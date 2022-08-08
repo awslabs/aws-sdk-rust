@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -69,6 +70,7 @@ impl NotAuthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgumentException {
@@ -133,6 +135,7 @@ impl InvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceError {

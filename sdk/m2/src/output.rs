@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>Returns a list of summary details for all the environments in your account. </p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all the environments.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -87,6 +89,7 @@ impl ListEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The identifier of this environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {
@@ -174,6 +177,7 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The unique identifier of the runtime environment that was updated.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentOutput {
@@ -231,48 +235,69 @@ impl UpdateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the runtime environment. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the runtime environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the runtime environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The type of instance underlying the runtime environment.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The status of the runtime environment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentLifecycle>,
     /// <p>The target platform for the runtime environment.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The version of the runtime engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The timestamp when the runtime environment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The storage configurations defined for the runtime environment.</p>
+    #[doc(hidden)]
     pub storage_configurations:
         std::option::Option<std::vec::Vec<crate::model::StorageConfiguration>>,
     /// <p>The tags defined for this runtime environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
+    #[doc(hidden)]
     pub high_availability_config: std::option::Option<crate::model::HighAvailabilityConfig>,
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    #[doc(hidden)]
     pub actual_capacity: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
+    #[doc(hidden)]
     pub pending_maintenance: std::option::Option<crate::model::PendingMaintenance>,
 }
 impl GetEnvironmentOutput {
@@ -795,6 +820,7 @@ impl StopApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBatchJobOutput {
     /// <p>The unique identifier of this execution of the batch job.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl StartBatchJobOutput {
@@ -879,8 +905,10 @@ impl StartApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsOutput {
     /// <p>The list of deployments that is returned.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -961,8 +989,10 @@ impl ListDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsOutput {
     /// <p>The list of data sets, containing ionformation including the creating time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+    #[doc(hidden)]
     pub data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSetsOutput {
@@ -1043,8 +1073,10 @@ impl ListDataSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetImportHistoryOutput {
     /// <p>The data set import tasks.</p>
+    #[doc(hidden)]
     pub data_set_import_tasks: std::option::Option<std::vec::Vec<crate::model::DataSetImportTask>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSetImportHistoryOutput {
@@ -1126,9 +1158,11 @@ impl ListDataSetImportHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchJobExecutionsOutput {
     /// <p>Returns a list of batch job executions for an application.</p>
+    #[doc(hidden)]
     pub batch_job_executions:
         std::option::Option<std::vec::Vec<crate::model::BatchJobExecutionSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchJobExecutionsOutput {
@@ -1215,8 +1249,10 @@ impl ListBatchJobExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchJobDefinitionsOutput {
     /// <p>The list of batch job definitions.</p>
+    #[doc(hidden)]
     pub batch_job_definitions: std::option::Option<std::vec::Vec<crate::model::BatchJobDefinition>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchJobDefinitionsOutput {
@@ -1300,9 +1336,11 @@ impl ListBatchJobDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsOutput {
     /// <p>The list of application versions.</p>
+    #[doc(hidden)]
     pub application_versions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsOutput {
@@ -1389,18 +1427,25 @@ impl ListApplicationVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the runtime environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The application version.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The status of the deployment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentLifecycle>,
     /// <p>The timestamp when the deployment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl GetDeploymentOutput {
@@ -1575,10 +1620,13 @@ impl GetDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetImportTaskOutput {
     /// <p>The task identifier.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSetTaskLifecycle>,
     /// <p>A summary of the status of the task.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::DataSetImportSummary>,
 }
 impl GetDataSetImportTaskOutput {
@@ -1673,20 +1721,28 @@ impl GetDataSetImportTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetDetailsOutput {
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
     /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    #[doc(hidden)]
     pub data_set_org: std::option::Option<crate::model::DatasetDetailOrgAttributes>,
     /// <p>The length of records in the data set.</p>
+    #[doc(hidden)]
     pub record_length: std::option::Option<i32>,
     /// <p>The locaion where the data set is stored.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The size of the block on disk. </p>
+    #[doc(hidden)]
     pub blocksize: std::option::Option<i32>,
     /// <p>The timestamp when the data set was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data set was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
+    #[doc(hidden)]
     pub last_referenced_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDataSetDetailsOutput {
@@ -1875,24 +1931,34 @@ impl GetDataSetDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchJobExecutionOutput {
     /// <p>The unique identifier for this batch job execution.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for this batch job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of this batch job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The user for the job.</p>
+    #[doc(hidden)]
     pub job_user: std::option::Option<std::string::String>,
     /// <p>The type of job.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::BatchJobType>,
     /// <p>The status of the batch job execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BatchJobExecutionStatus>,
     /// <p>The timestamp when the batch job execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the batch job execution ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl GetBatchJobExecutionOutput {
@@ -2118,18 +2184,25 @@ impl GetBatchJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationVersionOutput {
     /// <p>The name of the application version.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific version of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The application description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
+    #[doc(hidden)]
     pub definition_content: std::option::Option<std::string::String>,
     /// <p>The status of the application version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationVersionLifecycle>,
     /// <p>The timestamp when the application version was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl GetApplicationVersionOutput {
@@ -2328,6 +2401,7 @@ impl DeleteApplicationFromEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -2385,6 +2459,7 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetImportTaskOutput {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CreateDataSetImportTaskOutput {
@@ -2469,8 +2544,10 @@ impl CancelBatchJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>Returns a list of summary details for all the applications in an environment.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all applications.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -2552,10 +2629,13 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The unique application identifier.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The version number of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
 }
 impl CreateApplicationOutput {
@@ -2680,6 +2760,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>The new version of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
 }
 impl UpdateApplicationOutput {
@@ -2734,41 +2815,59 @@ impl UpdateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationLifecycle>,
     /// <p>The latest version of the application.</p>
+    #[doc(hidden)]
     pub latest_version: std::option::Option<crate::model::ApplicationVersionSummary>,
     /// <p>The version of the application that is deployed.</p>
+    #[doc(hidden)]
     pub deployed_version: std::option::Option<crate::model::DeployedVersionSummary>,
     /// <p>The type of the target platform for the application.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under the customer's account.</p>
+    #[doc(hidden)]
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroupSummary>>,
     /// <p>The timestamp when this application was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    #[doc(hidden)]
     pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier of the environment where the application will be deployed.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
+    #[doc(hidden)]
     pub target_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you deploy an application.</p>
+    #[doc(hidden)]
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub listener_ports: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub load_balancer_dns_name: std::option::Option<std::string::String>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl GetApplicationOutput {
@@ -3261,6 +3360,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3334,8 +3434,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngineVersionsOutput {
     /// <p>Returns the engine versions.</p>
+    #[doc(hidden)]
     pub engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersionsSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEngineVersionsOutput {

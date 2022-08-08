@@ -64,6 +64,7 @@ impl UpdateRepositoryDescriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestTitleOutput {
     /// <p>Information about the updated pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl UpdatePullRequestTitleOutput {
@@ -121,6 +122,7 @@ impl UpdatePullRequestTitleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestStatusOutput {
     /// <p>Information about the pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl UpdatePullRequestStatusOutput {
@@ -178,6 +180,7 @@ impl UpdatePullRequestStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestDescriptionOutput {
     /// <p>Information about the updated pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl UpdatePullRequestDescriptionOutput {
@@ -265,6 +268,7 @@ impl UpdatePullRequestApprovalStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestApprovalRuleContentOutput {
     /// <p>Information about the updated approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
 }
 impl UpdatePullRequestApprovalRuleContentOutput {
@@ -352,6 +356,7 @@ impl UpdateDefaultBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCommentOutput {
     /// <p>Information about the updated comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl UpdateCommentOutput {
@@ -406,6 +411,7 @@ impl UpdateCommentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateNameOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
 impl UpdateApprovalRuleTemplateNameOutput {
@@ -465,6 +471,7 @@ impl UpdateApprovalRuleTemplateNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateDescriptionOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
 impl UpdateApprovalRuleTemplateDescriptionOutput {
@@ -524,6 +531,7 @@ impl UpdateApprovalRuleTemplateDescriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateContentOutput {
     /// <p>Returns information about an approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
 impl UpdateApprovalRuleTemplateContentOutput {
@@ -613,8 +621,10 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
+    #[doc(hidden)]
     pub successful_executions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
+    #[doc(hidden)]
     pub failed_executions:
         std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
 }
@@ -743,6 +753,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the create or update operation.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
 }
 impl PutRepositoryTriggersOutput {
@@ -800,10 +811,13 @@ impl PutRepositoryTriggersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileOutput {
     /// <p>The full SHA ID of the commit that contains this file change.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
 }
 impl PutFileOutput {
@@ -922,6 +936,7 @@ impl PutCommentReactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentReplyOutput {
     /// <p>Information about the reply to a comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl PostCommentReplyOutput {
@@ -976,20 +991,28 @@ impl PostCommentReplyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the pull request. </p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
+    #[doc(hidden)]
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
+    #[doc(hidden)]
     pub after_blob_id: std::option::Option<std::string::String>,
     /// <p>The location of the change where you posted your comment.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The content of the comment you posted.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl PostCommentForPullRequestOutput {
@@ -1181,18 +1204,25 @@ impl PostCommentForPullRequestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentForComparedCommitOutput {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
+    #[doc(hidden)]
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
+    #[doc(hidden)]
     pub after_blob_id: std::option::Option<std::string::String>,
     /// <p>The location of the comment in the comparison between the two commits.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The content of the comment you posted.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl PostCommentForComparedCommitOutput {
@@ -1394,6 +1424,7 @@ impl OverridePullRequestApprovalRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestByThreeWayOutput {
     /// <p>Returns information about a pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl MergePullRequestByThreeWayOutput {
@@ -1451,6 +1482,7 @@ impl MergePullRequestByThreeWayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl MergePullRequestBySquashOutput {
@@ -1508,6 +1540,7 @@ impl MergePullRequestBySquashOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestByFastForwardOutput {
     /// <p>Information about the specified pull request, including the merge.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl MergePullRequestByFastForwardOutput {
@@ -1565,8 +1598,10 @@ impl MergePullRequestByFastForwardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesByThreeWayOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
 }
 impl MergeBranchesByThreeWayOutput {
@@ -1638,8 +1673,10 @@ impl MergeBranchesByThreeWayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesBySquashOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
 }
 impl MergeBranchesBySquashOutput {
@@ -1711,8 +1748,10 @@ impl MergeBranchesBySquashOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesByFastForwardOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
 }
 impl MergeBranchesByFastForwardOutput {
@@ -1784,9 +1823,11 @@ impl MergeBranchesByFastForwardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -1878,8 +1919,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
+    #[doc(hidden)]
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesForApprovalRuleTemplateOutput {
@@ -1961,8 +2004,10 @@ impl ListRepositoriesForApprovalRuleTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositoryNameIdPair>>,
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesOutput {
@@ -2044,8 +2089,10 @@ impl ListRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
+    #[doc(hidden)]
     pub pull_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPullRequestsOutput {
@@ -2126,8 +2173,10 @@ impl ListPullRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBranchesOutput {
     /// <p>The list of branch names.</p>
+    #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that returns the batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBranchesOutput {
@@ -2208,8 +2257,10 @@ impl ListBranchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     /// <p>The names of all approval rule templates associated with the repository.</p>
+    #[doc(hidden)]
     pub approval_rule_template_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
@@ -2301,8 +2352,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApprovalRuleTemplatesOutput {
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    #[doc(hidden)]
     pub approval_rule_template_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApprovalRuleTemplatesOutput {
@@ -2390,8 +2443,10 @@ impl ListApprovalRuleTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the trigger.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>The JSON block of configuration information for each trigger.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
 }
 impl GetRepositoryTriggersOutput {
@@ -2475,6 +2530,7 @@ impl GetRepositoryTriggersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryOutput {
     /// <p>Information about the repository.</p>
+    #[doc(hidden)]
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
 }
 impl GetRepositoryOutput {
@@ -2532,8 +2588,10 @@ impl GetRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestOverrideStateOutput {
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
+    #[doc(hidden)]
     pub overridden: bool,
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
+    #[doc(hidden)]
     pub overrider: std::option::Option<std::string::String>,
 }
 impl GetPullRequestOverrideStateOutput {
@@ -2605,6 +2663,7 @@ impl GetPullRequestOverrideStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
+    #[doc(hidden)]
     pub approvals: std::option::Option<std::vec::Vec<crate::model::Approval>>,
 }
 impl GetPullRequestApprovalStatesOutput {
@@ -2668,6 +2727,7 @@ impl GetPullRequestApprovalStatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestOutput {
     /// <p>Information about the specified pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl GetPullRequestOutput {
@@ -2725,12 +2785,16 @@ impl GetPullRequestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeOptionsOutput {
     /// <p>The merge option or strategy used to merge the code.</p>
+    #[doc(hidden)]
     pub merge_options: std::option::Option<std::vec::Vec<crate::model::MergeOptionTypeEnum>>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
+    #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
 }
 impl GetMergeOptionsOutput {
@@ -2855,16 +2919,22 @@ impl GetMergeOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeConflictsOutput {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
+    #[doc(hidden)]
     pub mergeable: bool,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
+    #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
+    #[doc(hidden)]
     pub conflict_metadata_list: std::option::Option<std::vec::Vec<crate::model::ConflictMetadata>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMergeConflictsOutput {
@@ -3023,12 +3093,16 @@ impl GetMergeConflictsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeCommitOutput {
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
+    #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
+    #[doc(hidden)]
     pub merged_commit_id: std::option::Option<std::string::String>,
 }
 impl GetMergeCommitOutput {
@@ -3146,18 +3220,25 @@ impl GetMergeCommitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderOutput {
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
+    #[doc(hidden)]
     pub folder_path: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
     /// <p>The list of folders that exist under the specified folder, if any.</p>
+    #[doc(hidden)]
     pub sub_folders: std::option::Option<std::vec::Vec<crate::model::Folder>>,
     /// <p>The list of files in the specified folder, if any.</p>
+    #[doc(hidden)]
     pub files: std::option::Option<std::vec::Vec<crate::model::File>>,
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
+    #[doc(hidden)]
     pub symbolic_links: std::option::Option<std::vec::Vec<crate::model::SymbolicLink>>,
     /// <p>The list of submodules in the specified folder, if any.</p>
+    #[doc(hidden)]
     pub sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
 }
 impl GetFolderOutput {
@@ -3350,18 +3431,24 @@ impl GetFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The blob ID of the object that represents the file content.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The size of the contents of the file, in bytes.</p>
+    #[doc(hidden)]
     pub file_size: i64,
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
+    #[doc(hidden)]
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetFileOutput {
@@ -3513,8 +3600,10 @@ impl GetFileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDifferencesOutput {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
+    #[doc(hidden)]
     pub differences: std::option::Option<std::vec::Vec<crate::model::Difference>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDifferencesOutput {
@@ -3595,6 +3684,7 @@ impl GetDifferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
+    #[doc(hidden)]
     pub commit: std::option::Option<crate::model::Commit>,
 }
 impl GetCommitOutput {
@@ -3649,9 +3739,11 @@ impl GetCommitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
+    #[doc(hidden)]
     pub comments_for_pull_request_data:
         std::option::Option<std::vec::Vec<crate::model::CommentsForPullRequest>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCommentsForPullRequestOutput {
@@ -3741,9 +3833,11 @@ impl GetCommentsForPullRequestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentsForComparedCommitOutput {
     /// <p>A list of comment objects on the compared commit.</p>
+    #[doc(hidden)]
     pub comments_for_compared_commit_data:
         std::option::Option<std::vec::Vec<crate::model::CommentsForComparedCommit>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCommentsForComparedCommitOutput {
@@ -3833,8 +3927,10 @@ impl GetCommentsForComparedCommitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentReactionsOutput {
     /// <p>An array of reactions to the specified comment.</p>
+    #[doc(hidden)]
     pub reactions_for_comment: std::option::Option<std::vec::Vec<crate::model::ReactionForComment>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCommentReactionsOutput {
@@ -3918,6 +4014,7 @@ impl GetCommentReactionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentOutput {
     /// <p>The contents of the comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl GetCommentOutput {
@@ -3972,6 +4069,7 @@ impl GetCommentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBranchOutput {
     /// <p>The name of the branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<crate::model::BranchInfo>,
 }
 impl GetBranchOutput {
@@ -4026,6 +4124,7 @@ impl GetBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetBlobOutput {
@@ -4080,6 +4179,7 @@ impl GetBlobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApprovalRuleTemplateOutput {
     /// <p>The content and structure of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
 impl GetApprovalRuleTemplateOutput {
@@ -4139,6 +4239,7 @@ impl GetApprovalRuleTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatePullRequestApprovalRulesOutput {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    #[doc(hidden)]
     pub evaluation: std::option::Option<crate::model::Evaluation>,
 }
 impl EvaluatePullRequestApprovalRulesOutput {
@@ -4228,8 +4329,10 @@ impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePullRequestEventsOutput {
     /// <p>Information about the pull request events.</p>
+    #[doc(hidden)]
     pub pull_request_events: std::option::Option<std::vec::Vec<crate::model::PullRequestEvent>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePullRequestEventsOutput {
@@ -4311,16 +4414,22 @@ impl DescribePullRequestEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMergeConflictsOutput {
     /// <p>Contains metadata about the conflicts found in the merge.</p>
+    #[doc(hidden)]
     pub conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
+    #[doc(hidden)]
     pub merge_hunks: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
+    #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
 }
 impl DescribeMergeConflictsOutput {
@@ -4481,6 +4590,7 @@ impl DescribeMergeConflictsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
+    #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryOutput {
@@ -4540,6 +4650,7 @@ pub struct DeletePullRequestApprovalRuleOutput {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
+    #[doc(hidden)]
     pub approval_rule_id: std::option::Option<std::string::String>,
 }
 impl DeletePullRequestApprovalRuleOutput {
@@ -4603,12 +4714,16 @@ impl DeletePullRequestApprovalRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileOutput {
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
 }
 impl DeleteFileOutput {
@@ -4714,6 +4829,7 @@ impl DeleteFileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCommentContentOutput {
     /// <p>Information about the comment you just deleted.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl DeleteCommentContentOutput {
@@ -4768,6 +4884,7 @@ impl DeleteCommentContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
+    #[doc(hidden)]
     pub deleted_branch: std::option::Option<crate::model::BranchInfo>,
 }
 impl DeleteBranchOutput {
@@ -4825,6 +4942,7 @@ impl DeleteBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
+    #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteApprovalRuleTemplateOutput {
@@ -4882,8 +5000,10 @@ impl DeleteApprovalRuleTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUnreferencedMergeCommitOutput {
     /// <p>The full commit ID of the commit that contains your merge results.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
 }
 impl CreateUnreferencedMergeCommitOutput {
@@ -4955,6 +5075,7 @@ impl CreateUnreferencedMergeCommitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
     /// <p>Information about the newly created repository.</p>
+    #[doc(hidden)]
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
 }
 impl CreateRepositoryOutput {
@@ -5012,6 +5133,7 @@ impl CreateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePullRequestApprovalRuleOutput {
     /// <p>Information about the created approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
 }
 impl CreatePullRequestApprovalRuleOutput {
@@ -5069,6 +5191,7 @@ impl CreatePullRequestApprovalRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePullRequestOutput {
     /// <p>Information about the newly created pull request.</p>
+    #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
 impl CreatePullRequestOutput {
@@ -5126,14 +5249,19 @@ impl CreatePullRequestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCommitOutput {
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
     /// <p>The files added as part of the committed file changes.</p>
+    #[doc(hidden)]
     pub files_added: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
     /// <p>The files updated as part of the commited file changes.</p>
+    #[doc(hidden)]
     pub files_updated: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
     /// <p>The files deleted as part of the committed file changes.</p>
+    #[doc(hidden)]
     pub files_deleted: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
 }
 impl CreateCommitOutput {
@@ -5313,6 +5441,7 @@ impl CreateBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApprovalRuleTemplateOutput {
     /// <p>The content and structure of the created approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
 impl CreateApprovalRuleTemplateOutput {
@@ -5372,8 +5501,10 @@ impl CreateApprovalRuleTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositoryMetadata>>,
     /// <p>Returns a list of repository names for which information could not be found.</p>
+    #[doc(hidden)]
     pub repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetRepositoriesOutput {
@@ -5464,8 +5595,10 @@ impl BatchGetRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCommitsOutput {
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
+    #[doc(hidden)]
     pub commits: std::option::Option<std::vec::Vec<crate::model::Commit>>,
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
 }
 impl BatchGetCommitsOutput {
@@ -5555,8 +5688,10 @@ impl BatchGetCommitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
+    #[doc(hidden)]
     pub disassociated_repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
     >,
@@ -5673,16 +5808,22 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeMergeConflictsOutput {
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
+    #[doc(hidden)]
     pub conflicts: std::option::Option<std::vec::Vec<crate::model::Conflict>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDescribeMergeConflictsError>>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
+    #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
 }
 impl BatchDescribeMergeConflictsOutput {
@@ -5852,8 +5993,10 @@ impl BatchDescribeMergeConflictsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
+    #[doc(hidden)]
     pub associated_repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
     >,

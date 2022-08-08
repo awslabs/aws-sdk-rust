@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,26 +80,37 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Backup {
     /// <p>The identifier (ID) of the backup.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>The state of the backup.</p>
+    #[doc(hidden)]
     pub backup_state: std::option::Option<crate::model::BackupState>,
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the backup was copied from a source backup.</p>
+    #[doc(hidden)]
     pub copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    #[doc(hidden)]
     pub never_expires: std::option::Option<bool>,
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_backup: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_cluster: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup will be permanently deleted.</p>
+    #[doc(hidden)]
     pub delete_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of tags for the backup.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Backup {
@@ -415,35 +428,50 @@ impl AsRef<str> for BackupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The cluster's backup policy.</p>
+    #[doc(hidden)]
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
     /// <p>A policy that defines how the service retains backups.</p>
+    #[doc(hidden)]
     pub backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
     /// <p>The cluster's identifier (ID).</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the HSMs in the cluster.</p>
+    #[doc(hidden)]
     pub hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
+    #[doc(hidden)]
     pub hsm_type: std::option::Option<std::string::String>,
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
+    #[doc(hidden)]
     pub pre_co_password: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster's security group.</p>
+    #[doc(hidden)]
     pub security_group: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
+    #[doc(hidden)]
     pub source_backup_id: std::option::Option<std::string::String>,
     /// <p>The cluster's state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     /// <p>A description of the cluster's state.</p>
+    #[doc(hidden)]
     pub state_message: std::option::Option<std::string::String>,
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
+    #[doc(hidden)]
     pub subnet_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<crate::model::Certificates>,
     /// <p>The list of tags for the cluster.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Cluster {
@@ -804,14 +832,19 @@ impl Cluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificates {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
+    #[doc(hidden)]
     pub cluster_csr: std::option::Option<std::string::String>,
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
+    #[doc(hidden)]
     pub hsm_certificate: std::option::Option<std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    #[doc(hidden)]
     pub aws_hardware_certificate: std::option::Option<std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
+    #[doc(hidden)]
     pub manufacturer_hardware_certificate: std::option::Option<std::string::String>,
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
+    #[doc(hidden)]
     pub cluster_certificate: std::option::Option<std::string::String>,
 }
 impl Certificates {
@@ -1045,20 +1078,28 @@ impl AsRef<str> for ClusterState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hsm {
     /// <p>The Availability Zone that contains the HSM.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
+    #[doc(hidden)]
     pub eni_id: std::option::Option<std::string::String>,
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
+    #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>The HSM's identifier (ID).</p>
+    #[doc(hidden)]
     pub hsm_id: std::option::Option<std::string::String>,
     /// <p>The HSM's state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::HsmState>,
     /// <p>A description of the HSM's state.</p>
+    #[doc(hidden)]
     pub state_message: std::option::Option<std::string::String>,
 }
 impl Hsm {
@@ -1311,8 +1352,10 @@ impl AsRef<str> for HsmState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BackupRetentionType>,
     /// <p>Use a value between 7 - 379.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl BackupRetentionPolicy {
@@ -1489,12 +1532,16 @@ impl AsRef<str> for BackupPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_backup: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
+    #[doc(hidden)]
     pub source_cluster: std::option::Option<std::string::String>,
 }
 impl DestinationBackup {

@@ -17683,10 +17683,13 @@ impl UpdateTagOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagOptionInput {
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The updated value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The updated active state.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl UpdateTagOptionInput {
@@ -17718,14 +17721,18 @@ impl std::fmt::Debug for UpdateTagOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceActionInput {
     /// <p>The self-service action identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The self-service action name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map that defines the self-service action.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<
         std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
     >,
     /// <p>The self-service action description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -17733,6 +17740,7 @@ pub struct UpdateServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl UpdateServiceActionInput {
@@ -17788,21 +17796,28 @@ pub struct UpdateProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The updated name of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the product version is active.</p>
     /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+    #[doc(hidden)]
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
 impl UpdateProvisioningArtifactInput {
@@ -17867,18 +17882,22 @@ pub struct UpdateProvisionedProductPropertiesInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the provisioned product properties to be updated.</p>
     /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
     /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
     /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_properties: std::option::Option<
         std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
     >,
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl UpdateProvisionedProductPropertiesInput {
@@ -17936,31 +17955,44 @@ pub struct UpdateProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
     /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_name: std::option::Option<std::string::String>,
     /// <p>The new parameters.</p>
+    #[doc(hidden)]
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
+    #[doc(hidden)]
     pub provisioning_preferences: std::option::Option<crate::model::UpdateProvisioningPreferences>,
     /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
+    #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
 }
 impl UpdateProvisionedProductInput {
@@ -18059,26 +18091,37 @@ pub struct UpdateProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The updated product name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated owner of the product.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The updated description of the product.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated distributor of the product.</p>
+    #[doc(hidden)]
     pub distributor: std::option::Option<std::string::String>,
     /// <p>The updated support description for the product.</p>
+    #[doc(hidden)]
     pub support_description: std::option::Option<std::string::String>,
     /// <p>The updated support email for the product.</p>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The updated support URL for the product.</p>
+    #[doc(hidden)]
     pub support_url: std::option::Option<std::string::String>,
     /// <p>The tags to add to the product.</p>
+    #[doc(hidden)]
     pub add_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The tags to remove from the product.</p>
+    #[doc(hidden)]
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateProductInput {
@@ -18160,14 +18203,19 @@ pub struct UpdatePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Information about the organization node.</p>
+    #[doc(hidden)]
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
     /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    #[doc(hidden)]
     pub share_tag_options: std::option::Option<bool>,
 }
 impl UpdatePortfolioShareInput {
@@ -18219,18 +18267,25 @@ pub struct UpdatePortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name to use for display purposes.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The updated description of the portfolio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated name of the portfolio provider.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The tags to add.</p>
+    #[doc(hidden)]
     pub add_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The tags to remove.</p>
+    #[doc(hidden)]
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdatePortfolioInput {
@@ -18292,10 +18347,13 @@ pub struct UpdateConstraintInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The updated description of the constraint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
@@ -18346,6 +18404,7 @@ pub struct UpdateConstraintInput {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
 }
 impl UpdateConstraintInput {
@@ -18435,12 +18494,16 @@ impl std::fmt::Debug for UpdateConstraintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateProvisionedProductInput {
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+    #[doc(hidden)]
     pub terminate_token: std::option::Option<std::string::String>,
     /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    #[doc(hidden)]
     pub ignore_errors: bool,
     /// <p>The language code.</p>
     /// <ul>
@@ -18448,8 +18511,10 @@ pub struct TerminateProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
+    #[doc(hidden)]
     pub retain_physical_resources: bool,
 }
 impl TerminateProvisionedProductInput {
@@ -18506,12 +18571,15 @@ pub struct SearchProvisionedProductsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    #[doc(hidden)]
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProvisionedProductViewFilterBy,
@@ -18519,12 +18587,16 @@ pub struct SearchProvisionedProductsInput {
         >,
     >,
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl SearchProvisionedProductsInput {
@@ -18595,10 +18667,13 @@ pub struct SearchProductsAsAdminInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProductViewFilterBy,
@@ -18606,14 +18681,19 @@ pub struct SearchProductsAsAdminInput {
         >,
     >,
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ProductViewSortBy>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>Access level of the source of the product.</p>
+    #[doc(hidden)]
     pub product_source: std::option::Option<crate::model::ProductSource>,
 }
 impl SearchProductsAsAdminInput {
@@ -18687,8 +18767,10 @@ pub struct SearchProductsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProductViewFilterBy,
@@ -18696,12 +18778,16 @@ pub struct SearchProductsInput {
         >,
     >,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ProductViewSortBy>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsInput {
@@ -18765,12 +18851,16 @@ pub struct ScanProvisionedProductsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    #[doc(hidden)]
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ScanProvisionedProductsInput {
@@ -18817,8 +18907,10 @@ pub struct RejectPortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
     /// <ul>
@@ -18827,6 +18919,7 @@ pub struct RejectPortfolioShareInput {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+    #[doc(hidden)]
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl RejectPortfolioShareInput {
@@ -18874,31 +18967,44 @@ pub struct ProvisionProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_name: std::option::Option<std::string::String>,
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
+    #[doc(hidden)]
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
+    #[doc(hidden)]
     pub provisioning_preferences: std::option::Option<crate::model::ProvisioningPreferences>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+    #[doc(hidden)]
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
+    #[doc(hidden)]
     pub provision_token: std::option::Option<std::string::String>,
 }
 impl ProvisionProductInput {
@@ -18992,10 +19098,13 @@ impl std::fmt::Debug for ProvisionProductInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagOptionsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListTagOptionsFilters>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListTagOptionsInput {
@@ -19032,12 +19141,16 @@ pub struct ListStackInstancesForProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl ListStackInstancesForProvisionedProductInput {
@@ -19079,12 +19192,16 @@ impl std::fmt::Debug for ListStackInstancesForProvisionedProductInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceActionsForProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -19092,6 +19209,7 @@ pub struct ListServiceActionsForProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsForProvisioningArtifactInput {
@@ -19143,10 +19261,13 @@ pub struct ListServiceActionsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsInput {
@@ -19183,16 +19304,20 @@ impl std::fmt::Debug for ListServiceActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForTagOptionInput {
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub tag_option_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <ul>
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesForTagOptionInput {
@@ -19238,14 +19363,19 @@ pub struct ListRecordHistoryInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    #[doc(hidden)]
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
     /// <p>The search filter to scope the results.</p>
+    #[doc(hidden)]
     pub search_filter: std::option::Option<crate::model::ListRecordHistorySearchFilter>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListRecordHistoryInput {
@@ -19294,10 +19424,13 @@ impl std::fmt::Debug for ListRecordHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningArtifactsForServiceActionInput {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -19305,6 +19438,7 @@ pub struct ListProvisioningArtifactsForServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsForServiceActionInput {
@@ -19351,8 +19485,10 @@ pub struct ListProvisioningArtifactsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsInput {
@@ -19389,14 +19525,19 @@ pub struct ListProvisionedProductPlansInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub provision_product_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    #[doc(hidden)]
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
 }
 impl ListProvisionedProductPlansInput {
@@ -19448,12 +19589,16 @@ pub struct ListPrincipalsForPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalsForPortfolioInput {
@@ -19500,12 +19645,16 @@ pub struct ListPortfoliosForProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl ListPortfoliosForProductInput {
@@ -19552,10 +19701,13 @@ pub struct ListPortfoliosInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl ListPortfoliosInput {
@@ -19597,14 +19749,19 @@ pub struct ListPortfolioAccessInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
+    #[doc(hidden)]
     pub organization_parent_id: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl ListPortfolioAccessInput {
@@ -19656,8 +19813,10 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
@@ -19665,10 +19824,13 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub organization_node_type: std::option::Option<crate::model::OrganizationNodeType>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl ListOrganizationPortfolioAccessInput {
@@ -19727,12 +19889,16 @@ pub struct ListLaunchPathsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchPathsInput {
@@ -19779,14 +19945,19 @@ pub struct ListConstraintsForPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListConstraintsForPortfolioInput {
@@ -19838,12 +20009,16 @@ pub struct ListBudgetsForResourceInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListBudgetsForResourceInput {
@@ -19890,10 +20065,13 @@ pub struct ListAcceptedPortfolioSharesInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
@@ -19901,6 +20079,7 @@ pub struct ListAcceptedPortfolioSharesInput {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
     /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl ListAcceptedPortfolioSharesInput {
@@ -19952,16 +20131,22 @@ pub struct ImportAsProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
+    #[doc(hidden)]
     pub physical_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl ImportAsProvisionedProductInput {
@@ -20018,16 +20203,22 @@ pub struct GetProvisionedProductOutputsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioned product that you want the outputs from.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
+    #[doc(hidden)]
     pub output_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl GetProvisionedProductOutputsInput {
@@ -20090,10 +20281,13 @@ impl std::fmt::Debug for GetAwsOrganizationsAccessStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteProvisionedProductServiceActionInput {
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>An idempotency token that uniquely identifies the execute request.</p>
+    #[doc(hidden)]
     pub execute_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -20101,8 +20295,10 @@ pub struct ExecuteProvisionedProductServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -20160,10 +20356,13 @@ pub struct ExecuteProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl ExecuteProvisionedProductPlanInput {
@@ -20211,8 +20410,10 @@ impl std::fmt::Debug for EnableAwsOrganizationsAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTagOptionFromResourceInput {
     /// <p>The resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub tag_option_id: std::option::Option<std::string::String>,
 }
 impl DisassociateTagOptionFromResourceInput {
@@ -20239,10 +20440,13 @@ impl std::fmt::Debug for DisassociateTagOptionFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -20250,6 +20454,7 @@ pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl DisassociateServiceActionFromProvisioningArtifactInput {
@@ -20297,10 +20502,13 @@ pub struct DisassociateProductFromPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
 }
 impl DisassociateProductFromPortfolioInput {
@@ -20342,10 +20550,13 @@ pub struct DisassociatePrincipalFromPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl DisassociatePrincipalFromPortfolioInput {
@@ -20382,8 +20593,10 @@ impl std::fmt::Debug for DisassociatePrincipalFromPortfolioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateBudgetFromResourceInput {
     /// <p>The name of the budget you want to disassociate.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DisassociateBudgetFromResourceInput {
@@ -20421,6 +20634,7 @@ impl std::fmt::Debug for DisableAwsOrganizationsAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagOptionInput {
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeTagOptionInput {
@@ -20442,8 +20656,10 @@ impl std::fmt::Debug for DescribeTagOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionExecutionParametersInput {
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The self-service action identifier.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -20451,6 +20667,7 @@ pub struct DescribeServiceActionExecutionParametersInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl DescribeServiceActionExecutionParametersInput {
@@ -20487,6 +20704,7 @@ impl std::fmt::Debug for DescribeServiceActionExecutionParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionInput {
     /// <p>The self-service action identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -20494,6 +20712,7 @@ pub struct DescribeServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl DescribeServiceActionInput {
@@ -20530,12 +20749,16 @@ pub struct DescribeRecordInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl DescribeRecordInput {
@@ -20582,18 +20805,25 @@ pub struct DescribeProvisioningParametersInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    #[doc(hidden)]
     pub path_name: std::option::Option<std::string::String>,
 }
 impl DescribeProvisioningParametersInput {
@@ -20658,16 +20888,22 @@ pub struct DescribeProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The provisioning artifact name.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
     /// <p>The product name.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
+    #[doc(hidden)]
     pub verbose: bool,
 }
 impl DescribeProvisioningArtifactInput {
@@ -20727,12 +20963,16 @@ pub struct DescribeProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl DescribeProvisionedProductPlanInput {
@@ -20779,12 +21019,15 @@ pub struct DescribeProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeProvisionedProductInput {
@@ -20828,8 +21071,10 @@ pub struct DescribeProductViewInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product view identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeProductViewInput {
@@ -20866,13 +21111,17 @@ pub struct DescribeProductAsAdminInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The product name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+    #[doc(hidden)]
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
 impl DescribeProductAsAdminInput {
@@ -20920,10 +21169,13 @@ pub struct DescribeProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The product name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeProductInput {
@@ -20960,6 +21212,7 @@ impl std::fmt::Debug for DescribeProductInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioShareStatusInput {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
+    #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
 impl DescribePortfolioShareStatusInput {
@@ -20981,16 +21234,20 @@ impl std::fmt::Debug for DescribePortfolioShareStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioSharesInput {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
     /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
     /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
     /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DescribePortfolioShareType>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: i32,
 }
 impl DescribePortfolioSharesInput {
@@ -21036,8 +21293,10 @@ pub struct DescribePortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribePortfolioInput {
@@ -21074,8 +21333,10 @@ pub struct DescribeCopyProductStatusInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
+    #[doc(hidden)]
     pub copy_product_token: std::option::Option<std::string::String>,
 }
 impl DescribeCopyProductStatusInput {
@@ -21112,8 +21373,10 @@ pub struct DescribeConstraintInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeConstraintInput {
@@ -21145,6 +21408,7 @@ impl std::fmt::Debug for DescribeConstraintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagOptionInput {
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteTagOptionInput {
@@ -21166,6 +21430,7 @@ impl std::fmt::Debug for DeleteTagOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceActionInput {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -21173,6 +21438,7 @@ pub struct DeleteServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl DeleteServiceActionInput {
@@ -21209,10 +21475,13 @@ pub struct DeleteProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
 }
 impl DeleteProvisioningArtifactInput {
@@ -21254,10 +21523,13 @@ pub struct DeleteProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    #[doc(hidden)]
     pub ignore_errors: bool,
 }
 impl DeleteProvisionedProductPlanInput {
@@ -21299,8 +21571,10 @@ pub struct DeleteProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteProductInput {
@@ -21337,12 +21611,16 @@ pub struct DeletePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The organization node to whom you are going to stop sharing.</p>
+    #[doc(hidden)]
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
 }
 impl DeletePortfolioShareInput {
@@ -21389,8 +21667,10 @@ pub struct DeletePortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePortfolioInput {
@@ -21427,8 +21707,10 @@ pub struct DeleteConstraintInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteConstraintInput {
@@ -21460,8 +21742,10 @@ impl std::fmt::Debug for DeleteConstraintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagOptionInput {
     /// <p>The TagOption key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The TagOption value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CreateTagOptionInput {
@@ -21488,8 +21772,10 @@ impl std::fmt::Debug for CreateTagOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceActionInput {
     /// <p>The self-service action name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    #[doc(hidden)]
     pub definition_type: std::option::Option<crate::model::ServiceActionDefinitionType>,
     /// <p>The self-service action definition. Can be one of the following:</p>
     /// <dl>
@@ -21521,10 +21807,12 @@ pub struct CreateServiceActionInput {
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub definition: std::option::Option<
         std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
     >,
     /// <p>The self-service action description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -21532,8 +21820,10 @@ pub struct CreateServiceActionInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceActionInput {
@@ -21625,12 +21915,16 @@ pub struct CreateProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the provisioning artifact.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::ProvisioningArtifactProperties>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateProvisioningArtifactInput {
@@ -21677,28 +21971,39 @@ pub struct CreateProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name of the plan.</p>
+    #[doc(hidden)]
     pub plan_name: std::option::Option<std::string::String>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+    #[doc(hidden)]
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
+    #[doc(hidden)]
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProvisionedProductPlanInput {
@@ -21783,30 +22088,42 @@ pub struct CreateProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name of the product.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The owner of the product.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The description of the product.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The distributor of the product.</p>
+    #[doc(hidden)]
     pub distributor: std::option::Option<std::string::String>,
     /// <p>The support information about the product.</p>
+    #[doc(hidden)]
     pub support_description: std::option::Option<std::string::String>,
     /// <p>The contact email for product support.</p>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The contact URL for product support.</p>
     /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    #[doc(hidden)]
     pub support_url: std::option::Option<std::string::String>,
     /// <p>The type of product.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::ProductType>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration of the provisioning artifact. </p>
+    #[doc(hidden)]
     pub provisioning_artifact_parameters:
         std::option::Option<crate::model::ProvisioningArtifactProperties>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateProductInput {
@@ -21899,14 +22216,19 @@ pub struct CreatePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+    #[doc(hidden)]
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
+    #[doc(hidden)]
     pub share_tag_options: bool,
 }
 impl CreatePortfolioShareInput {
@@ -21958,16 +22280,22 @@ pub struct CreatePortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name to use for display purposes.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the portfolio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the portfolio provider.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioInput {
@@ -22024,10 +22352,13 @@ pub struct CreateConstraintInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
@@ -22078,6 +22409,7 @@ pub struct CreateConstraintInput {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -22087,10 +22419,13 @@ pub struct CreateConstraintInput {
     /// <li> <p> <code>STACKSET</code> </p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateConstraintInput {
@@ -22207,14 +22542,19 @@ pub struct CopyProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
+    #[doc(hidden)]
     pub source_product_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the target product. By default, a new product is created.</p>
+    #[doc(hidden)]
     pub target_product_id: std::option::Option<std::string::String>,
     /// <p>A name for the target product. The default is the name of the source product.</p>
+    #[doc(hidden)]
     pub target_product_name: std::option::Option<std::string::String>,
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
+    #[doc(hidden)]
     pub source_provisioning_artifact_identifiers: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<
@@ -22224,8 +22564,10 @@ pub struct CopyProductInput {
         >,
     >,
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
+    #[doc(hidden)]
     pub copy_options: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CopyProductInput {
@@ -22292,6 +22634,7 @@ impl std::fmt::Debug for CopyProductInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    #[doc(hidden)]
     pub service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
     /// <p>The language code.</p>
@@ -22300,6 +22643,7 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
@@ -22337,6 +22681,7 @@ impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactI
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    #[doc(hidden)]
     pub service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
     /// <p>The language code.</p>
@@ -22345,6 +22690,7 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactInput {
@@ -22382,8 +22728,10 @@ impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactInpu
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTagOptionWithResourceInput {
     /// <p>The resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub tag_option_id: std::option::Option<std::string::String>,
 }
 impl AssociateTagOptionWithResourceInput {
@@ -22410,10 +22758,13 @@ impl std::fmt::Debug for AssociateTagOptionWithResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceActionWithProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
@@ -22421,6 +22772,7 @@ pub struct AssociateServiceActionWithProvisioningArtifactInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl AssociateServiceActionWithProvisioningArtifactInput {
@@ -22467,12 +22819,16 @@ pub struct AssociateProductWithPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the source portfolio.</p>
+    #[doc(hidden)]
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
 impl AssociateProductWithPortfolioInput {
@@ -22519,12 +22875,16 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
 impl AssociatePrincipalWithPortfolioInput {
@@ -22566,8 +22926,10 @@ impl std::fmt::Debug for AssociatePrincipalWithPortfolioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateBudgetWithResourceInput {
     /// <p>The name of the budget you want to associate.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl AssociateBudgetWithResourceInput {
@@ -22599,8 +22961,10 @@ pub struct AcceptPortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
     /// <ul>
@@ -22609,6 +22973,7 @@ pub struct AcceptPortfolioShareInput {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+    #[doc(hidden)]
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl AcceptPortfolioShareInput {

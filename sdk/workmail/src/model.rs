@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BookingOptions {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
+    #[doc(hidden)]
     pub auto_accept_requests: bool,
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
+    #[doc(hidden)]
     pub auto_decline_recurring_requests: bool,
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
+    #[doc(hidden)]
     pub auto_decline_conflicting_requests: bool,
 }
 impl BookingOptions {
@@ -168,6 +171,7 @@ impl AsRef<str> for MobileDeviceAccessRuleEffect {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl LambdaAvailabilityProvider {
@@ -222,10 +226,13 @@ impl LambdaAvailabilityProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
+    #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
     /// <p>The username used to authenticate the remote EWS server.</p>
+    #[doc(hidden)]
     pub ews_username: std::option::Option<std::string::String>,
     /// <p>The password used to authenticate the remote EWS server.</p>
+    #[doc(hidden)]
     pub ews_password: std::option::Option<std::string::String>,
 }
 impl EwsAvailabilityProvider {
@@ -314,8 +321,10 @@ impl EwsAvailabilityProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -387,10 +396,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderConfiguration {
     /// <p>The folder name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FolderName>,
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::RetentionAction>,
     /// <p>The number of days for which the folder-configuration action applies.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
 }
 impl FolderConfiguration {
@@ -728,20 +740,28 @@ impl AsRef<str> for AccessControlRuleEffect {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The identifier of the user.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The email of the user.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The display name of the user.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The role of the user.</p>
+    #[doc(hidden)]
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl User {
@@ -1039,18 +1059,25 @@ impl AsRef<str> for EntityState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The identifier of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The email of the resource.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the resource: equipment or room.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Resource {
@@ -1268,8 +1295,10 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Delegate {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the delegate: user or group.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MemberType>,
 }
 impl Delegate {
@@ -1396,14 +1425,19 @@ impl AsRef<str> for MemberType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationSummary {
     /// <p>The identifier associated with the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The alias associated with the organization.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The default email domain associated with the organization.</p>
+    #[doc(hidden)]
     pub default_mail_domain: std::option::Option<std::string::String>,
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The state associated with the organization.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl OrganizationSummary {
@@ -1535,32 +1569,46 @@ impl OrganizationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule. </p>
+    #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of a mobile access rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of a mobile access rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>Device types that a rule will match. </p>
+    #[doc(hidden)]
     pub device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
+    #[doc(hidden)]
     pub not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that a rule will match.</p>
+    #[doc(hidden)]
     pub device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
+    #[doc(hidden)]
     pub not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that a rule will match.</p>
+    #[doc(hidden)]
     pub device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
+    #[doc(hidden)]
     pub not_device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device user agents that a rule will match.</p>
+    #[doc(hidden)]
     pub device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
+    #[doc(hidden)]
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time at which an access rule was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which an access rule was modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessRule {
@@ -1934,16 +1982,22 @@ impl MobileDeviceAccessRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MobileDeviceAccessOverride {
     /// <p>The WorkMail user to which the access override applies.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The device to which the override applies.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A description of the override.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the override was first created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the override was last modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessOverride {
@@ -2092,8 +2146,10 @@ impl MobileDeviceAccessOverride {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainSummary {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether the domain is default or not.</p>
+    #[doc(hidden)]
     pub default_domain: bool,
 }
 impl MailDomainSummary {
@@ -2165,10 +2221,13 @@ impl MailDomainSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
+    #[doc(hidden)]
     pub grantee_id: std::option::Option<std::string::String>,
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
+    #[doc(hidden)]
     pub grantee_type: std::option::Option<crate::model::MemberType>,
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+    #[doc(hidden)]
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
 impl Permission {
@@ -2270,22 +2329,31 @@ impl Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<std::string::String>,
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    #[doc(hidden)]
     pub estimated_progress: i32,
     /// <p>The state of the mailbox export job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MailboxExportJobState>,
     /// <p>The mailbox export job start timestamp.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The mailbox export job end timestamp.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MailboxExportJob {
@@ -2551,16 +2619,22 @@ impl AsRef<str> for MailboxExportJobState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The email of the group.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Group {
@@ -2706,16 +2780,22 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The identifier of the member.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the member.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A member can be a user or group.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MemberType>,
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
@@ -2861,16 +2941,22 @@ impl Member {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Displays the provider type that applies to this domain.</p>
+    #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::AvailabilityProviderType>,
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+    #[doc(hidden)]
     pub ews_provider: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
+    #[doc(hidden)]
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
     /// <p>The date and time at which the availability configuration was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the availability configuration was last modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AvailabilityConfiguration {
@@ -3032,8 +3118,10 @@ impl AvailabilityConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
+    #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
     /// <p>The username used to authenticate the remote EWS server.</p>
+    #[doc(hidden)]
     pub ews_username: std::option::Option<std::string::String>,
 }
 impl RedactedEwsAvailabilityProvider {
@@ -3160,26 +3248,37 @@ impl AsRef<str> for AvailabilityProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlRule {
     /// <p>The rule name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule effect.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::AccessControlRuleEffect>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    #[doc(hidden)]
     pub ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    #[doc(hidden)]
     pub not_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    #[doc(hidden)]
     pub not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to include in the rule.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to exclude from the rule.</p>
+    #[doc(hidden)]
     pub not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date that the rule was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the rule was modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessControlRule {
@@ -3467,8 +3566,10 @@ impl AccessControlRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MobileDeviceAccessMatchedRule {
     /// <p>Identifier of the rule that a simulated user matches.</p>
+    #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
     /// <p>Name of a rule that a simulated user matches.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl MobileDeviceAccessMatchedRule {
@@ -3608,10 +3709,13 @@ impl AsRef<str> for DnsRecordVerificationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsRecord {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DnsRecord {
@@ -3701,8 +3805,10 @@ impl DnsRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Domain {
     /// <p>The fully qualified domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl Domain {

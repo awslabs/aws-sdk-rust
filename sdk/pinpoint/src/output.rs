@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyOtpMessageOutput {
     /// <p>Verify OTP Message Response.</p>
+    #[doc(hidden)]
     pub verification_response: std::option::Option<crate::model::VerificationResponse>,
 }
 impl VerifyOtpMessageOutput {
@@ -63,6 +64,7 @@ impl VerifyOtpMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateVoiceTemplateOutput {
@@ -120,6 +122,7 @@ impl UpdateVoiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl UpdateVoiceChannelOutput {
@@ -179,6 +182,7 @@ impl UpdateVoiceChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateActiveVersionOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateTemplateActiveVersionOutput {
@@ -236,6 +240,7 @@ impl UpdateTemplateActiveVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateSmsTemplateOutput {
@@ -293,6 +298,7 @@ impl UpdateSmsTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl UpdateSmsChannelOutput {
@@ -350,6 +356,7 @@ impl UpdateSmsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl UpdateSegmentOutput {
@@ -407,6 +414,7 @@ impl UpdateSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    #[doc(hidden)]
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
@@ -474,6 +482,7 @@ impl UpdateRecommenderConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdatePushTemplateOutput {
@@ -531,6 +540,7 @@ impl UpdatePushTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJourneyStateOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl UpdateJourneyStateOutput {
@@ -588,6 +598,7 @@ impl UpdateJourneyStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl UpdateJourneyOutput {
@@ -645,6 +656,7 @@ impl UpdateJourneyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateInAppTemplateOutput {
@@ -702,6 +714,7 @@ impl UpdateInAppTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl UpdateGcmChannelOutput {
@@ -759,6 +772,7 @@ impl UpdateGcmChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointsBatchOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEndpointsBatchOutput {
@@ -816,6 +830,7 @@ impl UpdateEndpointsBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEndpointOutput {
@@ -873,6 +888,7 @@ impl UpdateEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEmailTemplateOutput {
@@ -930,6 +946,7 @@ impl UpdateEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl UpdateEmailChannelOutput {
@@ -989,6 +1006,7 @@ impl UpdateEmailChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl UpdateCampaignOutput {
@@ -1046,6 +1064,7 @@ impl UpdateCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl UpdateBaiduChannelOutput {
@@ -1105,6 +1124,7 @@ impl UpdateBaiduChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
+    #[doc(hidden)]
     pub application_settings_resource:
         std::option::Option<crate::model::ApplicationSettingsResource>,
 }
@@ -1172,6 +1192,7 @@ impl UpdateApplicationSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
@@ -1239,6 +1260,7 @@ impl UpdateApnsVoipSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl UpdateApnsVoipChannelOutput {
@@ -1305,6 +1327,7 @@ impl UpdateApnsVoipChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
@@ -1372,6 +1395,7 @@ impl UpdateApnsSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl UpdateApnsChannelOutput {
@@ -1429,6 +1453,7 @@ impl UpdateApnsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl UpdateAdmChannelOutput {
@@ -1546,6 +1571,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
+    #[doc(hidden)]
     pub send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
 }
 impl SendUsersMessagesOutput {
@@ -1612,6 +1638,7 @@ impl SendUsersMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendOtpMessageOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
 }
 impl SendOtpMessageOutput {
@@ -1669,6 +1696,7 @@ impl SendOtpMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessagesOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
 }
 impl SendMessagesOutput {
@@ -1726,6 +1754,7 @@ impl SendMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesOutput {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
+    #[doc(hidden)]
     pub attributes_resource: std::option::Option<crate::model::AttributesResource>,
 }
 impl RemoveAttributesOutput {
@@ -1783,6 +1812,7 @@ impl RemoveAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl PutEventStreamOutput {
@@ -1840,6 +1870,7 @@ impl PutEventStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
+    #[doc(hidden)]
     pub events_response: std::option::Option<crate::model::EventsResponse>,
 }
 impl PutEventsOutput {
@@ -1897,6 +1928,7 @@ impl PutEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberValidateOutput {
     /// <p>Provides information about a phone number.</p>
+    #[doc(hidden)]
     pub number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
 }
 impl PhoneNumberValidateOutput {
@@ -1960,6 +1992,7 @@ impl PhoneNumberValidateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
+    #[doc(hidden)]
     pub template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
 }
 impl ListTemplateVersionsOutput {
@@ -2026,6 +2059,7 @@ impl ListTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesOutput {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub templates_response: std::option::Option<crate::model::TemplatesResponse>,
 }
 impl ListTemplatesOutput {
@@ -2083,6 +2117,7 @@ impl ListTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    #[doc(hidden)]
     pub tags_model: std::option::Option<crate::model::TagsModel>,
 }
 impl ListTagsForResourceOutput {
@@ -2140,6 +2175,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJourneysOutput {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
+    #[doc(hidden)]
     pub journeys_response: std::option::Option<crate::model::JourneysResponse>,
 }
 impl ListJourneysOutput {
@@ -2197,6 +2233,7 @@ impl ListJourneysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    #[doc(hidden)]
     pub voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
 }
 impl GetVoiceTemplateOutput {
@@ -2260,6 +2297,7 @@ impl GetVoiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl GetVoiceChannelOutput {
@@ -2319,6 +2357,7 @@ impl GetVoiceChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
 }
 impl GetUserEndpointsOutput {
@@ -2376,6 +2415,7 @@ impl GetUserEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    #[doc(hidden)]
     pub sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
 }
 impl GetSmsTemplateOutput {
@@ -2433,6 +2473,7 @@ impl GetSmsTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl GetSmsChannelOutput {
@@ -2490,6 +2531,7 @@ impl GetSmsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentVersionsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
+    #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
 impl GetSegmentVersionsOutput {
@@ -2547,6 +2589,7 @@ impl GetSegmentVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentVersionOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl GetSegmentVersionOutput {
@@ -2604,6 +2647,7 @@ impl GetSegmentVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
+    #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
 impl GetSegmentsOutput {
@@ -2661,6 +2705,7 @@ impl GetSegmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
+    #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
 }
 impl GetSegmentImportJobsOutput {
@@ -2718,6 +2763,7 @@ impl GetSegmentImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
+    #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
 }
 impl GetSegmentExportJobsOutput {
@@ -2775,6 +2821,7 @@ impl GetSegmentExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl GetSegmentOutput {
@@ -2832,6 +2879,7 @@ impl GetSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub list_recommender_configurations_response:
         std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
 }
@@ -2900,6 +2948,7 @@ impl GetRecommenderConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    #[doc(hidden)]
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
@@ -2967,6 +3016,7 @@ impl GetRecommenderConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    #[doc(hidden)]
     pub push_notification_template_response:
         std::option::Option<crate::model::PushNotificationTemplateResponse>,
 }
@@ -3034,6 +3084,7 @@ impl GetPushTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
+    #[doc(hidden)]
     pub journey_execution_metrics_response:
         std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
 }
@@ -3101,6 +3152,7 @@ impl GetJourneyExecutionMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyExecutionActivityMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
+    #[doc(hidden)]
     pub journey_execution_activity_metrics_response:
         std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
 }
@@ -3169,6 +3221,7 @@ impl GetJourneyExecutionActivityMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
+    #[doc(hidden)]
     pub journey_date_range_kpi_response:
         std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
 }
@@ -3236,6 +3289,7 @@ impl GetJourneyDateRangeKpiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl GetJourneyOutput {
@@ -3293,6 +3347,7 @@ impl GetJourneyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
+    #[doc(hidden)]
     pub in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
 }
 impl GetInAppTemplateOutput {
@@ -3356,6 +3411,7 @@ impl GetInAppTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
+    #[doc(hidden)]
     pub in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
 }
 impl GetInAppMessagesOutput {
@@ -3419,6 +3475,7 @@ impl GetInAppMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
+    #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
 }
 impl GetImportJobsOutput {
@@ -3476,6 +3533,7 @@ impl GetImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
 }
 impl GetImportJobOutput {
@@ -3533,6 +3591,7 @@ impl GetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl GetGcmChannelOutput {
@@ -3590,6 +3649,7 @@ impl GetGcmChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
+    #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
 }
 impl GetExportJobsOutput {
@@ -3647,6 +3707,7 @@ impl GetExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
 impl GetExportJobOutput {
@@ -3704,6 +3765,7 @@ impl GetExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl GetEventStreamOutput {
@@ -3761,6 +3823,7 @@ impl GetEventStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
 }
 impl GetEndpointOutput {
@@ -3818,6 +3881,7 @@ impl GetEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    #[doc(hidden)]
     pub email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
 }
 impl GetEmailTemplateOutput {
@@ -3881,6 +3945,7 @@ impl GetEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl GetEmailChannelOutput {
@@ -3940,6 +4005,7 @@ impl GetEmailChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelsOutput {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
+    #[doc(hidden)]
     pub channels_response: std::option::Option<crate::model::ChannelsResponse>,
 }
 impl GetChannelsOutput {
@@ -3997,6 +4063,7 @@ impl GetChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignVersionsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
+    #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
 impl GetCampaignVersionsOutput {
@@ -4054,6 +4121,7 @@ impl GetCampaignVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignVersionOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl GetCampaignVersionOutput {
@@ -4111,6 +4179,7 @@ impl GetCampaignVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
+    #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
 impl GetCampaignsOutput {
@@ -4168,6 +4237,7 @@ impl GetCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
+    #[doc(hidden)]
     pub campaign_date_range_kpi_response:
         std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
 }
@@ -4235,6 +4305,7 @@ impl GetCampaignDateRangeKpiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignActivitiesOutput {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
+    #[doc(hidden)]
     pub activities_response: std::option::Option<crate::model::ActivitiesResponse>,
 }
 impl GetCampaignActivitiesOutput {
@@ -4292,6 +4363,7 @@ impl GetCampaignActivitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl GetCampaignOutput {
@@ -4349,6 +4421,7 @@ impl GetCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl GetBaiduChannelOutput {
@@ -4408,6 +4481,7 @@ impl GetBaiduChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsOutput {
     /// <p>Provides information about all of your applications.</p>
+    #[doc(hidden)]
     pub applications_response: std::option::Option<crate::model::ApplicationsResponse>,
 }
 impl GetAppsOutput {
@@ -4467,6 +4541,7 @@ impl GetAppsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
+    #[doc(hidden)]
     pub application_settings_resource:
         std::option::Option<crate::model::ApplicationSettingsResource>,
 }
@@ -4534,6 +4609,7 @@ impl GetApplicationSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
+    #[doc(hidden)]
     pub application_date_range_kpi_response:
         std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
 }
@@ -4601,6 +4677,7 @@ impl GetApplicationDateRangeKpiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppOutput {
     /// <p>Provides information about an application.</p>
+    #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl GetAppOutput {
@@ -4658,6 +4735,7 @@ impl GetAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
@@ -4725,6 +4803,7 @@ impl GetApnsVoipSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl GetApnsVoipChannelOutput {
@@ -4791,6 +4870,7 @@ impl GetApnsVoipChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
@@ -4858,6 +4938,7 @@ impl GetApnsSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl GetApnsChannelOutput {
@@ -4915,6 +4996,7 @@ impl GetApnsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl GetAdmChannelOutput {
@@ -4972,6 +5054,7 @@ impl GetAdmChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteVoiceTemplateOutput {
@@ -5029,6 +5112,7 @@ impl DeleteVoiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl DeleteVoiceChannelOutput {
@@ -5088,6 +5172,7 @@ impl DeleteVoiceChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
 }
 impl DeleteUserEndpointsOutput {
@@ -5145,6 +5230,7 @@ impl DeleteUserEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteSmsTemplateOutput {
@@ -5202,6 +5288,7 @@ impl DeleteSmsTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl DeleteSmsChannelOutput {
@@ -5259,6 +5346,7 @@ impl DeleteSmsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl DeleteSegmentOutput {
@@ -5316,6 +5404,7 @@ impl DeleteSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    #[doc(hidden)]
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
@@ -5383,6 +5472,7 @@ impl DeleteRecommenderConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeletePushTemplateOutput {
@@ -5440,6 +5530,7 @@ impl DeletePushTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl DeleteJourneyOutput {
@@ -5497,6 +5588,7 @@ impl DeleteJourneyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteInAppTemplateOutput {
@@ -5554,6 +5646,7 @@ impl DeleteInAppTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl DeleteGcmChannelOutput {
@@ -5611,6 +5704,7 @@ impl DeleteGcmChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl DeleteEventStreamOutput {
@@ -5668,6 +5762,7 @@ impl DeleteEventStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
 }
 impl DeleteEndpointOutput {
@@ -5725,6 +5820,7 @@ impl DeleteEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteEmailTemplateOutput {
@@ -5782,6 +5878,7 @@ impl DeleteEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl DeleteEmailChannelOutput {
@@ -5841,6 +5938,7 @@ impl DeleteEmailChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl DeleteCampaignOutput {
@@ -5898,6 +5996,7 @@ impl DeleteCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl DeleteBaiduChannelOutput {
@@ -5957,6 +6056,7 @@ impl DeleteBaiduChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppOutput {
     /// <p>Provides information about an application.</p>
+    #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl DeleteAppOutput {
@@ -6014,6 +6114,7 @@ impl DeleteAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_sandbox_channel_response:
         std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
@@ -6081,6 +6182,7 @@ impl DeleteApnsVoipSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl DeleteApnsVoipChannelOutput {
@@ -6147,6 +6249,7 @@ impl DeleteApnsVoipChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_sandbox_channel_response:
         std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
@@ -6214,6 +6317,7 @@ impl DeleteApnsSandboxChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl DeleteApnsChannelOutput {
@@ -6271,6 +6375,7 @@ impl DeleteApnsChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl DeleteAdmChannelOutput {
@@ -6328,6 +6433,7 @@ impl DeleteAdmChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
+    #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateVoiceTemplateOutput {
@@ -6394,6 +6500,7 @@ impl CreateVoiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmsTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
+    #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateSmsTemplateOutput {
@@ -6460,6 +6567,7 @@ impl CreateSmsTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl CreateSegmentOutput {
@@ -6517,6 +6625,7 @@ impl CreateSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    #[doc(hidden)]
     pub recommender_configuration_response:
         std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
@@ -6584,6 +6693,7 @@ impl CreateRecommenderConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
+    #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreatePushTemplateOutput {
@@ -6650,6 +6760,7 @@ impl CreatePushTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl CreateJourneyOutput {
@@ -6707,6 +6818,7 @@ impl CreateJourneyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
+    #[doc(hidden)]
     pub template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
 }
 impl CreateInAppTemplateOutput {
@@ -6773,6 +6885,7 @@ impl CreateInAppTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
 }
 impl CreateImportJobOutput {
@@ -6830,6 +6943,7 @@ impl CreateImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
 impl CreateExportJobOutput {
@@ -6887,6 +7001,7 @@ impl CreateExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
+    #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateEmailTemplateOutput {
@@ -6953,6 +7068,7 @@ impl CreateEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl CreateCampaignOutput {
@@ -7010,6 +7126,7 @@ impl CreateCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
     /// <p>Provides information about an application.</p>
+    #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl CreateAppOutput {

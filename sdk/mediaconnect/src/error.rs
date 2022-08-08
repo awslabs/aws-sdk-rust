@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -69,6 +70,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailableException {
@@ -133,6 +135,7 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -197,6 +200,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerErrorException {
@@ -261,6 +265,7 @@ impl InternalServerErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ForbiddenException {
@@ -325,6 +330,7 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BadRequestException {
@@ -389,6 +395,7 @@ impl BadRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantFlowEntitlements420Exception {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GrantFlowEntitlements420Exception {
@@ -453,6 +460,7 @@ impl GrantFlowEntitlements420Exception {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlow420Exception {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateFlow420Exception {
@@ -517,6 +525,7 @@ impl CreateFlow420Exception {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowOutputs420Exception {
     /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddFlowOutputs420Exception {

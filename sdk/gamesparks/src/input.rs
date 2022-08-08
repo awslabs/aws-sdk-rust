@@ -5974,12 +5974,16 @@ impl UpdateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateStageInput {
@@ -6016,10 +6020,13 @@ impl std::fmt::Debug for UpdateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The description of the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateSnapshotInput {
@@ -6051,8 +6058,10 @@ impl std::fmt::Debug for UpdateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The list of modifications to make.</p>
+    #[doc(hidden)]
     pub modifications: std::option::Option<std::vec::Vec<crate::model::SectionModification>>,
 }
 impl UpdateGameConfigurationInput {
@@ -6079,8 +6088,10 @@ impl std::fmt::Debug for UpdateGameConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The description of the game.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateGameInput {
@@ -6107,8 +6118,10 @@ impl std::fmt::Debug for UpdateGameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6135,8 +6148,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6167,12 +6182,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStageDeploymentInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage to deploy the snapshot onto.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to deploy.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartStageDeploymentInput {
@@ -6209,10 +6228,13 @@ impl std::fmt::Debug for StartStageDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot for which to generate code.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Properties of the generator to use for the job.</p>
+    #[doc(hidden)]
     pub generator: std::option::Option<crate::model::Generator>,
 }
 impl StartGeneratedCodeJobInput {
@@ -6244,6 +6266,7 @@ impl std::fmt::Debug for StartGeneratedCodeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6265,12 +6288,15 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStagesInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStagesInput {
@@ -6304,14 +6330,18 @@ impl std::fmt::Debug for ListStagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStageDeploymentsInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListStageDeploymentsInput {
@@ -6350,12 +6380,15 @@ impl std::fmt::Debug for ListStageDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotsInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotsInput {
@@ -6389,14 +6422,18 @@ impl std::fmt::Debug for ListSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeneratedCodeJobsInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeneratedCodeJobsInput {
@@ -6436,9 +6473,11 @@ impl std::fmt::Debug for ListGeneratedCodeJobsInput {
 pub struct ListGamesInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGamesInput {
@@ -6467,14 +6506,18 @@ impl std::fmt::Debug for ListGamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExtensionVersionsInput {
     /// <p>The namespace (qualifier) of the extension.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExtensionVersionsInput {
@@ -6514,9 +6557,11 @@ impl std::fmt::Debug for ListExtensionVersionsInput {
 pub struct ListExtensionsInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExtensionsInput {
@@ -6545,8 +6590,10 @@ impl std::fmt::Debug for ListExtensionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The source used to import configuration sections.</p>
+    #[doc(hidden)]
     pub import_source: std::option::Option<crate::model::ImportGameConfigurationSource>,
 }
 impl ImportGameConfigurationInput {
@@ -6575,10 +6622,13 @@ impl std::fmt::Debug for ImportGameConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageDeploymentInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl GetStageDeploymentInput {
@@ -6610,8 +6660,10 @@ impl std::fmt::Debug for GetStageDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl GetStageInput {
@@ -6638,10 +6690,13 @@ impl std::fmt::Debug for GetStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The list of game configuration sections to be described.</p>
+    #[doc(hidden)]
     pub sections: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetSnapshotInput {
@@ -6673,10 +6728,13 @@ impl std::fmt::Debug for GetSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
+    #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl GetPlayerConnectionStatusInput {
@@ -6708,10 +6766,13 @@ impl std::fmt::Debug for GetPlayerConnectionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot for the code generation job.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the code generation job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetGeneratedCodeJobInput {
@@ -6743,8 +6804,10 @@ impl std::fmt::Debug for GetGeneratedCodeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGameConfigurationInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The list of sections to return.</p>
+    #[doc(hidden)]
     pub sections: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetGameConfigurationInput {
@@ -6771,6 +6834,7 @@ impl std::fmt::Debug for GetGameConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGameInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl GetGameInput {
@@ -6792,10 +6856,13 @@ impl std::fmt::Debug for GetGameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the extension.</p>
+    #[doc(hidden)]
     pub extension_version: std::option::Option<std::string::String>,
 }
 impl GetExtensionVersionInput {
@@ -6827,8 +6894,10 @@ impl std::fmt::Debug for GetExtensionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetExtensionInput {
@@ -6855,8 +6924,10 @@ impl std::fmt::Debug for GetExtensionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSnapshotInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to export.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl ExportSnapshotInput {
@@ -6883,10 +6954,13 @@ impl std::fmt::Debug for ExportSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectPlayerInput {
     /// <p>The unique identifier representing a player.</p>
+    #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl DisconnectPlayerInput {
@@ -6918,8 +6992,10 @@ impl std::fmt::Debug for DisconnectPlayerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage to delete.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl DeleteStageInput {
@@ -6946,6 +7022,7 @@ impl std::fmt::Debug for DeleteStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameInput {
     /// <p>The name of the game to delete.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl DeleteGameInput {
@@ -6967,16 +7044,22 @@ impl std::fmt::Debug for DeleteGameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The list of tags to apply to the stage.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7027,8 +7110,10 @@ impl std::fmt::Debug for CreateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The description of the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateSnapshotInput {
@@ -7055,12 +7140,16 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameInput {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
     /// <p>The description of the game.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The list of tags to apply to the game.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
     /// The key for the record.
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// The value for the record.
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// The server sync count for this record.
+    #[doc(hidden)]
     pub sync_count: std::option::Option<i64>,
     /// The date on which the record was last modified.
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The user/device that made the last change to this record.
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// The last modified date of the client device.
+    #[doc(hidden)]
     pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Record {
@@ -163,14 +169,19 @@ impl Record {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordPatch {
     /// An operation, either replace or remove.
+    #[doc(hidden)]
     pub op: std::option::Option<crate::model::Operation>,
     /// The key associated with the record patch.
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// The value associated with the record patch.
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// Last known server sync count for this record. Set to 0 if unknown.
+    #[doc(hidden)]
     pub sync_count: std::option::Option<i64>,
     /// The last modified date of the client device.
+    #[doc(hidden)]
     pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecordPatch {
@@ -351,12 +362,15 @@ impl AsRef<str> for Operation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoStreams {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Status of the Cognito streams. Valid values are:
     /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
+    #[doc(hidden)]
     pub streaming_status: std::option::Option<crate::model::StreamingStatus>,
 }
 impl CognitoStreams {
@@ -509,8 +523,10 @@ impl AsRef<str> for StreamingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
+    #[doc(hidden)]
     pub application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl PushSync {
@@ -654,12 +670,16 @@ impl AsRef<str> for Platform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityPoolUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// Number of sync sessions for the identity pool.
+    #[doc(hidden)]
     pub sync_sessions_count: std::option::Option<i64>,
     /// Data storage information for the identity pool.
+    #[doc(hidden)]
     pub data_storage: std::option::Option<i64>,
     /// Date on which the identity pool was last modified.
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IdentityPoolUsage {
@@ -771,18 +791,25 @@ impl IdentityPoolUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// Date on which the dataset was created.
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// Date when the dataset was last modified.
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The device that made the last change to this dataset.
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// Total size in bytes of the records in this dataset.
+    #[doc(hidden)]
     pub data_storage: std::option::Option<i64>,
     /// Number of records in this dataset.
+    #[doc(hidden)]
     pub num_records: std::option::Option<i64>,
 }
 impl Dataset {
@@ -1011,14 +1038,19 @@ impl AsRef<str> for BulkPublishStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// Date on which the identity was last modified.
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// Number of datasets for the identity.
+    #[doc(hidden)]
     pub dataset_count: i32,
     /// Total data storage for this identity.
+    #[doc(hidden)]
     pub data_storage: std::option::Option<i64>,
 }
 impl IdentityUsage {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     /// Details about the error.
+    #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// A message containing information about the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerErrorException {
@@ -99,8 +101,10 @@ impl InternalServerErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     /// Details about the error.
+    #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// A message containing information about the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {

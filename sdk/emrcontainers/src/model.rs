@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationOverrides {
     /// <p>The configurations for the application running by the job run. </p>
+    #[doc(hidden)]
     pub application_configuration: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The configurations for monitoring.</p>
+    #[doc(hidden)]
     pub monitoring_configuration: std::option::Option<crate::model::MonitoringConfiguration>,
 }
 impl ConfigurationOverrides {
@@ -97,11 +99,14 @@ impl ConfigurationOverrides {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringConfiguration {
     /// <p>Monitoring configurations for the persistent application UI. </p>
+    #[doc(hidden)]
     pub persistent_app_ui: std::option::Option<crate::model::PersistentAppUi>,
     /// <p>Monitoring configurations for CloudWatch.</p>
+    #[doc(hidden)]
     pub cloud_watch_monitoring_configuration:
         std::option::Option<crate::model::CloudWatchMonitoringConfiguration>,
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
+    #[doc(hidden)]
     pub s3_monitoring_configuration: std::option::Option<crate::model::S3MonitoringConfiguration>,
 }
 impl MonitoringConfiguration {
@@ -217,6 +222,7 @@ impl MonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
 }
 impl S3MonitoringConfiguration {
@@ -271,8 +277,10 @@ impl S3MonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMonitoringConfiguration {
     /// <p>The name of the log group for log publishing.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The specified name prefix for log streams.</p>
+    #[doc(hidden)]
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
 }
 impl CloudWatchMonitoringConfiguration {
@@ -405,11 +413,14 @@ impl AsRef<str> for PersistentAppUi {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>A set of properties specified within a configuration classification.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
 }
 impl Configuration {
@@ -530,6 +541,7 @@ impl Configuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
+    #[doc(hidden)]
     pub spark_submit_job_driver: std::option::Option<crate::model::SparkSubmitJobDriver>,
 }
 impl JobDriver {
@@ -592,10 +604,13 @@ impl JobDriver {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
+    #[doc(hidden)]
     pub entry_point: std::option::Option<std::string::String>,
     /// <p>The arguments for job application.</p>
+    #[doc(hidden)]
     pub entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Spark submit parameters that are used for job runs.</p>
+    #[doc(hidden)]
     pub spark_submit_parameters: std::option::Option<std::string::String>,
 }
 impl SparkSubmitJobDriver {
@@ -699,18 +714,25 @@ impl SparkSubmitJobDriver {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the virtual cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the virtual cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The state of the virtual cluster.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VirtualClusterState>,
     /// <p>The container provider of the virtual cluster.</p>
+    #[doc(hidden)]
     pub container_provider: std::option::Option<crate::model::ContainerProvider>,
     /// <p>The date and time when the virtual cluster is created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -897,10 +919,13 @@ impl VirtualCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerProvider {
     /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContainerProviderType>,
     /// <p>The ID of the container cluster.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The information about the container cluster.</p>
+    #[doc(hidden)]
     pub info: std::option::Option<crate::model::ContainerInfo>,
 }
 impl ContainerProvider {
@@ -1029,6 +1054,7 @@ impl ContainerInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EksInfo {
     /// <p>The namespaces of the EKS cluster.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl EksInfo {
@@ -1197,43 +1223,61 @@ impl AsRef<str> for VirtualClusterState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The ID of the endpoint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the endpoint.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The state of the endpoint.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EndpointState>,
     /// <p>The EMR release version to be used for the endpoint.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The execution role ARN of the endpoint.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ARN of the endpoint. This field is under deprecation and will be removed in future.</p>
     #[deprecated(
         note = "Customer provided certificate-arn is deprecated and would be removed in future."
     )]
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate generated by emr control plane on customer behalf to secure the managed endpoint.</p>
+    #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::model::Certificate>,
     /// <p>The configuration settings that are used to override existing configurations for endpoints.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The server URL of the endpoint.</p>
+    #[doc(hidden)]
     pub server_url: std::option::Option<std::string::String>,
     /// <p>The date and time when the endpoint was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The security group configuration of the endpoint. </p>
+    #[doc(hidden)]
     pub security_group: std::option::Option<std::string::String>,
     /// <p>The subnet IDs of the endpoint. </p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Additional details of the endpoint state. </p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p> The reasons why the endpoint has failed. </p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The tags of the endpoint. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1723,8 +1767,10 @@ impl AsRef<str> for FailureReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
+    #[doc(hidden)]
     pub certificate_data: std::option::Option<std::string::String>,
 }
 impl Certificate {
@@ -1875,36 +1921,52 @@ impl AsRef<str> for EndpointState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobRun {
     /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the job run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the job run's virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The ARN of job run.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The state of the job run. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The client token used to start a job run.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The execution role ARN of the job run.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The release version of Amazon EMR.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The configuration settings that are used to override default configuration.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>Parameters of job driver for the job run.</p>
+    #[doc(hidden)]
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The date and time when the job run was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user who created the job run.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run has finished.</p>
+    #[doc(hidden)]
     pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional details of the job run state.</p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The reasons why the job run has failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The assigned tags of the job run.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

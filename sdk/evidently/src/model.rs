@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The error name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,18 +148,25 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefResource {
     /// <p>The name of the experiment or launch.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The ARN of the experiment or launch.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the experiment or launch.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The day and time that this experiment or launch started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The day and time that this experiment or launch ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_on: std::option::Option<std::string::String>,
 }
 impl RefResource {
@@ -372,22 +381,31 @@ impl AsRef<str> for SegmentReferenceResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Segment {
     /// <p>The ARN of the segment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the segment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>The date and time that this segment was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that this segment was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The customer-created description for this segment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+    #[doc(hidden)]
     pub experiment_count: std::option::Option<i64>,
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+    #[doc(hidden)]
     pub launch_count: std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this launch.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -605,30 +623,43 @@ impl Segment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Project {
     /// <p>The name or ARN of the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current state of the project.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
     /// <p>The user-entered description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the project is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the project was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of features currently in the project.</p>
+    #[doc(hidden)]
     pub feature_count: std::option::Option<i64>,
     /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
+    #[doc(hidden)]
     pub launch_count: std::option::Option<i64>,
     /// <p>The number of ongoing launches currently in the project.</p>
+    #[doc(hidden)]
     pub active_launch_count: std::option::Option<i64>,
     /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
+    #[doc(hidden)]
     pub experiment_count: std::option::Option<i64>,
     /// <p>The number of ongoing experiments currently in the project.</p>
+    #[doc(hidden)]
     pub active_experiment_count: std::option::Option<i64>,
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
+    #[doc(hidden)]
     pub data_delivery: std::option::Option<crate::model::ProjectDataDelivery>,
     /// <p>The list of tag keys and values associated with this project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -920,8 +951,10 @@ impl Project {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDataDelivery {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestination>,
 }
 impl ProjectDataDelivery {
@@ -1001,6 +1034,7 @@ impl ProjectDataDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestination {
     /// <p>The name of the log group where the project stores evaluation events.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestination {
@@ -1055,8 +1089,10 @@ impl CloudWatchLogsDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -1183,6 +1219,7 @@ impl AsRef<str> for ProjectStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestinationConfig {
     /// <p>The name of the log group where the project stores evaluation events.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestinationConfig {
@@ -1237,8 +1274,10 @@ impl CloudWatchLogsDestinationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfig {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfig {
@@ -1310,10 +1349,13 @@ impl S3DestinationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProjectEventsResultEntry {
     /// <p>A unique ID assigned to this <code>PutProjectEvents</code> operation. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutProjectEventsResultEntry {
@@ -1405,10 +1447,13 @@ impl PutProjectEventsResultEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The timestamp of the event.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EventType>,
     /// <p>The event data.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
 }
 impl Event {
@@ -1636,18 +1681,25 @@ impl VariableValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>The name of the variation that was served to the user session.</p>
+    #[doc(hidden)]
     pub variation: std::option::Option<std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::VariableValue>,
     /// <p>An internal ID that represents a unique user session of the application.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl EvaluationResult {
@@ -1807,10 +1859,13 @@ impl EvaluationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    #[doc(hidden)]
     pub evaluation_context: std::option::Option<std::string::String>,
 }
 impl EvaluationRequest {
@@ -1902,28 +1957,40 @@ impl EvaluationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p>The name or ARN of the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current state of the project.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
     /// <p>The description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the project is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the project was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of features currently in the project.</p>
+    #[doc(hidden)]
     pub feature_count: std::option::Option<i64>,
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
+    #[doc(hidden)]
     pub launch_count: std::option::Option<i64>,
     /// <p>The number of ongoing launches currently in the project.</p>
+    #[doc(hidden)]
     pub active_launch_count: std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
+    #[doc(hidden)]
     pub experiment_count: std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
+    #[doc(hidden)]
     pub active_experiment_count: std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2195,8 +2262,10 @@ impl ProjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDataDeliveryConfig {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
 }
 impl ProjectDataDeliveryConfig {
@@ -2335,35 +2404,50 @@ impl AsRef<str> for LaunchStopDesiredState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Launch {
     /// <p>The ARN of the launch.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the launch.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the project that contains the launch.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the launch.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LaunchStatus>,
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The description of the launch.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the launch is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the launch was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that contains information about the start and end times of the launch.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::LaunchExecution>,
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroup>>,
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
+    #[doc(hidden)]
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitor>>,
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>The type of launch.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LaunchType>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    #[doc(hidden)]
     pub scheduled_splits_definition:
         std::option::Option<crate::model::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2725,6 +2809,7 @@ impl Launch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitsLaunchDefinition {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::ScheduledSplit>>,
 }
 impl ScheduledSplitsLaunchDefinition {
@@ -2786,13 +2871,16 @@ impl ScheduledSplitsLaunchDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
+    #[doc(hidden)]
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    #[doc(hidden)]
     pub segment_overrides: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
 }
 impl ScheduledSplit {
@@ -2915,10 +3003,13 @@ impl ScheduledSplit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    #[doc(hidden)]
     pub evaluation_order: std::option::Option<i64>,
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+    #[doc(hidden)]
     pub weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl SegmentOverride {
@@ -3070,6 +3161,7 @@ impl AsRef<str> for LaunchType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricMonitor {
     /// <p>A structure that defines the metric.</p>
+    #[doc(hidden)]
     pub metric_definition: std::option::Option<crate::model::MetricDefinition>,
 }
 impl MetricMonitor {
@@ -3127,15 +3219,20 @@ impl MetricMonitor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDefinition {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
+    #[doc(hidden)]
     pub entity_id_key: std::option::Option<std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
+    #[doc(hidden)]
     pub value_key: std::option::Option<std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The label for the units that the metric is measuring.</p>
+    #[doc(hidden)]
     pub unit_label: std::option::Option<std::string::String>,
 }
 impl MetricDefinition {
@@ -3267,10 +3364,13 @@ impl MetricDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchGroup {
     /// <p>The name of the launch group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the launch group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
+    #[doc(hidden)]
     pub feature_variations:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3380,8 +3480,10 @@ impl LaunchGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchExecution {
     /// <p>The date and time that the launch started.</p>
+    #[doc(hidden)]
     pub started_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the launch ended.</p>
+    #[doc(hidden)]
     pub ended_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LaunchExecution {
@@ -3526,12 +3628,16 @@ impl AsRef<str> for LaunchStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchGroupConfig {
     /// <p>A name for this launch group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the launch group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The feature that this launch is using.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>The feature variation to use for this launch group.</p>
+    #[doc(hidden)]
     pub variation: std::option::Option<std::string::String>,
 }
 impl LaunchGroupConfig {
@@ -3637,6 +3743,7 @@ impl LaunchGroupConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
+    #[doc(hidden)]
     pub metric_definition: std::option::Option<crate::model::MetricDefinitionConfig>,
 }
 impl MetricMonitorConfig {
@@ -3694,15 +3801,20 @@ impl MetricMonitorConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDefinitionConfig {
     /// <p>A name for the metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
+    #[doc(hidden)]
     pub entity_id_key: std::option::Option<std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
+    #[doc(hidden)]
     pub value_key: std::option::Option<std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>A label for the units that the metric is measuring.</p>
+    #[doc(hidden)]
     pub unit_label: std::option::Option<std::string::String>,
 }
 impl MetricDefinitionConfig {
@@ -3834,6 +3946,7 @@ impl MetricDefinitionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::ScheduledSplitConfig>>,
 }
 impl ScheduledSplitsLaunchConfig {
@@ -3895,13 +4008,16 @@ impl ScheduledSplitsLaunchConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitConfig {
     /// <p>The date and time that this step of the launch starts.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
+    #[doc(hidden)]
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    #[doc(hidden)]
     pub segment_overrides: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
 }
 impl ScheduledSplitConfig {
@@ -4024,24 +4140,34 @@ impl ScheduledSplitConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureSummary {
     /// <p>The ARN of the feature.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the project that contains the feature.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the feature.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FeatureStatus>,
     /// <p>The date and time that the feature is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the feature was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
+    #[doc(hidden)]
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An array of structures that define</p>
+    #[doc(hidden)]
     pub evaluation_rules: std::option::Option<std::vec::Vec<crate::model::EvaluationRule>>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    #[doc(hidden)]
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with this feature.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4301,8 +4427,10 @@ impl FeatureSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl EvaluationRule {
@@ -4484,36 +4612,50 @@ impl AsRef<str> for FeatureStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Feature {
     /// <p>The ARN of the feature.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the project that contains the feature.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the feature.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FeatureStatus>,
     /// <p>The date and time that the feature is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the feature was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the feature.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
+    #[doc(hidden)]
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    #[doc(hidden)]
     pub value_type: std::option::Option<crate::model::VariationValueType>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
+    #[doc(hidden)]
     pub variations: std::option::Option<std::vec::Vec<crate::model::Variation>>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
+    #[doc(hidden)]
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
+    #[doc(hidden)]
     pub evaluation_rules: std::option::Option<std::vec::Vec<crate::model::EvaluationRule>>,
     /// <p>The list of tag keys and values associated with this feature.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
+    #[doc(hidden)]
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4882,8 +5024,10 @@ impl Feature {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variation {
     /// <p>The name of the variation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value assigned to this variation.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::VariableValue>,
 }
 impl Variation {
@@ -5021,8 +5165,10 @@ impl AsRef<str> for VariationValueType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariationConfig {
     /// <p>The name of the variation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value assigned to this variation.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::VariableValue>,
 }
 impl VariationConfig {
@@ -5152,12 +5298,16 @@ impl AsRef<str> for ExperimentStopDesiredState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentReport {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The name of the variation that this report pertains to.</p>
+    #[doc(hidden)]
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>The type of analysis used for this report.</p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<crate::model::ExperimentReportName>,
     /// <p>The content of the report.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl ExperimentReport {
@@ -5320,12 +5470,16 @@ impl AsRef<str> for ExperimentReportName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentResultsData {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
+    #[doc(hidden)]
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>The experiment statistic that these results pertain to.</p>
+    #[doc(hidden)]
     pub result_stat: std::option::Option<crate::model::ExperimentResultResponseType>,
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl ExperimentResultsData {
@@ -5643,41 +5797,59 @@ impl AsRef<str> for ExperimentBaseStat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Experiment {
     /// <p>The ARN of the experiment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the experiment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the project that contains this experiment.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the experiment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentStatus>,
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>A description of the experiment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the experiment is first created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment was most recently updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::ExperimentSchedule>,
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::ExperimentExecution>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    #[doc(hidden)]
     pub treatments: std::option::Option<std::vec::Vec<crate::model::Treatment>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    #[doc(hidden)]
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoal>>,
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
+    #[doc(hidden)]
     pub sampling_rate: i64,
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExperimentType>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    #[doc(hidden)]
     pub online_ab_definition: std::option::Option<crate::model::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6090,8 +6262,10 @@ impl Experiment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnlineAbDefinition {
     /// <p>The name of the variation that is the default variation that the other variations are compared to.</p>
+    #[doc(hidden)]
     pub control_treatment_name: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
+    #[doc(hidden)]
     pub treatment_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl OnlineAbDefinition {
@@ -6229,9 +6403,11 @@ impl AsRef<str> for ExperimentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricGoal {
     /// <p>A structure that contains details about the metric.</p>
+    #[doc(hidden)]
     pub metric_definition: std::option::Option<crate::model::MetricDefinition>,
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    #[doc(hidden)]
     pub desired_change: std::option::Option<crate::model::ChangeDirectionEnum>,
 }
 impl MetricGoal {
@@ -6367,10 +6543,13 @@ impl AsRef<str> for ChangeDirectionEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Treatment {
     /// <p>The name of this treatment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the treatment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
+    #[doc(hidden)]
     pub feature_variations:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6480,8 +6659,10 @@ impl Treatment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentExecution {
     /// <p>The date and time that the experiment started.</p>
+    #[doc(hidden)]
     pub started_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment ended.</p>
+    #[doc(hidden)]
     pub ended_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExperimentExecution {
@@ -6559,6 +6740,7 @@ impl ExperimentExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
+    #[doc(hidden)]
     pub analysis_complete_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExperimentSchedule {
@@ -6683,8 +6865,10 @@ impl AsRef<str> for ExperimentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
+    #[doc(hidden)]
     pub control_treatment_name: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
+    #[doc(hidden)]
     pub treatment_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl OnlineAbConfig {
@@ -6771,9 +6955,11 @@ impl OnlineAbConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
+    #[doc(hidden)]
     pub metric_definition: std::option::Option<crate::model::MetricDefinitionConfig>,
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    #[doc(hidden)]
     pub desired_change: std::option::Option<crate::model::ChangeDirectionEnum>,
 }
 impl MetricGoalConfig {
@@ -6854,12 +7040,16 @@ impl MetricGoalConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for this treatment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The feature that this experiment is testing.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
+    #[doc(hidden)]
     pub variation: std::option::Option<std::string::String>,
 }
 impl TreatmentConfig {

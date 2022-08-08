@@ -8981,12 +8981,16 @@ impl UpdateServiceSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
+    #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
+    #[doc(hidden)]
     pub organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
     /// <p>Activates cross-account discovery.</p>
+    #[doc(hidden)]
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
 }
 impl UpdateServiceSettingsInput {
@@ -9031,11 +9035,14 @@ impl std::fmt::Debug for UpdateServiceSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARNs of the license configurations to add.</p>
+    #[doc(hidden)]
     pub add_license_specifications:
         std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     /// <p>ARNs of the license configurations to remove.</p>
+    #[doc(hidden)]
     pub remove_license_specifications:
         std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
 }
@@ -9078,22 +9085,29 @@ impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
     /// <p>Name of the report generator.</p>
+    #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
     /// <p>The report context.</p>
+    #[doc(hidden)]
     pub report_context: std::option::Option<crate::model::ReportContext>,
     /// <p>Frequency by which reports are generated.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Description of the report generator.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateLicenseManagerReportGeneratorInput {
@@ -9152,23 +9166,32 @@ impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>New status of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_status: std::option::Option<crate::model::LicenseConfigurationStatus>,
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
+    #[doc(hidden)]
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>New number of licenses managed by the license configuration.</p>
+    #[doc(hidden)]
     pub license_count: std::option::Option<i64>,
     /// <p>New hard limit of the number of available licenses.</p>
+    #[doc(hidden)]
     pub license_count_hard_limit: std::option::Option<bool>,
     /// <p>New name of the license configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>New description of the license configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>New product information.</p>
+    #[doc(hidden)]
     pub product_information_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
 impl UpdateLicenseConfigurationInput {
@@ -9240,8 +9263,10 @@ impl std::fmt::Debug for UpdateLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys identifying the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9268,8 +9293,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -9296,6 +9323,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
 }
 impl RejectGrantInput {
@@ -9317,10 +9345,13 @@ impl std::fmt::Debug for RejectGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
@@ -9328,6 +9359,7 @@ pub struct ListUsageForLicenseConfigurationInput {
     /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListUsageForLicenseConfigurationInput {
@@ -9369,15 +9401,19 @@ impl std::fmt::Debug for ListUsageForLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTokensInput {
     /// <p>Token IDs.</p>
+    #[doc(hidden)]
     pub token_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filter is supported:</p>
     /// <ul>
     /// <li> <p> <code>LicenseArns</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTokensInput {
@@ -9417,6 +9453,7 @@ impl std::fmt::Debug for ListTokensInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9438,8 +9475,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceInventoryInput {
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
@@ -9451,6 +9490,7 @@ pub struct ListResourceInventoryInput {
     /// <li> <p> <code>tag:
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
 }
 impl ListResourceInventoryInput {
@@ -9491,6 +9531,7 @@ impl std::fmt::Debug for ListResourceInventoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    #[doc(hidden)]
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -9500,10 +9541,13 @@ pub struct ListReceivedLicensesInput {
     /// <li> <p> <code>IssuerName</code> </p> </li>
     /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReceivedLicensesInput {
@@ -9547,6 +9591,7 @@ impl std::fmt::Debug for ListReceivedLicensesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
+    #[doc(hidden)]
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -9556,10 +9601,13 @@ pub struct ListReceivedGrantsInput {
     /// <li> <p> <code>GrantStatus</code> </p> </li>
     /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReceivedGrantsInput {
@@ -9603,10 +9651,13 @@ impl std::fmt::Debug for ListReceivedGrantsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseVersionsInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLicenseVersionsInput {
@@ -9638,10 +9689,13 @@ impl std::fmt::Debug for ListLicenseVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseSpecificationsForResourceInput {
@@ -9673,6 +9727,7 @@ impl std::fmt::Debug for ListLicenseSpecificationsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    #[doc(hidden)]
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -9681,10 +9736,13 @@ pub struct ListLicensesInput {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLicensesInput {
@@ -9730,10 +9788,13 @@ pub struct ListLicenseManagerReportGeneratorsInput {
     /// <ul>
     /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLicenseManagerReportGeneratorsInput {
@@ -9768,10 +9829,13 @@ impl std::fmt::Debug for ListLicenseManagerReportGeneratorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConversionTasksInput {
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListLicenseConversionTasksInput {
@@ -9803,10 +9867,13 @@ impl std::fmt::Debug for ListLicenseConversionTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
+    #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
@@ -9814,6 +9881,7 @@ pub struct ListLicenseConfigurationsInput {
     /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListLicenseConfigurationsInput {
@@ -9858,10 +9926,13 @@ impl std::fmt::Debug for ListLicenseConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
@@ -9893,6 +9964,7 @@ impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
+    #[doc(hidden)]
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -9902,10 +9974,13 @@ pub struct ListDistributedGrantsInput {
     /// <li> <p> <code>ProductSKU</code> </p> </li>
     /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDistributedGrantsInput {
@@ -9949,10 +10024,13 @@ impl std::fmt::Debug for ListDistributedGrantsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationsForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsForLicenseConfigurationInput {
@@ -9995,6 +10073,7 @@ impl std::fmt::Debug for GetServiceSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseUsageInput {
@@ -10016,6 +10095,7 @@ impl std::fmt::Debug for GetLicenseUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseManagerReportGeneratorInput {
@@ -10040,6 +10120,7 @@ impl std::fmt::Debug for GetLicenseManagerReportGeneratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
+    #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
 impl GetLicenseConversionTaskInput {
@@ -10064,6 +10145,7 @@ impl std::fmt::Debug for GetLicenseConversionTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseConfigurationInput {
@@ -10085,8 +10167,10 @@ impl std::fmt::Debug for GetLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetLicenseInput {
@@ -10113,8 +10197,10 @@ impl std::fmt::Debug for GetLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetGrantInput {
@@ -10141,8 +10227,10 @@ impl std::fmt::Debug for GetGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>Token properties to validate against those present in the JWT token.</p>
+    #[doc(hidden)]
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetAccessTokenInput {
@@ -10169,8 +10257,10 @@ impl std::fmt::Debug for GetAccessTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
+    #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl ExtendLicenseConsumptionInput {
@@ -10197,6 +10287,7 @@ impl std::fmt::Debug for ExtendLicenseConsumptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTokenInput {
     /// <p>Token ID.</p>
+    #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
 }
 impl DeleteTokenInput {
@@ -10218,6 +10309,7 @@ impl std::fmt::Debug for DeleteTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
+    #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseManagerReportGeneratorInput {
@@ -10242,6 +10334,7 @@ impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseConfigurationInput {
     /// <p>ID of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseConfigurationInput {
@@ -10263,8 +10356,10 @@ impl std::fmt::Debug for DeleteLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>Current version of the license.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseInput {
@@ -10291,10 +10386,13 @@ impl std::fmt::Debug for DeleteLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>The Status reason for the delete request.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Current version of the grant.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteGrantInput {
@@ -10326,14 +10424,19 @@ impl std::fmt::Debug for DeleteGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
+    #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
+    #[doc(hidden)]
     pub expiration_in_days: std::option::Option<i32>,
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
+    #[doc(hidden)]
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Idempotency token, valid for 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {
@@ -10375,28 +10478,40 @@ impl std::fmt::Debug for CreateTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseVersionInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License name.</p>
+    #[doc(hidden)]
     pub license_name: std::option::Option<std::string::String>,
     /// <p>Product name.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>License issuer.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<crate::model::Issuer>,
     /// <p>Home Region of the license.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::DatetimeRange>,
     /// <p>Information about the license.</p>
+    #[doc(hidden)]
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>License entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    #[doc(hidden)]
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>License status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Current version of the license.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
 }
 impl CreateLicenseVersionInput {
@@ -10475,22 +10590,29 @@ impl std::fmt::Debug for CreateLicenseVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
+    #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
     /// <p>Defines the type of license configuration the report generator tracks.</p>
+    #[doc(hidden)]
     pub report_context: std::option::Option<crate::model::ReportContext>,
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Description of the report generator.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags to add to the report generator.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLicenseManagerReportGeneratorInput {
@@ -10546,10 +10668,13 @@ impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
 }
 impl CreateLicenseConversionTaskForResourceInput {
@@ -10588,14 +10713,19 @@ impl std::fmt::Debug for CreateLicenseConversionTaskForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the license configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Dimension used to track the license inventory.</p>
+    #[doc(hidden)]
     pub license_counting_type: std::option::Option<crate::model::LicenseCountingType>,
     /// <p>Number of licenses managed by the license configuration.</p>
+    #[doc(hidden)]
     pub license_count: std::option::Option<i64>,
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
+    #[doc(hidden)]
     pub license_count_hard_limit: std::option::Option<bool>,
     /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
@@ -10605,12 +10735,16 @@ pub struct CreateLicenseConfigurationInput {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
+    #[doc(hidden)]
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to add to the license configuration.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
     /// <p>Product information.</p>
+    #[doc(hidden)]
     pub product_information_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
 }
@@ -10685,26 +10819,37 @@ impl std::fmt::Debug for CreateLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseInput {
     /// <p>License name.</p>
+    #[doc(hidden)]
     pub license_name: std::option::Option<std::string::String>,
     /// <p>Product name.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>Product SKU.</p>
+    #[doc(hidden)]
     pub product_sku: std::option::Option<std::string::String>,
     /// <p>License issuer.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<crate::model::Issuer>,
     /// <p>Home Region for the license.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::DatetimeRange>,
     /// <p>License entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>License beneficiary.</p>
+    #[doc(hidden)]
     pub beneficiary: std::option::Option<std::string::String>,
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    #[doc(hidden)]
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>Information about the license.</p>
+    #[doc(hidden)]
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateLicenseInput {
@@ -10778,18 +10923,25 @@ impl std::fmt::Debug for CreateLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant name.</p>
+    #[doc(hidden)]
     pub grant_name: std::option::Option<std::string::String>,
     /// <p>Allowed operations for the grant.</p>
+    #[doc(hidden)]
     pub allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant status reason.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Current version of the grant.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
 }
 impl CreateGrantVersionInput {
@@ -10841,16 +10993,22 @@ impl std::fmt::Debug for CreateGrantVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Grant name.</p>
+    #[doc(hidden)]
     pub grant_name: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>The grant principals.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Home Region of the grant.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Allowed operations for the grant.</p>
+    #[doc(hidden)]
     pub allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
 }
 impl CreateGrantInput {
@@ -10897,18 +11055,25 @@ impl std::fmt::Debug for CreateGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutLicenseInput {
     /// <p>Product SKU.</p>
+    #[doc(hidden)]
     pub product_sku: std::option::Option<std::string::String>,
     /// <p>Checkout type.</p>
+    #[doc(hidden)]
     pub checkout_type: std::option::Option<crate::model::CheckoutType>,
     /// <p>Key fingerprint identifying the license.</p>
+    #[doc(hidden)]
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>License entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>License beneficiary.</p>
+    #[doc(hidden)]
     pub beneficiary: std::option::Option<std::string::String>,
     /// <p>Node ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
 }
 impl CheckoutLicenseInput {
@@ -10960,16 +11125,22 @@ impl std::fmt::Debug for CheckoutLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutBorrowLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License entitlements. Partial checkouts are not supported.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    #[doc(hidden)]
     pub digital_signature_method: std::option::Option<crate::model::DigitalSignatureMethod>,
     /// <p>Node ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>Information about constraints.</p>
+    #[doc(hidden)]
     pub checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CheckoutBorrowLicenseInput {
@@ -11018,8 +11189,10 @@ impl std::fmt::Debug for CheckoutBorrowLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckInLicenseInput {
     /// <p>License consumption token.</p>
+    #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>License beneficiary.</p>
+    #[doc(hidden)]
     pub beneficiary: std::option::Option<std::string::String>,
 }
 impl CheckInLicenseInput {
@@ -11046,6 +11219,7 @@ impl std::fmt::Debug for CheckInLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
 }
 impl AcceptGrantInput {

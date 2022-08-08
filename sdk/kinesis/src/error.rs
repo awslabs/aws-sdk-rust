@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -69,6 +70,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -133,6 +135,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -197,6 +200,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgumentException {
@@ -261,6 +265,7 @@ impl InvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -325,6 +330,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidStateException {
@@ -389,6 +395,7 @@ impl KmsInvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsThrottlingException {
@@ -453,6 +460,7 @@ impl KmsThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsOptInRequired {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsOptInRequired {
@@ -517,6 +525,7 @@ impl KmsOptInRequired {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsNotFoundException {
@@ -581,6 +590,7 @@ impl KmsNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsDisabledException {
@@ -645,6 +655,7 @@ impl KmsDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsAccessDeniedException {
@@ -709,6 +720,7 @@ impl KmsAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProvisionedThroughputExceededException {
@@ -773,6 +785,7 @@ impl ProvisionedThroughputExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredNextTokenException {
@@ -837,6 +850,7 @@ impl ExpiredNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredIteratorException {
     /// <p>A message that provides information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredIteratorException {

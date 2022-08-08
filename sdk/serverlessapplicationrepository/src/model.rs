@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Version {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>An array of parameter types supported by the application.</p>
+    #[doc(hidden)]
     pub parameter_definitions:
         std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
@@ -17,18 +20,24 @@ pub struct Version {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
+    #[doc(hidden)]
     pub required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
+    #[doc(hidden)]
     pub resources_supported: bool,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
+    #[doc(hidden)]
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    #[doc(hidden)]
     pub source_code_url: std::option::Option<std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl Version {
@@ -345,31 +354,43 @@ impl AsRef<str> for Capability {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterDefinition {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
+    #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>An array containing the list of values allowed for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
+    #[doc(hidden)]
     pub constraint_description: std::option::Option<std::string::String>,
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
+    #[doc(hidden)]
     pub max_length: i32,
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
+    #[doc(hidden)]
     pub max_value: i32,
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
+    #[doc(hidden)]
     pub min_length: i32,
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
+    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
+    #[doc(hidden)]
     pub no_echo: bool,
     /// <p>A list of AWS SAM resources that use this parameter.</p>
+    #[doc(hidden)]
     pub referenced_by_resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of the parameter.</p>
     /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
@@ -381,6 +402,7 @@ pub struct ParameterDefinition {
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
     /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ParameterDefinition {
@@ -702,12 +724,16 @@ impl ParameterDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
+    #[doc(hidden)]
     pub principal_org_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique ID for the statement.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl ApplicationPolicyStatement {
@@ -840,13 +866,17 @@ impl ApplicationPolicyStatement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    #[doc(hidden)]
     pub source_code_url: std::option::Option<std::string::String>,
 }
 impl VersionSummary {
@@ -967,27 +997,35 @@ impl VersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
+    #[doc(hidden)]
     pub spdx_license_id: std::option::Option<std::string::String>,
 }
 impl ApplicationSummary {
@@ -1203,8 +1241,10 @@ impl ApplicationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationDependencySummary {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The semantic version of the nested application.</p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
 }
 impl ApplicationDependencySummary {
@@ -1341,8 +1381,10 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1414,8 +1456,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackConfiguration {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub monitoring_time_in_minutes: i32,
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub rollback_triggers: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
 }
 impl RollbackConfiguration {
@@ -1500,8 +1544,10 @@ impl RollbackConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackTrigger {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl RollbackTrigger {
@@ -1573,8 +1619,10 @@ impl RollbackTrigger {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterValue {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The input value associated with the parameter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ParameterValue {

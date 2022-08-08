@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
 impl UpdateExperimentTemplateOutput {
@@ -121,6 +122,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExperimentOutput {
     /// <p>Information about the experiment.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl StopExperimentOutput {
@@ -178,6 +180,7 @@ impl StopExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExperimentOutput {
     /// <p>Information about the experiment.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl StartExperimentOutput {
@@ -235,9 +238,11 @@ impl StartExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetResourceTypesOutput {
     /// <p>The target resource types.</p>
+    #[doc(hidden)]
     pub target_resource_types:
         std::option::Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetResourceTypesOutput {
@@ -324,6 +329,7 @@ impl ListTargetResourceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -397,9 +403,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentTemplatesOutput {
     /// <p>The experiment templates.</p>
+    #[doc(hidden)]
     pub experiment_templates:
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentTemplatesOutput {
@@ -486,8 +494,10 @@ impl ListExperimentTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsOutput {
     /// <p>The experiments.</p>
+    #[doc(hidden)]
     pub experiments: std::option::Option<std::vec::Vec<crate::model::ExperimentSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentsOutput {
@@ -568,8 +578,10 @@ impl ListExperimentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionsOutput {
     /// <p>The actions.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionsOutput {
@@ -650,6 +662,7 @@ impl ListActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTargetResourceTypeOutput {
     /// <p>Information about the resource type.</p>
+    #[doc(hidden)]
     pub target_resource_type: std::option::Option<crate::model::TargetResourceType>,
 }
 impl GetTargetResourceTypeOutput {
@@ -707,6 +720,7 @@ impl GetTargetResourceTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
 impl GetExperimentTemplateOutput {
@@ -764,6 +778,7 @@ impl GetExperimentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentOutput {
     /// <p>Information about the experiment.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl GetExperimentOutput {
@@ -821,6 +836,7 @@ impl GetExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionOutput {
     /// <p>Information about the action.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
 }
 impl GetActionOutput {
@@ -875,6 +891,7 @@ impl GetActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
 impl DeleteExperimentTemplateOutput {
@@ -932,6 +949,7 @@ impl DeleteExperimentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
 impl CreateExperimentTemplateOutput {

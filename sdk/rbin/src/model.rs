@@ -165,8 +165,10 @@ impl AsRef<str> for RuleStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub resource_tag_key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub resource_tag_value: std::option::Option<std::string::String>,
 }
 impl ResourceTag {
@@ -299,8 +301,10 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionPeriod {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    #[doc(hidden)]
     pub retention_period_value: std::option::Option<i32>,
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
+    #[doc(hidden)]
     pub retention_period_unit: std::option::Option<crate::model::RetentionPeriodUnit>,
 }
 impl RetentionPeriod {
@@ -477,8 +481,10 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -550,10 +556,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The retention rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl RuleSummary {

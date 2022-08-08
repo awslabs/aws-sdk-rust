@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -69,6 +70,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -133,6 +135,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailureException {
@@ -197,6 +200,7 @@ impl InternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedException {
@@ -261,6 +265,7 @@ impl UnauthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailableException {
@@ -325,6 +330,7 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalException {
@@ -389,6 +395,7 @@ impl InternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingResourceUpdateException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictingResourceUpdateException {
@@ -453,6 +460,7 @@ impl ConflictingResourceUpdateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -517,6 +525,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionConflictException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VersionConflictException {
@@ -581,6 +590,7 @@ impl VersionConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidQueryException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidQueryException {
@@ -645,6 +655,7 @@ impl InvalidQueryException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAggregationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAggregationException {
@@ -709,6 +720,7 @@ impl InvalidAggregationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexNotReadyException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IndexNotReadyException {
@@ -773,6 +785,7 @@ impl IndexNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateValidationException {
     /// <p>Additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateValidationException {
@@ -837,6 +850,7 @@ impl CertificateValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateStateException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateStateException {
@@ -901,6 +915,7 @@ impl CertificateStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -965,6 +980,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferConflictException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransferConflictException {
@@ -1029,6 +1045,7 @@ impl TransferConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResponseException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResponseException {
@@ -1093,6 +1110,7 @@ impl InvalidResponseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskAlreadyExistsException {
@@ -1157,6 +1175,7 @@ impl TaskAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotConfiguredException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotConfiguredException {
@@ -1221,10 +1240,13 @@ impl NotConfiguredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that caused the exception.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource that caused the exception.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ResourceAlreadyExistsException {
@@ -1325,6 +1347,7 @@ impl ResourceAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlParseException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SqlParseException {
@@ -1389,6 +1412,7 @@ impl SqlParseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferAlreadyCompletedException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransferAlreadyCompletedException {
@@ -1453,6 +1477,7 @@ impl TransferAlreadyCompletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceRegistrationFailureException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceRegistrationFailureException {
@@ -1517,6 +1542,7 @@ impl ResourceRegistrationFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateConflictException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateConflictException {
@@ -1581,6 +1607,7 @@ impl CertificateConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistrationCodeValidationException {
     /// <p>Additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegistrationCodeValidationException {
@@ -1645,6 +1672,7 @@ impl RegistrationCodeValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -1709,6 +1737,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConflictException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteConflictException {
@@ -1773,6 +1802,7 @@ impl DeleteConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStateTransitionException {
@@ -1837,6 +1867,7 @@ impl InvalidStateTransitionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionsLimitExceededException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VersionsLimitExceededException {
@@ -1901,6 +1932,7 @@ impl VersionsLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyException {
     /// <p>The message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedPolicyException {
@@ -1965,6 +1997,7 @@ impl MalformedPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {

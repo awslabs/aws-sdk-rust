@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendStorageOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdateBackendStorageOutput {
@@ -118,20 +122,28 @@ impl UpdateBackendStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendJobOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the job was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time when the job was last updated.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<std::string::String>,
 }
 impl UpdateBackendJobOutput {
@@ -308,12 +320,16 @@ impl UpdateBackendJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendConfigOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The app ID for the backend manager.</p>
+    #[doc(hidden)]
     pub backend_manager_app_id: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
+    #[doc(hidden)]
     pub login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
 }
 impl UpdateBackendConfigOutput {
@@ -425,16 +441,22 @@ impl UpdateBackendConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendAuthOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdateBackendAuthOutput {
@@ -577,16 +599,22 @@ impl UpdateBackendAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendApiOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdateBackendApiOutput {
@@ -729,6 +757,7 @@ impl UpdateBackendApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl RemoveBackendConfigOutput {
@@ -781,14 +810,19 @@ impl RemoveBackendConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAllBackendsOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl RemoveAllBackendsOutput {
@@ -911,8 +945,10 @@ impl RemoveAllBackendsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListS3BucketsOutput {
@@ -993,8 +1029,10 @@ impl ListS3BucketsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackendJobsOutput {
     /// <p>An array of jobs and their properties.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBackendJobsOutput {
@@ -1075,12 +1113,16 @@ impl ListBackendJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportBackendStorageOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ImportBackendStorageOutput {
@@ -1189,16 +1231,22 @@ impl ImportBackendStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportBackendAuthOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ImportBackendAuthOutput {
@@ -1341,12 +1389,16 @@ impl ImportBackendAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTokenOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
+    #[doc(hidden)]
     pub challenge_code: std::option::Option<std::string::String>,
     /// <p>A unique ID provided when creating a new challenge token.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The expiry time for the one-time generated token code.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<std::string::String>,
 }
 impl GetTokenOutput {
@@ -1455,12 +1507,16 @@ impl GetTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendStorageOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for the backend storage resource.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::GetBackendStorageResourceConfig>,
     /// <p>The name of the storage resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendStorageOutput {
@@ -1581,20 +1637,28 @@ impl GetBackendStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendJobOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the job was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time when the job was last updated.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<std::string::String>,
 }
 impl GetBackendJobOutput {
@@ -1771,14 +1835,19 @@ impl GetBackendJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendAuthOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendAuthOutput {
@@ -1916,8 +1985,10 @@ impl GetBackendAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the datastore model.</p>
+    #[doc(hidden)]
     pub models: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl GetBackendApiModelsOutput {
@@ -1989,14 +2060,19 @@ impl GetBackendApiModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendApiOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The resource configuration for this response object.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendApiOutput {
@@ -2128,18 +2204,25 @@ impl GetBackendApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendOutput {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
+    #[doc(hidden)]
     pub amplify_feature_flags: std::option::Option<std::string::String>,
     /// <p>A stringified version of the current configs for your Amplify project.</p>
+    #[doc(hidden)]
     pub amplify_meta_config: std::option::Option<std::string::String>,
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the app.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
     /// <p>A list of backend environments in an array.</p>
+    #[doc(hidden)]
     pub backend_environment_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request failed, this is the returned error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl GetBackendOutput {
@@ -2315,16 +2398,22 @@ impl GetBackendOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateBackendApiModelsOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl GenerateBackendApiModelsOutput {
@@ -2467,6 +2556,7 @@ impl GenerateBackendApiModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
+    #[doc(hidden)]
     pub is_success: bool,
 }
 impl DeleteTokenOutput {
@@ -2521,12 +2611,16 @@ impl DeleteTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendStorageOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteBackendStorageOutput {
@@ -2635,16 +2729,22 @@ impl DeleteBackendStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendAuthOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteBackendAuthOutput {
@@ -2787,16 +2887,22 @@ impl DeleteBackendAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendApiOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteBackendApiOutput {
@@ -2939,16 +3045,22 @@ impl DeleteBackendApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteBackendOutput {
@@ -3091,12 +3203,16 @@ impl DeleteBackendOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
+    #[doc(hidden)]
     pub challenge_code: std::option::Option<std::string::String>,
     /// <p>A unique ID provided when creating a new challenge token.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The expiry time for the one-time generated token code.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<std::string::String>,
 }
 impl CreateTokenOutput {
@@ -3205,12 +3321,16 @@ impl CreateTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendStorageOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateBackendStorageOutput {
@@ -3319,12 +3439,16 @@ impl CreateBackendStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendConfigOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateBackendConfigOutput {
@@ -3433,16 +3557,22 @@ impl CreateBackendConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateBackendAuthOutput {
@@ -3585,16 +3715,22 @@ impl CreateBackendAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendApiOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateBackendApiOutput {
@@ -3737,16 +3873,22 @@ impl CreateBackendApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateBackendOutput {
@@ -3889,16 +4031,22 @@ impl CreateBackendOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneBackendOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CloneBackendOutput {

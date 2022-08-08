@@ -126,6 +126,7 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>What occurs to start the revision publish action.</p>
+    #[doc(hidden)]
     pub revision_published: std::option::Option<crate::model::RevisionPublished>,
 }
 impl Event {
@@ -183,6 +184,7 @@ impl Event {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl RevisionPublished {
@@ -237,6 +239,7 @@ impl RevisionPublished {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>Details for the export revision to Amazon S3 action.</p>
+    #[doc(hidden)]
     pub export_revision_to_s3:
         std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
 }
@@ -301,8 +304,10 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoExportRevisionToS3RequestDetails {
     /// <p>Encryption configuration for the auto export job.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+    #[doc(hidden)]
     pub revision_destination: std::option::Option<crate::model::AutoExportRevisionDestinationEntry>,
 }
 impl AutoExportRevisionToS3RequestDetails {
@@ -386,8 +391,10 @@ impl AutoExportRevisionToS3RequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoExportRevisionDestinationEntry {
     /// <p>The S3 bucket that is the destination for the event action.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    #[doc(hidden)]
     pub key_pattern: std::option::Option<std::string::String>,
 }
 impl AutoExportRevisionDestinationEntry {
@@ -459,8 +466,10 @@ impl AutoExportRevisionDestinationEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
 }
 impl ExportServerSideEncryption {
@@ -590,6 +599,7 @@ impl AsRef<str> for ServerSideEncryptionTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
 }
 impl OriginDetails {
@@ -758,10 +768,13 @@ impl AsRef<str> for AssetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetDetails {
     /// <p>The S3 object that is the asset.</p>
+    #[doc(hidden)]
     pub s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
     /// <p>The Amazon Redshift datashare that is the asset.</p>
+    #[doc(hidden)]
     pub redshift_data_share_asset: std::option::Option<crate::model::RedshiftDataShareAsset>,
     /// <p>Information about the API Gateway API asset.</p>
+    #[doc(hidden)]
     pub api_gateway_api_asset: std::option::Option<crate::model::ApiGatewayApiAsset>,
 }
 impl AssetDetails {
@@ -865,22 +878,31 @@ impl AssetDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiGatewayApiAsset {
     /// <p>The API description of the API asset.</p>
+    #[doc(hidden)]
     pub api_description: std::option::Option<std::string::String>,
     /// <p>The API endpoint of the API asset.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the API asset.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API key of the API asset.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>The API name of the API asset.</p>
+    #[doc(hidden)]
     pub api_name: std::option::Option<std::string::String>,
     /// <p>The download URL of the API specification of the API asset.</p>
+    #[doc(hidden)]
     pub api_specification_download_url: std::option::Option<std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub api_specification_download_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The protocol type of the API asset.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The stage of the API asset.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl ApiGatewayApiAsset {
@@ -1150,6 +1172,7 @@ impl AsRef<str> for ProtocolType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataShareAsset {
     /// The Amazon Resource Name (ARN) of the datashare asset.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RedshiftDataShareAsset {
@@ -1202,6 +1225,7 @@ impl RedshiftDataShareAsset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SnapshotAsset {
     /// <p>The size of the S3 object that is the object.</p>
+    #[doc(hidden)]
     pub size: f64,
 }
 impl S3SnapshotAsset {
@@ -1256,24 +1280,34 @@ impl S3SnapshotAsset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetEntry {
     /// <p>The ARN for the asset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the asset.</p>
+    #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this asset.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssetEntry {
@@ -1493,20 +1527,28 @@ impl AssetEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobEntry {
     /// <p>The ARN for the job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ResponseDetails>,
     /// <p>Errors for jobs.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::JobError>>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The state of the job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>The job type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl JobEntry {
@@ -1859,18 +1901,25 @@ impl AsRef<str> for State {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobError {
     /// The code for the job error.
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::Code>,
     /// <p>The details about the job error.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::Details>,
     /// <p>The name of the limit that was reached.</p>
+    #[doc(hidden)]
     pub limit_name: std::option::Option<crate::model::JobErrorLimitName>,
     /// The value of the exceeded limit.
+    #[doc(hidden)]
     pub limit_value: f64,
     /// The message related to the job error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The unique identifier for the resource related to the error.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// The type of resource related to the error.
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::JobErrorResourceTypes>,
 }
 impl JobError {
@@ -2159,9 +2208,11 @@ impl AsRef<str> for JobErrorLimitName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Details {
     /// <p>Information about the job error.</p>
+    #[doc(hidden)]
     pub import_asset_from_signed_url_job_error_details:
         std::option::Option<crate::model::ImportAssetFromSignedUrlJobErrorDetails>,
     /// <p>Information about the job error.</p>
+    #[doc(hidden)]
     pub import_assets_from_s3_job_error_details:
         std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
 }
@@ -2268,8 +2319,10 @@ impl Details {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetSourceEntry {
     /// <p>The S3 bucket that's part of the source of the asset.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl AssetSourceEntry {
@@ -2341,6 +2394,7 @@ impl AssetSourceEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Information about the job error.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
@@ -2478,22 +2532,29 @@ impl AsRef<str> for Code {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseDetails {
     /// <p>Details for the export to signed URL response.</p>
+    #[doc(hidden)]
     pub export_asset_to_signed_url:
         std::option::Option<crate::model::ExportAssetToSignedUrlResponseDetails>,
     /// <p>Details for the export to Amazon S3 response.</p>
+    #[doc(hidden)]
     pub export_assets_to_s3: std::option::Option<crate::model::ExportAssetsToS3ResponseDetails>,
     /// <p>Details for the export revisions to Amazon S3 response.</p>
+    #[doc(hidden)]
     pub export_revisions_to_s3:
         std::option::Option<crate::model::ExportRevisionsToS3ResponseDetails>,
     /// <p>Details for the import from signed URL response.</p>
+    #[doc(hidden)]
     pub import_asset_from_signed_url:
         std::option::Option<crate::model::ImportAssetFromSignedUrlResponseDetails>,
     /// <p>Details for the import from Amazon S3 response.</p>
+    #[doc(hidden)]
     pub import_assets_from_s3: std::option::Option<crate::model::ImportAssetsFromS3ResponseDetails>,
     /// <p>Details from an import from Amazon Redshift datashare response.</p>
+    #[doc(hidden)]
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails>,
     /// <p>The response details.</p>
+    #[doc(hidden)]
     pub import_asset_from_api_gateway_api:
         std::option::Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
 }
@@ -2729,26 +2790,37 @@ impl ResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API description.</p>
+    #[doc(hidden)]
     pub api_description: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API key.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>The API name.</p>
+    #[doc(hidden)]
     pub api_name: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+    #[doc(hidden)]
     pub api_specification_md5_hash: std::option::Option<std::string::String>,
     /// <p>The upload URL of the API specification.</p>
+    #[doc(hidden)]
     pub api_specification_upload_url: std::option::Option<std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub api_specification_upload_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data set ID.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The protocol type.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The revision ID.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The API stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromApiGatewayApiResponseDetails {
@@ -3007,11 +3079,14 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// A list of Amazon Redshift datashare asset sources.
+    #[doc(hidden)]
     pub asset_sources:
         std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
     /// The unique identifier for the data set associated with this import job.
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// The unique identifier for the revision associated with this import job.
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
@@ -3118,6 +3193,7 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataShareAssetSourceEntry {
     /// The Amazon Resource Name (ARN) of the datashare asset.
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
 }
 impl RedshiftDataShareAssetSourceEntry {
@@ -3175,10 +3251,13 @@ impl RedshiftDataShareAssetSourceEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromS3ResponseDetails {
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
+    #[doc(hidden)]
     pub asset_sources: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromS3ResponseDetails {
@@ -3277,16 +3356,22 @@ impl ImportAssetsFromS3ResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetFromSignedUrlResponseDetails {
     /// <p>The name for the asset associated with this import job.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
+    #[doc(hidden)]
     pub md5_hash: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The signed URL.</p>
+    #[doc(hidden)]
     pub signed_url: std::option::Option<std::string::String>,
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub signed_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ImportAssetFromSignedUrlResponseDetails {
@@ -3429,13 +3514,17 @@ impl ImportAssetFromSignedUrlResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportRevisionsToS3ResponseDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Encryption configuration of the export job.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
+    #[doc(hidden)]
     pub revision_destinations:
         std::option::Option<std::vec::Vec<crate::model::RevisionDestinationEntry>>,
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
+    #[doc(hidden)]
     pub event_action_arn: std::option::Option<std::string::String>,
 }
 impl ExportRevisionsToS3ResponseDetails {
@@ -3562,10 +3651,13 @@ impl ExportRevisionsToS3ResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionDestinationEntry {
     /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    #[doc(hidden)]
     pub key_pattern: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RevisionDestinationEntry {
@@ -3654,12 +3746,16 @@ impl RevisionDestinationEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAssetsToS3ResponseDetails {
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
+    #[doc(hidden)]
     pub asset_destinations: std::option::Option<std::vec::Vec<crate::model::AssetDestinationEntry>>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Encryption configuration of the export job.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The unique identifier for the revision associated with this export response.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ExportAssetsToS3ResponseDetails {
@@ -3780,10 +3876,13 @@ impl ExportAssetsToS3ResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetDestinationEntry {
     /// <p>The unique identifier for the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The S3 bucket that is the destination for the asset.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl AssetDestinationEntry {
@@ -3872,14 +3971,19 @@ impl AssetDestinationEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAssetToSignedUrlResponseDetails {
     /// <p>The unique identifier for the asset associated with this export job.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this export response.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The signed URL for the export request.</p>
+    #[doc(hidden)]
     pub signed_url: std::option::Option<std::string::String>,
     /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub signed_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExportAssetToSignedUrlResponseDetails {
@@ -4005,16 +4109,22 @@ impl ExportAssetToSignedUrlResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventActionEntry {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The Amazon Resource Name (ARN) for the event action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventActionEntry {
@@ -4160,24 +4270,34 @@ impl EventActionEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetEntry {
     /// <p>The ARN for the data set.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::Origin>,
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    #[doc(hidden)]
     pub origin_details: std::option::Option<crate::model::OriginDetails>,
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataSetEntry {
@@ -4397,27 +4517,38 @@ impl DataSetEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionEntry {
     /// <p>The ARN for the revision.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevisionEntry {
@@ -4657,22 +4788,29 @@ impl RevisionEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestDetails {
     /// <p>Details about the export to signed URL request.</p>
+    #[doc(hidden)]
     pub export_asset_to_signed_url:
         std::option::Option<crate::model::ExportAssetToSignedUrlRequestDetails>,
     /// <p>Details about the export to Amazon S3 request.</p>
+    #[doc(hidden)]
     pub export_assets_to_s3: std::option::Option<crate::model::ExportAssetsToS3RequestDetails>,
     /// <p>Details about the export to Amazon S3 request.</p>
+    #[doc(hidden)]
     pub export_revisions_to_s3:
         std::option::Option<crate::model::ExportRevisionsToS3RequestDetails>,
     /// <p>Details about the import from signed URL request.</p>
+    #[doc(hidden)]
     pub import_asset_from_signed_url:
         std::option::Option<crate::model::ImportAssetFromSignedUrlRequestDetails>,
     /// <p>Details about the import from Amazon S3 request.</p>
+    #[doc(hidden)]
     pub import_assets_from_s3: std::option::Option<crate::model::ImportAssetsFromS3RequestDetails>,
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
+    #[doc(hidden)]
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
     /// <p>Information about the import asset from API Gateway API request.</p>
+    #[doc(hidden)]
     pub import_asset_from_api_gateway_api:
         std::option::Option<crate::model::ImportAssetFromApiGatewayApiRequestDetails>,
 }
@@ -4908,22 +5046,31 @@ impl RequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetFromApiGatewayApiRequestDetails {
     /// <p>The API description. Markdown supported.</p>
+    #[doc(hidden)]
     pub api_description: std::option::Option<std::string::String>,
     /// <p>The API Gateway API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API Gateway API key.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>The API name.</p>
+    #[doc(hidden)]
     pub api_name: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
+    #[doc(hidden)]
     pub api_specification_md5_hash: std::option::Option<std::string::String>,
     /// <p>The data set ID.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The protocol type.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The revision ID.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The API stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromApiGatewayApiRequestDetails {
@@ -5126,11 +5273,14 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// A list of Amazon Redshift datashare assets.
+    #[doc(hidden)]
     pub asset_sources:
         std::option::Option<std::vec::Vec<crate::model::RedshiftDataShareAssetSourceEntry>>,
     /// The unique identifier for the data set associated with this import job.
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// The unique identifier for the revision associated with this import job.
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
@@ -5237,10 +5387,13 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetsFromS3RequestDetails {
     /// <p>Is a list of S3 bucket and object key pairs.</p>
+    #[doc(hidden)]
     pub asset_sources: std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetsFromS3RequestDetails {
@@ -5339,12 +5492,16 @@ impl ImportAssetsFromS3RequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAssetFromSignedUrlRequestDetails {
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
+    #[doc(hidden)]
     pub md5_hash: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ImportAssetFromSignedUrlRequestDetails {
@@ -5450,10 +5607,13 @@ impl ImportAssetFromSignedUrlRequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Encryption configuration for the export job.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The destination for the revision.</p>
+    #[doc(hidden)]
     pub revision_destinations:
         std::option::Option<std::vec::Vec<crate::model::RevisionDestinationEntry>>,
 }
@@ -5561,12 +5721,16 @@ impl ExportRevisionsToS3RequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAssetsToS3RequestDetails {
     /// <p>The destination for the asset.</p>
+    #[doc(hidden)]
     pub asset_destinations: std::option::Option<std::vec::Vec<crate::model::AssetDestinationEntry>>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Encryption configuration for the export job.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The unique identifier for the revision associated with this export request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ExportAssetsToS3RequestDetails {
@@ -5687,10 +5851,13 @@ impl ExportAssetsToS3RequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAssetToSignedUrlRequestDetails {
     /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this export request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ExportAssetToSignedUrlRequestDetails {

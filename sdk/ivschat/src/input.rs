@@ -2037,14 +2037,19 @@ impl UpdateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Room name. The value does not need to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
+    #[doc(hidden)]
     pub maximum_message_rate_per_second: i32,
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
+    #[doc(hidden)]
     pub maximum_message_length: i32,
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
+    #[doc(hidden)]
     pub message_review_handler: std::option::Option<crate::model::MessageReviewHandler>,
 }
 impl UpdateRoomInput {
@@ -2091,8 +2096,10 @@ impl std::fmt::Debug for UpdateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to be untagged. The ARN must be URL-encoded.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Array of tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2119,8 +2126,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to be tagged. The ARN must be URL-encoded.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Array of tags to be added or updated.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2151,10 +2160,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEventInput {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
+    #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
     /// <p>Application-defined name of the event to send to clients.</p>
+    #[doc(hidden)]
     pub event_name: std::option::Option<std::string::String>,
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2190,6 +2202,7 @@ impl std::fmt::Debug for SendEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2211,12 +2224,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoomsInput {
     /// <p>Filters the list to match the specified room name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of rooms to return. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Filters the list to match the specified message review handler URI.</p>
+    #[doc(hidden)]
     pub message_review_handler_uri: std::option::Option<std::string::String>,
 }
 impl ListRoomsInput {
@@ -2256,6 +2273,7 @@ impl std::fmt::Debug for ListRoomsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomInput {
     /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetRoomInput {
@@ -2277,10 +2295,13 @@ impl std::fmt::Debug for GetRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
+    #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
     /// <p>ID of the user (connection) to disconnect from the room.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Reason for disconnecting the user.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DisconnectUserInput {
@@ -2312,6 +2333,7 @@ impl std::fmt::Debug for DisconnectUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoomInput {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteRoomInput {
@@ -2333,10 +2355,13 @@ impl std::fmt::Debug for DeleteRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageInput {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Reason for deleting the message.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DeleteMessageInput {
@@ -2368,14 +2393,19 @@ impl std::fmt::Debug for DeleteMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomInput {
     /// <p>Room name. The value does not need to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    #[doc(hidden)]
     pub maximum_message_rate_per_second: i32,
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
+    #[doc(hidden)]
     pub maximum_message_length: i32,
     /// <p>Configuration information for optional review of messages.</p>
+    #[doc(hidden)]
     pub message_review_handler: std::option::Option<crate::model::MessageReviewHandler>,
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2426,14 +2456,19 @@ impl std::fmt::Debug for CreateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
+    #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::ChatTokenCapability>>,
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
+    #[doc(hidden)]
     pub session_duration_in_minutes: i32,
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

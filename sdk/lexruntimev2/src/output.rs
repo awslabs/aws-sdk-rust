@@ -3,28 +3,36 @@
 #[non_exhaustive]
 pub struct RecognizeUtteranceOutput {
     /// <p>Indicates whether the input mode to the operation was text or speech. </p>
+    #[doc(hidden)]
     pub input_mode: std::option::Option<std::string::String>,
     /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
     /// <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::string::String>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    #[doc(hidden)]
     pub interpretations: std::option::Option<std::string::String>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
     /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<std::string::String>,
     /// <p>The attributes sent in the request.</p>
     /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
+    #[doc(hidden)]
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p>The identifier of the session in use.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
     /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    #[doc(hidden)]
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
@@ -256,17 +264,22 @@ impl RecognizeUtteranceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeTextOutput {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>Represents the current state of the dialog between the user and the bot. </p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<crate::model::SessionState>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    #[doc(hidden)]
     pub interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
     /// <p>The attributes sent in the request.</p>
+    #[doc(hidden)]
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier of the session in use.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl RecognizeTextOutput {
@@ -436,15 +449,20 @@ impl RecognizeTextOutput {
 #[non_exhaustive]
 pub struct PutSessionOutput {
     /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::string::String>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<std::string::String>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    #[doc(hidden)]
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p>The identifier of the session that received the data.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
@@ -598,14 +616,18 @@ impl PutSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    #[doc(hidden)]
     pub interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<crate::model::SessionState>,
 }
 impl GetSessionOutput {
@@ -739,12 +761,16 @@ impl GetSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionOutput {
     /// <p>The identifier of the bot that contained the session data.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier in use for the bot that contained the session data.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session was used.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the deleted session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl DeleteSessionOutput {

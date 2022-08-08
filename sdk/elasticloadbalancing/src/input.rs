@@ -4776,10 +4776,13 @@ impl SetLoadBalancerPoliciesOfListenerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The external port of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetLoadBalancerPoliciesOfListenerInput {
@@ -4811,10 +4814,13 @@ impl std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLoadBalancerPoliciesForBackendServerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The port number associated with the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_port: std::option::Option<i32>,
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
@@ -4846,10 +4852,13 @@ impl std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The port that uses the specified SSL certificate.</p>
+    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    #[doc(hidden)]
     pub ssl_certificate_id: std::option::Option<std::string::String>,
 }
 impl SetLoadBalancerListenerSslCertificateInput {
@@ -4881,8 +4890,10 @@ impl std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of tag keys to remove.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
 }
 impl RemoveTagsInput {
@@ -4909,8 +4920,10 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstancesWithLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl RegisterInstancesWithLoadBalancerInput {
@@ -4937,8 +4950,10 @@ impl std::fmt::Debug for RegisterInstancesWithLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The attributes for the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesInput {
@@ -4967,8 +4982,10 @@ impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
@@ -4995,8 +5012,10 @@ impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zones.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAvailabilityZonesForLoadBalancerInput {
@@ -5023,8 +5042,10 @@ impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachLoadBalancerFromSubnetsInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetachLoadBalancerFromSubnetsInput {
@@ -5051,6 +5072,7 @@ impl std::fmt::Debug for DetachLoadBalancerFromSubnetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
+    #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
@@ -5072,10 +5094,13 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
+    #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {
@@ -5107,6 +5132,7 @@ impl std::fmt::Debug for DescribeLoadBalancersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    #[doc(hidden)]
     pub policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoadBalancerPolicyTypesInput {
@@ -5128,8 +5154,10 @@ impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerPoliciesInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The names of the policies.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoadBalancerPoliciesInput {
@@ -5156,6 +5184,7 @@ impl std::fmt::Debug for DescribeLoadBalancerPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerAttributesInput {
@@ -5177,8 +5206,10 @@ impl std::fmt::Debug for DescribeLoadBalancerAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DescribeInstanceHealthInput {
@@ -5205,8 +5236,10 @@ impl std::fmt::Debug for DescribeInstanceHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
@@ -5233,8 +5266,10 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstancesFromLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DeregisterInstancesFromLoadBalancerInput {
@@ -5261,8 +5296,10 @@ impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerPolicyInput {
@@ -5289,8 +5326,10 @@ impl std::fmt::Debug for DeleteLoadBalancerPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The client port numbers of the listeners.</p>
+    #[doc(hidden)]
     pub load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
 }
 impl DeleteLoadBalancerListenersInput {
@@ -5317,6 +5356,7 @@ impl std::fmt::Debug for DeleteLoadBalancerListenersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerInput {
@@ -5338,12 +5378,16 @@ impl std::fmt::Debug for DeleteLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+    #[doc(hidden)]
     pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>The policy attributes.</p>
+    #[doc(hidden)]
     pub policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInput {
@@ -5380,8 +5424,10 @@ impl std::fmt::Debug for CreateLoadBalancerPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The listeners.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
 }
 impl CreateLoadBalancerListenersInput {
@@ -5409,24 +5455,31 @@ impl std::fmt::Debug for CreateLoadBalancerListenersInput {
 pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
+    #[doc(hidden)]
     pub scheme: std::option::Option<std::string::String>,
     /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLoadBalancerInput {
@@ -5485,10 +5538,13 @@ impl std::fmt::Debug for CreateLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLbCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
+    #[doc(hidden)]
     pub cookie_expiration_period: std::option::Option<i64>,
 }
 impl CreateLbCookieStickinessPolicyInput {
@@ -5520,10 +5576,13 @@ impl std::fmt::Debug for CreateLbCookieStickinessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the application cookie used for stickiness.</p>
+    #[doc(hidden)]
     pub cookie_name: std::option::Option<std::string::String>,
 }
 impl CreateAppCookieStickinessPolicyInput {
@@ -5555,8 +5614,10 @@ impl std::fmt::Debug for CreateAppCookieStickinessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The configuration information.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl ConfigureHealthCheckInput {
@@ -5583,8 +5644,10 @@ impl std::fmt::Debug for ConfigureHealthCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AttachLoadBalancerToSubnetsInput {
@@ -5611,8 +5674,10 @@ impl std::fmt::Debug for AttachLoadBalancerToSubnetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
@@ -5639,8 +5704,10 @@ impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
+    #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {

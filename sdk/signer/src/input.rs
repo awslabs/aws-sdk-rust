@@ -3178,8 +3178,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to be removed from the signing profile.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3206,8 +3208,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be associated with the signing profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3238,14 +3242,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSigningJobInput {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The name of the signing profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the signing profile owner.</p>
+    #[doc(hidden)]
     pub profile_owner: std::option::Option<std::string::String>,
 }
 impl StartSigningJobInput {
@@ -3287,12 +3296,16 @@ impl std::fmt::Debug for StartSigningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSigningProfileInput {
     /// <p>The name of the signing profile to be revoked.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the signing profile to be revoked.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The reason for revoking a signing profile.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+    #[doc(hidden)]
     pub effective_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevokeSigningProfileInput {
@@ -3329,10 +3342,13 @@ impl std::fmt::Debug for RevokeSigningProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSignatureInput {
     /// <p>ID of the signing job to be revoked.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>AWS account ID of the job owner.</p>
+    #[doc(hidden)]
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The reason for revoking the signing job.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl RevokeSignatureInput {
@@ -3364,10 +3380,13 @@ impl std::fmt::Debug for RevokeSignatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the cross-account permissions statement.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl RemoveProfilePermissionInput {
@@ -3399,19 +3418,26 @@ impl std::fmt::Debug for RemoveProfilePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSigningProfileInput {
     /// <p>The name of the signing profile to be created.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
+    #[doc(hidden)]
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
+    #[doc(hidden)]
     pub signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
     /// <p>The ID of the signing platform to be created.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    #[doc(hidden)]
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
     /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
+    #[doc(hidden)]
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags to be associated with the signing profile that is being created.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3472,6 +3498,7 @@ impl std::fmt::Debug for PutSigningProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3493,14 +3520,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
+    #[doc(hidden)]
     pub include_canceled: bool,
     /// <p>The maximum number of profiles to be returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
 }
 impl ListSigningProfilesInput {
@@ -3542,14 +3574,19 @@ impl std::fmt::Debug for ListSigningProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningPlatformsInput {
     /// <p>The category type of a signing platform.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>Any partner entities connected to a signing platform.</p>
+    #[doc(hidden)]
     pub partner: std::option::Option<std::string::String>,
     /// <p>The validation template that is used by the target signing platform.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned by this operation.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningPlatformsInput {
@@ -3591,22 +3628,31 @@ impl std::fmt::Debug for ListSigningPlatformsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningJobsInput {
     /// <p>A status value with which to filter your results.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The IAM principal that requested the signing job.</p>
+    #[doc(hidden)]
     pub requested_by: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
+    #[doc(hidden)]
     pub is_revoked: bool,
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
+    #[doc(hidden)]
     pub signature_expires_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
+    #[doc(hidden)]
     pub signature_expires_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
+    #[doc(hidden)]
     pub job_invoker: std::option::Option<std::string::String>,
 }
 impl ListSigningJobsInput {
@@ -3668,8 +3714,10 @@ impl std::fmt::Debug for ListSigningJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilePermissionsInput {
     /// <p>Name of the signing profile containing the cross-account permissions.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>String for specifying the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfilePermissionsInput {
@@ -3696,8 +3744,10 @@ impl std::fmt::Debug for ListProfilePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningProfileInput {
     /// <p>The name of the target signing profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the profile owner.</p>
+    #[doc(hidden)]
     pub profile_owner: std::option::Option<std::string::String>,
 }
 impl GetSigningProfileInput {
@@ -3724,6 +3774,7 @@ impl std::fmt::Debug for GetSigningProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningPlatformInput {
     /// <p>The ID of the target signing platform.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
 }
 impl GetSigningPlatformInput {
@@ -3745,6 +3796,7 @@ impl std::fmt::Debug for GetSigningPlatformInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSigningJobInput {
@@ -3766,6 +3818,7 @@ impl std::fmt::Debug for DescribeSigningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSigningProfileInput {
     /// <p>The name of the signing profile to be canceled.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
 }
 impl CancelSigningProfileInput {
@@ -3787,16 +3840,22 @@ impl std::fmt::Debug for CancelSigningProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddProfilePermissionInput {
     /// <p>The human-readable name of the signing profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the signing profile.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the current profile revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the cross-account permission statement.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl AddProfilePermissionInput {

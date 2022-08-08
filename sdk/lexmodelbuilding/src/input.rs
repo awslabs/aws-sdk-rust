@@ -7962,8 +7962,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7990,8 +7992,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8018,22 +8022,27 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMigrationInput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub v1_bot_name: std::option::Option<std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
+    #[doc(hidden)]
     pub v1_bot_version: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
     /// <ul>
     /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
     /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub v2_bot_name: std::option::Option<std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub v2_bot_role: std::option::Option<std::string::String>,
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
 }
 impl StartMigrationInput {
@@ -8083,19 +8092,23 @@ impl std::fmt::Debug for StartMigrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportInput {
     /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
     /// <ul>
     /// <li> <p>A bot exports dependent intents.</p> </li>
     /// <li> <p>An intent exports dependent slot types.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
     /// <ul>
     /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartImportInput {
@@ -8141,16 +8154,20 @@ pub struct PutSlotTypeInput {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    #[doc(hidden)]
     pub enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -8158,13 +8175,17 @@ pub struct PutSlotTypeInput {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
+    #[doc(hidden)]
     pub value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+    #[doc(hidden)]
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
+    #[doc(hidden)]
     pub slot_type_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
@@ -8243,22 +8264,28 @@ pub struct PutIntentInput {
     /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::vec::Vec<crate::model::Slot>>,
     /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
     /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
     /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
+    #[doc(hidden)]
     pub confirmation_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
     /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
     /// </note>
+    #[doc(hidden)]
     pub rejection_statement: std::option::Option<crate::model::Statement>,
     /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
     /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
@@ -8269,31 +8296,41 @@ pub struct PutIntentInput {
     /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
     /// </ul>
     /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
+    #[doc(hidden)]
     pub follow_up_prompt: std::option::Option<crate::model::FollowUpPrompt>,
     /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
     /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
     /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
     /// </note>
+    #[doc(hidden)]
     pub conclusion_statement: std::option::Option<crate::model::Statement>,
     /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
     /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
+    #[doc(hidden)]
     pub dialog_code_hook: std::option::Option<crate::model::CodeHook>,
     /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
     /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
+    #[doc(hidden)]
     pub fulfillment_activity: std::option::Option<crate::model::FulfillmentActivity>,
     /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
+    #[doc(hidden)]
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
 }
 impl PutIntentInput {
@@ -8413,20 +8450,27 @@ impl std::fmt::Debug for PutIntentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBotAliasInput {
     /// <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the bot.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Settings for conversation logs for the alias.</p>
+    #[doc(hidden)]
     pub conversation_logs: std::option::Option<crate::model::ConversationLogsRequest>,
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutBotAliasInput {
@@ -8480,10 +8524,13 @@ impl std::fmt::Debug for PutBotAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBotInput {
     /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::Intent>>,
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>
     /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
@@ -8496,6 +8543,7 @@ pub struct PutBotInput {
     /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
+    #[doc(hidden)]
     pub enable_model_improvements: std::option::Option<bool>,
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
@@ -8513,6 +8561,7 @@ pub struct PutBotInput {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
     /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>
     /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
@@ -8523,38 +8572,49 @@ pub struct PutBotInput {
     /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub clarification_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+    #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
     /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
     /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
     /// <p>The default is 300 seconds (5 minutes).</p>
+    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
+    #[doc(hidden)]
     pub process_behavior: std::option::Option<crate::model::ProcessBehavior>,
     /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
     /// <p>The default is <code>en-US</code>.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
     /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub detect_sentiment: std::option::Option<bool>,
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutBotInput {
@@ -8702,6 +8762,7 @@ impl std::fmt::Debug for PutBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8723,10 +8784,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUtterancesViewInput {
     /// <p>The name of the bot for which utterance information should be returned.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
+    #[doc(hidden)]
     pub bot_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
+    #[doc(hidden)]
     pub status_type: std::option::Option<crate::model::StatusType>,
 }
 impl GetUtterancesViewInput {
@@ -8758,10 +8822,13 @@ impl std::fmt::Debug for GetUtterancesViewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypeVersionsInput {
     /// <p>The name of the slot type for which versions should be returned.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetSlotTypeVersionsInput {
@@ -8793,10 +8860,13 @@ impl std::fmt::Debug for GetSlotTypeVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypesInput {
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl GetSlotTypesInput {
@@ -8828,8 +8898,10 @@ impl std::fmt::Debug for GetSlotTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypeInput {
     /// <p>The name of the slot type. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the slot type. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetSlotTypeInput {
@@ -8856,16 +8928,22 @@ impl std::fmt::Debug for GetSlotTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMigrationsInput {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
+    #[doc(hidden)]
     pub sort_by_attribute: std::option::Option<crate::model::MigrationSortAttribute>,
     /// <p>The order so sort the list.</p>
+    #[doc(hidden)]
     pub sort_by_order: std::option::Option<crate::model::SortOrder>,
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
+    #[doc(hidden)]
     pub v1_bot_name_contains: std::option::Option<std::string::String>,
     /// <p>Filters the list to contain only migrations in the specified state.</p>
+    #[doc(hidden)]
     pub migration_status_equals: std::option::Option<crate::model::MigrationStatus>,
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMigrationsInput {
@@ -8912,6 +8990,7 @@ impl std::fmt::Debug for GetMigrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMigrationInput {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
 }
 impl GetMigrationInput {
@@ -8933,10 +9012,13 @@ impl std::fmt::Debug for GetMigrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentVersionsInput {
     /// <p>The name of the intent for which versions should be returned.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetIntentVersionsInput {
@@ -8968,10 +9050,13 @@ impl std::fmt::Debug for GetIntentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentsInput {
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of intents to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl GetIntentsInput {
@@ -9003,8 +9088,10 @@ impl std::fmt::Debug for GetIntentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentInput {
     /// <p>The name of the intent. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the intent.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetIntentInput {
@@ -9031,6 +9118,7 @@ impl std::fmt::Debug for GetIntentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportInput {
     /// <p>The identifier of the import job information to return.</p>
+    #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
 }
 impl GetImportInput {
@@ -9052,12 +9140,16 @@ impl std::fmt::Debug for GetImportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportInput {
     /// <p>The name of the bot to export.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the bot to export.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The type of resource to export. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The format of the exported data.</p>
+    #[doc(hidden)]
     pub export_type: std::option::Option<crate::model::ExportType>,
 }
 impl GetExportInput {
@@ -9094,12 +9186,16 @@ impl std::fmt::Debug for GetExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinSlotTypesInput {
     /// <p>A list of locales that the slot type supports.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    #[doc(hidden)]
     pub signature_contains: std::option::Option<std::string::String>,
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetBuiltinSlotTypesInput {
@@ -9136,12 +9232,16 @@ impl std::fmt::Debug for GetBuiltinSlotTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinIntentsInput {
     /// <p>A list of locales that the intent supports.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub signature_contains: std::option::Option<std::string::String>,
     /// <p>A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of intents to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetBuiltinIntentsInput {
@@ -9178,6 +9278,7 @@ impl std::fmt::Debug for GetBuiltinIntentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinIntentInput {
     /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
 }
 impl GetBuiltinIntentInput {
@@ -9199,10 +9300,13 @@ impl std::fmt::Debug for GetBuiltinIntentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotVersionsInput {
     /// <p>The name of the bot for which versions should be returned.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetBotVersionsInput {
@@ -9234,10 +9338,13 @@ impl std::fmt::Debug for GetBotVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotsInput {
     /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl GetBotsInput {
@@ -9269,14 +9376,19 @@ impl std::fmt::Debug for GetBotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotChannelAssociationsInput {
     /// <p>The name of the Amazon Lex bot in the association.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl GetBotChannelAssociationsInput {
@@ -9318,10 +9430,13 @@ impl std::fmt::Debug for GetBotChannelAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotChannelAssociationInput {
     /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
 }
 impl GetBotChannelAssociationInput {
@@ -9353,12 +9468,16 @@ impl std::fmt::Debug for GetBotChannelAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotAliasesInput {
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of aliases to return in the response. The default is 50. . </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl GetBotAliasesInput {
@@ -9395,8 +9514,10 @@ impl std::fmt::Debug for GetBotAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotAliasInput {
     /// <p>The name of the bot alias. The name is case sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
 }
 impl GetBotAliasInput {
@@ -9423,8 +9544,10 @@ impl std::fmt::Debug for GetBotAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotInput {
     /// <p>The name of the bot. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version or alias of the bot.</p>
+    #[doc(hidden)]
     pub version_or_alias: std::option::Option<std::string::String>,
 }
 impl GetBotInput {
@@ -9451,8 +9574,10 @@ impl std::fmt::Debug for GetBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUtterancesInput {
     /// <p>The name of the bot that stored the utterances.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUtterancesInput {
@@ -9479,8 +9604,10 @@ impl std::fmt::Debug for DeleteUtterancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSlotTypeVersionInput {
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteSlotTypeVersionInput {
@@ -9507,6 +9634,7 @@ impl std::fmt::Debug for DeleteSlotTypeVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSlotTypeInput {
     /// <p>The name of the slot type. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteSlotTypeInput {
@@ -9528,8 +9656,10 @@ impl std::fmt::Debug for DeleteSlotTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntentVersionInput {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteIntentVersionInput {
@@ -9556,6 +9686,7 @@ impl std::fmt::Debug for DeleteIntentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntentInput {
     /// <p>The name of the intent. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteIntentInput {
@@ -9577,8 +9708,10 @@ impl std::fmt::Debug for DeleteIntentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotVersionInput {
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteBotVersionInput {
@@ -9605,10 +9738,13 @@ impl std::fmt::Debug for DeleteBotVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotChannelAssociationInput {
     /// <p>The name of the association. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
 }
 impl DeleteBotChannelAssociationInput {
@@ -9640,8 +9776,10 @@ impl std::fmt::Debug for DeleteBotChannelAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotAliasInput {
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bot that the alias points to.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
 }
 impl DeleteBotAliasInput {
@@ -9668,6 +9806,7 @@ impl std::fmt::Debug for DeleteBotAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotInput {
     /// <p>The name of the bot. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteBotInput {
@@ -9689,8 +9828,10 @@ impl std::fmt::Debug for DeleteBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotTypeVersionInput {
     /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl CreateSlotTypeVersionInput {
@@ -9717,8 +9858,10 @@ impl std::fmt::Debug for CreateSlotTypeVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntentVersionInput {
     /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl CreateIntentVersionInput {
@@ -9745,8 +9888,10 @@ impl std::fmt::Debug for CreateIntentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotVersionInput {
     /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl CreateBotVersionInput {

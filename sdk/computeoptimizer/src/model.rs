@@ -186,6 +186,7 @@ pub struct Scope {
     /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
     /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ScopeName>,
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
@@ -195,6 +196,7 @@ pub struct Scope {
     /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Scope {
@@ -437,14 +439,19 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::Summary>>,
     /// <p>The resource type that the recommendation summary applies to.</p>
+    #[doc(hidden)]
     pub recommendation_resource_type: std::option::Option<crate::model::RecommendationSourceType>,
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
+    #[doc(hidden)]
     pub current_performance_risk_ratings:
         std::option::Option<crate::model::CurrentPerformanceRiskRatings>,
 }
@@ -605,12 +612,16 @@ impl RecommendationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentPerformanceRiskRatings {
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+    #[doc(hidden)]
     pub high: i64,
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+    #[doc(hidden)]
     pub medium: i64,
     /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+    #[doc(hidden)]
     pub low: i64,
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
+    #[doc(hidden)]
     pub very_low: i64,
 }
 impl CurrentPerformanceRiskRatings {
@@ -719,8 +730,10 @@ impl CurrentPerformanceRiskRatings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsOpportunity {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
+    #[doc(hidden)]
     pub savings_opportunity_percentage: f64,
     /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<crate::model::EstimatedMonthlySavings>,
 }
 impl SavingsOpportunity {
@@ -810,8 +823,10 @@ impl SavingsOpportunity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EstimatedMonthlySavings {
     /// <p>The currency of the estimated monthly savings.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::Currency>,
     /// <p>The value of the estimated monthly savings.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl EstimatedMonthlySavings {
@@ -1006,10 +1021,13 @@ impl AsRef<str> for RecommendationSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Summary {
     /// <p>The finding classification of the recommendation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::Finding>,
     /// <p>The value of the recommendation summary.</p>
+    #[doc(hidden)]
     pub value: f64,
     /// <p>An array of objects that summarize a finding reason code.</p>
+    #[doc(hidden)]
     pub reason_code_summaries: std::option::Option<std::vec::Vec<crate::model::ReasonCodeSummary>>,
 }
 impl Summary {
@@ -1108,8 +1126,10 @@ impl Summary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FindingReasonCode>,
     /// <p>The value of the finding reason code summary.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl ReasonCodeSummary {
@@ -1308,17 +1328,21 @@ impl AsRef<str> for Finding {
 pub struct RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
     /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
     /// <p>The status of the inferred workload types recommendation preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
 }
 impl RecommendationPreferencesDetail {
@@ -1463,21 +1487,29 @@ impl RecommendationPreferencesDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The version number of the current function.</p>
+    #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the function.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
+    #[doc(hidden)]
     pub current_memory_size: i32,
     /// <p>The number of times your function code was applied during the look-back period.</p>
+    #[doc(hidden)]
     pub number_of_invocations: i64,
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
+    #[doc(hidden)]
     pub utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: f64,
     /// <p>The timestamp of when the function recommendation was last generated.</p>
+    #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The finding classification of the function.</p>
     /// <p>Findings for functions include:</p>
@@ -1488,6 +1520,7 @@ pub struct LambdaFunctionRecommendation {
     /// <p>Functions with a finding of unavailable are not returned unless you specify the <code>filter</code> parameter with a value of <code>Unavailable</code> in your <code>GetLambdaFunctionRecommendations</code> request.</p>
     /// </note> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::LambdaFunctionRecommendationFinding>,
     /// <p>The reason for the finding classification of the function.</p> <note>
     /// <p>Functions that have a finding classification of <code>Optimized</code> don't have a finding reason code.</p>
@@ -1499,13 +1532,16 @@ pub struct LambdaFunctionRecommendation {
     /// <li> <p> <b> <code>InsufficientData</code> </b> — The function does not have sufficient metric data for Compute Optimizer to generate a recommendation. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// <li> <p> <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding_reason_codes: std::option::Option<
         std::vec::Vec<crate::model::LambdaFunctionRecommendationFindingReasonCode>,
     >,
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
+    #[doc(hidden)]
     pub memory_size_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>>,
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
+    #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
 }
 impl LambdaFunctionRecommendation {
@@ -1938,13 +1974,17 @@ impl AsRef<str> for CurrentPerformanceRisk {
 pub struct LambdaFunctionMemoryRecommendationOption {
     /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>The memory size, in MB, of the function recommendation option.</p>
+    #[doc(hidden)]
     pub memory_size: i32,
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
+    #[doc(hidden)]
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl LambdaFunctionMemoryRecommendationOption {
@@ -2076,10 +2116,13 @@ impl LambdaFunctionMemoryRecommendationOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionMemoryProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::LambdaFunctionMemoryMetricName>,
     /// <p>The statistic of the projected utilization metric.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::LambdaFunctionMemoryMetricStatistic>,
     /// <p>The values of the projected utilization metrics.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl LambdaFunctionMemoryProjectedMetric {
@@ -2430,12 +2473,15 @@ pub struct LambdaFunctionUtilizationMetric {
     /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
     /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::LambdaFunctionMetricName>,
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::LambdaFunctionMetricStatistic>,
     /// <p>The value of the utilization metric.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl LambdaFunctionUtilizationMetric {
@@ -2664,6 +2710,7 @@ pub struct LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::LambdaFunctionRecommendationFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
@@ -2671,6 +2718,7 @@ pub struct LambdaFunctionRecommendationFilter {
     /// <li> <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the <code>name</code> parameter as <code>Finding</code>.</p> </li>
     /// <li> <p>Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LambdaFunctionRecommendationFilter {
@@ -2832,13 +2880,17 @@ impl AsRef<str> for LambdaFunctionRecommendationFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountEnrollmentStatus {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The account enrollment status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccountEnrollmentStatus {
@@ -2954,9 +3006,11 @@ impl AccountEnrollmentStatus {
 pub struct EnrollmentFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::EnrollmentFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnrollmentFilter {
@@ -3099,12 +3153,15 @@ impl AsRef<str> for EnrollmentFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
+    #[doc(hidden)]
     pub recommended_instance_type: std::option::Option<std::string::String>,
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>An array of objects that describe a projected utilization metric.</p>
+    #[doc(hidden)]
     pub projected_metrics: std::option::Option<std::vec::Vec<crate::model::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetric {
@@ -3222,10 +3279,13 @@ pub struct ProjectedMetric {
     /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::MetricName>,
     /// <p>The timestamps of the projected utilization metric.</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the projected utilization metrics.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl ProjectedMetric {
@@ -3474,6 +3534,7 @@ pub struct RecommendationPreferences {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cpu_vendor_architectures:
         std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
 }
@@ -3673,10 +3734,13 @@ impl AsRef<str> for MetricStatistic {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationError {
     /// <p>The ID of the error.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The message, or reason, for the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GetRecommendationError {
@@ -3765,12 +3829,16 @@ impl GetRecommendationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the instance.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the current instance.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>The instance type of the current instance.</p>
+    #[doc(hidden)]
     pub current_instance_type: std::option::Option<std::string::String>,
     /// <p>The finding classification of the instance.</p>
     /// <p>Findings for instances include:</p>
@@ -3779,6 +3847,7 @@ pub struct InstanceRecommendation {
     /// <li> <p> <b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::Finding>,
     /// <p>The reason for the finding classification of the instance.</p>
     /// <p>Finding reason codes for instances include:</p>
@@ -3804,23 +3873,31 @@ pub struct InstanceRecommendation {
     /// </ul> <note>
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub finding_reason_codes:
         std::option::Option<std::vec::Vec<crate::model::InstanceRecommendationFindingReasonCode>>,
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
+    #[doc(hidden)]
     pub utilization_metrics: std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
+    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
+    #[doc(hidden)]
     pub recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::InstanceRecommendationOption>>,
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_sources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
+    #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
+    #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
+    #[doc(hidden)]
     pub effective_recommendation_preferences:
         std::option::Option<crate::model::EffectiveRecommendationPreferences>,
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
@@ -3834,6 +3911,7 @@ pub struct InstanceRecommendation {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub inferred_workload_types:
         std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
 }
@@ -4416,15 +4494,18 @@ pub struct EffectiveRecommendationPreferences {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cpu_vendor_architectures:
         std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
     /// <p>Describes the activation status of the inferred workload types preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
 }
 impl EffectiveRecommendationPreferences {
@@ -4576,8 +4657,10 @@ impl EffectiveRecommendationPreferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationSource {
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
+    #[doc(hidden)]
     pub recommendation_source_arn: std::option::Option<std::string::String>,
     /// <p>The resource type of the recommendation source.</p>
+    #[doc(hidden)]
     pub recommendation_source_type: std::option::Option<crate::model::RecommendationSourceType>,
 }
 impl RecommendationSource {
@@ -4664,10 +4747,12 @@ impl RecommendationSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRecommendationOption {
     /// <p>The instance type of the instance recommendation.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
@@ -4680,18 +4765,23 @@ pub struct InstanceRecommendationOption {
     /// <li> <p> <b> <code>VirtualizationType</code> </b> — The recommended instance type uses the hardware virtual machine (HVM) virtualization type and the current instance uses the paravirtual (PV) virtualization type. For more information about the differences between these virtualization types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Windows</i>.</p> </li>
     /// <li> <p> <b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
+    #[doc(hidden)]
     pub performance_risk: f64,
     /// <p>The rank of the instance recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    #[doc(hidden)]
     pub migration_effort: std::option::Option<crate::model::MigrationEffort>,
 }
 impl InstanceRecommendationOption {
@@ -5091,12 +5181,15 @@ pub struct UtilizationMetric {
     /// <li> <p> <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single instance.</p> </li>
     /// <li> <p> <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::MetricName>,
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl UtilizationMetric {
@@ -5439,6 +5532,7 @@ pub struct Filter {
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>Underprovisioned</code>).</p>
     /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example, <code>Ec2Instance</code>).</p>
     /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter and the resource type that you wish to filter results for:</p>
@@ -5466,6 +5560,7 @@ pub struct Filter {
     /// <li> <p> <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -5689,10 +5784,13 @@ impl AsRef<str> for FilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the volume.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe the current configuration of the volume.</p>
+    #[doc(hidden)]
     pub current_configuration: std::option::Option<crate::model::VolumeConfiguration>,
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
@@ -5700,17 +5798,23 @@ pub struct VolumeRecommendation {
     /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::EbsFinding>,
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
+    #[doc(hidden)]
     pub utilization_metrics: std::option::Option<std::vec::Vec<crate::model::EbsUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
+    #[doc(hidden)]
     pub volume_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
+    #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
+    #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
 }
 impl VolumeRecommendation {
@@ -5961,15 +6065,19 @@ impl VolumeRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::VolumeConfiguration>,
     /// <p>The performance risk of the volume recommendation option.</p>
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
+    #[doc(hidden)]
     pub performance_risk: f64,
     /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
 }
 impl VolumeRecommendationOption {
@@ -6091,16 +6199,22 @@ impl VolumeRecommendationOption {
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
+    #[doc(hidden)]
     pub volume_size: i32,
     /// <p>The baseline IOPS of the volume.</p>
+    #[doc(hidden)]
     pub volume_baseline_iops: i32,
     /// <p>The burst IOPS of the volume.</p>
+    #[doc(hidden)]
     pub volume_burst_iops: i32,
     /// <p>The baseline throughput of the volume.</p>
+    #[doc(hidden)]
     pub volume_baseline_throughput: i32,
     /// <p>The burst throughput of the volume.</p>
+    #[doc(hidden)]
     pub volume_burst_throughput: i32,
 }
 impl VolumeConfiguration {
@@ -6254,12 +6368,15 @@ pub struct EbsUtilizationMetric {
     /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
     /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::EbsMetricName>,
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl EbsUtilizationMetric {
@@ -6503,9 +6620,11 @@ impl AsRef<str> for EbsFinding {
 pub struct EbsFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::EbsFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EbsFilter {
@@ -6643,10 +6762,13 @@ impl AsRef<str> for EbsFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
@@ -6654,21 +6776,29 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::Finding>,
     /// <p>An array of objects that describe the utilization metrics of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub utilization_metrics: std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the current configuration of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub current_configuration: std::option::Option<crate::model::AutoScalingGroupConfiguration>,
     /// <p>An array of objects that describe the recommendation options for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
     /// <p>The timestamp of when the Auto Scaling group recommendation was last generated.</p>
+    #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The risk of the current Auto Scaling group not meeting the performance needs of its workloads. The higher the risk, the more likely the current Auto Scaling group configuration has insufficient capacity and cannot meet workload requirements.</p>
+    #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub effective_recommendation_preferences:
         std::option::Option<crate::model::EffectiveRecommendationPreferences>,
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
@@ -6682,6 +6812,7 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub inferred_workload_types:
         std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
 }
@@ -7050,23 +7181,29 @@ impl AutoScalingGroupRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AutoScalingGroupConfiguration>,
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::UtilizationMetric>>,
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
+    #[doc(hidden)]
     pub performance_risk: f64,
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    #[doc(hidden)]
     pub migration_effort: std::option::Option<crate::model::MigrationEffort>,
 }
 impl AutoScalingGroupRecommendationOption {
@@ -7253,12 +7390,16 @@ impl AutoScalingGroupRecommendationOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroupConfiguration {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub desired_capacity: i32,
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub min_size: i32,
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub max_size: i32,
     /// <p>The instance type for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
 }
 impl AutoScalingGroupConfiguration {
@@ -7367,12 +7508,15 @@ impl AutoScalingGroupConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
+    #[doc(hidden)]
     pub metadata_key: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -7519,8 +7663,10 @@ impl AsRef<str> for FileFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfig {
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfig {
@@ -8670,18 +8816,25 @@ impl AsRef<str> for ExportableAutoScalingGroupField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationExportJob {
     /// <p>The identification number of the export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>An object that describes the destination of the export file.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::ExportDestination>,
     /// <p>The resource type of the exported recommendations.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The status of the export job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>The timestamp of when the export job was created.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the export job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for an export job failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl RecommendationExportJob {
@@ -8916,6 +9069,7 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportDestination {
     /// <p>An object that describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Destination>,
 }
 impl ExportDestination {
@@ -8971,6 +9125,7 @@ pub struct JobFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g, <code>Complete</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::JobFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
@@ -8978,6 +9133,7 @@ pub struct JobFilter {
     /// <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be exported at this time.</p> </li>
     /// <li> <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JobFilter {

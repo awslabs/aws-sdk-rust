@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskSetOutput {
     /// <p>Details about the task set.</p>
+    #[doc(hidden)]
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl UpdateTaskSetOutput {
@@ -58,6 +59,7 @@ impl UpdateTaskSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServicePrimaryTaskSetOutput {
     /// <p>etails about the task set.</p>
+    #[doc(hidden)]
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl UpdateServicePrimaryTaskSetOutput {
@@ -112,6 +114,7 @@ impl UpdateServicePrimaryTaskSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
     /// <p>The full description of your service following the update call.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl UpdateServiceOutput {
@@ -166,8 +169,10 @@ impl UpdateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerInstancesStateOutput {
     /// <p>The list of container instances.</p>
+    #[doc(hidden)]
     pub container_instances: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl UpdateContainerInstancesStateOutput {
@@ -258,6 +263,7 @@ impl UpdateContainerInstancesStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerAgentOutput {
     /// <p>The container instance that the container agent was updated for.</p>
+    #[doc(hidden)]
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
 impl UpdateContainerAgentOutput {
@@ -315,6 +321,7 @@ impl UpdateContainerAgentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterSettingsOutput {
     /// <p>Details about the cluster</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl UpdateClusterSettingsOutput {
@@ -369,6 +376,7 @@ impl UpdateClusterSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterOutput {
     /// <p>Details about the cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl UpdateClusterOutput {
@@ -423,6 +431,7 @@ impl UpdateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCapacityProviderOutput {
     /// <p>Details about the capacity provider.</p>
+    #[doc(hidden)]
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
 }
 impl UpdateCapacityProviderOutput {
@@ -540,6 +549,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitTaskStateChangeOutput {
     /// <p>Acknowledgement of the state change.</p>
+    #[doc(hidden)]
     pub acknowledgment: std::option::Option<std::string::String>,
 }
 impl SubmitTaskStateChangeOutput {
@@ -597,6 +607,7 @@ impl SubmitTaskStateChangeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitContainerStateChangeOutput {
     /// <p>Acknowledgement of the state change.</p>
+    #[doc(hidden)]
     pub acknowledgment: std::option::Option<std::string::String>,
 }
 impl SubmitContainerStateChangeOutput {
@@ -654,6 +665,7 @@ impl SubmitContainerStateChangeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitAttachmentStateChangesOutput {
     /// <p>Acknowledgement of the state change.</p>
+    #[doc(hidden)]
     pub acknowledgment: std::option::Option<std::string::String>,
 }
 impl SubmitAttachmentStateChangesOutput {
@@ -711,6 +723,7 @@ impl SubmitAttachmentStateChangesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTaskOutput {
     /// <p>The task that was stopped.</p>
+    #[doc(hidden)]
     pub task: std::option::Option<crate::model::Task>,
 }
 impl StopTaskOutput {
@@ -763,8 +776,10 @@ impl StopTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskOutput {
     /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl StartTaskOutput {
@@ -854,8 +869,10 @@ impl StartTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunTaskOutput {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl RunTaskOutput {
@@ -945,8 +962,10 @@ impl RunTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTaskDefinitionOutput {
     /// <p>The full description of the registered task definition.</p>
+    #[doc(hidden)]
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
     /// <p>The list of tags associated with the task definition.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterTaskDefinitionOutput {
@@ -1030,6 +1049,7 @@ impl RegisterTaskDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerInstanceOutput {
     /// <p>The container instance that was registered.</p>
+    #[doc(hidden)]
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
 impl RegisterContainerInstanceOutput {
@@ -1087,6 +1107,7 @@ impl RegisterContainerInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutClusterCapacityProvidersOutput {
     /// <p>Details about the cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl PutClusterCapacityProvidersOutput {
@@ -1141,6 +1162,7 @@ impl PutClusterCapacityProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAttributesOutput {
     /// <p>The attributes applied to your resource.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl PutAttributesOutput {
@@ -1204,6 +1226,7 @@ impl PutAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSettingDefaultOutput {
     /// <p>The current setting for a resource.</p>
+    #[doc(hidden)]
     pub setting: std::option::Option<crate::model::Setting>,
 }
 impl PutAccountSettingDefaultOutput {
@@ -1258,6 +1281,7 @@ impl PutAccountSettingDefaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSettingOutput {
     /// <p>The current account setting for a resource.</p>
+    #[doc(hidden)]
     pub setting: std::option::Option<crate::model::Setting>,
 }
 impl PutAccountSettingOutput {
@@ -1312,8 +1336,10 @@ impl PutAccountSettingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksOutput {
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
+    #[doc(hidden)]
     pub task_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTasksOutput {
@@ -1394,8 +1420,10 @@ impl ListTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionsOutput {
     /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
+    #[doc(hidden)]
     pub task_definition_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskDefinitionsOutput {
@@ -1476,8 +1504,10 @@ impl ListTaskDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionFamiliesOutput {
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
+    #[doc(hidden)]
     pub families: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskDefinitionFamiliesOutput {
@@ -1558,6 +1588,7 @@ impl ListTaskDefinitionFamiliesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1619,8 +1650,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
+    #[doc(hidden)]
     pub service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
@@ -1701,8 +1734,10 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainerInstancesOutput {
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
+    #[doc(hidden)]
     pub container_instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainerInstancesOutput {
@@ -1783,8 +1818,10 @@ impl ListContainerInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
+    #[doc(hidden)]
     pub cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -1865,8 +1902,10 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributesOutput {
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributesOutput {
@@ -1947,8 +1986,10 @@ impl ListAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountSettingsOutput {
     /// <p>The account settings for the resource.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<std::vec::Vec<crate::model::Setting>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountSettingsOutput {
@@ -2029,16 +2070,22 @@ impl ListAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteCommandOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
+    #[doc(hidden)]
     pub container_arn: std::option::Option<std::string::String>,
     /// <p>The name of the container.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
+    #[doc(hidden)]
     pub interactive: bool,
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::Session>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl ExecuteCommandOutput {
@@ -2184,8 +2231,10 @@ impl ExecuteCommandOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverPollEndpointOutput {
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
+    #[doc(hidden)]
     pub telemetry_endpoint: std::option::Option<std::string::String>,
 }
 impl DiscoverPollEndpointOutput {
@@ -2260,8 +2309,10 @@ impl DiscoverPollEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskSetsOutput {
     /// <p>The list of task sets described.</p>
+    #[doc(hidden)]
     pub task_sets: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl DescribeTaskSetsOutput {
@@ -2351,8 +2402,10 @@ impl DescribeTaskSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTasksOutput {
     /// <p>The list of tasks.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl DescribeTasksOutput {
@@ -2442,6 +2495,7 @@ impl DescribeTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskDefinitionOutput {
     /// <p>The full task definition description.</p>
+    #[doc(hidden)]
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
     /// <p>The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -2454,6 +2508,7 @@ pub struct DescribeTaskDefinitionOutput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribeTaskDefinitionOutput {
@@ -2567,8 +2622,10 @@ impl DescribeTaskDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesOutput {
     /// <p>The list of services described.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl DescribeServicesOutput {
@@ -2658,8 +2715,10 @@ impl DescribeServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContainerInstancesOutput {
     /// <p>The list of container instances.</p>
+    #[doc(hidden)]
     pub container_instances: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl DescribeContainerInstancesOutput {
@@ -2750,8 +2809,10 @@ impl DescribeContainerInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
     /// <p>The list of clusters.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl DescribeClustersOutput {
@@ -2841,10 +2902,13 @@ impl DescribeClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCapacityProvidersOutput {
     /// <p>The list of capacity providers.</p>
+    #[doc(hidden)]
     pub capacity_providers: std::option::Option<std::vec::Vec<crate::model::CapacityProvider>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCapacityProvidersOutput {
@@ -2952,6 +3016,7 @@ impl DescribeCapacityProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTaskDefinitionOutput {
     /// <p>The full description of the deregistered task.</p>
+    #[doc(hidden)]
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
 }
 impl DeregisterTaskDefinitionOutput {
@@ -3009,6 +3074,7 @@ impl DeregisterTaskDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterContainerInstanceOutput {
     /// <p>The container instance that was deregistered.</p>
+    #[doc(hidden)]
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
 impl DeregisterContainerInstanceOutput {
@@ -3066,6 +3132,7 @@ impl DeregisterContainerInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTaskSetOutput {
     /// <p>Details about the task set.</p>
+    #[doc(hidden)]
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl DeleteTaskSetOutput {
@@ -3120,6 +3187,7 @@ impl DeleteTaskSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceOutput {
     /// <p>The full description of the deleted service.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl DeleteServiceOutput {
@@ -3174,6 +3242,7 @@ impl DeleteServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>The full description of the deleted cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -3228,6 +3297,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCapacityProviderOutput {
     /// <p>The details of the capacity provider.</p>
+    #[doc(hidden)]
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
 }
 impl DeleteCapacityProviderOutput {
@@ -3285,6 +3355,7 @@ impl DeleteCapacityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttributesOutput {
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl DeleteAttributesOutput {
@@ -3348,6 +3419,7 @@ impl DeleteAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountSettingOutput {
     /// <p>The account setting for the specified principal ARN.</p>
+    #[doc(hidden)]
     pub setting: std::option::Option<crate::model::Setting>,
 }
 impl DeleteAccountSettingOutput {
@@ -3402,6 +3474,7 @@ impl DeleteAccountSettingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskSetOutput {
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
+    #[doc(hidden)]
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl CreateTaskSetOutput {
@@ -3459,6 +3532,7 @@ pub struct CreateServiceOutput {
     /// <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>
     /// <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>
     /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl CreateServiceOutput {
@@ -3522,6 +3596,7 @@ impl CreateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The full description of your new cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {
@@ -3576,6 +3651,7 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityProviderOutput {
     /// <p>The full description of the new capacity provider.</p>
+    #[doc(hidden)]
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
 }
 impl CreateCapacityProviderOutput {

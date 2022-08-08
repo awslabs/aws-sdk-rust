@@ -1896,12 +1896,16 @@ impl ListDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsInput {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
+    #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDetectorsInput {
@@ -1938,10 +1942,13 @@ impl std::fmt::Debug for ListDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmsInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmsInput {
@@ -1973,8 +1980,10 @@ impl std::fmt::Debug for ListAlarmsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorInput {
@@ -2001,8 +2010,10 @@ impl std::fmt::Debug for DescribeDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmInput {
@@ -2029,6 +2040,7 @@ impl std::fmt::Debug for DescribeAlarmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
+    #[doc(hidden)]
     pub detectors: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
 }
 impl BatchUpdateDetectorInput {
@@ -2050,6 +2062,7 @@ impl std::fmt::Debug for BatchUpdateDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
+    #[doc(hidden)]
     pub snooze_action_requests:
         std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
 }
@@ -2074,6 +2087,7 @@ impl std::fmt::Debug for BatchSnoozeAlarmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
+    #[doc(hidden)]
     pub reset_action_requests:
         std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
 }
@@ -2098,6 +2112,7 @@ impl std::fmt::Debug for BatchResetAlarmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageInput {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {
@@ -2119,6 +2134,7 @@ impl std::fmt::Debug for BatchPutMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
+    #[doc(hidden)]
     pub enable_action_requests:
         std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
 }
@@ -2143,6 +2159,7 @@ impl std::fmt::Debug for BatchEnableAlarmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
+    #[doc(hidden)]
     pub disable_action_requests:
         std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
 }
@@ -2167,6 +2184,7 @@ impl std::fmt::Debug for BatchDisableAlarmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDetectorInput {
     /// <p>The list of one or more detectors to be deleted.</p>
+    #[doc(hidden)]
     pub detectors: std::option::Option<std::vec::Vec<crate::model::DeleteDetectorRequest>>,
 }
 impl BatchDeleteDetectorInput {
@@ -2188,6 +2206,7 @@ impl std::fmt::Debug for BatchDeleteDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
+    #[doc(hidden)]
     pub acknowledge_action_requests:
         std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
 }

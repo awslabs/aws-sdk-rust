@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -69,6 +70,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -133,6 +135,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -197,6 +200,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -261,6 +265,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
@@ -325,6 +330,7 @@ impl ServiceQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -389,6 +395,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>The explanation of the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -460,6 +467,7 @@ pub struct UnprocessableEntityException {
     /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnprocessableEntityException {

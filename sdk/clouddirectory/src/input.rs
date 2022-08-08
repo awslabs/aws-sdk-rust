@@ -11404,12 +11404,16 @@ impl UpgradePublishedSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradePublishedSchemaInput {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
+    #[doc(hidden)]
     pub development_schema_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the published schema to be upgraded.</p>
+    #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl UpgradePublishedSchemaInput {
@@ -11446,10 +11450,13 @@ impl std::fmt::Debug for UpgradePublishedSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
+    #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl UpgradeAppliedSchemaInput {
@@ -11481,13 +11488,17 @@ impl std::fmt::Debug for UpgradeAppliedSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Attributes update structure.</p>
+    #[doc(hidden)]
     pub attribute_updates:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkFacetAttributeUpdate>>,
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateTypedLinkFacetInput {
@@ -11526,8 +11537,10 @@ impl std::fmt::Debug for UpdateTypedLinkFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaInput {
@@ -11554,10 +11567,13 @@ impl std::fmt::Debug for UpdateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The attributes update structure.</p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
 }
 impl UpdateObjectAttributesInput {
@@ -11589,10 +11605,13 @@ impl std::fmt::Debug for UpdateObjectAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
 }
 impl UpdateLinkAttributesInput {
@@ -11624,12 +11643,16 @@ impl std::fmt::Debug for UpdateLinkAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::FacetAttributeUpdate>>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+    #[doc(hidden)]
     pub object_type: std::option::Option<crate::model::ObjectType>,
 }
 impl UpdateFacetInput {
@@ -11666,8 +11689,10 @@ impl std::fmt::Debug for UpdateFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of the tag that need to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11694,8 +11719,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -11722,10 +11749,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFacetFromObjectInput {
     /// <p>The ARN of the directory in which the object resides.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>A reference to the object to remove the facet from.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl RemoveFacetFromObjectInput {
@@ -11757,8 +11787,10 @@ impl std::fmt::Debug for RemoveFacetFromObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSchemaFromJsonInput {
     /// <p>The ARN of the schema to update.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The replacement JSON schema.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl PutSchemaFromJsonInput {
@@ -11785,12 +11817,16 @@ impl std::fmt::Debug for PutSchemaFromJsonInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishSchemaInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub development_schema_arn: std::option::Option<std::string::String>,
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PublishSchemaInput {
@@ -11827,12 +11863,16 @@ impl std::fmt::Debug for PublishSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl LookupPolicyInput {
@@ -11869,10 +11909,13 @@ impl std::fmt::Debug for LookupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetNamesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTypedLinkFacetNamesInput {
@@ -11904,12 +11947,16 @@ impl std::fmt::Debug for ListTypedLinkFacetNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTypedLinkFacetAttributesInput {
@@ -11946,10 +11993,13 @@ impl std::fmt::Debug for ListTypedLinkFacetAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -11981,10 +12031,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishedSchemaArnsInput {
     /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPublishedSchemaArnsInput {
@@ -12016,14 +12069,19 @@ impl std::fmt::Debug for ListPublishedSchemaArnsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyAttachmentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListPolicyAttachmentsInput {
@@ -12065,19 +12123,26 @@ impl std::fmt::Debug for ListPolicyAttachmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutgoingTypedLinksInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    #[doc(hidden)]
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
+    #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The consistency level to execute the request at.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListOutgoingTypedLinksInput {
@@ -12133,14 +12198,19 @@ impl std::fmt::Debug for ListOutgoingTypedLinksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object for which policies will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListObjectPoliciesInput {
@@ -12182,16 +12252,22 @@ impl std::fmt::Debug for ListObjectPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object for which parent objects are being listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
+    #[doc(hidden)]
     pub include_all_links_to_each_parent: bool,
 }
 impl ListObjectParentsInput {
@@ -12241,12 +12317,16 @@ impl std::fmt::Debug for ListObjectParentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentPathsInput {
     /// <p>The ARN of the directory to which the parent path applies.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListObjectParentPathsInput {
@@ -12283,14 +12363,19 @@ impl std::fmt::Debug for ListObjectParentPathsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectChildrenInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object for which child objects are being listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListObjectChildrenInput {
@@ -12332,16 +12417,22 @@ impl std::fmt::Debug for ListObjectChildrenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+    #[doc(hidden)]
     pub facet_filter: std::option::Option<crate::model::SchemaFacet>,
 }
 impl ListObjectAttributesInput {
@@ -12388,10 +12479,13 @@ impl std::fmt::Debug for ListObjectAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedSchemaArnsInput {
     /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListManagedSchemaArnsInput {
@@ -12423,17 +12517,23 @@ impl std::fmt::Debug for ListManagedSchemaArnsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndexInput {
     /// <p>The ARN of the directory that the index exists in.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    #[doc(hidden)]
     pub ranges_on_indexed_values:
         std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The consistency level to execute the request at.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListIndexInput {
@@ -12482,19 +12582,26 @@ impl std::fmt::Debug for ListIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncomingTypedLinksInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    #[doc(hidden)]
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
+    #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The consistency level to execute the request at.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListIncomingTypedLinksInput {
@@ -12550,10 +12657,13 @@ impl std::fmt::Debug for ListIncomingTypedLinksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacetNamesInput {
     /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFacetNamesInput {
@@ -12585,12 +12695,16 @@ impl std::fmt::Debug for ListFacetNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacetAttributesInput {
     /// <p>The ARN of the schema where the facet resides.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet whose attributes will be retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFacetAttributesInput {
@@ -12627,10 +12741,13 @@ impl std::fmt::Debug for ListFacetAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDirectoriesInput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DirectoryState>,
 }
 impl ListDirectoriesInput {
@@ -12662,8 +12779,10 @@ impl std::fmt::Debug for ListDirectoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevelopmentSchemaArnsInput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDevelopmentSchemaArnsInput {
@@ -12690,14 +12809,19 @@ impl std::fmt::Debug for ListDevelopmentSchemaArnsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedIndicesInput {
     /// <p>The ARN of the directory.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the object that has indices attached.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The consistency level to use for this operation.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListAttachedIndicesInput {
@@ -12739,12 +12863,16 @@ impl std::fmt::Debug for ListAttachedIndicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppliedSchemaArnsInput {
     /// <p>The ARN of the directory you are listing.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppliedSchemaArnsInput {
@@ -12781,8 +12909,10 @@ impl std::fmt::Debug for ListAppliedSchemaArnsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypedLinkFacetInformationInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetTypedLinkFacetInformationInput {
@@ -12809,6 +12939,7 @@ impl std::fmt::Debug for GetTypedLinkFacetInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaAsJsonInput {
     /// <p>The ARN of the schema to retrieve.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl GetSchemaAsJsonInput {
@@ -12830,10 +12961,13 @@ impl std::fmt::Debug for GetSchemaAsJsonInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectInformationInput {
     /// <p>The ARN of the directory being retrieved.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The consistency level at which to retrieve the object information.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl GetObjectInformationInput {
@@ -12865,14 +12999,19 @@ impl std::fmt::Debug for GetObjectInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetObjectAttributesInput {
@@ -12914,12 +13053,16 @@ impl std::fmt::Debug for GetObjectAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl GetLinkAttributesInput {
@@ -12956,8 +13099,10 @@ impl std::fmt::Debug for GetLinkAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetFacetInput {
@@ -12984,6 +13129,7 @@ impl std::fmt::Debug for GetFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryInput {
     /// <p>The ARN of the directory.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl GetDirectoryInput {
@@ -13005,6 +13151,7 @@ impl std::fmt::Debug for GetDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppliedSchemaVersionInput {
     /// <p>The ARN of the applied schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl GetAppliedSchemaVersionInput {
@@ -13026,6 +13173,7 @@ impl std::fmt::Debug for GetAppliedSchemaVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl EnableDirectoryInput {
@@ -13047,6 +13195,7 @@ impl std::fmt::Debug for EnableDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDirectoryInput {
     /// <p>The ARN of the directory to disable.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DisableDirectoryInput {
@@ -13068,8 +13217,10 @@ impl std::fmt::Debug for DisableDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used to accept a typed link specifier as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl DetachTypedLinkInput {
@@ -13096,10 +13247,13 @@ impl std::fmt::Debug for DetachTypedLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DetachPolicyInput {
@@ -13131,10 +13285,13 @@ impl std::fmt::Debug for DetachPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The link name associated with the object that needs to be detached.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl DetachObjectInput {
@@ -13166,10 +13323,13 @@ impl std::fmt::Debug for DetachObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachFromIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the index object.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>A reference to the object being detached from the index.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DetachFromIndexInput {
@@ -13201,8 +13361,10 @@ impl std::fmt::Debug for DetachFromIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTypedLinkFacetInput {
@@ -13229,6 +13391,7 @@ impl std::fmt::Debug for DeleteTypedLinkFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaInput {
@@ -13250,8 +13413,10 @@ impl std::fmt::Debug for DeleteSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference that identifies the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DeleteObjectInput {
@@ -13278,8 +13443,10 @@ impl std::fmt::Debug for DeleteObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteFacetInput {
@@ -13306,6 +13473,7 @@ impl std::fmt::Debug for DeleteFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryInput {
     /// <p>The ARN of the directory to delete.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryInput {
@@ -13327,8 +13495,10 @@ impl std::fmt::Debug for DeleteDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    #[doc(hidden)]
     pub facet: std::option::Option<crate::model::TypedLinkFacet>,
 }
 impl CreateTypedLinkFacetInput {
@@ -13355,6 +13525,7 @@ impl std::fmt::Debug for CreateTypedLinkFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaInput {
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateSchemaInput {
@@ -13376,15 +13547,20 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
+    #[doc(hidden)]
     pub object_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of link that is used to attach this object to a parent.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl CreateObjectInput {
@@ -13428,15 +13604,20 @@ impl std::fmt::Debug for CreateObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIndexInput {
     /// <p>The ARN of the directory where the index should be created.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+    #[doc(hidden)]
     pub ordered_indexed_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    #[doc(hidden)]
     pub is_unique: bool,
     /// <p>A reference to the parent object that contains the index object.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link between the parent object and the index object.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl CreateIndexInput {
@@ -13483,10 +13664,13 @@ impl std::fmt::Debug for CreateIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFacetInput {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -13501,8 +13685,10 @@ pub struct CreateFacetInput {
     /// <ul>
     /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub object_type: std::option::Option<crate::model::ObjectType>,
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    #[doc(hidden)]
     pub facet_style: std::option::Option<crate::model::FacetStyle>,
 }
 impl CreateFacetInput {
@@ -13556,8 +13742,10 @@ impl std::fmt::Debug for CreateFacetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryInput {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateDirectoryInput {
@@ -13584,8 +13772,10 @@ impl std::fmt::Debug for CreateDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperation>>,
 }
 impl BatchWriteInput {
@@ -13612,10 +13802,13 @@ impl std::fmt::Debug for BatchWriteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::BatchReadOperation>>,
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    #[doc(hidden)]
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl BatchReadInput {
@@ -13647,14 +13840,19 @@ impl std::fmt::Debug for BatchReadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub source_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub target_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    #[doc(hidden)]
     pub typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
 impl AttachTypedLinkInput {
@@ -13698,10 +13896,13 @@ impl std::fmt::Debug for AttachTypedLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachToIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the index that you are attaching the object to.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AttachToIndexInput {
@@ -13733,10 +13934,13 @@ impl std::fmt::Debug for AttachToIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that is associated with the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AttachPolicyInput {
@@ -13768,12 +13972,16 @@ impl std::fmt::Debug for AttachPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachObjectInput {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The parent object reference.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The child object reference to be attached to the object.</p>
+    #[doc(hidden)]
     pub child_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The link name with which the child object is attached to the parent.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl AttachObjectInput {
@@ -13810,8 +14018,10 @@ impl std::fmt::Debug for AttachObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySchemaInput {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl ApplySchemaInput {
@@ -13838,13 +14048,17 @@ impl std::fmt::Debug for ApplySchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFacetToObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>Attributes on the facet that you are adding to the object.</p>
+    #[doc(hidden)]
     pub object_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>A reference to the object you are adding the specified facet to.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AddFacetToObjectInput {

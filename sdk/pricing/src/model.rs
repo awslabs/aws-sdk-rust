@@ -6,12 +6,15 @@
 pub struct Filter {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FilterType>,
     /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
+    #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
     /// <p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -160,6 +163,7 @@ impl AsRef<str> for FilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AttributeValue {
@@ -212,8 +216,10 @@ impl AttributeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The code for the Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The attributes that are available for this service.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Service {

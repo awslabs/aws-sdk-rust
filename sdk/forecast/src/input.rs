@@ -9261,8 +9261,10 @@ impl UpdateDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetGroupInput {
     /// <p>The ARN of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateDatasetGroupInput {
@@ -9289,8 +9291,10 @@ impl std::fmt::Debug for UpdateDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9317,6 +9321,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -9329,6 +9334,7 @@ pub struct TagResourceInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -9365,6 +9371,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl StopResourceInput {
@@ -9386,6 +9393,7 @@ impl std::fmt::Debug for StopResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ResumeResourceInput {
@@ -9407,6 +9415,7 @@ impl std::fmt::Debug for ResumeResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9428,8 +9437,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9440,6 +9451,7 @@ pub struct ListPredictorsInput {
     /// </ul>
     /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListPredictorsInput {
@@ -9479,8 +9491,10 @@ impl std::fmt::Debug for ListPredictorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorBacktestExportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9489,6 +9503,7 @@ pub struct ListPredictorBacktestExportJobsInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListPredictorBacktestExportJobsInput {
@@ -9526,8 +9541,10 @@ impl std::fmt::Debug for ListPredictorBacktestExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitorsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of monitors to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9538,6 +9555,7 @@ pub struct ListMonitorsInput {
     /// </ul>
     /// <p>For example, to list all monitors who's status is ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListMonitorsInput {
@@ -9577,10 +9595,13 @@ impl std::fmt::Debug for ListMonitorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitorEvaluationsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of monitoring results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9591,6 +9612,7 @@ pub struct ListMonitorEvaluationsInput {
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListMonitorEvaluationsInput {
@@ -9635,8 +9657,10 @@ impl std::fmt::Debug for ListMonitorEvaluationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9647,6 +9671,7 @@ pub struct ListForecastsInput {
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListForecastsInput {
@@ -9686,8 +9711,10 @@ impl std::fmt::Debug for ListForecastsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastExportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9701,6 +9728,7 @@ pub struct ListForecastExportJobsInput {
     /// <acct-id>
     /// :forecast/electricityforecast" } ]
     /// </acct-id></code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListForecastExportJobsInput {
@@ -9743,8 +9771,10 @@ impl std::fmt::Debug for ListForecastExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilityExportsInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9753,6 +9783,7 @@ pub struct ListExplainabilityExportsInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListExplainabilityExportsInput {
@@ -9790,8 +9821,10 @@ impl std::fmt::Debug for ListExplainabilityExportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilitiesInput {
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items returned in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9800,6 +9833,7 @@ pub struct ListExplainabilitiesInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListExplainabilitiesInput {
@@ -9837,8 +9871,10 @@ impl std::fmt::Debug for ListExplainabilitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
@@ -9865,8 +9901,10 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p> <b>Filter properties</b> </p>
@@ -9877,6 +9915,7 @@ pub struct ListDatasetImportJobsInput {
     /// </ul>
     /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListDatasetImportJobsInput {
@@ -9916,8 +9955,10 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetGroupsInput {
@@ -9944,6 +9985,7 @@ impl std::fmt::Debug for ListDatasetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl GetAccuracyMetricsInput {
@@ -9965,6 +10007,7 @@ impl std::fmt::Debug for GetAccuracyMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribePredictorBacktestExportJobInput {
@@ -9989,6 +10032,7 @@ impl std::fmt::Debug for DescribePredictorBacktestExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DescribePredictorInput {
@@ -10010,6 +10054,7 @@ impl std::fmt::Debug for DescribePredictorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMonitorInput {
@@ -10031,6 +10076,7 @@ impl std::fmt::Debug for DescribeMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeForecastExportJobInput {
@@ -10052,6 +10098,7 @@ impl std::fmt::Debug for DescribeForecastExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
 }
 impl DescribeForecastInput {
@@ -10073,6 +10120,7 @@ impl std::fmt::Debug for DescribeForecastInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExplainabilityExportInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_export_arn: std::option::Option<std::string::String>,
 }
 impl DescribeExplainabilityExportInput {
@@ -10094,6 +10142,7 @@ impl std::fmt::Debug for DescribeExplainabilityExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
 }
 impl DescribeExplainabilityInput {
@@ -10115,6 +10164,7 @@ impl std::fmt::Debug for DescribeExplainabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetImportJobInput {
@@ -10136,6 +10186,7 @@ impl std::fmt::Debug for DescribeDatasetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetGroupInput {
@@ -10157,6 +10208,7 @@ impl std::fmt::Debug for DescribeDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -10178,6 +10230,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoPredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoPredictorInput {
@@ -10199,6 +10252,7 @@ impl std::fmt::Debug for DescribeAutoPredictorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceTreeInput {
     /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourceTreeInput {
@@ -10220,6 +10274,7 @@ impl std::fmt::Debug for DeleteResourceTreeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DeletePredictorBacktestExportJobInput {
@@ -10244,6 +10299,7 @@ impl std::fmt::Debug for DeletePredictorBacktestExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DeletePredictorInput {
@@ -10265,6 +10321,7 @@ impl std::fmt::Debug for DeletePredictorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteMonitorInput {
@@ -10286,6 +10343,7 @@ impl std::fmt::Debug for DeleteMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DeleteForecastExportJobInput {
@@ -10307,6 +10365,7 @@ impl std::fmt::Debug for DeleteForecastExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
 }
 impl DeleteForecastInput {
@@ -10328,6 +10387,7 @@ impl std::fmt::Debug for DeleteForecastInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExplainabilityExportInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    #[doc(hidden)]
     pub explainability_export_arn: std::option::Option<std::string::String>,
 }
 impl DeleteExplainabilityExportInput {
@@ -10349,6 +10409,7 @@ impl std::fmt::Debug for DeleteExplainabilityExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
 }
 impl DeleteExplainabilityInput {
@@ -10370,6 +10431,7 @@ impl std::fmt::Debug for DeleteExplainabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetImportJobInput {
@@ -10391,6 +10453,7 @@ impl std::fmt::Debug for DeleteDatasetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetGroupInput {
@@ -10412,6 +10475,7 @@ impl std::fmt::Debug for DeleteDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -10433,10 +10497,13 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorBacktestExportJobInput {
     /// <p>The name for the backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -10448,8 +10515,10 @@ pub struct CreatePredictorBacktestExportJobInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl CreatePredictorBacktestExportJobInput {
@@ -10503,6 +10572,7 @@ impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorInput {
     /// <p>A name for the predictor.</p>
+    #[doc(hidden)]
     pub predictor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
     /// <p class="title"> <b>Supported algorithms:</b> </p>
@@ -10514,23 +10584,28 @@ pub struct CreatePredictorInput {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
     /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+    #[doc(hidden)]
     pub forecast_horizon: std::option::Option<i32>,
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
     /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
     /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
+    #[doc(hidden)]
     pub perform_auto_ml: std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    #[doc(hidden)]
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
     /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
@@ -10540,20 +10615,27 @@ pub struct CreatePredictorInput {
     /// <li> <p>DeepAR+</p> </li>
     /// <li> <p>CNN-QR</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub perform_hpo: std::option::Option<bool>,
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
+    #[doc(hidden)]
     pub training_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
+    #[doc(hidden)]
     pub evaluation_parameters: std::option::Option<crate::model::EvaluationParameters>,
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
+    #[doc(hidden)]
     pub hpo_config: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The featurization configuration.</p>
+    #[doc(hidden)]
     pub featurization_config: std::option::Option<crate::model::FeaturizationConfig>,
     /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -10566,8 +10648,10 @@ pub struct CreatePredictorInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
+    #[doc(hidden)]
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
 impl CreatePredictorInput {
@@ -10702,10 +10786,13 @@ impl std::fmt::Debug for CreatePredictorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitorInput {
     /// <p>The name of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMonitorInput {
@@ -10737,11 +10824,14 @@ impl std::fmt::Debug for CreateMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastExportJobInput {
     /// <p>The name for the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -10754,8 +10844,10 @@ pub struct CreateForecastExportJobInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl CreateForecastExportJobInput {
@@ -10808,11 +10900,14 @@ impl std::fmt::Debug for CreateForecastExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastInput {
     /// <p>A name for the forecast.</p>
+    #[doc(hidden)]
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -10825,6 +10920,7 @@ pub struct CreateForecastInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -10833,6 +10929,7 @@ pub struct CreateForecastInput {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
 }
 impl CreateForecastInput {
@@ -10891,10 +10988,13 @@ impl std::fmt::Debug for CreateForecastInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExplainabilityExportInput {
     /// <p>A unique name for the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_export_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -10906,8 +11006,10 @@ pub struct CreateExplainabilityExportInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl CreateExplainabilityExportInput {
@@ -10961,22 +11063,30 @@ impl std::fmt::Debug for CreateExplainabilityExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExplainabilityInput {
     /// <p>A unique name for the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
     /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>Create an Explainability visualization that is viewable within the AWS console.</p>
+    #[doc(hidden)]
     pub enable_visualization: std::option::Option<bool>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<std::string::String>,
     /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -10988,6 +11098,7 @@ pub struct CreateExplainabilityInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateExplainabilityInput {
@@ -11062,11 +11173,14 @@ impl std::fmt::Debug for CreateExplainabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
+    #[doc(hidden)]
     pub dataset_import_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
@@ -11074,17 +11188,21 @@ pub struct CreateDatasetImportJobInput {
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
+    #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
     /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
     /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
+    #[doc(hidden)]
     pub use_geolocation_for_time_zone: bool,
     /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
     /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
     /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub geolocation_format: std::option::Option<std::string::String>,
     /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -11097,8 +11215,10 @@ pub struct CreateDatasetImportJobInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl CreateDatasetImportJobInput {
@@ -11184,11 +11304,14 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetGroupInput {
     /// <p>A name for the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation must match.</p>
     /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -11201,6 +11324,7 @@ pub struct CreateDatasetGroupInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetGroupInput {
@@ -11248,18 +11372,24 @@ impl std::fmt::Debug for CreateDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>A name for the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation must match.</p>
     /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
+    #[doc(hidden)]
     pub data_frequency: std::option::Option<std::string::String>,
     /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and Dataset Types</a>.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -11272,6 +11402,7 @@ pub struct CreateDatasetInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetInput {
@@ -11335,31 +11466,41 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoPredictorInput {
     /// <p>A unique name for the predictor</p>
+    #[doc(hidden)]
     pub predictor_name: std::option::Option<std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
     /// <p>If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.</p>
+    #[doc(hidden)]
     pub forecast_horizon: std::option::Option<i32>,
     /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+    #[doc(hidden)]
     pub forecast_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+    #[doc(hidden)]
     pub forecast_frequency: std::option::Option<std::string::String>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
+    #[doc(hidden)]
     pub data_config: std::option::Option<crate::model::DataConfig>,
     /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
     /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
+    #[doc(hidden)]
     pub reference_predictor_arn: std::option::Option<std::string::String>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
+    #[doc(hidden)]
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
     /// <p>Create an Explainability resource for the predictor.</p>
+    #[doc(hidden)]
     pub explain_predictor: std::option::Option<bool>,
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -11371,11 +11512,14 @@ pub struct CreateAutoPredictorInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
     /// <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
+    #[doc(hidden)]
     pub monitor_config: std::option::Option<crate::model::MonitorConfig>,
     /// <p>The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>.</p>
+    #[doc(hidden)]
     pub time_alignment_boundary: std::option::Option<crate::model::TimeAlignmentBoundary>,
 }
 impl CreateAutoPredictorInput {

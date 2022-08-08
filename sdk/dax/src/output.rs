@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubnetGroupOutput {
     /// <p>The subnet group that has been modified.</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl UpdateSubnetGroupOutput {
@@ -61,6 +62,7 @@ impl UpdateSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParameterGroupOutput {
     /// <p>The parameter group that has been modified.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl UpdateParameterGroupOutput {
@@ -118,6 +120,7 @@ impl UpdateParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterOutput {
     /// <p>A description of the DAX cluster, after it has been modified.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl UpdateClusterOutput {
@@ -172,6 +175,7 @@ impl UpdateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>The tag keys that have been removed from the cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UntagResourceOutput {
@@ -233,6 +237,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>The list of tags that are associated with the DAX resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceOutput {
@@ -294,6 +299,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootNodeOutput {
     /// <p>A description of the DAX cluster after a node has been rebooted.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl RebootNodeOutput {
@@ -348,8 +354,10 @@ impl RebootNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>A list of tags currently associated with the DAX cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -430,6 +438,7 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl IncreaseReplicationFactorOutput {
@@ -484,8 +493,10 @@ impl IncreaseReplicationFactorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
+    #[doc(hidden)]
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
 }
 impl DescribeSubnetGroupsOutput {
@@ -566,8 +577,10 @@ impl DescribeSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl DescribeParametersOutput {
@@ -648,8 +661,10 @@ impl DescribeParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
+    #[doc(hidden)]
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
 }
 impl DescribeParameterGroupsOutput {
@@ -731,8 +746,10 @@ impl DescribeParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of events. Each element in the array represents one event.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -813,8 +830,10 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameters. Each element in the list represents one parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl DescribeDefaultParametersOutput {
@@ -895,8 +914,10 @@ impl DescribeDefaultParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
 impl DescribeClustersOutput {
@@ -977,6 +998,7 @@ impl DescribeClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
+    #[doc(hidden)]
     pub deletion_message: std::option::Option<std::string::String>,
 }
 impl DeleteSubnetGroupOutput {
@@ -1034,6 +1056,7 @@ impl DeleteSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
+    #[doc(hidden)]
     pub deletion_message: std::option::Option<std::string::String>,
 }
 impl DeleteParameterGroupOutput {
@@ -1091,6 +1114,7 @@ impl DeleteParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>A description of the DAX cluster that is being deleted.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -1145,6 +1169,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DecreaseReplicationFactorOutput {
@@ -1199,6 +1224,7 @@ impl DecreaseReplicationFactorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetGroupOutput {
     /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl CreateSubnetGroupOutput {
@@ -1256,6 +1282,7 @@ impl CreateSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupOutput {
     /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl CreateParameterGroupOutput {
@@ -1313,6 +1340,7 @@ impl CreateParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>A description of the DAX cluster that you have created.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {

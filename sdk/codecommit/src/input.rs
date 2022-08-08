@@ -14348,8 +14348,10 @@ impl UpdateRepositoryNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
+    #[doc(hidden)]
     pub old_name: std::option::Option<std::string::String>,
     /// <p>The new name for the repository.</p>
+    #[doc(hidden)]
     pub new_name: std::option::Option<std::string::String>,
 }
 impl UpdateRepositoryNameInput {
@@ -14376,8 +14378,10 @@ impl std::fmt::Debug for UpdateRepositoryNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRepositoryDescriptionInput {
     /// <p>The name of the repository to set or change the comment or description for.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
+    #[doc(hidden)]
     pub repository_description: std::option::Option<std::string::String>,
 }
 impl UpdateRepositoryDescriptionInput {
@@ -14404,8 +14408,10 @@ impl std::fmt::Debug for UpdateRepositoryDescriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestTitleInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
 }
 impl UpdatePullRequestTitleInput {
@@ -14432,8 +14438,10 @@ impl std::fmt::Debug for UpdatePullRequestTitleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestStatusInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+    #[doc(hidden)]
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
 }
 impl UpdatePullRequestStatusInput {
@@ -14460,8 +14468,10 @@ impl std::fmt::Debug for UpdatePullRequestStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestDescriptionInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdatePullRequestDescriptionInput {
@@ -14488,10 +14498,13 @@ impl std::fmt::Debug for UpdatePullRequestDescriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestApprovalStateInput {
     /// <p>The system-generated ID of the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The approval state to associate with the user on the pull request.</p>
+    #[doc(hidden)]
     pub approval_state: std::option::Option<crate::model::ApprovalState>,
 }
 impl UpdatePullRequestApprovalStateInput {
@@ -14523,10 +14536,13 @@ impl std::fmt::Debug for UpdatePullRequestApprovalStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePullRequestApprovalRuleContentInput {
     /// <p>The system-generated ID of the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the approval rule you want to update.</p>
+    #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    #[doc(hidden)]
     pub existing_rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The updated content for the approval rule.</p> <note>
     /// <p>When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
@@ -14540,6 +14556,7 @@ pub struct UpdatePullRequestApprovalRuleContentInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub new_rule_content: std::option::Option<std::string::String>,
 }
 impl UpdatePullRequestApprovalRuleContentInput {
@@ -14590,8 +14607,10 @@ impl std::fmt::Debug for UpdatePullRequestApprovalRuleContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDefaultBranchInput {
     /// <p>The name of the repository to set or change the default branch for.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch to set as the default.</p>
+    #[doc(hidden)]
     pub default_branch_name: std::option::Option<std::string::String>,
 }
 impl UpdateDefaultBranchInput {
@@ -14618,8 +14637,10 @@ impl std::fmt::Debug for UpdateDefaultBranchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCommentInput {
     /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>The updated content to replace the existing content of the comment.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl UpdateCommentInput {
@@ -14646,8 +14667,10 @@ impl std::fmt::Debug for UpdateCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateNameInput {
     /// <p>The current name of the approval rule template.</p>
+    #[doc(hidden)]
     pub old_approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The new name you want to apply to the approval rule template.</p>
+    #[doc(hidden)]
     pub new_approval_rule_template_name: std::option::Option<std::string::String>,
 }
 impl UpdateApprovalRuleTemplateNameInput {
@@ -14680,8 +14703,10 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateDescriptionInput {
     /// <p>The name of the template for which you want to update the description.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The updated description of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_description: std::option::Option<std::string::String>,
 }
 impl UpdateApprovalRuleTemplateDescriptionInput {
@@ -14714,10 +14739,13 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateDescriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApprovalRuleTemplateContentInput {
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+    #[doc(hidden)]
     pub new_rule_content: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    #[doc(hidden)]
     pub existing_rule_content_sha256: std::option::Option<std::string::String>,
 }
 impl UpdateApprovalRuleTemplateContentInput {
@@ -14755,8 +14783,10 @@ impl std::fmt::Debug for UpdateApprovalRuleTemplateContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -14783,8 +14813,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRepositoryTriggersInput {
     /// <p>The name of the repository in which to test the triggers.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The list of triggers to test.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
 }
 impl TestRepositoryTriggersInput {
@@ -14811,8 +14843,10 @@ impl std::fmt::Debug for TestRepositoryTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair to use when tagging this repository.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14843,8 +14877,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryTriggersInput {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON block of configuration information for each trigger.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
 }
 impl PutRepositoryTriggersInput {
@@ -14871,25 +14907,34 @@ impl std::fmt::Debug for PutRepositoryTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileInput {
     /// <p>The name of the repository where you want to add or update the file.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The content of the file, in binary object format. </p>
+    #[doc(hidden)]
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
+    #[doc(hidden)]
     pub parent_commit_id: std::option::Option<std::string::String>,
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An email address for the person adding or updating the file.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl PutFileInput {
@@ -14954,8 +14999,10 @@ impl std::fmt::Debug for PutFileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCommentReactionInput {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+    #[doc(hidden)]
     pub reaction_value: std::option::Option<std::string::String>,
 }
 impl PutCommentReactionInput {
@@ -14982,10 +15029,13 @@ impl std::fmt::Debug for PutCommentReactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentReplyInput {
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    #[doc(hidden)]
     pub in_reply_to: std::option::Option<std::string::String>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The contents of your reply to a comment.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl PostCommentReplyInput {
@@ -15017,18 +15067,25 @@ impl std::fmt::Debug for PostCommentReplyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentForPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The content of your comment on the change.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl PostCommentForPullRequestInput {
@@ -15080,16 +15137,22 @@ impl std::fmt::Debug for PostCommentForPullRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostCommentForComparedCommitInput {
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The location of the comparison where you want to comment.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The content of the comment you want to make.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl PostCommentForComparedCommitInput {
@@ -15136,10 +15199,13 @@ impl std::fmt::Debug for PostCommentForComparedCommitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverridePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+    #[doc(hidden)]
     pub override_status: std::option::Option<crate::model::OverrideStatus>,
 }
 impl OverridePullRequestApprovalRulesInput {
@@ -15171,25 +15237,35 @@ impl std::fmt::Debug for OverridePullRequestApprovalRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestByThreeWayInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>The commit message to include in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl MergePullRequestByThreeWayInput {
@@ -15263,25 +15339,35 @@ impl std::fmt::Debug for MergePullRequestByThreeWayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestBySquashInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>The commit message to include in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl MergePullRequestBySquashInput {
@@ -15355,10 +15441,13 @@ impl std::fmt::Debug for MergePullRequestBySquashInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergePullRequestByFastForwardInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
 }
 impl MergePullRequestByFastForwardInput {
@@ -15390,27 +15479,38 @@ impl std::fmt::Debug for MergePullRequestByFastForwardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesByThreeWayInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch where the merge is applied. </p>
+    #[doc(hidden)]
     pub target_branch: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The commit message to include in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl MergeBranchesByThreeWayInput {
@@ -15492,27 +15592,38 @@ impl std::fmt::Debug for MergeBranchesByThreeWayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesBySquashInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch where the merge is applied. </p>
+    #[doc(hidden)]
     pub target_branch: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The commit message for the merge.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl MergeBranchesBySquashInput {
@@ -15594,12 +15705,16 @@ impl std::fmt::Debug for MergeBranchesBySquashInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeBranchesByFastForwardInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch where the merge is applied.</p>
+    #[doc(hidden)]
     pub target_branch: std::option::Option<std::string::String>,
 }
 impl MergeBranchesByFastForwardInput {
@@ -15639,8 +15754,10 @@ impl std::fmt::Debug for MergeBranchesByFastForwardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -15667,10 +15784,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesForApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRepositoriesForApprovalRuleTemplateInput {
@@ -15705,10 +15825,13 @@ impl std::fmt::Debug for ListRepositoriesForApprovalRuleTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInput {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria used to sort the results of a list repositories operation.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortByEnum>,
     /// <p>The order in which to sort the results of a list repositories operation.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::OrderEnum>,
 }
 impl ListRepositoriesInput {
@@ -15740,14 +15863,19 @@ impl std::fmt::Debug for ListRepositoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPullRequestsInput {
     /// <p>The name of the repository for which you want to list pull requests.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
+    #[doc(hidden)]
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
+    #[doc(hidden)]
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPullRequestsInput {
@@ -15789,8 +15917,10 @@ impl std::fmt::Debug for ListPullRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBranchesInput {
     /// <p>The name of the repository that contains the branches.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An enumeration token that allows the operation to batch the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBranchesInput {
@@ -15817,10 +15947,13 @@ impl std::fmt::Debug for ListBranchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
@@ -15852,8 +15985,10 @@ impl std::fmt::Debug for ListAssociatedApprovalRuleTemplatesForRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApprovalRuleTemplatesInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApprovalRuleTemplatesInput {
@@ -15880,6 +16015,7 @@ impl std::fmt::Debug for ListApprovalRuleTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryTriggersInput {
     /// <p>The name of the repository for which the trigger is configured.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryTriggersInput {
@@ -15901,6 +16037,7 @@ impl std::fmt::Debug for GetRepositoryTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryInput {
     /// <p>The name of the repository to get information about.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryInput {
@@ -15922,8 +16059,10 @@ impl std::fmt::Debug for GetRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestOverrideStateInput {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetPullRequestOverrideStateInput {
@@ -15950,8 +16089,10 @@ impl std::fmt::Debug for GetPullRequestOverrideStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestApprovalStatesInput {
     /// <p>The system-generated ID for the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID for the pull request revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetPullRequestApprovalStatesInput {
@@ -15978,6 +16119,7 @@ impl std::fmt::Debug for GetPullRequestApprovalStatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
 }
 impl GetPullRequestInput {
@@ -15999,14 +16141,19 @@ impl std::fmt::Debug for GetPullRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeOptionsInput {
     /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
 }
@@ -16059,21 +16206,29 @@ impl std::fmt::Debug for GetMergeOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeConflictsInput {
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code. </p>
+    #[doc(hidden)]
     pub merge_option: std::option::Option<crate::model::MergeOptionTypeEnum>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>The maximum number of files to include in the output.</p>
+    #[doc(hidden)]
     pub max_conflict_files: std::option::Option<i32>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMergeConflictsInput {
@@ -16140,14 +16295,19 @@ impl std::fmt::Debug for GetMergeConflictsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMergeCommitInput {
     /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
 }
@@ -16200,10 +16360,13 @@ impl std::fmt::Debug for GetMergeCommitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderInput {
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
+    #[doc(hidden)]
     pub commit_specifier: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
+    #[doc(hidden)]
     pub folder_path: std::option::Option<std::string::String>,
 }
 impl GetFolderInput {
@@ -16235,10 +16398,13 @@ impl std::fmt::Debug for GetFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileInput {
     /// <p>The name of the repository that contains the file.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    #[doc(hidden)]
     pub commit_specifier: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
 }
 impl GetFileInput {
@@ -16270,18 +16436,25 @@ impl std::fmt::Debug for GetFileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDifferencesInput {
     /// <p>The name of the repository where you want to get differences.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
+    #[doc(hidden)]
     pub before_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
+    #[doc(hidden)]
     pub after_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
+    #[doc(hidden)]
     pub before_path: std::option::Option<std::string::String>,
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
+    #[doc(hidden)]
     pub after_path: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDifferencesInput {
@@ -16333,8 +16506,10 @@ impl std::fmt::Debug for GetDifferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommitInput {
     /// <p>The name of the repository to which the commit was made.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
 }
 impl GetCommitInput {
@@ -16361,16 +16536,22 @@ impl std::fmt::Debug for GetCommitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentsForPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the pull request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCommentsForPullRequestInput {
@@ -16417,14 +16598,19 @@ impl std::fmt::Debug for GetCommentsForPullRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentsForComparedCommitInput {
     /// <p>The name of the repository where you want to compare commits.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCommentsForComparedCommitInput {
@@ -16466,12 +16652,16 @@ impl std::fmt::Debug for GetCommentsForComparedCommitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentReactionsInput {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
+    #[doc(hidden)]
     pub reaction_user_arn: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCommentReactionsInput {
@@ -16508,6 +16698,7 @@ impl std::fmt::Debug for GetCommentReactionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
 }
 impl GetCommentInput {
@@ -16529,8 +16720,10 @@ impl std::fmt::Debug for GetCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBranchInput {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch for which you want to retrieve information.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl GetBranchInput {
@@ -16557,8 +16750,10 @@ impl std::fmt::Debug for GetBranchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlobInput {
     /// <p>The name of the repository that contains the blob.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
 }
 impl GetBlobInput {
@@ -16585,6 +16780,7 @@ impl std::fmt::Debug for GetBlobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to get information.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
 }
 impl GetApprovalRuleTemplateInput {
@@ -16609,8 +16805,10 @@ impl std::fmt::Debug for GetApprovalRuleTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatePullRequestApprovalRulesInput {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl EvaluatePullRequestApprovalRulesInput {
@@ -16637,8 +16835,10 @@ impl std::fmt::Debug for EvaluatePullRequestApprovalRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryInput {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The name of the repository you want to disassociate from the template.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryInput {
@@ -16668,14 +16868,19 @@ impl std::fmt::Debug for DisassociateApprovalRuleTemplateFromRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePullRequestEventsInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>Optional. The pull request event type about which you want to return information.</p>
+    #[doc(hidden)]
     pub pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+    #[doc(hidden)]
     pub actor_arn: std::option::Option<std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribePullRequestEventsInput {
@@ -16719,23 +16924,32 @@ impl std::fmt::Debug for DescribePullRequestEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMergeConflictsInput {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code.</p>
+    #[doc(hidden)]
     pub merge_option: std::option::Option<crate::model::MergeOptionTypeEnum>,
     /// <p>The maximum number of merge hunks to include in the output.</p>
+    #[doc(hidden)]
     pub max_merge_hunks: std::option::Option<i32>,
     /// <p>The path of the target files used to describe the conflicts. </p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMergeConflictsInput {
@@ -16807,6 +17021,7 @@ impl std::fmt::Debug for DescribeMergeConflictsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryInput {
@@ -16828,8 +17043,10 @@ impl std::fmt::Debug for DeleteRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the approval rule you want to delete.</p>
+    #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
 }
 impl DeletePullRequestApprovalRuleInput {
@@ -16856,20 +17073,28 @@ impl std::fmt::Debug for DeletePullRequestApprovalRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileInput {
     /// <p>The name of the repository that contains the file to delete.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
+    #[doc(hidden)]
     pub parent_commit_id: std::option::Option<std::string::String>,
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl DeleteFileInput {
@@ -16926,6 +17151,7 @@ impl std::fmt::Debug for DeleteFileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCommentContentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
 }
 impl DeleteCommentContentInput {
@@ -16947,8 +17173,10 @@ impl std::fmt::Debug for DeleteCommentContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBranchInput {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch to delete.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl DeleteBranchInput {
@@ -16975,6 +17203,7 @@ impl std::fmt::Debug for DeleteBranchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template to delete.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
 }
 impl DeleteApprovalRuleTemplateInput {
@@ -16999,27 +17228,38 @@ impl std::fmt::Debug for DeleteApprovalRuleTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUnreferencedMergeCommitInput {
     /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code.</p>
+    #[doc(hidden)]
     pub merge_option: std::option::Option<crate::model::MergeOptionTypeEnum>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address for the person who created the unreferenced commit.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The commit message for the unreferenced commit.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl CreateUnreferencedMergeCommitInput {
@@ -17103,12 +17343,15 @@ pub struct CreateRepositoryInput {
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
     /// </note>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>A comment or description about the new repository.</p> <note>
     /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
+    #[doc(hidden)]
     pub repository_description: std::option::Option<std::string::String>,
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -17148,8 +17391,10 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name for the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
     /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
     /// <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
@@ -17163,6 +17408,7 @@ pub struct CreatePullRequestApprovalRuleInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub approval_rule_content: std::option::Option<std::string::String>,
 }
 impl CreatePullRequestApprovalRuleInput {
@@ -17205,14 +17451,18 @@ impl std::fmt::Debug for CreatePullRequestApprovalRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePullRequestInput {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>A description of the pull request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreatePullRequestInput {
@@ -17251,24 +17501,34 @@ impl std::fmt::Debug for CreatePullRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCommitInput {
     /// <p>The name of the repository where you create the commit.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch where you create the commit.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
+    #[doc(hidden)]
     pub parent_commit_id: std::option::Option<std::string::String>,
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    #[doc(hidden)]
     pub author_name: std::option::Option<std::string::String>,
     /// <p>The email address of the person who created the commit.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
+    #[doc(hidden)]
     pub keep_empty_folders: bool,
     /// <p>The files to add or update in this commit.</p>
+    #[doc(hidden)]
     pub put_files: std::option::Option<std::vec::Vec<crate::model::PutFileEntry>>,
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
+    #[doc(hidden)]
     pub delete_files: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>,
     /// <p>The file modes to update for files in this commit.</p>
+    #[doc(hidden)]
     pub set_file_modes: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
 }
 impl CreateCommitInput {
@@ -17335,10 +17595,13 @@ impl std::fmt::Debug for CreateCommitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBranchInput {
     /// <p>The name of the repository in which you want to create the new branch.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the new branch to create.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The ID of the commit to point the new branch to.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
 }
 impl CreateBranchInput {
@@ -17370,6 +17633,7 @@ impl std::fmt::Debug for CreateBranchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p> <note>
     /// <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>
@@ -17383,8 +17647,10 @@ pub struct CreateApprovalRuleTemplateInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub approval_rule_template_content: std::option::Option<std::string::String>,
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
+    #[doc(hidden)]
     pub approval_rule_template_description: std::option::Option<std::string::String>,
 }
 impl CreateApprovalRuleTemplateInput {
@@ -17438,6 +17704,7 @@ pub struct BatchGetRepositoriesInput {
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
+    #[doc(hidden)]
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetRepositoriesInput {
@@ -17463,8 +17730,10 @@ pub struct BatchGetCommitsInput {
     /// <p>The full commit IDs of the commits to get information about.</p> <note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
+    #[doc(hidden)]
     pub commit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the repository that contains the commits.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl BatchGetCommitsInput {
@@ -17493,10 +17762,12 @@ impl std::fmt::Debug for BatchGetCommitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
+    #[doc(hidden)]
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
@@ -17529,25 +17800,35 @@ impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesIn
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeMergeConflictsInput {
     /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub destination_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    #[doc(hidden)]
     pub source_commit_specifier: std::option::Option<std::string::String>,
     /// <p>The merge option or strategy you want to use to merge the code.</p>
+    #[doc(hidden)]
     pub merge_option: std::option::Option<crate::model::MergeOptionTypeEnum>,
     /// <p>The maximum number of merge hunks to include in the output.</p>
+    #[doc(hidden)]
     pub max_merge_hunks: std::option::Option<i32>,
     /// <p>The maximum number of files to include in the output.</p>
+    #[doc(hidden)]
     pub max_conflict_files: std::option::Option<i32>,
     /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
+    #[doc(hidden)]
     pub file_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    #[doc(hidden)]
     pub conflict_detail_level: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    #[doc(hidden)]
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchDescribeMergeConflictsInput {
@@ -17624,10 +17905,12 @@ impl std::fmt::Debug for BatchDescribeMergeConflictsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     /// <p>The name of the template you want to associate with one or more repositories.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
+    #[doc(hidden)]
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
@@ -17660,8 +17943,10 @@ impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesInput
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name for the approval rule template. </p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The name of the repository that you want to associate with the template.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInput {

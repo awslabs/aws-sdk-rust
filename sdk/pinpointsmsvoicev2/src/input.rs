@@ -7815,18 +7815,25 @@ impl UpdatePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: std::option::Option<bool>,
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    #[doc(hidden)]
     pub shared_routes_enabled: std::option::Option<bool>,
     /// <p>When set to true the pool can't be deleted.</p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdatePoolInput {
@@ -7884,16 +7891,22 @@ impl std::fmt::Debug for UpdatePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: std::option::Option<bool>,
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: std::option::Option<bool>,
 }
 impl UpdatePhoneNumberInput {
@@ -7946,18 +7959,25 @@ impl std::fmt::Debug for UpdatePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name to use for the event destination.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>When set to true logging is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>An array of event types that determine which events to log.</p>
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
 impl UpdateEventDestinationInput {
@@ -8019,8 +8039,10 @@ impl std::fmt::Debug for UpdateEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of tag key values to unassociate with the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8047,8 +8069,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that are associated with the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8075,6 +8099,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
@@ -8096,6 +8121,7 @@ impl std::fmt::Debug for SetVoiceMessageSpendLimitOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl SetTextMessageSpendLimitOverrideInput {
@@ -8117,8 +8143,10 @@ impl std::fmt::Debug for SetTextMessageSpendLimitOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultSenderIdInput {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
+    #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
 }
 impl SetDefaultSenderIdInput {
@@ -8145,8 +8173,10 @@ impl std::fmt::Debug for SetDefaultSenderIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
 }
 impl SetDefaultMessageTypeInput {
@@ -8173,29 +8203,39 @@ impl std::fmt::Debug for SetDefaultMessageTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
+    #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The text to convert to a voice message.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<std::string::String>,
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
     /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
     /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message_body_text_type: std::option::Option<crate::model::VoiceMessageBodyTextType>,
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<crate::model::VoiceId>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
+    #[doc(hidden)]
     pub max_price_per_minute: std::option::Option<std::string::String>,
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
+    #[doc(hidden)]
     pub time_to_live: std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
+    #[doc(hidden)]
     pub context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl SendVoiceMessageInput {
@@ -8271,25 +8311,35 @@ impl std::fmt::Debug for SendVoiceMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
+    #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The body of the text message.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    #[doc(hidden)]
     pub max_price: std::option::Option<std::string::String>,
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    #[doc(hidden)]
     pub time_to_live: std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
+    #[doc(hidden)]
     pub context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
+    #[doc(hidden)]
     pub destination_country_parameters: std::option::Option<
         std::collections::HashMap<
             crate::model::DestinationCountryParameterKey,
@@ -8297,6 +8347,7 @@ pub struct SendTextMessageInput {
         >,
     >,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl SendTextMessageInput {
@@ -8381,24 +8432,34 @@ impl std::fmt::Debug for SendTextMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    #[doc(hidden)]
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
+    #[doc(hidden)]
     pub number_type: std::option::Option<crate::model::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
+    #[doc(hidden)]
     pub registration_id: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl RequestPhoneNumberInput {
@@ -8468,6 +8529,7 @@ impl std::fmt::Debug for RequestPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl ReleasePhoneNumberInput {
@@ -8489,8 +8551,10 @@ impl std::fmt::Debug for ReleasePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
+    #[doc(hidden)]
     pub opted_out_number: std::option::Option<std::string::String>,
 }
 impl PutOptedOutNumberInput {
@@ -8517,8 +8581,10 @@ impl std::fmt::Debug for PutOptedOutNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new keyword to add.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
     /// <p>The message associated with the keyword.</p>
     /// <ul>
@@ -8526,8 +8592,10 @@ pub struct PutKeywordInput {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub keyword_message: std::option::Option<std::string::String>,
     /// <p>The action to perform for the new keyword when it is received.</p>
+    #[doc(hidden)]
     pub keyword_action: std::option::Option<crate::model::KeywordAction>,
 }
 impl PutKeywordInput {
@@ -8569,6 +8637,7 @@ impl std::fmt::Debug for PutKeywordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to query for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8590,12 +8659,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PoolOriginationIdentitiesFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPoolOriginationIdentitiesInput {
@@ -8632,12 +8705,16 @@ impl std::fmt::Debug for ListPoolOriginationIdentitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateOriginationIdentityInput {
@@ -8674,8 +8751,10 @@ impl std::fmt::Debug for DisassociateOriginationIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpendLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeSpendLimitsInput {
@@ -8702,12 +8781,16 @@ impl std::fmt::Debug for DescribeSpendLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
+    #[doc(hidden)]
     pub sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdAndCountry>>,
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SenderIdFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeSenderIdsInput {
@@ -8744,12 +8827,16 @@ impl std::fmt::Debug for DescribeSenderIdsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
+    #[doc(hidden)]
     pub pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PoolFilter objects to filter the results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PoolFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribePoolsInput {
@@ -8786,12 +8873,16 @@ impl std::fmt::Debug for DescribePoolsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
+    #[doc(hidden)]
     pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PhoneNumberFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribePhoneNumbersInput {
@@ -8828,10 +8919,13 @@ impl std::fmt::Debug for DescribePhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeOptOutListsInput {
@@ -8863,14 +8957,19 @@ impl std::fmt::Debug for DescribeOptOutListsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
+    #[doc(hidden)]
     pub opted_out_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OptedOutFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeOptedOutNumbersInput {
@@ -8912,14 +9011,19 @@ impl std::fmt::Debug for DescribeOptedOutNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>An array of keywords to search for.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of keyword filters to filter the results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeKeywordsInput {
@@ -8961,12 +9065,16 @@ impl std::fmt::Debug for DescribeKeywordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSetsInput {
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
+    #[doc(hidden)]
     pub configuration_set_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of filters to apply to the results that are returned.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeConfigurationSetsInput {
@@ -9003,8 +9111,10 @@ impl std::fmt::Debug for DescribeConfigurationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
@@ -9031,8 +9141,10 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountAttributesInput {
@@ -9081,6 +9193,7 @@ impl std::fmt::Debug for DeleteTextMessageSpendLimitOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
 }
 impl DeletePoolInput {
@@ -9102,6 +9215,7 @@ impl std::fmt::Debug for DeletePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
 }
 impl DeleteOptOutListInput {
@@ -9123,8 +9237,10 @@ impl std::fmt::Debug for DeleteOptOutListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
+    #[doc(hidden)]
     pub opted_out_number: std::option::Option<std::string::String>,
 }
 impl DeleteOptedOutNumberInput {
@@ -9151,8 +9267,10 @@ impl std::fmt::Debug for DeleteOptedOutNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The keyword to delete.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
 }
 impl DeleteKeywordInput {
@@ -9179,8 +9297,10 @@ impl std::fmt::Debug for DeleteKeywordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventDestinationInput {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination to delete.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventDestinationInput {
@@ -9207,6 +9327,7 @@ impl std::fmt::Debug for DeleteEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDefaultSenderIdInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteDefaultSenderIdInput {
@@ -9228,6 +9349,7 @@ impl std::fmt::Debug for DeleteDefaultSenderIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDefaultMessageTypeInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteDefaultMessageTypeInput {
@@ -9249,6 +9371,7 @@ impl std::fmt::Debug for DeleteDefaultMessageTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
@@ -9270,16 +9393,22 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePoolInput {
@@ -9329,10 +9458,13 @@ impl std::fmt::Debug for CreatePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateOptOutListInput {
@@ -9364,18 +9496,25 @@ impl std::fmt::Debug for CreateOptOutListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name that identifies the event destination.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEventDestinationInput {
@@ -9437,10 +9576,13 @@ impl std::fmt::Debug for CreateEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetInput {
@@ -9472,12 +9614,16 @@ impl std::fmt::Debug for CreateConfigurationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateOriginationIdentityInput {

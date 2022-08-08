@@ -51567,15 +51567,19 @@ impl UpdateWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkteamInput {
     /// <p>The name of the work team to update.</p>
+    #[doc(hidden)]
     pub workteam_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
+    #[doc(hidden)]
     pub member_definitions: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
     /// <p>An updated description for the work team.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl UpdateWorkteamInput {
@@ -51620,13 +51624,17 @@ impl std::fmt::Debug for UpdateWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkforceInput {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
+    #[doc(hidden)]
     pub workforce_name: std::option::Option<std::string::String>,
     /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
     /// <p>Maximum: Ten CIDR values</p>
+    #[doc(hidden)]
     pub source_ip_config: std::option::Option<crate::model::SourceIpConfig>,
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    #[doc(hidden)]
     pub oidc_config: std::option::Option<crate::model::OidcConfig>,
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    #[doc(hidden)]
     pub workforce_vpc_config: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
 }
 impl UpdateWorkforceInput {
@@ -51666,10 +51674,13 @@ impl std::fmt::Debug for UpdateWorkforceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>A collection of settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl UpdateUserProfileInput {
@@ -51701,32 +51712,43 @@ impl std::fmt::Debug for UpdateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrialComponentInput {
     /// <p>The name of the component to update.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The new status of the component.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TrialComponentStatus>,
     /// <p>When the component started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
     >,
     /// <p>The hyperparameters to remove from the component.</p>
+    #[doc(hidden)]
     pub parameters_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
     >,
     /// <p>The input artifacts to remove from the component.</p>
+    #[doc(hidden)]
     pub input_artifacts_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
     >,
     /// <p>The output artifacts to remove from the component.</p>
+    #[doc(hidden)]
     pub output_artifacts_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateTrialComponentInput {
@@ -51813,8 +51835,10 @@ impl std::fmt::Debug for UpdateTrialComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrialInput {
     /// <p>The name of the trial to update.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl UpdateTrialInput {
@@ -51841,10 +51865,13 @@ impl std::fmt::Debug for UpdateTrialInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrainingJobInput {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
+    #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
     /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    #[doc(hidden)]
     pub profiler_config: std::option::Option<crate::model::ProfilerConfigForUpdate>,
     /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
 }
@@ -51882,13 +51909,17 @@ impl std::fmt::Debug for UpdateTrainingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The description for the project.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<std::string::String>,
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    #[doc(hidden)]
     pub service_catalog_provisioning_update_details:
         std::option::Option<crate::model::ServiceCatalogProvisioningUpdateDetails>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateProjectInput {
@@ -51930,12 +51961,16 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
     /// <p>The description of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_description: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_display_name: std::option::Option<std::string::String>,
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl UpdatePipelineExecutionInput {
@@ -51980,19 +52015,26 @@ impl std::fmt::Debug for UpdatePipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_display_name: std::option::Option<std::string::String>,
     /// <p>The JSON pipeline definition.</p>
+    #[doc(hidden)]
     pub pipeline_definition: std::option::Option<std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    #[doc(hidden)]
     pub pipeline_definition_s3_location:
         std::option::Option<crate::model::PipelineDefinitionS3Location>,
     /// <p>The description of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl UpdatePipelineInput {
@@ -52051,10 +52093,13 @@ impl std::fmt::Debug for UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
+    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    #[doc(hidden)]
     pub on_create: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    #[doc(hidden)]
     pub on_start: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
 }
 impl UpdateNotebookInstanceLifecycleConfigInput {
@@ -52089,37 +52134,51 @@ impl std::fmt::Debug for UpdateNotebookInstanceLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotebookInstanceInput {
     /// <p>The name of the notebook instance to update.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
     /// <p>The Amazon ML compute instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::InstanceType>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    #[doc(hidden)]
     pub lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    #[doc(hidden)]
     pub disassociate_lifecycle_config: bool,
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
+    #[doc(hidden)]
     pub volume_size_in_gb: std::option::Option<i32>,
     /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    #[doc(hidden)]
     pub default_code_repository: std::option::Option<std::string::String>,
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    #[doc(hidden)]
     pub additional_code_repositories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    #[doc(hidden)]
     pub accelerator_types:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    #[doc(hidden)]
     pub disassociate_accelerator_types: bool,
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    #[doc(hidden)]
     pub disassociate_default_code_repository: bool,
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    #[doc(hidden)]
     pub disassociate_additional_code_repositories: bool,
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
     /// </note>
+    #[doc(hidden)]
     pub root_access: std::option::Option<crate::model::RootAccess>,
     /// <p>Information on the IMDS configuration of the notebook instance</p>
+    #[doc(hidden)]
     pub instance_metadata_service_configuration:
         std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
 }
@@ -52233,8 +52292,10 @@ impl std::fmt::Debug for UpdateNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_config: std::option::Option<crate::model::MonitoringScheduleConfig>,
 }
 impl UpdateMonitoringScheduleInput {
@@ -52266,18 +52327,24 @@ impl std::fmt::Debug for UpdateMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    #[doc(hidden)]
     pub model_package_arn: std::option::Option<std::string::String>,
     /// <p>The approval status of the model.</p>
+    #[doc(hidden)]
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>A description for the approval status of the model.</p>
+    #[doc(hidden)]
     pub approval_description: std::option::Option<std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
+    #[doc(hidden)]
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metadata properties associated with the model package versions to remove.</p>
+    #[doc(hidden)]
     pub customer_metadata_properties_to_remove:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    #[doc(hidden)]
     pub additional_inference_specifications_to_add: std::option::Option<
         std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
     >,
@@ -52342,14 +52409,19 @@ impl std::fmt::Debug for UpdateModelPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateImageInput {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
+    #[doc(hidden)]
     pub delete_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The new description for the image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The new display name for the image.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The name of the image to update.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateImageInput {
@@ -52391,14 +52463,19 @@ impl std::fmt::Debug for UpdateImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFeatureMetadataInput {
     /// <p>The name of the feature group containing the feature that you're updating.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the feature that you're updating.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>A description that you can write to better describe the feature.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+    #[doc(hidden)]
     pub parameter_additions: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+    #[doc(hidden)]
     pub parameter_removals: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFeatureMetadataInput {
@@ -52440,8 +52517,10 @@ impl std::fmt::Debug for UpdateFeatureMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFeatureGroupInput {
     /// <p>The name of the feature group that you're updating.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>A list of the features that you're adding to the feature group.</p>
+    #[doc(hidden)]
     pub feature_additions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
 }
 impl UpdateFeatureGroupInput {
@@ -52468,10 +52547,13 @@ impl std::fmt::Debug for UpdateFeatureGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentInput {
     /// <p>The name of the experiment to update.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the experiment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateExperimentInput {
@@ -52503,8 +52585,10 @@ impl std::fmt::Debug for UpdateExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointWeightsAndCapacitiesInput {
     /// <p>The name of an existing SageMaker endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>An object that provides new capacity and weight values for a variant.</p>
+    #[doc(hidden)]
     pub desired_weights_and_capacities:
         std::option::Option<std::vec::Vec<crate::model::DesiredWeightAndCapacity>>,
 }
@@ -52537,17 +52621,23 @@ impl std::fmt::Debug for UpdateEndpointWeightsAndCapacitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointInput {
     /// <p>The name of the endpoint whose configuration you want to update.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The name of the new endpoint configuration.</p>
+    #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
     /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub retain_all_variant_properties: bool,
     /// <p>When you are updating endpoint resources with <code>UpdateEndpointInput$RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <code>VariantProperty</code> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden. </p>
+    #[doc(hidden)]
     pub exclude_retained_variant_properties:
         std::option::Option<std::vec::Vec<crate::model::VariantProperty>>,
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
+    #[doc(hidden)]
     pub retain_deployment_config: bool,
 }
 impl UpdateEndpointInput {
@@ -52602,10 +52692,13 @@ impl std::fmt::Debug for UpdateEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A collection of settings.</p>
+    #[doc(hidden)]
     pub default_user_settings: std::option::Option<crate::model::UserSettings>,
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    #[doc(hidden)]
     pub domain_settings_for_update: std::option::Option<crate::model::DomainSettingsForUpdate>,
 }
 impl UpdateDomainInput {
@@ -52642,8 +52735,10 @@ impl std::fmt::Debug for UpdateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDevicesInput {
     /// <p>The name of the fleet the devices belong to.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>List of devices to register with Edge Manager agent.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
 }
 impl UpdateDevicesInput {
@@ -52670,15 +52765,20 @@ impl std::fmt::Debug for UpdateDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Description of the fleet.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::EdgeOutputConfig>,
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
+    #[doc(hidden)]
     pub enable_iot_role_alias: std::option::Option<bool>,
 }
 impl UpdateDeviceFleetInput {
@@ -52721,13 +52821,17 @@ impl std::fmt::Debug for UpdateDeviceFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContextInput {
     /// <p>The name of the context to update.</p>
+    #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
     /// <p>The new description for the context.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
+    #[doc(hidden)]
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateContextInput {
@@ -52767,9 +52871,11 @@ impl std::fmt::Debug for UpdateContextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCodeRepositoryInput {
     /// <p>The name of the Git repository to update.</p>
+    #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+    #[doc(hidden)]
     pub git_config: std::option::Option<crate::model::GitConfigForUpdate>,
 }
 impl UpdateCodeRepositoryInput {
@@ -52797,13 +52903,17 @@ impl std::fmt::Debug for UpdateCodeRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
+    #[doc(hidden)]
     pub artifact_arn: std::option::Option<std::string::String>,
     /// <p>The new name for the artifact.</p>
+    #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
+    #[doc(hidden)]
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateArtifactInput {
@@ -52843,8 +52953,10 @@ impl std::fmt::Debug for UpdateArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppImageConfigInput {
     /// <p>The name of the AppImageConfig to update.</p>
+    #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
     /// <p>The new KernelGateway app to run on the image.</p>
+    #[doc(hidden)]
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
 }
 impl UpdateAppImageConfigInput {
@@ -52876,15 +52988,20 @@ impl std::fmt::Debug for UpdateAppImageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateActionInput {
     /// <p>The name of the action to update.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The new description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The new status for the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
+    #[doc(hidden)]
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateActionInput {
@@ -52929,6 +53046,7 @@ impl std::fmt::Debug for UpdateActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTransformJobInput {
     /// <p>The name of the batch transform job to stop.</p>
+    #[doc(hidden)]
     pub transform_job_name: std::option::Option<std::string::String>,
 }
 impl StopTransformJobInput {
@@ -52950,6 +53068,7 @@ impl std::fmt::Debug for StopTransformJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTrainingJobInput {
     /// <p>The name of the training job to stop.</p>
+    #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
 }
 impl StopTrainingJobInput {
@@ -52971,6 +53090,7 @@ impl std::fmt::Debug for StopTrainingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopProcessingJobInput {
     /// <p>The name of the processing job to stop.</p>
+    #[doc(hidden)]
     pub processing_job_name: std::option::Option<std::string::String>,
 }
 impl StopProcessingJobInput {
@@ -52992,8 +53112,10 @@ impl std::fmt::Debug for StopProcessingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StopPipelineExecutionInput {
@@ -53020,6 +53142,7 @@ impl std::fmt::Debug for StopPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopNotebookInstanceInput {
     /// <p>The name of the notebook instance to terminate.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl StopNotebookInstanceInput {
@@ -53041,6 +53164,7 @@ impl std::fmt::Debug for StopNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringScheduleInput {
     /// <p>The name of the schedule to stop.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl StopMonitoringScheduleInput {
@@ -53062,6 +53186,7 @@ impl std::fmt::Debug for StopMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLabelingJobInput {
     /// <p>The name of the labeling job to stop.</p>
+    #[doc(hidden)]
     pub labeling_job_name: std::option::Option<std::string::String>,
 }
 impl StopLabelingJobInput {
@@ -53083,6 +53208,7 @@ impl std::fmt::Debug for StopLabelingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInferenceRecommendationsJobInput {
     /// <p>The name of the job you want to stop.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl StopInferenceRecommendationsJobInput {
@@ -53104,6 +53230,7 @@ impl std::fmt::Debug for StopInferenceRecommendationsJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
+    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
 }
 impl StopHyperParameterTuningJobInput {
@@ -53128,6 +53255,7 @@ impl std::fmt::Debug for StopHyperParameterTuningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
+    #[doc(hidden)]
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
 }
 impl StopEdgePackagingJobInput {
@@ -53149,8 +53277,10 @@ impl std::fmt::Debug for StopEdgePackagingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to stop.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage to stop.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl StopEdgeDeploymentStageInput {
@@ -53177,6 +53307,7 @@ impl std::fmt::Debug for StopEdgeDeploymentStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCompilationJobInput {
     /// <p>The name of the model compilation job to stop.</p>
+    #[doc(hidden)]
     pub compilation_job_name: std::option::Option<std::string::String>,
 }
 impl StopCompilationJobInput {
@@ -53198,6 +53329,7 @@ impl std::fmt::Debug for StopCompilationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAutoMlJobInput {
     /// <p>The name of the object you are requesting.</p>
+    #[doc(hidden)]
     pub auto_ml_job_name: std::option::Option<std::string::String>,
 }
 impl StopAutoMlJobInput {
@@ -53219,16 +53351,22 @@ impl std::fmt::Debug for StopAutoMlJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineExecutionInput {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_display_name: std::option::Option<std::string::String>,
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    #[doc(hidden)]
     pub pipeline_parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The description of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_description: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl StartPipelineExecutionInput {
@@ -53283,6 +53421,7 @@ impl std::fmt::Debug for StartPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNotebookInstanceInput {
     /// <p>The name of the notebook instance to start.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl StartNotebookInstanceInput {
@@ -53304,6 +53443,7 @@ impl std::fmt::Debug for StartNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringScheduleInput {
     /// <p>The name of the schedule to start.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl StartMonitoringScheduleInput {
@@ -53325,8 +53465,10 @@ impl std::fmt::Debug for StartMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to start.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage to start.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl StartEdgeDeploymentStageInput {
@@ -53353,10 +53495,13 @@ impl std::fmt::Debug for StartEdgeDeploymentStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendPipelineExecutionStepSuccessInput {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub callback_token: std::option::Option<std::string::String>,
     /// <p>A list of the output parameters of the callback step.</p>
+    #[doc(hidden)]
     pub output_parameters: std::option::Option<std::vec::Vec<crate::model::OutputParameter>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl SendPipelineExecutionStepSuccessInput {
@@ -53388,10 +53533,13 @@ impl std::fmt::Debug for SendPipelineExecutionStepSuccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendPipelineExecutionStepFailureInput {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub callback_token: std::option::Option<std::string::String>,
     /// <p>A message describing why the step failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl SendPipelineExecutionStepFailureInput {
@@ -53423,16 +53571,22 @@ impl std::fmt::Debug for SendPipelineExecutionStepFailureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInput {
     /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::ResourceType>,
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
+    #[doc(hidden)]
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SearchSortOrder>,
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchInput {
@@ -53479,10 +53633,13 @@ impl std::fmt::Debug for SearchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryPipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl RetryPipelineExecutionInput {
@@ -53516,13 +53673,17 @@ impl std::fmt::Debug for RetryPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenderUiTemplateInput {
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
+    #[doc(hidden)]
     pub ui_template: std::option::Option<crate::model::UiTemplate>,
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
+    #[doc(hidden)]
     pub task: std::option::Option<crate::model::RenderableTask>,
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <code>UiConfig</code>.</p>
+    #[doc(hidden)]
     pub human_task_ui_arn: std::option::Option<std::string::String>,
 }
 impl RenderUiTemplateInput {
@@ -53560,10 +53721,13 @@ impl std::fmt::Debug for RenderUiTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDevicesInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>The tags associated with devices.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterDevicesInput {
@@ -53595,10 +53759,13 @@ impl std::fmt::Debug for RegisterDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryLineageInput {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+    #[doc(hidden)]
     pub start_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
+    #[doc(hidden)]
     pub direction: std::option::Option<crate::model::Direction>,
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    #[doc(hidden)]
     pub include_edges: bool,
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
@@ -53608,12 +53775,16 @@ pub struct QueryLineageInput {
     /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
     /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::QueryFilters>,
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+    #[doc(hidden)]
     pub max_depth: std::option::Option<i32>,
     /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryLineageInput {
@@ -53672,8 +53843,10 @@ impl std::fmt::Debug for QueryLineageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutModelPackageGroupPolicyInput {
     /// <p>The name of the model group to add a resource policy to.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
     /// <p>The resource policy for the model group.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl PutModelPackageGroupPolicyInput {
@@ -53700,14 +53873,19 @@ impl std::fmt::Debug for PutModelPackageGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkteamsInput {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListWorkteamsSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of work teams to return in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkteamsInput {
@@ -53749,14 +53927,19 @@ impl std::fmt::Debug for ListWorkteamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkforcesInput {
     /// <p>Sort workforces using the workforce name or creation date.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListWorkforcesSortByOptions>,
     /// <p>Sort workforces in ascending or descending order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A token to resume pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workforces returned in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkforcesInput {
@@ -53798,16 +53981,22 @@ impl std::fmt::Debug for ListWorkforcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserProfilesInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns a list up to a specified limit.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The sort order for the results. The default is Ascending.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::UserProfileSortKey>,
     /// <p>A parameter by which to filter the results.</p>
+    #[doc(hidden)]
     pub domain_id_equals: std::option::Option<std::string::String>,
     /// <p>A parameter by which to filter the results.</p>
+    #[doc(hidden)]
     pub user_profile_name_contains: std::option::Option<std::string::String>,
 }
 impl ListUserProfilesInput {
@@ -53857,20 +54046,28 @@ impl std::fmt::Debug for ListUserProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrialsInput {
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only trials created after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only trials created before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortTrialsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrialsInput {
@@ -53927,22 +54124,31 @@ impl std::fmt::Debug for ListTrialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrialComponentsInput {
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>A filter that returns only components created after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only components created before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortTrialComponentsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrialComponentsInput {
@@ -54004,24 +54210,34 @@ impl std::fmt::Debug for ListTrialComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTransformJobsInput {
     /// <p>A filter that returns only transform jobs created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only transform jobs created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only transform jobs modified after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that retrieves only transform jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::TransformJobStatus>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTransformJobsInput {
@@ -54088,17 +54304,23 @@ impl std::fmt::Debug for ListTransformJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrainingJobsForHyperParameterTuningJobInput {
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
+    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of training jobs to return. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter that returns only training jobs with the specified status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::TrainingJobStatus>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::TrainingJobSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListTrainingJobsForHyperParameterTuningJobInput {
@@ -54149,24 +54371,34 @@ impl std::fmt::Debug for ListTrainingJobsForHyperParameterTuningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrainingJobsInput {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::TrainingJobStatus>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListTrainingJobsInput {
@@ -54233,10 +54465,13 @@ impl std::fmt::Debug for ListTrainingJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of tags to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
@@ -54268,10 +54503,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscribedWorkteamsInput {
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of work teams to return in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSubscribedWorkteamsInput {
@@ -54303,24 +54541,34 @@ impl std::fmt::Debug for ListSubscribedWorkteamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioLifecycleConfigsInput {
     /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+    #[doc(hidden)]
     pub app_type_equals: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+    #[doc(hidden)]
     pub modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+    #[doc(hidden)]
     pub modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is CreationTime.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
     /// <p>The sort order. The default value is Descending.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListStudioLifecycleConfigsInput {
@@ -54389,14 +54637,19 @@ impl std::fmt::Debug for ListStudioLifecycleConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStageDevicesInput {
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of requests to select.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the edge deployment plan.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>Toggle for excluding devices deployed in other stages.</p>
+    #[doc(hidden)]
     pub exclude_devices_deployed_in_other_stage: bool,
     /// <p>The name of the stage in the deployment.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ListStageDevicesInput {
@@ -54441,18 +54694,25 @@ impl std::fmt::Debug for ListStageDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>A filter that returns the projects that were created after a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the projects that were created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of projects to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter that returns the projects whose name contains a specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ProjectSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::ProjectSortOrder>,
 }
 impl ListProjectsInput {
@@ -54504,24 +54764,34 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProcessingJobsInput {
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only processing jobs modified after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only processing jobs modified before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that retrieves only processing jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::ProcessingJobStatus>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of processing jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of processing jobs to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProcessingJobsInput {
@@ -54588,18 +54858,25 @@ impl std::fmt::Debug for ListProcessingJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
     /// <p>The prefix of the pipeline name.</p>
+    #[doc(hidden)]
     pub pipeline_name_prefix: std::option::Option<std::string::String>,
     /// <p>A filter that returns the pipelines that were created after a specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the pipelines that were created before a specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortPipelinesBy>,
     /// <p>The sort order for results.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of pipelines to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelinesInput {
@@ -54651,10 +54928,13 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineParametersForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of parameters to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelineParametersForExecutionInput {
@@ -54686,12 +54966,16 @@ impl std::fmt::Debug for ListPipelineParametersForExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineExecutionStepsInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListPipelineExecutionStepsInput {
@@ -54728,18 +55012,25 @@ impl std::fmt::Debug for ListPipelineExecutionStepsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineExecutionsInput {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortPipelineExecutionsBy>,
     /// <p>The sort order for results.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of pipeline executions to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelineExecutionsInput {
@@ -54793,30 +55084,43 @@ pub struct ListNotebookInstancesInput {
     /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
     /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of notebook instances to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::NotebookInstanceSortKey>,
     /// <p>The sort order for results. </p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::NotebookInstanceSortOrder>,
     /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances with the specified status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::NotebookInstanceStatus>,
     /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
+    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name_contains: std::option::Option<std::string::String>,
     /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
+    #[doc(hidden)]
     pub default_code_repository_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
+    #[doc(hidden)]
     pub additional_code_repository_equals: std::option::Option<std::string::String>,
 }
 impl ListNotebookInstancesInput {
@@ -54910,22 +55214,31 @@ impl std::fmt::Debug for ListNotebookInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookInstanceLifecycleConfigsInput {
     /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of lifecycle configurations to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortKey>,
     /// <p>The sort order for results.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::NotebookInstanceLifecycleConfigSortOrder>,
     /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListNotebookInstanceLifecycleConfigsInput {
@@ -54991,30 +55304,43 @@ impl std::fmt::Debug for ListNotebookInstanceLifecycleConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitoringSchedulesInput {
     /// <p>Name of a specific endpoint to fetch schedules for.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringScheduleSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter for monitoring schedules whose name contains a specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::ScheduleStatus>,
     /// <p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p>
+    #[doc(hidden)]
     pub monitoring_job_definition_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only the monitoring schedules for the specified monitoring type.</p>
+    #[doc(hidden)]
     pub monitoring_type_equals: std::option::Option<crate::model::MonitoringType>,
 }
 impl ListMonitoringSchedulesInput {
@@ -55099,34 +55425,49 @@ impl std::fmt::Debug for ListMonitoringSchedulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitoringExecutionsInput {
     /// <p>Name of a specific schedule to fetch jobs for.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringExecutionSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter for jobs scheduled before a specified time.</p>
+    #[doc(hidden)]
     pub scheduled_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter for jobs scheduled after a specified time.</p>
+    #[doc(hidden)]
     pub scheduled_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created after a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs modified after a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs modified before a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that retrieves only jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
+    #[doc(hidden)]
     pub monitoring_job_definition_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
+    #[doc(hidden)]
     pub monitoring_type_equals: std::option::Option<crate::model::MonitoringType>,
 }
 impl ListMonitoringExecutionsInput {
@@ -55221,18 +55562,25 @@ impl std::fmt::Debug for ListMonitoringExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelsInput {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ModelSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::OrderKey>,
     /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of models to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListModelsInput {
@@ -55284,20 +55632,28 @@ impl std::fmt::Debug for ListModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelQualityJobDefinitionsInput {
     /// <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListModelQualityJobDefinitionsInput {
@@ -55354,16 +55710,22 @@ impl std::fmt::Debug for ListModelQualityJobDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelPackagesInput {
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of model packages to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
+    #[doc(hidden)]
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
@@ -55371,12 +55733,16 @@ pub struct ListModelPackagesInput {
     /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
     /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub model_package_type: std::option::Option<crate::model::ModelPackageType>,
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ModelPackageSortBy>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListModelPackagesInput {
@@ -55448,18 +55814,25 @@ impl std::fmt::Debug for ListModelPackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelPackageGroupsInput {
     /// <p>A filter that returns only model groups created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model groups created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ModelPackageGroupSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListModelPackageGroupsInput {
@@ -55511,10 +55884,13 @@ impl std::fmt::Debug for ListModelPackageGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelMetadataInput {
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
+    #[doc(hidden)]
     pub search_expression: std::option::Option<crate::model::ModelMetadataSearchExpression>,
     /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of models to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListModelMetadataInput {
@@ -55548,20 +55924,28 @@ impl std::fmt::Debug for ListModelMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelExplainabilityJobDefinitionsInput {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListModelExplainabilityJobDefinitionsInput {
@@ -55618,20 +56002,28 @@ impl std::fmt::Debug for ListModelExplainabilityJobDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelBiasJobDefinitionsInput {
     /// <p>Name of the endpoint to monitor for model bias.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter for model bias jobs whose name contains a specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only model bias jobs created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only model bias jobs created after a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListModelBiasJobDefinitionsInput {
@@ -55688,16 +56080,22 @@ impl std::fmt::Debug for ListModelBiasJobDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLineageGroupsInput {
     /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortLineageGroupsBy>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLineageGroupsInput {
@@ -55744,20 +56142,28 @@ impl std::fmt::Debug for ListLineageGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLabelingJobsForWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
+    #[doc(hidden)]
     pub workteam_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
+    #[doc(hidden)]
     pub job_reference_code_contains: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListLabelingJobsForWorkteamSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListLabelingJobsForWorkteamInput {
@@ -55819,24 +56225,34 @@ impl std::fmt::Debug for ListLabelingJobsForWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLabelingJobsInput {
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::LabelingJobStatus>,
 }
 impl ListLabelingJobsInput {
@@ -55903,24 +56319,34 @@ impl std::fmt::Debug for ListLabelingJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceRecommendationsJobsInput {
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::RecommendationJobStatus>,
     /// <p>The parameter by which to sort the results.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListInferenceRecommendationsJobsSortBy>,
     /// <p>The sort order for the results.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommendations to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInferenceRecommendationsJobsInput {
@@ -55989,22 +56415,31 @@ impl std::fmt::Debug for ListInferenceRecommendationsJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageVersionsInput {
     /// <p>A filter that returns only versions created on or after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only versions created on or before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the image to list the versions of.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ImageVersionSortBy>,
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::ImageVersionSortOrder>,
 }
 impl ListImageVersionsInput {
@@ -56066,22 +56501,31 @@ impl std::fmt::Debug for ListImageVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInput {
     /// <p>A filter that returns only images created on or after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images created on or before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images modified on or after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only images modified on or before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter that returns only images whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ImageSortBy>,
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::ImageSortOrder>,
 }
 impl ListImagesInput {
@@ -56143,24 +56587,34 @@ impl std::fmt::Debug for ListImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHyperParameterTuningJobsInput {
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::HyperParameterTuningJobSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
 }
 impl ListHyperParameterTuningJobsInput {
@@ -56231,14 +56685,19 @@ impl std::fmt::Debug for ListHyperParameterTuningJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHumanTaskUisInput {
     /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A token to resume pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListHumanTaskUisInput {
@@ -56280,14 +56739,19 @@ impl std::fmt::Debug for ListHumanTaskUisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowDefinitionsInput {
     /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A token to resume pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFlowDefinitionsInput {
@@ -56329,22 +56793,31 @@ impl std::fmt::Debug for ListFlowDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFeatureGroupsInput {
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    #[doc(hidden)]
     pub feature_group_status_equals: std::option::Option<crate::model::FeatureGroupStatus>,
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    #[doc(hidden)]
     pub offline_store_status_equals: std::option::Option<crate::model::OfflineStoreStatusValue>,
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The order in which feature groups are listed.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::FeatureGroupSortOrder>,
     /// <p>The value on which the feature group list is sorted.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::FeatureGroupSortBy>,
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFeatureGroupsInput {
@@ -56416,16 +56889,22 @@ impl std::fmt::Debug for ListFeatureGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsInput {
     /// <p>A filter that returns only experiments created after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only experiments created before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortExperimentsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExperimentsInput {
@@ -56472,24 +56951,34 @@ impl std::fmt::Debug for ListExperimentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsInput {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::EndpointSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::OrderKey>,
     /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A filter that returns only endpoints with the specified status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::EndpointStatus>,
 }
 impl ListEndpointsInput {
@@ -56556,18 +57045,25 @@ impl std::fmt::Debug for ListEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointConfigsInput {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::EndpointConfigSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::OrderKey>,
     /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListEndpointConfigsInput {
@@ -56619,26 +57115,37 @@ impl std::fmt::Debug for ListEndpointConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEdgePackagingJobsInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to select.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Select jobs where the job was created after specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was created before specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was updated after specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Select jobs where the job was updated before specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>Filter for jobs where the model name contains this string.</p>
+    #[doc(hidden)]
     pub model_name_contains: std::option::Option<std::string::String>,
     /// <p>The job status to filter for.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::EdgePackagingJobStatus>,
     /// <p>Use to specify what column to sort by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListEdgePackagingJobsSortBy>,
     /// <p>What direction to sort by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListEdgePackagingJobsInput {
@@ -56710,24 +57217,34 @@ impl std::fmt::Debug for ListEdgePackagingJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEdgeDeploymentPlansInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to select (50 by default).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Selects edge deployment plans created after this time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans created before this time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans with names containing this name.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+    #[doc(hidden)]
     pub device_fleet_name_contains: std::option::Option<std::string::String>,
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListEdgeDeploymentPlansSortBy>,
     /// <p>The direction of the sorting (ascending or descending).</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListEdgeDeploymentPlansInput {
@@ -56797,8 +57314,10 @@ impl std::fmt::Debug for ListEdgeDeploymentPlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns a list up to a specified limit.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDomainsInput {
@@ -56825,14 +57344,19 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to select.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Select fleets where the job was updated after X</p>
+    #[doc(hidden)]
     pub latest_heartbeat_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl ListDevicesInput {
@@ -56874,22 +57398,31 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceFleetsInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to select.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter fleets where packaging job was created after specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Select fleets where the job was updated after X</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Select fleets where the job was updated before X</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>The column to sort by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListDeviceFleetsSortBy>,
     /// <p>What direction to sort in.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListDeviceFleetsInput {
@@ -56951,20 +57484,28 @@ impl std::fmt::Debug for ListDeviceFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataQualityJobDefinitionsInput {
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDataQualityJobDefinitionsInput {
@@ -57021,20 +57562,28 @@ impl std::fmt::Debug for ListDataQualityJobDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContextsInput {
     /// <p>A filter that returns only contexts with the specified source URI.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>A filter that returns only contexts of the specified type.</p>
+    #[doc(hidden)]
     pub context_type: std::option::Option<std::string::String>,
     /// <p>A filter that returns only contexts created on or after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only contexts created on or before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortContextsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListContextsInput {
@@ -57091,24 +57640,34 @@ impl std::fmt::Debug for ListContextsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCompilationJobsInput {
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of model compilation jobs to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that retrieves model compilation jobs with a specific <code>DescribeCompilationJobResponse$CompilationJobStatus</code> status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::CompilationJobStatus>,
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ListCompilationJobsSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListCompilationJobsInput {
@@ -57175,22 +57734,31 @@ impl std::fmt::Debug for ListCompilationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCodeRepositoriesInput {
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of Git repositories to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::CodeRepositorySortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::CodeRepositorySortOrder>,
 }
 impl ListCodeRepositoriesInput {
@@ -57252,18 +57820,25 @@ impl std::fmt::Debug for ListCodeRepositoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCandidatesForAutoMlJobInput {
     /// <p>List the candidates created for the job by providing the job's name.</p>
+    #[doc(hidden)]
     pub auto_ml_job_name: std::option::Option<std::string::String>,
     /// <p>List the candidates for the job and filter by status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::CandidateStatus>,
     /// <p>List the candidates for the job and filter by candidate name.</p>
+    #[doc(hidden)]
     pub candidate_name_equals: std::option::Option<std::string::String>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::AutoMlSortOrder>,
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::CandidateSortBy>,
     /// <p>List the job's candidates up to a specified limit.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCandidatesForAutoMlJobInput {
@@ -57315,24 +57890,34 @@ impl std::fmt::Debug for ListCandidatesForAutoMlJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoMlJobsInput {
     /// <p>Request a list of jobs, using a filter for time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Request a list of jobs, using a filter for time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Request a list of jobs, using a filter for time.</p>
+    #[doc(hidden)]
     pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Request a list of jobs, using a filter for time.</p>
+    #[doc(hidden)]
     pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Request a list of jobs, using a search filter for name.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>Request a list of jobs, using a filter for status.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::AutoMlJobStatus>,
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::AutoMlSortOrder>,
     /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AutoMlSortBy>,
     /// <p>Request a list of jobs up to a specified limit.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoMlJobsInput {
@@ -57399,26 +57984,37 @@ impl std::fmt::Debug for ListAutoMlJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationsInput {
     /// <p>A filter that returns only associations with the specified source ARN.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>A filter that returns only associations with the specified source type.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A filter that returns only associations with the specified destination type.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<std::string::String>,
     /// <p>A filter that returns only associations of the specified type.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::AssociationEdgeType>,
     /// <p>A filter that returns only associations created on or after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only associations created on or before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortAssociationsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssociationsInput {
@@ -57490,20 +58086,28 @@ impl std::fmt::Debug for ListAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArtifactsInput {
     /// <p>A filter that returns only artifacts with the specified source URI.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>A filter that returns only artifacts of the specified type.</p>
+    #[doc(hidden)]
     pub artifact_type: std::option::Option<std::string::String>,
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortArtifactsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListArtifactsInput {
@@ -57560,16 +58164,22 @@ impl std::fmt::Debug for ListArtifactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns a list up to a specified limit.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The sort order for the results. The default is Ascending.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AppSortKey>,
     /// <p>A parameter to search for the domain ID.</p>
+    #[doc(hidden)]
     pub domain_id_equals: std::option::Option<std::string::String>,
     /// <p>A parameter to search by user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name_equals: std::option::Option<std::string::String>,
 }
 impl ListAppsInput {
@@ -57616,22 +58226,31 @@ impl std::fmt::Debug for ListAppsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppImageConfigsInput {
     /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
+    #[doc(hidden)]
     pub modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
+    #[doc(hidden)]
     pub modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AppImageConfigSortKey>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListAppImageConfigsInput {
@@ -57693,18 +58312,25 @@ impl std::fmt::Debug for ListAppImageConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlgorithmsInput {
     /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of algorithms to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AlgorithmSortBy>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListAlgorithmsInput {
@@ -57756,20 +58382,28 @@ impl std::fmt::Debug for ListAlgorithmsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionsInput {
     /// <p>A filter that returns only actions with the specified source URI.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>A filter that returns only actions of the specified type.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<std::string::String>,
     /// <p>A filter that returns only actions created on or after the specified time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter that returns only actions created on or before the specified time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortActionsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListActionsInput {
@@ -57826,8 +58460,10 @@ impl std::fmt::Debug for ListActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSearchSuggestionsInput {
     /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::ResourceType>,
     /// <p>Limits the property names that are included in the response.</p>
+    #[doc(hidden)]
     pub suggestion_query: std::option::Option<crate::model::SuggestionQuery>,
 }
 impl GetSearchSuggestionsInput {
@@ -57865,6 +58501,7 @@ impl std::fmt::Debug for GetSagemakerServicecatalogPortfolioStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to get the resource policy.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl GetModelPackageGroupPolicyInput {
@@ -57886,6 +58523,7 @@ impl std::fmt::Debug for GetModelPackageGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLineageGroupPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    #[doc(hidden)]
     pub lineage_group_name: std::option::Option<std::string::String>,
 }
 impl GetLineageGroupPolicyInput {
@@ -57907,6 +58545,7 @@ impl std::fmt::Debug for GetLineageGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceFleetReportInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl GetDeviceFleetReportInput {
@@ -57939,8 +58578,10 @@ impl std::fmt::Debug for EnableSagemakerServicecatalogPortfolioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTrialComponentInput {
     /// <p>The name of the component to disassociate from the trial.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the trial to disassociate from.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
 }
 impl DisassociateTrialComponentInput {
@@ -57978,6 +58619,7 @@ impl std::fmt::Debug for DisableSagemakerServicecatalogPortfolioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkteamInput {
     /// <p>The name of the work team to return a description of.</p>
+    #[doc(hidden)]
     pub workteam_name: std::option::Option<std::string::String>,
 }
 impl DescribeWorkteamInput {
@@ -57999,6 +58641,7 @@ impl std::fmt::Debug for DescribeWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkforceInput {
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
+    #[doc(hidden)]
     pub workforce_name: std::option::Option<std::string::String>,
 }
 impl DescribeWorkforceInput {
@@ -58020,8 +58663,10 @@ impl std::fmt::Debug for DescribeWorkforceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfileInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name. This value is not case sensitive.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeUserProfileInput {
@@ -58048,6 +58693,7 @@ impl std::fmt::Debug for DescribeUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrialComponentInput {
     /// <p>The name of the trial component to describe.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrialComponentInput {
@@ -58069,6 +58715,7 @@ impl std::fmt::Debug for DescribeTrialComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrialInput {
     /// <p>The name of the trial to describe.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrialInput {
@@ -58090,6 +58737,7 @@ impl std::fmt::Debug for DescribeTrialInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransformJobInput {
     /// <p>The name of the transform job that you want to view details of.</p>
+    #[doc(hidden)]
     pub transform_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeTransformJobInput {
@@ -58111,6 +58759,7 @@ impl std::fmt::Debug for DescribeTransformJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrainingJobInput {
     /// <p>The name of the training job.</p>
+    #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrainingJobInput {
@@ -58132,6 +58781,7 @@ impl std::fmt::Debug for DescribeTrainingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscribedWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    #[doc(hidden)]
     pub workteam_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSubscribedWorkteamInput {
@@ -58153,6 +58803,7 @@ impl std::fmt::Debug for DescribeSubscribedWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    #[doc(hidden)]
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeStudioLifecycleConfigInput {
@@ -58177,6 +58828,7 @@ impl std::fmt::Debug for DescribeStudioLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to describe.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
@@ -58198,6 +58850,7 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProcessingJobInput {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub processing_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeProcessingJobInput {
@@ -58219,6 +58872,7 @@ impl std::fmt::Debug for DescribeProcessingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribePipelineExecutionInput {
@@ -58240,6 +58894,7 @@ impl std::fmt::Debug for DescribePipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelineDefinitionForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribePipelineDefinitionForExecutionInput {
@@ -58261,6 +58916,7 @@ impl std::fmt::Debug for DescribePipelineDefinitionForExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelineInput {
     /// <p>The name of the pipeline to describe.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
 }
 impl DescribePipelineInput {
@@ -58282,6 +58938,7 @@ impl std::fmt::Debug for DescribePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to describe.</p>
+    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeNotebookInstanceLifecycleConfigInput {
@@ -58306,6 +58963,7 @@ impl std::fmt::Debug for DescribeNotebookInstanceLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotebookInstanceInput {
     /// <p>The name of the notebook instance that you want information about.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl DescribeNotebookInstanceInput {
@@ -58327,6 +58985,7 @@ impl std::fmt::Debug for DescribeNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMonitoringScheduleInput {
     /// <p>Name of a previously created monitoring schedule.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl DescribeMonitoringScheduleInput {
@@ -58348,6 +59007,7 @@ impl std::fmt::Debug for DescribeMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelQualityJobDefinitionInput {
     /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelQualityJobDefinitionInput {
@@ -58369,6 +59029,7 @@ impl std::fmt::Debug for DescribeModelQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelPackageGroupInput {
     /// <p>The name of gthe model group to describe.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelPackageGroupInput {
@@ -58391,6 +59052,7 @@ impl std::fmt::Debug for DescribeModelPackageGroupInput {
 pub struct DescribeModelPackageInput {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub model_package_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelPackageInput {
@@ -58413,6 +59075,7 @@ impl std::fmt::Debug for DescribeModelPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelExplainabilityJobDefinitionInput {
@@ -58434,6 +59097,7 @@ impl std::fmt::Debug for DescribeModelExplainabilityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelBiasJobDefinitionInput {
@@ -58455,6 +59119,7 @@ impl std::fmt::Debug for DescribeModelBiasJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelInput {
     /// <p>The name of the model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelInput {
@@ -58476,6 +59141,7 @@ impl std::fmt::Debug for DescribeModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLineageGroupInput {
     /// <p>The name of the lineage group.</p>
+    #[doc(hidden)]
     pub lineage_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeLineageGroupInput {
@@ -58497,6 +59163,7 @@ impl std::fmt::Debug for DescribeLineageGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLabelingJobInput {
     /// <p>The name of the labeling job to return information for.</p>
+    #[doc(hidden)]
     pub labeling_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeLabelingJobInput {
@@ -58518,6 +59185,7 @@ impl std::fmt::Debug for DescribeLabelingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInferenceRecommendationsJobInput {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl DescribeInferenceRecommendationsJobInput {
@@ -58539,8 +59207,10 @@ impl std::fmt::Debug for DescribeInferenceRecommendationsJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageVersionInput {
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The version of the image. If not specified, the latest version is described.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl DescribeImageVersionInput {
@@ -58567,6 +59237,7 @@ impl std::fmt::Debug for DescribeImageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageInput {
     /// <p>The name of the image to describe.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
 }
 impl DescribeImageInput {
@@ -58588,6 +59259,7 @@ impl std::fmt::Debug for DescribeImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHyperParameterTuningJobInput {
     /// <p>The name of the tuning job.</p>
+    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeHyperParameterTuningJobInput {
@@ -58612,6 +59284,7 @@ impl std::fmt::Debug for DescribeHyperParameterTuningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanTaskUiInput {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
+    #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
 impl DescribeHumanTaskUiInput {
@@ -58633,6 +59306,7 @@ impl std::fmt::Debug for DescribeHumanTaskUiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowDefinitionInput {
     /// <p>The name of the flow definition.</p>
+    #[doc(hidden)]
     pub flow_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeFlowDefinitionInput {
@@ -58654,8 +59328,10 @@ impl std::fmt::Debug for DescribeFlowDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureMetadataInput {
     /// <p>The name of the feature group containing the feature.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the feature.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl DescribeFeatureMetadataInput {
@@ -58682,8 +59358,10 @@ impl std::fmt::Debug for DescribeFeatureMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureGroupInput {
     /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFeatureGroupInput {
@@ -58710,6 +59388,7 @@ impl std::fmt::Debug for DescribeFeatureGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExperimentInput {
     /// <p>The name of the experiment to describe.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
 }
 impl DescribeExperimentInput {
@@ -58731,6 +59410,7 @@ impl std::fmt::Debug for DescribeExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointConfigInput {
     /// <p>The name of the endpoint configuration.</p>
+    #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointConfigInput {
@@ -58752,6 +59432,7 @@ impl std::fmt::Debug for DescribeEndpointConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointInput {
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointInput {
@@ -58773,6 +59454,7 @@ impl std::fmt::Debug for DescribeEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
+    #[doc(hidden)]
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeEdgePackagingJobInput {
@@ -58794,10 +59476,13 @@ impl std::fmt::Debug for DescribeEdgePackagingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEdgeDeploymentPlanInput {
     /// <p>The name of the deployment plan to describe.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to select (50 by default).</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl DescribeEdgeDeploymentPlanInput {
@@ -58829,6 +59514,7 @@ impl std::fmt::Debug for DescribeEdgeDeploymentPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -58850,6 +59536,7 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceFleetInput {
@@ -58871,10 +59558,13 @@ impl std::fmt::Debug for DescribeDeviceFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceInput {
     /// <p>Next token of device description.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique ID of the device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet the devices belong to.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
@@ -58906,6 +59596,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeDataQualityJobDefinitionInput {
@@ -58927,6 +59618,7 @@ impl std::fmt::Debug for DescribeDataQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContextInput {
     /// <p>The name of the context to describe.</p>
+    #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
 }
 impl DescribeContextInput {
@@ -58948,6 +59640,7 @@ impl std::fmt::Debug for DescribeContextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCompilationJobInput {
     /// <p>The name of the model compilation job that you want information about.</p>
+    #[doc(hidden)]
     pub compilation_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeCompilationJobInput {
@@ -58969,6 +59662,7 @@ impl std::fmt::Debug for DescribeCompilationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeRepositoryInput {
     /// <p>The name of the Git repository to describe.</p>
+    #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
 }
 impl DescribeCodeRepositoryInput {
@@ -58990,6 +59684,7 @@ impl std::fmt::Debug for DescribeCodeRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoMlJobInput {
     /// <p>Requests information about an AutoML job using its unique name.</p>
+    #[doc(hidden)]
     pub auto_ml_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeAutoMlJobInput {
@@ -59011,6 +59706,7 @@ impl std::fmt::Debug for DescribeAutoMlJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    #[doc(hidden)]
     pub artifact_arn: std::option::Option<std::string::String>,
 }
 impl DescribeArtifactInput {
@@ -59032,6 +59728,7 @@ impl std::fmt::Debug for DescribeArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppImageConfigInput {
     /// <p>The name of the AppImageConfig to describe.</p>
+    #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeAppImageConfigInput {
@@ -59053,12 +59750,16 @@ impl std::fmt::Debug for DescribeAppImageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app.</p>
+    #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p>The name of the app.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
 }
 impl DescribeAppInput {
@@ -59095,6 +59796,7 @@ impl std::fmt::Debug for DescribeAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlgorithmInput {
     /// <p>The name of the algorithm to describe.</p>
+    #[doc(hidden)]
     pub algorithm_name: std::option::Option<std::string::String>,
 }
 impl DescribeAlgorithmInput {
@@ -59116,6 +59818,7 @@ impl std::fmt::Debug for DescribeAlgorithmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActionInput {
     /// <p>The name of the action to describe.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
 }
 impl DescribeActionInput {
@@ -59137,8 +59840,10 @@ impl std::fmt::Debug for DescribeActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterDevicesInput {
     /// <p>The name of the fleet the devices belong to.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>The unique IDs of the devices.</p>
+    #[doc(hidden)]
     pub device_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeregisterDevicesInput {
@@ -59165,6 +59870,7 @@ impl std::fmt::Debug for DeregisterDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkteamInput {
     /// <p>The name of the work team to delete.</p>
+    #[doc(hidden)]
     pub workteam_name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkteamInput {
@@ -59186,6 +59892,7 @@ impl std::fmt::Debug for DeleteWorkteamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkforceInput {
     /// <p>The name of the workforce.</p>
+    #[doc(hidden)]
     pub workforce_name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkforceInput {
@@ -59207,8 +59914,10 @@ impl std::fmt::Debug for DeleteWorkforceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserProfileInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserProfileInput {
@@ -59235,6 +59944,7 @@ impl std::fmt::Debug for DeleteUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrialComponentInput {
     /// <p>The name of the component to delete.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
 }
 impl DeleteTrialComponentInput {
@@ -59256,6 +59966,7 @@ impl std::fmt::Debug for DeleteTrialComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrialInput {
     /// <p>The name of the trial to delete.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
 }
 impl DeleteTrialInput {
@@ -59277,8 +59988,10 @@ impl std::fmt::Debug for DeleteTrialInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array or one or more tag keys to delete.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -59305,6 +60018,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    #[doc(hidden)]
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteStudioLifecycleConfigInput {
@@ -59329,6 +60043,7 @@ impl std::fmt::Debug for DeleteStudioLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The name of the project to delete.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -59350,8 +60065,10 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
@@ -59378,6 +60095,7 @@ impl std::fmt::Debug for DeletePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to delete.</p>
+    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteNotebookInstanceLifecycleConfigInput {
@@ -59402,6 +60120,7 @@ impl std::fmt::Debug for DeleteNotebookInstanceLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotebookInstanceInput {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl DeleteNotebookInstanceInput {
@@ -59423,6 +60142,7 @@ impl std::fmt::Debug for DeleteNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule to delete.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl DeleteMonitoringScheduleInput {
@@ -59444,6 +60164,7 @@ impl std::fmt::Debug for DeleteMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelQualityJobDefinitionInput {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelQualityJobDefinitionInput {
@@ -59465,6 +60186,7 @@ impl std::fmt::Debug for DeleteModelQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to delete the policy.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelPackageGroupPolicyInput {
@@ -59486,6 +60208,7 @@ impl std::fmt::Debug for DeleteModelPackageGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelPackageGroupInput {
     /// <p>The name of the model group to delete.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelPackageGroupInput {
@@ -59508,6 +60231,7 @@ impl std::fmt::Debug for DeleteModelPackageGroupInput {
 pub struct DeleteModelPackageInput {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub model_package_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelPackageInput {
@@ -59530,6 +60254,7 @@ impl std::fmt::Debug for DeleteModelPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition to delete.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelExplainabilityJobDefinitionInput {
@@ -59551,6 +60276,7 @@ impl std::fmt::Debug for DeleteModelExplainabilityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition to delete.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelBiasJobDefinitionInput {
@@ -59572,6 +60298,7 @@ impl std::fmt::Debug for DeleteModelBiasJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
     /// <p>The name of the model to delete.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelInput {
@@ -59593,8 +60320,10 @@ impl std::fmt::Debug for DeleteModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageVersionInput {
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The version to delete.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl DeleteImageVersionInput {
@@ -59621,6 +60350,7 @@ impl std::fmt::Debug for DeleteImageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageInput {
     /// <p>The name of the image to delete.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
 }
 impl DeleteImageInput {
@@ -59642,6 +60372,7 @@ impl std::fmt::Debug for DeleteImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
+    #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
 impl DeleteHumanTaskUiInput {
@@ -59663,6 +60394,7 @@ impl std::fmt::Debug for DeleteHumanTaskUiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowDefinitionInput {
     /// <p>The name of the flow definition you are deleting.</p>
+    #[doc(hidden)]
     pub flow_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteFlowDefinitionInput {
@@ -59684,6 +60416,7 @@ impl std::fmt::Debug for DeleteFlowDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFeatureGroupInput {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteFeatureGroupInput {
@@ -59705,6 +60438,7 @@ impl std::fmt::Debug for DeleteFeatureGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExperimentInput {
     /// <p>The name of the experiment to delete.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
 }
 impl DeleteExperimentInput {
@@ -59726,6 +60460,7 @@ impl std::fmt::Debug for DeleteExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointConfigInput {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
+    #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointConfigInput {
@@ -59747,6 +60482,7 @@ impl std::fmt::Debug for DeleteEndpointConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
     /// <p>The name of the endpoint that you want to delete.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
@@ -59768,8 +60504,10 @@ impl std::fmt::Debug for DeleteEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl DeleteEdgeDeploymentStageInput {
@@ -59796,6 +60534,7 @@ impl std::fmt::Debug for DeleteEdgeDeploymentStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan to delete.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
 }
 impl DeleteEdgeDeploymentPlanInput {
@@ -59817,8 +60556,10 @@ impl std::fmt::Debug for DeleteEdgeDeploymentPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    #[doc(hidden)]
     pub retention_policy: std::option::Option<crate::model::RetentionPolicy>,
 }
 impl DeleteDomainInput {
@@ -59845,6 +60586,7 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceFleetInput {
     /// <p>The name of the fleet to delete.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceFleetInput {
@@ -59866,6 +60608,7 @@ impl std::fmt::Debug for DeleteDeviceFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to delete.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteDataQualityJobDefinitionInput {
@@ -59887,6 +60630,7 @@ impl std::fmt::Debug for DeleteDataQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContextInput {
     /// <p>The name of the context to delete.</p>
+    #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
 }
 impl DeleteContextInput {
@@ -59908,6 +60652,7 @@ impl std::fmt::Debug for DeleteContextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCodeRepositoryInput {
     /// <p>The name of the Git repository to delete.</p>
+    #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteCodeRepositoryInput {
@@ -59929,8 +60674,10 @@ impl std::fmt::Debug for DeleteCodeRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssociationInput {
     /// <p>The ARN of the source.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssociationInput {
@@ -59957,8 +60704,10 @@ impl std::fmt::Debug for DeleteAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    #[doc(hidden)]
     pub artifact_arn: std::option::Option<std::string::String>,
     /// <p>The URI of the source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ArtifactSource>,
 }
 impl DeleteArtifactInput {
@@ -59985,6 +60734,7 @@ impl std::fmt::Debug for DeleteArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppImageConfigInput {
     /// <p>The name of the AppImageConfig to delete.</p>
+    #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteAppImageConfigInput {
@@ -60006,12 +60756,16 @@ impl std::fmt::Debug for DeleteAppImageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app.</p>
+    #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p>The name of the app.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
@@ -60048,6 +60802,7 @@ impl std::fmt::Debug for DeleteAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlgorithmInput {
     /// <p>The name of the algorithm to delete.</p>
+    #[doc(hidden)]
     pub algorithm_name: std::option::Option<std::string::String>,
 }
 impl DeleteAlgorithmInput {
@@ -60069,6 +60824,7 @@ impl std::fmt::Debug for DeleteAlgorithmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteActionInput {
     /// <p>The name of the action to delete.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
 }
 impl DeleteActionInput {
@@ -60090,20 +60846,26 @@ impl std::fmt::Debug for DeleteActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkteamInput {
     /// <p>The name of the work team. Use this name to identify the work team.</p>
+    #[doc(hidden)]
     pub workteam_name: std::option::Option<std::string::String>,
     /// <p>The name of the workforce.</p>
+    #[doc(hidden)]
     pub workforce_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
+    #[doc(hidden)]
     pub member_definitions: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
     /// <p>A description of the work team.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkteamInput {
@@ -60160,17 +60922,23 @@ impl std::fmt::Debug for CreateWorkteamInput {
 pub struct CreateWorkforceInput {
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
+    #[doc(hidden)]
     pub cognito_config: std::option::Option<crate::model::CognitoConfig>,
     /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
     /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
+    #[doc(hidden)]
     pub oidc_config: std::option::Option<crate::model::OidcConfig>,
     /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+    #[doc(hidden)]
     pub source_ip_config: std::option::Option<crate::model::SourceIpConfig>,
     /// <p>The name of the private workforce.</p>
+    #[doc(hidden)]
     pub workforce_name: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Use this parameter to configure a workforce using VPC.</p>
+    #[doc(hidden)]
     pub workforce_vpc_config: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
 }
 impl CreateWorkforceInput {
@@ -60221,17 +60989,23 @@ impl std::fmt::Debug for CreateWorkforceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileInput {
     /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    #[doc(hidden)]
     pub single_sign_on_user_identifier: std::option::Option<std::string::String>,
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    #[doc(hidden)]
     pub single_sign_on_user_value: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A collection of settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl CreateUserProfileInput {
@@ -60282,8 +61056,10 @@ impl std::fmt::Debug for CreateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrialComponentInput {
     /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The status of the component. States include:</p>
     /// <ul>
@@ -60291,26 +61067,34 @@ pub struct CreateTrialComponentInput {
     /// <li> <p>Completed</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TrialComponentStatus>,
     /// <p>When the component started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The hyperparameters for the component.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
     >,
     /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
     >,
     /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
     >,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>A list of tags to associate with the component. You can use <code>Search</code> API to search on the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTrialComponentInput {
@@ -60394,14 +61178,19 @@ impl std::fmt::Debug for CreateTrialComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrialInput {
     /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to associate the trial with.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>A list of tags to associate with the trial. You can use <code>Search</code> API to search on the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTrialInput {
@@ -60443,34 +61232,46 @@ impl std::fmt::Debug for CreateTrialInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransformJobInput {
     /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub transform_job_name: std::option::Option<std::string::String>,
     /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
+    #[doc(hidden)]
     pub max_concurrent_transforms: std::option::Option<i32>,
     /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
+    #[doc(hidden)]
     pub model_client_config: std::option::Option<crate::model::ModelClientConfig>,
     /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
     /// <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>
     /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
+    #[doc(hidden)]
     pub max_payload_in_mb: std::option::Option<i32>,
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
     /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
     /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
     /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+    #[doc(hidden)]
     pub batch_strategy: std::option::Option<crate::model::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    #[doc(hidden)]
     pub environment:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Describes the input source and the way the transform job consumes it.</p>
+    #[doc(hidden)]
     pub transform_input: std::option::Option<crate::model::TransformInput>,
     /// <p>Describes the results of the transform job.</p>
+    #[doc(hidden)]
     pub transform_output: std::option::Option<crate::model::TransformOutput>,
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+    #[doc(hidden)]
     pub transform_resources: std::option::Option<crate::model::TransformResources>,
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
+    #[doc(hidden)]
     pub data_processing: std::option::Option<crate::model::DataProcessing>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -60478,6 +61279,7 @@ pub struct CreateTransformJobInput {
     /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
     /// <li> <p> <code>CreateTransformJob</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
 }
 impl CreateTransformJobInput {
@@ -60572,49 +61374,66 @@ impl std::fmt::Debug for CreateTransformJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrainingJobInput {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
     /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    #[doc(hidden)]
     pub hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+    #[doc(hidden)]
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>
     /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
     /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
     /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    #[doc(hidden)]
     pub enable_network_isolation: bool,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
+    #[doc(hidden)]
     pub enable_inter_container_traffic_encryption: bool,
     /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
     /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
+    #[doc(hidden)]
     pub enable_managed_spot_training: bool,
     /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    #[doc(hidden)]
     pub checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
     /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    #[doc(hidden)]
     pub debug_hook_config: std::option::Option<crate::model::DebugHookConfig>,
     /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    #[doc(hidden)]
     pub debug_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
     /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    #[doc(hidden)]
     pub tensor_board_output_config: std::option::Option<crate::model::TensorBoardOutputConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -60622,16 +61441,21 @@ pub struct CreateTrainingJobInput {
     /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
     /// <li> <p> <code>CreateTransformJob</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
     /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    #[doc(hidden)]
     pub profiler_config: std::option::Option<crate::model::ProfilerConfig>,
     /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
     /// <p>The environment variables to set in the Docker container.</p>
+    #[doc(hidden)]
     pub environment:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    #[doc(hidden)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
 }
 impl CreateTrainingJobInput {
@@ -60798,13 +61622,17 @@ impl std::fmt::Debug for CreateTrainingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    #[doc(hidden)]
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    #[doc(hidden)]
     pub studio_lifecycle_config_content: std::option::Option<std::string::String>,
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    #[doc(hidden)]
     pub studio_lifecycle_config_app_type:
         std::option::Option<crate::model::StudioLifecycleConfigAppType>,
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateStudioLifecycleConfigInput {
@@ -60852,13 +61680,17 @@ impl std::fmt::Debug for CreateStudioLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A description for the project.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<std::string::String>,
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    #[doc(hidden)]
     pub service_catalog_provisioning_details:
         std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProjectInput {
@@ -60900,25 +61732,35 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProcessingJobInput {
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
+    #[doc(hidden)]
     pub processing_inputs: std::option::Option<std::vec::Vec<crate::model::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
+    #[doc(hidden)]
     pub processing_output_config: std::option::Option<crate::model::ProcessingOutputConfig>,
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub processing_job_name: std::option::Option<std::string::String>,
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
+    #[doc(hidden)]
     pub processing_resources: std::option::Option<crate::model::ProcessingResources>,
     /// <p>The time limit for how long the processing job is allowed to run.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::ProcessingStoppingCondition>,
     /// <p>Configures the processing job to run a specified Docker container image.</p>
+    #[doc(hidden)]
     pub app_specification: std::option::Option<crate::model::AppSpecification>,
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
+    #[doc(hidden)]
     pub environment:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
+    #[doc(hidden)]
     pub network_config: std::option::Option<crate::model::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -60926,6 +61768,7 @@ pub struct CreateProcessingJobInput {
     /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
     /// <li> <p> <code>CreateTransformJob</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
 }
 impl CreateProcessingJobInput {
@@ -61009,8 +61852,10 @@ impl std::fmt::Debug for CreateProcessingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresignedNotebookInstanceUrlInput {
     /// <p>The name of the notebook instance.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
+    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: std::option::Option<i32>,
 }
 impl CreatePresignedNotebookInstanceUrlInput {
@@ -61040,12 +61885,16 @@ impl std::fmt::Debug for CreatePresignedNotebookInstanceUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresignedDomainUrlInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The name of the UserProfile to sign-in as.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
+    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: std::option::Option<i32>,
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
+    #[doc(hidden)]
     pub expires_in_seconds: std::option::Option<i32>,
 }
 impl CreatePresignedDomainUrlInput {
@@ -61085,23 +61934,32 @@ impl std::fmt::Debug for CreatePresignedDomainUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_display_name: std::option::Option<std::string::String>,
     /// <p>The JSON pipeline definition of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_definition: std::option::Option<std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    #[doc(hidden)]
     pub pipeline_definition_s3_location:
         std::option::Option<crate::model::PipelineDefinitionS3Location>,
     /// <p>A description of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_description: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the created pipeline.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl CreatePipelineInput {
@@ -61170,10 +62028,13 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
+    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    #[doc(hidden)]
     pub on_create: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
     /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    #[doc(hidden)]
     pub on_start: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
 }
 impl CreateNotebookInstanceLifecycleConfigInput {
@@ -61208,42 +62069,58 @@ impl std::fmt::Debug for CreateNotebookInstanceLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotebookInstanceInput {
     /// <p>The name of the new notebook instance.</p>
+    #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
     /// <p>The type of ML compute instance to launch for the notebook instance.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::InstanceType>,
     /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    #[doc(hidden)]
     pub lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
+    #[doc(hidden)]
     pub direct_internet_access: std::option::Option<crate::model::DirectInternetAccess>,
     /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
+    #[doc(hidden)]
     pub volume_size_in_gb: std::option::Option<i32>,
     /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    #[doc(hidden)]
     pub accelerator_types:
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
     /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    #[doc(hidden)]
     pub default_code_repository: std::option::Option<std::string::String>,
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    #[doc(hidden)]
     pub additional_code_repositories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
+    #[doc(hidden)]
     pub root_access: std::option::Option<crate::model::RootAccess>,
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    #[doc(hidden)]
     pub platform_identifier: std::option::Option<std::string::String>,
     /// <p>Information on the IMDS configuration of the notebook instance</p>
+    #[doc(hidden)]
     pub instance_metadata_service_configuration:
         std::option::Option<crate::model::InstanceMetadataServiceConfiguration>,
 }
@@ -61358,10 +62235,13 @@ impl std::fmt::Debug for CreateNotebookInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    #[doc(hidden)]
     pub monitoring_schedule_config: std::option::Option<crate::model::MonitoringScheduleConfig>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMonitoringScheduleInput {
@@ -61398,26 +62278,36 @@ impl std::fmt::Debug for CreateMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelQualityJobDefinitionInput {
     /// <p>The name of the monitoring job definition.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
+    #[doc(hidden)]
     pub model_quality_baseline_config:
         std::option::Option<crate::model::ModelQualityBaselineConfig>,
     /// <p>The container that runs the monitoring job.</p>
+    #[doc(hidden)]
     pub model_quality_app_specification:
         std::option::Option<crate::model::ModelQualityAppSpecification>,
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
+    #[doc(hidden)]
     pub model_quality_job_input: std::option::Option<crate::model::ModelQualityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
+    #[doc(hidden)]
     pub model_quality_job_output_config: std::option::Option<crate::model::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    #[doc(hidden)]
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Specifies the network configuration for the monitoring job.</p>
+    #[doc(hidden)]
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelQualityJobDefinitionInput {
@@ -61503,10 +62393,13 @@ impl std::fmt::Debug for CreateModelQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelPackageGroupInput {
     /// <p>The name of the model group.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
     /// <p>A description for the model group.</p>
+    #[doc(hidden)]
     pub model_package_group_description: std::option::Option<std::string::String>,
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelPackageGroupInput {
@@ -61542,11 +62435,14 @@ impl std::fmt::Debug for CreateModelPackageGroupInput {
 pub struct CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     /// <p>This parameter is required for unversioned models. It is not applicable to versioned models.</p>
+    #[doc(hidden)]
     pub model_package_name: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
     /// <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
+    #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the model package.</p>
+    #[doc(hidden)]
     pub model_package_description: std::option::Option<std::string::String>,
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
@@ -61554,41 +62450,56 @@ pub struct CreateModelPackageInput {
     /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub inference_specification: std::option::Option<crate::model::InferenceSpecification>,
     /// <p>Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
+    #[doc(hidden)]
     pub validation_specification:
         std::option::Option<crate::model::ModelPackageValidationSpecification>,
     /// <p>Details about the algorithm that was used to create the model package.</p>
+    #[doc(hidden)]
     pub source_algorithm_specification:
         std::option::Option<crate::model::SourceAlgorithmSpecification>,
     /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
     /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
+    #[doc(hidden)]
     pub certify_for_marketplace: bool,
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Whether the model is approved for deployment.</p>
     /// <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>
     /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.</p>
+    #[doc(hidden)]
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>A structure that contains model metrics reports.</p>
+    #[doc(hidden)]
     pub model_metrics: std::option::Option<crate::model::ModelMetrics>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
+    #[doc(hidden)]
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
     /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
     /// <p>Specify "OTHER" if none of the tasks listed fit your use case.</p>
+    #[doc(hidden)]
     pub task: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    #[doc(hidden)]
     pub sample_payload_url: std::option::Option<std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
+    #[doc(hidden)]
     pub additional_inference_specifications: std::option::Option<
         std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
     >,
@@ -61728,28 +62639,38 @@ impl std::fmt::Debug for CreateModelPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelExplainabilityJobDefinitionInput {
     /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The baseline configuration for a model explainability job.</p>
+    #[doc(hidden)]
     pub model_explainability_baseline_config:
         std::option::Option<crate::model::ModelExplainabilityBaselineConfig>,
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
+    #[doc(hidden)]
     pub model_explainability_app_specification:
         std::option::Option<crate::model::ModelExplainabilityAppSpecification>,
     /// <p>Inputs for the model explainability job.</p>
+    #[doc(hidden)]
     pub model_explainability_job_input:
         std::option::Option<crate::model::ModelExplainabilityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
+    #[doc(hidden)]
     pub model_explainability_job_output_config:
         std::option::Option<crate::model::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    #[doc(hidden)]
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Networking options for a model explainability job.</p>
+    #[doc(hidden)]
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelExplainabilityJobDefinitionInput {
@@ -61838,24 +62759,34 @@ impl std::fmt::Debug for CreateModelExplainabilityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelBiasJobDefinitionInput {
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The baseline configuration for a model bias job.</p>
+    #[doc(hidden)]
     pub model_bias_baseline_config: std::option::Option<crate::model::ModelBiasBaselineConfig>,
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
+    #[doc(hidden)]
     pub model_bias_app_specification: std::option::Option<crate::model::ModelBiasAppSpecification>,
     /// <p>Inputs for the model bias job.</p>
+    #[doc(hidden)]
     pub model_bias_job_input: std::option::Option<crate::model::ModelBiasJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
+    #[doc(hidden)]
     pub model_bias_job_output_config: std::option::Option<crate::model::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    #[doc(hidden)]
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Networking options for a model bias job.</p>
+    #[doc(hidden)]
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelBiasJobDefinitionInput {
@@ -61939,22 +62870,30 @@ impl std::fmt::Debug for CreateModelBiasJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
     /// <p>The name of the new model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
+    #[doc(hidden)]
     pub primary_container: std::option::Option<crate::model::ContainerDefinition>,
     /// <p>Specifies the containers in the inference pipeline.</p>
+    #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
+    #[doc(hidden)]
     pub inference_execution_config: std::option::Option<crate::model::InferenceExecutionConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
+    #[doc(hidden)]
     pub enable_network_isolation: bool,
 }
 impl CreateModelInput {
@@ -62018,6 +62957,7 @@ impl std::fmt::Debug for CreateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLabelingJobInput {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
+    #[doc(hidden)]
     pub labeling_job_name: std::option::Option<std::string::String>,
     /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
     /// <ul>
@@ -62034,6 +62974,7 @@ pub struct CreateLabelingJobInput {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub label_attribute_name: std::option::Option<std::string::String>,
     /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
     /// <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>
@@ -62042,10 +62983,13 @@ pub struct CreateLabelingJobInput {
     /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
+    #[doc(hidden)]
     pub input_config: std::option::Option<crate::model::LabelingJobInputConfig>,
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::LabelingJobOutputConfig>,
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
     /// <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
@@ -62064,15 +63008,20 @@ pub struct CreateLabelingJobInput {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub label_category_config_s3_uri: std::option::Option<std::string::String>,
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
+    #[doc(hidden)]
     pub stopping_conditions: std::option::Option<crate::model::LabelingJobStoppingConditions>,
     /// <p>Configures the information required to perform automated data labeling.</p>
+    #[doc(hidden)]
     pub labeling_job_algorithms_config:
         std::option::Option<crate::model::LabelingJobAlgorithmsConfig>,
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
+    #[doc(hidden)]
     pub human_task_config: std::option::Option<crate::model::HumanTaskConfig>,
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLabelingJobInput {
@@ -62185,20 +63134,28 @@ impl std::fmt::Debug for CreateLabelingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInferenceRecommendationsJobInput {
     /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::RecommendationJobType>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
+    #[doc(hidden)]
     pub input_config: std::option::Option<crate::model::RecommendationJobInputConfig>,
     /// <p>Description of the recommendation job.</p>
+    #[doc(hidden)]
     pub job_description: std::option::Option<std::string::String>,
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
+    #[doc(hidden)]
     pub stopping_conditions: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::RecommendationJobOutputConfig>,
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateInferenceRecommendationsJobInput {
@@ -62267,10 +63224,13 @@ pub struct CreateImageVersionInput {
     /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
     /// </region>
     /// </acct-id></code> </p>
+    #[doc(hidden)]
     pub base_image: std::option::Option<std::string::String>,
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
 }
 impl CreateImageVersionInput {
@@ -62310,14 +63270,19 @@ impl std::fmt::Debug for CreateImageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageInput {
     /// <p>The description of the image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The name of the image. Must be unique to your account.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateImageInput {
@@ -62359,24 +63324,30 @@ impl std::fmt::Debug for CreateImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHyperParameterTuningJobInput {
     /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
+    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
     /// <p>The <code>HyperParameterTuningJobConfig</code> object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+    #[doc(hidden)]
     pub hyper_parameter_tuning_job_config:
         std::option::Option<crate::model::HyperParameterTuningJobConfig>,
     /// <p>The <code>HyperParameterTrainingJobDefinition</code> object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.</p>
+    #[doc(hidden)]
     pub training_job_definition:
         std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
     /// <p>A list of the <code>HyperParameterTrainingJobDefinition</code> objects launched for this tuning job.</p>
+    #[doc(hidden)]
     pub training_job_definitions:
         std::option::Option<std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>>,
     /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
     /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
     /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
     /// </note>
+    #[doc(hidden)]
     pub warm_start_config:
         std::option::Option<crate::model::HyperParameterTuningJobWarmStartConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHyperParameterTuningJobInput {
@@ -62441,10 +63412,13 @@ impl std::fmt::Debug for CreateHyperParameterTuningJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHumanTaskUiInput {
     /// <p>The name of the user interface you are creating.</p>
+    #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
     /// <p>The Liquid template for the worker user interface.</p>
+    #[doc(hidden)]
     pub ui_template: std::option::Option<crate::model::UiTemplate>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHumanTaskUiInput {
@@ -62476,18 +63450,25 @@ impl std::fmt::Debug for CreateHumanTaskUiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowDefinitionInput {
     /// <p>The name of your flow definition.</p>
+    #[doc(hidden)]
     pub flow_definition_name: std::option::Option<std::string::String>,
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    #[doc(hidden)]
     pub human_loop_request_source: std::option::Option<crate::model::HumanLoopRequestSource>,
     /// <p>An object containing information about the events that trigger a human workflow.</p>
+    #[doc(hidden)]
     pub human_loop_activation_config: std::option::Option<crate::model::HumanLoopActivationConfig>,
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
+    #[doc(hidden)]
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
     /// <p>An object containing information about where the human review results will be uploaded.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::FlowDefinitionOutputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFlowDefinitionInput {
@@ -62550,6 +63531,7 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
     /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>
@@ -62558,6 +63540,7 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub record_identifier_feature_name: std::option::Option<std::string::String>,
     /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
@@ -62566,14 +63549,17 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
     /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_time_feature_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
+    #[doc(hidden)]
     pub feature_definitions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
+    #[doc(hidden)]
     pub online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
     /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
     /// <ul>
@@ -62582,12 +63568,16 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
+    #[doc(hidden)]
     pub offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFeatureGroupInput {
@@ -62678,12 +63668,16 @@ impl std::fmt::Debug for CreateFeatureGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentInput {
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the experiment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateExperimentInput {
@@ -62720,12 +63714,16 @@ impl std::fmt::Debug for CreateExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
+    #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
     /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    #[doc(hidden)]
     pub production_variants: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
     /// <p>Configuration to control how SageMaker captures inference data.</p>
+    #[doc(hidden)]
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -62740,8 +63738,10 @@ pub struct CreateEndpointConfigInput {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
+    #[doc(hidden)]
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl CreateEndpointConfigInput {
@@ -62802,12 +63802,16 @@ impl std::fmt::Debug for CreateEndpointConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
     /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The name of an endpoint configuration. For more information, see <code>CreateEndpointConfig</code>. </p>
+    #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEndpointInput {
@@ -62844,20 +63848,28 @@ impl std::fmt::Debug for CreateEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
+    #[doc(hidden)]
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
+    #[doc(hidden)]
     pub compilation_job_name: std::option::Option<std::string::String>,
     /// <p>The name of the model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The version of the model.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides information about the output location for the packaged model.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::EdgeOutputConfig>,
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
+    #[doc(hidden)]
     pub resource_key: std::option::Option<std::string::String>,
     /// <p>Creates tags for the packaging job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEdgePackagingJobInput {
@@ -62914,8 +63926,10 @@ impl std::fmt::Debug for CreateEdgePackagingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>List of stages to be added to the edge deployment plan.</p>
+    #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
 }
 impl CreateEdgeDeploymentStageInput {
@@ -62942,14 +63956,19 @@ impl std::fmt::Debug for CreateEdgeDeploymentStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan.</p>
+    #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
     /// <p>List of models associated with the edge deployment plan.</p>
+    #[doc(hidden)]
     pub model_configs: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
     /// <p>The device fleet used for this edge deployment plan.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+    #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
     /// <p>List of tags with which to tag the edge deployment plan.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEdgeDeploymentPlanInput {
@@ -62991,34 +64010,45 @@ impl std::fmt::Debug for CreateEdgeDeploymentPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p>A name for the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The mode of authentication that members use to access the domain.</p>
+    #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    #[doc(hidden)]
     pub default_user_settings: std::option::Option<crate::model::UserSettings>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub app_network_access_type: std::option::Option<crate::model::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
+    #[doc(hidden)]
     pub home_efs_file_system_kms_key_id: std::option::Option<std::string::String>,
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    #[doc(hidden)]
     pub app_security_group_management:
         std::option::Option<crate::model::AppSecurityGroupManagement>,
     /// <p>A collection of <code>Domain</code> settings.</p>
+    #[doc(hidden)]
     pub domain_settings: std::option::Option<crate::model::DomainSettings>,
 }
 impl CreateDomainInput {
@@ -63107,17 +64137,23 @@ impl std::fmt::Debug for CreateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceFleetInput {
     /// <p>The name of the fleet that the device belongs to.</p>
+    #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A description of the fleet.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::EdgeOutputConfig>,
     /// <p>Creates tags for the specified fleet.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
+    #[doc(hidden)]
     pub enable_iot_role_alias: std::option::Option<bool>,
 }
 impl CreateDeviceFleetInput {
@@ -63165,25 +64201,35 @@ impl std::fmt::Debug for CreateDeviceFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataQualityJobDefinitionInput {
     /// <p>The name for the monitoring job definition.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>Configures the constraints and baselines for the monitoring job.</p>
+    #[doc(hidden)]
     pub data_quality_baseline_config: std::option::Option<crate::model::DataQualityBaselineConfig>,
     /// <p>Specifies the container that runs the monitoring job.</p>
+    #[doc(hidden)]
     pub data_quality_app_specification:
         std::option::Option<crate::model::DataQualityAppSpecification>,
     /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
+    #[doc(hidden)]
     pub data_quality_job_input: std::option::Option<crate::model::DataQualityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
+    #[doc(hidden)]
     pub data_quality_job_output_config: std::option::Option<crate::model::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    #[doc(hidden)]
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Specifies networking configuration for the monitoring job.</p>
+    #[doc(hidden)]
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataQualityJobDefinitionInput {
@@ -63269,17 +64315,23 @@ impl std::fmt::Debug for CreateDataQualityJobDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContextInput {
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
     /// <p>The source type, ID, and URI.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ContextSource>,
     /// <p>The context type.</p>
+    #[doc(hidden)]
     pub context_type: std::option::Option<std::string::String>,
     /// <p>The description of the context.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of properties to add to the context.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags to apply to the context.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateContextInput {
@@ -63329,6 +64381,7 @@ impl std::fmt::Debug for CreateContextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCompilationJobInput {
     /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub compilation_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
@@ -63339,18 +64392,25 @@ pub struct CreateCompilationJobInput {
     /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
+    #[doc(hidden)]
     pub model_package_version_arn: std::option::Option<std::string::String>,
     /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+    #[doc(hidden)]
     pub input_config: std::option::Option<crate::model::InputConfig>,
     /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::NeoVpcConfig>,
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCompilationJobInput {
@@ -63415,10 +64475,13 @@ impl std::fmt::Debug for CreateCompilationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeRepositoryInput {
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
+    #[doc(hidden)]
     pub git_config: std::option::Option<crate::model::GitConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCodeRepositoryInput {
@@ -63450,24 +64513,34 @@ impl std::fmt::Debug for CreateCodeRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoMlJobInput {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
+    #[doc(hidden)]
     pub auto_ml_job_name: std::option::Option<std::string::String>,
     /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
     /// <p>Defines the type of supervised learning available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    #[doc(hidden)]
     pub problem_type: std::option::Option<crate::model::ProblemType>,
     /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
+    #[doc(hidden)]
     pub auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
     /// <p>A collection of settings used to configure an AutoML job.</p>
+    #[doc(hidden)]
     pub auto_ml_job_config: std::option::Option<crate::model::AutoMlJobConfig>,
     /// <p>The ARN of the role that is used to access the data.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
+    #[doc(hidden)]
     pub generate_candidate_definitions_only: bool,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
+    #[doc(hidden)]
     pub model_deploy_config: std::option::Option<crate::model::ModelDeployConfig>,
 }
 impl CreateAutoMlJobInput {
@@ -63537,17 +64610,23 @@ impl std::fmt::Debug for CreateAutoMlJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateArtifactInput {
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The ID, ID type, and URI of the source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ArtifactSource>,
     /// <p>The artifact type.</p>
+    #[doc(hidden)]
     pub artifact_type: std::option::Option<std::string::String>,
     /// <p>A list of properties to add to the artifact.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>A list of tags to apply to the artifact.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateArtifactInput {
@@ -63597,10 +64676,13 @@ impl std::fmt::Debug for CreateArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppImageConfigInput {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
+    #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the AppImageConfig.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The KernelGatewayImageConfig.</p>
+    #[doc(hidden)]
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
 }
 impl CreateAppImageConfigInput {
@@ -63637,18 +64719,24 @@ impl std::fmt::Debug for CreateAppImageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>The domain ID.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The user profile name.</p>
+    #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p>The name of the app.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
 }
 impl CreateAppInput {
@@ -63697,8 +64785,10 @@ impl std::fmt::Debug for CreateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlgorithmInput {
     /// <p>The name of the algorithm.</p>
+    #[doc(hidden)]
     pub algorithm_name: std::option::Option<std::string::String>,
     /// <p>A description of the algorithm.</p>
+    #[doc(hidden)]
     pub algorithm_description: std::option::Option<std::string::String>,
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
@@ -63710,6 +64800,7 @@ pub struct CreateAlgorithmInput {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub training_specification: std::option::Option<crate::model::TrainingSpecification>,
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
@@ -63717,13 +64808,17 @@ pub struct CreateAlgorithmInput {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub inference_specification: std::option::Option<crate::model::InferenceSpecification>,
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
+    #[doc(hidden)]
     pub validation_specification:
         std::option::Option<crate::model::AlgorithmValidationSpecification>,
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
+    #[doc(hidden)]
     pub certify_for_marketplace: bool,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAlgorithmInput {
@@ -63795,21 +64890,29 @@ impl std::fmt::Debug for CreateAlgorithmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActionInput {
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The source type, ID, and URI.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ActionSource>,
     /// <p>The action type.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<std::string::String>,
     /// <p>The description of the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p>A list of properties to add to the action.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>A list of tags to apply to the action.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateActionInput {
@@ -63869,6 +64972,7 @@ impl std::fmt::Debug for CreateActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeModelPackageInput {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
+    #[doc(hidden)]
     pub model_package_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDescribeModelPackageInput {
@@ -63890,8 +64994,10 @@ impl std::fmt::Debug for BatchDescribeModelPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTrialComponentInput {
     /// <p>The name of the component to associated with the trial.</p>
+    #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the trial to associate with.</p>
+    #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
 }
 impl AssociateTrialComponentInput {
@@ -63918,8 +65024,10 @@ impl std::fmt::Debug for AssociateTrialComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
@@ -63946,8 +65054,10 @@ impl std::fmt::Debug for AddTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAssociationInput {
     /// <p>The ARN of the source.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
     /// <ul>
@@ -63956,6 +65066,7 @@ pub struct AddAssociationInput {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::AssociationEdgeType>,
 }
 impl AddAssociationInput {

@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SatelliteListItem {
     /// <p>UUID of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>NORAD satellite ID number.</p>
+    #[doc(hidden)]
     pub norad_satellite_id: i32,
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    #[doc(hidden)]
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SatelliteListItem {
@@ -128,12 +132,16 @@ impl SatelliteListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissionProfileListItem {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
     /// <p>Region of a mission profile.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Name of a mission profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl MissionProfileListItem {
@@ -245,10 +253,13 @@ impl MissionProfileListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroundStationData {
     /// <p>UUID of a ground station.</p>
+    #[doc(hidden)]
     pub ground_station_id: std::option::Option<std::string::String>,
     /// <p>Name of a ground station.</p>
+    #[doc(hidden)]
     pub ground_station_name: std::option::Option<std::string::String>,
     /// <p>Ground station Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl GroundStationData {
@@ -343,8 +354,10 @@ impl GroundStationData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataflowEndpointListItem {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     /// <p>ARN of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl DataflowEndpointListItem {
@@ -431,8 +444,10 @@ impl DataflowEndpointListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointDetails {
     /// <p>Endpoint security details.</p>
+    #[doc(hidden)]
     pub security_details: std::option::Option<crate::model::SecurityDetails>,
     /// <p>A dataflow endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::DataflowEndpoint>,
 }
 impl EndpointDetails {
@@ -510,12 +525,16 @@ impl EndpointDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataflowEndpoint {
     /// <p>Name of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Socket address of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::SocketAddress>,
     /// <p>Status of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
 }
 impl DataflowEndpoint {
@@ -694,8 +713,10 @@ impl AsRef<str> for EndpointStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SocketAddress {
     /// <p>Name of a socket address.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Port of a socket address.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
 }
 impl SocketAddress {
@@ -767,10 +788,13 @@ impl SocketAddress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityDetails {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups to attach to the elastic network interfaces.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl SecurityDetails {
@@ -877,30 +901,43 @@ impl SecurityDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactData {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    #[doc(hidden)]
     pub pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
+    #[doc(hidden)]
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
+    #[doc(hidden)]
     pub contact_status: std::option::Option<crate::model::ContactStatus>,
     /// <p>Error message of a contact.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Maximum elevation angle of a contact.</p>
+    #[doc(hidden)]
     pub maximum_elevation: std::option::Option<crate::model::Elevation>,
     /// <p>Region of a contact.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a contact.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1210,8 +1247,10 @@ impl ContactData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Elevation {
     /// <p>Elevation angle value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>Elevation angle units.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::AngleUnits>,
 }
 impl Elevation {
@@ -1451,10 +1490,13 @@ impl AsRef<str> for ContactStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataflowDetail {
     /// <p>Dataflow details for the source side.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>Dataflow details for the destination side.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>Error message for a dataflow.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DataflowDetail {
@@ -1549,12 +1591,16 @@ impl DataflowDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    #[doc(hidden)]
     pub config_details: std::option::Option<crate::model::ConfigDetails>,
     /// <p>Region of a dataflow destination.</p>
+    #[doc(hidden)]
     pub dataflow_destination_region: std::option::Option<std::string::String>,
 }
 impl Destination {
@@ -1747,8 +1793,10 @@ impl ConfigDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3RecordingDetails {
     /// <p>ARN of the bucket used.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>Template of the S3 key used.</p>
+    #[doc(hidden)]
     pub key_template: std::option::Option<std::string::String>,
 }
 impl S3RecordingDetails {
@@ -1820,6 +1868,7 @@ impl S3RecordingDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
+    #[doc(hidden)]
     pub output_node: std::option::Option<std::string::String>,
 }
 impl AntennaDemodDecodeDetails {
@@ -1957,12 +2006,16 @@ impl AsRef<str> for ConfigCapabilityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    #[doc(hidden)]
     pub config_details: std::option::Option<crate::model::ConfigDetails>,
     /// <p>Region of a dataflow source.</p>
+    #[doc(hidden)]
     pub dataflow_source_region: std::option::Option<std::string::String>,
 }
 impl Source {
@@ -2077,12 +2130,16 @@ impl Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigListItem {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_arn: std::option::Option<std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ConfigListItem {
@@ -2331,10 +2388,13 @@ impl ConfigTypeData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3RecordingConfig {
     /// <p>ARN of the bucket to record to.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>S3 Key prefix to prefice data files.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3RecordingConfig {
@@ -2424,8 +2484,10 @@ impl S3RecordingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UplinkEchoConfig {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>ARN of an uplink <code>Config</code>.</p>
+    #[doc(hidden)]
     pub antenna_uplink_config_arn: std::option::Option<std::string::String>,
 }
 impl UplinkEchoConfig {
@@ -2500,10 +2562,13 @@ impl UplinkEchoConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntennaUplinkConfig {
     /// <p>Whether or not uplink transmit is disabled.</p>
+    #[doc(hidden)]
     pub transmit_disabled: std::option::Option<bool>,
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
+    #[doc(hidden)]
     pub spectrum_config: std::option::Option<crate::model::UplinkSpectrumConfig>,
     /// <p>EIRP of the target.</p>
+    #[doc(hidden)]
     pub target_eirp: std::option::Option<crate::model::Eirp>,
 }
 impl AntennaUplinkConfig {
@@ -2595,8 +2660,10 @@ impl AntennaUplinkConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Eirp {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>Units of an EIRP.</p>
+    #[doc(hidden)]
     pub units: std::option::Option<crate::model::EirpUnits>,
 }
 impl Eirp {
@@ -2719,8 +2786,10 @@ impl AsRef<str> for EirpUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UplinkSpectrumConfig {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
+    #[doc(hidden)]
     pub center_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    #[doc(hidden)]
     pub polarization: std::option::Option<crate::model::Polarization>,
 }
 impl UplinkSpectrumConfig {
@@ -2857,8 +2926,10 @@ impl AsRef<str> for Polarization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Frequency {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>Frequency units.</p>
+    #[doc(hidden)]
     pub units: std::option::Option<crate::model::FrequencyUnits>,
 }
 impl Frequency {
@@ -2992,10 +3063,13 @@ impl AsRef<str> for FrequencyUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the spectral <code>Config</code>.</p>
+    #[doc(hidden)]
     pub spectrum_config: std::option::Option<crate::model::SpectrumConfig>,
     /// <p>Information about the demodulation <code>Config</code>.</p>
+    #[doc(hidden)]
     pub demodulation_config: std::option::Option<crate::model::DemodulationConfig>,
     /// <p>Information about the decode <code>Config</code>.</p>
+    #[doc(hidden)]
     pub decode_config: std::option::Option<crate::model::DecodeConfig>,
 }
 impl AntennaDownlinkDemodDecodeConfig {
@@ -3093,6 +3167,7 @@ impl AntennaDownlinkDemodDecodeConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecodeConfig {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
+    #[doc(hidden)]
     pub unvalidated_json: std::option::Option<std::string::String>,
 }
 impl DecodeConfig {
@@ -3150,6 +3225,7 @@ impl DecodeConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
+    #[doc(hidden)]
     pub unvalidated_json: std::option::Option<std::string::String>,
 }
 impl DemodulationConfig {
@@ -3207,6 +3283,7 @@ impl DemodulationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpectrumConfig {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    #[doc(hidden)]
     pub center_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
@@ -3214,8 +3291,10 @@ pub struct SpectrumConfig {
     /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<crate::model::FrequencyBandwidth>,
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    #[doc(hidden)]
     pub polarization: std::option::Option<crate::model::Polarization>,
 }
 impl SpectrumConfig {
@@ -3333,8 +3412,10 @@ pub struct FrequencyBandwidth {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>Frequency bandwidth units.</p>
+    #[doc(hidden)]
     pub units: std::option::Option<crate::model::BandwidthUnits>,
 }
 impl FrequencyBandwidth {
@@ -3483,8 +3564,10 @@ impl AsRef<str> for BandwidthUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_name: std::option::Option<std::string::String>,
     /// <p>Region of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_region: std::option::Option<std::string::String>,
 }
 impl DataflowEndpointConfig {
@@ -3562,6 +3645,7 @@ impl DataflowEndpointConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
+    #[doc(hidden)]
     pub autotrack: std::option::Option<crate::model::Criticality>,
 }
 impl TrackingConfig {
@@ -3678,6 +3762,7 @@ impl AsRef<str> for Criticality {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
+    #[doc(hidden)]
     pub spectrum_config: std::option::Option<crate::model::SpectrumConfig>,
 }
 impl AntennaDownlinkConfig {

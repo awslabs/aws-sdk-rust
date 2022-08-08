@@ -1445,8 +1445,10 @@ impl ListAvailableResourceMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
@@ -1455,10 +1457,13 @@ pub struct ListAvailableResourceMetricsInput {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metric_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAvailableResourceMetricsInput {
@@ -1506,14 +1511,19 @@ impl std::fmt::Debug for ListAvailableResourceMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableResourceDimensionsInput {
@@ -1559,17 +1569,22 @@ pub struct GetResourceMetricsInput {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
+    #[doc(hidden)]
     pub metric_queries: std::option::Option<std::vec::Vec<crate::model::MetricQuery>>,
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
@@ -1580,10 +1595,13 @@ pub struct GetResourceMetricsInput {
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    #[doc(hidden)]
     pub period_in_seconds: std::option::Option<i32>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceMetricsInput {
@@ -1655,8 +1673,10 @@ impl std::fmt::Debug for GetResourceMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetadataInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetResourceMetadataInput {
@@ -1683,26 +1703,31 @@ impl std::fmt::Debug for GetResourceMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionKeyDetailsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
     /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub requested_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDimensionKeyDetailsInput {
@@ -1760,15 +1785,19 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -1777,6 +1806,7 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
@@ -1787,23 +1817,30 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
+    #[doc(hidden)]
     pub period_in_seconds: std::option::Option<i32>,
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<crate::model::DimensionGroup>,
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+    #[doc(hidden)]
     pub additional_metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
+    #[doc(hidden)]
     pub partition_by: std::option::Option<crate::model::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDimensionKeysInput {

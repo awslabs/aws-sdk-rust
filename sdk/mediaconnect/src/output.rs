@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowSourceOutput {
     /// The ARN of the flow that you want to update.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The settings for the source of the flow.
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
 }
 impl UpdateFlowSourceOutput {
@@ -77,8 +79,10 @@ impl UpdateFlowSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowOutputOutput {
     /// The ARN of the flow that is associated with the updated output.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The new settings of the output that you updated.
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::Output>,
 }
 impl UpdateFlowOutputOutput {
@@ -150,8 +154,10 @@ impl UpdateFlowOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowMediaStreamOutput {
     /// The ARN of the flow that is associated with the media stream that you updated.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media stream that you updated.
+    #[doc(hidden)]
     pub media_stream: std::option::Option<crate::model::MediaStream>,
 }
 impl UpdateFlowMediaStreamOutput {
@@ -226,8 +232,10 @@ impl UpdateFlowMediaStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowEntitlementOutput {
     /// The new configuration of the entitlement that you updated.
+    #[doc(hidden)]
     pub entitlement: std::option::Option<crate::model::Entitlement>,
     /// The ARN of the flow that this entitlement was granted on.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl UpdateFlowEntitlementOutput {
@@ -302,6 +310,7 @@ impl UpdateFlowEntitlementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
+    #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
 }
 impl UpdateFlowOutput {
@@ -414,8 +423,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowOutput {
     /// The ARN of the flow that you stopped.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The status of the flow when the StopFlow process begins.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl StopFlowOutput {
@@ -487,8 +498,10 @@ impl StopFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowOutput {
     /// The ARN of the flow that you started.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The status of the flow when the StartFlow process begins.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl StartFlowOutput {
@@ -560,8 +573,10 @@ impl StartFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeFlowEntitlementOutput {
     /// The ARN of the entitlement that was revoked.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The ARN of the flow that the entitlement was revoked from.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl RevokeFlowEntitlementOutput {
@@ -636,10 +651,13 @@ impl RevokeFlowEntitlementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowVpcInterfaceOutput {
     /// The ARN of the flow that is associated with the VPC interface you removed.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
+    #[doc(hidden)]
     pub non_deleted_network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The name of the VPC interface that was removed.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowVpcInterfaceOutput {
@@ -747,8 +765,10 @@ impl RemoveFlowVpcInterfaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowSourceOutput {
     /// The ARN of the flow that is associated with the source you removed.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the source that was removed.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowSourceOutput {
@@ -820,8 +840,10 @@ impl RemoveFlowSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowOutputOutput {
     /// The ARN of the flow that is associated with the output you removed.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the output that was removed.
+    #[doc(hidden)]
     pub output_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowOutputOutput {
@@ -893,8 +915,10 @@ impl RemoveFlowOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that was removed.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowMediaStreamOutput {
@@ -969,6 +993,7 @@ impl RemoveFlowMediaStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl PurchaseOfferingOutput {
@@ -1026,6 +1051,7 @@ impl PurchaseOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1099,8 +1125,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
+    #[doc(hidden)]
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
 }
 impl ListReservationsOutput {
@@ -1181,8 +1209,10 @@ impl ListReservationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of offerings that are available to this account in the current AWS Region.
+    #[doc(hidden)]
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
 }
 impl ListOfferingsOutput {
@@ -1263,8 +1293,10 @@ impl ListOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowsOutput {
     /// A list of flow summaries.
+    #[doc(hidden)]
     pub flows: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsOutput {
@@ -1345,8 +1377,10 @@ impl ListFlowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitlementsOutput {
@@ -1428,8 +1462,10 @@ impl ListEntitlementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// The ARN of the flow that these entitlements were granted to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl GrantFlowEntitlementsOutput {
@@ -1510,6 +1546,7 @@ impl GrantFlowEntitlementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl DescribeReservationOutput {
@@ -1567,6 +1604,7 @@ impl DescribeReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    #[doc(hidden)]
     pub offering: std::option::Option<crate::model::Offering>,
 }
 impl DescribeOfferingOutput {
@@ -1621,8 +1659,10 @@ impl DescribeOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
+    #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
     /// Messages that provide the state of the flow.
+    #[doc(hidden)]
     pub messages: std::option::Option<crate::model::Messages>,
 }
 impl DescribeFlowOutput {
@@ -1694,8 +1734,10 @@ impl DescribeFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowOutput {
     /// The ARN of the flow that was deleted.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The status of the flow when the DeleteFlow process begins.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl DeleteFlowOutput {
@@ -1767,6 +1809,7 @@ impl DeleteFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
+    #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
 }
 impl CreateFlowOutput {
@@ -1819,8 +1862,10 @@ impl CreateFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowVpcInterfacesOutput {
     /// The ARN of the flow that these VPC interfaces were added to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The details of the newly added VPC interfaces.
+    #[doc(hidden)]
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
 }
 impl AddFlowVpcInterfacesOutput {
@@ -1901,8 +1946,10 @@ impl AddFlowVpcInterfacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowSourcesOutput {
     /// The ARN of the flow that these sources were added to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The details of the newly added sources.
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
 }
 impl AddFlowSourcesOutput {
@@ -1983,8 +2030,10 @@ impl AddFlowSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowOutputsOutput {
     /// The ARN of the flow that these outputs were added to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The details of the newly added outputs.
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl AddFlowOutputsOutput {
@@ -2065,8 +2114,10 @@ impl AddFlowOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that you added to the flow.
+    #[doc(hidden)]
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
 }
 impl AddFlowMediaStreamsOutput {

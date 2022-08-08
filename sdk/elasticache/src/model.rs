@@ -5,75 +5,102 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The user supplied description of the replication group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the Global datastore and role of this replication group in the Global datastore.</p>
+    #[doc(hidden)]
     pub global_replication_group_info:
         std::option::Option<crate::model::GlobalReplicationGroupInfo>,
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
+    #[doc(hidden)]
     pub pending_modified_values:
         std::option::Option<crate::model::ReplicationGroupPendingModifiedValues>,
     /// <p>The names of all the cache clusters that are part of this replication group.</p>
+    #[doc(hidden)]
     pub member_clusters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each node group (shard).</p>
+    #[doc(hidden)]
     pub node_groups: std::option::Option<std::vec::Vec<crate::model::NodeGroup>>,
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group.</p>
+    #[doc(hidden)]
     pub snapshotting_cluster_id: std::option::Option<std::string::String>,
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
+    #[doc(hidden)]
     pub automatic_failover: std::option::Option<crate::model::AutomaticFailoverStatus>,
     /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a> </p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<crate::model::MultiAzStatus>,
     /// <p>The configuration endpoint for this replication group. Use the configuration endpoint to connect to this replication group.</p>
+    #[doc(hidden)]
     pub configuration_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
     /// <p> If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be partitioned across multiple shards (API/CLI: node groups).</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub cluster_enabled: std::option::Option<bool>,
     /// <p>The name of the compute and memory capacity node type for each node in the replication group.</p>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
+    #[doc(hidden)]
     pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub transit_encryption_enabled: std::option::Option<bool>,
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub at_rest_encryption_enabled: std::option::Option<bool>,
     /// <p>The outpost ARNs of the replication group's member clusters.</p>
+    #[doc(hidden)]
     pub member_clusters_outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the replication group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the user group associated to the replication group.</p>
+    #[doc(hidden)]
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the destination, format and type of the logs. </p>
+    #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
+    #[doc(hidden)]
     pub replication_group_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    #[doc(hidden)]
     pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
 }
 impl ReplicationGroup {
@@ -800,16 +827,22 @@ impl AsRef<str> for DataTieringStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogDeliveryConfiguration {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
     /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
+    #[doc(hidden)]
     pub destination_details: std::option::Option<crate::model::DestinationDetails>,
     /// <p>Returns the log format, either JSON or TEXT.</p>
+    #[doc(hidden)]
     pub log_format: std::option::Option<crate::model::LogFormat>,
     /// <p>Returns the log delivery configuration status. Values are one of <code>enabling</code> | <code>disabling</code> | <code>modifying</code> | <code>active</code> | <code>error</code> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LogDeliveryConfigurationStatus>,
     /// <p>Returns an error message for the log delivery configuration.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LogDeliveryConfiguration {
@@ -1083,9 +1116,11 @@ impl AsRef<str> for LogFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationDetails {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_details:
         std::option::Option<crate::model::CloudWatchLogsDestinationDetails>,
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_details:
         std::option::Option<crate::model::KinesisFirehoseDestinationDetails>,
 }
@@ -1176,6 +1211,7 @@ impl DestinationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseDestinationDetails {
@@ -1233,6 +1269,7 @@ impl KinesisFirehoseDestinationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestinationDetails {
     /// <p>The name of the CloudWatch Logs log group.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestinationDetails {
@@ -1397,8 +1434,10 @@ impl AsRef<str> for LogType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The port number that the cache engine is listening on.</p>
+    #[doc(hidden)]
     pub port: i32,
 }
 impl Endpoint {
@@ -1588,16 +1627,22 @@ impl AsRef<str> for AutomaticFailoverStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroup {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The endpoint of the primary node in this node group (shard).</p>
+    #[doc(hidden)]
     pub primary_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    #[doc(hidden)]
     pub reader_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The keyspace for this node group (shard).</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
+    #[doc(hidden)]
     pub node_group_members: std::option::Option<std::vec::Vec<crate::model::NodeGroupMember>>,
 }
 impl NodeGroup {
@@ -1756,16 +1801,22 @@ impl NodeGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupMember {
     /// <p>The ID of the cluster to which the node belongs.</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+    #[doc(hidden)]
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
+    #[doc(hidden)]
     pub read_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The name of the Availability Zone in which the node is located.</p>
+    #[doc(hidden)]
     pub preferred_availability_zone: std::option::Option<std::string::String>,
     /// <p>The outpost ARN of the node group member.</p>
+    #[doc(hidden)]
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis (cluster mode disabled) replication groups.</p>
+    #[doc(hidden)]
     pub current_role: std::option::Option<std::string::String>,
 }
 impl NodeGroupMember {
@@ -1926,17 +1977,23 @@ impl NodeGroupMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupPendingModifiedValues {
     /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
+    #[doc(hidden)]
     pub primary_cluster_id: std::option::Option<std::string::String>,
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
+    #[doc(hidden)]
     pub automatic_failover_status:
         std::option::Option<crate::model::PendingAutomaticFailoverStatus>,
     /// <p>The status of an online resharding operation.</p>
+    #[doc(hidden)]
     pub resharding: std::option::Option<crate::model::ReshardingStatus>,
     /// <p>The auth token status</p>
+    #[doc(hidden)]
     pub auth_token_status: std::option::Option<crate::model::AuthTokenUpdateStatus>,
     /// <p>The user group being modified.</p>
+    #[doc(hidden)]
     pub user_groups: std::option::Option<crate::model::UserGroupsUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
+    #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::PendingLogDeliveryConfiguration>>,
 }
@@ -2118,12 +2175,16 @@ impl ReplicationGroupPendingModifiedValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingLogDeliveryConfiguration {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
+    #[doc(hidden)]
     pub destination_details: std::option::Option<crate::model::DestinationDetails>,
     /// <p>Returns the log format, either JSON or TEXT</p>
+    #[doc(hidden)]
     pub log_format: std::option::Option<crate::model::LogFormat>,
 }
 impl PendingLogDeliveryConfiguration {
@@ -2238,8 +2299,10 @@ impl PendingLogDeliveryConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupsUpdateStatus {
     /// <p>The ID of the user group to add.</p>
+    #[doc(hidden)]
     pub user_group_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the user group to remove.</p>
+    #[doc(hidden)]
     pub user_group_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UserGroupsUpdateStatus {
@@ -2385,6 +2448,7 @@ impl AsRef<str> for AuthTokenUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReshardingStatus {
     /// <p>Represents the progress of an online resharding operation.</p>
+    #[doc(hidden)]
     pub slot_migration: std::option::Option<crate::model::SlotMigration>,
 }
 impl ReshardingStatus {
@@ -2442,6 +2506,7 @@ impl ReshardingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
+    #[doc(hidden)]
     pub progress_percentage: f64,
 }
 impl SlotMigration {
@@ -2551,8 +2616,10 @@ impl AsRef<str> for PendingAutomaticFailoverStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroupInfo {
     /// <p>The name of the Global datastore</p>
+    #[doc(hidden)]
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>The role of the replication group in a Global datastore. Can be primary or secondary.</p>
+    #[doc(hidden)]
     pub global_replication_group_member_role: std::option::Option<std::string::String>,
 }
 impl GlobalReplicationGroupInfo {
@@ -2642,8 +2709,10 @@ impl GlobalReplicationGroupInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerNodeEndpoint {
     /// <p>The address of the node endpoint</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The port of the node endpoint</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
 }
 impl CustomerNodeEndpoint {
@@ -2720,14 +2789,19 @@ impl CustomerNodeEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroup {
     /// <p>The Amazon account ID of the cache security group owner.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The name of the cache security group.</p>
+    #[doc(hidden)]
     pub cache_security_group_name: std::option::Option<std::string::String>,
     /// <p>The description of the cache security group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
+    #[doc(hidden)]
     pub ec2_security_groups: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
     /// <p>The ARN of the cache security group,</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CacheSecurityGroup {
@@ -2863,10 +2937,13 @@ impl CacheSecurityGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2SecurityGroup {
     /// <p>The status of the Amazon EC2 security group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EC2 security group.</p>
+    #[doc(hidden)]
     pub ec2_security_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
+    #[doc(hidden)]
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl Ec2SecurityGroup {
@@ -2967,8 +3044,10 @@ impl Ec2SecurityGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl ParameterNameValue {
@@ -3046,8 +3125,10 @@ impl ParameterNameValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for the tag. May not be null.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value. May be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -3119,11 +3200,14 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheCluster {
     /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
     /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
+    #[doc(hidden)]
     pub configuration_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
+    #[doc(hidden)]
     pub client_download_landing_page: std::option::Option<std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -3158,21 +3242,29 @@ pub struct CacheCluster {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version of the cache engine that is used in this cluster.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
+    #[doc(hidden)]
     pub cache_cluster_status: std::option::Option<std::string::String>,
     /// <p>The number of cache nodes in the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    #[doc(hidden)]
     pub num_cache_nodes: std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
+    #[doc(hidden)]
     pub preferred_availability_zone: std::option::Option<std::string::String>,
     /// <p>The outpost ARN in which the cache cluster is created.</p>
+    #[doc(hidden)]
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
+    #[doc(hidden)]
     pub cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -3186,53 +3278,72 @@ pub struct CacheCluster {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
+    #[doc(hidden)]
     pub pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
+    #[doc(hidden)]
     pub cache_security_groups:
         std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroupMembership>>,
     /// <p>Status of the cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_group: std::option::Option<crate::model::CacheParameterGroupStatus>,
     /// <p>The name of the cache subnet group associated with the cluster.</p>
+    #[doc(hidden)]
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of cache nodes that are members of the cluster.</p>
+    #[doc(hidden)]
     pub cache_nodes: std::option::Option<std::vec::Vec<crate::model::CacheNode>>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
     /// <p> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     /// </important>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>The date the auth token was last modified</p>
+    #[doc(hidden)]
     pub auth_token_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub transit_encryption_enabled: std::option::Option<bool>,
     /// <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub at_rest_encryption_enabled: std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
+    #[doc(hidden)]
     pub replication_group_log_delivery_enabled: bool,
     /// <p>Returns the destination, format and type of the logs.</p>
+    #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
 }
@@ -4110,8 +4221,10 @@ impl CacheCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupMembership {
     /// <p>The identifier of the cache security group.</p>
+    #[doc(hidden)]
     pub security_group_id: std::option::Option<std::string::String>,
     /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl SecurityGroupMembership {
@@ -4218,20 +4331,28 @@ impl SecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheNode {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
+    #[doc(hidden)]
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
+    #[doc(hidden)]
     pub cache_node_status: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created.</p>
+    #[doc(hidden)]
     pub cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this cache node.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The status of the parameter group applied to this cache node.</p>
+    #[doc(hidden)]
     pub parameter_group_status: std::option::Option<std::string::String>,
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
+    #[doc(hidden)]
     pub source_cache_node_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone where this node was created and now resides.</p>
+    #[doc(hidden)]
     pub customer_availability_zone: std::option::Option<std::string::String>,
     /// <p>The customer outpost ARN of the cache node.</p>
+    #[doc(hidden)]
     pub customer_outpost_arn: std::option::Option<std::string::String>,
 }
 impl CacheNode {
@@ -4429,10 +4550,13 @@ impl CacheNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheParameterGroupStatus {
     /// <p>The name of the cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of parameter updates.</p>
+    #[doc(hidden)]
     pub parameter_apply_status: std::option::Option<std::string::String>,
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+    #[doc(hidden)]
     pub cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CacheParameterGroupStatus {
@@ -4540,8 +4664,10 @@ impl CacheParameterGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
+    #[doc(hidden)]
     pub cache_security_group_name: std::option::Option<std::string::String>,
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CacheSecurityGroupMembership {
@@ -4616,8 +4742,10 @@ impl CacheSecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the topic.</p>
+    #[doc(hidden)]
     pub topic_status: std::option::Option<std::string::String>,
 }
 impl NotificationConfiguration {
@@ -4690,16 +4818,22 @@ impl NotificationConfiguration {
 pub struct PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    #[doc(hidden)]
     pub num_cache_nodes: std::option::Option<i32>,
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
+    #[doc(hidden)]
     pub cache_node_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The new cache engine version that the cluster runs.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The cache node type that this cluster or replication group is scaled to.</p>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The auth token status</p>
+    #[doc(hidden)]
     pub auth_token_status: std::option::Option<crate::model::AuthTokenUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
+    #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::PendingLogDeliveryConfiguration>>,
 }
@@ -4885,34 +5019,47 @@ impl PendingModifiedValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroup {
     /// <p>The name of the Global datastore</p>
+    #[doc(hidden)]
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>The optional description of the Global datastore</p>
+    #[doc(hidden)]
     pub global_replication_group_description: std::option::Option<std::string::String>,
     /// <p>The status of the Global datastore</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The cache node type of the Global datastore</p>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The Elasticache engine. For Redis only.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The Elasticache Redis engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The replication groups that comprise the Global datastore.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroupMember>>,
     /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
+    #[doc(hidden)]
     pub cluster_enabled: std::option::Option<bool>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    #[doc(hidden)]
     pub global_node_groups: std::option::Option<std::vec::Vec<crate::model::GlobalNodeGroup>>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub auth_token_enabled: std::option::Option<bool>,
     /// <p>A flag that enables in-transit encryption when set to true. You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    #[doc(hidden)]
     pub transit_encryption_enabled: std::option::Option<bool>,
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    #[doc(hidden)]
     pub at_rest_encryption_enabled: std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GlobalReplicationGroup {
@@ -5233,8 +5380,10 @@ impl GlobalReplicationGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalNodeGroup {
     /// <p>The name of the global node group</p>
+    #[doc(hidden)]
     pub global_node_group_id: std::option::Option<std::string::String>,
     /// <p>The keyspace for this node group</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
 }
 impl GlobalNodeGroup {
@@ -5309,14 +5458,19 @@ impl GlobalNodeGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon region of the Global datastore member.</p>
+    #[doc(hidden)]
     pub replication_group_region: std::option::Option<std::string::String>,
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
+    #[doc(hidden)]
     pub automatic_failover: std::option::Option<crate::model::AutomaticFailoverStatus>,
     /// <p>The status of the membership of the replication group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl GlobalReplicationGroupMember {
@@ -5450,8 +5604,10 @@ impl GlobalReplicationGroupMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNode {
     /// <p>The unique identifier for the reservation.</p>
+    #[doc(hidden)]
     pub reserved_cache_node_id: std::option::Option<std::string::String>,
     /// <p>The offering identifier.</p>
+    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
     /// <p>The cache node type for the reserved cache nodes.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -5486,27 +5642,38 @@ pub struct ReservedCacheNode {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The time the reservation started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this reserved cache node.</p>
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this reserved cache node.</p>
+    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The number of cache nodes that have been reserved.</p>
+    #[doc(hidden)]
     pub cache_node_count: i32,
     /// <p>The description of the reserved cache node.</p>
+    #[doc(hidden)]
     pub product_description: std::option::Option<std::string::String>,
     /// <p>The offering type of this reserved cache node.</p>
+    #[doc(hidden)]
     pub offering_type: std::option::Option<std::string::String>,
     /// <p>The state of the reserved cache node.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The recurring price charged to run this reserved cache node.</p>
+    #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code> </p>
+    #[doc(hidden)]
     pub reservation_arn: std::option::Option<std::string::String>,
 }
 impl ReservedCacheNode {
@@ -5901,8 +6068,10 @@ impl ReservedCacheNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
+    #[doc(hidden)]
     pub recurring_charge_amount: f64,
     /// <p>The frequency of the recurring charge.</p>
+    #[doc(hidden)]
     pub recurring_charge_frequency: std::option::Option<std::string::String>,
 }
 impl RecurringCharge {
@@ -5980,8 +6149,10 @@ impl RecurringCharge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupPendingChanges {
     /// <p>The list of user IDs to remove.</p>
+    #[doc(hidden)]
     pub user_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of user IDs to add.</p>
+    #[doc(hidden)]
     pub user_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UserGroupPendingChanges {
@@ -6071,8 +6242,10 @@ impl UserGroupPendingChanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
+    #[doc(hidden)]
     pub password_count: std::option::Option<i32>,
 }
 impl Authentication {
@@ -6202,8 +6375,10 @@ impl AsRef<str> for AuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReshardingConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
+    #[doc(hidden)]
     pub preferred_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReshardingConfiguration {
@@ -6294,14 +6469,19 @@ impl ReshardingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogDeliveryConfigurationRequest {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
     /// <p>Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the destination type.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
+    #[doc(hidden)]
     pub destination_details: std::option::Option<crate::model::DestinationDetails>,
     /// <p>Specifies either JSON or TEXT</p>
+    #[doc(hidden)]
     pub log_format: std::option::Option<crate::model::LogFormat>,
     /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl LogDeliveryConfigurationRequest {
@@ -6496,14 +6676,19 @@ impl AsRef<str> for AuthTokenUpdateStrategyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetGroup {
     /// <p>The name of the cache subnet group.</p>
+    #[doc(hidden)]
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description of the cache subnet group.</p>
+    #[doc(hidden)]
     pub cache_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnets associated with the cache subnet group.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CacheSubnetGroup {
@@ -6647,10 +6832,13 @@ impl CacheSubnetGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
+    #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
     /// <p>The Availability Zone associated with the subnet.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<crate::model::AvailabilityZone>,
     /// <p>The outpost ARN of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_outpost: std::option::Option<crate::model::SubnetOutpost>,
 }
 impl Subnet {
@@ -6748,6 +6936,7 @@ impl Subnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetOutpost {
     /// <p>The outpost ARN of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_outpost_arn: std::option::Option<std::string::String>,
 }
 impl SubnetOutpost {
@@ -6805,6 +6994,7 @@ impl SubnetOutpost {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZone {
@@ -6912,6 +7102,7 @@ impl AsRef<str> for AzMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureShard {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
@@ -6923,10 +7114,13 @@ pub struct ConfigureShard {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub new_replica_count: i32,
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
+    #[doc(hidden)]
     pub preferred_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
+    #[doc(hidden)]
     pub preferred_outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConfigureShard {
@@ -7087,10 +7281,13 @@ impl ConfigureShard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon region where the cluster is stored</p>
+    #[doc(hidden)]
     pub replication_group_region: std::option::Option<std::string::String>,
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
+    #[doc(hidden)]
     pub resharding_configuration:
         std::option::Option<std::vec::Vec<crate::model::ReshardingConfiguration>>,
 }
@@ -7201,22 +7398,31 @@ impl RegionalConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The username of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    #[doc(hidden)]
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl User {
@@ -7425,8 +7631,10 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The property being filtered. For example, UserId.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The property values to filter on. For example, "user-123".</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -7507,20 +7715,28 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroup {
     /// <p>The ID of the user group.</p>
+    #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
+    #[doc(hidden)]
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
+    #[doc(hidden)]
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UserGroup {
@@ -7721,40 +7937,57 @@ impl UserGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAction {
     /// <p>The ID of the replication group</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the cache cluster</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date the update is first available</p>
+    #[doc(hidden)]
     pub service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
+    #[doc(hidden)]
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The status of the service update</p>
+    #[doc(hidden)]
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    #[doc(hidden)]
     pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects the nature of the service update </p>
+    #[doc(hidden)]
     pub service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
     /// <p>The date that the service update is available to a replication group</p>
+    #[doc(hidden)]
     pub update_action_available_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the update action</p>
+    #[doc(hidden)]
     pub update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
     /// <p>The progress of the service update on the replication group</p>
+    #[doc(hidden)]
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date when the UpdateActionStatus was last modified</p>
+    #[doc(hidden)]
     pub update_action_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the recommended apply-by date.</p>
+    #[doc(hidden)]
     pub sla_met: std::option::Option<crate::model::SlaMet>,
     /// <p>The status of the service update on the node group</p>
+    #[doc(hidden)]
     pub node_group_update_status:
         std::option::Option<std::vec::Vec<crate::model::NodeGroupUpdateStatus>>,
     /// <p>The status of the service update on the cache node</p>
+    #[doc(hidden)]
     pub cache_node_update_status:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeUpdateStatus>>,
     /// <p>The estimated length of time for the update to complete</p>
+    #[doc(hidden)]
     pub estimated_update_time: std::option::Option<std::string::String>,
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
 }
 impl UpdateAction {
@@ -8181,20 +8414,28 @@ impl UpdateAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheNodeUpdateStatus {
     /// <p>The node ID of the cache cluster</p>
+    #[doc(hidden)]
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The update status of the node</p>
+    #[doc(hidden)]
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
+    #[doc(hidden)]
     pub node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the update for a node</p>
+    #[doc(hidden)]
     pub node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date of the update for a node</p>
+    #[doc(hidden)]
     pub node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
+    #[doc(hidden)]
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
+    #[doc(hidden)]
     pub node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the NodeUpdateStatus was last modified&gt;</p>
+    #[doc(hidden)]
     pub node_update_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CacheNodeUpdateStatus {
@@ -8543,8 +8784,10 @@ impl AsRef<str> for NodeUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupUpdateStatus {
     /// <p>The ID of the node group</p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>The status of the service update on the node group member</p>
+    #[doc(hidden)]
     pub node_group_member_update_status:
         std::option::Option<std::vec::Vec<crate::model::NodeGroupMemberUpdateStatus>>,
 }
@@ -8638,22 +8881,31 @@ impl NodeGroupUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupMemberUpdateStatus {
     /// <p>The cache cluster ID</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The node ID of the cache cluster</p>
+    #[doc(hidden)]
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The update status of the node</p>
+    #[doc(hidden)]
     pub node_update_status: std::option::Option<crate::model::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
+    #[doc(hidden)]
     pub node_deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the update for a node</p>
+    #[doc(hidden)]
     pub node_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date of the update for a node</p>
+    #[doc(hidden)]
     pub node_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
+    #[doc(hidden)]
     pub node_update_initiated_by: std::option::Option<crate::model::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
+    #[doc(hidden)]
     pub node_update_initiated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the NodeUpdateStatus was last modified</p>
+    #[doc(hidden)]
     pub node_update_status_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NodeGroupMemberUpdateStatus {
@@ -9214,8 +9466,10 @@ impl AsRef<str> for ServiceUpdateSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range filter</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRangeFilter {
@@ -9293,16 +9547,22 @@ impl TimeRangeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the source replication group.</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>A description of the source replication group.</p>
+    #[doc(hidden)]
     pub replication_group_description: std::option::Option<std::string::String>,
     /// <p>The user-supplied identifier of the source cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
+    #[doc(hidden)]
     pub snapshot_status: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
+    #[doc(hidden)]
     pub snapshot_source: std::option::Option<std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -9339,19 +9599,26 @@ pub struct Snapshot {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cluster.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The number of cache nodes in the source cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    #[doc(hidden)]
     pub num_cache_nodes: std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
+    #[doc(hidden)]
     pub preferred_availability_zone: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+    #[doc(hidden)]
     pub preferred_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the source cluster was created.</p>
+    #[doc(hidden)]
     pub cache_cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -9365,36 +9632,51 @@ pub struct Snapshot {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The port number used by each cache nodes in the source cluster.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The cache parameter group that is associated with the source cluster.</p>
+    #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
+    #[doc(hidden)]
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code> operation. </p>
     /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored replication group must be the same.</p>
+    #[doc(hidden)]
     pub num_node_groups: std::option::Option<i32>,
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
+    #[doc(hidden)]
     pub automatic_failover: std::option::Option<crate::model::AutomaticFailoverStatus>,
     /// <p>A list of the cache nodes in the source cluster.</p>
+    #[doc(hidden)]
     pub node_snapshots: std::option::Option<std::vec::Vec<crate::model::NodeSnapshot>>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    #[doc(hidden)]
     pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
 }
 impl Snapshot {
@@ -10138,18 +10420,25 @@ impl Snapshot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeSnapshot {
     /// <p>A unique identifier for the source cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the source node group (shard).</p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>The cache node identifier for the node in the source cluster.</p>
+    #[doc(hidden)]
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the source node group (shard).</p>
+    #[doc(hidden)]
     pub node_group_configuration: std::option::Option<crate::model::NodeGroupConfiguration>,
     /// <p>The size of the cache on the source cache node.</p>
+    #[doc(hidden)]
     pub cache_size: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache node was created in the source cluster.</p>
+    #[doc(hidden)]
     pub cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NodeSnapshot {
@@ -10330,19 +10619,26 @@ impl NodeSnapshot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p>The number of read replica nodes in this node group (shard).</p>
+    #[doc(hidden)]
     pub replica_count: std::option::Option<i32>,
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
+    #[doc(hidden)]
     pub primary_availability_zone: std::option::Option<std::string::String>,
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
+    #[doc(hidden)]
     pub replica_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The outpost ARN of the primary node.</p>
+    #[doc(hidden)]
     pub primary_outpost_arn: std::option::Option<std::string::String>,
     /// <p>The outpost ARN of the node replicas.</p>
+    #[doc(hidden)]
     pub replica_outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NodeGroupConfiguration {
@@ -10533,28 +10829,40 @@ impl NodeGroupConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
+    #[doc(hidden)]
     pub service_update_release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date after which the service update is no longer available</p>
+    #[doc(hidden)]
     pub service_update_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
+    #[doc(hidden)]
     pub service_update_severity: std::option::Option<crate::model::ServiceUpdateSeverity>,
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    #[doc(hidden)]
     pub service_update_recommended_apply_by_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service update</p>
+    #[doc(hidden)]
     pub service_update_status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>Provides details of the service update</p>
+    #[doc(hidden)]
     pub service_update_description: std::option::Option<std::string::String>,
     /// <p>Reflects the nature of the service update</p>
+    #[doc(hidden)]
     pub service_update_type: std::option::Option<crate::model::ServiceUpdateType>,
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
+    #[doc(hidden)]
     pub auto_update_after_recommended_apply_by_date: std::option::Option<bool>,
     /// <p>The estimated length of time the service update will take</p>
+    #[doc(hidden)]
     pub estimated_update_time: std::option::Option<std::string::String>,
 }
 impl ServiceUpdate {
@@ -10855,6 +11163,7 @@ impl ServiceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNodesOffering {
     /// <p>A unique identifier for the reserved cache node offering.</p>
+    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
     /// <p>The cache node type for the reserved cache node.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -10889,18 +11198,25 @@ pub struct ReservedCacheNodesOffering {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The duration of the offering. in seconds.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this offering.</p>
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this offering.</p>
+    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The cache engine used by the offering.</p>
+    #[doc(hidden)]
     pub product_description: std::option::Option<std::string::String>,
     /// <p>The offering type.</p>
+    #[doc(hidden)]
     pub offering_type: std::option::Option<std::string::String>,
     /// <p>The recurring price charged to run this reserved cache node.</p>
+    #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
 }
 impl ReservedCacheNodesOffering {
@@ -11198,12 +11514,16 @@ impl ReservedCacheNodesOffering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The identifier for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The text of the event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
@@ -11399,12 +11719,16 @@ impl AsRef<str> for SourceType {
 pub struct EngineDefaults {
     /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
+    #[doc(hidden)]
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of engine default parameters.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    #[doc(hidden)]
     pub cache_node_type_specific_parameters:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
 }
@@ -11550,23 +11874,32 @@ impl EngineDefaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheNodeTypeSpecificParameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The source of the parameter value.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The valid data type for the parameter.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The valid range of values for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
+    #[doc(hidden)]
     pub cache_node_type_specific_values:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificValue>>,
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
 }
 impl CacheNodeTypeSpecificParameter {
@@ -11842,8 +12175,10 @@ impl AsRef<str> for ChangeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheNodeTypeSpecificValue {
     /// <p>The cache node type for which this value applies.</p>
+    #[doc(hidden)]
     pub cache_node_type: std::option::Option<std::string::String>,
     /// <p>The value for the cache node type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CacheNodeTypeSpecificValue {
@@ -11918,22 +12253,31 @@ impl CacheNodeTypeSpecificValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
     /// <p>A description of the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The source of the parameter.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The valid data type for the parameter.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The valid range of values for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
 }
 impl Parameter {
@@ -12139,15 +12483,20 @@ impl Parameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheParameterGroup {
     /// <p>The name of the cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | </p>
+    #[doc(hidden)]
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for this cache parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
+    #[doc(hidden)]
     pub is_global: bool,
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CacheParameterGroup {
@@ -12288,15 +12637,20 @@ impl CacheParameterGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheEngineVersion {
     /// <p>The name of the cache engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the cache engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the cache parameter group family associated with this cache engine.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
+    #[doc(hidden)]
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the cache engine.</p>
+    #[doc(hidden)]
     pub cache_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the cache engine version.</p>
+    #[doc(hidden)]
     pub cache_engine_version_description: std::option::Option<std::string::String>,
 }
 impl CacheEngineVersion {
@@ -12501,14 +12855,19 @@ impl AsRef<str> for OutpostMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedUpdateAction {
     /// <p>The replication group ID</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the cache cluster</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The error type for requests that are not processed</p>
+    #[doc(hidden)]
     pub error_type: std::option::Option<std::string::String>,
     /// <p>The error message that describes the reason the request was not processed</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedUpdateAction {
@@ -12643,12 +13002,16 @@ impl UnprocessedUpdateAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProcessedUpdateAction {
     /// <p>The ID of the replication group</p>
+    #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the cache cluster</p>
+    #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The status of the update action on the Redis cluster</p>
+    #[doc(hidden)]
     pub update_action_status: std::option::Option<crate::model::UpdateActionStatus>,
 }
 impl ProcessedUpdateAction {

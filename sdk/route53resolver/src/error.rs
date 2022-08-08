@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -69,8 +70,10 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>ResourceUnavailableException</code> error, the type of resource that isn't available.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceUnavailableException {
@@ -157,8 +160,10 @@ impl ResourceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>ResourceNotFoundException</code> error, the type of resource that doesn't exist.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -245,8 +250,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>LimitExceededException</code> error, the type of resource that exceeded the current limit.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -333,6 +340,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -397,8 +405,10 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For an <code>InvalidParameterException</code> error, the name of the parameter that's invalid.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
@@ -482,6 +492,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceErrorException {
@@ -546,6 +557,7 @@ impl InternalServiceErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -610,6 +622,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -674,6 +687,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -738,6 +752,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagException {
@@ -802,6 +817,7 @@ impl InvalidTagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnknownResourceException {
@@ -866,6 +882,7 @@ impl UnknownResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyDocument {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPolicyDocument {
@@ -930,6 +947,7 @@ impl InvalidPolicyDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -994,8 +1012,10 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>ResourceExistsException</code> error, the type of resource that the error applies to.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceExistsException {
@@ -1082,8 +1102,10 @@ impl ResourceExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>For a <code>ResourceInUseException</code> error, the type of resource that is currently in use.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {

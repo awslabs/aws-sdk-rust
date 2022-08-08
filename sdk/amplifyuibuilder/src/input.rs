@@ -2898,10 +2898,13 @@ impl UpdateThemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportThemesInput {
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportThemesInput {
@@ -2933,12 +2936,16 @@ impl std::fmt::Debug for ExportThemesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemesInput {
     /// <p>The unique ID for the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of theme results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListThemesInput {
@@ -2975,12 +2982,16 @@ impl std::fmt::Debug for ListThemesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents the configuration of the theme to create.</p>
+    #[doc(hidden)]
     pub theme_to_create: std::option::Option<crate::model::CreateThemeData>,
 }
 impl CreateThemeInput {
@@ -3017,10 +3028,13 @@ impl std::fmt::Debug for CreateThemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme to delete.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the theme to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteThemeInput {
@@ -3052,14 +3066,19 @@ impl std::fmt::Debug for DeleteThemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeInput {
     /// <p>The unique ID for the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID for the theme.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the updated theme.</p>
+    #[doc(hidden)]
     pub updated_theme: std::option::Option<crate::model::UpdateThemeData>,
 }
 impl UpdateThemeInput {
@@ -3101,10 +3120,13 @@ impl std::fmt::Debug for UpdateThemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThemeInput {
     /// <p>The unique ID of the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID for the theme.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetThemeInput {
@@ -3136,10 +3158,13 @@ impl std::fmt::Debug for GetThemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportComponentsInput {
     /// <p>The unique ID of the Amplify app to export components to.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportComponentsInput {
@@ -3171,12 +3196,16 @@ impl std::fmt::Debug for ExportComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
     /// <p>The unique ID for the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of components to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListComponentsInput {
@@ -3213,12 +3242,16 @@ impl std::fmt::Debug for ListComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The unique ID of the Amplify app to associate with the component.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents the configuration of the component to create.</p>
+    #[doc(hidden)]
     pub component_to_create: std::option::Option<crate::model::CreateComponentData>,
 }
 impl CreateComponentInput {
@@ -3255,10 +3288,13 @@ impl std::fmt::Debug for CreateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentInput {
     /// <p>The unique ID of the Amplify app associated with the component to delete.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the component to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
@@ -3290,14 +3326,19 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentInput {
     /// <p>The unique ID for the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID for the component.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the updated component.</p>
+    #[doc(hidden)]
     pub updated_component: std::option::Option<crate::model::UpdateComponentData>,
 }
 impl UpdateComponentInput {
@@ -3339,10 +3380,13 @@ impl std::fmt::Debug for UpdateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentInput {
     /// <p>The unique ID of the Amplify app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the component.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
@@ -3374,8 +3418,10 @@ impl std::fmt::Debug for GetComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::TokenProviders>,
     /// <p>Information about the refresh token request.</p>
+    #[doc(hidden)]
     pub refresh_token_body: std::option::Option<crate::model::RefreshTokenRequestBody>,
 }
 impl RefreshTokenInput {
@@ -3404,8 +3450,10 @@ impl std::fmt::Debug for RefreshTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExchangeCodeForTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::TokenProviders>,
     /// <p>Describes the configuration of the request.</p>
+    #[doc(hidden)]
     pub request: std::option::Option<crate::model::ExchangeCodeForTokenRequestBody>,
 }
 impl ExchangeCodeForTokenInput {

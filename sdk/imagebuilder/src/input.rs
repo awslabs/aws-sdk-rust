@@ -9644,30 +9644,42 @@ impl UpdateInfrastructureConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub instance_profile_name: std::option::Option<std::string::String>,
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::Logging>,
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<std::string::String>,
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+    #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
@@ -9675,6 +9687,7 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
 impl UpdateInfrastructureConfigurationInput {
@@ -9773,26 +9786,37 @@ impl std::fmt::Debug for UpdateInfrastructureConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The description of the image pipeline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The image test configuration of the image pipeline.</p>
+    #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p>The schedule of the image pipeline.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::Schedule>,
     /// <p>The status of the image pipeline.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineStatus>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateImagePipelineInput {
@@ -9875,12 +9899,16 @@ impl std::fmt::Debug for UpdateImagePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The description of the distribution configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The distributions of the distribution configuration.</p>
+    #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
     /// <p>The idempotency token of the distribution configuration.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionConfigurationInput {
@@ -9920,8 +9948,10 @@ impl std::fmt::Debug for UpdateDistributionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9948,8 +9978,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9980,8 +10012,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImagePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartImagePipelineExecutionInput {
@@ -10008,8 +10042,10 @@ impl std::fmt::Debug for StartImagePipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The policy to apply.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutImageRecipePolicyInput {
@@ -10036,8 +10072,10 @@ impl std::fmt::Debug for PutImageRecipePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The policy to apply.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutImagePolicyInput {
@@ -10064,8 +10102,10 @@ impl std::fmt::Debug for PutImagePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The policy to apply to the container recipe.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutContainerRecipePolicyInput {
@@ -10092,8 +10132,10 @@ impl std::fmt::Debug for PutContainerRecipePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
+    #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
     /// <p>The policy to apply.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutComponentPolicyInput {
@@ -10120,6 +10162,7 @@ impl std::fmt::Debug for PutComponentPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -10141,10 +10184,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInfrastructureConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInfrastructureConfigurationsInput {
@@ -10176,6 +10222,7 @@ impl std::fmt::Debug for ListInfrastructureConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10185,14 +10232,19 @@ pub struct ListImagesInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Requests a list of images with a specific recipe name.</p>
+    #[doc(hidden)]
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Includes deprecated images in the response list.</p>
+    #[doc(hidden)]
     pub include_deprecated: std::option::Option<bool>,
 }
 impl ListImagesInput {
@@ -10246,6 +10298,7 @@ impl std::fmt::Debug for ListImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageRecipesInput {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10253,10 +10306,13 @@ pub struct ListImageRecipesInput {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageRecipesInput {
@@ -10306,10 +10362,13 @@ pub struct ListImagePipelinesInput {
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>status</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelinesInput {
@@ -10349,16 +10408,20 @@ impl std::fmt::Debug for ListImagePipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelineImagesInput {
@@ -10399,10 +10462,13 @@ impl std::fmt::Debug for ListImagePipelineImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePackagesInput {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
     /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePackagesInput {
@@ -10434,6 +10500,7 @@ impl std::fmt::Debug for ListImagePackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageBuildVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_version_arn: std::option::Option<std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10443,10 +10510,13 @@ pub struct ListImageBuildVersionsInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageBuildVersionsInput {
@@ -10490,10 +10560,13 @@ impl std::fmt::Debug for ListImageBuildVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDistributionConfigurationsInput {
@@ -10525,6 +10598,7 @@ impl std::fmt::Debug for ListDistributionConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainerRecipesInput {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10533,10 +10607,13 @@ pub struct ListContainerRecipesInput {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results to return in the list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainerRecipesInput {
@@ -10579,6 +10656,7 @@ impl std::fmt::Debug for ListContainerRecipesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
     /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -10589,12 +10667,16 @@ pub struct ListComponentsInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Returns the list of component build versions for the specified name.</p>
+    #[doc(hidden)]
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
@@ -10644,10 +10726,13 @@ impl std::fmt::Debug for ListComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentBuildVersionsInput {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    #[doc(hidden)]
     pub component_version_arn: std::option::Option<std::string::String>,
     /// <p>The maximum items to return in a request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentBuildVersionsInput {
@@ -10679,6 +10764,7 @@ impl std::fmt::Debug for ListComponentBuildVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportVmImageInput {
     /// <p>The name of the base image that is created by the import process.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -10696,19 +10782,26 @@ pub struct ImportVmImageInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description for the base image that is created by the import process.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The operating system platform for the imported VM.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system version for the imported VM.</p>
+    #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    #[doc(hidden)]
     pub vm_import_task_id: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the import resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportVmImageInput {
@@ -10783,6 +10876,7 @@ impl std::fmt::Debug for ImportVmImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportComponentInput {
     /// <p> The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -10799,27 +10893,38 @@ pub struct ImportComponentInput {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The format of the resource that you want to import as a component.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ComponentFormat>,
     /// <p>The platform of the component.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The tags of the component.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token of the component.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInput {
@@ -10913,6 +11018,7 @@ impl std::fmt::Debug for ImportComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetInfrastructureConfigurationInput {
@@ -10937,6 +11043,7 @@ impl std::fmt::Debug for GetInfrastructureConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetImageRecipePolicyInput {
@@ -10958,6 +11065,7 @@ impl std::fmt::Debug for GetImageRecipePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetImageRecipeInput {
@@ -10979,6 +11087,7 @@ impl std::fmt::Debug for GetImageRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
 }
 impl GetImagePolicyInput {
@@ -11000,6 +11109,7 @@ impl std::fmt::Debug for GetImagePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl GetImagePipelineInput {
@@ -11021,6 +11131,7 @@ impl std::fmt::Debug for GetImagePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetImageInput {
@@ -11042,6 +11153,7 @@ impl std::fmt::Debug for GetImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigurationInput {
@@ -11066,6 +11178,7 @@ impl std::fmt::Debug for GetDistributionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipePolicyInput {
@@ -11087,6 +11200,7 @@ impl std::fmt::Debug for GetContainerRecipePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipeInput {
@@ -11108,6 +11222,7 @@ impl std::fmt::Debug for GetContainerRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentPolicyInput {
@@ -11129,6 +11244,7 @@ impl std::fmt::Debug for GetComponentPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
@@ -11153,6 +11269,7 @@ impl std::fmt::Debug for GetComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInfrastructureConfigurationInput {
@@ -11177,6 +11294,7 @@ impl std::fmt::Debug for DeleteInfrastructureConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageRecipeInput {
@@ -11198,6 +11316,7 @@ impl std::fmt::Debug for DeleteImageRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImagePipelineInput {
@@ -11219,6 +11338,7 @@ impl std::fmt::Debug for DeleteImagePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageInput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageInput {
@@ -11240,6 +11360,7 @@ impl std::fmt::Debug for DeleteImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionConfigurationInput {
@@ -11264,6 +11385,7 @@ impl std::fmt::Debug for DeleteDistributionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteContainerRecipeInput {
@@ -11285,6 +11407,7 @@ impl std::fmt::Debug for DeleteContainerRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
+    #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
@@ -11309,36 +11432,50 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInfrastructureConfigurationInput {
     /// <p>The name of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub instance_profile_name: std::option::Option<std::string::String>,
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::Logging>,
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<std::string::String>,
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+    #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
+    #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateInfrastructureConfigurationInput {
@@ -11438,8 +11575,10 @@ impl std::fmt::Debug for CreateInfrastructureConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageRecipeInput {
     /// <p> The name of the image recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -11457,23 +11596,31 @@ pub struct CreateImageRecipeInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The components of the image recipe.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
+    #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p> The tags of the image recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory used during build and test workflows.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
+    #[doc(hidden)]
     pub additional_instance_configuration:
         std::option::Option<crate::model::AdditionalInstanceConfiguration>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageRecipeInput {
@@ -11565,29 +11712,41 @@ impl std::fmt::Debug for CreateImageRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImagePipelineInput {
     /// <p> The name of the image pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image pipeline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The image test configuration of the image pipeline.</p>
+    #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p> The schedule of the image pipeline.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::Schedule>,
     /// <p> The status of the image pipeline.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineStatus>,
     /// <p> The tags of the image pipeline.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImagePipelineInput {
@@ -11678,21 +11837,29 @@ impl std::fmt::Debug for CreateImagePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageInput {
     /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The image tests configuration of the image.</p>
+    #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p> The tags of the image.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageInput {
@@ -11763,15 +11930,20 @@ impl std::fmt::Debug for CreateImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionConfigurationInput {
     /// <p> The name of the distribution configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the distribution configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The distributions of the distribution configuration.</p>
+    #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
     /// <p> The tags of the distribution configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token of the distribution configuration.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationInput {
@@ -11816,10 +11988,13 @@ impl std::fmt::Debug for CreateDistributionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerRecipeInput {
     /// <p>The type of container to create.</p>
+    #[doc(hidden)]
     pub container_type: std::option::Option<crate::model::ContainerType>,
     /// <p>The name of the container recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the container recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -11837,31 +12012,44 @@ pub struct CreateContainerRecipeInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>Components for build and test that are included in the container recipe.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    #[doc(hidden)]
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    #[doc(hidden)]
     pub dockerfile_template_data: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
+    #[doc(hidden)]
     pub dockerfile_template_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    #[doc(hidden)]
     pub platform_override: std::option::Option<crate::model::Platform>,
     /// <p>Specifies the operating system version for the base image.</p>
+    #[doc(hidden)]
     pub image_os_version_override: std::option::Option<std::string::String>,
     /// <p>The base image for the container recipe.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The destination repository for the container image.</p>
+    #[doc(hidden)]
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The client token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateContainerRecipeInput {
@@ -11980,6 +12168,7 @@ impl std::fmt::Debug for CreateContainerRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -11997,26 +12186,36 @@ pub struct CreateComponentInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The platform of the component.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The tags of the component.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token of the component.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentInput {
@@ -12107,8 +12306,10 @@ impl std::fmt::Debug for CreateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelImageCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CancelImageCreationInput {

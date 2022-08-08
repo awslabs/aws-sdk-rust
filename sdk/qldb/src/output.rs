@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerPermissionsModeOutput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current permissions mode of the ledger.</p>
+    #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
 }
 impl UpdateLedgerPermissionsModeOutput {
@@ -99,17 +102,23 @@ impl UpdateLedgerPermissionsModeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerOutput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    #[doc(hidden)]
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl UpdateLedgerOutput {
@@ -324,6 +333,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisOutput {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl StreamJournalToKinesisOutput {
@@ -378,6 +388,7 @@ impl StreamJournalToKinesisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are currently associated with the specified Amazon QLDB resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
@@ -459,12 +470,14 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersOutput {
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
+    #[doc(hidden)]
     pub ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
     /// <p>A pagination token, indicating whether there are more results available:</p>
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLedgersOutput {
@@ -557,12 +570,14 @@ impl ListLedgersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsForLedgerOutput {
     /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
+    #[doc(hidden)]
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsForLedgerOutput {
@@ -658,12 +673,14 @@ impl ListJournalS3ExportsForLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsOutput {
     /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    #[doc(hidden)]
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsOutput {
@@ -759,11 +776,13 @@ impl ListJournalS3ExportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
+    #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
@@ -856,8 +875,10 @@ impl ListJournalKinesisStreamsForLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
+    #[doc(hidden)]
     pub proof: std::option::Option<crate::model::ValueHolder>,
     /// <p>The document revision data object in Amazon Ion format.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetRevisionOutput {
@@ -932,8 +953,10 @@ impl GetRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDigestOutput {
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
+    #[doc(hidden)]
     pub digest: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    #[doc(hidden)]
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetDigestOutput {
@@ -1008,8 +1031,10 @@ impl GetDigestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockOutput {
     /// <p>The block data object in Amazon Ion format.</p>
+    #[doc(hidden)]
     pub block: std::option::Option<crate::model::ValueHolder>,
     /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
+    #[doc(hidden)]
     pub proof: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetBlockOutput {
@@ -1082,6 +1107,7 @@ impl GetBlockOutput {
 pub struct ExportJournalToS3Output {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl ExportJournalToS3Output {
@@ -1139,19 +1165,26 @@ impl ExportJournalToS3Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLedgerOutput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger.</p>
+    #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    #[doc(hidden)]
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl DescribeLedgerOutput {
@@ -1326,6 +1359,7 @@ impl DescribeLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalS3ExportOutput {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
+    #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
 }
 impl DescribeJournalS3ExportOutput {
@@ -1389,6 +1423,7 @@ impl DescribeJournalS3ExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
+    #[doc(hidden)]
     pub stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
 }
 impl DescribeJournalKinesisStreamOutput {
@@ -1476,19 +1511,26 @@ impl DeleteLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLedgerOutput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger that you created.</p>
+    #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl CreateLedgerOutput {
@@ -1654,6 +1696,7 @@ impl CreateLedgerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJournalKinesisStreamOutput {
     /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl CancelJournalKinesisStreamOutput {

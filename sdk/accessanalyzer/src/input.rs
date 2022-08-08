@@ -5013,10 +5013,13 @@ impl ValidatePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalyzersInput {
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The type of analyzer.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl ListAnalyzersInput {
@@ -5048,15 +5051,20 @@ impl std::fmt::Debug for ListAnalyzersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+    #[doc(hidden)]
     pub archive_rules: std::option::Option<std::vec::Vec<crate::model::InlineArchiveRule>>,
     /// <p>The tags to apply to the analyzer.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAnalyzerInput {
@@ -5101,8 +5109,10 @@ impl std::fmt::Debug for CreateAnalyzerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAnalyzerInput {
@@ -5129,6 +5139,7 @@ impl std::fmt::Debug for DeleteAnalyzerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
 }
 impl GetAnalyzerInput {
@@ -5150,10 +5161,13 @@ impl std::fmt::Debug for GetAnalyzerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListArchiveRulesInput {
@@ -5185,14 +5199,18 @@ impl std::fmt::Debug for ListArchiveRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateArchiveRuleInput {
     /// <p>The name of the created analyzer.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to create.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The criteria for the rule.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateArchiveRuleInput {
@@ -5232,10 +5250,13 @@ impl std::fmt::Debug for CreateArchiveRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteArchiveRuleInput {
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to delete.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteArchiveRuleInput {
@@ -5267,14 +5288,18 @@ impl std::fmt::Debug for DeleteArchiveRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateArchiveRuleInput {
     /// <p>The name of the analyzer to update the archive rules for.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to update.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateArchiveRuleInput {
@@ -5314,8 +5339,10 @@ impl std::fmt::Debug for UpdateArchiveRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
+    #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to retrieve.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
 }
 impl GetArchiveRuleInput {
@@ -5342,18 +5369,24 @@ impl std::fmt::Debug for GetArchiveRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyInput {
     /// <p>The locale to use for localizing the findings.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The JSON policy document to use as the content for the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<crate::model::PolicyType>,
     /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
     /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
+    #[doc(hidden)]
     pub validate_policy_resource_type:
         std::option::Option<crate::model::ValidatePolicyResourceType>,
 }
@@ -5408,14 +5441,19 @@ impl std::fmt::Debug for ValidatePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatusUpdate>,
     /// <p>The IDs of the findings to update.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the resource identified in the finding.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsInput {
@@ -5457,8 +5495,10 @@ impl std::fmt::Debug for UpdateFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to remove the tag from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key for the tag to add.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5485,8 +5525,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to add the tag to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5517,8 +5559,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartResourceScanInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource to scan.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl StartResourceScanInput {
@@ -5545,11 +5589,14 @@ impl std::fmt::Debug for StartResourceScanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPolicyGenerationInput {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    #[doc(hidden)]
     pub policy_generation_details: std::option::Option<crate::model::PolicyGenerationDetails>,
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
+    #[doc(hidden)]
     pub cloud_trail_details: std::option::Option<crate::model::CloudTrailDetails>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartPolicyGenerationInput {
@@ -5584,6 +5631,7 @@ impl std::fmt::Debug for StartPolicyGenerationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to retrieve tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5605,10 +5653,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyGenerationsInput {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPolicyGenerationsInput {
@@ -5640,16 +5691,21 @@ impl std::fmt::Debug for ListPolicyGenerationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A filter to match for the findings to return.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
     /// <p>The sort order for the findings returned.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::SortCriteria>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFindingsInput {
@@ -5694,12 +5750,16 @@ impl std::fmt::Debug for ListFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAnalyzedResourcesInput {
@@ -5736,10 +5796,13 @@ impl std::fmt::Debug for ListAnalyzedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPreviewsInput {
@@ -5771,16 +5834,21 @@ impl std::fmt::Debug for ListAccessPreviewsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewFindingsInput {
     /// <p>The unique ID for the access preview.</p>
+    #[doc(hidden)]
     pub access_preview_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>Criteria to filter the returned findings.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPreviewFindingsInput {
@@ -5825,12 +5893,15 @@ impl std::fmt::Debug for ListAccessPreviewFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedPolicyInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    #[doc(hidden)]
     pub include_resource_placeholders: std::option::Option<bool>,
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
+    #[doc(hidden)]
     pub include_service_level_template: std::option::Option<bool>,
 }
 impl GetGeneratedPolicyInput {
@@ -5870,8 +5941,10 @@ impl std::fmt::Debug for GetGeneratedPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the finding to retrieve.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFindingInput {
@@ -5898,8 +5971,10 @@ impl std::fmt::Debug for GetFindingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzedResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource to retrieve information about.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetAnalyzedResourceInput {
@@ -5926,8 +6001,10 @@ impl std::fmt::Debug for GetAnalyzedResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
+    #[doc(hidden)]
     pub access_preview_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
 }
 impl GetAccessPreviewInput {
@@ -5954,12 +6031,15 @@ impl std::fmt::Debug for GetAccessPreviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Configuration>,
     >,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAccessPreviewInput {
@@ -5995,6 +6075,7 @@ impl std::fmt::Debug for CreateAccessPreviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelPolicyGenerationInput {
@@ -6016,10 +6097,13 @@ impl std::fmt::Debug for CancelPolicyGenerationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The name of the rule to apply.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ApplyArchiveRuleInput {

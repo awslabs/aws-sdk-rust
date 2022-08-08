@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UploadNotFoundException {
@@ -69,6 +70,7 @@ impl UploadNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedCommandException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedCommandException {
@@ -133,6 +135,7 @@ impl UnsupportedCommandException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerException {
@@ -197,6 +200,7 @@ impl ServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNotFoundException {
@@ -261,6 +265,7 @@ impl RepositoryNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegistryNotFoundException {
@@ -325,6 +330,7 @@ impl RegistryNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -389,6 +395,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -453,14 +460,19 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerPartException {
     /// <p>The AWS account ID associated with the layer part.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the layer part.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The position of the last byte of the layer part.</p>
+    #[doc(hidden)]
     pub last_valid_byte_received: std::option::Option<i64>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLayerPartException {
@@ -598,6 +610,7 @@ impl InvalidLayerPartException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -662,6 +675,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagParameterException {
@@ -726,6 +740,7 @@ impl InvalidTagParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferencedImagesNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReferencedImagesNotFoundException {
@@ -790,6 +805,7 @@ impl ReferencedImagesNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayersNotFoundException {
@@ -854,6 +870,7 @@ impl LayersNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTagAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageTagAlreadyExistsException {
@@ -918,6 +935,7 @@ impl ImageTagAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDigestDoesNotMatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageDigestDoesNotMatchException {
@@ -982,6 +1000,7 @@ impl ImageDigestDoesNotMatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageAlreadyExistsException {
@@ -1046,6 +1065,7 @@ impl ImageAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryPolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryPolicyNotFoundException {
@@ -1110,6 +1130,7 @@ impl RepositoryPolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageNotFoundException {
@@ -1174,6 +1195,7 @@ impl ImageNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNotEmptyException {
@@ -1238,6 +1260,7 @@ impl RepositoryNotEmptyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryAlreadyExistsException {
@@ -1302,6 +1325,7 @@ impl RepositoryAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerPartTooSmallException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerPartTooSmallException {
@@ -1366,6 +1390,7 @@ impl LayerPartTooSmallException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerAlreadyExistsException {
@@ -1430,6 +1455,7 @@ impl LayerAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLayerException {
@@ -1494,6 +1520,7 @@ impl InvalidLayerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmptyUploadException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmptyUploadException {

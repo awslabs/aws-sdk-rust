@@ -7736,14 +7736,19 @@ impl UpdateCostCategoryDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
     /// <p>The default value for the cost category.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    #[doc(hidden)]
     pub split_charge_rules:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
 }
@@ -7788,6 +7793,7 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostAllocationTagsStatusInput {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    #[doc(hidden)]
     pub cost_allocation_tags_status:
         std::option::Option<std::vec::Vec<crate::model::CostAllocationTagStatusEntry>>,
 }
@@ -7815,16 +7821,22 @@ impl std::fmt::Debug for UpdateCostAllocationTagsStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionInput {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
     /// <p>The update to the threshold value for receiving notifications. </p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
     /// <p>A list of cost anomaly monitor ARNs. </p>
+    #[doc(hidden)]
     pub monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The update to the subscriber list. </p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     /// <p>The new name of the subscription. </p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalySubscriptionInput {
@@ -7871,8 +7883,10 @@ impl std::fmt::Debug for UpdateAnomalySubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyMonitorInput {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The new name for the cost anomaly monitor. </p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalyMonitorInput {
@@ -7899,8 +7913,10 @@ impl std::fmt::Debug for UpdateAnomalyMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+    #[doc(hidden)]
     pub resource_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7927,6 +7943,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> A list of tag key-value pairs to be added to the resource.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -7939,6 +7956,7 @@ pub struct TagResourceInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl TagResourceInput {
@@ -7975,8 +7993,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvideAnomalyFeedbackInput {
     /// <p>A cost anomaly ID. </p>
+    #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
 }
 impl ProvideAnomalyFeedbackInput {
@@ -8003,6 +8023,7 @@ impl std::fmt::Debug for ProvideAnomalyFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8024,10 +8045,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsInput {
     /// <p>The date when the Cost Category was effective. </p>
+    #[doc(hidden)]
     pub effective_on: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of entries a paginated response contains. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCostCategoryDefinitionsInput {
@@ -8059,14 +8083,19 @@ impl std::fmt::Debug for ListCostCategoryDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostAllocationTagsInput {
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CostAllocationTagType>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCostAllocationTagsInput {
@@ -8108,6 +8137,7 @@ impl std::fmt::Debug for ListCostAllocationTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageForecastInput {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
     /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
@@ -8115,9 +8145,11 @@ pub struct GetUsageForecastInput {
     /// <li> <p>USAGE_QUANTITY</p> </li>
     /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -8145,8 +8177,10 @@ pub struct GetUsageForecastInput {
     /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+    #[doc(hidden)]
     pub prediction_interval_level: std::option::Option<i32>,
 }
 impl GetUsageForecastInput {
@@ -8219,10 +8253,13 @@ impl std::fmt::Debug for GetUsageForecastInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
     /// <p>The value that you want to search for.</p>
+    #[doc(hidden)]
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The key of the tag that you want to return values for.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -8234,6 +8271,7 @@ pub struct GetTagsInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -8248,11 +8286,14 @@ pub struct GetTagsInput {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetTagsInput {
@@ -8326,6 +8367,7 @@ impl std::fmt::Debug for GetTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -8336,12 +8378,16 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The data type.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::vec::Vec<crate::model::SavingsPlansDataType>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8355,6 +8401,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationDetailsInput {
@@ -8420,9 +8467,11 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -8434,6 +8483,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8445,6 +8495,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationInput {
@@ -8500,21 +8551,29 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansPurchaseRecommendationInput {
     /// <p>The Savings Plans recommendation type that's requested.</p>
+    #[doc(hidden)]
     pub savings_plans_type: std::option::Option<crate::model::SupportedSavingsPlansType>,
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
+    #[doc(hidden)]
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
     /// <p>The payment option that's used to generate these recommendations.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The lookback period that's used to generate the recommendation.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
     /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
 }
 impl GetSavingsPlansPurchaseRecommendationInput {
@@ -8576,11 +8635,14 @@ impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansCoverageInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
@@ -8591,12 +8653,16 @@ pub struct GetSavingsPlansCoverageInput {
     /// </ul>
     /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8610,6 +8676,7 @@ pub struct GetSavingsPlansCoverageInput {
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansCoverageInput {
@@ -8695,14 +8762,19 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRightsizingRecommendationInput {
@@ -8755,11 +8827,14 @@ impl std::fmt::Debug for GetRightsizingRecommendationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationUtilizationInput {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
@@ -8776,6 +8851,7 @@ pub struct GetReservationUtilizationInput {
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
     /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8799,10 +8875,13 @@ pub struct GetReservationUtilizationInput {
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetReservationUtilizationInput {
@@ -8890,8 +8969,10 @@ impl std::fmt::Debug for GetReservationUtilizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationPurchaseRecommendationInput {
     /// <p>The account ID that's associated with the recommendation. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The specific service that you want recommendations for.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -8903,20 +8984,28 @@ pub struct GetReservationPurchaseRecommendationInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>The reservation term that you want recommendations for.</p>
+    #[doc(hidden)]
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
     /// <p>The reservation purchase option that you want recommendations for.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
+    #[doc(hidden)]
     pub service_specification: std::option::Option<crate::model::ServiceSpecification>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
+    #[doc(hidden)]
     pub page_size: i32,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationPurchaseRecommendationInput {
@@ -8996,6 +9085,7 @@ impl std::fmt::Debug for GetReservationPurchaseRecommendationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationCoverageInput {
     /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>You can group the data by the following attributes:</p>
     /// <ul>
@@ -9011,10 +9101,12 @@ pub struct GetReservationCoverageInput {
     /// <li> <p>REGION</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
@@ -9034,11 +9126,14 @@ pub struct GetReservationCoverageInput {
     /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The measurement that you want your reservation coverage reported in.</p>
     /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -9055,8 +9150,10 @@ pub struct GetReservationCoverageInput {
     /// <li> <p> <code>Time</code> </p> </li>
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetReservationCoverageInput {
@@ -9160,10 +9257,13 @@ impl std::fmt::Debug for GetReservationCoverageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionValuesInput {
     /// <p>The value that you want to search the filter values for.</p>
+    #[doc(hidden)]
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+    #[doc(hidden)]
     pub dimension: std::option::Option<crate::model::Dimension>,
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -9215,6 +9315,7 @@ pub struct GetDimensionValuesInput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub context: std::option::Option<crate::model::Context>,
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -9226,6 +9327,7 @@ pub struct GetDimensionValuesInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -9240,11 +9342,14 @@ pub struct GetDimensionValuesInput {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDimensionValuesInput {
@@ -9372,6 +9477,7 @@ impl std::fmt::Debug for GetDimensionValuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostForecastInput {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
@@ -9382,9 +9488,11 @@ pub struct GetCostForecastInput {
     /// <li> <p>NET_UNBLENDED_COST</p> </li>
     /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -9412,8 +9520,10 @@ pub struct GetCostForecastInput {
     /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+    #[doc(hidden)]
     pub prediction_interval_level: std::option::Option<i32>,
 }
 impl GetCostForecastInput {
@@ -9490,10 +9600,13 @@ impl std::fmt::Debug for GetCostForecastInput {
 pub struct GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    #[doc(hidden)]
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The time period of the request. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The unique name of the Cost Category.</p>
+    #[doc(hidden)]
     pub cost_category_name: std::option::Option<std::string::String>,
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -9505,6 +9618,7 @@ pub struct GetCostCategoriesInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value that you sort the data by.</p>
     /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
@@ -9519,12 +9633,15 @@ pub struct GetCostCategoriesInput {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCostCategoriesInput {
@@ -9600,23 +9717,29 @@ impl std::fmt::Debug for GetCostCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageWithResourcesInput {
     /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
     /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCostAndUsageWithResourcesInput {
@@ -9670,24 +9793,30 @@ impl std::fmt::Debug for GetCostAndUsageWithResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageInput {
     /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
     /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
     /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCostAndUsageInput {
@@ -9742,12 +9871,16 @@ impl std::fmt::Debug for GetCostAndUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalySubscriptionsInput {
     /// <p>A list of cost anomaly subscription ARNs. </p>
+    #[doc(hidden)]
     pub subscription_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Cost anomaly monitor ARNs. </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The number of entries a paginated response contains. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetAnomalySubscriptionsInput {
@@ -9784,10 +9917,13 @@ impl std::fmt::Debug for GetAnomalySubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyMonitorsInput {
     /// <p>A list of cost anomaly monitor ARNs. </p>
+    #[doc(hidden)]
     pub monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The number of entries that a paginated response contains. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetAnomalyMonitorsInput {
@@ -9819,16 +9955,22 @@ impl std::fmt::Debug for GetAnomalyMonitorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomaliesInput {
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
+    #[doc(hidden)]
     pub date_interval: std::option::Option<crate::model::AnomalyDateInterval>,
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
+    #[doc(hidden)]
     pub total_impact: std::option::Option<crate::model::TotalImpactFilter>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The number of entries a paginated response contains. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetAnomaliesInput {
@@ -9875,8 +10017,10 @@ impl std::fmt::Debug for GetAnomaliesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The date when the Cost Category was effective. </p>
+    #[doc(hidden)]
     pub effective_on: std::option::Option<std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInput {
@@ -9903,6 +10047,7 @@ impl std::fmt::Debug for DescribeCostCategoryDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCostCategoryDefinitionInput {
@@ -9924,6 +10069,7 @@ impl std::fmt::Debug for DeleteCostCategoryDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalySubscriptionInput {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAnomalySubscriptionInput {
@@ -9945,6 +10091,7 @@ impl std::fmt::Debug for DeleteAnomalySubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalyMonitorInput {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAnomalyMonitorInput {
@@ -9966,14 +10113,19 @@ impl std::fmt::Debug for DeleteAnomalyMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
     /// <p>The default value for the cost category.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    #[doc(hidden)]
     pub split_charge_rules:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
@@ -9987,6 +10139,7 @@ pub struct CreateCostCategoryDefinitionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl CreateCostCategoryDefinitionInput {
@@ -10045,6 +10198,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalySubscriptionInput {
     /// <p>The cost anomaly subscription object that you want to create. </p>
+    #[doc(hidden)]
     pub anomaly_subscription: std::option::Option<crate::model::AnomalySubscription>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -10057,6 +10211,7 @@ pub struct CreateAnomalySubscriptionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl CreateAnomalySubscriptionInput {
@@ -10093,6 +10248,7 @@ impl std::fmt::Debug for CreateAnomalySubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyMonitorInput {
     /// <p>The cost anomaly detection monitor object that you want to create.</p>
+    #[doc(hidden)]
     pub anomaly_monitor: std::option::Option<crate::model::AnomalyMonitor>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -10105,6 +10261,7 @@ pub struct CreateAnomalyMonitorInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl CreateAnomalyMonitorInput {

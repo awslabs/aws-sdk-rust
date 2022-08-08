@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>Returns the FinSpace environment object.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateEnvironmentOutput {
@@ -121,6 +122,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of all tags for a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -194,8 +196,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>A list of all of your FinSpace environments.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -276,6 +280,7 @@ impl ListEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the FinSpace environment.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl GetEnvironmentOutput {
@@ -363,10 +368,13 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The unique identifier for FinSpace environment that you created.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    #[doc(hidden)]
     pub environment_url: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {

@@ -5,70 +5,102 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<std::string::String>,
     /// <p>Specifies information on the subnet group that is associated with the cluster, including the name, description, and subnets in the subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Specifies the progress of the operation as a percentage.</p>
+    #[doc(hidden)]
     pub percent_progress: std::option::Option<std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
+    #[doc(hidden)]
     pub earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
     /// <p>If a failover occurs, and the Amazon DocumentDB replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Amazon DocumentDB replicas in the cluster, you can then reconnect to the reader endpoint.</p>
+    #[doc(hidden)]
     pub reader_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether the cluster has instances in multiple Availability Zones.</p>
+    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>Provides the name of the database engine to be used for this cluster.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Indicates the database engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
+    #[doc(hidden)]
     pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the port that the database engine is listening on.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Contains the master user name for the cluster.</p>
+    #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
+    #[doc(hidden)]
     pub replication_source_identifier: std::option::Option<std::string::String>,
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
+    #[doc(hidden)]
     pub read_replica_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Provides the list of instances that make up the cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_members: std::option::Option<std::vec::Vec<crate::model::DbClusterMember>>,
     /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the cluster is encrypted.</p>
+    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+    #[doc(hidden)]
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_arn: std::option::Option<std::string::String>,
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
+    #[doc(hidden)]
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+    #[doc(hidden)]
     pub clone_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
     pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    #[doc(hidden)]
     pub deletion_protection: bool,
 }
 impl DbCluster {
@@ -789,6 +821,7 @@ impl DbCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRole {
     /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
@@ -796,6 +829,7 @@ pub struct DbClusterRole {
     /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
     /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DbClusterRole {
@@ -882,8 +916,10 @@ impl DbClusterRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The name of the VPC security group.</p>
+    #[doc(hidden)]
     pub vpc_security_group_id: std::option::Option<std::string::String>,
     /// <p>The status of the VPC security group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl VpcSecurityGroupMembership {
@@ -958,12 +994,16 @@ impl VpcSecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
+    #[doc(hidden)]
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_status: std::option::Option<std::string::String>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    #[doc(hidden)]
     pub promotion_tier: std::option::Option<i32>,
 }
 impl DbClusterMember {
@@ -1081,8 +1121,10 @@ impl DbClusterMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1154,24 +1196,34 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>Specifies the name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>Specifies the value of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
     /// <p>Provides a description of the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates the source of the parameter value.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>Specifies the engine-specific parameters type.</p>
+    #[doc(hidden)]
     pub apply_type: std::option::Option<std::string::String>,
     /// <p>Specifies the valid data type for the parameter.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>Specifies the valid range of values for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>The earliest engine version to which the parameter can apply.</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates when to apply parameter updates.</p>
+    #[doc(hidden)]
     pub apply_method: std::option::Option<crate::model::ApplyMethod>,
 }
 impl Parameter {
@@ -1449,27 +1501,37 @@ impl AsRef<str> for ApplyMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
+    #[doc(hidden)]
     pub customer_aws_id: std::option::Option<std::string::String>,
     /// <p>The Amazon DocumentDB event notification subscription ID.</p>
+    #[doc(hidden)]
     pub cust_subscription_id: std::option::Option<std::string::String>,
     /// <p>The topic ARN of the Amazon DocumentDB event notification subscription.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the Amazon DocumentDB event notification subscription was created.</p>
+    #[doc(hidden)]
     pub subscription_creation_time: std::option::Option<std::string::String>,
     /// <p>The source type for the Amazon DocumentDB event notification subscription.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of source IDs for the Amazon DocumentDB event notification subscription.</p>
+    #[doc(hidden)]
     pub source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event categories for the Amazon DocumentDB event notification subscription.</p>
+    #[doc(hidden)]
     pub event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+    #[doc(hidden)]
     pub event_subscription_arn: std::option::Option<std::string::String>,
 }
 impl EventSubscription {
@@ -1722,24 +1784,34 @@ impl EventSubscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    #[doc(hidden)]
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global cluster.</p>
+    #[doc(hidden)]
     pub global_cluster_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this global cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The Amazon DocumentDB database engine used by the global cluster. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Indicates the database engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The default database name within the new global cluster.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The storage encryption setting for the global cluster.</p>
+    #[doc(hidden)]
     pub storage_encrypted: std::option::Option<bool>,
     /// <p>The deletion protection setting for the new global cluster.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
+    #[doc(hidden)]
     pub global_cluster_members:
         std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
 }
@@ -1978,10 +2050,13 @@ impl GlobalCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    #[doc(hidden)]
     pub readers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated. </p>
+    #[doc(hidden)]
     pub is_writer: bool,
 }
 impl GlobalClusterMember {
@@ -2082,59 +2157,86 @@ impl GlobalClusterMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstance {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the instance.</p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>Provides the name of the database engine to be used for this instance.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this database.</p>
+    #[doc(hidden)]
     pub db_instance_status: std::option::Option<std::string::String>,
     /// <p>Specifies the connection endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>Provides the date and time that the instance was created.</p>
+    #[doc(hidden)]
     pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
+    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Specifies information on the subnet group that is associated with the instance, including the name, description, and subnets in the subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Specifies that changes to the instance are pending. This element is included only when changes are pending. Specific changes are identified by subelements.</p>
+    #[doc(hidden)]
     pub pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
+    #[doc(hidden)]
     pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the database engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
+    #[doc(hidden)]
     pub status_infos: std::option::Option<std::vec::Vec<crate::model::DbInstanceStatusInfo>>,
     /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies whether or not the instance is encrypted.</p>
+    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+    #[doc(hidden)]
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
+    #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
+    #[doc(hidden)]
     pub promotion_tier: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the instance.</p>
+    #[doc(hidden)]
     pub db_instance_arn: std::option::Option<std::string::String>,
     /// <p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbInstance {
@@ -2732,12 +2834,16 @@ impl DbInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "<code>read replication</code>."</p>
+    #[doc(hidden)]
     pub status_type: std::option::Option<std::string::String>,
     /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
+    #[doc(hidden)]
     pub normal: bool,
     /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DbInstanceStatusInfo {
@@ -2843,33 +2949,47 @@ impl DbInstanceStatusInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
     /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
+    #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
     /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>Specifies the pending port for the instance.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Specifies the pending number of days for which automated backups are retained.</p>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.</p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
     /// <p>Indicates the database engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The license model for the instance.</p>
     /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type to be associated with the instance.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
+    #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The new subnet group for the instance. </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
+    #[doc(hidden)]
     pub pending_cloudwatch_logs_exports:
         std::option::Option<crate::model::PendingCloudwatchLogsExports>,
 }
@@ -3182,8 +3302,10 @@ impl PendingModifiedValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingCloudwatchLogsExports {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_types_to_enable: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_types_to_disable: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PendingCloudwatchLogsExports {
@@ -3273,16 +3395,22 @@ impl PendingCloudwatchLogsExports {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroup {
     /// <p>The name of the subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>Provides the description of the subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>Provides the virtual private cloud (VPC) ID of the subnet group.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_group_status: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more subnets within a subnet group.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group_arn: std::option::Option<std::string::String>,
 }
 impl DbSubnetGroup {
@@ -3449,10 +3577,13 @@ impl DbSubnetGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subnet {
     /// <p>Specifies the identifier of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the Availability Zone for the subnet.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<crate::model::AvailabilityZone>,
     /// <p>Specifies the status of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_status: std::option::Option<std::string::String>,
 }
 impl Subnet {
@@ -3550,6 +3681,7 @@ impl Subnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZone {
@@ -3602,10 +3734,13 @@ impl AvailabilityZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>Specifies the DNS address of the instance.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>Specifies the port that the database engine is listening on.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl Endpoint {
@@ -3697,8 +3832,10 @@ impl Endpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The list of attributes and values for the cluster snapshot.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes:
         std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshotAttribute>>,
 }
@@ -3800,9 +3937,11 @@ impl DbClusterSnapshotAttributesResult {
 pub struct DbClusterSnapshotAttribute {
     /// <p>The name of the manual cluster snapshot attribute.</p>
     /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The values for the manual cluster snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
+    #[doc(hidden)]
     pub attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbClusterSnapshotAttribute {
@@ -3893,8 +4032,10 @@ impl DbClusterSnapshotAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
+    #[doc(hidden)]
     pub enable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of log types to disable.</p>
+    #[doc(hidden)]
     pub disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CloudwatchLogsExportConfiguration {
@@ -3985,8 +4126,10 @@ impl CloudwatchLogsExportConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more filter values. Filter values are case sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -4067,8 +4210,10 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePendingMaintenanceActions {
     /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
+    #[doc(hidden)]
     pub pending_maintenance_action_details:
         std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
 }
@@ -4162,16 +4307,22 @@ impl ResourcePendingMaintenanceActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+    #[doc(hidden)]
     pub auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
+    #[doc(hidden)]
     pub forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    #[doc(hidden)]
     pub opt_in_status: std::option::Option<std::string::String>,
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
+    #[doc(hidden)]
     pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl PendingMaintenanceAction {
@@ -4323,16 +4474,22 @@ impl PendingMaintenanceAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The engine version of an instance.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The instance class for an instance.</p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The license model for an instance.</p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>A list of Availability Zones for an instance.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
+    #[doc(hidden)]
     pub vpc: bool,
 }
 impl OrderableDbInstanceOption {
@@ -4491,16 +4648,22 @@ impl OrderableDbInstanceOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>Provides the identifier for the source of the event.</p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the source type for this event.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>Provides the text of this event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Specifies the category for the event.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the date and time of the event.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
 }
 impl Event {
@@ -4733,8 +4896,10 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventCategoriesMap {
     /// <p>The source type that the returned categories belong to.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The event categories for the specified source type.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EventCategoriesMap {
@@ -4815,10 +4980,13 @@ impl EventCategoriesMap {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The parameters of a particular cluster parameter group family.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl EngineDefaults {
@@ -4919,20 +5087,28 @@ impl EngineDefaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbEngineVersion {
     /// <p>The name of the database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group family for the database engine.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the database engine.</p>
+    #[doc(hidden)]
     pub db_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the database engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_description: std::option::Option<std::string::String>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
 }
 impl DbEngineVersion {
@@ -5151,14 +5327,19 @@ impl DbEngineVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the upgrade target database engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
+    #[doc(hidden)]
     pub auto_upgrade: bool,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
+    #[doc(hidden)]
     pub is_major_version_upgrade: bool,
 }
 impl UpgradeTarget {
@@ -5284,38 +5465,55 @@ impl UpgradeTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshot {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the identifier for the cluster snapshot.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in UTC.</p>
+    #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the name of the database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the status of this cluster snapshot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
+    #[doc(hidden)]
     pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides the master user name for the cluster snapshot.</p>
+    #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>Provides the version of the database engine for this cluster snapshot.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Provides the type of the cluster snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_type: std::option::Option<std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
+    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>Specifies whether the cluster snapshot is encrypted.</p>
+    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster snapshot.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_arn: std::option::Option<std::string::String>,
     /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
+    #[doc(hidden)]
     pub source_db_cluster_snapshot_arn: std::option::Option<std::string::String>,
 }
 impl DbClusterSnapshot {
@@ -5690,12 +5888,16 @@ impl DbClusterSnapshot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroup {
     /// <p>Provides the name of the cluster parameter group.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>Provides the name of the parameter group family that this cluster parameter group is compatible with.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Provides the customer-specified description for this cluster parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster parameter group.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_arn: std::option::Option<std::string::String>,
 }
 impl DbClusterParameterGroup {
@@ -5823,20 +6025,26 @@ impl DbClusterParameterGroup {
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
     /// <p>Example: <code>rds-ca-2019</code> </p>
+    #[doc(hidden)]
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the certificate.</p>
     /// <p>Example: <code>CA</code> </p>
+    #[doc(hidden)]
     pub certificate_type: std::option::Option<std::string::String>,
     /// <p>The thumbprint of the certificate.</p>
+    #[doc(hidden)]
     pub thumbprint: std::option::Option<std::string::String>,
     /// <p>The starting date-time from which the certificate is valid.</p>
     /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
+    #[doc(hidden)]
     pub valid_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time after which the certificate is no longer valid.</p>
     /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
+    #[doc(hidden)]
     pub valid_till: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl Certificate {

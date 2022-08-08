@@ -10977,8 +10977,10 @@ impl UpdateResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to update.</p>
+    #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
     /// <p>The new settings for the Resolver rule.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<crate::model::ResolverRuleConfig>,
 }
 impl UpdateResolverRuleInput {
@@ -11005,8 +11007,10 @@ impl std::fmt::Debug for UpdateResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the Resolver endpoint that you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateResolverEndpointInput {
@@ -11033,8 +11037,10 @@ impl std::fmt::Debug for UpdateResolverEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::Validation>,
 }
 impl UpdateResolverDnssecConfigInput {
@@ -11061,11 +11067,13 @@ impl std::fmt::Debug for UpdateResolverDnssecConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
+    #[doc(hidden)]
     pub autodefined_reverse_flag: std::option::Option<crate::model::AutodefinedReverseFlag>,
 }
 impl UpdateResolverConfigInput {
@@ -11097,13 +11105,17 @@ impl std::fmt::Debug for UpdateResolverConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
+    #[doc(hidden)]
     pub mutation_protection: std::option::Option<crate::model::MutationProtectionStatus>,
     /// <p>The name of the rule group association.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateFirewallRuleGroupAssociationInput {
@@ -11146,11 +11158,14 @@ impl std::fmt::Debug for UpdateFirewallRuleGroupAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group for the rule. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the domain list to use in the rule. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
     /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
@@ -11158,6 +11173,7 @@ pub struct UpdateFirewallRuleInput {
     /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
     /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
@@ -11165,14 +11181,19 @@ pub struct UpdateFirewallRuleInput {
     /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
     /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub block_response: std::option::Option<crate::model::BlockResponse>,
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_domain: std::option::Option<std::string::String>,
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_dns_type: std::option::Option<crate::model::BlockOverrideDnsType>,
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_ttl: std::option::Option<i32>,
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateFirewallRuleInput {
@@ -11247,6 +11268,7 @@ impl std::fmt::Debug for UpdateFirewallRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to update. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
     /// <ul>
@@ -11254,6 +11276,7 @@ pub struct UpdateFirewallDomainsInput {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::FirewallDomainUpdateOperation>,
     /// <p>A list of domains to use in the update operation.</p>
     /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
@@ -11262,6 +11285,7 @@ pub struct UpdateFirewallDomainsInput {
     /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
     /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFirewallDomainsInput {
@@ -11304,6 +11328,7 @@ impl std::fmt::Debug for UpdateFirewallDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallConfigInput {
     /// <p>The ID of the VPC that the configuration is for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
@@ -11311,6 +11336,7 @@ pub struct UpdateFirewallConfigInput {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    #[doc(hidden)]
     pub firewall_fail_open: std::option::Option<crate::model::FirewallFailOpenStatus>,
 }
 impl UpdateFirewallConfigInput {
@@ -11350,8 +11376,10 @@ pub struct UntagResourceInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you want to remove to the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11394,8 +11422,10 @@ pub struct TagResourceInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you want to add to the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -11430,6 +11460,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResolverRulePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
     /// <ul>
@@ -11440,6 +11471,7 @@ pub struct PutResolverRulePolicyInput {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
+    #[doc(hidden)]
     pub resolver_rule_policy: std::option::Option<std::string::String>,
 }
 impl PutResolverRulePolicyInput {
@@ -11474,6 +11506,7 @@ impl std::fmt::Debug for PutResolverRulePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResolverQueryLogConfigPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
     /// <ul>
@@ -11483,6 +11516,7 @@ pub struct PutResolverQueryLogConfigPolicyInput {
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
+    #[doc(hidden)]
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
 }
 impl PutResolverQueryLogConfigPolicyInput {
@@ -11519,8 +11553,10 @@ impl std::fmt::Debug for PutResolverQueryLogConfigPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
+    #[doc(hidden)]
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl PutFirewallRuleGroupPolicyInput {
@@ -11550,11 +11586,14 @@ impl std::fmt::Debug for PutFirewallRuleGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that you want to list tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -11587,13 +11626,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRulesInput {
     /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListResolverRulesInput {
@@ -11628,13 +11670,16 @@ impl std::fmt::Debug for ListResolverRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRuleAssociationsInput {
     /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListResolverRuleAssociationsInput {
@@ -11669,13 +11714,16 @@ impl std::fmt::Debug for ListResolverRuleAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigsInput {
     /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
     /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of query logging configurations.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
@@ -11703,10 +11751,12 @@ pub struct ListResolverQueryLogConfigsInput {
     /// </ul> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListResolverQueryLogConfigsInput {
@@ -11778,13 +11828,16 @@ impl std::fmt::Debug for ListResolverQueryLogConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigAssociationsInput {
     /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverQueryLogConfigAssociations</code> request, omit this value.</p>
     /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of query logging associations.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The element that you want Resolver to sort query logging associations by. </p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
@@ -11812,10 +11865,12 @@ pub struct ListResolverQueryLogConfigAssociationsInput {
     /// </ul> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListResolverQueryLogConfigAssociationsInput {
@@ -11887,13 +11942,16 @@ impl std::fmt::Debug for ListResolverQueryLogConfigAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointsInput {
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListResolverEndpointsInput {
@@ -11928,11 +11986,14 @@ impl std::fmt::Debug for ListResolverEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointIpAddressesInput {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolverEndpointIpAddressesInput {
@@ -11965,12 +12026,15 @@ impl std::fmt::Debug for ListResolverEndpointIpAddressesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverDnssecConfigsInput {
     /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional specification to return a subset of objects.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListResolverDnssecConfigsInput {
@@ -12004,10 +12068,12 @@ impl std::fmt::Debug for ListResolverDnssecConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverConfigsInput {
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolverConfigsInput {
@@ -12036,9 +12102,11 @@ impl std::fmt::Debug for ListResolverConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRulesInput {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
@@ -12047,12 +12115,15 @@ pub struct ListFirewallRulesInput {
     /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
     /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallRulesInput {
@@ -12104,9 +12175,11 @@ impl std::fmt::Debug for ListFirewallRulesInput {
 pub struct ListFirewallRuleGroupsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallRuleGroupsInput {
@@ -12135,18 +12208,24 @@ impl std::fmt::Debug for ListFirewallRuleGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRuleGroupAssociationsInput {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FirewallRuleGroupAssociationStatus>,
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallRuleGroupAssociationsInput {
@@ -12195,12 +12274,15 @@ impl std::fmt::Debug for ListFirewallRuleGroupAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallDomainsInput {
@@ -12235,9 +12317,11 @@ impl std::fmt::Debug for ListFirewallDomainsInput {
 pub struct ListFirewallDomainListsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallDomainListsInput {
@@ -12267,9 +12351,11 @@ impl std::fmt::Debug for ListFirewallDomainListsInput {
 pub struct ListFirewallConfigsInput {
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFirewallConfigsInput {
@@ -12298,11 +12384,14 @@ impl std::fmt::Debug for ListFirewallConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFirewallDomainsInput {
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::FirewallDomainImportOperation>,
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
+    #[doc(hidden)]
     pub domain_file_url: std::option::Option<std::string::String>,
 }
 impl ImportFirewallDomainsInput {
@@ -12335,6 +12424,7 @@ impl std::fmt::Debug for ImportFirewallDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRulePolicyInput {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetResolverRulePolicyInput {
@@ -12356,6 +12446,7 @@ impl std::fmt::Debug for GetResolverRulePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRuleAssociationInput {
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
+    #[doc(hidden)]
     pub resolver_rule_association_id: std::option::Option<std::string::String>,
 }
 impl GetResolverRuleAssociationInput {
@@ -12380,6 +12471,7 @@ impl std::fmt::Debug for GetResolverRuleAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
+    #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
 impl GetResolverRuleInput {
@@ -12401,6 +12493,7 @@ impl std::fmt::Debug for GetResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyInput {
@@ -12422,6 +12515,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigAssociationInput {
     /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_association_id: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigAssociationInput {
@@ -12446,6 +12540,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigInput {
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigInput {
@@ -12470,6 +12565,7 @@ impl std::fmt::Debug for GetResolverQueryLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
 impl GetResolverEndpointInput {
@@ -12491,6 +12587,7 @@ impl std::fmt::Debug for GetResolverEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl GetResolverDnssecConfigInput {
@@ -12512,6 +12609,7 @@ impl std::fmt::Debug for GetResolverDnssecConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl GetResolverConfigInput {
@@ -12533,6 +12631,7 @@ impl std::fmt::Debug for GetResolverConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyInput {
@@ -12554,6 +12653,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupAssociationInput {
@@ -12578,6 +12678,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupInput {
@@ -12599,6 +12700,7 @@ impl std::fmt::Debug for GetFirewallRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallDomainListInput {
     /// <p>The ID of the domain list. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallDomainListInput {
@@ -12620,6 +12722,7 @@ impl std::fmt::Debug for GetFirewallDomainListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallConfigInput {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallConfigInput {
@@ -12641,8 +12744,10 @@ impl std::fmt::Debug for GetFirewallConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverRuleInput {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
+    #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
 impl DisassociateResolverRuleInput {
@@ -12669,8 +12774,10 @@ impl std::fmt::Debug for DisassociateResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DisassociateResolverQueryLogConfigInput {
@@ -12700,8 +12807,10 @@ impl std::fmt::Debug for DisassociateResolverQueryLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<crate::model::IpAddressUpdate>,
 }
 impl DisassociateResolverEndpointIpAddressInput {
@@ -12728,6 +12837,7 @@ impl std::fmt::Debug for DisassociateResolverEndpointIpAddressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFirewallRuleGroupInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
 }
 impl DisassociateFirewallRuleGroupInput {
@@ -12752,6 +12862,7 @@ impl std::fmt::Debug for DisassociateFirewallRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
+    #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteResolverRuleInput {
@@ -12773,6 +12884,7 @@ impl std::fmt::Debug for DeleteResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
 }
 impl DeleteResolverQueryLogConfigInput {
@@ -12797,6 +12909,7 @@ impl std::fmt::Debug for DeleteResolverQueryLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
 impl DeleteResolverEndpointInput {
@@ -12818,6 +12931,7 @@ impl std::fmt::Debug for DeleteResolverEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallRuleGroupInput {
@@ -12839,8 +12953,10 @@ impl std::fmt::Debug for DeleteFirewallRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the domain list that's used in the rule. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallRuleInput {
@@ -12867,6 +12983,7 @@ impl std::fmt::Debug for DeleteFirewallRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallDomainListInput {
     /// <p>The ID of the domain list that you want to delete. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallDomainListInput {
@@ -12888,22 +13005,29 @@ impl std::fmt::Debug for DeleteFirewallDomainListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverRuleInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
+    #[doc(hidden)]
     pub rule_type: std::option::Option<crate::model::RuleTypeOption>,
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+    #[doc(hidden)]
     pub target_ips: std::option::Option<std::vec::Vec<crate::model::TargetAddress>>,
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateResolverRuleInput {
@@ -12959,6 +13083,7 @@ impl std::fmt::Debug for CreateResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverQueryLogConfigInput {
     /// <p>The name that you want to give the query logging configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
@@ -12966,10 +13091,13 @@ pub struct CreateResolverQueryLogConfigInput {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateResolverQueryLogConfigInput {
@@ -13011,20 +13139,26 @@ impl std::fmt::Debug for CreateResolverQueryLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverEndpointInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify the applicable value:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub direction: std::option::Option<crate::model::ResolverEndpointDirection>,
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+    #[doc(hidden)]
     pub ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressRequest>>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateResolverEndpointInput {
@@ -13075,10 +13209,13 @@ impl std::fmt::Debug for CreateResolverEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallRuleGroupInput {
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A name that lets you identify the rule group, to manage and use it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFirewallRuleGroupInput {
@@ -13110,13 +13247,17 @@ impl std::fmt::Debug for CreateFirewallRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallRuleInput {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the firewall rule group where you want to create the rule. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the domain list that you want to use in the rule. </p>
+    #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
     /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
@@ -13124,6 +13265,7 @@ pub struct CreateFirewallRuleInput {
     /// <li> <p> <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p> </li>
     /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>. </p>
     /// <ul>
@@ -13132,17 +13274,22 @@ pub struct CreateFirewallRuleInput {
     /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
+    #[doc(hidden)]
     pub block_response: std::option::Option<crate::model::BlockResponse>,
     /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_domain: std::option::Option<std::string::String>,
     /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_dns_type: std::option::Option<crate::model::BlockOverrideDnsType>,
     /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
     /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
+    #[doc(hidden)]
     pub block_override_ttl: std::option::Option<i32>,
     /// <p>A name that lets you identify the rule in the rule group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateFirewallRuleInput {
@@ -13226,10 +13373,13 @@ impl std::fmt::Debug for CreateFirewallRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallDomainListInput {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A name that lets you identify the domain list to manage and use it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFirewallDomainListInput {
@@ -13261,10 +13411,13 @@ impl std::fmt::Debug for CreateFirewallDomainListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+    #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl AssociateResolverRuleInput {
@@ -13296,10 +13449,12 @@ impl std::fmt::Debug for AssociateResolverRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_id: std::option::Option<std::string::String>,
     /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl AssociateResolverQueryLogConfigInput {
@@ -13331,8 +13486,10 @@ impl std::fmt::Debug for AssociateResolverQueryLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
+    #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<crate::model::IpAddressUpdate>,
 }
 impl AssociateResolverEndpointIpAddressInput {
@@ -13359,20 +13516,27 @@ impl std::fmt::Debug for AssociateResolverEndpointIpAddressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFirewallRuleGroupInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the firewall rule group. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>A name that lets you identify the association, to manage and use it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
+    #[doc(hidden)]
     pub mutation_protection: std::option::Option<crate::model::MutationProtectionStatus>,
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AssociateFirewallRuleGroupInput {

@@ -154,6 +154,7 @@ impl SetAlarmStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl PutMetricStreamOutput {
@@ -298,6 +299,7 @@ pub struct PutDashboardOutput {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
+    #[doc(hidden)]
     pub dashboard_validation_messages:
         std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
 }
@@ -437,6 +439,7 @@ impl PutAnomalyDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -498,8 +501,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricStreamsOutput {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The array of metric stream information.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>,
 }
 impl ListMetricStreamsOutput {
@@ -580,8 +585,10 @@ impl ListMetricStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricsOutput {
     /// <p>The metrics that match your request. </p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::Metric>>,
     /// <p>The token that marks the start of the next batch of returned results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricsOutput {
@@ -662,8 +669,10 @@ impl ListMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
     /// <p>The list of matching dashboards.</p>
+    #[doc(hidden)]
     pub dashboard_entries: std::option::Option<std::vec::Vec<crate::model::DashboardEntry>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDashboardsOutput {
@@ -745,6 +754,7 @@ impl ListDashboardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
+    #[doc(hidden)]
     pub metric_widget_image: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetMetricWidgetImageOutput {
@@ -802,26 +812,37 @@ impl GetMetricWidgetImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the metric stream.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
+    #[doc(hidden)]
     pub include_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
+    #[doc(hidden)]
     pub exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
     /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+    #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+    #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+    #[doc(hidden)]
     pub statistics_configurations:
         std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
 }
@@ -1093,8 +1114,10 @@ impl GetMetricStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricStatisticsOutput {
     /// <p>A label for the specified metric.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The data points for the specified metric.</p>
+    #[doc(hidden)]
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
 }
 impl GetMetricStatisticsOutput {
@@ -1175,11 +1198,14 @@ impl GetMetricStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataOutput {
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
+    #[doc(hidden)]
     pub metric_data_results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
     /// <p>A token that marks the next batch of returned results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
 }
 impl GetMetricDataOutput {
@@ -1290,16 +1316,22 @@ impl GetMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightRuleReportOutput {
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    #[doc(hidden)]
     pub key_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
+    #[doc(hidden)]
     pub aggregation_statistic: std::option::Option<std::string::String>,
     /// <p>The sum of the values from all individual contributors that match the rule.</p>
+    #[doc(hidden)]
     pub aggregate_value: std::option::Option<f64>,
     /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
+    #[doc(hidden)]
     pub approximate_unique_count: std::option::Option<i64>,
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
+    #[doc(hidden)]
     pub contributors: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
+    #[doc(hidden)]
     pub metric_datapoints:
         std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
 }
@@ -1477,10 +1509,13 @@ impl GetInsightRuleReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    #[doc(hidden)]
     pub dashboard_body: std::option::Option<std::string::String>,
     /// <p>The name of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
 }
 impl GetDashboardOutput {
@@ -1578,6 +1613,7 @@ impl GetDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableInsightRulesOutput {
     /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl EnableInsightRulesOutput {
@@ -1671,6 +1707,7 @@ impl EnableAlarmActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableInsightRulesOutput {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl DisableInsightRulesOutput {
@@ -1764,8 +1801,10 @@ impl DisableAlarmActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInsightRulesOutput {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The rules returned by the operation.</p>
+    #[doc(hidden)]
     pub insight_rules: std::option::Option<std::vec::Vec<crate::model::InsightRule>>,
 }
 impl DescribeInsightRulesOutput {
@@ -1846,8 +1885,10 @@ impl DescribeInsightRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyDetectorsOutput {
     /// <p>The list of anomaly detection models returned by the operation.</p>
+    #[doc(hidden)]
     pub anomaly_detectors: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyDetectorsOutput {
@@ -1929,6 +1970,7 @@ impl DescribeAnomalyDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmsForMetricOutput {
     /// <p>The information for each alarm with the specified metric.</p>
+    #[doc(hidden)]
     pub metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
 }
 impl DescribeAlarmsForMetricOutput {
@@ -1992,10 +2034,13 @@ impl DescribeAlarmsForMetricOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmsOutput {
     /// <p>The information about any composite alarms returned by the operation.</p>
+    #[doc(hidden)]
     pub composite_alarms: std::option::Option<std::vec::Vec<crate::model::CompositeAlarm>>,
     /// <p>The information about any metric alarms returned by the operation.</p>
+    #[doc(hidden)]
     pub metric_alarms: std::option::Option<std::vec::Vec<crate::model::MetricAlarm>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmsOutput {
@@ -2103,8 +2148,10 @@ impl DescribeAlarmsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmHistoryOutput {
     /// <p>The alarm histories, in JSON format.</p>
+    #[doc(hidden)]
     pub alarm_history_items: std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmHistoryOutput {
@@ -2216,6 +2263,7 @@ impl DeleteMetricStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInsightRulesOutput {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
 }
 impl DeleteInsightRulesOutput {

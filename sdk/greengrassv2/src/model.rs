@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the exception field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message of the exception field.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,12 +148,16 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectivityInfo {
     /// <p>An ID for the connectivity information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+    #[doc(hidden)]
     pub host_address: std::option::Option<std::string::String>,
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+    #[doc(hidden)]
     pub port_number: i32,
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl ConnectivityInfo {
@@ -257,12 +263,16 @@ impl ConnectivityInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The recipe of the component version.</p>
+    #[doc(hidden)]
     pub recipe: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
@@ -270,8 +280,10 @@ pub struct ResolvedComponentVersion {
     /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResolvedComponentVersion {
@@ -494,11 +506,14 @@ impl AsRef<str> for VendorGuidance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentCandidate {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    #[doc(hidden)]
     pub version_requirements:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -618,8 +633,10 @@ impl ComponentCandidate {
 pub struct ComponentPlatform {
     /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
     /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -715,14 +732,19 @@ impl ComponentPlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstalledComponent {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The lifecycle state of the component.</p>
+    #[doc(hidden)]
     pub lifecycle_state: std::option::Option<crate::model::InstalledComponentLifecycleState>,
     /// <p>The details about the lifecycle state of the component.</p>
+    #[doc(hidden)]
     pub lifecycle_state_details: std::option::Option<std::string::String>,
     /// <p>Whether or not the component is a root component.</p>
+    #[doc(hidden)]
     pub is_root: bool,
 }
 impl InstalledComponent {
@@ -951,25 +973,35 @@ impl AsRef<str> for InstalledComponentLifecycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The description of the deployment job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The status of the deployment job on the Greengrass core device.</p>
+    #[doc(hidden)]
     pub core_device_execution_status:
         std::option::Option<crate::model::EffectiveDeploymentExecutionStatus>,
     /// <p>The reason code for the update, if the job was updated.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EffectiveDeployment {
@@ -1284,18 +1316,25 @@ impl AsRef<str> for EffectiveDeploymentExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the deployment.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
+    #[doc(hidden)]
     pub is_latest_for_target: bool,
 }
 impl Deployment {
@@ -1586,14 +1625,17 @@ impl AsRef<str> for DeploymentHistoryFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreDevice {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
     /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CoreDevice {
@@ -1761,10 +1803,13 @@ impl AsRef<str> for CoreDeviceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentVersionListItem {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ComponentVersionListItem {
@@ -1859,10 +1904,13 @@ impl ComponentVersionListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Component {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The latest version of the component and its details.</p>
+    #[doc(hidden)]
     pub latest_version: std::option::Option<crate::model::ComponentLatestVersion>,
 }
 impl Component {
@@ -1957,16 +2005,22 @@ impl Component {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the component version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The publisher of the component version.</p>
+    #[doc(hidden)]
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The platforms that the component version supports.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
 }
 impl ComponentLatestVersion {
@@ -2176,8 +2230,10 @@ impl AsRef<str> for ComponentVisibilityScope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub association_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssociatedClientDevice {
@@ -2252,11 +2308,14 @@ impl AssociatedClientDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIoTJobConfiguration {
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
+    #[doc(hidden)]
     pub job_executions_rollout_config:
         std::option::Option<crate::model::IoTJobExecutionsRolloutConfig>,
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
+    #[doc(hidden)]
     pub abort_config: std::option::Option<crate::model::IoTJobAbortConfig>,
     /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
+    #[doc(hidden)]
     pub timeout_config: std::option::Option<crate::model::IoTJobTimeoutConfig>,
 }
 impl DeploymentIoTJobConfiguration {
@@ -2364,6 +2423,7 @@ impl DeploymentIoTJobConfiguration {
 pub struct IoTJobTimeoutConfig {
     /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
     /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
+    #[doc(hidden)]
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl IoTJobTimeoutConfig {
@@ -2427,6 +2487,7 @@ impl IoTJobTimeoutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
+    #[doc(hidden)]
     pub criteria_list: std::option::Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
 }
 impl IoTJobAbortConfig {
@@ -2496,13 +2557,17 @@ impl IoTJobAbortConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobAbortCriteria {
     /// <p>The type of job deployment failure that can cancel a job.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::IoTJobExecutionFailureType>,
     /// <p>The action to perform when the criteria are met.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::IoTJobAbortAction>,
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+    #[doc(hidden)]
     pub threshold_percentage: f64,
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
+    #[doc(hidden)]
     pub min_number_of_executed_things: i32,
 }
 impl IoTJobAbortCriteria {
@@ -2739,8 +2804,10 @@ impl AsRef<str> for IoTJobExecutionFailureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobExecutionsRolloutConfig {
     /// <p>The exponential rate to increase the job rollout rate.</p>
+    #[doc(hidden)]
     pub exponential_rate: std::option::Option<crate::model::IoTJobExponentialRolloutRate>,
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
+    #[doc(hidden)]
     pub maximum_per_minute: std::option::Option<i32>,
 }
 impl IoTJobExecutionsRolloutConfig {
@@ -2821,11 +2888,14 @@ impl IoTJobExecutionsRolloutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobExponentialRolloutRate {
     /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
+    #[doc(hidden)]
     pub base_rate_per_minute: i32,
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
     /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
+    #[doc(hidden)]
     pub increment_factor: f64,
     /// <p>The criteria to increase the rollout rate for the job.</p>
+    #[doc(hidden)]
     pub rate_increase_criteria: std::option::Option<crate::model::IoTJobRateIncreaseCriteria>,
 }
 impl IoTJobExponentialRolloutRate {
@@ -2926,8 +2996,10 @@ impl IoTJobExponentialRolloutRate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobRateIncreaseCriteria {
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
+    #[doc(hidden)]
     pub number_of_notified_things: std::option::Option<i32>,
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
+    #[doc(hidden)]
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
 impl IoTJobRateIncreaseCriteria {
@@ -3003,10 +3075,13 @@ impl IoTJobRateIncreaseCriteria {
 pub struct DeploymentPolicies {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code> </p>
+    #[doc(hidden)]
     pub failure_handling_policy: std::option::Option<crate::model::DeploymentFailureHandlingPolicy>,
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
+    #[doc(hidden)]
     pub component_update_policy: std::option::Option<crate::model::DeploymentComponentUpdatePolicy>,
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
+    #[doc(hidden)]
     pub configuration_validation_policy:
         std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
 }
@@ -3130,6 +3205,7 @@ impl DeploymentPolicies {
 pub struct DeploymentConfigurationValidationPolicy {
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
     /// <p>Default: <code>30</code> </p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
 }
 impl DeploymentConfigurationValidationPolicy {
@@ -3189,6 +3265,7 @@ impl DeploymentConfigurationValidationPolicy {
 pub struct DeploymentComponentUpdatePolicy {
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code> </p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
     /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
     /// <ul>
@@ -3196,6 +3273,7 @@ pub struct DeploymentComponentUpdatePolicy {
     /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
 }
 impl DeploymentComponentUpdatePolicy {
@@ -3403,10 +3481,13 @@ impl AsRef<str> for DeploymentFailureHandlingPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentDeploymentSpecification {
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub configuration_update: std::option::Option<crate::model::ComponentConfigurationUpdate>,
     /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub run_with: std::option::Option<crate::model::ComponentRunWith>,
 }
 impl ComponentDeploymentSpecification {
@@ -3511,12 +3592,15 @@ impl ComponentDeploymentSpecification {
 pub struct ComponentRunWith {
     /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core devices. The user, and group if specified, must exist on each Linux core device. Specify the user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core software uses the primary user for the group.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    #[doc(hidden)]
     pub posix_user: std::option::Option<std::string::String>,
     /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+    #[doc(hidden)]
     pub system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
     /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
     /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    #[doc(hidden)]
     pub windows_user: std::option::Option<std::string::String>,
 }
 impl ComponentRunWith {
@@ -3619,8 +3703,10 @@ impl ComponentRunWith {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemResourceLimits {
     /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
+    #[doc(hidden)]
     pub memory: i64,
     /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
+    #[doc(hidden)]
     pub cpus: f64,
 }
 impl SystemResourceLimits {
@@ -3692,8 +3778,10 @@ impl SystemResourceLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentConfigurationUpdate {
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub merge: std::option::Option<std::string::String>,
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub reset: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ComponentConfigurationUpdate {
@@ -3829,10 +3917,13 @@ impl AsRef<str> for RecipeOutputFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudComponentStatus {
     /// <p>The state of the component version.</p>
+    #[doc(hidden)]
     pub component_state: std::option::Option<crate::model::CloudComponentState>,
     /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
@@ -3841,8 +3932,10 @@ pub struct CloudComponentStatus {
     /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
+    #[doc(hidden)]
     pub vendor_guidance_message: std::option::Option<std::string::String>,
 }
 impl CloudComponentStatus {
@@ -4082,16 +4175,21 @@ impl AsRef<str> for CloudComponentState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionRecipeSource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The platforms that the component version supports.</p>
+    #[doc(hidden)]
     pub component_platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
     /// <p>The component versions on which this Lambda function component depends.</p>
+    #[doc(hidden)]
     pub component_dependencies: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -4099,6 +4197,7 @@ pub struct LambdaFunctionRecipeSource {
         >,
     >,
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
+    #[doc(hidden)]
     pub component_lambda_parameters: std::option::Option<crate::model::LambdaExecutionParameters>,
 }
 impl LambdaFunctionRecipeSource {
@@ -4302,16 +4401,22 @@ impl LambdaFunctionRecipeSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+    #[doc(hidden)]
     pub event_sources: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
+    #[doc(hidden)]
     pub max_queue_size: std::option::Option<i32>,
     /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
+    #[doc(hidden)]
     pub max_instances_count: std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
+    #[doc(hidden)]
     pub max_idle_time_in_seconds: std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
     /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
+    #[doc(hidden)]
     pub status_timeout_in_seconds: std::option::Option<i32>,
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
@@ -4319,17 +4424,22 @@ pub struct LambdaExecutionParameters {
     /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
     /// </ul>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub pinned: std::option::Option<bool>,
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
+    #[doc(hidden)]
     pub input_payload_encoding_type:
         std::option::Option<crate::model::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
+    #[doc(hidden)]
     pub exec_args: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
+    #[doc(hidden)]
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
+    #[doc(hidden)]
     pub linux_process_params: std::option::Option<crate::model::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParameters {
@@ -4633,8 +4743,10 @@ impl LambdaExecutionParameters {
 pub struct LambdaLinuxProcessParams {
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
     /// <p>Default: <code>GreengrassContainer</code> </p>
+    #[doc(hidden)]
     pub isolation_mode: std::option::Option<crate::model::LambdaIsolationMode>,
     /// <p>The parameters for the container in which the Lambda function runs.</p>
+    #[doc(hidden)]
     pub container_params: std::option::Option<crate::model::LambdaContainerParams>,
 }
 impl LambdaLinuxProcessParams {
@@ -4716,13 +4828,17 @@ impl LambdaLinuxProcessParams {
 pub struct LambdaContainerParams {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
+    #[doc(hidden)]
     pub memory_size_in_kb: std::option::Option<i32>,
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub mount_ro_sysfs: std::option::Option<bool>,
     /// <p>The list of volumes that the container can access.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::LambdaVolumeMount>>,
     /// <p>The list of system devices that the container can access.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::LambdaDeviceMount>>,
 }
 impl LambdaContainerParams {
@@ -4852,12 +4968,15 @@ impl LambdaContainerParams {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaDeviceMount {
     /// <p>The mount path for the device in the file system.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub add_group_owner: std::option::Option<bool>,
 }
 impl LambdaDeviceMount {
@@ -5010,14 +5129,18 @@ impl AsRef<str> for LambdaFilesystemPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
     /// <p>The path to the logical volume in the file system.</p>
+    #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub add_group_owner: std::option::Option<bool>,
 }
 impl LambdaVolumeMount {
@@ -5245,12 +5368,14 @@ impl AsRef<str> for LambdaInputPayloadEncodingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LambdaEventSourceType>,
 }
 impl LambdaEventSource {
@@ -5393,6 +5518,7 @@ impl AsRef<str> for LambdaEventSourceType {
 pub struct ComponentDependencyRequirement {
     /// <p>The component version requirement for the component dependency.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    #[doc(hidden)]
     pub version_requirement: std::option::Option<std::string::String>,
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
@@ -5400,6 +5526,7 @@ pub struct ComponentDependencyRequirement {
     /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
     /// <p>Default: <code>HARD</code> </p>
+    #[doc(hidden)]
     pub dependency_type: std::option::Option<crate::model::ComponentDependencyType>,
 }
 impl ComponentDependencyRequirement {
@@ -5550,10 +5677,13 @@ impl AsRef<str> for ComponentDependencyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
     /// <p>The name of the IoT thing whose disassociate request failed.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The error code for the request.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message that provides additional information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
@@ -5643,6 +5773,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl DisassociateClientDeviceFromCoreDeviceEntry {
@@ -5697,10 +5828,13 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
     /// <p>The name of the IoT thing whose associate request failed.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The error code for the request.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message that provides additional information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceErrorEntry {
@@ -5790,6 +5924,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceEntry {

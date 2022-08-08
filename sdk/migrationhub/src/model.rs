@@ -34,8 +34,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAttribute {
     /// <p>Type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceAttributeType>,
     /// <p>Value of the resource type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceAttribute {
@@ -208,10 +210,13 @@ impl AsRef<str> for ResourceAttributeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
+    #[doc(hidden)]
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>Indication of the percentage completion of the task.</p>
+    #[doc(hidden)]
     pub progress_percent: std::option::Option<i32>,
 }
 impl Task {
@@ -425,6 +430,7 @@ impl AsRef<str> for ApplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub progress_update_stream_name: std::option::Option<std::string::String>,
 }
 impl ProgressUpdateStreamSummary {
@@ -488,16 +494,22 @@ impl ProgressUpdateStreamSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MigrationTaskSummary {
     /// <p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Indication of the percentage completion of the task.</p>
+    #[doc(hidden)]
     pub progress_percent: std::option::Option<i32>,
     /// <p>Detail information of what is being done within the overall status state.</p>
+    #[doc(hidden)]
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>The timestamp when the task was gathered.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MigrationTaskSummary {
@@ -649,8 +661,10 @@ impl MigrationTaskSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl DiscoveredResource {
@@ -725,8 +739,10 @@ impl DiscoveredResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatedArtifact {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreatedArtifact {
@@ -798,10 +814,13 @@ impl CreatedArtifact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationState {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The current status of an application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationState {
@@ -899,14 +918,19 @@ impl ApplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MigrationTask {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Task object encapsulating task information.</p>
+    #[doc(hidden)]
     pub task: std::option::Option<crate::model::Task>,
     /// <p>The timestamp when the task was gathered.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
+    #[doc(hidden)]
     pub resource_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
 }

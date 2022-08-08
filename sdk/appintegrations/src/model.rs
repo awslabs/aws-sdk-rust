@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventIntegration {
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
+    #[doc(hidden)]
     pub event_integration_arn: std::option::Option<std::string::String>,
     /// <p>The name of the event integration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The event integration description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event integration filter.</p>
+    #[doc(hidden)]
     pub event_filter: std::option::Option<crate::model::EventFilter>,
     /// <p>The Amazon EventBridge bus for the event integration.</p>
+    #[doc(hidden)]
     pub event_bridge_bus: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -184,6 +190,7 @@ impl EventIntegration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventFilter {
     /// <p>The source of the events.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl EventFilter {
@@ -238,16 +245,22 @@ impl EventFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventIntegrationAssociation {
     /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
+    #[doc(hidden)]
     pub event_integration_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the event integration association.</p>
+    #[doc(hidden)]
     pub event_integration_association_id: std::option::Option<std::string::String>,
     /// <p>The name of the event integration.</p>
+    #[doc(hidden)]
     pub event_integration_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the client that is associated with the event integration.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The name of the EventBridge rule.</p>
+    #[doc(hidden)]
     pub event_bridge_rule_name: std::option::Option<std::string::String>,
     /// <p>The metadata associated with the client.</p>
+    #[doc(hidden)]
     pub client_association_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -435,10 +448,13 @@ impl EventIntegrationAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the DataIntegration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The URI of the data source.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
 }
 impl DataIntegrationSummary {
@@ -527,10 +543,13 @@ impl DataIntegrationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataIntegrationAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
+    #[doc(hidden)]
     pub data_integration_association_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
+    #[doc(hidden)]
     pub data_integration_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
 }
 impl DataIntegrationAssociationSummary {
@@ -631,10 +650,13 @@ impl DataIntegrationAssociationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run.</p>
+    #[doc(hidden)]
     pub first_execution_from: std::option::Option<std::string::String>,
     /// <p>The name of the object to pull from the data source.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p>How often the data should be pulled from data source.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl ScheduleConfiguration {

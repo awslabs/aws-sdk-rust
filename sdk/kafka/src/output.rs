@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSecurityOutput {
@@ -80,8 +82,10 @@ impl UpdateSecurityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMonitoringOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateMonitoringOutput {
@@ -156,8 +160,10 @@ impl UpdateMonitoringOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateConnectivityOutput {
@@ -232,8 +238,10 @@ impl UpdateConnectivityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Latest revision of the configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
 }
 impl UpdateConfigurationOutput {
@@ -308,8 +316,10 @@ impl UpdateConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterKafkaVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateClusterKafkaVersionOutput {
@@ -384,8 +394,10 @@ impl UpdateClusterKafkaVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateClusterConfigurationOutput {
@@ -460,8 +472,10 @@ impl UpdateClusterConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBrokerTypeOutput {
@@ -536,8 +550,10 @@ impl UpdateBrokerTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBrokerStorageOutput {
@@ -612,8 +628,10 @@ impl UpdateBrokerStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerCountOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBrokerCountOutput {
@@ -748,8 +766,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootBrokerOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl RebootBrokerOutput {
@@ -824,6 +844,7 @@ impl RebootBrokerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The key-value pair for the resource tag.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -897,8 +918,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScramSecretsOutput {
     /// <p>Paginated results marker.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of scram secrets associated with the cluster.</p>
+    #[doc(hidden)]
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListScramSecretsOutput {
@@ -979,8 +1002,10 @@ impl ListScramSecretsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesOutput {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List containing a NodeInfo object.</p>
+    #[doc(hidden)]
     pub node_info_list: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
 }
 impl ListNodesOutput {
@@ -1061,8 +1086,10 @@ impl ListNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKafkaVersionsOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub kafka_versions: std::option::Option<std::vec::Vec<crate::model::KafkaVersion>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKafkaVersionsOutput {
@@ -1142,8 +1169,10 @@ impl ListKafkaVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsOutput {
@@ -1224,8 +1253,10 @@ impl ListConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsOutput {
     /// <p>Paginated results marker.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of ConfigurationRevision objects.</p>
+    #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
 }
 impl ListConfigurationRevisionsOutput {
@@ -1307,8 +1338,10 @@ impl ListConfigurationRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersV2Output {
     /// <p>Information on each of the MSK clusters in the response.</p>
+    #[doc(hidden)]
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersV2Output {
@@ -1389,8 +1422,10 @@ impl ListClustersV2Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
+    #[doc(hidden)]
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -1471,9 +1506,11 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
+    #[doc(hidden)]
     pub cluster_operation_info_list:
         std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterOperationsOutput {
@@ -1563,6 +1600,7 @@ impl ListClusterOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleKafkaVersionsOutput {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
+    #[doc(hidden)]
     pub compatible_kafka_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
 }
@@ -1633,18 +1671,25 @@ impl GetCompatibleKafkaVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBootstrapBrokersOutput {
     /// <p>A string containing one or more hostname:port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string: std::option::Option<std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_tls: std::option::Option<std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_sasl_scram: std::option::Option<std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_sasl_iam: std::option::Option<std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_public_tls: std::option::Option<std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_public_sasl_scram: std::option::Option<std::string::String>,
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    #[doc(hidden)]
     pub bootstrap_broker_string_public_sasl_iam: std::option::Option<std::string::String>,
 }
 impl GetBootstrapBrokersOutput {
@@ -1862,18 +1907,23 @@ impl GetBootstrapBrokersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
+    #[doc(hidden)]
     pub revision: i64,
     /// <p>Contents of the <filename>
     /// server.properties
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
+    #[doc(hidden)]
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DescribeConfigurationRevisionOutput {
@@ -2014,18 +2064,25 @@ impl DescribeConfigurationRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    #[doc(hidden)]
     pub kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Latest revision of the configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
 }
 impl DescribeConfigurationOutput {
@@ -2200,6 +2257,7 @@ impl DescribeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterV2Output {
     /// <p>The cluster information.</p>
+    #[doc(hidden)]
     pub cluster_info: std::option::Option<crate::model::Cluster>,
 }
 impl DescribeClusterV2Output {
@@ -2257,6 +2315,7 @@ impl DescribeClusterV2Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
+    #[doc(hidden)]
     pub cluster_operation_info: std::option::Option<crate::model::ClusterOperationInfo>,
 }
 impl DescribeClusterOperationOutput {
@@ -2316,6 +2375,7 @@ impl DescribeClusterOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
     /// <p>The cluster information.</p>
+    #[doc(hidden)]
     pub cluster_info: std::option::Option<crate::model::ClusterInfo>,
 }
 impl DescribeClusterOutput {
@@ -2373,8 +2433,10 @@ impl DescribeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
 }
 impl DeleteConfigurationOutput {
@@ -2449,8 +2511,10 @@ impl DeleteConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
 }
 impl DeleteClusterOutput {
@@ -2522,14 +2586,19 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Latest revision of the configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
 }
 impl CreateConfigurationOutput {
@@ -2661,12 +2730,16 @@ impl CreateConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterV2Output {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the MSK cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+    #[doc(hidden)]
     pub cluster_type: std::option::Option<crate::model::ClusterType>,
 }
 impl CreateClusterV2Output {
@@ -2775,10 +2848,13 @@ impl CreateClusterV2Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the MSK cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
 }
 impl CreateClusterOutput {
@@ -2867,8 +2943,10 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of errors when disassociating secrets to cluster.</p>
+    #[doc(hidden)]
     pub unprocessed_scram_secrets:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
 }
@@ -2956,8 +3034,10 @@ impl BatchDisassociateScramSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of errors when associating secrets to cluster.</p>
+    #[doc(hidden)]
     pub unprocessed_scram_secrets:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
 }

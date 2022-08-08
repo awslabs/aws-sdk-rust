@@ -9485,6 +9485,7 @@ impl UpdateRevealConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRevealConfigurationInput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RevealConfiguration>,
 }
 impl UpdateRevealConfigurationInput {
@@ -9506,6 +9507,7 @@ impl std::fmt::Debug for UpdateRevealConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl UpdateOrganizationConfigurationInput {
@@ -9527,8 +9529,10 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberSessionInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
 impl UpdateMemberSessionInput {
@@ -9555,8 +9559,10 @@ impl std::fmt::Debug for UpdateMemberSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMacieSessionInput {
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
 impl UpdateMacieSessionInput {
@@ -9588,20 +9594,27 @@ impl std::fmt::Debug for UpdateMacieSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsFilterInput {
     /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria to use to filter findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    #[doc(hidden)]
     pub position: i32,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsFilterInput {
@@ -9655,6 +9668,7 @@ impl std::fmt::Debug for UpdateFindingsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClassificationJobInput {
     /// <p>The unique identifier for the classification job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The new status for the job. Valid values are:</p>
     /// <ul>
@@ -9662,6 +9676,7 @@ pub struct UpdateClassificationJobInput {
     /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
     /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl UpdateClassificationJobInput {
@@ -9693,8 +9708,10 @@ impl std::fmt::Debug for UpdateClassificationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9721,14 +9738,19 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCustomDataIdentifierInput {
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    #[doc(hidden)]
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
+    #[doc(hidden)]
     pub maximum_match_distance: i32,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
     /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
+    #[doc(hidden)]
     pub sample_text: std::option::Option<std::string::String>,
 }
 impl TestCustomDataIdentifierInput {
@@ -9770,9 +9792,11 @@ impl std::fmt::Debug for TestCustomDataIdentifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
     /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9804,12 +9828,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesInput {
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
+    #[doc(hidden)]
     pub bucket_criteria: std::option::Option<crate::model::SearchResourcesBucketCriteria>,
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria to use to sort the results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SearchResourcesSortCriteria>,
 }
 impl SearchResourcesInput {
@@ -9848,8 +9876,10 @@ impl std::fmt::Debug for SearchResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFindingsPublicationConfigurationInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    #[doc(hidden)]
     pub security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
 }
 impl PutFindingsPublicationConfigurationInput {
@@ -9881,6 +9911,7 @@ impl std::fmt::Debug for PutFindingsPublicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutClassificationExportConfigurationInput {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
 impl PutClassificationExportConfigurationInput {
@@ -9904,6 +9935,7 @@ impl std::fmt::Debug for PutClassificationExportConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9925,8 +9957,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -9953,10 +9987,13 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
+    #[doc(hidden)]
     pub only_associated: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
@@ -9988,6 +10025,7 @@ impl std::fmt::Debug for ListMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedDataIdentifiersInput {
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedDataIdentifiersInput {
@@ -10009,8 +10047,10 @@ impl std::fmt::Debug for ListManagedDataIdentifiersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
@@ -10037,8 +10077,10 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsFiltersInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsFiltersInput {
@@ -10065,12 +10107,16 @@ impl std::fmt::Debug for ListFindingsFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
     /// <p>The criteria to use to filter the results.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The maximum number of items to include in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria to use to sort the results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl ListFindingsInput {
@@ -10107,8 +10153,10 @@ impl std::fmt::Debug for ListFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomDataIdentifiersInput {
     /// <p>The maximum number of items to include in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomDataIdentifiersInput {
@@ -10135,12 +10183,16 @@ impl std::fmt::Debug for ListCustomDataIdentifiersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClassificationJobsInput {
     /// <p>The criteria to use to filter the results.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::ListJobsFilterCriteria>,
     /// <p>The maximum number of items to include in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria to use to sort the results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::ListJobsSortCriteria>,
 }
 impl ListClassificationJobsInput {
@@ -10177,6 +10229,7 @@ impl std::fmt::Debug for ListClassificationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageTotalsInput {
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<std::string::String>,
 }
 impl GetUsageTotalsInput {
@@ -10198,14 +10251,19 @@ impl std::fmt::Debug for GetUsageTotalsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsInput {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    #[doc(hidden)]
     pub filter_by: std::option::Option<std::vec::Vec<crate::model::UsageStatisticsFilter>>,
     /// <p>The maximum number of items to include in each page of the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria to use to sort the query results.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::UsageStatisticsSortBy>,
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
 }
 impl GetUsageStatisticsInput {
@@ -10247,6 +10305,7 @@ impl std::fmt::Debug for GetUsageStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSensitiveDataOccurrencesAvailabilityInput {
     /// <p>The unique identifier for the finding.</p>
+    #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
 }
 impl GetSensitiveDataOccurrencesAvailabilityInput {
@@ -10268,6 +10327,7 @@ impl std::fmt::Debug for GetSensitiveDataOccurrencesAvailabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSensitiveDataOccurrencesInput {
     /// <p>The unique identifier for the finding.</p>
+    #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
 }
 impl GetSensitiveDataOccurrencesInput {
@@ -10300,6 +10360,7 @@ impl std::fmt::Debug for GetRevealConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetMemberInput {
@@ -10354,6 +10415,7 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingStatisticsInput {
     /// <p>The criteria to use to filter the query results.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
@@ -10362,10 +10424,13 @@ pub struct GetFindingStatisticsInput {
     /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub group_by: std::option::Option<crate::model::GroupBy>,
     /// <p>The maximum number of items to include in each page of the response.</p>
+    #[doc(hidden)]
     pub size: i32,
     /// <p>The criteria to use to sort the query results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::FindingStatisticsSortCriteria>,
 }
 impl GetFindingStatisticsInput {
@@ -10421,6 +10486,7 @@ impl std::fmt::Debug for GetFindingsPublicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFindingsFilterInput {
@@ -10442,8 +10508,10 @@ impl std::fmt::Debug for GetFindingsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The criteria for sorting the results of the request.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl GetFindingsInput {
@@ -10470,6 +10538,7 @@ impl std::fmt::Debug for GetFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCustomDataIdentifierInput {
@@ -10502,6 +10571,7 @@ impl std::fmt::Debug for GetClassificationExportConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketStatisticsInput {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetBucketStatisticsInput {
@@ -10534,8 +10604,10 @@ impl std::fmt::Debug for GetAdministratorAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
@@ -10562,10 +10634,13 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableMacieInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
 impl EnableMacieInput {
@@ -10602,6 +10677,7 @@ impl std::fmt::Debug for EnableMacieInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberInput {
@@ -10645,6 +10721,7 @@ impl std::fmt::Debug for DisassociateFromAdministratorAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableOrganizationAdminAccountInput {
@@ -10688,6 +10765,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClassificationJobInput {
     /// <p>The unique identifier for the classification job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeClassificationJobInput {
@@ -10709,6 +10787,7 @@ impl std::fmt::Debug for DescribeClassificationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBucketsInput {
     /// <p>The criteria to use to filter the query results.</p>
+    #[doc(hidden)]
     pub criteria: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -10716,10 +10795,13 @@ pub struct DescribeBucketsInput {
         >,
     >,
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The criteria to use to sort the query results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::BucketSortCriteria>,
 }
 impl DescribeBucketsInput {
@@ -10763,6 +10845,7 @@ impl std::fmt::Debug for DescribeBucketsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteMemberInput {
@@ -10784,6 +10867,7 @@ impl std::fmt::Debug for DeleteMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInvitationsInput {
@@ -10805,6 +10889,7 @@ impl std::fmt::Debug for DeleteInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFindingsFilterInput {
@@ -10826,6 +10911,7 @@ impl std::fmt::Debug for DeleteFindingsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCustomDataIdentifierInput {
@@ -10847,6 +10933,7 @@ impl std::fmt::Debug for DeleteCustomDataIdentifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
@@ -10868,6 +10955,7 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSampleFindingsInput {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
+    #[doc(hidden)]
     pub finding_types: std::option::Option<std::vec::Vec<crate::model::FindingType>>,
 }
 impl CreateSampleFindingsInput {
@@ -10889,9 +10977,11 @@ impl std::fmt::Debug for CreateSampleFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMemberInput {
     /// <p>The details of the account to associate with the administrator account.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<crate::model::AccountDetail>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10923,10 +11013,13 @@ impl std::fmt::Debug for CreateMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
+    #[doc(hidden)]
     pub disable_email_notification: bool,
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CreateInvitationsInput {
@@ -10961,21 +11054,28 @@ impl std::fmt::Debug for CreateInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFindingsFilterInput {
     /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria to use to filter findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    #[doc(hidden)]
     pub position: i32,
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
     /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11034,26 +11134,35 @@ impl std::fmt::Debug for CreateFindingsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomDataIdentifierInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    #[doc(hidden)]
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
+    #[doc(hidden)]
     pub maximum_match_distance: i32,
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11123,22 +11232,28 @@ impl std::fmt::Debug for CreateCustomDataIdentifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClassificationJobInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
+    #[doc(hidden)]
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
+    #[doc(hidden)]
     pub initial_run: bool,
     /// <p>The schedule for running the job. Valid values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
     /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    #[doc(hidden)]
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
@@ -11148,18 +11263,24 @@ pub struct CreateClassificationJobInput {
     /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
     /// </ul>
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    #[doc(hidden)]
     pub managed_data_identifier_selector:
         std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    #[doc(hidden)]
     pub s3_job_definition: std::option::Option<crate::model::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
+    #[doc(hidden)]
     pub sampling_percentage: i32,
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
+    #[doc(hidden)]
     pub schedule_frequency: std::option::Option<crate::model::JobScheduleFrequency>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11265,6 +11386,7 @@ impl std::fmt::Debug for CreateClassificationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCustomDataIdentifiersInput {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersInput {
@@ -11286,10 +11408,13 @@ impl std::fmt::Debug for BatchGetCustomDataIdentifiersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    #[doc(hidden)]
     pub administrator_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the invitation to accept.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    #[doc(hidden)]
     pub master_account: std::option::Option<std::string::String>,
 }
 impl AcceptInvitationInput {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
+    #[doc(hidden)]
     pub certificate_transparency_logging_preference:
         std::option::Option<crate::model::CertificateTransparencyLoggingPreference>,
 }
@@ -128,8 +129,10 @@ impl AsRef<str> for CertificateTransparencyLoggingPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -201,6 +204,7 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
@@ -210,6 +214,7 @@ pub struct DomainValidationOption {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub validation_domain: std::option::Option<std::string::String>,
 }
 impl DomainValidationOption {
@@ -360,6 +365,7 @@ impl AsRef<str> for ValidationMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiryEventsConfiguration {
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
+    #[doc(hidden)]
     pub days_before_expiry: std::option::Option<i32>,
 }
 impl ExpiryEventsConfiguration {
@@ -416,8 +422,10 @@ pub struct CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl CertificateSummary {
@@ -498,11 +506,14 @@ impl CertificateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
+    #[doc(hidden)]
     pub extended_key_usage: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsageName>>,
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
+    #[doc(hidden)]
     pub key_usage: std::option::Option<std::vec::Vec<crate::model::KeyUsageName>>,
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    #[doc(hidden)]
     pub key_types: std::option::Option<std::vec::Vec<crate::model::KeyAlgorithm>>,
 }
 impl Filters {
@@ -999,58 +1010,84 @@ impl AsRef<str> for CertificateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateDetail {
     /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name for the certificate, such as www.example.com or example.com.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
+    #[doc(hidden)]
     pub domain_validation_options:
         std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
     /// <p>The serial number of the certificate.</p>
+    #[doc(hidden)]
     pub serial: std::option::Option<std::string::String>,
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The name of the certificate authority that issued and signed the certificate.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The time at which the certificate was requested.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
+    #[doc(hidden)]
     pub issued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>
+    #[doc(hidden)]
     pub imported_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the certificate.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
+    #[doc(hidden)]
     pub revocation_reason: std::option::Option<crate::model::RevocationReason>,
     /// <p>The time before which the certificate is not valid.</p>
+    #[doc(hidden)]
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time after which the certificate is not valid.</p>
+    #[doc(hidden)]
     pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
+    #[doc(hidden)]
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>The algorithm that was used to sign the certificate.</p>
+    #[doc(hidden)]
     pub signature_algorithm: std::option::Option<std::string::String>,
     /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by multiple Amazon Web Services resources. </p>
+    #[doc(hidden)]
     pub in_use_by: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <code>ImportCertificate</code>, this value is <code>IMPORTED</code>. ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    #[doc(hidden)]
     pub renewal_summary: std::option::Option<crate::model::RenewalSummary>,
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
+    #[doc(hidden)]
     pub key_usages: std::option::Option<std::vec::Vec<crate::model::KeyUsage>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
+    #[doc(hidden)]
     pub extended_key_usages: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
     /// <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued the certificate. This has the following format: </p>
     /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
+    #[doc(hidden)]
     pub renewal_eligibility: std::option::Option<crate::model::RenewalEligibility>,
     /// <p>Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::CertificateOptions>,
 }
 impl CertificateDetail {
@@ -1689,6 +1726,7 @@ impl AsRef<str> for RenewalEligibility {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedKeyUsage {
     /// <p>The name of an Extended Key Usage value.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ExtendedKeyUsageName>,
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
     /// <ul>
@@ -1702,6 +1740,7 @@ pub struct ExtendedKeyUsage {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub oid: std::option::Option<std::string::String>,
 }
 impl ExtendedKeyUsage {
@@ -1809,6 +1848,7 @@ impl ExtendedKeyUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::KeyUsageName>,
 }
 impl KeyUsage {
@@ -1861,13 +1901,17 @@ impl KeyUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewalSummary {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
+    #[doc(hidden)]
     pub renewal_status: std::option::Option<crate::model::RenewalStatus>,
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    #[doc(hidden)]
     pub domain_validation_options:
         std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
     /// <p>The reason that a renewal request was unsuccessful.</p>
+    #[doc(hidden)]
     pub renewal_status_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RenewalSummary {
@@ -2127,10 +2171,13 @@ impl AsRef<str> for FailureReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
+    #[doc(hidden)]
     pub validation_emails: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The domain name that ACM used to send domain validation emails.</p>
+    #[doc(hidden)]
     pub validation_domain: std::option::Option<std::string::String>,
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
@@ -2138,11 +2185,14 @@ pub struct DomainValidation {
     /// <li> <p> <code></code>SUCCESS</p> </li>
     /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub validation_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    #[doc(hidden)]
     pub resource_record: std::option::Option<crate::model::ResourceRecord>,
     /// <p>Specifies the domain validation method.</p>
+    #[doc(hidden)]
     pub validation_method: std::option::Option<crate::model::ValidationMethod>,
 }
 impl DomainValidation {
@@ -2321,10 +2371,13 @@ impl DomainValidation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecordType>,
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceRecord {

@@ -132,39 +132,56 @@ impl AsRef<str> for RouteActivationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSummary {
     /// <p>The unique identifier of the service. </p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The name of the service. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service creator. </p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>A description of the service. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The endpoint type of the service. </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
     /// <p>The summary of the configuration for the URL endpoint type. </p>
+    #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointSummary>,
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
+    #[doc(hidden)]
     pub lambda_endpoint: std::option::Option<crate::model::LambdaEndpointSummary>,
     /// <p>The current state of the service. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the service. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the service resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the service is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceSummary {
@@ -541,16 +558,22 @@ impl ServiceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorResponse {
     /// <p>The error code associated with the error. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The message associated with the error. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the resource. </p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of resource. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ErrorResourceType>,
     /// <p>Additional details about the error. </p>
+    #[doc(hidden)]
     pub additional_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1035,6 +1058,7 @@ impl AsRef<str> for ServiceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointSummary {
@@ -1087,8 +1111,10 @@ impl LambdaEndpointSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlEndpointSummary {
     /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
+    #[doc(hidden)]
     pub health_url: std::option::Option<std::string::String>,
 }
 impl UrlEndpointSummary {
@@ -1215,40 +1241,57 @@ impl AsRef<str> for ServiceEndpointType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteSummary {
     /// <p>The unique identifier of the route. </p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route creator. </p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The route type of the route. </p>
+    #[doc(hidden)]
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The unique identifier of the service. </p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    #[doc(hidden)]
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
+    #[doc(hidden)]
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    #[doc(hidden)]
     pub path_resource_to_id:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current state of the route. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the route. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the route resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the route is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RouteSummary {
@@ -1778,18 +1821,25 @@ impl AsRef<str> for RouteType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentVpc {
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
+    #[doc(hidden)]
     pub cidr_blocks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the VPC at the time it is added to the environment. </p>
+    #[doc(hidden)]
     pub vpc_name: std::option::Option<std::string::String>,
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentVpc {
@@ -1964,29 +2014,41 @@ impl EnvironmentVpc {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
     /// <p>The name of the environment. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A description of the environment. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The network fabric type of the environment. </p>
+    #[doc(hidden)]
     pub network_fabric_type: std::option::Option<crate::model::NetworkFabricType>,
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway set up by the environment. </p>
+    #[doc(hidden)]
     pub transit_gateway_id: std::option::Option<std::string::String>,
     /// <p>The current state of the environment. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags assigned to the environment. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the environment is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentSummary {
@@ -2386,33 +2448,47 @@ impl AsRef<str> for NetworkFabricType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The name of the application. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application creator. </p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
+    #[doc(hidden)]
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
     /// <p>The endpoint URL of the Amazon API Gateway proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxySummary>,
     /// <p>The current state of the application. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the application is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {
@@ -2805,18 +2881,25 @@ impl AsRef<str> for ApplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub proxy_url: std::option::Option<std::string::String>,
     /// <p>The resource ID of the API Gateway for the proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_id: std::option::Option<std::string::String>,
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub nlb_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub nlb_name: std::option::Option<std::string::String>,
     /// <p>The type of API Gateway endpoint created. </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxySummary {
@@ -3085,6 +3168,7 @@ impl AsRef<str> for ProxyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaEndpointConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointConfig {
@@ -3137,8 +3221,10 @@ impl LambdaEndpointConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The health check URL of the URL endpoint type. </p>
+    #[doc(hidden)]
     pub health_url: std::option::Option<std::string::String>,
 }
 impl UrlEndpointConfig {
@@ -3210,18 +3296,25 @@ impl UrlEndpointConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiGatewayProxyConfig {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub proxy_url: std::option::Option<std::string::String>,
     /// <p>The resource ID of the API Gateway for the proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_id: std::option::Option<std::string::String>,
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub nlb_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub nlb_name: std::option::Option<std::string::String>,
     /// <p>The type of API Gateway endpoint created. </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyConfig {
@@ -3384,6 +3477,7 @@ impl ApiGatewayProxyConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointInput {
@@ -3436,8 +3530,10 @@ impl LambdaEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlEndpointInput {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
+    #[doc(hidden)]
     pub health_url: std::option::Option<std::string::String>,
 }
 impl UrlEndpointInput {
@@ -3509,12 +3605,16 @@ impl UrlEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UriPathRouteInput {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
+    #[doc(hidden)]
     pub activation_state: std::option::Option<crate::model::RouteActivationState>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    #[doc(hidden)]
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    #[doc(hidden)]
     pub include_child_paths: std::option::Option<bool>,
 }
 impl UriPathRouteInput {
@@ -3632,6 +3732,7 @@ impl UriPathRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultRouteInput {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
+    #[doc(hidden)]
     pub activation_state: std::option::Option<crate::model::RouteActivationState>,
 }
 impl DefaultRouteInput {
@@ -3690,8 +3791,10 @@ impl DefaultRouteInput {
 pub struct ApiGatewayProxyInput {
     /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyInput {

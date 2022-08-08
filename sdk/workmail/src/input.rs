@@ -12887,12 +12887,16 @@ impl UpdateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be updated.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The name of the resource to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The resource's booking options to be updated.</p>
+    #[doc(hidden)]
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
 }
 impl UpdateResourceInput {
@@ -12929,10 +12933,13 @@ impl std::fmt::Debug for UpdateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePrimaryEmailAddressInput {
     /// <p>The organization that contains the user, group, or resource to update.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The user, group, or resource to update.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The value of the email to be updated as primary.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl UpdatePrimaryEmailAddressInput {
@@ -12964,30 +12971,43 @@ impl std::fmt::Debug for UpdatePrimaryEmailAddressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMobileDeviceAccessRuleInput {
     /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the rule to be updated.</p>
+    #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
     /// <p>The updated rule name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>Device types that the updated rule will match.</p>
+    #[doc(hidden)]
     pub device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
+    #[doc(hidden)]
     pub not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that the updated rule will match.</p>
+    #[doc(hidden)]
     pub device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
+    #[doc(hidden)]
     pub not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that the updated rule will match.</p>
+    #[doc(hidden)]
     pub device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
+    #[doc(hidden)]
     pub not_device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User agents that the updated rule will match.</p>
+    #[doc(hidden)]
     pub device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
+    #[doc(hidden)]
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateMobileDeviceAccessRuleInput {
@@ -13075,10 +13095,13 @@ impl std::fmt::Debug for UpdateMobileDeviceAccessRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMailboxQuotaInput {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
+    #[doc(hidden)]
     pub mailbox_quota: std::option::Option<i32>,
 }
 impl UpdateMailboxQuotaInput {
@@ -13110,8 +13133,10 @@ impl std::fmt::Debug for UpdateMailboxQuotaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDefaultMailDomainInput {
     /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain name that will become the default domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl UpdateDefaultMailDomainInput {
@@ -13138,12 +13163,16 @@ impl std::fmt::Debug for UpdateDefaultMailDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityConfigurationInput {
     /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies the availability configuration.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    #[doc(hidden)]
     pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
     /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    #[doc(hidden)]
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
 }
 impl UpdateAvailabilityConfigurationInput {
@@ -13182,8 +13211,10 @@ impl std::fmt::Debug for UpdateAvailabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13210,12 +13241,16 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAvailabilityConfigurationInput {
     /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    #[doc(hidden)]
     pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
     /// <p>Describes a Lambda based availability provider.</p>
+    #[doc(hidden)]
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
 }
 impl TestAvailabilityConfigurationInput {
@@ -13254,8 +13289,10 @@ impl std::fmt::Debug for TestAvailabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -13282,20 +13319,28 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The identifier associated with the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket prefix.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
 }
 impl StartMailboxExportJobInput {
@@ -13352,10 +13397,13 @@ impl std::fmt::Debug for StartMailboxExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetPasswordInput {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user for whom the password is reset.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The new password for the user.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl ResetPasswordInput {
@@ -13387,10 +13435,13 @@ impl std::fmt::Debug for ResetPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterToWorkMailInput {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user, group, or resource to be updated.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The email for the user, group, or resource to be updated.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl RegisterToWorkMailInput {
@@ -13422,10 +13473,13 @@ impl std::fmt::Debug for RegisterToWorkMailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterMailDomainInput {
     /// <p>Idempotency token used when retrying requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RegisterMailDomainInput {
@@ -13457,14 +13511,19 @@ impl std::fmt::Debug for RegisterMailDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionPolicyInput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The retention policy ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The retention policy name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The retention policy description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The retention policy folder configurations.</p>
+    #[doc(hidden)]
     pub folder_configurations:
         std::option::Option<std::vec::Vec<crate::model::FolderConfiguration>>,
 }
@@ -13509,6 +13568,7 @@ impl std::fmt::Debug for PutRetentionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMobileDeviceAccessOverrideInput {
     /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -13516,12 +13576,16 @@ pub struct PutMobileDeviceAccessOverrideInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A description of the override.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl PutMobileDeviceAccessOverrideInput {
@@ -13568,12 +13632,16 @@ impl std::fmt::Debug for PutMobileDeviceAccessOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
+    #[doc(hidden)]
     pub grantee_id: std::option::Option<std::string::String>,
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+    #[doc(hidden)]
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
 impl PutMailboxPermissionsInput {
@@ -13610,8 +13678,10 @@ impl std::fmt::Debug for PutMailboxPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInboundDmarcSettingsInput {
     /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Enforces or suspends a policy after it's applied.</p>
+    #[doc(hidden)]
     pub enforced: std::option::Option<bool>,
 }
 impl PutInboundDmarcSettingsInput {
@@ -13638,10 +13708,13 @@ impl std::fmt::Debug for PutInboundDmarcSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl PutEmailMonitoringConfigurationInput {
@@ -13673,24 +13746,34 @@ impl std::fmt::Debug for PutEmailMonitoringConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessControlRuleInput {
     /// <p>The rule name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule effect.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::AccessControlRuleEffect>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    #[doc(hidden)]
     pub ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    #[doc(hidden)]
     pub not_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    #[doc(hidden)]
     pub not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to include in the rule.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to exclude from the rule.</p>
+    #[doc(hidden)]
     pub not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl PutAccessControlRuleInput {
@@ -13757,10 +13840,13 @@ impl std::fmt::Debug for PutAccessControlRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>The identifier for the organization under which the users exist.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUsersInput {
@@ -13792,6 +13878,7 @@ impl std::fmt::Debug for ListUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -13813,10 +13900,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInput {
     /// <p>The identifier for the organization under which the resources exist.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourcesInput {
@@ -13848,12 +13938,16 @@ impl std::fmt::Debug for ListResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDelegatesInput {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the resource whose delegates are listed.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of maximum results in a page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceDelegatesInput {
@@ -13890,8 +13984,10 @@ impl std::fmt::Debug for ListResourceDelegatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationsInput {
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrganizationsInput {
@@ -13918,6 +14014,7 @@ impl std::fmt::Debug for ListOrganizationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessRulesInput {
     /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl ListMobileDeviceAccessRulesInput {
@@ -13939,6 +14036,7 @@ impl std::fmt::Debug for ListMobileDeviceAccessRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessOverridesInput {
     /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
@@ -13946,12 +14044,16 @@ pub struct ListMobileDeviceAccessOverridesInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the access override applies.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMobileDeviceAccessOverridesInput {
@@ -13998,10 +14100,13 @@ impl std::fmt::Debug for ListMobileDeviceAccessOverridesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailDomainsInput {
     /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailDomainsInput {
@@ -14033,12 +14138,16 @@ impl std::fmt::Debug for ListMailDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMailboxPermissionsInput {
@@ -14075,10 +14184,13 @@ impl std::fmt::Debug for ListMailboxPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxExportJobsInput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMailboxExportJobsInput {
@@ -14110,10 +14222,13 @@ impl std::fmt::Debug for ListMailboxExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGroupsInput {
@@ -14145,12 +14260,16 @@ impl std::fmt::Debug for ListGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupMembersInput {
     /// <p>The identifier for the organization under which the group exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGroupMembersInput {
@@ -14187,10 +14306,13 @@ impl std::fmt::Debug for ListGroupMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailabilityConfigurationsInput {
     /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailabilityConfigurationsInput {
@@ -14222,12 +14344,16 @@ impl std::fmt::Debug for ListAvailabilityConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
     /// <p>The identifier for the organization under which the entity exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the entity for which to list the aliases.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAliasesInput {
@@ -14264,6 +14390,7 @@ impl std::fmt::Debug for ListAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessControlRulesInput {
     /// <p>The identifier for the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl ListAccessControlRulesInput {
@@ -14285,6 +14412,7 @@ impl std::fmt::Debug for ListAccessControlRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessOverrideInput {
     /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
@@ -14292,8 +14420,10 @@ pub struct GetMobileDeviceAccessOverrideInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl GetMobileDeviceAccessOverrideInput {
@@ -14330,14 +14460,19 @@ impl std::fmt::Debug for GetMobileDeviceAccessOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessEffectInput {
     /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Device type the simulated user will report.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>Device model the simulated user will report.</p>
+    #[doc(hidden)]
     pub device_model: std::option::Option<std::string::String>,
     /// <p>Device operating system the simulated user will report.</p>
+    #[doc(hidden)]
     pub device_operating_system: std::option::Option<std::string::String>,
     /// <p>Device user agent the simulated user will report.</p>
+    #[doc(hidden)]
     pub device_user_agent: std::option::Option<std::string::String>,
 }
 impl GetMobileDeviceAccessEffectInput {
@@ -14379,8 +14514,10 @@ impl std::fmt::Debug for GetMobileDeviceAccessEffectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailDomainInput {
     /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain from which you want to retrieve details.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetMailDomainInput {
@@ -14407,8 +14544,10 @@ impl std::fmt::Debug for GetMailDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailboxDetailsInput {
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user whose mailbox details are being requested.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetMailboxDetailsInput {
@@ -14435,6 +14574,7 @@ impl std::fmt::Debug for GetMailboxDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl GetDefaultRetentionPolicyInput {
@@ -14456,12 +14596,16 @@ impl std::fmt::Debug for GetDefaultRetentionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessControlEffectInput {
     /// <p>The identifier for the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetAccessControlEffectInput {
@@ -14498,10 +14642,13 @@ impl std::fmt::Debug for GetAccessControlEffectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMemberFromGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the group from which members are removed.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member to be removed to the group.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberFromGroupInput {
@@ -14533,10 +14680,13 @@ impl std::fmt::Debug for DisassociateMemberFromGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DisassociateDelegateFromResourceInput {
@@ -14568,8 +14718,10 @@ impl std::fmt::Debug for DisassociateDelegateFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
     /// <p>The identifier for the organization under which the user exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user to be described.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
@@ -14596,8 +14748,10 @@ impl std::fmt::Debug for DescribeUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceInput {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be described.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeResourceInput {
@@ -14624,6 +14778,7 @@ impl std::fmt::Debug for DescribeResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationInput {
     /// <p>The identifier for the organization to be described.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationInput {
@@ -14645,8 +14800,10 @@ impl std::fmt::Debug for DescribeOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMailboxExportJobInput {
     /// <p>The mailbox export job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DescribeMailboxExportJobInput {
@@ -14673,6 +14830,7 @@ impl std::fmt::Debug for DescribeMailboxExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInboundDmarcSettingsInput {
     /// <p>Lists the ID of the given organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DescribeInboundDmarcSettingsInput {
@@ -14694,8 +14852,10 @@ impl std::fmt::Debug for DescribeInboundDmarcSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the group to be described.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DescribeGroupInput {
@@ -14722,6 +14882,7 @@ impl std::fmt::Debug for DescribeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DescribeEmailMonitoringConfigurationInput {
@@ -14743,8 +14904,10 @@ impl std::fmt::Debug for DescribeEmailMonitoringConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterMailDomainInput {
     /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to deregister in WorkMail and SES. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeregisterMailDomainInput {
@@ -14771,8 +14934,10 @@ impl std::fmt::Debug for DeregisterMailDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterFromWorkMailInput {
     /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member (user or group) to be updated.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DeregisterFromWorkMailInput {
@@ -14799,8 +14964,10 @@ impl std::fmt::Debug for DeregisterFromWorkMailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>The organization that contains the user to be deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user to be deleted.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -14827,8 +14994,10 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRetentionPolicyInput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The retention policy ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteRetentionPolicyInput {
@@ -14855,8 +15024,10 @@ impl std::fmt::Debug for DeleteRetentionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
     /// <p>The identifier associated with the organization from which the resource is deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be deleted.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceInput {
@@ -14883,10 +15054,13 @@ impl std::fmt::Debug for DeleteResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationInput {
     /// <p>The idempotency token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
+    #[doc(hidden)]
     pub delete_directory: bool,
 }
 impl DeleteOrganizationInput {
@@ -14918,8 +15092,10 @@ impl std::fmt::Debug for DeleteOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMobileDeviceAccessRuleInput {
     /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the rule to be deleted.</p>
+    #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteMobileDeviceAccessRuleInput {
@@ -14949,6 +15125,7 @@ impl std::fmt::Debug for DeleteMobileDeviceAccessRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -14956,8 +15133,10 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteMobileDeviceAccessOverrideInput {
@@ -14994,10 +15173,13 @@ impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    #[doc(hidden)]
     pub grantee_id: std::option::Option<std::string::String>,
 }
 impl DeleteMailboxPermissionsInput {
@@ -15029,8 +15211,10 @@ impl std::fmt::Debug for DeleteMailboxPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// <p>The organization that contains the group.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group to be deleted.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
@@ -15057,6 +15241,7 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DeleteEmailMonitoringConfigurationInput {
@@ -15078,8 +15263,10 @@ impl std::fmt::Debug for DeleteEmailMonitoringConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAvailabilityConfigurationInput {
     /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteAvailabilityConfigurationInput {
@@ -15106,10 +15293,13 @@ impl std::fmt::Debug for DeleteAvailabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
     /// <p>The identifier for the organization under which the user exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
@@ -15141,8 +15331,10 @@ impl std::fmt::Debug for DeleteAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessControlRuleInput {
     /// <p>The identifier for the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the access control rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessControlRuleInput {
@@ -15169,12 +15361,16 @@ impl std::fmt::Debug for DeleteAccessControlRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The identifier of the organization for which the user is created.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The display name for the new user.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The password for the new user.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl CreateUserInput {
@@ -15211,10 +15407,13 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
 impl CreateResourceInput {
@@ -15246,16 +15445,22 @@ impl std::fmt::Debug for CreateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The organization alias.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The idempotency token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The email domains to associate with the organization.</p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
     /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    #[doc(hidden)]
     pub enable_interoperability: bool,
 }
 impl CreateOrganizationInput {
@@ -15302,30 +15507,43 @@ impl std::fmt::Debug for CreateOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMobileDeviceAccessRuleInput {
     /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token for the client request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The rule name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>Device types that the rule will match.</p>
+    #[doc(hidden)]
     pub device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
+    #[doc(hidden)]
     pub not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that the rule will match.</p>
+    #[doc(hidden)]
     pub device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
+    #[doc(hidden)]
     pub not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that the rule will match.</p>
+    #[doc(hidden)]
     pub device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
+    #[doc(hidden)]
     pub not_device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device user agents that the rule will match.</p>
+    #[doc(hidden)]
     pub device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
+    #[doc(hidden)]
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMobileDeviceAccessRuleInput {
@@ -15410,8 +15628,10 @@ impl std::fmt::Debug for CreateMobileDeviceAccessRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The organization under which the group is to be created.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateGroupInput {
@@ -15438,14 +15658,19 @@ impl std::fmt::Debug for CreateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAvailabilityConfigurationInput {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The domain to which the provider applies.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    #[doc(hidden)]
     pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    #[doc(hidden)]
     pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
 }
 impl CreateAvailabilityConfigurationInput {
@@ -15489,10 +15714,13 @@ impl std::fmt::Debug for CreateAvailabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasInput {
     /// <p>The organization under which the member (user or group) exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The member (user or group) to which this alias is added.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The alias to add to the member set.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAliasInput {
@@ -15524,10 +15752,13 @@ impl std::fmt::Debug for CreateAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl CancelMailboxExportJobInput {
@@ -15559,10 +15790,13 @@ impl std::fmt::Debug for CancelMailboxExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateMemberToGroupInput {
     /// <p>The organization under which the group exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The group to which the member (user or group) is associated.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The member (user or group) to associate to the group.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl AssociateMemberToGroupInput {
@@ -15594,10 +15828,13 @@ impl std::fmt::Debug for AssociateMemberToGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDelegateToResourceInput {
     /// <p>The organization under which the resource exists.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The resource for which members (users or groups) are associated.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The member (user or group) to associate to the resource.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl AssociateDelegateToResourceInput {

@@ -64,6 +64,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnclaimDeviceOutput {
     /// <p>The device's final claim state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl UnclaimDeviceOutput {
@@ -147,6 +148,7 @@ impl TagResourceOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -223,8 +225,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>A list of devices.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceDescription>>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -305,8 +309,10 @@ impl ListDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceEventsOutput {
     /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceEventsOutput {
@@ -387,6 +393,7 @@ impl ListDeviceEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeDeviceMethodOutput {
     /// <p>A JSON encoded string containing the device method response.</p>
+    #[doc(hidden)]
     pub device_method_response: std::option::Option<std::string::String>,
 }
 impl InvokeDeviceMethodOutput {
@@ -444,6 +451,7 @@ impl InvokeDeviceMethodOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl InitiateDeviceClaimOutput {
@@ -496,6 +504,7 @@ impl InitiateDeviceClaimOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceMethodsOutput {
     /// <p>List of available device APIs.</p>
+    #[doc(hidden)]
     pub device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
 }
 impl GetDeviceMethodsOutput {
@@ -559,6 +568,7 @@ impl GetDeviceMethodsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizeDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl FinalizeDeviceClaimOutput {
@@ -611,6 +621,7 @@ impl FinalizeDeviceClaimOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceOutput {
     /// <p>Device details.</p>
+    #[doc(hidden)]
     pub device_description: std::option::Option<crate::model::DeviceDescription>,
 }
 impl DescribeDeviceOutput {
@@ -668,8 +679,10 @@ impl DescribeDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimDevicesByClaimCodeOutput {
     /// <p>The claim code provided by the device manufacturer.</p>
+    #[doc(hidden)]
     pub claim_code: std::option::Option<std::string::String>,
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
+    #[doc(hidden)]
     pub total: i32,
 }
 impl ClaimDevicesByClaimCodeOutput {

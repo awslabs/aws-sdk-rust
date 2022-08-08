@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
     /// <p>The instances distribution.</p>
+    #[doc(hidden)]
     pub instances_distribution: std::option::Option<crate::model::InstancesDistribution>,
 }
 impl MixedInstancesPolicy {
@@ -93,27 +95,33 @@ pub struct InstancesDistribution {
     /// <p>If you specify <code>prioritized</code>, Amazon EC2 Auto Scaling uses the priority that you assigned to each launch template override, launching the highest priority first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on.</p>
     /// <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify <code>InstanceRequirements</code> in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.</p>
     /// <p>Valid values: <code>lowest-price</code> | <code>prioritized</code> </p>
+    #[doc(hidden)]
     pub on_demand_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
     /// <p>If you specify weights for the instance types in the overrides, the base capacity is measured in the same unit of measurement as the instance types. If you specify <code>InstanceRequirements</code> in the overrides, the base capacity is measured in the same unit of measurement as your group's desired capacity.</p>
     /// <p>Default: <code>0</code> </p>
+    #[doc(hidden)]
     pub on_demand_base_capacity: std::option::Option<i32>,
     /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand Instances are used.</p>
     /// <p>Default: <code>100</code> </p>
+    #[doc(hidden)]
     pub on_demand_percentage_above_base_capacity: std::option::Option<i32>,
     /// <p>Indicates how to allocate instances across Spot Instance pools. </p>
     /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you specify. </p>
     /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for capacity first. </p>
     /// <p>Default: <code>lowest-price</code> </p>
     /// <p>Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code> </p>
+    #[doc(hidden)]
     pub spot_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the Spot allocation strategy is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: <code>2</code> </p>
+    #[doc(hidden)]
     pub spot_instance_pools: std::option::Option<i32>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
     /// <p>If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
+    #[doc(hidden)]
     pub spot_max_price: std::option::Option<std::string::String>,
 }
 impl InstancesDistribution {
@@ -320,10 +328,12 @@ impl InstancesDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplate {
     /// <p>The launch template to use.</p>
+    #[doc(hidden)]
     pub launch_template_specification:
         std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2 Auto Scaling uses the instance type or instance type requirements specified in the launch template when it launches an instance.</p>
     /// <p>The overrides can include either one or more instance types or a set of instance requirements, but not both.</p>
+    #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplate {
@@ -420,13 +430,17 @@ impl LaunchTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateOverrides {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
+    #[doc(hidden)]
     pub weighted_capacity: std::option::Option<std::string::String>,
     /// <p>Provides a launch template for the specified instance type or instance requirements. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    #[doc(hidden)]
     pub launch_template_specification:
         std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The instance requirements. When you specify instance requirements, Amazon EC2 Auto Scaling finds instance types that satisfy your requirements, and then uses your On-Demand and Spot allocation strategies to launch instances from these instance types, in the same way as when you specify a list of specific instance types. </p>
+    #[doc(hidden)]
     pub instance_requirements: std::option::Option<crate::model::InstanceRequirements>,
 }
 impl LaunchTemplateOverrides {
@@ -556,8 +570,10 @@ impl LaunchTemplateOverrides {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
+    #[doc(hidden)]
     pub v_cpu_count: std::option::Option<crate::model::VCpuCountRequest>,
     /// <p>The minimum and maximum instance memory size for an instance type, in MiB.</p>
+    #[doc(hidden)]
     pub memory_mi_b: std::option::Option<crate::model::MemoryMiBRequest>,
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
@@ -568,13 +584,16 @@ pub struct InstanceRequirements {
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template. </p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
+    #[doc(hidden)]
     pub cpu_manufacturers: std::option::Option<std::vec::Vec<crate::model::CpuManufacturer>>,
     /// <p>The minimum and maximum amount of memory per vCPU for an instance type, in GiB.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub memory_gi_b_per_v_cpu: std::option::Option<crate::model::MemoryGiBPerVCpuRequest>,
     /// <p>Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. </p>
     /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but not the M5n instance types.</p>
     /// <p>Default: No excluded instance types</p>
+    #[doc(hidden)]
     pub excluded_instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
@@ -582,29 +601,37 @@ pub struct InstanceRequirements {
     /// <li> <p>For previous generation instance types, specify <code>previous</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
+    #[doc(hidden)]
     pub instance_generations: std::option::Option<std::vec::Vec<crate::model::InstanceGeneration>>,
     /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
+    #[doc(hidden)]
     pub spot_max_price_percentage_over_lowest_price: std::option::Option<i32>,
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
+    #[doc(hidden)]
     pub on_demand_max_price_percentage_over_lowest_price: std::option::Option<i32>,
     /// <p>Indicates whether bare metal instance types are included, excluded, or required.</p>
     /// <p>Default: <code>excluded</code> </p>
+    #[doc(hidden)]
     pub bare_metal: std::option::Option<crate::model::BareMetal>,
     /// <p>Indicates whether burstable performance instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: <code>excluded</code> </p>
+    #[doc(hidden)]
     pub burstable_performance: std::option::Option<crate::model::BurstablePerformance>,
     /// <p>Indicates whether instance types must provide On-Demand Instance hibernation support.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub require_hibernate_support: std::option::Option<bool>,
     /// <p>The minimum and maximum number of network interfaces for an instance type.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub network_interface_count: std::option::Option<crate::model::NetworkInterfaceCountRequest>,
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: <code>included</code> </p>
+    #[doc(hidden)]
     pub local_storage: std::option::Option<crate::model::LocalStorage>,
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
@@ -612,12 +639,15 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
+    #[doc(hidden)]
     pub local_storage_types: std::option::Option<std::vec::Vec<crate::model::LocalStorageType>>,
     /// <p>The minimum and maximum total local storage size for an instance type, in GB.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub total_local_storage_gb: std::option::Option<crate::model::TotalLocalStorageGbRequest>,
     /// <p>The minimum and maximum baseline bandwidth performance for an instance type, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub baseline_ebs_bandwidth_mbps:
         std::option::Option<crate::model::BaselineEbsBandwidthMbpsRequest>,
     /// <p>Lists the accelerator types that must be on an instance type.</p>
@@ -627,10 +657,12 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with inference accelerators, specify <code>inference</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
+    #[doc(hidden)]
     pub accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) for an instance type.</p>
     /// <p>To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub accelerator_count: std::option::Option<crate::model::AcceleratorCountRequest>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
@@ -640,6 +672,7 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
+    #[doc(hidden)]
     pub accelerator_manufacturers:
         std::option::Option<std::vec::Vec<crate::model::AcceleratorManufacturer>>,
     /// <p>Lists the accelerators that must be on an instance type.</p>
@@ -653,9 +686,11 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
+    #[doc(hidden)]
     pub accelerator_names: std::option::Option<std::vec::Vec<crate::model::AcceleratorName>>,
     /// <p>The minimum and maximum total memory size for the accelerators on an instance type, in MiB.</p>
     /// <p>Default: No minimum or maximum</p>
+    #[doc(hidden)]
     pub accelerator_total_memory_mi_b:
         std::option::Option<crate::model::AcceleratorTotalMemoryMiBRequest>,
 }
@@ -1384,8 +1419,10 @@ impl InstanceRequirements {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorTotalMemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The memory maximum in MiB.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl AcceleratorTotalMemoryMiBRequest {
@@ -1603,8 +1640,10 @@ impl AsRef<str> for AcceleratorManufacturer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum value.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The maximum value.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl AcceleratorCountRequest {
@@ -1735,8 +1774,10 @@ impl AsRef<str> for AcceleratorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The maximum value in Mbps.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbpsRequest {
@@ -1808,8 +1849,10 @@ impl BaselineEbsBandwidthMbpsRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TotalLocalStorageGbRequest {
     /// <p>The storage minimum in GB.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<f64>,
     /// <p>The storage maximum in GB.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<f64>,
 }
 impl TotalLocalStorageGbRequest {
@@ -1995,8 +2038,10 @@ impl AsRef<str> for LocalStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterfaceCountRequest {
     /// <p>The minimum number of network interfaces.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The maximum number of network interfaces.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl NetworkInterfaceCountRequest {
@@ -2241,8 +2286,10 @@ impl AsRef<str> for InstanceGeneration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<f64>,
     /// <p>The memory maximum in GiB.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<f64>,
 }
 impl MemoryGiBPerVCpuRequest {
@@ -2373,8 +2420,10 @@ impl AsRef<str> for CpuManufacturer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The memory maximum in MiB.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl MemoryMiBRequest {
@@ -2446,8 +2495,10 @@ impl MemoryMiBRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VCpuCountRequest {
     /// <p>The minimum number of vCPUs.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<i32>,
     /// <p>The maximum number of vCPUs.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<i32>,
 }
 impl VCpuCountRequest {
@@ -2520,11 +2571,14 @@ impl VCpuCountRequest {
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
     /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
+    #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>The name of the launch template. To get the template name, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
     /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
+    #[doc(hidden)]
     pub launch_template_name: std::option::Option<std::string::String>,
     /// <p>The version number, <code>$Latest</code>, or <code>$Default</code>. To get the version number, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html">DescribeLaunchTemplateVersions</a> API operation. New launch template versions can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a> API. If the value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the launch template when launching instances. If the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of the launch template when launching instances. The default value is <code>$Default</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateSpecification {
@@ -2625,28 +2679,40 @@ impl LaunchTemplateSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Activity {
     /// <p>The ID of the activity.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>A friendly, more verbose description of the activity.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The reason the activity began.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
     /// <p>The start time of the activity.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the activity.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the activity.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
     /// <p>A friendly, more verbose description of the activity status.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
+    #[doc(hidden)]
     pub progress: i32,
     /// <p>The details about the activity.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_state: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_arn: std::option::Option<std::string::String>,
 }
 impl Activity {
@@ -3026,18 +3092,23 @@ impl AsRef<str> for ScalingActivityStatusCode {
 pub struct RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
+    #[doc(hidden)]
     pub min_healthy_percentage: std::option::Option<i32>,
     /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The duration of the instance warmup, in seconds.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>InstanceWarmup</code> falls back to the value of the health check grace period.</p>
     /// </note>
+    #[doc(hidden)]
     pub instance_warmup: std::option::Option<i32>,
     /// <p>Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub checkpoint_percentages: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
+    #[doc(hidden)]
     pub checkpoint_delay: std::option::Option<i32>,
     /// <p>A boolean value that indicates whether skip matching is enabled. If true, then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same configuration that is already set on the group. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub skip_matching: std::option::Option<bool>,
 }
 impl RefreshPreferences {
@@ -3185,8 +3256,10 @@ impl RefreshPreferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DesiredConfiguration {
     /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Describes a mixed instances policy. A mixed instances policy contains the instance types that Amazon EC2 Auto Scaling can launch and other information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub mixed_instances_policy: std::option::Option<crate::model::MixedInstancesPolicy>,
 }
 impl DesiredConfiguration {
@@ -3320,6 +3393,7 @@ impl AsRef<str> for RefreshStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+    #[doc(hidden)]
     pub reuse_on_scale_in: std::option::Option<bool>,
 }
 impl InstanceReusePolicy {
@@ -3433,8 +3507,10 @@ impl AsRef<str> for WarmPoolState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_arn: std::option::Option<std::string::String>,
 }
 impl Alarm {
@@ -3507,12 +3583,15 @@ impl Alarm {
 pub struct PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
+    #[doc(hidden)]
     pub metric_specifications:
         std::option::Option<std::vec::Vec<crate::model::PredictiveScalingMetricSpecification>>,
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::PredictiveScalingMode>,
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
+    #[doc(hidden)]
     pub scheduling_buffer_time: std::option::Option<i32>,
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
     /// <p>The following are possible values:</p>
@@ -3520,11 +3599,13 @@ pub struct PredictiveScalingConfiguration {
     /// <li> <p> <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit. </p> </li>
     /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub max_capacity_breach_behavior:
         std::option::Option<crate::model::PredictiveScalingMaxCapacityBreachBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
+    #[doc(hidden)]
     pub max_capacity_buffer: std::option::Option<i32>,
 }
 impl PredictiveScalingConfiguration {
@@ -3832,23 +3913,30 @@ pub struct PredictiveScalingMetricSpecification {
     /// <p>Specifies the target utilization.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
+    #[doc(hidden)]
     pub target_value: std::option::Option<f64>,
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
+    #[doc(hidden)]
     pub predefined_metric_pair_specification:
         std::option::Option<crate::model::PredictiveScalingPredefinedMetricPair>,
     /// <p>The predefined scaling metric specification.</p>
+    #[doc(hidden)]
     pub predefined_scaling_metric_specification:
         std::option::Option<crate::model::PredictiveScalingPredefinedScalingMetric>,
     /// <p>The predefined load metric specification.</p>
+    #[doc(hidden)]
     pub predefined_load_metric_specification:
         std::option::Option<crate::model::PredictiveScalingPredefinedLoadMetric>,
     /// <p>The customized scaling metric specification.</p>
+    #[doc(hidden)]
     pub customized_scaling_metric_specification:
         std::option::Option<crate::model::PredictiveScalingCustomizedScalingMetric>,
     /// <p>The customized load metric specification.</p>
+    #[doc(hidden)]
     pub customized_load_metric_specification:
         std::option::Option<crate::model::PredictiveScalingCustomizedLoadMetric>,
     /// <p>The customized capacity metric specification.</p>
+    #[doc(hidden)]
     pub customized_capacity_metric_specification:
         std::option::Option<crate::model::PredictiveScalingCustomizedCapacityMetric>,
 }
@@ -4087,6 +4175,7 @@ impl PredictiveScalingMetricSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingCustomizedCapacityMetric {
     /// <p>One or more metric data queries to provide the data points for a capacity metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
+    #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedCapacityMetric {
@@ -4152,18 +4241,23 @@ impl PredictiveScalingCustomizedCapacityMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataQuery {
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. </p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
+    #[doc(hidden)]
     pub metric_stat: std::option::Option<crate::model::MetricStat>,
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>Indicates whether to return the timestamps and raw data values of this metric. </p>
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
+    #[doc(hidden)]
     pub return_data: std::option::Option<bool>,
 }
 impl MetricDataQuery {
@@ -4302,11 +4396,14 @@ impl MetricDataQuery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStat {
     /// <p>The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metrics for predictive scaling are <code>Average</code> and <code>Sum</code>.</p>
+    #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl MetricStat {
@@ -4398,11 +4495,14 @@ impl MetricStat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
     /// <p>The namespace of the metric. For more information, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
 }
 impl Metric {
@@ -4503,8 +4603,10 @@ impl Metric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the dimension.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MetricDimension {
@@ -4576,6 +4678,7 @@ impl MetricDimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
+    #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedLoadMetric {
@@ -4640,6 +4743,7 @@ impl PredictiveScalingCustomizedLoadMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
+    #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedScalingMetric {
@@ -4705,6 +4809,7 @@ impl PredictiveScalingCustomizedScalingMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingPredefinedLoadMetric {
     /// <p>The metric type.</p>
+    #[doc(hidden)]
     pub predefined_metric_type: std::option::Option<crate::model::PredefinedLoadMetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -4725,6 +4830,7 @@ pub struct PredictiveScalingPredefinedLoadMetric {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    #[doc(hidden)]
     pub resource_label: std::option::Option<std::string::String>,
 }
 impl PredictiveScalingPredefinedLoadMetric {
@@ -4931,6 +5037,7 @@ impl AsRef<str> for PredefinedLoadMetricType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingPredefinedScalingMetric {
     /// <p>The metric type.</p>
+    #[doc(hidden)]
     pub predefined_metric_type: std::option::Option<crate::model::PredefinedScalingMetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -4951,6 +5058,7 @@ pub struct PredictiveScalingPredefinedScalingMetric {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    #[doc(hidden)]
     pub resource_label: std::option::Option<std::string::String>,
 }
 impl PredictiveScalingPredefinedScalingMetric {
@@ -5156,6 +5264,7 @@ impl AsRef<str> for PredefinedScalingMetricType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveScalingPredefinedMetricPair {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
+    #[doc(hidden)]
     pub predefined_metric_type: std::option::Option<crate::model::PredefinedMetricPairType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the total and average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -5176,6 +5285,7 @@ pub struct PredictiveScalingPredefinedMetricPair {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    #[doc(hidden)]
     pub resource_label: std::option::Option<std::string::String>,
 }
 impl PredictiveScalingPredefinedMetricPair {
@@ -5381,16 +5491,20 @@ impl AsRef<str> for PredefinedMetricPairType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
+    #[doc(hidden)]
     pub predefined_metric_specification:
         std::option::Option<crate::model::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
+    #[doc(hidden)]
     pub customized_metric_specification:
         std::option::Option<crate::model::CustomizedMetricSpecification>,
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
+    #[doc(hidden)]
     pub target_value: std::option::Option<f64>,
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub disable_scale_in: std::option::Option<bool>,
 }
 impl TargetTrackingConfiguration {
@@ -5534,15 +5648,20 @@ impl TargetTrackingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomizedMetricSpecification {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the metric.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
     /// <p>The statistic of the metric.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl CustomizedMetricSpecification {
@@ -5753,6 +5872,7 @@ pub struct PredefinedMetricSpecification {
     /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
     /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub predefined_metric_type: std::option::Option<crate::model::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -5773,6 +5893,7 @@ pub struct PredefinedMetricSpecification {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    #[doc(hidden)]
     pub resource_label: std::option::Option<std::string::String>,
 }
 impl PredefinedMetricSpecification {
@@ -6003,12 +6124,15 @@ impl AsRef<str> for MetricType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
+    #[doc(hidden)]
     pub metric_interval_lower_bound: std::option::Option<f64>,
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
+    #[doc(hidden)]
     pub metric_interval_upper_bound: std::option::Option<f64>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
+    #[doc(hidden)]
     pub scaling_adjustment: std::option::Option<i32>,
 }
 impl StepAdjustment {
@@ -6109,8 +6233,10 @@ impl StepAdjustment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl CapacityForecast {
@@ -6197,10 +6323,13 @@ impl CapacityForecast {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
+    #[doc(hidden)]
     pub metric_specification:
         std::option::Option<crate::model::PredictiveScalingMetricSpecification>,
 }
@@ -6314,23 +6443,32 @@ impl LoadForecast {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The instance type of the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the instance is running.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    #[doc(hidden)]
     pub lifecycle_state: std::option::Option<crate::model::LifecycleState>,
     /// <p>The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<std::string::String>,
     /// <p>The launch configuration associated with the instance.</p>
+    #[doc(hidden)]
     pub launch_configuration_name: std::option::Option<std::string::String>,
     /// <p>The launch template for the instance.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    #[doc(hidden)]
     pub protected_from_scale_in: std::option::Option<bool>,
     /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+    #[doc(hidden)]
     pub weighted_capacity: std::option::Option<std::string::String>,
 }
 impl Instance {
@@ -6710,14 +6848,19 @@ impl AsRef<str> for LifecycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub max_group_prepared_capacity: std::option::Option<i32>,
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
+    #[doc(hidden)]
     pub pool_state: std::option::Option<crate::model::WarmPoolState>,
     /// <p>The status of a warm pool that is marked for deletion.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WarmPoolStatus>,
     /// <p>The instance reuse policy.</p>
+    #[doc(hidden)]
     pub instance_reuse_policy: std::option::Option<crate::model::InstanceReusePolicy>,
 }
 impl WarmPoolConfiguration {
@@ -6903,14 +7046,19 @@ impl AsRef<str> for WarmPoolStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagDescription {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
+    #[doc(hidden)]
     pub propagate_at_launch: std::option::Option<bool>,
 }
 impl TagDescription {
@@ -7055,9 +7203,11 @@ pub struct Filter {
     /// <li> <p> <code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values. </p> </li>
     /// <li> <p> <code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive. </p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -7192,27 +7342,38 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledUpdateGroupAction {
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the scheduled action.</p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+    #[doc(hidden)]
     pub scheduled_action_arn: std::option::Option<std::string::String>,
     /// <p>This property is no longer used.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
+    #[doc(hidden)]
     pub recurrence: std::option::Option<std::string::String>,
     /// <p>The minimum size of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum size of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<i32>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
+    #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
     /// <p>The time zone for the cron expression.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
 }
 impl ScheduledUpdateGroupAction {
@@ -7467,6 +7628,7 @@ pub struct ProcessType {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub process_name: std::option::Option<std::string::String>,
 }
 impl ProcessType {
@@ -7554,10 +7716,13 @@ impl ProcessType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the scaling policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>One of the following policy types: </p>
     /// <ul>
@@ -7567,31 +7732,44 @@ pub struct ScalingPolicy {
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<std::string::String>,
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    #[doc(hidden)]
     pub adjustment_type: std::option::Option<std::string::String>,
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
+    #[doc(hidden)]
     pub min_adjustment_step: std::option::Option<i32>,
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    #[doc(hidden)]
     pub min_adjustment_magnitude: std::option::Option<i32>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+    #[doc(hidden)]
     pub scaling_adjustment: std::option::Option<i32>,
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
+    #[doc(hidden)]
     pub cooldown: std::option::Option<i32>,
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+    #[doc(hidden)]
     pub step_adjustments: std::option::Option<std::vec::Vec<crate::model::StepAdjustment>>,
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
+    #[doc(hidden)]
     pub metric_aggregation_type: std::option::Option<std::string::String>,
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
+    #[doc(hidden)]
     pub estimated_instance_warmup: std::option::Option<i32>,
     /// <p>The CloudWatch alarms related to the policy.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
     /// <p>A target tracking scaling policy.</p>
+    #[doc(hidden)]
     pub target_tracking_configuration:
         std::option::Option<crate::model::TargetTrackingConfiguration>,
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A predictive scaling policy.</p>
+    #[doc(hidden)]
     pub predictive_scaling_configuration:
         std::option::Option<crate::model::PredictiveScalingConfiguration>,
 }
@@ -7975,8 +8153,10 @@ impl ScalingPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>One of the following event notification types:</p>
     /// <ul>
@@ -7986,6 +8166,7 @@ pub struct NotificationConfiguration {
     /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
     /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<std::string::String>,
 }
 impl NotificationConfiguration {
@@ -8101,6 +8282,7 @@ impl NotificationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricGranularityType {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<std::string::String>,
 }
 impl MetricGranularityType {
@@ -8177,6 +8359,7 @@ pub struct MetricCollectionType {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
 }
 impl MetricCollectionType {
@@ -8297,6 +8480,7 @@ impl MetricCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerTargetGroupState {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub load_balancer_target_group_arn: std::option::Option<std::string::String>,
     /// <p>The state of the target group.</p>
     /// <ul>
@@ -8306,6 +8490,7 @@ pub struct LoadBalancerTargetGroupState {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl LoadBalancerTargetGroupState {
@@ -8407,6 +8592,7 @@ impl LoadBalancerTargetGroupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerState {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>One of the following load balancer states:</p>
     /// <ul>
@@ -8416,6 +8602,7 @@ pub struct LoadBalancerState {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl LoadBalancerState {
@@ -8511,24 +8698,33 @@ impl LoadBalancerState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleHook {
     /// <p>The name of the lifecycle hook.</p>
+    #[doc(hidden)]
     pub lifecycle_hook_name: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group for the lifecycle hook.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle transition.</p>
     /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
+    #[doc(hidden)]
     pub lifecycle_transition: std::option::Option<std::string::String>,
     /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
+    #[doc(hidden)]
     pub notification_target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
+    #[doc(hidden)]
     pub notification_metadata: std::option::Option<std::string::String>,
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
+    #[doc(hidden)]
     pub heartbeat_timeout: std::option::Option<i32>,
     /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
+    #[doc(hidden)]
     pub global_timeout: std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    #[doc(hidden)]
     pub default_result: std::option::Option<std::string::String>,
 }
 impl LifecycleHook {
@@ -8743,49 +8939,69 @@ impl LifecycleHook {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
+    #[doc(hidden)]
     pub classic_link_vpc_id: std::option::Option<std::string::String>,
     /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
+    #[doc(hidden)]
     pub classic_link_vpc_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
     /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the kernel associated with the AMI.</p>
+    #[doc(hidden)]
     pub kernel_id: std::option::Option<std::string::String>,
     /// <p>The ID of the RAM disk associated with the AMI.</p>
+    #[doc(hidden)]
     pub ramdisk_id: std::option::Option<std::string::String>,
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub instance_monitoring: std::option::Option<crate::model::InstanceMonitoring>,
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub spot_price: std::option::Option<std::string::String>,
     /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>The creation date and time for the launch configuration.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub associate_public_ip_address: std::option::Option<bool>,
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub placement_tenancy: std::option::Option<std::string::String>,
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
 impl LaunchConfiguration {
@@ -9247,13 +9463,16 @@ pub struct InstanceMetadataOptions {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the version 1.0 credentials are not available.</p>
+    #[doc(hidden)]
     pub http_tokens: std::option::Option<crate::model::InstanceMetadataHttpTokensState>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     /// <p>Default: 1</p>
+    #[doc(hidden)]
     pub http_put_response_hop_limit: std::option::Option<i32>,
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
     /// </note>
+    #[doc(hidden)]
     pub http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
 }
 impl InstanceMetadataOptions {
@@ -9480,6 +9699,7 @@ impl AsRef<str> for InstanceMetadataHttpTokensState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceMonitoring {
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl InstanceMonitoring {
@@ -9534,15 +9754,19 @@ impl InstanceMonitoring {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
+    #[doc(hidden)]
     pub virtual_name: std::option::Option<std::string::String>,
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
+    #[doc(hidden)]
     pub ebs: std::option::Option<crate::model::Ebs>,
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+    #[doc(hidden)]
     pub no_device: std::option::Option<bool>,
 }
 impl BlockDeviceMapping {
@@ -9658,6 +9882,7 @@ impl BlockDeviceMapping {
 pub struct Ebs {
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
     /// <ul>
@@ -9667,11 +9892,14 @@ pub struct Ebs {
     /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto Scaling, the default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. </p>
     /// <p>The following are the supported values for each volume type: </p>
@@ -9681,14 +9909,17 @@ pub struct Ebs {
     /// </ul>
     /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. </p>
     /// <p> <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
     /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
+    #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
 impl Ebs {
@@ -9905,8 +10136,10 @@ impl Ebs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefresh {
     /// <p>The instance refresh ID.</p>
+    #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The current status for the instance refresh operation:</p>
     /// <ul>
@@ -9917,22 +10150,31 @@ pub struct InstanceRefresh {
     /// <li> <p> <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any replacements that have already been completed, but it prevents new replacements from being started. </p> </li>
     /// <li> <p> <code>Cancelled</code> - The operation is cancelled. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceRefreshStatus>,
     /// <p>Provides more details about the current status of the instance refresh. </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time at which the instance refresh began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the instance refresh ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
+    #[doc(hidden)]
     pub percentage_complete: std::option::Option<i32>,
     /// <p>The number of instances remaining to update before the instance refresh is complete.</p>
+    #[doc(hidden)]
     pub instances_to_update: std::option::Option<i32>,
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
+    #[doc(hidden)]
     pub progress_details: std::option::Option<crate::model::InstanceRefreshProgressDetails>,
     /// <p>Describes the preferences for an instance refresh.</p>
+    #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::RefreshPreferences>,
     /// <p>Describes the specific update you want to deploy.</p>
+    #[doc(hidden)]
     pub desired_configuration: std::option::Option<crate::model::DesiredConfiguration>,
 }
 impl InstanceRefresh {
@@ -10216,8 +10458,10 @@ impl InstanceRefresh {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshProgressDetails {
     /// <p>Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub live_pool_progress: std::option::Option<crate::model::InstanceRefreshLivePoolProgress>,
     /// <p>Indicates the progress of an instance refresh on instances that are in the warm pool.</p>
+    #[doc(hidden)]
     pub warm_pool_progress: std::option::Option<crate::model::InstanceRefreshWarmPoolProgress>,
 }
 impl InstanceRefreshProgressDetails {
@@ -10307,8 +10551,10 @@ impl InstanceRefreshProgressDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshWarmPoolProgress {
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
+    #[doc(hidden)]
     pub percentage_complete: std::option::Option<i32>,
     /// <p>The number of instances remaining to update.</p>
+    #[doc(hidden)]
     pub instances_to_update: std::option::Option<i32>,
 }
 impl InstanceRefreshWarmPoolProgress {
@@ -10380,8 +10626,10 @@ impl InstanceRefreshWarmPoolProgress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshLivePoolProgress {
     /// <p>The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
+    #[doc(hidden)]
     pub percentage_complete: std::option::Option<i32>,
     /// <p>The number of instances remaining to update.</p>
+    #[doc(hidden)]
     pub instances_to_update: std::option::Option<i32>,
 }
 impl InstanceRefreshLivePoolProgress {
@@ -10531,26 +10779,36 @@ impl AsRef<str> for InstanceRefreshStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingInstanceDetails {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The instance type of the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group for the instance.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zone for the instance.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
+    #[doc(hidden)]
     pub lifecycle_state: std::option::Option<std::string::String>,
     /// <p>The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<std::string::String>,
     /// <p>The launch configuration used to launch the instance. This value is not available if you attached the instance to the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub launch_configuration_name: std::option::Option<std::string::String>,
     /// <p>The launch template for the instance.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    #[doc(hidden)]
     pub protected_from_scale_in: std::option::Option<bool>,
     /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+    #[doc(hidden)]
     pub weighted_capacity: std::option::Option<std::string::String>,
 }
 impl AutoScalingInstanceDetails {
@@ -10790,71 +11048,104 @@ impl AutoScalingInstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the associated launch configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_name: std::option::Option<std::string::String>,
     /// <p>The launch template for the group.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The mixed instances policy for the group.</p>
+    #[doc(hidden)]
     pub mixed_instances_policy: std::option::Option<crate::model::MixedInstancesPolicy>,
     /// <p>The minimum size of the group.</p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum size of the group.</p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<i32>,
     /// <p>The desired size of the group.</p>
+    #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
     /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
+    #[doc(hidden)]
     pub predicted_capacity: std::option::Option<i32>,
     /// <p>The duration of the default cooldown period, in seconds.</p>
+    #[doc(hidden)]
     pub default_cooldown: std::option::Option<i32>,
     /// <p>One or more Availability Zones for the group.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more load balancers associated with the group.</p>
+    #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
+    #[doc(hidden)]
     pub target_group_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
+    #[doc(hidden)]
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The duration of the health check grace period, in seconds.</p>
+    #[doc(hidden)]
     pub health_check_grace_period: std::option::Option<i32>,
     /// <p>The EC2 instances associated with the group.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The date and time the group was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suspended processes associated with the group.</p>
+    #[doc(hidden)]
     pub suspended_processes: std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
+    #[doc(hidden)]
     pub placement_group: std::option::Option<std::string::String>,
     /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
+    #[doc(hidden)]
     pub vpc_zone_identifier: std::option::Option<std::string::String>,
     /// <p>The metrics enabled for the group.</p>
+    #[doc(hidden)]
     pub enabled_metrics: std::option::Option<std::vec::Vec<crate::model::EnabledMetric>>,
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The tags for the group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     /// <p>The termination policies for the group.</p>
+    #[doc(hidden)]
     pub termination_policies: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    #[doc(hidden)]
     pub new_instances_protected_from_scale_in: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
+    #[doc(hidden)]
     pub service_linked_role_arn: std::option::Option<std::string::String>,
     /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
     /// <p>Valid Range: Minimum value of 0.</p>
+    #[doc(hidden)]
     pub max_instance_lifetime: std::option::Option<i32>,
     /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
+    #[doc(hidden)]
     pub capacity_rebalance: std::option::Option<bool>,
     /// <p>The warm pool for the group.</p>
+    #[doc(hidden)]
     pub warm_pool_configuration: std::option::Option<crate::model::WarmPoolConfiguration>,
     /// <p>The current size of the warm pool.</p>
+    #[doc(hidden)]
     pub warm_pool_size: std::option::Option<i32>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
+    #[doc(hidden)]
     pub desired_capacity_type: std::option::Option<std::string::String>,
     /// <p>The duration of the default instance warmup, in seconds.</p>
+    #[doc(hidden)]
     pub default_instance_warmup: std::option::Option<i32>,
 }
 impl AutoScalingGroup {
@@ -11604,8 +11895,10 @@ pub struct EnabledMetric {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
+    #[doc(hidden)]
     pub granularity: std::option::Option<std::string::String>,
 }
 impl EnabledMetric {
@@ -11747,8 +12040,10 @@ impl EnabledMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendedProcess {
     /// <p>The name of the suspended process.</p>
+    #[doc(hidden)]
     pub process_name: std::option::Option<std::string::String>,
     /// <p>The reason that the process was suspended.</p>
+    #[doc(hidden)]
     pub suspension_reason: std::option::Option<std::string::String>,
 }
 impl SuspendedProcess {
@@ -11823,6 +12118,7 @@ impl SuspendedProcess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    #[doc(hidden)]
     pub adjustment_type: std::option::Option<std::string::String>,
 }
 impl AdjustmentType {
@@ -11880,14 +12176,19 @@ impl AdjustmentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The name of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
+    #[doc(hidden)]
     pub propagate_at_launch: std::option::Option<bool>,
 }
 impl Tag {
@@ -12014,24 +12315,31 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleHookSpecification {
     /// <p>The name of the lifecycle hook.</p>
+    #[doc(hidden)]
     pub lifecycle_hook_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
     /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
     /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub lifecycle_transition: std::option::Option<std::string::String>,
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
+    #[doc(hidden)]
     pub notification_metadata: std::option::Option<std::string::String>,
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
+    #[doc(hidden)]
     pub heartbeat_timeout: std::option::Option<i32>,
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
+    #[doc(hidden)]
     pub default_result: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub notification_target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LifecycleHookSpecification {
@@ -12221,10 +12529,13 @@ impl LifecycleHookSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedScheduledUpdateGroupActionRequest {
     /// <p>The name of the scheduled action.</p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message accompanying the error code.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedScheduledUpdateGroupActionRequest {
@@ -12319,25 +12630,33 @@ impl FailedScheduledUpdateGroupActionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledUpdateGroupActionRequest {
     /// <p>The name of the scaling action.</p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The date and time for the action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
     /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
     /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error message.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
+    #[doc(hidden)]
     pub recurrence: std::option::Option<std::string::String>,
     /// <p>The minimum size of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum size of the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<i32>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
+    #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
     /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
     /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
 }
 impl ScheduledUpdateGroupActionRequest {

@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnauthorizedException {
@@ -109,12 +112,16 @@ impl UnauthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The number of seconds the caller should wait before retrying.</p>
+    #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
@@ -235,10 +242,13 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request ID associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
@@ -339,10 +349,13 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {
@@ -443,10 +456,13 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the request involved in the conflict.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -547,10 +563,13 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
@@ -651,12 +670,16 @@ impl BadRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that couldn't be found.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the resource that couldn't be found.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -777,12 +800,16 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the request that contains too many tags.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the resource that received too many tags.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
@@ -903,10 +930,13 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessableEntityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnprocessableEntityException {
@@ -1007,10 +1037,13 @@ impl UnprocessableEntityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the request that exceeded the throttling limit.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -1111,10 +1144,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the failed request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ServiceFailureException {
@@ -1215,10 +1251,13 @@ impl ServiceFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {

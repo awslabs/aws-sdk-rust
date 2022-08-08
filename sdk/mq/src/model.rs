@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The name of the XML element that has been sanitized.</p>
+    #[doc(hidden)]
     pub element_name: std::option::Option<std::string::String>,
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::SanitizationWarningReason>,
 }
 impl SanitizationWarning {
@@ -170,10 +173,13 @@ impl AsRef<str> for SanitizationWarningReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Required. The revision number of the configuration.</p>
+    #[doc(hidden)]
     pub revision: i32,
 }
 impl ConfigurationRevision {
@@ -265,10 +271,13 @@ impl ConfigurationRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
     /// <p>Required. The time, in 24-hour format.</p>
+    #[doc(hidden)]
     pub time_of_day: std::option::Option<std::string::String>,
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
 }
 impl WeeklyStartTime {
@@ -443,8 +452,10 @@ impl AsRef<str> for DayOfWeek {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub audit: bool,
     /// <p>Enables general logging.</p>
+    #[doc(hidden)]
     pub general: bool,
 }
 impl Logs {
@@ -516,24 +527,34 @@ impl Logs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub role_base: std::option::Option<std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
+    #[doc(hidden)]
     pub role_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
+    #[doc(hidden)]
     pub role_search_subtree: bool,
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub service_account_username: std::option::Option<std::string::String>,
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub user_base: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
+    #[doc(hidden)]
     pub user_role_name: std::option::Option<std::string::String>,
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
+    #[doc(hidden)]
     pub user_search_subtree: bool,
 }
 impl LdapServerMetadataOutput {
@@ -764,8 +785,10 @@ impl LdapServerMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision number of the configuration.</p>
+    #[doc(hidden)]
     pub revision: i32,
 }
 impl ConfigurationId {
@@ -894,26 +917,37 @@ impl AsRef<str> for AuthenticationStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub role_base: std::option::Option<std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
+    #[doc(hidden)]
     pub role_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
+    #[doc(hidden)]
     pub role_search_subtree: bool,
     /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub service_account_password: std::option::Option<std::string::String>,
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub service_account_username: std::option::Option<std::string::String>,
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub user_base: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
+    #[doc(hidden)]
     pub user_role_name: std::option::Option<std::string::String>,
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
+    #[doc(hidden)]
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
+    #[doc(hidden)]
     pub user_search_subtree: bool,
 }
 impl LdapServerMetadataInput {
@@ -1162,8 +1196,10 @@ impl LdapServerMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSummary {
     /// <p>The type of change pending for the broker user.</p>
+    #[doc(hidden)]
     pub pending_change: std::option::Option<crate::model::ChangeType>,
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl UserSummary {
@@ -1297,24 +1333,34 @@ impl AsRef<str> for ChangeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>Required. The ARN of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    #[doc(hidden)]
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Required. The date and time of the configuration revision.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Required. The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Required. The latest revision of the configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of all tags associated with this configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1619,20 +1665,28 @@ impl AsRef<str> for EngineType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerSummary {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub broker_arn: std::option::Option<std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    #[doc(hidden)]
     pub broker_name: std::option::Option<std::string::String>,
     /// <p>The broker's status.</p>
+    #[doc(hidden)]
     pub broker_state: std::option::Option<crate::model::BrokerState>,
     /// <p>The time when the broker was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The broker's deployment mode.</p>
+    #[doc(hidden)]
     pub deployment_mode: std::option::Option<crate::model::DeploymentMode>,
     /// <p>The type of broker engine.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The broker's instance type.</p>
+    #[doc(hidden)]
     pub host_instance_type: std::option::Option<std::string::String>,
 }
 impl BrokerSummary {
@@ -1962,10 +2016,13 @@ impl AsRef<str> for BrokerState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    #[doc(hidden)]
     pub console_access: bool,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
+    #[doc(hidden)]
     pub pending_change: std::option::Option<crate::model::ChangeType>,
 }
 impl UserPendingChanges {
@@ -2066,17 +2123,23 @@ impl UserPendingChanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerInstanceOption {
     /// <p>The list of available az.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     /// <p>The broker's engine type.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The broker's instance type.</p>
+    #[doc(hidden)]
     pub host_instance_type: std::option::Option<std::string::String>,
     /// <p>The broker's storage type.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::BrokerStorageType>,
     /// <p>The list of supported deployment modes.</p>
+    #[doc(hidden)]
     pub supported_deployment_modes:
         std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
     /// <p>The list of supported engine versions.</p>
+    #[doc(hidden)]
     pub supported_engine_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BrokerInstanceOption {
@@ -2315,6 +2378,7 @@ impl AsRef<str> for BrokerStorageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
     /// <p>Id for the availability zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZone {
@@ -2367,8 +2431,10 @@ impl AvailabilityZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerEngineType {
     /// <p>The broker's engine type.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The list of engine versions.</p>
+    #[doc(hidden)]
     pub engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>,
 }
 impl BrokerEngineType {
@@ -2452,6 +2518,7 @@ impl BrokerEngineType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineVersion {
     /// <p>Id for the version.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl EngineVersion {
@@ -2504,14 +2571,19 @@ impl EngineVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
+    #[doc(hidden)]
     pub audit: bool,
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
+    #[doc(hidden)]
     pub audit_log_group: std::option::Option<std::string::String>,
     /// <p>Enables general logging.</p>
+    #[doc(hidden)]
     pub general: bool,
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
+    #[doc(hidden)]
     pub general_log_group: std::option::Option<std::string::String>,
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
+    #[doc(hidden)]
     pub pending: std::option::Option<crate::model::PendingLogs>,
 }
 impl LogsSummary {
@@ -2643,8 +2715,10 @@ impl LogsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
+    #[doc(hidden)]
     pub audit: bool,
     /// <p>Enables general logging.</p>
+    #[doc(hidden)]
     pub general: bool,
 }
 impl PendingLogs {
@@ -2719,8 +2793,10 @@ impl PendingLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionOptions {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub use_aws_owned_key: bool,
 }
 impl EncryptionOptions {
@@ -2792,10 +2868,13 @@ impl EncryptionOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configurations {
     /// <p>The broker's current configuration.</p>
+    #[doc(hidden)]
     pub current: std::option::Option<crate::model::ConfigurationId>,
     /// <p>The history of configurations applied to the broker.</p>
+    #[doc(hidden)]
     pub history: std::option::Option<std::vec::Vec<crate::model::ConfigurationId>>,
     /// <p>The broker's pending configuration.</p>
+    #[doc(hidden)]
     pub pending: std::option::Option<crate::model::ConfigurationId>,
 }
 impl Configurations {
@@ -2899,10 +2978,13 @@ impl Configurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerInstance {
     /// <p>The brokers web console URL.</p>
+    #[doc(hidden)]
     pub console_url: std::option::Option<std::string::String>,
     /// <p>The broker's wire-level protocol endpoints.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl BrokerInstance {
@@ -3000,8 +3082,10 @@ impl BrokerInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionRequired {
     /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
+    #[doc(hidden)]
     pub action_required_code: std::option::Option<std::string::String>,
     /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
+    #[doc(hidden)]
     pub action_required_info: std::option::Option<std::string::String>,
 }
 impl ActionRequired {
@@ -3079,10 +3163,13 @@ impl ActionRequired {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub console_access: bool,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
     /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
@@ -3090,6 +3177,7 @@ pub struct User {
     /// <title>Amazon MQ for RabbitMQ</title>
     /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
     /// </important>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl User {

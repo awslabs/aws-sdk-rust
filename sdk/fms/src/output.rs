@@ -64,8 +64,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProtocolsListOutput {
     /// <p>The details of the Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list_arn: std::option::Option<std::string::String>,
 }
 impl PutProtocolsListOutput {
@@ -143,8 +145,10 @@ impl PutProtocolsListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyOutput {
     /// <p>The details of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl PutPolicyOutput {
@@ -246,8 +250,10 @@ impl PutNotificationChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppsListOutput {
     /// <p>The details of the Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    #[doc(hidden)]
     pub apps_list_arn: std::option::Option<std::string::String>,
 }
 impl PutAppsListOutput {
@@ -325,9 +331,11 @@ impl PutAppsListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThirdPartyFirewallFirewallPoliciesOutput {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
+    #[doc(hidden)]
     pub third_party_firewall_firewall_policies:
         std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
@@ -421,6 +429,7 @@ impl ListThirdPartyFirewallFirewallPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -484,8 +493,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
+    #[doc(hidden)]
     pub protocols_lists: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtocolsListsOutput {
@@ -569,8 +580,10 @@ impl ListProtocolsListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesOutput {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
+    #[doc(hidden)]
     pub policy_list: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -651,8 +664,10 @@ impl ListPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsOutput {
     /// <p>An array of account IDs.</p>
+    #[doc(hidden)]
     pub member_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMemberAccountsOutput {
@@ -733,9 +748,11 @@ impl ListMemberAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceStatusOutput {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
+    #[doc(hidden)]
     pub policy_compliance_status_list:
         std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceStatusOutput {
@@ -825,8 +842,10 @@ impl ListComplianceStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsListsOutput {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
+    #[doc(hidden)]
     pub apps_lists: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsListsOutput {
@@ -908,6 +927,7 @@ impl ListAppsListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetViolationDetailsOutput {
     /// <p>Violation detail for a resource.</p>
+    #[doc(hidden)]
     pub violation_detail: std::option::Option<crate::model::ViolationDetail>,
 }
 impl GetViolationDetailsOutput {
@@ -972,6 +992,7 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub third_party_firewall_status:
         std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
@@ -980,6 +1001,7 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub marketplace_onboarding_status:
         std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
 }
@@ -1112,8 +1134,10 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtocolsListOutput {
     /// <p>Information about the specified Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list_arn: std::option::Option<std::string::String>,
 }
 impl GetProtocolsListOutput {
@@ -1191,8 +1215,10 @@ impl GetProtocolsListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtectionStatusOutput {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::SecurityServiceType>,
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
@@ -1203,9 +1229,11 @@ pub struct GetProtectionStatusOutput {
     /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
     /// </ul>
     /// <p>The details are in JSON format. </p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetProtectionStatusOutput {
@@ -1344,8 +1372,10 @@ impl GetProtectionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// <p>Information about the specified Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl GetPolicyOutput {
@@ -1417,8 +1447,10 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNotificationChannelOutput {
     /// <p>The SNS topic that records Firewall Manager activity. </p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
+    #[doc(hidden)]
     pub sns_role_name: std::option::Option<std::string::String>,
 }
 impl GetNotificationChannelOutput {
@@ -1496,6 +1528,7 @@ impl GetNotificationChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailOutput {
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
+    #[doc(hidden)]
     pub policy_compliance_detail: std::option::Option<crate::model::PolicyComplianceDetail>,
 }
 impl GetComplianceDetailOutput {
@@ -1559,8 +1592,10 @@ impl GetComplianceDetailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsListOutput {
     /// <p>Information about the specified Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    #[doc(hidden)]
     pub apps_list_arn: std::option::Option<std::string::String>,
 }
 impl GetAppsListOutput {
@@ -1638,8 +1673,10 @@ impl GetAppsListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdminAccountOutput {
     /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
+    #[doc(hidden)]
     pub admin_account: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
+    #[doc(hidden)]
     pub role_status: std::option::Option<crate::model::AccountRoleStatus>,
 }
 impl GetAdminAccountOutput {
@@ -1717,6 +1754,7 @@ impl GetAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateThirdPartyFirewallOutput {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
+    #[doc(hidden)]
     pub third_party_firewall_status:
         std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
 }
@@ -1941,6 +1979,7 @@ pub struct AssociateThirdPartyFirewallOutput {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub third_party_firewall_status:
         std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
 }

@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPattern {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    #[doc(hidden)]
     pub pattern_name: std::option::Option<std::string::String>,
     /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+    #[doc(hidden)]
     pub rank: i32,
 }
 impl LogPattern {
@@ -257,24 +261,32 @@ impl AsRef<str> for Tier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle of the application. </p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<std::string::String>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
+    #[doc(hidden)]
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
+    #[doc(hidden)]
     pub ops_center_enabled: std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    #[doc(hidden)]
     pub cwe_monitor_enabled: std::option::Option<bool>,
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub remarks: std::option::Option<std::string::String>,
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
+    #[doc(hidden)]
     pub auto_config_enabled: std::option::Option<bool>,
     /// <p> The method used by Application Insights to onboard your resources. </p>
+    #[doc(hidden)]
     pub discovery_type: std::option::Option<crate::model::DiscoveryType>,
 }
 impl ApplicationInfo {
@@ -530,8 +542,10 @@ impl AsRef<str> for DiscoveryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -603,30 +617,42 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Problem {
     /// <p>The ID of the problem.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the problem.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>A detailed analysis of the problem using machine learning.</p>
+    #[doc(hidden)]
     pub insights: std::option::Option<std::string::String>,
     /// <p>The status of the problem.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The resource affected by the problem.</p>
+    #[doc(hidden)]
     pub affected_resource: std::option::Option<std::string::String>,
     /// <p>The time when the problem started, in epoch seconds.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the problem ended, in epoch seconds.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
+    #[doc(hidden)]
     pub severity_level: std::option::Option<crate::model::SeverityLevel>,
     /// <p>The name of the resource group affected by the problem.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<
         std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
     >,
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
+    #[doc(hidden)]
     pub recurring_count: std::option::Option<i64>,
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
+    #[doc(hidden)]
     pub last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Problem {
@@ -1143,16 +1169,22 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationEvent {
     /// <p> The resource monitored by Application Insights. </p>
+    #[doc(hidden)]
     pub monitored_resource_arn: std::option::Option<std::string::String>,
     /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
+    #[doc(hidden)]
     pub event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
     /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
+    #[doc(hidden)]
     pub event_resource_type: std::option::Option<crate::model::ConfigurationEventResourceType>,
     /// <p> The timestamp of the event. </p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The details of the event in plain text. </p>
+    #[doc(hidden)]
     pub event_detail: std::option::Option<std::string::String>,
     /// <p> The name of the resource Application Insights attempted to configure. </p>
+    #[doc(hidden)]
     pub event_resource_name: std::option::Option<std::string::String>,
 }
 impl ConfigurationEvent {
@@ -1440,18 +1472,25 @@ impl AsRef<str> for ConfigurationEventStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationComponent {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
+    #[doc(hidden)]
     pub component_remarks: std::option::Option<std::string::String>,
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p> The operating system of the component. </p>
+    #[doc(hidden)]
     pub os_type: std::option::Option<crate::model::OsType>,
     /// <p>The stack tier of the application component.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>Indicates whether the application component is monitored. </p>
+    #[doc(hidden)]
     pub monitor: std::option::Option<bool>,
     /// <p> Workloads detected in the application component. </p>
+    #[doc(hidden)]
     pub detected_workload: std::option::Option<
         std::collections::HashMap<
             crate::model::Tier,
@@ -1707,6 +1746,7 @@ impl AsRef<str> for OsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
+    #[doc(hidden)]
     pub observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
 }
 impl RelatedObservations {
@@ -1770,94 +1810,139 @@ impl RelatedObservations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Observation {
     /// <p>The ID of the observation type.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the observation ended, in epoch seconds.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source type of the observation.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The source resource ARN of the observation.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The log group name.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
+    #[doc(hidden)]
     pub line_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The log text of the observation.</p>
+    #[doc(hidden)]
     pub log_text: std::option::Option<std::string::String>,
     /// <p>The log filter of the observation.</p>
+    #[doc(hidden)]
     pub log_filter: std::option::Option<crate::model::LogFilter>,
     /// <p>The namespace of the observation metric.</p>
+    #[doc(hidden)]
     pub metric_namespace: std::option::Option<std::string::String>,
     /// <p>The name of the observation metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The unit of the source observation metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The value of the source observation metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
+    #[doc(hidden)]
     pub cloud_watch_event_id: std::option::Option<std::string::String>,
     /// <p> The source of the CloudWatch Event. </p>
+    #[doc(hidden)]
     pub cloud_watch_event_source: std::option::Option<crate::model::CloudWatchEventSource>,
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
+    #[doc(hidden)]
     pub cloud_watch_event_detail_type: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    #[doc(hidden)]
     pub health_event_arn: std::option::Option<std::string::String>,
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
+    #[doc(hidden)]
     pub health_service: std::option::Option<std::string::String>,
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+    #[doc(hidden)]
     pub health_event_type_code: std::option::Option<std::string::String>,
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
+    #[doc(hidden)]
     pub health_event_type_category: std::option::Option<std::string::String>,
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
+    #[doc(hidden)]
     pub health_event_description: std::option::Option<std::string::String>,
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
+    #[doc(hidden)]
     pub code_deploy_deployment_id: std::option::Option<std::string::String>,
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
+    #[doc(hidden)]
     pub code_deploy_deployment_group: std::option::Option<std::string::String>,
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
+    #[doc(hidden)]
     pub code_deploy_state: std::option::Option<std::string::String>,
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
+    #[doc(hidden)]
     pub code_deploy_application: std::option::Option<std::string::String>,
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
+    #[doc(hidden)]
     pub code_deploy_instance_group_id: std::option::Option<std::string::String>,
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
+    #[doc(hidden)]
     pub ec2_state: std::option::Option<std::string::String>,
     /// <p> The category of an RDS event. </p>
+    #[doc(hidden)]
     pub rds_event_categories: std::option::Option<std::string::String>,
     /// <p> The message of an RDS event. </p>
+    #[doc(hidden)]
     pub rds_event_message: std::option::Option<std::string::String>,
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
+    #[doc(hidden)]
     pub s3_event_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
+    #[doc(hidden)]
     pub states_execution_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+    #[doc(hidden)]
     pub states_arn: std::option::Option<std::string::String>,
     /// <p> The status of the step function-related observation. </p>
+    #[doc(hidden)]
     pub states_status: std::option::Option<std::string::String>,
     /// <p> The input to the step function-based observation. </p>
+    #[doc(hidden)]
     pub states_input: std::option::Option<std::string::String>,
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+    #[doc(hidden)]
     pub ebs_event: std::option::Option<std::string::String>,
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
+    #[doc(hidden)]
     pub ebs_result: std::option::Option<std::string::String>,
     /// <p> The cause of an EBS CloudWatch event. </p>
+    #[doc(hidden)]
     pub ebs_cause: std::option::Option<std::string::String>,
     /// <p> The request ID of an EBS CloudWatch event. </p>
+    #[doc(hidden)]
     pub ebs_request_id: std::option::Option<std::string::String>,
     /// <p> The X-Ray request fault percentage for this node. </p>
+    #[doc(hidden)]
     pub x_ray_fault_percent: std::option::Option<i32>,
     /// <p> The X-Ray request throttle percentage for this node. </p>
+    #[doc(hidden)]
     pub x_ray_throttle_percent: std::option::Option<i32>,
     /// <p> The X-Ray request error percentage for this node. </p>
+    #[doc(hidden)]
     pub x_ray_error_percent: std::option::Option<i32>,
     /// <p> The X-Ray request count for this node. </p>
+    #[doc(hidden)]
     pub x_ray_request_count: std::option::Option<i32>,
     /// <p> The X-Ray node request average latency for this node. </p>
+    #[doc(hidden)]
     pub x_ray_request_average_latency: std::option::Option<i64>,
     /// <p> The name of the X-Ray node. </p>
+    #[doc(hidden)]
     pub x_ray_node_name: std::option::Option<std::string::String>,
     /// <p> The type of the X-Ray node. </p>
+    #[doc(hidden)]
     pub x_ray_node_type: std::option::Option<std::string::String>,
 }
 impl Observation {

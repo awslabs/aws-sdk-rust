@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectConnectServerException {
@@ -69,6 +70,7 @@ impl DirectConnectServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectClientException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectConnectClientException {
@@ -133,6 +135,7 @@ impl DirectConnectClientException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -197,6 +200,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateTagKeysException {

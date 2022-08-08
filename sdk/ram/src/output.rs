@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceShareOutput {
     /// <p>Information about the resource share.</p>
+    #[doc(hidden)]
     pub resource_share: std::option::Option<crate::model::ResourceShare>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateResourceShareOutput {
@@ -140,8 +142,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectResourceShareInvitationOutput {
     /// <p>An object that contains the details about the rejected invitation.</p>
+    #[doc(hidden)]
     pub resource_share_invitation: std::option::Option<crate::model::ResourceShareInvitation>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl RejectResourceShareInvitationOutput {
@@ -222,6 +226,7 @@ impl RejectResourceShareInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteResourceShareCreatedFromPolicyOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl PromoteResourceShareCreatedFromPolicyOutput {
@@ -276,9 +281,11 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTypesOutput {
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
+    #[doc(hidden)]
     pub resource_types:
         std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceTypesOutput {
@@ -362,9 +369,11 @@ impl ListResourceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSharePermissionsOutput {
     /// <p>An array of objects that describe the permissions associated with the resource share.</p>
+    #[doc(hidden)]
     pub permissions:
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceSharePermissionsOutput {
@@ -448,8 +457,10 @@ impl ListResourceSharePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
     /// <p>An array of objects that contain information about the resources.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -530,8 +541,10 @@ impl ListResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsOutput {
     /// <p>An array of objects that contain the details about the principals.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalsOutput {
@@ -612,9 +625,11 @@ impl ListPrincipalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionVersionsOutput {
     /// <p>An array of objects that contain details for each of the available versions.</p>
+    #[doc(hidden)]
     pub permissions:
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionVersionsOutput {
@@ -698,9 +713,11 @@ impl ListPermissionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
     /// <p>An array of objects with information about the permissions.</p>
+    #[doc(hidden)]
     pub permissions:
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionsOutput {
@@ -784,8 +801,10 @@ impl ListPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPendingInvitationResourcesOutput {
     /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPendingInvitationResourcesOutput {
@@ -866,8 +885,10 @@ impl ListPendingInvitationResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSharesOutput {
     /// <p>An array of objects that contain the information about the resource shares.</p>
+    #[doc(hidden)]
     pub resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceSharesOutput {
@@ -948,9 +969,11 @@ impl GetResourceSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareInvitationsOutput {
     /// <p>An array of objects that contain the details about the invitations.</p>
+    #[doc(hidden)]
     pub resource_share_invitations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceShareInvitationsOutput {
@@ -1040,9 +1063,11 @@ impl GetResourceShareInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsOutput {
     /// <p>An array of objects that contain the details about the associations.</p>
+    #[doc(hidden)]
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceShareAssociationsOutput {
@@ -1132,8 +1157,10 @@ impl GetResourceShareAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesOutput {
     /// <p>An array of resource policy documents in JSON format.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourcePoliciesOutput {
@@ -1214,6 +1241,7 @@ impl GetResourcePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionOutput {
     /// <p>An object that contains information about the permission.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
 }
 impl GetPermissionOutput {
@@ -1271,6 +1299,7 @@ impl GetPermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSharingWithAwsOrganizationOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl EnableSharingWithAwsOrganizationOutput {
@@ -1325,8 +1354,10 @@ impl EnableSharingWithAwsOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceSharePermissionOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceSharePermissionOutput {
@@ -1398,9 +1429,11 @@ impl DisassociateResourceSharePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceShareOutput {
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
+    #[doc(hidden)]
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceShareOutput {
@@ -1490,8 +1523,10 @@ impl DisassociateResourceShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceShareOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteResourceShareOutput {
@@ -1563,8 +1598,10 @@ impl DeleteResourceShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceShareOutput {
     /// <p>An object with information about the new resource share.</p>
+    #[doc(hidden)]
     pub resource_share: std::option::Option<crate::model::ResourceShare>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateResourceShareOutput {
@@ -1639,8 +1676,10 @@ impl CreateResourceShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceSharePermissionOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateResourceSharePermissionOutput {
@@ -1712,9 +1751,11 @@ impl AssociateResourceSharePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceShareOutput {
     /// <p>An array of objects that contain information about the associations.</p>
+    #[doc(hidden)]
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateResourceShareOutput {
@@ -1804,8 +1845,10 @@ impl AssociateResourceShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptResourceShareInvitationOutput {
     /// <p>An object that contains information about the specified invitation.</p>
+    #[doc(hidden)]
     pub resource_share_invitation: std::option::Option<crate::model::ResourceShareInvitation>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AcceptResourceShareInvitationOutput {

@@ -55,10 +55,13 @@ impl AsRef<str> for IdentityProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebsiteCaSummary {
     /// <p>A unique identifier for the CA.</p>
+    #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
     /// <p>The time when the CA was added.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl WebsiteCaSummary {
@@ -153,12 +156,16 @@ impl WebsiteCaSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
+    #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
     /// <p>The authorization provider type.</p>
+    #[doc(hidden)]
     pub authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The time of creation.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WebsiteAuthorizationProviderSummary {
@@ -333,20 +340,28 @@ impl AsRef<str> for AuthorizationProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetSummary {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The time when the fleet was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the fleet was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
+    #[doc(hidden)]
     pub company_code: std::option::Option<std::string::String>,
     /// <p>The status of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_status: std::option::Option<crate::model::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -628,12 +643,16 @@ impl AsRef<str> for FleetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainSummary {
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The time that the domain was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DomainSummary {
@@ -833,8 +852,10 @@ impl AsRef<str> for DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The status of the device.</p>
+    #[doc(hidden)]
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
 }
 impl DeviceSummary {

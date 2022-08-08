@@ -6219,20 +6219,24 @@ impl SetSubnetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSubnetsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    #[doc(hidden)]
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetSubnetsInput {
@@ -6277,8 +6281,10 @@ impl std::fmt::Debug for SetSubnetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSecurityGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The IDs of the security groups.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetSecurityGroupsInput {
@@ -6305,6 +6311,7 @@ impl std::fmt::Debug for SetSecurityGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRulePrioritiesInput {
     /// <p>The rule priorities.</p>
+    #[doc(hidden)]
     pub rule_priorities: std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInput {
@@ -6326,8 +6333,10 @@ impl std::fmt::Debug for SetRulePrioritiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIpAddressTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetIpAddressTypeInput {
@@ -6354,8 +6363,10 @@ impl std::fmt::Debug for SetIpAddressTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tag keys for the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
@@ -6382,8 +6393,10 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl RemoveListenerCertificatesInput {
@@ -6410,8 +6423,10 @@ impl std::fmt::Debug for RemoveListenerCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTargetsInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
 }
 impl RegisterTargetsInput {
@@ -6438,8 +6453,10 @@ impl std::fmt::Debug for RegisterTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesInput {
@@ -6466,26 +6483,36 @@ impl std::fmt::Debug for ModifyTargetGroupAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    #[doc(hidden)]
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
+    #[doc(hidden)]
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
+    #[doc(hidden)]
     pub health_check_enabled: std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
+    #[doc(hidden)]
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    #[doc(hidden)]
     pub health_check_timeout_seconds: std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
+    #[doc(hidden)]
     pub healthy_threshold_count: std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
+    #[doc(hidden)]
     pub unhealthy_threshold_count: std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
+    #[doc(hidden)]
     pub matcher: std::option::Option<crate::model::Matcher>,
 }
 impl ModifyTargetGroupInput {
@@ -6560,10 +6587,13 @@ impl std::fmt::Debug for ModifyTargetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The conditions.</p>
+    #[doc(hidden)]
     pub conditions: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
     /// <p>The actions.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl ModifyRuleInput {
@@ -6595,8 +6625,10 @@ impl std::fmt::Debug for ModifyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The load balancer attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
 }
 impl ModifyLoadBalancerAttributesInput {
@@ -6623,17 +6655,23 @@ impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub ssl_policy: std::option::Option<std::string::String>,
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The actions for the default rule.</p>
+    #[doc(hidden)]
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
@@ -6644,6 +6682,7 @@ pub struct ModifyListenerInput {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyListenerInput {
@@ -6704,8 +6743,10 @@ impl std::fmt::Debug for ModifyListenerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetHealthInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
 }
 impl DescribeTargetHealthInput {
@@ -6732,14 +6773,19 @@ impl std::fmt::Debug for DescribeTargetHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
+    #[doc(hidden)]
     pub target_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the target groups.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeTargetGroupsInput {
@@ -6781,6 +6827,7 @@ impl std::fmt::Debug for DescribeTargetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTargetGroupAttributesInput {
@@ -6802,6 +6849,7 @@ impl std::fmt::Debug for DescribeTargetGroupAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
@@ -6823,12 +6871,16 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSslPoliciesInput {
     /// <p>The names of the policies.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    #[doc(hidden)]
     pub load_balancer_type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
 }
 impl DescribeSslPoliciesInput {
@@ -6865,12 +6917,16 @@ impl std::fmt::Debug for DescribeSslPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the rules.</p>
+    #[doc(hidden)]
     pub rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeRulesInput {
@@ -6907,12 +6963,16 @@ impl std::fmt::Debug for DescribeRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
+    #[doc(hidden)]
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the load balancers.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {
@@ -6949,6 +7009,7 @@ impl std::fmt::Debug for DescribeLoadBalancersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerAttributesInput {
@@ -6970,12 +7031,16 @@ impl std::fmt::Debug for DescribeLoadBalancerAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
+    #[doc(hidden)]
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeListenersInput {
@@ -7012,10 +7077,13 @@ impl std::fmt::Debug for DescribeListenersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenerCertificatesInput {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeListenerCertificatesInput {
@@ -7047,8 +7115,10 @@ impl std::fmt::Debug for DescribeListenerCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
@@ -7075,8 +7145,10 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTargetsInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
 }
 impl DeregisterTargetsInput {
@@ -7103,6 +7175,7 @@ impl std::fmt::Debug for DeregisterTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTargetGroupInput {
@@ -7124,6 +7197,7 @@ impl std::fmt::Debug for DeleteTargetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRuleInput {
@@ -7145,6 +7219,7 @@ impl std::fmt::Debug for DeleteRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerInput {
@@ -7166,6 +7241,7 @@ impl std::fmt::Debug for DeleteLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
 }
 impl DeleteListenerInput {
@@ -7188,34 +7264,48 @@ impl std::fmt::Debug for DeleteListenerInput {
 pub struct CreateTargetGroupInput {
     /// <p>The name of the target group.</p>
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+    #[doc(hidden)]
     pub protocol_version: std::option::Option<std::string::String>,
     /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    #[doc(hidden)]
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    #[doc(hidden)]
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    #[doc(hidden)]
     pub health_check_enabled: std::option::Option<bool>,
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    #[doc(hidden)]
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
+    #[doc(hidden)]
     pub health_check_timeout_seconds: std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    #[doc(hidden)]
     pub healthy_threshold_count: std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+    #[doc(hidden)]
     pub unhealthy_threshold_count: std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
+    #[doc(hidden)]
     pub matcher: std::option::Option<crate::model::Matcher>,
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
@@ -7224,10 +7314,13 @@ pub struct CreateTargetGroupInput {
     /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
     /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
     /// <p>The tags to assign to the target group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl CreateTargetGroupInput {
@@ -7346,14 +7439,19 @@ impl std::fmt::Debug for CreateTargetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The conditions.</p>
+    #[doc(hidden)]
     pub conditions: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The actions.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The tags to assign to the rule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleInput {
@@ -7396,6 +7494,7 @@ impl std::fmt::Debug for CreateRuleInput {
 pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
@@ -7403,6 +7502,7 @@ pub struct CreateLoadBalancerInput {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
@@ -7410,21 +7510,28 @@ pub struct CreateLoadBalancerInput {
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    #[doc(hidden)]
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     /// <p>The default is an Internet-facing load balancer.</p>
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
+    #[doc(hidden)]
     pub scheme: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
     /// <p>The tags to assign to the load balancer.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The type of load balancer. The default is <code>application</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
+    #[doc(hidden)]
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerInput {
@@ -7500,17 +7607,23 @@ impl std::fmt::Debug for CreateLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub ssl_policy: std::option::Option<std::string::String>,
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The actions for the default rule.</p>
+    #[doc(hidden)]
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
@@ -7521,8 +7634,10 @@ pub struct CreateListenerInput {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to assign to the listener.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateListenerInput {
@@ -7588,8 +7703,10 @@ impl std::fmt::Debug for CreateListenerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
@@ -7616,8 +7733,10 @@ impl std::fmt::Debug for AddTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl AddListenerCertificatesInput {

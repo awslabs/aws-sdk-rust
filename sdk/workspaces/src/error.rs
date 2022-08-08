@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource that is not available.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ResourceUnavailableException {
@@ -90,8 +92,10 @@ impl ResourceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The resource could not be found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that could not be found.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -175,8 +179,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotSupportedException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The exception error reason.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl OperationNotSupportedException {
@@ -260,6 +266,7 @@ impl OperationNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValuesException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValuesException {
@@ -324,6 +331,7 @@ impl InvalidParameterValuesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -388,6 +396,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceededException {
@@ -452,6 +461,7 @@ impl ResourceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceStateException {
@@ -516,6 +526,7 @@ impl InvalidResourceStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAssociatedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAssociatedException {
@@ -580,6 +591,7 @@ impl ResourceAssociatedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspacesDefaultRoleNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WorkspacesDefaultRoleNotFoundException {
@@ -644,6 +656,7 @@ impl WorkspacesDefaultRoleNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedNetworkConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedNetworkConfigurationException {
@@ -708,6 +721,7 @@ impl UnsupportedNetworkConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedWorkspaceConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedWorkspaceConfigurationException {
@@ -772,6 +786,7 @@ impl UnsupportedWorkspaceConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationInProgressException {
@@ -836,6 +851,7 @@ impl OperationInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
@@ -900,6 +916,7 @@ impl ResourceAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceCreationFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceCreationFailedException {

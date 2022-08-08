@@ -64,6 +64,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -125,9 +126,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMediaCapturePipelinesOutput {
     /// <p>The media capture pipeline objects in the list.</p>
+    #[doc(hidden)]
     pub media_capture_pipelines:
         std::option::Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
     /// <p>The token used to retrieve the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMediaCapturePipelinesOutput {
@@ -214,6 +217,7 @@ impl ListMediaCapturePipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaCapturePipelineOutput {
     /// <p>The media capture pipeline object.</p>
+    #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl GetMediaCapturePipelineOutput {
@@ -303,6 +307,7 @@ impl DeleteMediaCapturePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineOutput {
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+    #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl CreateMediaCapturePipelineOutput {

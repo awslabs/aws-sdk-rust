@@ -124,6 +124,7 @@ impl StopNotebookExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNotebookExecutionOutput {
     /// <p>The unique identifier of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
 }
 impl StartNotebookExecutionOutput {
@@ -241,8 +242,10 @@ impl SetTerminationProtectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunJobFlowOutput {
     /// <p>A unique identifier for the job flow.</p>
+    #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl RunJobFlowOutput {
@@ -524,12 +527,16 @@ impl PutAutoTerminationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoScalingPolicyOutput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>The automatic scaling policy definition.</p>
+    #[doc(hidden)]
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicyDescription>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl PutAutoScalingPolicyOutput {
@@ -707,6 +714,7 @@ impl ModifyInstanceFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
+    #[doc(hidden)]
     pub step_concurrency_level: std::option::Option<i32>,
 }
 impl ModifyClusterOutput {
@@ -761,8 +769,10 @@ impl ModifyClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioSessionMappingsOutput {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+    #[doc(hidden)]
     pub session_mappings: std::option::Option<std::vec::Vec<crate::model::SessionMappingSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStudioSessionMappingsOutput {
@@ -844,8 +854,10 @@ impl ListStudioSessionMappingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudiosOutput {
     /// <p>The list of Studio summary objects.</p>
+    #[doc(hidden)]
     pub studios: std::option::Option<std::vec::Vec<crate::model::StudioSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStudiosOutput {
@@ -926,8 +938,10 @@ impl ListStudiosOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStepsOutput {
     /// <p>The filtered list of steps for the cluster.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepSummary>>,
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStepsOutput {
@@ -1008,9 +1022,11 @@ impl ListStepsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
+    #[doc(hidden)]
     pub security_configurations:
         std::option::Option<std::vec::Vec<crate::model::SecurityConfigurationSummary>>,
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSecurityConfigurationsOutput {
@@ -1097,8 +1113,10 @@ impl ListSecurityConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReleaseLabelsOutput {
     /// <p>The returned release labels.</p>
+    #[doc(hidden)]
     pub release_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReleaseLabelsOutput {
@@ -1179,9 +1197,11 @@ impl ListReleaseLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
+    #[doc(hidden)]
     pub notebook_executions:
         std::option::Option<std::vec::Vec<crate::model::NotebookExecutionSummary>>,
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsOutput {
@@ -1268,8 +1288,10 @@ impl ListNotebookExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
     /// <p>The list of instances for the cluster and given filters.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -1350,8 +1372,10 @@ impl ListInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceGroupsOutput {
     /// <p>The list of instance groups for the cluster and given filters.</p>
+    #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceGroupsOutput {
@@ -1432,8 +1456,10 @@ impl ListInstanceGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceFleetsOutput {
     /// <p>The list of instance fleets for the cluster and given filters.</p>
+    #[doc(hidden)]
     pub instance_fleets: std::option::Option<std::vec::Vec<crate::model::InstanceFleet>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceFleetsOutput {
@@ -1514,8 +1540,10 @@ impl ListInstanceFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::ClusterSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -1596,8 +1624,10 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBootstrapActionsOutput {
     /// <p>The bootstrap actions associated with the cluster.</p>
+    #[doc(hidden)]
     pub bootstrap_actions: std::option::Option<std::vec::Vec<crate::model::Command>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListBootstrapActionsOutput {
@@ -1678,6 +1708,7 @@ impl ListBootstrapActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioSessionMappingOutput {
     /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
+    #[doc(hidden)]
     pub session_mapping: std::option::Option<crate::model::SessionMappingDetail>,
 }
 impl GetStudioSessionMappingOutput {
@@ -1735,6 +1766,7 @@ impl GetStudioSessionMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedScalingPolicyOutput {
     /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    #[doc(hidden)]
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
 }
 impl GetManagedScalingPolicyOutput {
@@ -1796,9 +1828,11 @@ pub struct GetBlockPublicAccessConfigurationOutput {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
+    #[doc(hidden)]
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
     /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
+    #[doc(hidden)]
     pub block_public_access_configuration_metadata:
         std::option::Option<crate::model::BlockPublicAccessConfigurationMetadata>,
 }
@@ -1902,6 +1936,7 @@ impl GetBlockPublicAccessConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoTerminationPolicyOutput {
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    #[doc(hidden)]
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
 }
 impl GetAutoTerminationPolicyOutput {
@@ -1965,6 +2000,7 @@ impl GetAutoTerminationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStudioOutput {
     /// <p>The Amazon EMR Studio details.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl DescribeStudioOutput {
@@ -2019,6 +2055,7 @@ impl DescribeStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStepOutput {
     /// <p>The step details for the requested step identifier.</p>
+    #[doc(hidden)]
     pub step: std::option::Option<crate::model::Step>,
 }
 impl DescribeStepOutput {
@@ -2071,10 +2108,13 @@ impl DescribeStepOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The security configuration details in JSON format.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSecurityConfigurationOutput {
@@ -2169,12 +2209,16 @@ impl DescribeSecurityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReleaseLabelOutput {
     /// <p>The target release label described in the response.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+    #[doc(hidden)]
     pub available_os_releases: std::option::Option<std::vec::Vec<crate::model::OsRelease>>,
 }
 impl DescribeReleaseLabelOutput {
@@ -2303,6 +2347,7 @@ impl DescribeReleaseLabelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotebookExecutionOutput {
     /// <p>Properties of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution: std::option::Option<crate::model::NotebookExecution>,
 }
 impl DescribeNotebookExecutionOutput {
@@ -2360,6 +2405,7 @@ impl DescribeNotebookExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
+    #[doc(hidden)]
     pub job_flows: std::option::Option<std::vec::Vec<crate::model::JobFlowDetail>>,
 }
 impl DescribeJobFlowsOutput {
@@ -2423,6 +2469,7 @@ impl DescribeJobFlowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
     /// <p>This output contains the details for the requested cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DescribeClusterOutput {
@@ -2597,8 +2644,10 @@ impl CreateStudioSessionMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioOutput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The unique Studio access URL.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl CreateStudioOutput {
@@ -2670,8 +2719,10 @@ impl CreateStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSecurityConfigurationOutput {
@@ -2746,6 +2797,7 @@ impl CreateSecurityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStepsOutput {
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
+    #[doc(hidden)]
     pub cancel_steps_info_list: std::option::Option<std::vec::Vec<crate::model::CancelStepsInfo>>,
 }
 impl CancelStepsOutput {
@@ -2840,6 +2892,7 @@ impl AddTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
+    #[doc(hidden)]
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddJobFlowStepsOutput {
@@ -2903,10 +2956,13 @@ impl AddJobFlowStepsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddInstanceGroupsOutput {
     /// <p>The job flow ID in which the instance groups are added.</p>
+    #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p>Instance group IDs of the newly created instance groups.</p>
+    #[doc(hidden)]
     pub instance_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl AddInstanceGroupsOutput {
@@ -3004,10 +3060,13 @@ impl AddInstanceGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddInstanceFleetOutput {
     /// <p>The unique identifier of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl AddInstanceFleetOutput {

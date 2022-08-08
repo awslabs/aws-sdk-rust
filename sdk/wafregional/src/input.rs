@@ -12878,8 +12878,10 @@ impl UpdateXssMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -12887,6 +12889,7 @@ pub struct UpdateXssMatchSetInput {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::XssMatchSetUpdate>>,
 }
 impl UpdateXssMatchSetInput {
@@ -12923,8 +12926,10 @@ impl std::fmt::Debug for UpdateXssMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of updates to make to the <code>WebACL</code>.</p>
     /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
@@ -12933,8 +12938,10 @@ pub struct UpdateWebAclInput {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::WebAclUpdate>>,
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    #[doc(hidden)]
     pub default_action: std::option::Option<crate::model::WafAction>,
 }
 impl UpdateWebAclInput {
@@ -12977,8 +12984,10 @@ impl std::fmt::Debug for UpdateWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    #[doc(hidden)]
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -12986,6 +12995,7 @@ pub struct UpdateSqlInjectionMatchSetInput {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetUpdate>>,
 }
 impl UpdateSqlInjectionMatchSetInput {
@@ -13025,8 +13035,10 @@ impl std::fmt::Debug for UpdateSqlInjectionMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -13034,6 +13046,7 @@ pub struct UpdateSizeConstraintSetInput {
     /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetUpdate>>,
 }
 impl UpdateSizeConstraintSetInput {
@@ -13070,12 +13083,15 @@ impl std::fmt::Debug for UpdateSizeConstraintSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleGroupUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupInput {
@@ -13109,8 +13125,10 @@ impl std::fmt::Debug for UpdateRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -13118,6 +13136,7 @@ pub struct UpdateRuleInput {
     /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
 }
 impl UpdateRuleInput {
@@ -13154,10 +13173,13 @@ impl std::fmt::Debug for UpdateRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetInput {
@@ -13189,10 +13211,13 @@ impl std::fmt::Debug for UpdateRegexPatternSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexMatchSetInput {
@@ -13224,12 +13249,16 @@ impl std::fmt::Debug for UpdateRegexMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    #[doc(hidden)]
     pub rate_limit: i64,
 }
 impl UpdateRateBasedRuleInput {
@@ -13266,8 +13295,10 @@ impl std::fmt::Debug for UpdateRateBasedRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -13275,6 +13306,7 @@ pub struct UpdateIpSetInput {
     /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::IpSetUpdate>>,
 }
 impl UpdateIpSetInput {
@@ -13311,14 +13343,17 @@ impl std::fmt::Debug for UpdateIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    #[doc(hidden)]
     pub geo_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetUpdate>>,
 }
 impl UpdateGeoMatchSetInput {
@@ -13354,8 +13389,10 @@ impl std::fmt::Debug for UpdateGeoMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -13363,6 +13400,7 @@ pub struct UpdateByteMatchSetInput {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetUpdate>>,
 }
 impl UpdateByteMatchSetInput {
@@ -13399,8 +13437,10 @@ impl std::fmt::Debug for UpdateByteMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p></p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13427,8 +13467,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p></p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -13455,8 +13497,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy to attach to the specified RuleGroup.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutPermissionPolicyInput {
@@ -13485,6 +13529,7 @@ pub struct PutLoggingConfigurationInput {
     /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
     /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationInput {
@@ -13510,8 +13555,10 @@ impl std::fmt::Debug for PutLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListXssMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListXssMatchSetsInput {
@@ -13538,8 +13585,10 @@ impl std::fmt::Debug for ListXssMatchSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListWebAcLsInput {
@@ -13566,10 +13615,13 @@ impl std::fmt::Debug for ListWebAcLsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p></p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p></p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -13601,8 +13653,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListSubscribedRuleGroupsInput {
@@ -13629,8 +13683,10 @@ impl std::fmt::Debug for ListSubscribedRuleGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSqlInjectionMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListSqlInjectionMatchSetsInput {
@@ -13657,8 +13713,10 @@ impl std::fmt::Debug for ListSqlInjectionMatchSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSizeConstraintSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListSizeConstraintSetsInput {
@@ -13685,8 +13743,10 @@ impl std::fmt::Debug for ListSizeConstraintSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListRulesInput {
@@ -13713,8 +13773,10 @@ impl std::fmt::Debug for ListRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListRuleGroupsInput {
@@ -13741,8 +13803,10 @@ impl std::fmt::Debug for ListRuleGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForWebAclInput {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ListResourcesForWebAclInput {
@@ -13769,8 +13833,10 @@ impl std::fmt::Debug for ListResourcesForWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListRegexPatternSetsInput {
@@ -13797,8 +13863,10 @@ impl std::fmt::Debug for ListRegexPatternSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListRegexMatchSetsInput {
@@ -13825,8 +13893,10 @@ impl std::fmt::Debug for ListRegexMatchSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRateBasedRulesInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListRateBasedRulesInput {
@@ -13853,8 +13923,10 @@ impl std::fmt::Debug for ListRateBasedRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListLoggingConfigurationsInput {
@@ -13881,8 +13953,10 @@ impl std::fmt::Debug for ListLoggingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsInput {
     /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListIpSetsInput {
@@ -13909,8 +13983,10 @@ impl std::fmt::Debug for ListIpSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeoMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListGeoMatchSetsInput {
@@ -13937,8 +14013,10 @@ impl std::fmt::Debug for ListGeoMatchSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByteMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListByteMatchSetsInput {
@@ -13965,10 +14043,13 @@ impl std::fmt::Debug for ListByteMatchSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivatedRulesInRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
+    #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListActivatedRulesInRuleGroupInput {
@@ -14000,6 +14081,7 @@ impl std::fmt::Debug for ListActivatedRulesInRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetXssMatchSetInput {
@@ -14026,6 +14108,7 @@ pub struct GetWebAclForResourceInput {
     /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
     /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetWebAclForResourceInput {
@@ -14052,6 +14135,7 @@ impl std::fmt::Debug for GetWebAclForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl GetWebAclInput {
@@ -14073,6 +14157,7 @@ impl std::fmt::Debug for GetWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    #[doc(hidden)]
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetSqlInjectionMatchSetInput {
@@ -14097,6 +14182,7 @@ impl std::fmt::Debug for GetSqlInjectionMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
 }
 impl GetSizeConstraintSetInput {
@@ -14118,16 +14204,20 @@ impl std::fmt::Debug for GetSizeConstraintSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p> <code>RuleId</code> is one of three values:</p>
     /// <ul>
     /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
     /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    #[doc(hidden)]
     pub time_window: std::option::Option<crate::model::TimeWindow>,
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    #[doc(hidden)]
     pub max_items: i64,
 }
 impl GetSampledRequestsInput {
@@ -14168,6 +14258,7 @@ impl std::fmt::Debug for GetSampledRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
 }
 impl GetRuleGroupInput {
@@ -14189,6 +14280,7 @@ impl std::fmt::Debug for GetRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl GetRuleInput {
@@ -14210,6 +14302,7 @@ impl std::fmt::Debug for GetRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
 }
 impl GetRegexPatternSetInput {
@@ -14231,6 +14324,7 @@ impl std::fmt::Debug for GetRegexPatternSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetRegexMatchSetInput {
@@ -14252,8 +14346,10 @@ impl std::fmt::Debug for GetRegexMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleManagedKeysInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>A null value and not currently used. Do not include this in your request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl GetRateBasedRuleManagedKeysInput {
@@ -14280,6 +14376,7 @@ impl std::fmt::Debug for GetRateBasedRuleManagedKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl GetRateBasedRuleInput {
@@ -14301,6 +14398,7 @@ impl std::fmt::Debug for GetRateBasedRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyInput {
@@ -14322,6 +14420,7 @@ impl std::fmt::Debug for GetPermissionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetLoggingConfigurationInput {
@@ -14343,6 +14442,7 @@ impl std::fmt::Debug for GetLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
 }
 impl GetIpSetInput {
@@ -14364,6 +14464,7 @@ impl std::fmt::Debug for GetIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    #[doc(hidden)]
     pub geo_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetGeoMatchSetInput {
@@ -14385,6 +14486,7 @@ impl std::fmt::Debug for GetGeoMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeTokenStatusInput {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl GetChangeTokenStatusInput {
@@ -14417,6 +14519,7 @@ impl std::fmt::Debug for GetChangeTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetByteMatchSetInput {
@@ -14443,6 +14546,7 @@ pub struct DisassociateWebAclInput {
     /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
     /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateWebAclInput {
@@ -14469,8 +14573,10 @@ impl std::fmt::Debug for DisassociateWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteXssMatchSetInput {
@@ -14497,8 +14603,10 @@ impl std::fmt::Debug for DeleteXssMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebAclInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteWebAclInput {
@@ -14525,8 +14633,10 @@ impl std::fmt::Debug for DeleteWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    #[doc(hidden)]
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetInput {
@@ -14556,8 +14666,10 @@ impl std::fmt::Debug for DeleteSqlInjectionMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSizeConstraintSetInput {
@@ -14584,8 +14696,10 @@ impl std::fmt::Debug for DeleteSizeConstraintSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleGroupInput {
@@ -14612,8 +14726,10 @@ impl std::fmt::Debug for DeleteRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleInput {
@@ -14640,8 +14756,10 @@ impl std::fmt::Debug for DeleteRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexPatternSetInput {
@@ -14668,8 +14786,10 @@ impl std::fmt::Debug for DeleteRegexPatternSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexMatchSetInput {
@@ -14696,8 +14816,10 @@ impl std::fmt::Debug for DeleteRegexMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRateBasedRuleInput {
@@ -14725,6 +14847,7 @@ impl std::fmt::Debug for DeleteRateBasedRuleInput {
 pub struct DeletePermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
     /// <p>The user making the request must be the owner of the RuleGroup.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeletePermissionPolicyInput {
@@ -14747,6 +14870,7 @@ impl std::fmt::Debug for DeletePermissionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {
@@ -14768,8 +14892,10 @@ impl std::fmt::Debug for DeleteLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteIpSetInput {
@@ -14796,8 +14922,10 @@ impl std::fmt::Debug for DeleteIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    #[doc(hidden)]
     pub geo_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteGeoMatchSetInput {
@@ -14824,8 +14952,10 @@ impl std::fmt::Debug for DeleteGeoMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteByteMatchSetInput {
@@ -14852,8 +14982,10 @@ impl std::fmt::Debug for DeleteByteMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateXssMatchSetInput {
     /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateXssMatchSetInput {
@@ -14880,6 +15012,7 @@ impl std::fmt::Debug for CreateXssMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclMigrationStackInput {
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
     /// <ul>
@@ -14887,8 +15020,10 @@ pub struct CreateWebAclMigrationStackInput {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
+    #[doc(hidden)]
     pub ignore_unsupported_type: std::option::Option<bool>,
 }
 impl CreateWebAclMigrationStackInput {
@@ -14925,14 +15060,19 @@ impl std::fmt::Debug for CreateWebAclMigrationStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclInput {
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
+    #[doc(hidden)]
     pub default_action: std::option::Option<crate::model::WafAction>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWebAclInput {
@@ -14974,8 +15114,10 @@ impl std::fmt::Debug for CreateWebAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSqlInjectionMatchSetInput {
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSqlInjectionMatchSetInput {
@@ -15002,8 +15144,10 @@ impl std::fmt::Debug for CreateSqlInjectionMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSizeConstraintSetInput {
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSizeConstraintSetInput {
@@ -15030,12 +15174,16 @@ impl std::fmt::Debug for CreateSizeConstraintSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupInput {
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleGroupInput {
@@ -15072,12 +15220,16 @@ impl std::fmt::Debug for CreateRuleGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleInput {
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleInput {
@@ -15114,8 +15266,10 @@ impl std::fmt::Debug for CreateRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetInput {
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexPatternSetInput {
@@ -15142,8 +15296,10 @@ impl std::fmt::Debug for CreateRegexPatternSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexMatchSetInput {
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexMatchSetInput {
@@ -15170,16 +15326,22 @@ impl std::fmt::Debug for CreateRegexMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRateBasedRuleInput {
     /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
+    #[doc(hidden)]
     pub rate_key: std::option::Option<crate::model::RateKey>,
     /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    #[doc(hidden)]
     pub rate_limit: i64,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRateBasedRuleInput {
@@ -15226,8 +15388,10 @@ impl std::fmt::Debug for CreateRateBasedRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateIpSetInput {
@@ -15254,8 +15418,10 @@ impl std::fmt::Debug for CreateIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeoMatchSetInput {
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateGeoMatchSetInput {
@@ -15282,8 +15448,10 @@ impl std::fmt::Debug for CreateGeoMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateByteMatchSetInput {
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateByteMatchSetInput {
@@ -15310,6 +15478,7 @@ impl std::fmt::Debug for CreateByteMatchSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebAclInput {
     /// <p>A unique identifier (ID) for the web ACL. </p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -15317,6 +15486,7 @@ pub struct AssociateWebAclInput {
     /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
     /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AssociateWebAclInput {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl EnableTrustAnchorOutput {
@@ -61,6 +62,7 @@ impl EnableTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl DisableTrustAnchorOutput {
@@ -118,8 +120,10 @@ impl DisableTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrustAnchorsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of trust anchors.</p>
+    #[doc(hidden)]
     pub trust_anchors: std::option::Option<std::vec::Vec<crate::model::TrustAnchorDetail>>,
 }
 impl ListTrustAnchorsOutput {
@@ -201,6 +205,7 @@ impl ListTrustAnchorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl CreateTrustAnchorOutput {
@@ -258,6 +263,7 @@ impl CreateTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl DeleteTrustAnchorOutput {
@@ -315,6 +321,7 @@ impl DeleteTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl UpdateTrustAnchorOutput {
@@ -372,6 +379,7 @@ impl UpdateTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
 }
 impl GetTrustAnchorOutput {
@@ -429,8 +437,10 @@ impl GetTrustAnchorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubjectsOutput {
     /// <p>A list of subjects.</p>
+    #[doc(hidden)]
     pub subjects: std::option::Option<std::vec::Vec<crate::model::SubjectSummary>>,
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubjectsOutput {
@@ -511,6 +521,7 @@ impl ListSubjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubjectOutput {
     /// <p>The state of the subject after a read or write operation.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<crate::model::SubjectDetail>,
 }
 impl GetSubjectOutput {
@@ -568,6 +579,7 @@ impl GetSubjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl EnableProfileOutput {
@@ -625,6 +637,7 @@ impl EnableProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl DisableProfileOutput {
@@ -682,8 +695,10 @@ impl DisableProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilesOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of profiles.</p>
+    #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::model::ProfileDetail>>,
 }
 impl ListProfilesOutput {
@@ -764,6 +779,7 @@ impl ListProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl CreateProfileOutput {
@@ -821,6 +837,7 @@ impl CreateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl DeleteProfileOutput {
@@ -878,6 +895,7 @@ impl DeleteProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl UpdateProfileOutput {
@@ -935,6 +953,7 @@ impl UpdateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::ProfileDetail>,
 }
 impl GetProfileOutput {
@@ -992,6 +1011,7 @@ impl GetProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl EnableCrlOutput {
@@ -1044,6 +1064,7 @@ impl EnableCrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl DisableCrlOutput {
@@ -1096,8 +1117,10 @@ impl DisableCrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrlsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of certificate revocation lists (CRL). </p>
+    #[doc(hidden)]
     pub crls: std::option::Option<std::vec::Vec<crate::model::CrlDetail>>,
 }
 impl ListCrlsOutput {
@@ -1178,6 +1201,7 @@ impl ListCrlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl ImportCrlOutput {
@@ -1230,6 +1254,7 @@ impl ImportCrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl DeleteCrlOutput {
@@ -1282,6 +1307,7 @@ impl DeleteCrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl UpdateCrlOutput {
@@ -1334,6 +1360,7 @@ impl UpdateCrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl: std::option::Option<crate::model::CrlDetail>,
 }
 impl GetCrlOutput {
@@ -1446,6 +1473,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags attached to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {

@@ -59,12 +59,16 @@ impl AsRef<str> for IpAddressType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
+    #[doc(hidden)]
     pub zone_name: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    #[doc(hidden)]
     pub load_balancer_addresses:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerAddress>>,
 }
@@ -183,12 +187,16 @@ impl AvailabilityZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerAddress {
     /// <p>The static IP address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
+    #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    #[doc(hidden)]
     pub private_i_pv4_address: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The IPv6 address.</p>
+    #[doc(hidden)]
     pub i_pv6_address: std::option::Option<std::string::String>,
 }
 impl LoadBalancerAddress {
@@ -303,12 +311,16 @@ impl LoadBalancerAddress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    #[doc(hidden)]
     pub private_i_pv4_address: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The IPv6 address.</p>
+    #[doc(hidden)]
     pub i_pv6_address: std::option::Option<std::string::String>,
 }
 impl SubnetMapping {
@@ -423,14 +435,19 @@ impl SubnetMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The priority.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<std::string::String>,
     /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
+    #[doc(hidden)]
     pub conditions: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
     /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Indicates whether this is the default rule.</p>
+    #[doc(hidden)]
     pub is_default: bool,
 }
 impl Rule {
@@ -572,21 +589,29 @@ impl Rule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The type of action.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ActionTypeEnum>,
     /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+    #[doc(hidden)]
     pub authenticate_oidc_config: std::option::Option<crate::model::AuthenticateOidcActionConfig>,
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+    #[doc(hidden)]
     pub authenticate_cognito_config:
         std::option::Option<crate::model::AuthenticateCognitoActionConfig>,
     /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<i32>,
     /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
+    #[doc(hidden)]
     pub redirect_config: std::option::Option<crate::model::RedirectActionConfig>,
     /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+    #[doc(hidden)]
     pub fixed_response_config: std::option::Option<crate::model::FixedResponseActionConfig>,
     /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
+    #[doc(hidden)]
     pub forward_config: std::option::Option<crate::model::ForwardActionConfig>,
 }
 impl Action {
@@ -802,8 +827,10 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForwardActionConfig {
     /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
+    #[doc(hidden)]
     pub target_group_stickiness_config:
         std::option::Option<crate::model::TargetGroupStickinessConfig>,
 }
@@ -898,8 +925,10 @@ impl ForwardActionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl TargetGroupStickinessConfig {
@@ -971,8 +1000,10 @@ impl TargetGroupStickinessConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupTuple {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The weight. The range is 0 to 999.</p>
+    #[doc(hidden)]
     pub weight: std::option::Option<i32>,
 }
 impl TargetGroupTuple {
@@ -1047,11 +1078,14 @@ impl TargetGroupTuple {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FixedResponseActionConfig {
     /// <p>The message.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<std::string::String>,
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl FixedResponseActionConfig {
@@ -1153,16 +1187,22 @@ impl FixedResponseActionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedirectActionConfig {
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<std::string::String>,
     /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::RedirectActionStatusCodeEnum>,
 }
 impl RedirectActionConfig {
@@ -1360,19 +1400,26 @@ impl AsRef<str> for RedirectActionStatusCodeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub user_pool_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito user pool client.</p>
+    #[doc(hidden)]
     pub user_pool_client_id: std::option::Option<std::string::String>,
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub user_pool_domain: std::option::Option<std::string::String>,
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
+    #[doc(hidden)]
     pub session_cookie_name: std::option::Option<std::string::String>,
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
+    #[doc(hidden)]
     pub session_timeout: std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
+    #[doc(hidden)]
     pub authentication_request_extra_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -1381,6 +1428,7 @@ pub struct AuthenticateCognitoActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub on_unauthenticated_request:
         std::option::Option<crate::model::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
@@ -1681,25 +1729,35 @@ impl AsRef<str> for AuthenticateCognitoActionConditionalBehaviorEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticateOidcActionConfig {
     /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    #[doc(hidden)]
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    #[doc(hidden)]
     pub token_endpoint: std::option::Option<std::string::String>,
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    #[doc(hidden)]
     pub user_info_endpoint: std::option::Option<std::string::String>,
     /// <p>The OAuth 2.0 client identifier.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
+    #[doc(hidden)]
     pub session_cookie_name: std::option::Option<std::string::String>,
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
+    #[doc(hidden)]
     pub session_timeout: std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
+    #[doc(hidden)]
     pub authentication_request_extra_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -1708,9 +1766,11 @@ pub struct AuthenticateOidcActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub on_unauthenticated_request:
         std::option::Option<crate::model::AuthenticateOidcActionConditionalBehaviorEnum>,
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
+    #[doc(hidden)]
     pub use_existing_client_secret: std::option::Option<bool>,
 }
 impl AuthenticateOidcActionConfig {
@@ -2164,6 +2224,7 @@ pub struct RuleCondition {
     /// <li> <p> <code>query-string</code> </p> </li>
     /// <li> <p> <code>source-ip</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
@@ -2181,19 +2242,26 @@ pub struct RuleCondition {
     /// <li> <p>* (matches 0 or more characters)</p> </li>
     /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
+    #[doc(hidden)]
     pub host_header_config: std::option::Option<crate::model::HostHeaderConditionConfig>,
     /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
+    #[doc(hidden)]
     pub path_pattern_config: std::option::Option<crate::model::PathPatternConditionConfig>,
     /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
+    #[doc(hidden)]
     pub http_header_config: std::option::Option<crate::model::HttpHeaderConditionConfig>,
     /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
+    #[doc(hidden)]
     pub query_string_config: std::option::Option<crate::model::QueryStringConditionConfig>,
     /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
+    #[doc(hidden)]
     pub http_request_method_config:
         std::option::Option<crate::model::HttpRequestMethodConditionConfig>,
     /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
+    #[doc(hidden)]
     pub source_ip_config: std::option::Option<crate::model::SourceIpConditionConfig>,
 }
 impl RuleCondition {
@@ -2496,6 +2564,7 @@ impl RuleCondition {
 pub struct SourceIpConditionConfig {
     /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
     /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SourceIpConditionConfig {
@@ -2564,6 +2633,7 @@ impl SourceIpConditionConfig {
 pub struct HttpRequestMethodConditionConfig {
     /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HttpRequestMethodConditionConfig {
@@ -2632,6 +2702,7 @@ impl HttpRequestMethodConditionConfig {
 pub struct QueryStringConditionConfig {
     /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::QueryStringKeyValuePair>>,
 }
 impl QueryStringConditionConfig {
@@ -2699,8 +2770,10 @@ impl QueryStringConditionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStringKeyValuePair {
     /// <p>The key. You can omit the key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl QueryStringKeyValuePair {
@@ -2774,10 +2847,12 @@ impl QueryStringKeyValuePair {
 pub struct HttpHeaderConditionConfig {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
+    #[doc(hidden)]
     pub http_header_name: std::option::Option<std::string::String>,
     /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HttpHeaderConditionConfig {
@@ -2871,6 +2946,7 @@ impl HttpHeaderConditionConfig {
 pub struct PathPatternConditionConfig {
     /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathPatternConditionConfig {
@@ -2938,6 +3014,7 @@ impl PathPatternConditionConfig {
 pub struct HostHeaderConditionConfig {
     /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HostHeaderConditionConfig {
@@ -3004,8 +3081,10 @@ impl HostHeaderConditionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RulePriorityPair {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The rule priority.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
 }
 impl RulePriorityPair {
@@ -3077,8 +3156,10 @@ impl RulePriorityPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
+    #[doc(hidden)]
     pub is_default: std::option::Option<bool>,
 }
 impl Certificate {
@@ -3153,14 +3234,17 @@ impl Certificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetDescription {
     /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
     /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
     /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
     /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
 }
 impl TargetDescription {
@@ -3291,8 +3375,10 @@ pub struct TargetGroupAttribute {
     /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
     /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TargetGroupAttribute {
@@ -3445,40 +3531,58 @@ impl TargetGroupAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the target group.</p>
+    #[doc(hidden)]
     pub target_group_name: std::option::Option<std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The ID of the VPC for the targets.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    #[doc(hidden)]
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port to use to connect with the target.</p>
+    #[doc(hidden)]
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
+    #[doc(hidden)]
     pub health_check_enabled: std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
+    #[doc(hidden)]
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+    #[doc(hidden)]
     pub health_check_timeout_seconds: std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
+    #[doc(hidden)]
     pub healthy_threshold_count: std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
+    #[doc(hidden)]
     pub unhealthy_threshold_count: std::option::Option<i32>,
     /// <p>The destination for health checks on the targets.</p>
+    #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
+    #[doc(hidden)]
     pub matcher: std::option::Option<crate::model::Matcher>,
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    #[doc(hidden)]
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    #[doc(hidden)]
     pub protocol_version: std::option::Option<std::string::String>,
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroup {
@@ -3992,8 +4096,10 @@ pub struct Matcher {
     /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
     /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
     /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
+    #[doc(hidden)]
     pub http_code: std::option::Option<std::string::String>,
     /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+    #[doc(hidden)]
     pub grpc_code: std::option::Option<std::string::String>,
 }
 impl Matcher {
@@ -4178,8 +4284,10 @@ pub struct LoadBalancerAttribute {
     /// <ul>
     /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl LoadBalancerAttribute {
@@ -4347,20 +4455,28 @@ impl LoadBalancerAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The port on which the load balancer is listening.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    #[doc(hidden)]
     pub ssl_policy: std::option::Option<std::string::String>,
     /// <p>The default actions for the listener.</p>
+    #[doc(hidden)]
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    #[doc(hidden)]
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Listener {
@@ -4567,10 +4683,13 @@ impl Listener {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetHealthDescription {
     /// <p>The description of the target.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::TargetDescription>,
     /// <p>The port to use to connect with the target.</p>
+    #[doc(hidden)]
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>The health information for the target.</p>
+    #[doc(hidden)]
     pub target_health: std::option::Option<crate::model::TargetHealth>,
 }
 impl TargetHealthDescription {
@@ -4668,6 +4787,7 @@ impl TargetHealthDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetHealth {
     /// <p>The state of the target.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TargetHealthStateEnum>,
     /// <p>The reason code.</p>
     /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
@@ -4699,8 +4819,10 @@ pub struct TargetHealth {
     /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::TargetHealthReasonEnum>,
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl TargetHealth {
@@ -5068,8 +5190,10 @@ impl AsRef<str> for TargetHealthStateEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagDescription {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagDescription {
@@ -5150,8 +5274,10 @@ impl TagDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -5223,12 +5349,16 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SslPolicy {
     /// <p>The protocols.</p>
+    #[doc(hidden)]
     pub ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ciphers.</p>
+    #[doc(hidden)]
     pub ciphers: std::option::Option<std::vec::Vec<crate::model::Cipher>>,
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The supported load balancers. </p>
+    #[doc(hidden)]
     pub supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SslPolicy {
@@ -5368,8 +5498,10 @@ impl SslPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cipher {
     /// <p>The name of the cipher.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The priority of the cipher.</p>
+    #[doc(hidden)]
     pub priority: i32,
 }
 impl Cipher {
@@ -5500,31 +5632,44 @@ impl AsRef<str> for LoadBalancerTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the load balancer.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
+    #[doc(hidden)]
     pub canonical_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The date and time the load balancer was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
+    #[doc(hidden)]
     pub scheme: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
     /// <p>The ID of the VPC for the load balancer.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The state of the load balancer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LoadBalancerState>,
     /// <p>The type of load balancer.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
     /// <p>The subnets for the load balancer.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     /// <p>The IDs of the security groups for the load balancer.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    #[doc(hidden)]
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl LoadBalancer {
@@ -5832,8 +5977,10 @@ impl LoadBalancer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerState {
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::LoadBalancerStateEnum>,
     /// <p>A description of the state.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl LoadBalancerState {
@@ -6046,8 +6193,10 @@ pub struct Limit {
     /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
     /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the limit.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
 }
 impl Limit {

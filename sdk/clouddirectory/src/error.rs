@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -69,6 +70,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryableConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RetryableConflictException {
@@ -133,6 +135,7 @@ impl RetryableConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -197,6 +200,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -261,6 +265,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAttachmentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAttachmentException {
@@ -325,6 +330,7 @@ impl InvalidAttachmentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArnException {
@@ -389,6 +395,7 @@ impl InvalidArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceException {
@@ -453,6 +460,7 @@ impl InternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleSchemaException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatibleSchemaException {
@@ -517,6 +525,7 @@ impl IncompatibleSchemaException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -581,6 +590,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchemaAlreadyExistsException {
@@ -645,6 +655,7 @@ impl SchemaAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRuleException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRuleException {
@@ -709,6 +720,7 @@ impl InvalidRuleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFacetUpdateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFacetUpdateException {
@@ -773,6 +785,7 @@ impl InvalidFacetUpdateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FacetValidationException {
@@ -837,6 +850,7 @@ impl FacetValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FacetNotFoundException {
@@ -901,6 +915,7 @@ impl FacetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkNameAlreadyInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LinkNameAlreadyInUseException {
@@ -965,6 +980,7 @@ impl LinkNameAlreadyInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryNotEnabledException {
@@ -1029,6 +1045,7 @@ impl DirectoryNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTaggingRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTaggingRequestException {
@@ -1093,6 +1110,7 @@ impl InvalidTaggingRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSchemaDocException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSchemaDocException {
@@ -1157,6 +1175,7 @@ impl InvalidSchemaDocException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAlreadyPublishedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchemaAlreadyPublishedException {
@@ -1221,6 +1240,7 @@ impl SchemaAlreadyPublishedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -1285,6 +1305,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotPolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotPolicyException {
@@ -1349,6 +1370,7 @@ impl NotPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotListParentOfRootException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CannotListParentOfRootException {
@@ -1413,6 +1435,7 @@ impl CannotListParentOfRootException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotNodeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotNodeException {
@@ -1477,6 +1500,7 @@ impl NotNodeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotIndexException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotIndexException {
@@ -1541,6 +1565,7 @@ impl NotIndexException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryDeletedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryDeletedException {
@@ -1605,6 +1630,7 @@ impl DirectoryDeletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectAlreadyDetachedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ObjectAlreadyDetachedException {
@@ -1669,6 +1695,7 @@ impl ObjectAlreadyDetachedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StillContainsLinksException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StillContainsLinksException {
@@ -1733,6 +1760,7 @@ impl StillContainsLinksException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotDetachedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ObjectNotDetachedException {
@@ -1797,6 +1825,7 @@ impl ObjectNotDetachedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FacetInUseException {
@@ -1861,6 +1890,7 @@ impl FacetInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNotDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryNotDisabledException {
@@ -1925,6 +1955,7 @@ impl DirectoryNotDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FacetAlreadyExistsException {
@@ -1989,6 +2020,7 @@ impl FacetAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedIndexTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedIndexTypeException {
@@ -2053,6 +2085,7 @@ impl UnsupportedIndexTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryAlreadyExistsException {
@@ -2117,10 +2150,13 @@ impl DirectoryAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BatchWriteExceptionType>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchWriteException {
@@ -2224,6 +2260,7 @@ impl BatchWriteException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexedAttributeMissingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IndexedAttributeMissingException {

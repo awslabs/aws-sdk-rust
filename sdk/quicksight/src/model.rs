@@ -97,10 +97,13 @@ impl AsRef<str> for ExceptionResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The user's email address.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
     /// <ul>
@@ -110,24 +113,32 @@ pub struct User {
     /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
     /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::UserRole>,
     /// <p>The type of identity authentication used by the user.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    #[doc(hidden)]
     pub active: bool,
     /// <p>The principal ID of the user.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The custom permissions profile associated with this user.</p>
+    #[doc(hidden)]
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
     /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
     /// <p>The URL of the external login provider.</p>
+    #[doc(hidden)]
     pub external_login_federation_provider_url: std::option::Option<std::string::String>,
     /// <p>The identity ID for the user in the external login provider.</p>
+    #[doc(hidden)]
     pub external_login_id: std::option::Option<std::string::String>,
 }
 impl User {
@@ -547,8 +558,10 @@ pub struct ResourcePermission {
     /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
     /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
     /// <p>The IAM action to grant or revoke permissions on.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourcePermission {
@@ -644,10 +657,13 @@ impl ResourcePermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeAlias {
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The display name of the theme alias.</p>
+    #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the theme alias.</p>
+    #[doc(hidden)]
     pub theme_version_number: std::option::Option<i64>,
 }
 impl ThemeAlias {
@@ -819,10 +835,13 @@ impl AsRef<str> for ResourceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
+    #[doc(hidden)]
     pub data_color_palette: std::option::Option<crate::model::DataColorPalette>,
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
+    #[doc(hidden)]
     pub ui_color_palette: std::option::Option<crate::model::UiColorPalette>,
     /// <p>Display options related to sheets.</p>
+    #[doc(hidden)]
     pub sheet: std::option::Option<crate::model::SheetStyle>,
 }
 impl ThemeConfiguration {
@@ -917,8 +936,10 @@ impl ThemeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SheetStyle {
     /// <p>The display options for tiles.</p>
+    #[doc(hidden)]
     pub tile: std::option::Option<crate::model::TileStyle>,
     /// <p>The layout options for tiles.</p>
+    #[doc(hidden)]
     pub tile_layout: std::option::Option<crate::model::TileLayoutStyle>,
 }
 impl SheetStyle {
@@ -993,8 +1014,10 @@ impl SheetStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TileLayoutStyle {
     /// <p>The gutter settings that apply between tiles. </p>
+    #[doc(hidden)]
     pub gutter: std::option::Option<crate::model::GutterStyle>,
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
+    #[doc(hidden)]
     pub margin: std::option::Option<crate::model::MarginStyle>,
 }
 impl TileLayoutStyle {
@@ -1066,6 +1089,7 @@ impl TileLayoutStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
+    #[doc(hidden)]
     pub show: std::option::Option<bool>,
 }
 impl MarginStyle {
@@ -1118,6 +1142,7 @@ impl MarginStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    #[doc(hidden)]
     pub show: std::option::Option<bool>,
 }
 impl GutterStyle {
@@ -1170,6 +1195,7 @@ impl GutterStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TileStyle {
     /// <p>The border around a tile.</p>
+    #[doc(hidden)]
     pub border: std::option::Option<crate::model::BorderStyle>,
 }
 impl TileStyle {
@@ -1224,6 +1250,7 @@ impl TileStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
+    #[doc(hidden)]
     pub show: std::option::Option<bool>,
 }
 impl BorderStyle {
@@ -1276,36 +1303,52 @@ impl BorderStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UiColorPalette {
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+    #[doc(hidden)]
     pub primary_foreground: std::option::Option<std::string::String>,
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
+    #[doc(hidden)]
     pub primary_background: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
+    #[doc(hidden)]
     pub secondary_foreground: std::option::Option<std::string::String>,
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
+    #[doc(hidden)]
     pub secondary_background: std::option::Option<std::string::String>,
     /// <p>This color is that applies to selected states and buttons.</p>
+    #[doc(hidden)]
     pub accent: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
+    #[doc(hidden)]
     pub accent_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to error messages.</p>
+    #[doc(hidden)]
     pub danger: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
+    #[doc(hidden)]
     pub danger_foreground: std::option::Option<std::string::String>,
     /// <p>This color that applies to warning and informational messages.</p>
+    #[doc(hidden)]
     pub warning: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
+    #[doc(hidden)]
     pub warning_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
+    #[doc(hidden)]
     pub success: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
+    #[doc(hidden)]
     pub success_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
+    #[doc(hidden)]
     pub dimension: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
+    #[doc(hidden)]
     pub dimension_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
+    #[doc(hidden)]
     pub measure: std::option::Option<std::string::String>,
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
+    #[doc(hidden)]
     pub measure_foreground: std::option::Option<std::string::String>,
 }
 impl UiColorPalette {
@@ -1645,10 +1688,13 @@ impl UiColorPalette {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
+    #[doc(hidden)]
     pub colors: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
+    #[doc(hidden)]
     pub min_max_gradient: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
+    #[doc(hidden)]
     pub empty_fill_color: std::option::Option<std::string::String>,
 }
 impl DataColorPalette {
@@ -1758,10 +1804,13 @@ impl DataColorPalette {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateAlias {
     /// <p>The display name of the template alias.</p>
+    #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version number of the template alias.</p>
+    #[doc(hidden)]
     pub template_version_number: std::option::Option<i64>,
 }
 impl TemplateAlias {
@@ -1850,8 +1899,10 @@ impl TemplateAlias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateSourceEntity {
     /// <p>The source analysis, if it is based on an analysis.</p>
+    #[doc(hidden)]
     pub source_analysis: std::option::Option<crate::model::TemplateSourceAnalysis>,
     /// <p>The source template, if it is based on an template.</p>
+    #[doc(hidden)]
     pub source_template: std::option::Option<crate::model::TemplateSourceTemplate>,
 }
 impl TemplateSourceEntity {
@@ -1929,6 +1980,7 @@ impl TemplateSourceEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl TemplateSourceTemplate {
@@ -1981,8 +2033,10 @@ impl TemplateSourceTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
+    #[doc(hidden)]
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
 }
 impl TemplateSourceAnalysis {
@@ -2064,8 +2118,10 @@ impl TemplateSourceAnalysis {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetReference {
     /// <p>Dataset placeholder.</p>
+    #[doc(hidden)]
     pub data_set_placeholder: std::option::Option<std::string::String>,
     /// <p>Dataset Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
 }
 impl DataSetReference {
@@ -2199,12 +2255,16 @@ impl AsRef<str> for AssignmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The Amazon Resource Name (ARN) for the group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The group description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The principal ID of the group.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl Group {
@@ -2310,6 +2370,7 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
+    #[doc(hidden)]
     pub disable_ssl: bool,
 }
 impl SslProperties {
@@ -2364,6 +2425,7 @@ impl SslProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
+    #[doc(hidden)]
     pub vpc_connection_arn: std::option::Option<std::string::String>,
 }
 impl VpcConnectionProperties {
@@ -2421,8 +2483,10 @@ impl VpcConnectionProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
+    #[doc(hidden)]
     pub credential_pair: std::option::Option<crate::model::CredentialPair>,
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
+    #[doc(hidden)]
     pub copy_source_arn: std::option::Option<std::string::String>,
 }
 impl DataSourceCredentials {
@@ -2500,10 +2564,13 @@ impl DataSourceCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialPair {
     /// <p>User name.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>Password.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
+    #[doc(hidden)]
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
 }
@@ -3000,8 +3067,10 @@ impl DataSourceParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The port for the Exasol data source.</p>
+    #[doc(hidden)]
     pub port: i32,
 }
 impl ExasolParameters {
@@ -3073,6 +3142,7 @@ impl ExasolParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl AmazonOpenSearchParameters {
@@ -3127,8 +3197,10 @@ impl AmazonOpenSearchParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TwitterParameters {
     /// <p>Twitter query string.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>Maximum number of rows to query Twitter.</p>
+    #[doc(hidden)]
     pub max_rows: i32,
 }
 impl TwitterParameters {
@@ -3200,10 +3272,13 @@ impl TwitterParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TeradataParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl TeradataParameters {
@@ -3292,10 +3367,13 @@ impl TeradataParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlServerParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl SqlServerParameters {
@@ -3384,8 +3462,10 @@ impl SqlServerParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
 }
 impl SparkParameters {
@@ -3457,10 +3537,13 @@ impl SparkParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>Warehouse.</p>
+    #[doc(hidden)]
     pub warehouse: std::option::Option<std::string::String>,
 }
 impl SnowflakeParameters {
@@ -3549,6 +3632,7 @@ impl SnowflakeParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
+    #[doc(hidden)]
     pub site_base_url: std::option::Option<std::string::String>,
 }
 impl ServiceNowParameters {
@@ -3606,6 +3690,7 @@ impl ServiceNowParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
+    #[doc(hidden)]
     pub manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
 }
 impl S3Parameters {
@@ -3665,8 +3750,10 @@ impl S3Parameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManifestFileLocation {
     /// <p>Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Amazon S3 key that identifies an object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl ManifestFileLocation {
@@ -3738,12 +3825,16 @@ impl ManifestFileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RedshiftParameters {
@@ -3849,8 +3940,10 @@ impl RedshiftParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsParameters {
     /// <p>Instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl RdsParameters {
@@ -3922,10 +4015,13 @@ impl RdsParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrestoParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Catalog.</p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
 }
 impl PrestoParameters {
@@ -4014,10 +4110,13 @@ impl PrestoParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostgreSqlParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl PostgreSqlParameters {
@@ -4106,10 +4205,13 @@ impl PostgreSqlParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OracleParameters {
     /// <p>An Oracle host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl OracleParameters {
@@ -4198,10 +4300,13 @@ impl OracleParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MySqlParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl MySqlParameters {
@@ -4290,10 +4395,13 @@ impl MySqlParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MariaDbParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl MariaDbParameters {
@@ -4382,6 +4490,7 @@ impl MariaDbParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
+    #[doc(hidden)]
     pub site_base_url: std::option::Option<std::string::String>,
 }
 impl JiraParameters {
@@ -4439,6 +4548,7 @@ impl JiraParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
+    #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
 }
 impl AwsIotAnalyticsParameters {
@@ -4496,10 +4606,13 @@ impl AwsIotAnalyticsParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl AuroraPostgreSqlParameters {
@@ -4588,10 +4701,13 @@ impl AuroraPostgreSqlParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuroraParameters {
     /// <p>Host.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Port.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl AuroraParameters {
@@ -4680,6 +4796,7 @@ impl AuroraParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl AthenaParameters {
@@ -4734,6 +4851,7 @@ impl AthenaParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonElasticsearchParameters {
     /// <p>The OpenSearch domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl AmazonElasticsearchParameters {
@@ -4788,8 +4906,10 @@ impl AmazonElasticsearchParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetUsageConfiguration {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
+    #[doc(hidden)]
     pub disable_use_as_direct_query_source: bool,
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    #[doc(hidden)]
     pub disable_use_as_imported_source: bool,
 }
 impl DataSetUsageConfiguration {
@@ -4877,8 +4997,10 @@ impl DataSetUsageConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnLevelPermissionRule {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of column names.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnLevelPermissionRule {
@@ -4968,8 +5090,10 @@ impl ColumnLevelPermissionRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
+    #[doc(hidden)]
     pub tag_rules: std::option::Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
 }
 impl RowLevelPermissionTagConfiguration {
@@ -5051,12 +5175,16 @@ impl RowLevelPermissionTagConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowLevelPermissionTagRule {
     /// <p>The unique key for a tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The column name that a tag key is assigned to.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
+    #[doc(hidden)]
     pub tag_multi_value_delimiter: std::option::Option<std::string::String>,
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
+    #[doc(hidden)]
     pub match_all_value: std::option::Option<std::string::String>,
 }
 impl RowLevelPermissionTagRule {
@@ -5224,15 +5352,20 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowLevelPermissionDataSet {
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
+    #[doc(hidden)]
     pub permission_policy: std::option::Option<crate::model::RowLevelPermissionPolicy>,
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
+    #[doc(hidden)]
     pub format_version: std::option::Option<crate::model::RowLevelPermissionFormatVersion>,
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl RowLevelPermissionDataSet {
@@ -5482,8 +5615,10 @@ impl AsRef<str> for RowLevelPermissionPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldFolder {
     /// <p>The description for a field folder.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FieldFolder {
@@ -5564,6 +5699,7 @@ impl FieldFolder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
+    #[doc(hidden)]
     pub geo_spatial_column_group: std::option::Option<crate::model::GeoSpatialColumnGroup>,
 }
 impl ColumnGroup {
@@ -5627,10 +5763,13 @@ impl ColumnGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Country code.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<crate::model::GeoSpatialCountryCode>,
     /// <p>Columns in this hierarchy.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GeoSpatialColumnGroup {
@@ -5837,10 +5976,13 @@ impl AsRef<str> for DataSetImportMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>Transform operations that act on this logical table.</p>
+    #[doc(hidden)]
     pub data_transforms: std::option::Option<std::vec::Vec<crate::model::TransformOperation>>,
     /// <p>Source of this logical table.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::LogicalTableSource>,
 }
 impl LogicalTable {
@@ -5942,10 +6084,13 @@ impl LogicalTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogicalTableSource {
     /// <p>Specifies the result of a join of two logical tables.</p>
+    #[doc(hidden)]
     pub join_instruction: std::option::Option<crate::model::JoinInstruction>,
     /// <p>Physical table ID.</p>
+    #[doc(hidden)]
     pub physical_table_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+    #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
 }
 impl LogicalTableSource {
@@ -6040,16 +6185,22 @@ impl LogicalTableSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
+    #[doc(hidden)]
     pub left_operand: std::option::Option<std::string::String>,
     /// <p>The operand on the right side of a join.</p>
+    #[doc(hidden)]
     pub right_operand: std::option::Option<std::string::String>,
     /// <p>Join key properties of the left operand.</p>
+    #[doc(hidden)]
     pub left_join_key_properties: std::option::Option<crate::model::JoinKeyProperties>,
     /// <p>Join key properties of the right operand.</p>
+    #[doc(hidden)]
     pub right_join_key_properties: std::option::Option<crate::model::JoinKeyProperties>,
     /// <p>The type of join that it is.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JoinType>,
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
+    #[doc(hidden)]
     pub on_clause: std::option::Option<std::string::String>,
 }
 impl JoinInstruction {
@@ -6265,6 +6416,7 @@ impl AsRef<str> for JoinType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+    #[doc(hidden)]
     pub unique_key: std::option::Option<bool>,
 }
 impl JoinKeyProperties {
@@ -6459,8 +6611,10 @@ impl TransformOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The column tags to remove from this column.</p>
+    #[doc(hidden)]
     pub tag_names: std::option::Option<std::vec::Vec<crate::model::ColumnTagName>>,
 }
 impl UntagColumnOperation {
@@ -6596,10 +6750,12 @@ impl AsRef<str> for ColumnTagName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ColumnTag>>,
 }
 impl TagColumnOperation {
@@ -6686,8 +6842,10 @@ impl TagColumnOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnTag {
     /// <p>A geospatial role for a column.</p>
+    #[doc(hidden)]
     pub column_geographic_role: std::option::Option<crate::model::GeoSpatialDataRole>,
     /// <p>A description for a column.</p>
+    #[doc(hidden)]
     pub column_description: std::option::Option<crate::model::ColumnDescription>,
 }
 impl ColumnTag {
@@ -6765,6 +6923,7 @@ impl ColumnTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl ColumnDescription {
@@ -6900,10 +7059,13 @@ impl AsRef<str> for GeoSpatialDataRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CastColumnTypeOperation {
     /// <p>Column name.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>New column data type.</p>
+    #[doc(hidden)]
     pub new_column_type: std::option::Option<crate::model::ColumnDataType>,
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl CastColumnTypeOperation {
@@ -7058,8 +7220,10 @@ impl AsRef<str> for ColumnDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenameColumnOperation {
     /// <p>The name of the column to be renamed.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The new name for the column.</p>
+    #[doc(hidden)]
     pub new_column_name: std::option::Option<std::string::String>,
 }
 impl RenameColumnOperation {
@@ -7134,6 +7298,7 @@ impl RenameColumnOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::CalculatedColumn>>,
 }
 impl CreateColumnsOperation {
@@ -7197,10 +7362,13 @@ impl CreateColumnsOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    #[doc(hidden)]
     pub column_id: std::option::Option<std::string::String>,
     /// <p>An expression that defines the calculated column.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl CalculatedColumn {
@@ -7289,6 +7457,7 @@ impl CalculatedColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
+    #[doc(hidden)]
     pub condition_expression: std::option::Option<std::string::String>,
 }
 impl FilterOperation {
@@ -7346,6 +7515,7 @@ impl FilterOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectOperation {
     /// <p>Projected columns.</p>
+    #[doc(hidden)]
     pub projected_columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ProjectOperation {
@@ -7477,12 +7647,15 @@ impl PhysicalTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Source {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>Information about the format for the S3 source file or files.</p>
+    #[doc(hidden)]
     pub upload_settings: std::option::Option<crate::model::UploadSettings>,
     /// <p>A physical table type for an S3 data source.</p> <note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
+    #[doc(hidden)]
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
 }
 impl S3Source {
@@ -7592,8 +7765,10 @@ impl S3Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the column.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputColumnDataType>,
 }
 impl InputColumn {
@@ -7745,14 +7920,19 @@ impl AsRef<str> for InputColumnDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadSettings {
     /// <p>File format.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::FileFormat>,
     /// <p>A row number to start reading data from.</p>
+    #[doc(hidden)]
     pub start_from_row: std::option::Option<i32>,
     /// <p>Whether the file has a header row, or the files each have a header row.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<bool>,
     /// <p>Text qualifier.</p>
+    #[doc(hidden)]
     pub text_qualifier: std::option::Option<crate::model::TextQualifier>,
     /// <p>The delimiter between values in the file.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
 }
 impl UploadSettings {
@@ -8004,12 +8184,16 @@ impl AsRef<str> for FileFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>A display name for the SQL query result.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The SQL query.</p>
+    #[doc(hidden)]
     pub sql_query: std::option::Option<std::string::String>,
     /// <p>The column schema from the SQL query result set.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
 }
 impl CustomSql {
@@ -8127,14 +8311,19 @@ impl CustomSql {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelationalTable {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>The catalog associated with a table.</p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>The schema name. This name applies to certain relational database engines.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The name of the relational table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The column schema of the table.</p>
+    #[doc(hidden)]
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
 }
 impl RelationalTable {
@@ -8269,6 +8458,7 @@ impl RelationalTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkSharingConfiguration {
     /// <p>A structure that contains the permissions of a shareable link.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
 impl LinkSharingConfiguration {
@@ -8333,10 +8523,13 @@ impl LinkSharingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
+    #[doc(hidden)]
     pub ad_hoc_filtering_option: std::option::Option<crate::model::AdHocFilteringOption>,
     /// <p>Export to .csv option.</p>
+    #[doc(hidden)]
     pub export_to_csv_option: std::option::Option<crate::model::ExportToCsvOption>,
     /// <p>Sheet controls option.</p>
+    #[doc(hidden)]
     pub sheet_controls_option: std::option::Option<crate::model::SheetControlsOption>,
 }
 impl DashboardPublishOptions {
@@ -8439,6 +8632,7 @@ impl DashboardPublishOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SheetControlsOption {
     /// <p>Visibility state.</p>
+    #[doc(hidden)]
     pub visibility_state: std::option::Option<crate::model::DashboardUiState>,
 }
 impl SheetControlsOption {
@@ -8551,6 +8745,7 @@ impl AsRef<str> for DashboardUiState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportToCsvOption {
     /// <p>Availability status.</p>
+    #[doc(hidden)]
     pub availability_status: std::option::Option<crate::model::DashboardBehavior>,
 }
 impl ExportToCsvOption {
@@ -8663,6 +8858,7 @@ impl AsRef<str> for DashboardBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdHocFilteringOption {
     /// <p>Availability status.</p>
+    #[doc(hidden)]
     pub availability_status: std::option::Option<crate::model::DashboardBehavior>,
 }
 impl AdHocFilteringOption {
@@ -8720,12 +8916,16 @@ impl AdHocFilteringOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameters {
     /// <p>The parameters that have a data type of string.</p>
+    #[doc(hidden)]
     pub string_parameters: std::option::Option<std::vec::Vec<crate::model::StringParameter>>,
     /// <p>The parameters that have a data type of integer.</p>
+    #[doc(hidden)]
     pub integer_parameters: std::option::Option<std::vec::Vec<crate::model::IntegerParameter>>,
     /// <p>The parameters that have a data type of decimal.</p>
+    #[doc(hidden)]
     pub decimal_parameters: std::option::Option<std::vec::Vec<crate::model::DecimalParameter>>,
     /// <p>The parameters that have a data type of date-time.</p>
+    #[doc(hidden)]
     pub date_time_parameters: std::option::Option<std::vec::Vec<crate::model::DateTimeParameter>>,
 }
 impl Parameters {
@@ -8871,8 +9071,10 @@ impl Parameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values for the date-time parameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
 }
 impl DateTimeParameter {
@@ -8953,8 +9155,10 @@ impl DateTimeParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values for the decimal parameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl DecimalParameter {
@@ -9032,8 +9236,10 @@ impl DecimalParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegerParameter {
     /// <p>The name of the integer parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values for the integer parameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<i64>>,
 }
 impl IntegerParameter {
@@ -9111,8 +9317,10 @@ impl IntegerParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StringParameter {
     /// <p>A display name for a string parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values of a string parameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StringParameter {
@@ -9193,6 +9401,7 @@ impl StringParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSourceEntity {
     /// <p>Source template.</p>
+    #[doc(hidden)]
     pub source_template: std::option::Option<crate::model::DashboardSourceTemplate>,
 }
 impl DashboardSourceEntity {
@@ -9250,8 +9459,10 @@ impl DashboardSourceEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSourceTemplate {
     /// <p>Dataset references.</p>
+    #[doc(hidden)]
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DashboardSourceTemplate {
@@ -9333,6 +9544,7 @@ impl DashboardSourceTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
+    #[doc(hidden)]
     pub source_template: std::option::Option<crate::model::AnalysisSourceTemplate>,
 }
 impl AnalysisSourceEntity {
@@ -9390,8 +9602,10 @@ impl AnalysisSourceEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSourceTemplate {
     /// <p>The dataset references of the source template of an analysis.</p>
+    #[doc(hidden)]
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AnalysisSourceTemplate {
@@ -9473,8 +9687,10 @@ impl AnalysisSourceTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
+    #[doc(hidden)]
     pub default_theme: std::option::Option<std::string::String>,
     /// <p>The default email customization template.</p>
+    #[doc(hidden)]
     pub default_email_customization_template: std::option::Option<std::string::String>,
 }
 impl AccountCustomization {
@@ -9558,8 +9774,10 @@ impl AccountCustomization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -9631,10 +9849,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::GroupFilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::GroupFilterAttribute>,
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl GroupSearchFilter {
@@ -9831,16 +10052,22 @@ impl AsRef<str> for GroupFilterOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderSummary {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The display name of the folder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of folder.</p>
+    #[doc(hidden)]
     pub folder_type: std::option::Option<crate::model::FolderType>,
     /// <p>The time that the folder was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FolderSummary {
@@ -10040,10 +10267,13 @@ impl AsRef<str> for FolderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderSearchFilter {
     /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FolderFilterAttribute>,
     /// <p>The value of the named item (in this example, <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FolderSearchFilter {
@@ -10240,18 +10470,25 @@ impl AsRef<str> for FilterOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Dashboard ID.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>A display name for the dashboard.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this dashboard was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this dashboard was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Published version number.</p>
+    #[doc(hidden)]
     pub published_version_number: std::option::Option<i64>,
     /// <p>The last time that this dashboard was published.</p>
+    #[doc(hidden)]
     pub last_published_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashboardSummary {
@@ -10417,10 +10654,13 @@ impl DashboardSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::DashboardFilterAttribute>,
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DashboardSearchFilter {
@@ -10566,16 +10806,22 @@ impl AsRef<str> for DashboardFilterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSummary {
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The last known status for the analysis.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The time that the analysis was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the analysis was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AnalysisSummary {
@@ -10724,10 +10970,13 @@ impl AnalysisSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_USER"</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AnalysisFilterAttribute>,
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AnalysisSearchFilter {
@@ -10873,14 +11122,19 @@ impl AsRef<str> for AnalysisFilterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeVersionSummary {
     /// <p>The version number of the theme version.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the theme version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the theme version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that this theme version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the theme version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
 impl ThemeVersionSummary {
@@ -11009,16 +11263,22 @@ impl ThemeVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>the display name for the theme.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The latest version number for the theme. </p>
+    #[doc(hidden)]
     pub latest_version_number: std::option::Option<i64>,
     /// <p>The date and time that this theme was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that this theme was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThemeSummary {
@@ -11223,14 +11483,19 @@ impl AsRef<str> for ThemeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version number of the template version.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The time that this template version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the template version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The description of the template version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl TemplateVersionSummary {
@@ -11359,16 +11624,22 @@ impl TemplateVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure containing a list of version numbers for the template summary.</p>
+    #[doc(hidden)]
     pub latest_version_number: std::option::Option<i64>,
     /// <p>The last time that this template was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this template was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TemplateSummary {
@@ -11514,16 +11785,22 @@ impl TemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceInfoV2 {
     /// <p>The name of the error.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The namespace ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The namespace Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub capacity_region: std::option::Option<std::string::String>,
     /// <p>The creation status of a namespace that is not yet completely created.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::NamespaceStatus>,
     /// <p>The identity store used for the namespace.</p>
+    #[doc(hidden)]
     pub identity_store: std::option::Option<crate::model::IdentityStore>,
     /// <p>An error that occurred when the namespace was created.</p>
+    #[doc(hidden)]
     pub namespace_error: std::option::Option<crate::model::NamespaceError>,
 }
 impl NamespaceInfoV2 {
@@ -11675,8 +11952,10 @@ impl NamespaceInfoV2 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceError {
     /// <p>The error type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NamespaceErrorType>,
     /// <p>The message for the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NamespaceError {
@@ -11930,26 +12209,37 @@ impl AsRef<str> for NamespaceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Ingestion ID.</p>
+    #[doc(hidden)]
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>Ingestion status.</p>
+    #[doc(hidden)]
     pub ingestion_status: std::option::Option<crate::model::IngestionStatus>,
     /// <p>Error information for this ingestion.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p>Information about rows for a data set SPICE ingestion.</p>
+    #[doc(hidden)]
     pub row_info: std::option::Option<crate::model::RowInfo>,
     /// <p>Information about a queued dataset SPICE ingestion.</p>
+    #[doc(hidden)]
     pub queue_info: std::option::Option<crate::model::QueueInfo>,
     /// <p>The time that this ingestion started.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this ingestion took, measured in seconds.</p>
+    #[doc(hidden)]
     pub ingestion_time_in_seconds: std::option::Option<i64>,
     /// <p>The size of the data ingested, in bytes.</p>
+    #[doc(hidden)]
     pub ingestion_size_in_bytes: std::option::Option<i64>,
     /// <p>Event source for this ingestion.</p>
+    #[doc(hidden)]
     pub request_source: std::option::Option<crate::model::IngestionRequestSource>,
     /// <p>Type of this ingestion.</p>
+    #[doc(hidden)]
     pub request_type: std::option::Option<crate::model::IngestionRequestType>,
 }
 impl Ingestion {
@@ -12315,8 +12605,10 @@ impl AsRef<str> for IngestionRequestSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
+    #[doc(hidden)]
     pub waiting_on_ingestion: std::option::Option<std::string::String>,
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
+    #[doc(hidden)]
     pub queued_ingestion: std::option::Option<std::string::String>,
 }
 impl QueueInfo {
@@ -12394,10 +12686,13 @@ impl QueueInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowInfo {
     /// <p>The number of rows that were ingested.</p>
+    #[doc(hidden)]
     pub rows_ingested: std::option::Option<i64>,
     /// <p>The number of rows that were not ingested.</p>
+    #[doc(hidden)]
     pub rows_dropped: std::option::Option<i64>,
     /// <p>The total number of rows in the dataset.</p>
+    #[doc(hidden)]
     pub total_rows_in_dataset: std::option::Option<i64>,
 }
 impl RowInfo {
@@ -12486,8 +12781,10 @@ impl RowInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInfo {
     /// <p>Error type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::IngestionErrorType>,
     /// <p>Error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorInfo {
@@ -12916,8 +13213,10 @@ impl AsRef<str> for IngestionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveIamPolicyAssignment {
     /// <p>A name for the IAM policy assignment.</p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl ActiveIamPolicyAssignment {
@@ -12992,8 +13291,10 @@ impl ActiveIamPolicyAssignment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignmentSummary {
     /// <p>Assignment name.</p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>Assignment status.</p>
+    #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
 }
 impl IamPolicyAssignmentSummary {
@@ -13071,8 +13372,10 @@ impl IamPolicyAssignmentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the group member (user).</p>
+    #[doc(hidden)]
     pub member_name: std::option::Option<std::string::String>,
 }
 impl GroupMember {
@@ -13144,8 +13447,10 @@ impl GroupMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberIdArnPair {
     /// <p>The ID of the member.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
 }
 impl MemberIdArnPair {
@@ -13217,29 +13522,41 @@ impl MemberIdArnPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The time that this data source was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this data source was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    #[doc(hidden)]
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
+    #[doc(hidden)]
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    #[doc(hidden)]
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    #[doc(hidden)]
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Error information from the last update or the creation of the data source.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::DataSourceErrorInfo>,
 }
 impl DataSource {
@@ -13534,8 +13851,10 @@ impl DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceErrorInfo {
     /// <p>Error type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceErrorInfoType>,
     /// <p>Error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DataSourceErrorInfo {
@@ -13871,22 +14190,31 @@ impl AsRef<str> for DataSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A display name for the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this dataset was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
+    #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
     /// <p>The row-level security configuration for the dataset.</p>
+    #[doc(hidden)]
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
     /// <p>Whether or not the row level permission tags are applied.</p>
+    #[doc(hidden)]
     pub row_level_permission_tag_configuration_applied: bool,
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
+    #[doc(hidden)]
     pub column_level_permission_rules_applied: bool,
 }
 impl DataSetSummary {
@@ -14114,16 +14442,22 @@ impl DataSetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time that this dashboard version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Version number.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Source entity ARN.</p>
+    #[doc(hidden)]
     pub source_entity_arn: std::option::Option<std::string::String>,
     /// <p>Description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl DashboardVersionSummary {
@@ -14333,6 +14667,7 @@ impl AsRef<str> for EmbeddingIdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
+    #[doc(hidden)]
     pub dashboard: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
     /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
@@ -14341,10 +14676,12 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
     /// </ul>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+    #[doc(hidden)]
     pub quick_sight_console:
         std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
     /// <p>The configuration details for embedding the Q search bar.</p>
     /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    #[doc(hidden)]
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
@@ -14489,6 +14826,7 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
 pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
     /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+    #[doc(hidden)]
     pub initial_topic_id: std::option::Option<std::string::String>,
 }
 impl RegisteredUserQSearchBarEmbeddingConfiguration {
@@ -14559,6 +14897,7 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub initial_path: std::option::Option<std::string::String>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
@@ -14643,6 +14982,7 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
 pub struct RegisteredUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
+    #[doc(hidden)]
     pub initial_dashboard_id: std::option::Option<std::string::String>,
 }
 impl RegisteredUserDashboardEmbeddingConfiguration {
@@ -14703,6 +15043,7 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
+    #[doc(hidden)]
     pub dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
@@ -14767,6 +15108,7 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
 pub struct AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    #[doc(hidden)]
     pub initial_dashboard_id: std::option::Option<std::string::String>,
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
@@ -14827,8 +15169,10 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionTag {
     /// <p>The key for the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value that you want to assign the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SessionTag {
@@ -14900,18 +15244,25 @@ impl SessionTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Theme {
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name that the user gives to the theme.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier that the user gives to the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>A version of a theme.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::ThemeVersion>,
     /// <p>The date and time that the theme was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the theme was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ThemeType>,
 }
 impl Theme {
@@ -15077,20 +15428,28 @@ impl Theme {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeVersion {
     /// <p>The version number of the theme.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the theme.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    #[doc(hidden)]
     pub base_theme_id: std::option::Option<std::string::String>,
     /// <p>The date and time that this theme version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The theme configuration, which contains all the theme display properties.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ThemeConfiguration>,
     /// <p>Errors associated with the theme.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ThemeError>>,
     /// <p>The status of the theme version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
 impl ThemeVersion {
@@ -15285,8 +15644,10 @@ impl ThemeVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeError {
     /// <p>The type of error.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ThemeErrorType>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThemeError {
@@ -15413,16 +15774,22 @@ impl AsRef<str> for ThemeErrorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Template {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The display name of the template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure describing the versions of the template.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::TemplateVersion>,
     /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>Time when this was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time when this was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Template {
@@ -15571,23 +15938,32 @@ impl Template {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateVersion {
     /// <p>The time that this template version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Errors associated with this template version.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
     /// <p>The version number of the template version.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
+    #[doc(hidden)]
     pub data_set_configurations:
         std::option::Option<std::vec::Vec<crate::model::DataSetConfiguration>>,
     /// <p>The description of the template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
+    #[doc(hidden)]
     pub source_entity_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the theme associated with this version of the template.</p>
+    #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    #[doc(hidden)]
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
 }
 impl TemplateVersion {
@@ -15820,8 +16196,10 @@ impl TemplateVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
+    #[doc(hidden)]
     pub sheet_id: std::option::Option<std::string::String>,
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Sheet {
@@ -15893,10 +16271,13 @@ impl Sheet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetConfiguration {
     /// <p>Placeholder.</p>
+    #[doc(hidden)]
     pub placeholder: std::option::Option<std::string::String>,
     /// <p>Dataset schema.</p>
+    #[doc(hidden)]
     pub data_set_schema: std::option::Option<crate::model::DataSetSchema>,
     /// <p>A structure containing the list of column group schemas.</p>
+    #[doc(hidden)]
     pub column_group_schema_list:
         std::option::Option<std::vec::Vec<crate::model::ColumnGroupSchema>>,
 }
@@ -16001,8 +16382,10 @@ impl DataSetConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnGroupSchema {
     /// <p>The name of the column group schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure containing the list of schemas for column group columns.</p>
+    #[doc(hidden)]
     pub column_group_column_schema_list:
         std::option::Option<std::vec::Vec<crate::model::ColumnGroupColumnSchema>>,
 }
@@ -16093,6 +16476,7 @@ impl ColumnGroupSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnGroupColumnSchema {
     /// <p>The name of the column group's column schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ColumnGroupColumnSchema {
@@ -16145,6 +16529,7 @@ impl ColumnGroupColumnSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
+    #[doc(hidden)]
     pub column_schema_list: std::option::Option<std::vec::Vec<crate::model::ColumnSchema>>,
 }
 impl DataSetSchema {
@@ -16209,10 +16594,13 @@ impl DataSetSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnSchema {
     /// <p>The name of the column schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the column schema.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The geographic role of the column schema.</p>
+    #[doc(hidden)]
     pub geographic_role: std::option::Option<std::string::String>,
 }
 impl ColumnSchema {
@@ -16304,8 +16692,10 @@ impl ColumnSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateError {
     /// <p>Type of error.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TemplateErrorType>,
     /// <p>Description of the error type.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TemplateError {
@@ -16448,18 +16838,24 @@ impl AsRef<str> for TemplateErrorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignment {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>Assignment ID.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Assignment name.</p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Identities.</p>
+    #[doc(hidden)]
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>Assignment status.</p>
+    #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
 }
 impl IamPolicyAssignment {
@@ -16632,18 +17028,25 @@ impl IamPolicyAssignment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Folder {
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A display name for the folder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of folder it is.</p>
+    #[doc(hidden)]
     pub folder_type: std::option::Option<crate::model::FolderType>,
     /// <p>An array of ancestor ARN strings for the folder.</p>
+    #[doc(hidden)]
     pub folder_path: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the folder was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Folder {
@@ -16818,44 +17221,60 @@ impl Folder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A display name for the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this dataset was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
+    #[doc(hidden)]
     pub physical_table_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PhysicalTable>,
     >,
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    #[doc(hidden)]
     pub logical_table_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::LogicalTable>,
     >,
     /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
+    #[doc(hidden)]
     pub output_columns: std::option::Option<std::vec::Vec<crate::model::OutputColumn>>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
+    #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
     /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
+    #[doc(hidden)]
     pub consumed_spice_capacity_in_bytes: i64,
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    #[doc(hidden)]
     pub column_groups: std::option::Option<std::vec::Vec<crate::model::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    #[doc(hidden)]
     pub field_folders: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FieldFolder>,
     >,
     /// <p>The row-level security configuration for the dataset.</p>
+    #[doc(hidden)]
     pub row_level_permission_data_set: std::option::Option<crate::model::RowLevelPermissionDataSet>,
     /// <p>The element you can use to define tags for row-level security.</p>
+    #[doc(hidden)]
     pub row_level_permission_tag_configuration:
         std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
+    #[doc(hidden)]
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    #[doc(hidden)]
     pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
 }
 impl DataSet {
@@ -17317,10 +17736,13 @@ impl DataSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputColumn {
     /// <p>A display name for the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for a column.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ColumnDataType>,
 }
 impl OutputColumn {
@@ -17412,18 +17834,25 @@ impl OutputColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dashboard {
     /// <p>Dashboard ID.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A display name for the dashboard.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::DashboardVersion>,
     /// <p>The time that this dataset was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was published.</p>
+    #[doc(hidden)]
     pub last_published_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Dashboard {
@@ -17592,24 +18021,34 @@ impl Dashboard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Errors associated with this dashboard version.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::DashboardError>>,
     /// <p>Version number for this version of the dashboard.</p>
+    #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source entity ARN.</p>
+    #[doc(hidden)]
     pub source_entity_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    #[doc(hidden)]
     pub data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
+    #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    #[doc(hidden)]
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
 }
 impl DashboardVersion {
@@ -17853,8 +18292,10 @@ impl DashboardVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardError {
     /// <p>Type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DashboardErrorType>,
     /// <p>Message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DashboardError {
@@ -18027,24 +18468,34 @@ impl AsRef<str> for DashboardErrorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Analysis {
     /// <p>The ID of the analysis.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the analysis.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Status associated with the analysis.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Errors associated with the analysis.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
     /// <p>The ARNs of the datasets of the analysis.</p>
+    #[doc(hidden)]
     pub data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the theme of the analysis.</p>
+    #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>The time that the analysis was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the analysis was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    #[doc(hidden)]
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
 }
 impl Analysis {
@@ -18288,8 +18739,10 @@ impl Analysis {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisError {
     /// <p>The type of the analysis error.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AnalysisErrorType>,
     /// <p>The message associated with the analysis error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AnalysisError {
@@ -18469,14 +18922,19 @@ impl AsRef<str> for AnalysisErrorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The edition of your Amazon QuickSight account.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::Edition>,
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    #[doc(hidden)]
     pub notification_email: std::option::Option<std::string::String>,
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<std::string::String>,
     /// <p>The status of your account subscription.</p>
+    #[doc(hidden)]
     pub account_subscription_status: std::option::Option<std::string::String>,
 }
 impl AccountInfo {
@@ -18673,14 +19131,19 @@ impl AsRef<str> for Edition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::Edition>,
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub default_namespace: std::option::Option<std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
+    #[doc(hidden)]
     pub notification_email: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    #[doc(hidden)]
     pub public_sharing_enabled: bool,
 }
 impl AccountSettings {
@@ -18923,8 +19386,10 @@ impl AsRef<str> for IngestionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderMember {
     /// <p>The ID of an asset in the folder.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The type of asset that it is.</p>
+    #[doc(hidden)]
     pub member_type: std::option::Option<crate::model::MemberType>,
 }
 impl FolderMember {
@@ -18999,12 +19464,16 @@ impl FolderMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignupResponse {
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+    #[doc(hidden)]
     pub iam_user: bool,
     /// <p>The user login name for your Amazon QuickSight account.</p>
+    #[doc(hidden)]
     pub user_login_name: std::option::Option<std::string::String>,
     /// <p>The name of your Amazon QuickSight account.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+    #[doc(hidden)]
     pub directory_type: std::option::Option<std::string::String>,
 }
 impl SignupResponse {

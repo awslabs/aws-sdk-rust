@@ -6,6 +6,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TimeToLiveStatus>,
 }
 impl TimeToLive {
@@ -117,6 +118,7 @@ pub struct PointInTimeRecovery {
     /// <p>The options are:</p>
     /// <p>• <code>ENABLED</code> </p>
     /// <p>• <code>DISABLED</code> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
 }
 impl PointInTimeRecovery {
@@ -243,8 +245,10 @@ pub struct EncryptionSpecification {
     /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
+    #[doc(hidden)]
     pub kms_key_identifier: std::option::Option<std::string::String>,
 }
 impl EncryptionSpecification {
@@ -397,10 +401,13 @@ pub struct CapacitySpecification {
     /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
+    #[doc(hidden)]
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
+    #[doc(hidden)]
     pub write_capacity_units: std::option::Option<i64>,
 }
 impl CapacitySpecification {
@@ -559,8 +566,10 @@ impl AsRef<str> for ThroughputMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnDefinition {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ColumnDefinition {
@@ -634,8 +643,10 @@ impl ColumnDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag. Tag keys are case sensitive. Each Amazon Keyspaces resource can only have up to one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -707,10 +718,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl TableSummary {
@@ -802,8 +816,10 @@ impl TableSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KeyspaceSummary {
@@ -878,6 +894,7 @@ impl KeyspaceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Comment {
     /// <p>An optional description of the table.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Comment {
@@ -932,8 +949,10 @@ impl Comment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRecoverySummary {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub earliest_restorable_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PointInTimeRecoverySummary {
@@ -1023,12 +1042,16 @@ pub struct CapacitySpecificationSummary {
     /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input. </p>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
+    #[doc(hidden)]
     pub read_capacity_units: std::option::Option<i64>,
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
+    #[doc(hidden)]
     pub write_capacity_units: std::option::Option<i64>,
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
+    #[doc(hidden)]
     pub last_update_to_pay_per_request_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CapacitySpecificationSummary {
@@ -1162,12 +1185,16 @@ impl CapacitySpecificationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaDefinition {
     /// <p>The regular columns of the table.</p>
+    #[doc(hidden)]
     pub all_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
     /// <p>The columns that are part of the partition key of the table .</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::PartitionKey>>,
     /// <p>The columns that are part of the clustering key of the table.</p>
+    #[doc(hidden)]
     pub clustering_keys: std::option::Option<std::vec::Vec<crate::model::ClusteringKey>>,
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
+    #[doc(hidden)]
     pub static_columns: std::option::Option<std::vec::Vec<crate::model::StaticColumn>>,
 }
 impl SchemaDefinition {
@@ -1309,6 +1336,7 @@ impl SchemaDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticColumn {
     /// <p>The name of the static column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StaticColumn {
@@ -1361,8 +1389,10 @@ impl StaticColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::SortOrder>,
 }
 impl ClusteringKey {
@@ -1489,6 +1519,7 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionKey {
     /// <p>The name(s) of the partition key column(s).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PartitionKey {

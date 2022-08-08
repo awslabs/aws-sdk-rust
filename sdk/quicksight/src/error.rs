@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -90,10 +92,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ResourceUnavailableException {
@@ -197,10 +202,13 @@ impl ResourceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -304,8 +312,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionNotMetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl PreconditionNotMetException {
@@ -389,8 +399,10 @@ impl PreconditionNotMetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
@@ -474,8 +486,10 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InternalFailureException {
@@ -559,8 +573,10 @@ impl InternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -644,8 +660,10 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedUserEditionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnsupportedUserEditionException {
@@ -729,10 +747,13 @@ impl UnsupportedUserEditionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource type for this request.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ResourceExistsException {
@@ -836,8 +857,10 @@ impl ResourceExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -921,10 +944,13 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Limit exceeded.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ExceptionResourceType>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -1029,8 +1055,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPricingPlanException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnsupportedPricingPlanException {
@@ -1114,8 +1142,10 @@ impl UnsupportedPricingPlanException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentUpdatingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ConcurrentUpdatingException {
@@ -1199,8 +1229,10 @@ impl ConcurrentUpdatingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
@@ -1284,8 +1316,10 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionLifetimeInMinutesInvalidException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SessionLifetimeInMinutesInvalidException {
@@ -1369,8 +1403,10 @@ impl SessionLifetimeInMinutesInvalidException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickSightUserNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl QuickSightUserNotFoundException {
@@ -1454,8 +1490,10 @@ impl QuickSightUserNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityTypeNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl IdentityTypeNotSupportedException {
@@ -1539,8 +1577,10 @@ impl IdentityTypeNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNotWhitelistedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DomainNotWhitelistedException {

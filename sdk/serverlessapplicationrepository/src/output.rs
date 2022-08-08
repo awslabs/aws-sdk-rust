@@ -4,39 +4,52 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    #[doc(hidden)]
     pub is_verified_author: bool,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub license_url: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    #[doc(hidden)]
     pub spdx_license_id: std::option::Option<std::string::String>,
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    #[doc(hidden)]
     pub verified_author_url: std::option::Option<std::string::String>,
     /// <p>Version information about the application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::Version>,
 }
 impl UpdateApplicationOutput {
@@ -376,6 +389,7 @@ impl UnshareApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
+    #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyOutput {
@@ -440,8 +454,10 @@ impl PutApplicationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsOutput {
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of version summaries for the application.</p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionSummary>>,
 }
 impl ListApplicationVersionsOutput {
@@ -522,8 +538,10 @@ impl ListApplicationVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>An array of application summaries.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -605,9 +623,11 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
+    #[doc(hidden)]
     pub dependencies:
         std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationDependenciesOutput {
@@ -691,21 +711,28 @@ impl ListApplicationDependenciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationTemplateOutput {
@@ -883,6 +910,7 @@ impl GetCloudFormationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
+    #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
 impl GetApplicationPolicyOutput {
@@ -947,39 +975,52 @@ impl GetApplicationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    #[doc(hidden)]
     pub is_verified_author: bool,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub license_url: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    #[doc(hidden)]
     pub spdx_license_id: std::option::Option<std::string::String>,
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    #[doc(hidden)]
     pub verified_author_url: std::option::Option<std::string::String>,
     /// <p>Version information about the application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::Version>,
 }
 impl GetApplicationOutput {
@@ -1319,21 +1360,28 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl CreateCloudFormationTemplateOutput {
@@ -1511,15 +1559,19 @@ impl CreateCloudFormationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationChangeSetOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
     /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The unique ID of the stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl CreateCloudFormationChangeSetOutput {
@@ -1643,10 +1695,13 @@ impl CreateCloudFormationChangeSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationVersionOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>An array of parameter types supported by the application.</p>
+    #[doc(hidden)]
     pub parameter_definitions:
         std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
@@ -1655,18 +1710,24 @@ pub struct CreateApplicationVersionOutput {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
+    #[doc(hidden)]
     pub required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
+    #[doc(hidden)]
     pub resources_supported: bool,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
+    #[doc(hidden)]
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    #[doc(hidden)]
     pub source_code_url: std::option::Option<std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl CreateApplicationVersionOutput {
@@ -1915,39 +1976,52 @@ impl CreateApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
+    #[doc(hidden)]
     pub is_verified_author: bool,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub license_url: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
+    #[doc(hidden)]
     pub spdx_license_id: std::option::Option<std::string::String>,
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
+    #[doc(hidden)]
     pub verified_author_url: std::option::Option<std::string::String>,
     /// <p>Version information about the application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::Version>,
 }
 impl CreateApplicationOutput {

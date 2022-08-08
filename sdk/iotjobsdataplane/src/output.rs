@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobExecutionOutput {
     /// <p>A JobExecutionState object.</p>
+    #[doc(hidden)]
     pub execution_state: std::option::Option<crate::model::JobExecutionState>,
     /// <p>The contents of the Job Documents.</p>
+    #[doc(hidden)]
     pub job_document: std::option::Option<std::string::String>,
 }
 impl UpdateJobExecutionOutput {
@@ -80,6 +82,7 @@ impl UpdateJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNextPendingJobExecutionOutput {
     /// <p>A JobExecution object.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::JobExecution>,
 }
 impl StartNextPendingJobExecutionOutput {
@@ -137,8 +140,10 @@ impl StartNextPendingJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPendingJobExecutionsOutput {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
+    #[doc(hidden)]
     pub in_progress_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
+    #[doc(hidden)]
     pub queued_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
 }
 impl GetPendingJobExecutionsOutput {
@@ -230,6 +235,7 @@ impl GetPendingJobExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobExecutionOutput {
     /// <p>Contains data about a job execution.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::JobExecution>,
 }
 impl DescribeJobExecutionOutput {

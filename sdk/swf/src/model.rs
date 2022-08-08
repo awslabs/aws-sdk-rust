@@ -7,10 +7,12 @@ pub struct WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl WorkflowType {
@@ -96,10 +98,12 @@ pub struct ActivityType {
     /// <p>The name of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique within a domain.</p>
     /// </note>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique with in a domain.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ActivityType {
@@ -243,8 +247,10 @@ impl AsRef<str> for ChildPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
     /// <p>The key of a tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of a tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceTag {
@@ -316,6 +322,7 @@ impl ResourceTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskList {
     /// <p>The name of the task list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TaskList {
@@ -424,44 +431,58 @@ impl TaskList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
+    #[doc(hidden)]
     pub decision_type: std::option::Option<crate::model::DecisionType>,
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub schedule_activity_task_decision_attributes:
         std::option::Option<crate::model::ScheduleActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub request_cancel_activity_task_decision_attributes:
         std::option::Option<crate::model::RequestCancelActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub complete_workflow_execution_decision_attributes:
         std::option::Option<crate::model::CompleteWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub fail_workflow_execution_decision_attributes:
         std::option::Option<crate::model::FailWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub cancel_workflow_execution_decision_attributes:
         std::option::Option<crate::model::CancelWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub continue_as_new_workflow_execution_decision_attributes:
         std::option::Option<crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub record_marker_decision_attributes:
         std::option::Option<crate::model::RecordMarkerDecisionAttributes>,
     /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub start_timer_decision_attributes:
         std::option::Option<crate::model::StartTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub cancel_timer_decision_attributes:
         std::option::Option<crate::model::CancelTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub signal_external_workflow_execution_decision_attributes:
         std::option::Option<crate::model::SignalExternalWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub request_cancel_external_workflow_execution_decision_attributes:
         std::option::Option<crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub start_child_workflow_execution_decision_attributes:
         std::option::Option<crate::model::StartChildWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.</p>
+    #[doc(hidden)]
     pub schedule_lambda_function_decision_attributes:
         std::option::Option<crate::model::ScheduleLambdaFunctionDecisionAttributes>,
 }
@@ -922,14 +943,19 @@ impl Decision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The optional input data to be supplied to the Lambda function.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
+    #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl ScheduleLambdaFunctionDecisionAttributes {
@@ -1069,31 +1095,39 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p> The type of the workflow execution to be started.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The input to be provided to the workflow execution.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> A task priority that, if set, specifies the priority for a decision task of this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p> If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -1104,10 +1138,13 @@ pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IAM role attached to the child workflow execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl StartChildWorkflowExecutionDecisionAttributes {
@@ -1433,10 +1470,13 @@ impl StartChildWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
@@ -1537,14 +1577,19 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
+    #[doc(hidden)]
     pub signal_name: std::option::Option<std::string::String>,
     /// <p> The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl SignalExternalWorkflowExecutionDecisionAttributes {
@@ -1676,6 +1721,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
 }
 impl CancelTimerDecisionAttributes {
@@ -1739,11 +1785,14 @@ impl CancelTimerDecisionAttributes {
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+    #[doc(hidden)]
     pub start_to_fire_timeout: std::option::Option<std::string::String>,
 }
 impl StartTimerDecisionAttributes {
@@ -1849,8 +1898,10 @@ impl StartTimerDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
+    #[doc(hidden)]
     pub marker_name: std::option::Option<std::string::String>,
     /// <p> The details of the marker.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl RecordMarkerDecisionAttributes {
@@ -1935,21 +1986,26 @@ impl RecordMarkerDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// <p>The input provided to the new workflow execution.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>If set, specifies the total duration for this workflow execution. This overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for the new workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -1960,12 +2016,16 @@ pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the workflow to start.</p>
+    #[doc(hidden)]
     pub workflow_type_version: std::option::Option<std::string::String>,
     /// <p>The IAM role to attach to the new (continued) execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl ContinueAsNewWorkflowExecutionDecisionAttributes {
@@ -2246,6 +2306,7 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelWorkflowExecutionDecisionAttributes {
     /// <p> Details of the cancellation.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl CancelWorkflowExecutionDecisionAttributes {
@@ -2308,8 +2369,10 @@ impl CancelWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailWorkflowExecutionDecisionAttributes {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p> Details of the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl FailWorkflowExecutionDecisionAttributes {
@@ -2389,6 +2452,7 @@ impl FailWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteWorkflowExecutionDecisionAttributes {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl CompleteWorkflowExecutionDecisionAttributes {
@@ -2451,6 +2515,7 @@ impl CompleteWorkflowExecutionDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
 }
 impl RequestCancelActivityTaskDecisionAttributes {
@@ -2518,39 +2583,49 @@ impl RequestCancelActivityTaskDecisionAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleActivityTaskDecisionAttributes {
     /// <p> The type of the activity task to schedule.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
     /// <p> The <code>activityId</code> of the activity task.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The input provided to the activity task.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The maximum duration for this activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub schedule_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the name of the task list in which to schedule the activity task. If not specified, the <code>defaultTaskList</code> registered with the activity type is used.</p> <note>
     /// <p>A task list for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> If set, specifies the priority with which the activity task is to be assigned to a worker. This overrides the defaultTaskPriority specified when registering the activity type using <code>RegisterActivityType</code>. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p> If set, specifies the maximum duration the activity task can wait to be assigned to a worker. This overrides the default schedule-to-start timeout specified when registering the activity type using <code>RegisterActivityType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-start timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-start timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub schedule_to_start_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the maximum duration a worker may take to process this activity task. This overrides the default start-to-close timeout specified when registering the activity type using <code>RegisterActivityType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A start-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or returns a result, it is ignored. This overrides the default heartbeat timeout specified when registering the activity type using <code>RegisterActivityType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub heartbeat_timeout: std::option::Option<std::string::String>,
 }
 impl ScheduleActivityTaskDecisionAttributes {
@@ -2988,172 +3063,229 @@ impl AsRef<str> for DecisionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the history event.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
+    #[doc(hidden)]
     pub event_id: i64,
     /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_started_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionStartedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_completed_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionCompletedEventAttributes>,
     /// <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub complete_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::CompleteWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub fail_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::FailWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_timed_out_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionTimedOutEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_canceled_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionCanceledEventAttributes>,
     /// <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub cancel_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::CancelWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_continued_as_new_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionContinuedAsNewEventAttributes>,
     /// <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub continue_as_new_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_terminated_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionTerminatedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_cancel_requested_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionCancelRequestedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub decision_task_scheduled_event_attributes:
         std::option::Option<crate::model::DecisionTaskScheduledEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub decision_task_started_event_attributes:
         std::option::Option<crate::model::DecisionTaskStartedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_attributes:
         std::option::Option<crate::model::DecisionTaskCompletedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub decision_task_timed_out_event_attributes:
         std::option::Option<crate::model::DecisionTaskTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_scheduled_event_attributes:
         std::option::Option<crate::model::ActivityTaskScheduledEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_started_event_attributes:
         std::option::Option<crate::model::ActivityTaskStartedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_completed_event_attributes:
         std::option::Option<crate::model::ActivityTaskCompletedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_failed_event_attributes:
         std::option::Option<crate::model::ActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_timed_out_event_attributes:
         std::option::Option<crate::model::ActivityTaskTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_canceled_event_attributes:
         std::option::Option<crate::model::ActivityTaskCanceledEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub activity_task_cancel_requested_event_attributes:
         std::option::Option<crate::model::ActivityTaskCancelRequestedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub workflow_execution_signaled_event_attributes:
         std::option::Option<crate::model::WorkflowExecutionSignaledEventAttributes>,
     /// <p>If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub marker_recorded_event_attributes:
         std::option::Option<crate::model::MarkerRecordedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub record_marker_failed_event_attributes:
         std::option::Option<crate::model::RecordMarkerFailedEventAttributes>,
     /// <p>If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub timer_started_event_attributes:
         std::option::Option<crate::model::TimerStartedEventAttributes>,
     /// <p>If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub timer_fired_event_attributes: std::option::Option<crate::model::TimerFiredEventAttributes>,
     /// <p>If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub timer_canceled_event_attributes:
         std::option::Option<crate::model::TimerCanceledEventAttributes>,
     /// <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub start_child_workflow_execution_initiated_event_attributes:
         std::option::Option<crate::model::StartChildWorkflowExecutionInitiatedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_started_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionStartedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_completed_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionCompletedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_timed_out_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_canceled_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionCanceledEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub child_workflow_execution_terminated_event_attributes:
         std::option::Option<crate::model::ChildWorkflowExecutionTerminatedEventAttributes>,
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub signal_external_workflow_execution_initiated_event_attributes:
         std::option::Option<crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
     /// <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub external_workflow_execution_signaled_event_attributes:
         std::option::Option<crate::model::ExternalWorkflowExecutionSignaledEventAttributes>,
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub signal_external_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::SignalExternalWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types. </p>
+    #[doc(hidden)]
     pub external_workflow_execution_cancel_requested_event_attributes:
         std::option::Option<crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes>,
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub request_cancel_external_workflow_execution_initiated_event_attributes: std::option::Option<
         crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
     >,
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub request_cancel_external_workflow_execution_failed_event_attributes: std::option::Option<
         crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
     >,
     /// <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub schedule_activity_task_failed_event_attributes:
         std::option::Option<crate::model::ScheduleActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub request_cancel_activity_task_failed_event_attributes:
         std::option::Option<crate::model::RequestCancelActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub start_timer_failed_event_attributes:
         std::option::Option<crate::model::StartTimerFailedEventAttributes>,
     /// <p>If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub cancel_timer_failed_event_attributes:
         std::option::Option<crate::model::CancelTimerFailedEventAttributes>,
     /// <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub start_child_workflow_execution_failed_event_attributes:
         std::option::Option<crate::model::StartChildWorkflowExecutionFailedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub lambda_function_scheduled_event_attributes:
         std::option::Option<crate::model::LambdaFunctionScheduledEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub lambda_function_started_event_attributes:
         std::option::Option<crate::model::LambdaFunctionStartedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub lambda_function_completed_event_attributes:
         std::option::Option<crate::model::LambdaFunctionCompletedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub lambda_function_failed_event_attributes:
         std::option::Option<crate::model::LambdaFunctionFailedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub lambda_function_timed_out_event_attributes:
         std::option::Option<crate::model::LambdaFunctionTimedOutEventAttributes>,
     /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub schedule_lambda_function_failed_event_attributes:
         std::option::Option<crate::model::ScheduleLambdaFunctionFailedEventAttributes>,
     /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
+    #[doc(hidden)]
     pub start_lambda_function_failed_event_attributes:
         std::option::Option<crate::model::StartLambdaFunctionFailedEventAttributes>,
 }
@@ -4930,12 +5062,15 @@ impl HistoryEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::StartLambdaFunctionFailedCause>,
     /// <p>A description that can help diagnose the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl StartLambdaFunctionFailedEventAttributes {
@@ -5084,14 +5219,18 @@ impl AsRef<str> for StartLambdaFunctionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::ScheduleLambdaFunctionFailedCause>,
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl ScheduleLambdaFunctionFailedEventAttributes {
@@ -5294,10 +5433,13 @@ impl AsRef<str> for ScheduleLambdaFunctionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The type of the timeout that caused this event.</p>
+    #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::model::LambdaFunctionTimeoutType>,
 }
 impl LambdaFunctionTimedOutEventAttributes {
@@ -5440,12 +5582,16 @@ impl AsRef<str> for LambdaFunctionTimeoutType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The reason provided for the failure.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionFailedEventAttributes {
@@ -5551,10 +5697,13 @@ impl LambdaFunctionFailedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionCompletedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The results of the Lambda task.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionCompletedEventAttributes {
@@ -5643,6 +5792,7 @@ impl LambdaFunctionCompletedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionStartedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
 }
 impl LambdaFunctionStartedEventAttributes {
@@ -5697,16 +5847,22 @@ impl LambdaFunctionStartedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The input provided to the Lambda task.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
+    #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl LambdaFunctionScheduledEventAttributes {
@@ -5857,19 +6013,25 @@ impl LambdaFunctionScheduledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChildWorkflowExecutionFailedEventAttributes {
     /// <p>The workflow type provided in the <code>StartChildWorkflowExecution</code> <code>Decision</code> that failed.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::StartChildWorkflowExecutionFailedCause>,
     /// <p>The <code>workflowId</code> of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>When the <code>cause</code> is <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is the ID of the <code>StartChildWorkflowExecutionInitiated</code> event that corresponds to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start the workflow execution. You can use this information to diagnose problems by tracing back the chain of events leading up to this event.</p>
     /// <p>When the <code>cause</code> isn't <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is set to <code>0</code> because the <code>StartChildWorkflowExecutionInitiated</code> event doesn't exist.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <code>Decision</code> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl StartChildWorkflowExecutionFailedEventAttributes {
@@ -6163,12 +6325,15 @@ impl AsRef<str> for StartChildWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>CancelTimer</code> decision that failed.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::CancelTimerFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl CancelTimerFailedEventAttributes {
@@ -6329,12 +6494,15 @@ impl AsRef<str> for CancelTimerFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>StartTimer</code> decision that failed.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::StartTimerFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl StartTimerFailedEventAttributes {
@@ -6508,12 +6676,15 @@ impl AsRef<str> for StartTimerFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelActivityTaskFailedEventAttributes {
     /// <p>The activityId provided in the <code>RequestCancelActivityTask</code> decision that failed.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::RequestCancelActivityTaskFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl RequestCancelActivityTaskFailedEventAttributes {
@@ -6681,14 +6852,18 @@ impl AsRef<str> for RequestCancelActivityTaskFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleActivityTaskFailedEventAttributes {
     /// <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
     /// <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::ScheduleActivityTaskFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl ScheduleActivityTaskFailedEventAttributes {
@@ -6949,18 +7124,24 @@ impl AsRef<str> for ScheduleActivityTaskFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow to which the cancel request was to be delivered.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::RequestCancelExternalWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
@@ -7193,12 +7374,16 @@ impl AsRef<str> for RequestCancelExternalWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
@@ -7317,8 +7502,10 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
@@ -7397,8 +7584,10 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecution {
     /// <p>The user defined identifier associated with the workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>A system-generated unique identifier for the workflow execution.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl WorkflowExecution {
@@ -7470,18 +7659,24 @@ impl WorkflowExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution that the signal was being delivered to.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution that the signal was being delivered to.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::SignalExternalWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl SignalExternalWorkflowExecutionFailedEventAttributes {
@@ -7708,8 +7903,10 @@ impl AsRef<str> for SignalExternalWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalWorkflowExecutionSignaledEventAttributes {
     /// <p>The external workflow execution that the signal was delivered to.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ExternalWorkflowExecutionSignaledEventAttributes {
@@ -7785,16 +7982,22 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The name of the signal.</p>
+    #[doc(hidden)]
     pub signal_name: std::option::Option<std::string::String>,
     /// <p>The input provided to the signal.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
@@ -7946,12 +8149,16 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionTerminatedEventAttributes {
     /// <p>The child workflow execution that was terminated.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ChildWorkflowExecutionTerminatedEventAttributes {
@@ -8064,14 +8271,19 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionCanceledEventAttributes {
     /// <p>The child workflow execution that was canceled.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Details of the cancellation (if provided).</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ChildWorkflowExecutionCanceledEventAttributes {
@@ -8200,14 +8412,19 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionTimedOutEventAttributes {
     /// <p>The child workflow execution that timed out.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
+    #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ChildWorkflowExecutionTimedOutEventAttributes {
@@ -8390,16 +8607,22 @@ impl AsRef<str> for WorkflowExecutionTimeoutType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionFailedEventAttributes {
     /// <p>The child workflow execution that failed.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The reason for the failure (if provided).</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure (if provided).</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ChildWorkflowExecutionFailedEventAttributes {
@@ -8545,14 +8768,19 @@ impl ChildWorkflowExecutionFailedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionCompletedEventAttributes {
     /// <p>The child workflow execution that was completed.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The result of the child workflow execution.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ChildWorkflowExecutionCompletedEventAttributes {
@@ -8681,10 +8909,13 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
+    #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ChildWorkflowExecutionStartedEventAttributes {
@@ -8779,22 +9010,30 @@ impl ChildWorkflowExecutionStartedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of the child workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks. This data isn't sent to the activity.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The inputs provided to the child workflow execution.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The maximum duration for the child workflow execution. If the workflow execution isn't closed within this duration, it is timed out and force-terminated.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The name of the task list used for the decision tasks of the child workflow execution.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <code>Decision</code> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -8803,13 +9042,17 @@ pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The maximum duration allowed for the decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The list of tags to associated with the child workflow execution.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IAM role to attach to the child workflow execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl StartChildWorkflowExecutionInitiatedEventAttributes {
@@ -9123,10 +9366,13 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl TimerCanceledEventAttributes {
@@ -9223,8 +9469,10 @@ impl TimerCanceledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimerFiredEventAttributes {
     /// <p>The unique ID of the timer that fired.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl TimerFiredEventAttributes {
@@ -9296,13 +9544,17 @@ impl TimerFiredEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimerStartedEventAttributes {
     /// <p>The unique ID of the timer that was started.</p>
+    #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+    #[doc(hidden)]
     pub start_to_fire_timeout: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl TimerStartedEventAttributes {
@@ -9422,12 +9674,15 @@ impl TimerStartedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordMarkerFailedEventAttributes {
     /// <p>The marker's name.</p>
+    #[doc(hidden)]
     pub marker_name: std::option::Option<std::string::String>,
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::RecordMarkerFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarkerFailed</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl RecordMarkerFailedEventAttributes {
@@ -9584,10 +9839,13 @@ impl AsRef<str> for RecordMarkerFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
+    #[doc(hidden)]
     pub marker_name: std::option::Option<std::string::String>,
     /// <p>The details of the marker.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl MarkerRecordedEventAttributes {
@@ -9684,12 +9942,16 @@ impl MarkerRecordedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionSignaledEventAttributes {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
+    #[doc(hidden)]
     pub signal_name: std::option::Option<std::string::String>,
     /// <p>The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process the signal.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
+    #[doc(hidden)]
     pub external_workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</p>
+    #[doc(hidden)]
     pub external_initiated_event_id: i64,
 }
 impl WorkflowExecutionSignaledEventAttributes {
@@ -9810,8 +10072,10 @@ impl WorkflowExecutionSignaledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskCancelRequestedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The unique ID of the task.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
 }
 impl ActivityTaskCancelRequestedEventAttributes {
@@ -9891,12 +10155,16 @@ impl ActivityTaskCancelRequestedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskCanceledEventAttributes {
     /// <p>Details of the cancellation.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub latest_cancel_requested_event_id: i64,
 }
 impl ActivityTaskCanceledEventAttributes {
@@ -10010,12 +10278,16 @@ impl ActivityTaskCanceledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskTimedOutEventAttributes {
     /// <p>The type of the timeout that caused this event.</p>
+    #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::model::ActivityTaskTimeoutType>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl ActivityTaskTimedOutEventAttributes {
@@ -10192,12 +10464,16 @@ impl AsRef<str> for ActivityTaskTimeoutType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskFailedEventAttributes {
     /// <p>The reason provided for the failure.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ActivityTaskFailedEventAttributes {
@@ -10303,10 +10579,13 @@ impl ActivityTaskFailedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskCompletedEventAttributes {
     /// <p>The results of the activity task.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl ActivityTaskCompletedEventAttributes {
@@ -10395,8 +10674,10 @@ impl ActivityTaskCompletedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskStartedEventAttributes {
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
 }
 impl ActivityTaskStartedEventAttributes {
@@ -10468,28 +10749,39 @@ impl ActivityTaskStartedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTaskScheduledEventAttributes {
     /// <p>The type of the activity task.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
     /// <p>The unique ID of the activity task.</p>
+    #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
     /// <p>The input provided to the activity task.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
+    #[doc(hidden)]
     pub control: std::option::Option<std::string::String>,
     /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
+    #[doc(hidden)]
     pub schedule_to_start_timeout: std::option::Option<std::string::String>,
     /// <p>The maximum amount of time for this activity task.</p>
+    #[doc(hidden)]
     pub schedule_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The maximum amount of time a worker may take to process the activity task.</p>
+    #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The task list in which the activity task has been scheduled.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
+    #[doc(hidden)]
     pub heartbeat_timeout: std::option::Option<std::string::String>,
 }
 impl ActivityTaskScheduledEventAttributes {
@@ -10746,10 +11038,13 @@ impl ActivityTaskScheduledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecisionTaskTimedOutEventAttributes {
     /// <p>The type of timeout that expired before the decision task could be completed.</p>
+    #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::model::DecisionTaskTimeoutType>,
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl DecisionTaskTimedOutEventAttributes {
@@ -10892,10 +11187,13 @@ impl AsRef<str> for DecisionTaskTimeoutType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
+    #[doc(hidden)]
     pub execution_context: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub started_event_id: i64,
 }
 impl DecisionTaskCompletedEventAttributes {
@@ -10987,8 +11285,10 @@ impl DecisionTaskCompletedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecisionTaskStartedEventAttributes {
     /// <p>Identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub scheduled_event_id: i64,
 }
 impl DecisionTaskStartedEventAttributes {
@@ -11060,12 +11360,15 @@ impl DecisionTaskStartedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl DecisionTaskScheduledEventAttributes {
@@ -11166,10 +11469,13 @@ impl DecisionTaskScheduledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
+    #[doc(hidden)]
     pub external_workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub external_initiated_event_id: i64,
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::WorkflowExecutionCancelRequestedCause>,
 }
 impl WorkflowExecutionCancelRequestedEventAttributes {
@@ -11330,8 +11636,10 @@ impl AsRef<str> for WorkflowExecutionCancelRequestedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <p>The reason provided for the termination.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details provided for the termination.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -11340,8 +11648,10 @@ pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::WorkflowExecutionTerminatedCause>,
 }
 impl WorkflowExecutionTerminatedEventAttributes {
@@ -11536,8 +11846,10 @@ pub struct ContinueAsNewWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::ContinueAsNewWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
@@ -11726,20 +12038,27 @@ impl AsRef<str> for ContinueAsNewWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The input provided to the new workflow execution.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>The <code>runId</code> of the new workflow execution.</p>
+    #[doc(hidden)]
     pub new_execution_run_id: std::option::Option<std::string::String>,
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -11748,12 +12067,16 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The list of tags associated with the new workflow execution.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The workflow type of this execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl WorkflowExecutionContinuedAsNewEventAttributes {
@@ -12052,8 +12375,10 @@ pub struct CancelWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::CancelWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl CancelWorkflowExecutionFailedEventAttributes {
@@ -12197,8 +12522,10 @@ impl AsRef<str> for CancelWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionCanceledEventAttributes {
     /// <p>The details of the cancellation.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl WorkflowExecutionCanceledEventAttributes {
@@ -12278,6 +12605,7 @@ impl WorkflowExecutionCanceledEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
+    #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -12286,6 +12614,7 @@ pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
 }
 impl WorkflowExecutionTimedOutEventAttributes {
@@ -12383,8 +12712,10 @@ pub struct FailWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::FailWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl FailWorkflowExecutionFailedEventAttributes {
@@ -12528,10 +12859,13 @@ impl AsRef<str> for FailWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionFailedEventAttributes {
     /// <p>The descriptive reason provided for the failure.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The details of the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl WorkflowExecutionFailedEventAttributes {
@@ -12630,8 +12964,10 @@ pub struct CompleteWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cause: std::option::Option<crate::model::CompleteWorkflowExecutionFailedCause>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl CompleteWorkflowExecutionFailedEventAttributes {
@@ -12781,8 +13117,10 @@ impl AsRef<str> for CompleteWorkflowExecutionFailedCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionCompletedEventAttributes {
     /// <p>The result produced by the workflow execution upon successful completion.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl WorkflowExecutionCompletedEventAttributes {
@@ -12862,12 +13200,15 @@ impl WorkflowExecutionCompletedEventAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionStartedEventAttributes {
     /// <p>The input provided to the workflow execution.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The maximum duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The maximum duration of decision tasks for this workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -12876,22 +13217,31 @@ pub struct WorkflowExecutionStartedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The priority of the decision tasks in the workflow execution.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The workflow type of this execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code> decision, then it contains the <code>runId</code> of the previous workflow execution that was closed and continued as this execution.</p>
+    #[doc(hidden)]
     pub continued_execution_run_id: std::option::Option<std::string::String>,
     /// <p>The source workflow execution that started this workflow execution. The member isn't set if the workflow execution was not started by a workflow.</p>
+    #[doc(hidden)]
     pub parent_workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this workflow execution. The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    #[doc(hidden)]
     pub parent_initiated_event_id: i64,
     /// <p>The IAM role attached to the workflow execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl WorkflowExecutionStartedEventAttributes {
@@ -13550,14 +13900,19 @@ impl AsRef<str> for EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowTypeInfo {
     /// <p>The workflow type this information is about.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The current status of the workflow type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when this type was registered.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
+    #[doc(hidden)]
     pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkflowTypeInfo {
@@ -13747,14 +14102,19 @@ impl AsRef<str> for RegistrationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The type of the workflow execution.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The time when the execution was started.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
+    #[doc(hidden)]
     pub close_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
+    #[doc(hidden)]
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
@@ -13765,12 +14125,16 @@ pub struct WorkflowExecutionInfo {
     /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
     /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub close_status: std::option::Option<crate::model::CloseStatus>,
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
+    #[doc(hidden)]
     pub parent: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
+    #[doc(hidden)]
     pub cancel_requested: bool,
 }
 impl WorkflowExecutionInfo {
@@ -14148,6 +14512,7 @@ impl AsRef<str> for ExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl WorkflowExecutionFilter {
@@ -14203,6 +14568,7 @@ impl WorkflowExecutionFilter {
 pub struct TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tag: std::option::Option<std::string::String>,
 }
 impl TagFilter {
@@ -14258,8 +14624,10 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Version of the workflow type.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl WorkflowTypeFilter {
@@ -14331,8 +14699,10 @@ impl WorkflowTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
+    #[doc(hidden)]
     pub oldest_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the latest start or close date and time to return.</p>
+    #[doc(hidden)]
     pub latest_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilter {
@@ -14410,16 +14780,20 @@ impl ExecutionTimeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainInfo {
     /// <p>The name of the domain. This name is unique within the account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the domain:</p>
     /// <ul>
     /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the domain.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DomainInfo {
@@ -14540,6 +14914,7 @@ impl DomainInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CloseStatus>,
 }
 impl CloseStatusFilter {
@@ -14594,14 +14969,19 @@ impl CloseStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
     /// <p>The current status of the activity type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
+    #[doc(hidden)]
     pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivityTypeInfo {
@@ -14737,15 +15117,19 @@ impl ActivityTypeInfo {
 pub struct WorkflowTypeConfiguration {
     /// <p> The default maximum duration, specified when registering the workflow type, that a decision task for executions of this workflow type might take before returning completion or failure. If the task doesn'tdo close in the specified time then the task is automatically timed out and rescheduled. If the decider eventually reports a completion or failure, it is ignored. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p> The default maximum duration, specified when registering the workflow type, for executions of this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p> The default task list, specified when registering the workflow type, for decisions tasks scheduled for workflow executions of this type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
     /// <p> The default task priority, specified when registering the workflow type, for all decision tasks of this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> decision.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
     /// <p> The default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -14754,10 +15138,12 @@ pub struct WorkflowTypeConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when starting this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub default_lambda_role: std::option::Option<std::string::String>,
 }
 impl WorkflowTypeConfiguration {
@@ -14965,14 +15351,19 @@ impl WorkflowTypeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionOpenCounts {
     /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
+    #[doc(hidden)]
     pub open_activity_tasks: i32,
     /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
+    #[doc(hidden)]
     pub open_decision_tasks: i32,
     /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
+    #[doc(hidden)]
     pub open_timers: i32,
     /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
+    #[doc(hidden)]
     pub open_child_workflow_executions: i32,
     /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
+    #[doc(hidden)]
     pub open_lambda_functions: i32,
 }
 impl WorkflowExecutionOpenCounts {
@@ -15104,14 +15495,18 @@ impl WorkflowExecutionOpenCounts {
 pub struct WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -15120,8 +15515,10 @@ pub struct WorkflowExecutionConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The IAM role attached to the child workflow execution.</p>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl WorkflowExecutionConfiguration {
@@ -15312,6 +15709,7 @@ impl WorkflowExecutionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
+    #[doc(hidden)]
     pub workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
 }
 impl DomainConfiguration {
@@ -15378,22 +15776,28 @@ impl DomainConfiguration {
 pub struct ActivityTypeConfiguration {
     /// <p> The default maximum duration for tasks of an activity type specified when registering the activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p> The default maximum time, in seconds, before which a worker processing a task must report progress by calling <code>RecordActivityTaskHeartbeat</code>.</p>
     /// <p>You can specify this value only when <i>registering</i> an activity type. The registered default value can be overridden when you schedule a task through the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_heartbeat_timeout: std::option::Option<std::string::String>,
     /// <p> The default task list specified for this activity type at registration. This default is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>. You can override the default registered task list when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
     /// <p> The default task priority for tasks of this activity type, specified at registration. If not set, then <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity task.</p>
     /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
     /// <p> The default maximum duration, specified when registering the activity type, that a task of an activity type can wait before being assigned to a worker. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_schedule_to_start_timeout: std::option::Option<std::string::String>,
     /// <p> The default maximum duration, specified when registering the activity type, for tasks of this activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_schedule_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl ActivityTypeConfiguration {

@@ -184,8 +184,10 @@ impl PutPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>The tags associated with your private CA.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -266,8 +268,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionsOutput {
@@ -348,9 +352,11 @@ impl ListPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
+    #[doc(hidden)]
     pub certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCertificateAuthoritiesOutput {
@@ -438,6 +444,7 @@ impl ListCertificateAuthoritiesOutput {
 pub struct IssueCertificateOutput {
     /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl IssueCertificateOutput {
@@ -528,6 +535,7 @@ impl ImportCertificateAuthorityCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// <p>The policy attached to the private CA as a JSON document.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPolicyOutput {
@@ -582,6 +590,7 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateAuthorityCsrOutput {
     /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
+    #[doc(hidden)]
     pub csr: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCsrOutput {
@@ -634,8 +643,10 @@ impl GetCertificateAuthorityCsrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateAuthorityCertificateOutput {
     /// <p>Base64-encoded certificate authority (CA) certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCertificateOutput {
@@ -710,8 +721,10 @@ impl GetCertificateAuthorityCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateOutput {
@@ -786,12 +799,16 @@ impl GetCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateAuthorityAuditReportOutput {
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
+    #[doc(hidden)]
     pub audit_report_status: std::option::Option<crate::model::AuditReportStatus>,
     /// <p>Name of the S3 bucket that contains the report.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The date and time at which the report was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
@@ -906,6 +923,7 @@ impl DescribeCertificateAuthorityAuditReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+    #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
 }
 impl DescribeCertificateAuthorityOutput {
@@ -1085,8 +1103,10 @@ impl CreatePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateAuthorityAuditReportOutput {
     /// <p>An alphanumeric string that contains a report identifier.</p>
+    #[doc(hidden)]
     pub audit_report_id: std::option::Option<std::string::String>,
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl CreateCertificateAuthorityAuditReportOutput {
@@ -1162,6 +1182,7 @@ impl CreateCertificateAuthorityAuditReportOutput {
 pub struct CreateCertificateAuthorityOutput {
     /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl CreateCertificateAuthorityOutput {

@@ -2382,8 +2382,10 @@ impl UpdateSuiteDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be updated.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    #[doc(hidden)]
     pub suite_definition_configuration:
         std::option::Option<crate::model::SuiteDefinitionConfiguration>,
 }
@@ -2416,8 +2418,10 @@ impl std::fmt::Debug for UpdateSuiteDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2444,8 +2448,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN of an IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be attached to the IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2476,8 +2482,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSuiteRunInput {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite run ID of the test suite run to be stopped.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl StopSuiteRunInput {
@@ -2504,12 +2512,16 @@ impl std::fmt::Debug for StopSuiteRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSuiteRunInput {
     /// <p>Suite definition ID of the test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Suite run configuration.</p>
+    #[doc(hidden)]
     pub suite_run_configuration: std::option::Option<crate::model::SuiteRunConfiguration>,
     /// <p>The tags to be attached to the suite run.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2552,6 +2564,7 @@ impl std::fmt::Debug for StartSuiteRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2573,12 +2586,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteRunsInput {
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteRunsInput {
@@ -2615,8 +2632,10 @@ impl std::fmt::Debug for ListSuiteRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteDefinitionsInput {
     /// <p>The maximum number of results to return at once.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteDefinitionsInput {
@@ -2643,8 +2662,10 @@ impl std::fmt::Debug for ListSuiteDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunReportInput {
     /// <p>Suite definition ID of the test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite run ID of the test suite run.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl GetSuiteRunReportInput {
@@ -2671,8 +2692,10 @@ impl std::fmt::Debug for GetSuiteRunReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunInput {
     /// <p>Suite definition ID for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite run ID for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl GetSuiteRunInput {
@@ -2699,8 +2722,10 @@ impl std::fmt::Debug for GetSuiteRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to get.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the test suite to get.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
 }
 impl GetSuiteDefinitionInput {
@@ -2727,8 +2752,10 @@ impl std::fmt::Debug for GetSuiteDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointInput {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl GetEndpointInput {
@@ -2755,6 +2782,7 @@ impl std::fmt::Debug for GetEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteSuiteDefinitionInput {
@@ -2776,9 +2804,11 @@ impl std::fmt::Debug for DeleteSuiteDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSuiteDefinitionInput {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    #[doc(hidden)]
     pub suite_definition_configuration:
         std::option::Option<crate::model::SuiteDefinitionConfiguration>,
     /// <p>The tags to be attached to the suite definition.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

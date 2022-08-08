@@ -6571,8 +6571,10 @@ impl VerifySmsSandboxPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    #[doc(hidden)]
     pub one_time_password: std::option::Option<std::string::String>,
 }
 impl VerifySmsSandboxPhoneNumberInput {
@@ -6599,8 +6601,10 @@ impl std::fmt::Debug for VerifySmsSandboxPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the topic from which to remove tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the specified topic.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6627,6 +6631,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeInput {
     /// <p>The ARN of the subscription to be deleted.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeInput {
@@ -6648,8 +6653,10 @@ impl std::fmt::Debug for UnsubscribeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the topic to which to add tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified topic. A tag consists of a required key and an optional value.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6676,6 +6683,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeInput {
     /// <p>The ARN of the topic you want to subscribe to.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
@@ -6689,6 +6697,7 @@ pub struct SubscribeInput {
     /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
     /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
@@ -6702,6 +6711,7 @@ pub struct SubscribeInput {
     /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
     /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
@@ -6719,12 +6729,14 @@ pub struct SubscribeInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>
     /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub return_subscription_arn: bool,
 }
 impl SubscribeInput {
@@ -6809,6 +6821,7 @@ impl std::fmt::Debug for SubscribeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTopicAttributesInput {
     /// <p>The ARN of the topic to modify.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>
@@ -6829,8 +6842,10 @@ pub struct SetTopicAttributesInput {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The new value for the attribute.</p>
+    #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl SetTopicAttributesInput {
@@ -6880,6 +6895,7 @@ impl std::fmt::Debug for SetTopicAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription to modify.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that this action uses:</p>
@@ -6897,8 +6913,10 @@ pub struct SetSubscriptionAttributesInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The new value for the attribute in JSON format.</p>
+    #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl SetSubscriptionAttributesInput {
@@ -6970,6 +6988,7 @@ pub struct SetSmsAttributesInput {
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7020,6 +7039,7 @@ impl std::fmt::Debug for SetSmsAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -7054,6 +7074,7 @@ pub struct SetPlatformApplicationAttributesInput {
     /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
     /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7116,6 +7137,7 @@ impl std::fmt::Debug for SetPlatformApplicationAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetEndpointAttributesInput {
     /// <p>EndpointArn used for SetEndpointAttributes action.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -7123,6 +7145,7 @@ pub struct SetEndpointAttributesInput {
     /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
     /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7158,8 +7181,10 @@ impl std::fmt::Debug for SetEndpointAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The unique label of the statement you want to remove.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -7186,8 +7211,10 @@ impl std::fmt::Debug for RemovePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    #[doc(hidden)]
     pub publish_batch_request_entries:
         std::option::Option<std::vec::Vec<crate::model::PublishBatchRequestEntry>>,
 }
@@ -7221,11 +7248,14 @@ impl std::fmt::Debug for PublishBatchInput {
 pub struct PublishInput {
     /// <p>The topic you want to publish to.</p>
     /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
     /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must specify a value for the <code>TargetArn</code> or <code>TopicArn</code> parameters.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The message you want to send.</p>
     /// <p>If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. </p>
@@ -7247,9 +7277,11 @@ pub struct PublishInput {
     /// <li> <p>Duplicate keys are not allowed.</p> </li>
     /// <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
     /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
     /// <ul>
@@ -7258,17 +7290,21 @@ pub struct PublishInput {
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code> </p>
+    #[doc(hidden)]
     pub message_structure: std::option::Option<std::string::String>,
     /// <p>Message attributes for Publish action.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
     /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is treated as a duplicate. </p>
     /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+    #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
     /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). Every message must include a <code>MessageGroupId</code>.</p>
+    #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl PublishInput {
@@ -7365,6 +7401,7 @@ impl std::fmt::Debug for PublishInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptInPhoneNumberInput {
     /// <p>The phone number to opt in. Use E.164 format.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl OptInPhoneNumberInput {
@@ -7386,6 +7423,7 @@ impl std::fmt::Debug for OptInPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsInput {
     /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicsInput {
@@ -7407,6 +7445,7 @@ impl std::fmt::Debug for ListTopicsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the topic for which to list tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -7428,8 +7467,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionsByTopicInput {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionsByTopicInput {
@@ -7456,6 +7497,7 @@ impl std::fmt::Debug for ListSubscriptionsByTopicInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionsInput {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionsInput {
@@ -7477,8 +7519,10 @@ impl std::fmt::Debug for ListSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmsSandboxPhoneNumbersInput {
     /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of phone numbers to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSmsSandboxPhoneNumbersInput {
@@ -7505,6 +7549,7 @@ impl std::fmt::Debug for ListSmsSandboxPhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformApplicationsInput {
     /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformApplicationsInput {
@@ -7526,6 +7571,7 @@ impl std::fmt::Debug for ListPlatformApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersOptedOutInput {
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersOptedOutInput {
@@ -7547,8 +7593,10 @@ impl std::fmt::Debug for ListPhoneNumbersOptedOutInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginationNumbersInput {
     /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of origination numbers to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOriginationNumbersInput {
@@ -7575,8 +7623,10 @@ impl std::fmt::Debug for ListOriginationNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsByPlatformApplicationInput {
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
     /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointsByPlatformApplicationInput {
@@ -7603,6 +7653,7 @@ impl std::fmt::Debug for ListEndpointsByPlatformApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTopicAttributesInput {
     /// <p>The ARN of the topic whose properties you want to get.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl GetTopicAttributesInput {
@@ -7624,6 +7675,7 @@ impl std::fmt::Debug for GetTopicAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl GetSubscriptionAttributesInput {
@@ -7658,6 +7710,7 @@ pub struct GetSmsAttributesInput {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetSmsAttributesInput {
@@ -7681,6 +7734,7 @@ impl std::fmt::Debug for GetSmsAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
 }
 impl GetPlatformApplicationAttributesInput {
@@ -7702,6 +7756,7 @@ impl std::fmt::Debug for GetPlatformApplicationAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointAttributesInput {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl GetEndpointAttributesInput {
@@ -7723,6 +7778,7 @@ impl std::fmt::Debug for GetEndpointAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTopicInput {
@@ -7744,6 +7800,7 @@ impl std::fmt::Debug for DeleteTopicInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl DeleteSmsSandboxPhoneNumberInput {
@@ -7765,6 +7822,7 @@ impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
 }
 impl DeletePlatformApplicationInput {
@@ -7786,6 +7844,7 @@ impl std::fmt::Debug for DeletePlatformApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
@@ -7809,6 +7868,7 @@ pub struct CreateTopicInput {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
@@ -7831,11 +7891,13 @@ pub struct CreateTopicInput {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of tags to add to a new topic.</p> <note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTopicInput {
@@ -7894,8 +7956,10 @@ impl std::fmt::Debug for CreateTopicInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCodeString>,
 }
 impl CreateSmsSandboxPhoneNumberInput {
@@ -7922,12 +7986,16 @@ impl std::fmt::Debug for CreateSmsSandboxPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformEndpointInput {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
+    #[doc(hidden)]
     pub custom_user_data: std::option::Option<std::string::String>,
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7968,10 +8036,13 @@ impl std::fmt::Debug for CreatePlatformEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformApplicationInput {
     /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8007,10 +8078,13 @@ impl std::fmt::Debug for CreatePlatformApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmSubscriptionInput {
     /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
+    #[doc(hidden)]
     pub authenticate_on_unsubscribe: std::option::Option<std::string::String>,
 }
 impl ConfirmSubscriptionInput {
@@ -8045,6 +8119,7 @@ impl std::fmt::Debug for ConfirmSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl CheckIfPhoneNumberIsOptedOutInput {
@@ -8066,13 +8141,17 @@ impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the new policy statement.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddPermissionInput {

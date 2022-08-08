@@ -2525,8 +2525,10 @@ impl UpdateEventIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the event inegration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateEventIntegrationInput {
@@ -2553,10 +2555,13 @@ impl std::fmt::Debug for UpdateEventIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DataIntegration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the DataIntegration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDataIntegrationInput {
@@ -2588,8 +2593,10 @@ impl std::fmt::Debug for UpdateDataIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2616,8 +2623,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2648,6 +2657,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2669,8 +2679,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventIntegrationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventIntegrationsInput {
@@ -2697,10 +2709,13 @@ impl std::fmt::Debug for ListEventIntegrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventIntegrationAssociationsInput {
     /// <p>The name of the event integration. </p>
+    #[doc(hidden)]
     pub event_integration_name: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventIntegrationAssociationsInput {
@@ -2732,8 +2747,10 @@ impl std::fmt::Debug for ListEventIntegrationAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIntegrationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataIntegrationsInput {
@@ -2760,10 +2777,13 @@ impl std::fmt::Debug for ListDataIntegrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIntegrationAssociationsInput {
     /// <p>A unique identifier for the DataIntegration.</p>
+    #[doc(hidden)]
     pub data_integration_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataIntegrationAssociationsInput {
@@ -2798,6 +2818,7 @@ impl std::fmt::Debug for ListDataIntegrationAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventIntegrationInput {
     /// <p>The name of the event integration. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEventIntegrationInput {
@@ -2819,6 +2840,7 @@ impl std::fmt::Debug for GetEventIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataIntegrationInput {
     /// <p>A unique identifier.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetDataIntegrationInput {
@@ -2840,6 +2862,7 @@ impl std::fmt::Debug for GetDataIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventIntegrationInput {
     /// <p>The name of the event integration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEventIntegrationInput {
@@ -2861,6 +2884,7 @@ impl std::fmt::Debug for DeleteEventIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
+    #[doc(hidden)]
     pub data_integration_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDataIntegrationInput {
@@ -2885,16 +2909,22 @@ impl std::fmt::Debug for DeleteDataIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the event integration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event filter.</p>
+    #[doc(hidden)]
     pub event_filter: std::option::Option<crate::model::EventFilter>,
     /// <p>The EventBridge bus.</p>
+    #[doc(hidden)]
     pub event_bridge_bus: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2945,19 +2975,26 @@ impl std::fmt::Debug for CreateEventIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataIntegrationInput {
     /// <p>The name of the DataIntegration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the DataIntegration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The URI of the data source.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>The name of the data and how often it should be pulled from the source.</p>
+    #[doc(hidden)]
     pub schedule_config: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDataIntegrationInput {

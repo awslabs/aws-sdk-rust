@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The field that had the validation exception.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the validation exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,8 +148,10 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The routing control state in a set of routing control state entries.</p>
+    #[doc(hidden)]
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
 }
 impl UpdateRoutingControlStateEntry {
@@ -280,14 +284,19 @@ impl AsRef<str> for RoutingControlState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the control panel where the routing control is located.</p>
+    #[doc(hidden)]
     pub control_panel_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_name: std::option::Option<std::string::String>,
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+    #[doc(hidden)]
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
 }
 impl RoutingControl {

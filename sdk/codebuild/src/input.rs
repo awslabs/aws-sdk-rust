@@ -9437,17 +9437,22 @@ impl UpdateWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub branch_filter: std::option::Option<std::string::String>,
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    #[doc(hidden)]
     pub rotate_secret: bool,
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    #[doc(hidden)]
     pub filter_groups:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
 impl UpdateWebhookInput {
@@ -9493,15 +9498,18 @@ impl std::fmt::Debug for UpdateWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportGroupInput {
     /// <p> The ARN of the report group to update. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
     /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateReportGroupInput {
@@ -9538,6 +9546,7 @@ impl std::fmt::Debug for UpdateReportGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -9554,8 +9563,10 @@ pub struct UpdateProjectVisibilityInput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+    #[doc(hidden)]
     pub resource_access_role: std::option::Option<std::string::String>,
 }
 impl UpdateProjectVisibilityInput {
@@ -9603,12 +9614,16 @@ pub struct UpdateProjectInput {
     /// <p>The name of the build project.</p> <note>
     /// <p>You cannot change a build project's name.</p>
     /// </note>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A new or replacement description of the build project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information to be changed about the build input source code for the build project.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
     /// <ul>
@@ -9619,47 +9634,64 @@ pub struct UpdateProjectInput {
     /// </ul>
     /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
+    #[doc(hidden)]
     pub secondary_source_versions:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+    #[doc(hidden)]
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information to be changed about the build environment for the build project.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>An updated list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    #[doc(hidden)]
     pub badge_enabled: std::option::Option<bool>,
     /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
+    #[doc(hidden)]
     pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    #[doc(hidden)]
     pub file_system_locations:
         std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>Contains configuration information about a batch build project.</p>
+    #[doc(hidden)]
     pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     /// <p>To remove this limit, set this value to -1.</p>
+    #[doc(hidden)]
     pub concurrent_build_limit: std::option::Option<i32>,
 }
 impl UpdateProjectInput {
@@ -9804,6 +9836,7 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBuildBatchInput {
     /// <p>The identifier of the batch build to stop.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopBuildBatchInput {
@@ -9825,6 +9858,7 @@ impl std::fmt::Debug for StopBuildBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBuildInput {
     /// <p>The ID of the build.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopBuildInput {
@@ -9846,10 +9880,13 @@ impl std::fmt::Debug for StopBuildInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBuildBatchInput {
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
+    #[doc(hidden)]
     pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
+    #[doc(hidden)]
     pub secondary_sources_version_override:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
@@ -9881,63 +9918,88 @@ pub struct StartBuildBatchInput {
     /// </dl>
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
+    #[doc(hidden)]
     pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
+    #[doc(hidden)]
     pub secondary_artifacts_override:
         std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
+    #[doc(hidden)]
     pub environment_variables_override:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
+    #[doc(hidden)]
     pub source_type_override: std::option::Option<crate::model::SourceType>,
     /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
+    #[doc(hidden)]
     pub source_location_override: std::option::Option<std::string::String>,
     /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    #[doc(hidden)]
     pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
+    #[doc(hidden)]
     pub git_clone_depth_override: std::option::Option<i32>,
     /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
+    #[doc(hidden)]
     pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    #[doc(hidden)]
     pub buildspec_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+    #[doc(hidden)]
     pub insecure_ssl_override: std::option::Option<bool>,
     /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
     /// </note>
+    #[doc(hidden)]
     pub report_build_batch_status_override: std::option::Option<bool>,
     /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
+    #[doc(hidden)]
     pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
+    #[doc(hidden)]
     pub image_override: std::option::Option<std::string::String>,
     /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
+    #[doc(hidden)]
     pub compute_type_override: std::option::Option<crate::model::ComputeType>,
     /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
+    #[doc(hidden)]
     pub certificate_override: std::option::Option<std::string::String>,
     /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
+    #[doc(hidden)]
     pub cache_override: std::option::Option<crate::model::ProjectCache>,
     /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
+    #[doc(hidden)]
     pub service_role_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override privileged mode in the batch build project.</p>
+    #[doc(hidden)]
     pub privileged_mode_override: std::option::Option<bool>,
     /// <p>Overrides the build timeout specified in the batch build project.</p>
+    #[doc(hidden)]
     pub build_timeout_in_minutes_override: std::option::Option<i32>,
     /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes_override: std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
+    #[doc(hidden)]
     pub encryption_key_override: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
+    #[doc(hidden)]
     pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
     /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
+    #[doc(hidden)]
     pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
     /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
     /// <dl>
@@ -9955,11 +10017,14 @@ pub struct StartBuildBatchInput {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
+    #[doc(hidden)]
     pub image_pull_credentials_type_override:
         std::option::Option<crate::model::ImagePullCredentialsType>,
     /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
+    #[doc(hidden)]
     pub build_batch_config_override: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+    #[doc(hidden)]
     pub debug_session_enabled: std::option::Option<bool>,
 }
 impl StartBuildBatchInput {
@@ -10230,10 +10295,13 @@ impl std::fmt::Debug for StartBuildBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
+    #[doc(hidden)]
     pub secondary_sources_version_override:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
@@ -10265,66 +10333,92 @@ pub struct StartBuildInput {
     /// </dl>
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
+    #[doc(hidden)]
     pub artifacts_override: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_artifacts_override:
         std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
+    #[doc(hidden)]
     pub environment_variables_override:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
+    #[doc(hidden)]
     pub source_type_override: std::option::Option<crate::model::SourceType>,
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
+    #[doc(hidden)]
     pub source_location_override: std::option::Option<std::string::String>,
     /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    #[doc(hidden)]
     pub source_auth_override: std::option::Option<crate::model::SourceAuth>,
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
+    #[doc(hidden)]
     pub git_clone_depth_override: std::option::Option<i32>,
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
+    #[doc(hidden)]
     pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    #[doc(hidden)]
     pub buildspec_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+    #[doc(hidden)]
     pub insecure_ssl_override: std::option::Option<bool>,
     /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
     /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
     /// </note>
+    #[doc(hidden)]
     pub report_build_status_override: std::option::Option<bool>,
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
+    #[doc(hidden)]
     pub build_status_config_override: std::option::Option<crate::model::BuildStatusConfig>,
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
+    #[doc(hidden)]
     pub environment_type_override: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
+    #[doc(hidden)]
     pub image_override: std::option::Option<std::string::String>,
     /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
+    #[doc(hidden)]
     pub compute_type_override: std::option::Option<crate::model::ComputeType>,
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
+    #[doc(hidden)]
     pub certificate_override: std::option::Option<std::string::String>,
     /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
+    #[doc(hidden)]
     pub cache_override: std::option::Option<crate::model::ProjectCache>,
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
+    #[doc(hidden)]
     pub service_role_override: std::option::Option<std::string::String>,
     /// <p>Enable this flag to override privileged mode in the build project.</p>
+    #[doc(hidden)]
     pub privileged_mode_override: std::option::Option<bool>,
     /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes_override: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes_override: std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
+    #[doc(hidden)]
     pub encryption_key_override: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p> Log settings for this build that override the log settings defined in the build project. </p>
+    #[doc(hidden)]
     pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
     /// <p> The credentials for access to a private registry. </p>
+    #[doc(hidden)]
     pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
     /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <dl>
@@ -10342,9 +10436,11 @@ pub struct StartBuildInput {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
+    #[doc(hidden)]
     pub image_pull_credentials_type_override:
         std::option::Option<crate::model::ImagePullCredentialsType>,
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
+    #[doc(hidden)]
     pub debug_session_enabled: std::option::Option<bool>,
 }
 impl StartBuildInput {
@@ -10616,10 +10712,13 @@ impl std::fmt::Debug for StartBuildInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryBuildBatchInput {
     /// <p>Specifies the identifier of the batch build to restart.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Specifies the type of retry to perform.</p>
+    #[doc(hidden)]
     pub retry_type: std::option::Option<crate::model::RetryBuildBatchType>,
 }
 impl RetryBuildBatchInput {
@@ -10651,8 +10750,10 @@ impl std::fmt::Debug for RetryBuildBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryBuildInput {
     /// <p>Specifies the identifier of the build to restart.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl RetryBuildInput {
@@ -10679,8 +10780,10 @@ impl std::fmt::Debug for RetryBuildInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -10722,16 +10825,20 @@ pub struct ListSharedReportGroupsInput {
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
     /// <ul>
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSharedReportGroupsInput {
@@ -10780,16 +10887,20 @@ pub struct ListSharedProjectsInput {
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SharedResourceSortByType>,
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSharedProjectsInput {
@@ -10834,14 +10945,19 @@ impl std::fmt::Debug for ListSharedProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportsForReportGroupInput {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+    #[doc(hidden)]
     pub report_group_arn: std::option::Option<std::string::String>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ReportFilter>,
 }
 impl ListReportsForReportGroupInput {
@@ -10887,12 +11003,16 @@ pub struct ListReportsInput {
     /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
     /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ReportFilter>,
 }
 impl ListReportsInput {
@@ -10933,6 +11053,7 @@ impl std::fmt::Debug for ListReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportGroupsInput {
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p> The criterion to be used to list build report groups. Valid values include: </p>
     /// <ul>
@@ -10940,10 +11061,13 @@ pub struct ListReportGroupsInput {
     /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
     /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ReportGroupSortByType>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReportGroupsInput {
@@ -10991,6 +11115,7 @@ pub struct ListProjectsInput {
     /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ProjectSortByType>,
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
@@ -10998,8 +11123,10 @@ pub struct ListProjectsInput {
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
@@ -11053,6 +11180,7 @@ impl std::fmt::Debug for ListCuratedEnvironmentImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
     /// <p>Valid values include:</p>
@@ -11061,8 +11189,10 @@ pub struct ListBuildsForProjectInput {
     /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsForProjectInput {
@@ -11104,8 +11234,10 @@ pub struct ListBuildsInput {
     /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsInput {
@@ -11136,18 +11268,23 @@ impl std::fmt::Debug for ListBuildsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildBatchesForProjectInput {
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesForProjectInput {
@@ -11193,16 +11330,20 @@ impl std::fmt::Debug for ListBuildBatchesForProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesInput {
@@ -11243,6 +11384,7 @@ impl std::fmt::Debug for ListBuildBatchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl InvalidateProjectCacheInput {
@@ -11264,14 +11406,19 @@ impl std::fmt::Debug for InvalidateProjectCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSourceCredentialsInput {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p> The source provider used for this project. </p>
+    #[doc(hidden)]
     pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    #[doc(hidden)]
     pub auth_type: std::option::Option<crate::model::AuthType>,
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    #[doc(hidden)]
     pub should_overwrite: std::option::Option<bool>,
 }
 impl ImportSourceCredentialsInput {
@@ -11313,6 +11460,7 @@ impl std::fmt::Debug for ImportSourceCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -11334,9 +11482,11 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReportGroupTrendInput {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
+    #[doc(hidden)]
     pub report_group_arn: std::option::Option<std::string::String>,
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
+    #[doc(hidden)]
     pub num_of_reports: std::option::Option<i32>,
     /// <p>The test report value to accumulate. This must be one of the following values:</p>
     /// <dl>
@@ -11411,6 +11561,7 @@ pub struct GetReportGroupTrendInput {
     /// </dl>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub trend_field: std::option::Option<crate::model::ReportGroupTrendFieldType>,
 }
 impl GetReportGroupTrendInput {
@@ -11515,12 +11666,16 @@ impl std::fmt::Debug for GetReportGroupTrendInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTestCasesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
+    #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::TestCaseFilter>,
 }
 impl DescribeTestCasesInput {
@@ -11557,12 +11712,16 @@ impl std::fmt::Debug for DescribeTestCasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeCoveragesInput {
     /// <p> The ARN of the report for which test cases are returned. </p>
+    #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
     /// <p>Specifies how the results are sorted. Possible values are:</p>
     /// <dl>
@@ -11579,10 +11738,13 @@ pub struct DescribeCodeCoveragesInput {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ReportCodeCoverageSortByType>,
     /// <p>The minimum line coverage percentage to report.</p>
+    #[doc(hidden)]
     pub min_line_coverage_percentage: std::option::Option<f64>,
     /// <p>The maximum line coverage percentage to report.</p>
+    #[doc(hidden)]
     pub max_line_coverage_percentage: std::option::Option<f64>,
 }
 impl DescribeCodeCoveragesInput {
@@ -11654,6 +11816,7 @@ impl std::fmt::Debug for DescribeCodeCoveragesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DeleteWebhookInput {
@@ -11675,6 +11838,7 @@ impl std::fmt::Debug for DeleteWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSourceCredentialsInput {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteSourceCredentialsInput {
@@ -11696,6 +11860,7 @@ impl std::fmt::Debug for DeleteSourceCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -11717,9 +11882,11 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportGroupInput {
     /// <p>The ARN of the report group to delete. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
+    #[doc(hidden)]
     pub delete_reports: bool,
 }
 impl DeleteReportGroupInput {
@@ -11747,6 +11914,7 @@ impl std::fmt::Debug for DeleteReportGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportInput {
     /// <p> The ARN of the report to delete. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteReportInput {
@@ -11768,6 +11936,7 @@ impl std::fmt::Debug for DeleteReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The name of the build project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -11789,6 +11958,7 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBuildBatchInput {
     /// <p>The identifier of the batch build to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteBuildBatchInput {
@@ -11810,16 +11980,20 @@ impl std::fmt::Debug for DeleteBuildBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub branch_filter: std::option::Option<std::string::String>,
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
+    #[doc(hidden)]
     pub filter_groups:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
 impl CreateWebhookInput {
@@ -11861,13 +12035,17 @@ impl std::fmt::Debug for CreateWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportGroupInput {
     /// <p> The name of the report group. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The type of report group. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReportType>,
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    #[doc(hidden)]
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p> A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateReportGroupInput {
@@ -11905,12 +12083,16 @@ impl std::fmt::Debug for CreateReportGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name of the build project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description that makes the build project easy to identify.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the build input source code for the build project.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
     /// <ul>
@@ -11921,46 +12103,63 @@ pub struct CreateProjectInput {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    #[doc(hidden)]
     pub secondary_source_versions:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+    #[doc(hidden)]
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment for the build project.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    #[doc(hidden)]
     pub badge_enabled: std::option::Option<bool>,
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    #[doc(hidden)]
     pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    #[doc(hidden)]
     pub file_system_locations:
         std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
+    #[doc(hidden)]
     pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    #[doc(hidden)]
     pub concurrent_build_limit: std::option::Option<i32>,
 }
 impl CreateProjectInput {
@@ -12102,6 +12301,7 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportsInput {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    #[doc(hidden)]
     pub report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportsInput {
@@ -12123,6 +12323,7 @@ impl std::fmt::Debug for BatchGetReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportGroupsInput {
     /// <p> An array of report group ARNs that identify the report groups to return. </p>
+    #[doc(hidden)]
     pub report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportGroupsInput {
@@ -12144,6 +12345,7 @@ impl std::fmt::Debug for BatchGetReportGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetProjectsInput {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetProjectsInput {
@@ -12165,6 +12367,7 @@ impl std::fmt::Debug for BatchGetProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildsInput {
@@ -12186,6 +12389,7 @@ impl std::fmt::Debug for BatchGetBuildsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildBatchesInput {
@@ -12207,6 +12411,7 @@ impl std::fmt::Debug for BatchGetBuildBatchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteBuildsInput {

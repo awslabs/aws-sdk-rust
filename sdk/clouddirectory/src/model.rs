@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
     /// <p>The action to perform when updating the attribute.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::UpdateActionType>,
 }
 impl TypedLinkFacetAttributeUpdate {
@@ -139,17 +141,23 @@ impl AsRef<str> for UpdateActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the attribute.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FacetAttributeType>,
     /// <p>The default value of the attribute (if configured).</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
+    #[doc(hidden)]
     pub is_immutable: bool,
     /// <p>Validation rules that are attached to the attribute definition.</p>
+    #[doc(hidden)]
     pub rules:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
+    #[doc(hidden)]
     pub required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
 }
 impl TypedLinkAttributeDefinition {
@@ -370,8 +378,10 @@ impl AsRef<str> for RequiredAttributeBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
     /// <p>The type of attribute validation rule.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RuleType>,
     /// <p>The minimum and maximum parameters that are associated with the rule.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -701,8 +711,10 @@ impl AsRef<str> for FacetAttributeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
+    #[doc(hidden)]
     pub object_attribute_key: std::option::Option<crate::model::AttributeKey>,
     /// <p>The action to perform as part of the attribute update.</p>
+    #[doc(hidden)]
     pub object_attribute_action: std::option::Option<crate::model::ObjectAttributeAction>,
 }
 impl ObjectAttributeUpdate {
@@ -786,8 +798,10 @@ impl ObjectAttributeUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
+    #[doc(hidden)]
     pub object_attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
+    #[doc(hidden)]
     pub object_attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
 }
 impl ObjectAttributeAction {
@@ -883,10 +897,13 @@ impl ObjectAttributeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeKey {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet that the attribute exists within.</p>
+    #[doc(hidden)]
     pub facet_name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AttributeKey {
@@ -980,6 +997,7 @@ pub struct ObjectReference {
     /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub selector: std::option::Option<std::string::String>,
 }
 impl ObjectReference {
@@ -1049,8 +1067,10 @@ impl ObjectReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
+    #[doc(hidden)]
     pub attribute_key: std::option::Option<crate::model::AttributeKey>,
     /// <p>The action to perform as part of the attribute update.</p>
+    #[doc(hidden)]
     pub attribute_action: std::option::Option<crate::model::LinkAttributeAction>,
 }
 impl LinkAttributeUpdate {
@@ -1128,8 +1148,10 @@ impl LinkAttributeUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
+    #[doc(hidden)]
     pub attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
+    #[doc(hidden)]
     pub attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
 }
 impl LinkAttributeAction {
@@ -1209,12 +1231,16 @@ impl LinkAttributeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    #[doc(hidden)]
     pub typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub source_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub target_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the attribute value to update.</p>
+    #[doc(hidden)]
     pub identity_attribute_values:
         std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
@@ -1350,8 +1376,10 @@ impl TypedLinkSpecifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value for the typed link.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::TypedAttributeValue>,
 }
 impl AttributeNameAndValue {
@@ -1429,8 +1457,10 @@ impl AttributeNameAndValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub typed_link_name: std::option::Option<std::string::String>,
 }
 impl TypedLinkSchemaAndFacetName {
@@ -1568,8 +1598,10 @@ impl AsRef<str> for ObjectType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::FacetAttribute>,
     /// <p>The action to perform when updating the attribute.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::UpdateActionType>,
 }
 impl FacetAttributeUpdate {
@@ -1647,12 +1679,16 @@ impl FacetAttributeUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    #[doc(hidden)]
     pub attribute_definition: std::option::Option<crate::model::FacetAttributeDefinition>,
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    #[doc(hidden)]
     pub attribute_reference: std::option::Option<crate::model::FacetAttributeReference>,
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
+    #[doc(hidden)]
     pub required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
 }
 impl FacetAttribute {
@@ -1777,8 +1813,10 @@ impl FacetAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    #[doc(hidden)]
     pub target_facet_name: std::option::Option<std::string::String>,
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    #[doc(hidden)]
     pub target_attribute_name: std::option::Option<std::string::String>,
 }
 impl FacetAttributeReference {
@@ -1856,12 +1894,16 @@ impl FacetAttributeReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FacetAttributeType>,
     /// <p>The default value of the attribute (if configured).</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
+    #[doc(hidden)]
     pub is_immutable: bool,
     /// <p>Validation rules attached to the attribute definition.</p>
+    #[doc(hidden)]
     pub rules:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
 }
@@ -1989,8 +2031,10 @@ impl FacetAttributeDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key that is associated with the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value that is associated with the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2062,8 +2106,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
+    #[doc(hidden)]
     pub facet_name: std::option::Option<std::string::String>,
 }
 impl SchemaFacet {
@@ -2135,8 +2181,10 @@ impl SchemaFacet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>List of policy objects.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>,
 }
 impl PolicyToPath {
@@ -2217,10 +2265,13 @@ impl PolicyToPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyAttachment {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<std::string::String>,
 }
 impl PolicyAttachment {
@@ -2367,8 +2418,10 @@ impl AsRef<str> for ConsistencyLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The range of attribute values that are being selected.</p>
+    #[doc(hidden)]
     pub range: std::option::Option<crate::model::TypedAttributeValueRange>,
 }
 impl TypedLinkAttributeRange {
@@ -2446,12 +2499,16 @@ impl TypedLinkAttributeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
+    #[doc(hidden)]
     pub start_mode: std::option::Option<crate::model::RangeMode>,
     /// <p>The value to start the range at.</p>
+    #[doc(hidden)]
     pub start_value: std::option::Option<crate::model::TypedAttributeValue>,
     /// <p>The inclusive or exclusive range end.</p>
+    #[doc(hidden)]
     pub end_mode: std::option::Option<crate::model::RangeMode>,
     /// <p>The attribute value to terminate the range at.</p>
+    #[doc(hidden)]
     pub end_value: std::option::Option<crate::model::TypedAttributeValue>,
 }
 impl TypedAttributeValueRange {
@@ -2639,8 +2696,10 @@ impl AsRef<str> for RangeMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the link between the parent and the child object.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl ObjectIdentifierAndLinkNameTuple {
@@ -2715,8 +2774,10 @@ impl ObjectIdentifierAndLinkNameTuple {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
+    #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathToObjectIdentifiers {
@@ -2797,8 +2858,10 @@ impl PathToObjectIdentifiers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AttributeKey>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::TypedAttributeValue>,
 }
 impl AttributeKeyAndValue {
@@ -2873,8 +2936,10 @@ impl AttributeKeyAndValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexAttachment {
     /// <p>The indexed attribute values.</p>
+    #[doc(hidden)]
     pub indexed_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl IndexAttachment {
@@ -2959,8 +3024,10 @@ impl IndexAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
+    #[doc(hidden)]
     pub attribute_key: std::option::Option<crate::model::AttributeKey>,
     /// <p>The range of attribute values being selected.</p>
+    #[doc(hidden)]
     pub range: std::option::Option<crate::model::TypedAttributeValueRange>,
 }
 impl ObjectAttributeRange {
@@ -3038,12 +3105,16 @@ impl ObjectAttributeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Directory {
     /// <p>The name of the directory.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DirectoryState>,
     /// <p>The date and time when the directory was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Directory {
@@ -3217,10 +3288,13 @@ impl AsRef<str> for DirectoryState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Facet {
     /// <p>The name of the <code>Facet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+    #[doc(hidden)]
     pub object_type: std::option::Option<crate::model::ObjectType>,
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    #[doc(hidden)]
     pub facet_style: std::option::Option<crate::model::FacetStyle>,
 }
 impl Facet {
@@ -3370,10 +3444,13 @@ impl AsRef<str> for FacetStyle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
+    #[doc(hidden)]
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TypedLinkFacet {
@@ -3636,36 +3713,51 @@ impl AsRef<str> for BatchWriteExceptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteOperationResponse {
     /// <p>Creates an object in a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
     /// <p>Attaches an object to a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub attach_object: std::option::Option<crate::model::BatchAttachObjectResponse>,
     /// <p>Detaches an object from a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub detach_object: std::option::Option<crate::model::BatchDetachObjectResponse>,
     /// <p>Updates a given object’s attributes.</p>
+    #[doc(hidden)]
     pub update_object_attributes:
         std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
     /// <p>Deletes an object in a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub delete_object: std::option::Option<crate::model::BatchDeleteObjectResponse>,
     /// <p>The result of an add facet to object batch operation.</p>
+    #[doc(hidden)]
     pub add_facet_to_object: std::option::Option<crate::model::BatchAddFacetToObjectResponse>,
     /// <p>The result of a batch remove facet from object operation.</p>
+    #[doc(hidden)]
     pub remove_facet_from_object:
         std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
+    #[doc(hidden)]
     pub attach_policy: std::option::Option<crate::model::BatchAttachPolicyResponse>,
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub detach_policy: std::option::Option<crate::model::BatchDetachPolicyResponse>,
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
+    #[doc(hidden)]
     pub create_index: std::option::Option<crate::model::BatchCreateIndexResponse>,
     /// <p>Attaches the specified object to the specified index.</p>
+    #[doc(hidden)]
     pub attach_to_index: std::option::Option<crate::model::BatchAttachToIndexResponse>,
     /// <p>Detaches the specified object from the specified index.</p>
+    #[doc(hidden)]
     pub detach_from_index: std::option::Option<crate::model::BatchDetachFromIndexResponse>,
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub attach_typed_link: std::option::Option<crate::model::BatchAttachTypedLinkResponse>,
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLinkResponse>,
     /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+    #[doc(hidden)]
     pub update_link_attributes:
         std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
 }
@@ -4108,6 +4200,7 @@ impl BatchDetachTypedLinkResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl BatchAttachTypedLinkResponse {
@@ -4165,6 +4258,7 @@ impl BatchAttachTypedLinkResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchDetachFromIndexResponse {
@@ -4225,6 +4319,7 @@ impl BatchDetachFromIndexResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
+    #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchAttachToIndexResponse {
@@ -4285,6 +4380,7 @@ impl BatchAttachToIndexResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchCreateIndexResponse {
@@ -4492,6 +4588,7 @@ impl BatchDeleteObjectResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchUpdateObjectAttributesResponse {
@@ -4549,6 +4646,7 @@ impl BatchUpdateObjectAttributesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
+    #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchDetachObjectResponse {
@@ -4609,6 +4707,7 @@ impl BatchDetachObjectResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
+    #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchAttachObjectResponse {
@@ -4669,6 +4768,7 @@ impl BatchAttachObjectResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchCreateObjectResponse {
@@ -4726,34 +4826,49 @@ impl BatchCreateObjectResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteOperation {
     /// <p>Creates an object.</p>
+    #[doc(hidden)]
     pub create_object: std::option::Option<crate::model::BatchCreateObject>,
     /// <p>Attaches an object to a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub attach_object: std::option::Option<crate::model::BatchAttachObject>,
     /// <p>Detaches an object from a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub detach_object: std::option::Option<crate::model::BatchDetachObject>,
     /// <p>Updates a given object's attributes.</p>
+    #[doc(hidden)]
     pub update_object_attributes: std::option::Option<crate::model::BatchUpdateObjectAttributes>,
     /// <p>Deletes an object in a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub delete_object: std::option::Option<crate::model::BatchDeleteObject>,
     /// <p>A batch operation that adds a facet to an object.</p>
+    #[doc(hidden)]
     pub add_facet_to_object: std::option::Option<crate::model::BatchAddFacetToObject>,
     /// <p>A batch operation that removes a facet from an object.</p>
+    #[doc(hidden)]
     pub remove_facet_from_object: std::option::Option<crate::model::BatchRemoveFacetFromObject>,
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
+    #[doc(hidden)]
     pub attach_policy: std::option::Option<crate::model::BatchAttachPolicy>,
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub detach_policy: std::option::Option<crate::model::BatchDetachPolicy>,
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
+    #[doc(hidden)]
     pub create_index: std::option::Option<crate::model::BatchCreateIndex>,
     /// <p>Attaches the specified object to the specified index.</p>
+    #[doc(hidden)]
     pub attach_to_index: std::option::Option<crate::model::BatchAttachToIndex>,
     /// <p>Detaches the specified object from the specified index.</p>
+    #[doc(hidden)]
     pub detach_from_index: std::option::Option<crate::model::BatchDetachFromIndex>,
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub attach_typed_link: std::option::Option<crate::model::BatchAttachTypedLink>,
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLink>,
     /// <p>Updates a given object's attributes.</p>
+    #[doc(hidden)]
     pub update_link_attributes: std::option::Option<crate::model::BatchUpdateLinkAttributes>,
 }
 impl BatchWriteOperation {
@@ -5109,8 +5224,10 @@ impl BatchWriteOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
 }
 impl BatchUpdateLinkAttributes {
@@ -5195,6 +5312,7 @@ impl BatchUpdateLinkAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLink {
@@ -5252,12 +5370,16 @@ impl BatchDetachTypedLink {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachTypedLink {
     /// <p>Identifies the source object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub source_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
+    #[doc(hidden)]
     pub target_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    #[doc(hidden)]
     pub typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
 impl BatchAttachTypedLink {
@@ -5387,8 +5509,10 @@ impl BatchAttachTypedLink {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>A reference to the object being detached from the index.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchDetachFromIndex {
@@ -5466,8 +5590,10 @@ impl BatchDetachFromIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachToIndex {
     /// <p>A reference to the index that you are attaching the object to.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchAttachToIndex {
@@ -5545,15 +5671,20 @@ impl BatchAttachToIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+    #[doc(hidden)]
     pub ordered_indexed_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    #[doc(hidden)]
     pub is_unique: bool,
     /// <p>A reference to the parent object that contains the index object.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link between the parent object and the index object.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    #[doc(hidden)]
     pub batch_reference_name: std::option::Option<std::string::String>,
 }
 impl BatchCreateIndex {
@@ -5697,8 +5828,10 @@ impl BatchCreateIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchDetachPolicy {
@@ -5776,8 +5909,10 @@ impl BatchDetachPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachPolicy {
     /// <p>The reference that is associated with the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchAttachPolicy {
@@ -5855,8 +5990,10 @@ impl BatchAttachPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRemoveFacetFromObject {
     /// <p>The facet to remove from the object.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>A reference to the object whose facet will be removed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchRemoveFacetFromObject {
@@ -5934,11 +6071,14 @@ impl BatchRemoveFacetFromObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
+    #[doc(hidden)]
     pub object_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchAddFacetToObject {
@@ -6045,6 +6185,7 @@ impl BatchAddFacetToObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchDeleteObject {
@@ -6102,8 +6243,10 @@ impl BatchDeleteObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Attributes update structure.</p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
 }
 impl BatchUpdateObjectAttributes {
@@ -6188,10 +6331,13 @@ impl BatchUpdateObjectAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    #[doc(hidden)]
     pub batch_reference_name: std::option::Option<std::string::String>,
 }
 impl BatchDetachObject {
@@ -6286,10 +6432,13 @@ impl BatchDetachObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAttachObject {
     /// <p>The parent object reference.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The child object reference that is to be attached to the object.</p>
+    #[doc(hidden)]
     pub child_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
 }
 impl BatchAttachObject {
@@ -6384,15 +6533,20 @@ impl BatchAttachObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
+    #[doc(hidden)]
     pub object_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
+    #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link.</p>
+    #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    #[doc(hidden)]
     pub batch_reference_name: std::option::Option<std::string::String>,
 }
 impl BatchCreateObject {
@@ -6542,8 +6696,10 @@ impl BatchCreateObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has succeeded.</p>
+    #[doc(hidden)]
     pub successful_response: std::option::Option<crate::model::BatchReadSuccessfulResponse>,
     /// <p>Identifies which operation in a batch has failed.</p>
+    #[doc(hidden)]
     pub exception_response: std::option::Option<crate::model::BatchReadException>,
 }
 impl BatchReadOperationResponse {
@@ -6627,8 +6783,10 @@ impl BatchReadOperationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BatchReadExceptionType>,
     /// <p>An exception message that is associated with the failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchReadException {
@@ -6820,38 +6978,52 @@ impl AsRef<str> for BatchReadExceptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadSuccessfulResponse {
     /// <p>Lists all attributes that are associated with an object.</p>
+    #[doc(hidden)]
     pub list_object_attributes:
         std::option::Option<crate::model::BatchListObjectAttributesResponse>,
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
+    #[doc(hidden)]
     pub list_object_children: std::option::Option<crate::model::BatchListObjectChildrenResponse>,
     /// <p>Retrieves metadata about an object.</p>
+    #[doc(hidden)]
     pub get_object_information:
         std::option::Option<crate::model::BatchGetObjectInformationResponse>,
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    #[doc(hidden)]
     pub get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributesResponse>,
     /// <p>Lists indices attached to an object.</p>
+    #[doc(hidden)]
     pub list_attached_indices: std::option::Option<crate::model::BatchListAttachedIndicesResponse>,
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    #[doc(hidden)]
     pub list_object_parent_paths:
         std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
     /// <p>Returns policies attached to an object in pagination fashion.</p>
+    #[doc(hidden)]
     pub list_object_policies: std::option::Option<crate::model::BatchListObjectPoliciesResponse>,
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    #[doc(hidden)]
     pub list_policy_attachments:
         std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    #[doc(hidden)]
     pub lookup_policy: std::option::Option<crate::model::BatchLookupPolicyResponse>,
     /// <p>Lists objects attached to the specified index.</p>
+    #[doc(hidden)]
     pub list_index: std::option::Option<crate::model::BatchListIndexResponse>,
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub list_outgoing_typed_links:
         std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub list_incoming_typed_links:
         std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
     /// <p>The list of attributes to retrieve from the typed link.</p>
+    #[doc(hidden)]
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
     /// <p>The list of parent objects to retrieve.</p>
+    #[doc(hidden)]
     pub list_object_parents: std::option::Option<crate::model::BatchListObjectParentsResponse>,
 }
 impl BatchReadSuccessfulResponse {
@@ -7241,9 +7413,11 @@ impl BatchReadSuccessfulResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    #[doc(hidden)]
     pub parent_links:
         std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectParentsResponse {
@@ -7332,6 +7506,7 @@ impl BatchListObjectParentsResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponse {
@@ -7396,8 +7571,10 @@ impl BatchGetLinkAttributesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListIncomingTypedLinksResponse {
     /// <p>Returns one or more typed link specifiers as output.</p>
+    #[doc(hidden)]
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListIncomingTypedLinksResponse {
@@ -7479,8 +7656,10 @@ impl BatchListIncomingTypedLinksResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
+    #[doc(hidden)]
     pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListOutgoingTypedLinksResponse {
@@ -7564,8 +7743,10 @@ impl BatchListOutgoingTypedLinksResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListIndexResponse {
     /// <p>The objects and indexed values attached to the index.</p>
+    #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListIndexResponse {
@@ -7647,8 +7828,10 @@ impl BatchListIndexResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchLookupPolicyResponse {
@@ -7730,8 +7913,10 @@ impl BatchLookupPolicyResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
+    #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListPolicyAttachmentsResponse {
@@ -7812,8 +7997,10 @@ impl BatchListPolicyAttachmentsResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectPoliciesResponse {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
+    #[doc(hidden)]
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectPoliciesResponse {
@@ -7894,9 +8081,11 @@ impl BatchListObjectPoliciesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParentPathsResponse {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
+    #[doc(hidden)]
     pub path_to_object_identifiers_list:
         std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectParentPathsResponse {
@@ -7986,8 +8175,10 @@ impl BatchListObjectParentPathsResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
+    #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListAttachedIndicesResponse {
@@ -8069,6 +8260,7 @@ impl BatchListAttachedIndicesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl BatchGetObjectAttributesResponse {
@@ -8133,8 +8325,10 @@ impl BatchGetObjectAttributesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
+    #[doc(hidden)]
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchGetObjectInformationResponse {
@@ -8218,9 +8412,11 @@ impl BatchGetObjectInformationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectChildrenResponse {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
+    #[doc(hidden)]
     pub children:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectChildrenResponse {
@@ -8312,8 +8508,10 @@ impl BatchListObjectChildrenResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectAttributesResponse {
@@ -8395,32 +8593,46 @@ impl BatchListObjectAttributesResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadOperation {
     /// <p>Lists all attributes that are associated with an object.</p>
+    #[doc(hidden)]
     pub list_object_attributes: std::option::Option<crate::model::BatchListObjectAttributes>,
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
+    #[doc(hidden)]
     pub list_object_children: std::option::Option<crate::model::BatchListObjectChildren>,
     /// <p>Lists indices attached to an object.</p>
+    #[doc(hidden)]
     pub list_attached_indices: std::option::Option<crate::model::BatchListAttachedIndices>,
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    #[doc(hidden)]
     pub list_object_parent_paths: std::option::Option<crate::model::BatchListObjectParentPaths>,
     /// <p>Retrieves metadata about an object.</p>
+    #[doc(hidden)]
     pub get_object_information: std::option::Option<crate::model::BatchGetObjectInformation>,
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    #[doc(hidden)]
     pub get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributes>,
     /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
+    #[doc(hidden)]
     pub list_object_parents: std::option::Option<crate::model::BatchListObjectParents>,
     /// <p>Returns policies attached to an object in pagination fashion.</p>
+    #[doc(hidden)]
     pub list_object_policies: std::option::Option<crate::model::BatchListObjectPolicies>,
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    #[doc(hidden)]
     pub list_policy_attachments: std::option::Option<crate::model::BatchListPolicyAttachments>,
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    #[doc(hidden)]
     pub lookup_policy: std::option::Option<crate::model::BatchLookupPolicy>,
     /// <p>Lists objects attached to the specified index.</p>
+    #[doc(hidden)]
     pub list_index: std::option::Option<crate::model::BatchListIndex>,
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub list_outgoing_typed_links: std::option::Option<crate::model::BatchListOutgoingTypedLinks>,
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub list_incoming_typed_links: std::option::Option<crate::model::BatchListIncomingTypedLinks>,
     /// <p>Retrieves attributes that are associated with a typed link.</p>
+    #[doc(hidden)]
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributes>,
 }
 impl BatchReadOperation {
@@ -8800,8 +9012,10 @@ impl BatchReadOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetLinkAttributes {
@@ -8885,15 +9099,20 @@ impl BatchGetLinkAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListIncomingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    #[doc(hidden)]
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
+    #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListIncomingTypedLinks {
@@ -9043,15 +9262,20 @@ impl BatchListIncomingTypedLinks {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListOutgoingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    #[doc(hidden)]
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
+    #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListOutgoingTypedLinks {
@@ -9201,13 +9425,17 @@ impl BatchListOutgoingTypedLinks {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    #[doc(hidden)]
     pub ranges_on_indexed_values:
         std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
+    #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListIndex {
@@ -9331,10 +9559,13 @@ impl BatchListIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchLookupPolicy {
@@ -9426,10 +9657,13 @@ impl BatchLookupPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListPolicyAttachments {
     /// <p>The reference that identifies the policy object.</p>
+    #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListPolicyAttachments {
@@ -9521,10 +9755,13 @@ impl BatchListPolicyAttachments {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectPolicies {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListObjectPolicies {
@@ -9616,10 +9853,13 @@ impl BatchListObjectPolicies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListObjectParents {
@@ -9711,10 +9951,13 @@ impl BatchListObjectParents {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetObjectAttributes {
@@ -9818,6 +10061,7 @@ impl BatchGetObjectAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchGetObjectInformation {
@@ -9875,10 +10119,13 @@ impl BatchGetObjectInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParentPaths {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListObjectParentPaths {
@@ -9970,10 +10217,13 @@ impl BatchListObjectParentPaths {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
+    #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListAttachedIndices {
@@ -10065,10 +10315,13 @@ impl BatchListAttachedIndices {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectChildren {
     /// <p>Reference of the object for which child objects are being listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchListObjectChildren {
@@ -10160,12 +10413,16 @@ impl BatchListObjectChildren {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
+    #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+    #[doc(hidden)]
     pub facet_filter: std::option::Option<crate::model::SchemaFacet>,
 }
 impl BatchListObjectAttributes {

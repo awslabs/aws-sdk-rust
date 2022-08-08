@@ -1451,14 +1451,19 @@ impl StartAttachmentUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAttachmentUploadInput {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The size of the attachment in bytes.</p>
+    #[doc(hidden)]
     pub attachment_size_in_bytes: i64,
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
+    #[doc(hidden)]
     pub attachment_name: std::option::Option<std::string::String>,
     /// <p>A unique case sensitive identifier to support idempotency of request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl StartAttachmentUploadInput {
@@ -1500,12 +1505,16 @@ impl std::fmt::Debug for StartAttachmentUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageInput {
     /// <p>The type of the content. Supported types are text/plain.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl SendMessageInput {
@@ -1546,12 +1555,16 @@ pub struct SendEventInput {
     /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
     /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl SendEventInput {
@@ -1592,18 +1605,25 @@ impl std::fmt::Debug for SendEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptInput {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the page. Default: 10. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
+    #[doc(hidden)]
     pub scan_direction: std::option::Option<crate::model::ScanDirection>,
     /// <p>The sort order for the records. Default: DESCENDING.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortKey>,
     /// <p>A filtering option for where to start.</p>
+    #[doc(hidden)]
     pub start_position: std::option::Option<crate::model::StartPosition>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl GetTranscriptInput {
@@ -1655,8 +1675,10 @@ impl std::fmt::Debug for GetTranscriptInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl GetAttachmentInput {
@@ -1683,8 +1705,10 @@ impl std::fmt::Debug for GetAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectParticipantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl DisconnectParticipantInput {
@@ -1711,11 +1735,14 @@ impl std::fmt::Debug for DisconnectParticipantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
+    #[doc(hidden)]
     pub participant_token: std::option::Option<std::string::String>,
     /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    #[doc(hidden)]
     pub connect_participant: std::option::Option<bool>,
 }
 impl CreateParticipantConnectionInput {
@@ -1748,10 +1775,13 @@ impl std::fmt::Debug for CreateParticipantConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
+    #[doc(hidden)]
     pub attachment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl CompleteAttachmentUploadInput {

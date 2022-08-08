@@ -1812,16 +1812,22 @@ impl StartExpenseAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExpenseAnalysisInput {
     /// <p>The location of the document to be processed.</p>
+    #[doc(hidden)]
     pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl StartExpenseAnalysisInput {
@@ -1868,16 +1874,22 @@ impl std::fmt::Debug for StartExpenseAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentTextDetectionInput {
     /// <p>The location of the document to be processed.</p>
+    #[doc(hidden)]
     pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentTextDetectionInput {
@@ -1924,20 +1936,28 @@ impl std::fmt::Debug for StartDocumentTextDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
+    #[doc(hidden)]
     pub document_location: std::option::Option<crate::model::DocumentLocation>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    #[doc(hidden)]
     pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl StartDocumentAnalysisInput {
@@ -1994,10 +2014,13 @@ impl std::fmt::Debug for StartDocumentAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExpenseAnalysisInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExpenseAnalysisInput {
@@ -2029,10 +2052,13 @@ impl std::fmt::Debug for GetExpenseAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentTextDetectionInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDocumentTextDetectionInput {
@@ -2064,10 +2090,13 @@ impl std::fmt::Debug for GetDocumentTextDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentAnalysisInput {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDocumentAnalysisInput {
@@ -2100,6 +2129,7 @@ impl std::fmt::Debug for GetDocumentAnalysisInput {
 pub struct DetectDocumentTextInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::Document>,
 }
 impl DetectDocumentTextInput {
@@ -2122,6 +2152,7 @@ impl std::fmt::Debug for DetectDocumentTextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
+    #[doc(hidden)]
     pub document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
 }
 impl AnalyzeIdInput {
@@ -2148,6 +2179,7 @@ pub struct AnalyzeExpenseInput {
     /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::Document>,
 }
 impl AnalyzeExpenseInput {
@@ -2175,12 +2207,16 @@ impl std::fmt::Debug for AnalyzeExpenseInput {
 pub struct AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::Document>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    #[doc(hidden)]
     pub feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    #[doc(hidden)]
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+    #[doc(hidden)]
     pub queries_config: std::option::Option<crate::model::QueriesConfig>,
 }
 impl AnalyzeDocumentInput {

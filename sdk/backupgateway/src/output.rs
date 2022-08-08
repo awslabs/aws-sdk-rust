@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHypervisorsOutput {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub hypervisors: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHypervisorsOutput {
@@ -86,6 +88,7 @@ impl ListHypervisorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportHypervisorConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl ImportHypervisorConfigurationOutput {
@@ -143,6 +146,7 @@ impl ImportHypervisorConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHypervisorOutput {
@@ -200,6 +204,7 @@ impl DeleteHypervisorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl UpdateHypervisorOutput {
@@ -257,6 +262,7 @@ impl UpdateHypervisorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewaySoftwareNowOutput {
@@ -341,6 +347,7 @@ impl TestHypervisorConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl PutMaintenanceStartTimeOutput {
@@ -395,6 +402,7 @@ impl PutMaintenanceStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateGatewayFromServerOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateGatewayFromServerOutput {
@@ -449,6 +457,7 @@ impl DisassociateGatewayFromServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateGatewayToServerOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AssociateGatewayToServerOutput {
@@ -503,8 +512,10 @@ impl AssociateGatewayToServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
+    #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysOutput {
@@ -585,6 +596,7 @@ impl ListGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayOutput {
@@ -639,6 +651,7 @@ impl CreateGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayOutput {
@@ -693,6 +706,7 @@ impl DeleteGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInformationOutput {
@@ -747,6 +761,7 @@ impl UpdateGatewayInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayOutput {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
+    #[doc(hidden)]
     pub gateway: std::option::Option<crate::model::GatewayDetails>,
 }
 impl GetGatewayOutput {
@@ -804,6 +819,7 @@ impl GetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UntagResourceOutput {
@@ -858,6 +874,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl TagResourceOutput {
@@ -912,8 +929,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualMachinesOutput {
@@ -995,8 +1014,10 @@ impl ListVirtualMachinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the resource's tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {

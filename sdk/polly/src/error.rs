@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextLengthExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TextLengthExceededException {
@@ -69,6 +70,7 @@ impl TextLengthExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMarksNotSupportedForTextTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SsmlMarksNotSupportedForTextTypeException {
@@ -133,6 +135,7 @@ impl SsmlMarksNotSupportedForTextTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceFailureException {
@@ -197,6 +200,7 @@ impl ServiceFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarksNotSupportedForFormatException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MarksNotSupportedForFormatException {
@@ -262,6 +266,7 @@ impl MarksNotSupportedForFormatException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LexiconNotFoundException {
@@ -326,6 +331,7 @@ impl LexiconNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LanguageNotSupportedException {
@@ -390,6 +396,7 @@ impl LanguageNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSsmlException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSsmlException {
@@ -454,6 +461,7 @@ impl InvalidSsmlException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSampleRateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSampleRateException {
@@ -518,6 +526,7 @@ impl InvalidSampleRateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EngineNotSupportedException {
@@ -582,6 +591,7 @@ impl EngineNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicArnException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSnsTopicArnException {
@@ -646,6 +656,7 @@ impl InvalidSnsTopicArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3KeyException {
@@ -710,6 +721,7 @@ impl InvalidS3KeyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3BucketException {
@@ -774,6 +786,7 @@ impl InvalidS3BucketException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsLanguageException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedPlsLanguageException {
@@ -838,6 +851,7 @@ impl UnsupportedPlsLanguageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsAlphabetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedPlsAlphabetException {
@@ -902,6 +916,7 @@ impl UnsupportedPlsAlphabetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexiconsNumberExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxLexiconsNumberExceededException {
@@ -966,6 +981,7 @@ impl MaxLexiconsNumberExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexemeLengthExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxLexemeLengthExceededException {
@@ -1030,6 +1046,7 @@ impl MaxLexemeLengthExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconSizeExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LexiconSizeExceededException {
@@ -1094,6 +1111,7 @@ impl LexiconSizeExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLexiconException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLexiconException {
@@ -1158,6 +1176,7 @@ impl InvalidLexiconException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -1222,6 +1241,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTaskNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SynthesisTaskNotFoundException {
@@ -1286,6 +1306,7 @@ impl SynthesisTaskNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTaskIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTaskIdException {

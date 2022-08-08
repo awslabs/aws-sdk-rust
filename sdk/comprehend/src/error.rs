@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -69,6 +70,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceUnavailableException {
@@ -133,6 +135,7 @@ impl ResourceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -197,6 +200,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceededException {
@@ -261,6 +265,7 @@ impl ResourceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -325,6 +330,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -389,6 +395,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -453,6 +460,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagKeysException {
@@ -517,6 +525,7 @@ impl TooManyTagKeysException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -581,6 +590,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -645,6 +655,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for JobNotFoundException {
@@ -709,6 +720,7 @@ impl JobNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyValidationException {
@@ -773,6 +785,7 @@ impl KmsKeyValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilterException {
@@ -837,6 +850,7 @@ impl InvalidFilterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedLanguageException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedLanguageException {
@@ -901,6 +915,7 @@ impl UnsupportedLanguageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TextSizeLimitExceededException {
@@ -965,6 +980,7 @@ impl TextSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchSizeLimitExceededException {

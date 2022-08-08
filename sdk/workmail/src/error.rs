@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationStateException {
@@ -69,6 +70,7 @@ impl OrganizationStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationNotFoundException {
@@ -133,6 +135,7 @@ impl OrganizationNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NameAvailabilityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NameAvailabilityException {
@@ -197,6 +200,7 @@ impl NameAvailabilityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MailDomainStateException {
@@ -261,6 +265,7 @@ impl MailDomainStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MailDomainNotFoundException {
@@ -325,6 +330,7 @@ impl MailDomainNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationException {
@@ -389,6 +395,7 @@ impl InvalidConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityStateException {
@@ -453,6 +460,7 @@ impl EntityStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityNotFoundException {
@@ -517,6 +525,7 @@ impl EntityNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailAddressInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmailAddressInUseException {
@@ -581,6 +590,7 @@ impl EmailAddressInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryUnavailableException {
@@ -645,6 +655,7 @@ impl DirectoryUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -709,6 +720,7 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -773,6 +785,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryServiceAuthenticationFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryServiceAuthenticationFailedException {
@@ -837,6 +850,7 @@ impl DirectoryServiceAuthenticationFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -901,6 +915,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -965,6 +980,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -1029,6 +1045,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPasswordException {
@@ -1093,6 +1110,7 @@ impl InvalidPasswordException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityAlreadyRegisteredException {
@@ -1157,6 +1175,7 @@ impl EntityAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MailDomainInUseException {
@@ -1221,6 +1240,7 @@ impl MailDomainInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomSesConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCustomSesConfigurationException {
@@ -1285,6 +1305,7 @@ impl InvalidCustomSesConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReservedNameException {
@@ -1349,6 +1370,7 @@ impl ReservedNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryInUseException {

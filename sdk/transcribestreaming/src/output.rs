@@ -3,16 +3,22 @@
 #[non_exhaustive]
 pub struct StartStreamTranscriptionOutput {
     /// <p>An identifier for the transcription.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code of the input audio stream.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
+    #[doc(hidden)]
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
     /// <p>The name of the custom vocabulary used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>An identifier for a specific transcription session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>
     pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
@@ -20,36 +26,52 @@ pub struct StartStreamTranscriptionOutput {
         crate::error::TranscriptResultStreamError,
     >,
     /// <p>The name of the vocabulary filter used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The vocabulary filtering method used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
     /// <p>Shows whether speaker identification was enabled in the transcription.</p>
+    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>Shows whether channel identification was enabled in the stream.</p>
+    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>The number of channels identified in the stream.</p>
+    #[doc(hidden)]
     pub number_of_channels: std::option::Option<i32>,
     /// <p>Shows whether partial results stabilization was enabled in the transcription.</p>
+    #[doc(hidden)]
     pub enable_partial_results_stabilization: bool,
     /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
+    #[doc(hidden)]
     pub partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
     /// <p>Shows whether content identification was enabled in this stream.</p>
+    #[doc(hidden)]
     pub content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
     /// <p>Shows whether content redaction was enabled in this stream.</p>
+    #[doc(hidden)]
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your request.</p>
+    #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the custom language model used in the transcription.</p>
+    #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
     /// <p>The language code of the language identified in your media stream.</p>
+    #[doc(hidden)]
     pub identify_language: bool,
     /// <p>The language codes used in the identification of your media stream's predominant language.</p>
+    #[doc(hidden)]
     pub language_options: std::option::Option<std::string::String>,
     /// <p>The preferred language you specified in your request.</p>
+    #[doc(hidden)]
     pub preferred_language: std::option::Option<crate::model::LanguageCode>,
     /// <p>The name of the custom vocabulary used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_names: std::option::Option<std::string::String>,
     /// <p>The name of the vocabulary filter used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_names: std::option::Option<std::string::String>,
 }
 impl StartStreamTranscriptionOutput {
@@ -615,22 +637,31 @@ impl StartStreamTranscriptionOutput {
 #[non_exhaustive]
 pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>An identifier for the streaming transcription.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate of the input audio, in Hertz (Hz).</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
+    #[doc(hidden)]
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
     /// <p>The name of the vocabulary used when processing the stream.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The specialty in the medical domain.</p>
+    #[doc(hidden)]
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>The type of audio that was transcribed. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>Shows whether speaker identification was enabled in the stream.</p>
+    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>
     pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
@@ -638,10 +669,13 @@ pub struct StartMedicalStreamTranscriptionOutput {
         crate::error::MedicalTranscriptResultStreamError,
     >,
     /// <p>Shows whether channel identification has been enabled in the stream.</p>
+    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>The number of channels identified in the stream.</p>
+    #[doc(hidden)]
     pub number_of_channels: std::option::Option<i32>,
     /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
 }

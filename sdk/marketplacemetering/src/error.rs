@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -69,6 +70,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTokenException {
@@ -133,6 +135,7 @@ impl InvalidTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceErrorException {
@@ -197,6 +200,7 @@ impl InternalServiceErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredTokenException {
@@ -261,6 +265,7 @@ impl ExpiredTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisabledApiException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisabledApiException {
@@ -325,6 +330,7 @@ impl DisabledApiException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlatformNotSupportedException {
@@ -389,6 +395,7 @@ impl PlatformNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRegionException {
@@ -453,6 +460,7 @@ impl InvalidRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPublicKeyVersionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPublicKeyVersionException {
@@ -517,6 +525,7 @@ impl InvalidPublicKeyVersionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidProductCodeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidProductCodeException {
@@ -581,6 +590,7 @@ impl InvalidProductCodeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerNotEntitledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomerNotEntitledException {
@@ -646,6 +656,7 @@ impl CustomerNotEntitledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampOutOfBoundsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TimestampOutOfBoundsException {
@@ -710,6 +721,7 @@ impl TimestampOutOfBoundsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUsageDimensionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUsageDimensionException {
@@ -774,6 +786,7 @@ impl InvalidUsageDimensionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUsageAllocationsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUsageAllocationsException {
@@ -838,6 +851,7 @@ impl InvalidUsageAllocationsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagException {
@@ -902,6 +916,7 @@ impl InvalidTagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEndpointRegionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEndpointRegionException {
@@ -966,6 +981,7 @@ impl InvalidEndpointRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateRequestException {
@@ -1030,6 +1046,7 @@ impl DuplicateRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomerIdentifierException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCustomerIdentifierException {

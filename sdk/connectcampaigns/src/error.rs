@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl ValidationException {
@@ -93,8 +95,10 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -185,8 +189,10 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -273,8 +279,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
@@ -365,8 +373,10 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -453,8 +463,10 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -541,10 +553,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCampaignStateException {
     /// State of a campaign
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CampaignState>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl InvalidCampaignStateException {
@@ -651,8 +666,10 @@ impl InvalidCampaignStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl InvalidStateException {
@@ -739,8 +756,10 @@ impl InvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// A header that defines the error encountered while processing the request.
+    #[doc(hidden)]
     pub x_amz_error_type: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {

@@ -87,8 +87,10 @@ impl AsRef<str> for CertificateAuthorityStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevocationConfiguration {
     /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
+    #[doc(hidden)]
     pub crl_configuration: std::option::Option<crate::model::CrlConfiguration>,
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
+    #[doc(hidden)]
     pub ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
 }
 impl RevocationConfiguration {
@@ -167,10 +169,12 @@ impl RevocationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OcspConfiguration {
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
     /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+    #[doc(hidden)]
     pub ocsp_custom_cname: std::option::Option<std::string::String>,
 }
 impl OcspConfiguration {
@@ -281,17 +285,22 @@ impl OcspConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrlConfiguration {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>Validity period of the CRL in days.</p>
+    #[doc(hidden)]
     pub expiration_in_days: std::option::Option<i32>,
     /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>
+    #[doc(hidden)]
     pub custom_cname: std::option::Option<std::string::String>,
     /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access. </p>
     /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
     /// <p> <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
+    #[doc(hidden)]
     pub s3_object_acl: std::option::Option<crate::model::S3ObjectAcl>,
 }
 impl CrlConfiguration {
@@ -484,8 +493,10 @@ impl AsRef<str> for S3ObjectAcl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Key (name) of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -645,16 +656,22 @@ impl AsRef<str> for RevocationReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the permission was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
     /// <p>The ID of the account that assigned the permission.</p>
+    #[doc(hidden)]
     pub source_account: std::option::Option<std::string::String>,
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
     /// <p>The name of the policy that is associated with the permission.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl Permission {
@@ -871,35 +888,49 @@ impl AsRef<str> for ActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthority {
     /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Date and time at which your private CA was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time at which your private CA was last updated.</p>
+    #[doc(hidden)]
     pub last_state_change_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Type of your private CA.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateAuthorityType>,
     /// <p>Serial number of your private CA.</p>
+    #[doc(hidden)]
     pub serial: std::option::Option<std::string::String>,
     /// <p>Status of your private CA.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateAuthorityStatus>,
     /// <p>Date and time before which your private CA certificate is not valid.</p>
+    #[doc(hidden)]
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time after which your private CA certificate is not valid.</p>
+    #[doc(hidden)]
     pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reason the request to create your private CA failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>Your private CA configuration.</p>
+    #[doc(hidden)]
     pub certificate_authority_configuration:
         std::option::Option<crate::model::CertificateAuthorityConfiguration>,
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
+    #[doc(hidden)]
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+    #[doc(hidden)]
     pub restorable_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    #[doc(hidden)]
     pub key_storage_security_standard:
         std::option::Option<crate::model::KeyStorageSecurityStandard>,
 }
@@ -1300,13 +1331,17 @@ impl AsRef<str> for KeyStorageSecurityStandard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
+    #[doc(hidden)]
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithm>,
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<crate::model::Asn1Subject>,
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
+    #[doc(hidden)]
     pub csr_extensions: std::option::Option<crate::model::CsrExtensions>,
 }
 impl CertificateAuthorityConfiguration {
@@ -1427,8 +1462,10 @@ impl CertificateAuthorityConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsrExtensions {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
+    #[doc(hidden)]
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+    #[doc(hidden)]
     pub subject_information_access:
         std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
 }
@@ -1519,8 +1556,10 @@ impl CsrExtensions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDescription {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
+    #[doc(hidden)]
     pub access_method: std::option::Option<crate::model::AccessMethod>,
     /// <p>The location of <code>AccessDescription</code> information.</p>
+    #[doc(hidden)]
     pub access_location: std::option::Option<crate::model::GeneralName>,
 }
 impl AccessDescription {
@@ -1598,20 +1637,28 @@ impl AccessDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
+    #[doc(hidden)]
     pub other_name: std::option::Option<crate::model::OtherName>,
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
+    #[doc(hidden)]
     pub rfc822_name: std::option::Option<std::string::String>,
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<crate::model::Asn1Subject>,
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
+    #[doc(hidden)]
     pub edi_party_name: std::option::Option<crate::model::EdiPartyName>,
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
+    #[doc(hidden)]
     pub uniform_resource_identifier: std::option::Option<std::string::String>,
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    #[doc(hidden)]
     pub registered_id: std::option::Option<std::string::String>,
 }
 impl GeneralName {
@@ -1806,8 +1853,10 @@ impl GeneralName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdiPartyName {
     /// <p>Specifies the party name.</p>
+    #[doc(hidden)]
     pub party_name: std::option::Option<std::string::String>,
     /// <p>Specifies the name assigner.</p>
+    #[doc(hidden)]
     pub name_assigner: std::option::Option<std::string::String>,
 }
 impl EdiPartyName {
@@ -1882,38 +1931,53 @@ impl EdiPartyName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Asn1Subject {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    #[doc(hidden)]
     pub organization: std::option::Option<std::string::String>,
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
+    #[doc(hidden)]
     pub organizational_unit: std::option::Option<std::string::String>,
     /// <p>Disambiguating information for the certificate subject.</p>
+    #[doc(hidden)]
     pub distinguished_name_qualifier: std::option::Option<std::string::String>,
     /// <p>State in which the subject of the certificate is located.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
+    #[doc(hidden)]
     pub common_name: std::option::Option<std::string::String>,
     /// <p>The certificate serial number.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
+    #[doc(hidden)]
     pub locality: std::option::Option<std::string::String>,
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
+    #[doc(hidden)]
     pub surname: std::option::Option<std::string::String>,
     /// <p>First name.</p>
+    #[doc(hidden)]
     pub given_name: std::option::Option<std::string::String>,
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
+    #[doc(hidden)]
     pub initials: std::option::Option<std::string::String>,
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
+    #[doc(hidden)]
     pub pseudonym: std::option::Option<std::string::String>,
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
+    #[doc(hidden)]
     pub generation_qualifier: std::option::Option<std::string::String>,
     /// <p></p>
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
+    #[doc(hidden)]
     pub custom_attributes: std::option::Option<std::vec::Vec<crate::model::CustomAttribute>>,
 }
 impl Asn1Subject {
@@ -2246,9 +2310,11 @@ impl Asn1Subject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomAttribute {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomAttribute {
@@ -2326,8 +2392,10 @@ impl CustomAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtherName {
     /// <p>Specifies an OID. </p>
+    #[doc(hidden)]
     pub type_id: std::option::Option<std::string::String>,
     /// <p>Specifies an OID value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl OtherName {
@@ -2399,8 +2467,10 @@ impl OtherName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessMethod {
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    #[doc(hidden)]
     pub custom_object_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the <code>AccessMethod</code>.</p>
+    #[doc(hidden)]
     pub access_method_type: std::option::Option<crate::model::AccessMethodType>,
 }
 impl AccessMethod {
@@ -2541,22 +2611,31 @@ impl AsRef<str> for AccessMethodType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUsage {
     /// <p> Key can be used for digital signing.</p>
+    #[doc(hidden)]
     pub digital_signature: bool,
     /// <p>Key can be used for non-repudiation.</p>
+    #[doc(hidden)]
     pub non_repudiation: bool,
     /// <p>Key can be used to encipher data.</p>
+    #[doc(hidden)]
     pub key_encipherment: bool,
     /// <p>Key can be used to decipher data.</p>
+    #[doc(hidden)]
     pub data_encipherment: bool,
     /// <p>Key can be used in a key-agreement protocol.</p>
+    #[doc(hidden)]
     pub key_agreement: bool,
     /// <p>Key can be used to sign certificates.</p>
+    #[doc(hidden)]
     pub key_cert_sign: bool,
     /// <p>Key can be used to sign CRLs.</p>
+    #[doc(hidden)]
     pub crl_sign: bool,
     /// <p>Key can be used only to encipher data.</p>
+    #[doc(hidden)]
     pub encipher_only: bool,
     /// <p>Key can be used only to decipher data.</p>
+    #[doc(hidden)]
     pub decipher_only: bool,
 }
 impl KeyUsage {
@@ -3058,6 +3137,7 @@ impl AsRef<str> for ResourceOwner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Validity {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<i64>,
     /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
     /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
@@ -3077,6 +3157,7 @@ pub struct Validity {
     /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ValidityPeriodType>,
 }
 impl Validity {
@@ -3270,8 +3351,10 @@ impl AsRef<str> for ValidityPeriodType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiPassthrough {
     /// <p>Specifies X.509 extension information for a certificate.</p>
+    #[doc(hidden)]
     pub extensions: std::option::Option<crate::model::Extensions>,
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<crate::model::Asn1Subject>,
 }
 impl ApiPassthrough {
@@ -3350,15 +3433,20 @@ impl ApiPassthrough {
 pub struct Extensions {
     /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
+    #[doc(hidden)]
     pub certificate_policies: std::option::Option<std::vec::Vec<crate::model::PolicyInformation>>,
     /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+    #[doc(hidden)]
     pub extended_key_usage: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
     /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
+    #[doc(hidden)]
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
     /// <p></p>
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    #[doc(hidden)]
     pub custom_extensions: std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,
 }
 impl Extensions {
@@ -3530,12 +3618,15 @@ impl Extensions {
 pub struct CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
+    #[doc(hidden)]
     pub critical: std::option::Option<bool>,
 }
 impl CustomExtension {
@@ -3636,8 +3727,10 @@ impl CustomExtension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+    #[doc(hidden)]
     pub extended_key_usage_type: std::option::Option<crate::model::ExtendedKeyUsageType>,
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
+    #[doc(hidden)]
     pub extended_key_usage_object_identifier: std::option::Option<std::string::String>,
 }
 impl ExtendedKeyUsage {
@@ -3819,8 +3912,10 @@ impl AsRef<str> for ExtendedKeyUsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyInformation {
     /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    #[doc(hidden)]
     pub cert_policy_id: std::option::Option<std::string::String>,
     /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
+    #[doc(hidden)]
     pub policy_qualifiers: std::option::Option<std::vec::Vec<crate::model::PolicyQualifierInfo>>,
 }
 impl PolicyInformation {
@@ -3905,8 +4000,10 @@ impl PolicyInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
+    #[doc(hidden)]
     pub policy_qualifier_id: std::option::Option<crate::model::PolicyQualifierId>,
     /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
+    #[doc(hidden)]
     pub qualifier: std::option::Option<crate::model::Qualifier>,
 }
 impl PolicyQualifierInfo {
@@ -3984,6 +4081,7 @@ impl PolicyQualifierInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
+    #[doc(hidden)]
     pub cps_uri: std::option::Option<std::string::String>,
 }
 impl Qualifier {

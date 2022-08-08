@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Update {
     /// <p>A UUID that is used to track the update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The current status of the update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UpdateStatus>,
     /// <p>The type of the update.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UpdateType>,
     /// <p>A key-value map that contains the parameters associated with the update.</p>
+    #[doc(hidden)]
     pub params: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
 }
 impl Update {
@@ -187,10 +193,13 @@ pub struct ErrorDetail {
     /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
     /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A more complete description of the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ErrorDetail {
@@ -454,8 +463,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParam {
     /// <p>The keys associated with an update request.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UpdateParamType>,
     /// <p>The value of the keys submitted as part of an update request.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl UpdateParam {
@@ -845,10 +856,13 @@ impl AsRef<str> for UpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The ID of the launch template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateSpecification {
@@ -937,8 +951,10 @@ impl LaunchTemplateSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupUpdateConfig {
     /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    #[doc(hidden)]
     pub max_unavailable: std::option::Option<i32>,
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    #[doc(hidden)]
     pub max_unavailable_percentage: std::option::Option<i32>,
 }
 impl NodegroupUpdateConfig {
@@ -1013,14 +1029,17 @@ impl NodegroupUpdateConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupScalingConfig {
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<i32>,
     /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
     /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    #[doc(hidden)]
     pub desired_size: std::option::Option<i32>,
 }
 impl NodegroupScalingConfig {
@@ -1121,8 +1140,10 @@ impl NodegroupScalingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
+    #[doc(hidden)]
     pub add_or_update_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
     /// <p>Kubernetes taints to be removed.</p>
+    #[doc(hidden)]
     pub remove_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
 }
 impl UpdateTaintsPayload {
@@ -1212,10 +1233,13 @@ impl UpdateTaintsPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Taint {
     /// <p>The key of the taint.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the taint.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The effect of the taint.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::TaintEffect>,
 }
 impl Taint {
@@ -1363,9 +1387,11 @@ impl AsRef<str> for TaintEffect {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLabelsPayload {
     /// <p>Kubernetes labels to be added or updated.</p>
+    #[doc(hidden)]
     pub add_or_update_labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Kubernetes labels to be removed.</p>
+    #[doc(hidden)]
     pub remove_labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLabelsPayload {
@@ -1466,6 +1492,7 @@ impl UpdateLabelsPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
+    #[doc(hidden)]
     pub cluster_logging: std::option::Option<std::vec::Vec<crate::model::LogSetup>>,
 }
 impl Logging {
@@ -1529,8 +1556,10 @@ impl Logging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogSetup {
     /// <p>The available cluster control plane log types.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<crate::model::LogType>>,
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl LogSetup {
@@ -1684,6 +1713,7 @@ impl AsRef<str> for LogType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfigRequest {
     /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your nodes and the Kubernetes control plane.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
     /// <ul>
@@ -1691,12 +1721,16 @@ pub struct VpcConfigRequest {
     /// <li> <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set this value to <code>false</code> to disable public access to your cluster's Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub endpoint_public_access: std::option::Option<bool>,
     /// <p>Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private access for your Kubernetes API server. If you disable private access and you have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub endpoint_private_access: std::option::Option<bool>,
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfigRequest {
@@ -1916,40 +1950,57 @@ impl AsRef<str> for ResolveConflicts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Kubernetes server version for the cluster.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The endpoint for your Kubernetes API server.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub resources_vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
+    #[doc(hidden)]
     pub kubernetes_network_config:
         std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
     /// <p>The logging configuration for your cluster.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::Logging>,
     /// <p>The identity provider information for the cluster.</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<crate::model::Identity>,
     /// <p>The current status of the cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClusterStatus>,
     /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
+    #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::model::Certificate>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
     /// <p>The configuration used to connect to a cluster for registration.</p>
+    #[doc(hidden)]
     pub connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
 }
 impl Cluster {
@@ -2336,14 +2387,19 @@ impl Cluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorConfigResponse {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
+    #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>A unique code associated with the cluster for registration purposes.</p>
+    #[doc(hidden)]
     pub activation_code: std::option::Option<std::string::String>,
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
+    #[doc(hidden)]
     pub activation_expiry: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cluster's cloud service provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl ConnectorConfigResponse {
@@ -2475,8 +2531,10 @@ impl ConnectorConfigResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::Provider>,
 }
 impl EncryptionConfig {
@@ -2557,6 +2615,7 @@ impl EncryptionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Provider {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
 }
 impl Provider {
@@ -2611,6 +2670,7 @@ impl Provider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
 }
 impl Certificate {
@@ -2736,6 +2796,7 @@ impl AsRef<str> for ClusterStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
+    #[doc(hidden)]
     pub oidc: std::option::Option<crate::model::Oidc>,
 }
 impl Identity {
@@ -2788,6 +2849,7 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
 }
 impl Oidc {
@@ -2842,10 +2904,13 @@ impl Oidc {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesNetworkConfigResponse {
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
+    #[doc(hidden)]
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.</p>
+    #[doc(hidden)]
     pub service_ipv6_cidr: std::option::Option<std::string::String>,
     /// <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster. </p>
+    #[doc(hidden)]
     pub ip_family: std::option::Option<crate::model::IpFamily>,
 }
 impl KubernetesNetworkConfigResponse {
@@ -2995,18 +3060,25 @@ impl AsRef<str> for IpFamily {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfigResponse {
     /// <p>The subnets associated with your cluster.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Kubernetes control plane.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security group for control-plane-to-data-plane communication.</p>
+    #[doc(hidden)]
     pub cluster_security_group_id: std::option::Option<std::string::String>,
     /// <p>The VPC associated with your cluster.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    #[doc(hidden)]
     pub endpoint_public_access: bool,
     /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub endpoint_private_access: bool,
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    #[doc(hidden)]
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfigResponse {
@@ -3193,8 +3265,10 @@ impl VpcConfigResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The cloud provider for the target cluster to connect.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::ConnectorConfigProvider>,
 }
 impl ConnectorConfigRequest {
@@ -3362,8 +3436,10 @@ impl AsRef<str> for ConnectorConfigProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderConfig {
     /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The name of the identity provider configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IdentityProviderConfig {
@@ -3435,53 +3511,76 @@ impl IdentityProviderConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
+    #[doc(hidden)]
     pub nodegroup_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
+    #[doc(hidden)]
     pub nodegroup_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster that the managed node group resides in.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The Kubernetes version of the managed node group.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
+    #[doc(hidden)]
     pub release_version: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the managed node group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodegroupStatus>,
     /// <p>The capacity type of your managed node group.</p>
+    #[doc(hidden)]
     pub capacity_type: std::option::Option<crate::model::CapacityTypes>,
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
+    #[doc(hidden)]
     pub scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
+    #[doc(hidden)]
     pub remote_access: std::option::Option<crate::model::RemoteAccessConfig>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
+    #[doc(hidden)]
     pub ami_type: std::option::Option<crate::model::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
+    #[doc(hidden)]
     pub node_role: std::option::Option<std::string::String>,
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
+    #[doc(hidden)]
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
+    #[doc(hidden)]
     pub taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::NodegroupResources>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
+    #[doc(hidden)]
     pub disk_size: std::option::Option<i32>,
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::NodegroupHealth>,
     /// <p>The node group update configuration.</p>
+    #[doc(hidden)]
     pub update_config: std::option::Option<crate::model::NodegroupUpdateConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4025,6 +4124,7 @@ impl Nodegroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
+    #[doc(hidden)]
     pub issues: std::option::Option<std::vec::Vec<crate::model::Issue>>,
 }
 impl NodegroupHealth {
@@ -4105,10 +4205,13 @@ pub struct Issue {
     /// <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
     /// <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::NodegroupIssueCode>,
     /// <p>The error message associated with the issue.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Issue {
@@ -4415,8 +4518,10 @@ impl AsRef<str> for NodegroupIssueCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
+    #[doc(hidden)]
     pub remote_access_security_group: std::option::Option<std::string::String>,
 }
 impl NodegroupResources {
@@ -4507,6 +4612,7 @@ impl NodegroupResources {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AutoScalingGroup {
@@ -4647,8 +4753,10 @@ impl AsRef<str> for AmiTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoteAccessConfig {
     /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+    #[doc(hidden)]
     pub ec2_ssh_key: std::option::Option<std::string::String>,
     /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub source_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoteAccessConfig {
@@ -4867,6 +4975,7 @@ impl AsRef<str> for NodegroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderConfigResponse {
     /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    #[doc(hidden)]
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfig>,
 }
 impl IdentityProviderConfigResponse {
@@ -4922,30 +5031,42 @@ impl IdentityProviderConfigResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OidcIdentityProviderConfig {
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub identity_provider_config_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the configuration.</p>
+    #[doc(hidden)]
     pub identity_provider_config_arn: std::option::Option<std::string::String>,
     /// <p>The cluster that the configuration is associated to.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying tokens.</p>
+    #[doc(hidden)]
     pub issuer_url: std::option::Option<std::string::String>,
     /// <p>This is also known as <i>audience</i>. The ID of the client application that makes authentication requests to the OIDC identity provider.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
+    #[doc(hidden)]
     pub username_claim: std::option::Option<std::string::String>,
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
+    #[doc(hidden)]
     pub username_prefix: std::option::Option<std::string::String>,
     /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
+    #[doc(hidden)]
     pub groups_claim: std::option::Option<std::string::String>,
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
+    #[doc(hidden)]
     pub groups_prefix: std::option::Option<std::string::String>,
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
+    #[doc(hidden)]
     pub required_claims:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConfigStatus>,
 }
 impl OidcIdentityProviderConfig {
@@ -5316,22 +5437,31 @@ impl AsRef<str> for ConfigStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FargateProfile {
     /// <p>The name of the Fargate profile.</p>
+    #[doc(hidden)]
     pub fargate_profile_name: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
+    #[doc(hidden)]
     pub fargate_profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub pod_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The IDs of subnets to launch pods into.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The selectors to match for pods to use this Fargate profile.</p>
+    #[doc(hidden)]
     pub selectors: std::option::Option<std::vec::Vec<crate::model::FargateProfileSelector>>,
     /// <p>The current status of the Fargate profile.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FargateProfileStatus>,
     /// <p>The metadata applied to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5650,8 +5780,10 @@ impl AsRef<str> for FargateProfileStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FargateProfileSelector {
     /// <p>The Kubernetes namespace that the selector should match.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
+    #[doc(hidden)]
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5744,10 +5876,13 @@ impl FargateProfileSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddonInfo {
     /// <p>The name of the add-on.</p>
+    #[doc(hidden)]
     pub addon_name: std::option::Option<std::string::String>,
     /// <p>The type of the add-on.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An object that represents information about available add-on versions and compatible Kubernetes versions.</p>
+    #[doc(hidden)]
     pub addon_versions: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
 }
 impl AddonInfo {
@@ -5846,10 +5981,13 @@ impl AddonInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddonVersionInfo {
     /// <p>The version of the add-on.</p>
+    #[doc(hidden)]
     pub addon_version: std::option::Option<std::string::String>,
     /// <p>The architectures that the version supports.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that represents the compatibilities of a version.</p>
+    #[doc(hidden)]
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
 }
 impl AddonVersionInfo {
@@ -5959,10 +6097,13 @@ impl AddonVersionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
     /// <p>The supported compute platform.</p>
+    #[doc(hidden)]
     pub platform_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The supported default version.</p>
+    #[doc(hidden)]
     pub default_version: bool,
 }
 impl Compatibility {
@@ -6063,24 +6204,34 @@ impl Compatibility {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Addon {
     /// <p>The name of the add-on.</p>
+    #[doc(hidden)]
     pub addon_name: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The status of the add-on.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AddonStatus>,
     /// <p>The version of the add-on.</p>
+    #[doc(hidden)]
     pub addon_version: std::option::Option<std::string::String>,
     /// <p>An object that represents the health of the add-on.</p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::AddonHealth>,
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
+    #[doc(hidden)]
     pub addon_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the add-on was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the add-on was last modified.</p>
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the add-on.</p>
+    #[doc(hidden)]
     pub service_account_role_arn: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6321,6 +6472,7 @@ impl Addon {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddonHealth {
     /// <p>An object that represents the add-on's health issues.</p>
+    #[doc(hidden)]
     pub issues: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
 }
 impl AddonHealth {
@@ -6384,10 +6536,13 @@ impl AddonHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddonIssue {
     /// <p>A code that describes the type of issue.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::AddonIssueCode>,
     /// <p>A message that provides details about the issue and what might cause it.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource IDs of the issue.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddonIssue {
@@ -6666,9 +6821,11 @@ pub struct KubernetesNetworkConfigRequest {
     /// </ul> <important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
+    #[doc(hidden)]
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
     /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
     /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
+    #[doc(hidden)]
     pub ip_family: std::option::Option<crate::model::IpFamily>,
 }
 impl KubernetesNetworkConfigRequest {
@@ -6767,20 +6924,28 @@ impl KubernetesNetworkConfigRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
+    #[doc(hidden)]
     pub identity_provider_config_name: std::option::Option<std::string::String>,
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
+    #[doc(hidden)]
     pub issuer_url: std::option::Option<std::string::String>,
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
+    #[doc(hidden)]
     pub username_claim: std::option::Option<std::string::String>,
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
+    #[doc(hidden)]
     pub username_prefix: std::option::Option<std::string::String>,
     /// <p>The JWT claim that the provider uses to return your groups.</p>
+    #[doc(hidden)]
     pub groups_claim: std::option::Option<std::string::String>,
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
+    #[doc(hidden)]
     pub groups_prefix: std::option::Option<std::string::String>,
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub required_claims:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

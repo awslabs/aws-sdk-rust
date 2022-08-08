@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReservationOutput {
     /// Reserved resources available to use
+    #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl UpdateReservationOutput {
@@ -62,6 +63,7 @@ impl UpdateReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
+    #[doc(hidden)]
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
 }
 impl UpdateMultiplexProgramOutput {
@@ -119,6 +121,7 @@ impl UpdateMultiplexProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexOutput {
     /// The updated multiplex.
+    #[doc(hidden)]
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
 impl UpdateMultiplexOutput {
@@ -176,6 +179,7 @@ impl UpdateMultiplexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputSecurityGroupOutput {
     /// An Input Security Group
+    #[doc(hidden)]
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
 }
 impl UpdateInputSecurityGroupOutput {
@@ -233,28 +237,40 @@ impl UpdateInputSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputDeviceOutput {
     /// The unique ARN of the input device.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The state of the connection between the input device and AWS.
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::InputDeviceConnectionState>,
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    #[doc(hidden)]
     pub device_settings_sync_state: std::option::Option<crate::model::DeviceSettingsSyncState>,
     /// The status of software on the input device.
+    #[doc(hidden)]
     pub device_update_status: std::option::Option<crate::model::DeviceUpdateStatus>,
     /// Settings that describe an input device that is type HD.
+    #[doc(hidden)]
     pub hd_device_settings: std::option::Option<crate::model::InputDeviceHdSettings>,
     /// The unique ID of the input device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The network MAC address of the input device.
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// A name that you specify for the input device.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The network settings for the input device.
+    #[doc(hidden)]
     pub network_settings: std::option::Option<crate::model::InputDeviceNetworkSettings>,
     /// The unique serial number of the input device.
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// The type of the input device.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
+    #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceUhdSettings>,
 }
 impl UpdateInputDeviceOutput {
@@ -535,6 +551,7 @@ impl UpdateInputDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputOutput {
     /// Placeholder documentation for Input
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl UpdateInputOutput {
@@ -587,6 +604,7 @@ impl UpdateInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelClassOutput {
@@ -641,6 +659,7 @@ impl UpdateChannelClassOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// Placeholder documentation for Channel
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelOutput {
@@ -725,24 +744,34 @@ impl TransferInputDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMultiplexOutput {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the multiplex output destinations.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -996,41 +1025,59 @@ impl StopMultiplexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopChannelOutput {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
+    #[doc(hidden)]
     pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl StopChannelOutput {
@@ -1458,24 +1505,34 @@ impl StopChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMultiplexOutput {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the multiplex output destinations.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1759,41 +1816,59 @@ impl StartInputDeviceMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChannelOutput {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
+    #[doc(hidden)]
     pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl StartChannelOutput {
@@ -2281,6 +2356,7 @@ impl RebootInputDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingOutput {
     /// Reserved resources available to use
+    #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl PurchaseOfferingOutput {
@@ -2338,6 +2414,7 @@ impl PurchaseOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// Placeholder documentation for Tags
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2411,8 +2488,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReservationsOutput {
     /// Token to retrieve the next page of results
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// List of reservations
+    #[doc(hidden)]
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
 }
 impl ListReservationsOutput {
@@ -2493,8 +2572,10 @@ impl ListReservationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsOutput {
     /// Token to retrieve the next page of results
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// List of offerings
+    #[doc(hidden)]
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
 }
 impl ListOfferingsOutput {
@@ -2575,9 +2656,11 @@ impl ListOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiplexProgramsOutput {
     /// List of multiplex programs.
+    #[doc(hidden)]
     pub multiplex_programs:
         std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
     /// Token for the next ListMultiplexProgram request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexProgramsOutput {
@@ -2661,8 +2744,10 @@ impl ListMultiplexProgramsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiplexesOutput {
     /// List of multiplexes.
+    #[doc(hidden)]
     pub multiplexes: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>,
     /// Token for the next ListMultiplexes request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexesOutput {
@@ -2743,8 +2828,10 @@ impl ListMultiplexesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputSecurityGroupsOutput {
     /// List of input security groups
+    #[doc(hidden)]
     pub input_security_groups: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputSecurityGroupsOutput {
@@ -2828,8 +2915,10 @@ impl ListInputSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputsOutput {
     /// Placeholder documentation for __listOfInput
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputsOutput {
@@ -2910,9 +2999,11 @@ impl ListInputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
+    #[doc(hidden)]
     pub input_device_transfers:
         std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
     /// A token to get additional list results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputDeviceTransfersOutput {
@@ -2999,8 +3090,10 @@ impl ListInputDeviceTransfersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputDevicesOutput {
     /// The list of input devices.
+    #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
     /// A token to get additional list results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputDevicesOutput {
@@ -3082,8 +3175,10 @@ impl ListInputDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// Placeholder documentation for __listOfChannelSummary
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -3164,8 +3259,10 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleOutput {
     /// The next token; for use in pagination.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The list of actions in the schedule.
+    #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
 }
 impl DescribeScheduleOutput {
@@ -3247,43 +3344,62 @@ impl DescribeScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Number of reserved resources
+    #[doc(hidden)]
     pub count: i32,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: i32,
     /// Units for duration, e.g. 'MONTHS'
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::OfferingDurationUnits>,
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// User specified reservation name
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
+    #[doc(hidden)]
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// Renewal settings for the reservation
+    #[doc(hidden)]
     pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// Current state of reservation, e.g. 'ACTIVE'
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReservationState>,
     /// A collection of key-value pairs
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    #[doc(hidden)]
     pub usage_price: f64,
 }
 impl DescribeReservationOutput {
@@ -3694,26 +3810,37 @@ impl DescribeReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingOutput {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: i32,
     /// Units for duration, e.g. 'MONTHS'
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::OfferingDurationUnits>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
+    #[doc(hidden)]
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// Resource configuration details
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    #[doc(hidden)]
     pub usage_price: f64,
 }
 impl DescribeOfferingOutput {
@@ -3959,16 +4086,21 @@ impl DescribeOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The settings for this multiplex program.
+    #[doc(hidden)]
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
+    #[doc(hidden)]
     pub packet_identifiers_map:
         std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    #[doc(hidden)]
     pub pipeline_details:
         std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DescribeMultiplexProgramOutput {
@@ -4127,24 +4259,34 @@ impl DescribeMultiplexProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the multiplex output destinations.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4398,17 +4540,23 @@ impl DescribeMultiplexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The Id of the Input Security Group
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The list of inputs currently using this Input Security Group.
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The current state of the Input Security Group.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InputSecurityGroupState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Whitelist rules and their sync status
+    #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
 }
 impl DescribeInputSecurityGroupOutput {
@@ -4591,12 +4739,16 @@ pub struct DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::ContentType>,
     /// The length of the content.
+    #[doc(hidden)]
     pub content_length: i64,
     /// The unique, cacheable version of this thumbnail.
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// The date and time the thumbnail was last updated at the device.
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeInputDeviceThumbnailOutput {
@@ -4728,28 +4880,40 @@ impl DescribeInputDeviceThumbnailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputDeviceOutput {
     /// The unique ARN of the input device.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The state of the connection between the input device and AWS.
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::InputDeviceConnectionState>,
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    #[doc(hidden)]
     pub device_settings_sync_state: std::option::Option<crate::model::DeviceSettingsSyncState>,
     /// The status of software on the input device.
+    #[doc(hidden)]
     pub device_update_status: std::option::Option<crate::model::DeviceUpdateStatus>,
     /// Settings that describe an input device that is type HD.
+    #[doc(hidden)]
     pub hd_device_settings: std::option::Option<crate::model::InputDeviceHdSettings>,
     /// The unique ID of the input device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The network MAC address of the input device.
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// A name that you specify for the input device.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The network settings for the input device.
+    #[doc(hidden)]
     pub network_settings: std::option::Option<crate::model::InputDeviceNetworkSettings>,
     /// The unique serial number of the input device.
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// The type of the input device.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
+    #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceUhdSettings>,
 }
 impl DescribeInputDeviceOutput {
@@ -5030,37 +5194,53 @@ impl DescribeInputDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputOutput {
     /// The Unique ARN of the input (generated, immutable).
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
+    #[doc(hidden)]
     pub attached_channels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the destinations of the input (PUSH-type).
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
     /// The generated ID of the input (unique for user account, immutable).
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    #[doc(hidden)]
     pub input_class: std::option::Option<crate::model::InputClass>,
     /// Settings for the input devices.
+    #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of IDs for all Inputs which are partners of this one.
+    #[doc(hidden)]
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    #[doc(hidden)]
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
+    #[doc(hidden)]
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
     /// The user-assigned name (This is a mutable value).
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// A list of IDs for all the Input Security Groups attached to the input.
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the sources of the input (PULL-type).
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
     /// Placeholder documentation for InputState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InputState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputType>,
 }
 impl DescribeInputOutput {
@@ -5461,41 +5641,59 @@ impl DescribeInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
+    #[doc(hidden)]
     pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl DescribeChannelOutput {
@@ -5983,43 +6181,62 @@ impl DeleteScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Number of reserved resources
+    #[doc(hidden)]
     pub count: i32,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: i32,
     /// Units for duration, e.g. 'MONTHS'
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::OfferingDurationUnits>,
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// User specified reservation name
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
+    #[doc(hidden)]
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// Renewal settings for the reservation
+    #[doc(hidden)]
     pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// Current state of reservation, e.g. 'ACTIVE'
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReservationState>,
     /// A collection of key-value pairs
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    #[doc(hidden)]
     pub usage_price: f64,
 }
 impl DeleteReservationOutput {
@@ -6430,16 +6647,21 @@ impl DeleteReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The settings for this multiplex program.
+    #[doc(hidden)]
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
+    #[doc(hidden)]
     pub packet_identifiers_map:
         std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    #[doc(hidden)]
     pub pipeline_details:
         std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiplexProgramOutput {
@@ -6598,24 +6820,34 @@ impl DeleteMultiplexProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexOutput {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the multiplex output destinations.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6929,41 +7161,59 @@ impl DeleteInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelOutput {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
+    #[doc(hidden)]
     pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl DeleteChannelOutput {
@@ -7421,6 +7671,7 @@ impl CreateTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerInputOutput {
     /// Placeholder documentation for Input
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl CreatePartnerInputOutput {
@@ -7473,6 +7724,7 @@ impl CreatePartnerInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiplexProgramOutput {
     /// The newly created multiplex program.
+    #[doc(hidden)]
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
 }
 impl CreateMultiplexProgramOutput {
@@ -7530,6 +7782,7 @@ impl CreateMultiplexProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiplexOutput {
     /// The newly created multiplex.
+    #[doc(hidden)]
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
 impl CreateMultiplexOutput {
@@ -7587,6 +7840,7 @@ impl CreateMultiplexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputSecurityGroupOutput {
     /// An Input Security Group
+    #[doc(hidden)]
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
 }
 impl CreateInputSecurityGroupOutput {
@@ -7644,6 +7898,7 @@ impl CreateInputSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputOutput {
     /// Placeholder documentation for Input
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl CreateInputOutput {
@@ -7696,6 +7951,7 @@ impl CreateInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// Placeholder documentation for Channel
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl CreateChannelOutput {
@@ -7810,8 +8066,10 @@ impl CancelInputDeviceTransferOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateScheduleOutput {
     /// Schedule actions created in the schedule.
+    #[doc(hidden)]
     pub creates: std::option::Option<crate::model::BatchScheduleActionCreateResult>,
     /// Schedule actions deleted from the schedule.
+    #[doc(hidden)]
     pub deletes: std::option::Option<crate::model::BatchScheduleActionDeleteResult>,
 }
 impl BatchUpdateScheduleOutput {
@@ -7889,8 +8147,10 @@ impl BatchUpdateScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopOutput {
     /// List of failed operations
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
     /// List of successful operations
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
 }
 impl BatchStopOutput {
@@ -7981,8 +8241,10 @@ impl BatchStopOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStartOutput {
     /// List of failed operations
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
     /// List of successful operations
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
 }
 impl BatchStartOutput {
@@ -8073,8 +8335,10 @@ impl BatchStartOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteOutput {
     /// List of failed operations
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
     /// List of successful operations
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
 }
 impl BatchDeleteOutput {

@@ -5688,10 +5688,13 @@ impl UploadEntityDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    #[doc(hidden)]
     pub sync_with_public_namespace: bool,
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    #[doc(hidden)]
     pub deprecate_existing_entities: bool,
 }
 impl UploadEntityDefinitionsInput {
@@ -5731,11 +5734,14 @@ pub struct UpdateSystemTemplateInput {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
+    #[doc(hidden)]
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateSystemTemplateInput {
@@ -5775,11 +5781,14 @@ pub struct UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
+    #[doc(hidden)]
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInput {
@@ -5817,9 +5826,11 @@ impl std::fmt::Debug for UpdateFlowTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
     /// <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5847,6 +5858,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeploySystemInstanceInput {
     /// <p>The ID of the system instance to remove from its target.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UndeploySystemInstanceInput {
@@ -5868,8 +5880,10 @@ impl std::fmt::Debug for UndeploySystemInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to add to the resource.&gt;</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5898,12 +5912,16 @@ pub struct SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
 }
 impl SearchThingsInput {
@@ -5942,10 +5960,13 @@ impl std::fmt::Debug for SearchThingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSystemTemplatesInput {
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SystemTemplateFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchSystemTemplatesInput {
@@ -5978,10 +5999,13 @@ impl std::fmt::Debug for SearchSystemTemplatesInput {
 pub struct SearchSystemInstancesInput {
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SystemInstanceFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchSystemInstancesInput {
@@ -6014,10 +6038,13 @@ impl std::fmt::Debug for SearchSystemInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFlowTemplatesInput {
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::FlowTemplateFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchFlowTemplatesInput {
@@ -6049,16 +6076,22 @@ impl std::fmt::Debug for SearchFlowTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFlowExecutionsInput {
     /// <p>The ID of the system instance that contains the flow.</p>
+    #[doc(hidden)]
     pub system_instance_id: std::option::Option<std::string::String>,
     /// <p>The ID of a flow execution.</p>
+    #[doc(hidden)]
     pub flow_execution_id: std::option::Option<std::string::String>,
     /// <p>The date and time of the earliest flow execution to return.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest flow execution to return.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchFlowExecutionsInput {
@@ -6105,15 +6138,20 @@ impl std::fmt::Debug for SearchFlowExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchEntitiesInput {
     /// <p>The entity types for which to search.</p>
+    #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::EntityFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
 }
 impl SearchEntitiesInput {
@@ -6156,10 +6194,13 @@ impl std::fmt::Debug for SearchEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The maximum number of tags to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The token that specifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6191,10 +6232,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowExecutionMessagesInput {
     /// <p>The ID of the flow execution.</p>
+    #[doc(hidden)]
     pub flow_execution_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFlowExecutionMessagesInput {
@@ -6226,6 +6270,7 @@ impl std::fmt::Debug for ListFlowExecutionMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUploadStatusInput {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl GetUploadStatusInput {
@@ -6249,10 +6294,13 @@ pub struct GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetSystemTemplateRevisionsInput {
@@ -6288,8 +6336,10 @@ pub struct GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The number that specifies the revision of the system to get.</p>
+    #[doc(hidden)]
     pub revision_number: std::option::Option<i64>,
 }
 impl GetSystemTemplateInput {
@@ -6320,6 +6370,7 @@ pub struct GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSystemInstanceInput {
@@ -6356,10 +6407,13 @@ pub struct GetFlowTemplateRevisionsInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetFlowTemplateRevisionsInput {
@@ -6395,8 +6449,10 @@ pub struct GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The number of the workflow revision to retrieve.</p>
+    #[doc(hidden)]
     pub revision_number: std::option::Option<i64>,
 }
 impl GetFlowTemplateInput {
@@ -6427,8 +6483,10 @@ pub struct GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
 }
 impl GetEntitiesInput {
@@ -6457,8 +6515,10 @@ impl std::fmt::Debug for GetEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DissociateEntityFromThingInput {
     /// <p>The name of the thing to disassociate.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The entity type from which to disassociate the thing.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<crate::model::EntityType>,
 }
 impl DissociateEntityFromThingInput {
@@ -6485,6 +6545,7 @@ impl std::fmt::Debug for DissociateEntityFromThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceInput {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl DescribeNamespaceInput {
@@ -6508,6 +6569,7 @@ pub struct DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateSystemTemplateInput {
@@ -6533,6 +6595,7 @@ pub struct DeprecateFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateFlowTemplateInput {
@@ -6558,6 +6621,7 @@ pub struct DeploySystemInstanceInput {
     /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeploySystemInstanceInput {
@@ -6583,6 +6647,7 @@ pub struct DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSystemTemplateInput {
@@ -6606,6 +6671,7 @@ impl std::fmt::Debug for DeleteSystemTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSystemInstanceInput {
     /// <p>The ID of the system instance to be deleted.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSystemInstanceInput {
@@ -6640,6 +6706,7 @@ pub struct DeleteFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFlowTemplateInput {
@@ -6663,9 +6730,11 @@ impl std::fmt::Debug for DeleteFlowTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSystemTemplateInput {
     /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The namespace version in which the system is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
+    #[doc(hidden)]
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl CreateSystemTemplateInput {
@@ -6696,18 +6765,25 @@ impl std::fmt::Debug for CreateSystemTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSystemInstanceInput {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A document that defines an entity. </p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::DeploymentTarget>,
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    #[doc(hidden)]
     pub greengrass_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    #[doc(hidden)]
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    #[doc(hidden)]
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSystemInstanceInput {
@@ -6761,9 +6837,11 @@ impl std::fmt::Debug for CreateSystemInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowTemplateInput {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
+    #[doc(hidden)]
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl CreateFlowTemplateInput {
@@ -6794,12 +6872,15 @@ impl std::fmt::Debug for CreateFlowTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEntityToThingInput {
     /// <p>The name of the thing to which the entity is to be associated.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
 }
 impl AssociateEntityToThingInput {

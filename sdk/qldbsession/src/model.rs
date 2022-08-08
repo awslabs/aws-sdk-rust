@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FetchPageResult {
     /// <p>Contains details of the fetched page.</p>
+    #[doc(hidden)]
     pub page: std::option::Option<crate::model::Page>,
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    #[doc(hidden)]
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
 }
 impl FetchPageResult {
@@ -103,8 +106,10 @@ impl FetchPageResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
+    #[doc(hidden)]
     pub read_i_os: i64,
     /// <p>The number of write I/O requests that the command made.</p>
+    #[doc(hidden)]
     pub write_i_os: i64,
 }
 impl IoUsage {
@@ -176,6 +181,7 @@ impl IoUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimingInformation {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
+    #[doc(hidden)]
     pub processing_time_milliseconds: i64,
 }
 impl TimingInformation {
@@ -233,8 +239,10 @@ impl TimingInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
     /// <p>The token of the next page.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl Page {
@@ -318,8 +326,10 @@ impl Page {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
+    #[doc(hidden)]
     pub ion_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
+    #[doc(hidden)]
     pub ion_text: std::option::Option<std::string::String>,
 }
 impl ValueHolder {
@@ -394,10 +404,13 @@ impl ValueHolder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
+    #[doc(hidden)]
     pub first_page: std::option::Option<crate::model::Page>,
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    #[doc(hidden)]
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
 }
 impl ExecuteStatementResult {
@@ -492,6 +505,7 @@ impl ExecuteStatementResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl AbortTransactionResult {
@@ -549,12 +563,16 @@ impl AbortTransactionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The commit digest of the committed transaction.</p>
+    #[doc(hidden)]
     pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    #[doc(hidden)]
     pub consumed_i_os: std::option::Option<crate::model::IoUsage>,
 }
 impl CommitTransactionResult {
@@ -672,6 +690,7 @@ impl CommitTransactionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndSessionResult {
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl EndSessionResult {
@@ -729,8 +748,10 @@ impl EndSessionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTransactionResult {
     /// <p>The transaction ID of the started transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl StartTransactionResult {
@@ -808,8 +829,10 @@ impl StartTransactionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSessionResult {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
+    #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl StartSessionResult {
@@ -887,8 +910,10 @@ impl StartSessionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Specifies the next page token of the page to be fetched.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl FetchPageRequest {
@@ -966,10 +991,13 @@ impl FetchPageRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Specifies the statement of the request.</p>
+    #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
 }
 impl ExecuteStatementRequest {
@@ -1100,9 +1128,11 @@ impl AbortTransactionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitTransactionRequest {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
+    #[doc(hidden)]
     pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CommitTransactionRequest {
@@ -1243,6 +1273,7 @@ impl StartTransactionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
 }
 impl StartSessionRequest {

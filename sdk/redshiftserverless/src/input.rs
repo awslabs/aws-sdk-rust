@@ -6457,8 +6457,10 @@ impl UpdateWorkgroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkgroupsInput {
     /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkgroupsInput {
@@ -6485,22 +6487,31 @@ impl std::fmt::Debug for ListWorkgroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkgroupInput {
     /// <p>The name of the created workgroup.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The name of the namespace to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
+    #[doc(hidden)]
     pub base_capacity: std::option::Option<i32>,
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC instead of over the internet.</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>An array of parameters to set for more control over a serverless database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    #[doc(hidden)]
     pub config_parameters: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
     /// <p>An array of security group IDs to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that specifies whether the workgroup can be accessed from a public network.</p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>A array of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkgroupInput {
@@ -6562,6 +6573,7 @@ impl std::fmt::Debug for CreateWorkgroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkgroupInput {
     /// <p>The name of the workgroup to be deleted.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkgroupInput {
@@ -6583,18 +6595,25 @@ impl std::fmt::Debug for DeleteWorkgroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
+    #[doc(hidden)]
     pub base_capacity: std::option::Option<i32>,
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    #[doc(hidden)]
     pub config_parameters: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of security group IDs to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWorkgroupInput {
@@ -6646,6 +6665,7 @@ impl std::fmt::Debug for UpdateWorkgroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkgroupInput {
     /// <p>The name of the workgroup to return information for.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl GetWorkgroupInput {
@@ -6667,10 +6687,13 @@ impl std::fmt::Debug for GetWorkgroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsageLimitInput {
     /// <p>The identifier of the usage limit to update.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The new limit amount. For more information about this parameter.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<i64>,
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
 }
 impl UpdateUsageLimitInput {
@@ -6702,12 +6725,16 @@ impl std::fmt::Debug for UpdateUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageLimitsInput {
     /// <p>The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
     /// <p>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in the next page. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUsageLimitsInput {
@@ -6744,6 +6771,7 @@ impl std::fmt::Debug for ListUsageLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageLimitInput {
     /// <p>The unique identifier of the usage limit to return information for.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
 }
 impl GetUsageLimitInput {
@@ -6765,6 +6793,7 @@ impl std::fmt::Debug for GetUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsageLimitInput {
     /// <p>The unique identifier of the usage limit to delete.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsageLimitInput {
@@ -6786,14 +6815,19 @@ impl std::fmt::Debug for DeleteUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<i64>,
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
 }
 impl CreateUsageLimitInput {
@@ -6835,8 +6869,10 @@ impl std::fmt::Debug for CreateUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotInput {
     /// <p>The name of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The new retention period of the snapshot.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
 }
 impl UpdateSnapshotInput {
@@ -6863,14 +6899,19 @@ impl std::fmt::Debug for UpdateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The name of the namespace to restore the snapshot to.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup used to restore the snapshot.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot to restore from.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
 }
 impl RestoreFromSnapshotInput {
@@ -6912,18 +6953,25 @@ impl std::fmt::Debug for RestoreFromSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotsInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The namespace from which to list all snapshots.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The time when the creation of the snapshot was initiated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp showing when the snapshot creation finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListSnapshotsInput {
@@ -6975,10 +7023,13 @@ impl std::fmt::Debug for ListSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotInput {
     /// <p>The name of the snapshot to return.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
 }
 impl GetSnapshotInput {
@@ -7010,6 +7061,7 @@ impl std::fmt::Debug for GetSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotInput {
     /// <p>The name of the snapshot to be deleted.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotInput {
@@ -7031,10 +7083,13 @@ impl std::fmt::Debug for DeleteSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>The namespace to create a snapshot for.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>How long to retain the created snapshot.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
 }
 impl CreateSnapshotInput {
@@ -7066,10 +7121,13 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromRecoveryPointInput {
     /// <p>The unique identifier of the recovery point to restore from.</p>
+    #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
     /// <p>The name of the namespace to restore data into.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup used to restore data.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl RestoreFromRecoveryPointInput {
@@ -7101,14 +7159,19 @@ impl std::fmt::Debug for RestoreFromRecoveryPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsInput {
     /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The time when the recovery point's creation was initiated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when creation of the recovery point finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the namespace to list recovery points for.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl ListRecoveryPointsInput {
@@ -7150,6 +7213,7 @@ impl std::fmt::Debug for ListRecoveryPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryPointInput {
     /// <p>The unique identifier of the recovery point to return information for.</p>
+    #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
 }
 impl GetRecoveryPointInput {
@@ -7171,10 +7235,13 @@ impl std::fmt::Debug for GetRecoveryPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConvertRecoveryPointToSnapshotInput {
     /// <p>The unique identifier of the recovery point.</p>
+    #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>How long to retain the snapshot.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
 }
 impl ConvertRecoveryPointToSnapshotInput {
@@ -7206,8 +7273,10 @@ impl std::fmt::Debug for ConvertRecoveryPointToSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesInput {
     /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListNamespacesInput {
@@ -7234,22 +7303,31 @@ impl std::fmt::Debug for ListNamespacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceInput {
     /// <p>The name of the namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub admin_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
+    #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<crate::model::LogExport>>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateNamespaceInput {
@@ -7311,10 +7389,13 @@ impl std::fmt::Debug for CreateNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceInput {
     /// <p>The name of the namespace to delete.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
+    #[doc(hidden)]
     pub final_snapshot_name: std::option::Option<std::string::String>,
     /// <p>How long to retain the final snapshot.</p>
+    #[doc(hidden)]
     pub final_snapshot_retention_period: std::option::Option<i32>,
 }
 impl DeleteNamespaceInput {
@@ -7349,18 +7430,25 @@ impl std::fmt::Debug for DeleteNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNamespaceInput {
     /// <p>The name of the namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub admin_user_password: std::option::Option<std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
+    #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<crate::model::LogExport>>,
 }
 impl UpdateNamespaceInput {
@@ -7412,6 +7500,7 @@ impl std::fmt::Debug for UpdateNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamespaceInput {
     /// <p>The name of the namespace to retrieve information for.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl GetNamespaceInput {
@@ -7433,8 +7522,10 @@ impl std::fmt::Debug for GetNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointAccessInput {
     /// <p>The name of the VPC endpoint to update.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateEndpointAccessInput {
@@ -7461,12 +7552,16 @@ impl std::fmt::Debug for UpdateEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointAccessInput {
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl ListEndpointAccessInput {
@@ -7503,6 +7598,7 @@ impl std::fmt::Debug for ListEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointAccessInput {
     /// <p>The name of the VPC endpoint to return information for.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl GetEndpointAccessInput {
@@ -7524,6 +7620,7 @@ impl std::fmt::Debug for GetEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointAccessInput {
     /// <p>The name of the VPC endpoint to delete.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointAccessInput {
@@ -7545,12 +7642,16 @@ impl std::fmt::Debug for DeleteEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointAccessInput {
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateEndpointAccessInput {
@@ -7587,8 +7688,10 @@ impl std::fmt::Debug for CreateEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag or set of tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7615,8 +7718,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The map of the key-value pairs used to tag the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -7643,9 +7748,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p> <code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code> </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -7673,6 +7780,7 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to list tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -7694,6 +7802,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -7715,6 +7824,7 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCredentialsInput {
     /// <p>The name of the workgroup associated with the database.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
@@ -7725,8 +7835,10 @@ pub struct GetCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl GetCredentialsInput {
@@ -7766,6 +7878,7 @@ impl std::fmt::Debug for GetCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the policy to delete.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {

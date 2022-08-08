@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedS3Resource {
     /// <p>(Discontinued) The failed S3 resources.</p>
+    #[doc(hidden)]
     pub failed_item: std::option::Option<crate::model::S3Resource>,
     /// <p>(Discontinued) The status code of a failed item.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The error message of a failed item.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedS3Resource {
@@ -103,8 +106,10 @@ impl FailedS3Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Resource {
@@ -176,10 +181,13 @@ impl S3Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ResourceClassificationUpdate {
     /// <p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The prefix of the S3 bucket whose classification types you want to update.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>
+    #[doc(hidden)]
     pub classification_type_update: std::option::Option<crate::model::ClassificationTypeUpdate>,
 }
 impl S3ResourceClassificationUpdate {
@@ -280,8 +288,10 @@ impl S3ResourceClassificationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationTypeUpdate {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
+    #[doc(hidden)]
     pub one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic. </p>
+    #[doc(hidden)]
     pub continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
 }
 impl ClassificationTypeUpdate {
@@ -465,10 +475,13 @@ impl AsRef<str> for S3OneTimeClassificationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
+    #[doc(hidden)]
     pub classification_type: std::option::Option<crate::model::ClassificationType>,
 }
 impl S3ResourceClassification {
@@ -560,8 +573,10 @@ impl S3ResourceClassification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationType {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
+    #[doc(hidden)]
     pub one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
+    #[doc(hidden)]
     pub continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
 }
 impl ClassificationType {
@@ -639,6 +654,7 @@ impl ClassificationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberAccount {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl MemberAccount {

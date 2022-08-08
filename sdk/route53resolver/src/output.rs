@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverRuleOutput {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
+    #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl UpdateResolverRuleOutput {
@@ -61,6 +62,7 @@ impl UpdateResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverEndpointOutput {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl UpdateResolverEndpointOutput {
@@ -118,6 +120,7 @@ impl UpdateResolverEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverDnssecConfigOutput {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
+    #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
 }
 impl UpdateResolverDnssecConfigOutput {
@@ -177,6 +180,7 @@ impl UpdateResolverDnssecConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverConfigOutput {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
+    #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
 }
 impl UpdateResolverConfigOutput {
@@ -234,6 +238,7 @@ impl UpdateResolverConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
@@ -301,6 +306,7 @@ impl UpdateFirewallRuleGroupAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallRuleOutput {
     /// <p>The firewall rule that you just updated. </p>
+    #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl UpdateFirewallRuleOutput {
@@ -358,12 +364,16 @@ impl UpdateFirewallRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallDomainsOutput {
     /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the domain list. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl UpdateFirewallDomainsOutput {
@@ -475,6 +485,7 @@ impl UpdateFirewallDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
+    #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
 impl UpdateFirewallConfigOutput {
@@ -592,6 +603,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResolverRulePolicyOutput {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
+    #[doc(hidden)]
     pub return_value: bool,
 }
 impl PutResolverRulePolicyOutput {
@@ -646,6 +658,7 @@ impl PutResolverRulePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResolverQueryLogConfigPolicyOutput {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
+    #[doc(hidden)]
     pub return_value: bool,
 }
 impl PutResolverQueryLogConfigPolicyOutput {
@@ -700,6 +713,7 @@ impl PutResolverQueryLogConfigPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFirewallRuleGroupPolicyOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub return_value: bool,
 }
 impl PutFirewallRuleGroupPolicyOutput {
@@ -754,8 +768,10 @@ impl PutFirewallRuleGroupPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -836,10 +852,13 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRulesOutput {
     /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
+    #[doc(hidden)]
     pub resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
 }
 impl ListResolverRulesOutput {
@@ -937,10 +956,13 @@ impl ListResolverRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRuleAssociationsOutput {
     /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
+    #[doc(hidden)]
     pub resolver_rule_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
 }
@@ -1048,12 +1070,16 @@ impl ListResolverRuleAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
+    #[doc(hidden)]
     pub total_count: i32,
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
+    #[doc(hidden)]
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
+    #[doc(hidden)]
     pub resolver_query_log_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
 }
@@ -1178,12 +1204,16 @@ impl ListResolverQueryLogConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigAssociationsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
+    #[doc(hidden)]
     pub total_count: i32,
     /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
+    #[doc(hidden)]
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
 }
@@ -1312,10 +1342,13 @@ impl ListResolverQueryLogConfigAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointsOutput {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
+    #[doc(hidden)]
     pub resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
 }
 impl ListResolverEndpointsOutput {
@@ -1414,10 +1447,13 @@ impl ListResolverEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointIpAddressesOutput {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
+    #[doc(hidden)]
     pub ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
 }
 impl ListResolverEndpointIpAddressesOutput {
@@ -1517,8 +1553,10 @@ impl ListResolverEndpointIpAddressesOutput {
 pub struct ListResolverDnssecConfigsOutput {
     /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub resolver_dnssec_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
 }
@@ -1610,8 +1648,10 @@ impl ListResolverDnssecConfigsOutput {
 pub struct ListResolverConfigsOutput {
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
 }
 impl ListResolverConfigsOutput {
@@ -1696,9 +1736,11 @@ impl ListResolverConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the rules that you have defined. </p>
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
 }
 impl ListFirewallRulesOutput {
@@ -1782,9 +1824,11 @@ impl ListFirewallRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRuleGroupsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub firewall_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
 }
@@ -1875,9 +1919,11 @@ impl ListFirewallRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRuleGroupAssociationsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_associations:
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
 }
@@ -1971,9 +2017,11 @@ impl ListFirewallRuleGroupAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallDomainsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the domains in the firewall domain list. </p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListFirewallDomainsOutput {
@@ -2057,9 +2105,11 @@ impl ListFirewallDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallDomainListsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub firewall_domain_lists:
         std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
 }
@@ -2150,8 +2200,10 @@ impl ListFirewallDomainListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    #[doc(hidden)]
     pub firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
 }
 impl ListFirewallConfigsOutput {
@@ -2233,12 +2285,16 @@ impl ListFirewallConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the domain list. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl ImportFirewallDomainsOutput {
@@ -2350,6 +2406,7 @@ impl ImportFirewallDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
+    #[doc(hidden)]
     pub resolver_rule_policy: std::option::Option<std::string::String>,
 }
 impl GetResolverRulePolicyOutput {
@@ -2407,6 +2464,7 @@ impl GetResolverRulePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRuleAssociationOutput {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
+    #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl GetResolverRuleAssociationOutput {
@@ -2470,6 +2528,7 @@ impl GetResolverRuleAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverRuleOutput {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
+    #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl GetResolverRuleOutput {
@@ -2527,6 +2586,7 @@ impl GetResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyOutput {
@@ -2590,6 +2650,7 @@ impl GetResolverQueryLogConfigPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigAssociationOutput {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
@@ -2657,6 +2718,7 @@ impl GetResolverQueryLogConfigAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigOutput {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl GetResolverQueryLogConfigOutput {
@@ -2720,6 +2782,7 @@ impl GetResolverQueryLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverEndpointOutput {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl GetResolverEndpointOutput {
@@ -2777,6 +2840,7 @@ impl GetResolverEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
+    #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
 }
 impl GetResolverDnssecConfigOutput {
@@ -2836,6 +2900,7 @@ impl GetResolverDnssecConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
+    #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
 }
 impl GetResolverConfigOutput {
@@ -2893,6 +2958,7 @@ impl GetResolverConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupPolicyOutput {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    #[doc(hidden)]
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyOutput {
@@ -2953,6 +3019,7 @@ impl GetFirewallRuleGroupPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupAssociationOutput {
     /// <p>The association that you requested. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
@@ -3020,6 +3087,7 @@ impl GetFirewallRuleGroupAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
+    #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl GetFirewallRuleGroupOutput {
@@ -3077,6 +3145,7 @@ impl GetFirewallRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallDomainListOutput {
     /// <p>The domain list that you requested. </p>
+    #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl GetFirewallDomainListOutput {
@@ -3134,6 +3203,7 @@ impl GetFirewallDomainListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
+    #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
 impl GetFirewallConfigOutput {
@@ -3191,6 +3261,7 @@ impl GetFirewallConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverRuleOutput {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl DisassociateResolverRuleOutput {
@@ -3254,6 +3325,7 @@ impl DisassociateResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
@@ -3321,6 +3393,7 @@ impl DisassociateResolverQueryLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl DisassociateResolverEndpointIpAddressOutput {
@@ -3378,6 +3451,7 @@ impl DisassociateResolverEndpointIpAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFirewallRuleGroupOutput {
     /// <p>The firewall rule group association that you just removed. </p>
+    #[doc(hidden)]
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
@@ -3445,6 +3519,7 @@ impl DisassociateFirewallRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverRuleOutput {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl DeleteResolverRuleOutput {
@@ -3502,6 +3577,7 @@ impl DeleteResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverQueryLogConfigOutput {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl DeleteResolverQueryLogConfigOutput {
@@ -3565,6 +3641,7 @@ impl DeleteResolverQueryLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverEndpointOutput {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl DeleteResolverEndpointOutput {
@@ -3622,6 +3699,7 @@ impl DeleteResolverEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
+    #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl DeleteFirewallRuleGroupOutput {
@@ -3679,6 +3757,7 @@ impl DeleteFirewallRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
+    #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl DeleteFirewallRuleOutput {
@@ -3736,6 +3815,7 @@ impl DeleteFirewallRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallDomainListOutput {
     /// <p>The domain list that you just deleted. </p>
+    #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl DeleteFirewallDomainListOutput {
@@ -3793,6 +3873,7 @@ impl DeleteFirewallDomainListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverRuleOutput {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl CreateResolverRuleOutput {
@@ -3850,6 +3931,7 @@ impl CreateResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverQueryLogConfigOutput {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl CreateResolverQueryLogConfigOutput {
@@ -3913,6 +3995,7 @@ impl CreateResolverQueryLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverEndpointOutput {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl CreateResolverEndpointOutput {
@@ -3970,6 +4053,7 @@ impl CreateResolverEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
+    #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl CreateFirewallRuleGroupOutput {
@@ -4027,6 +4111,7 @@ impl CreateFirewallRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallRuleOutput {
     /// <p>The firewall rule that you just created. </p>
+    #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl CreateFirewallRuleOutput {
@@ -4084,6 +4169,7 @@ impl CreateFirewallRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallDomainListOutput {
     /// <p>The domain list that you just created.</p>
+    #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl CreateFirewallDomainListOutput {
@@ -4141,6 +4227,7 @@ impl CreateFirewallDomainListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
+    #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl AssociateResolverRuleOutput {
@@ -4204,6 +4291,7 @@ impl AssociateResolverRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
+    #[doc(hidden)]
     pub resolver_query_log_config_association:
         std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
@@ -4271,6 +4359,7 @@ impl AssociateResolverQueryLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
+    #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl AssociateResolverEndpointIpAddressOutput {
@@ -4328,6 +4417,7 @@ impl AssociateResolverEndpointIpAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    #[doc(hidden)]
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }

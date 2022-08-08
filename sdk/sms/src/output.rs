@@ -34,10 +34,13 @@ impl UpdateReplicationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppOutput {
     /// <p>A summary description of the application.</p>
+    #[doc(hidden)]
     pub app_summary: std::option::Option<crate::model::AppSummary>,
     /// <p>The updated server groups in the application.</p>
+    #[doc(hidden)]
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags associated with the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateAppOutput {
@@ -207,6 +210,7 @@ impl StopAppReplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandReplicationRunOutput {
     /// <p>The ID of the replication run.</p>
+    #[doc(hidden)]
     pub replication_run_id: std::option::Option<std::string::String>,
 }
 impl StartOnDemandReplicationRunOutput {
@@ -444,8 +448,10 @@ impl NotifyAppValidationOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsOutput {
     /// <p>The application summaries.</p>
+    #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsOutput {
@@ -616,12 +622,16 @@ impl ImportAppCatalogOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServersOutput {
     /// <p>The time when the server was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the server catalog.</p>
+    #[doc(hidden)]
     pub server_catalog_status: std::option::Option<crate::model::ServerCatalogStatus>,
     /// <p>Information about the servers.</p>
+    #[doc(hidden)]
     pub server_list: std::option::Option<std::vec::Vec<crate::model::Server>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetServersOutput {
@@ -742,10 +752,13 @@ impl GetServersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationRunsOutput {
     /// <p>Information about the replication job.</p>
+    #[doc(hidden)]
     pub replication_job: std::option::Option<crate::model::ReplicationJob>,
     /// <p>Information about the replication runs.</p>
+    #[doc(hidden)]
     pub replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetReplicationRunsOutput {
@@ -847,8 +860,10 @@ impl GetReplicationRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationJobsOutput {
     /// <p>Information about the replication jobs.</p>
+    #[doc(hidden)]
     pub replication_job_list: std::option::Option<std::vec::Vec<crate::model::ReplicationJob>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetReplicationJobsOutput {
@@ -930,8 +945,10 @@ impl GetReplicationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorsOutput {
     /// <p>Information about the registered connectors.</p>
+    #[doc(hidden)]
     pub connector_list: std::option::Option<std::vec::Vec<crate::model::Connector>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectorsOutput {
@@ -1012,6 +1029,7 @@ impl GetConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppValidationOutputOutput {
     /// <p>The validation output.</p>
+    #[doc(hidden)]
     pub validation_output_list: std::option::Option<std::vec::Vec<crate::model::ValidationOutput>>,
 }
 impl GetAppValidationOutputOutput {
@@ -1076,9 +1094,11 @@ impl GetAppValidationOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppValidationConfigurationOutput {
     /// <p>The configuration for application validation.</p>
+    #[doc(hidden)]
     pub app_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppValidationConfiguration>>,
     /// <p>The configuration for instance validation.</p>
+    #[doc(hidden)]
     pub server_group_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupValidationConfiguration>>,
 }
@@ -1191,6 +1211,7 @@ impl GetAppValidationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppReplicationConfigurationOutput {
     /// <p>The replication configurations associated with server groups in this application.</p>
+    #[doc(hidden)]
     pub server_group_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupReplicationConfiguration>>,
 }
@@ -1269,12 +1290,16 @@ impl GetAppReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppLaunchConfigurationOutput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    #[doc(hidden)]
     pub auto_launch: std::option::Option<bool>,
     /// <p>The launch configurations for server groups in this application.</p>
+    #[doc(hidden)]
     pub server_group_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupLaunchConfiguration>>,
 }
@@ -1399,10 +1424,13 @@ impl GetAppLaunchConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppOutput {
     /// <p>Information about the application.</p>
+    #[doc(hidden)]
     pub app_summary: std::option::Option<crate::model::AppSummary>,
     /// <p>The server groups that belong to the application.</p>
+    #[doc(hidden)]
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags associated with the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetAppOutput {
@@ -1512,6 +1540,7 @@ impl GetAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateTemplateOutput {
     /// <p>The location of the Amazon S3 object.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl GenerateTemplateOutput {
@@ -1569,6 +1598,7 @@ impl GenerateTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateChangeSetOutput {
     /// <p>The location of the Amazon S3 object.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl GenerateChangeSetOutput {
@@ -1836,6 +1866,7 @@ impl DeleteAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationJobOutput {
     /// <p>The unique identifier of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
 }
 impl CreateReplicationJobOutput {
@@ -1893,10 +1924,13 @@ impl CreateReplicationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
     /// <p>A summary description of the application.</p>
+    #[doc(hidden)]
     pub app_summary: std::option::Option<crate::model::AppSummary>,
     /// <p>The server groups included in the application.</p>
+    #[doc(hidden)]
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags associated with the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppOutput {

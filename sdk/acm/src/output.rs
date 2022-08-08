@@ -65,6 +65,7 @@ impl ResendValidationEmailOutput {
 pub struct RequestCertificateOutput {
     /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl RequestCertificateOutput {
@@ -215,6 +216,7 @@ impl PutAccountConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForCertificateOutput {
@@ -276,8 +278,10 @@ impl ListTagsForCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
     /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of ACM certificates.</p>
+    #[doc(hidden)]
     pub certificate_summary_list:
         std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
@@ -362,6 +366,7 @@ impl ListCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ImportCertificateOutput {
@@ -419,8 +424,10 @@ impl ImportCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateOutput {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateOutput {
@@ -495,6 +502,7 @@ impl GetCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountConfigurationOutput {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
 }
 impl GetAccountConfigurationOutput {
@@ -552,10 +560,13 @@ impl GetAccountConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
 }
 impl ExportCertificateOutput {
@@ -647,6 +658,7 @@ impl ExportCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
     /// <p>Metadata about an ACM certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::CertificateDetail>,
 }
 impl DescribeCertificateOutput {

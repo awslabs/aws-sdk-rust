@@ -12084,12 +12084,16 @@ impl UpdateVariableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVariableInput {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new default value of the variable.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The new description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    #[doc(hidden)]
     pub variable_type: std::option::Option<std::string::String>,
 }
 impl UpdateVariableInput {
@@ -12126,16 +12130,22 @@ impl std::fmt::Debug for UpdateVariableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleVersionInput {
     /// <p>The rule to update.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The rule expression.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The language.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::Language>,
     /// <p>The outcomes.</p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to assign to the rule version.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateRuleVersionInput {
@@ -12182,8 +12192,10 @@ impl std::fmt::Debug for UpdateRuleVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleMetadataInput {
     /// <p>The rule to update.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateRuleMetadataInput {
@@ -12210,12 +12222,16 @@ impl std::fmt::Debug for UpdateRuleMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelVersionStatusInput {
     /// <p>The model ID of the model version to update.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model version status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelVersionStatus>,
 }
 impl UpdateModelVersionStatusInput {
@@ -12252,16 +12268,22 @@ impl std::fmt::Debug for UpdateModelVersionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelVersionInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The major version number.</p>
+    #[doc(hidden)]
     pub major_version_number: std::option::Option<std::string::String>,
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateModelVersionInput {
@@ -12312,10 +12334,13 @@ impl std::fmt::Debug for UpdateModelVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The new model description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateModelInput {
@@ -12347,12 +12372,16 @@ impl std::fmt::Debug for UpdateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventLabelInput {
     /// <p>The ID of the event associated with the label to update.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The event type of the event associated with the label to update.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The new label to assign to the event.</p>
+    #[doc(hidden)]
     pub assigned_label: std::option::Option<std::string::String>,
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    #[doc(hidden)]
     pub label_timestamp: std::option::Option<std::string::String>,
 }
 impl UpdateEventLabelInput {
@@ -12389,10 +12418,13 @@ impl std::fmt::Debug for UpdateEventLabelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorVersionStatusInput {
     /// <p>The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The new status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
 }
 impl UpdateDetectorVersionStatusInput {
@@ -12424,10 +12456,13 @@ impl std::fmt::Debug for UpdateDetectorVersionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorVersionMetadataInput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDetectorVersionMetadataInput {
@@ -12459,21 +12494,28 @@ impl std::fmt::Debug for UpdateDetectorVersionMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorVersionInput {
     /// <p>The parent detector ID for the detector version you want to update.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
+    #[doc(hidden)]
     pub external_model_endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The rules to include in the detector version.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The detector version description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The model versions to include in the detector version.</p>
+    #[doc(hidden)]
     pub model_versions: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>,
     /// <p>The rule execution mode to add to the detector.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    #[doc(hidden)]
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
 }
 impl UpdateDetectorVersionInput {
@@ -12528,8 +12570,10 @@ impl std::fmt::Debug for UpdateDetectorVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which to remove the tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -12556,8 +12600,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -12584,19 +12630,26 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEventInput {
     /// <p>The event ID to upload.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The event type name of the event.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    #[doc(hidden)]
     pub event_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    #[doc(hidden)]
     pub assigned_label: std::option::Option<std::string::String>,
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    #[doc(hidden)]
     pub label_timestamp: std::option::Option<std::string::String>,
     /// <p>An array of entities.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl SendEventInput {
@@ -12651,10 +12704,13 @@ impl std::fmt::Debug for SendEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOutcomeInput {
     /// <p>The name of the outcome.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The outcome description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutOutcomeInput {
@@ -12686,10 +12742,13 @@ impl std::fmt::Debug for PutOutcomeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLabelInput {
     /// <p>The label name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The label description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutLabelInput {
@@ -12721,6 +12780,7 @@ impl std::fmt::Debug for PutLabelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutKmsEncryptionKeyInput {
     /// <p>The KMS encryption key ARN.</p>
+    #[doc(hidden)]
     pub kms_encryption_key_arn: std::option::Option<std::string::String>,
 }
 impl PutKmsEncryptionKeyInput {
@@ -12742,18 +12802,25 @@ impl std::fmt::Debug for PutKmsEncryptionKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutExternalModelInput {
     /// <p>The model endpoints name.</p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
     /// <p>The source of the model.</p>
+    #[doc(hidden)]
     pub model_source: std::option::Option<crate::model::ModelSource>,
     /// <p>The IAM role used to invoke the model endpoint.</p>
+    #[doc(hidden)]
     pub invoke_model_endpoint_role_arn: std::option::Option<std::string::String>,
     /// <p>The model endpoint input configuration.</p>
+    #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::ModelInputConfiguration>,
     /// <p>The model endpoint output configuration.</p>
+    #[doc(hidden)]
     pub output_configuration: std::option::Option<crate::model::ModelOutputConfiguration>,
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+    #[doc(hidden)]
     pub model_endpoint_status: std::option::Option<crate::model::ModelEndpointStatus>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutExternalModelInput {
@@ -12812,18 +12879,25 @@ impl std::fmt::Debug for PutExternalModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventTypeInput {
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the event type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event type variables.</p>
+    #[doc(hidden)]
     pub event_variables: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The event type labels.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
+    #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    #[doc(hidden)]
     pub event_ingestion: std::option::Option<crate::model::EventIngestion>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutEventTypeInput {
@@ -12875,10 +12949,13 @@ impl std::fmt::Debug for PutEventTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEntityTypeInput {
     /// <p>The name of the entity type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutEntityTypeInput {
@@ -12910,12 +12987,16 @@ impl std::fmt::Debug for PutEntityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDetectorInput {
     /// <p>The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The description of the detector.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutDetectorInput {
@@ -12952,10 +13033,13 @@ impl std::fmt::Debug for PutDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the resource whose tags you want to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The next token from the previous results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -12987,18 +13071,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventPredictionsInput {
     /// <p> The event ID. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<crate::model::FilterCondition>,
     /// <p> The event type associated with the detector. </p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::FilterCondition>,
     /// <p> The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<crate::model::FilterCondition>,
     /// <p> The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<crate::model::FilterCondition>,
     /// <p> The time period for when the predictions were generated. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of predictions to return for the request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventPredictionsInput {
@@ -13050,10 +13141,13 @@ impl std::fmt::Debug for ListEventPredictionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVariablesInput {
     /// <p>The name of the variable. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The next page token of the get variable request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The max size per page determined for the get variable request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetVariablesInput {
@@ -13085,14 +13179,19 @@ impl std::fmt::Debug for GetVariablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRulesInput {
     /// <p>The rule ID.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The rule version.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<std::string::String>,
     /// <p>The next page token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of rules to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetRulesInput {
@@ -13134,10 +13233,13 @@ impl std::fmt::Debug for GetRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutcomesInput {
     /// <p>The name of the outcome or outcomes to get.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The next page token for the request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetOutcomesInput {
@@ -13169,10 +13271,13 @@ impl std::fmt::Debug for GetOutcomesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelVersionInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
 }
 impl GetModelVersionInput {
@@ -13204,12 +13309,16 @@ impl std::fmt::Debug for GetModelVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetModelsInput {
@@ -13246,10 +13355,13 @@ impl std::fmt::Debug for GetModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelsInput {
     /// <p>The name of the label or labels to get.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetLabelsInput {
@@ -13292,10 +13404,13 @@ impl std::fmt::Debug for GetKmsEncryptionKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExternalModelsInput {
     /// <p>The Amazon SageMaker model endpoint.</p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
     /// <p>The next page token for the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetExternalModelsInput {
@@ -13327,10 +13442,13 @@ impl std::fmt::Debug for GetExternalModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventTypesInput {
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEventTypesInput {
@@ -13362,15 +13480,20 @@ impl std::fmt::Debug for GetEventTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventPredictionMetadataInput {
     /// <p> The event ID. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p> The event type associated with the detector specified for the prediction. </p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p> The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p> The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
+    #[doc(hidden)]
     pub prediction_timestamp: std::option::Option<std::string::String>,
 }
 impl GetEventPredictionMetadataInput {
@@ -13413,16 +13536,22 @@ impl std::fmt::Debug for GetEventPredictionMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventPredictionInput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID.</p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The unique ID used to identify the event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The event type associated with the detector specified for the prediction.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
     /// <p>You must provide at least one eventVariable</p>
@@ -13432,9 +13561,11 @@ pub struct GetEventPredictionInput {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p> <b>For imported SageMaker models:</b> </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    #[doc(hidden)]
     pub event_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
+    #[doc(hidden)]
     pub external_model_endpoint_data_blobs: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ModelEndpointDataBlob>,
     >,
@@ -13510,8 +13641,10 @@ impl std::fmt::Debug for GetEventPredictionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventInput {
     /// <p>The ID of the event to retrieve.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The event type of the event to retrieve.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
 }
 impl GetEventInput {
@@ -13538,10 +13671,13 @@ impl std::fmt::Debug for GetEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntityTypesInput {
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEntityTypesInput {
@@ -13573,8 +13709,10 @@ impl std::fmt::Debug for GetEntityTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorVersionInput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID.</p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
 }
 impl GetDetectorVersionInput {
@@ -13601,10 +13739,13 @@ impl std::fmt::Debug for GetDetectorVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorsInput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetDetectorsInput {
@@ -13636,6 +13777,7 @@ impl std::fmt::Debug for GetDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeleteEventsByEventTypeStatusInput {
     /// <p>Name of event type for which to get the deletion status.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
 }
 impl GetDeleteEventsByEventTypeStatusInput {
@@ -13657,10 +13799,13 @@ impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionJobsInput {
     /// <p>The batch prediction job for which to get the details.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The next token from the previous request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBatchPredictionJobsInput {
@@ -13692,10 +13837,13 @@ impl std::fmt::Debug for GetBatchPredictionJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchImportJobsInput {
     /// <p>The ID of the batch import job to get.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The next token from the previous request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBatchImportJobsInput {
@@ -13727,14 +13875,19 @@ impl std::fmt::Debug for GetBatchImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelVersionsInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The next token from the previous results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeModelVersionsInput {
@@ -13776,10 +13929,13 @@ impl std::fmt::Debug for DescribeModelVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorInput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The next token from the previous response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeDetectorInput {
@@ -13811,6 +13967,7 @@ impl std::fmt::Debug for DescribeDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVariableInput {
     /// <p>The name of the variable to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteVariableInput {
@@ -13832,6 +13989,7 @@ impl std::fmt::Debug for DeleteVariableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleInput {
     /// <p>A rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl DeleteRuleInput {
@@ -13853,6 +14011,7 @@ impl std::fmt::Debug for DeleteRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutcomeInput {
     /// <p>The name of the outcome to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteOutcomeInput {
@@ -13874,10 +14033,13 @@ impl std::fmt::Debug for DeleteOutcomeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelVersionInput {
     /// <p>The model ID of the model version to delete.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type of the model version to delete.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number of the model version to delete.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
 }
 impl DeleteModelVersionInput {
@@ -13909,8 +14071,10 @@ impl std::fmt::Debug for DeleteModelVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
     /// <p>The model ID of the model to delete.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type of the model to delete.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
 }
 impl DeleteModelInput {
@@ -13937,6 +14101,7 @@ impl std::fmt::Debug for DeleteModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLabelInput {
     /// <p>The name of the label to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteLabelInput {
@@ -13958,6 +14123,7 @@ impl std::fmt::Debug for DeleteLabelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExternalModelInput {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
 }
 impl DeleteExternalModelInput {
@@ -13979,6 +14145,7 @@ impl std::fmt::Debug for DeleteExternalModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventTypeInput {
     /// <p>The name of the event type to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEventTypeInput {
@@ -14000,6 +14167,7 @@ impl std::fmt::Debug for DeleteEventTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventsByEventTypeInput {
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventsByEventTypeInput {
@@ -14021,10 +14189,13 @@ impl std::fmt::Debug for DeleteEventsByEventTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventInput {
     /// <p>The ID of the event to delete.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    #[doc(hidden)]
     pub delete_audit_history: std::option::Option<bool>,
 }
 impl DeleteEventInput {
@@ -14056,6 +14227,7 @@ impl std::fmt::Debug for DeleteEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEntityTypeInput {
     /// <p>The name of the entity type to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEntityTypeInput {
@@ -14077,8 +14249,10 @@ impl std::fmt::Debug for DeleteEntityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorVersionInput {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the detector version to delete.</p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorVersionInput {
@@ -14105,6 +14279,7 @@ impl std::fmt::Debug for DeleteDetectorVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorInput {
     /// <p>The ID of the detector to delete.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorInput {
@@ -14126,6 +14301,7 @@ impl std::fmt::Debug for DeleteDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to delete.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchPredictionJobInput {
@@ -14147,6 +14323,7 @@ impl std::fmt::Debug for DeleteBatchPredictionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBatchImportJobInput {
     /// <p>The ID of the batch import job to delete. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchImportJobInput {
@@ -14168,19 +14345,26 @@ impl std::fmt::Debug for DeleteBatchImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVariableInput {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::DataType>,
     /// <p>The source of the data.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The default value for the variable when no value is received.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
+    #[doc(hidden)]
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVariableInput {
@@ -14233,18 +14417,25 @@ impl std::fmt::Debug for CreateVariableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleInput {
     /// <p>The rule ID.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The detector ID for the rule's parent detector.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The rule expression.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The language of the rule.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::Language>,
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleInput {
@@ -14296,18 +14487,25 @@ impl std::fmt::Debug for CreateRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelVersionInput {
     /// <p>The model ID. </p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The training data source location in Amazon S3. </p>
+    #[doc(hidden)]
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
+    #[doc(hidden)]
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelVersionInput {
@@ -14365,14 +14563,19 @@ impl std::fmt::Debug for CreateModelVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type. </p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateModelInput {
@@ -14414,22 +14617,29 @@ impl std::fmt::Debug for CreateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorVersionInput {
     /// <p>The ID of the detector under which you want to create a new version.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The description of the detector version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
+    #[doc(hidden)]
     pub external_model_endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The rules to include in the detector version.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The model versions to include in the detector version.</p>
+    #[doc(hidden)]
     pub model_versions: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>,
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    #[doc(hidden)]
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDetectorVersionInput {
@@ -14485,20 +14695,28 @@ impl std::fmt::Debug for CreateDetectorVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your training file.</p>
+    #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your output file.</p>
+    #[doc(hidden)]
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The name of the detector.</p>
+    #[doc(hidden)]
     pub detector_name: std::option::Option<std::string::String>,
     /// <p>The detector version.</p>
+    #[doc(hidden)]
     pub detector_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchPredictionJobInput {
@@ -14555,16 +14773,22 @@ impl std::fmt::Debug for CreateBatchPredictionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchImportJobInput {
     /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    #[doc(hidden)]
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A collection of key-value pairs associated with this request. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchImportJobInput {
@@ -14611,6 +14835,7 @@ impl std::fmt::Debug for CreateBatchImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to cancel.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelBatchPredictionJobInput {
@@ -14633,6 +14858,7 @@ impl std::fmt::Debug for CancelBatchPredictionJobInput {
 pub struct CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelBatchImportJobInput {
@@ -14655,6 +14881,7 @@ impl std::fmt::Debug for CancelBatchImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetVariableInput {
     /// <p>The list of variable names to get.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetVariableInput {
@@ -14676,8 +14903,10 @@ impl std::fmt::Debug for BatchGetVariableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateVariableInput {
     /// <p>The list of variables for the batch create variable request.</p>
+    #[doc(hidden)]
     pub variable_entries: std::option::Option<std::vec::Vec<crate::model::VariableEntry>>,
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl BatchCreateVariableInput {

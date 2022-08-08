@@ -16,6 +16,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RawMessageContent {
     /// <p>The S3 reference of an email message.</p>
+    #[doc(hidden)]
     pub s3_reference: std::option::Option<crate::model::S3Reference>,
 }
 impl RawMessageContent {
@@ -75,10 +76,13 @@ impl RawMessageContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Reference {
     /// <p>The S3 bucket name.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The S3 key object name.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
+    #[doc(hidden)]
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Reference {

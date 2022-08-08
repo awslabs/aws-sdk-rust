@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user profile was last modified, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateUserProfileOutput {
@@ -165,10 +171,13 @@ impl UpdateUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTeamMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The project role granted to the user.</p>
+    #[doc(hidden)]
     pub project_role: std::option::Option<std::string::String>,
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
+    #[doc(hidden)]
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl UpdateTeamMemberOutput {
@@ -317,6 +326,7 @@ impl UntagProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagProjectOutput {
     /// <p>The tags for the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -390,8 +400,10 @@ impl TagProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserProfilesOutput {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
+    #[doc(hidden)]
     pub user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfileSummary>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserProfilesOutput {
@@ -473,8 +485,10 @@ impl ListUserProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
+    #[doc(hidden)]
     pub team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTeamMembersOutput {
@@ -555,9 +569,11 @@ impl ListTeamMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForProjectOutput {
     /// <p>The tags for the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForProjectOutput {
@@ -649,8 +665,10 @@ impl ListTagsForProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
     /// <p>An array of resources associated with the project. </p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -731,8 +749,10 @@ impl ListResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>A list of projects.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -843,16 +863,22 @@ impl DisassociateTeamMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address for the user. Optional.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserProfileOutput {
@@ -1004,22 +1030,31 @@ impl DescribeUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The display name for the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the project, if any.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The date and time the project was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
+    #[doc(hidden)]
     pub project_template_id: std::option::Option<std::string::String>,
     /// <p>The project creation or deletion status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
 }
 impl DescribeProjectOutput {
@@ -1222,6 +1257,7 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserProfileOutput {
@@ -1276,8 +1312,10 @@ impl DeleteUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectOutput {
@@ -1349,16 +1387,22 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user profile was last modified, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateUserProfileOutput {
@@ -1510,12 +1554,16 @@ impl CreateUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub project_template_id: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
@@ -1627,6 +1675,7 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl AssociateTeamMemberOutput {

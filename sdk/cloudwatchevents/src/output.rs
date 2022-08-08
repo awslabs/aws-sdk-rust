@@ -4,14 +4,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
     /// <p>The ARN of the connection that was updated.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connection that was updated.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
+    #[doc(hidden)]
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateConnectionOutput {
@@ -149,12 +154,16 @@ impl UpdateConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateArchiveOutput {
     /// <p>The ARN of the archive.</p>
+    #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
     /// <p>The state of the archive.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArchiveState>,
     /// <p>The reason that the archive is in the current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the archive was updated.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateArchiveOutput {
@@ -263,12 +272,16 @@ impl UpdateArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiDestinationOutput {
     /// <p>The ARN of the API destination that was updated.</p>
+    #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
     /// <p>The state of the API destination that was updated.</p>
+    #[doc(hidden)]
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>A time stamp for the time that the API destination was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateApiDestinationOutput {
@@ -416,6 +429,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestEventPatternOutput {
     /// <p>Indicates whether the event matches the event pattern.</p>
+    #[doc(hidden)]
     pub result: bool,
 }
 impl TestEventPatternOutput {
@@ -500,12 +514,16 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplayOutput {
     /// <p>The ARN of the replay.</p>
+    #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
     /// <p>The state of the replay.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>The reason that the replay is in the state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the replay started.</p>
+    #[doc(hidden)]
     pub replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartReplayOutput {
@@ -614,8 +632,10 @@ impl StartReplayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTargetsOutput {
     /// <p>The number of failed entries.</p>
+    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
+    #[doc(hidden)]
     pub failed_entries: std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
 }
 impl RemoveTargetsOutput {
@@ -727,8 +747,10 @@ impl RemovePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTargetsOutput {
     /// <p>The number of failed entries.</p>
+    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
+    #[doc(hidden)]
     pub failed_entries: std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>,
 }
 impl PutTargetsOutput {
@@ -810,6 +832,7 @@ impl PutTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl PutRuleOutput {
@@ -894,8 +917,10 @@ impl PutPermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPartnerEventsOutput {
     /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
+    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
 }
 impl PutPartnerEventsOutput {
@@ -977,8 +1002,10 @@ impl PutPartnerEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsOutput {
     /// <p>The number of failed entries.</p>
+    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>,
 }
 impl PutEventsOutput {
@@ -1059,8 +1086,10 @@ impl PutEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsByRuleOutput {
     /// <p>The targets assigned to the rule.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsByRuleOutput {
@@ -1141,6 +1170,7 @@ impl ListTargetsByRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1202,8 +1232,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesOutput {
@@ -1284,8 +1316,10 @@ impl ListRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleNamesByTargetOutput {
     /// <p>The names of the rules that can invoke the given target.</p>
+    #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRuleNamesByTargetOutput {
@@ -1366,8 +1400,10 @@ impl ListRuleNamesByTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReplaysOutput {
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
+    #[doc(hidden)]
     pub replays: std::option::Option<std::vec::Vec<crate::model::Replay>>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReplaysOutput {
@@ -1448,8 +1484,10 @@ impl ListReplaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerEventSourcesOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
+    #[doc(hidden)]
     pub partner_event_sources: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPartnerEventSourcesOutput {
@@ -1533,9 +1571,11 @@ impl ListPartnerEventSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerEventSourceAccountsOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
+    #[doc(hidden)]
     pub partner_event_source_accounts:
         std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPartnerEventSourceAccountsOutput {
@@ -1625,8 +1665,10 @@ impl ListPartnerEventSourceAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSourcesOutput {
     /// <p>The list of event sources.</p>
+    #[doc(hidden)]
     pub event_sources: std::option::Option<std::vec::Vec<crate::model::EventSource>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventSourcesOutput {
@@ -1707,8 +1749,10 @@ impl ListEventSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventBusesOutput {
     /// <p>This list of event buses.</p>
+    #[doc(hidden)]
     pub event_buses: std::option::Option<std::vec::Vec<crate::model::EventBus>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventBusesOutput {
@@ -1789,8 +1833,10 @@ impl ListEventBusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
     /// <p>An array of connections objects that include details about the connections.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsOutput {
@@ -1871,8 +1917,10 @@ impl ListConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
+    #[doc(hidden)]
     pub archives: std::option::Option<std::vec::Vec<crate::model::Archive>>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArchivesOutput {
@@ -1953,8 +2001,10 @@ impl ListArchivesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    #[doc(hidden)]
     pub api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApiDestinationsOutput {
@@ -2096,24 +2146,34 @@ impl DisableRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuleOutput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>Specifies whether the rule is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RuleState>,
     /// <p>The description of the rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
     /// <p>The name of the event bus associated with the rule.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
 }
 impl DescribeRuleOutput {
@@ -2330,28 +2390,40 @@ impl DescribeRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplayOutput {
     /// <p>The name of the replay.</p>
+    #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the replay.</p>
+    #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
     /// <p>The description of the replay.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current state of the replay.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>The reason that the replay is in the current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the archive events were replayed from.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::ReplayDestination>,
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
+    #[doc(hidden)]
     pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
+    #[doc(hidden)]
     pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the event was last replayed.</p>
+    #[doc(hidden)]
     pub event_last_replayed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay started.</p>
+    #[doc(hidden)]
     pub replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay stopped.</p>
+    #[doc(hidden)]
     pub replay_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeReplayOutput {
@@ -2614,8 +2686,10 @@ impl DescribeReplayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnerEventSourceOutput {
     /// <p>The ARN of the event source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the event source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribePartnerEventSourceOutput {
@@ -2687,16 +2761,22 @@ impl DescribePartnerEventSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the SaaS partner that created the event source.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the event source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the partner event source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl DescribeEventSourceOutput {
@@ -2845,10 +2925,13 @@ impl DescribeEventSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventBusOutput {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The policy that enables the external account to send events to your account.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl DescribeEventBusOutput {
@@ -2937,26 +3020,37 @@ impl DescribeEventBusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionOutput {
     /// <p>The ARN of the connection retrieved.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The name of the connection retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the connection retrieved.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the connection retrieved.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The reason that the connection is in the current connection state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The type of authorization specified for the connection.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The parameters to use for authorization for the connection.</p>
+    #[doc(hidden)]
     pub auth_parameters: std::option::Option<crate::model::ConnectionAuthResponseParameters>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
+    #[doc(hidden)]
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeConnectionOutput {
@@ -3214,26 +3308,37 @@ impl DescribeConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeArchiveOutput {
     /// <p>The ARN of the archive.</p>
+    #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
     /// <p>The name of the archive.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event source associated with the archive.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The description of the archive.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event pattern used to filter events sent to the archive.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The state of the archive.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArchiveState>,
     /// <p>The reason that the archive is in the state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The number of days to retain events for in the archive.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
     /// <p>The size of the archive in bytes.</p>
+    #[doc(hidden)]
     pub size_bytes: i64,
     /// <p>The number of events in the archive.</p>
+    #[doc(hidden)]
     pub event_count: i64,
     /// <p>The time at which the archive was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeArchiveOutput {
@@ -3467,24 +3572,34 @@ impl DescribeArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApiDestinationOutput {
     /// <p>The ARN of the API destination retrieved.</p>
+    #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
     /// <p>The name of the API destination retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the API destination retrieved.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the API destination retrieved.</p>
+    #[doc(hidden)]
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>The ARN of the connection specified for the API destination retrieved.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The URL to use to connect to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub invocation_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use to connect to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
+    #[doc(hidden)]
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeApiDestinationOutput {
@@ -3809,14 +3924,19 @@ impl DeleteEventBusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>The ARN of the connection that was deleted.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connection before it was deleted.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
+    #[doc(hidden)]
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteConnectionOutput {
@@ -4014,14 +4134,19 @@ impl DeleteApiDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeauthorizeConnectionOutput {
     /// <p>The ARN of the connection that authorization was removed from.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connection.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
+    #[doc(hidden)]
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeauthorizeConnectionOutput {
@@ -4189,6 +4314,7 @@ impl DeactivateEventSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
 }
 impl CreatePartnerEventSourceOutput {
@@ -4246,6 +4372,7 @@ impl CreatePartnerEventSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventBusOutput {
     /// <p>The ARN of the new event bus.</p>
+    #[doc(hidden)]
     pub event_bus_arn: std::option::Option<std::string::String>,
 }
 impl CreateEventBusOutput {
@@ -4303,12 +4430,16 @@ impl CreateEventBusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
     /// <p>The ARN of the connection that was created by the request.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connection that was created by the request.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateConnectionOutput {
@@ -4426,12 +4557,16 @@ impl CreateConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
+    #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
     /// <p>The state of the archive that was created.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArchiveState>,
     /// <p>The reason that the archive is in the state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the archive was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateArchiveOutput {
@@ -4540,12 +4675,16 @@ impl CreateArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiDestinationOutput {
     /// <p>The ARN of the API destination that was created by the request.</p>
+    #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
     /// <p>The state of the API destination that was created by the request.</p>
+    #[doc(hidden)]
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>A time stamp indicating the time that the API destination was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateApiDestinationOutput {
@@ -4663,10 +4802,13 @@ impl CreateApiDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReplayOutput {
     /// <p>The ARN of the replay to cancel.</p>
+    #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the replay.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>The reason that the replay is in the current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
 }
 impl CancelReplayOutput {

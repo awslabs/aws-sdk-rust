@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -69,6 +70,7 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -133,6 +135,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -197,6 +200,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgumentException {
@@ -261,6 +265,7 @@ impl InvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -325,6 +330,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeValidationException {
     /// <p>Test</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeValidationException {
@@ -389,6 +395,7 @@ impl CodeValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -453,6 +460,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApplicationConfigurationException {
     /// <p>test</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApplicationConfigurationException {
@@ -517,10 +525,13 @@ impl InvalidApplicationConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnableToDetectSchemaException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnableToDetectSchemaException {
@@ -637,6 +648,7 @@ impl UnableToDetectSchemaException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailableException {
@@ -701,6 +713,7 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceProvisionedThroughputExceededException {
@@ -765,6 +778,7 @@ impl ResourceProvisionedThroughputExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {

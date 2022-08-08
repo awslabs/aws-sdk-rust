@@ -907,16 +907,21 @@ pub struct PutObjectInput {
     /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
     /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
     /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The content type of the object.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
+    #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
     /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+    #[doc(hidden)]
     pub upload_availability: std::option::Option<crate::model::UploadAvailability>,
 }
 impl PutObjectInput {
@@ -983,12 +988,15 @@ pub struct ListItemsInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>
     /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
     /// <p>Tokens expire after 15 minutes.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListItemsInput {
@@ -1040,8 +1048,10 @@ pub struct GetObjectInput {
     /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
     /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
     /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
+    #[doc(hidden)]
     pub range: std::option::Option<std::string::String>,
 }
 impl GetObjectInput {
@@ -1086,6 +1096,7 @@ pub struct DescribeObjectInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl DescribeObjectInput {
@@ -1119,6 +1130,7 @@ pub struct DeleteObjectInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl DeleteObjectInput {

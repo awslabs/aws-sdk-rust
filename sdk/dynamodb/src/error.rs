@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The resource which is being requested does not exist.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -69,6 +70,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     /// <p>The resource which is being attempted to be changed is in use.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -136,6 +138,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>Too many operations for a given subscriber.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -200,6 +203,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEndpointException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEndpointException {
@@ -264,6 +268,7 @@ impl InvalidEndpointException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>The server encountered an internal error trying to fulfill the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -328,6 +333,7 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransactionConflictException {
@@ -392,6 +398,7 @@ impl TransactionConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestLimitExceeded {
@@ -456,6 +463,7 @@ impl RequestLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
     /// <p>You exceeded your maximum allowed provisioned throughput.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProvisionedThroughputExceededException {
@@ -520,6 +528,7 @@ impl ProvisionedThroughputExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemCollectionSizeLimitExceededException {
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ItemCollectionSizeLimitExceededException {
@@ -584,6 +593,7 @@ impl ItemCollectionSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionalCheckFailedException {
     /// <p>The conditional request failed.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConditionalCheckFailedException {
@@ -648,6 +658,7 @@ impl ConditionalCheckFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicaNotFoundException {
@@ -712,6 +723,7 @@ impl ReplicaNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IndexNotFoundException {
@@ -776,6 +788,7 @@ impl IndexNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTableNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalTableNotFoundException {
@@ -840,6 +853,7 @@ impl GlobalTableNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TableNotFoundException {
@@ -904,6 +918,7 @@ impl TableNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicaAlreadyExistsException {
@@ -968,6 +983,7 @@ impl ReplicaAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousBackupsUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContinuousBackupsUnavailableException {
@@ -1032,6 +1048,7 @@ impl ContinuousBackupsUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransactionInProgressException {
@@ -1180,8 +1197,10 @@ impl TransactionInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionCanceledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A list of cancellation reasons.</p>
+    #[doc(hidden)]
     pub cancellation_reasons: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
 }
 impl TransactionCanceledException {
@@ -1275,6 +1294,7 @@ impl TransactionCanceledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotentParameterMismatchException {
@@ -1339,6 +1359,7 @@ impl IdempotentParameterMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TableInUseException {
@@ -1403,6 +1424,7 @@ impl TableInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TableAlreadyExistsException {
@@ -1467,6 +1489,7 @@ impl TableAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRecoveryUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PointInTimeRecoveryUnavailableException {
@@ -1531,6 +1554,7 @@ impl PointInTimeRecoveryUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRestoreTimeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRestoreTimeException {
@@ -1595,6 +1619,7 @@ impl InvalidRestoreTimeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BackupNotFoundException {
@@ -1659,6 +1684,7 @@ impl BackupNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BackupInUseException {
@@ -1723,6 +1749,7 @@ impl BackupInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExportTimeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidExportTimeException {
@@ -1787,6 +1814,7 @@ impl InvalidExportTimeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExportConflictException {
@@ -1851,6 +1879,7 @@ impl ExportConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateItemException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateItemException {
@@ -1915,6 +1944,7 @@ impl DuplicateItemException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExportNotFoundException {
@@ -1979,6 +2009,7 @@ impl ExportNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalTableAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalTableAlreadyExistsException {

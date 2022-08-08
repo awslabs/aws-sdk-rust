@@ -7995,10 +7995,13 @@ impl UpdateScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScheduleInput {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
+    #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>The name of the schedule to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateScheduleInput {
@@ -8030,10 +8033,13 @@ impl std::fmt::Debug for UpdateScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRulesetInput {
     /// <p>The name of the ruleset to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl UpdateRulesetInput {
@@ -8065,30 +8071,41 @@ impl std::fmt::Debug for UpdateRulesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeJobInput {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>One or more artifacts that represent the output from running the job. </p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    #[doc(hidden)]
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    #[doc(hidden)]
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    #[doc(hidden)]
     pub timeout: i32,
 }
 impl UpdateRecipeJobInput {
@@ -8164,10 +8181,13 @@ impl std::fmt::Debug for UpdateRecipeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeInput {
     /// <p>A description of the recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
 }
 impl UpdateRecipeInput {
@@ -8199,10 +8219,13 @@ impl std::fmt::Debug for UpdateRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    #[doc(hidden)]
     pub sample: std::option::Option<crate::model::Sample>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
@@ -8234,33 +8257,45 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileJobInput {
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
+    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::S3Location>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
+    #[doc(hidden)]
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    #[doc(hidden)]
     pub timeout: i32,
     /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    #[doc(hidden)]
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl UpdateProfileJobInput {
@@ -8343,14 +8378,19 @@ impl std::fmt::Debug for UpdateProfileJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetInput {
     /// <p>The name of the dataset to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    #[doc(hidden)]
     pub format_options: std::option::Option<crate::model::FormatOptions>,
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    #[doc(hidden)]
     pub path_options: std::option::Option<crate::model::PathOptions>,
 }
 impl UpdateDatasetInput {
@@ -8392,8 +8432,10 @@ impl std::fmt::Debug for UpdateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8420,8 +8462,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8452,8 +8496,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopJobRunInput {
     /// <p>The name of the job to be stopped.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the job run to be stopped.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StopJobRunInput {
@@ -8480,8 +8526,10 @@ impl std::fmt::Debug for StopJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
+    #[doc(hidden)]
     pub assume_control: bool,
 }
 impl StartProjectSessionInput {
@@ -8508,6 +8556,7 @@ impl std::fmt::Debug for StartProjectSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunInput {
     /// <p>The name of the job to be run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartJobRunInput {
@@ -8529,16 +8578,22 @@ impl std::fmt::Debug for StartJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendProjectSessionActionInput {
     /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
+    #[doc(hidden)]
     pub preview: bool,
     /// <p>The name of the project to apply the action to.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
+    #[doc(hidden)]
     pub recipe_step: std::option::Option<crate::model::RecipeStep>,
     /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
+    #[doc(hidden)]
     pub step_index: std::option::Option<i32>,
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
+    #[doc(hidden)]
     pub client_session_id: std::option::Option<std::string::String>,
     /// <p>Represents the data being transformed during an action.</p>
+    #[doc(hidden)]
     pub view_frame: std::option::Option<crate::model::ViewFrame>,
 }
 impl SendProjectSessionActionInput {
@@ -8585,8 +8640,10 @@ impl std::fmt::Debug for SendProjectSessionActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishRecipeInput {
     /// <p>A description of the recipe to be published, for this version of the recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe to be published.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PublishRecipeInput {
@@ -8613,6 +8670,7 @@ impl std::fmt::Debug for PublishRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8634,10 +8692,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulesInput {
     /// <p>The name of the job that these schedules apply to.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulesInput {
@@ -8669,10 +8730,13 @@ impl std::fmt::Debug for ListSchedulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesetsInput {
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesetsInput {
@@ -8704,10 +8768,13 @@ impl std::fmt::Debug for ListRulesetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipeVersionsInput {
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the recipe for which to return version information.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ListRecipeVersionsInput {
@@ -8739,11 +8806,14 @@ impl std::fmt::Debug for ListRecipeVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipesInput {
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
+    #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl ListRecipesInput {
@@ -8776,8 +8846,10 @@ impl std::fmt::Debug for ListRecipesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -8804,12 +8876,16 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -8846,10 +8922,13 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsInput {
     /// <p>The name of the job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsInput {
@@ -8881,8 +8960,10 @@ impl std::fmt::Debug for ListJobRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p>The maximum number of results to return in this request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsInput {
@@ -8909,6 +8990,7 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleInput {
     /// <p>The name of the schedule to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeScheduleInput {
@@ -8930,6 +9012,7 @@ impl std::fmt::Debug for DescribeScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesetInput {
     /// <p>The name of the ruleset to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeRulesetInput {
@@ -8951,8 +9034,10 @@ impl std::fmt::Debug for DescribeRulesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeInput {
     /// <p>The name of the recipe to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DescribeRecipeInput {
@@ -8979,6 +9064,7 @@ impl std::fmt::Debug for DescribeRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
@@ -9000,8 +9086,10 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobRunInput {
     /// <p>The name of the job being processed during this run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobRunInput {
@@ -9028,6 +9116,7 @@ impl std::fmt::Debug for DescribeJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
     /// <p>The name of the job to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
@@ -9049,6 +9138,7 @@ impl std::fmt::Debug for DescribeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -9070,6 +9160,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduleInput {
     /// <p>The name of the schedule to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteScheduleInput {
@@ -9091,6 +9182,7 @@ impl std::fmt::Debug for DeleteScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRulesetInput {
     /// <p>The name of the ruleset to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteRulesetInput {
@@ -9112,8 +9204,10 @@ impl std::fmt::Debug for DeleteRulesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecipeVersionInput {
     /// <p>The name of the recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DeleteRecipeVersionInput {
@@ -9140,6 +9234,7 @@ impl std::fmt::Debug for DeleteRecipeVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The name of the project to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -9161,6 +9256,7 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobInput {
     /// <p>The name of the job to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteJobInput {
@@ -9182,6 +9278,7 @@ impl std::fmt::Debug for DeleteJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -9203,13 +9300,17 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduleInput {
     /// <p>The name or names of one or more jobs to be run.</p>
+    #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this schedule.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateScheduleInput {
@@ -9249,14 +9350,19 @@ impl std::fmt::Debug for CreateScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRulesetInput {
     /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>Metadata tags to apply to the ruleset.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9302,39 +9408,54 @@ impl std::fmt::Debug for CreateRulesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecipeJobInput {
     /// <p>The name of the dataset that this job processes.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>One or more artifacts that represent the output from running the job.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    #[doc(hidden)]
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    #[doc(hidden)]
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
+    #[doc(hidden)]
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    #[doc(hidden)]
     pub timeout: i32,
 }
 impl CreateRecipeJobInput {
@@ -9433,12 +9554,16 @@ impl std::fmt::Debug for CreateRecipeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecipeInput {
     /// <p>A description for the recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
     /// <p>Metadata tags to apply to this recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9479,16 +9604,22 @@ impl std::fmt::Debug for CreateRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name of an existing dataset to associate this project with.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of an existing recipe to associate with the project.</p>
+    #[doc(hidden)]
     pub recipe_name: std::option::Option<std::string::String>,
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    #[doc(hidden)]
     pub sample: std::option::Option<crate::model::Sample>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9539,38 +9670,52 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileJobInput {
     /// <p>The name of the dataset that this job is to act upon.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
+    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::S3Location>,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
+    #[doc(hidden)]
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    #[doc(hidden)]
     pub timeout: i32,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    #[doc(hidden)]
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl CreateProfileJobInput {
@@ -9666,16 +9811,22 @@ impl std::fmt::Debug for CreateProfileJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    #[doc(hidden)]
     pub format_options: std::option::Option<crate::model::FormatOptions>,
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    #[doc(hidden)]
     pub path_options: std::option::Option<crate::model::PathOptions>,
     /// <p>Metadata tags to apply to this dataset.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9726,8 +9877,10 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteRecipeVersionInput {
     /// <p>The name of the recipe whose versions are to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    #[doc(hidden)]
     pub recipe_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteRecipeVersionInput {

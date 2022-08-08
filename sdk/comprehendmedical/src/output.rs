@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopSnomedctInferenceJobOutput {
@@ -58,6 +59,7 @@ impl StopSnomedctInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRxNormInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopRxNormInferenceJobOutput {
@@ -112,6 +114,7 @@ impl StopRxNormInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopPhiDetectionJobOutput {
@@ -166,6 +169,7 @@ impl StopPhiDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopIcd10CmInferenceJobOutput {
@@ -220,6 +224,7 @@ impl StopIcd10CmInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEntitiesDetectionV2JobOutput {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopEntitiesDetectionV2JobOutput {
@@ -274,6 +279,7 @@ impl StopEntitiesDetectionV2JobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartSnomedctInferenceJobOutput {
@@ -328,6 +334,7 @@ impl StartSnomedctInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRxNormInferenceJobOutput {
     /// <p>The identifier of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartRxNormInferenceJobOutput {
@@ -382,6 +389,7 @@ impl StartRxNormInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPhiDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPhiDetectionJobOutput {
@@ -436,6 +444,7 @@ impl StartPhiDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartIcd10CmInferenceJobOutput {
@@ -490,6 +499,7 @@ impl StartIcd10CmInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEntitiesDetectionV2JobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartEntitiesDetectionV2JobOutput {
@@ -544,9 +554,11 @@ impl StartEntitiesDetectionV2JobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnomedctInferenceJobsOutput {
     /// <p> A list containing the properties of each job that is returned. </p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p> Identifies the next page of results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnomedctInferenceJobsOutput {
@@ -641,9 +653,11 @@ impl ListSnomedctInferenceJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRxNormInferenceJobsOutput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRxNormInferenceJobsOutput {
@@ -738,9 +752,11 @@ impl ListRxNormInferenceJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhiDetectionJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhiDetectionJobsOutput {
@@ -835,9 +851,11 @@ impl ListPhiDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIcd10CmInferenceJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIcd10CmInferenceJobsOutput {
@@ -932,9 +950,11 @@ impl ListIcd10CmInferenceJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesDetectionV2JobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesDetectionV2JobsOutput {
@@ -1029,14 +1049,19 @@ impl ListEntitiesDetectionV2JobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>,
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
+    #[doc(hidden)]
     pub snomedct_details: std::option::Option<crate::model::SnomedctDetails>,
     /// <p> The number of characters in the input request documentation. </p>
+    #[doc(hidden)]
     pub characters: std::option::Option<crate::model::Characters>,
 }
 impl InferSnomedctOutput {
@@ -1180,10 +1205,13 @@ impl InferSnomedctOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferRxNormOutput {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl InferRxNormOutput {
@@ -1287,10 +1315,13 @@ impl InferRxNormOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl InferIcd10CmOutput {
@@ -1394,10 +1425,13 @@ impl InferIcd10CmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPhiOutput {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl DetectPhiOutput {
@@ -1501,12 +1535,16 @@ impl DetectPhiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesV2Output {
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
+    #[doc(hidden)]
     pub unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesV2Output {
@@ -1637,12 +1675,16 @@ impl DetectEntitiesV2Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesOutput {
     /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p> Attributes extracted from the input text that we were unable to relate to an entity.</p>
+    #[doc(hidden)]
     pub unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
     /// <p> If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesOutput {
@@ -1773,6 +1815,7 @@ impl DetectEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnomedctInferenceJobOutput {
     /// <p>Provides information about a detection job.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
@@ -1841,6 +1884,7 @@ impl DescribeSnomedctInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
@@ -1909,6 +1953,7 @@ impl DescribeRxNormInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
@@ -1977,6 +2022,7 @@ impl DescribePhiDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIcd10CmInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
@@ -2045,6 +2091,7 @@ impl DescribeIcd10CmInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
+    #[doc(hidden)]
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }

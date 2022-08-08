@@ -5149,10 +5149,13 @@ impl UpdateIdentityProviderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The type of identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
+    #[doc(hidden)]
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
 }
 impl UpdateIdentityProviderConfigurationInput {
@@ -5189,10 +5192,13 @@ impl std::fmt::Debug for UpdateIdentityProviderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetMetadataInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    #[doc(hidden)]
     pub optimize_for_end_user_location: std::option::Option<bool>,
 }
 impl UpdateFleetMetadataInput {
@@ -5227,10 +5233,13 @@ impl std::fmt::Debug for UpdateFleetMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainMetadataInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl UpdateDomainMetadataInput {
@@ -5262,8 +5271,10 @@ impl std::fmt::Debug for UpdateDomainMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    #[doc(hidden)]
     pub device_ca_certificate: std::option::Option<std::string::String>,
 }
 impl UpdateDevicePolicyConfigurationInput {
@@ -5290,12 +5301,16 @@ impl std::fmt::Debug for UpdateDevicePolicyConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The VPC with connectivity to associated websites.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups associated with access to the provided subnets.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateCompanyNetworkConfigurationInput {
@@ -5332,8 +5347,10 @@ impl std::fmt::Debug for UpdateCompanyNetworkConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuditStreamConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+    #[doc(hidden)]
     pub audit_stream_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAuditStreamConfigurationInput {
@@ -5360,8 +5377,10 @@ impl std::fmt::Debug for UpdateAuditStreamConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5388,8 +5407,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5420,8 +5441,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignOutUserInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl SignOutUserInput {
@@ -5448,8 +5471,10 @@ impl std::fmt::Debug for SignOutUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeDomainAccessInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RevokeDomainAccessInput {
@@ -5476,8 +5501,10 @@ impl std::fmt::Debug for RevokeDomainAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDomainAccessInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RestoreDomainAccessInput {
@@ -5504,10 +5531,13 @@ impl std::fmt::Debug for RestoreDomainAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebsiteCertificateAuthoritiesInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesInput {
@@ -5539,10 +5569,13 @@ impl std::fmt::Debug for ListWebsiteCertificateAuthoritiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebsiteAuthorizationProvidersInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWebsiteAuthorizationProvidersInput {
@@ -5574,6 +5607,7 @@ impl std::fmt::Debug for ListWebsiteAuthorizationProvidersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5595,8 +5629,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFleetsInput {
@@ -5623,10 +5659,13 @@ impl std::fmt::Debug for ListFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDomainsInput {
@@ -5658,10 +5697,13 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDevicesInput {
@@ -5693,8 +5735,10 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the CA.</p>
+    #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
 }
 impl DisassociateWebsiteCertificateAuthorityInput {
@@ -5721,8 +5765,10 @@ impl std::fmt::Debug for DisassociateWebsiteCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWebsiteAuthorizationProviderInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the authorization provider.</p>
+    #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
 }
 impl DisassociateWebsiteAuthorizationProviderInput {
@@ -5749,8 +5795,10 @@ impl std::fmt::Debug for DisassociateWebsiteAuthorizationProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDomainInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisassociateDomainInput {
@@ -5777,8 +5825,10 @@ impl std::fmt::Debug for DisassociateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the certificate authority.</p>
+    #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
 }
 impl DescribeWebsiteCertificateAuthorityInput {
@@ -5805,6 +5855,7 @@ impl std::fmt::Debug for DescribeWebsiteCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityProviderConfigurationInput {
@@ -5826,6 +5877,7 @@ impl std::fmt::Debug for DescribeIdentityProviderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFleetMetadataInput {
@@ -5847,8 +5899,10 @@ impl std::fmt::Debug for DescribeFleetMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -5875,6 +5929,7 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDevicePolicyConfigurationInput {
@@ -5896,8 +5951,10 @@ impl std::fmt::Debug for DescribeDevicePolicyConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for a registered user's device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
@@ -5924,6 +5981,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCompanyNetworkConfigurationInput {
@@ -5945,6 +6003,7 @@ impl std::fmt::Debug for DescribeCompanyNetworkConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditStreamConfigurationInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAuditStreamConfigurationInput {
@@ -5966,6 +6025,7 @@ impl std::fmt::Debug for DescribeAuditStreamConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFleetInput {
@@ -5987,12 +6047,16 @@ impl std::fmt::Debug for DeleteFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    #[doc(hidden)]
     pub optimize_for_end_user_location: std::option::Option<bool>,
     /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6036,10 +6100,13 @@ impl std::fmt::Debug for CreateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The root certificate of the CA.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The certificate name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteCertificateAuthorityInput {
@@ -6071,10 +6138,13 @@ impl std::fmt::Debug for AssociateWebsiteCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebsiteAuthorizationProviderInput {
     /// <p>The ARN of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The authorization provider type.</p>
+    #[doc(hidden)]
     pub authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteAuthorizationProviderInput {
@@ -6111,12 +6181,16 @@ impl std::fmt::Debug for AssociateWebsiteAuthorizationProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name (FQDN).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    #[doc(hidden)]
     pub acm_certificate_arn: std::option::Option<std::string::String>,
 }
 impl AssociateDomainInput {

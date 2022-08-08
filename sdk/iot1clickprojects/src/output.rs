@@ -124,6 +124,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -197,8 +198,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -279,8 +282,10 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
+    #[doc(hidden)]
     pub placements: std::option::Option<std::vec::Vec<crate::model::PlacementSummary>>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlacementsOutput {
@@ -361,6 +366,7 @@ impl ListPlacementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
+    #[doc(hidden)]
     pub devices:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -466,6 +472,7 @@ impl DisassociateDeviceFromPlacementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>An object describing the project.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::ProjectDescription>,
 }
 impl DescribeProjectOutput {
@@ -523,6 +530,7 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlacementOutput {
     /// <p>An object describing the placement.</p>
+    #[doc(hidden)]
     pub placement: std::option::Option<crate::model::PlacementDescription>,
 }
 impl DescribePlacementOutput {

@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOptionDetail {
     /// <p>The TagOption key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The TagOption value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The TagOption active state.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
     /// <p>The TagOption identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
 }
 impl TagOptionDetail {
@@ -135,8 +140,10 @@ impl TagOptionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceActionDetail {
     /// <p>Summary information about the self-service action.</p>
+    #[doc(hidden)]
     pub service_action_summary: std::option::Option<crate::model::ServiceActionSummary>,
     /// <p>A map that defines the self-service action.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<
         std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
     >,
@@ -305,12 +312,16 @@ impl AsRef<str> for ServiceActionDefinitionKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceActionSummary {
     /// <p>The self-service action identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The self-service action name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The self-service action description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    #[doc(hidden)]
     pub definition_type: std::option::Option<crate::model::ServiceActionDefinitionType>,
 }
 impl ServiceActionSummary {
@@ -531,10 +542,13 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactDetail {
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
@@ -542,12 +556,16 @@ pub struct ProvisioningArtifactDetail {
     /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
     /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the product version is active.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    #[doc(hidden)]
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
 impl ProvisioningArtifactDetail {
@@ -974,8 +992,10 @@ impl AsRef<str> for PropertyKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordDetail {
     /// <p>The identifier of the record.</p>
+    #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The status of the provisioned product.</p>
     /// <ul>
@@ -985,12 +1005,16 @@ pub struct RecordDetail {
     /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the record was last updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    #[doc(hidden)]
     pub provisioned_product_type: std::option::Option<std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
@@ -998,20 +1022,28 @@ pub struct RecordDetail {
     /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub record_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The path identifier.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The errors that occurred.</p>
+    #[doc(hidden)]
     pub record_errors: std::option::Option<std::vec::Vec<crate::model::RecordError>>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub record_tags: std::option::Option<std::vec::Vec<crate::model::RecordTag>>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    #[doc(hidden)]
     pub launch_role_arn: std::option::Option<std::string::String>,
 }
 impl RecordDetail {
@@ -1365,8 +1397,10 @@ impl RecordDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordTag {
     /// <p>The key for this tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for this tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl RecordTag {
@@ -1438,8 +1472,10 @@ impl RecordTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordError {
     /// <p>The numeric value of the error.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl RecordError {
@@ -1511,8 +1547,10 @@ impl RecordError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for this key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1587,32 +1625,38 @@ pub struct UpdateProvisioningPreferences {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
+    #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more AWS Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
+    #[doc(hidden)]
     pub stack_set_failure_tolerance_count: std::option::Option<i32>,
     /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_failure_tolerance_percentage: std::option::Option<i32>,
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_max_concurrency_count: std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
     /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
@@ -1636,6 +1680,7 @@ pub struct UpdateProvisioningPreferences {
     /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub stack_set_operation_type: std::option::Option<crate::model::StackSetOperationType>,
 }
 impl UpdateProvisioningPreferences {
@@ -2022,10 +2067,13 @@ impl AsRef<str> for StackSetOperationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisioningParameter {
     /// <p>The parameter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The parameter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
+    #[doc(hidden)]
     pub use_previous_value: bool,
 }
 impl UpdateProvisioningParameter {
@@ -2114,6 +2162,7 @@ impl UpdateProvisioningParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductViewDetail {
     /// <p>Summary information about the product view.</p>
+    #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>The status of the product.</p>
     /// <ul>
@@ -2121,10 +2170,13 @@ pub struct ProductViewDetail {
     /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The ARN of the product.</p>
+    #[doc(hidden)]
     pub product_arn: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProductViewDetail {
@@ -2251,26 +2303,37 @@ impl ProductViewDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductViewSummary {
     /// <p>The product view identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>Short description of the product.</p>
+    #[doc(hidden)]
     pub short_description: std::option::Option<std::string::String>,
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProductType>,
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
+    #[doc(hidden)]
     pub distributor: std::option::Option<std::string::String>,
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
+    #[doc(hidden)]
     pub has_default_path: bool,
     /// <p>The email contact information to obtain support for this Product.</p>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The description of the support for this Product.</p>
+    #[doc(hidden)]
     pub support_description: std::option::Option<std::string::String>,
     /// <p>The URL information to obtain support for this Product.</p>
+    #[doc(hidden)]
     pub support_url: std::option::Option<std::string::String>,
 }
 impl ProductViewSummary {
@@ -2632,8 +2695,10 @@ impl AsRef<str> for ShareStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNode {
     /// <p>The organization node type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OrganizationNodeType>,
     /// <p>The identifier of the organization node.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl OrganizationNode {
@@ -2767,16 +2832,22 @@ impl AsRef<str> for OrganizationNodeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortfolioDetail {
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN assigned to the portfolio.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name to use for display purposes.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the portfolio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the portfolio provider.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
 }
 impl PortfolioDetail {
@@ -2922,6 +2993,7 @@ impl PortfolioDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConstraintDetail {
     /// <p>The identifier of the constraint.</p>
+    #[doc(hidden)]
     pub constraint_id: std::option::Option<std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -2930,14 +3002,19 @@ pub struct ConstraintDetail {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The owner of the constraint.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
 }
 impl ConstraintDetail {
@@ -3098,12 +3175,16 @@ impl ConstraintDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductAttribute {
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the provisioned product.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
@@ -3113,14 +3194,19 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
+    #[doc(hidden)]
     pub last_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -3129,6 +3215,7 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -3137,22 +3224,31 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
+    #[doc(hidden)]
     pub physical_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    #[doc(hidden)]
     pub user_arn_session: std::option::Option<std::string::String>,
 }
 impl ProvisionedProductAttribute {
@@ -3808,8 +3904,10 @@ pub struct AccessLevelFilter {
     /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AccessLevelFilterKey>,
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AccessLevelFilter {
@@ -4131,8 +4229,10 @@ impl AsRef<str> for ProductViewFilterBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductViewAggregationValue {
     /// <p>The value of the product view aggregation.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>An approximate count of the products that match the value.</p>
+    #[doc(hidden)]
     pub approximate_count: i32,
 }
 impl ProductViewAggregationValue {
@@ -4204,12 +4304,16 @@ impl ProductViewAggregationValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductDetail {
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the provisioned product.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
@@ -4219,14 +4323,19 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
+    #[doc(hidden)]
     pub last_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -4235,6 +4344,7 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -4243,12 +4353,16 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    #[doc(hidden)]
     pub launch_role_arn: std::option::Option<std::string::String>,
 }
 impl ProvisionedProductDetail {
@@ -4686,32 +4800,38 @@ pub struct ProvisioningPreferences {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
+    #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more AWS Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
+    #[doc(hidden)]
     pub stack_set_failure_tolerance_count: std::option::Option<i32>,
     /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_failure_tolerance_percentage: std::option::Option<i32>,
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_max_concurrency_count: std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    #[doc(hidden)]
     pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
 }
 impl ProvisioningPreferences {
@@ -4950,8 +5070,10 @@ impl ProvisioningPreferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningParameter {
     /// <p>The parameter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The parameter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ProvisioningParameter {
@@ -5023,10 +5145,13 @@ impl ProvisioningParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagOptionsFilters {
     /// <p>The TagOption key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The TagOption value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The active state.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl ListTagOptionsFilters {
@@ -5115,8 +5240,10 @@ impl ListTagOptionsFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstance {
     /// <p>The name of the AWS account that the stack instance is associated with.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>The name of the AWS region that the stack instance is associated with.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
     /// <ul>
@@ -5124,6 +5251,7 @@ pub struct StackInstance {
     /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
     /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceStatus>,
 }
 impl StackInstance {
@@ -5289,14 +5417,19 @@ impl AsRef<str> for StackInstanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetail {
     /// <p>The identifier of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The creation time of the resource.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceDetail {
@@ -5426,8 +5559,10 @@ pub struct ListRecordHistorySearchFilter {
     /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
     /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ListRecordHistorySearchFilter {
@@ -5511,8 +5646,10 @@ impl ListRecordHistorySearchFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactView {
     /// <p>Summary information about a product view.</p>
+    #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
+    #[doc(hidden)]
     pub provisioning_artifact: std::option::Option<crate::model::ProvisioningArtifact>,
 }
 impl ProvisioningArtifactView {
@@ -5592,14 +5729,19 @@ impl ProvisioningArtifactView {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifact {
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    #[doc(hidden)]
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
 impl ProvisioningArtifact {
@@ -5728,16 +5870,22 @@ impl ProvisioningArtifact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductPlanSummary {
     /// <p>The name of the plan.</p>
+    #[doc(hidden)]
     pub plan_name: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub provision_product_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub provision_product_name: std::option::Option<std::string::String>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
 }
 impl ProvisionedProductPlanSummary {
@@ -5940,8 +6088,10 @@ impl AsRef<str> for ProvisionedProductPlanType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
     /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
 impl Principal {
@@ -6070,12 +6220,16 @@ impl AsRef<str> for PrincipalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPathSummary {
     /// <p>The identifier of the product path.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The constraints on the portfolio-product relationship.</p>
+    #[doc(hidden)]
     pub constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
     /// <p>The tags associated with this product path.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the portfolio that contains the product. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LaunchPathSummary {
@@ -6206,8 +6360,10 @@ pub struct ConstraintSummary {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ConstraintSummary {
@@ -6297,6 +6453,7 @@ impl ConstraintSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BudgetDetail {
     /// <p>Name of the associated budget.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
 }
 impl BudgetDetail {
@@ -6351,10 +6508,13 @@ impl BudgetDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordOutput {
     /// <p>The output key.</p>
+    #[doc(hidden)]
     pub output_key: std::option::Option<std::string::String>,
     /// <p>The output value.</p>
+    #[doc(hidden)]
     pub output_value: std::option::Option<std::string::String>,
     /// <p>The description of the output.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl RecordOutput {
@@ -6502,10 +6662,13 @@ impl AsRef<str> for AccessStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionParameter {
     /// <p>The name of the execution parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The execution parameter type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The default values for the execution parameter.</p>
+    #[doc(hidden)]
     pub default_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExecutionParameter {
@@ -6603,8 +6766,10 @@ impl ExecutionParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactOutput {
     /// <p>The provisioning artifact output key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Description of the provisioning artifact output key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ProvisioningArtifactOutput {
@@ -6678,9 +6843,11 @@ impl ProvisioningArtifactOutput {
 pub struct ProvisioningArtifactPreferences {
     /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ProvisioningArtifactPreferences {
@@ -6776,8 +6943,10 @@ impl ProvisioningArtifactPreferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOptionSummary {
     /// <p>The TagOption key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The TagOption value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagOptionSummary {
@@ -6858,8 +7027,10 @@ impl TagOptionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageInstruction {
     /// <p>The usage instruction type for the value.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The usage instruction value for this type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl UsageInstruction {
@@ -6931,16 +7102,22 @@ impl UsageInstruction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactParameter {
     /// <p>The parameter key.</p>
+    #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The default value.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The parameter type.</p>
+    #[doc(hidden)]
     pub parameter_type: std::option::Option<std::string::String>,
     /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
+    #[doc(hidden)]
     pub is_no_echo: bool,
     /// <p>The description of the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Constraints that the administrator has put on a parameter.</p>
+    #[doc(hidden)]
     pub parameter_constraints: std::option::Option<crate::model::ParameterConstraints>,
 }
 impl ProvisioningArtifactParameter {
@@ -7094,21 +7271,28 @@ impl ProvisioningArtifactParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterConstraints {
     /// <p>The values that the administrator has allowed for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
+    #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
     /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    #[doc(hidden)]
     pub constraint_description: std::option::Option<std::string::String>,
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    #[doc(hidden)]
     pub max_length: std::option::Option<std::string::String>,
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
+    #[doc(hidden)]
     pub min_length: std::option::Option<std::string::String>,
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
+    #[doc(hidden)]
     pub max_value: std::option::Option<std::string::String>,
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    #[doc(hidden)]
     pub min_value: std::option::Option<std::string::String>,
 }
 impl ParameterConstraints {
@@ -7289,18 +7473,25 @@ impl ParameterConstraints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceChange {
     /// <p>The change action.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
     /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
+    #[doc(hidden)]
     pub logical_resource_id: std::option::Option<std::string::String>,
     /// <p>The ID of the resource, if it was already created.</p>
+    #[doc(hidden)]
     pub physical_resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
+    #[doc(hidden)]
     pub replacement: std::option::Option<crate::model::Replacement>,
     /// <p>The change scope.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
     /// <p>Information about the resource changes.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
 }
 impl ResourceChange {
@@ -7490,10 +7681,13 @@ impl ResourceChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceChangeDetail {
     /// <p>Information about the resource attribute to be modified.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::ResourceTargetDefinition>,
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+    #[doc(hidden)]
     pub evaluation: std::option::Option<crate::model::EvaluationType>,
     /// <p>The ID of the entity that caused the change.</p>
+    #[doc(hidden)]
     pub causing_entity: std::option::Option<std::string::String>,
 }
 impl ResourceChangeDetail {
@@ -7646,10 +7840,13 @@ impl AsRef<str> for EvaluationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTargetDefinition {
     /// <p>The attribute to be changed.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::ResourceAttribute>,
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
+    #[doc(hidden)]
     pub requires_recreation: std::option::Option<crate::model::RequiresRecreation>,
 }
 impl ResourceTargetDefinition {
@@ -7999,35 +8196,50 @@ impl AsRef<str> for ChangeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
+    #[doc(hidden)]
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the plan.</p>
+    #[doc(hidden)]
     pub plan_name: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub provision_product_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub provision_product_name: std::option::Option<std::string::String>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
     /// <p>The time when the plan was last updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+    #[doc(hidden)]
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
+    #[doc(hidden)]
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl ProvisionedProductPlanDetails {
@@ -8455,6 +8667,7 @@ impl AsRef<str> for ProvisionedProductPlanStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchDashboard {
     /// <p>The name of the CloudWatch dashboard.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CloudWatchDashboard {
@@ -8507,14 +8720,19 @@ impl CloudWatchDashboard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactSummary {
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8664,8 +8882,10 @@ impl ProvisioningArtifactSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPath {
     /// <p>The identifier of the launch path.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the launch path.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LaunchPath {
@@ -8737,8 +8957,10 @@ impl LaunchPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareDetails {
     /// <p>List of accounts for whom the operation succeeded.</p>
+    #[doc(hidden)]
     pub successful_shares: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of errors.</p>
+    #[doc(hidden)]
     pub share_errors: std::option::Option<std::vec::Vec<crate::model::ShareError>>,
 }
 impl ShareDetails {
@@ -8828,10 +9050,13 @@ impl ShareDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareError {
     /// <p>List of accounts impacted by the error.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Error type that happened when processing the operation.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl ShareError {
@@ -8933,12 +9158,16 @@ pub struct PortfolioShareDetail {
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The type of the portfolio share.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DescribePortfolioShareType>,
     /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
+    #[doc(hidden)]
     pub accepted: bool,
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
+    #[doc(hidden)]
     pub share_tag_options: bool,
 }
 impl PortfolioShareDetail {
@@ -9186,13 +9415,16 @@ impl AsRef<str> for CopyProductStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactProperties {
     /// <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
+    #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
@@ -9201,8 +9433,10 @@ pub struct ProvisioningArtifactProperties {
     /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
     /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    #[doc(hidden)]
     pub disable_template_validation: bool,
 }
 impl ProvisioningArtifactProperties {
@@ -9477,14 +9711,19 @@ impl AsRef<str> for ProvisioningArtifactPropertyName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The error code. Valid values are listed below.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ServiceActionAssociationErrorCode>,
     /// <p>A text description of the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedServiceActionAssociation {
@@ -9697,10 +9936,13 @@ impl AsRef<str> for ServiceActionAssociationErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
 }
 impl ServiceActionAssociation {

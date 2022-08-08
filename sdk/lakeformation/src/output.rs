@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableStorageOptimizerOutput {
     /// <p>A response indicating the success of failure of the operation.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl UpdateTableStorageOptimizerOutput {
@@ -148,6 +149,7 @@ impl UpdateLfTagOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTransactionOutput {
     /// <p>An opaque identifier for the transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl StartTransactionOutput {
@@ -205,6 +207,7 @@ impl StartTransactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl StartQueryPlanningOutput {
@@ -259,8 +262,10 @@ impl StartQueryPlanningOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesByLfTagsOutput {
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of tables that meet the LF-tag conditions.</p>
+    #[doc(hidden)]
     pub table_list: std::option::Option<std::vec::Vec<crate::model::TaggedTable>>,
 }
 impl SearchTablesByLfTagsOutput {
@@ -341,8 +346,10 @@ impl SearchTablesByLfTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDatabasesByLfTagsOutput {
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of databases that meet the LF-tag conditions.</p>
+    #[doc(hidden)]
     pub database_list: std::option::Option<std::vec::Vec<crate::model::TaggedDatabase>>,
 }
 impl SearchDatabasesByLfTagsOutput {
@@ -453,6 +460,7 @@ impl RevokePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveLfTagsFromResourceOutput {
     /// <p>A list of failures to untag a resource.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,
 }
 impl RemoveLfTagsFromResourceOutput {
@@ -576,8 +584,10 @@ impl PutDataLakeSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTransactionsOutput {
     /// <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
+    #[doc(hidden)]
     pub transactions: std::option::Option<std::vec::Vec<crate::model::TransactionDescription>>,
     /// <p>A continuation token indicating whether additional data is available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTransactionsOutput {
@@ -659,8 +669,10 @@ impl ListTransactionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTableStorageOptimizersOutput {
     /// <p>A list of the storage optimizers associated with a table.</p>
+    #[doc(hidden)]
     pub storage_optimizer_list: std::option::Option<std::vec::Vec<crate::model::StorageOptimizer>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableStorageOptimizersOutput {
@@ -742,8 +754,10 @@ impl ListTableStorageOptimizersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
     /// <p>A summary of the data lake resources.</p>
+    #[doc(hidden)]
     pub resource_info_list: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -825,9 +839,11 @@ impl ListResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
+    #[doc(hidden)]
     pub principal_resource_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionsOutput {
@@ -917,8 +933,10 @@ impl ListPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLfTagsOutput {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
+    #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLfTagsOutput {
@@ -999,8 +1017,10 @@ impl ListLfTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataCellsFilterOutput {
     /// <p>A list of <code>DataCellFilter</code> structures.</p>
+    #[doc(hidden)]
     pub data_cells_filters: std::option::Option<std::vec::Vec<crate::model::DataCellsFilter>>,
     /// <p>A continuation token, if not all requested data cell filters have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataCellsFilterOutput {
@@ -1112,10 +1132,13 @@ impl GrantPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkUnitsOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the plan query operation.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
+    #[doc(hidden)]
     pub work_unit_ranges: std::option::Option<std::vec::Vec<crate::model::WorkUnitRange>>,
 }
 impl GetWorkUnitsOutput {
@@ -1270,12 +1293,16 @@ impl GetWorkUnitResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemporaryGlueTableCredentialsOutput {
     /// <p>The access key ID for the temporary credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The secret key for the temporary credentials.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The session token for the temporary credentials.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date and time when the temporary credentials expire.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTemporaryGlueTableCredentialsOutput {
@@ -1393,12 +1420,16 @@ impl GetTemporaryGlueTableCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemporaryGluePartitionCredentialsOutput {
     /// <p>The access key ID for the temporary credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The secret key for the temporary credentials.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The session token for the temporary credentials.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date and time when the temporary credentials expire.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTemporaryGluePartitionCredentialsOutput {
@@ -1516,8 +1547,10 @@ impl GetTemporaryGluePartitionCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableObjectsOutput {
     /// <p>A list of objects organized by partition keys.</p>
+    #[doc(hidden)]
     pub objects: std::option::Option<std::vec::Vec<crate::model::PartitionObjects>>,
     /// <p>A continuation token indicating whether additional data is available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTableObjectsOutput {
@@ -1598,10 +1631,13 @@ impl GetTableObjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLfTagsOutput {
     /// <p>A list of LF-tags applied to a database resource.</p>
+    #[doc(hidden)]
     pub lf_tag_on_database: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A list of LF-tags applied to a table resource.</p>
+    #[doc(hidden)]
     pub lf_tags_on_table: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A list of LF-tags applied to a column resource.</p>
+    #[doc(hidden)]
     pub lf_tags_on_columns: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
 }
 impl GetResourceLfTagsOutput {
@@ -1718,10 +1754,13 @@ impl GetResourceLfTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryStatisticsOutput {
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
+    #[doc(hidden)]
     pub execution_statistics: std::option::Option<crate::model::ExecutionStatistics>,
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
+    #[doc(hidden)]
     pub planning_statistics: std::option::Option<crate::model::PlanningStatistics>,
     /// <p>The time that the query was submitted.</p>
+    #[doc(hidden)]
     pub query_submission_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetQueryStatisticsOutput {
@@ -1819,6 +1858,7 @@ impl GetQueryStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
     /// <ul>
@@ -1827,6 +1867,7 @@ pub struct GetQueryStateOutput {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::QueryStateString>,
 }
 impl GetQueryStateOutput {
@@ -1919,10 +1960,13 @@ impl GetQueryStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLfTagOutput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetLfTagOutput {
@@ -2020,8 +2064,10 @@ impl GetLfTagOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEffectivePermissionsForPathOutput {
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEffectivePermissionsForPathOutput {
@@ -2105,6 +2151,7 @@ impl GetEffectivePermissionsForPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataLakeSettingsOutput {
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    #[doc(hidden)]
     pub data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
 }
 impl GetDataLakeSettingsOutput {
@@ -2192,6 +2239,7 @@ impl ExtendTransactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransactionOutput {
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
+    #[doc(hidden)]
     pub transaction_description: std::option::Option<crate::model::TransactionDescription>,
 }
 impl DescribeTransactionOutput {
@@ -2255,6 +2303,7 @@ impl DescribeTransactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceOutput {
     /// <p>A structure containing information about an Lake Formation resource.</p>
+    #[doc(hidden)]
     pub resource_info: std::option::Option<crate::model::ResourceInfo>,
 }
 impl DescribeResourceOutput {
@@ -2492,6 +2541,7 @@ impl CreateDataCellsFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitTransactionOutput {
     /// <p>The status of the transaction.</p>
+    #[doc(hidden)]
     pub transaction_status: std::option::Option<crate::model::TransactionStatus>,
 }
 impl CommitTransactionOutput {
@@ -2579,6 +2629,7 @@ impl CancelTransactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRevokePermissionsOutput {
     /// <p>A list of failures to revoke permissions to the resources.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
 }
 impl BatchRevokePermissionsOutput {
@@ -2643,6 +2694,7 @@ impl BatchRevokePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGrantPermissionsOutput {
     /// <p>A list of failures to grant permissions to the resources.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
 }
 impl BatchGrantPermissionsOutput {
@@ -2707,6 +2759,7 @@ impl BatchGrantPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddLfTagsToResourceOutput {
     /// <p>A list of failures to tag the resource.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,
 }
 impl AddLfTagsToResourceOutput {

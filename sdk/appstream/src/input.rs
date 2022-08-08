@@ -12388,31 +12388,44 @@ impl UpdateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackInput {
     /// <p>The stack name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The storage connectors to enable.</p>
+    #[doc(hidden)]
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub delete_storage_connectors: bool,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    #[doc(hidden)]
     pub redirect_url: std::option::Option<std::string::String>,
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    #[doc(hidden)]
     pub feedback_url: std::option::Option<std::string::String>,
     /// <p>The stack attributes to delete.</p>
+    #[doc(hidden)]
     pub attributes_to_delete: std::option::Option<std::vec::Vec<crate::model::StackAttribute>>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    #[doc(hidden)]
     pub application_settings: std::option::Option<crate::model::ApplicationSettings>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    #[doc(hidden)]
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    #[doc(hidden)]
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    #[doc(hidden)]
     pub streaming_experience_settings:
         std::option::Option<crate::model::StreamingExperienceSettings>,
 }
@@ -12501,10 +12514,13 @@ impl std::fmt::Debug for UpdateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateImagePermissionsInput {
     /// <p>The name of the private image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>The permissions for the image.</p>
+    #[doc(hidden)]
     pub image_permissions: std::option::Option<crate::model::ImagePermissions>,
 }
 impl UpdateImagePermissionsInput {
@@ -12536,10 +12552,13 @@ impl std::fmt::Debug for UpdateImagePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetInput {
     /// <p>The name of the image used to create the fleet.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>A unique name for the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -12582,48 +12601,66 @@ pub struct UpdateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
+    #[doc(hidden)]
     pub compute_capacity: std::option::Option<crate::model::ComputeCapacity>,
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
+    #[doc(hidden)]
     pub max_user_duration_in_seconds: std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
+    #[doc(hidden)]
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>Deletes the VPC association for the specified fleet.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub delete_vpc_config: bool,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Enables or disables default internet access for the fleet.</p>
+    #[doc(hidden)]
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
+    #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The fleet attributes to delete.</p>
+    #[doc(hidden)]
     pub attributes_to_delete: std::option::Option<std::vec::Vec<crate::model::FleetAttribute>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
+    #[doc(hidden)]
     pub stream_view: std::option::Option<crate::model::StreamView>,
     /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The maximum number of concurrent sessions for a fleet.</p>
+    #[doc(hidden)]
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    #[doc(hidden)]
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+    #[doc(hidden)]
     pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UpdateFleetInput {
@@ -12808,14 +12845,19 @@ impl std::fmt::Debug for UpdateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEntitlementInput {
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The description of the entitlement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether all or only selected apps are entitled.</p>
+    #[doc(hidden)]
     pub app_visibility: std::option::Option<crate::model::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
 }
 impl UpdateEntitlementInput {
@@ -12857,11 +12899,14 @@ impl std::fmt::Debug for UpdateEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDirectoryConfigInput {
     /// <p>The name of the Directory Config object.</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    #[doc(hidden)]
     pub organizational_unit_distinguished_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
 }
 impl UpdateDirectoryConfigInput {
@@ -12903,22 +12948,31 @@ impl std::fmt::Debug for UpdateDirectoryConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The icon S3 location of the application.</p>
+    #[doc(hidden)]
     pub icon_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The launch path of the application.</p>
+    #[doc(hidden)]
     pub launch_path: std::option::Option<std::string::String>,
     /// <p>The working directory of the application.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The launch parameters of the application.</p>
+    #[doc(hidden)]
     pub launch_parameters: std::option::Option<std::string::String>,
     /// <p>The ARN of the app block.</p>
+    #[doc(hidden)]
     pub app_block_arn: std::option::Option<std::string::String>,
     /// <p>The attributes to delete for an application.</p>
+    #[doc(hidden)]
     pub attributes_to_delete:
         std::option::Option<std::vec::Vec<crate::model::ApplicationAttribute>>,
 }
@@ -12983,8 +13037,10 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys for the tags to disassociate.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13011,11 +13067,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13049,6 +13107,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopImageBuilderInput {
     /// <p>The name of the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopImageBuilderInput {
@@ -13070,6 +13129,7 @@ impl std::fmt::Debug for StopImageBuilderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopFleetInput {
@@ -13091,8 +13151,10 @@ impl std::fmt::Debug for StopFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImageBuilderInput {
     /// <p>The name of the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    #[doc(hidden)]
     pub appstream_agent_version: std::option::Option<std::string::String>,
 }
 impl StartImageBuilderInput {
@@ -13119,6 +13181,7 @@ impl std::fmt::Debug for StartImageBuilderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartFleetInput {
@@ -13140,6 +13203,7 @@ impl std::fmt::Debug for StartFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -13161,12 +13225,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitledApplicationsInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub entitlement_name: std::option::Option<std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitledApplicationsInput {
@@ -13203,8 +13271,10 @@ impl std::fmt::Debug for ListEntitledApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedStacksInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedStacksInput {
@@ -13231,8 +13301,10 @@ impl std::fmt::Debug for ListAssociatedStacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedFleetsInput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedFleetsInput {
@@ -13259,6 +13331,7 @@ impl std::fmt::Debug for ListAssociatedFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl ExpireSessionInput {
@@ -13282,8 +13355,10 @@ pub struct EnableUserInput {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl EnableUserInput {
@@ -13312,8 +13387,10 @@ impl std::fmt::Debug for EnableUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
 }
 impl DisassociateFleetInput {
@@ -13340,10 +13417,13 @@ impl std::fmt::Debug for DisassociateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApplicationFromEntitlementInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub entitlement_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the application to remove from the entitlement.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl DisassociateApplicationFromEntitlementInput {
@@ -13375,8 +13455,10 @@ impl std::fmt::Debug for DisassociateApplicationFromEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateApplicationFleetInput {
@@ -13405,8 +13487,10 @@ pub struct DisableUserInput {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DisableUserInput {
@@ -13435,16 +13519,21 @@ impl std::fmt::Debug for DisableUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserStackAssociationsInput {
     /// <p>The name of the stack that is associated with the user.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUserStackAssociationsInput {
@@ -13488,10 +13577,13 @@ impl std::fmt::Debug for DescribeUserStackAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersInput {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsersInput {
@@ -13523,8 +13615,10 @@ impl std::fmt::Debug for DescribeUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsageReportSubscriptionsInput {
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsageReportSubscriptionsInput {
@@ -13551,8 +13645,10 @@ impl std::fmt::Debug for DescribeUsageReportSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksInput {
     /// <p>The names of the stacks to describe.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStacksInput {
@@ -13579,16 +13675,22 @@ impl std::fmt::Debug for DescribeStacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSessionsInput {
     /// <p>The name of the stack. This value is case-sensitive.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet. This value is case-sensitive.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DescribeSessionsInput {
@@ -13635,14 +13737,19 @@ impl std::fmt::Debug for DescribeSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesInput {
     /// <p>The names of the public or private images to describe.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of image (public, private, or shared) to describe. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::VisibilityType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeImagesInput {
@@ -13684,12 +13791,16 @@ impl std::fmt::Debug for DescribeImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagePermissionsInput {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
+    #[doc(hidden)]
     pub shared_aws_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagePermissionsInput {
@@ -13726,10 +13837,13 @@ impl std::fmt::Debug for DescribeImagePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageBuildersInput {
     /// <p>The names of the image builders to describe.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImageBuildersInput {
@@ -13761,8 +13875,10 @@ impl std::fmt::Debug for DescribeImageBuildersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetsInput {
     /// <p>The names of the fleets to describe.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetsInput {
@@ -13789,12 +13905,16 @@ impl std::fmt::Debug for DescribeFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitlementsInput {
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEntitlementsInput {
@@ -13831,10 +13951,13 @@ impl std::fmt::Debug for DescribeEntitlementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectoryConfigsInput {
     /// <p>The directory names.</p>
+    #[doc(hidden)]
     pub directory_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectoryConfigsInput {
@@ -13866,10 +13989,13 @@ impl std::fmt::Debug for DescribeDirectoryConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationsInput {
     /// <p>The ARNs for the applications.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeApplicationsInput {
@@ -13901,12 +14027,16 @@ impl std::fmt::Debug for DescribeApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationFleetAssociationsInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsInput {
@@ -13943,10 +14073,13 @@ impl std::fmt::Debug for DescribeApplicationFleetAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppBlocksInput {
     /// <p>The ARNs of the app blocks.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAppBlocksInput {
@@ -13980,8 +14113,10 @@ pub struct DeleteUserInput {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DeleteUserInput {
@@ -14021,6 +14156,7 @@ impl std::fmt::Debug for DeleteUsageReportSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackInput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteStackInput {
@@ -14042,8 +14178,10 @@ impl std::fmt::Debug for DeleteStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImagePermissionsInput {
     /// <p>The name of the private image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
 }
 impl DeleteImagePermissionsInput {
@@ -14070,6 +14208,7 @@ impl std::fmt::Debug for DeleteImagePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageBuilderInput {
     /// <p>The name of the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteImageBuilderInput {
@@ -14091,6 +14230,7 @@ impl std::fmt::Debug for DeleteImageBuilderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageInput {
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteImageInput {
@@ -14112,6 +14252,7 @@ impl std::fmt::Debug for DeleteImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteFleetInput {
@@ -14133,8 +14274,10 @@ impl std::fmt::Debug for DeleteFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEntitlementInput {
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
 }
 impl DeleteEntitlementInput {
@@ -14161,6 +14304,7 @@ impl std::fmt::Debug for DeleteEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryConfigInput {
@@ -14182,6 +14326,7 @@ impl std::fmt::Debug for DeleteDirectoryConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -14203,6 +14348,7 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppBlockInput {
     /// <p>The name of the app block.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAppBlockInput {
@@ -14226,16 +14372,21 @@ pub struct CreateUserInput {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
+    #[doc(hidden)]
     pub message_action: std::option::Option<crate::model::MessageAction>,
     /// <p>The first name, or given name, of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name, or surname, of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user. You must specify USERPOOL. </p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl CreateUserInput {
@@ -14292,21 +14443,27 @@ impl std::fmt::Debug for CreateUsageReportSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUpdatedImageInput {
     /// <p>The name of the image to update.</p>
+    #[doc(hidden)]
     pub existing_image_name: std::option::Option<std::string::String>,
     /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    #[doc(hidden)]
     pub new_image_name: std::option::Option<std::string::String>,
     /// <p>The description to display for the new image.</p>
+    #[doc(hidden)]
     pub new_image_description: std::option::Option<std::string::String>,
     /// <p>The name to display for the new image.</p>
+    #[doc(hidden)]
     pub new_image_display_name: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub new_image_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl CreateUpdatedImageInput {
@@ -14360,16 +14517,22 @@ impl std::fmt::Debug for CreateUpdatedImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingUrlInput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<i64>,
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub session_context: std::option::Option<std::string::String>,
 }
 impl CreateStreamingUrlInput {
@@ -14416,33 +14579,45 @@ impl std::fmt::Debug for CreateStreamingUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackInput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The stack name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The storage connectors to enable.</p>
+    #[doc(hidden)]
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    #[doc(hidden)]
     pub redirect_url: std::option::Option<std::string::String>,
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    #[doc(hidden)]
     pub feedback_url: std::option::Option<std::string::String>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    #[doc(hidden)]
     pub application_settings: std::option::Option<crate::model::ApplicationSettings>,
     /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    #[doc(hidden)]
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    #[doc(hidden)]
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    #[doc(hidden)]
     pub streaming_experience_settings:
         std::option::Option<crate::model::StreamingExperienceSettings>,
 }
@@ -14532,8 +14707,10 @@ impl std::fmt::Debug for CreateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageBuilderStreamingUrlInput {
     /// <p>The name of the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<i64>,
 }
 impl CreateImageBuilderStreamingUrlInput {
@@ -14560,10 +14737,13 @@ impl std::fmt::Debug for CreateImageBuilderStreamingUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageBuilderInput {
     /// <p>A unique name for the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the image used to create the image builder.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
@@ -14601,30 +14781,40 @@ pub struct CreateImageBuilderInput {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The image builder name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>Enables or disables default internet access for the image builder.</p>
+    #[doc(hidden)]
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    #[doc(hidden)]
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    #[doc(hidden)]
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
 }
 impl CreateImageBuilderInput {
@@ -14752,10 +14942,13 @@ impl std::fmt::Debug for CreateImageBuilderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the image used to create the fleet.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -14798,6 +14991,7 @@ pub struct CreateFleetInput {
     /// <li> <p>stream.standard.small</p> </li>
     /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The fleet type.</p>
     /// <dl>
@@ -14814,50 +15008,67 @@ pub struct CreateFleetInput {
     /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub fleet_type: std::option::Option<crate::model::FleetType>,
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
+    #[doc(hidden)]
     pub compute_capacity: std::option::Option<crate::model::ComputeCapacity>,
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
+    #[doc(hidden)]
     pub max_user_duration_in_seconds: std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
+    #[doc(hidden)]
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Enables or disables default internet access for the fleet.</p>
+    #[doc(hidden)]
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
+    #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
+    #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
+    #[doc(hidden)]
     pub stream_view: std::option::Option<crate::model::StreamView>,
     /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
+    #[doc(hidden)]
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    #[doc(hidden)]
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    #[doc(hidden)]
     pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl CreateFleetInput {
@@ -15062,14 +15273,19 @@ impl std::fmt::Debug for CreateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntitlementInput {
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The description of the entitlement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether all or selected apps are entitled.</p>
+    #[doc(hidden)]
     pub app_visibility: std::option::Option<crate::model::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
 }
 impl CreateEntitlementInput {
@@ -15111,11 +15327,14 @@ impl std::fmt::Debug for CreateEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryConfigInput {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    #[doc(hidden)]
     pub organizational_unit_distinguished_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
 }
 impl CreateDirectoryConfigInput {
@@ -15157,26 +15376,37 @@ impl std::fmt::Debug for CreateDirectoryConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The location in S3 of the application icon.</p>
+    #[doc(hidden)]
     pub icon_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The launch path of the application.</p>
+    #[doc(hidden)]
     pub launch_path: std::option::Option<std::string::String>,
     /// <p>The working directory of the application.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The launch parameters of the application.</p>
+    #[doc(hidden)]
     pub launch_parameters: std::option::Option<std::string::String>,
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+    #[doc(hidden)]
     pub instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The app block ARN to which the application should be associated</p>
+    #[doc(hidden)]
     pub app_block_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15252,16 +15482,22 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppBlockInput {
     /// <p>The name of the app block.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the app block.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The display name of the app block. This is not displayed to the user.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The source S3 location of the app block.</p>
+    #[doc(hidden)]
     pub source_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The setup script details of the app block.</p>
+    #[doc(hidden)]
     pub setup_script_details: std::option::Option<crate::model::ScriptDetails>,
     /// <p>The tags assigned to the app block.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15312,12 +15548,16 @@ impl std::fmt::Debug for CreateAppBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyImageInput {
     /// <p>The name of the image to copy.</p>
+    #[doc(hidden)]
     pub source_image_name: std::option::Option<std::string::String>,
     /// <p>The name that the image will have when it is copied to the destination.</p>
+    #[doc(hidden)]
     pub destination_image_name: std::option::Option<std::string::String>,
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
+    #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
     /// <p>The description that the image will have when it is copied to the destination.</p>
+    #[doc(hidden)]
     pub destination_image_description: std::option::Option<std::string::String>,
 }
 impl CopyImageInput {
@@ -15357,6 +15597,7 @@ impl std::fmt::Debug for CopyImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
+    #[doc(hidden)]
     pub user_stack_associations:
         std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
 }
@@ -15381,6 +15622,7 @@ impl std::fmt::Debug for BatchDisassociateUserStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
+    #[doc(hidden)]
     pub user_stack_associations:
         std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
 }
@@ -15405,8 +15647,10 @@ impl std::fmt::Debug for BatchAssociateUserStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFleetInput {
     /// <p>The name of the fleet. </p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
 }
 impl AssociateFleetInput {
@@ -15433,10 +15677,13 @@ impl std::fmt::Debug for AssociateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApplicationToEntitlementInput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub entitlement_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl AssociateApplicationToEntitlementInput {
@@ -15468,8 +15715,10 @@ impl std::fmt::Debug for AssociateApplicationToEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl AssociateApplicationFleetInput {

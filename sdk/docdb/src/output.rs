@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
@@ -61,6 +62,7 @@ impl StopDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
@@ -118,6 +120,7 @@ impl StartDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterToPointInTimeOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
@@ -175,6 +178,7 @@ impl RestoreDbClusterToPointInTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterFromSnapshotOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
@@ -240,6 +244,7 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbClusterParameterGroupOutput {
@@ -357,6 +362,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
@@ -414,6 +420,7 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl RemoveFromGlobalClusterOutput {
@@ -471,6 +478,7 @@ impl RemoveFromGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
@@ -528,6 +536,7 @@ impl RebootDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl ModifyGlobalClusterOutput {
@@ -585,6 +594,7 @@ impl ModifyGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
@@ -642,6 +652,7 @@ impl ModifyEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
@@ -699,6 +710,7 @@ impl ModifyDbSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
@@ -756,6 +768,7 @@ impl ModifyDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -831,6 +844,7 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
@@ -918,6 +932,7 @@ impl ModifyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
@@ -975,6 +990,7 @@ impl ModifyDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of one or more tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1038,6 +1054,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
@@ -1095,9 +1112,11 @@ impl FailoverDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>The maintenance actions to be applied.</p>
+    #[doc(hidden)]
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -1189,9 +1208,11 @@ impl DescribePendingMaintenanceActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>The options that are available for a particular orderable instance.</p>
+    #[doc(hidden)]
     pub orderable_db_instance_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
@@ -1281,8 +1302,10 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalClustersOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
 }
 impl DescribeGlobalClustersOutput {
@@ -1363,8 +1386,10 @@ impl DescribeGlobalClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
+    #[doc(hidden)]
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
@@ -1449,8 +1474,10 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more events. </p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -1531,6 +1558,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of event category maps.</p>
+    #[doc(hidden)]
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
@@ -1601,6 +1629,7 @@ impl DescribeEventCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
@@ -1658,8 +1687,10 @@ impl DescribeEngineDefaultClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more subnet groups.</p>
+    #[doc(hidden)]
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
 }
 impl DescribeDbSubnetGroupsOutput {
@@ -1741,8 +1772,10 @@ impl DescribeDbSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more instances. </p>
+    #[doc(hidden)]
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
 impl DescribeDbInstancesOutput {
@@ -1823,8 +1856,10 @@ impl DescribeDbInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more engine versions.</p>
+    #[doc(hidden)]
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
 impl DescribeDbEngineVersionsOutput {
@@ -1906,8 +1941,10 @@ impl DescribeDbEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Provides a list of cluster snapshots.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
 impl DescribeDbClusterSnapshotsOutput {
@@ -1989,6 +2026,7 @@ impl DescribeDbClusterSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -2056,8 +2094,10 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClustersOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of clusters.</p>
+    #[doc(hidden)]
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
 }
 impl DescribeDbClustersOutput {
@@ -2138,8 +2178,10 @@ impl DescribeDbClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersOutput {
@@ -2220,8 +2262,10 @@ impl DescribeDbClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cluster parameter groups.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
@@ -2312,8 +2356,10 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
     /// <p>A list of certificates for this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesOutput {
@@ -2394,6 +2440,7 @@ impl DescribeCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl DeleteGlobalClusterOutput {
@@ -2451,6 +2498,7 @@ impl DeleteGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
@@ -2538,6 +2586,7 @@ impl DeleteDbSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
@@ -2595,6 +2644,7 @@ impl DeleteDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
@@ -2682,6 +2732,7 @@ impl DeleteDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
@@ -2739,6 +2790,7 @@ impl DeleteDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl CreateGlobalClusterOutput {
@@ -2796,6 +2848,7 @@ impl CreateGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
@@ -2853,6 +2906,7 @@ impl CreateEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
@@ -2910,6 +2964,7 @@ impl CreateDbSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
@@ -2967,6 +3022,7 @@ impl CreateDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
@@ -3024,6 +3080,7 @@ impl CreateDbClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
@@ -3090,6 +3147,7 @@ impl CreateDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
@@ -3147,6 +3205,7 @@ impl CreateDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
@@ -3204,6 +3263,7 @@ impl CopyDbClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
@@ -3270,6 +3330,7 @@ impl CopyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
+    #[doc(hidden)]
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
@@ -3367,6 +3428,7 @@ impl AddTagsToResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddSourceIdentifierToSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {

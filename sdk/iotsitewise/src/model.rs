@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortalStatus {
     /// <p>The current state of the portal.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::PortalState>,
     /// <p>Contains associated error information, if any.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::MonitorErrorDetails>,
 }
 impl PortalStatus {
@@ -81,8 +83,10 @@ impl PortalStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorErrorDetails {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::MonitorErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MonitorErrorDetails {
@@ -283,8 +287,10 @@ impl AsRef<str> for PortalState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
+    #[doc(hidden)]
     pub alarm_role_arn: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub notification_lambda_arn: std::option::Option<std::string::String>,
 }
 impl Alarms {
@@ -366,8 +372,10 @@ impl Alarms {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Contains an image file.</p>
+    #[doc(hidden)]
     pub file: std::option::Option<crate::model::ImageFile>,
 }
 impl Image {
@@ -439,8 +447,10 @@ impl Image {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The file type of the image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageFileType>,
 }
 impl ImageFile {
@@ -681,8 +691,10 @@ impl AsRef<str> for PropertyNotificationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelStatus {
     /// <p>The current state of the asset model.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AssetModelState>,
     /// <p>Contains associated error information, if any.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
 impl AssetModelStatus {
@@ -757,10 +769,13 @@ impl AssetModelStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> A list of detailed errors. </p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
 }
 impl ErrorDetails {
@@ -858,8 +873,10 @@ impl ErrorDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetailedError {
     /// <p>The error code. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::DetailedErrorCode>,
     /// <p>The error message. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DetailedError {
@@ -1129,12 +1146,16 @@ impl AsRef<str> for AssetModelState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelCompositeModel {
     /// <p>The name of the composite model.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset property definitions for this composite model.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
 }
 impl AssetModelCompositeModel {
@@ -1249,16 +1270,22 @@ impl AssetModelCompositeModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the asset model property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the asset model property.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+    #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PropertyType>,
 }
 impl AssetModelProperty {
@@ -1404,12 +1431,16 @@ impl AssetModelProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyType {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::Attribute>,
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
+    #[doc(hidden)]
     pub measurement: std::option::Option<crate::model::Measurement>,
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
+    #[doc(hidden)]
     pub transform: std::option::Option<crate::model::Transform>,
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
 }
 impl PropertyType {
@@ -1527,12 +1558,16 @@ impl PropertyType {
 pub struct Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
+    #[doc(hidden)]
     pub window: std::option::Option<crate::model::MetricWindow>,
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
+    #[doc(hidden)]
     pub processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
 }
 impl Metric {
@@ -1656,6 +1691,7 @@ impl Metric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
+    #[doc(hidden)]
     pub compute_location: std::option::Option<crate::model::ComputeLocation>,
 }
 impl MetricProcessingConfig {
@@ -1768,6 +1804,7 @@ impl AsRef<str> for ComputeLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricWindow {
     /// <p>The tumbling time interval window.</p>
+    #[doc(hidden)]
     pub tumbling: std::option::Option<crate::model::TumblingWindow>,
 }
 impl MetricWindow {
@@ -1829,6 +1866,7 @@ pub struct TumblingWindow {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
+    #[doc(hidden)]
     pub interval: std::option::Option<std::string::String>,
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
@@ -1849,6 +1887,7 @@ pub struct TumblingWindow {
     /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub offset: std::option::Option<std::string::String>,
 }
 impl TumblingWindow {
@@ -1980,8 +2019,10 @@ impl TumblingWindow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The variable that identifies an asset property from which to use values.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::VariableValue>,
 }
 impl ExpressionVariable {
@@ -2056,9 +2097,11 @@ impl ExpressionVariable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
 }
 impl VariableValue {
@@ -2135,10 +2178,13 @@ impl VariableValue {
 pub struct Transform {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
+    #[doc(hidden)]
     pub processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
 }
 impl Transform {
@@ -2244,8 +2290,10 @@ impl Transform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
+    #[doc(hidden)]
     pub compute_location: std::option::Option<crate::model::ComputeLocation>,
     /// <p>The forwarding configuration for a given property.</p>
+    #[doc(hidden)]
     pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
 }
 impl TransformProcessingConfig {
@@ -2323,6 +2371,7 @@ impl TransformProcessingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ForwardingConfigState>,
 }
 impl ForwardingConfig {
@@ -2433,6 +2482,7 @@ impl AsRef<str> for ForwardingConfigState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Measurement {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
+    #[doc(hidden)]
     pub processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
 }
 impl Measurement {
@@ -2496,6 +2546,7 @@ impl Measurement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
+    #[doc(hidden)]
     pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
 }
 impl MeasurementProcessingConfig {
@@ -2553,6 +2604,7 @@ impl MeasurementProcessingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl Attribute {
@@ -2677,10 +2729,13 @@ impl AsRef<str> for PropertyDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelHierarchy {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
+    #[doc(hidden)]
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
 impl AssetModelHierarchy {
@@ -2772,8 +2827,10 @@ impl AssetModelHierarchy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetStatus {
     /// <p>The current status of the asset.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AssetState>,
     /// <p>Contains associated error information, if any.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
 impl AssetStatus {
@@ -2967,8 +3024,10 @@ impl AsRef<str> for Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>A portal resource.</p>
+    #[doc(hidden)]
     pub portal: std::option::Option<crate::model::PortalResource>,
     /// <p>A project resource.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::ProjectResource>,
 }
 impl Resource {
@@ -3046,6 +3105,7 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectResource {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ProjectResource {
@@ -3098,6 +3158,7 @@ impl ProjectResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortalResource {
     /// <p>The ID of the portal.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl PortalResource {
@@ -3152,12 +3213,16 @@ impl PortalResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>An Amazon Web Services SSO user identity.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserIdentity>,
     /// <p>An Amazon Web Services SSO group identity.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::GroupIdentity>,
     /// <p>An IAM user identity.</p>
+    #[doc(hidden)]
     pub iam_user: std::option::Option<crate::model::IamUserIdentity>,
     /// <p>An IAM role identity.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<crate::model::IamRoleIdentity>,
 }
 impl Identity {
@@ -3272,6 +3337,7 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamRoleIdentity {
@@ -3326,6 +3392,7 @@ pub struct IamUserIdentity {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamUserIdentity {
@@ -3384,6 +3451,7 @@ impl IamUserIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupIdentity {
     /// <p>The Amazon Web Services SSO ID of the group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GroupIdentity {
@@ -3436,6 +3504,7 @@ impl GroupIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentity {
     /// <p>The Amazon Web Services SSO ID of the user.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UserIdentity {
@@ -3488,8 +3557,10 @@ impl UserIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
     /// <p>Contains associated error information, if any.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ConfigurationErrorDetails>,
 }
 impl ConfigurationStatus {
@@ -3567,8 +3638,10 @@ impl ConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationErrorDetails {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConfigurationErrorDetails {
@@ -3701,10 +3774,12 @@ pub struct RetentionPeriod {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub number_of_days: std::option::Option<i32>,
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub unlimited: std::option::Option<bool>,
 }
 impl RetentionPeriod {
@@ -3843,6 +3918,7 @@ impl AsRef<str> for DisassociatedDataStorageState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub customer_managed_s3_storage: std::option::Option<crate::model::CustomerManagedS3Storage>,
 }
 impl MultiLayerStorage {
@@ -3909,8 +3985,10 @@ impl MultiLayerStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_resource_arn: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedS3Storage {
@@ -4040,6 +4118,7 @@ impl AsRef<str> for StorageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::LoggingLevel>,
 }
 impl LoggingOptions {
@@ -4206,22 +4285,30 @@ impl AsRef<str> for EncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesSummary {
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the time series.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeSeriesSummary {
@@ -4474,14 +4561,19 @@ impl AsRef<str> for ListTimeSeriesType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The project's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the project was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the project was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProjectSummary {
@@ -4610,20 +4702,28 @@ impl ProjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortalSummary {
     /// <p>The ID of the portal.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the portal.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    #[doc(hidden)]
     pub start_url: std::option::Option<std::string::String>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the current status of a portal.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PortalStatus>,
 }
 impl PortalSummary {
@@ -4806,17 +4906,23 @@ impl PortalSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewaySummary {
     /// <p>The ID of the gateway device.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>Contains a gateway's platform information.</p>
+    #[doc(hidden)]
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    #[doc(hidden)]
     pub gateway_capability_summaries:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GatewaySummary {
@@ -4983,6 +5089,7 @@ impl GatewaySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayCapabilitySummary {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -4990,6 +5097,7 @@ pub struct GatewayCapabilitySummary {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl GatewayCapabilitySummary {
@@ -5084,8 +5192,10 @@ impl GatewayCapabilitySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass.</p>
+    #[doc(hidden)]
     pub greengrass: std::option::Option<crate::model::Greengrass>,
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
+    #[doc(hidden)]
     pub greengrass_v2: std::option::Option<crate::model::GreengrassV2>,
 }
 impl GatewayPlatform {
@@ -5163,6 +5273,7 @@ impl GatewayPlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl GreengrassV2 {
@@ -5220,6 +5331,7 @@ impl GreengrassV2 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl Greengrass {
@@ -5274,14 +5386,19 @@ impl Greengrass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSummary {
     /// <p>The ID of the dashboard.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the dashboard</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The dashboard's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashboardSummary {
@@ -5410,8 +5527,10 @@ impl DashboardSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p>The ID of the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -5422,6 +5541,7 @@ pub struct JobSummary {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
 }
 impl JobSummary {
@@ -5695,23 +5815,32 @@ impl AsRef<str> for ListBulkImportJobsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model used to create the asset.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
+    #[doc(hidden)]
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     /// <p>A description for the asset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AssociatedAssetsSummary {
@@ -5923,8 +6052,10 @@ impl AssociatedAssetsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AssetHierarchy {
@@ -6051,23 +6182,32 @@ impl AsRef<str> for TraversalDirection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetSummary {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model used to create this asset.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
+    #[doc(hidden)]
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     /// <p>A description for the asset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AssetSummary {
@@ -6335,11 +6475,13 @@ impl AsRef<str> for ListAssetsFilter {
 pub struct AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
+    #[doc(hidden)]
     pub hierarchy_info: std::option::Option<crate::model::AssetHierarchyInfo>,
     /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::AssetRelationshipType>,
 }
 impl AssetRelationshipSummary {
@@ -6480,8 +6622,10 @@ impl AsRef<str> for AssetRelationshipType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetHierarchyInfo {
     /// <p>The ID of the parent asset in this asset relationship.</p>
+    #[doc(hidden)]
     pub parent_asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the child asset in this asset relationship.</p>
+    #[doc(hidden)]
     pub child_asset_id: std::option::Option<std::string::String>,
 }
 impl AssetHierarchyInfo {
@@ -6610,19 +6754,26 @@ impl AsRef<str> for TraversalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset model.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The asset model description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl AssetModelSummary {
@@ -6791,16 +6942,22 @@ impl AssetModelSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessPolicySummary {
@@ -7063,8 +7220,10 @@ impl AsRef<str> for IdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::TimeInNanos>,
     /// <p>Contains an asset property value (of a single type only).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::Variant>,
 }
 impl InterpolatedAssetPropertyValue {
@@ -7139,12 +7298,16 @@ impl InterpolatedAssetPropertyValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variant {
     /// <p>Asset property data of type string (sequence of characters).</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>Asset property data of type integer (whole number).</p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
     /// <p>Asset property data of type double (floating point number).</p>
+    #[doc(hidden)]
     pub double_value: std::option::Option<f64>,
     /// <p>Asset property data of type Boolean (true or false).</p>
+    #[doc(hidden)]
     pub boolean_value: std::option::Option<bool>,
 }
 impl Variant {
@@ -7250,8 +7413,10 @@ impl Variant {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeInNanos {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
+    #[doc(hidden)]
     pub time_in_seconds: std::option::Option<i64>,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
+    #[doc(hidden)]
     pub offset_in_nanos: std::option::Option<i32>,
 }
 impl TimeInNanos {
@@ -7382,10 +7547,13 @@ impl AsRef<str> for Quality {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyValue {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::Variant>,
     /// <p>The timestamp of the asset property value.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::TimeInNanos>,
     /// <p>The quality of the asset property value.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<crate::model::Quality>,
 }
 impl AssetPropertyValue {
@@ -7532,10 +7700,13 @@ impl AsRef<str> for TimeOrdering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The quality of the aggregated data.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<crate::model::Quality>,
     /// <p>The value of the aggregates.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::Aggregates>,
 }
 impl AggregatedValue {
@@ -7627,16 +7798,22 @@ impl AggregatedValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Aggregates {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub average: std::option::Option<f64>,
     /// <p>The count of data points in the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<f64>,
     /// <p>The maximum value of the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
     /// <p>The minimum value of the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p>The sum of the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p>The standard deviation of the time series over a time interval window.</p>
+    #[doc(hidden)]
     pub standard_deviation: std::option::Option<f64>,
 }
 impl Aggregates {
@@ -7909,8 +8086,10 @@ impl AsRef<str> for AuthMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageLocation {
     /// <p>The ID of the image.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl ImageLocation {
@@ -7982,6 +8161,7 @@ impl ImageLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobConfiguration {
     /// <p>The file format of the data in Amazon S3.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
 }
 impl JobConfiguration {
@@ -8039,6 +8219,7 @@ impl JobConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileFormat {
     /// <p>The .csv file format.</p>
+    #[doc(hidden)]
     pub csv: std::option::Option<crate::model::Csv>,
 }
 impl FileFormat {
@@ -8091,6 +8272,7 @@ impl FileFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Csv {
     /// <p>The column names specified in the .csv file.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
 }
 impl Csv {
@@ -8242,8 +8424,10 @@ impl AsRef<str> for ColumnName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ErrorReportLocation {
@@ -8315,10 +8499,13 @@ impl ErrorReportLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl File {
@@ -8407,10 +8594,13 @@ impl File {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompositeModelProperty {
     /// <p>The name of the property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the composite model that defines this property.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Contains asset property information.</p>
+    #[doc(hidden)]
     pub asset_property: std::option::Option<crate::model::Property>,
 }
 impl CompositeModelProperty {
@@ -8502,18 +8692,25 @@ impl CompositeModelProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Property {
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::PropertyNotification>,
     /// <p>The property data type.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PropertyType>,
 }
 impl Property {
@@ -8676,8 +8873,10 @@ impl Property {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The current notification state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::PropertyNotificationState>,
 }
 impl PropertyNotification {
@@ -8752,12 +8951,16 @@ impl PropertyNotification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetCompositeModel {
     /// <p>The name of the composite model.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset properties that this composite model defines.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
 }
 impl AssetCompositeModel {
@@ -8872,18 +9075,25 @@ impl AssetCompositeModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetProperty {
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::PropertyNotification>,
     /// <p>The data type of the asset property.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
+    #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl AssetProperty {
@@ -9049,12 +9259,16 @@ impl AssetProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset property definitions for this composite model.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
 }
 impl AssetModelCompositeModelDefinition {
@@ -9170,16 +9384,21 @@ impl AssetModelCompositeModelDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PropertyType>,
 }
 impl AssetModelPropertyDefinition {
@@ -9314,8 +9533,10 @@ impl AssetModelPropertyDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelHierarchyDefinition {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of an asset model for this hierarchy.</p>
+    #[doc(hidden)]
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
 impl AssetModelHierarchyDefinition {
@@ -9390,8 +9611,10 @@ impl AssetModelHierarchyDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The list of update property value errors.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>,
 }
 impl BatchPutAssetPropertyErrorEntry {
@@ -9473,10 +9696,13 @@ impl BatchPutAssetPropertyErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyError {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
     /// <p>The associated error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A list of timestamps for each error, if any.</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
 }
 impl BatchPutAssetPropertyError {
@@ -9703,14 +9929,19 @@ impl AsRef<str> for BatchPutAssetPropertyValueErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset to update.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property for this entry.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
+    #[doc(hidden)]
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntry {
@@ -9846,10 +10077,13 @@ impl PutAssetPropertyValueEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+    #[doc(hidden)]
     pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
     /// <p>The error information, such as the error code and the timestamp.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
 }
 impl BatchGetAssetPropertyValueHistorySkippedEntry {
@@ -9956,8 +10190,10 @@ impl BatchGetAssetPropertyValueHistorySkippedEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistoryErrorInfo {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
     /// <p>The date the error occurred, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorInfo {
@@ -10171,8 +10407,10 @@ impl AsRef<str> for BatchEntryCompletionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The requested historical values for the specified asset property.</p>
+    #[doc(hidden)]
     pub asset_property_value_history:
         std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
@@ -10264,10 +10502,13 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
     /// <p>The associated error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
@@ -10373,21 +10614,29 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The quality by which to filter asset data.</p>
+    #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
+    #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
 }
 impl BatchGetAssetPropertyValueHistoryEntry {
@@ -10585,10 +10834,13 @@ impl BatchGetAssetPropertyValueHistoryEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueSkippedEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+    #[doc(hidden)]
     pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
     /// <p>The error information, such as the error code and the timestamp.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
 }
 impl BatchGetAssetPropertyValueSkippedEntry {
@@ -10694,8 +10946,10 @@ impl BatchGetAssetPropertyValueSkippedEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueErrorInfo {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
     /// <p>The date the error occurred, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchGetAssetPropertyValueErrorInfo {
@@ -10850,8 +11104,10 @@ impl AsRef<str> for BatchGetAssetPropertyValueErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>Contains asset property value information.</p>
+    #[doc(hidden)]
     pub asset_property_value: std::option::Option<crate::model::AssetPropertyValue>,
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
@@ -10926,10 +11182,13 @@ impl BatchGetAssetPropertyValueSuccessEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
     /// <p>The associated error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueErrorEntry {
@@ -11035,12 +11294,16 @@ impl BatchGetAssetPropertyValueErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueEntry {
@@ -11149,10 +11412,13 @@ impl BatchGetAssetPropertyValueEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+    #[doc(hidden)]
     pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
     /// <p>The error information, such as the error code and the timestamp.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
 }
 impl BatchGetAssetPropertyAggregatesSkippedEntry {
@@ -11258,8 +11524,10 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
     /// <p>The date the error occurred, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {
@@ -11418,8 +11686,10 @@ impl AsRef<str> for BatchGetAssetPropertyAggregatesErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+    #[doc(hidden)]
     pub aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntry {
@@ -11501,10 +11771,13 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesErrorEntry {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
     /// <p>The associated error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyAggregatesErrorEntry {
@@ -11610,25 +11883,35 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesEntry {
     /// <p>The ID of the entry.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The data aggregating function.</p>
+    #[doc(hidden)]
     pub aggregate_types: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
     /// <p>The time interval over which to aggregate data.</p>
+    #[doc(hidden)]
     pub resolution: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The quality by which to filter asset data.</p>
+    #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
+    #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
 }
 impl BatchGetAssetPropertyAggregatesEntry {
@@ -11869,10 +12152,13 @@ impl BatchGetAssetPropertyAggregatesEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetErrorDetails {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::AssetErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AssetErrorDetails {

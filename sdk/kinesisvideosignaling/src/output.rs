@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAlexaOfferToMasterOutput {
     /// <p>The base64-encoded SDP answer content.</p>
+    #[doc(hidden)]
     pub answer: std::option::Option<std::string::String>,
 }
 impl SendAlexaOfferToMasterOutput {
@@ -58,6 +59,7 @@ impl SendAlexaOfferToMasterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIceServerConfigOutput {
     /// <p>The list of ICE server information objects.</p>
+    #[doc(hidden)]
     pub ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,
 }
 impl GetIceServerConfigOutput {

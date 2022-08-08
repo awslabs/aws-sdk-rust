@@ -4,23 +4,32 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subnet IDs to include in the VPC link.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags for the VPC link.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>The status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status: std::option::Option<crate::model::VpcLinkStatus>,
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status_message: std::option::Option<std::string::String>,
     /// <p>The version of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_version: std::option::Option<crate::model::VpcLinkVersion>,
 }
 impl UpdateVpcLinkOutput {
@@ -261,35 +270,49 @@ impl UpdateVpcLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageOutput {
     /// <p>Settings for logging access in this stage.</p>
+    #[doc(hidden)]
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    #[doc(hidden)]
     pub auto_deploy: bool,
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
+    #[doc(hidden)]
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
+    #[doc(hidden)]
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
+    #[doc(hidden)]
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
     >,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    #[doc(hidden)]
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -654,17 +677,22 @@ impl UpdateStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteResponseOutput {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>Represents the response models of a route response.</p>
+    #[doc(hidden)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the response parameters of a route response.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>Represents the identifier of a route response.</p>
+    #[doc(hidden)]
     pub route_response_id: std::option::Option<std::string::String>,
     /// <p>Represents the route response key of a route response.</p>
+    #[doc(hidden)]
     pub route_response_key: std::option::Option<std::string::String>,
 }
 impl UpdateRouteResponseOutput {
@@ -840,33 +868,46 @@ impl UpdateRouteResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteOutput {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub api_key_required: bool,
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
     /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>The operation name for the route.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>The route ID.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The route key for the route.</p>
+    #[doc(hidden)]
     pub route_key: std::option::Option<std::string::String>,
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>The target for the route.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl UpdateRouteOutput {
@@ -1199,14 +1240,19 @@ impl UpdateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelOutput {
     /// <p>The content-type for the model, for example, "application/json".</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The model identifier.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be alphanumeric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl UpdateModelOutput {
@@ -1332,18 +1378,24 @@ pub struct UpdateIntegrationResponseOutput {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>The integration response ID.</p>
+    #[doc(hidden)]
     pub integration_response_id: std::option::Option<std::string::String>,
     /// <p>The integration response key.</p>
+    #[doc(hidden)]
     pub integration_response_key: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The template selection expressions for the integration response.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
 }
 impl UpdateIntegrationResponseOutput {
@@ -1556,27 +1608,37 @@ impl UpdateIntegrationResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationOutput {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    #[doc(hidden)]
     pub credentials_arn: std::option::Option<std::string::String>,
     /// <p>Represents the description of an integration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Represents the identifier of an integration.</p>
+    #[doc(hidden)]
     pub integration_id: std::option::Option<std::string::String>,
     /// <p>Specifies the integration's HTTP method type.</p>
+    #[doc(hidden)]
     pub integration_method: std::option::Option<std::string::String>,
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub integration_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    #[doc(hidden)]
     pub integration_subtype: std::option::Option<std::string::String>,
     /// <p>The integration type of an integration. One of the following:</p>
     /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
@@ -1584,17 +1646,21 @@ pub struct UpdateIntegrationOutput {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    #[doc(hidden)]
     pub integration_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    #[doc(hidden)]
     pub passthrough_behavior: std::option::Option<crate::model::PassthroughBehavior>,
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    #[doc(hidden)]
     pub payload_format_version: std::option::Option<std::string::String>,
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -1607,12 +1673,15 @@ pub struct UpdateIntegrationOutput {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1620,10 +1689,13 @@ pub struct UpdateIntegrationOutput {
         >,
     >,
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    #[doc(hidden)]
     pub timeout_in_millis: i32,
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl UpdateIntegrationOutput {
@@ -2202,15 +2274,20 @@ impl UpdateIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameOutput {
     /// <p>The API mapping selection expression.</p>
+    #[doc(hidden)]
     pub api_mapping_selection_expression: std::option::Option<std::string::String>,
     /// <p>The name of the DomainName resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The domain name configurations.</p>
+    #[doc(hidden)]
     pub domain_name_configurations:
         std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The collection of tags associated with a domain name.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2390,16 +2467,22 @@ impl UpdateDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
+    #[doc(hidden)]
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>May contain additional feedback on the status of an API deployment.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The description for the deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDeploymentOutput {
@@ -2551,14 +2634,19 @@ impl UpdateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthorizerOutput {
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_credentials_arn: std::option::Option<std::string::String>,
     /// <p>The authorizer identifier.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    #[doc(hidden)]
     pub authorizer_payload_format_version: std::option::Option<std::string::String>,
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    #[doc(hidden)]
     pub authorizer_type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
     /// {account_id}
@@ -2569,18 +2657,24 @@ pub struct UpdateAuthorizerOutput {
     /// </replaceable>:lambda:path/<replaceable>
     /// {service_api}
     /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    #[doc(hidden)]
     pub enable_simple_responses: bool,
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    #[doc(hidden)]
     pub identity_source: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The validation expression does not apply to the REQUEST authorizer.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub jwt_configuration: std::option::Option<crate::model::JwtConfiguration>,
     /// <p>The name of the authorizer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateAuthorizerOutput {
@@ -2888,12 +2982,16 @@ impl UpdateAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiMappingOutput {
     /// <p>The API identifier.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API mapping identifier.</p>
+    #[doc(hidden)]
     pub api_mapping_id: std::option::Option<std::string::String>,
     /// <p>The API mapping key.</p>
+    #[doc(hidden)]
     pub api_mapping_key: std::option::Option<std::string::String>,
     /// <p>The API stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl UpdateApiMappingOutput {
@@ -3005,37 +3103,53 @@ impl UpdateApiMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub api_key_selection_expression: std::option::Option<std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub disable_schema_validation: bool,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API protocol.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_selection_expression: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateApiOutput {
@@ -3503,37 +3617,53 @@ impl ResetAuthorizersCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReimportApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub api_key_selection_expression: std::option::Option<std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub disable_schema_validation: bool,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API protocol.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_selection_expression: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReimportApiOutput {
@@ -3911,37 +4041,53 @@ impl ReimportApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub api_key_selection_expression: std::option::Option<std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub disable_schema_validation: bool,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API protocol.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_selection_expression: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ImportApiOutput {
@@ -4319,8 +4465,10 @@ impl ImportApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinksOutput {
     /// <p>A collection of VPC links.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetVpcLinksOutput {
@@ -4401,23 +4549,32 @@ impl GetVpcLinksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subnet IDs to include in the VPC link.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags for the VPC link.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>The status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status: std::option::Option<crate::model::VpcLinkStatus>,
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status_message: std::option::Option<std::string::String>,
     /// <p>The version of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_version: std::option::Option<crate::model::VpcLinkVersion>,
 }
 impl GetVpcLinkOutput {
@@ -4658,6 +4815,7 @@ impl GetVpcLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsOutput {
     /// <p>Represents a collection of tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4731,8 +4889,10 @@ impl GetTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStagesOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetStagesOutput {
@@ -4813,35 +4973,49 @@ impl GetStagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageOutput {
     /// <p>Settings for logging access in this stage.</p>
+    #[doc(hidden)]
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    #[doc(hidden)]
     pub auto_deploy: bool,
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
+    #[doc(hidden)]
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
+    #[doc(hidden)]
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
+    #[doc(hidden)]
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
     >,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    #[doc(hidden)]
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5206,8 +5380,10 @@ impl GetStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoutesOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetRoutesOutput {
@@ -5288,8 +5464,10 @@ impl GetRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteResponsesOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RouteResponse>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetRouteResponsesOutput {
@@ -5370,17 +5548,22 @@ impl GetRouteResponsesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteResponseOutput {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>Represents the response models of a route response.</p>
+    #[doc(hidden)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the response parameters of a route response.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>Represents the identifier of a route response.</p>
+    #[doc(hidden)]
     pub route_response_id: std::option::Option<std::string::String>,
     /// <p>Represents the route response key of a route response.</p>
+    #[doc(hidden)]
     pub route_response_key: std::option::Option<std::string::String>,
 }
 impl GetRouteResponseOutput {
@@ -5556,33 +5739,46 @@ impl GetRouteResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteOutput {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub api_key_required: bool,
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
     /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>The operation name for the route.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>The route ID.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The route key for the route.</p>
+    #[doc(hidden)]
     pub route_key: std::option::Option<std::string::String>,
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>The target for the route.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl GetRouteOutput {
@@ -5915,6 +6111,7 @@ impl GetRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelTemplateOutput {
     /// <p>The template value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl GetModelTemplateOutput {
@@ -5967,8 +6164,10 @@ impl GetModelTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Model>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetModelsOutput {
@@ -6049,14 +6248,19 @@ impl GetModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelOutput {
     /// <p>The content-type for the model, for example, "application/json".</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The model identifier.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be alphanumeric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl GetModelOutput {
@@ -6179,8 +6383,10 @@ impl GetModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationsOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Integration>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIntegrationsOutput {
@@ -6261,8 +6467,10 @@ impl GetIntegrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponsesOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::IntegrationResponse>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIntegrationResponsesOutput {
@@ -6346,18 +6554,24 @@ pub struct GetIntegrationResponseOutput {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>The integration response ID.</p>
+    #[doc(hidden)]
     pub integration_response_id: std::option::Option<std::string::String>,
     /// <p>The integration response key.</p>
+    #[doc(hidden)]
     pub integration_response_key: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The template selection expressions for the integration response.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
 }
 impl GetIntegrationResponseOutput {
@@ -6570,27 +6784,37 @@ impl GetIntegrationResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationOutput {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    #[doc(hidden)]
     pub credentials_arn: std::option::Option<std::string::String>,
     /// <p>Represents the description of an integration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Represents the identifier of an integration.</p>
+    #[doc(hidden)]
     pub integration_id: std::option::Option<std::string::String>,
     /// <p>Specifies the integration's HTTP method type.</p>
+    #[doc(hidden)]
     pub integration_method: std::option::Option<std::string::String>,
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub integration_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    #[doc(hidden)]
     pub integration_subtype: std::option::Option<std::string::String>,
     /// <p>The integration type of an integration. One of the following:</p>
     /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
@@ -6598,17 +6822,21 @@ pub struct GetIntegrationOutput {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    #[doc(hidden)]
     pub integration_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    #[doc(hidden)]
     pub passthrough_behavior: std::option::Option<crate::model::PassthroughBehavior>,
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    #[doc(hidden)]
     pub payload_format_version: std::option::Option<std::string::String>,
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -6621,12 +6849,15 @@ pub struct GetIntegrationOutput {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -6634,10 +6865,13 @@ pub struct GetIntegrationOutput {
         >,
     >,
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    #[doc(hidden)]
     pub timeout_in_millis: i32,
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl GetIntegrationOutput {
@@ -7216,8 +7450,10 @@ impl GetIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNamesOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDomainNamesOutput {
@@ -7298,15 +7534,20 @@ impl GetDomainNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameOutput {
     /// <p>The API mapping selection expression.</p>
+    #[doc(hidden)]
     pub api_mapping_selection_expression: std::option::Option<std::string::String>,
     /// <p>The name of the DomainName resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The domain name configurations.</p>
+    #[doc(hidden)]
     pub domain_name_configurations:
         std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The collection of tags associated with a domain name.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7486,8 +7727,10 @@ impl GetDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDeploymentsOutput {
@@ -7568,16 +7811,22 @@ impl GetDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
+    #[doc(hidden)]
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>May contain additional feedback on the status of an API deployment.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The description for the deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl GetDeploymentOutput {
@@ -7729,8 +7978,10 @@ impl GetDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizersOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAuthorizersOutput {
@@ -7811,14 +8062,19 @@ impl GetAuthorizersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizerOutput {
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_credentials_arn: std::option::Option<std::string::String>,
     /// <p>The authorizer identifier.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    #[doc(hidden)]
     pub authorizer_payload_format_version: std::option::Option<std::string::String>,
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    #[doc(hidden)]
     pub authorizer_type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
     /// {account_id}
@@ -7829,18 +8085,24 @@ pub struct GetAuthorizerOutput {
     /// </replaceable>:lambda:path/<replaceable>
     /// {service_api}
     /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    #[doc(hidden)]
     pub enable_simple_responses: bool,
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    #[doc(hidden)]
     pub identity_source: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The validation expression does not apply to the REQUEST authorizer.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub jwt_configuration: std::option::Option<crate::model::JwtConfiguration>,
     /// <p>The name of the authorizer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAuthorizerOutput {
@@ -8148,8 +8410,10 @@ impl GetAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApisOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Api>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetApisOutput {
@@ -8230,8 +8494,10 @@ impl GetApisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiMappingsOutput {
     /// <p>The elements from this collection.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ApiMapping>>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetApiMappingsOutput {
@@ -8312,12 +8578,16 @@ impl GetApiMappingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiMappingOutput {
     /// <p>The API identifier.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API mapping identifier.</p>
+    #[doc(hidden)]
     pub api_mapping_id: std::option::Option<std::string::String>,
     /// <p>The API mapping key.</p>
+    #[doc(hidden)]
     pub api_mapping_key: std::option::Option<std::string::String>,
     /// <p>The API stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl GetApiMappingOutput {
@@ -8429,37 +8699,53 @@ impl GetApiMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub api_key_selection_expression: std::option::Option<std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub disable_schema_validation: bool,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API protocol.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_selection_expression: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetApiOutput {
@@ -8837,6 +9123,7 @@ impl GetApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportApiOutput {
     /// <p>Represents an exported definition of an API in a particular output format, for example, YAML. The API is serialized to the requested specification, for example, OpenAPI 3.0.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ExportApiOutput {
@@ -9369,23 +9656,32 @@ impl DeleteAccessLogSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcLinkOutput {
     /// <p>The timestamp when the VPC link was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subnet IDs to include in the VPC link.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags for the VPC link.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>The status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status: std::option::Option<crate::model::VpcLinkStatus>,
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_status_message: std::option::Option<std::string::String>,
     /// <p>The version of the VPC link.</p>
+    #[doc(hidden)]
     pub vpc_link_version: std::option::Option<crate::model::VpcLinkVersion>,
 }
 impl CreateVpcLinkOutput {
@@ -9626,35 +9922,49 @@ impl CreateVpcLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageOutput {
     /// <p>Settings for logging access in this stage.</p>
+    #[doc(hidden)]
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    #[doc(hidden)]
     pub auto_deploy: bool,
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Default route settings for the stage.</p>
+    #[doc(hidden)]
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
+    #[doc(hidden)]
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
+    #[doc(hidden)]
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
     >,
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    #[doc(hidden)]
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10019,17 +10329,22 @@ impl CreateStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteResponseOutput {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>Represents the response models of a route response.</p>
+    #[doc(hidden)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the response parameters of a route response.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>Represents the identifier of a route response.</p>
+    #[doc(hidden)]
     pub route_response_id: std::option::Option<std::string::String>,
     /// <p>Represents the route response key of a route response.</p>
+    #[doc(hidden)]
     pub route_response_key: std::option::Option<std::string::String>,
 }
 impl CreateRouteResponseOutput {
@@ -10205,33 +10520,46 @@ impl CreateRouteResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteOutput {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub api_key_required: bool,
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
     /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub model_selection_expression: std::option::Option<std::string::String>,
     /// <p>The operation name for the route.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
     >,
     /// <p>The route ID.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The route key for the route.</p>
+    #[doc(hidden)]
     pub route_key: std::option::Option<std::string::String>,
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>The target for the route.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl CreateRouteOutput {
@@ -10564,14 +10892,19 @@ impl CreateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelOutput {
     /// <p>The content-type for the model, for example, "application/json".</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The model identifier.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be alphanumeric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl CreateModelOutput {
@@ -10697,18 +11030,24 @@ pub struct CreateIntegrationResponseOutput {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>The integration response ID.</p>
+    #[doc(hidden)]
     pub integration_response_id: std::option::Option<std::string::String>,
     /// <p>The integration response key.</p>
+    #[doc(hidden)]
     pub integration_response_key: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The template selection expressions for the integration response.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
 }
 impl CreateIntegrationResponseOutput {
@@ -10921,27 +11260,37 @@ impl CreateIntegrationResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationOutput {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    #[doc(hidden)]
     pub credentials_arn: std::option::Option<std::string::String>,
     /// <p>Represents the description of an integration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Represents the identifier of an integration.</p>
+    #[doc(hidden)]
     pub integration_id: std::option::Option<std::string::String>,
     /// <p>Specifies the integration's HTTP method type.</p>
+    #[doc(hidden)]
     pub integration_method: std::option::Option<std::string::String>,
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub integration_response_selection_expression: std::option::Option<std::string::String>,
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    #[doc(hidden)]
     pub integration_subtype: std::option::Option<std::string::String>,
     /// <p>The integration type of an integration. One of the following:</p>
     /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
@@ -10949,17 +11298,21 @@ pub struct CreateIntegrationOutput {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    #[doc(hidden)]
     pub integration_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    #[doc(hidden)]
     pub passthrough_behavior: std::option::Option<crate::model::PassthroughBehavior>,
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    #[doc(hidden)]
     pub payload_format_version: std::option::Option<std::string::String>,
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -10972,12 +11325,15 @@ pub struct CreateIntegrationOutput {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    #[doc(hidden)]
     pub response_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -10985,10 +11341,13 @@ pub struct CreateIntegrationOutput {
         >,
     >,
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub template_selection_expression: std::option::Option<std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    #[doc(hidden)]
     pub timeout_in_millis: i32,
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl CreateIntegrationOutput {
@@ -11567,15 +11926,20 @@ impl CreateIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainNameOutput {
     /// <p>The API mapping selection expression.</p>
+    #[doc(hidden)]
     pub api_mapping_selection_expression: std::option::Option<std::string::String>,
     /// <p>The name of the DomainName resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The domain name configurations.</p>
+    #[doc(hidden)]
     pub domain_name_configurations:
         std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The collection of tags associated with a domain name.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11755,16 +12119,22 @@ impl CreateDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
+    #[doc(hidden)]
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>May contain additional feedback on the status of an API deployment.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The description for the deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -11916,14 +12286,19 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthorizerOutput {
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_credentials_arn: std::option::Option<std::string::String>,
     /// <p>The authorizer identifier.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    #[doc(hidden)]
     pub authorizer_payload_format_version: std::option::Option<std::string::String>,
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    #[doc(hidden)]
     pub authorizer_type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
     /// {account_id}
@@ -11934,18 +12309,24 @@ pub struct CreateAuthorizerOutput {
     /// </replaceable>:lambda:path/<replaceable>
     /// {service_api}
     /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    #[doc(hidden)]
     pub enable_simple_responses: bool,
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    #[doc(hidden)]
     pub identity_source: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The validation expression does not apply to the REQUEST authorizer.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub jwt_configuration: std::option::Option<crate::model::JwtConfiguration>,
     /// <p>The name of the authorizer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateAuthorizerOutput {
@@ -12253,12 +12634,16 @@ impl CreateAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiMappingOutput {
     /// <p>The API identifier.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API mapping identifier.</p>
+    #[doc(hidden)]
     pub api_mapping_id: std::option::Option<std::string::String>,
     /// <p>The API mapping key.</p>
+    #[doc(hidden)]
     pub api_mapping_key: std::option::Option<std::string::String>,
     /// <p>The API stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl CreateApiMappingOutput {
@@ -12370,37 +12755,53 @@ impl CreateApiMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    #[doc(hidden)]
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    #[doc(hidden)]
     pub api_gateway_managed: bool,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    #[doc(hidden)]
     pub api_key_selection_expression: std::option::Option<std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub disable_schema_validation: bool,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API protocol.</p>
+    #[doc(hidden)]
     pub protocol_type: std::option::Option<crate::model::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    #[doc(hidden)]
     pub route_selection_expression: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateApiOutput {

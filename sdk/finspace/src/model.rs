@@ -5,28 +5,40 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The name of the FinSpace environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the FinSpace environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of creation of the FinSpace environment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    #[doc(hidden)]
     pub environment_url: std::option::Option<std::string::String>,
     /// <p>The description of the FinSpace environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    #[doc(hidden)]
     pub sage_maker_studio_domain_url: std::option::Option<std::string::String>,
     /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
+    #[doc(hidden)]
     pub dedicated_service_account_id: std::option::Option<std::string::String>,
     /// <p>The authentication mode for the environment.</p>
+    #[doc(hidden)]
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    #[doc(hidden)]
     pub federation_parameters: std::option::Option<crate::model::FederationParameters>,
 }
 impl Environment {
@@ -309,16 +321,22 @@ impl Environment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FederationParameters {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
+    #[doc(hidden)]
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
+    #[doc(hidden)]
     pub saml_metadata_url: std::option::Option<std::string::String>,
     /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
+    #[doc(hidden)]
     pub application_call_back_url: std::option::Option<std::string::String>,
     /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
+    #[doc(hidden)]
     pub federation_urn: std::option::Option<std::string::String>,
     /// <p>Name of the identity provider (IdP).</p>
+    #[doc(hidden)]
     pub federation_provider_name: std::option::Option<std::string::String>,
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+    #[doc(hidden)]
     pub attribute_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -647,10 +665,13 @@ impl AsRef<str> for EnvironmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuperuserParameters {
     /// <p>The email address of the superuser.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The first name of the superuser.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the superuser.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
 }
 impl SuperuserParameters {

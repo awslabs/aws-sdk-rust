@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerInternalException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerInternalException {
@@ -69,6 +70,7 @@ impl ServerInternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RateLimitExceededException {
@@ -133,6 +135,7 @@ impl RateLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -197,6 +200,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationException {
@@ -261,6 +265,7 @@ impl AuthorizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -325,6 +330,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseUsageException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LicenseUsageException {
@@ -390,6 +396,7 @@ impl LicenseUsageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceStateException {
@@ -454,6 +461,7 @@ impl InvalidResourceStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -518,6 +526,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -582,6 +591,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceededException {
@@ -646,6 +656,7 @@ impl ResourceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FilterLimitExceededException {
@@ -710,8 +721,10 @@ impl FilterLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedDependencyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
 }
 impl FailedDependencyException {
@@ -795,8 +808,10 @@ impl FailedDependencyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedirectException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RedirectException {
@@ -880,6 +895,7 @@ impl RedirectException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -944,6 +960,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedDigitalSignatureMethodException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedDigitalSignatureMethodException {
@@ -1008,6 +1025,7 @@ impl UnsupportedDigitalSignatureMethodException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoEntitlementsAllowedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoEntitlementsAllowedException {
@@ -1072,6 +1090,7 @@ impl NoEntitlementsAllowedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitlementNotAllowedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntitlementNotAllowedException {

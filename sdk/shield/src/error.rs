@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -93,6 +95,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptimisticLockException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OptimisticLockException {
@@ -157,6 +160,7 @@ impl OptimisticLockException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LockedSubscriptionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LockedSubscriptionException {
@@ -221,10 +225,13 @@ impl LockedSubscriptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Additional information about the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// <p>Fields that caused the exception.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl InvalidParameterException {
@@ -338,6 +345,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -402,6 +410,7 @@ impl InternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOperationException {
@@ -466,6 +475,7 @@ impl InvalidOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceException {
@@ -530,6 +540,7 @@ impl InvalidResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPaginationTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPaginationTokenException {
@@ -594,10 +605,13 @@ impl InvalidPaginationTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of limit that would be exceeded.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The threshold that would be exceeded.</p>
+    #[doc(hidden)]
     pub limit: i64,
 }
 impl LimitsExceededException {
@@ -698,6 +712,7 @@ impl LimitsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAssociatedRoleException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAssociatedRoleException {
@@ -762,6 +777,7 @@ impl NoAssociatedRoleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedForDependencyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedForDependencyException {
@@ -826,6 +842,7 @@ impl AccessDeniedForDependencyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -890,8 +907,10 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource that already exists.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceAlreadyExistsException {

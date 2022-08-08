@@ -8,8 +8,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputConfig {
     /// <p>The name of the bucket your output will go to.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
 }
 impl OutputConfig {
@@ -81,8 +83,10 @@ impl OutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationChannel {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl NotificationChannel {
@@ -158,6 +162,7 @@ impl NotificationChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentLocation {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl DocumentLocation {
@@ -214,10 +219,13 @@ impl DocumentLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Object {
     /// <p>The name of the S3 bucket. Note that the # character is not valid in the file name.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl S3Object {
@@ -306,6 +314,7 @@ impl S3Object {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueriesConfig {
     /// <p></p>
+    #[doc(hidden)]
     pub queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
 }
 impl QueriesConfig {
@@ -369,8 +378,10 @@ impl QueriesConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Query {
     /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Alias attached to the query, for ease of location.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>List of pages associated with the query. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -380,6 +391,7 @@ pub struct Query {
     /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
     /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub pages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Query {
@@ -557,8 +569,10 @@ impl AsRef<str> for FeatureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Warning {
     /// <p>The error code for the warning.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A list of the pages that the warning applies to.</p>
+    #[doc(hidden)]
     pub pages: std::option::Option<std::vec::Vec<i32>>,
 }
 impl Warning {
@@ -636,10 +650,13 @@ impl Warning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpenseDocument {
     /// <p>Denotes which invoice or receipt in the document the information is coming from. First document will be 1, the second 2, and so on.</p>
+    #[doc(hidden)]
     pub expense_index: std::option::Option<i32>,
     /// <p>Any information found outside of a table by Amazon Textract.</p>
+    #[doc(hidden)]
     pub summary_fields: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
+    #[doc(hidden)]
     pub line_item_groups: std::option::Option<std::vec::Vec<crate::model::LineItemGroup>>,
 }
 impl ExpenseDocument {
@@ -747,8 +764,10 @@ impl ExpenseDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItemGroup {
     /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
+    #[doc(hidden)]
     pub line_item_group_index: std::option::Option<i32>,
     /// <p>The breakdown of information on a particular line of a table. </p>
+    #[doc(hidden)]
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItemFields>>,
 }
 impl LineItemGroup {
@@ -829,6 +848,7 @@ impl LineItemGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
+    #[doc(hidden)]
     pub line_item_expense_fields: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
 }
 impl LineItemFields {
@@ -893,12 +913,16 @@ impl LineItemFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpenseField {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExpenseType>,
     /// <p>The explicitly stated label of a detected element.</p>
+    #[doc(hidden)]
     pub label_detection: std::option::Option<crate::model::ExpenseDetection>,
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
+    #[doc(hidden)]
     pub value_detection: std::option::Option<crate::model::ExpenseDetection>,
     /// <p>The page number the value was detected on.</p>
+    #[doc(hidden)]
     pub page_number: std::option::Option<i32>,
 }
 impl ExpenseField {
@@ -1010,10 +1034,13 @@ impl ExpenseField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpenseDetection {
     /// <p>The word or line of text recognized by Amazon Textract</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::Geometry>,
     /// <p>The confidence in detection, as a percentage</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl ExpenseDetection {
@@ -1102,8 +1129,10 @@ impl ExpenseDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
+    #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
 }
 impl Geometry {
@@ -1188,8 +1217,10 @@ impl Geometry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Point {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+    #[doc(hidden)]
     pub x: f32,
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+    #[doc(hidden)]
     pub y: f32,
 }
 impl Point {
@@ -1263,12 +1294,16 @@ impl Point {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BoundingBox {
     /// <p>The width of the bounding box as a ratio of the overall document page width.</p>
+    #[doc(hidden)]
     pub width: f32,
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
+    #[doc(hidden)]
     pub height: f32,
     /// <p>The left coordinate of the bounding box as a ratio of overall document page width.</p>
+    #[doc(hidden)]
     pub left: f32,
     /// <p>The top coordinate of the bounding box as a ratio of overall document page height.</p>
+    #[doc(hidden)]
     pub top: f32,
 }
 impl BoundingBox {
@@ -1374,8 +1409,10 @@ impl BoundingBox {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpenseType {
     /// <p>The word or line of text detected by Amazon Textract.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The confidence of accuracy, as a percentage.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl ExpenseType {
@@ -1510,6 +1547,7 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
+    #[doc(hidden)]
     pub pages: std::option::Option<i32>,
 }
 impl DocumentMetadata {
@@ -1581,30 +1619,41 @@ pub struct Block {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub block_type: std::option::Option<crate::model::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
+    #[doc(hidden)]
     pub text_type: std::option::Option<crate::model::TextType>,
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    #[doc(hidden)]
     pub row_index: std::option::Option<i32>,
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    #[doc(hidden)]
     pub column_index: std::option::Option<i32>,
     /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    #[doc(hidden)]
     pub row_span: std::option::Option<i32>,
     /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    #[doc(hidden)]
     pub column_span: std::option::Option<i32>,
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::Geometry>,
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks. The list size can be the following:</p>
     /// <ul>
     /// <li> <p>0 - The block has no child blocks.</p> </li>
     /// <li> <p>1 - The block has child blocks.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
     /// <p>The type of entity. The following can be returned:</p>
     /// <ul>
@@ -1612,12 +1661,16 @@ pub struct Block {
     /// <li> <p> <i>VALUE</i> - The field text.</p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
+    #[doc(hidden)]
     pub selection_status: std::option::Option<crate::model::SelectionStatus>,
     /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is considered to be a single-page document. The value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document is considered to be a single-page document.</p>
+    #[doc(hidden)]
     pub page: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub query: std::option::Option<crate::model::Query>,
 }
 impl Block {
@@ -2127,8 +2180,10 @@ impl AsRef<str> for EntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Relationship {
     /// <p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RelationshipType>,
     /// <p>An array of IDs for related blocks. You can get the type of the relationship from the <code>Type</code> element.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Relationship {
@@ -2454,8 +2509,10 @@ impl AsRef<str> for BlockType {
 pub struct Document {
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
+    #[doc(hidden)]
     pub bytes: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Document {
@@ -2530,8 +2587,10 @@ impl Document {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityDocument {
     /// <p>Denotes the placement of a document in the IdentityDocument list. The first document is marked 1, the second 2 and so on.</p>
+    #[doc(hidden)]
     pub document_index: std::option::Option<i32>,
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
+    #[doc(hidden)]
     pub identity_document_fields:
         std::option::Option<std::vec::Vec<crate::model::IdentityDocumentField>>,
 }
@@ -2619,8 +2678,10 @@ impl IdentityDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityDocumentField {
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AnalyzeIdDetections>,
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    #[doc(hidden)]
     pub value_detection: std::option::Option<crate::model::AnalyzeIdDetections>,
 }
 impl IdentityDocumentField {
@@ -2698,10 +2759,13 @@ impl IdentityDocumentField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeIdDetections {
     /// <p>Text of either the normalized field or value associated with it.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
+    #[doc(hidden)]
     pub normalized_value: std::option::Option<crate::model::NormalizedValue>,
     /// <p>The confidence score of the detected text.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl AnalyzeIdDetections {
@@ -2793,8 +2857,10 @@ impl AnalyzeIdDetections {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NormalizedValue {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
+    #[doc(hidden)]
     pub value_type: std::option::Option<crate::model::ValueType>,
 }
 impl NormalizedValue {
@@ -2920,10 +2986,13 @@ impl AsRef<str> for ValueType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopActivationOutput {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
+    #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
     /// <p>Shows if and why human review was needed.</p>
+    #[doc(hidden)]
     pub human_loop_activation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
+    #[doc(hidden)]
     pub human_loop_activation_conditions_evaluation_results:
         std::option::Option<std::string::String>,
 }
@@ -3044,10 +3113,13 @@ impl HumanLoopActivationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>Sets attributes of the input data.</p>
+    #[doc(hidden)]
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {
@@ -3145,6 +3217,7 @@ impl HumanLoopConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information or adult content.</p>
+    #[doc(hidden)]
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {

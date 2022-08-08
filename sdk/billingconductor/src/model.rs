@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The field name. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message describing why the field failed validation. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -370,24 +372,34 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PricingRuleListElement {
     /// <p> The name of a pricing rule. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) used to uniquely identify a pricing rule. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The pricing rule description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific. </p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::PricingRuleScope>,
     /// <p> The type of pricing rule. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PricingRuleType>,
     /// <p> A percentage modifier applied on the public pricing rates. </p>
+    #[doc(hidden)]
     pub modifier_percentage: std::option::Option<f64>,
     /// <p> If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p> The pricing plans count that this pricing rule is associated with. </p>
+    #[doc(hidden)]
     pub associated_pricing_plan_count: i64,
     /// <p> The time the pricing rule was created. </p>
+    #[doc(hidden)]
     pub creation_time: i64,
     /// <p> The most recent time the pricing rule was modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl PricingRuleListElement {
@@ -719,6 +731,7 @@ impl AsRef<str> for PricingRuleScope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListPricingRulesFilter {
@@ -780,16 +793,22 @@ impl ListPricingRulesFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PricingPlanListElement {
     /// <p>The name of a pricing plan. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The pricing rules count currently associated with this pricing plan list element. </p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p> The time the pricing plan was created. </p>
+    #[doc(hidden)]
     pub creation_time: i64,
     /// <p> The most recent time the pricing plan was modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl PricingPlanListElement {
@@ -929,6 +948,7 @@ impl PricingPlanListElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListPricingPlansFilter {
@@ -990,8 +1010,10 @@ impl ListPricingPlansFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
+    #[doc(hidden)]
     pub relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {
@@ -1123,6 +1145,7 @@ impl AsRef<str> for CustomLineItemRelationship {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
+    #[doc(hidden)]
     pub relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {
@@ -1181,8 +1204,10 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceResponseElement {
     /// <p> The resource ARN that was disassociated from the custom line item. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> An <code>AssociateResourceError</code> shown if the resource disassociation fails. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::AssociateResourceError>,
 }
 impl DisassociateResourceResponseElement {
@@ -1257,8 +1282,10 @@ impl DisassociateResourceResponseElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceError {
     /// <p> The reason the resource association failed. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> A static error code that used to classify the type of failure. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AssociateResourceErrorReason>,
 }
 impl AssociateResourceError {
@@ -1401,8 +1428,10 @@ impl AsRef<str> for AssociateResourceErrorReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
+    #[doc(hidden)]
     pub inclusive_start_billing_period: std::option::Option<std::string::String>,
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
+    #[doc(hidden)]
     pub exclusive_end_billing_period: std::option::Option<std::string::String>,
 }
 impl CustomLineItemBillingPeriodRange {
@@ -1492,8 +1521,10 @@ impl CustomLineItemBillingPeriodRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceResponseElement {
     /// <p> The resource ARN that was associated to the custom line item. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> An <code>AssociateResourceError</code> that will populate if the resource association fails. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::AssociateResourceError>,
 }
 impl AssociateResourceResponseElement {
@@ -1568,24 +1599,34 @@ impl AssociateResourceResponseElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLineItemListElement {
     /// <p> The Amazon Resource Names (ARNs) for custom line items. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The custom line item's name. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item. </p>
+    #[doc(hidden)]
     pub charge_details: std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
     /// <p> The custom line item's charge value currency. Only one of the valid values can be used. </p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<crate::model::CurrencyCode>,
     /// <p> The custom line item's description. This is shown on the Bills page in association with the charge value. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The product code associated with the custom line item. </p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
+    #[doc(hidden)]
     pub billing_group_arn: std::option::Option<std::string::String>,
     /// <p> The time created. </p>
+    #[doc(hidden)]
     pub creation_time: i64,
     /// <p> The most recent time the custom line item was modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The number of resources that are associated to the custom line item. </p>
+    #[doc(hidden)]
     pub association_size: i64,
 }
 impl CustomLineItemListElement {
@@ -1863,10 +1904,13 @@ impl AsRef<str> for CurrencyCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
+    #[doc(hidden)]
     pub flat: std::option::Option<crate::model::ListCustomLineItemFlatChargeDetails>,
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
+    #[doc(hidden)]
     pub percentage: std::option::Option<crate::model::ListCustomLineItemPercentageChargeDetails>,
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CustomLineItemType>,
 }
 impl ListCustomLineItemChargeDetails {
@@ -2025,6 +2069,7 @@ impl AsRef<str> for CustomLineItemType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    #[doc(hidden)]
     pub percentage_value: std::option::Option<f64>,
 }
 impl ListCustomLineItemPercentageChargeDetails {
@@ -2079,6 +2124,7 @@ impl ListCustomLineItemPercentageChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
+    #[doc(hidden)]
     pub charge_value: std::option::Option<f64>,
 }
 impl ListCustomLineItemFlatChargeDetails {
@@ -2133,10 +2179,13 @@ impl ListCustomLineItemFlatChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomLineItemsFilter {
     /// <p> A list of custom line items to retrieve information. </p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The billing group Amazon Resource Names (ARNs) to retrieve information. </p>
+    #[doc(hidden)]
     pub billing_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of custom line item ARNs to retrieve information. </p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCustomLineItemsFilter {
@@ -2252,10 +2301,13 @@ impl ListCustomLineItemsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLineItemChargeDetails {
     /// <p> A <code>CustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
+    #[doc(hidden)]
     pub flat: std::option::Option<crate::model::CustomLineItemFlatChargeDetails>,
     /// <p> A <code>CustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
+    #[doc(hidden)]
     pub percentage: std::option::Option<crate::model::CustomLineItemPercentageChargeDetails>,
     /// <p> The type of the custom line item that indicates whether the charge is a fee or credit. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CustomLineItemType>,
 }
 impl CustomLineItemChargeDetails {
@@ -2359,8 +2411,10 @@ impl CustomLineItemChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    #[doc(hidden)]
     pub percentage_value: std::option::Option<f64>,
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
+    #[doc(hidden)]
     pub associated_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetails {
@@ -2441,6 +2495,7 @@ impl CustomLineItemPercentageChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
+    #[doc(hidden)]
     pub charge_value: std::option::Option<f64>,
 }
 impl CustomLineItemFlatChargeDetails {
@@ -2495,8 +2550,10 @@ impl CustomLineItemFlatChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
+    #[doc(hidden)]
     pub flat: std::option::Option<crate::model::UpdateCustomLineItemFlatChargeDetails>,
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
+    #[doc(hidden)]
     pub percentage: std::option::Option<crate::model::UpdateCustomLineItemPercentageChargeDetails>,
 }
 impl UpdateCustomLineItemChargeDetails {
@@ -2582,6 +2639,7 @@ impl UpdateCustomLineItemChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    #[doc(hidden)]
     pub percentage_value: std::option::Option<f64>,
 }
 impl UpdateCustomLineItemPercentageChargeDetails {
@@ -2636,6 +2694,7 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
+    #[doc(hidden)]
     pub charge_value: std::option::Option<f64>,
 }
 impl UpdateCustomLineItemFlatChargeDetails {
@@ -2690,24 +2749,34 @@ impl UpdateCustomLineItemFlatChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingGroupListElement {
     /// <p>The billing group's name. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) that can be used to uniquely identify the billing group. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The billing group description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The account ID that serves as the main account in a billing group. </p>
+    #[doc(hidden)]
     pub primary_account_id: std::option::Option<std::string::String>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    #[doc(hidden)]
     pub computation_preference: std::option::Option<crate::model::ComputationPreference>,
     /// <p>The number of accounts in the particular billing group. </p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p> The time the billing group was created. </p>
+    #[doc(hidden)]
     pub creation_time: i64,
     /// <p> The most recent time the billing group was modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>The billing group status. Only one of the valid values can be used. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BillingGroupStatus>,
     /// <p>The reason why the billing group is in its current status. </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl BillingGroupListElement {
@@ -2987,6 +3056,7 @@ impl AsRef<str> for BillingGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing group. </p>
+    #[doc(hidden)]
     pub pricing_plan_arn: std::option::Option<std::string::String>,
 }
 impl ComputationPreference {
@@ -3044,8 +3114,10 @@ impl ComputationPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<std::string::String>,
 }
 impl ListBillingGroupsFilter {
@@ -3126,6 +3198,7 @@ impl ListBillingGroupsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
+    #[doc(hidden)]
     pub linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AccountGrouping {
@@ -3189,16 +3262,22 @@ impl AccountGrouping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The actual Amazon Web Services charges for the billing group. </p>
+    #[doc(hidden)]
     pub aws_cost: std::option::Option<std::string::String>,
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group. </p>
+    #[doc(hidden)]
     pub proforma_cost: std::option::Option<std::string::String>,
     /// <p> The billing group margin. </p>
+    #[doc(hidden)]
     pub margin: std::option::Option<std::string::String>,
     /// <p> The percentage of billing group margin. </p>
+    #[doc(hidden)]
     pub margin_percentage: std::option::Option<std::string::String>,
     /// <p>The displayed currency. </p>
+    #[doc(hidden)]
     pub currency: std::option::Option<std::string::String>,
 }
 impl BillingGroupCostReportElement {
@@ -3344,6 +3423,7 @@ impl BillingGroupCostReportElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    #[doc(hidden)]
     pub billing_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListBillingGroupCostReportsFilter {
@@ -3408,12 +3488,16 @@ impl ListBillingGroupCostReportsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAssociationsListElement {
     /// <p> The associating array of account IDs. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> The Billing Group Arn that the linked account is associated to. </p>
+    #[doc(hidden)]
     pub billing_group_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account name. </p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account email. </p>
+    #[doc(hidden)]
     pub account_email: std::option::Option<std::string::String>,
 }
 impl AccountAssociationsListElement {
@@ -3530,8 +3614,10 @@ pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+    #[doc(hidden)]
     pub association: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account ID to filter on. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListAccountAssociationsFilter {

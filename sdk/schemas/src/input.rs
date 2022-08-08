@@ -5606,16 +5606,22 @@ impl UpdateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaInput {
     /// <p>The ID of the client token.</p>
+    #[doc(hidden)]
     pub client_token_id: std::option::Option<std::string::String>,
     /// <p>The source of the schema definition.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The description of the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The schema type for the events schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl UpdateSchemaInput {
@@ -5662,8 +5668,10 @@ impl std::fmt::Debug for UpdateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegistryInput {
     /// <p>The description of the registry to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl UpdateRegistryInput {
@@ -5690,10 +5698,13 @@ impl std::fmt::Debug for UpdateRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+    #[doc(hidden)]
     pub cross_account: bool,
 }
 impl UpdateDiscovererInput {
@@ -5725,8 +5736,10 @@ impl std::fmt::Debug for UpdateDiscovererInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5753,8 +5766,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5785,6 +5800,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDiscovererInput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
 }
 impl StopDiscovererInput {
@@ -5806,6 +5822,7 @@ impl std::fmt::Debug for StopDiscovererInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDiscovererInput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
 }
 impl StartDiscovererInput {
@@ -5827,12 +5844,16 @@ impl std::fmt::Debug for StartDiscovererInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSchemasInput {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl SearchSchemasInput {
@@ -5869,10 +5890,13 @@ impl std::fmt::Debug for SearchSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The resource-based policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The revision ID of the policy.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -5904,12 +5928,16 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCodeBindingInput {
     /// <p>The language of the code binding.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl PutCodeBindingInput {
@@ -5946,6 +5974,7 @@ impl std::fmt::Debug for PutCodeBindingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5967,12 +5996,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaVersionsInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
 }
 impl ListSchemaVersionsInput {
@@ -6009,12 +6042,16 @@ impl std::fmt::Debug for ListSchemaVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub schema_name_prefix: std::option::Option<std::string::String>,
 }
 impl ListSchemasInput {
@@ -6051,12 +6088,16 @@ impl std::fmt::Debug for ListSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegistriesInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub registry_name_prefix: std::option::Option<std::string::String>,
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
 }
 impl ListRegistriesInput {
@@ -6093,12 +6134,16 @@ impl std::fmt::Debug for ListRegistriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoverersInput {
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub discoverer_id_prefix: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub source_arn_prefix: std::option::Option<std::string::String>,
 }
 impl ListDiscoverersInput {
@@ -6135,6 +6180,7 @@ impl std::fmt::Debug for ListDiscoverersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -6156,8 +6202,10 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of event.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl GetDiscoveredSchemaInput {
@@ -6184,12 +6232,16 @@ impl std::fmt::Debug for GetDiscoveredSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCodeBindingSourceInput {
     /// <p>The language of the code binding.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl GetCodeBindingSourceInput {
@@ -6226,12 +6278,16 @@ impl std::fmt::Debug for GetCodeBindingSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSchemaInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ExportSchemaInput {
@@ -6268,10 +6324,13 @@ impl std::fmt::Debug for ExportSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemaInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl DescribeSchemaInput {
@@ -6303,6 +6362,7 @@ impl std::fmt::Debug for DescribeSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegistryInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl DescribeRegistryInput {
@@ -6324,6 +6384,7 @@ impl std::fmt::Debug for DescribeRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDiscovererInput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
 }
 impl DescribeDiscovererInput {
@@ -6345,12 +6406,16 @@ impl std::fmt::Debug for DescribeDiscovererInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeBindingInput {
     /// <p>The language of the code binding.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl DescribeCodeBindingInput {
@@ -6387,10 +6452,13 @@ impl std::fmt::Debug for DescribeCodeBindingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaVersionInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// The version number of the schema
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaVersionInput {
@@ -6422,8 +6490,10 @@ impl std::fmt::Debug for DeleteSchemaVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaInput {
@@ -6450,6 +6520,7 @@ impl std::fmt::Debug for DeleteSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -6471,6 +6542,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegistryInput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegistryInput {
@@ -6492,6 +6564,7 @@ impl std::fmt::Debug for DeleteRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
 }
 impl DeleteDiscovererInput {
@@ -6513,17 +6586,23 @@ impl std::fmt::Debug for DeleteDiscovererInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaInput {
     /// <p>The source of the schema definition.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A description of the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the schema.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl CreateSchemaInput {
@@ -6573,10 +6652,13 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegistryInput {
     /// <p>A description of the registry to be created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags to associate with the registry.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6612,12 +6694,16 @@ impl std::fmt::Debug for CreateRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiscovererInput {
     /// <p>A description for the discoverer.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    #[doc(hidden)]
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

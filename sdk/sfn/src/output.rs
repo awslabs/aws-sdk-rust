@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateStateMachineOutput {
@@ -121,6 +122,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
+    #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopExecutionOutput {
@@ -178,34 +180,48 @@ impl StopExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the execution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the execution is started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
+    #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SyncExecutionStatus>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
+    #[doc(hidden)]
     pub billing_details: std::option::Option<crate::model::BillingDetails>,
 }
 impl StartSyncExecutionOutput {
@@ -523,8 +539,10 @@ impl StartSyncExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The date the execution is started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExecutionOutput {
@@ -692,6 +710,7 @@ impl SendTaskFailureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array of tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -753,8 +772,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStateMachinesOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub state_machines: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStateMachinesOutput {
@@ -835,8 +856,10 @@ impl ListStateMachinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
+    #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsOutput {
@@ -917,8 +940,10 @@ impl ListExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivitiesOutput {
     /// <p>The list of activities.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActivitiesOutput {
@@ -999,8 +1024,10 @@ impl ListActivitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExecutionHistoryOutput {
     /// <p>The list of events that occurred in the execution.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExecutionHistoryOutput {
@@ -1081,8 +1108,10 @@ impl GetExecutionHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActivityTaskOutput {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
 }
 impl GetActivityTaskOutput {
@@ -1154,18 +1183,25 @@ impl GetActivityTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStateMachineForExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the state machine associated with the execution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
 impl DescribeStateMachineForExecutionOutput {
@@ -1338,6 +1374,7 @@ impl DescribeStateMachineForExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -1349,20 +1386,28 @@ pub struct DescribeStateMachineOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the state machine.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StateMachineStatus>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
 impl DescribeStateMachineOutput {
@@ -1602,8 +1647,10 @@ impl DescribeStateMachineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -1615,24 +1662,33 @@ pub struct DescribeExecutionOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The date the execution is started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
+    #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
 }
 impl DescribeExecutionOutput {
@@ -1923,6 +1979,7 @@ impl DescribeExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -1934,8 +1991,10 @@ pub struct DescribeActivityOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeActivityOutput {
@@ -2114,8 +2173,10 @@ impl DeleteActivityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The date the state machine is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateStateMachineOutput {
@@ -2193,8 +2254,10 @@ impl CreateStateMachineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateActivityOutput {

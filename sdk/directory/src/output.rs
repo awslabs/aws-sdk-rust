@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
 }
 impl VerifyTrustOutput {
@@ -59,8 +60,10 @@ impl VerifyTrustOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustOutput {
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the trust relationship.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
 }
 impl UpdateTrustOutput {
@@ -132,6 +135,7 @@ impl UpdateTrustOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSettingsOutput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl UpdateSettingsOutput {
@@ -276,6 +280,7 @@ impl UpdateConditionalForwarderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareDirectoryOutput {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl UnshareDirectoryOutput {
@@ -333,6 +338,7 @@ impl UnshareDirectoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
+    #[doc(hidden)]
     pub schema_extension_id: std::option::Option<std::string::String>,
 }
 impl StartSchemaExtensionOutput {
@@ -390,6 +396,7 @@ impl StartSchemaExtensionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareDirectoryOutput {
     /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl ShareDirectoryOutput {
@@ -597,6 +604,7 @@ impl RemoveIpRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectSharedDirectoryOutput {
     /// <p>Identifier of the shared directory in the directory consumer account.</p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl RejectSharedDirectoryOutput {
@@ -684,6 +692,7 @@ impl RegisterEventTopicOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCertificateOutput {
     /// <p>The identifier of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl RegisterCertificateOutput {
@@ -741,8 +750,10 @@ impl RegisterCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -823,9 +834,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
+    #[doc(hidden)]
     pub schema_extensions_info:
         std::option::Option<std::vec::Vec<crate::model::SchemaExtensionInfo>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemaExtensionsOutput {
@@ -909,8 +922,10 @@ impl ListSchemaExtensionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsOutput {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub log_subscriptions: std::option::Option<std::vec::Vec<crate::model::LogSubscription>>,
     /// <p>The token for the next set of items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogSubscriptionsOutput {
@@ -992,8 +1007,10 @@ impl ListLogSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpRoutesOutput {
     /// <p>A list of <code>IpRoute</code>s.</p>
+    #[doc(hidden)]
     pub ip_routes_info: std::option::Option<std::vec::Vec<crate::model::IpRouteInfo>>,
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpRoutesOutput {
@@ -1074,8 +1091,10 @@ impl ListIpRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
+    #[doc(hidden)]
     pub certificates_info: std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
 }
 impl ListCertificatesOutput {
@@ -1157,6 +1176,7 @@ impl ListCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
+    #[doc(hidden)]
     pub snapshot_limits: std::option::Option<crate::model::SnapshotLimits>,
 }
 impl GetSnapshotLimitsOutput {
@@ -1214,6 +1234,7 @@ impl GetSnapshotLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
+    #[doc(hidden)]
     pub directory_limits: std::option::Option<crate::model::DirectoryLimits>,
 }
 impl GetDirectoryLimitsOutput {
@@ -1512,8 +1533,10 @@ impl DisableClientAuthenticationOutput {
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    #[doc(hidden)]
     pub trusts: std::option::Option<std::vec::Vec<crate::model::Trust>>,
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrustsOutput {
@@ -1598,8 +1621,10 @@ impl DescribeTrustsOutput {
 pub struct DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
@@ -1683,8 +1708,10 @@ impl DescribeSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSharedDirectoriesOutput {
     /// <p>A list of all shared directories in your account.</p>
+    #[doc(hidden)]
     pub shared_directories: std::option::Option<std::vec::Vec<crate::model::SharedDirectory>>,
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSharedDirectoriesOutput {
@@ -1766,11 +1793,14 @@ impl DescribeSharedDirectoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSettingsOutput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    #[doc(hidden)]
     pub setting_entries: std::option::Option<std::vec::Vec<crate::model::SettingEntry>>,
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSettingsOutput {
@@ -1871,8 +1901,10 @@ impl DescribeSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
+    #[doc(hidden)]
     pub regions_description: std::option::Option<std::vec::Vec<crate::model::RegionDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegionsOutput {
@@ -1954,8 +1986,10 @@ impl DescribeRegionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLdapsSettingsOutput {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
+    #[doc(hidden)]
     pub ldaps_settings_info: std::option::Option<std::vec::Vec<crate::model::LdapsSettingInfo>>,
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLdapsSettingsOutput {
@@ -2037,6 +2071,7 @@ impl DescribeLdapsSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
+    #[doc(hidden)]
     pub event_topics: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
 }
 impl DescribeEventTopicsOutput {
@@ -2100,8 +2135,10 @@ impl DescribeEventTopicsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainControllersOutput {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
+    #[doc(hidden)]
     pub domain_controllers: std::option::Option<std::vec::Vec<crate::model::DomainController>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDomainControllersOutput {
@@ -2184,9 +2221,11 @@ impl DescribeDomainControllersOutput {
 pub struct DescribeDirectoriesOutput {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    #[doc(hidden)]
     pub directory_descriptions:
         std::option::Option<std::vec::Vec<crate::model::DirectoryDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectoriesOutput {
@@ -2273,6 +2312,7 @@ impl DescribeDirectoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
+    #[doc(hidden)]
     pub conditional_forwarders:
         std::option::Option<std::vec::Vec<crate::model::ConditionalForwarder>>,
 }
@@ -2340,9 +2380,11 @@ impl DescribeConditionalForwardersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
+    #[doc(hidden)]
     pub client_authentication_settings_info:
         std::option::Option<std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>>,
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientAuthenticationSettingsOutput {
@@ -2434,6 +2476,7 @@ impl DescribeClientAuthenticationSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
     /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl DescribeCertificateOutput {
@@ -2551,6 +2594,7 @@ impl DeregisterCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrustOutput {
@@ -2605,6 +2649,7 @@ impl DeleteTrustOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotOutput {
@@ -2689,6 +2734,7 @@ impl DeleteLogSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryOutput {
     /// <p>The directory identifier.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryOutput {
@@ -2773,6 +2819,7 @@ impl DeleteConditionalForwarderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustOutput {
     /// <p>A unique identifier for the trust relationship that was created.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
 }
 impl CreateTrustOutput {
@@ -2827,6 +2874,7 @@ impl CreateTrustOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>The identifier of the snapshot that was created.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl CreateSnapshotOutput {
@@ -2881,6 +2929,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMicrosoftAdOutput {
     /// <p>The identifier of the directory that was created.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl CreateMicrosoftAdOutput {
@@ -2965,6 +3014,7 @@ impl CreateLogSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl CreateDirectoryOutput {
@@ -3049,6 +3099,7 @@ impl CreateConditionalForwarderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
+    #[doc(hidden)]
     pub computer: std::option::Option<crate::model::Computer>,
 }
 impl CreateComputerOutput {
@@ -3103,8 +3154,10 @@ impl CreateComputerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasOutput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The alias for the directory.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAliasOutput {
@@ -3176,6 +3229,7 @@ impl CreateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectDirectoryOutput {
     /// <p>The identifier of the new directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl ConnectDirectoryOutput {
@@ -3350,6 +3404,7 @@ impl AddIpRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptSharedDirectoryOutput {
     /// <p>The shared directory in the directory consumer account.</p>
+    #[doc(hidden)]
     pub shared_directory: std::option::Option<crate::model::SharedDirectory>,
 }
 impl AcceptSharedDirectoryOutput {

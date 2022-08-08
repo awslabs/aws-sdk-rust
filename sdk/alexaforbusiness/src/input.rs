@@ -16043,10 +16043,13 @@ impl UpdateSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSkillGroupInput {
     /// <p>The ARN of the skill group to update. </p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The updated name for the skill group.</p>
+    #[doc(hidden)]
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The updated description for the skill group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateSkillGroupInput {
@@ -16078,14 +16081,19 @@ impl std::fmt::Debug for UpdateSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomInput {
     /// <p>The ARN of the room to update. </p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The updated name for the room.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>The updated description for the room.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated provider calendar ARN for the room.</p>
+    #[doc(hidden)]
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>The updated profile ARN for the room.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl UpdateRoomInput {
@@ -16127,32 +16135,46 @@ impl std::fmt::Debug for UpdateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileInput {
     /// <p>The ARN of the room profile to update. Required.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The updated name for the room profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
+    #[doc(hidden)]
     pub is_default: std::option::Option<bool>,
     /// <p>The updated timezone for the room profile.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The updated address for the room profile.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The updated distance unit for the room profile.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>The updated temperature unit for the room profile.</p>
+    #[doc(hidden)]
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>The updated wake word for the room profile.</p>
+    #[doc(hidden)]
     pub wake_word: std::option::Option<crate::model::WakeWord>,
     /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>Whether the setup mode of the profile is enabled.</p>
+    #[doc(hidden)]
     pub setup_mode_disabled: std::option::Option<bool>,
     /// <p>The updated maximum volume limit for the room profile.</p>
+    #[doc(hidden)]
     pub max_volume_limit: std::option::Option<i32>,
     /// <p>Whether the PSTN setting of the room profile is enabled.</p>
+    #[doc(hidden)]
     pub pstn_enabled: std::option::Option<bool>,
     /// <p>Whether data retention of the profile is enabled.</p>
+    #[doc(hidden)]
     pub data_retention_opt_in: std::option::Option<bool>,
     /// <p>The updated meeting room settings of a room profile.</p>
+    #[doc(hidden)]
     pub meeting_room_configuration:
         std::option::Option<crate::model::UpdateMeetingRoomConfiguration>,
 }
@@ -16245,18 +16267,25 @@ impl std::fmt::Debug for UpdateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current password of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub current_password: std::option::Option<std::string::String>,
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    #[doc(hidden)]
     pub next_password: std::option::Option<std::string::String>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    #[doc(hidden)]
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateNetworkProfileInput {
@@ -16308,10 +16337,13 @@ impl std::fmt::Debug for UpdateNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayGroupInput {
     /// <p>The ARN of the gateway group to update.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
     /// <p>The updated name of the gateway group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the gateway group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayGroupInput {
@@ -16343,12 +16375,16 @@ impl std::fmt::Debug for UpdateGatewayGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInput {
     /// <p>The ARN of the gateway to update.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The updated name of the gateway.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the gateway.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInput {
@@ -16385,8 +16421,10 @@ impl std::fmt::Debug for UpdateGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceInput {
     /// <p>The ARN of the device to update. Required.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The updated device name. Required.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceInput {
@@ -16413,18 +16451,25 @@ impl std::fmt::Debug for UpdateDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactInput {
     /// <p>The ARN of the contact to update.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The updated display name of the contact.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The updated first name of the contact.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The updated last name of the contact.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
+    #[doc(hidden)]
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
 }
 impl UpdateContactInput {
@@ -16476,14 +16521,19 @@ impl std::fmt::Debug for UpdateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConferenceProviderInput {
     /// <p>The ARN of the conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_arn: std::option::Option<std::string::String>,
     /// <p>The type of the conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_type: std::option::Option<crate::model::ConferenceProviderType>,
     /// <p>The IP endpoint and protocol for calling.</p>
+    #[doc(hidden)]
     pub ip_dial_in: std::option::Option<crate::model::IpDialIn>,
     /// <p>The information for PSTN conferencing.</p>
+    #[doc(hidden)]
     pub pstn_dial_in: std::option::Option<crate::model::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
+    #[doc(hidden)]
     pub meeting_setting: std::option::Option<crate::model::MeetingSetting>,
 }
 impl UpdateConferenceProviderInput {
@@ -16527,16 +16577,22 @@ impl std::fmt::Debug for UpdateConferenceProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
+    #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
     /// <p>The S3 location of the output reports.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The name identifier of the schedule.</p>
+    #[doc(hidden)]
     pub schedule_name: std::option::Option<std::string::String>,
     /// <p>The recurrence of the reports.</p>
+    #[doc(hidden)]
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
 }
 impl UpdateBusinessReportScheduleInput {
@@ -16583,10 +16639,13 @@ impl std::fmt::Debug for UpdateBusinessReportScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAddressBookInput {
     /// <p>The ARN of the room to update.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
     /// <p>The updated name of the room.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the room.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateAddressBookInput {
@@ -16618,8 +16677,10 @@ impl std::fmt::Debug for UpdateAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -16646,8 +16707,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -16674,6 +16737,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSmartHomeApplianceDiscoveryInput {
     /// <p>The room where smart home appliance discovery was initiated.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl StartSmartHomeApplianceDiscoveryInput {
@@ -16695,10 +16759,13 @@ impl std::fmt::Debug for StartSmartHomeApplianceDiscoveryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceSyncInput {
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device to sync. Required.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>Request structure to start the device sync. Required.</p>
+    #[doc(hidden)]
     pub features: std::option::Option<std::vec::Vec<crate::model::Feature>>,
 }
 impl StartDeviceSyncInput {
@@ -16730,6 +16797,7 @@ impl std::fmt::Debug for StartDeviceSyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendInvitationInput {
     /// <p>The ARN of the user to whom to send an invitation. Required.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl SendInvitationInput {
@@ -16751,12 +16819,16 @@ impl std::fmt::Debug for SendInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAnnouncementInput {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
+    #[doc(hidden)]
     pub room_filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::Content>,
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
+    #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl SendAnnouncementInput {
@@ -16793,12 +16865,16 @@ impl std::fmt::Debug for SendAnnouncementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchUsersInput {
@@ -16835,12 +16911,16 @@ impl std::fmt::Debug for SearchUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSkillGroupsInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchSkillGroupsInput {
@@ -16877,12 +16957,16 @@ impl std::fmt::Debug for SearchSkillGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchRoomsInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchRoomsInput {
@@ -16919,12 +17003,16 @@ impl std::fmt::Debug for SearchRoomsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchProfilesInput {
@@ -16961,12 +17049,16 @@ impl std::fmt::Debug for SearchProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchNetworkProfilesInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchNetworkProfilesInput {
@@ -17003,12 +17095,16 @@ impl std::fmt::Debug for SearchNetworkProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchDevicesInput {
@@ -17045,12 +17141,16 @@ impl std::fmt::Debug for SearchDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContactsInput {
     /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchContactsInput {
@@ -17087,12 +17187,16 @@ impl std::fmt::Debug for SearchContactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAddressBooksInput {
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl SearchAddressBooksInput {
@@ -17129,8 +17233,10 @@ impl std::fmt::Debug for SearchAddressBooksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeInvitationInput {
     /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    #[doc(hidden)]
     pub enrollment_id: std::option::Option<std::string::String>,
 }
 impl RevokeInvitationInput {
@@ -17157,8 +17263,10 @@ impl std::fmt::Debug for RevokeInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveRoomInput {
     /// <p>The ARN of the user. Required.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the skill that was requested. Required.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl ResolveRoomInput {
@@ -17185,6 +17293,7 @@ impl std::fmt::Debug for ResolveRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectSkillInput {
     /// <p>The unique identifier of the skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl RejectSkillInput {
@@ -17206,18 +17315,25 @@ impl std::fmt::Debug for RejectSkillInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAvsDeviceInput {
     /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
+    #[doc(hidden)]
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The product ID used to identify your AVS device during authorization.</p>
+    #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
+    #[doc(hidden)]
     pub device_serial_number: std::option::Option<std::string::String>,
     /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
+    #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterAvsDeviceInput {
@@ -17269,11 +17385,14 @@ impl std::fmt::Debug for RegisterAvsDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSkillAuthorizationInput {
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
+    #[doc(hidden)]
     pub authorization_result:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of a skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room that the skill is authorized for.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl PutSkillAuthorizationInput {
@@ -17308,10 +17427,13 @@ impl std::fmt::Debug for PutSkillAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRoomSkillParameterInput {
     /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The updated room skill parameter. Required.</p>
+    #[doc(hidden)]
     pub room_skill_parameter: std::option::Option<crate::model::RoomSkillParameter>,
 }
 impl PutRoomSkillParameterInput {
@@ -17343,10 +17465,13 @@ impl std::fmt::Debug for PutRoomSkillParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInvitationConfigurationInput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
+    #[doc(hidden)]
     pub contact_email: std::option::Option<std::string::String>,
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
+    #[doc(hidden)]
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutInvitationConfigurationInput {
@@ -17378,6 +17503,7 @@ impl std::fmt::Debug for PutInvitationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConferencePreferenceInput {
     /// <p>The conference preference of a specific conference provider.</p>
+    #[doc(hidden)]
     pub conference_preference: std::option::Option<crate::model::ConferencePreference>,
 }
 impl PutConferencePreferenceInput {
@@ -17401,10 +17527,13 @@ impl std::fmt::Debug for PutConferencePreferenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The ARN of the specified resource for which to list tags.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
@@ -17436,10 +17565,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSmartHomeAppliancesInput {
@@ -17471,10 +17603,13 @@ impl std::fmt::Debug for ListSmartHomeAppliancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreSkillsByCategoryInput {
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
+    #[doc(hidden)]
     pub category_id: std::option::Option<i64>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of skills returned per paginated calls.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsStoreSkillsByCategoryInput {
@@ -17506,8 +17641,10 @@ impl std::fmt::Debug for ListSkillsStoreSkillsByCategoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreCategoriesInput {
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of categories returned, per paginated calls.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsStoreCategoriesInput {
@@ -17534,14 +17671,19 @@ impl std::fmt::Debug for ListSkillsStoreCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsInput {
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>Whether the skill is enabled under the user's account.</p>
+    #[doc(hidden)]
     pub enablement_type: std::option::Option<crate::model::EnablementTypeFilter>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
+    #[doc(hidden)]
     pub skill_type: std::option::Option<crate::model::SkillTypeFilter>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsInput {
@@ -17583,10 +17725,13 @@ impl std::fmt::Debug for ListSkillsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysInput {
     /// <p>The gateway group ARN for which to list gateways.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGatewaysInput {
@@ -17618,8 +17763,10 @@ impl std::fmt::Debug for ListGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayGroupsInput {
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGatewayGroupsInput {
@@ -17646,12 +17793,16 @@ impl std::fmt::Debug for ListGatewayGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceEventsInput {
     /// <p>The ARN of a device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::DeviceEventType>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeviceEventsInput {
@@ -17688,8 +17839,10 @@ impl std::fmt::Debug for ListDeviceEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConferenceProvidersInput {
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListConferenceProvidersInput {
@@ -17716,8 +17869,10 @@ impl std::fmt::Debug for ListConferenceProvidersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBusinessReportSchedulesInput {
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schedules listed in the call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListBusinessReportSchedulesInput {
@@ -17744,6 +17899,7 @@ impl std::fmt::Debug for ListBusinessReportSchedulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSkillGroupInput {
     /// <p>The ARN of the skill group for which to get details. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
 }
 impl GetSkillGroupInput {
@@ -17765,10 +17921,13 @@ impl std::fmt::Debug for GetSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room skill parameter key for which to get details. Required.</p>
+    #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
 }
 impl GetRoomSkillParameterInput {
@@ -17800,6 +17959,7 @@ impl std::fmt::Debug for GetRoomSkillParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomInput {
     /// <p>The ARN of the room for which to request details. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl GetRoomInput {
@@ -17821,6 +17981,7 @@ impl std::fmt::Debug for GetRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileInput {
     /// <p>The ARN of the room profile for which to request details. Required.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl GetProfileInput {
@@ -17842,6 +18003,7 @@ impl std::fmt::Debug for GetProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
 impl GetNetworkProfileInput {
@@ -17874,6 +18036,7 @@ impl std::fmt::Debug for GetInvitationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayGroupInput {
     /// <p>The ARN of the gateway group to get.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
 }
 impl GetGatewayGroupInput {
@@ -17895,6 +18058,7 @@ impl std::fmt::Debug for GetGatewayGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayInput {
     /// <p>The ARN of the gateway to get.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl GetGatewayInput {
@@ -17916,6 +18080,7 @@ impl std::fmt::Debug for GetGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInput {
     /// <p>The ARN of the device for which to request details. Required.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInput {
@@ -17937,6 +18102,7 @@ impl std::fmt::Debug for GetDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactInput {
     /// <p>The ARN of the contact for which to request details.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl GetContactInput {
@@ -17958,6 +18124,7 @@ impl std::fmt::Debug for GetContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConferenceProviderInput {
     /// <p>The ARN of the newly created conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl GetConferenceProviderInput {
@@ -17990,6 +18157,7 @@ impl std::fmt::Debug for GetConferencePreferenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAddressBookInput {
     /// <p>The ARN of the address book for which to request details.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl GetAddressBookInput {
@@ -18011,6 +18179,7 @@ impl std::fmt::Debug for GetAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgetSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl ForgetSmartHomeAppliancesInput {
@@ -18032,8 +18201,10 @@ impl std::fmt::Debug for ForgetSmartHomeAppliancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSkillGroupFromRoomInput {
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillGroupFromRoomInput {
@@ -18060,6 +18231,7 @@ impl std::fmt::Debug for DisassociateSkillGroupFromRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSkillFromUsersInput {
     /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillFromUsersInput {
@@ -18081,8 +18253,10 @@ impl std::fmt::Debug for DisassociateSkillFromUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSkillFromSkillGroupInput {
     /// <p>The unique identifier of a skill. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of a skill group to associate to a skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillFromSkillGroupInput {
@@ -18109,6 +18283,7 @@ impl std::fmt::Debug for DisassociateSkillFromSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDeviceFromRoomInput {
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateDeviceFromRoomInput {
@@ -18130,8 +18305,10 @@ impl std::fmt::Debug for DisassociateDeviceFromRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateContactFromAddressBookInput {
     /// <p>The ARN of the contact to disassociate from an address book.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the address from which to disassociate the contact.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateContactFromAddressBookInput {
@@ -18158,8 +18335,10 @@ impl std::fmt::Debug for DisassociateContactFromAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>The ARN of the user to delete in the organization. Required.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
+    #[doc(hidden)]
     pub enrollment_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -18186,6 +18365,7 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSkillGroupInput {
     /// <p>The ARN of the skill group to delete. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSkillGroupInput {
@@ -18207,8 +18387,10 @@ impl std::fmt::Debug for DeleteSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSkillAuthorizationInput {
     /// <p>The unique identifier of a skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room that the skill is authorized for.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSkillAuthorizationInput {
@@ -18235,10 +18417,13 @@ impl std::fmt::Debug for DeleteSkillAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoomSkillParameterInput {
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room skill parameter key for which to remove details.</p>
+    #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
 }
 impl DeleteRoomSkillParameterInput {
@@ -18270,6 +18455,7 @@ impl std::fmt::Debug for DeleteRoomSkillParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoomInput {
     /// <p>The ARN of the room to delete. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRoomInput {
@@ -18291,6 +18477,7 @@ impl std::fmt::Debug for DeleteRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileInput {
     /// <p>The ARN of the room profile to delete. Required.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProfileInput {
@@ -18312,6 +18499,7 @@ impl std::fmt::Debug for DeleteProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkProfileInput {
@@ -18333,6 +18521,7 @@ impl std::fmt::Debug for DeleteNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayGroupInput {
     /// <p>The ARN of the gateway group to delete.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayGroupInput {
@@ -18354,8 +18543,10 @@ impl std::fmt::Debug for DeleteGatewayGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceUsageDataInput {
     /// <p>The ARN of the device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The type of usage data to delete.</p>
+    #[doc(hidden)]
     pub device_usage_type: std::option::Option<crate::model::DeviceUsageType>,
 }
 impl DeleteDeviceUsageDataInput {
@@ -18382,6 +18573,7 @@ impl std::fmt::Debug for DeleteDeviceUsageDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceInput {
     /// <p>The ARN of the device for which to request details.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceInput {
@@ -18403,6 +18595,7 @@ impl std::fmt::Debug for DeleteDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactInput {
     /// <p>The ARN of the contact to delete.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl DeleteContactInput {
@@ -18424,6 +18617,7 @@ impl std::fmt::Debug for DeleteContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConferenceProviderInput {
     /// <p>The ARN of the conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConferenceProviderInput {
@@ -18445,6 +18639,7 @@ impl std::fmt::Debug for DeleteConferenceProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
+    #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteBusinessReportScheduleInput {
@@ -18466,6 +18661,7 @@ impl std::fmt::Debug for DeleteBusinessReportScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAddressBookInput {
     /// <p>The ARN of the address book to delete.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAddressBookInput {
@@ -18487,16 +18683,22 @@ impl std::fmt::Debug for DeleteAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The ARN for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The first name for the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name for the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address for the user.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the user.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateUserInput {
@@ -18543,12 +18745,16 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSkillGroupInput {
     /// <p>The name for the skill group.</p>
+    #[doc(hidden)]
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the skill group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the skill group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSkillGroupInput {
@@ -18585,16 +18791,22 @@ impl std::fmt::Debug for CreateSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomInput {
     /// <p>The name for the room.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>The description for the room.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The profile ARN for the room. This is required.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The calendar ARN for the room.</p>
+    #[doc(hidden)]
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the room.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRoomInput {
@@ -18641,33 +18853,47 @@ impl std::fmt::Debug for CreateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileInput {
     /// <p>The name of a room profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The time zone used by a room profile.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The valid address for the room.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The distance unit to be used by devices in the profile.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>The temperature unit to be used by devices in the profile.</p>
+    #[doc(hidden)]
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
+    #[doc(hidden)]
     pub wake_word: std::option::Option<crate::model::WakeWord>,
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>The user-specified token that is used during the creation of a profile.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Whether room profile setup is enabled.</p>
+    #[doc(hidden)]
     pub setup_mode_disabled: std::option::Option<bool>,
     /// <p>The maximum volume limit for a room profile.</p>
+    #[doc(hidden)]
     pub max_volume_limit: std::option::Option<i32>,
     /// <p>Whether PSTN calling is enabled.</p>
+    #[doc(hidden)]
     pub pstn_enabled: std::option::Option<bool>,
     /// <p>Whether data retention of the profile is enabled.</p>
+    #[doc(hidden)]
     pub data_retention_opt_in: std::option::Option<bool>,
     /// <p>The meeting room settings of a room profile.</p>
+    #[doc(hidden)]
     pub meeting_room_configuration:
         std::option::Option<crate::model::CreateMeetingRoomConfiguration>,
     /// <p>The tags for the profile.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProfileInput {
@@ -18759,26 +18985,37 @@ impl std::fmt::Debug for CreateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileInput {
     /// <p>The name of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub ssid: std::option::Option<std::string::String>,
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    #[doc(hidden)]
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
+    #[doc(hidden)]
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub current_password: std::option::Option<std::string::String>,
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    #[doc(hidden)]
     pub next_password: std::option::Option<std::string::String>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    #[doc(hidden)]
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateNetworkProfileInput {
@@ -18850,12 +19087,16 @@ impl std::fmt::Debug for CreateNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayGroupInput {
     /// <p>The name of the gateway group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the gateway group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGatewayGroupInput {
@@ -18892,20 +19133,28 @@ impl std::fmt::Debug for CreateGatewayGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactInput {
     /// <p>The name of the contact to display on the console.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the contact that is used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
+    #[doc(hidden)]
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateContactInput {
@@ -18962,18 +19211,25 @@ impl std::fmt::Debug for CreateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConferenceProviderInput {
     /// <p>The name of the conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_name: std::option::Option<std::string::String>,
     /// <p>Represents a type within a list of predefined types.</p>
+    #[doc(hidden)]
     pub conference_provider_type: std::option::Option<crate::model::ConferenceProviderType>,
     /// <p>The IP endpoint and protocol for calling.</p>
+    #[doc(hidden)]
     pub ip_dial_in: std::option::Option<crate::model::IpDialIn>,
     /// <p>The information for PSTN conferencing.</p>
+    #[doc(hidden)]
     pub pstn_dial_in: std::option::Option<crate::model::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
+    #[doc(hidden)]
     pub meeting_setting: std::option::Option<crate::model::MeetingSetting>,
     /// <p>The request token of the client.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConferenceProviderInput {
@@ -19027,20 +19283,28 @@ impl std::fmt::Debug for CreateConferenceProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
+    #[doc(hidden)]
     pub schedule_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
+    #[doc(hidden)]
     pub content_range: std::option::Option<crate::model::BusinessReportContentRange>,
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    #[doc(hidden)]
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
     /// <p>The client request token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the business report schedule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBusinessReportScheduleInput {
@@ -19097,12 +19361,16 @@ impl std::fmt::Debug for CreateBusinessReportScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressBookInput {
     /// <p>The name of the address book.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the address book.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAddressBookInput {
@@ -19139,6 +19407,7 @@ impl std::fmt::Debug for CreateAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSkillWithUsersInput {
     /// <p>The private skill ID you want to make available to enrolled users.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl AssociateSkillWithUsersInput {
@@ -19160,8 +19429,10 @@ impl std::fmt::Debug for AssociateSkillWithUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSkillWithSkillGroupInput {
     /// <p>The ARN of the skill group to associate the skill to. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl AssociateSkillWithSkillGroupInput {
@@ -19188,8 +19459,10 @@ impl std::fmt::Debug for AssociateSkillWithSkillGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSkillGroupWithRoomInput {
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl AssociateSkillGroupWithRoomInput {
@@ -19216,8 +19489,10 @@ impl std::fmt::Debug for AssociateSkillGroupWithRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDeviceWithRoomInput {
     /// <p>The ARN of the device to associate to a room. Required.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the room with which to associate the device. Required.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl AssociateDeviceWithRoomInput {
@@ -19244,8 +19519,10 @@ impl std::fmt::Debug for AssociateDeviceWithRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDeviceWithNetworkProfileInput {
     /// <p>The device ARN.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the network profile to associate with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
 impl AssociateDeviceWithNetworkProfileInput {
@@ -19272,8 +19549,10 @@ impl std::fmt::Debug for AssociateDeviceWithNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateContactWithAddressBookInput {
     /// <p>The ARN of the contact to associate with an address book.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the address book with which to associate the contact.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl AssociateContactWithAddressBookInput {
@@ -19300,6 +19579,7 @@ impl std::fmt::Debug for AssociateContactWithAddressBookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApproveSkillInput {
     /// <p>The unique identifier of the skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl ApproveSkillInput {

@@ -4883,14 +4883,17 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
+    #[doc(hidden)]
     pub power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
     /// <p> Specify the power option that you can provide for hardware. </p>
     /// <ul>
     /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
     /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub power_phase: std::option::Option<crate::model::PowerPhase>,
     /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
@@ -4905,10 +4908,13 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub power_connector: std::option::Option<crate::model::PowerConnector>,
     /// <p> Specify whether the power feed comes above or below the rack. </p>
+    #[doc(hidden)]
     pub power_feed_drop: std::option::Option<crate::model::PowerFeedDrop>,
     /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
+    #[doc(hidden)]
     pub uplink_gbps: std::option::Option<crate::model::UplinkGbps>,
     /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
@@ -4916,8 +4922,10 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
     /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub uplink_count: std::option::Option<crate::model::UplinkCount>,
     /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
+    #[doc(hidden)]
     pub fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
     /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
@@ -4935,8 +4943,10 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
     /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub optical_standard: std::option::Option<crate::model::OpticalStandard>,
     /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+    #[doc(hidden)]
     pub maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInput {
@@ -5050,10 +5060,13 @@ pub struct UpdateSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address. </p>
+    #[doc(hidden)]
     pub address_type: std::option::Option<crate::model::AddressType>,
     /// <p> The address for the site. </p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressInput {
@@ -5089,12 +5102,16 @@ pub struct UpdateSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The name of the site.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> Notes about a site. </p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
 }
 impl UpdateSiteInput {
@@ -5135,12 +5152,16 @@ pub struct UpdateOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The name of the Outpost.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Outpost.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The type of hardware for this Outpost. </p>
+    #[doc(hidden)]
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl UpdateOutpostInput {
@@ -5181,8 +5202,10 @@ impl std::fmt::Debug for UpdateOutpostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5209,8 +5232,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5241,12 +5266,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConnectionInput {
     /// <p> The serial number of the dongle. </p>
+    #[doc(hidden)]
     pub device_serial_number: std::option::Option<std::string::String>,
     /// <p> The ID of the Outpost server. </p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p> The public key of the client. </p>
+    #[doc(hidden)]
     pub client_public_key: std::option::Option<std::string::String>,
     /// <p> The device index of the network interface on the Outpost server. </p>
+    #[doc(hidden)]
     pub network_interface_device_index: i32,
 }
 impl StartConnectionInput {
@@ -5286,6 +5315,7 @@ impl std::fmt::Debug for StartConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5307,19 +5337,24 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSitesInput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A filter for the country code of the Outpost site. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub operating_address_country_code_filter:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the state/region of the Outpost site. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub operating_address_state_or_region_filter:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the city of the Outpost site. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub operating_address_city_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSitesInput {
@@ -5377,17 +5412,22 @@ impl std::fmt::Debug for ListSitesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutpostsInput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A filter for the lifecycle status of the Outpost. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub life_cycle_status_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub availability_zone_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub availability_zone_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListOutpostsInput {
@@ -5435,10 +5475,13 @@ impl std::fmt::Debug for ListOutpostsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    #[doc(hidden)]
     pub outpost_identifier_filter: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrdersInput {
@@ -5470,18 +5513,23 @@ impl std::fmt::Debug for ListOrdersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCatalogItemsInput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A filter for the class of items in the catalog. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub item_class_filter: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
     /// <p> A filter for the storage options of items in the catalog. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub supported_storage_filter:
         std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
     /// <p> A filter for EC2 family options for items in the catalog. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub ec2_family_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCatalogItemsInput {
@@ -5528,13 +5576,17 @@ impl std::fmt::Debug for ListCatalogItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    #[doc(hidden)]
     pub outpost_identifier: std::option::Option<std::string::String>,
     /// <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    #[doc(hidden)]
     pub host_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetsInput {
@@ -5574,8 +5626,10 @@ pub struct GetSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address you request. </p>
+    #[doc(hidden)]
     pub address_type: std::option::Option<crate::model::AddressType>,
 }
 impl GetSiteAddressInput {
@@ -5606,6 +5660,7 @@ pub struct GetSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
 }
 impl GetSiteInput {
@@ -5631,10 +5686,13 @@ pub struct GetOutpostInstanceTypesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInput {
@@ -5670,6 +5728,7 @@ pub struct GetOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl GetOutpostInput {
@@ -5693,6 +5752,7 @@ impl std::fmt::Debug for GetOutpostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrderInput {
     /// <p>The ID of the order.</p>
+    #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
 }
 impl GetOrderInput {
@@ -5714,6 +5774,7 @@ impl std::fmt::Debug for GetOrderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
     /// <p> The ID of the connection you request. </p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl GetConnectionInput {
@@ -5735,6 +5796,7 @@ impl std::fmt::Debug for GetConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCatalogItemInput {
     /// <p>The ID of the catalog item.</p>
+    #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
 }
 impl GetCatalogItemInput {
@@ -5758,6 +5820,7 @@ pub struct DeleteSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
 }
 impl DeleteSiteInput {
@@ -5783,6 +5846,7 @@ pub struct DeleteOutpostInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl DeleteOutpostInput {
@@ -5806,19 +5870,26 @@ impl std::fmt::Debug for DeleteOutpostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteInput {
     /// <p>The name of the site.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p> The tags to apply to a site. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
+    #[doc(hidden)]
     pub operating_address: std::option::Option<crate::model::Address>,
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
+    #[doc(hidden)]
     pub shipping_address: std::option::Option<crate::model::Address>,
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
+    #[doc(hidden)]
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl CreateSiteInput {
@@ -5875,21 +5946,28 @@ impl std::fmt::Debug for CreateSiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutpostInput {
     /// <p>The name of the Outpost.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Outpost.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the Outpost.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The type of hardware for this Outpost. </p>
+    #[doc(hidden)]
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl CreateOutpostInput {
@@ -5948,12 +6026,16 @@ impl std::fmt::Debug for CreateOutpostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrderInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    #[doc(hidden)]
     pub outpost_identifier: std::option::Option<std::string::String>,
     /// <p>The line items that make up the order.</p>
+    #[doc(hidden)]
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItemRequest>>,
     /// <p>The payment option for the order.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The payment terms for the order.</p>
+    #[doc(hidden)]
     pub payment_term: std::option::Option<crate::model::PaymentTerm>,
 }
 impl CreateOrderInput {
@@ -5990,6 +6072,7 @@ impl std::fmt::Debug for CreateOrderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelOrderInput {
     /// <p> The ID of the order to cancel. </p>
+    #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
 }
 impl CancelOrderInput {

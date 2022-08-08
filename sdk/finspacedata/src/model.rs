@@ -197,6 +197,7 @@ impl AsRef<str> for ApplicationPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaUnion {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
+    #[doc(hidden)]
     pub tabular_schema_config: std::option::Option<crate::model::SchemaDefinition>,
 }
 impl SchemaUnion {
@@ -254,8 +255,10 @@ impl SchemaUnion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaDefinition {
     /// <p>List of column definitions.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
     /// <p>List of column names used for primary key.</p>
+    #[doc(hidden)]
     pub primary_key_columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SchemaDefinition {
@@ -348,10 +351,13 @@ pub struct ColumnDefinition {
     /// <ul>
     /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::ColumnDataType>,
     /// <p>The name of a column.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>Description for a column.</p>
+    #[doc(hidden)]
     pub column_description: std::option::Option<std::string::String>,
 }
 impl ColumnDefinition {
@@ -608,6 +614,7 @@ impl AsRef<str> for DatasetKind {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserByPermissionGroup {
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
@@ -615,26 +622,33 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UserStatus>,
     /// <p>The first name of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+    #[doc(hidden)]
     pub api_access_principal_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -642,6 +656,7 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
 }
 impl UserByPermissionGroup {
@@ -1026,6 +1041,7 @@ impl AsRef<str> for UserStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
@@ -1033,36 +1049,48 @@ pub struct User {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UserStatus>,
     /// <p>The first name of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p> The last name of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address of the user. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    #[doc(hidden)]
     pub api_access_principal_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p> Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub last_enabled_time: i64,
     /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    #[doc(hidden)]
     pub last_disabled_time: i64,
     /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub last_login_time: i64,
 }
 impl User {
@@ -1369,8 +1397,10 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionGroupByUser {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the permission group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -1378,6 +1408,7 @@ pub struct PermissionGroupByUser {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroupByUser {
@@ -1493,10 +1524,13 @@ impl PermissionGroupByUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionGroup {
     /// <p> The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the permission group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> A brief description for the permission group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -1510,11 +1544,14 @@ pub struct PermissionGroup {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub application_permissions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -1522,6 +1559,7 @@ pub struct PermissionGroup {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroup {
@@ -1753,16 +1791,22 @@ impl PermissionGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataViewSummary {
     /// <p>The unique identifier for the Dataview.</p>
+    #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Dataview.</p>
+    #[doc(hidden)]
     pub data_view_arn: std::option::Option<std::string::String>,
     /// <p>Th unique identifier for the Dataview Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub as_of_timestamp: std::option::Option<i64>,
     /// <p>Ordered set of column names used to partition data.</p>
+    #[doc(hidden)]
     pub partition_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Columns to be used for sorting the data.</p>
+    #[doc(hidden)]
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
@@ -1775,17 +1819,23 @@ pub struct DataViewSummary {
     /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
     /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataViewStatus>,
     /// <p>The structure with error messages.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::DataViewErrorInfo>,
     /// <p>Information about the Dataview destination.</p>
+    #[doc(hidden)]
     pub destination_type_properties:
         std::option::Option<crate::model::DataViewDestinationTypeParams>,
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
+    #[doc(hidden)]
     pub auto_update: bool,
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl DataViewSummary {
@@ -2100,16 +2150,19 @@ pub struct DataViewDestinationTypeParams {
     /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<std::string::String>,
     /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
     /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub s3_destination_export_file_format: std::option::Option<crate::model::ExportFileFormat>,
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
     /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    #[doc(hidden)]
     pub s3_destination_export_file_format_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2325,6 +2378,7 @@ impl AsRef<str> for ExportFileFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataViewErrorInfo {
     /// <p>The text of the error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
@@ -2337,6 +2391,7 @@ pub struct DataViewErrorInfo {
     /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
     /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_category: std::option::Option<crate::model::ErrorCategory>,
 }
 impl DataViewErrorInfo {
@@ -2620,28 +2675,38 @@ impl AsRef<str> for DataViewStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
     /// <p>An identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Display title for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<std::string::String>,
     /// <p>Contact information for a Dataset owner.</p>
+    #[doc(hidden)]
     pub owner_info: std::option::Option<crate::model::DatasetOwnerInfo>,
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Definition for a schema on a tabular Dataset.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
     /// <p>The unique resource identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl Dataset {
@@ -2873,10 +2938,13 @@ impl Dataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetOwnerInfo {
     /// <p>The name of the Dataset owner.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Phone number for the Dataset owner.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>Email address for the Dataset owner.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl DatasetOwnerInfo {
@@ -2965,10 +3033,13 @@ impl DatasetOwnerInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangesetSummary {
     /// <p>The unique identifier for a Changeset.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Changeset.</p>
+    #[doc(hidden)]
     pub changeset_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
@@ -2976,14 +3047,18 @@ pub struct ChangesetSummary {
     /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
+    #[doc(hidden)]
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Options that define the structure of the source file(s).</p>
+    #[doc(hidden)]
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
@@ -2993,16 +3068,22 @@ pub struct ChangesetSummary {
     /// <li> <p> <code>RUNNING</code> – Changeset creation is running.</p> </li>
     /// <li> <p> <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionStatus>,
     /// <p>The structure with error messages.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub active_until_timestamp: std::option::Option<i64>,
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub active_from_timestamp: std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is updated.</p>
+    #[doc(hidden)]
     pub updates_changeset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the updated Changeset.</p>
+    #[doc(hidden)]
     pub updated_by_changeset_id: std::option::Option<std::string::String>,
 }
 impl ChangesetSummary {
@@ -3355,6 +3436,7 @@ impl ChangesetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangesetErrorInfo {
     /// <p>The text of the error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
@@ -3367,6 +3449,7 @@ pub struct ChangesetErrorInfo {
     /// <li> <p> <code>CANCELLED</code> – Cancelled.</p> </li>
     /// <li> <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_category: std::option::Option<crate::model::ErrorCategory>,
 }
 impl ChangesetErrorInfo {
@@ -3655,10 +3738,13 @@ impl AsRef<str> for LocationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>The access key identifier.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The access key.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The session token.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
 }
 impl Credentials {
@@ -3756,8 +3842,10 @@ impl Credentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p> The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -3829,12 +3917,16 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCredentials {
     /// <p> The unique identifier for the security credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p> The secret access key that can be used to sign requests.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p> The token that users must pass to use the credentials.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p> The Epoch time when the current credentials expire.</p>
+    #[doc(hidden)]
     pub expiration: i64,
 }
 impl AwsCredentials {
@@ -4014,8 +4106,10 @@ impl AsRef<str> for DatasetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionGroupParams {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>List of resource permissions.</p>
+    #[doc(hidden)]
     pub dataset_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
 impl PermissionGroupParams {
@@ -4110,6 +4204,7 @@ impl PermissionGroupParams {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePermission {
     /// <p>Permission for a resource.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<std::string::String>,
 }
 impl ResourcePermission {

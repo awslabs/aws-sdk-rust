@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedOperationException {
@@ -69,6 +70,7 @@ impl UnauthorizedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemporarilyUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TemporarilyUnavailableException {
@@ -133,6 +135,7 @@ impl TemporarilyUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerCannotBeReplicatedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerCannotBeReplicatedException {
@@ -197,6 +200,7 @@ impl ServerCannotBeReplicatedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationJobNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationJobNotFoundException {
@@ -261,6 +265,7 @@ impl ReplicationJobNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedException {
@@ -325,6 +330,7 @@ impl OperationNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRequiredParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingRequiredParameterException {
@@ -389,6 +395,7 @@ impl MissingRequiredParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -453,6 +460,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalError {
@@ -517,6 +525,7 @@ impl InternalError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRunLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationRunLimitExceededException {
@@ -581,6 +590,7 @@ impl ReplicationRunLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DryRunOperationException {
@@ -645,6 +655,7 @@ impl DryRunOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoConnectorsAvailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoConnectorsAvailableException {
@@ -709,6 +720,7 @@ impl NoConnectorsAvailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationJobAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationJobAlreadyExistsException {

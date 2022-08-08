@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserSettingsOutput {
     /// <p>The user settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl UpdateUserSettingsOutput {
@@ -61,6 +62,7 @@ impl UpdateUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl UpdateTrustStoreOutput {
@@ -118,6 +120,7 @@ impl UpdateTrustStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortalOutput {
     /// <p>The web portal.</p>
+    #[doc(hidden)]
     pub portal: std::option::Option<crate::model::Portal>,
 }
 impl UpdatePortalOutput {
@@ -172,6 +175,7 @@ impl UpdatePortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkSettingsOutput {
     /// <p>The network settings.</p>
+    #[doc(hidden)]
     pub network_settings: std::option::Option<crate::model::NetworkSettings>,
 }
 impl UpdateNetworkSettingsOutput {
@@ -229,6 +233,7 @@ impl UpdateNetworkSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderOutput {
     /// <p>The identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
 }
 impl UpdateIdentityProviderOutput {
@@ -286,6 +291,7 @@ impl UpdateIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrowserSettingsOutput {
     /// <p>The browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings: std::option::Option<crate::model::BrowserSettings>,
 }
 impl UpdateBrowserSettingsOutput {
@@ -403,8 +409,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserSettingsOutput {
     /// <p>The user settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<std::vec::Vec<crate::model::UserSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserSettingsOutput {
@@ -486,8 +494,10 @@ impl ListUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrustStoresOutput {
     /// <p>The trust stores.</p>
+    #[doc(hidden)]
     pub trust_stores: std::option::Option<std::vec::Vec<crate::model::TrustStoreSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrustStoresOutput {
@@ -569,10 +579,13 @@ impl ListTrustStoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrustStoreCertificatesOutput {
     /// <p>The certificate list.</p>
+    #[doc(hidden)]
     pub certificate_list: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrustStoreCertificatesOutput {
@@ -674,6 +687,7 @@ impl ListTrustStoreCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags of the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -735,8 +749,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortalsOutput {
     /// <p>The portals in the list.</p>
+    #[doc(hidden)]
     pub portals: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPortalsOutput {
@@ -817,8 +833,10 @@ impl ListPortalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkSettingsOutput {
     /// <p>The network settings.</p>
+    #[doc(hidden)]
     pub network_settings: std::option::Option<std::vec::Vec<crate::model::NetworkSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkSettingsOutput {
@@ -900,8 +918,10 @@ impl ListNetworkSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersOutput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The identity providers.</p>
+    #[doc(hidden)]
     pub identity_providers:
         std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
 }
@@ -986,8 +1006,10 @@ impl ListIdentityProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBrowserSettingsOutput {
     /// <p>The browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings: std::option::Option<std::vec::Vec<crate::model::BrowserSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBrowserSettingsOutput {
@@ -1069,6 +1091,7 @@ impl ListBrowserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserSettingsOutput {
     /// <p>The user settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl GetUserSettingsOutput {
@@ -1126,8 +1149,10 @@ impl GetUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
     /// <p>The certificate of the trust store certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl GetTrustStoreCertificateOutput {
@@ -1205,6 +1230,7 @@ impl GetTrustStoreCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrustStoreOutput {
     /// <p>The trust store.</p>
+    #[doc(hidden)]
     pub trust_store: std::option::Option<crate::model::TrustStore>,
 }
 impl GetTrustStoreOutput {
@@ -1262,8 +1288,10 @@ impl GetTrustStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPortalServiceProviderMetadataOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The service provider SAML metadata.</p>
+    #[doc(hidden)]
     pub service_provider_saml_metadata: std::option::Option<std::string::String>,
 }
 impl GetPortalServiceProviderMetadataOutput {
@@ -1344,6 +1372,7 @@ impl GetPortalServiceProviderMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPortalOutput {
     /// <p>The web portal.</p>
+    #[doc(hidden)]
     pub portal: std::option::Option<crate::model::Portal>,
 }
 impl GetPortalOutput {
@@ -1398,6 +1427,7 @@ impl GetPortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkSettingsOutput {
     /// <p>The network settings.</p>
+    #[doc(hidden)]
     pub network_settings: std::option::Option<crate::model::NetworkSettings>,
 }
 impl GetNetworkSettingsOutput {
@@ -1455,6 +1485,7 @@ impl GetNetworkSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityProviderOutput {
     /// <p>The identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
 }
 impl GetIdentityProviderOutput {
@@ -1512,6 +1543,7 @@ impl GetIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBrowserSettingsOutput {
     /// <p>The browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings: std::option::Option<crate::model::BrowserSettings>,
 }
 impl GetBrowserSettingsOutput {
@@ -1869,6 +1901,7 @@ impl DeleteBrowserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserSettingsOutput {
     /// <p>The ARN of the user settings.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
 }
 impl CreateUserSettingsOutput {
@@ -1926,6 +1959,7 @@ impl CreateUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl CreateTrustStoreOutput {
@@ -1983,8 +2017,10 @@ impl CreateTrustStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortalOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    #[doc(hidden)]
     pub portal_endpoint: std::option::Option<std::string::String>,
 }
 impl CreatePortalOutput {
@@ -2059,6 +2095,7 @@ impl CreatePortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkSettingsOutput {
     /// <p>The ARN of the network settings.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
 }
 impl CreateNetworkSettingsOutput {
@@ -2116,6 +2153,7 @@ impl CreateNetworkSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityProviderOutput {
     /// <p>The ARN of the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
 }
 impl CreateIdentityProviderOutput {
@@ -2173,6 +2211,7 @@ impl CreateIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBrowserSettingsOutput {
     /// <p>The ARN of the browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
 }
 impl CreateBrowserSettingsOutput {
@@ -2230,8 +2269,10 @@ impl CreateBrowserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateUserSettingsOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the user settings.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
 }
 impl AssociateUserSettingsOutput {
@@ -2306,8 +2347,10 @@ impl AssociateUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTrustStoreOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl AssociateTrustStoreOutput {
@@ -2382,8 +2425,10 @@ impl AssociateTrustStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateNetworkSettingsOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the network settings.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
 }
 impl AssociateNetworkSettingsOutput {
@@ -2458,8 +2503,10 @@ impl AssociateNetworkSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateBrowserSettingsOutput {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
 }
 impl AssociateBrowserSettingsOutput {

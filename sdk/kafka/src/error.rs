@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnauthorizedException {
@@ -93,8 +95,10 @@ impl UnauthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequestsException {
@@ -181,8 +185,10 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
@@ -269,8 +275,10 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
@@ -357,8 +365,10 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerErrorException {
@@ -445,8 +455,10 @@ impl InternalServerErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {
@@ -533,8 +545,10 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
@@ -621,8 +635,10 @@ impl BadRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>The parameter that caused the error.</p>
+    #[doc(hidden)]
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {

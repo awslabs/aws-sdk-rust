@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnrecognizedPublicKeyEncodingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnrecognizedPublicKeyEncodingException {
@@ -69,6 +70,7 @@ impl UnrecognizedPublicKeyEncodingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchEntityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchEntityException {
@@ -133,6 +135,7 @@ impl NoSuchEntityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -197,6 +200,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPublicKeyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPublicKeyException {
@@ -261,6 +265,7 @@ impl InvalidPublicKeyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateSshPublicKeyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateSshPublicKeyException {
@@ -328,6 +333,7 @@ impl DuplicateSshPublicKeyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceFailureException {
@@ -392,6 +398,7 @@ impl ServiceFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedCertificateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedCertificateException {
@@ -456,6 +463,7 @@ impl MalformedCertificateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCertificateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCertificateException {
@@ -520,6 +528,7 @@ impl InvalidCertificateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityAlreadyExistsException {
@@ -584,6 +593,7 @@ impl EntityAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateCertificateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateCertificateException {
@@ -648,6 +658,7 @@ impl DuplicateCertificateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyPairMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeyPairMismatchException {
@@ -712,6 +723,7 @@ impl KeyPairMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInputException {
@@ -776,6 +788,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -840,6 +853,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityTemporarilyUnmodifiableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityTemporarilyUnmodifiableException {
@@ -904,6 +918,7 @@ impl EntityTemporarilyUnmodifiableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnmodifiableEntityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnmodifiableEntityException {
@@ -968,6 +983,7 @@ impl UnmodifiableEntityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PasswordPolicyViolationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PasswordPolicyViolationException {
@@ -1032,6 +1048,7 @@ impl PasswordPolicyViolationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedPolicyDocumentException {
@@ -1096,6 +1113,7 @@ impl MalformedPolicyDocumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyEvaluationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyEvaluationException {
@@ -1160,6 +1178,7 @@ impl PolicyEvaluationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthenticationCodeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAuthenticationCodeException {
@@ -1224,6 +1243,7 @@ impl InvalidAuthenticationCodeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotAttachableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyNotAttachableException {
@@ -1288,6 +1308,7 @@ impl PolicyNotAttachableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceNotSupportedException {
@@ -1352,6 +1373,7 @@ impl ServiceNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialReportNotReadyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CredentialReportNotReadyException {
@@ -1416,6 +1438,7 @@ impl CredentialReportNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialReportNotPresentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CredentialReportNotPresentException {
@@ -1480,6 +1503,7 @@ impl CredentialReportNotPresentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialReportExpiredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CredentialReportExpiredException {
@@ -1544,6 +1568,7 @@ impl CredentialReportExpiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportGenerationLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReportGenerationLimitExceededException {
@@ -1608,6 +1633,7 @@ impl ReportGenerationLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteConflictException {
@@ -1672,6 +1698,7 @@ impl DeleteConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUserTypeException {

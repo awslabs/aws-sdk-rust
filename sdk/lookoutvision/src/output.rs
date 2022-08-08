@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetEntriesOutput {
     /// <p>The status of the dataset update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
 impl UpdateDatasetEntriesOutput {
@@ -121,6 +122,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopModelOutput {
     /// <p>The status of the model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelHostingStatus>,
 }
 impl StopModelOutput {
@@ -178,6 +180,7 @@ impl StopModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartModelPackagingJobOutput {
     /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl StartModelPackagingJobOutput {
@@ -232,6 +235,7 @@ impl StartModelPackagingJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartModelOutput {
     /// <p>The current running status of the model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelHostingStatus>,
 }
 impl StartModelOutput {
@@ -289,6 +293,7 @@ impl StartModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A map of tag keys and values attached to the specified model.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -350,8 +355,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>A list of projects in your AWS account.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectMetadata>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -432,8 +439,10 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelsOutput {
     /// <p>A list of model versions in the specified project. </p>
+    #[doc(hidden)]
     pub models: std::option::Option<std::vec::Vec<crate::model::ModelMetadata>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelsOutput {
@@ -514,9 +523,11 @@ impl ListModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelPackagingJobsOutput {
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+    #[doc(hidden)]
     pub model_packaging_jobs:
         std::option::Option<std::vec::Vec<crate::model::ModelPackagingJobMetadata>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelPackagingJobsOutput {
@@ -603,8 +614,10 @@ impl ListModelPackagingJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesOutput {
     /// <p>A list of the entries (JSON Lines) within the dataset.</p>
+    #[doc(hidden)]
     pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetEntriesOutput {
@@ -685,6 +698,7 @@ impl ListDatasetEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectAnomaliesOutput {
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
+    #[doc(hidden)]
     pub detect_anomaly_result: std::option::Option<crate::model::DetectAnomalyResult>,
 }
 impl DetectAnomaliesOutput {
@@ -742,6 +756,7 @@ impl DetectAnomaliesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The description of the project.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<crate::model::ProjectDescription>,
 }
 impl DescribeProjectOutput {
@@ -799,6 +814,7 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelPackagingJobOutput {
     /// <p>The description of the model packaging job. </p>
+    #[doc(hidden)]
     pub model_packaging_description: std::option::Option<crate::model::ModelPackagingDescription>,
 }
 impl DescribeModelPackagingJobOutput {
@@ -865,6 +881,7 @@ impl DescribeModelPackagingJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelOutput {
     /// <p>Contains the description of the model.</p>
+    #[doc(hidden)]
     pub model_description: std::option::Option<crate::model::ModelDescription>,
 }
 impl DescribeModelOutput {
@@ -922,6 +939,7 @@ impl DescribeModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>The description of the requested dataset. </p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<crate::model::DatasetDescription>,
 }
 impl DescribeDatasetOutput {
@@ -979,6 +997,7 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectOutput {
@@ -1033,6 +1052,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
 }
 impl DeleteModelOutput {
@@ -1117,6 +1137,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>Information about the project.</p>
+    #[doc(hidden)]
     pub project_metadata: std::option::Option<crate::model::ProjectMetadata>,
 }
 impl CreateProjectOutput {
@@ -1174,6 +1195,7 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelOutput {
     /// <p>The response from a call to <code>CreateModel</code>.</p>
+    #[doc(hidden)]
     pub model_metadata: std::option::Option<crate::model::ModelMetadata>,
 }
 impl CreateModelOutput {
@@ -1231,6 +1253,7 @@ impl CreateModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>Information about the dataset.</p>
+    #[doc(hidden)]
     pub dataset_metadata: std::option::Option<crate::model::DatasetMetadata>,
 }
 impl CreateDatasetOutput {

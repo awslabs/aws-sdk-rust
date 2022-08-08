@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -69,6 +70,7 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContainerNotFoundException {
@@ -133,6 +135,7 @@ impl ContainerNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestedRangeNotSatisfiableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestedRangeNotSatisfiableException {
@@ -197,6 +200,7 @@ impl RequestedRangeNotSatisfiableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ObjectNotFoundException {

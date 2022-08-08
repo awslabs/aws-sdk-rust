@@ -94,6 +94,7 @@ impl StopAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRecommendationReportGenerationOutput {
     /// <p> The ID of the recommendation report generation task. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartRecommendationReportGenerationOutput {
@@ -146,6 +147,7 @@ impl StartRecommendationReportGenerationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportFileTaskOutput {
     /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartImportFileTaskOutput {
@@ -198,6 +200,7 @@ impl StartImportFileTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentOutput {
     /// <p> The ID of the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl StartAssessmentOutput {
@@ -285,8 +288,10 @@ impl PutPortfolioPreferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServersOutput {
     /// <p> The list of servers with detailed information about each server. </p>
+    #[doc(hidden)]
     pub server_infos: std::option::Option<std::vec::Vec<crate::model::ServerDetail>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServersOutput {
@@ -367,8 +372,10 @@ impl ListServersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportFileTaskOutput {
     /// <p> Lists information about the files you import.</p>
+    #[doc(hidden)]
     pub task_infos: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImportFileTaskOutput {
@@ -450,8 +457,10 @@ impl ListImportFileTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectorsOutput {
     /// <p> The list of all the installed collectors. </p>
+    #[doc(hidden)]
     pub collectors: std::option::Option<std::vec::Vec<crate::model::Collector>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCollectorsOutput {
@@ -532,9 +541,11 @@ impl ListCollectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationComponentsOutput {
     /// <p> The list of application components with detailed information about each component. </p>
+    #[doc(hidden)]
     pub application_component_infos:
         std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationComponentsOutput {
@@ -624,6 +635,7 @@ impl ListApplicationComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServerStrategiesOutput {
     /// <p> A list of strategy recommendations for the server. </p>
+    #[doc(hidden)]
     pub server_strategies: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
 }
 impl GetServerStrategiesOutput {
@@ -688,10 +700,13 @@ impl GetServerStrategiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServerDetailsOutput {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Detailed information about the server. </p>
+    #[doc(hidden)]
     pub server_detail: std::option::Option<crate::model::ServerDetail>,
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
+    #[doc(hidden)]
     pub associated_applications:
         std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
 }
@@ -799,8 +814,10 @@ impl GetServerDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationReportDetailsOutput {
     /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> Detailed information about the recommendation report. </p>
+    #[doc(hidden)]
     pub recommendation_report_details:
         std::option::Option<crate::model::RecommendationReportDetails>,
 }
@@ -885,6 +902,7 @@ impl GetRecommendationReportDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPortfolioSummaryOutput {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    #[doc(hidden)]
     pub assessment_summary: std::option::Option<crate::model::AssessmentSummary>,
 }
 impl GetPortfolioSummaryOutput {
@@ -942,10 +960,13 @@ impl GetPortfolioSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
+    #[doc(hidden)]
     pub prioritize_business_goals: std::option::Option<crate::model::PrioritizeBusinessGoals>,
     /// <p> The transformation preferences for non-database applications. </p>
+    #[doc(hidden)]
     pub application_preferences: std::option::Option<crate::model::ApplicationPreferences>,
     /// <p> The transformation preferences for database applications. </p>
+    #[doc(hidden)]
     pub database_preferences: std::option::Option<crate::model::DatabasePreferences>,
 }
 impl GetPortfolioPreferencesOutput {
@@ -1055,26 +1076,37 @@ impl GetPortfolioPreferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportFileTaskOutput {
     /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> Status of import file task. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImportFileTaskStatus>,
     /// <p> Start time of the import task. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The S3 bucket where import file is located. </p>
+    #[doc(hidden)]
     pub input_s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
+    #[doc(hidden)]
     pub input_s3_key: std::option::Option<std::string::String>,
     /// <p> The S3 bucket name for status report of import task. </p>
+    #[doc(hidden)]
     pub status_report_s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
+    #[doc(hidden)]
     pub status_report_s3_key: std::option::Option<std::string::String>,
     /// <p> The time that the import task completed. </p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The number of records successfully imported. </p>
+    #[doc(hidden)]
     pub number_of_records_success: std::option::Option<i32>,
     /// <p> The number of records that failed to be imported. </p>
+    #[doc(hidden)]
     pub number_of_records_failed: std::option::Option<i32>,
     /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
+    #[doc(hidden)]
     pub import_name: std::option::Option<std::string::String>,
 }
 impl GetImportFileTaskOutput {
@@ -1317,8 +1349,10 @@ impl GetImportFileTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentOutput {
     /// <p> The ID for the specific assessment task. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> Detailed information about the assessment. </p>
+    #[doc(hidden)]
     pub data_collection_details: std::option::Option<crate::model::DataCollectionDetails>,
 }
 impl GetAssessmentOutput {
@@ -1399,6 +1433,7 @@ impl GetAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
+    #[doc(hidden)]
     pub application_component_strategies:
         std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
 }
@@ -1472,13 +1507,17 @@ impl GetApplicationComponentStrategiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationComponentDetailsOutput {
     /// <p> Detailed information about an application component. </p>
+    #[doc(hidden)]
     pub application_component_detail: std::option::Option<crate::model::ApplicationComponentDetail>,
     /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
+    #[doc(hidden)]
     pub associated_applications:
         std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
     /// <p> Set to true if the application component belongs to more than one application group. </p>
+    #[doc(hidden)]
     pub more_application_resource: std::option::Option<bool>,
     /// <p> A list of the IDs of the servers on which the application component is running. </p>
+    #[doc(hidden)]
     pub associated_server_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetApplicationComponentDetailsOutput {

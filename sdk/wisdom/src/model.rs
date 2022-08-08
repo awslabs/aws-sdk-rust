@@ -5,27 +5,38 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseData {
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
     /// <p>The name of the knowledge base.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
     /// <p>The status of the knowledge base.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
     /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
+    #[doc(hidden)]
     pub last_content_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Source configuration information about the knowledge base.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
+    #[doc(hidden)]
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -315,6 +326,7 @@ impl KnowledgeBaseData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
@@ -374,6 +386,7 @@ pub struct RenderingConfiguration {
     /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
     /// </ul>
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
+    #[doc(hidden)]
     pub template_uri: std::option::Option<std::string::String>,
 }
 impl RenderingConfiguration {
@@ -482,6 +495,7 @@ impl SourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppIntegrationsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
+    #[doc(hidden)]
     pub app_integration_arn: std::option::Option<std::string::String>,
     /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
     /// <ul>
@@ -489,6 +503,7 @@ pub struct AppIntegrationsConfiguration {
     /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
+    #[doc(hidden)]
     pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AppIntegrationsConfiguration {
@@ -720,27 +735,38 @@ impl AsRef<str> for KnowledgeBaseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentSummary {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    #[doc(hidden)]
     pub content_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the content.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the revision of the content.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The title of the content.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The media type of the content.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The status of the content.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1098,6 +1124,7 @@ impl AsRef<str> for ContentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchExpression {
     /// <p>The search expression filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl SearchExpression {
@@ -1161,10 +1188,13 @@ impl SearchExpression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The field on which to filter.</p>
+    #[doc(hidden)]
     pub field: std::option::Option<crate::model::FilterField>,
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The desired field value on which to filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -1358,25 +1388,35 @@ impl AsRef<str> for FilterField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseSummary {
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
     /// <p>The name of the knowledge base.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
     /// <p>The status of the knowledge base summary.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
     /// <p>Configuration information about the external data source.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
+    #[doc(hidden)]
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The description of the knowledge base.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1641,34 +1681,48 @@ impl KnowledgeBaseSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    #[doc(hidden)]
     pub content_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the content.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the content revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The title of the content.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The media type of the content.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The status of the content.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The URI of the content.</p>
+    #[doc(hidden)]
     pub link_out_uri: std::option::Option<std::string::String>,
     /// <p>The URL of the content.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    #[doc(hidden)]
     pub url_expiry: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ContentData {
@@ -1996,12 +2050,16 @@ impl ContentData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_arn: std::option::Option<std::string::String>,
 }
 impl SessionSummary {
@@ -2110,10 +2168,13 @@ impl SessionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultData {
     /// <p>The identifier of the result data.</p>
+    #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::Document>,
     /// <p>The relevance score of the results.</p>
+    #[doc(hidden)]
     pub relevance_score: f64,
 }
 impl ResultData {
@@ -2202,10 +2263,13 @@ impl ResultData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Document {
     /// <p>A reference to the content resource.</p>
+    #[doc(hidden)]
     pub content_reference: std::option::Option<crate::model::ContentReference>,
     /// <p>The title of the document.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<crate::model::DocumentText>,
     /// <p>The excerpt from the document.</p>
+    #[doc(hidden)]
     pub excerpt: std::option::Option<crate::model::DocumentText>,
 }
 impl Document {
@@ -2300,8 +2364,10 @@ impl Document {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentText {
     /// <p>Text in the document.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Highlights in the document text.</p>
+    #[doc(hidden)]
     pub highlights: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
 }
 impl DocumentText {
@@ -2382,8 +2448,10 @@ impl DocumentText {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Highlight {
     /// <p>The offset for the start of the highlight.</p>
+    #[doc(hidden)]
     pub begin_offset_inclusive: i32,
     /// <p>The offset for the end of the highlight.</p>
+    #[doc(hidden)]
     pub end_offset_exclusive: i32,
 }
 impl Highlight {
@@ -2455,12 +2523,16 @@ impl Highlight {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    #[doc(hidden)]
     pub content_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the content.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
 }
 impl ContentReference {
@@ -2572,8 +2644,10 @@ impl ContentReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyRecommendationsReceivedError {
     /// <p>The identifier of the recommendation that is in error.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>A recommendation is causing an error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotifyRecommendationsReceivedError {
@@ -2648,18 +2722,23 @@ impl NotifyRecommendationsReceivedError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationTrigger {
     /// <p>The identifier of the recommendation trigger.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of recommendation trigger.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecommendationTriggerType>,
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
     /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
     /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::RecommendationSourceType>,
     /// <p>A union type containing information related to the trigger.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<crate::model::RecommendationTriggerData>,
     /// <p>The identifiers of the recommendations.</p>
+    #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RecommendationTrigger {
@@ -2851,6 +2930,7 @@ impl RecommendationTriggerData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryRecommendationTriggerData {
     /// <p>The text associated with the recommendation trigger.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl QueryRecommendationTriggerData {
@@ -3013,14 +3093,19 @@ impl AsRef<str> for RecommendationTriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationData {
     /// <p>The identifier of the recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The recommended document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::Document>,
     /// <p>The relevance score of the recommendation.</p>
+    #[doc(hidden)]
     pub relevance_score: f64,
     /// <p>The relevance level of the recommendation.</p>
+    #[doc(hidden)]
     pub relevance_level: std::option::Option<crate::model::RelevanceLevel>,
     /// <p>The type of recommendation.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecommendationType>,
 }
 impl RecommendationData {
@@ -3262,21 +3347,29 @@ impl AsRef<str> for RelevanceLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assistant.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the assistant.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AssistantType>,
     /// <p>The status of the assistant.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssistantStatus>,
     /// <p>The description of the assistant.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
@@ -3618,21 +3711,29 @@ impl AsRef<str> for AssistantType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of assistant.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AssistantType>,
     /// <p>The status of the assistant.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssistantStatus>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
@@ -3845,14 +3946,19 @@ impl AssistantData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The name of the session.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the session.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3996,18 +4102,25 @@ impl SessionData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssistantAssociationSummary {
     /// <p>The identifier of the assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The type of association.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::AssociationType>,
     /// <p>The association data.</p>
+    #[doc(hidden)]
     pub association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4245,8 +4358,10 @@ impl AssistantAssociationOutputData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnowledgeBaseAssociationData {
     /// <p>The identifier of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base_arn: std::option::Option<std::string::String>,
 }
 impl KnowledgeBaseAssociationData {
@@ -4375,18 +4490,25 @@ impl AsRef<str> for AssociationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
     pub assistant_arn: std::option::Option<std::string::String>,
     /// <p>The type of association.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::AssociationType>,
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
+    #[doc(hidden)]
     pub association_data: std::option::Option<crate::model::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

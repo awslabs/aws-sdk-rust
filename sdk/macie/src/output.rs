@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateS3ResourcesOutput {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl UpdateS3ResourcesOutput {
@@ -68,8 +69,10 @@ impl UpdateS3ResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListS3ResourcesOutput {
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
+    #[doc(hidden)]
     pub s3_resources: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListS3ResourcesOutput {
@@ -151,8 +154,10 @@ impl ListS3ResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsOutput {
     /// <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
+    #[doc(hidden)]
     pub member_accounts: std::option::Option<std::vec::Vec<crate::model::MemberAccount>>,
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMemberAccountsOutput {
@@ -233,6 +238,7 @@ impl ListMemberAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateS3ResourcesOutput {
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    #[doc(hidden)]
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl DisassociateS3ResourcesOutput {
@@ -327,6 +333,7 @@ impl DisassociateMemberAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateS3ResourcesOutput {
     /// <p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl AssociateS3ResourcesOutput {

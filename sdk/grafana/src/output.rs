@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
+    #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
     /// <p>The token to use when requesting the next set of workspaces.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkspacesOutput {
@@ -86,6 +88,7 @@ impl ListWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl CreateWorkspaceOutput {
@@ -143,6 +146,7 @@ impl CreateWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceOutput {
     /// <p>A structure containing information about the workspace that was deleted.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DeleteWorkspaceOutput {
@@ -200,6 +204,7 @@ impl DeleteWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl UpdateWorkspaceOutput {
@@ -257,6 +262,7 @@ impl UpdateWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceOutput {
     /// <p>A structure containing information about the workspace.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DescribeWorkspaceOutput {
@@ -314,6 +320,7 @@ impl DescribeWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
 }
 impl UpdatePermissionsOutput {
@@ -377,8 +384,10 @@ impl UpdatePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The permissions returned by the operation.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
 }
 impl ListPermissionsOutput {
@@ -459,6 +468,7 @@ impl ListPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLicenseOutput {
     /// <p>A structure containing information about the workspace.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DisassociateLicenseOutput {
@@ -516,6 +526,7 @@ impl DisassociateLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLicenseOutput {
     /// <p>A structure containing data about the workspace.</p>
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl AssociateLicenseOutput {
@@ -573,6 +584,7 @@ impl AssociateLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
 impl UpdateWorkspaceAuthenticationOutput {
@@ -630,6 +642,7 @@ impl UpdateWorkspaceAuthenticationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceAuthenticationOutput {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
 impl DescribeWorkspaceAuthenticationOutput {
@@ -687,8 +700,10 @@ impl DescribeWorkspaceAuthenticationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the API key that was deleted.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace where the key was deleted.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceApiKeyOutput {
@@ -760,10 +775,13 @@ impl DeleteWorkspaceApiKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The key token that was created. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace that the key is valid for.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceApiKeyOutput {
@@ -912,6 +930,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags that are associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

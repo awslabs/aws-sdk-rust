@@ -27299,6 +27299,7 @@ pub struct UpdateServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub setting_id: std::option::Option<std::string::String>,
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
@@ -27310,6 +27311,7 @@ pub struct UpdateServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub setting_value: std::option::Option<std::string::String>,
 }
 impl UpdateServiceSettingInput {
@@ -27354,10 +27356,13 @@ impl std::fmt::Debug for UpdateServiceSettingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceDataSyncInput {
     /// <p>The name of the resource data sync you want to update.</p>
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Specify information about the data sources to synchronize.</p>
+    #[doc(hidden)]
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSource>,
 }
 impl UpdateResourceDataSyncInput {
@@ -27389,34 +27394,46 @@ impl std::fmt::Debug for UpdateResourceDataSyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePatchBaselineInput {
     /// <p>The ID of the patch baseline to update.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch baseline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A set of global filters used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub global_filters: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+    #[doc(hidden)]
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
     /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
     /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>A description of the patch baseline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
     /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    #[doc(hidden)]
     pub replace: std::option::Option<bool>,
 }
 impl UpdatePatchBaselineInput {
@@ -27507,12 +27524,15 @@ impl std::fmt::Debug for UpdatePatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to add to an OpsMetadata object.</p>
+    #[doc(hidden)]
     pub metadata_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
     >,
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    #[doc(hidden)]
     pub keys_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOpsMetadataInput {
@@ -27548,6 +27568,7 @@ impl std::fmt::Debug for UpdateOpsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpsItemInput {
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
@@ -27555,34 +27576,48 @@ pub struct UpdateOpsItemInput {
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
     /// <p>Keys that you want to remove from the OperationalData map.</p>
+    #[doc(hidden)]
     pub operational_data_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    #[doc(hidden)]
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>Specify a new category for an OpsItem.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>Specify a new severity for an OpsItem.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateOpsItemInput {
@@ -27686,8 +27721,10 @@ impl std::fmt::Debug for UpdateOpsItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateManagedInstanceRoleInput {
     /// <p>The ID of the managed node where you want to update the role.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The IAM role you want to assign or change.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
 }
 impl UpdateManagedInstanceRoleInput {
@@ -27714,14 +27751,18 @@ impl std::fmt::Debug for UpdateManagedInstanceRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTaskInput {
     /// <p>The maintenance window ID that contains the task to modify.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The task ID to modify.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
     /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>. </p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The task ARN to modify.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
@@ -27729,6 +27770,7 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The parameters to modify.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -27736,6 +27778,7 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <p>The map has the following format:</p>
     /// <p>Key: string, between 1 and 255 characters</p>
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -27745,29 +27788,37 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p> <important>
     /// <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
     /// </important>
+    #[doc(hidden)]
     pub task_invocation_parameters:
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task, in parallel.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The new logging location in Amazon S3 to specify.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The new task name to specify.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new task description to specify.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    #[doc(hidden)]
     pub replace: std::option::Option<bool>,
     /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     /// <ul>
@@ -27778,6 +27829,7 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl UpdateMaintenanceWindowTaskInput {
@@ -27913,18 +27965,25 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTargetInput {
     /// <p>The maintenance window ID with which to modify the target.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The target ID to modify.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The targets to add or replace.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>A name for the update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    #[doc(hidden)]
     pub replace: std::option::Option<bool>,
 }
 impl UpdateMaintenanceWindowTargetInput {
@@ -27976,33 +28035,46 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowInput {
     /// <p>The ID of the maintenance window to update.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the update request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    #[doc(hidden)]
     pub schedule_timezone: std::option::Option<std::string::String>,
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
     /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    #[doc(hidden)]
     pub cutoff: std::option::Option<i32>,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    #[doc(hidden)]
     pub allow_unassociated_targets: std::option::Option<bool>,
     /// <p>Whether the maintenance window is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
+    #[doc(hidden)]
     pub replace: std::option::Option<bool>,
 }
 impl UpdateMaintenanceWindowInput {
@@ -28090,10 +28162,13 @@ impl std::fmt::Debug for UpdateMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentMetadataInput {
     /// <p>The name of the change template for which a version's metadata is to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of a change template in which to update approval metadata.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The change template review details to update.</p>
+    #[doc(hidden)]
     pub document_reviews: std::option::Option<crate::model::DocumentReviews>,
 }
 impl UpdateDocumentMetadataInput {
@@ -28125,8 +28200,10 @@ impl std::fmt::Debug for UpdateDocumentMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentDefaultVersionInput {
     /// <p>The name of a custom document that you want to set as the default version.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of a custom document that you want to set as the default version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
 }
 impl UpdateDocumentDefaultVersionInput {
@@ -28153,22 +28230,30 @@ impl std::fmt::Debug for UpdateDocumentDefaultVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentInput {
     /// <p>A valid JSON or YAML string.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentsSource>>,
     /// <p>The name of the SSM document that you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>Specify a new target type for the document.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
 }
 impl UpdateDocumentInput {
@@ -28227,10 +28312,13 @@ impl std::fmt::Debug for UpdateDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssociationStatusInput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association status.</p>
+    #[doc(hidden)]
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
 }
 impl UpdateAssociationStatusInput {
@@ -28262,18 +28350,23 @@ impl std::fmt::Debug for UpdateAssociationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssociationInput {
     /// <p>The ID of the association you want to update. </p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The document version you want update for the association. </p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The cron expression used to schedule the association that you want to update.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
@@ -28282,40 +28375,54 @@ pub struct UpdateAssociationInput {
     /// <p>For example:</p>
     /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The targets of the association.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The name of the association that you want to update.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
+    #[doc(hidden)]
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    #[doc(hidden)]
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
     /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
     /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -28465,10 +28572,13 @@ impl std::fmt::Debug for UpdateAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlabelParameterVersionInput {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
+    #[doc(hidden)]
     pub parameter_version: std::option::Option<i64>,
     /// <p>One or more labels to delete from the specified parameter version.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnlabelParameterVersionInput {
@@ -28500,6 +28610,7 @@ impl std::fmt::Debug for UnlabelParameterVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateSessionInput {
     /// <p>The ID of the session to terminate.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl TerminateSessionInput {
@@ -28521,8 +28632,10 @@ impl std::fmt::Debug for TerminateSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAutomationExecutionInput {
     /// <p>The execution ID of the Automation to stop.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StopType>,
 }
 impl StopAutomationExecutionInput {
@@ -28549,12 +28662,16 @@ impl std::fmt::Debug for StopAutomationExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSessionInput {
     /// <p>The managed node to connect to for the session.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -28599,37 +28716,48 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
+    #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the change template document to run during the runbook workflow.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the change template document to run during the runbook workflow.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
+    #[doc(hidden)]
     pub change_request_name: std::option::Option<std::string::String>,
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub auto_approve: bool,
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
+    #[doc(hidden)]
     pub runbooks: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
+    #[doc(hidden)]
     pub scheduled_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
+    #[doc(hidden)]
     pub change_details: std::option::Option<std::string::String>,
 }
 impl StartChangeRequestExecutionInput {
@@ -28716,33 +28844,44 @@ impl std::fmt::Debug for StartChangeRequestExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAutomationExecutionInput {
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the Automation runbook to use for this execution.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ExecutionMode>,
     /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
+    #[doc(hidden)]
     pub target_parameter_name: std::option::Option<std::string::String>,
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -28751,6 +28890,7 @@ pub struct StartAutomationExecutionInput {
     /// </ul> <note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartAutomationExecutionInput {
@@ -28842,6 +28982,7 @@ impl std::fmt::Debug for StartAutomationExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssociationsOnceInput {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
+    #[doc(hidden)]
     pub association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartAssociationsOnceInput {
@@ -28865,51 +29006,68 @@ pub struct SendCommandInput {
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
     /// </note>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p>--document-version "\$DEFAULT"</p>
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_hash: std::option::Option<std::string::String>,
     /// <p>Sha256 or Sha1.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_hash_type: std::option::Option<crate::model::DocumentHashType>,
     /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
+    #[doc(hidden)]
     pub timeout_seconds: std::option::Option<i32>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The required and optional parameters specified in the document being run.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+    #[doc(hidden)]
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications.</p>
+    #[doc(hidden)]
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
 impl SendCommandInput {
@@ -29030,8 +29188,10 @@ impl std::fmt::Debug for SendCommandInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAutomationSignalInput {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The type of signal to send to an Automation execution. </p>
+    #[doc(hidden)]
     pub signal_type: std::option::Option<crate::model::SignalType>,
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
@@ -29040,6 +29200,7 @@ pub struct SendAutomationSignalInput {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
+    #[doc(hidden)]
     pub payload: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -29083,6 +29244,7 @@ impl std::fmt::Debug for SendAutomationSignalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeSessionInput {
     /// <p>The ID of the disconnected session to resume.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl ResumeSessionInput {
@@ -29113,6 +29275,7 @@ pub struct ResetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub setting_id: std::option::Option<std::string::String>,
 }
 impl ResetServiceSettingInput {
@@ -29145,6 +29308,7 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
     /// <p>ManagedInstance: mi-012345abcde</p>
@@ -29155,8 +29319,10 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Tag keys that you want to remove from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -29198,6 +29364,7 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the task should be added to.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -29214,8 +29381,10 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code> </p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The ARN of the task to run.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
     /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
@@ -29223,12 +29392,15 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The type of task being registered.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -29236,29 +29408,37 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
         >,
     >,
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
+    #[doc(hidden)]
     pub task_invocation_parameters:
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>An optional name for the task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the task.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>User-provided idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     /// <ul>
@@ -29269,6 +29449,7 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
     /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl RegisterTaskWithMaintenanceWindowInput {
@@ -29411,8 +29592,10 @@ impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTargetWithMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the target should be registered with.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The type of target being registered with the maintenance window.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
     /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
@@ -29455,14 +29638,19 @@ pub struct RegisterTargetWithMaintenanceWindowInput {
     /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>An optional name for the target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the target.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>User-provided idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl RegisterTargetWithMaintenanceWindowInput {
@@ -29556,8 +29744,10 @@ impl std::fmt::Debug for RegisterTargetWithMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPatchBaselineForPatchGroupInput {
     /// <p>The ID of the patch baseline to register with the patch group.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group to be registered with the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl RegisterPatchBaselineForPatchGroupInput {
@@ -29584,6 +29774,7 @@ impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDefaultPatchBaselineInput {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl RegisterDefaultPatchBaselineInput {
@@ -29617,14 +29808,17 @@ pub struct PutParameterInput {
     /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of parameter that you want to add to the system.</p> <note>
     /// <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
@@ -29632,6 +29826,7 @@ pub struct PutParameterInput {
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
     /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
     /// </important>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ParameterType>,
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the <code>SecureString</code> data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.</p>
@@ -29639,10 +29834,13 @@ pub struct PutParameterInput {
     /// <li> <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with your default KMS key.</p> </li>
     /// <li> <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub overwrite: std::option::Option<bool>,
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
+    #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -29652,6 +29850,7 @@ pub struct PutParameterInput {
     /// </ul> <note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The parameter tier to assign to a parameter.</p>
     /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account. Standard parameters are offered at no additional cost. </p>
@@ -29672,12 +29871,14 @@ pub struct PutParameterInput {
     /// <li> <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p> </li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ParameterTier>,
     /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
     /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the expiration date. You can update the expiration date and time by updating the policy. Updating the <i>parameter</i> doesn't affect the expiration date and time. When the expiration time is reached, Parameter Store deletes the parameter.</p>
     /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the expiration. By using this policy, you can receive notification before or after the expiration time is reached, in units of days or hours.</p>
     /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a specified period of time. This policy type is useful when, for example, a secret needs to be changed within a period of time, but it hasn't been changed.</p>
     /// <p>All existing policies are preserved until you send new policies or an empty policy. For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a>. </p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::string::String>,
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
     /// <p> <b>The following data type values are supported.</b> </p>
@@ -29687,6 +29888,7 @@ pub struct PutParameterInput {
     /// <li> <p> <code>aws:ssm:integration</code> </p> </li>
     /// </ul>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl PutParameterInput {
@@ -29820,8 +30022,10 @@ impl std::fmt::Debug for PutParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInventoryInput {
     /// <p>An managed node ID where you want to add or update inventory items.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::InventoryItem>>,
 }
 impl PutInventoryInput {
@@ -29848,21 +30052,28 @@ impl std::fmt::Debug for PutInventoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutComplianceItemsInput {
     /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    #[doc(hidden)]
     pub execution_summary: std::option::Option<crate::model::ComplianceExecutionSummary>,
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ComplianceItemEntry>>,
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
+    #[doc(hidden)]
     pub item_content_hash: std::option::Option<std::string::String>,
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
     /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
+    #[doc(hidden)]
     pub upload_type: std::option::Option<crate::model::ComplianceUploadType>,
 }
 impl PutComplianceItemsInput {
@@ -29919,14 +30130,19 @@ impl std::fmt::Debug for PutComplianceItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDocumentPermissionInput {
     /// <p>The name of the document that you want to share.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::DocumentPermissionType>,
     /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    #[doc(hidden)]
     pub account_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    #[doc(hidden)]
     pub account_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
+    #[doc(hidden)]
     pub shared_document_version: std::option::Option<std::string::String>,
 }
 impl ModifyDocumentPermissionInput {
@@ -29968,8 +30184,10 @@ impl std::fmt::Debug for ModifyDocumentPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Returns a list of tags for a specific resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The resource ID for which you want to see a list of tags.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -29996,10 +30214,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDataSyncInput {
     /// <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceDataSyncInput {
@@ -30031,10 +30252,13 @@ impl std::fmt::Debug for ListResourceDataSyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceComplianceSummariesInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ComplianceStringFilter>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceComplianceSummariesInput {
@@ -30066,10 +30290,13 @@ impl std::fmt::Debug for ListResourceComplianceSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsMetadataInput {
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsMetadataFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOpsMetadataInput {
@@ -30101,12 +30328,16 @@ impl std::fmt::Debug for ListOpsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemRelatedItemsInput {
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOpsItemRelatedItemsInput {
@@ -30143,10 +30374,13 @@ impl std::fmt::Debug for ListOpsItemRelatedItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemEventsInput {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsItemEventFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOpsItemEventsInput {
@@ -30178,14 +30412,19 @@ impl std::fmt::Debug for ListOpsItemEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInventoryEntriesInput {
     /// <p>The managed node ID for which you want inventory information.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of inventory item for which you want information.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInventoryEntriesInput {
@@ -30227,10 +30466,13 @@ impl std::fmt::Debug for ListInventoryEntriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentVersionsInput {
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentVersionsInput {
@@ -30262,14 +30504,18 @@ impl std::fmt::Debug for ListDocumentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentsInput {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
+    #[doc(hidden)]
     pub document_filter_list: std::option::Option<std::vec::Vec<crate::model::DocumentFilter>>,
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DocumentKeyValuesFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentsInput {
@@ -30308,14 +30554,19 @@ impl std::fmt::Debug for ListDocumentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentMetadataHistoryInput {
     /// <p>The name of the change template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the change template.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadataEnum>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDocumentMetadataHistoryInput {
@@ -30357,10 +30608,13 @@ impl std::fmt::Debug for ListDocumentMetadataHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceSummariesInput {
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ComplianceStringFilter>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComplianceSummariesInput {
@@ -30392,14 +30646,19 @@ impl std::fmt::Debug for ListComplianceSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceItemsInput {
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ComplianceStringFilter>>,
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComplianceItemsInput {
@@ -30441,16 +30700,21 @@ impl std::fmt::Debug for ListComplianceItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCommandsInput {
     /// <p>(Optional) If provided, lists only the specified command.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
 }
 impl ListCommandsInput {
@@ -30494,16 +30758,22 @@ impl std::fmt::Debug for ListCommandsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCommandInvocationsInput {
     /// <p>(Optional) The invocations for a specific command ID.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Optional) The command execution details for a specific managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
+    #[doc(hidden)]
     pub details: bool,
 }
 impl ListCommandInvocationsInput {
@@ -30550,10 +30820,13 @@ impl std::fmt::Debug for ListCommandInvocationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationVersionsInput {
     /// <p>The association ID for which you want to view all versions.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationVersionsInput {
@@ -30587,11 +30860,14 @@ pub struct ListAssociationsInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub association_filter_list:
         std::option::Option<std::vec::Vec<crate::model::AssociationFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsInput {
@@ -30627,10 +30903,13 @@ impl std::fmt::Debug for ListAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelParameterVersionInput {
     /// <p>The parameter name on which you want to attach one or more labels.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
+    #[doc(hidden)]
     pub parameter_version: std::option::Option<i64>,
     /// <p>One or more labels to attach to the specified parameter version.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LabelParameterVersionInput {
@@ -30671,6 +30950,7 @@ pub struct GetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub setting_id: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingInput {
@@ -30701,8 +30981,10 @@ impl std::fmt::Debug for GetServiceSettingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
 impl GetPatchBaselineForPatchGroupInput {
@@ -30731,6 +31013,7 @@ pub struct GetPatchBaselineInput {
     /// <p>The ID of the patch baseline to retrieve.</p> <note>
     /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl GetPatchBaselineInput {
@@ -30754,21 +31037,27 @@ impl std::fmt::Debug for GetPatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Retrieve all parameters within a hierarchy.</p> <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub recursive: std::option::Option<bool>,
     /// <p>Filters to limit the request results.</p> <note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameter_filters: std::option::Option<std::vec::Vec<crate::model::ParameterStringFilter>>,
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+    #[doc(hidden)]
     pub with_decryption: std::option::Option<bool>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParametersByPathInput {
@@ -30821,8 +31110,10 @@ impl std::fmt::Debug for GetParametersByPathInput {
 pub struct GetParametersInput {
     /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    #[doc(hidden)]
     pub with_decryption: std::option::Option<bool>,
 }
 impl GetParametersInput {
@@ -30850,12 +31141,16 @@ impl std::fmt::Debug for GetParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParameterHistoryInput {
     /// <p>The name of the parameter for which you want to review history.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    #[doc(hidden)]
     pub with_decryption: std::option::Option<bool>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParameterHistoryInput {
@@ -30893,8 +31188,10 @@ impl std::fmt::Debug for GetParameterHistoryInput {
 pub struct GetParameterInput {
     /// <p>The name of the parameter you want to query.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    #[doc(hidden)]
     pub with_decryption: std::option::Option<bool>,
 }
 impl GetParameterInput {
@@ -30922,16 +31219,22 @@ impl std::fmt::Debug for GetParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsSummaryInput {
     /// <p>Specify the name of a resource data sync to get.</p>
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>Optional filters used to scope down the returned OpsData. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
+    #[doc(hidden)]
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
     /// <p>The OpsData data type to return.</p>
+    #[doc(hidden)]
     pub result_attributes: std::option::Option<std::vec::Vec<crate::model::OpsResultAttribute>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetOpsSummaryInput {
@@ -30978,10 +31281,13 @@ impl std::fmt::Debug for GetOpsSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsMetadataInput {
@@ -31013,6 +31319,7 @@ impl std::fmt::Debug for GetOpsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl GetOpsItemInput {
@@ -31034,8 +31341,10 @@ impl std::fmt::Debug for GetOpsItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowTaskInput {
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The maintenance window task ID to retrieve.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowTaskInput {
@@ -31062,10 +31371,13 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskInvocationInput {
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The invocation ID to retrieve.</p>
+    #[doc(hidden)]
     pub invocation_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowExecutionTaskInvocationInput {
@@ -31097,8 +31409,10 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowExecutionTaskInput {
@@ -31125,6 +31439,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowExecutionInput {
@@ -31146,6 +31461,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowInput {
     /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowInput {
@@ -31167,14 +31483,19 @@ impl std::fmt::Debug for GetMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInventorySchemaInput {
     /// <p>The type of inventory item to return.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
+    #[doc(hidden)]
     pub aggregator: bool,
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
+    #[doc(hidden)]
     pub sub_type: std::option::Option<bool>,
 }
 impl GetInventorySchemaInput {
@@ -31216,14 +31537,19 @@ impl std::fmt::Debug for GetInventorySchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInventoryInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
+    #[doc(hidden)]
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::InventoryAggregator>>,
     /// <p>The list of inventory item types to return.</p>
+    #[doc(hidden)]
     pub result_attributes: std::option::Option<std::vec::Vec<crate::model::ResultAttribute>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetInventoryInput {
@@ -31265,12 +31591,16 @@ impl std::fmt::Debug for GetInventoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentInput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The document version for which you want information.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
 }
 impl GetDocumentInput {
@@ -31307,10 +31637,13 @@ impl std::fmt::Debug for GetDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeployablePatchSnapshotForInstanceInput {
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Defines the basic information about a patch baseline override.</p>
+    #[doc(hidden)]
     pub baseline_override: std::option::Option<crate::model::BaselineOverride>,
 }
 impl GetDeployablePatchSnapshotForInstanceInput {
@@ -31342,6 +31675,7 @@ impl std::fmt::Debug for GetDeployablePatchSnapshotForInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultPatchBaselineInput {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
 impl GetDefaultPatchBaselineInput {
@@ -31363,6 +31697,7 @@ impl std::fmt::Debug for GetDefaultPatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionStatusInput {
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl GetConnectionStatusInput {
@@ -31384,11 +31719,14 @@ impl std::fmt::Debug for GetConnectionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommandInvocationInput {
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    #[doc(hidden)]
     pub plugin_name: std::option::Option<std::string::String>,
 }
 impl GetCommandInvocationInput {
@@ -31421,8 +31759,10 @@ impl std::fmt::Debug for GetCommandInvocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCalendarStateInput {
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
+    #[doc(hidden)]
     pub at_time: std::option::Option<std::string::String>,
 }
 impl GetCalendarStateInput {
@@ -31449,6 +31789,7 @@ impl std::fmt::Debug for GetCalendarStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutomationExecutionInput {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl GetAutomationExecutionInput {
@@ -31470,8 +31811,10 @@ impl std::fmt::Debug for GetAutomationExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateOpsItemRelatedItemInput {
     /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl DisassociateOpsItemRelatedItemInput {
@@ -31498,12 +31841,16 @@ impl std::fmt::Debug for DisassociateOpsItemRelatedItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSessionsInput {
     /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SessionState>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SessionFilter>>,
 }
 impl DescribeSessionsInput {
@@ -31540,14 +31887,19 @@ impl std::fmt::Debug for DescribeSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchPropertiesInput {
     /// <p>The operating system type for which to list patches.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The patch property for which you want to view patch details. </p>
+    #[doc(hidden)]
     pub property: std::option::Option<crate::model::PatchProperty>,
     /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
+    #[doc(hidden)]
     pub patch_set: std::option::Option<crate::model::PatchSet>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchPropertiesInput {
@@ -31589,6 +31941,7 @@ impl std::fmt::Debug for DescribePatchPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchGroupStateInput {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl DescribePatchGroupStateInput {
@@ -31610,6 +31963,7 @@ impl std::fmt::Debug for DescribePatchGroupStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchGroupsInput {
     /// <p>The maximum number of patch groups to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
@@ -31617,8 +31971,10 @@ pub struct DescribePatchGroupsInput {
     /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchGroupsInput {
@@ -31661,10 +32017,13 @@ pub struct DescribePatchBaselinesInput {
     /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patch baselines to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchBaselinesInput {
@@ -31702,12 +32061,16 @@ impl std::fmt::Debug for DescribePatchBaselinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersInput {
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ParametersFilter>>,
     /// <p>Filters to limit the request results.</p>
+    #[doc(hidden)]
     pub parameter_filters: std::option::Option<std::vec::Vec<crate::model::ParameterStringFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersInput {
@@ -31761,10 +32124,13 @@ pub struct DescribeOpsItemsInput {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+    #[doc(hidden)]
     pub ops_item_filters: std::option::Option<std::vec::Vec<crate::model::OpsItemFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOpsItemsInput {
@@ -31813,12 +32179,16 @@ impl std::fmt::Debug for DescribeOpsItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowTasksInput {
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTasksInput {
@@ -31855,12 +32225,16 @@ impl std::fmt::Debug for DescribeMaintenanceWindowTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowTargetsInput {
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTargetsInput {
@@ -31897,12 +32271,16 @@ impl std::fmt::Debug for DescribeMaintenanceWindowTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsForTargetInput {
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsForTargetInput {
@@ -31941,16 +32319,22 @@ impl std::fmt::Debug for DescribeMaintenanceWindowsForTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowScheduleInput {
     /// <p>The ID of the maintenance window to retrieve information about.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowScheduleInput {
@@ -31999,10 +32383,13 @@ impl std::fmt::Debug for DescribeMaintenanceWindowScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsInput {
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsInput {
@@ -32034,12 +32421,16 @@ impl std::fmt::Debug for DescribeMaintenanceWindowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionTasksInput {
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTasksInput {
@@ -32076,14 +32467,19 @@ impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsInput {
     /// <p>The ID of the maintenance window execution the task is part of.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
@@ -32126,16 +32522,20 @@ impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTaskInvocationsInput 
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionsInput {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionsInput {
@@ -32176,10 +32576,13 @@ impl std::fmt::Debug for DescribeMaintenanceWindowExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInventoryDeletionsInput {
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
+    #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeInventoryDeletionsInput {
@@ -32211,6 +32614,7 @@ impl std::fmt::Debug for DescribeInventoryDeletionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
@@ -32218,10 +32622,13 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// <li> <p>Values (array containing a single string)</p> </li>
     /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InstancePatchStateFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeInstancePatchStatesForPatchGroupInput {
@@ -32263,10 +32670,13 @@ impl std::fmt::Debug for DescribeInstancePatchStatesForPatchGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesInput {
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of managed nodes to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeInstancePatchStatesInput {
@@ -32298,6 +32708,7 @@ impl std::fmt::Debug for DescribeInstancePatchStatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchesInput {
     /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
@@ -32307,10 +32718,13 @@ pub struct DescribeInstancePatchesInput {
     /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
     /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeInstancePatchesInput {
@@ -32356,13 +32770,17 @@ pub struct DescribeInstanceInformationInput {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
+    #[doc(hidden)]
     pub instance_information_filter_list:
         std::option::Option<std::vec::Vec<crate::model::InstanceInformationFilter>>,
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InstanceInformationStringFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInformationInput {
@@ -32406,10 +32824,13 @@ impl std::fmt::Debug for DescribeInstanceInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAssociationsStatusInput {
     /// <p>The managed node IDs for which you want association status information.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAssociationsStatusInput {
@@ -32441,10 +32862,13 @@ impl std::fmt::Debug for DescribeInstanceAssociationsStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectivePatchesForPatchBaselineInput {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePatchesForPatchBaselineInput {
@@ -32476,10 +32900,13 @@ impl std::fmt::Debug for DescribeEffectivePatchesForPatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectiveInstanceAssociationsInput {
     /// <p>The managed node ID for which you want to view all associations.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectiveInstanceAssociationsInput {
@@ -32511,12 +32938,16 @@ impl std::fmt::Debug for DescribeEffectiveInstanceAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentPermissionInput {
     /// <p>The name of the document for which you are the owner.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::DocumentPermissionType>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentPermissionInput {
@@ -32553,10 +32984,13 @@ impl std::fmt::Debug for DescribeDocumentPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentInput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentInput {
@@ -32618,10 +33052,13 @@ pub struct DescribeAvailablePatchesInput {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patches to return (per page).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAvailablePatchesInput {
@@ -32683,14 +33120,19 @@ impl std::fmt::Debug for DescribeAvailablePatchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutomationStepExecutionsInput {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::StepExecutionFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
+    #[doc(hidden)]
     pub reverse_order: std::option::Option<bool>,
 }
 impl DescribeAutomationStepExecutionsInput {
@@ -32732,10 +33174,13 @@ impl std::fmt::Debug for DescribeAutomationStepExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutomationExecutionsInput {
     /// <p>Filters used to limit the scope of executions that are requested.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationExecutionsInput {
@@ -32767,18 +33212,23 @@ impl std::fmt::Debug for DescribeAutomationExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationExecutionTargetsInput {
     /// <p>The association ID that includes the execution for which you want to view details.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The execution ID for which you want to view details.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>Filters for the request. You can specify the following filters and values.</p>
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTargetsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionTargetsInput {
@@ -32825,15 +33275,19 @@ impl std::fmt::Debug for DescribeAssociationExecutionTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationExecutionsInput {
     /// <p>The association ID for which you want to view execution history details.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>Filters for the request. You can specify the following filters and values.</p>
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionsInput {
@@ -32873,12 +33327,16 @@ impl std::fmt::Debug for DescribeAssociationExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationInput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association ID for which you want information.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationInput {
@@ -32915,10 +33373,13 @@ impl std::fmt::Debug for DescribeAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivationsInput {
     /// <p>A filter to view information about your activations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DescribeActivationsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeActivationsInput {
@@ -32950,8 +33411,10 @@ impl std::fmt::Debug for DescribeActivationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTaskFromMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the task should be removed from.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the task to remove from the maintenance window.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
 }
 impl DeregisterTaskFromMaintenanceWindowInput {
@@ -32978,10 +33441,13 @@ impl std::fmt::Debug for DeregisterTaskFromMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTargetFromMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the target should be removed from.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the target definition to remove.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
+    #[doc(hidden)]
     pub safe: std::option::Option<bool>,
 }
 impl DeregisterTargetFromMaintenanceWindowInput {
@@ -33013,8 +33479,10 @@ impl std::fmt::Debug for DeregisterTargetFromMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterPatchBaselineForPatchGroupInput {
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl DeregisterPatchBaselineForPatchGroupInput {
@@ -33041,6 +33509,7 @@ impl std::fmt::Debug for DeregisterPatchBaselineForPatchGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterManagedInstanceInput {
     /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DeregisterManagedInstanceInput {
@@ -33062,8 +33531,10 @@ impl std::fmt::Debug for DeregisterManagedInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceDataSyncInput {
     /// <p>The name of the configuration to delete.</p>
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>Specify the type of resource data sync to delete.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
 }
 impl DeleteResourceDataSyncInput {
@@ -33090,6 +33561,7 @@ impl std::fmt::Debug for DeleteResourceDataSyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePatchBaselineInput {
     /// <p>The ID of the patch baseline to delete.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl DeletePatchBaselineInput {
@@ -33111,6 +33583,7 @@ impl std::fmt::Debug for DeletePatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParametersInput {
     /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteParametersInput {
@@ -33132,6 +33605,7 @@ impl std::fmt::Debug for DeleteParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterInput {
     /// <p>The name of the parameter to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteParameterInput {
@@ -33153,6 +33627,7 @@ impl std::fmt::Debug for DeleteParameterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl DeleteOpsMetadataInput {
@@ -33174,6 +33649,7 @@ impl std::fmt::Debug for DeleteOpsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMaintenanceWindowInput {
     /// <p>The ID of the maintenance window to delete.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl DeleteMaintenanceWindowInput {
@@ -33195,14 +33671,18 @@ impl std::fmt::Debug for DeleteMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInventoryInput {
     /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
+    #[doc(hidden)]
     pub schema_delete_option: std::option::Option<crate::model::InventorySchemaDeleteOption>,
     /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
     /// <p>User-provided idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteInventoryInput {
@@ -33243,12 +33723,16 @@ impl std::fmt::Debug for DeleteInventoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentInput {
     /// <p>The name of the document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl DeleteDocumentInput {
@@ -33285,12 +33769,15 @@ impl std::fmt::Debug for DeleteDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssociationInput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association ID that you want to delete.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssociationInput {
@@ -33324,6 +33811,7 @@ impl std::fmt::Debug for DeleteAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteActivationInput {
     /// <p>The ID of the activation that you want to delete.</p>
+    #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
 }
 impl DeleteActivationInput {
@@ -33345,12 +33833,16 @@ impl std::fmt::Debug for DeleteActivationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceDataSyncInput {
     /// <p>A name for the configuration.</p>
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::ResourceDataSyncS3Destination>,
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
+    #[doc(hidden)]
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSource>,
 }
 impl CreateResourceDataSyncInput {
@@ -33389,34 +33881,46 @@ impl std::fmt::Debug for CreateResourceDataSyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePatchBaselineInput {
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The name of the patch baseline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A set of global filters used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub global_filters: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
+    #[doc(hidden)]
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
     /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
     /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>A description of the patch baseline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
     /// <p>User-provided idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -33425,6 +33929,7 @@ pub struct CreatePatchBaselineInput {
     /// </ul> <note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePatchBaselineInput {
@@ -33526,8 +34031,10 @@ impl std::fmt::Debug for CreatePatchBaselineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpsMetadataInput {
     /// <p>A resource ID for a new Application Manager application.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Metadata for a new Application Manager application. </p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
     >,
@@ -33536,6 +34043,7 @@ pub struct CreateOpsMetadataInput {
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateOpsMetadataInput {
@@ -33575,46 +34083,61 @@ impl std::fmt::Debug for CreateOpsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpsItemInput {
     /// <p>Information about the OpsItem. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    #[doc(hidden)]
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <p>Tags use a key-value pair. For example:</p>
     /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specify a category to assign to an OpsItem. </p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>Specify a severity to assign to an OpsItem.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateOpsItemInput {
@@ -33720,30 +34243,41 @@ impl std::fmt::Debug for CreateOpsItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMaintenanceWindowInput {
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    #[doc(hidden)]
     pub schedule_timezone: std::option::Option<std::string::String>,
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
     /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
+    #[doc(hidden)]
     pub allow_unassociated_targets: bool,
     /// <p>User-provided idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -33753,6 +34287,7 @@ pub struct CreateMaintenanceWindowInput {
     /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMaintenanceWindowInput {
@@ -33849,10 +34384,13 @@ pub struct CreateDocumentInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
+    #[doc(hidden)]
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentsSource>>,
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
@@ -33862,18 +34400,24 @@ pub struct CreateDocumentInput {
     /// <li> <p> <code>amzn</code> </p> </li>
     /// </ul>
     /// </important>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The type of document to create.</p> <note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -33882,6 +34426,7 @@ pub struct CreateDocumentInput {
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDocumentInput {
@@ -33969,6 +34514,7 @@ impl std::fmt::Debug for CreateDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::CreateAssociationBatchRequestEntry>>,
 }
@@ -33999,52 +34545,70 @@ pub struct CreateAssociationInput {
     /// <p>For example:</p>
     /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The parameters for the runtime configuration of the document.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression when the association will be applied to the target(s).</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>Specify a descriptive name for the association.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
+    #[doc(hidden)]
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    #[doc(hidden)]
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
     /// </note>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -34191,16 +34755,21 @@ pub struct CreateActivationInput {
     /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub default_instance_name: std::option::Option<std::string::String>,
     /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub registration_limit: std::option::Option<i32>,
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -34210,8 +34779,10 @@ pub struct CreateActivationInput {
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Reserved for internal use.</p>
+    #[doc(hidden)]
     pub registration_metadata:
         std::option::Option<std::vec::Vec<crate::model::RegistrationMetadataItem>>,
 }
@@ -34277,6 +34848,7 @@ impl std::fmt::Debug for CreateActivationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution to stop.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl CancelMaintenanceWindowExecutionInput {
@@ -34298,8 +34870,10 @@ impl std::fmt::Debug for CancelMaintenanceWindowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCommandInput {
     /// <p>The ID of the command you want to cancel.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CancelCommandInput {
@@ -34326,14 +34900,18 @@ impl std::fmt::Debug for CancelCommandInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<std::string::String>,
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
     /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
+    #[doc(hidden)]
     pub resource_uri: std::option::Option<std::string::String>,
 }
 impl AssociateOpsItemRelatedItemInput {
@@ -34374,6 +34952,7 @@ pub struct AddTagsToResourceInput {
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
@@ -34385,10 +34964,12 @@ pub struct AddTagsToResourceInput {
     /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {

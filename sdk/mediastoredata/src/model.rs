@@ -110,16 +110,22 @@ impl AsRef<str> for UploadAvailability {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Item {
     /// <p>The name of the item.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The item type (folder or object).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The ETag that represents a unique instance of the item.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time that the item was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The content type of the item.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The length of the item in bytes.</p>
+    #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
 }
 impl Item {

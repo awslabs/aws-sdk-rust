@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The name of the user</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>The names of the Access Control Lists to which the user belongs</p>
+    #[doc(hidden)]
     pub acl_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version supported for the user</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl User {
@@ -191,8 +198,10 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
+    #[doc(hidden)]
     pub password_count: std::option::Option<i32>,
 }
 impl Authentication {
@@ -322,8 +331,10 @@ impl AsRef<str> for AuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationMode {
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputAuthenticationType>,
     /// <p>The password(s) used for authentication</p>
+    #[doc(hidden)]
     pub passwords: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthenticationMode {
@@ -463,14 +474,19 @@ impl AsRef<str> for InputAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetGroup {
     /// <p>The name of the subnet group</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the subnet group</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnets associated with the subnet group.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SubnetGroup {
@@ -602,8 +618,10 @@ impl SubnetGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The Availability Zone where the subnet resides</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<crate::model::AvailabilityZone>,
 }
 impl Subnet {
@@ -678,6 +696,7 @@ impl Subnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZone {
@@ -730,12 +749,16 @@ impl AvailabilityZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterGroup {
     /// <p>The name of the parameter group</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ParameterGroup {
@@ -841,8 +864,10 @@ impl ParameterGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl ParameterNameValue {
@@ -920,54 +945,79 @@ impl ParameterNameValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the cluster</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A group of settings that are currently being applied.</p>
+    #[doc(hidden)]
     pub pending_updates: std::option::Option<crate::model::ClusterPendingUpdates>,
     /// <p>The number of shards in the cluster</p>
+    #[doc(hidden)]
     pub number_of_shards: std::option::Option<i32>,
     /// <p>A list of shards that are members of the cluster.</p>
+    #[doc(hidden)]
     pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
+    #[doc(hidden)]
     pub availability_mode: std::option::Option<crate::model::AzStatus>,
     /// <p>The cluster's configuration endpoint</p>
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The cluster's node type</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The Redis engine version used by the cluster</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The Redis engine patch version used by the cluster</p>
+    #[doc(hidden)]
     pub engine_patch_version: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group used by the cluster</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
+    #[doc(hidden)]
     pub parameter_group_status: std::option::Option<std::string::String>,
     /// <p>A list of security groups used by the cluster</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
     /// <p>The name of the subnet group used by the cluster</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
+    #[doc(hidden)]
     pub tls_enabled: std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The SNS topic must be in Active status to receive notifications</p>
+    #[doc(hidden)]
     pub sns_topic_status: std::option::Option<std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
+    #[doc(hidden)]
     pub maintenance_window: std::option::Option<std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The name of the Access Control List associated with this cluster.</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
 }
 impl Cluster {
@@ -1488,8 +1538,10 @@ impl Cluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupMembership {
     /// <p>The identifier of the security group.</p>
+    #[doc(hidden)]
     pub security_group_id: std::option::Option<std::string::String>,
     /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl SecurityGroupMembership {
@@ -1564,8 +1616,10 @@ impl SecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the node.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The port number that the engine is listening on.</p>
+    #[doc(hidden)]
     pub port: i32,
 }
 impl Endpoint {
@@ -1692,14 +1746,19 @@ impl AsRef<str> for AzStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Shard {
     /// <p>The name of the shard</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The keyspace for this shard.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p>A list containing information about individual nodes within the shard</p>
+    #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
     /// <p>The number of nodes in the shard</p>
+    #[doc(hidden)]
     pub number_of_nodes: std::option::Option<i32>,
 }
 impl Shard {
@@ -1831,14 +1890,19 @@ impl Shard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
     /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the service update on the node</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the node resides</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The date and time when the node was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this node.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl Node {
@@ -1967,10 +2031,13 @@ impl Node {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterPendingUpdates {
     /// <p>The status of an online resharding operation.</p>
+    #[doc(hidden)]
     pub resharding: std::option::Option<crate::model::ReshardingStatus>,
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
+    #[doc(hidden)]
     pub ac_ls: std::option::Option<crate::model::AcLsUpdateStatus>,
     /// <p>A list of service updates being applied to the cluster</p>
+    #[doc(hidden)]
     pub service_updates:
         std::option::Option<std::vec::Vec<crate::model::PendingModifiedServiceUpdate>>,
 }
@@ -2081,8 +2148,10 @@ impl ClusterPendingUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingModifiedServiceUpdate {
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The status of the service update</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ServiceUpdateStatus>,
 }
 impl PendingModifiedServiceUpdate {
@@ -2223,6 +2292,7 @@ impl AsRef<str> for ServiceUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcLsUpdateStatus {
     /// <p>A list of ACLs pending to be applied.</p>
+    #[doc(hidden)]
     pub acl_to_apply: std::option::Option<std::string::String>,
 }
 impl AcLsUpdateStatus {
@@ -2277,6 +2347,7 @@ impl AcLsUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReshardingStatus {
     /// <p>The status of the online resharding slot migration</p>
+    #[doc(hidden)]
     pub slot_migration: std::option::Option<crate::model::SlotMigration>,
 }
 impl ReshardingStatus {
@@ -2334,6 +2405,7 @@ impl ReshardingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
+    #[doc(hidden)]
     pub progress_percentage: f64,
 }
 impl SlotMigration {
@@ -2388,6 +2460,7 @@ impl SlotMigration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardConfigurationRequest {
     /// <p>The number of shards in the cluster</p>
+    #[doc(hidden)]
     pub shard_count: i32,
 }
 impl ShardConfigurationRequest {
@@ -2442,6 +2515,7 @@ impl ShardConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaConfigurationRequest {
     /// <p>The number of replicas to scale up or down to</p>
+    #[doc(hidden)]
     pub replica_count: i32,
 }
 impl ReplicaConfigurationRequest {
@@ -2496,18 +2570,25 @@ impl ReplicaConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Acl {
     /// <p>The name of the Access Control List</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The list of user names that belong to the ACL.</p>
+    #[doc(hidden)]
     pub user_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version supported for the ACL</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the ACL.</p>
+    #[doc(hidden)]
     pub pending_changes: std::option::Option<crate::model::AclPendingChanges>,
     /// <p>A list of clusters associated with the ACL.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Acl {
@@ -2688,8 +2769,10 @@ impl Acl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AclPendingChanges {
     /// <p>A list of user names being removed from the ACL</p>
+    #[doc(hidden)]
     pub user_names_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users being added to the ACL</p>
+    #[doc(hidden)]
     pub user_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AclPendingChanges {
@@ -2779,8 +2862,10 @@ impl AclPendingChanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for the tag. May not be null.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value. May be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2852,8 +2937,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The property being filtered. For example, UserName.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The property values to filter on. For example, "user-123".</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -2934,16 +3021,22 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The name of the snapshot</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
+    #[doc(hidden)]
     pub cluster_configuration: std::option::Option<crate::model::ClusterConfiguration>,
 }
 impl Snapshot {
@@ -3088,32 +3181,46 @@ impl Snapshot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterConfiguration {
     /// <p>The name of the cluster</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the cluster configuration</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The node type used for the cluster</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The Redis engine version used by the cluster</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The specified maintenance window for the cluster</p>
+    #[doc(hidden)]
     pub maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The port used by the cluster</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The name of parameter group used by the cluster</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the subnet group used by the cluster</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC the cluster belongs to</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The snapshot retention limit set by the cluster</p>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>The snapshot window set by the cluster</p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The number of shards in the cluster</p>
+    #[doc(hidden)]
     pub num_shards: std::option::Option<i32>,
     /// <p>The list of shards in the cluster</p>
+    #[doc(hidden)]
     pub shards: std::option::Option<std::vec::Vec<crate::model::ShardDetail>>,
 }
 impl ClusterConfiguration {
@@ -3413,12 +3520,16 @@ impl ClusterConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardDetail {
     /// <p>The name of the shard</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The configuration details of the shard</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ShardConfiguration>,
     /// <p>The size of the shard's snapshot</p>
+    #[doc(hidden)]
     pub size: std::option::Option<std::string::String>,
     /// <p>The date and time that the shard's snapshot was created</p>
+    #[doc(hidden)]
     pub snapshot_creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ShardDetail {
@@ -3530,8 +3641,10 @@ impl ShardDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardConfiguration {
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p>The number of read replica nodes in this shard.</p>
+    #[doc(hidden)]
     pub replica_count: std::option::Option<i32>,
 }
 impl ShardConfiguration {
@@ -3603,20 +3716,28 @@ impl ShardConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUpdate {
     /// <p>The name of the cluster to which the service update applies</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
+    #[doc(hidden)]
     pub release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides details of the service update</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the service update</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ServiceUpdateStatus>,
     /// <p>Reflects the nature of the service update</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ServiceUpdateType>,
     /// <p>A list of nodes updated by the service update</p>
+    #[doc(hidden)]
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
+    #[doc(hidden)]
     pub auto_update_start_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceUpdate {
@@ -3859,16 +3980,22 @@ impl AsRef<str> for ServiceUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>The name of the parameter</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>A description of the parameter</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameter's data type</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The valid range of values for the parameter.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p>The earliest engine version to which the parameter can apply.</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
 }
 impl Parameter {
@@ -4014,12 +4141,16 @@ impl Parameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The text of the event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
@@ -4206,10 +4337,13 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineVersionInfo {
     /// <p>The engine version</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The patched engine version</p>
+    #[doc(hidden)]
     pub engine_patch_version: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
+    #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
 }
 impl EngineVersionInfo {
@@ -4307,10 +4441,13 @@ impl EngineVersionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedCluster {
     /// <p>The name of the cluster</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The error type associated with the update failure</p>
+    #[doc(hidden)]
     pub error_type: std::option::Option<std::string::String>,
     /// <p>The error message associated with the update failure</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedCluster {
@@ -4402,6 +4539,7 @@ impl UnprocessedCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUpdateRequest {
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update_name_to_apply: std::option::Option<std::string::String>,
 }
 impl ServiceUpdateRequest {

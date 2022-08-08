@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,16 +80,22 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BgpPeer {
     /// <p>The ID of the BGP peer.</p>
+    #[doc(hidden)]
     pub bgp_peer_id: std::option::Option<std::string::String>,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
@@ -97,6 +105,7 @@ pub struct BgpPeer {
     /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
     /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub bgp_peer_state: std::option::Option<crate::model::BgpPeerState>,
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
@@ -104,10 +113,13 @@ pub struct BgpPeer {
     /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
     /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub bgp_status: std::option::Option<crate::model::BgpStatus>,
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
+    #[doc(hidden)]
     pub aws_device_v2: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_logical_device_id: std::option::Option<std::string::String>,
 }
 impl BgpPeer {
@@ -553,6 +565,7 @@ impl AsRef<str> for AddressFamily {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteFilterPrefix {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl RouteFilterPrefix {
@@ -698,8 +711,10 @@ impl AsRef<str> for VirtualInterfaceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MacSecKey {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
+    #[doc(hidden)]
     pub ckn: std::option::Option<std::string::String>,
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
@@ -709,8 +724,10 @@ pub struct MacSecKey {
     /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
+    #[doc(hidden)]
     pub start_on: std::option::Option<std::string::String>,
 }
 impl MacSecKey {
@@ -896,10 +913,13 @@ impl AsRef<str> for HasLogicalRedundancy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
@@ -913,44 +933,63 @@ pub struct Connection {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    #[doc(hidden)]
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    #[doc(hidden)]
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    #[doc(hidden)]
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_device_v2: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    #[doc(hidden)]
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the connection.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl Connection {
@@ -1630,8 +1669,10 @@ impl AsRef<str> for LagState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
@@ -1640,21 +1681,29 @@ pub struct DirectConnectGatewayAssociation {
     /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub association_state: std::option::Option<crate::model::DirectConnectGatewayAssociationState>,
     /// <p>The error message if the state of an object failed to advance.</p>
+    #[doc(hidden)]
     pub state_change_error: std::option::Option<std::string::String>,
     /// <p>Information about the associated gateway.</p>
+    #[doc(hidden)]
     pub associated_gateway: std::option::Option<crate::model::AssociatedGateway>,
     /// <p>The ID of the Direct Connect gateway association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
+    #[doc(hidden)]
     pub virtual_gateway_region: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_owner_account: std::option::Option<std::string::String>,
 }
 impl DirectConnectGatewayAssociation {
@@ -1946,12 +1995,16 @@ impl DirectConnectGatewayAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedGateway {
     /// <p>The ID of the associated gateway.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of associated gateway.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::GatewayType>,
     /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The Region where the associated gateway is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl AssociatedGateway {
@@ -2188,12 +2241,16 @@ impl AsRef<str> for DirectConnectGatewayAssociationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectGateway {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The name of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_name: std::option::Option<std::string::String>,
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    #[doc(hidden)]
     pub amazon_side_asn: std::option::Option<i64>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
@@ -2202,8 +2259,10 @@ pub struct DirectConnectGateway {
     /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
     /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub direct_connect_gateway_state: std::option::Option<crate::model::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
+    #[doc(hidden)]
     pub state_change_error: std::option::Option<std::string::String>,
 }
 impl DirectConnectGateway {
@@ -2454,20 +2513,28 @@ impl AsRef<str> for DirectConnectGatewayState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualInterfaceTestHistory {
     /// <p>The ID of the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub test_id: std::option::Option<std::string::String>,
     /// <p>The ID of the tested virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The owner ID of the tested virtual interface.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
+    #[doc(hidden)]
     pub test_duration_in_minutes: std::option::Option<i32>,
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualInterfaceTestHistory {
@@ -2662,31 +2729,44 @@ impl VirtualInterfaceTestHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualInterface {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    #[doc(hidden)]
     pub virtual_interface_type: std::option::Option<std::string::String>,
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    #[doc(hidden)]
     pub amazon_side_asn: std::option::Option<i64>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -2700,30 +2780,43 @@ pub struct VirtualInterface {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
+    #[doc(hidden)]
     pub customer_router_config: std::option::Option<std::string::String>,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    #[doc(hidden)]
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    #[doc(hidden)]
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
+    #[doc(hidden)]
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_device_v2: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether SiteLink is enabled.</p>
+    #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
 }
 impl VirtualInterface {
@@ -3315,6 +3408,7 @@ impl VirtualInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
@@ -3323,6 +3417,7 @@ pub struct VirtualGateway {
     /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
     /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub virtual_gateway_state: std::option::Option<std::string::String>,
 }
 impl VirtualGateway {
@@ -3418,8 +3513,10 @@ impl VirtualGateway {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ResourceTag {
@@ -3500,16 +3597,22 @@ impl ResourceTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouterType {
     /// <p>The vendor for the virtual interface's router.</p>
+    #[doc(hidden)]
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The virtual interface router platform.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The router software. </p>
+    #[doc(hidden)]
     pub software: std::option::Option<std::string::String>,
     /// <p>The template for the virtual interface's router.</p>
+    #[doc(hidden)]
     pub xslt_template_name: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+    #[doc(hidden)]
     pub xslt_template_name_for_mac_sec: std::option::Option<std::string::String>,
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    #[doc(hidden)]
     pub router_type_identifier: std::option::Option<std::string::String>,
 }
 impl RouterType {
@@ -3664,16 +3767,22 @@ impl RouterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The code for the location.</p>
+    #[doc(hidden)]
     pub location_code: std::option::Option<std::string::String>,
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
+    #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region for the location.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The available port speeds for the location.</p>
+    #[doc(hidden)]
     pub available_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the service provider for the location.</p>
+    #[doc(hidden)]
     pub available_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
+    #[doc(hidden)]
     pub available_mac_sec_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Location {
@@ -3904,14 +4013,19 @@ impl AsRef<str> for LoaContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lag {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    #[doc(hidden)]
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    #[doc(hidden)]
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
+    #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
@@ -3923,37 +4037,53 @@ pub struct Lag {
     /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
+    #[doc(hidden)]
     pub minimum_links: i32,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
+    #[doc(hidden)]
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
+    #[doc(hidden)]
     pub aws_device_v2: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
+    #[doc(hidden)]
     pub allows_hosted_connections: bool,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    #[doc(hidden)]
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    #[doc(hidden)]
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the LAG.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+    #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl Lag {
@@ -4428,8 +4558,10 @@ impl Lag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Interconnect {
     /// <p>The ID of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
     /// <p>The name of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_name: std::option::Option<std::string::String>,
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -4441,30 +4573,43 @@ pub struct Interconnect {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    #[doc(hidden)]
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    #[doc(hidden)]
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    #[doc(hidden)]
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_device_v2: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    #[doc(hidden)]
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
+    #[doc(hidden)]
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
     /// <p>The tags associated with the interconnect.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
 }
 impl Interconnect {
@@ -4902,8 +5047,10 @@ impl AsRef<str> for InterconnectState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Loa {
     /// <p>The binary contents of the LOA-CFA document.</p>
+    #[doc(hidden)]
     pub loa_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    #[doc(hidden)]
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
 impl Loa {
@@ -4981,12 +5128,16 @@ impl Loa {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectGatewayAttachment {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    #[doc(hidden)]
     pub virtual_interface_region: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
@@ -4995,10 +5146,13 @@ pub struct DirectConnectGatewayAttachment {
     /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
     /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attachment_state: std::option::Option<crate::model::DirectConnectGatewayAttachmentState>,
     /// <p>The type of attachment.</p>
+    #[doc(hidden)]
     pub attachment_type: std::option::Option<crate::model::DirectConnectGatewayAttachmentType>,
     /// <p>The error message if the state of an object failed to advance.</p>
+    #[doc(hidden)]
     pub state_change_error: std::option::Option<std::string::String>,
 }
 impl DirectConnectGatewayAttachment {
@@ -5338,10 +5492,13 @@ impl AsRef<str> for DirectConnectGatewayAttachmentState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectGatewayAssociationProposal {
     /// <p>The ID of the association proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
@@ -5349,14 +5506,18 @@ pub struct DirectConnectGatewayAssociationProposal {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub proposal_state:
         std::option::Option<crate::model::DirectConnectGatewayAssociationProposalState>,
     /// <p>Information about the associated gateway.</p>
+    #[doc(hidden)]
     pub associated_gateway: std::option::Option<crate::model::AssociatedGateway>,
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub existing_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub requested_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
 }
@@ -5715,8 +5876,10 @@ impl AsRef<str> for NniPartnerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerAgreement {
     /// <p>The name of the agreement.</p>
+    #[doc(hidden)]
     pub agreement_name: std::option::Option<std::string::String>,
     /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CustomerAgreement {
@@ -5791,27 +5954,38 @@ impl CustomerAgreement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewTransitVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the transitive virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
+    #[doc(hidden)]
     pub enable_site_link: std::option::Option<bool>,
 }
 impl NewTransitVirtualInterface {
@@ -6063,23 +6237,32 @@ impl NewTransitVirtualInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewPublicVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    #[doc(hidden)]
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The tags associated with the public virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl NewPublicVirtualInterface {
@@ -6304,29 +6487,41 @@ impl NewPublicVirtualInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The ID of the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
+    #[doc(hidden)]
     pub enable_site_link: std::option::Option<bool>,
 }
 impl NewPrivateVirtualInterface {
@@ -6598,14 +6793,19 @@ impl NewPrivateVirtualInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewBgpPeer {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
 }
 impl NewBgpPeer {
@@ -6737,23 +6937,32 @@ impl NewBgpPeer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewTransitVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500. </p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The tags associated with the transitive virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl NewTransitVirtualInterfaceAllocation {
@@ -6968,23 +7177,32 @@ impl NewTransitVirtualInterfaceAllocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewPublicVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    #[doc(hidden)]
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The tags associated with the public virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl NewPublicVirtualInterfaceAllocation {
@@ -7209,23 +7427,32 @@ impl NewPublicVirtualInterfaceAllocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewPrivateVirtualInterfaceAllocation {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
     /// <p>The ID of the VLAN.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    #[doc(hidden)]
     pub auth_key: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the Amazon interface.</p>
+    #[doc(hidden)]
     pub amazon_address: std::option::Option<std::string::String>,
     /// <p>The address family for the BGP peer.</p>
+    #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl NewPrivateVirtualInterfaceAllocation {

@@ -6481,14 +6481,19 @@ impl UploadMultipartPartInput {
 #[non_exhaustive]
 pub struct UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
+    #[doc(hidden)]
     pub range: std::option::Option<std::string::String>,
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -6536,12 +6541,16 @@ impl std::fmt::Debug for UploadMultipartPartInput {
 #[non_exhaustive]
 pub struct UploadArchiveInput {
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The optional description of the archive you are uploading.</p>
+    #[doc(hidden)]
     pub archive_description: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -6585,10 +6594,13 @@ impl std::fmt::Debug for UploadArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>Provides options for specifying notification configuration.</p>
+    #[doc(hidden)]
     pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
 impl SetVaultNotificationsInput {
@@ -6622,10 +6634,13 @@ impl std::fmt::Debug for SetVaultNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The vault access policy as a JSON string.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
 impl SetVaultAccessPolicyInput {
@@ -6657,8 +6672,10 @@ impl std::fmt::Debug for SetVaultAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The data retrieval policy in JSON format.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
 }
 impl SetDataRetrievalPolicyInput {
@@ -6685,10 +6702,13 @@ impl std::fmt::Debug for SetDataRetrievalPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromVaultInput {
@@ -6720,6 +6740,7 @@ impl std::fmt::Debug for RemoveTagsFromVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl PurchaseProvisionedCapacityInput {
@@ -6741,10 +6762,13 @@ impl std::fmt::Debug for PurchaseProvisionedCapacityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVaultsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListVaultsInput {
@@ -6776,8 +6800,10 @@ impl std::fmt::Debug for ListVaultsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl ListTagsForVaultInput {
@@ -6804,6 +6830,7 @@ impl std::fmt::Debug for ListTagsForVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListProvisionedCapacityInput {
@@ -6825,14 +6852,19 @@ impl std::fmt::Debug for ListProvisionedCapacityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListPartsInput {
@@ -6874,12 +6906,16 @@ impl std::fmt::Debug for ListPartsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultipartUploadsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListMultipartUploadsInput {
@@ -6916,16 +6952,22 @@ impl std::fmt::Debug for ListMultipartUploadsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub statuscode: std::option::Option<std::string::String>,
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
+    #[doc(hidden)]
     pub completed: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -6972,10 +7014,13 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::VaultLockPolicy>,
 }
 impl InitiateVaultLockInput {
@@ -7007,13 +7052,17 @@ impl std::fmt::Debug for InitiateVaultLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
+    #[doc(hidden)]
     pub archive_description: std::option::Option<std::string::String>,
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
+    #[doc(hidden)]
     pub part_size: std::option::Option<std::string::String>,
 }
 impl InitiateMultipartUploadInput {
@@ -7051,10 +7100,13 @@ impl std::fmt::Debug for InitiateMultipartUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>Provides options for specifying job information.</p>
+    #[doc(hidden)]
     pub job_parameters: std::option::Option<crate::model::JobParameters>,
 }
 impl InitiateJobInput {
@@ -7086,8 +7138,10 @@ impl std::fmt::Debug for InitiateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultNotificationsInput {
@@ -7114,8 +7168,10 @@ impl std::fmt::Debug for GetVaultNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultLockInput {
@@ -7142,8 +7198,10 @@ impl std::fmt::Debug for GetVaultLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultAccessPolicyInput {
@@ -7170,10 +7228,13 @@ impl std::fmt::Debug for GetVaultAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutputInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The job ID whose data is downloaded.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>
     /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
@@ -7183,6 +7244,7 @@ pub struct GetJobOutputInput {
     /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>
     /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>
     /// </ol>
+    #[doc(hidden)]
     pub range: std::option::Option<std::string::String>,
 }
 impl GetJobOutputInput {
@@ -7226,6 +7288,7 @@ impl std::fmt::Debug for GetJobOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetDataRetrievalPolicyInput {
@@ -7247,8 +7310,10 @@ impl std::fmt::Debug for GetDataRetrievalPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl DescribeVaultInput {
@@ -7275,10 +7340,13 @@ impl std::fmt::Debug for DescribeVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The ID of the job to describe.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
@@ -7310,8 +7378,10 @@ impl std::fmt::Debug for DescribeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultNotificationsInput {
@@ -7338,8 +7408,10 @@ impl std::fmt::Debug for DeleteVaultNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultAccessPolicyInput {
@@ -7366,8 +7438,10 @@ impl std::fmt::Debug for DeleteVaultAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultInput {
@@ -7394,10 +7468,13 @@ impl std::fmt::Debug for DeleteVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteArchiveInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The ID of the archive to delete.</p>
+    #[doc(hidden)]
     pub archive_id: std::option::Option<std::string::String>,
 }
 impl DeleteArchiveInput {
@@ -7429,8 +7506,10 @@ impl std::fmt::Debug for DeleteArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl CreateVaultInput {
@@ -7457,10 +7536,13 @@ impl std::fmt::Debug for CreateVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
+    #[doc(hidden)]
     pub lock_id: std::option::Option<std::string::String>,
 }
 impl CompleteVaultLockInput {
@@ -7492,14 +7574,19 @@ impl std::fmt::Debug for CompleteVaultLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    #[doc(hidden)]
     pub archive_size: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl CompleteMultipartUploadInput {
@@ -7541,10 +7628,13 @@ impl std::fmt::Debug for CompleteMultipartUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7580,8 +7670,10 @@ impl std::fmt::Debug for AddTagsToVaultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
 }
 impl AbortVaultLockInput {
@@ -7609,10 +7701,13 @@ impl std::fmt::Debug for AbortVaultLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload to delete.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl AbortMultipartUploadInput {

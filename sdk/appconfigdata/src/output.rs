@@ -6,6 +6,7 @@ pub struct StartConfigurationSessionOutput {
     /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
     /// <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub initial_configuration_token: std::option::Option<std::string::String>,
 }
 impl StartConfigurationSessionOutput {
@@ -75,12 +76,16 @@ impl StartConfigurationSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLatestConfigurationOutput {
     /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
+    #[doc(hidden)]
     pub next_poll_configuration_token: std::option::Option<std::string::String>,
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
+    #[doc(hidden)]
     pub next_poll_interval_in_seconds: i32,
     /// <p>A standard MIME type describing the format of the configuration content.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetLatestConfigurationOutput {

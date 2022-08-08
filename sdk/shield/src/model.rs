@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the parameter that failed validation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message describing why the parameter failed validation.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -384,10 +386,13 @@ impl AsRef<str> for ProtectionGroupAggregation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmergencyContact {
     /// <p>The email address for the contact.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The phone number for the contact.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>Additional notes regarding the contact. </p>
+    #[doc(hidden)]
     pub contact_notes: std::option::Option<std::string::String>,
 }
 impl EmergencyContact {
@@ -483,9 +488,11 @@ impl EmergencyContact {
 pub struct ResponseAction {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    #[doc(hidden)]
     pub block: std::option::Option<crate::model::BlockAction>,
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<crate::model::CountAction>,
 }
 impl ResponseAction {
@@ -627,8 +634,10 @@ impl BlockAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -700,16 +709,22 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Protection {
     /// <p>The unique identifier (ID) of the protection.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    #[doc(hidden)]
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
+    #[doc(hidden)]
     pub protection_arn: std::option::Option<std::string::String>,
     /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    #[doc(hidden)]
     pub application_layer_automatic_response_configuration:
         std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
 }
@@ -878,8 +893,10 @@ impl Protection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ResponseAction>,
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
@@ -1018,10 +1035,13 @@ impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InclusionProtectionFilters {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the protection that you want to retrieve. </p>
+    #[doc(hidden)]
     pub protection_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
 }
 impl InclusionProtectionFilters {
@@ -1138,6 +1158,7 @@ impl InclusionProtectionFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
@@ -1145,14 +1166,19 @@ pub struct ProtectionGroup {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<crate::model::ProtectionGroupPattern>,
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ProtectedResourceType>,
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
+    #[doc(hidden)]
     pub protection_group_arn: std::option::Option<std::string::String>,
 }
 impl ProtectionGroup {
@@ -1331,12 +1357,16 @@ impl ProtectionGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InclusionProtectionGroupFilters {
     /// <p>The ID of the protection group that you want to retrieve. </p>
+    #[doc(hidden)]
     pub protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+    #[doc(hidden)]
     pub patterns: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
     /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+    #[doc(hidden)]
     pub aggregations: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
 }
 impl InclusionProtectionGroupFilters {
@@ -1481,14 +1511,19 @@ impl InclusionProtectionGroupFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackSummary {
     /// <p>The unique identifier (ID) of the attack.</p>
+    #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The start time of the attack, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the attack, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of attacks for a specified time period.</p>
+    #[doc(hidden)]
     pub attack_vectors: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
 }
 impl AttackSummary {
@@ -1647,6 +1682,7 @@ pub struct AttackVectorDescription {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub vector_type: std::option::Option<std::string::String>,
 }
 impl AttackVectorDescription {
@@ -1761,8 +1797,10 @@ impl AttackVectorDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub to_exclusive: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
@@ -1895,23 +1933,31 @@ impl AsRef<str> for SubscriptionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
     /// <p>The start time of the subscription, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time your subscription will end.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
+    #[doc(hidden)]
     pub time_commitment_in_seconds: i64,
     /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    #[doc(hidden)]
     pub auto_renew: std::option::Option<crate::model::AutoRenew>,
     /// <p>Specifies how many protections of a given type you can create.</p>
+    #[doc(hidden)]
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
     /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
+    #[doc(hidden)]
     pub proactive_engagement_status: std::option::Option<crate::model::ProactiveEngagementStatus>,
     /// <p>Limits settings for your subscription. </p>
+    #[doc(hidden)]
     pub subscription_limits: std::option::Option<crate::model::SubscriptionLimits>,
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl Subscription {
@@ -2133,8 +2179,10 @@ impl Subscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionLimits {
     /// <p>Limits settings on protections for your subscription. </p>
+    #[doc(hidden)]
     pub protection_limits: std::option::Option<crate::model::ProtectionLimits>,
     /// <p>Limits settings on protection groups for your subscription. </p>
+    #[doc(hidden)]
     pub protection_group_limits: std::option::Option<crate::model::ProtectionGroupLimits>,
 }
 impl SubscriptionLimits {
@@ -2218,8 +2266,10 @@ impl SubscriptionLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionGroupLimits {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
+    #[doc(hidden)]
     pub max_protection_groups: i64,
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
+    #[doc(hidden)]
     pub pattern_type_limits: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
 }
 impl ProtectionGroupLimits {
@@ -2300,6 +2350,7 @@ impl ProtectionGroupLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
+    #[doc(hidden)]
     pub arbitrary_pattern_limits:
         std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
 }
@@ -2364,6 +2415,7 @@ impl ProtectionGroupPatternTypeLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionGroupArbitraryPatternLimits {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
+    #[doc(hidden)]
     pub max_members: i64,
 }
 impl ProtectionGroupArbitraryPatternLimits {
@@ -2418,6 +2470,7 @@ impl ProtectionGroupArbitraryPatternLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
+    #[doc(hidden)]
     pub protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
 }
 impl ProtectionLimits {
@@ -2485,8 +2538,10 @@ impl ProtectionLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limit {
     /// <p>The type of protection.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
+    #[doc(hidden)]
     pub max: i64,
 }
 impl Limit {
@@ -2617,8 +2672,10 @@ impl AsRef<str> for ProactiveEngagementStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
+    #[doc(hidden)]
     pub attack_volume: std::option::Option<crate::model::AttackVolume>,
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
+    #[doc(hidden)]
     pub attack_count: i64,
 }
 impl AttackStatisticsDataItem {
@@ -2693,10 +2750,13 @@ impl AttackStatisticsDataItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackVolume {
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
+    #[doc(hidden)]
     pub bits_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
+    #[doc(hidden)]
     pub packets_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
+    #[doc(hidden)]
     pub requests_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
 }
 impl AttackVolume {
@@ -2796,6 +2856,7 @@ impl AttackVolume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
+    #[doc(hidden)]
     pub max: f64,
 }
 impl AttackVolumeStatistics {
@@ -2850,21 +2911,29 @@ impl AttackVolumeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackDetail {
     /// <p>The unique identifier (ID) of the attack.</p>
+    #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
+    #[doc(hidden)]
     pub sub_resources: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
     /// <p>The time the attack started, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the attack ended, in Unix time in seconds. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
+    #[doc(hidden)]
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event. </p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
+    #[doc(hidden)]
     pub mitigations: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
 }
 impl AttackDetail {
@@ -3086,6 +3155,7 @@ impl AttackDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
+    #[doc(hidden)]
     pub mitigation_name: std::option::Option<std::string::String>,
 }
 impl Mitigation {
@@ -3144,14 +3214,19 @@ impl Mitigation {
 pub struct AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub attack_layer: std::option::Option<crate::model::AttackLayer>,
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
+    #[doc(hidden)]
     pub attack_property_identifier: std::option::Option<crate::model::AttackPropertyIdentifier>,
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
+    #[doc(hidden)]
     pub top_contributors: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p>The total contributions made to this Shield event by all contributors.</p>
+    #[doc(hidden)]
     pub total: i64,
 }
 impl AttackProperty {
@@ -3364,8 +3439,10 @@ impl AsRef<str> for Unit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contributor {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
+    #[doc(hidden)]
     pub value: i64,
 }
 impl Contributor {
@@ -3580,16 +3657,22 @@ impl AsRef<str> for AttackLayer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SummarizedCounter {
     /// <p>The counter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the counter for a specified time period.</p>
+    #[doc(hidden)]
     pub max: f64,
     /// <p>The average value of the counter for a specified time period.</p>
+    #[doc(hidden)]
     pub average: f64,
     /// <p>The total of counter values for a specified time period.</p>
+    #[doc(hidden)]
     pub sum: f64,
     /// <p>The number of counters for a specified time period.</p>
+    #[doc(hidden)]
     pub n: i32,
     /// <p>The unit of the counters.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl SummarizedCounter {
@@ -3729,12 +3812,16 @@ impl SummarizedCounter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubResourceSummary {
     /// <p>The <code>SubResource</code> type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SubResourceType>,
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The list of attack types and associated counters.</p>
+    #[doc(hidden)]
     pub attack_vectors: std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>,
     /// <p>The counters that describe the details of the attack.</p>
+    #[doc(hidden)]
     pub counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
 }
 impl SubResourceSummary {
@@ -3862,8 +3949,10 @@ impl SubResourceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
+    #[doc(hidden)]
     pub vector_type: std::option::Option<std::string::String>,
     /// <p>The list of counters that describe the details of the attack.</p>
+    #[doc(hidden)]
     pub vector_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
 }
 impl SummarizedAttackVector {

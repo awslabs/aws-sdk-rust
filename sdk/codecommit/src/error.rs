@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNameRequiredException {
@@ -69,6 +70,7 @@ impl RepositoryNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNameExistsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNameExistsException {
@@ -133,6 +135,7 @@ impl RepositoryNameExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryDoesNotExistException {
@@ -199,6 +202,7 @@ impl RepositoryDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryNameException {
@@ -263,6 +267,7 @@ impl InvalidRepositoryNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryDescriptionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryDescriptionException {
@@ -327,6 +332,7 @@ impl InvalidRepositoryDescriptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKeyUnavailableException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionKeyUnavailableException {
@@ -391,6 +397,7 @@ impl EncryptionKeyUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKeyNotFoundException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionKeyNotFoundException {
@@ -455,6 +462,7 @@ impl EncryptionKeyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKeyDisabledException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionKeyDisabledException {
@@ -519,6 +527,7 @@ impl EncryptionKeyDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKeyAccessDeniedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionKeyAccessDeniedException {
@@ -583,6 +592,7 @@ impl EncryptionKeyAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionIntegrityChecksFailedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionIntegrityChecksFailedException {
@@ -647,6 +657,7 @@ impl EncryptionIntegrityChecksFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TitleRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TitleRequiredException {
@@ -711,6 +722,7 @@ impl TitleRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestIdRequiredException {
@@ -775,6 +787,7 @@ impl PullRequestIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestDoesNotExistException {
@@ -839,6 +852,7 @@ impl PullRequestDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestAlreadyClosedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestAlreadyClosedException {
@@ -903,6 +917,7 @@ impl PullRequestAlreadyClosedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTitleException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTitleException {
@@ -967,6 +982,7 @@ impl InvalidTitleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPullRequestIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPullRequestIdException {
@@ -1031,6 +1047,7 @@ impl InvalidPullRequestIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestStatusRequiredException {
@@ -1095,6 +1112,7 @@ impl PullRequestStatusRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPullRequestStatusUpdateException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPullRequestStatusUpdateException {
@@ -1159,6 +1177,7 @@ impl InvalidPullRequestStatusUpdateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPullRequestStatusException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPullRequestStatusException {
@@ -1223,6 +1242,7 @@ impl InvalidPullRequestStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDescriptionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDescriptionException {
@@ -1287,6 +1307,7 @@ impl InvalidDescriptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionNotCurrentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RevisionNotCurrentException {
@@ -1351,6 +1372,7 @@ impl RevisionNotCurrentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RevisionIdRequiredException {
@@ -1415,6 +1437,7 @@ impl RevisionIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestCannotBeApprovedByAuthorException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestCannotBeApprovedByAuthorException {
@@ -1479,6 +1502,7 @@ impl PullRequestCannotBeApprovedByAuthorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumNumberOfApprovalsExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumNumberOfApprovalsExceededException {
@@ -1543,6 +1567,7 @@ impl MaximumNumberOfApprovalsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRevisionIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRevisionIdException {
@@ -1607,6 +1632,7 @@ impl InvalidRevisionIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalStateException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalStateException {
@@ -1671,6 +1697,7 @@ impl InvalidApprovalStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalStateRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalStateRequiredException {
@@ -1735,6 +1762,7 @@ impl ApprovalStateRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRuleContentSha256Exception {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRuleContentSha256Exception {
@@ -1799,6 +1827,7 @@ impl InvalidRuleContentSha256Exception {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalRuleNameException {
@@ -1863,6 +1892,7 @@ impl InvalidApprovalRuleNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleContentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalRuleContentException {
@@ -1927,6 +1957,7 @@ impl InvalidApprovalRuleContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotModifyApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CannotModifyApprovalRuleFromTemplateException {
@@ -1991,6 +2022,7 @@ impl CannotModifyApprovalRuleFromTemplateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleNameRequiredException {
@@ -2055,6 +2087,7 @@ impl ApprovalRuleNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleDoesNotExistException {
@@ -2119,6 +2152,7 @@ impl ApprovalRuleDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleContentRequiredException {
@@ -2183,6 +2217,7 @@ impl ApprovalRuleContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBranchNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBranchNameException {
@@ -2247,6 +2282,7 @@ impl InvalidBranchNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BranchNameRequiredException {
@@ -2311,6 +2347,7 @@ impl BranchNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BranchDoesNotExistException {
@@ -2375,6 +2412,7 @@ impl BranchDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCommentIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCommentIdException {
@@ -2439,6 +2477,7 @@ impl InvalidCommentIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentNotCreatedByCallerException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentNotCreatedByCallerException {
@@ -2503,6 +2542,7 @@ impl CommentNotCreatedByCallerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentIdRequiredException {
@@ -2567,6 +2607,7 @@ impl CommentIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentDoesNotExistException {
@@ -2631,6 +2672,7 @@ impl CommentDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentDeletedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentDeletedException {
@@ -2695,6 +2737,7 @@ impl CommentDeletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentContentSizeLimitExceededException {
@@ -2759,6 +2802,7 @@ impl CommentContentSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommentContentRequiredException {
@@ -2823,6 +2867,7 @@ impl CommentContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleTemplateNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalRuleTemplateNameException {
@@ -2887,6 +2932,7 @@ impl InvalidApprovalRuleTemplateNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleTemplateNameRequiredException {
@@ -2951,6 +2997,7 @@ impl ApprovalRuleTemplateNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleTemplateNameAlreadyExistsException {
@@ -3016,6 +3063,7 @@ impl ApprovalRuleTemplateNameAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleTemplateDoesNotExistException {
@@ -3080,6 +3128,7 @@ impl ApprovalRuleTemplateDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleTemplateDescriptionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalRuleTemplateDescriptionException {
@@ -3145,6 +3194,7 @@ impl InvalidApprovalRuleTemplateDescriptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleTemplateContentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalRuleTemplateContentException {
@@ -3209,6 +3259,7 @@ impl InvalidApprovalRuleTemplateContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleTemplateContentRequiredException {
@@ -3273,6 +3324,7 @@ impl ApprovalRuleTemplateContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -3337,6 +3389,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagPolicyException {
@@ -3401,6 +3454,7 @@ impl TagPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagKeysListRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagKeysListRequiredException {
@@ -3465,6 +3519,7 @@ impl TagKeysListRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceArnRequiredException {
@@ -3529,6 +3584,7 @@ impl ResourceArnRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagKeysListException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagKeysListException {
@@ -3593,6 +3649,7 @@ impl InvalidTagKeysListException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSystemTagUsageException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSystemTagUsageException {
@@ -3657,6 +3714,7 @@ impl InvalidSystemTagUsageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceArnException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceArnException {
@@ -3721,6 +3779,7 @@ impl InvalidResourceArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggersListRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryTriggersListRequiredException {
@@ -3785,6 +3844,7 @@ impl RepositoryTriggersListRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryTriggerNameRequiredException {
@@ -3849,6 +3909,7 @@ impl RepositoryTriggerNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerEventsListRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryTriggerEventsListRequiredException {
@@ -3913,6 +3974,7 @@ impl RepositoryTriggerEventsListRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerDestinationArnRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryTriggerDestinationArnRequiredException {
@@ -3978,6 +4040,7 @@ impl RepositoryTriggerDestinationArnRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerBranchNameListRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryTriggerBranchNameListRequiredException {
@@ -4043,6 +4106,7 @@ impl RepositoryTriggerBranchNameListRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumRepositoryTriggersExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumRepositoryTriggersExceededException {
@@ -4107,6 +4171,7 @@ impl MaximumRepositoryTriggersExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumBranchesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumBranchesExceededException {
@@ -4171,6 +4236,7 @@ impl MaximumBranchesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerRegionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerRegionException {
@@ -4235,6 +4301,7 @@ impl InvalidRepositoryTriggerRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerNameException {
@@ -4299,6 +4366,7 @@ impl InvalidRepositoryTriggerNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerEventsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerEventsException {
@@ -4363,6 +4431,7 @@ impl InvalidRepositoryTriggerEventsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerDestinationArnException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerDestinationArnException {
@@ -4428,6 +4497,7 @@ impl InvalidRepositoryTriggerDestinationArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerCustomDataException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerCustomDataException {
@@ -4492,6 +4562,7 @@ impl InvalidRepositoryTriggerCustomDataException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerBranchNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRepositoryTriggerBranchNameException {
@@ -4556,6 +4627,7 @@ impl InvalidRepositoryTriggerBranchNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagsMapRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagsMapRequiredException {
@@ -4620,6 +4692,7 @@ impl TagsMapRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagsMapException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagsMapException {
@@ -4684,6 +4757,7 @@ impl InvalidTagsMapException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SameFileContentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SameFileContentException {
@@ -4748,6 +4822,7 @@ impl SameFileContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PathRequiredException {
@@ -4812,6 +4887,7 @@ impl PathRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentCommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParentCommitIdRequiredException {
@@ -4876,6 +4952,7 @@ impl ParentCommitIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentCommitIdOutdatedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParentCommitIdOutdatedException {
@@ -4940,6 +5017,7 @@ impl ParentCommitIdOutdatedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentCommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParentCommitDoesNotExistException {
@@ -5004,6 +5082,7 @@ impl ParentCommitDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NameLengthExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NameLengthExceededException {
@@ -5068,6 +5147,7 @@ impl NameLengthExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPathException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPathException {
@@ -5132,6 +5212,7 @@ impl InvalidPathException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParentCommitIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParentCommitIdException {
@@ -5196,6 +5277,7 @@ impl InvalidParentCommitIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileModeException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFileModeException {
@@ -5260,6 +5342,7 @@ impl InvalidFileModeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEmailException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEmailException {
@@ -5324,6 +5407,7 @@ impl InvalidEmailException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeletionParameterException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeletionParameterException {
@@ -5388,6 +5472,7 @@ impl InvalidDeletionParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FolderContentSizeLimitExceededException {
@@ -5452,6 +5537,7 @@ impl FolderContentSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilePathConflictsWithSubmodulePathException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FilePathConflictsWithSubmodulePathException {
@@ -5516,6 +5602,7 @@ impl FilePathConflictsWithSubmodulePathException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileNameConflictsWithDirectoryNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileNameConflictsWithDirectoryNameException {
@@ -5580,6 +5667,7 @@ impl FileNameConflictsWithDirectoryNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileContentSizeLimitExceededException {
@@ -5644,6 +5732,7 @@ impl FileContentSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileContentRequiredException {
@@ -5708,6 +5797,7 @@ impl FileContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNameConflictsWithFileNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryNameConflictsWithFileNameException {
@@ -5772,6 +5862,7 @@ impl DirectoryNameConflictsWithFileNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitMessageLengthExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitMessageLengthExceededException {
@@ -5836,6 +5927,7 @@ impl CommitMessageLengthExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchNameIsTagNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BranchNameIsTagNameException {
@@ -5900,6 +5992,7 @@ impl BranchNameIsTagNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactionValueRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReactionValueRequiredException {
@@ -5964,6 +6057,7 @@ impl ReactionValueRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactionLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReactionLimitExceededException {
@@ -6028,6 +6122,7 @@ impl ReactionLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReactionValueException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReactionValueException {
@@ -6092,6 +6187,7 @@ impl InvalidReactionValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientRequestTokenException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidClientRequestTokenException {
@@ -6156,6 +6252,7 @@ impl InvalidClientRequestTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotencyParameterMismatchException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotencyParameterMismatchException {
@@ -6220,6 +6317,7 @@ impl IdempotencyParameterMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientRequestTokenRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientRequestTokenRequiredException {
@@ -6284,6 +6382,7 @@ impl ClientRequestTokenRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotAssociatedWithPullRequestException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNotAssociatedWithPullRequestException {
@@ -6349,6 +6448,7 @@ impl RepositoryNotAssociatedWithPullRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PathDoesNotExistException {
@@ -6413,6 +6513,7 @@ impl PathDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRelativeFileVersionEnumException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRelativeFileVersionEnumException {
@@ -6477,6 +6578,7 @@ impl InvalidRelativeFileVersionEnumException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilePositionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilePositionException {
@@ -6541,6 +6643,7 @@ impl InvalidFilePositionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileLocationException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFileLocationException {
@@ -6605,6 +6708,7 @@ impl InvalidFileLocationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCommitIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCommitIdException {
@@ -6669,6 +6773,7 @@ impl InvalidCommitIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitIdRequiredException {
@@ -6733,6 +6838,7 @@ impl CommitIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitDoesNotExistException {
@@ -6797,6 +6903,7 @@ impl CommitDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BeforeCommitIdAndAfterCommitIdAreSameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BeforeCommitIdAndAfterCommitIdAreSameException {
@@ -6862,6 +6969,7 @@ impl BeforeCommitIdAndAfterCommitIdAreSameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverrideStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OverrideStatusRequiredException {
@@ -6926,6 +7034,7 @@ impl OverrideStatusRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverrideAlreadySetException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OverrideAlreadySetException {
@@ -6990,6 +7099,7 @@ impl OverrideAlreadySetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOverrideStatusException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOverrideStatusException {
@@ -7054,6 +7164,7 @@ impl InvalidOverrideStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TipsDivergenceExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TipsDivergenceExceededException {
@@ -7118,6 +7229,7 @@ impl TipsDivergenceExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TipOfSourceReferenceIsDifferentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TipOfSourceReferenceIsDifferentException {
@@ -7182,6 +7294,7 @@ impl TipOfSourceReferenceIsDifferentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplacementTypeRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplacementTypeRequiredException {
@@ -7246,6 +7359,7 @@ impl ReplacementTypeRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplacementContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplacementContentRequiredException {
@@ -7310,6 +7424,7 @@ impl ReplacementContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestApprovalRulesNotSatisfiedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullRequestApprovalRulesNotSatisfiedException {
@@ -7374,6 +7489,7 @@ impl PullRequestApprovalRulesNotSatisfiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipleConflictResolutionEntriesException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MultipleConflictResolutionEntriesException {
@@ -7438,6 +7554,7 @@ impl MultipleConflictResolutionEntriesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumItemsToCompareExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumItemsToCompareExceededException {
@@ -7502,6 +7619,7 @@ impl MaximumItemsToCompareExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumFileContentToLoadExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumFileContentToLoadExceededException {
@@ -7566,6 +7684,7 @@ impl MaximumFileContentToLoadExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumConflictResolutionEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumConflictResolutionEntriesExceededException {
@@ -7631,6 +7750,7 @@ impl MaximumConflictResolutionEntriesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManualMergeRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ManualMergeRequiredException {
@@ -7695,6 +7815,7 @@ impl ManualMergeRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReplacementTypeException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReplacementTypeException {
@@ -7759,6 +7880,7 @@ impl InvalidReplacementTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReplacementContentException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReplacementContentException {
@@ -7823,6 +7945,7 @@ impl InvalidReplacementContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConflictResolutionStrategyException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConflictResolutionStrategyException {
@@ -7887,6 +8010,7 @@ impl InvalidConflictResolutionStrategyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConflictResolutionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConflictResolutionException {
@@ -7951,6 +8075,7 @@ impl InvalidConflictResolutionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConflictDetailLevelException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConflictDetailLevelException {
@@ -8015,6 +8140,7 @@ impl InvalidConflictDetailLevelException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentReferenceUpdateException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentReferenceUpdateException {
@@ -8079,6 +8205,7 @@ impl ConcurrentReferenceUpdateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReferenceDoesNotExistException {
@@ -8143,6 +8270,7 @@ impl ReferenceDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetBranchException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetBranchException {
@@ -8207,6 +8335,7 @@ impl InvalidTargetBranchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCommitException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCommitException {
@@ -8271,6 +8400,7 @@ impl InvalidCommitException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileModeRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileModeRequiredException {
@@ -8335,6 +8465,7 @@ impl FileModeRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitRequiredException {
@@ -8399,6 +8530,7 @@ impl CommitRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxResultsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMaxResultsException {
@@ -8463,6 +8595,7 @@ impl InvalidMaxResultsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidContinuationTokenException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidContinuationTokenException {
@@ -8527,6 +8660,7 @@ impl InvalidContinuationTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortByException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSortByException {
@@ -8591,6 +8725,7 @@ impl InvalidSortByException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOrderException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOrderException {
@@ -8655,6 +8790,7 @@ impl InvalidOrderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthorArnException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAuthorArnException {
@@ -8719,6 +8855,7 @@ impl InvalidAuthorArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorDoesNotExistException {
@@ -8783,6 +8920,7 @@ impl AuthorDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeOptionRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MergeOptionRequiredException {
@@ -8847,6 +8985,7 @@ impl MergeOptionRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSourceCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSourceCommitSpecifierException {
@@ -8911,6 +9050,7 @@ impl InvalidSourceCommitSpecifierException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMergeOptionException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMergeOptionException {
@@ -8975,6 +9115,7 @@ impl InvalidMergeOptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxConflictFilesException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMaxConflictFilesException {
@@ -9039,6 +9180,7 @@ impl InvalidMaxConflictFilesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDestinationCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDestinationCommitSpecifierException {
@@ -9103,6 +9245,7 @@ impl InvalidDestinationCommitSpecifierException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FolderDoesNotExistException {
@@ -9167,6 +9310,7 @@ impl FolderDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileTooLargeException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileTooLargeException {
@@ -9231,6 +9375,7 @@ impl FileTooLargeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileDoesNotExistException {
@@ -9295,6 +9440,7 @@ impl FileDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitIdDoesNotExistException {
@@ -9359,6 +9505,7 @@ impl CommitIdDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReactionUserArnException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReactionUserArnException {
@@ -9423,6 +9570,7 @@ impl InvalidReactionUserArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBlobIdException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBlobIdException {
@@ -9487,6 +9635,7 @@ impl InvalidBlobIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlobIdRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BlobIdRequiredException {
@@ -9551,6 +9700,7 @@ impl BlobIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlobIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BlobIdDoesNotExistException {
@@ -9615,6 +9765,7 @@ impl BlobIdDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPullRequestEventTypeException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPullRequestEventTypeException {
@@ -9679,6 +9830,7 @@ impl InvalidPullRequestEventTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActorArnException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidActorArnException {
@@ -9743,6 +9895,7 @@ impl InvalidActorArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActorDoesNotExistException {
@@ -9807,6 +9960,7 @@ impl ActorDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxMergeHunksException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMaxMergeHunksException {
@@ -9871,6 +10025,7 @@ impl InvalidMaxMergeHunksException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotDeleteApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CannotDeleteApprovalRuleFromTemplateException {
@@ -9935,6 +10090,7 @@ impl CannotDeleteApprovalRuleFromTemplateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultBranchCannotBeDeletedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DefaultBranchCannotBeDeletedException {
@@ -9999,6 +10155,7 @@ impl DefaultBranchCannotBeDeletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateInUseException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleTemplateInUseException {
@@ -10063,6 +10220,7 @@ impl ApprovalRuleTemplateInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryLimitExceededException {
@@ -10127,6 +10285,7 @@ impl RepositoryLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NumberOfRulesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NumberOfRulesExceededException {
@@ -10191,6 +10350,7 @@ impl NumberOfRulesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalRuleNameAlreadyExistsException {
@@ -10255,6 +10415,7 @@ impl ApprovalRuleNameAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetsRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetsRequiredException {
@@ -10319,6 +10480,7 @@ impl TargetsRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetRequiredException {
@@ -10383,6 +10545,7 @@ impl TargetRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceAndDestinationAreSameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceAndDestinationAreSameException {
@@ -10447,6 +10610,7 @@ impl SourceAndDestinationAreSameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceTypeNotSupportedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReferenceTypeNotSupportedException {
@@ -10511,6 +10675,7 @@ impl ReferenceTypeNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceNameRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReferenceNameRequiredException {
@@ -10575,6 +10740,7 @@ impl ReferenceNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipleRepositoriesInPullRequestException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MultipleRepositoriesInPullRequestException {
@@ -10639,6 +10805,7 @@ impl MultipleRepositoriesInPullRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumOpenPullRequestsExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumOpenPullRequestsExceededException {
@@ -10703,6 +10870,7 @@ impl MaximumOpenPullRequestsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetsException {
@@ -10767,6 +10935,7 @@ impl InvalidTargetsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetException {
@@ -10831,6 +11000,7 @@ impl InvalidTargetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReferenceNameException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReferenceNameException {
@@ -10895,6 +11065,7 @@ impl InvalidReferenceNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFileOrContentRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceFileOrContentRequiredException {
@@ -10959,6 +11130,7 @@ impl SourceFileOrContentRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamePathRequestException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SamePathRequestException {
@@ -11023,6 +11195,7 @@ impl SamePathRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestrictedSourceFileException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RestrictedSourceFileException {
@@ -11087,6 +11260,7 @@ impl RestrictedSourceFileException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileEntryConflictException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutFileEntryConflictException {
@@ -11151,6 +11325,7 @@ impl PutFileEntryConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoChangeException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoChangeException {
@@ -11215,6 +11390,7 @@ impl NoChangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumFileEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumFileEntriesExceededException {
@@ -11279,6 +11455,7 @@ impl MaximumFileEntriesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileEntryRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileEntryRequiredException {
@@ -11343,6 +11520,7 @@ impl FileEntryRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileContentAndSourceFileSpecifiedException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileContentAndSourceFileSpecifiedException {
@@ -11407,6 +11585,7 @@ impl FileContentAndSourceFileSpecifiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchNameExistsException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BranchNameExistsException {
@@ -11471,6 +11650,7 @@ impl BranchNameExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NumberOfRuleTemplatesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NumberOfRuleTemplatesExceededException {
@@ -11535,6 +11715,7 @@ impl NumberOfRuleTemplatesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNamesRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNamesRequiredException {
@@ -11599,6 +11780,7 @@ impl RepositoryNamesRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumRepositoryNamesExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumRepositoryNamesExceededException {
@@ -11663,6 +11845,7 @@ impl MaximumRepositoryNamesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitIdsListRequiredException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitIdsListRequiredException {
@@ -11727,6 +11910,7 @@ impl CommitIdsListRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitIdsLimitExceededException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommitIdsLimitExceededException {
@@ -11791,6 +11975,7 @@ impl CommitIdsLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// <p>Any message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumRuleTemplatesAssociatedWithRepositoryException {

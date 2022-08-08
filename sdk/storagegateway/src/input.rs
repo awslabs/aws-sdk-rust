@@ -16312,9 +16312,11 @@ impl UpdateVtlDeviceTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVtlDeviceTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
+    #[doc(hidden)]
     pub vtl_device_arn: std::option::Option<std::string::String>,
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
 }
 impl UpdateVtlDeviceTypeInput {
@@ -16348,16 +16350,21 @@ impl std::fmt::Debug for UpdateVtlDeviceTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub start_at: std::option::Option<i32>,
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
+    #[doc(hidden)]
     pub recurrence_in_hours: std::option::Option<i32>,
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateSnapshotScheduleInput {
@@ -16401,11 +16408,13 @@ impl std::fmt::Debug for UpdateSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbSecurityStrategyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the type of security strategy.</p>
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    #[doc(hidden)]
     pub smb_security_strategy: std::option::Option<crate::model::SmbSecurityStrategy>,
 }
 impl UpdateSmbSecurityStrategyInput {
@@ -16435,8 +16444,10 @@ impl std::fmt::Debug for UpdateSmbSecurityStrategyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbLocalGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
+    #[doc(hidden)]
     pub smb_local_groups: std::option::Option<crate::model::SmbLocalGroups>,
 }
 impl UpdateSmbLocalGroupsInput {
@@ -16463,8 +16474,10 @@ impl std::fmt::Debug for UpdateSmbLocalGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The shares on this gateway appear when listing shares.</p>
+    #[doc(hidden)]
     pub file_shares_visible: std::option::Option<bool>,
 }
 impl UpdateSmbFileShareVisibilityInput {
@@ -16491,49 +16504,66 @@ impl std::fmt::Debug for UpdateSmbFileShareVisibilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    #[doc(hidden)]
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
     /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub smbacl_enabled: std::option::Option<bool>,
     /// <p>The files and folders on this share will only be visible to users with read access.</p>
+    #[doc(hidden)]
     pub access_based_enumeration: std::option::Option<bool>,
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    #[doc(hidden)]
     pub admin_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    #[doc(hidden)]
     pub valid_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    #[doc(hidden)]
     pub invalid_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+    #[doc(hidden)]
     pub case_sensitivity: std::option::Option<crate::model::CaseSensitivity>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -16542,11 +16572,13 @@ pub struct UpdateSmbFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
+    #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
     /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub oplocks_enabled: std::option::Option<bool>,
 }
 impl UpdateSmbFileShareInput {
@@ -16678,20 +16710,27 @@ impl std::fmt::Debug for UpdateSmbFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNfsFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The default values for the file share. Optional.</p>
+    #[doc(hidden)]
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    #[doc(hidden)]
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -16700,23 +16739,29 @@ pub struct UpdateNfsFileShareInput {
     /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
     /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub squash: std::option::Option<std::string::String>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -16725,8 +16770,10 @@ pub struct UpdateNfsFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
+    #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
 }
 impl UpdateNfsFileShareInput {
@@ -16847,14 +16894,19 @@ impl std::fmt::Debug for UpdateNfsFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub hour_of_day: std::option::Option<i32>,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub minute_of_hour: std::option::Option<i32>,
     /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<i32>,
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
 }
 impl UpdateMaintenanceStartTimeInput {
@@ -16896,6 +16948,7 @@ impl std::fmt::Debug for UpdateMaintenanceStartTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewaySoftwareNowInput {
@@ -16917,15 +16970,20 @@ impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_timezone: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the size of the gateway's metadata cache.</p>
+    #[doc(hidden)]
     pub gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
 }
 impl UpdateGatewayInformationInput {
@@ -16968,14 +17026,19 @@ impl std::fmt::Debug for UpdateGatewayInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFileSystemAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+    #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The password of the user credential.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
 }
 impl UpdateFileSystemAssociationInput {
@@ -17026,17 +17089,21 @@ impl std::fmt::Debug for UpdateFileSystemAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
+    #[doc(hidden)]
     pub secret_to_authenticate_initiator: std::option::Option<std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
+    #[doc(hidden)]
     pub initiator_name: std::option::Option<std::string::String>,
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
+    #[doc(hidden)]
     pub secret_to_authenticate_target: std::option::Option<std::string::String>,
 }
 impl UpdateChapCredentialsInput {
@@ -17084,8 +17151,10 @@ impl std::fmt::Debug for UpdateChapCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    #[doc(hidden)]
     pub bandwidth_rate_limit_intervals:
         std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
 }
@@ -17122,10 +17191,13 @@ impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
+    #[doc(hidden)]
     pub average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
     /// <p>The average download bandwidth rate limit in bits per second.</p>
+    #[doc(hidden)]
     pub average_download_rate_limit_in_bits_per_sec: std::option::Option<i64>,
 }
 impl UpdateBandwidthRateLimitInput {
@@ -17163,9 +17235,11 @@ impl std::fmt::Debug for UpdateBandwidthRateLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAutomaticTapeCreationPolicyInput {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
+    #[doc(hidden)]
     pub automatic_tape_creation_rules:
         std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAutomaticTapeCreationPolicyInput {
@@ -17197,6 +17271,7 @@ impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl StartGatewayInput {
@@ -17218,6 +17293,7 @@ impl std::fmt::Debug for StartGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl StartAvailabilityMonitorTestInput {
@@ -17239,6 +17315,7 @@ impl std::fmt::Debug for StartAvailabilityMonitorTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShutdownGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ShutdownGatewayInput {
@@ -17260,8 +17337,10 @@ impl std::fmt::Debug for ShutdownGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSmbGuestPasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The password that you want to set for your SMB server.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl SetSmbGuestPasswordInput {
@@ -17288,8 +17367,10 @@ impl std::fmt::Debug for SetSmbGuestPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The password you want to set for your VM local console.</p>
+    #[doc(hidden)]
     pub local_console_password: std::option::Option<std::string::String>,
 }
 impl SetLocalConsolePasswordInput {
@@ -17316,8 +17397,10 @@ impl std::fmt::Debug for SetLocalConsolePasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveTapeRecoveryPointInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to retrieve the recovery point.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl RetrieveTapeRecoveryPointInput {
@@ -17344,9 +17427,11 @@ impl std::fmt::Debug for RetrieveTapeRecoveryPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveTapeArchiveInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl RetrieveTapeArchiveInput {
@@ -17374,6 +17459,7 @@ impl std::fmt::Debug for RetrieveTapeArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ResetCacheInput {
@@ -17395,8 +17481,10 @@ impl std::fmt::Debug for ResetCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -17423,11 +17511,14 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    #[doc(hidden)]
     pub folder_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub recursive: std::option::Option<bool>,
 }
 impl RefreshCacheInput {
@@ -17460,6 +17551,7 @@ impl std::fmt::Debug for RefreshCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWhenUploadedInput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl NotifyWhenUploadedInput {
@@ -17485,10 +17577,13 @@ impl std::fmt::Debug for NotifyWhenUploadedInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListVolumesInput {
@@ -17520,6 +17615,7 @@ impl std::fmt::Debug for ListVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ListVolumeRecoveryPointsInput {
@@ -17541,6 +17637,7 @@ impl std::fmt::Debug for ListVolumeRecoveryPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeInitiatorsInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl ListVolumeInitiatorsInput {
@@ -17567,10 +17664,13 @@ impl std::fmt::Debug for ListVolumeInitiatorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTapesInput {
     /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
+    #[doc(hidden)]
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string that indicates the position at which to begin the returned list of tapes.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An optional number limit for the tapes in the list returned by this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTapesInput {
@@ -17602,10 +17702,13 @@ impl std::fmt::Debug for ListTapesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    #[doc(hidden)]
     pub pool_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTapePoolsInput {
@@ -17637,10 +17740,13 @@ impl std::fmt::Debug for ListTapePoolsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An opaque string that indicates the position at which to begin returning the list of tags.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the list of tags returned be limited to the specified number of items.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -17672,6 +17778,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocalDisksInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ListLocalDisksInput {
@@ -17697,8 +17804,10 @@ impl std::fmt::Debug for ListLocalDisksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysInput {
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListGatewaysInput {
@@ -17725,10 +17834,13 @@ impl std::fmt::Debug for ListGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSystemAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListFileSystemAssociationsInput {
@@ -17760,10 +17872,13 @@ impl std::fmt::Debug for ListFileSystemAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSharesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListFileSharesInput {
@@ -17795,6 +17910,7 @@ impl std::fmt::Debug for ListFileSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutomaticTapeCreationPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ListAutomaticTapeCreationPoliciesInput {
@@ -17816,18 +17932,25 @@ impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain that you want the gateway to join.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
+    #[doc(hidden)]
     pub organizational_unit: std::option::Option<std::string::String>,
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    #[doc(hidden)]
     pub domain_controllers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl JoinDomainInput {
@@ -17879,8 +18002,10 @@ impl std::fmt::Debug for JoinDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFileSystemInput {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
+    #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DisassociateFileSystemInput {
@@ -17910,6 +18035,7 @@ impl std::fmt::Debug for DisassociateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisableGatewayInput {
@@ -17931,9 +18057,11 @@ impl std::fmt::Debug for DisableGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub force_detach: std::option::Option<bool>,
 }
 impl DetachVolumeInput {
@@ -17961,6 +18089,7 @@ impl std::fmt::Debug for DetachVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeWorkingStorageInput {
@@ -17982,14 +18111,18 @@ impl std::fmt::Debug for DescribeWorkingStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
+    #[doc(hidden)]
     pub vtl_device_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeVtlDevicesInput {
@@ -18028,6 +18161,7 @@ impl std::fmt::Debug for DescribeVtlDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeUploadBufferInput {
@@ -18049,15 +18183,19 @@ impl std::fmt::Debug for DescribeUploadBufferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
+    #[doc(hidden)]
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeTapesInput {
@@ -18097,10 +18235,13 @@ impl std::fmt::Debug for DescribeTapesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeRecoveryPointsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeTapeRecoveryPointsInput {
@@ -18132,10 +18273,13 @@ impl std::fmt::Debug for DescribeTapeRecoveryPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
+    #[doc(hidden)]
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeTapeArchivesInput {
@@ -18167,6 +18311,7 @@ impl std::fmt::Debug for DescribeTapeArchivesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    #[doc(hidden)]
     pub volume_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeStorediScsiVolumesInput {
@@ -18188,6 +18333,7 @@ impl std::fmt::Debug for DescribeStorediScsiVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotScheduleInput {
@@ -18209,6 +18355,7 @@ impl std::fmt::Debug for DescribeSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSmbSettingsInput {
@@ -18230,6 +18377,7 @@ impl std::fmt::Debug for DescribeSmbSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
+    #[doc(hidden)]
     pub file_share_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSmbFileSharesInput {
@@ -18251,6 +18399,7 @@ impl std::fmt::Debug for DescribeSmbFileSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNfsFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
+    #[doc(hidden)]
     pub file_share_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeNfsFileSharesInput {
@@ -18272,6 +18421,7 @@ impl std::fmt::Debug for DescribeNfsFileSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceStartTimeInput {
@@ -18293,6 +18443,7 @@ impl std::fmt::Debug for DescribeMaintenanceStartTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInformationInput {
@@ -18314,6 +18465,7 @@ impl std::fmt::Debug for DescribeGatewayInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAssociationsInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
+    #[doc(hidden)]
     pub file_system_association_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeFileSystemAssociationsInput {
@@ -18338,6 +18490,7 @@ impl std::fmt::Debug for DescribeFileSystemAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl DescribeChapCredentialsInput {
@@ -18359,6 +18512,7 @@ impl std::fmt::Debug for DescribeChapCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCachediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    #[doc(hidden)]
     pub volume_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCachediScsiVolumesInput {
@@ -18380,6 +18534,7 @@ impl std::fmt::Debug for DescribeCachediScsiVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCacheInput {
@@ -18401,6 +18556,7 @@ impl std::fmt::Debug for DescribeCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBandwidthRateLimitScheduleInput {
@@ -18422,6 +18578,7 @@ impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBandwidthRateLimitInput {
@@ -18443,6 +18600,7 @@ impl std::fmt::Debug for DescribeBandwidthRateLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityMonitorTestInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAvailabilityMonitorTestInput {
@@ -18464,6 +18622,7 @@ impl std::fmt::Debug for DescribeAvailabilityMonitorTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DeleteVolumeInput {
@@ -18485,6 +18644,7 @@ impl std::fmt::Debug for DeleteVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTapePoolInput {
@@ -18506,8 +18666,10 @@ impl std::fmt::Debug for DeleteTapePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapeArchiveInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    #[doc(hidden)]
     pub bypass_governance_retention: bool,
 }
 impl DeleteTapeArchiveInput {
@@ -18537,10 +18699,13 @@ impl std::fmt::Debug for DeleteTapeArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    #[doc(hidden)]
     pub bypass_governance_retention: bool,
 }
 impl DeleteTapeInput {
@@ -18575,6 +18740,7 @@ impl std::fmt::Debug for DeleteTapeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotScheduleInput {
     /// <p>The volume which snapshot schedule to delete.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotScheduleInput {
@@ -18596,6 +18762,7 @@ impl std::fmt::Debug for DeleteSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayInput {
@@ -18617,9 +18784,11 @@ impl std::fmt::Debug for DeleteGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeleteFileShareInput {
@@ -18651,8 +18820,10 @@ impl std::fmt::Debug for DeleteFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
+    #[doc(hidden)]
     pub initiator_name: std::option::Option<std::string::String>,
 }
 impl DeleteChapCredentialsInput {
@@ -18682,9 +18853,11 @@ impl std::fmt::Debug for DeleteChapCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
+    #[doc(hidden)]
     pub bandwidth_type: std::option::Option<std::string::String>,
 }
 impl DeleteBandwidthRateLimitInput {
@@ -18712,6 +18885,7 @@ impl std::fmt::Debug for DeleteBandwidthRateLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutomaticTapeCreationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutomaticTapeCreationPolicyInput {
@@ -18733,27 +18907,35 @@ impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapeWithBarcodeInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
+    #[doc(hidden)]
     pub tape_size_in_bytes: std::option::Option<i64>,
     /// <p>The barcode that you want to assign to the tape.</p> <note>
     /// <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>
     /// </note>
+    #[doc(hidden)]
     pub tape_barcode: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
+    #[doc(hidden)]
     pub worm: bool,
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTapeWithBarcodeInput {
@@ -18817,33 +18999,43 @@ impl std::fmt::Debug for CreateTapeWithBarcodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapesInput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
+    #[doc(hidden)]
     pub tape_size_in_bytes: std::option::Option<i64>,
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note>
     /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p>
     /// </note>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The number of virtual tapes that you want to create.</p>
+    #[doc(hidden)]
     pub num_tapes_to_create: std::option::Option<i32>,
     /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
+    #[doc(hidden)]
     pub tape_barcode_prefix: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
+    #[doc(hidden)]
     pub worm: bool,
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTapesInput {
@@ -18919,16 +19111,21 @@ impl std::fmt::Debug for CreateTapesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapePoolInput {
     /// <p>The name of the new custom tape pool.</p>
+    #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
     /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::TapeStorageClass>,
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub retention_lock_type: std::option::Option<crate::model::RetentionLockType>,
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
+    #[doc(hidden)]
     pub retention_lock_time_in_days: std::option::Option<i32>,
     /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTapePoolInput {
@@ -18982,28 +19179,37 @@ impl std::fmt::Debug for CreateTapePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the gateway local disk that is configured as a stored volume. Use <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.</p>
+    #[doc(hidden)]
     pub disk_id: std::option::Option<std::string::String>,
     /// <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub preserve_existing_data: bool,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateStorediScsiVolumeInput {
@@ -19071,12 +19277,15 @@ impl std::fmt::Debug for CreateStorediScsiVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotFromVolumeRecoveryPointInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
+    #[doc(hidden)]
     pub snapshot_description: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotFromVolumeRecoveryPointInput {
@@ -19114,12 +19323,15 @@ impl std::fmt::Debug for CreateSnapshotFromVolumeRecoveryPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
+    #[doc(hidden)]
     pub snapshot_description: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotInput {
@@ -19153,15 +19365,20 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmbFileShareInput {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
@@ -19173,53 +19390,70 @@ pub struct CreateSmbFileShareInput {
     /// <p>Access point alias:</p>
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    #[doc(hidden)]
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
     /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub smbacl_enabled: std::option::Option<bool>,
     /// <p>The files and folders on this share will only be visible to users with read access.</p>
+    #[doc(hidden)]
     pub access_based_enumeration: std::option::Option<bool>,
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
+    #[doc(hidden)]
     pub admin_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    #[doc(hidden)]
     pub valid_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    #[doc(hidden)]
     pub invalid_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
     /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<std::string::String>,
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+    #[doc(hidden)]
     pub case_sensitivity: std::option::Option<crate::model::CaseSensitivity>,
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -19228,19 +19462,23 @@ pub struct CreateSmbFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
+    #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
     /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
     /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
+    #[doc(hidden)]
     pub bucket_region: std::option::Option<std::string::String>,
     /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub oplocks_enabled: std::option::Option<bool>,
 }
 impl CreateSmbFileShareInput {
@@ -19425,17 +19663,23 @@ impl std::fmt::Debug for CreateSmbFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNfsFileShareInput {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>File share default values. Optional.</p>
+    #[doc(hidden)]
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
@@ -19447,13 +19691,17 @@ pub struct CreateNfsFileShareInput {
     /// <p>Access point alias:</p>
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    #[doc(hidden)]
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that maps a user to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -19462,27 +19710,34 @@ pub struct CreateNfsFileShareInput {
     /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
     /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub squash: std::option::Option<std::string::String>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
     /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -19491,16 +19746,20 @@ pub struct CreateNfsFileShareInput {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
+    #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
+    #[doc(hidden)]
     pub bucket_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
 }
 impl CreateNfsFileShareInput {
@@ -19660,29 +19919,39 @@ impl std::fmt::Debug for CreateNfsFileShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The size of the volume in bytes.</p>
+    #[doc(hidden)]
     pub volume_size_in_bytes: i64,
     /// <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
     /// <p>The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code> value for this new volume must be equal to or larger than the size of the existing volume, in bytes.</p>
+    #[doc(hidden)]
     pub source_volume_arn: std::option::Option<std::string::String>,
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub kms_encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCachediScsiVolumeInput {
@@ -19754,8 +20023,10 @@ impl std::fmt::Debug for CreateCachediScsiVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRetrievalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl CancelRetrievalInput {
@@ -19782,8 +20053,10 @@ impl std::fmt::Debug for CancelRetrievalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelArchivalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl CancelArchivalInput {
@@ -19810,16 +20083,21 @@ impl std::fmt::Debug for CancelArchivalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
+    #[doc(hidden)]
     pub disk_id: std::option::Option<std::string::String>,
 }
 impl AttachVolumeInput {
@@ -19863,24 +20141,33 @@ impl std::fmt::Debug for AttachVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFileSystemInput {
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The password of the user credential.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
+    #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
+    #[doc(hidden)]
     pub endpoint_network_configuration:
         std::option::Option<crate::model::EndpointNetworkConfiguration>,
 }
@@ -19950,11 +20237,14 @@ impl std::fmt::Debug for AssociateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignTapePoolInput {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
+    #[doc(hidden)]
     pub bypass_governance_retention: bool,
 }
 impl AssignTapePoolInput {
@@ -19993,8 +20283,10 @@ impl std::fmt::Debug for AssignTapePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddWorkingStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddWorkingStorageInput {
@@ -20021,8 +20313,10 @@ impl std::fmt::Debug for AddWorkingStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddUploadBufferInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddUploadBufferInput {
@@ -20049,10 +20343,12 @@ impl std::fmt::Debug for AddUploadBufferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {
@@ -20081,8 +20377,10 @@ impl std::fmt::Debug for AddTagsToResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddCacheInput {
@@ -20119,26 +20417,34 @@ impl std::fmt::Debug for AddCacheInput {
 pub struct ActivateGatewayInput {
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
+    #[doc(hidden)]
     pub activation_key: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
+    #[doc(hidden)]
     pub gateway_timezone: std::option::Option<std::string::String>,
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub gateway_region: std::option::Option<std::string::String>,
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+    #[doc(hidden)]
     pub gateway_type: std::option::Option<std::string::String>,
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
+    #[doc(hidden)]
     pub tape_drive_type: std::option::Option<std::string::String>,
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
+    #[doc(hidden)]
     pub medium_changer_type: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ActivateGatewayInput {

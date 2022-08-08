@@ -7680,14 +7680,19 @@ impl UpdateVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
     /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration: std::option::Option<crate::model::UpdateOpenZfsVolumeConfiguration>,
 }
 impl UpdateVolumeInput {
@@ -7733,13 +7738,17 @@ impl std::fmt::Debug for UpdateVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStorageVirtualMachineInput {
     /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    #[doc(hidden)]
     pub active_directory_configuration:
         std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
     /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    #[doc(hidden)]
     pub svm_admin_password: std::option::Option<std::string::String>,
 }
 impl UpdateStorageVirtualMachineInput {
@@ -7784,10 +7793,13 @@ impl std::fmt::Debug for UpdateStorageVirtualMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl UpdateSnapshotInput {
@@ -7819,8 +7831,10 @@ impl std::fmt::Debug for UpdateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server, Amazon FSx for Lustre, or Amazon FSx for NetApp ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
@@ -7834,16 +7848,21 @@ pub struct UpdateFileSystemInput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
+    #[doc(hidden)]
     pub windows_configuration:
         std::option::Option<crate::model::UpdateFileSystemWindowsConfiguration>,
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub lustre_configuration:
         std::option::Option<crate::model::UpdateFileSystemLustreConfiguration>,
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
     /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration:
         std::option::Option<crate::model::UpdateFileSystemOpenZfsConfiguration>,
 }
@@ -7915,13 +7934,17 @@ impl std::fmt::Debug for UpdateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you are updating.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    #[doc(hidden)]
     pub imported_file_chunk_size: std::option::Option<i32>,
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
 }
 impl UpdateDataRepositoryAssociationInput {
@@ -7959,8 +7982,10 @@ impl std::fmt::Debug for UpdateDataRepositoryAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Amazon FSx resource to untag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7987,8 +8012,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8015,16 +8042,20 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreVolumeFromSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the volume that you are restoring.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The settings used when restoring the specified volume from snapshot. </p>
     /// <ul>
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::model::RestoreOpenZfsVolumeOption>>,
 }
 impl RestoreVolumeFromSnapshotInput {
@@ -8065,8 +8096,10 @@ impl std::fmt::Debug for RestoreVolumeFromSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseFileSystemNfsV3LocksInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl ReleaseFileSystemNfsV3LocksInput {
@@ -8093,10 +8126,13 @@ impl std::fmt::Debug for ReleaseFileSystemNfsV3LocksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8128,10 +8164,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateFileSystemAliasesInput {
@@ -8163,12 +8202,16 @@ impl std::fmt::Debug for DisassociateFileSystemAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesInput {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
+    #[doc(hidden)]
     pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesInput {
@@ -8205,12 +8248,16 @@ impl std::fmt::Debug for DescribeVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorageVirtualMachinesInput {
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachineFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStorageVirtualMachinesInput {
@@ -8250,12 +8297,16 @@ impl std::fmt::Debug for DescribeStorageVirtualMachinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    #[doc(hidden)]
     pub snapshot_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SnapshotFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsInput {
@@ -8292,10 +8343,13 @@ impl std::fmt::Debug for DescribeSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemsInput {
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
+    #[doc(hidden)]
     pub file_system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemsInput {
@@ -8327,12 +8381,16 @@ impl std::fmt::Debug for DescribeFileSystemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemAliasesInput {
@@ -8369,12 +8427,16 @@ impl std::fmt::Debug for DescribeFileSystemAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryTasksInput {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
+    #[doc(hidden)]
     pub task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTaskFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataRepositoryTasksInput {
@@ -8411,12 +8473,16 @@ impl std::fmt::Debug for DescribeDataRepositoryTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryAssociationsInput {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
+    #[doc(hidden)]
     pub association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>Filter</code> elements.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataRepositoryAssociationsInput {
@@ -8453,12 +8519,16 @@ impl std::fmt::Debug for DescribeDataRepositoryAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsInput {
     /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
+    #[doc(hidden)]
     pub backup_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsInput {
@@ -8495,12 +8565,16 @@ impl std::fmt::Debug for DescribeBackupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the volume that you are deleting.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration: std::option::Option<crate::model::DeleteVolumeOpenZfsConfiguration>,
 }
 impl DeleteVolumeInput {
@@ -8541,8 +8615,10 @@ impl std::fmt::Debug for DeleteVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageVirtualMachineInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the SVM that you want to delete.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
 }
 impl DeleteStorageVirtualMachineInput {
@@ -8572,8 +8648,10 @@ impl std::fmt::Debug for DeleteStorageVirtualMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot that you want to delete.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotInput {
@@ -8600,16 +8678,21 @@ impl std::fmt::Debug for DeleteSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system that you want to delete.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub windows_configuration:
         std::option::Option<crate::model::DeleteFileSystemWindowsConfiguration>,
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub lustre_configuration:
         std::option::Option<crate::model::DeleteFileSystemLustreConfiguration>,
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration:
         std::option::Option<crate::model::DeleteFileSystemOpenZfsConfiguration>,
 }
@@ -8658,10 +8741,13 @@ impl std::fmt::Debug for DeleteFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you want to delete.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
+    #[doc(hidden)]
     pub delete_data_in_file_system: std::option::Option<bool>,
 }
 impl DeleteDataRepositoryAssociationInput {
@@ -8696,8 +8782,10 @@ impl std::fmt::Debug for DeleteDataRepositoryAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup that you want to delete.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
@@ -8724,14 +8812,19 @@ impl std::fmt::Debug for DeleteBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumeFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the new volume you're creating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVolumeFromBackupInput {
@@ -8775,16 +8868,22 @@ impl std::fmt::Debug for CreateVolumeFromBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Specifies the name of the volume that you're creating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration: std::option::Option<crate::model::CreateOpenZfsVolumeConfiguration>,
 }
 impl CreateVolumeInput {
@@ -8835,17 +8934,23 @@ impl std::fmt::Debug for CreateVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorageVirtualMachineInput {
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    #[doc(hidden)]
     pub active_directory_configuration:
         std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The name of the SVM.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
+    #[doc(hidden)]
     pub svm_admin_password: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
@@ -8853,6 +8958,7 @@ pub struct CreateStorageVirtualMachineInput {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub root_volume_security_style:
         std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
@@ -8920,12 +9026,16 @@ impl std::fmt::Debug for CreateStorageVirtualMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotInput {
@@ -8962,17 +9072,23 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
     /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration for this Microsoft Windows file system.</p>
+    #[doc(hidden)]
     pub windows_configuration:
         std::option::Option<crate::model::CreateFileSystemWindowsConfiguration>,
     /// <p>The Lustre configuration for the file system being created.</p> <note>
@@ -8984,6 +9100,7 @@ pub struct CreateFileSystemFromBackupInput {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub lustre_configuration:
         std::option::Option<crate::model::CreateFileSystemLustreConfiguration>,
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
@@ -8994,6 +9111,7 @@ pub struct CreateFileSystemFromBackupInput {
     /// <p> The default value is <code>SSD</code>. </p> <note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -9003,11 +9121,14 @@ pub struct CreateFileSystemFromBackupInput {
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+    #[doc(hidden)]
     pub file_system_type_version: std::option::Option<std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
+    #[doc(hidden)]
     pub open_zfs_configuration:
         std::option::Option<crate::model::CreateFileSystemOpenZfsConfiguration>,
 }
@@ -9110,8 +9231,10 @@ impl std::fmt::Debug for CreateFileSystemFromBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
+    #[doc(hidden)]
     pub file_system_type: std::option::Option<crate::model::FileSystemType>,
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
     /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
@@ -9127,6 +9250,7 @@ pub struct CreateFileSystemInput {
     /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
     /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
@@ -9134,13 +9258,17 @@ pub struct CreateFileSystemInput {
     /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
     /// </ul>
     /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -9150,8 +9278,10 @@ pub struct CreateFileSystemInput {
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    #[doc(hidden)]
     pub windows_configuration:
         std::option::Option<crate::model::CreateFileSystemWindowsConfiguration>,
     /// <p>The Lustre configuration for the file system being created.</p> <note>
@@ -9163,9 +9293,11 @@ pub struct CreateFileSystemInput {
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub lustre_configuration:
         std::option::Option<crate::model::CreateFileSystemLustreConfiguration>,
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
+    #[doc(hidden)]
     pub ontap_configuration: std::option::Option<crate::model::CreateFileSystemOntapConfiguration>,
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
     /// <ul>
@@ -9175,8 +9307,10 @@ pub struct CreateFileSystemInput {
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_system_type_version: std::option::Option<std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
+    #[doc(hidden)]
     pub open_zfs_configuration:
         std::option::Option<crate::model::CreateFileSystemOpenZfsConfiguration>,
 }
@@ -9308,20 +9442,26 @@ impl std::fmt::Debug for CreateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataRepositoryTaskInput {
     /// <p>Specifies the type of data repository task to create.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
     /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
     /// <ul>
     /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
     /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+    #[doc(hidden)]
     pub report: std::option::Option<crate::model::CompletionReport>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataRepositoryTaskInput {
@@ -9372,24 +9512,32 @@ impl std::fmt::Debug for CreateDataRepositoryTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataRepositoryAssociationInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
+    #[doc(hidden)]
     pub file_system_path: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    #[doc(hidden)]
     pub data_repository_path: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub batch_import_meta_data_on_create: std::option::Option<bool>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    #[doc(hidden)]
     pub imported_file_chunk_size: std::option::Option<i32>,
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataRepositoryAssociationInput {
@@ -9453,12 +9601,16 @@ impl std::fmt::Debug for CreateDataRepositoryAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupInput {
     /// <p>The ID of the file system to back up.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more tags using the <code>CreateBackup</code> operation, no existing file system tags are copied from the file system to the backup.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupInput {
@@ -9495,10 +9647,13 @@ impl std::fmt::Debug for CreateBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
+    #[doc(hidden)]
     pub source_backup_id: std::option::Option<std::string::String>,
     /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
+    #[doc(hidden)]
     pub source_region: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -9508,11 +9663,14 @@ pub struct CopyBackupInput {
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
     /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyBackupInput {
@@ -9567,6 +9725,7 @@ impl std::fmt::Debug for CopyBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDataRepositoryTaskInput {
@@ -9588,8 +9747,10 @@ impl std::fmt::Debug for CancelDataRepositoryTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
     /// <ul>
@@ -9599,6 +9760,7 @@ pub struct AssociateFileSystemAliasesInput {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateFileSystemAliasesInput {

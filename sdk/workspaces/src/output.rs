@@ -154,6 +154,7 @@ impl UpdateConnectClientAddInOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be terminated.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
@@ -224,6 +225,7 @@ impl TerminateWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
@@ -294,6 +296,7 @@ impl StopWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be started.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
@@ -454,6 +457,7 @@ impl RegisterWorkspaceDirectoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebuildWorkspacesOutput {
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
@@ -524,6 +528,7 @@ impl RebuildWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be rebooted.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedWorkspaceChangeRequest>>,
 }
@@ -834,8 +839,10 @@ impl ModifyAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MigrateWorkspaceOutput {
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
+    #[doc(hidden)]
     pub source_workspace_id: std::option::Option<std::string::String>,
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    #[doc(hidden)]
     pub target_workspace_id: std::option::Option<std::string::String>,
 }
 impl MigrateWorkspaceOutput {
@@ -913,8 +920,10 @@ impl MigrateWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagementCidrRangesOutput {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
+    #[doc(hidden)]
     pub management_cidr_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagementCidrRangesOutput {
@@ -995,6 +1004,7 @@ impl ListAvailableManagementCidrRangesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportWorkspaceImageOutput {
     /// <p>The identifier of the WorkSpace image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl ImportWorkspaceImageOutput {
@@ -1049,16 +1059,22 @@ impl ImportWorkspaceImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportClientBrandingOutput {
     /// <p>The branding information configured for Windows devices.</p>
+    #[doc(hidden)]
     pub device_type_windows: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information configured for macOS devices.</p>
+    #[doc(hidden)]
     pub device_type_osx: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information configured for Android devices.</p>
+    #[doc(hidden)]
     pub device_type_android: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information configured for iOS devices.</p>
+    #[doc(hidden)]
     pub device_type_ios: std::option::Option<crate::model::IosClientBrandingAttributes>,
     /// <p>The branding information configured for Linux devices.</p>
+    #[doc(hidden)]
     pub device_type_linux: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information configured for web access.</p>
+    #[doc(hidden)]
     pub device_type_web: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
 }
 impl ImportClientBrandingOutput {
@@ -1308,8 +1324,10 @@ impl DisassociateConnectionAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceSnapshotsOutput {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
+    #[doc(hidden)]
     pub rebuild_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
+    #[doc(hidden)]
     pub restore_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeWorkspaceSnapshotsOutput {
@@ -1399,9 +1417,11 @@ impl DescribeWorkspaceSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspacesConnectionStatusOutput {
     /// <p>Information about the connection status of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspaces_connection_status:
         std::option::Option<std::vec::Vec<crate::model::WorkspaceConnectionStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesConnectionStatusOutput {
@@ -1492,8 +1512,10 @@ impl DescribeWorkspacesConnectionStatusOutput {
 pub struct DescribeWorkspacesOutput {
     /// <p>Information about the WorkSpaces.</p>
     /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
+    #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesOutput {
@@ -1577,8 +1599,10 @@ impl DescribeWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceImagesOutput {
     /// <p>Information about the images.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::WorkspaceImage>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceImagesOutput {
@@ -1659,10 +1683,13 @@ impl DescribeWorkspaceImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceImagePermissionsOutput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
+    #[doc(hidden)]
     pub image_permissions: std::option::Option<std::vec::Vec<crate::model::ImagePermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceImagePermissionsOutput {
@@ -1761,8 +1788,10 @@ impl DescribeWorkspaceImagePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceDirectoriesOutput {
     /// <p>Information about the directories.</p>
+    #[doc(hidden)]
     pub directories: std::option::Option<std::vec::Vec<crate::model::WorkspaceDirectory>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceDirectoriesOutput {
@@ -1844,8 +1873,10 @@ impl DescribeWorkspaceDirectoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceBundlesOutput {
     /// <p>Information about the bundles.</p>
+    #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::WorkspaceBundle>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceBundlesOutput {
@@ -1926,6 +1957,7 @@ impl DescribeWorkspaceBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribeTagsOutput {
@@ -1989,8 +2021,10 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpGroupsOutput {
     /// <p>Information about the IP access control groups.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::vec::Vec<crate::model::WorkspacesIpGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeIpGroupsOutput {
@@ -2071,11 +2105,14 @@ impl DescribeIpGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionAliasPermissionsOutput {
     /// <p>The identifier of the connection alias.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The permissions associated with a connection alias.</p>
+    #[doc(hidden)]
     pub connection_alias_permissions:
         std::option::Option<std::vec::Vec<crate::model::ConnectionAliasPermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionAliasPermissionsOutput {
@@ -2182,8 +2219,10 @@ impl DescribeConnectionAliasPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionAliasesOutput {
     /// <p>Information about the specified connection aliases.</p>
+    #[doc(hidden)]
     pub connection_aliases: std::option::Option<std::vec::Vec<crate::model::ConnectionAlias>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionAliasesOutput {
@@ -2265,8 +2304,10 @@ impl DescribeConnectionAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectClientAddInsOutput {
     /// <p>Information about client add-ins.</p>
+    #[doc(hidden)]
     pub add_ins: std::option::Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectClientAddInsOutput {
@@ -2347,6 +2388,7 @@ impl DescribeConnectClientAddInsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientPropertiesOutput {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
+    #[doc(hidden)]
     pub client_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ClientPropertiesResult>>,
 }
@@ -2417,16 +2459,22 @@ impl DescribeClientPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientBrandingOutput {
     /// <p>The branding information for Windows devices.</p>
+    #[doc(hidden)]
     pub device_type_windows: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information for macOS devices.</p>
+    #[doc(hidden)]
     pub device_type_osx: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information for Android devices.</p>
+    #[doc(hidden)]
     pub device_type_android: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information for iOS devices.</p>
+    #[doc(hidden)]
     pub device_type_ios: std::option::Option<crate::model::IosClientBrandingAttributes>,
     /// <p>The branding information for Linux devices.</p>
+    #[doc(hidden)]
     pub device_type_linux: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
     /// <p>The branding information for Web access.</p>
+    #[doc(hidden)]
     pub device_type_web: std::option::Option<crate::model::DefaultClientBrandingAttributes>,
 }
 impl DescribeClientBrandingOutput {
@@ -2616,9 +2664,11 @@ impl DescribeClientBrandingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountModificationsOutput {
     /// <p>The list of modifications to the configuration of BYOL.</p>
+    #[doc(hidden)]
     pub account_modifications:
         std::option::Option<std::vec::Vec<crate::model::AccountModification>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountModificationsOutput {
@@ -2702,10 +2752,12 @@ impl DescribeAccountModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOutput {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_support:
         std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
 impl DescribeAccountOutput {
@@ -3040,10 +3092,12 @@ impl DeleteClientBrandingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateWorkspaceRequest>>,
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
+    #[doc(hidden)]
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
 }
 impl CreateWorkspacesOutput {
@@ -3142,20 +3196,28 @@ impl CreateWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceImageOutput {
     /// <p>The identifier of the new WorkSpace image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The operating system that the image is running.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The availability status of the image.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkspaceImageState>,
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+    #[doc(hidden)]
     pub required_tenancy: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
     /// <p>The date when the image was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the AWS account that owns the image.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceImageOutput {
@@ -3350,6 +3412,7 @@ impl CreateWorkspaceImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceBundleOutput {
     /// <p>Describes a WorkSpace bundle.</p>
+    #[doc(hidden)]
     pub workspace_bundle: std::option::Option<crate::model::WorkspaceBundle>,
 }
 impl CreateWorkspaceBundleOutput {
@@ -3407,6 +3470,7 @@ impl CreateWorkspaceBundleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUpdatedWorkspaceImageOutput {
     /// <p>The identifier of the new updated WorkSpace image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl CreateUpdatedWorkspaceImageOutput {
@@ -3491,6 +3555,7 @@ impl CreateTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpGroupOutput {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl CreateIpGroupOutput {
@@ -3545,6 +3610,7 @@ impl CreateIpGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionAliasOutput {
     /// <p>The identifier of the connection alias.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl CreateConnectionAliasOutput {
@@ -3599,6 +3665,7 @@ impl CreateConnectionAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectClientAddInOutput {
     /// <p>The client add-in identifier.</p>
+    #[doc(hidden)]
     pub add_in_id: std::option::Option<std::string::String>,
 }
 impl CreateConnectClientAddInOutput {
@@ -3653,6 +3720,7 @@ impl CreateConnectClientAddInOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyWorkspaceImageOutput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl CopyWorkspaceImageOutput {
@@ -3767,6 +3835,7 @@ impl AssociateIpGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionAliasOutput {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    #[doc(hidden)]
     pub connection_identifier: std::option::Option<std::string::String>,
 }
 impl AssociateConnectionAliasOutput {

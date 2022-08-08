@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the specified tag key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -138,11 +140,13 @@ impl AsRef<str> for StateValue {
 pub struct MetricStreamStatisticsConfiguration {
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
+    #[doc(hidden)]
     pub include_metrics:
         std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsMetric>>,
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
+    #[doc(hidden)]
     pub additional_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MetricStreamStatisticsConfiguration {
@@ -247,8 +251,10 @@ impl MetricStreamStatisticsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStreamStatisticsMetric {
     /// <p>The namespace of the metric.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl MetricStreamStatisticsMetric {
@@ -375,6 +381,7 @@ impl AsRef<str> for MetricStreamOutputFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl MetricStreamFilter {
@@ -429,27 +436,36 @@ impl MetricStreamFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDatum {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The dimensions associated with the metric.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>The statistical values for the metric.</p>
+    #[doc(hidden)]
     pub statistic_values: std::option::Option<crate::model::StatisticSet>,
     /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+    #[doc(hidden)]
     pub counts: std::option::Option<std::vec::Vec<f64>>,
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
     /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
+    #[doc(hidden)]
     pub storage_resolution: std::option::Option<i32>,
 }
 impl MetricDatum {
@@ -865,12 +881,16 @@ impl AsRef<str> for StandardUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticSet {
     /// <p>The number of samples used for the statistic set.</p>
+    #[doc(hidden)]
     pub sample_count: std::option::Option<f64>,
     /// <p>The sum of values for the sample set.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p>The minimum value of the sample set.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p>The maximum value of the sample set.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
 }
 impl StatisticSet {
@@ -977,8 +997,10 @@ impl StatisticSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Dimension {
@@ -1054,24 +1076,31 @@ impl Dimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataQuery {
     /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
     /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    #[doc(hidden)]
     pub metric_stat: std::option::Option<crate::model::MetricStat>,
     /// <p>This field can contain either a Metrics Insights query, or a metric math expression to be performed on the returned data. For more information about Metrics Insights queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>A math expression can use the <code>Id</code> of the other metrics or queries to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
     /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
     /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    #[doc(hidden)]
     pub return_data: std::option::Option<bool>,
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
     /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl MetricDataQuery {
@@ -1249,6 +1278,7 @@ impl MetricDataQuery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStat {
     /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
     /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
@@ -1257,11 +1287,14 @@ pub struct MetricStat {
     /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
     /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
+    #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
 }
 impl MetricStat {
@@ -1388,10 +1421,13 @@ impl MetricStat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
     /// <p>The namespace of the metric.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric. This is a required field.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The dimensions for the metric.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
 }
 impl Metric {
@@ -1643,8 +1679,10 @@ impl AsRef<str> for Statistic {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
+    #[doc(hidden)]
     pub data_path: std::option::Option<std::string::String>,
     /// <p>A message describing the error or warning.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DashboardValidationMessage {
@@ -1716,6 +1754,7 @@ impl DashboardValidationMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+    #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl MetricMathAnomalyDetector {
@@ -1780,12 +1819,16 @@ impl MetricMathAnomalyDetector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric to create the anomaly detection model for.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
+    #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
 }
 impl SingleMetricAnomalyDetector {
@@ -1900,9 +1943,11 @@ impl SingleMetricAnomalyDetector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetectorConfiguration {
     /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
+    #[doc(hidden)]
     pub excluded_time_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
     /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+    #[doc(hidden)]
     pub metric_timezone: std::option::Option<std::string::String>,
 }
 impl AnomalyDetectorConfiguration {
@@ -1989,8 +2034,10 @@ impl AnomalyDetectorConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Range {
     /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Range {
@@ -2068,18 +2115,25 @@ impl Range {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was originally created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric stream.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
+    #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
 }
 impl MetricStreamEntry {
@@ -2296,8 +2350,10 @@ impl AsRef<str> for RecentlyActive {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionFilter {
     /// <p>The dimension name to be matched.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the dimension to be matched.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DimensionFilter {
@@ -2369,12 +2425,16 @@ impl DimensionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardEntry {
     /// <p>The name of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the dashboard, in bytes.</p>
+    #[doc(hidden)]
     pub size: i64,
 }
 impl DashboardEntry {
@@ -2489,20 +2549,28 @@ impl DashboardEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
+    #[doc(hidden)]
     pub sample_count: std::option::Option<f64>,
     /// <p>The average of the metric values that correspond to the data point.</p>
+    #[doc(hidden)]
     pub average: std::option::Option<f64>,
     /// <p>The sum of the metric values for the data point.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p>The minimum metric value for the data point.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p>The maximum metric value for the data point.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
     /// <p>The standard unit for the data point.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
     /// <p>The percentile statistic for the data point.</p>
+    #[doc(hidden)]
     pub extended_statistics:
         std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
@@ -2693,8 +2761,10 @@ impl Datapoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageData {
     /// <p>The error code or status code associated with the message.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The message text.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MessageData {
@@ -2766,16 +2836,22 @@ impl MessageData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataResult {
     /// <p>The short name you specified to represent this metric.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The human-readable label associated with the data.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::StatusCode>,
     /// <p>A list of messages with additional information about the data returned.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
 }
 impl MetricDataResult {
@@ -3002,6 +3078,7 @@ impl AsRef<str> for StatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelOptions {
     /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
 }
 impl LabelOptions {
@@ -3112,27 +3189,35 @@ impl AsRef<str> for ScanBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub unique_contributors: std::option::Option<f64>,
     /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub max_contributor_value: std::option::Option<f64>,
     /// <p>The number of occurrences that matched the rule during this data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub sample_count: std::option::Option<f64>,
     /// <p>The average value from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub average: std::option::Option<f64>,
     /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
 }
 impl InsightRuleMetricDatapoint {
@@ -3332,10 +3417,13 @@ impl InsightRuleMetricDatapoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
+    #[doc(hidden)]
     pub approximate_aggregate_value: std::option::Option<f64>,
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
+    #[doc(hidden)]
     pub datapoints:
         std::option::Option<std::vec::Vec<crate::model::InsightRuleContributorDatapoint>>,
 }
@@ -3452,8 +3540,10 @@ impl InsightRuleContributor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
+    #[doc(hidden)]
     pub approximate_value: std::option::Option<f64>,
 }
 impl InsightRuleContributorDatapoint {
@@ -3528,12 +3618,16 @@ impl InsightRuleContributorDatapoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartialFailure {
     /// <p>The specified rule that could not be deleted.</p>
+    #[doc(hidden)]
     pub failure_resource: std::option::Option<std::string::String>,
     /// <p>The type of error.</p>
+    #[doc(hidden)]
     pub exception_type: std::option::Option<std::string::String>,
     /// <p>The code of the error.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>A description of the error.</p>
+    #[doc(hidden)]
     pub failure_description: std::option::Option<std::string::String>,
 }
 impl PartialFailure {
@@ -3648,12 +3742,16 @@ impl PartialFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRule {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
 }
 impl InsightRule {
@@ -3760,24 +3858,32 @@ impl InsightRule {
 pub struct AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
+    #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+    #[doc(hidden)]
     pub state_value: std::option::Option<crate::model::AnomalyDetectorStateValue>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
+    #[doc(hidden)]
     pub single_metric_anomaly_detector:
         std::option::Option<crate::model::SingleMetricAnomalyDetector>,
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
+    #[doc(hidden)]
     pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
 }
 impl AnomalyDetector {
@@ -4118,59 +4224,86 @@ impl AsRef<str> for AnomalyDetectorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricAlarm {
     /// <p>The name of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_arn: std::option::Option<std::string::String>,
     /// <p>The description of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
+    #[doc(hidden)]
     pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
+    #[doc(hidden)]
     pub actions_enabled: std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state value for the alarm.</p>
+    #[doc(hidden)]
     pub state_value: std::option::Option<crate::model::StateValue>,
     /// <p>An explanation for the alarm state, in text format.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
+    #[doc(hidden)]
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
+    #[doc(hidden)]
     pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the metric associated with the alarm.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::Statistic>,
     /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
+    #[doc(hidden)]
     pub extended_statistic: std::option::Option<std::string::String>,
     /// <p>The dimensions for the metric associated with the alarm.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The period, in seconds, over which the statistic is applied.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The unit of the metric associated with the alarm.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
     /// <p>The number of periods over which data is compared to the specified threshold.</p>
+    #[doc(hidden)]
     pub evaluation_periods: std::option::Option<i32>,
     /// <p>The number of data points that must be breaching to trigger the alarm.</p>
+    #[doc(hidden)]
     pub datapoints_to_alarm: std::option::Option<i32>,
     /// <p>The value to compare with the specified statistic.</p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
     /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    #[doc(hidden)]
     pub treat_missing_data: std::option::Option<std::string::String>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
+    #[doc(hidden)]
     pub evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
+    #[doc(hidden)]
     pub threshold_metric_id: std::option::Option<std::string::String>,
 }
 impl MetricAlarm {
@@ -4764,46 +4897,65 @@ impl MetricAlarm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompositeAlarm {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
+    #[doc(hidden)]
     pub actions_enabled: std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
+    #[doc(hidden)]
     pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The name of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
+    #[doc(hidden)]
     pub alarm_rule: std::option::Option<std::string::String>,
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An explanation for the alarm state, in text format.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
+    #[doc(hidden)]
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
+    #[doc(hidden)]
     pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state value for the alarm.</p>
+    #[doc(hidden)]
     pub state_value: std::option::Option<crate::model::StateValue>,
     /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
+    #[doc(hidden)]
     pub state_transitioned_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
+    #[doc(hidden)]
     pub actions_suppressed_by: std::option::Option<crate::model::ActionsSuppressedBy>,
     /// <p> Captures the reason for action suppression. </p>
+    #[doc(hidden)]
     pub actions_suppressed_reason: std::option::Option<std::string::String>,
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    #[doc(hidden)]
     pub actions_suppressor: std::option::Option<std::string::String>,
     /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
     /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
     /// </important>
+    #[doc(hidden)]
     pub actions_suppressor_wait_period: std::option::Option<i32>,
     /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
     /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
     /// </important>
+    #[doc(hidden)]
     pub actions_suppressor_extension_period: std::option::Option<i32>,
 }
 impl CompositeAlarm {
@@ -5369,16 +5521,22 @@ impl AsRef<str> for AlarmType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
+    #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
+    #[doc(hidden)]
     pub alarm_type: std::option::Option<crate::model::AlarmType>,
     /// <p>The time stamp for the alarm history item.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of alarm history item.</p>
+    #[doc(hidden)]
     pub history_item_type: std::option::Option<crate::model::HistoryItemType>,
     /// <p>A summary of the alarm history, in text format.</p>
+    #[doc(hidden)]
     pub history_summary: std::option::Option<std::string::String>,
     /// <p>Data about the alarm, in JSON format.</p>
+    #[doc(hidden)]
     pub history_data: std::option::Option<std::string::String>,
 }
 impl AlarmHistoryItem {

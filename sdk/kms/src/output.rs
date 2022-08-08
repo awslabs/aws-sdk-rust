@@ -4,11 +4,14 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyMacOutput {
     /// <p>The HMAC KMS key used in the verification.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
     /// <p>If the HMAC is not verified, the <code>VerifyMac</code> operation fails with a <code>KMSInvalidMacException</code> exception. This exception indicates that one or more of the inputs changed since the HMAC was computed.</p>
+    #[doc(hidden)]
     pub mac_valid: bool,
     /// <p>The MAC algorithm used in the verification.</p>
+    #[doc(hidden)]
     pub mac_algorithm: std::option::Option<crate::model::MacAlgorithmSpec>,
 }
 impl VerifyMacOutput {
@@ -103,10 +106,13 @@ impl VerifyMacOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+    #[doc(hidden)]
     pub signature_valid: bool,
     /// <p>The signing algorithm that was used to verify the signature.</p>
+    #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
 }
 impl VerifyOutput {
@@ -378,6 +384,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
@@ -385,8 +392,10 @@ pub struct SignOutput {
     /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
     /// </ul>
     /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The signing algorithm that was used to sign the message.</p>
+    #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
 }
 impl SignOutput {
@@ -493,15 +502,19 @@ impl SignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The date and time after which KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The waiting period before the KMS key is deleted. </p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+    #[doc(hidden)]
     pub pending_window_in_days: std::option::Option<i32>,
 }
 impl ScheduleKeyDeletionOutput {
@@ -679,10 +692,13 @@ impl RetireGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyOutput {
     /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+    #[doc(hidden)]
     pub replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
+    #[doc(hidden)]
     pub replica_policy: std::option::Option<std::string::String>,
     /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
+    #[doc(hidden)]
     pub replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ReplicateKeyOutput {
@@ -786,14 +802,19 @@ impl ReplicateKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReEncryptOutput {
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
+    #[doc(hidden)]
     pub source_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
+    #[doc(hidden)]
     pub source_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
+    #[doc(hidden)]
     pub destination_encryption_algorithm:
         std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
@@ -977,10 +998,13 @@ impl PutKeyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetirableGrantsOutput {
     /// <p>A list of grants.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListRetirableGrantsOutput {
@@ -1080,11 +1104,14 @@ pub struct ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListResourceTagsOutput {
@@ -1191,10 +1218,13 @@ impl ListResourceTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeysOutput {
     /// <p>A list of KMS keys.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListKeysOutput {
@@ -1292,10 +1322,13 @@ impl ListKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyPoliciesOutput {
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListKeyPoliciesOutput {
@@ -1393,10 +1426,13 @@ impl ListKeyPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGrantsOutput {
     /// <p>A list of grants.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListGrantsOutput {
@@ -1494,10 +1530,13 @@ impl ListGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesOutput {
     /// <p>A list of aliases.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ListAliasesOutput {
@@ -1625,27 +1664,34 @@ impl ImportKeyMaterialOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The exported public key. </p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
+    #[doc(hidden)]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
+    #[doc(hidden)]
     pub key_spec: std::option::Option<crate::model::KeySpec>,
     /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
     /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    #[doc(hidden)]
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The encryption algorithms that KMS supports for this key. </p>
     /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
+    #[doc(hidden)]
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that KMS supports for this key.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
+    #[doc(hidden)]
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
 }
 impl GetPublicKeyOutput {
@@ -1866,12 +1912,16 @@ impl GetPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
+    #[doc(hidden)]
     pub import_token: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
+    #[doc(hidden)]
     pub parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetParametersForImportOutput {
@@ -1986,6 +2036,7 @@ impl GetParametersForImportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyRotationStatusOutput {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
+    #[doc(hidden)]
     pub key_rotation_enabled: bool,
 }
 impl GetKeyRotationStatusOutput {
@@ -2040,6 +2091,7 @@ impl GetKeyRotationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetKeyPolicyOutput {
@@ -2094,6 +2146,7 @@ impl GetKeyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateRandomOutput {
     /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GenerateRandomOutput {
@@ -2148,10 +2201,13 @@ impl GenerateRandomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateMacOutput {
     /// <p>The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.</p>
+    #[doc(hidden)]
     pub mac: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
+    #[doc(hidden)]
     pub mac_algorithm: std::option::Option<crate::model::MacAlgorithmSpec>,
     /// <p>The HMAC KMS key used in the operation.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GenerateMacOutput {
@@ -2243,8 +2299,10 @@ impl GenerateMacOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyWithoutPlaintextOutput {
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GenerateDataKeyWithoutPlaintextOutput {
@@ -2319,12 +2377,16 @@ impl GenerateDataKeyWithoutPlaintextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairWithoutPlaintextOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
+    #[doc(hidden)]
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
 }
 impl GenerateDataKeyPairWithoutPlaintextOutput {
@@ -2442,14 +2504,19 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub private_key_plaintext: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
+    #[doc(hidden)]
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
 }
 impl GenerateDataKeyPairOutput {
@@ -2587,10 +2654,13 @@ impl GenerateDataKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyOutput {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
+    #[doc(hidden)]
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GenerateDataKeyOutput {
@@ -2682,10 +2752,13 @@ impl GenerateDataKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptOutput {
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+    #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
 impl EncryptOutput {
@@ -2935,6 +3008,7 @@ impl DisableKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
+    #[doc(hidden)]
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
 }
 impl DescribeKeyOutput {
@@ -2992,11 +3066,14 @@ impl DescribeKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomKeyStoresOutput {
     /// <p>Contains metadata about each custom key store.</p>
+    #[doc(hidden)]
     pub custom_key_stores:
         std::option::Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl DescribeCustomKeyStoresOutput {
@@ -3187,10 +3264,13 @@ impl DeleteAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecryptOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Decrypted plaintext data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    #[doc(hidden)]
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
+    #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
 impl DecryptOutput {
@@ -3287,6 +3367,7 @@ impl DecryptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyOutput {
     /// <p>Metadata associated with the KMS key.</p>
+    #[doc(hidden)]
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
 }
 impl CreateKeyOutput {
@@ -3345,9 +3426,11 @@ impl CreateKeyOutput {
 pub struct CreateGrantOutput {
     /// <p>The grant token.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
     /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
+    #[doc(hidden)]
     pub grant_id: std::option::Option<std::string::String>,
 }
 impl CreateGrantOutput {
@@ -3425,6 +3508,7 @@ impl CreateGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomKeyStoreOutput {
     /// <p>A unique identifier for the new custom key store.</p>
+    #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
 }
 impl CreateCustomKeyStoreOutput {
@@ -3542,6 +3626,7 @@ impl ConnectCustomKeyStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl CancelKeyDeletionOutput {

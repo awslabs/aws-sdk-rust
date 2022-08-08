@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceStateFault {
@@ -69,6 +70,7 @@ impl InvalidResourceStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedFault {
@@ -133,6 +135,7 @@ impl AccessDeniedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceQuotaExceededFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceQuotaExceededFault {
@@ -197,6 +200,7 @@ impl ResourceQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundFault {
@@ -261,6 +265,7 @@ impl ResourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotAccessibleFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyNotAccessibleFault {
@@ -325,6 +330,7 @@ impl KmsKeyNotAccessibleFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ResourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3ResourceNotFoundFault {
@@ -389,6 +395,7 @@ impl S3ResourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3AccessDeniedFault {
@@ -453,8 +460,10 @@ impl S3AccessDeniedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ResourceAlreadyExistsFault {
@@ -538,6 +547,7 @@ impl ResourceAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsNotFoundFault {
@@ -602,6 +612,7 @@ impl KmsNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidStateFault {
@@ -666,6 +677,7 @@ impl KmsInvalidStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsFault {
@@ -730,6 +742,7 @@ impl KmsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsDisabledFault {
@@ -794,6 +807,7 @@ impl KmsDisabledFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsAccessDeniedFault {
@@ -858,6 +872,7 @@ impl KmsAccessDeniedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetAlreadyInUse {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetAlreadyInUse {
@@ -922,6 +937,7 @@ impl SubnetAlreadyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationSubnetGroupDoesNotCoverEnoughAZs {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationSubnetGroupDoesNotCoverEnoughAZs {
@@ -986,6 +1002,7 @@ impl ReplicationSubnetGroupDoesNotCoverEnoughAZs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnet {
@@ -1050,6 +1067,7 @@ impl InvalidSubnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeDependencyFailureFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpgradeDependencyFailureFault {
@@ -1114,6 +1132,7 @@ impl UpgradeDependencyFailureFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageQuotaExceededFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageQuotaExceededFault {
@@ -1178,6 +1197,7 @@ impl StorageQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientResourceCapacityFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientResourceCapacityFault {
@@ -1242,6 +1262,7 @@ impl InsufficientResourceCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsNoAuthorizationFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsNoAuthorizationFault {
@@ -1306,6 +1327,7 @@ impl SnsNoAuthorizationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsInvalidTopicFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsInvalidTopicFault {
@@ -1370,6 +1392,7 @@ impl SnsInvalidTopicFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsThrottlingFault {
@@ -1434,6 +1457,7 @@ impl KmsThrottlingFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCertificateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCertificateFault {
@@ -1498,6 +1522,7 @@ impl InvalidCertificateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOperationFault {
@@ -1562,6 +1587,7 @@ impl InvalidOperationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CollectorNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CollectorNotFoundFault {

@@ -154,6 +154,7 @@ impl ResumeResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -215,8 +216,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorsOutput {
     /// <p>An array of objects that summarize each predictor's properties.</p>
+    #[doc(hidden)]
     pub predictors: std::option::Option<std::vec::Vec<crate::model::PredictorSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPredictorsOutput {
@@ -297,9 +300,11 @@ impl ListPredictorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorBacktestExportJobsOutput {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::PredictorBacktestExportJobSummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPredictorBacktestExportJobsOutput {
@@ -391,8 +396,10 @@ impl ListPredictorBacktestExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitorsOutput {
     /// <p>An array of objects that summarize each monitor's properties.</p>
+    #[doc(hidden)]
     pub monitors: std::option::Option<std::vec::Vec<crate::model::MonitorSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMonitorsOutput {
@@ -473,9 +480,11 @@ impl ListMonitorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitorEvaluationsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    #[doc(hidden)]
     pub predictor_monitor_evaluations:
         std::option::Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>>,
 }
@@ -569,8 +578,10 @@ impl ListMonitorEvaluationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastsOutput {
     /// <p>An array of objects that summarize each forecast's properties.</p>
+    #[doc(hidden)]
     pub forecasts: std::option::Option<std::vec::Vec<crate::model::ForecastSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListForecastsOutput {
@@ -651,9 +662,11 @@ impl ListForecastsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastExportJobsOutput {
     /// <p>An array of objects that summarize each export job's properties.</p>
+    #[doc(hidden)]
     pub forecast_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::ForecastExportJobSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListForecastExportJobsOutput {
@@ -740,9 +753,11 @@ impl ListForecastExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilityExportsOutput {
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_exports:
         std::option::Option<std::vec::Vec<crate::model::ExplainabilityExportSummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExplainabilityExportsOutput {
@@ -829,8 +844,10 @@ impl ListExplainabilityExportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilitiesOutput {
     /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
+    #[doc(hidden)]
     pub explainabilities: std::option::Option<std::vec::Vec<crate::model::ExplainabilitySummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExplainabilitiesOutput {
@@ -912,8 +929,10 @@ impl ListExplainabilitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p>An array of objects that summarize each dataset's properties.</p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -994,9 +1013,11 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsOutput {
     /// <p>An array of objects that summarize each dataset import job's properties.</p>
+    #[doc(hidden)]
     pub dataset_import_jobs:
         std::option::Option<std::vec::Vec<crate::model::DatasetImportJobSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetImportJobsOutput {
@@ -1080,8 +1101,10 @@ impl ListDatasetImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsOutput {
     /// <p>An array of objects that summarize each dataset group's properties.</p>
+    #[doc(hidden)]
     pub dataset_groups: std::option::Option<std::vec::Vec<crate::model::DatasetGroupSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetGroupsOutput {
@@ -1163,17 +1186,21 @@ impl ListDatasetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
+    #[doc(hidden)]
     pub predictor_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
+    #[doc(hidden)]
     pub is_auto_predictor: std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    #[doc(hidden)]
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
+    #[doc(hidden)]
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
 impl GetAccuracyMetricsOutput {
@@ -1321,14 +1348,19 @@ impl GetAccuracyMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorBacktestExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
@@ -1337,8 +1369,10 @@ pub struct DescribePredictorBacktestExportJobOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the predictor backtest export job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -1348,8 +1382,10 @@ pub struct DescribePredictorBacktestExportJobOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl DescribePredictorBacktestExportJobOutput {
@@ -1609,47 +1645,66 @@ impl DescribePredictorBacktestExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorOutput {
     /// <p>The ARN of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm used for model training.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
+    #[doc(hidden)]
     pub auto_ml_algorithm_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
+    #[doc(hidden)]
     pub forecast_horizon: std::option::Option<i32>,
     /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
+    #[doc(hidden)]
     pub perform_auto_ml: std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    #[doc(hidden)]
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>Whether the predictor is set to perform hyperparameter optimization (HPO).</p>
+    #[doc(hidden)]
     pub perform_hpo: std::option::Option<bool>,
     /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+    #[doc(hidden)]
     pub training_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
+    #[doc(hidden)]
     pub evaluation_parameters: std::option::Option<crate::model::EvaluationParameters>,
     /// <p>The hyperparameter override values for the algorithm.</p>
+    #[doc(hidden)]
     pub hpo_config: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The featurization configuration.</p>
+    #[doc(hidden)]
     pub featurization_config: std::option::Option<crate::model::FeaturizationConfig>,
     /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
+    #[doc(hidden)]
     pub predictor_execution_details: std::option::Option<crate::model::PredictorExecutionDetails>,
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
+    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
+    #[doc(hidden)]
     pub is_auto_predictor: std::option::Option<bool>,
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
@@ -1660,10 +1715,13 @@ pub struct DescribePredictorOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the model training task was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -1673,8 +1731,10 @@ pub struct DescribePredictorOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
+    #[doc(hidden)]
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
 impl DescribePredictorOutput {
@@ -2286,26 +2346,37 @@ impl DescribePredictorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMonitorOutput {
     /// <p>The name of the monitor.</p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The status of the monitor resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+    #[doc(hidden)]
     pub last_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the monitor's latest evaluation.</p>
+    #[doc(hidden)]
     pub last_evaluation_state: std::option::Option<std::string::String>,
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+    #[doc(hidden)]
     pub baseline: std::option::Option<crate::model::Baseline>,
     /// <p>An error message, if any, for the monitor.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the monitor resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the latest modification to the monitor.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+    #[doc(hidden)]
     pub estimated_evaluation_time_remaining_in_minutes: std::option::Option<i64>,
 }
 impl DescribeMonitorOutput {
@@ -2549,14 +2620,19 @@ impl DescribeMonitorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastExportJobOutput {
     /// <p>The ARN of the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the exported forecast.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
@@ -2567,8 +2643,10 @@ pub struct DescribeForecastExportJobOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the forecast export job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -2578,8 +2656,10 @@ pub struct DescribeForecastExportJobOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl DescribeForecastExportJobOutput {
@@ -2830,16 +2910,22 @@ impl DescribeForecastExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastOutput {
     /// <p>The forecast ARN as specified in the request.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The name of the forecast.</p>
+    #[doc(hidden)]
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The estimated time remaining in minutes for the forecast job to complete.</p>
+    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
@@ -2850,10 +2936,13 @@ pub struct DescribeForecastOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the forecast creation task was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -2863,8 +2952,10 @@ pub struct DescribeForecastOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time series to include in the forecast.</p>
+    #[doc(hidden)]
     pub time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
 }
 impl DescribeForecastOutput {
@@ -3167,14 +3258,19 @@ impl DescribeForecastOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExplainabilityExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_export_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_export_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Information about any errors that occurred during the export.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
@@ -3183,8 +3279,10 @@ pub struct DescribeExplainabilityExportOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the Explainability export was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -3194,8 +3292,10 @@ pub struct DescribeExplainabilityExportOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl DescribeExplainabilityExportOutput {
@@ -3446,26 +3546,37 @@ impl DescribeExplainabilityExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExplainabilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
     /// <p>Whether the visualization was enabled for the Explainability resource.</p>
+    #[doc(hidden)]
     pub enable_visualization: std::option::Option<bool>,
     /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<std::string::String>,
     /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
+    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>If an error occurred, a message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the Explainability resource. States include: </p>
     /// <ul>
@@ -3474,8 +3585,10 @@ pub struct DescribeExplainabilityOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the Explainability resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -3485,6 +3598,7 @@ pub struct DescribeExplainabilityOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeExplainabilityOutput {
@@ -3831,33 +3945,44 @@ impl DescribeExplainabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetImportJobOutput {
     /// <p>The name of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
     /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
     /// <p>The single time zone applied to every item in the dataset</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
+    #[doc(hidden)]
     pub use_geolocation_for_time_zone: bool,
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
+    #[doc(hidden)]
     pub geolocation_format: std::option::Option<std::string::String>,
     /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
+    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>Statistical information about each field in the input data.</p>
+    #[doc(hidden)]
     pub field_statistics: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Statistics>,
     >,
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
+    #[doc(hidden)]
     pub data_size: std::option::Option<f64>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
@@ -3866,10 +3991,13 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the dataset import job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -3879,8 +4007,10 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The format of the imported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetImportJobOutput {
@@ -4300,12 +4430,16 @@ impl DescribeDatasetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetGroupOutput {
     /// <p>The name of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The domain associated with the dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The status of the dataset group. States include:</p>
     /// <ul>
@@ -4317,10 +4451,13 @@ pub struct DescribeDatasetGroupOutput {
     /// <p>The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p> <note>
     /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetGroupOutput {
@@ -4525,19 +4662,26 @@ impl DescribeDatasetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The domain associated with the dataset.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The dataset type.</p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
+    #[doc(hidden)]
     pub data_frequency: std::option::Option<std::string::String>,
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The status of the dataset. States include:</p>
     /// <ul>
@@ -4549,10 +4693,13 @@ pub struct DescribeDatasetOutput {
     /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetOutput {
@@ -4805,27 +4952,38 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_name: std::option::Option<std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+    #[doc(hidden)]
     pub forecast_horizon: std::option::Option<i32>,
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
+    #[doc(hidden)]
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    #[doc(hidden)]
     pub forecast_frequency: std::option::Option<std::string::String>,
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
+    #[doc(hidden)]
     pub forecast_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
+    #[doc(hidden)]
     pub data_config: std::option::Option<crate::model::DataConfig>,
     /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
+    #[doc(hidden)]
     pub reference_predictor_summary: std::option::Option<crate::model::ReferencePredictorSummary>,
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
+    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>The status of the predictor. States include: </p>
     /// <ul>
@@ -4834,10 +4992,13 @@ pub struct DescribeAutoPredictorOutput {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>In the event of an error, a message detailing the cause of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the CreateAutoPredictor request.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -4847,14 +5008,19 @@ pub struct DescribeAutoPredictorOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
+    #[doc(hidden)]
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
     /// <p>Provides the status and ARN of the Predictor Explainability.</p>
+    #[doc(hidden)]
     pub explainability_info: std::option::Option<crate::model::ExplainabilityInfo>,
     /// <p>A object with the Amazon Resource Name (ARN) and status of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_info: std::option::Option<crate::model::MonitorInfo>,
     /// <p>The time boundary Forecast uses when aggregating data.</p>
+    #[doc(hidden)]
     pub time_alignment_boundary: std::option::Option<crate::model::TimeAlignmentBoundary>,
 }
 impl DescribeAutoPredictorOutput {
@@ -5671,6 +5837,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorBacktestExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
 impl CreatePredictorBacktestExportJobOutput {
@@ -5734,6 +5901,7 @@ impl CreatePredictorBacktestExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl CreatePredictorOutput {
@@ -5791,6 +5959,7 @@ impl CreatePredictorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitorOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl CreateMonitorOutput {
@@ -5845,6 +6014,7 @@ impl CreateMonitorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateForecastExportJobOutput {
@@ -5902,6 +6072,7 @@ impl CreateForecastExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastOutput {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
 }
 impl CreateForecastOutput {
@@ -5956,6 +6127,7 @@ impl CreateForecastOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExplainabilityExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
+    #[doc(hidden)]
     pub explainability_export_arn: std::option::Option<std::string::String>,
 }
 impl CreateExplainabilityExportOutput {
@@ -6013,6 +6185,7 @@ impl CreateExplainabilityExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExplainabilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
 }
 impl CreateExplainabilityOutput {
@@ -6070,6 +6243,7 @@ impl CreateExplainabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetImportJobOutput {
@@ -6127,6 +6301,7 @@ impl CreateDatasetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetGroupOutput {
@@ -6184,6 +6359,7 @@ impl CreateDatasetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
@@ -6238,6 +6414,7 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl CreateAutoPredictorOutput {

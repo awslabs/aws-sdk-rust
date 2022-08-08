@@ -3,6 +3,7 @@
 #[non_exhaustive]
 pub struct GetMediaOutput {
     /// <p>The content type of the requested media.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p> The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <code>GetMedia</code> call also include the following additional Matroska (MKV) tags: </p>
     /// <ul>

@@ -5,30 +5,43 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QualificationType {
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The date and time the Qualification type was created. </p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The name of the Qualification type. The type name is used to identify the type, and to find the type using a Qualification type search. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> A long description for the Qualification type. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> One or more words or phrases that describe theQualification type, separated by commas. The Keywords make the type easier to find using a search. </p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
+    #[doc(hidden)]
     pub qualification_type_status: std::option::Option<crate::model::QualificationTypeStatus>,
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>
+    #[doc(hidden)]
     pub test: std::option::Option<std::string::String>,
     /// <p> The amount of time, in seconds, given to a Worker to complete the Qualification test, beginning from the time the Worker requests the Qualification. </p>
+    #[doc(hidden)]
     pub test_duration_in_seconds: std::option::Option<i64>,
     /// <p>The answers to the Qualification test specified in the Test parameter.</p>
+    #[doc(hidden)]
     pub answer_key: std::option::Option<std::string::String>,
     /// <p> The amount of time, in seconds, Workers must wait after taking the Qualification test before they can take it again. Workers can take a Qualification test multiple times if they were not granted the Qualification from a previous attempt, or if the test offers a gradient score and they want a better score. If not specified, retries are disabled and Workers can request a Qualification only once. </p>
+    #[doc(hidden)]
     pub retry_delay_in_seconds: std::option::Option<i64>,
     /// <p> Specifies whether the Qualification type is one that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test. This value is False for Qualifications assigned automatically by the system. Valid values are True | False. </p>
+    #[doc(hidden)]
     pub is_requestable: std::option::Option<bool>,
     /// <p>Specifies that requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test. Valid values are True | False.</p>
+    #[doc(hidden)]
     pub auto_granted: std::option::Option<bool>,
     /// <p> The Qualification integer value to use for automatically granted Qualifications, if AutoGranted is true. This is 1 by default. </p>
+    #[doc(hidden)]
     pub auto_granted_value: std::option::Option<i32>,
 }
 impl QualificationType {
@@ -362,12 +375,16 @@ pub struct NotificationSpecification {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
+    #[doc(hidden)]
     pub transport: std::option::Option<crate::model::NotificationTransport>,
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
+    #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
 }
 impl NotificationSpecification {
@@ -667,10 +684,13 @@ impl AsRef<str> for NotificationTransport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersFailureStatus {
     /// <p> Encoded value for the failure type. </p>
+    #[doc(hidden)]
     pub notify_workers_failure_code: std::option::Option<crate::model::NotifyWorkersFailureCode>,
     /// <p> A message detailing the reason the Worker could not be notified. </p>
+    #[doc(hidden)]
     pub notify_workers_failure_message: std::option::Option<std::string::String>,
     /// <p> The ID of the Worker.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
 }
 impl NotifyWorkersFailureStatus {
@@ -835,16 +855,22 @@ impl AsRef<str> for NotifyWorkersFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Qualification {
     /// <p> The ID of the Qualification type for the Qualification.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Worker who possesses the Qualification. </p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
+    #[doc(hidden)]
     pub grant_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The value (score) of the Qualification, if the Qualification has an integer value.</p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
     /// <p>The Locale data structure represents a geographical region or location.</p>
+    #[doc(hidden)]
     pub locale_value: std::option::Option<crate::model::Locale>,
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QualificationStatus>,
 }
 impl Qualification {
@@ -1051,8 +1077,10 @@ impl AsRef<str> for QualificationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
+    #[doc(hidden)]
     pub subdivision: std::option::Option<std::string::String>,
 }
 impl Locale {
@@ -1124,8 +1152,10 @@ impl Locale {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerBlock {
     /// <p> The ID of the Worker who accepted the HIT.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p> A message explaining the reason the Worker was blocked. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl WorkerBlock {
@@ -1197,8 +1227,10 @@ impl WorkerBlock {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewReport {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
+    #[doc(hidden)]
     pub review_results: std::option::Option<std::vec::Vec<crate::model::ReviewResultDetail>>,
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
+    #[doc(hidden)]
     pub review_actions: std::option::Option<std::vec::Vec<crate::model::ReviewActionDetail>>,
 }
 impl ReviewReport {
@@ -1290,20 +1322,28 @@ impl ReviewReport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewActionDetail {
     /// <p>The unique identifier for the action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary. </p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p> The specific HITId or AssignmentID targeted by the action.</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The type of object in TargetId.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReviewActionStatus>,
     /// <p> The date when the action was completed.</p>
+    #[doc(hidden)]
     pub complete_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A description of the outcome of the review.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
     /// <p> Present only when the Results have a FAILED Status.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
 }
 impl ReviewActionDetail {
@@ -1546,16 +1586,22 @@ impl AsRef<str> for ReviewActionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewResultDetail {
     /// <p> A unique identifier of the Review action result. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The HITID or AssignmentId about which this result was taken. Note that HIT-level Review Policies will often emit results about both the HIT itself and its Assignments, while Assignment-level review policies generally only emit results about the Assignment itself. </p>
+    #[doc(hidden)]
     pub subject_id: std::option::Option<std::string::String>,
     /// <p> The type of the object from the SubjectId field.</p>
+    #[doc(hidden)]
     pub subject_type: std::option::Option<std::string::String>,
     /// <p> Specifies the QuestionId the result is describing. Depending on whether the TargetType is a HIT or Assignment this results could specify multiple values. If TargetType is HIT and QuestionId is absent, then the result describes results of the HIT, including the HIT agreement score. If ObjectType is Assignment and QuestionId is absent, then the result describes the Worker's performance on the HIT. </p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p> Key identifies the particular piece of reviewed information. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p> The values of Key provided by the review policies you have selected. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ReviewResultDetail {
@@ -1695,8 +1741,10 @@ impl ReviewResultDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewPolicy {
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Name of the parameter from the Review policy.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::PolicyParameter>>,
 }
 impl ReviewPolicy {
@@ -1777,10 +1825,13 @@ impl ReviewPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyParameter {
     /// <p> Name of the parameter from the list of Review Polices. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p> The list of values of the Parameter</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> List of ParameterMapEntry objects. </p>
+    #[doc(hidden)]
     pub map_entries: std::option::Option<std::vec::Vec<crate::model::ParameterMapEntry>>,
 }
 impl PolicyParameter {
@@ -1887,8 +1938,10 @@ impl PolicyParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterMapEntry {
     /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ParameterMapEntry {
@@ -2024,47 +2077,68 @@ impl AsRef<str> for ReviewPolicyLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hit {
     /// <p> A unique identifier for the HIT.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>The ID of the HIT type of this HIT</p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
     /// <p> The ID of the HIT Group of this HIT.</p>
+    #[doc(hidden)]
     pub hit_group_id: std::option::Option<std::string::String>,
     /// <p> The ID of the HIT Layout of this HIT.</p>
+    #[doc(hidden)]
     pub hit_layout_id: std::option::Option<std::string::String>,
     /// <p> The date and time the HIT was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The title of the HIT.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p> A general description of the HIT.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The data the Worker completing the HIT uses produce the results. This is either either a QuestionForm, HTMLQuestion or an ExternalQuestion data structure.</p>
+    #[doc(hidden)]
     pub question: std::option::Option<std::string::String>,
     /// <p> One or more words or phrases that describe the HIT, separated by commas. Search terms similar to the keywords of a HIT are more likely to have the HIT in the search results.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     /// <p>The status of the HIT and its assignments. Valid Values are Assignable | Unassignable | Reviewable | Reviewing | Disposed. </p>
+    #[doc(hidden)]
     pub hit_status: std::option::Option<crate::model::HitStatus>,
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    #[doc(hidden)]
     pub max_assignments: std::option::Option<i32>,
     /// <p>A string representing a currency amount.</p>
+    #[doc(hidden)]
     pub reward: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, after the Worker submits an assignment for the HIT that the results are automatically approved by Amazon Mechanical Turk. This is the amount of time the Requester has to reject an assignment submitted by a Worker before the assignment is auto-approved and the Worker is paid. </p>
+    #[doc(hidden)]
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
     /// <p>The date and time the HIT expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The length of time, in seconds, that a Worker has to complete the HIT after accepting it.</p>
+    #[doc(hidden)]
     pub assignment_duration_in_seconds: std::option::Option<i64>,
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
+    #[doc(hidden)]
     pub requester_annotation: std::option::Option<std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    #[doc(hidden)]
     pub qualification_requirements:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
+    #[doc(hidden)]
     pub hit_review_status: std::option::Option<crate::model::HitReviewStatus>,
     /// <p> The number of assignments for this HIT that are being previewed or have been accepted by Workers, but have not yet been submitted, returned, or abandoned.</p>
+    #[doc(hidden)]
     pub number_of_assignments_pending: std::option::Option<i32>,
     /// <p> The number of assignments for this HIT that are available for Workers to accept.</p>
+    #[doc(hidden)]
     pub number_of_assignments_available: std::option::Option<i32>,
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
+    #[doc(hidden)]
     pub number_of_assignments_completed: std::option::Option<i32>,
 }
 impl Hit {
@@ -2593,17 +2667,23 @@ impl AsRef<str> for HitReviewStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QualificationRequirement {
     /// <p> The ID of the Qualification type for the requirement.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>The kind of comparison to make against a Qualification's value. You can compare a Qualification's value to an IntegerValue to see if it is LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You can compare it to a LocaleValue to see if it is EqualTo, or NotEqualTo the LocaleValue. You can check to see if the value is In or NotIn a set of IntegerValue or LocaleValue values. Lastly, a Qualification requirement can also test if a Qualification Exists or DoesNotExist in the user's profile, regardless of its value. </p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::Comparator>,
     /// <p> The integer value to compare against the Qualification's value. IntegerValue must not be present if Comparator is Exists or DoesNotExist. IntegerValue can only be used if the Qualification type has an integer value; it cannot be used with the Worker_Locale QualificationType ID. When performing a set comparison by using the In or the NotIn comparator, you can use up to 15 IntegerValue elements in a QualificationRequirement data structure. </p>
+    #[doc(hidden)]
     pub integer_values: std::option::Option<std::vec::Vec<i32>>,
     /// <p> The locale value to compare against the Qualification's value. The local value must be a valid ISO 3166 country code or supports ISO 3166-2 subdivisions. LocaleValue can only be used with a Worker_Locale QualificationType ID. LocaleValue can only be used with the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use a single LocaleValue element when using the EqualTo or NotEqualTo comparators. When performing a set comparison by using the In or the NotIn comparator, you can use up to 30 LocaleValue elements in a QualificationRequirement data structure. </p>
+    #[doc(hidden)]
     pub locale_values: std::option::Option<std::vec::Vec<crate::model::Locale>>,
     /// <p> DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default is false. This should not be used in combination with the <code>ActionsGuarded</code> field. </p>
     #[deprecated]
+    #[doc(hidden)]
     pub required_to_preview: std::option::Option<bool>,
     /// <p> Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform an action when they have met all QualificationRequirements guarding the action. The actions in the order of least restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the <code>RequiredToPreview</code> field. </p>
+    #[doc(hidden)]
     pub actions_guarded: std::option::Option<crate::model::HitAccessActions>,
 }
 impl QualificationRequirement {
@@ -3058,16 +3138,22 @@ impl AsRef<str> for ReviewableHitStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
+    #[doc(hidden)]
     pub qualification_request_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Worker requesting the Qualification.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p> The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<std::string::String>,
     /// <p> The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty. </p>
+    #[doc(hidden)]
     pub answer: std::option::Option<std::string::String>,
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
+    #[doc(hidden)]
     pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QualificationRequest {
@@ -3216,14 +3302,19 @@ impl QualificationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>A string representing a currency amount.</p>
+    #[doc(hidden)]
     pub bonus_amount: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment associated with this bonus payment.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>The Reason text given when the bonus was granted, if any.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The date and time of when the bonus was granted.</p>
+    #[doc(hidden)]
     pub grant_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BonusPayment {
@@ -3352,28 +3443,40 @@ impl BonusPayment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Assignment {
     /// <p> A unique identifier for the assignment.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Worker who accepted the HIT.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p> The ID of the HIT.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p> The status of the assignment.</p>
+    #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     /// <p> If results have been submitted, AutoApprovalTime is the date and time the results of the assignment results are considered Approved automatically if they have not already been explicitly approved or rejected by the Requester. This value is derived from the auto-approval delay specified by the Requester in the HIT. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
+    #[doc(hidden)]
     pub auto_approval_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time the Worker accepted the assignment.</p>
+    #[doc(hidden)]
     pub accept_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results, SubmitTime is the date and time the assignment was submitted. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
+    #[doc(hidden)]
     pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has approved the results, ApprovalTime is the date and time the Requester approved the results. This value is omitted from the assignment if the Requester has not yet approved the results.</p>
+    #[doc(hidden)]
     pub approval_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has rejected the results, RejectionTime is the date and time the Requester rejected the results.</p>
+    #[doc(hidden)]
     pub rejection_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time of the deadline for the assignment. This value is derived from the deadline specification for the HIT and the date and time the Worker accepted the HIT.</p>
+    #[doc(hidden)]
     pub deadline: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Worker's answers submitted for the HIT contained in a QuestionFormAnswers document, if the Worker provides an answer. If the Worker does not provide any answers, Answer may contain a QuestionFormAnswers document, or Answer may be empty.</p>
+    #[doc(hidden)]
     pub answer: std::option::Option<std::string::String>,
     /// <p> The feedback string included with the call to the ApproveAssignment operation or the RejectAssignment operation, if the Requester approved or rejected the assignment and specified feedback.</p>
+    #[doc(hidden)]
     pub requester_feedback: std::option::Option<std::string::String>,
 }
 impl Assignment {
@@ -3701,8 +3804,10 @@ impl AsRef<str> for AssignmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HitLayoutParameter {
     /// <p> The name of the parameter in the HITLayout. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value substituted for the parameter referenced in the HITLayout. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl HitLayoutParameter {

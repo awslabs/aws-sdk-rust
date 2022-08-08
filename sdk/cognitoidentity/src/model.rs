@@ -5,12 +5,15 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoIdentityProvider {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The client ID for the Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
     /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
+    #[doc(hidden)]
     pub server_side_token_check: std::option::Option<bool>,
 }
 impl CognitoIdentityProvider {
@@ -108,12 +111,15 @@ impl CognitoIdentityProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RoleMappingType>,
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
+    #[doc(hidden)]
     pub ambiguous_role_resolution: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
     /// <p>The rules to be used for mapping users to roles.</p>
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
+    #[doc(hidden)]
     pub rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
 }
 impl RoleMapping {
@@ -226,6 +232,7 @@ impl RoleMapping {
 pub struct RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
 }
 impl RulesConfigurationType {
@@ -290,12 +297,16 @@ impl RulesConfigurationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
+    #[doc(hidden)]
     pub claim: std::option::Option<std::string::String>,
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
+    #[doc(hidden)]
     pub match_type: std::option::Option<crate::model::MappingRuleMatchType>,
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl MappingRule {
@@ -577,8 +588,10 @@ impl AsRef<str> for RoleMappingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A string that you provide.</p>
+    #[doc(hidden)]
     pub identity_pool_name: std::option::Option<std::string::String>,
 }
 impl IdentityPoolShortDescription {
@@ -656,12 +669,16 @@ impl IdentityPoolShortDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityDescription {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The provider names.</p>
+    #[doc(hidden)]
     pub logins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Date on which the identity was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date on which the identity was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IdentityDescription {
@@ -782,12 +799,16 @@ impl IdentityDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The Secret Access Key portion of the credentials</p>
+    #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
     /// <p>The Session Token portion of the credentials</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date at which these credentials will expire.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Credentials {
@@ -902,8 +923,10 @@ impl Credentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedIdentityId {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The error code indicating the type of error that occurred.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
 }
 impl UnprocessedIdentityId {

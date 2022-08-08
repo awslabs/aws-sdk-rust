@@ -7786,14 +7786,19 @@ impl UpdateRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to update. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> An updated repository description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    #[doc(hidden)]
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
 }
 impl UpdateRepositoryInput {
@@ -7835,12 +7840,16 @@ impl std::fmt::Debug for UpdateRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package versions with the status you want to update. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -7848,17 +7857,23 @@ pub struct UpdatePackageVersionsStatusInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the version statuses to update. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
+    #[doc(hidden)]
     pub version_revisions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
+    #[doc(hidden)]
     pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p> The status you want to change the package version status to. </p>
+    #[doc(hidden)]
     pub target_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl UpdatePackageVersionsStatusInput {
@@ -7933,8 +7948,10 @@ impl std::fmt::Debug for UpdatePackageVersionsStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7961,8 +7978,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you want to modify or add to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -7989,14 +8008,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to set the resource policy on. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
+    #[doc(hidden)]
     pub policy_revision: std::option::Option<std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl PutRepositoryPermissionsPolicyInput {
@@ -8038,12 +8062,16 @@ impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the package.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>A format that specifies the type of the package to be updated.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8051,11 +8079,14 @@ pub struct PutPackageOriginConfigurationInput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the package to be updated.</p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+    #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
 }
 impl PutPackageOriginConfigurationInput {
@@ -8113,12 +8144,16 @@ impl std::fmt::Debug for PutPackageOriginConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    #[doc(hidden)]
     pub policy_revision: std::option::Option<std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl PutDomainPermissionsPolicyInput {
@@ -8155,6 +8190,7 @@ impl std::fmt::Debug for PutDomainPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8176,16 +8212,22 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
+    #[doc(hidden)]
     pub administrator_account: std::option::Option<std::string::String>,
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
+    #[doc(hidden)]
     pub repository_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInDomainInput {
@@ -8232,10 +8274,13 @@ impl std::fmt::Debug for ListRepositoriesInDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInput {
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    #[doc(hidden)]
     pub repository_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInput {
@@ -8267,12 +8312,16 @@ impl std::fmt::Debug for ListRepositoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested package versions. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the returned package versions. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8280,18 +8329,25 @@ pub struct ListPackageVersionsInput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package for which you want to request package versions. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that filters the requested package versions by status. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p> How to sort the requested list of package versions. </p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::PackageVersionSortType>,
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+    #[doc(hidden)]
     pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
 }
 impl ListPackageVersionsInput {
@@ -8368,12 +8424,16 @@ impl std::fmt::Debug for ListPackageVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested package version. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package with the requested dependencies. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8381,12 +8441,16 @@ pub struct ListPackageVersionDependenciesInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package versions' package. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionDependenciesInput {
@@ -8448,12 +8512,16 @@ impl std::fmt::Debug for ListPackageVersionDependenciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package that contains the requested package version assets. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8461,14 +8529,19 @@ pub struct ListPackageVersionAssetsInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested package version assets. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionAssetsInput {
@@ -8535,12 +8608,16 @@ impl std::fmt::Debug for ListPackageVersionAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested packages. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8548,16 +8625,22 @@ pub struct ListPackagesInput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    #[doc(hidden)]
     pub package_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    #[doc(hidden)]
     pub publish: std::option::Option<crate::model::AllowPublish>,
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    #[doc(hidden)]
     pub upstream: std::option::Option<crate::model::AllowUpstream>,
 }
 impl ListPackagesInput {
@@ -8629,8 +8712,10 @@ impl std::fmt::Debug for ListPackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p> The maximum number of results to return per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsInput {
@@ -8657,10 +8742,13 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPermissionsPolicyInput {
@@ -8692,12 +8780,16 @@ impl std::fmt::Debug for GetRepositoryPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
 }
 impl GetRepositoryEndpointInput {
@@ -8734,12 +8826,16 @@ impl std::fmt::Debug for GetRepositoryEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package with the requested readme file. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8747,10 +8843,13 @@ pub struct GetPackageVersionReadmeInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package version that contains the requested readme file. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionReadmeInput {
@@ -8807,12 +8906,16 @@ impl std::fmt::Debug for GetPackageVersionReadmeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package version with the requested asset. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested asset file. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8820,14 +8923,19 @@ pub struct GetPackageVersionAssetInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested asset. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p> The name of the requested asset. </p>
+    #[doc(hidden)]
     pub asset: std::option::Option<std::string::String>,
     /// <p> The name of the package version revision that contains the requested asset. </p>
+    #[doc(hidden)]
     pub package_version_revision: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionAssetInput {
@@ -8894,8 +9002,10 @@ impl std::fmt::Debug for GetPackageVersionAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl GetDomainPermissionsPolicyInput {
@@ -8922,10 +9032,13 @@ impl std::fmt::Debug for GetDomainPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i64>,
 }
 impl GetAuthorizationTokenInput {
@@ -8957,12 +9070,16 @@ impl std::fmt::Debug for GetAuthorizationTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -8970,15 +9087,20 @@ pub struct DisposePackageVersionsInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions you want to dispose. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The versions of the package you want to dispose. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The revisions of the package versions you want to dispose. </p>
+    #[doc(hidden)]
     pub version_revisions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The expected status of the package version to dispose. </p>
+    #[doc(hidden)]
     pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DisposePackageVersionsInput {
@@ -9048,12 +9170,16 @@ impl std::fmt::Debug for DisposePackageVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository from which the external connection will be removed. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The name of the external connection to be removed from the repository. </p>
+    #[doc(hidden)]
     pub external_connection: std::option::Option<std::string::String>,
 }
 impl DisassociateExternalConnectionInput {
@@ -9090,10 +9216,13 @@ impl std::fmt::Debug for DisassociateExternalConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> A string that specifies the name of the requested repository. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoryInput {
@@ -9125,12 +9254,16 @@ impl std::fmt::Debug for DescribeRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package version. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the requested package version. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -9138,10 +9271,13 @@ pub struct DescribePackageVersionInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the requested package version. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
 }
 impl DescribePackageVersionInput {
@@ -9198,12 +9334,16 @@ impl std::fmt::Debug for DescribePackageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the requested package. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>A format that specifies the type of the requested package.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -9211,8 +9351,10 @@ pub struct DescribePackageInput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the requested package.</p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
 }
 impl DescribePackageInput {
@@ -9264,8 +9406,10 @@ impl std::fmt::Debug for DescribePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -9292,12 +9436,16 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    #[doc(hidden)]
     pub policy_revision: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPermissionsPolicyInput {
@@ -9334,10 +9482,13 @@ impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to delete. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryInput {
@@ -9369,12 +9520,16 @@ impl std::fmt::Debug for DeleteRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to delete. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package versions to delete. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -9382,12 +9537,16 @@ pub struct DeletePackageVersionsInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions to delete. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> An array of strings that specify the versions of the package to delete. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The expected status of the package version to delete. </p>
+    #[doc(hidden)]
     pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DeletePackageVersionsInput {
@@ -9449,10 +9608,13 @@ impl std::fmt::Debug for DeletePackageVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    #[doc(hidden)]
     pub policy_revision: std::option::Option<std::string::String>,
 }
 impl DeleteDomainPermissionsPolicyInput {
@@ -9484,8 +9646,10 @@ impl std::fmt::Debug for DeleteDomainPermissionsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -9512,16 +9676,22 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to create. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> A description of the created repository. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    #[doc(hidden)]
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
     /// <p>One or more tag key-value pairs for the repository.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRepositoryInput {
@@ -9568,12 +9738,15 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
     /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// </important>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>One or more tag key-value pairs for the domain.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDomainInput {
@@ -9607,14 +9780,19 @@ impl std::fmt::Debug for CreateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to be copied. </p>
+    #[doc(hidden)]
     pub source_repository: std::option::Option<std::string::String>,
     /// <p> The name of the repository into which package versions are copied. </p>
+    #[doc(hidden)]
     pub destination_repository: std::option::Option<std::string::String>,
     /// <p> The format of the package versions to be copied. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -9622,21 +9800,27 @@ pub struct CopyPackageVersionsInput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the versions to be copied. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
+    #[doc(hidden)]
     pub version_revisions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
+    #[doc(hidden)]
     pub allow_overwrite: std::option::Option<bool>,
     /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    #[doc(hidden)]
     pub include_from_upstream: std::option::Option<bool>,
 }
 impl CopyPackageVersionsInput {
@@ -9720,10 +9904,13 @@ impl std::fmt::Debug for CopyPackageVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to which the external connection is added. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
@@ -9734,6 +9921,7 @@ pub struct AssociateExternalConnectionInput {
     /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub external_connection: std::option::Option<std::string::String>,
 }
 impl AssociateExternalConnectionInput {

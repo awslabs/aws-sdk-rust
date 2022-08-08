@@ -94,9 +94,11 @@ impl NotifyApplicationStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
+    #[doc(hidden)]
     pub progress_update_stream_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProgressUpdateStreamsOutput {
@@ -186,8 +188,10 @@ impl ListProgressUpdateStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMigrationTasksOutput {
     /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
+    #[doc(hidden)]
     pub migration_task_summary_list:
         std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
 }
@@ -278,8 +282,10 @@ impl ListMigrationTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesOutput {
     /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
+    #[doc(hidden)]
     pub discovered_resource_list:
         std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
 }
@@ -364,8 +370,10 @@ impl ListDiscoveredResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreatedArtifactsOutput {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
+    #[doc(hidden)]
     pub created_artifact_list: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
 }
 impl ListCreatedArtifactsOutput {
@@ -447,8 +455,10 @@ impl ListCreatedArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
+    #[doc(hidden)]
     pub application_state_list: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationStatesOutput {
@@ -620,6 +630,7 @@ impl DisassociateCreatedArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
+    #[doc(hidden)]
     pub migration_task: std::option::Option<crate::model::MigrationTask>,
 }
 impl DescribeMigrationTaskOutput {
@@ -677,8 +688,10 @@ impl DescribeMigrationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeApplicationStateOutput {

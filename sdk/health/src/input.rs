@@ -2160,12 +2160,16 @@ impl std::fmt::Debug for DescribeHealthServiceStatusForOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTypesInput {
     /// <p>Values to narrow the results returned.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::EventTypeFilter>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEventTypesInput {
@@ -2202,12 +2206,16 @@ impl std::fmt::Debug for DescribeEventTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsForOrganizationInput {
     /// <p>Values to narrow the results returned.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::OrganizationEventFilter>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventsForOrganizationInput {
@@ -2244,12 +2252,16 @@ impl std::fmt::Debug for DescribeEventsForOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
     /// <p>Values to narrow the results returned.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::EventFilter>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -2286,9 +2298,11 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsForOrganizationInput {
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    #[doc(hidden)]
     pub organization_event_detail_filters:
         std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsForOrganizationInput {
@@ -2320,8 +2334,10 @@ impl std::fmt::Debug for DescribeEventDetailsForOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    #[doc(hidden)]
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsInput {
@@ -2348,12 +2364,16 @@ impl std::fmt::Debug for DescribeEventDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventAggregatesInput {
     /// <p>Values to narrow the results returned.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::EventFilter>,
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
+    #[doc(hidden)]
     pub aggregate_field: std::option::Option<crate::model::EventAggregateField>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventAggregatesInput {
@@ -2390,6 +2410,7 @@ impl std::fmt::Debug for DescribeEventAggregatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityAggregatesInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    #[doc(hidden)]
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEntityAggregatesInput {
@@ -2411,13 +2432,17 @@ impl std::fmt::Debug for DescribeEntityAggregatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesForOrganizationInput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    #[doc(hidden)]
     pub organization_entity_filters:
         std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
@@ -2459,12 +2484,16 @@ impl std::fmt::Debug for DescribeAffectedEntitiesForOrganizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesInput {
     /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::EntityFilter>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAffectedEntitiesInput {
@@ -2503,10 +2532,13 @@ pub struct DescribeAffectedAccountsForOrganizationInput {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAffectedAccountsForOrganizationInput {

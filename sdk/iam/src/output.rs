@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
 impl UploadSshPublicKeyOutput {
@@ -62,6 +63,7 @@ impl UploadSshPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::SigningCertificate>,
 }
 impl UploadSigningCertificateOutput {
@@ -119,8 +121,10 @@ impl UploadSigningCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
+    #[doc(hidden)]
     pub server_certificate_metadata: std::option::Option<crate::model::ServerCertificateMetadata>,
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UploadServerCertificateOutput {
@@ -363,6 +367,7 @@ impl UpdateServerCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
+    #[doc(hidden)]
     pub saml_provider_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSamlProviderOutput {
@@ -420,6 +425,7 @@ impl UpdateSamlProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoleDescriptionOutput {
     /// <p>A structure that contains details about the modified role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl UpdateRoleDescriptionOutput {
@@ -1162,10 +1168,13 @@ impl TagInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimulatePrincipalPolicyOutput {
     /// <p>The results of the simulation.</p>
+    #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl SimulatePrincipalPolicyOutput {
@@ -1264,10 +1273,13 @@ impl SimulatePrincipalPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimulateCustomPolicyOutput {
     /// <p>The results of the simulation.</p>
+    #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl SimulateCustomPolicyOutput {
@@ -1458,6 +1470,7 @@ pub struct ResetServiceSpecificCredentialOutput {
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
+    #[doc(hidden)]
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
 }
 impl ResetServiceSpecificCredentialOutput {
@@ -1771,10 +1784,13 @@ impl PutGroupPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
+    #[doc(hidden)]
     pub virtual_mfa_devices: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListVirtualMfaDevicesOutput {
@@ -1873,10 +1889,13 @@ impl ListVirtualMfaDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserTagsOutput {
     /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListUserTagsOutput {
@@ -1974,10 +1993,13 @@ impl ListUserTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>A list of users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -2075,10 +2097,13 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserPoliciesOutput {
     /// <p>A list of policy names.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListUserPoliciesOutput {
@@ -2176,10 +2201,13 @@ impl ListUserPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSshPublicKeysOutput {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
+    #[doc(hidden)]
     pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSshPublicKeysOutput {
@@ -2278,10 +2306,13 @@ impl ListSshPublicKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningCertificatesOutput {
     /// <p>A list of the user's signing certificate information.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSigningCertificatesOutput {
@@ -2380,6 +2411,7 @@ impl ListSigningCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
+    #[doc(hidden)]
     pub service_specific_credentials:
         std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
 }
@@ -2455,10 +2487,13 @@ impl ListServiceSpecificCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServerCertificateTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListServerCertificateTagsOutput {
@@ -2556,11 +2591,14 @@ impl ListServerCertificateTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServerCertificatesOutput {
     /// <p>A list of server certificates.</p>
+    #[doc(hidden)]
     pub server_certificate_metadata_list:
         std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListServerCertificatesOutput {
@@ -2667,10 +2705,13 @@ impl ListServerCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSamlProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSamlProviderTagsOutput {
@@ -2768,6 +2809,7 @@ impl ListSamlProviderTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub saml_provider_list: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
 }
 impl ListSamlProvidersOutput {
@@ -2834,10 +2876,13 @@ impl ListSamlProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoleTagsOutput {
     /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListRoleTagsOutput {
@@ -2935,10 +2980,13 @@ impl ListRoleTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRolesOutput {
     /// <p>A list of roles.</p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListRolesOutput {
@@ -3036,10 +3084,13 @@ impl ListRolesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRolePoliciesOutput {
     /// <p>A list of policy names.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListRolePoliciesOutput {
@@ -3138,10 +3189,13 @@ impl ListRolePoliciesOutput {
 pub struct ListPolicyVersionsOutput {
     /// <p>A list of policy versions.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPolicyVersionsOutput {
@@ -3242,10 +3296,13 @@ impl ListPolicyVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPolicyTagsOutput {
@@ -3343,11 +3400,14 @@ impl ListPolicyTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesGrantingServiceAccessOutput {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    #[doc(hidden)]
     pub policies_granting_service_access:
         std::option::Option<std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPoliciesGrantingServiceAccessOutput {
@@ -3457,10 +3517,13 @@ impl ListPoliciesGrantingServiceAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesOutput {
     /// <p>A list of policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -3558,10 +3621,13 @@ impl ListPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenIdConnectProviderTagsOutput {
     /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListOpenIdConnectProviderTagsOutput {
@@ -3659,6 +3725,7 @@ impl ListOpenIdConnectProviderTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub open_id_connect_provider_list:
         std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
 }
@@ -3732,10 +3799,13 @@ impl ListOpenIdConnectProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMfaDeviceTagsOutput {
     /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListMfaDeviceTagsOutput {
@@ -3833,10 +3903,13 @@ impl ListMfaDeviceTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
+    #[doc(hidden)]
     pub mfa_devices: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListMfaDevicesOutput {
@@ -3934,10 +4007,13 @@ impl ListMfaDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfileTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfileTagsOutput {
@@ -4035,10 +4111,13 @@ impl ListInstanceProfileTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfilesForRoleOutput {
     /// <p>A list of instance profiles.</p>
+    #[doc(hidden)]
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesForRoleOutput {
@@ -4137,10 +4216,13 @@ impl ListInstanceProfilesForRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfilesOutput {
     /// <p>A list of instance profiles.</p>
+    #[doc(hidden)]
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesOutput {
@@ -4239,10 +4321,13 @@ impl ListInstanceProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsForUserOutput {
     /// <p>A list of groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListGroupsForUserOutput {
@@ -4340,10 +4425,13 @@ impl ListGroupsForUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>A list of groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -4442,10 +4530,13 @@ impl ListGroupsOutput {
 pub struct ListGroupPoliciesOutput {
     /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListGroupPoliciesOutput {
@@ -4546,14 +4637,19 @@ impl ListGroupPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesForPolicyOutput {
     /// <p>A list of IAM groups that the policy is attached to.</p>
+    #[doc(hidden)]
     pub policy_groups: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
     /// <p>A list of IAM users that the policy is attached to.</p>
+    #[doc(hidden)]
     pub policy_users: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
     /// <p>A list of IAM roles that the policy is attached to.</p>
+    #[doc(hidden)]
     pub policy_roles: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListEntitiesForPolicyOutput {
@@ -4703,10 +4799,13 @@ impl ListEntitiesForPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedUserPoliciesOutput {
     /// <p>A list of the attached policies.</p>
+    #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListAttachedUserPoliciesOutput {
@@ -4805,10 +4904,13 @@ impl ListAttachedUserPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedRolePoliciesOutput {
     /// <p>A list of the attached policies.</p>
+    #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListAttachedRolePoliciesOutput {
@@ -4907,10 +5009,13 @@ impl ListAttachedRolePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedGroupPoliciesOutput {
     /// <p>A list of the attached policies.</p>
+    #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListAttachedGroupPoliciesOutput {
@@ -5009,10 +5114,13 @@ impl ListAttachedGroupPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAliasesOutput {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
+    #[doc(hidden)]
     pub account_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListAccountAliasesOutput {
@@ -5110,10 +5218,13 @@ impl ListAccountAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessKeysOutput {
     /// <p>A list of objects containing metadata about the access keys.</p>
+    #[doc(hidden)]
     pub access_key_metadata: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListAccessKeysOutput {
@@ -5212,11 +5323,14 @@ impl ListAccessKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserPolicyOutput {
     /// <p>The user the policy is associated with.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetUserPolicyOutput {
@@ -5314,6 +5428,7 @@ pub struct GetUserOutput {
     /// <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
     /// <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>
     /// </important>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl GetUserOutput {
@@ -5375,6 +5490,7 @@ impl GetUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
 }
 impl GetSshPublicKeyOutput {
@@ -5432,8 +5548,10 @@ impl GetSshPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLinkedRoleDeletionStatusOutput {
     /// <p>The status of the deletion.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeletionTaskStatusType>,
     /// <p>An object that contains details about the reason the deletion failed.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
 }
 impl GetServiceLinkedRoleDeletionStatusOutput {
@@ -5511,19 +5629,26 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>The status of the job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub entity_details_list: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An object that contains details about the reason the operation failed.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
 impl GetServiceLastAccessedDetailsWithEntitiesOutput {
@@ -5703,22 +5828,30 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLastAccessedDetailsOutput {
     /// <p>The status of the job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The type of job. Service jobs return information about when each service was last accessed. Action jobs also include information about when tracked actions within the service were last accessed.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    #[doc(hidden)]
     pub services_last_accessed:
         std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An object that contains details about the reason the operation failed.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
 impl GetServiceLastAccessedDetailsOutput {
@@ -5921,6 +6054,7 @@ impl GetServiceLastAccessedDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
+    #[doc(hidden)]
     pub server_certificate: std::option::Option<crate::model::ServerCertificate>,
 }
 impl GetServerCertificateOutput {
@@ -5978,12 +6112,16 @@ impl GetServerCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
+    #[doc(hidden)]
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>The date and time when the SAML provider was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The expiration date and time for the SAML provider.</p>
+    #[doc(hidden)]
     pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetSamlProviderOutput {
@@ -6107,11 +6245,14 @@ impl GetSamlProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRolePolicyOutput {
     /// <p>The role the policy is associated with.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetRolePolicyOutput {
@@ -6206,6 +6347,7 @@ impl GetRolePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl GetRoleOutput {
@@ -6258,6 +6400,7 @@ impl GetRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyVersionOutput {
     /// <p>A structure containing details about the policy version.</p>
+    #[doc(hidden)]
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
 }
 impl GetPolicyVersionOutput {
@@ -6315,6 +6458,7 @@ impl GetPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl GetPolicyOutput {
@@ -6369,24 +6513,33 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
     pub job_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of services that the applicable SCPs allow account principals to access.</p>
+    #[doc(hidden)]
     pub number_of_services_accessible: std::option::Option<i32>,
     /// <p>The number of services that account principals are allowed but did not attempt to access.</p>
+    #[doc(hidden)]
     pub number_of_services_not_accessed: std::option::Option<i32>,
     /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    #[doc(hidden)]
     pub access_details: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains information about the reason that the operation failed.</p>
     /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl GetOrganizationsAccessReportOutput {
@@ -6616,14 +6769,19 @@ impl GetOrganizationsAccessReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    #[doc(hidden)]
     pub client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
+    #[doc(hidden)]
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetOpenIdConnectProviderOutput {
@@ -6776,6 +6934,7 @@ impl GetOpenIdConnectProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoginProfileOutput {
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
+    #[doc(hidden)]
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
 impl GetLoginProfileOutput {
@@ -6833,6 +6992,7 @@ impl GetLoginProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceProfileOutput {
     /// <p>A structure containing details about the instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl GetInstanceProfileOutput {
@@ -6890,11 +7050,14 @@ impl GetInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupPolicyOutput {
     /// <p>The group the policy is associated with.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetGroupPolicyOutput {
@@ -6989,12 +7152,16 @@ impl GetGroupPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// <p>A structure that contains details about the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
     /// <p>A list of users in the group.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetGroupOutput {
@@ -7109,10 +7276,13 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The format (MIME type) of the credential report.</p>
+    #[doc(hidden)]
     pub report_format: std::option::Option<crate::model::ReportFormatType>,
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
+    #[doc(hidden)]
     pub generated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCredentialReportOutput {
@@ -7207,6 +7377,7 @@ impl GetCredentialReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
+    #[doc(hidden)]
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetContextKeysForPrincipalPolicyOutput {
@@ -7270,6 +7441,7 @@ impl GetContextKeysForPrincipalPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContextKeysForCustomPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
+    #[doc(hidden)]
     pub context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetContextKeysForCustomPolicyOutput {
@@ -7333,6 +7505,7 @@ impl GetContextKeysForCustomPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
+    #[doc(hidden)]
     pub summary_map:
         std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
 }
@@ -7402,6 +7575,7 @@ impl GetAccountSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
+    #[doc(hidden)]
     pub password_policy: std::option::Option<crate::model::PasswordPolicy>,
 }
 impl GetAccountPasswordPolicyOutput {
@@ -7459,16 +7633,22 @@ impl GetAccountPasswordPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
+    #[doc(hidden)]
     pub user_detail_list: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
     /// <p>A list containing information about IAM groups.</p>
+    #[doc(hidden)]
     pub group_detail_list: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
     /// <p>A list containing information about IAM roles.</p>
+    #[doc(hidden)]
     pub role_detail_list: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>,
     /// <p>A list containing information about managed policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetAccountAuthorizationDetailsOutput {
@@ -7645,8 +7825,10 @@ impl GetAccountAuthorizationDetailsOutput {
 pub struct GetAccessKeyLastUsedOutput {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Contains information about the last time the access key was used.</p>
+    #[doc(hidden)]
     pub access_key_last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
 }
 impl GetAccessKeyLastUsedOutput {
@@ -7724,6 +7906,7 @@ impl GetAccessKeyLastUsedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateServiceLastAccessedDetailsOutput {
     /// <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GenerateServiceLastAccessedDetailsOutput {
@@ -7778,6 +7961,7 @@ impl GenerateServiceLastAccessedDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GenerateOrganizationsAccessReportOutput {
@@ -7832,8 +8016,10 @@ impl GenerateOrganizationsAccessReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReportStateType>,
     /// <p>Information about the credential report.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl GenerateCredentialReportOutput {
@@ -8245,6 +8431,7 @@ pub struct DeleteServiceLinkedRoleOutput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
+    #[doc(hidden)]
     pub deletion_task_id: std::option::Option<std::string::String>,
 }
 impl DeleteServiceLinkedRoleOutput {
@@ -8803,6 +8990,7 @@ impl DeactivateMfaDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
+    #[doc(hidden)]
     pub virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
 }
 impl CreateVirtualMfaDeviceOutput {
@@ -8860,6 +9048,7 @@ impl CreateVirtualMfaDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
@@ -8914,6 +9103,7 @@ pub struct CreateServiceSpecificCredentialOutput {
     /// <p>A structure that contains information about the newly created service-specific credential.</p> <important>
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub service_specific_credential: std::option::Option<crate::model::ServiceSpecificCredential>,
 }
 impl CreateServiceSpecificCredentialOutput {
@@ -8986,6 +9176,7 @@ impl CreateServiceSpecificCredentialOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceLinkedRoleOutput {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl CreateServiceLinkedRoleOutput {
@@ -9038,8 +9229,10 @@ impl CreateServiceLinkedRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
+    #[doc(hidden)]
     pub saml_provider_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSamlProviderOutput {
@@ -9123,6 +9316,7 @@ impl CreateSamlProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::Role>,
 }
 impl CreateRoleOutput {
@@ -9175,6 +9369,7 @@ impl CreateRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
+    #[doc(hidden)]
     pub policy_version: std::option::Option<crate::model::PolicyVersion>,
 }
 impl CreatePolicyVersionOutput {
@@ -9232,6 +9427,7 @@ impl CreatePolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl CreatePolicyOutput {
@@ -9286,8 +9482,10 @@ impl CreatePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpenIdConnectProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
+    #[doc(hidden)]
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateOpenIdConnectProviderOutput {
@@ -9377,6 +9575,7 @@ impl CreateOpenIdConnectProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
+    #[doc(hidden)]
     pub login_profile: std::option::Option<crate::model::LoginProfile>,
 }
 impl CreateLoginProfileOutput {
@@ -9434,6 +9633,7 @@ impl CreateLoginProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl CreateInstanceProfileOutput {
@@ -9491,6 +9691,7 @@ impl CreateInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
@@ -9573,6 +9774,7 @@ impl CreateAccountAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<crate::model::AccessKey>,
 }
 impl CreateAccessKeyOutput {

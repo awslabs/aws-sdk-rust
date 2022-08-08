@@ -5,15 +5,20 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason that validation failed.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// <p>A unique ID for the error.</p>
+    #[doc(hidden)]
     pub error_id: std::option::Option<std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
+    #[doc(hidden)]
     pub error_arguments:
         std::option::Option<std::vec::Vec<crate::model::ValidationExceptionErrorArgument>>,
     /// <p>A list of request parameters that failed validation.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl ValidationException {
@@ -178,10 +183,13 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource's ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource's type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -285,8 +293,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The number of seconds a client should wait before retrying the call.</p>
+    #[doc(hidden)]
     pub retry_after_seconds: i32,
 }
 impl InternalServerException {
@@ -370,14 +380,19 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource's ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource's type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>A unique ID for the error.</p>
+    #[doc(hidden)]
     pub error_id: std::option::Option<std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
+    #[doc(hidden)]
     pub error_arguments:
         std::option::Option<std::vec::Vec<crate::model::ConflictExceptionErrorArgument>>,
 }
@@ -531,6 +546,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -595,14 +611,19 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The target resource's ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The target resource's type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the limit.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {

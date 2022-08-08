@@ -124,11 +124,14 @@ impl StartCostEstimationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchOrganizationInsightsOutput {
@@ -241,11 +244,14 @@ impl SearchOrganizationInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInsightsOutput {
     /// <p> The returned proactive insights. </p>
+    #[doc(hidden)]
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
     /// <p> The returned reactive insights. </p>
+    #[doc(hidden)]
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchInsightsOutput {
@@ -418,8 +424,10 @@ impl PutFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsOutput {
     /// <p> An array of the requested recommendations. </p>
+    #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsOutput {
@@ -501,12 +509,15 @@ impl ListRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveOrganizationInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub reactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ReactiveOrganizationInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationInsightsOutput {
@@ -629,8 +640,10 @@ impl ListOrganizationInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationChannelsOutput {
     /// <p> An array that contains the requested notification channels. </p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::NotificationChannel>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationChannelsOutput {
@@ -711,9 +724,11 @@ impl ListNotificationChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitoredResourcesOutput {
     /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+    #[doc(hidden)]
     pub monitored_resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::MonitoredResourceIdentifier>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMonitoredResourcesOutput {
@@ -803,11 +818,14 @@ impl ListMonitoredResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsOutput {
     /// <p> The returned list of proactive insights. </p>
+    #[doc(hidden)]
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
     /// <p> The returned list of reactive insights. </p>
+    #[doc(hidden)]
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsOutput {
@@ -920,8 +938,10 @@ impl ListInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsOutput {
     /// <p> A list of the requested events. </p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventsOutput {
@@ -1002,10 +1022,13 @@ impl ListEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalousLogGroupsOutput {
     /// <p> The ID of the insight containing the log groups. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    #[doc(hidden)]
     pub anomalous_log_groups: std::option::Option<std::vec::Vec<crate::model::AnomalousLogGroup>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalousLogGroupsOutput {
@@ -1104,12 +1127,15 @@ impl ListAnomalousLogGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomaliesForInsightOutput {
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
+    #[doc(hidden)]
     pub proactive_anomalies:
         std::option::Option<std::vec::Vec<crate::model::ProactiveAnomalySummary>>,
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
+    #[doc(hidden)]
     pub reactive_anomalies:
         std::option::Option<std::vec::Vec<crate::model::ReactiveAnomalySummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomaliesForInsightOutput {
@@ -1222,8 +1248,10 @@ impl ListAnomaliesForInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionOutput {
     /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollectionFilter>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionOutput {
@@ -1303,17 +1331,23 @@ impl GetResourceCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostEstimationOutput {
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
+    #[doc(hidden)]
     pub resource_collection:
         std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CostEstimationStatus>,
     /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+    #[doc(hidden)]
     pub costs: std::option::Option<std::vec::Vec<crate::model::ServiceResourceCost>>,
     /// <p>The start and end time of the cost estimation.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::CostEstimationTimeRange>,
     /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
+    #[doc(hidden)]
     pub total_cost: f64,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCostEstimationOutput {
@@ -1477,6 +1511,7 @@ impl GetCostEstimationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceIntegrationOutput {
     /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
+    #[doc(hidden)]
     pub service_integration: std::option::Option<crate::model::ServiceIntegrationConfig>,
 }
 impl DescribeServiceIntegrationOutput {
@@ -1539,10 +1574,13 @@ impl DescribeServiceIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthOutput {
     /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
+    #[doc(hidden)]
     pub cloud_formation: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
@@ -1554,6 +1592,7 @@ pub struct DescribeResourceCollectionHealthOutput {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
 }
 impl DescribeResourceCollectionHealthOutput {
@@ -1714,12 +1753,16 @@ impl DescribeResourceCollectionHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthOutput {
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
+    #[doc(hidden)]
     pub cloud_formation: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
     /// <p>The name of the organization's account.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::vec::Vec<crate::model::AccountHealth>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
@@ -1730,6 +1773,7 @@ pub struct DescribeOrganizationResourceCollectionHealthOutput {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
 }
 impl DescribeOrganizationResourceCollectionHealthOutput {
@@ -1914,8 +1958,10 @@ impl DescribeOrganizationResourceCollectionHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOverviewOutput {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub reactive_insights: i32,
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub proactive_insights: i32,
 }
 impl DescribeOrganizationOverviewOutput {
@@ -1987,12 +2033,16 @@ impl DescribeOrganizationOverviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationHealthOutput {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub open_reactive_insights: i32,
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
+    #[doc(hidden)]
     pub metrics_analyzed: i32,
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    #[doc(hidden)]
     pub resource_hours: std::option::Option<i64>,
 }
 impl DescribeOrganizationHealthOutput {
@@ -2098,8 +2148,10 @@ impl DescribeOrganizationHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInsightOutput {
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
+    #[doc(hidden)]
     pub proactive_insight: std::option::Option<crate::model::ProactiveInsight>,
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
+    #[doc(hidden)]
     pub reactive_insight: std::option::Option<crate::model::ReactiveInsight>,
 }
 impl DescribeInsightOutput {
@@ -2177,6 +2229,7 @@ impl DescribeInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeedbackOutput {
     /// <p> Information about insight feedback received from a customer. </p>
+    #[doc(hidden)]
     pub insight_feedback: std::option::Option<crate::model::InsightFeedback>,
 }
 impl DescribeFeedbackOutput {
@@ -2234,6 +2287,7 @@ impl DescribeFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSourcesConfigOutput {
     /// <p>Lists the event sources in the configuration.</p>
+    #[doc(hidden)]
     pub event_sources: std::option::Option<crate::model::EventSourcesConfig>,
 }
 impl DescribeEventSourcesConfigOutput {
@@ -2291,8 +2345,10 @@ impl DescribeEventSourcesConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyOutput {
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+    #[doc(hidden)]
     pub proactive_anomaly: std::option::Option<crate::model::ProactiveAnomaly>,
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+    #[doc(hidden)]
     pub reactive_anomaly: std::option::Option<crate::model::ReactiveAnomaly>,
 }
 impl DescribeAnomalyOutput {
@@ -2370,10 +2426,13 @@ impl DescribeAnomalyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewOutput {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    #[doc(hidden)]
     pub reactive_insights: i32,
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    #[doc(hidden)]
     pub proactive_insights: i32,
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    #[doc(hidden)]
     pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
 }
 impl DescribeAccountOverviewOutput {
@@ -2468,12 +2527,16 @@ impl DescribeAccountOverviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountHealthOutput {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub open_reactive_insights: i32,
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub metrics_analyzed: i32,
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    #[doc(hidden)]
     pub resource_hours: std::option::Option<i64>,
 }
 impl DescribeAccountHealthOutput {
@@ -2609,6 +2672,7 @@ impl DeleteInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelOutput {
     /// <p> The ID of the added notification channel. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl AddNotificationChannelOutput {

@@ -1195,14 +1195,18 @@ impl UpdateScalingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
+    #[doc(hidden)]
     pub scaling_plan_name: std::option::Option<std::string::String>,
     /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    #[doc(hidden)]
     pub application_source: std::option::Option<crate::model::ApplicationSource>,
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    #[doc(hidden)]
     pub scaling_instructions: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
 }
 impl UpdateScalingPlanInput {
@@ -1241,14 +1245,19 @@ impl std::fmt::Debug for UpdateScalingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
+    #[doc(hidden)]
     pub scaling_plan_name: std::option::Option<std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
+    #[doc(hidden)]
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    #[doc(hidden)]
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
     /// <p>The type of forecast data to get.</p>
     /// <ul>
@@ -1257,11 +1266,14 @@ pub struct GetScalingPlanResourceForecastDataInput {
     /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
     /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetScalingPlanResourceForecastDataInput {
@@ -1325,16 +1337,21 @@ impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
+    #[doc(hidden)]
     pub scaling_plan_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
+    #[doc(hidden)]
     pub application_sources: std::option::Option<std::vec::Vec<crate::model::ApplicationSource>>,
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlansInput {
@@ -1378,12 +1395,16 @@ impl std::fmt::Debug for DescribeScalingPlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlanResourcesInput {
     /// <p>The name of the scaling plan.</p>
+    #[doc(hidden)]
     pub scaling_plan_name: std::option::Option<std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
     /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlanResourcesInput {
@@ -1420,8 +1441,10 @@ impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
+    #[doc(hidden)]
     pub scaling_plan_name: std::option::Option<std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
 }
 impl DeleteScalingPlanInput {
@@ -1448,12 +1471,15 @@ impl std::fmt::Debug for DeleteScalingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScalingPlanInput {
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
+    #[doc(hidden)]
     pub scaling_plan_name: std::option::Option<std::string::String>,
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    #[doc(hidden)]
     pub application_source: std::option::Option<crate::model::ApplicationSource>,
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    #[doc(hidden)]
     pub scaling_instructions: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
 }
 impl CreateScalingPlanInput {

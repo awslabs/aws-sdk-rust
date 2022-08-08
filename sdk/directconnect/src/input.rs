@@ -10771,12 +10771,16 @@ impl UpdateVirtualInterfaceAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
+    #[doc(hidden)]
     pub enable_site_link: std::option::Option<bool>,
     /// <p>The name of the virtual private interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualInterfaceAttributesInput {
@@ -10813,13 +10817,17 @@ impl std::fmt::Debug for UpdateVirtualInterfaceAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLagInput {
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
+    #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    #[doc(hidden)]
     pub minimum_links: i32,
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
 }
 impl UpdateLagInput {
@@ -10857,11 +10865,14 @@ impl std::fmt::Debug for UpdateLagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub remove_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
 }
@@ -10906,8 +10917,10 @@ impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway to update.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The new name for the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub new_direct_connect_gateway_name: std::option::Option<std::string::String>,
 }
 impl UpdateDirectConnectGatewayInput {
@@ -10938,11 +10951,14 @@ impl std::fmt::Debug for UpdateDirectConnectGatewayInput {
 pub struct UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
 }
 impl UpdateConnectionInput {
@@ -10976,8 +10992,10 @@ impl std::fmt::Debug for UpdateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11004,8 +11022,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -11032,6 +11052,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
 impl StopBgpFailoverTestInput {
@@ -11053,12 +11074,15 @@ impl std::fmt::Debug for StopBgpFailoverTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you want to test.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The BGP peers to place in the DOWN state.</p>
+    #[doc(hidden)]
     pub bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 180 minutes (3 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
+    #[doc(hidden)]
     pub test_duration_in_minutes: std::option::Option<i32>,
 }
 impl StartBgpFailoverTestInput {
@@ -11092,17 +11116,23 @@ impl std::fmt::Debug for StartBgpFailoverTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The ID of the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub test_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface that was tested.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualInterfaceTestHistoryInput {
@@ -11151,9 +11181,11 @@ impl std::fmt::Debug for ListVirtualInterfaceTestHistoryInput {
 pub struct DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMacSecKeyInput {
@@ -11182,8 +11214,10 @@ impl std::fmt::Debug for DisassociateMacSecKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectionFromLagInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
 }
 impl DisassociateConnectionFromLagInput {
@@ -11210,8 +11244,10 @@ impl std::fmt::Debug for DisassociateConnectionFromLagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualInterfacesInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualInterfacesInput {
@@ -11249,6 +11285,7 @@ impl std::fmt::Debug for DescribeVirtualGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
@@ -11270,8 +11307,10 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouterConfigurationInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    #[doc(hidden)]
     pub router_type_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeRouterConfigurationInput {
@@ -11309,10 +11348,13 @@ impl std::fmt::Debug for DescribeLocationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoaInput {
     /// <p>The ID of a connection, LAG, or interconnect.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    #[doc(hidden)]
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
 impl DescribeLoaInput {
@@ -11344,6 +11386,7 @@ impl std::fmt::Debug for DescribeLoaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
 }
 impl DescribeLagsInput {
@@ -11365,6 +11408,7 @@ impl std::fmt::Debug for DescribeLagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInterconnectsInput {
     /// <p>The ID of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
 }
 impl DescribeInterconnectsInput {
@@ -11386,10 +11430,13 @@ impl std::fmt::Debug for DescribeInterconnectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInterconnectLoaInput {
     /// <p>The ID of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    #[doc(hidden)]
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
 impl DescribeInterconnectLoaInput {
@@ -11421,6 +11468,7 @@ impl std::fmt::Debug for DescribeInterconnectLoaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHostedConnectionsInput {
     /// <p>The ID of the interconnect or LAG.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DescribeHostedConnectionsInput {
@@ -11442,11 +11490,14 @@ impl std::fmt::Debug for DescribeHostedConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectConnectGatewaysInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewaysInput {
@@ -11479,13 +11530,17 @@ impl std::fmt::Debug for DescribeDirectConnectGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectConnectGatewayAttachmentsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAttachmentsInput {
@@ -11523,17 +11578,23 @@ impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The ID of the associated gateway.</p>
+    #[doc(hidden)]
     pub associated_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAssociationsInput {
@@ -11581,15 +11642,20 @@ impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the associated gateway.</p>
+    #[doc(hidden)]
     pub associated_gateway_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAssociationProposalsInput {
@@ -11643,6 +11709,7 @@ impl std::fmt::Debug for DescribeCustomerMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionsOnInterconnectInput {
     /// <p>The ID of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionsOnInterconnectInput {
@@ -11664,6 +11731,7 @@ impl std::fmt::Debug for DescribeConnectionsOnInterconnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionsInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionsInput {
@@ -11685,10 +11753,13 @@ impl std::fmt::Debug for DescribeConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionLoaInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    #[doc(hidden)]
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
 impl DescribeConnectionLoaInput {
@@ -11720,6 +11791,7 @@ impl std::fmt::Debug for DescribeConnectionLoaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualInterfaceInput {
@@ -11741,6 +11813,7 @@ impl std::fmt::Debug for DeleteVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLagInput {
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
 }
 impl DeleteLagInput {
@@ -11762,6 +11835,7 @@ impl std::fmt::Debug for DeleteLagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInterconnectInput {
     /// <p>The ID of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
 }
 impl DeleteInterconnectInput {
@@ -11783,6 +11857,7 @@ impl std::fmt::Debug for DeleteInterconnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectConnectGatewayAssociationProposalInput {
@@ -11804,10 +11879,13 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectConnectGatewayAssociationInput {
@@ -11839,6 +11917,7 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectConnectGatewayInput {
@@ -11860,6 +11939,7 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -11881,12 +11961,16 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    #[doc(hidden)]
     pub asn: i32,
     /// <p>The IP address assigned to the customer interface.</p>
+    #[doc(hidden)]
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The ID of the BGP peer.</p>
+    #[doc(hidden)]
     pub bgp_peer_id: std::option::Option<std::string::String>,
 }
 impl DeleteBgpPeerInput {
@@ -11923,8 +12007,10 @@ impl std::fmt::Debug for DeleteBgpPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Information about the transit virtual interface.</p>
+    #[doc(hidden)]
     pub new_transit_virtual_interface:
         std::option::Option<crate::model::NewTransitVirtualInterface>,
 }
@@ -11957,8 +12043,10 @@ impl std::fmt::Debug for CreateTransitVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Information about the public virtual interface.</p>
+    #[doc(hidden)]
     pub new_public_virtual_interface: std::option::Option<crate::model::NewPublicVirtualInterface>,
 }
 impl CreatePublicVirtualInterfaceInput {
@@ -11990,8 +12078,10 @@ impl std::fmt::Debug for CreatePublicVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Information about the private virtual interface.</p>
+    #[doc(hidden)]
     pub new_private_virtual_interface:
         std::option::Option<crate::model::NewPrivateVirtualInterface>,
 }
@@ -12024,24 +12114,33 @@ impl std::fmt::Debug for CreatePrivateVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    #[doc(hidden)]
     pub number_of_connections: i32,
     /// <p>The location for the LAG.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    #[doc(hidden)]
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
+    #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the LAG.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The tags to associate with the automtically created LAGs.</p>
+    #[doc(hidden)]
     pub child_connection_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateLagInput {
@@ -12105,16 +12204,22 @@ impl std::fmt::Debug for CreateLagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
+    #[doc(hidden)]
     pub interconnect_name: std::option::Option<std::string::String>,
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The location of the interconnect.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the interconnect.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
 }
 impl CreateInterconnectInput {
@@ -12161,15 +12266,20 @@ impl std::fmt::Debug for CreateInterconnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub remove_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
 }
@@ -12227,15 +12337,19 @@ impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
     /// <p>This parameter is required when you create an association to a transit gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
 }
 impl CreateDirectConnectGatewayAssociationInput {
@@ -12280,8 +12394,10 @@ impl std::fmt::Debug for CreateDirectConnectGatewayAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_name: std::option::Option<std::string::String>,
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    #[doc(hidden)]
     pub amazon_side_asn: std::option::Option<i64>,
 }
 impl CreateDirectConnectGatewayInput {
@@ -12311,19 +12427,26 @@ impl std::fmt::Debug for CreateDirectConnectGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>The location of the connection.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the lag.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the requested connection.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    #[doc(hidden)]
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateConnectionInput {
@@ -12376,8 +12499,10 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>Information about the BGP peer.</p>
+    #[doc(hidden)]
     pub new_bgp_peer: std::option::Option<crate::model::NewBgpPeer>,
 }
 impl CreateBgpPeerInput {
@@ -12404,8 +12529,10 @@ impl std::fmt::Debug for CreateBgpPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmTransitVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
 impl ConfirmTransitVirtualInterfaceInput {
@@ -12432,6 +12559,7 @@ impl std::fmt::Debug for ConfirmTransitVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmPublicVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
 impl ConfirmPublicVirtualInterfaceInput {
@@ -12453,10 +12581,13 @@ impl std::fmt::Debug for ConfirmPublicVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
 impl ConfirmPrivateVirtualInterfaceInput {
@@ -12488,6 +12619,7 @@ impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
+    #[doc(hidden)]
     pub agreement_name: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {
@@ -12509,6 +12641,7 @@ impl std::fmt::Debug for ConfirmCustomerAgreementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl ConfirmConnectionInput {
@@ -12530,8 +12663,10 @@ impl std::fmt::Debug for ConfirmConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
+    #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG or connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl AssociateVirtualInterfaceInput {
@@ -12559,20 +12694,24 @@ impl std::fmt::Debug for AssociateVirtualInterfaceInput {
 pub struct AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    #[doc(hidden)]
     pub ckn: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    #[doc(hidden)]
     pub cak: std::option::Option<std::string::String>,
 }
 impl AssociateMacSecKeyInput {
@@ -12618,8 +12757,10 @@ impl std::fmt::Debug for AssociateMacSecKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateHostedConnectionInput {
     /// <p>The ID of the hosted connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the interconnect or the LAG.</p>
+    #[doc(hidden)]
     pub parent_connection_id: std::option::Option<std::string::String>,
 }
 impl AssociateHostedConnectionInput {
@@ -12646,8 +12787,10 @@ impl std::fmt::Debug for AssociateHostedConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the LAG with which to associate the connection.</p>
+    #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
 }
 impl AssociateConnectionWithLagInput {
@@ -12674,10 +12817,13 @@ impl std::fmt::Debug for AssociateConnectionWithLagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Information about the transit virtual interface.</p>
+    #[doc(hidden)]
     pub new_transit_virtual_interface_allocation:
         std::option::Option<crate::model::NewTransitVirtualInterfaceAllocation>,
 }
@@ -12715,10 +12861,13 @@ impl std::fmt::Debug for AllocateTransitVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Information about the public virtual interface.</p>
+    #[doc(hidden)]
     pub new_public_virtual_interface_allocation:
         std::option::Option<crate::model::NewPublicVirtualInterfaceAllocation>,
 }
@@ -12756,10 +12905,13 @@ impl std::fmt::Debug for AllocatePublicVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Information about the private virtual interface.</p>
+    #[doc(hidden)]
     pub new_private_virtual_interface_allocation:
         std::option::Option<crate::model::NewPrivateVirtualInterfaceAllocation>,
 }
@@ -12797,16 +12949,22 @@ impl std::fmt::Debug for AllocatePrivateVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostedConnectionInput {
     /// <p>The ID of the interconnect or LAG.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the hosted connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
+    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The tags associated with the connection.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AllocateHostedConnectionInput {
@@ -12853,14 +13011,19 @@ impl std::fmt::Debug for AllocateHostedConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateConnectionOnInterconnectInput {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the provisioned connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
+    #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
     /// <p>The dedicated VLAN provisioned to the connection.</p>
+    #[doc(hidden)]
     pub vlan: i32,
 }
 impl AllocateConnectionOnInterconnectInput {
@@ -12902,13 +13065,17 @@ impl std::fmt::Debug for AllocateConnectionOnInterconnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
+    #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the request proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
+    #[doc(hidden)]
     pub associated_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    #[doc(hidden)]
     pub override_allowed_prefixes_to_direct_connect_gateway:
         std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
 }

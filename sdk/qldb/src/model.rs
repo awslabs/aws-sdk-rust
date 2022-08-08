@@ -60,6 +60,7 @@ impl AsRef<str> for PermissionsMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
@@ -67,9 +68,11 @@ pub struct LedgerEncryptionDescription {
     /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
     /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_status: std::option::Option<crate::model::EncryptionStatus>,
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
+    #[doc(hidden)]
     pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescription {
@@ -309,9 +312,11 @@ impl AsRef<str> for LedgerState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub aggregation_enabled: std::option::Option<bool>,
 }
 impl KinesisConfiguration {
@@ -386,10 +391,13 @@ impl KinesisConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LedgerSummary {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerSummary {
@@ -481,26 +489,35 @@ impl LedgerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the journal export job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
+    #[doc(hidden)]
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
+    #[doc(hidden)]
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
+    #[doc(hidden)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The output format of the exported journal data.</p>
+    #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::OutputFormat>,
 }
 impl JournalS3ExportDescription {
@@ -787,6 +804,7 @@ impl AsRef<str> for OutputFormat {
 pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
@@ -796,8 +814,10 @@ pub struct S3ExportConfiguration {
     /// <li> <p> <code>JournalExports</code> </p> </li>
     /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
 }
 impl S3ExportConfiguration {
@@ -920,10 +940,12 @@ impl S3ExportConfiguration {
 pub struct S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3EncryptionConfiguration {
@@ -1131,26 +1153,37 @@ impl AsRef<str> for ExportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
+    #[doc(hidden)]
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
+    #[doc(hidden)]
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current state of the QLDB journal stream.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StreamStatus>,
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
+    #[doc(hidden)]
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
+    #[doc(hidden)]
     pub error_cause: std::option::Option<crate::model::ErrorCause>,
     /// <p>The user-defined name of the QLDB journal stream.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl JournalKinesisStreamDescription {
@@ -1517,6 +1550,7 @@ impl AsRef<str> for StreamStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
+    #[doc(hidden)]
     pub ion_text: std::option::Option<std::string::String>,
 }
 impl ValueHolder {

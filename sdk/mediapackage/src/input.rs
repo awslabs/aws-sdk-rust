@@ -3343,28 +3343,40 @@ impl UpdateOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginEndpointInput {
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// A Common Media Application Format (CMAF) packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint to update.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A short string that will be appended to the end of the Endpoint URL.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    #[doc(hidden)]
     pub startover_window_seconds: i32,
     /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    #[doc(hidden)]
     pub time_delay_seconds: i32,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOriginEndpointInput {
@@ -3443,8 +3455,10 @@ impl std::fmt::Debug for UpdateOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ID of the Channel to update.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -3471,8 +3485,10 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// The key(s) of tag to be deleted
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3499,8 +3515,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3531,8 +3549,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The id of the IngestEndpoint whose credentials should be rotated
+    #[doc(hidden)]
     pub ingest_endpoint_id: std::option::Option<std::string::String>,
 }
 impl RotateIngestEndpointCredentialsInput {
@@ -3560,6 +3580,7 @@ impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RotateChannelCredentialsInput {
@@ -3581,6 +3602,7 @@ impl std::fmt::Debug for RotateChannelCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3602,10 +3624,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginEndpointsInput {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The upper bound on the number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOriginEndpointsInput {
@@ -3637,12 +3662,16 @@ impl std::fmt::Debug for ListOriginEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
+    #[doc(hidden)]
     pub include_channel_id: std::option::Option<std::string::String>,
     /// When specified, the request will return only HarvestJobs in the given status.
+    #[doc(hidden)]
     pub include_status: std::option::Option<std::string::String>,
     /// The upper bound on the number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHarvestJobsInput {
@@ -3679,8 +3708,10 @@ impl std::fmt::Debug for ListHarvestJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// Upper bound on number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsInput {
@@ -3707,6 +3738,7 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeOriginEndpointInput {
@@ -3728,6 +3760,7 @@ impl std::fmt::Debug for DescribeOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeHarvestJobInput {
@@ -3749,6 +3782,7 @@ impl std::fmt::Debug for DescribeHarvestJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// The ID of a Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
@@ -3770,6 +3804,7 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteOriginEndpointInput {
@@ -3791,6 +3826,7 @@ impl std::fmt::Debug for DeleteOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// The ID of the Channel to delete.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -3812,33 +3848,47 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOriginEndpointInput {
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    #[doc(hidden)]
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    #[doc(hidden)]
     pub time_delay_seconds: i32,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateOriginEndpointInput {
@@ -3930,14 +3980,19 @@ impl std::fmt::Debug for CreateOriginEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    #[doc(hidden)]
     pub origin_endpoint_id: std::option::Option<std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
     /// The start of the time-window which will be harvested
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
 }
 impl CreateHarvestJobInput {
@@ -3979,10 +4034,13 @@ impl std::fmt::Debug for CreateHarvestJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4018,10 +4076,13 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the channel to log subscription.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
 }
 impl ConfigureLogsInput {

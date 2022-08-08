@@ -124,9 +124,11 @@ impl UpdateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLongTermPricingOutput {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    #[doc(hidden)]
     pub long_term_pricing_entries:
         std::option::Option<std::vec::Vec<crate::model::LongTermPricingListEntry>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLongTermPricingOutput {
@@ -213,8 +215,10 @@ impl ListLongTermPricingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
+    #[doc(hidden)]
     pub job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -295,8 +299,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCompatibleImagesOutput {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
+    #[doc(hidden)]
     pub compatible_images: std::option::Option<std::vec::Vec<crate::model::CompatibleImage>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCompatibleImagesOutput {
@@ -378,8 +384,10 @@ impl ListCompatibleImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
+    #[doc(hidden)]
     pub cluster_list_entries: std::option::Option<std::vec::Vec<crate::model::ClusterListEntry>>,
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -461,8 +469,10 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterJobsOutput {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
+    #[doc(hidden)]
     pub job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterJobsOutput {
@@ -543,6 +553,7 @@ impl ListClusterJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSoftwareUpdatesOutput {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    #[doc(hidden)]
     pub updates_uri: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesOutput {
@@ -597,8 +608,10 @@ impl GetSoftwareUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnowballUsageOutput {
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
+    #[doc(hidden)]
     pub snowball_limit: std::option::Option<i32>,
     /// <p>The number of Snow devices that this account is currently using.</p>
+    #[doc(hidden)]
     pub snowballs_in_use: std::option::Option<i32>,
 }
 impl GetSnowballUsageOutput {
@@ -670,6 +683,7 @@ impl GetSnowballUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobUnlockCodeOutput {
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
+    #[doc(hidden)]
     pub unlock_code: std::option::Option<std::string::String>,
 }
 impl GetJobUnlockCodeOutput {
@@ -724,6 +738,7 @@ impl GetJobUnlockCodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobManifestOutput {
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
+    #[doc(hidden)]
     pub manifest_uri: std::option::Option<std::string::String>,
 }
 impl GetJobManifestOutput {
@@ -778,10 +793,13 @@ impl GetJobManifestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
     /// <p>The expiration date of the current return shipping label.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+    #[doc(hidden)]
     pub return_shipping_label_uri: std::option::Option<std::string::String>,
 }
 impl DescribeReturnShippingLabelOutput {
@@ -879,8 +897,10 @@ impl DescribeReturnShippingLabelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
+    #[doc(hidden)]
     pub job_metadata: std::option::Option<crate::model::JobMetadata>,
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
+    #[doc(hidden)]
     pub sub_job_metadata: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
 }
 impl DescribeJobOutput {
@@ -964,6 +984,7 @@ impl DescribeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
     /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
+    #[doc(hidden)]
     pub cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
 }
 impl DescribeClusterOutput {
@@ -1021,8 +1042,10 @@ impl DescribeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressesOutput {
     /// <p>The Snow device shipping addresses that were created for this account.</p>
+    #[doc(hidden)]
     pub addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddressesOutput {
@@ -1103,6 +1126,7 @@ impl DescribeAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressOutput {
     /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
 }
 impl DescribeAddressOutput {
@@ -1157,6 +1181,7 @@ impl DescribeAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
 }
 impl CreateReturnShippingLabelOutput {
@@ -1214,6 +1239,7 @@ impl CreateReturnShippingLabelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLongTermPricingOutput {
     /// <p>The ID of the long-term pricing type for the device.</p>
+    #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
 }
 impl CreateLongTermPricingOutput {
@@ -1271,6 +1297,7 @@ impl CreateLongTermPricingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
@@ -1325,6 +1352,7 @@ impl CreateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The automatically generated ID for a cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl CreateClusterOutput {
@@ -1379,6 +1407,7 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressOutput {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
+    #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
 }
 impl CreateAddressOutput {

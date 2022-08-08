@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserNotFoundException {
     /// <p>The message returned when a user isn't found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserNotFoundException {
@@ -69,6 +70,7 @@ impl UserNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserNotConfirmedException {
     /// <p>The message returned when a user isn't confirmed successfully.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserNotConfirmedException {
@@ -133,6 +135,7 @@ impl UserNotConfirmedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// <p>The message returned when the Amazon Cognito service returns a too many requests exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -197,6 +200,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The message returned when the Amazon Cognito service returns a resource not found exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -261,6 +265,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PasswordResetRequiredException {
     /// <p>The message returned when a password reset is required.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PasswordResetRequiredException {
@@ -325,6 +330,7 @@ impl PasswordResetRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     /// <p>The message returned when the Amazon Cognito service returns a not authorized exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -389,6 +395,7 @@ impl NotAuthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The message returned when Amazon Cognito throws a limit exceeded exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -453,6 +460,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -517,6 +525,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
     /// <p>The message returned when Amazon Cognito throws an internal error exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -581,6 +590,7 @@ impl InternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ForbiddenException {
@@ -645,6 +655,7 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredCodeException {
     /// <p>The message returned when the expired code exception is thrown.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredCodeException {
@@ -709,6 +720,7 @@ impl ExpiredCodeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeMismatchException {
     /// <p>The message provided when the code mismatch exception is thrown.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeMismatchException {
@@ -773,6 +785,7 @@ impl CodeMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasExistsException {
     /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AliasExistsException {
@@ -837,6 +850,7 @@ impl AliasExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SoftwareTokenMfaNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SoftwareTokenMfaNotFoundException {
@@ -904,6 +918,7 @@ impl SoftwareTokenMfaNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserPoolConfigurationException {
     /// <p>The message returned when the user pool configuration is not valid.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUserPoolConfigurationException {
@@ -968,6 +983,7 @@ impl InvalidUserPoolConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSoftwareTokenMfaException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EnableSoftwareTokenMfaException {
@@ -1035,6 +1051,7 @@ impl EnableSoftwareTokenMfaException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScopeDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ScopeDoesNotExistException {
@@ -1099,6 +1116,7 @@ impl ScopeDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOAuthFlowException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOAuthFlowException {
@@ -1163,6 +1181,7 @@ impl InvalidOAuthFlowException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>The message provided when the concurrent exception is thrown.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -1227,6 +1246,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPoolTaggingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserPoolTaggingException {
@@ -1291,6 +1311,7 @@ impl UserPoolTaggingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserImportInProgressException {
     /// <p>The message returned when the user pool has an import job running.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserImportInProgressException {
@@ -1355,6 +1376,7 @@ impl UserImportInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSmsRoleTrustRelationshipException {
     /// <p>The message returned when the role trust relationship for the SMS message is not valid.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSmsRoleTrustRelationshipException {
@@ -1419,6 +1441,7 @@ impl InvalidSmsRoleTrustRelationshipException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSmsRoleAccessPolicyException {
     /// <p>The message returned when the invalid SMS role access policy exception is thrown.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSmsRoleAccessPolicyException {
@@ -1483,6 +1506,7 @@ impl InvalidSmsRoleAccessPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEmailRoleAccessPolicyException {
     /// <p>The message returned when you have an unverified email address or the identity policy isn't set on an email address that Amazon Cognito can access.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEmailRoleAccessPolicyException {
@@ -1547,6 +1571,7 @@ impl InvalidEmailRoleAccessPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserLambdaValidationException {
     /// <p>The message returned when the Amazon Cognito service returns a user validation exception with the Lambda service.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserLambdaValidationException {
@@ -1611,6 +1636,7 @@ impl UserLambdaValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnexpectedLambdaException {
     /// <p>The message returned when Amazon Cognito returns an unexpected Lambda exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnexpectedLambdaException {
@@ -1675,6 +1701,7 @@ impl UnexpectedLambdaException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaResponseException {
     /// <p>The message returned when Amazon Cognito throws an invalid Lambda response exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLambdaResponseException {
@@ -1739,6 +1766,7 @@ impl InvalidLambdaResponseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeDeliveryFailureException {
     /// <p>The message sent when a verification code fails to deliver successfully.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeDeliveryFailureException {
@@ -1803,6 +1831,7 @@ impl CodeDeliveryFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedIdentityProviderException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedIdentityProviderException {
@@ -1867,6 +1896,7 @@ impl UnsupportedIdentityProviderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPoolAddOnNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserPoolAddOnNotEnabledException {
@@ -1931,6 +1961,7 @@ impl UserPoolAddOnNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionNotMetException {
     /// <p>The message returned when a precondition is not met.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PreconditionNotMetException {
@@ -1995,6 +2026,7 @@ impl PreconditionNotMetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsernameExistsException {
     /// <p>The message returned when Amazon Cognito throws a user name exists exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UsernameExistsException {
@@ -2059,6 +2091,7 @@ impl UsernameExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
     /// <p>The message returned when Amazon Cognito throws an invalid user password exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPasswordException {
@@ -2123,6 +2156,7 @@ impl InvalidPasswordException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedTokenTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedTokenTypeException {
@@ -2187,6 +2221,7 @@ impl UnsupportedTokenTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -2251,6 +2286,7 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedException {
@@ -2315,6 +2351,7 @@ impl UnauthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MfaMethodNotFoundException {
     /// <p>The message returned when Amazon Cognito throws an MFA method not found exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MfaMethodNotFoundException {
@@ -2379,6 +2416,7 @@ impl MfaMethodNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateProviderException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateProviderException {
@@ -2443,6 +2481,7 @@ impl DuplicateProviderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GroupExistsException {
@@ -2507,6 +2546,7 @@ impl GroupExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFailedAttemptsException {
     /// <p>The message returned when Amazon Cognito returns a <code>TooManyFailedAttempts</code> exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFailedAttemptsException {
@@ -2571,6 +2611,7 @@ impl TooManyFailedAttemptsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedUserStateException {
     /// <p>The message returned when the user is in an unsupported state.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedUserStateException {

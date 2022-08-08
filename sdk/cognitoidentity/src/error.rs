@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// <p>Message returned by a TooManyRequestsException</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -69,6 +70,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The message returned by a ResourceNotFoundException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -133,6 +135,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     /// <p>The message returned by a ResourceConflictException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConflictException {
@@ -197,6 +200,7 @@ impl ResourceConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     /// <p>The message returned by a NotAuthorizedException</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -261,6 +265,7 @@ impl NotAuthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The message returned by a LimitExceededException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -325,6 +330,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>The message returned by an InvalidParameterException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -389,6 +395,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
     /// <p>The message returned by an InternalErrorException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -453,6 +460,7 @@ impl InternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>The message returned by a ConcurrentModificationException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -517,6 +525,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalServiceException {
     /// <p>The message returned by an ExternalServiceException</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExternalServiceException {
@@ -581,6 +590,7 @@ impl ExternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeveloperUserAlreadyRegisteredException {
     /// <p>This developer user identifier is already registered with Cognito.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeveloperUserAlreadyRegisteredException {
@@ -645,6 +655,7 @@ impl DeveloperUserAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIdentityPoolConfigurationException {
     /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIdentityPoolConfigurationException {

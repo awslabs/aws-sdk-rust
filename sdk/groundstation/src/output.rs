@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSatellitesOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of satellites.</p>
+    #[doc(hidden)]
     pub satellites: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
 }
 impl ListSatellitesOutput {
@@ -87,12 +89,16 @@ impl ListSatellitesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSatelliteOutput {
     /// <p>UUID of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>NORAD satellite ID number.</p>
+    #[doc(hidden)]
     pub norad_satellite_id: i32,
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    #[doc(hidden)]
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetSatelliteOutput {
@@ -210,8 +216,10 @@ impl GetSatelliteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of mission profiles.</p>
+    #[doc(hidden)]
     pub mission_profile_list:
         std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
 }
@@ -296,6 +304,7 @@ impl ListMissionProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl CreateMissionProfileOutput {
@@ -353,6 +362,7 @@ impl CreateMissionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteMissionProfileOutput {
@@ -410,6 +420,7 @@ impl DeleteMissionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateMissionProfileOutput {
@@ -467,24 +478,34 @@ impl UpdateMissionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
     /// <p>Name of a mission profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Region of a mission profile.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub contact_post_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    #[doc(hidden)]
     pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    #[doc(hidden)]
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
+    #[doc(hidden)]
     pub tracking_config_arn: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -751,8 +772,10 @@ impl GetMissionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroundStationsOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of ground stations.</p>
+    #[doc(hidden)]
     pub ground_station_list: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
 }
 impl ListGroundStationsOutput {
@@ -834,8 +857,10 @@ impl ListGroundStationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of dataflow endpoint groups.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_list:
         std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
 }
@@ -926,6 +951,7 @@ impl ListDataflowEndpointGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl CreateDataflowEndpointGroupOutput {
@@ -986,6 +1012,7 @@ impl CreateDataflowEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataflowEndpointGroupOutput {
@@ -1046,12 +1073,16 @@ impl DeleteDataflowEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     /// <p>ARN of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>Details of a dataflow endpoint.</p>
+    #[doc(hidden)]
     pub endpoints_details: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
     /// <p>Tags assigned to a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1203,8 +1234,10 @@ impl GetDataflowEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsOutput {
     /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of contacts.</p>
+    #[doc(hidden)]
     pub contact_list: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
 }
 impl ListContactsOutput {
@@ -1285,6 +1318,7 @@ impl ListContactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReserveContactOutput {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl ReserveContactOutput {
@@ -1339,6 +1373,7 @@ impl ReserveContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelContactOutput {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl CancelContactOutput {
@@ -1393,33 +1428,47 @@ impl CancelContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactOutput {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    #[doc(hidden)]
     pub pre_pass_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub post_pass_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Ground station for a contact.</p>
+    #[doc(hidden)]
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
+    #[doc(hidden)]
     pub contact_status: std::option::Option<crate::model::ContactStatus>,
     /// <p>Error message for a contact.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Maximum elevation angle of a contact.</p>
+    #[doc(hidden)]
     pub maximum_elevation: std::option::Option<crate::model::Elevation>,
     /// <p>Tags assigned to a contact.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Region of a contact.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>List describing source and destination details for each dataflow edge.</p>
+    #[doc(hidden)]
     pub dataflow_list: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>,
 }
 impl DescribeContactOutput {
@@ -1754,8 +1803,10 @@ impl DescribeContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigsOutput {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of <code>Config</code> items.</p>
+    #[doc(hidden)]
     pub config_list: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
 }
 impl ListConfigsOutput {
@@ -1836,10 +1887,13 @@ impl ListConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_arn: std::option::Option<std::string::String>,
 }
 impl CreateConfigOutput {
@@ -1931,10 +1985,13 @@ impl CreateConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConfigOutput {
@@ -2026,10 +2083,13 @@ impl DeleteConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_arn: std::option::Option<std::string::String>,
 }
 impl UpdateConfigOutput {
@@ -2121,16 +2181,22 @@ impl UpdateConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>ARN of a <code>Config</code> </p>
+    #[doc(hidden)]
     pub config_arn: std::option::Option<std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>Data elements in a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_data: std::option::Option<crate::model::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2357,6 +2423,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Tags assigned to a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2430,14 +2497,19 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMinuteUsageOutput {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
+    #[doc(hidden)]
     pub is_reserved_minutes_customer: std::option::Option<bool>,
     /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
+    #[doc(hidden)]
     pub total_reserved_minute_allocation: std::option::Option<i32>,
     /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
+    #[doc(hidden)]
     pub upcoming_minutes_scheduled: std::option::Option<i32>,
     /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
+    #[doc(hidden)]
     pub total_scheduled_minutes: std::option::Option<i32>,
     /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
+    #[doc(hidden)]
     pub estimated_minutes_remaining: std::option::Option<i32>,
 }
 impl GetMinuteUsageOutput {

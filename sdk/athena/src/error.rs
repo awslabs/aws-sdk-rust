@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
+    #[doc(hidden)]
     pub athena_error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
@@ -93,6 +95,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -157,8 +160,10 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -245,8 +250,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ThrottleReason>,
 }
 impl TooManyRequestsException {
@@ -333,6 +340,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MetadataException {

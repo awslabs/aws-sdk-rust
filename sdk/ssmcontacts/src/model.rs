@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field that caused the exception.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about what caused the field to cause an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -151,6 +153,7 @@ pub struct ContactChannelAddress {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub simple_address: std::option::Option<std::string::String>,
 }
 impl ContactChannelAddress {
@@ -223,6 +226,7 @@ impl ContactChannelAddress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
+    #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::Stage>>,
 }
 impl Plan {
@@ -286,8 +290,10 @@ impl Plan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
+    #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
 }
 impl Stage {
@@ -368,8 +374,10 @@ impl Stage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
+    #[doc(hidden)]
     pub channel_target_info: std::option::Option<crate::model::ChannelTargetInfo>,
     /// <p>Information about the contact that Incident Manager is engaging.</p>
+    #[doc(hidden)]
     pub contact_target_info: std::option::Option<crate::model::ContactTargetInfo>,
 }
 impl Target {
@@ -447,8 +455,10 @@ impl Target {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
+    #[doc(hidden)]
     pub is_essential: std::option::Option<bool>,
 }
 impl ContactTargetInfo {
@@ -520,8 +530,10 @@ impl ContactTargetInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    #[doc(hidden)]
     pub retry_interval_in_minutes: std::option::Option<i32>,
 }
 impl ChannelTargetInfo {
@@ -596,8 +608,10 @@ impl ChannelTargetInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Name of the object key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -669,20 +683,28 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
+    #[doc(hidden)]
     pub page_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the engagement that this page is part of.</p>
+    #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that Incident Manager engaged the contact channel.</p>
+    #[doc(hidden)]
     pub sent_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the message was delivered to the contact channel.</p>
+    #[doc(hidden)]
     pub delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel acknowledged engagement.</p>
+    #[doc(hidden)]
     pub read_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Page {
@@ -868,12 +890,16 @@ impl Page {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
+    #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
+    #[doc(hidden)]
     pub receipt_type: std::option::Option<crate::model::ReceiptType>,
     /// <p>Information provided during the page acknowledgement.</p>
+    #[doc(hidden)]
     pub receipt_info: std::option::Option<std::string::String>,
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
+    #[doc(hidden)]
     pub receipt_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Receipt {
@@ -1055,16 +1081,22 @@ impl AsRef<str> for ReceiptType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that's engaging the contact.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that the engagement began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the engagement ended.</p>
+    #[doc(hidden)]
     pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Engagement {
@@ -1213,8 +1245,10 @@ impl Engagement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The start of the time range.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
@@ -1292,12 +1326,16 @@ impl TimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
 impl Contact {
@@ -1458,10 +1496,13 @@ impl AsRef<str> for ContactType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the contact that contains the contact channel.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
@@ -1469,10 +1510,13 @@ pub struct ContactChannel {
     /// <li> <p>VOICE</p> </li>
     /// <li> <p>EMAIL</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
+    #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    #[doc(hidden)]
     pub activation_status: std::option::Option<crate::model::ActivationStatus>,
 }
 impl ContactChannel {

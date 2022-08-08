@@ -4603,8 +4603,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove from the resource. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4631,8 +4633,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4659,8 +4663,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProtocolsListInput {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
+    #[doc(hidden)]
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutProtocolsListInput {
@@ -4687,8 +4693,10 @@ impl std::fmt::Debug for PutProtocolsListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyInput {
     /// <p>The details of the Firewall Manager policy to be created.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The tags to add to the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutPolicyInput {
@@ -4715,8 +4723,10 @@ impl std::fmt::Debug for PutPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutNotificationChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+    #[doc(hidden)]
     pub sns_role_name: std::option::Option<std::string::String>,
 }
 impl PutNotificationChannelInput {
@@ -4743,8 +4753,10 @@ impl std::fmt::Debug for PutNotificationChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppsListInput {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
+    #[doc(hidden)]
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutAppsListInput {
@@ -4771,11 +4783,14 @@ impl std::fmt::Debug for PutAppsListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThirdPartyFirewallFirewallPoliciesInput {
     /// <p>The name of the third-party firewall vendor.</p>
+    #[doc(hidden)]
     pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
     /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
     /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListThirdPartyFirewallFirewallPoliciesInput {
@@ -4808,6 +4823,7 @@ impl std::fmt::Debug for ListThirdPartyFirewallFirewallPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4829,11 +4845,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtocolsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
+    #[doc(hidden)]
     pub default_lists: bool,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProtocolsListsInput {
@@ -4866,8 +4885,10 @@ impl std::fmt::Debug for ListProtocolsListsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPoliciesInput {
@@ -4894,8 +4915,10 @@ impl std::fmt::Debug for ListPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMemberAccountsInput {
@@ -4922,10 +4945,13 @@ impl std::fmt::Debug for ListMemberAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceStatusInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComplianceStatusInput {
@@ -4957,11 +4983,14 @@ impl std::fmt::Debug for ListComplianceStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
+    #[doc(hidden)]
     pub default_lists: bool,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppsListsInput {
@@ -4994,12 +5023,16 @@ impl std::fmt::Debug for ListAppsListsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetViolationDetailsInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
+    #[doc(hidden)]
     pub member_account: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that has violations.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetViolationDetailsInput {
@@ -5036,6 +5069,7 @@ impl std::fmt::Debug for GetViolationDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThirdPartyFirewallAssociationStatusInput {
     /// <p>The name of the third-party firewall vendor.</p>
+    #[doc(hidden)]
     pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
 }
 impl GetThirdPartyFirewallAssociationStatusInput {
@@ -5057,8 +5091,10 @@ impl std::fmt::Debug for GetThirdPartyFirewallAssociationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    #[doc(hidden)]
     pub default_list: bool,
 }
 impl GetProtocolsListInput {
@@ -5085,16 +5121,22 @@ impl std::fmt::Debug for GetProtocolsListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtectionStatusInput {
     /// <p>The ID of the policy for which you want to get the attack information.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
+    #[doc(hidden)]
     pub member_account_id: std::option::Option<std::string::String>,
     /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetProtectionStatusInput {
@@ -5141,6 +5183,7 @@ impl std::fmt::Debug for GetProtectionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
@@ -5173,8 +5216,10 @@ impl std::fmt::Debug for GetNotificationChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailInput {
     /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
+    #[doc(hidden)]
     pub member_account: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailInput {
@@ -5201,8 +5246,10 @@ impl std::fmt::Debug for GetComplianceDetailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsListInput {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    #[doc(hidden)]
     pub default_list: bool,
 }
 impl GetAppsListInput {
@@ -5240,6 +5287,7 @@ impl std::fmt::Debug for GetAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateThirdPartyFirewallInput {
     /// <p>The name of the third-party firewall vendor.</p>
+    #[doc(hidden)]
     pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
 }
 impl DisassociateThirdPartyFirewallInput {
@@ -5272,6 +5320,7 @@ impl std::fmt::Debug for DisassociateAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProtocolsListInput {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
 }
 impl DeleteProtocolsListInput {
@@ -5293,6 +5342,7 @@ impl std::fmt::Debug for DeleteProtocolsListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyInput {
     /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
     /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
@@ -5307,6 +5357,7 @@ pub struct DeletePolicyInput {
     /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
     /// </ul>
     /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
+    #[doc(hidden)]
     pub delete_all_policy_resources: bool,
 }
 impl DeletePolicyInput {
@@ -5359,6 +5410,7 @@ impl std::fmt::Debug for DeleteNotificationChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppsListInput {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppsListInput {
@@ -5380,6 +5432,7 @@ impl std::fmt::Debug for DeleteAppsListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateThirdPartyFirewallInput {
     /// <p>The name of the third-party firewall vendor.</p>
+    #[doc(hidden)]
     pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
 }
 impl AssociateThirdPartyFirewallInput {
@@ -5401,6 +5454,7 @@ impl std::fmt::Debug for AssociateThirdPartyFirewallInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAdminAccountInput {
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
+    #[doc(hidden)]
     pub admin_account: std::option::Option<std::string::String>,
 }
 impl AssociateAdminAccountInput {

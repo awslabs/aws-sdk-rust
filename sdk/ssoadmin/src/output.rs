@@ -188,6 +188,7 @@ impl PutInlinePolicyToPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionPermissionSetOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
+    #[doc(hidden)]
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
 }
@@ -255,8 +256,10 @@ impl ProvisionPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A set of key-value pairs that are used to manage the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -337,8 +340,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+    #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListPermissionSetsProvisionedToAccountOutput {
@@ -419,8 +424,10 @@ impl ListPermissionSetsProvisionedToAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetsOutput {
     /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionSetsOutput {
@@ -501,9 +508,11 @@ impl ListPermissionSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
+    #[doc(hidden)]
     pub permission_sets_provisioning_status:
         std::option::Option<std::vec::Vec<crate::model::PermissionSetProvisioningStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionSetProvisioningStatusOutput {
@@ -596,9 +605,11 @@ impl ListPermissionSetProvisioningStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedPoliciesInPermissionSetOutput {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
+    #[doc(hidden)]
     pub attached_managed_policies:
         std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedPoliciesInPermissionSetOutput {
@@ -685,8 +696,10 @@ impl ListManagedPoliciesInPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
     /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -767,9 +780,11 @@ impl ListInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
+    #[doc(hidden)]
     pub customer_managed_policy_references:
         std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
@@ -864,8 +879,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForProvisionedPermissionSetOutput {
     /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsForProvisionedPermissionSetOutput {
@@ -947,8 +964,10 @@ impl ListAccountsForProvisionedPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentsOutput {
     /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+    #[doc(hidden)]
     pub account_assignments: std::option::Option<std::vec::Vec<crate::model::AccountAssignment>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssignmentsOutput {
@@ -1030,9 +1049,11 @@ impl ListAccountAssignmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentDeletionStatusOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
+    #[doc(hidden)]
     pub account_assignments_deletion_status:
         std::option::Option<std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssignmentDeletionStatusOutput {
@@ -1125,9 +1146,11 @@ impl ListAccountAssignmentDeletionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
+    #[doc(hidden)]
     pub account_assignments_creation_status:
         std::option::Option<std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssignmentCreationStatusOutput {
@@ -1220,6 +1243,7 @@ impl ListAccountAssignmentCreationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
 }
 impl GetPermissionsBoundaryForPermissionSetOutput {
@@ -1277,6 +1301,7 @@ impl GetPermissionsBoundaryForPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInlinePolicyForPermissionSetOutput {
     /// <p>The inline policy that is attached to the permission set.</p>
+    #[doc(hidden)]
     pub inline_policy: std::option::Option<std::string::String>,
 }
 impl GetInlinePolicyForPermissionSetOutput {
@@ -1399,6 +1424,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
+    #[doc(hidden)]
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
 }
@@ -1466,6 +1492,7 @@ impl DescribePermissionSetProvisioningStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionSetOutput {
     /// <p>Describes the level of access on an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
 }
 impl DescribePermissionSetOutput {
@@ -1523,11 +1550,14 @@ impl DescribePermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
     /// <p>The status of the attribute configuration process.</p>
+    #[doc(hidden)]
     pub status:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfigurationStatus>,
     /// <p>Provides more details about the current status of the specified attribute.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
+    #[doc(hidden)]
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
@@ -1650,6 +1680,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAssignmentDeletionStatusOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
+    #[doc(hidden)]
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }
@@ -1717,6 +1748,7 @@ impl DescribeAccountAssignmentDeletionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
+    #[doc(hidden)]
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }
@@ -1909,6 +1941,7 @@ impl DeleteInlinePolicyFromPermissionSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountAssignmentOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
+    #[doc(hidden)]
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }
@@ -1976,6 +2009,7 @@ impl DeleteAccountAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionSetOutput {
     /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
 }
 impl CreatePermissionSetOutput {
@@ -2067,6 +2101,7 @@ impl CreateInstanceAccessControlAttributeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountAssignmentOutput {
     /// <p>The status object for the account assignment creation operation.</p>
+    #[doc(hidden)]
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }

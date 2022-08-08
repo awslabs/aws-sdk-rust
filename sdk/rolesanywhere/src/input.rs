@@ -4043,6 +4043,7 @@ impl UpdateTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl EnableTrustAnchorInput {
@@ -4064,6 +4065,7 @@ impl std::fmt::Debug for EnableTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl DisableTrustAnchorInput {
@@ -4085,8 +4087,10 @@ impl std::fmt::Debug for DisableTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrustAnchorsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of resources in the paginated list. </p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListTrustAnchorsInput {
@@ -4113,12 +4117,16 @@ impl std::fmt::Debug for ListTrustAnchorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>Specifies whether the trust anchor is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The tags to attach to the trust anchor.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTrustAnchorInput {
@@ -4155,6 +4163,7 @@ impl std::fmt::Debug for CreateTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrustAnchorInput {
@@ -4176,10 +4185,13 @@ impl std::fmt::Debug for DeleteTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
     /// <p>The name of the trust anchor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
 }
 impl UpdateTrustAnchorInput {
@@ -4211,6 +4223,7 @@ impl std::fmt::Debug for UpdateTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl GetTrustAnchorInput {
@@ -4232,8 +4245,10 @@ impl std::fmt::Debug for GetTrustAnchorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubjectsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of resources in the paginated list. </p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListSubjectsInput {
@@ -4260,6 +4275,7 @@ impl std::fmt::Debug for ListSubjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
+    #[doc(hidden)]
     pub subject_id: std::option::Option<std::string::String>,
 }
 impl GetSubjectInput {
@@ -4281,6 +4297,7 @@ impl std::fmt::Debug for GetSubjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableProfileInput {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl EnableProfileInput {
@@ -4302,6 +4319,7 @@ impl std::fmt::Debug for EnableProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableProfileInput {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl DisableProfileInput {
@@ -4323,8 +4341,10 @@ impl std::fmt::Debug for DisableProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilesInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of resources in the paginated list. </p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListProfilesInput {
@@ -4351,20 +4371,28 @@ impl std::fmt::Debug for ListProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileInput {
     /// <p>The name of the profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
+    #[doc(hidden)]
     pub require_instance_properties: std::option::Option<bool>,
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    #[doc(hidden)]
     pub session_policy: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    #[doc(hidden)]
     pub managed_policy_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The number of seconds the vended session credentials are valid for. </p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
     /// <p>Specifies whether the profile is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The tags to attach to the profile.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProfileInput {
@@ -4424,6 +4452,7 @@ impl std::fmt::Debug for CreateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteProfileInput {
@@ -4445,16 +4474,22 @@ impl std::fmt::Debug for DeleteProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileInput {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The name of the profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    #[doc(hidden)]
     pub session_policy: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    #[doc(hidden)]
     pub managed_policy_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The number of seconds the vended session credentials are valid for. </p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl UpdateProfileInput {
@@ -4501,6 +4536,7 @@ impl std::fmt::Debug for UpdateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileInput {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl GetProfileInput {
@@ -4522,6 +4558,7 @@ impl std::fmt::Debug for GetProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
 }
 impl EnableCrlInput {
@@ -4543,6 +4580,7 @@ impl std::fmt::Debug for EnableCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
 }
 impl DisableCrlInput {
@@ -4564,8 +4602,10 @@ impl std::fmt::Debug for DisableCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrlsInput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of resources in the paginated list. </p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListCrlsInput {
@@ -4592,14 +4632,19 @@ impl std::fmt::Debug for ListCrlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The x509 v3 specified certificate revocation list</p>
+    #[doc(hidden)]
     pub crl_data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
+    #[doc(hidden)]
     pub trust_anchor_arn: std::option::Option<std::string::String>,
 }
 impl ImportCrlInput {
@@ -4641,6 +4686,7 @@ impl std::fmt::Debug for ImportCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
 }
 impl DeleteCrlInput {
@@ -4662,10 +4708,13 @@ impl std::fmt::Debug for DeleteCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
     /// <p>The name of the Crl.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The x509 v3 specified certificate revocation list</p>
+    #[doc(hidden)]
     pub crl_data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateCrlInput {
@@ -4697,6 +4746,7 @@ impl std::fmt::Debug for UpdateCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
 }
 impl GetCrlInput {
@@ -4718,8 +4768,10 @@ impl std::fmt::Debug for GetCrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys. Tag keys are the unique identifiers of tags. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4746,8 +4798,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4774,6 +4828,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

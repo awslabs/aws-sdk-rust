@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatementTimeoutException {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The database connection ID that executed the SQL statement.</p>
+    #[doc(hidden)]
     pub db_connection_id: i64,
 }
 impl StatementTimeoutException {
@@ -90,6 +92,7 @@ impl StatementTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailableError {
@@ -154,6 +157,7 @@ impl ServiceUnavailableError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     /// <p>The error message returned by this <code>NotFoundException</code> error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -218,6 +222,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerErrorException {
@@ -282,6 +287,7 @@ impl InternalServerErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// <p>The error message returned by this <code>ForbiddenException</code> error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ForbiddenException {
@@ -346,6 +352,7 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     /// <p>The error message returned by this <code>BadRequestException</code> error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BadRequestException {
@@ -410,6 +417,7 @@ impl BadRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {

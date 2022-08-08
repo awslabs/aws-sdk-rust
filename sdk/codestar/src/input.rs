@@ -3009,12 +3009,16 @@ impl UpdateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileInput {
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UpdateUserProfileInput {
@@ -3051,12 +3055,16 @@ impl std::fmt::Debug for UpdateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTeamMemberInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    #[doc(hidden)]
     pub project_role: std::option::Option<std::string::String>,
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
+    #[doc(hidden)]
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl UpdateTeamMemberInput {
@@ -3093,10 +3101,13 @@ impl std::fmt::Debug for UpdateTeamMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The ID of the project you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the project you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the project, if any.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
@@ -3128,8 +3139,10 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagProjectInput {
     /// <p>The ID of the project to remove tags from.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The tags to remove from the project.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagProjectInput {
@@ -3156,8 +3169,10 @@ impl std::fmt::Debug for UntagProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagProjectInput {
     /// <p>The ID of the project you want to add a tag to.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The tags you want to add to the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3188,8 +3203,10 @@ impl std::fmt::Debug for TagProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserProfilesInput {
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUserProfilesInput {
@@ -3216,10 +3233,13 @@ impl std::fmt::Debug for ListUserProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTeamMembersInput {
     /// <p>The ID of the project for which you want to list team members.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of team members you want returned in a response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTeamMembersInput {
@@ -3251,10 +3271,13 @@ impl std::fmt::Debug for ListTeamMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForProjectInput {
     /// <p>The ID of the project to get tags for.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForProjectInput {
@@ -3286,10 +3309,13 @@ impl std::fmt::Debug for ListTagsForProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourcesInput {
@@ -3321,8 +3347,10 @@ impl std::fmt::Debug for ListResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -3349,8 +3377,10 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTeamMemberInput {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateTeamMemberInput {
@@ -3377,6 +3407,7 @@ impl std::fmt::Debug for DisassociateTeamMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DescribeUserProfileInput {
@@ -3398,6 +3429,7 @@ impl std::fmt::Debug for DescribeUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
@@ -3419,6 +3451,7 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserProfileInput {
@@ -3440,10 +3473,13 @@ impl std::fmt::Debug for DeleteUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
+    #[doc(hidden)]
     pub delete_stack: bool,
 }
 impl DeleteProjectInput {
@@ -3475,12 +3511,16 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl CreateUserProfileInput {
@@ -3517,18 +3557,25 @@ impl std::fmt::Debug for CreateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the project, if any.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
+    #[doc(hidden)]
     pub source_code: std::option::Option<std::vec::Vec<crate::model::Code>>,
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
+    #[doc(hidden)]
     pub toolchain: std::option::Option<crate::model::Toolchain>,
     /// <p>The tags created for the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3584,14 +3631,19 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTeamMemberInput {
     /// <p>The ID of the project to which you will add the IAM user.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
+    #[doc(hidden)]
     pub project_role: std::option::Option<std::string::String>,
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
+    #[doc(hidden)]
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl AssociateTeamMemberInput {

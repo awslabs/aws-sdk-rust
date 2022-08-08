@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScheduleOutput {
     /// <p>The name of the schedule that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateScheduleOutput {
@@ -56,6 +57,7 @@ impl UpdateScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRulesetOutput {
     /// <p>The name of the updated ruleset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateRulesetOutput {
@@ -108,6 +110,7 @@ impl UpdateRulesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeJobOutput {
     /// <p>The name of the job that you updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateRecipeJobOutput {
@@ -160,6 +163,7 @@ impl UpdateRecipeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeOutput {
     /// <p>The name of the recipe that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateRecipeOutput {
@@ -212,8 +216,10 @@ impl UpdateRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>The date and time that the project was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the project that you updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateProjectOutput {
@@ -288,6 +294,7 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileJobOutput {
     /// <p>The name of the job that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateProfileJobOutput {
@@ -340,6 +347,7 @@ impl UpdateProfileJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetOutput {
     /// <p>The name of the dataset that you updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateDatasetOutput {
@@ -452,6 +460,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopJobRunOutput {
     /// <p>The ID of the job run that you stopped.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StopJobRunOutput {
@@ -506,8 +515,10 @@ impl StopJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A system-generated identifier for the session.</p>
+    #[doc(hidden)]
     pub client_session_id: std::option::Option<std::string::String>,
 }
 impl StartProjectSessionOutput {
@@ -582,6 +593,7 @@ impl StartProjectSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunOutput {
     /// <p>A system-generated identifier for this particular job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StartJobRunOutput {
@@ -636,10 +648,13 @@ impl StartJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendProjectSessionActionOutput {
     /// <p>A message indicating the result of performing the action.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
     /// <p>The name of the project that was affected by the action.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the action that was performed.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<i32>,
 }
 impl SendProjectSessionActionOutput {
@@ -728,6 +743,7 @@ impl SendProjectSessionActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishRecipeOutput {
     /// <p>The name of the recipe that you published.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PublishRecipeOutput {
@@ -780,6 +796,7 @@ impl PublishRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags associated with the DataBrew resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -853,8 +870,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
+    #[doc(hidden)]
     pub schedules: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulesOutput {
@@ -935,8 +954,10 @@ impl ListSchedulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesetsOutput {
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+    #[doc(hidden)]
     pub rulesets: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesetsOutput {
@@ -1017,8 +1038,10 @@ impl ListRulesetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipeVersionsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of versions for the specified recipe.</p>
+    #[doc(hidden)]
     pub recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
 }
 impl ListRecipeVersionsOutput {
@@ -1099,8 +1122,10 @@ impl ListRecipeVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipesOutput {
     /// <p>A list of recipes that are defined.</p>
+    #[doc(hidden)]
     pub recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecipesOutput {
@@ -1181,8 +1206,10 @@ impl ListRecipesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>A list of projects that are defined .</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -1263,8 +1290,10 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>A list of jobs that are defined.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -1345,8 +1374,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsOutput {
     /// <p>A list of job runs that have occurred for the specified job.</p>
+    #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsOutput {
@@ -1427,8 +1458,10 @@ impl ListJobRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p>A list of datasets that are defined.</p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -1509,23 +1542,32 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleOutput {
     /// <p>The date and time that the schedule was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the schedule. </p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
+    #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the schedule was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this schedule.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the schedule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeScheduleOutput {
@@ -1757,24 +1799,34 @@ impl DescribeScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesetOutput {
     /// <p>The name of the ruleset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The date and time that the ruleset was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The modification date and time of the ruleset.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags that have been applied to the ruleset.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2021,31 +2073,44 @@ impl DescribeRulesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeOutput {
     /// <p>The identifier (user name) of the user who created the recipe.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the recipe was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the recipe was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the project associated with this recipe.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
+    #[doc(hidden)]
     pub published_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the recipe was last published.</p>
+    #[doc(hidden)]
     pub published_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ARN of the recipe.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The recipe version identifier.</p>
+    #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DescribeRecipeOutput {
@@ -2348,26 +2413,37 @@ impl DescribeRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the project.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The dataset associated with the project.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the project was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the project.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The recipe associated with this job.</p>
+    #[doc(hidden)]
     pub recipe_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    #[doc(hidden)]
     pub sample: std::option::Option<crate::model::Sample>,
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Describes the current state of the session:</p>
@@ -2376,10 +2452,13 @@ pub struct DescribeProjectOutput {
     /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
     /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub session_status: std::option::Option<crate::model::SessionStatus>,
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    #[doc(hidden)]
     pub opened_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the project was opened. </p>
+    #[doc(hidden)]
     pub open_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeProjectOutput {
@@ -2705,43 +2784,62 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobRunOutput {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
+    #[doc(hidden)]
     pub attempt: i32,
     /// <p>The date and time when the job completed processing.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the dataset for the job to process.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, during which the job run consumed resources.</p>
+    #[doc(hidden)]
     pub execution_time: i32,
     /// <p>The name of the job being processed during this run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    #[doc(hidden)]
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
+    #[doc(hidden)]
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>The unique identifier of the job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The current state of the job run entity itself.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>One or more output artifacts from a job run.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    #[doc(hidden)]
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    #[doc(hidden)]
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
+    #[doc(hidden)]
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
+    #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run began.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    #[doc(hidden)]
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl DescribeJobRunOutput {
@@ -3172,62 +3270,86 @@ impl DescribeJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>The date and time that the job was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user associated with the creation of the job.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The dataset that the job acts upon.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
     /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JobType>,
     /// <p>The identifier (user name) of the user who last modified the job.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
+    #[doc(hidden)]
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
+    #[doc(hidden)]
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>One or more artifacts that represent the output from running the job.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    #[doc(hidden)]
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    #[doc(hidden)]
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>The DataBrew project associated with this job.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    #[doc(hidden)]
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
+    #[doc(hidden)]
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
+    #[doc(hidden)]
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    #[doc(hidden)]
     pub timeout: i32,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
+    #[doc(hidden)]
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl DescribeJobOutput {
@@ -3790,29 +3912,41 @@ impl DescribeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>The identifier (user name) of the user who created the dataset.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the dataset was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    #[doc(hidden)]
     pub format_options: std::option::Option<crate::model::FormatOptions>,
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
     /// <p>The date and time that the dataset was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    #[doc(hidden)]
     pub path_options: std::option::Option<crate::model::PathOptions>,
     /// <p>Metadata tags associated with this dataset.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetOutput {
@@ -4089,6 +4223,7 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduleOutput {
     /// <p>The name of the schedule that was deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteScheduleOutput {
@@ -4141,6 +4276,7 @@ impl DeleteScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRulesetOutput {
     /// <p>The name of the deleted ruleset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteRulesetOutput {
@@ -4193,8 +4329,10 @@ impl DeleteRulesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the recipe that was deleted.</p>
+    #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DeleteRecipeVersionOutput {
@@ -4269,6 +4407,7 @@ impl DeleteRecipeVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p>The name of the project that you deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectOutput {
@@ -4321,6 +4460,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobOutput {
     /// <p>The name of the job that you deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteJobOutput {
@@ -4373,6 +4513,7 @@ impl DeleteJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetOutput {
     /// <p>The name of the dataset that you deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetOutput {
@@ -4425,6 +4566,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduleOutput {
     /// <p>The name of the schedule that was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateScheduleOutput {
@@ -4477,6 +4619,7 @@ impl CreateScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRulesetOutput {
     /// <p>The unique name of the created ruleset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateRulesetOutput {
@@ -4529,6 +4672,7 @@ impl CreateRulesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecipeJobOutput {
     /// <p>The name of the job that you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateRecipeJobOutput {
@@ -4581,6 +4725,7 @@ impl CreateRecipeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecipeOutput {
     /// <p>The name of the recipe that you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateRecipeOutput {
@@ -4633,6 +4778,7 @@ impl CreateRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>The name of the project that you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
@@ -4685,6 +4831,7 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileJobOutput {
     /// <p>The name of the job that was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateProfileJobOutput {
@@ -4737,6 +4884,7 @@ impl CreateProfileJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset that you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
@@ -4789,8 +4937,10 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was modified.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::RecipeVersionErrorDetail>>,
 }
 impl BatchDeleteRecipeVersionOutput {

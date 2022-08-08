@@ -6,6 +6,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMlModelOutput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl UpdateMlModelOutput {
@@ -61,6 +62,7 @@ impl UpdateMlModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl UpdateEvaluationOutput {
@@ -119,6 +121,7 @@ impl UpdateEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl UpdateDataSourceOutput {
@@ -177,6 +180,7 @@ impl UpdateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBatchPredictionOutput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl UpdateBatchPredictionOutput {
@@ -240,6 +244,7 @@ pub struct PredictOutput {
     /// <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li>
     /// <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prediction: std::option::Option<crate::model::Prediction>,
 }
 impl PredictOutput {
@@ -315,16 +320,22 @@ impl PredictOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlModelOutput {
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the training <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub training_data_source_id: std::option::Option<std::string::String>,
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    #[doc(hidden)]
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -334,10 +345,13 @@ pub struct GetMlModelOutput {
     /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EntityStatus>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
+    #[doc(hidden)]
     pub size_in_bytes: std::option::Option<i64>,
     /// <p>The current endpoint of the <code>MLModel</code> </p>
+    #[doc(hidden)]
     pub endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -348,9 +362,11 @@ pub struct GetMlModelOutput {
     /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub training_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    #[doc(hidden)]
     pub input_data_location_s3: std::option::Option<std::string::String>,
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
@@ -358,27 +374,37 @@ pub struct GetMlModelOutput {
     /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
     /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub ml_model_type: std::option::Option<crate::model::MlModelType>,
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <code>true</code>. Output values less than the threshold receive a negative response from the MLModel, such as <code>false</code>.</p>
+    #[doc(hidden)]
     pub score_threshold: std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+    #[doc(hidden)]
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    #[doc(hidden)]
     pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    #[doc(hidden)]
     pub recipe: std::option::Option<std::string::String>,
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl GetMlModelOutput {
@@ -903,20 +929,28 @@ impl GetMlModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvaluationOutput {
     /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The <code>DataSource</code> used for this evaluation.</p>
+    #[doc(hidden)]
     pub evaluation_data_source_id: std::option::Option<std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    #[doc(hidden)]
     pub input_data_location_s3: std::option::Option<std::string::String>,
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    #[doc(hidden)]
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
@@ -926,6 +960,7 @@ pub struct GetEvaluationOutput {
     /// <li> <p> <code>COMPLETED</code> - The evaluation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EntityStatus>,
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>: </p>
     /// <ul>
@@ -934,16 +969,22 @@ pub struct GetEvaluationOutput {
     /// <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>
     /// </ul>
     /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
+    #[doc(hidden)]
     pub performance_metrics: std::option::Option<crate::model::PerformanceMetrics>,
     /// <p>A link to the file that contains logs of the <code>CreateEvaluation</code> operation.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+    #[doc(hidden)]
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    #[doc(hidden)]
     pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEvaluationOutput {
@@ -1305,22 +1346,31 @@ impl GetEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    #[doc(hidden)]
     pub data_location_s3: std::option::Option<std::string::String>,
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
+    #[doc(hidden)]
     pub data_rearrangement: std::option::Option<std::string::String>,
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    #[doc(hidden)]
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total size of observations in the data files.</p>
+    #[doc(hidden)]
     pub data_size_in_bytes: std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub number_of_files: std::option::Option<i64>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -1330,27 +1380,38 @@ pub struct GetDataSourceOutput {
     /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EntityStatus>,
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
+    #[doc(hidden)]
     pub redshift_metadata: std::option::Option<crate::model::RedshiftMetadata>,
     /// <p>The datasource details that are specific to Amazon RDS.</p>
+    #[doc(hidden)]
     pub rds_metadata: std::option::Option<crate::model::RdsMetadata>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    #[doc(hidden)]
     pub compute_statistics: bool,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
+    #[doc(hidden)]
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    #[doc(hidden)]
     pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    #[doc(hidden)]
     pub data_source_schema: std::option::Option<std::string::String>,
 }
 impl GetDataSourceOutput {
@@ -1788,20 +1849,28 @@ impl GetDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionOutput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
+    #[doc(hidden)]
     pub batch_prediction_data_source_id: std::option::Option<std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    #[doc(hidden)]
     pub input_data_location_s3: std::option::Option<std::string::String>,
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    #[doc(hidden)]
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
@@ -1811,22 +1880,31 @@ pub struct GetBatchPredictionOutput {
     /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EntityStatus>,
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
+    #[doc(hidden)]
     pub output_uri: std::option::Option<std::string::String>,
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+    #[doc(hidden)]
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    #[doc(hidden)]
     pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub total_record_count: std::option::Option<i64>,
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub invalid_record_count: std::option::Option<i64>,
 }
 impl GetBatchPredictionOutput {
@@ -2207,10 +2285,13 @@ impl GetBatchPredictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>The ID of the tagged ML object.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the tagged ML object.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
     /// <p>A list of tags associated with the ML object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribeTagsOutput {
@@ -2311,8 +2392,10 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMlModelsOutput {
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::MlModel>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMlModelsOutput {
@@ -2393,8 +2476,10 @@ impl DescribeMlModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEvaluationsOutput {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEvaluationsOutput {
@@ -2475,8 +2560,10 @@ impl DescribeEvaluationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourcesOutput {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataSourcesOutput {
@@ -2557,8 +2644,10 @@ impl DescribeDataSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchPredictionsOutput {
     /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBatchPredictionsOutput {
@@ -2639,8 +2728,10 @@ impl DescribeBatchPredictionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object from which tags were deleted.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl DeleteTagsOutput {
@@ -2716,8 +2807,10 @@ impl DeleteTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The endpoint information of the <code>MLModel</code> </p>
+    #[doc(hidden)]
     pub realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
 }
 impl DeleteRealtimeEndpointOutput {
@@ -2795,6 +2888,7 @@ impl DeleteRealtimeEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlModelOutput {
@@ -2850,6 +2944,7 @@ impl DeleteMlModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationOutput {
@@ -2907,6 +3002,7 @@ impl DeleteEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceOutput {
@@ -2965,6 +3061,7 @@ impl DeleteDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchPredictionOutput {
@@ -3024,8 +3121,10 @@ impl DeleteBatchPredictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The endpoint information of the <code>MLModel</code> </p>
+    #[doc(hidden)]
     pub realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
 }
 impl CreateRealtimeEndpointOutput {
@@ -3103,6 +3202,7 @@ impl CreateRealtimeEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl CreateMlModelOutput {
@@ -3158,6 +3258,7 @@ impl CreateMlModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEvaluationOutput {
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl CreateEvaluationOutput {
@@ -3216,6 +3317,7 @@ impl CreateEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromS3Output {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateDataSourceFromS3Output {
@@ -3274,6 +3376,7 @@ impl CreateDataSourceFromS3Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromRedshiftOutput {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateDataSourceFromRedshiftOutput {
@@ -3332,6 +3435,7 @@ impl CreateDataSourceFromRedshiftOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromRdsOutput {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateDataSourceFromRdsOutput {
@@ -3390,6 +3494,7 @@ impl CreateDataSourceFromRdsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl CreateBatchPredictionOutput {
@@ -3447,8 +3552,10 @@ impl CreateBatchPredictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsOutput {
     /// <p>The ID of the ML object that was tagged.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object that was tagged.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl AddTagsOutput {

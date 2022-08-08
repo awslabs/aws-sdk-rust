@@ -5,11 +5,14 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionState {
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    #[doc(hidden)]
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
+    #[doc(hidden)]
     pub version_number: i64,
 }
 impl JobExecutionState {
@@ -209,27 +212,38 @@ impl AsRef<str> for JobExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing that is executing the job.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    #[doc(hidden)]
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    #[doc(hidden)]
     pub queued_at: i64,
     /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<i64>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_at: i64,
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    #[doc(hidden)]
     pub approximate_seconds_before_timed_out: std::option::Option<i64>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
     /// <p>The content of the job document.</p>
+    #[doc(hidden)]
     pub job_document: std::option::Option<std::string::String>,
 }
 impl JobExecution {
@@ -483,16 +497,22 @@ impl JobExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    #[doc(hidden)]
     pub queued_at: i64,
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<i64>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: i64,
     /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device.</p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
 }
 impl JobExecutionSummary {

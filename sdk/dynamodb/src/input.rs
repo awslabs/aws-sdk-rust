@@ -10971,8 +10971,10 @@ impl UpdateTimeToLiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
+    #[doc(hidden)]
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveInput {
@@ -11004,14 +11006,18 @@ impl std::fmt::Debug for UpdateTimeToLiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableReplicaAutoScalingInput {
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
+    #[doc(hidden)]
     pub global_secondary_index_updates:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>>,
     /// <p>The name of the global table to be updated.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
+    #[doc(hidden)]
     pub provisioned_write_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
+    #[doc(hidden)]
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
 }
 impl UpdateTableReplicaAutoScalingInput {
@@ -11060,17 +11066,21 @@ impl std::fmt::Debug for UpdateTableReplicaAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
+    #[doc(hidden)]
     pub attribute_definitions:
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table to be updated.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
+    #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
@@ -11080,19 +11090,24 @@ pub struct UpdateTableInput {
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub global_secondary_index_updates:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
+    #[doc(hidden)]
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>The new server-side encryption settings for the specified table.</p>
+    #[doc(hidden)]
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
     /// </note>
+    #[doc(hidden)]
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    #[doc(hidden)]
     pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl UpdateTableInput {
@@ -11178,21 +11193,26 @@ impl std::fmt::Debug for UpdateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateItemInput {
     /// <p>The name of the table containing the item to update.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
     /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attribute_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValueUpdate>,
     >,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
     /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are:</p>
     /// <ul>
@@ -11204,6 +11224,7 @@ pub struct UpdateItemInput {
     /// </ul>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
     /// <p>The values returned are strongly consistent.</p>
+    #[doc(hidden)]
     pub return_values: std::option::Option<crate::model::ReturnValue>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -11211,8 +11232,10 @@ pub struct UpdateItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
+    #[doc(hidden)]
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.</p>
@@ -11240,6 +11263,7 @@ pub struct UpdateItemInput {
     /// </ul>
     /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p>
     /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub update_expression: std::option::Option<std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
@@ -11249,6 +11273,7 @@ pub struct UpdateItemInput {
     /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
     /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -11271,6 +11296,7 @@ pub struct UpdateItemInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
@@ -11281,6 +11307,7 @@ pub struct UpdateItemInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -11464,23 +11491,29 @@ impl std::fmt::Debug for UpdateItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableSettingsInput {
     /// <p>The name of the global table</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_table_billing_mode: std::option::Option<crate::model::BillingMode>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
+    #[doc(hidden)]
     pub global_table_provisioned_write_capacity_units: std::option::Option<i64>,
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
+    #[doc(hidden)]
     pub global_table_provisioned_write_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    #[doc(hidden)]
     pub global_table_global_secondary_index_settings_update: std::option::Option<
         std::vec::Vec<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
     >,
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
+    #[doc(hidden)]
     pub replica_settings_update:
         std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
 }
@@ -11549,8 +11582,10 @@ impl std::fmt::Debug for UpdateGlobalTableSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableInput {
     /// <p>The global table name.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>A list of Regions that should be added or removed from the global table.</p>
+    #[doc(hidden)]
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
 }
 impl UpdateGlobalTableInput {
@@ -11577,10 +11612,13 @@ impl std::fmt::Debug for UpdateGlobalTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContributorInsightsInput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The global secondary index name, if applicable.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Represents the contributor insights action.</p>
+    #[doc(hidden)]
     pub contributor_insights_action: std::option::Option<crate::model::ContributorInsightsAction>,
 }
 impl UpdateContributorInsightsInput {
@@ -11617,8 +11655,10 @@ impl std::fmt::Debug for UpdateContributorInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContinuousBackupsInput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Represents the settings used to enable point in time recovery.</p>
+    #[doc(hidden)]
     pub point_in_time_recovery_specification:
         std::option::Option<crate::model::PointInTimeRecoverySpecification>,
 }
@@ -11651,8 +11691,10 @@ impl std::fmt::Debug for UpdateContinuousBackupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11679,6 +11721,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsInput {
     /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+    #[doc(hidden)]
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -11686,14 +11729,17 @@ pub struct TransactWriteItemsInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
+    #[doc(hidden)]
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
     /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl TransactWriteItemsInput {
@@ -11745,8 +11791,10 @@ impl std::fmt::Debug for TransactWriteItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsInput {
     /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+    #[doc(hidden)]
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl TransactGetItemsInput {
@@ -11775,8 +11823,10 @@ impl std::fmt::Debug for TransactGetItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -11803,12 +11853,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanInput {
     /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
@@ -11820,16 +11874,20 @@ pub struct ScanInput {
     /// <p>If neither <code>Select</code> nor <code>ProjectionExpression</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>ProjectionExpression</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>ProjectionExpression</code> without any value for <code>Select</code>.)</p> <note>
     /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
+    #[doc(hidden)]
     pub select: std::option::Option<crate::model::Select>,
     /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub scan_filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
     /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
     /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
     /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
     /// <p>In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
+    #[doc(hidden)]
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -11839,25 +11897,30 @@ pub struct ScanInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of segments into which the <code>Scan</code> operation will be divided. The value of <code>TotalSegments</code> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <code>TotalSegments</code> value of 4.</p>
     /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will be sequential rather than parallel.</p>
     /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
+    #[doc(hidden)]
     pub total_segments: std::option::Option<i32>,
     /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be scanned by an application worker.</p>
     /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so on.</p>
     /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code> operation.</p>
     /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value provided for <code>TotalSegments</code>.</p>
     /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<i32>,
     /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note>
     /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -11880,6 +11943,7 @@ pub struct ScanInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
@@ -11890,6 +11954,7 @@ pub struct ScanInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -11900,6 +11965,7 @@ pub struct ScanInput {
     /// </ul>
     /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
     /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
+    #[doc(hidden)]
     pub consistent_read: std::option::Option<bool>,
 }
 impl ScanInput {
@@ -12078,26 +12144,36 @@ impl std::fmt::Debug for ScanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableToPointInTimeInput {
     /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub source_table_arn: std::option::Option<std::string::String>,
     /// <p>Name of the source table that is being restored.</p>
+    #[doc(hidden)]
     pub source_table_name: std::option::Option<std::string::String>,
     /// <p>The name of the new table to which it must be restored to.</p>
+    #[doc(hidden)]
     pub target_table_name: std::option::Option<std::string::String>,
     /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
+    #[doc(hidden)]
     pub use_latest_restorable_time: std::option::Option<bool>,
     /// <p>Time in the past to restore the table to.</p>
+    #[doc(hidden)]
     pub restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The billing mode of the restored table.</p>
+    #[doc(hidden)]
     pub billing_mode_override: std::option::Option<crate::model::BillingMode>,
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    #[doc(hidden)]
     pub global_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    #[doc(hidden)]
     pub local_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
+    #[doc(hidden)]
     pub provisioned_throughput_override: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The new server-side encryption settings for the restored table.</p>
+    #[doc(hidden)]
     pub sse_specification_override: std::option::Option<crate::model::SseSpecification>,
 }
 impl RestoreTableToPointInTimeInput {
@@ -12187,20 +12263,27 @@ impl std::fmt::Debug for RestoreTableToPointInTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
+    #[doc(hidden)]
     pub target_table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    #[doc(hidden)]
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p>The billing mode of the restored table.</p>
+    #[doc(hidden)]
     pub billing_mode_override: std::option::Option<crate::model::BillingMode>,
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    #[doc(hidden)]
     pub global_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    #[doc(hidden)]
     pub local_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
+    #[doc(hidden)]
     pub provisioned_throughput_override: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The new server-side encryption settings for the restored table.</p>
+    #[doc(hidden)]
     pub sse_specification_override: std::option::Option<crate::model::SseSpecification>,
 }
 impl RestoreTableFromBackupInput {
@@ -12272,8 +12355,10 @@ impl std::fmt::Debug for RestoreTableFromBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryInput {
     /// <p>The name of the table containing the requested items.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code> </p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
@@ -12285,30 +12370,39 @@ pub struct QueryInput {
     /// <p>If neither <code>Select</code> nor <code>ProjectionExpression</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>ProjectionExpression</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>ProjectionExpression</code> without any value for <code>Select</code>.)</p> <note>
     /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
+    #[doc(hidden)]
     pub select: std::option::Option<crate::model::Select>,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
     /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you will receive a <code>ValidationException</code>.</p>
+    #[doc(hidden)]
     pub consistent_read: std::option::Option<bool>,
     /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_conditions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
     /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub query_filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
     /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
     /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
     /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
     /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
+    #[doc(hidden)]
     pub scan_index_forward: std::option::Option<bool>,
     /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
     /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are allowed.</p>
+    #[doc(hidden)]
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -12318,16 +12412,19 @@ pub struct QueryInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
     /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note>
     /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.</p>
     /// <p>The condition must perform an equality test on a single partition key value.</p>
@@ -12357,6 +12454,7 @@ pub struct QueryInput {
     /// </ul>
     /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -12379,6 +12477,7 @@ pub struct QueryInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
@@ -12389,6 +12488,7 @@ pub struct QueryInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -12595,6 +12695,7 @@ impl std::fmt::Debug for QueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutItemInput {
     /// <p>The name of the table to contain the item.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
@@ -12602,10 +12703,12 @@ pub struct PutItemInput {
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
+    #[doc(hidden)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
@@ -12618,6 +12721,7 @@ pub struct PutItemInput {
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p> <note>
     /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub return_values: std::option::Option<crate::model::ReturnValue>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -12625,11 +12729,14 @@ pub struct PutItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
+    #[doc(hidden)]
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
     /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
@@ -12639,6 +12746,7 @@ pub struct PutItemInput {
     /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
     /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -12661,6 +12769,7 @@ pub struct PutItemInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
@@ -12671,6 +12780,7 @@ pub struct PutItemInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -12819,8 +12929,10 @@ impl std::fmt::Debug for PutItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOfResourceInput {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOfResourceInput {
@@ -12847,8 +12959,10 @@ impl std::fmt::Debug for ListTagsOfResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesInput {
     /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
+    #[doc(hidden)]
     pub exclusive_start_table_name: std::option::Option<std::string::String>,
     /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTablesInput {
@@ -12878,11 +12992,14 @@ impl std::fmt::Debug for ListTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
+    #[doc(hidden)]
     pub exclusive_start_global_table_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
     /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Lists the global tables in a specific Region.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl ListGlobalTablesInput {
@@ -12918,10 +13035,13 @@ impl std::fmt::Debug for ListGlobalTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsInput {
     /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
+    #[doc(hidden)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsInput {
@@ -12953,10 +13073,13 @@ impl std::fmt::Debug for ListExportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContributorInsightsInput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A token to for the desired page, if there is one.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListContributorInsightsInput {
@@ -12988,14 +13111,19 @@ impl std::fmt::Debug for ListContributorInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupsInput {
     /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Maximum number of backups to return at once.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
+    #[doc(hidden)]
     pub time_range_lower_bound: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
+    #[doc(hidden)]
     pub time_range_upper_bound: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
+    #[doc(hidden)]
     pub exclusive_start_backup_arn: std::option::Option<std::string::String>,
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
@@ -13004,6 +13132,7 @@ pub struct ListBackupsInput {
     /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
     /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub backup_type: std::option::Option<crate::model::BackupTypeFilter>,
 }
 impl ListBackupsInput {
@@ -13059,15 +13188,19 @@ impl std::fmt::Debug for ListBackupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetItemInput {
     /// <p>The name of the table containing the requested item.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to retrieve.</p>
     /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+    #[doc(hidden)]
     pub consistent_read: std::option::Option<bool>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -13075,10 +13208,12 @@ pub struct GetItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -13101,6 +13236,7 @@ pub struct GetItemInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13193,28 +13329,37 @@ impl std::fmt::Debug for GetItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
+    #[doc(hidden)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
+    #[doc(hidden)]
     pub export_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    #[doc(hidden)]
     pub s3_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
+    #[doc(hidden)]
     pub s3_sse_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    #[doc(hidden)]
     pub export_format: std::option::Option<crate::model::ExportFormat>,
 }
 impl ExportTableToPointInTimeInput {
@@ -13282,11 +13427,14 @@ impl std::fmt::Debug for ExportTableToPointInTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
+    #[doc(hidden)]
     pub transact_statements:
         std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl ExecuteTransactionInput {
@@ -13322,12 +13470,16 @@ impl std::fmt::Debug for ExecuteTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
+    #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
     /// <p>The parameters for the PartiQL statement, if any.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
+    #[doc(hidden)]
     pub consistent_read: std::option::Option<bool>,
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -13335,8 +13487,10 @@ pub struct ExecuteStatementInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ExecuteStatementInput {
@@ -13390,8 +13544,10 @@ impl std::fmt::Debug for ExecuteStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN for a Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl EnableKinesisStreamingDestinationInput {
@@ -13418,8 +13574,10 @@ impl std::fmt::Debug for EnableKinesisStreamingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN for a Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl DisableKinesisStreamingDestinationInput {
@@ -13446,6 +13604,7 @@ impl std::fmt::Debug for DisableKinesisStreamingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeToLiveInput {
     /// <p>The name of the table to be described.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeTimeToLiveInput {
@@ -13467,6 +13626,7 @@ impl std::fmt::Debug for DescribeTimeToLiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableReplicaAutoScalingInput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeTableReplicaAutoScalingInput {
@@ -13488,6 +13648,7 @@ impl std::fmt::Debug for DescribeTableReplicaAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableInput {
     /// <p>The name of the table to describe.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeTableInput {
@@ -13520,6 +13681,7 @@ impl std::fmt::Debug for DescribeLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKinesisStreamingDestinationInput {
     /// <p>The name of the table being described.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeKinesisStreamingDestinationInput {
@@ -13541,6 +13703,7 @@ impl std::fmt::Debug for DescribeKinesisStreamingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableSettingsInput {
     /// <p>The name of the global table to describe.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalTableSettingsInput {
@@ -13562,6 +13725,7 @@ impl std::fmt::Debug for DescribeGlobalTableSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableInput {
     /// <p>The name of the global table.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalTableInput {
@@ -13583,6 +13747,7 @@ impl std::fmt::Debug for DescribeGlobalTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportInput {
     /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
+    #[doc(hidden)]
     pub export_arn: std::option::Option<std::string::String>,
 }
 impl DescribeExportInput {
@@ -13615,8 +13780,10 @@ impl std::fmt::Debug for DescribeEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContributorInsightsInput {
     /// <p>The name of the table to describe.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the global secondary index to describe, if applicable.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl DescribeContributorInsightsInput {
@@ -13643,6 +13810,7 @@ impl std::fmt::Debug for DescribeContributorInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousBackupsInput {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeContinuousBackupsInput {
@@ -13664,6 +13832,7 @@ impl std::fmt::Debug for DescribeContinuousBackupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupInput {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    #[doc(hidden)]
     pub backup_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBackupInput {
@@ -13685,6 +13854,7 @@ impl std::fmt::Debug for DescribeBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableInput {
     /// <p>The name of the table to delete.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DeleteTableInput {
@@ -13706,17 +13876,21 @@ impl std::fmt::Debug for DeleteTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteItemInput {
     /// <p>The name of the table from which to delete the item.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to delete.</p>
     /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
     /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
     /// <ul>
@@ -13726,6 +13900,7 @@ pub struct DeleteItemInput {
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p> <note>
     /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub return_values: std::option::Option<crate::model::ReturnValue>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -13733,8 +13908,10 @@ pub struct DeleteItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
+    #[doc(hidden)]
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to succeed.</p>
@@ -13745,6 +13922,7 @@ pub struct DeleteItemInput {
     /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
     /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -13767,6 +13945,7 @@ pub struct DeleteItemInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
@@ -13777,6 +13956,7 @@ pub struct DeleteItemInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -13920,6 +14100,7 @@ impl std::fmt::Debug for DeleteItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
     /// <p>The ARN associated with the backup.</p>
+    #[doc(hidden)]
     pub backup_arn: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
@@ -13941,9 +14122,11 @@ impl std::fmt::Debug for DeleteBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
+    #[doc(hidden)]
     pub attribute_definitions:
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table to create.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
@@ -13961,6 +14144,7 @@ pub struct CreateTableInput {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
@@ -13978,6 +14162,7 @@ pub struct CreateTableInput {
     /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
@@ -13996,6 +14181,7 @@ pub struct CreateTableInput {
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -14003,10 +14189,12 @@ pub struct CreateTableInput {
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
@@ -14019,12 +14207,16 @@ pub struct CreateTableInput {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
+    #[doc(hidden)]
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    #[doc(hidden)]
     pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl CreateTableInput {
@@ -14165,8 +14357,10 @@ impl std::fmt::Debug for CreateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalTableInput {
     /// <p>The global table name.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Regions where the global table needs to be created.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
 }
 impl CreateGlobalTableInput {
@@ -14193,8 +14387,10 @@ impl std::fmt::Debug for CreateGlobalTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupInput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Specified name for the backup.</p>
+    #[doc(hidden)]
     pub backup_name: std::option::Option<std::string::String>,
 }
 impl CreateBackupInput {
@@ -14231,6 +14427,7 @@ pub struct BatchWriteItemInput {
     /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
     >,
@@ -14240,8 +14437,10 @@ pub struct BatchWriteItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
+    #[doc(hidden)]
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
 }
@@ -14324,6 +14523,7 @@ pub struct BatchGetItemInput {
     /// <li> <p> <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p> <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
     /// <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
     >,
@@ -14333,6 +14533,7 @@ pub struct BatchGetItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl BatchGetItemInput {
@@ -14394,6 +14595,7 @@ impl std::fmt::Debug for BatchGetItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
+    #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -14401,6 +14603,7 @@ pub struct BatchExecuteStatementInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl BatchExecuteStatementInput {

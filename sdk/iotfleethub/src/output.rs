@@ -94,6 +94,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -167,8 +168,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
+    #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>A token used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -252,28 +255,40 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationOutput {
     /// <p>The unique Id of the web application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the web application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The name of the web application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the web application.</p>
+    #[doc(hidden)]
     pub application_description: std::option::Option<std::string::String>,
     /// <p>The URL of the web application.</p>
+    #[doc(hidden)]
     pub application_url: std::option::Option<std::string::String>,
     /// <p>The current state of the web application.</p>
+    #[doc(hidden)]
     pub application_state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The date (in Unix epoch time) when the application was created.</p>
+    #[doc(hidden)]
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
+    #[doc(hidden)]
     pub application_last_update_date: i64,
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
+    #[doc(hidden)]
     pub sso_client_id: std::option::Option<std::string::String>,
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -593,8 +608,10 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The unique Id of the web application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the web application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl CreateApplicationOutput {

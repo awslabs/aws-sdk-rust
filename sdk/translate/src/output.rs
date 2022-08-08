@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    #[doc(hidden)]
     pub latest_update_attempt_status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The time that the most recent update was attempted.</p>
+    #[doc(hidden)]
     pub latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateParallelDataOutput {
@@ -133,14 +137,19 @@ impl UpdateParallelDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslateTextOutput {
     /// <p>The translated text.</p>
+    #[doc(hidden)]
     pub translated_text: std::option::Option<std::string::String>,
     /// <p>The language code for the language of the source text.</p>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code for the language of the target text. </p>
+    #[doc(hidden)]
     pub target_language_code: std::option::Option<std::string::String>,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
+    #[doc(hidden)]
     pub applied_terminologies: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
     /// <p>Settings that configure the translation output.</p>
+    #[doc(hidden)]
     pub applied_settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextOutput {
@@ -287,8 +296,10 @@ impl TranslateTextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTextTranslationJobOutput {
     /// <p>The job ID of the stopped batch translation job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopTextTranslationJobOutput {
@@ -363,6 +374,7 @@ impl StopTextTranslationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextTranslationJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the job. Possible values include:</p>
     /// <ul>
@@ -374,6 +386,7 @@ pub struct StartTextTranslationJobOutput {
     /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
     /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTextTranslationJobOutput {
@@ -475,9 +488,11 @@ impl StartTextTranslationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub text_translation_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTextTranslationJobsOutput {
@@ -569,9 +584,11 @@ impl ListTextTranslationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
+    #[doc(hidden)]
     pub terminology_properties_list:
         std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTerminologiesOutput {
@@ -661,9 +678,11 @@ impl ListTerminologiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
+    #[doc(hidden)]
     pub parallel_data_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListParallelDataOutput {
@@ -753,10 +772,13 @@ impl ListParallelDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguagesOutput {
     /// <p>The list of supported languages.</p>
+    #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
     /// <p>The language code passed in with the request.</p>
+    #[doc(hidden)]
     pub display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLanguagesOutput {
@@ -857,8 +879,10 @@ impl ListLanguagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
+    #[doc(hidden)]
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    #[doc(hidden)]
     pub auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
 }
 impl ImportTerminologyOutput {
@@ -947,14 +971,17 @@ impl ImportTerminologyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
+    #[doc(hidden)]
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
+    #[doc(hidden)]
     pub terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    #[doc(hidden)]
     pub auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
 }
 impl GetTerminologyOutput {
@@ -1081,16 +1108,20 @@ impl GetTerminologyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParallelDataOutput {
     /// <p>The properties of the parallel data resource that is being retrieved.</p>
+    #[doc(hidden)]
     pub parallel_data_properties: std::option::Option<crate::model::ParallelDataProperties>,
     /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
+    #[doc(hidden)]
     pub data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    #[doc(hidden)]
     pub auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    #[doc(hidden)]
     pub latest_update_attempt_auxiliary_data_location:
         std::option::Option<crate::model::ParallelDataDataLocation>,
 }
@@ -1243,6 +1274,7 @@ impl GetParallelDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTextTranslationJobOutput {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
+    #[doc(hidden)]
     pub text_translation_job_properties:
         std::option::Option<crate::model::TextTranslationJobProperties>,
 }
@@ -1340,8 +1372,10 @@ impl DeleteTerminologyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParallelDataOutput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the parallel data deletion.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
 }
 impl DeleteParallelDataOutput {
@@ -1416,8 +1450,10 @@ impl DeleteParallelDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParallelDataOutput {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
 }
 impl CreateParallelDataOutput {

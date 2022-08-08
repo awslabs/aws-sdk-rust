@@ -484,6 +484,7 @@ impl SendInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAnnouncementOutput {
     /// <p>The identifier of the announcement.</p>
+    #[doc(hidden)]
     pub announcement_arn: std::option::Option<std::string::String>,
 }
 impl SendAnnouncementOutput {
@@ -541,10 +542,13 @@ impl SendAnnouncementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersOutput {
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of users returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchUsersOutput {
@@ -642,10 +646,13 @@ impl SearchUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSkillGroupsOutput {
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub skill_groups: std::option::Option<std::vec::Vec<crate::model::SkillGroupData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of skill groups returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchSkillGroupsOutput {
@@ -743,10 +750,13 @@ impl SearchSkillGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchRoomsOutput {
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub rooms: std::option::Option<std::vec::Vec<crate::model::RoomData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of rooms returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchRoomsOutput {
@@ -844,10 +854,13 @@ impl SearchRoomsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesOutput {
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::model::ProfileData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of room profiles returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchProfilesOutput {
@@ -945,10 +958,13 @@ impl SearchProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchNetworkProfilesOutput {
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
+    #[doc(hidden)]
     pub network_profiles: std::option::Option<std::vec::Vec<crate::model::NetworkProfileData>>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of network profiles returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchNetworkProfilesOutput {
@@ -1047,10 +1063,13 @@ impl SearchNetworkProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesOutput {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of devices returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchDevicesOutput {
@@ -1148,10 +1167,13 @@ impl SearchDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContactsOutput {
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of contacts returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchContactsOutput {
@@ -1249,10 +1271,13 @@ impl SearchContactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAddressBooksOutput {
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
+    #[doc(hidden)]
     pub address_books: std::option::Option<std::vec::Vec<crate::model::AddressBookData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of address books returned.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i32>,
 }
 impl SearchAddressBooksOutput {
@@ -1380,10 +1405,13 @@ impl RevokeInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveRoomOutput {
     /// <p>The ARN of the room from which the skill request was invoked.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The name of the room from which the skill request was invoked.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>Response to get the room profile request. Required.</p>
+    #[doc(hidden)]
     pub room_skill_parameters: std::option::Option<std::vec::Vec<crate::model::RoomSkillParameter>>,
 }
 impl ResolveRoomOutput {
@@ -1514,6 +1542,7 @@ impl RejectSkillOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAvsDeviceOutput {
     /// <p>The ARN of the device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
 }
 impl RegisterAvsDeviceOutput {
@@ -1688,8 +1717,10 @@ impl PutConferencePreferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>The tags requested for the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -1770,8 +1801,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmartHomeAppliancesOutput {
     /// <p>The smart home appliances.</p>
+    #[doc(hidden)]
     pub smart_home_appliances: std::option::Option<std::vec::Vec<crate::model::SmartHomeAppliance>>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSmartHomeAppliancesOutput {
@@ -1855,8 +1888,10 @@ impl ListSmartHomeAppliancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreSkillsByCategoryOutput {
     /// <p>The skill store skills.</p>
+    #[doc(hidden)]
     pub skills_store_skills: std::option::Option<std::vec::Vec<crate::model::SkillsStoreSkill>>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSkillsStoreSkillsByCategoryOutput {
@@ -1938,8 +1973,10 @@ impl ListSkillsStoreSkillsByCategoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreCategoriesOutput {
     /// <p>The list of categories.</p>
+    #[doc(hidden)]
     pub category_list: std::option::Option<std::vec::Vec<crate::model::Category>>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSkillsStoreCategoriesOutput {
@@ -2020,8 +2057,10 @@ impl ListSkillsStoreCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsOutput {
     /// <p>The list of enabled skills requested. Required.</p>
+    #[doc(hidden)]
     pub skill_summaries: std::option::Option<std::vec::Vec<crate::model::SkillSummary>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSkillsOutput {
@@ -2102,8 +2141,10 @@ impl ListSkillsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysOutput {
     /// <p>The gateways in the list.</p>
+    #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysOutput {
@@ -2184,8 +2225,10 @@ impl ListGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayGroupsOutput {
     /// <p>The gateway groups in the list.</p>
+    #[doc(hidden)]
     pub gateway_groups: std::option::Option<std::vec::Vec<crate::model::GatewayGroupSummary>>,
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewayGroupsOutput {
@@ -2267,8 +2310,10 @@ impl ListGatewayGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceEventsOutput {
     /// <p>The device events requested for the device ARN.</p>
+    #[doc(hidden)]
     pub device_events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
     /// <p>The token returned to indicate that there is more data available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceEventsOutput {
@@ -2349,8 +2394,10 @@ impl ListDeviceEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConferenceProvidersOutput {
     /// <p>The conference providers.</p>
+    #[doc(hidden)]
     pub conference_providers: std::option::Option<std::vec::Vec<crate::model::ConferenceProvider>>,
     /// <p>The tokens used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConferenceProvidersOutput {
@@ -2432,9 +2479,11 @@ impl ListConferenceProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBusinessReportSchedulesOutput {
     /// <p>The schedule of the reports.</p>
+    #[doc(hidden)]
     pub business_report_schedules:
         std::option::Option<std::vec::Vec<crate::model::BusinessReportSchedule>>,
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBusinessReportSchedulesOutput {
@@ -2521,6 +2570,7 @@ impl ListBusinessReportSchedulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSkillGroupOutput {
     /// <p>The details of the skill group requested. Required.</p>
+    #[doc(hidden)]
     pub skill_group: std::option::Option<crate::model::SkillGroup>,
 }
 impl GetSkillGroupOutput {
@@ -2578,6 +2628,7 @@ impl GetSkillGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomSkillParameterOutput {
     /// <p>The details of the room skill parameter requested. Required.</p>
+    #[doc(hidden)]
     pub room_skill_parameter: std::option::Option<crate::model::RoomSkillParameter>,
 }
 impl GetRoomSkillParameterOutput {
@@ -2635,6 +2686,7 @@ impl GetRoomSkillParameterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomOutput {
     /// <p>The details of the room requested.</p>
+    #[doc(hidden)]
     pub room: std::option::Option<crate::model::Room>,
 }
 impl GetRoomOutput {
@@ -2687,6 +2739,7 @@ impl GetRoomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileOutput {
     /// <p>The details of the room profile requested. Required.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::Profile>,
 }
 impl GetProfileOutput {
@@ -2741,6 +2794,7 @@ impl GetProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkProfileOutput {
     /// <p>The network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
 impl GetNetworkProfileOutput {
@@ -2798,10 +2852,13 @@ impl GetNetworkProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationConfigurationOutput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
+    #[doc(hidden)]
     pub contact_email: std::option::Option<std::string::String>,
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
+    #[doc(hidden)]
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetInvitationConfigurationOutput {
@@ -2905,6 +2962,7 @@ impl GetInvitationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayGroupOutput {
     /// <p>The details of the gateway group.</p>
+    #[doc(hidden)]
     pub gateway_group: std::option::Option<crate::model::GatewayGroup>,
 }
 impl GetGatewayGroupOutput {
@@ -2962,6 +3020,7 @@ impl GetGatewayGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayOutput {
     /// <p>The details of the gateway.</p>
+    #[doc(hidden)]
     pub gateway: std::option::Option<crate::model::Gateway>,
 }
 impl GetGatewayOutput {
@@ -3016,6 +3075,7 @@ impl GetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceOutput {
     /// <p>The details of the device requested. Required.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
 }
 impl GetDeviceOutput {
@@ -3070,6 +3130,7 @@ impl GetDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactOutput {
     /// <p>The details of the requested contact.</p>
+    #[doc(hidden)]
     pub contact: std::option::Option<crate::model::Contact>,
 }
 impl GetContactOutput {
@@ -3124,6 +3185,7 @@ impl GetContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConferenceProviderOutput {
     /// <p>The conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider: std::option::Option<crate::model::ConferenceProvider>,
 }
 impl GetConferenceProviderOutput {
@@ -3181,6 +3243,7 @@ impl GetConferenceProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConferencePreferenceOutput {
     /// <p>The conference preference.</p>
+    #[doc(hidden)]
     pub preference: std::option::Option<crate::model::ConferencePreference>,
 }
 impl GetConferencePreferenceOutput {
@@ -3238,6 +3301,7 @@ impl GetConferencePreferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAddressBookOutput {
     /// <p>The details of the requested address book.</p>
+    #[doc(hidden)]
     pub address_book: std::option::Option<crate::model::AddressBook>,
 }
 impl GetAddressBookOutput {
@@ -3895,6 +3959,7 @@ impl DeleteAddressBookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The ARN of the newly created user in the response.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -3949,6 +4014,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSkillGroupOutput {
     /// <p>The ARN of the newly created skill group in the response.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateSkillGroupOutput {
@@ -4006,6 +4072,7 @@ impl CreateSkillGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomOutput {
     /// <p>The ARN of the newly created room in the response.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl CreateRoomOutput {
@@ -4060,6 +4127,7 @@ impl CreateRoomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileOutput {
     /// <p>The ARN of the newly created room profile in the response.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateProfileOutput {
@@ -4114,6 +4182,7 @@ impl CreateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileOutput {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateNetworkProfileOutput {
@@ -4171,6 +4240,7 @@ impl CreateNetworkProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayGroupOutput {
     /// <p>The ARN of the created gateway group.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayGroupOutput {
@@ -4228,6 +4298,7 @@ impl CreateGatewayGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactOutput {
     /// <p>The ARN of the newly created address book.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactOutput {
@@ -4282,6 +4353,7 @@ impl CreateContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConferenceProviderOutput {
     /// <p>The ARN of the newly-created conference provider.</p>
+    #[doc(hidden)]
     pub conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl CreateConferenceProviderOutput {
@@ -4339,6 +4411,7 @@ impl CreateConferenceProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBusinessReportScheduleOutput {
     /// <p>The ARN of the business report schedule.</p>
+    #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
 }
 impl CreateBusinessReportScheduleOutput {
@@ -4393,6 +4466,7 @@ impl CreateBusinessReportScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressBookOutput {
     /// <p>The ARN of the newly created address book.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl CreateAddressBookOutput {

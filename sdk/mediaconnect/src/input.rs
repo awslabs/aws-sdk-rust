@@ -5579,39 +5579,56 @@ impl UpdateFlowSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowSourceInput {
     /// The type of encryption used on the content ingested from this source.
+    #[doc(hidden)]
     pub decryption: std::option::Option<crate::model::UpdateEncryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The flow that is associated with the source that you want to update.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
+    #[doc(hidden)]
     pub ingest_port: i32,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    #[doc(hidden)]
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    #[doc(hidden)]
     pub max_sync_buffer: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
+    #[doc(hidden)]
     pub media_stream_source_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    #[doc(hidden)]
     pub min_latency: i32,
     /// The protocol that is used by the source.
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to update.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface to use for this source.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub whitelist_cidr: std::option::Option<std::string::String>,
 }
 impl UpdateFlowSourceInput {
@@ -5718,39 +5735,56 @@ impl std::fmt::Debug for UpdateFlowSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The IP address where you want to send the output.
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::UpdateEncryption>,
     /// The flow that is associated with the output that you want to update.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    #[doc(hidden)]
     pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
+    #[doc(hidden)]
     pub media_stream_output_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    #[doc(hidden)]
     pub min_latency: i32,
     /// The ARN of the output that you want to update.
+    #[doc(hidden)]
     pub output_arn: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
+    #[doc(hidden)]
     pub port: i32,
     /// The protocol to use for the output.
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull stream.
+    #[doc(hidden)]
     pub remote_id: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface attachment to use for this output.
+    #[doc(hidden)]
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
 impl UpdateFlowOutputInput {
@@ -5859,18 +5893,25 @@ impl std::fmt::Debug for UpdateFlowOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowMediaStreamInput {
     /// The attributes that you want to assign to the media stream.
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    #[doc(hidden)]
     pub clock_rate: i32,
     /// Description
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that you want to update.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
     /// The type of media stream.
+    #[doc(hidden)]
     pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
+    #[doc(hidden)]
     pub video_format: std::option::Option<std::string::String>,
 }
 impl UpdateFlowMediaStreamInput {
@@ -5922,16 +5963,22 @@ impl std::fmt::Debug for UpdateFlowMediaStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The type of encryption that will be used on the output associated with this entitlement.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::UpdateEncryption>,
     /// The ARN of the entitlement that you want to update.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
+    #[doc(hidden)]
     pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
     /// The flow that is associated with the entitlement that you want to update.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFlowEntitlementInput {
@@ -5978,10 +6025,13 @@ impl std::fmt::Debug for UpdateFlowEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowInput {
     /// The flow that you want to update.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The settings for source failover.
+    #[doc(hidden)]
     pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
     /// Update maintenance setting for a flow
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::UpdateMaintenance>,
 }
 impl UpdateFlowInput {
@@ -6015,8 +6065,10 @@ impl std::fmt::Debug for UpdateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// The keys of the tags to be removed.
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6043,8 +6095,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6075,6 +6129,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
@@ -6096,6 +6151,7 @@ impl std::fmt::Debug for StopFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowInput {
     /// The ARN of the flow that you want to start.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
@@ -6117,8 +6173,10 @@ impl std::fmt::Debug for StartFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeFlowEntitlementInput {
     /// The ARN of the entitlement that you want to revoke.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The flow that you want to revoke an entitlement from.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl RevokeFlowEntitlementInput {
@@ -6145,8 +6203,10 @@ impl std::fmt::Debug for RevokeFlowEntitlementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowVpcInterfaceInput {
     /// The flow that you want to remove a VPC interface from.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the VPC interface that you want to remove.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowVpcInterfaceInput {
@@ -6173,8 +6233,10 @@ impl std::fmt::Debug for RemoveFlowVpcInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to remove.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowSourceInput {
@@ -6201,8 +6263,10 @@ impl std::fmt::Debug for RemoveFlowSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowOutputInput {
     /// The flow that you want to remove an output from.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the output that you want to remove.
+    #[doc(hidden)]
     pub output_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowOutputInput {
@@ -6229,8 +6293,10 @@ impl std::fmt::Debug for RemoveFlowOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that you want to remove.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowMediaStreamInput {
@@ -6257,10 +6323,13 @@ impl std::fmt::Debug for RemoveFlowMediaStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
+    #[doc(hidden)]
     pub offering_arn: std::option::Option<std::string::String>,
     /// The name that you want to use for the reservation.
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
 }
 impl PurchaseOfferingInput {
@@ -6292,6 +6361,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6313,8 +6383,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReservationsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReservationsInput {
@@ -6341,8 +6413,10 @@ impl std::fmt::Debug for ListReservationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsInput {
@@ -6369,8 +6443,10 @@ impl std::fmt::Debug for ListOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsInput {
@@ -6397,8 +6473,10 @@ impl std::fmt::Debug for ListFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitlementsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitlementsInput {
@@ -6425,8 +6503,10 @@ impl std::fmt::Debug for ListEntitlementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
     /// The flow that you want to grant entitlements on.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl GrantFlowEntitlementsInput {
@@ -6453,6 +6533,7 @@ impl std::fmt::Debug for GrantFlowEntitlementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
+    #[doc(hidden)]
     pub reservation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeReservationInput {
@@ -6474,6 +6555,7 @@ impl std::fmt::Debug for DescribeReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
+    #[doc(hidden)]
     pub offering_arn: std::option::Option<std::string::String>,
 }
 impl DescribeOfferingInput {
@@ -6495,6 +6577,7 @@ impl std::fmt::Debug for DescribeOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowInput {
     /// The ARN of the flow that you want to describe.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFlowInput {
@@ -6516,6 +6599,7 @@ impl std::fmt::Debug for DescribeFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowInput {
     /// The ARN of the flow that you want to delete.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFlowInput {
@@ -6537,24 +6621,34 @@ impl std::fmt::Debug for DeleteFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// The entitlements that you want to grant on a flow.
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    #[doc(hidden)]
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
     /// The name of the flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The outputs that you want to add to this flow.
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
     /// The settings for the source of the flow.
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::SetSourceRequest>,
     /// The settings for source failover.
+    #[doc(hidden)]
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
     /// The VPC interfaces you want on the flow.
+    #[doc(hidden)]
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
     /// Create maintenance setting for a flow
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::AddMaintenance>,
 }
 impl CreateFlowInput {
@@ -6621,8 +6715,10 @@ impl std::fmt::Debug for CreateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowVpcInterfacesInput {
     /// The flow that you want to mutate.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// A list of VPC interfaces that you want to add.
+    #[doc(hidden)]
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
 }
 impl AddFlowVpcInterfacesInput {
@@ -6649,8 +6745,10 @@ impl std::fmt::Debug for AddFlowVpcInterfacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowSourcesInput {
     /// The flow that you want to mutate.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// A list of sources that you want to add.
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
 }
 impl AddFlowSourcesInput {
@@ -6677,8 +6775,10 @@ impl std::fmt::Debug for AddFlowSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// A list of outputs that you want to add.
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
 }
 impl AddFlowOutputsInput {
@@ -6705,8 +6805,10 @@ impl std::fmt::Debug for AddFlowOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that you want to add to the flow.
+    #[doc(hidden)]
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInput {

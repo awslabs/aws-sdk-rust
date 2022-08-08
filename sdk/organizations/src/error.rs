@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedApiEndpointException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedApiEndpointException {
@@ -73,8 +74,10 @@ impl UnsupportedApiEndpointException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequestsException {
@@ -158,6 +161,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceException {
@@ -222,6 +226,7 @@ impl ServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyNotFoundException {
@@ -286,6 +291,7 @@ impl PolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyChangesInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyChangesInProgressException {
@@ -350,6 +356,7 @@ impl PolicyChangesInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedPolicyDocumentException {
@@ -442,8 +449,10 @@ impl MalformedPolicyDocumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::InvalidInputExceptionReason>,
 }
 impl InvalidInputException {
@@ -530,6 +539,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicatePolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicatePolicyException {
@@ -634,8 +644,10 @@ impl DuplicatePolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ConstraintViolationExceptionReason>,
 }
 impl ConstraintViolationException {
@@ -722,6 +734,7 @@ impl ConstraintViolationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -786,6 +799,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsOrganizationsNotInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsOrganizationsNotInUseException {
@@ -853,6 +867,7 @@ impl AwsOrganizationsNotInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -917,6 +932,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationalUnitNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationalUnitNotFoundException {
@@ -981,6 +997,7 @@ impl OrganizationalUnitNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateOrganizationalUnitException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateOrganizationalUnitException {
@@ -1045,6 +1062,7 @@ impl DuplicateOrganizationalUnitException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetNotFoundException {
@@ -1109,6 +1127,7 @@ impl TargetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MasterCannotLeaveOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MasterCannotLeaveOrganizationException {
@@ -1173,6 +1192,7 @@ impl MasterCannotLeaveOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountNotFoundException {
@@ -1237,6 +1257,7 @@ impl AccountNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAlreadyRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountAlreadyRegisteredException {
@@ -1301,6 +1322,7 @@ impl AccountAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceParentNotFoundException {
@@ -1365,6 +1387,7 @@ impl SourceParentNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateAccountException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateAccountException {
@@ -1429,6 +1452,7 @@ impl DuplicateAccountException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DestinationParentNotFoundException {
@@ -1493,6 +1517,7 @@ impl DestinationParentNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ChildNotFoundException {
@@ -1557,6 +1582,7 @@ impl ChildNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParentNotFoundException {
@@ -1621,6 +1647,7 @@ impl ParentNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountNotRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountNotRegisteredException {
@@ -1700,8 +1727,10 @@ impl AccountNotRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandshakeConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::HandshakeConstraintViolationExceptionReason>,
 }
 impl HandshakeConstraintViolationException {
@@ -1794,6 +1823,7 @@ impl HandshakeConstraintViolationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizingOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FinalizingOrganizationException {
@@ -1858,6 +1888,7 @@ impl FinalizingOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateHandshakeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateHandshakeException {
@@ -1922,6 +1953,7 @@ impl DuplicateHandshakeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountOwnerNotVerifiedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountOwnerNotVerifiedException {
@@ -1986,6 +2018,7 @@ impl AccountOwnerNotVerifiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RootNotFoundException {
@@ -2050,6 +2083,7 @@ impl RootNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeNotAvailableForOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyTypeNotAvailableForOrganizationException {
@@ -2115,6 +2149,7 @@ impl PolicyTypeNotAvailableForOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeAlreadyEnabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyTypeAlreadyEnabledException {
@@ -2179,6 +2214,7 @@ impl PolicyTypeAlreadyEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyTypeNotEnabledException {
@@ -2243,6 +2279,7 @@ impl PolicyTypeNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotAttachedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyNotAttachedException {
@@ -2307,6 +2344,7 @@ impl PolicyNotAttachedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandshakeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HandshakeNotFoundException {
@@ -2371,6 +2409,7 @@ impl HandshakeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectivePolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EffectivePolicyNotFoundException {
@@ -2435,6 +2474,7 @@ impl EffectivePolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountStatusNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAccountStatusNotFoundException {
@@ -2499,6 +2539,7 @@ impl CreateAccountStatusNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyInUseException {
@@ -2563,6 +2604,7 @@ impl PolicyInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationalUnitNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationalUnitNotEmptyException {
@@ -2627,6 +2669,7 @@ impl OrganizationalUnitNotEmptyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationNotEmptyException {
@@ -2691,6 +2734,7 @@ impl OrganizationNotEmptyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidHandshakeTransitionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidHandshakeTransitionException {
@@ -2755,6 +2799,7 @@ impl InvalidHandshakeTransitionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandshakeAlreadyInStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HandshakeAlreadyInStateException {
@@ -2819,6 +2864,7 @@ impl HandshakeAlreadyInStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyInOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyInOrganizationException {
@@ -2883,8 +2929,10 @@ impl AlreadyInOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedForDependencyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AccessDeniedForDependencyExceptionReason>,
 }
 impl AccessDeniedForDependencyException {
@@ -2977,6 +3025,7 @@ impl AccessDeniedForDependencyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -3041,6 +3090,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAlreadyClosedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountAlreadyClosedException {
@@ -3105,6 +3155,7 @@ impl AccountAlreadyClosedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicatePolicyAttachmentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicatePolicyAttachmentException {

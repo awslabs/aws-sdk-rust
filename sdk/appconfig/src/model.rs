@@ -44,14 +44,19 @@ impl BadRequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
+    #[doc(hidden)]
     pub constraint: std::option::Option<std::string::String>,
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The reason for an invalid configuration error.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The type of error for an invalid configuration.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl InvalidConfigurationDetail {
@@ -225,8 +230,10 @@ impl AsRef<str> for BadRequestReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>Information about the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A parameter value must be specified in the extension association.</p>
+    #[doc(hidden)]
     pub required: bool,
 }
 impl Parameter {
@@ -307,12 +314,16 @@ impl Parameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The action name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl Action {
@@ -505,8 +516,10 @@ impl AsRef<str> for ActionPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
+    #[doc(hidden)]
     pub alarm_arn: std::option::Option<std::string::String>,
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
+    #[doc(hidden)]
     pub alarm_role_arn: std::option::Option<std::string::String>,
 }
 impl Monitor {
@@ -759,8 +772,10 @@ impl AsRef<str> for GrowthType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Validator {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ValidatorType>,
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl Validator {
@@ -887,12 +902,16 @@ impl AsRef<str> for ValidatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppliedExtension {
     /// <p>The system-generated ID of the extension.</p>
+    #[doc(hidden)]
     pub extension_id: std::option::Option<std::string::String>,
     /// <p>The system-generated ID for the association.</p>
+    #[doc(hidden)]
     pub extension_association_id: std::option::Option<std::string::String>,
     /// <p>The extension version number.</p>
+    #[doc(hidden)]
     pub version_number: i32,
     /// <p>One or more parameters for the actions called by the extension.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1022,14 +1041,19 @@ impl AppliedExtension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentEvent {
     /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::DeploymentEventType>,
     /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+    #[doc(hidden)]
     pub triggered_by: std::option::Option<crate::model::TriggeredBy>,
     /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
+    #[doc(hidden)]
     pub action_invocations: std::option::Option<std::vec::Vec<crate::model::ActionInvocation>>,
     /// <p>The date and time the event occurred.</p>
+    #[doc(hidden)]
     pub occurred_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeploymentEvent {
@@ -1171,18 +1195,25 @@ impl DeploymentEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionInvocation {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    #[doc(hidden)]
     pub extension_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the action.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The error message when an extension invocation fails.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The error code when an extension invocation fails.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A system-generated ID for this invocation.</p>
+    #[doc(hidden)]
     pub invocation_id: std::option::Option<std::string::String>,
 }
 impl ActionInvocation {
@@ -1567,14 +1598,19 @@ impl AsRef<str> for DeploymentState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedConfigurationVersionSummary {
     /// <p>The application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The configuration profile ID.</p>
+    #[doc(hidden)]
     pub configuration_profile_id: std::option::Option<std::string::String>,
     /// <p>The configuration version.</p>
+    #[doc(hidden)]
     pub version_number: i32,
     /// <p>A description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl HostedConfigurationVersionSummary {
@@ -1703,14 +1739,19 @@ impl HostedConfigurationVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtensionSummary {
     /// <p>The system-generated ID of the extension.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The extension name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The extension version number.</p>
+    #[doc(hidden)]
     pub version_number: i32,
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the extension.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ExtensionSummary {
@@ -1833,10 +1874,13 @@ impl ExtensionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtensionAssociationSummary {
     /// <p>The extension association ID. This ID is used to call other <code>ExtensionAssociation</code> API actions such as <code>GetExtensionAssociation</code> or <code>DeleteExtensionAssociation</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    #[doc(hidden)]
     pub extension_arn: std::option::Option<std::string::String>,
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ExtensionAssociationSummary {
@@ -1928,16 +1972,22 @@ impl ExtensionAssociationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The environment ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    #[doc(hidden)]
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
 }
 impl Environment {
@@ -2092,20 +2142,28 @@ impl Environment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentStrategy {
     /// <p>The deployment strategy ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment strategy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the deployment strategy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
+    #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
+    #[doc(hidden)]
     pub growth_type: std::option::Option<crate::model::GrowthType>,
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
+    #[doc(hidden)]
     pub growth_factor: f32,
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    #[doc(hidden)]
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    #[doc(hidden)]
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
 }
 impl DeploymentStrategy {
@@ -2296,26 +2354,37 @@ impl DeploymentStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_number: i32,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
     /// <p>The version of the configuration.</p>
+    #[doc(hidden)]
     pub configuration_version: std::option::Option<std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
+    #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grows over time.</p>
+    #[doc(hidden)]
     pub growth_type: std::option::Option<crate::model::GrowthType>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    #[doc(hidden)]
     pub growth_factor: f32,
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    #[doc(hidden)]
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DeploymentState>,
     /// <p>The percentage of targets for which the deployment is available.</p>
+    #[doc(hidden)]
     pub percentage_complete: f32,
     /// <p>Time the deployment started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time the deployment completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeploymentSummary {
@@ -2569,18 +2638,24 @@ impl DeploymentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationProfileSummary {
     /// <p>The application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the configuration profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the configuration profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The URI location of the configuration.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The types of validators in the configuration profile.</p>
+    #[doc(hidden)]
     pub validator_types: std::option::Option<std::vec::Vec<crate::model::ValidatorType>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ConfigurationProfileSummary {
@@ -2738,10 +2813,13 @@ impl ConfigurationProfileSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
     /// <p>The application ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl Application {

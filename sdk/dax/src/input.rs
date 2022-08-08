@@ -3856,10 +3856,13 @@ impl UpdateSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubnetGroupInput {
     /// <p>The name of the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the subnet group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of subnet IDs in the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateSubnetGroupInput {
@@ -3891,10 +3894,12 @@ impl std::fmt::Debug for UpdateSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
     /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInput {
@@ -3925,18 +3930,25 @@ impl std::fmt::Debug for UpdateParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
     /// <p>The name of the DAX cluster to be modified.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>A description of the changes being made to the cluster.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    #[doc(hidden)]
     pub notification_topic_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
+    #[doc(hidden)]
     pub notification_topic_status: std::option::Option<std::string::String>,
     /// <p>The name of a parameter group for this cluster.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateClusterInput {
@@ -3991,8 +4003,10 @@ impl std::fmt::Debug for UpdateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The name of the DAX resource from which the tags should be removed.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4019,8 +4033,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The name of the DAX resource to which tags should be added.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the DAX resource. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4047,8 +4063,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootNodeInput {
     /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The system-assigned ID of the node to be rebooted.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
 }
 impl RebootNodeInput {
@@ -4075,8 +4093,10 @@ impl std::fmt::Debug for RebootNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The name of the DAX resource to which the tags belong.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -4103,10 +4123,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseReplicationFactorInput {
     /// <p>The name of the DAX cluster that will receive additional nodes.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
+    #[doc(hidden)]
     pub new_replication_factor: i32,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IncreaseReplicationFactorInput {
@@ -4138,11 +4161,14 @@ impl std::fmt::Debug for IncreaseReplicationFactorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubnetGroupsInput {
     /// <p>The name of the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubnetGroupsInput {
@@ -4175,13 +4201,17 @@ impl std::fmt::Debug for DescribeSubnetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersInput {
     /// <p>The name of the parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersInput {
@@ -4219,11 +4249,14 @@ impl std::fmt::Debug for DescribeParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParameterGroupsInput {
     /// <p>The names of the parameter groups.</p>
+    #[doc(hidden)]
     pub parameter_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParameterGroupsInput {
@@ -4256,19 +4289,26 @@ impl std::fmt::Debug for DescribeParameterGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes' worth of events to retrieve.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -4322,8 +4362,10 @@ impl std::fmt::Debug for DescribeEventsInput {
 pub struct DescribeDefaultParametersInput {
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDefaultParametersInput {
@@ -4351,11 +4393,14 @@ impl std::fmt::Debug for DescribeDefaultParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersInput {
     /// <p>The names of the DAX clusters being described.</p>
+    #[doc(hidden)]
     pub cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClustersInput {
@@ -4388,6 +4433,7 @@ impl std::fmt::Debug for DescribeClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetGroupInput {
     /// <p>The name of the subnet group to delete.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteSubnetGroupInput {
@@ -4409,6 +4455,7 @@ impl std::fmt::Debug for DeleteSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterGroupInput {
     /// <p>The name of the parameter group to delete.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteParameterGroupInput {
@@ -4430,6 +4477,7 @@ impl std::fmt::Debug for DeleteParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to be deleted.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
@@ -4451,12 +4499,16 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseReplicationFactorInput {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
+    #[doc(hidden)]
     pub new_replication_factor: i32,
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
+    #[doc(hidden)]
     pub node_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DecreaseReplicationFactorInput {
@@ -4493,10 +4545,13 @@ impl std::fmt::Debug for DecreaseReplicationFactorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetGroupInput {
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A description for the subnet group</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateSubnetGroupInput {
@@ -4528,8 +4583,10 @@ impl std::fmt::Debug for CreateSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupInput {
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateParameterGroupInput {
@@ -4562,23 +4619,30 @@ pub struct CreateClusterInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>A description of the cluster.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
+    #[doc(hidden)]
     pub replication_factor: i32,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -4593,24 +4657,31 @@ pub struct CreateClusterInput {
     /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
+    #[doc(hidden)]
     pub notification_topic_arn: std::option::Option<std::string::String>,
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The parameter group to be associated with the DAX cluster.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A set of tags to associate with the DAX cluster. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
+    #[doc(hidden)]
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> for no encryption</p> </li>
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_endpoint_encryption_type:
         std::option::Option<crate::model::ClusterEndpointEncryptionType>,
 }

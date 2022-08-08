@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
 }
 impl UpdateVpceConfigurationOutput {
@@ -61,6 +62,7 @@ impl UpdateVpceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUploadOutput {
     /// <p>A test spec uploaded to Device Farm.</p>
+    #[doc(hidden)]
     pub upload: std::option::Option<crate::model::Upload>,
 }
 impl UpdateUploadOutput {
@@ -115,6 +117,7 @@ impl UpdateUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTestGridProjectOutput {
     /// <p>The project, including updated information.</p>
+    #[doc(hidden)]
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
 impl UpdateTestGridProjectOutput {
@@ -172,6 +175,7 @@ impl UpdateTestGridProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>The project to update.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl UpdateProjectOutput {
@@ -226,6 +230,7 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkProfileOutput {
     /// <p>A list of the available network profiles.</p>
+    #[doc(hidden)]
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
 impl UpdateNetworkProfileOutput {
@@ -283,6 +288,7 @@ impl UpdateNetworkProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceProfileOutput {
     /// <p>An object that contains information about your instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl UpdateInstanceProfileOutput {
@@ -340,6 +346,7 @@ impl UpdateInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDevicePoolOutput {
     /// <p>The device pool you just updated.</p>
+    #[doc(hidden)]
     pub device_pool: std::option::Option<crate::model::DevicePool>,
 }
 impl UpdateDevicePoolOutput {
@@ -397,6 +404,7 @@ impl UpdateDevicePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
+    #[doc(hidden)]
     pub device_instance: std::option::Option<crate::model::DeviceInstance>,
 }
 impl UpdateDeviceInstanceOutput {
@@ -514,6 +522,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRunOutput {
     /// <p>The run that was stopped.</p>
+    #[doc(hidden)]
     pub run: std::option::Option<crate::model::Run>,
 }
 impl StopRunOutput {
@@ -566,6 +575,7 @@ impl StopRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
+    #[doc(hidden)]
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl StopRemoteAccessSessionOutput {
@@ -623,6 +633,7 @@ impl StopRemoteAccessSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopJobOutput {
     /// <p>The job that was stopped.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StopJobOutput {
@@ -675,6 +686,7 @@ impl StopJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleRunOutput {
     /// <p>Information about the scheduled run.</p>
+    #[doc(hidden)]
     pub run: std::option::Option<crate::model::Run>,
 }
 impl ScheduleRunOutput {
@@ -727,6 +739,7 @@ impl ScheduleRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
+    #[doc(hidden)]
     pub offering_transaction: std::option::Option<crate::model::OfferingTransaction>,
 }
 impl RenewOfferingOutput {
@@ -784,6 +797,7 @@ impl RenewOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingOutput {
     /// <p>Represents the offering transaction for the purchase result.</p>
+    #[doc(hidden)]
     pub offering_transaction: std::option::Option<crate::model::OfferingTransaction>,
 }
 impl PurchaseOfferingOutput {
@@ -841,8 +855,10 @@ impl PurchaseOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpceConfigurationsOutput {
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configurations: std::option::Option<std::vec::Vec<crate::model::VpceConfiguration>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpceConfigurationsOutput {
@@ -924,8 +940,10 @@ impl ListVpceConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUploadsOutput {
     /// <p>Information about the uploads.</p>
+    #[doc(hidden)]
     pub uploads: std::option::Option<std::vec::Vec<crate::model::Upload>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUploadsOutput {
@@ -1016,6 +1034,7 @@ pub struct ListUniqueProblemsOutput {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub unique_problems: std::option::Option<
         std::collections::HashMap<
             crate::model::ExecutionResult,
@@ -1023,6 +1042,7 @@ pub struct ListUniqueProblemsOutput {
         >,
     >,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUniqueProblemsOutput {
@@ -1154,8 +1174,10 @@ impl ListUniqueProblemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestsOutput {
     /// <p>Information about the tests.</p>
+    #[doc(hidden)]
     pub tests: std::option::Option<std::vec::Vec<crate::model::Test>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestsOutput {
@@ -1236,8 +1258,10 @@ impl ListTestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionsOutput {
     /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    #[doc(hidden)]
     pub test_grid_sessions: std::option::Option<std::vec::Vec<crate::model::TestGridSession>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionsOutput {
@@ -1319,8 +1343,10 @@ impl ListTestGridSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionArtifactsOutput {
     /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::TestGridSessionArtifact>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionArtifactsOutput {
@@ -1402,8 +1428,10 @@ impl ListTestGridSessionArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionActionsOutput {
     /// <p>The action taken by the session.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::TestGridSessionAction>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionActionsOutput {
@@ -1484,8 +1512,10 @@ impl ListTestGridSessionActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridProjectsOutput {
     /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
+    #[doc(hidden)]
     pub test_grid_projects: std::option::Option<std::vec::Vec<crate::model::TestGridProject>>,
     /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridProjectsOutput {
@@ -1567,6 +1597,7 @@ impl ListTestGridProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1628,8 +1659,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuitesOutput {
     /// <p>Information about the suites.</p>
+    #[doc(hidden)]
     pub suites: std::option::Option<std::vec::Vec<crate::model::Suite>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuitesOutput {
@@ -1710,8 +1743,10 @@ impl ListSuitesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSamplesOutput {
     /// <p>Information about the samples.</p>
+    #[doc(hidden)]
     pub samples: std::option::Option<std::vec::Vec<crate::model::Sample>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSamplesOutput {
@@ -1792,8 +1827,10 @@ impl ListSamplesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRunsOutput {
     /// <p>Information about the runs.</p>
+    #[doc(hidden)]
     pub runs: std::option::Option<std::vec::Vec<crate::model::Run>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRunsOutput {
@@ -1874,9 +1911,11 @@ impl ListRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRemoteAccessSessionsOutput {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
+    #[doc(hidden)]
     pub remote_access_sessions:
         std::option::Option<std::vec::Vec<crate::model::RemoteAccessSession>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRemoteAccessSessionsOutput {
@@ -1960,8 +1999,10 @@ impl ListRemoteAccessSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>Information about the projects.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -2042,9 +2083,11 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
+    #[doc(hidden)]
     pub offering_transactions:
         std::option::Option<std::vec::Vec<crate::model::OfferingTransaction>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingTransactionsOutput {
@@ -2128,8 +2171,10 @@ impl ListOfferingTransactionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsOutput {
     /// <p>A value that represents the list offering results.</p>
+    #[doc(hidden)]
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsOutput {
@@ -2210,8 +2255,10 @@ impl ListOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingPromotionsOutput {
     /// <p>Information about the offering promotions.</p>
+    #[doc(hidden)]
     pub offering_promotions: std::option::Option<std::vec::Vec<crate::model::OfferingPromotion>>,
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingPromotionsOutput {
@@ -2293,8 +2340,10 @@ impl ListOfferingPromotionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkProfilesOutput {
     /// <p>A list of the available network profiles.</p>
+    #[doc(hidden)]
     pub network_profiles: std::option::Option<std::vec::Vec<crate::model::NetworkProfile>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkProfilesOutput {
@@ -2376,8 +2425,10 @@ impl ListNetworkProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>Information about the jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -2458,8 +2509,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfilesOutput {
     /// <p>An object that contains information about your instance profiles.</p>
+    #[doc(hidden)]
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesOutput {
@@ -2541,8 +2594,10 @@ impl ListInstanceProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>Information about the devices.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -2623,8 +2678,10 @@ impl ListDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
+    #[doc(hidden)]
     pub device_pools: std::option::Option<std::vec::Vec<crate::model::DevicePool>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePoolsOutput {
@@ -2705,8 +2762,10 @@ impl ListDevicePoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceInstancesOutput {
     /// <p>An object that contains information about your device instances.</p>
+    #[doc(hidden)]
     pub device_instances: std::option::Option<std::vec::Vec<crate::model::DeviceInstance>>,
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceInstancesOutput {
@@ -2788,8 +2847,10 @@ impl ListDeviceInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArtifactsOutput {
     /// <p>Information about the artifacts.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsOutput {
@@ -2870,6 +2931,7 @@ impl ListArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstallToRemoteAccessSessionOutput {
     /// <p>An app to upload or that has been uploaded.</p>
+    #[doc(hidden)]
     pub app_upload: std::option::Option<crate::model::Upload>,
 }
 impl InstallToRemoteAccessSessionOutput {
@@ -2924,6 +2986,7 @@ impl InstallToRemoteAccessSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
 }
 impl GetVpceConfigurationOutput {
@@ -2981,6 +3044,7 @@ impl GetVpceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUploadOutput {
     /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
+    #[doc(hidden)]
     pub upload: std::option::Option<crate::model::Upload>,
 }
 impl GetUploadOutput {
@@ -3035,6 +3099,7 @@ impl GetUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridSessionOutput {
     /// <p>The <code>TestGridSession</code> that was requested.</p>
+    #[doc(hidden)]
     pub test_grid_session: std::option::Option<crate::model::TestGridSession>,
 }
 impl GetTestGridSessionOutput {
@@ -3092,6 +3157,7 @@ impl GetTestGridSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridProjectOutput {
     /// <p>A <code>TestGridProject</code>.</p>
+    #[doc(hidden)]
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
 impl GetTestGridProjectOutput {
@@ -3149,6 +3215,7 @@ impl GetTestGridProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestOutput {
     /// <p>A test condition that is evaluated.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<crate::model::Test>,
 }
 impl GetTestOutput {
@@ -3201,6 +3268,7 @@ impl GetTestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteOutput {
     /// <p>A collection of one or more tests.</p>
+    #[doc(hidden)]
     pub suite: std::option::Option<crate::model::Suite>,
 }
 impl GetSuiteOutput {
@@ -3253,6 +3321,7 @@ impl GetSuiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRunOutput {
     /// <p>The run to get results from.</p>
+    #[doc(hidden)]
     pub run: std::option::Option<crate::model::Run>,
 }
 impl GetRunOutput {
@@ -3305,6 +3374,7 @@ impl GetRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemoteAccessSessionOutput {
     /// <p>A container that lists detailed information about the remote access session.</p>
+    #[doc(hidden)]
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl GetRemoteAccessSessionOutput {
@@ -3362,6 +3432,7 @@ impl GetRemoteAccessSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProjectOutput {
     /// <p>The project to get information about.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl GetProjectOutput {
@@ -3416,14 +3487,17 @@ impl GetProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
+    #[doc(hidden)]
     pub current: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OfferingStatus>,
     >,
     /// <p>When specified, gets the offering status for the next period.</p>
+    #[doc(hidden)]
     pub next_period: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OfferingStatus>,
     >,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOfferingStatusOutput {
@@ -3554,6 +3628,7 @@ impl GetOfferingStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkProfileOutput {
     /// <p>The network profile.</p>
+    #[doc(hidden)]
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
 impl GetNetworkProfileOutput {
@@ -3611,6 +3686,7 @@ impl GetNetworkProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
     /// <p>An object that contains information about the requested job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl GetJobOutput {
@@ -3663,6 +3739,7 @@ impl GetJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceProfileOutput {
     /// <p>An object that contains information about an instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl GetInstanceProfileOutput {
@@ -3720,9 +3797,11 @@ impl GetInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePoolCompatibilityOutput {
     /// <p>Information about compatible devices.</p>
+    #[doc(hidden)]
     pub compatible_devices:
         std::option::Option<std::vec::Vec<crate::model::DevicePoolCompatibilityResult>>,
     /// <p>Information about incompatible devices.</p>
+    #[doc(hidden)]
     pub incompatible_devices:
         std::option::Option<std::vec::Vec<crate::model::DevicePoolCompatibilityResult>>,
 }
@@ -3825,6 +3904,7 @@ impl GetDevicePoolCompatibilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePoolOutput {
     /// <p>An object that contains information about the requested device pool.</p>
+    #[doc(hidden)]
     pub device_pool: std::option::Option<crate::model::DevicePool>,
 }
 impl GetDevicePoolOutput {
@@ -3882,6 +3962,7 @@ impl GetDevicePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
+    #[doc(hidden)]
     pub device_instance: std::option::Option<crate::model::DeviceInstance>,
 }
 impl GetDeviceInstanceOutput {
@@ -3939,6 +4020,7 @@ impl GetDeviceInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceOutput {
     /// <p>An object that contains information about the requested device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
 }
 impl GetDeviceOutput {
@@ -3993,6 +4075,7 @@ impl GetDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSettingsOutput {
     /// <p>The account settings.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
 impl GetAccountSettingsOutput {
@@ -4320,6 +4403,7 @@ impl DeleteDevicePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
 }
 impl CreateVpceConfigurationOutput {
@@ -4377,6 +4461,7 @@ impl CreateVpceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUploadOutput {
     /// <p>The newly created upload.</p>
+    #[doc(hidden)]
     pub upload: std::option::Option<crate::model::Upload>,
 }
 impl CreateUploadOutput {
@@ -4431,8 +4516,10 @@ impl CreateUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridUrlOutput {
     /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    #[doc(hidden)]
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTestGridUrlOutput {
@@ -4507,6 +4594,7 @@ impl CreateTestGridUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridProjectOutput {
     /// <p>ARN of the Selenium testing project that was created.</p>
+    #[doc(hidden)]
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
 impl CreateTestGridProjectOutput {
@@ -4564,6 +4652,7 @@ impl CreateTestGridProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionOutput {
     /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
+    #[doc(hidden)]
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl CreateRemoteAccessSessionOutput {
@@ -4621,6 +4710,7 @@ impl CreateRemoteAccessSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>The newly created project.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl CreateProjectOutput {
@@ -4675,6 +4765,7 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileOutput {
     /// <p>The network profile that is returned by the create network profile request.</p>
+    #[doc(hidden)]
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
 impl CreateNetworkProfileOutput {
@@ -4732,6 +4823,7 @@ impl CreateNetworkProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceProfileOutput {
     /// <p>An object that contains information about your instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl CreateInstanceProfileOutput {
@@ -4789,6 +4881,7 @@ impl CreateInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDevicePoolOutput {
     /// <p>The newly created device pool.</p>
+    #[doc(hidden)]
     pub device_pool: std::option::Option<crate::model::DevicePool>,
 }
 impl CreateDevicePoolOutput {

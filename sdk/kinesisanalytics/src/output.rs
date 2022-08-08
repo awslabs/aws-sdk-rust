@@ -154,6 +154,7 @@ impl StartApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -215,8 +216,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>Returns true if there are more applications to retrieve.</p>
+    #[doc(hidden)]
     pub has_more_applications: std::option::Option<bool>,
 }
 impl ListApplicationsOutput {
@@ -300,13 +303,17 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverInputSchemaOutput {
     /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
+    #[doc(hidden)]
     pub parsed_input_records:
         std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    #[doc(hidden)]
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Raw stream data that was sampled to infer the schema.</p>
+    #[doc(hidden)]
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DiscoverInputSchemaOutput {
@@ -445,6 +452,7 @@ impl DiscoverInputSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
+    #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationOutput {
@@ -654,6 +662,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
+    #[doc(hidden)]
     pub application_summary: std::option::Option<crate::model::ApplicationSummary>,
 }
 impl CreateApplicationOutput {

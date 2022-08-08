@@ -405,8 +405,10 @@ impl AsRef<str> for ConstraintViolationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policy {
     /// <p>A structure that contains additional details about the policy.</p>
+    #[doc(hidden)]
     pub policy_summary: std::option::Option<crate::model::PolicySummary>,
     /// <p>The text content of the policy.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl Policy {
@@ -482,18 +484,24 @@ impl Policy {
 pub struct PolicySummary {
     /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of policy.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PolicyType>,
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+    #[doc(hidden)]
     pub aws_managed: bool,
 }
 impl PolicySummary {
@@ -711,12 +719,15 @@ impl AsRef<str> for PolicyType {
 pub struct OrganizationalUnit {
     /// <p>The unique identifier (ID) associated with this OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this OU.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of this OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl OrganizationalUnit {
@@ -821,8 +832,10 @@ impl OrganizationalUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -900,14 +913,18 @@ pub struct PolicyTargetSummary {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the policy target.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the policy target.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
 impl PolicyTargetSummary {
@@ -1097,16 +1114,20 @@ impl AsRef<str> for TargetType {
 pub struct Root {
     /// <p>The unique identifier (ID) for the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
+    #[doc(hidden)]
     pub policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
 impl Root {
@@ -1237,8 +1258,10 @@ impl Root {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PolicyType>,
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PolicyTypeStatus>,
 }
 impl PolicyTypeSummary {
@@ -1377,8 +1400,10 @@ pub struct Parent {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the parent entity.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ParentType>,
 }
 impl Parent {
@@ -1522,11 +1547,14 @@ impl AsRef<str> for ParentType {
 pub struct Handshake {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the two accounts that are participating in the handshake.</p>
+    #[doc(hidden)]
     pub parties: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>,
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -1537,10 +1565,13 @@ pub struct Handshake {
     /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::HandshakeState>,
     /// <p>The date and time that the handshake request was made.</p>
+    #[doc(hidden)]
     pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
+    #[doc(hidden)]
     pub expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
     /// <ul>
@@ -1548,8 +1579,10 @@ pub struct Handshake {
     /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
     /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ActionType>,
     /// <p>Additional information that is needed to process the handshake.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
 }
 impl Handshake {
@@ -1795,6 +1828,7 @@ impl Handshake {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
     /// <ul>
@@ -1805,8 +1839,10 @@ pub struct HandshakeResource {
     /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HandshakeResourceType>,
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
 }
 impl HandshakeResource {
@@ -2170,8 +2206,10 @@ impl AsRef<str> for HandshakeState {
 pub struct HandshakeParty {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of party.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HandshakePartyType>,
 }
 impl HandshakeParty {
@@ -2309,10 +2347,12 @@ impl AsRef<str> for HandshakePartyType {
 pub struct HandshakeFilter {
     /// <p>Specifies the type of handshake action.</p>
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
     /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub parent_handshake_id: std::option::Option<std::string::String>,
 }
 impl HandshakeFilter {
@@ -2399,8 +2439,10 @@ impl HandshakeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegatedService {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the account became a delegated administrator for this service. </p>
+    #[doc(hidden)]
     pub delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DelegatedService {
@@ -2478,20 +2520,28 @@ impl DelegatedService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegatedAdministrator {
     /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the delegated administrator's account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the delegated administrator's account in the organization.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccountStatus>,
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
+    #[doc(hidden)]
     pub joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
+    #[doc(hidden)]
     pub joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the account was made a delegated administrator.</p>
+    #[doc(hidden)]
     pub delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DelegatedAdministrator {
@@ -2792,19 +2842,26 @@ impl AsRef<str> for AccountStatus {
 pub struct CreateAccountStatus {
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The account name given to the account when it was created.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CreateAccountState>,
     /// <p>The date and time that the request was made for the account creation.</p>
+    #[doc(hidden)]
     pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the account was created and the request completed.</p>
+    #[doc(hidden)]
     pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    #[doc(hidden)]
     pub gov_cloud_account_id: std::option::Option<std::string::String>,
     /// <p>If the request failed, a description of the reason for the failure.</p>
     /// <ul>
@@ -2823,6 +2880,7 @@ pub struct CreateAccountStatus {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
 }
 impl CreateAccountStatus {
@@ -3259,8 +3317,10 @@ pub struct Child {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of this child entity.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChildType>,
 }
 impl Child {
@@ -3402,8 +3462,10 @@ impl AsRef<str> for ChildType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
+    #[doc(hidden)]
     pub date_enabled: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnabledServicePrincipal {
@@ -3482,21 +3544,28 @@ impl EnabledServicePrincipal {
 pub struct Account {
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the account in the organization.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccountStatus>,
     /// <p>The method by which the account joined the organization.</p>
+    #[doc(hidden)]
     pub joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
     /// <p>The date the account became a part of the organization.</p>
+    #[doc(hidden)]
     pub joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Account {
@@ -3773,24 +3842,31 @@ impl AsRef<str> for HandshakeConstraintViolationExceptionReason {
 pub struct Organization {
     /// <p>The unique identifier (ID) of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
+    #[doc(hidden)]
     pub feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    #[doc(hidden)]
     pub master_account_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    #[doc(hidden)]
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
+    #[doc(hidden)]
     pub master_account_email: std::option::Option<std::string::String>,
     /// <important>
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
+    #[doc(hidden)]
     pub available_policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
 impl Organization {
@@ -4047,12 +4123,16 @@ impl AsRef<str> for OrganizationFeatureSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectivePolicy {
     /// <p>The text content of the policy.</p>
+    #[doc(hidden)]
     pub policy_content: std::option::Option<std::string::String>,
     /// <p>The time of the last update to this policy.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The account ID of the policy target. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The policy type.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<crate::model::EffectivePolicyType>,
 }
 impl EffectivePolicy {

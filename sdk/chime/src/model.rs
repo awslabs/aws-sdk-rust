@@ -131,18 +131,25 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CandidateAddress {
     /// <p>The street information of a candidate address</p>
+    #[doc(hidden)]
     pub street_info: std::option::Option<std::string::String>,
     /// <p>The numeric portion of a candidate address.</p>
+    #[doc(hidden)]
     pub street_number: std::option::Option<std::string::String>,
     /// <p>The city of a candidate address.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The state of a candidate address.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The postal code of a candidate address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+    #[doc(hidden)]
     pub postal_code_plus4: std::option::Option<std::string::String>,
     /// <p>The country of a candidate address.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
 }
 impl CandidateAddress {
@@ -305,24 +312,34 @@ impl CandidateAddress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
+    #[doc(hidden)]
     pub street_name: std::option::Option<std::string::String>,
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+    #[doc(hidden)]
     pub street_suffix: std::option::Option<std::string::String>,
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+    #[doc(hidden)]
     pub post_directional: std::option::Option<std::string::String>,
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+    #[doc(hidden)]
     pub pre_directional: std::option::Option<std::string::String>,
     /// <p>The numeric portion of an address.</p>
+    #[doc(hidden)]
     pub street_number: std::option::Option<std::string::String>,
     /// <p>The city of an address.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The state of an address.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The postal code of an address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+    #[doc(hidden)]
     pub postal_code_plus4: std::option::Option<std::string::String>,
     /// <p>The country of an address. </p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
 }
 impl Address {
@@ -545,16 +562,22 @@ impl Address {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorGroup {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
+    #[doc(hidden)]
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+    #[doc(hidden)]
     pub voice_connector_group_arn: std::option::Option<std::string::String>,
 }
 impl VoiceConnectorGroup {
@@ -718,8 +741,10 @@ impl VoiceConnectorGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorItem {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The priority associated with the Amazon Chime Voice Connector, with 1 being the highest priority. Higher priority Amazon Chime Voice Connectors are attempted first.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
 }
 impl VoiceConnectorItem {
@@ -794,20 +819,28 @@ impl VoiceConnectorItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnector {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
     /// <p>The name of the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The outbound host name for the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub outbound_host_name: std::option::Option<std::string::String>,
     /// <p>Designates whether encryption is required for the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
     /// <p>The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub voice_connector_arn: std::option::Option<std::string::String>,
 }
 impl VoiceConnector {
@@ -1054,6 +1087,7 @@ impl AsRef<str> for VoiceConnectorAwsRegion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSettings {
     /// <p>The telephony settings associated with the user.</p>
+    #[doc(hidden)]
     pub telephony: std::option::Option<crate::model::TelephonySettings>,
 }
 impl UserSettings {
@@ -1111,10 +1145,13 @@ impl UserSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelephonySettings {
     /// <p>Allows or denies inbound calling.</p>
+    #[doc(hidden)]
     pub inbound_calling: std::option::Option<bool>,
     /// <p>Allows or denies outbound calling.</p>
+    #[doc(hidden)]
     pub outbound_calling: std::option::Option<bool>,
     /// <p>Allows or denies SMS messaging.</p>
+    #[doc(hidden)]
     pub sms: std::option::Option<bool>,
 }
 impl TelephonySettings {
@@ -1203,30 +1240,43 @@ impl TelephonySettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The primary email address of the user.</p>
+    #[doc(hidden)]
     pub primary_email: std::option::Option<std::string::String>,
     /// <p>The primary phone number associated with the user.</p>
+    #[doc(hidden)]
     pub primary_provisioned_number: std::option::Option<std::string::String>,
     /// <p>The display name of the user.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The license type for the user.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::License>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The user registration status.</p>
+    #[doc(hidden)]
     pub user_registration_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The user invite status.</p>
+    #[doc(hidden)]
     pub user_invitation_status: std::option::Option<crate::model::InviteStatus>,
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub registered_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub invited_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Alexa for Business metadata.</p>
+    #[doc(hidden)]
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
     /// <p>The user's personal meeting PIN.</p>
+    #[doc(hidden)]
     pub personal_pin: std::option::Option<std::string::String>,
 }
 impl User {
@@ -1523,8 +1573,10 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlexaForBusinessMetadata {
     /// <p>Starts or stops Alexa for Business.</p>
+    #[doc(hidden)]
     pub is_alexa_for_business_enabled: std::option::Option<bool>,
     /// <p>The ARN of the room resource.</p>
+    #[doc(hidden)]
     pub alexa_for_business_room_arn: std::option::Option<std::string::String>,
 }
 impl AlexaForBusinessMetadata {
@@ -1847,21 +1899,29 @@ impl AsRef<str> for License {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipRule {
     /// <p>The SIP rule ID.</p>
+    #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of the SIP rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+    #[doc(hidden)]
     pub trigger_value: std::option::Option<std::string::String>,
     /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+    #[doc(hidden)]
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SipRule {
@@ -2062,10 +2122,13 @@ impl SipRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipRuleTargetApplication {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>Priority of the SIP media application in the target list.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The AWS Region of the target application.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl SipRuleTargetApplication {
@@ -2212,6 +2275,7 @@ impl AsRef<str> for SipRuleTriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipMediaApplicationCall {
     /// <p>The transaction ID of a call.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl SipMediaApplicationCall {
@@ -2269,16 +2333,22 @@ impl SipMediaApplicationCall {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipMediaApplication {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The AWS Region in which the SIP media application is created.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The name of the SIP media application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SipMediaApplication {
@@ -2437,6 +2507,7 @@ impl SipMediaApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipMediaApplicationEndpoint {
     /// <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created in the same AWS Region as the SIP media application.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl SipMediaApplicationEndpoint {
@@ -2491,14 +2562,19 @@ impl SipMediaApplicationEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoomMembership {
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Member>,
     /// <p>The membership role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
     /// <p>The identifier of the user that invited the room member.</p>
+    #[doc(hidden)]
     pub invited_by: std::option::Option<std::string::String>,
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RoomMembership {
@@ -2682,14 +2758,19 @@ impl AsRef<str> for RoomMembershipRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The member ID (user ID or bot ID).</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The member type.</p>
+    #[doc(hidden)]
     pub member_type: std::option::Option<crate::model::MemberType>,
     /// <p>The member email address.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The member name.</p>
+    #[doc(hidden)]
     pub full_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl Member {
@@ -2874,16 +2955,22 @@ impl AsRef<str> for MemberType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Room {
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The room name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the room creator.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The room update timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Room {
@@ -3029,30 +3116,43 @@ impl Room {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProxySession {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session ID.</p>
+    #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
     /// <p>The name of the proxy session.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the proxy session.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProxySessionStatus>,
     /// <p>The number of minutes allowed for the proxy session.</p>
+    #[doc(hidden)]
     pub expiry_minutes: std::option::Option<i32>,
     /// <p>The proxy session capabilities.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The created time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ended time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub ended_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The proxy session participants.</p>
+    #[doc(hidden)]
     pub participants: std::option::Option<std::vec::Vec<crate::model::Participant>>,
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    #[doc(hidden)]
     pub number_selection_behavior: std::option::Option<crate::model::NumberSelectionBehavior>,
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    #[doc(hidden)]
     pub geo_match_level: std::option::Option<crate::model::GeoMatchLevel>,
     /// <p>The country and area code for the proxy phone number.</p>
+    #[doc(hidden)]
     pub geo_match_params: std::option::Option<crate::model::GeoMatchParams>,
 }
 impl ProxySession {
@@ -3362,8 +3462,10 @@ impl ProxySession {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeoMatchParams {
     /// <p>The country.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The area code.</p>
+    #[doc(hidden)]
     pub area_code: std::option::Option<std::string::String>,
 }
 impl GeoMatchParams {
@@ -3545,8 +3647,10 @@ impl AsRef<str> for NumberSelectionBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Participant {
     /// <p>The participant's phone number.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The participant's proxy phone number.</p>
+    #[doc(hidden)]
     pub proxy_phone_number: std::option::Option<std::string::String>,
 }
 impl Participant {
@@ -3735,30 +3839,43 @@ impl AsRef<str> for ProxySessionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The phone number ID.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The phone number, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_number: std::option::Option<std::string::String>,
     /// <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The phone number type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The phone number product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The phone number status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PhoneNumberStatus>,
     /// <p>The phone number capabilities.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::PhoneNumberCapabilities>,
     /// <p>The phone number associations.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
     /// <p>The outbound calling name associated with the phone number.</p>
+    #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
     /// <p>The outbound calling name status.</p>
+    #[doc(hidden)]
     pub calling_name_status: std::option::Option<crate::model::CallingNameStatus>,
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumber {
@@ -4125,10 +4242,13 @@ impl AsRef<str> for CallingNameStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberAssociation {
     /// <p>Contains the ID for the entity specified in Name.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::PhoneNumberAssociationName>,
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub associated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumberAssociation {
@@ -4296,16 +4416,22 @@ impl AsRef<str> for PhoneNumberAssociationName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberCapabilities {
     /// <p>Allows or denies inbound calling for the specified phone number.</p>
+    #[doc(hidden)]
     pub inbound_call: std::option::Option<bool>,
     /// <p>Allows or denies outbound calling for the specified phone number.</p>
+    #[doc(hidden)]
     pub outbound_call: std::option::Option<bool>,
     /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
+    #[doc(hidden)]
     pub inbound_sms: std::option::Option<bool>,
     /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
+    #[doc(hidden)]
     pub outbound_sms: std::option::Option<bool>,
     /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
+    #[doc(hidden)]
     pub inbound_mms: std::option::Option<bool>,
     /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
+    #[doc(hidden)]
     pub outbound_mms: std::option::Option<bool>,
 }
 impl PhoneNumberCapabilities {
@@ -4651,6 +4777,7 @@ impl AsRef<str> for PhoneNumberType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
+    #[doc(hidden)]
     pub cdr_bucket: std::option::Option<std::string::String>,
 }
 impl VoiceConnectorSettings {
@@ -4705,6 +4832,7 @@ impl VoiceConnectorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessCallingSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
+    #[doc(hidden)]
     pub cdr_bucket: std::option::Option<std::string::String>,
 }
 impl BusinessCallingSettings {
@@ -4814,22 +4942,31 @@ impl AsRef<str> for ChannelMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bot {
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The unique ID for the bot user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The bot display name.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The bot type.</p>
+    #[doc(hidden)]
     pub bot_type: std::option::Option<crate::model::BotType>,
     /// <p>When true, the bot is stopped from running in your account.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The bot email address.</p>
+    #[doc(hidden)]
     pub bot_email: std::option::Option<std::string::String>,
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
+    #[doc(hidden)]
     pub security_token: std::option::Option<std::string::String>,
 }
 impl Bot {
@@ -5080,8 +5217,10 @@ impl AsRef<str> for BotType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
+    #[doc(hidden)]
     pub disable_remote_control: std::option::Option<bool>,
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+    #[doc(hidden)]
     pub enable_dial_out: std::option::Option<bool>,
 }
 impl AccountSettings {
@@ -5153,22 +5292,31 @@ impl AccountSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Account {
     /// <p>The AWS account ID.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub account_type: std::option::Option<crate::model::AccountType>,
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default license for the Amazon Chime account.</p>
+    #[doc(hidden)]
     pub default_license: std::option::Option<crate::model::License>,
     /// <p>Supported licenses for the Amazon Chime account.</p>
+    #[doc(hidden)]
     pub supported_licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
     /// <p>The status of the account.</p>
+    #[doc(hidden)]
     pub account_status: std::option::Option<crate::model::AccountStatus>,
     /// <p>The sign-in delegate groups associated with the account.</p>
+    #[doc(hidden)]
     pub signin_delegate_groups:
         std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
 }
@@ -5396,6 +5544,7 @@ impl Account {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigninDelegateGroup {
     /// <p>The group name.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl SigninDelegateGroup {
@@ -5573,8 +5722,10 @@ impl AsRef<str> for AccountType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -5646,8 +5797,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub engine_transcribe_settings: std::option::Option<crate::model::EngineTranscribeSettings>,
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub engine_transcribe_medical_settings:
         std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
 }
@@ -5744,16 +5897,22 @@ impl TranscriptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+    #[doc(hidden)]
     pub specialty: std::option::Option<crate::model::TranscribeMedicalSpecialty>,
     /// <p>The type of transcription.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TranscribeMedicalType>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeMedicalContentIdentificationType>,
 }
@@ -6241,31 +6400,42 @@ impl AsRef<str> for TranscribeMedicalLanguageCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
     /// <p>The filtering method passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_method:
         std::option::Option<crate::model::TranscribeVocabularyFilterMethod>,
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<crate::model::TranscribeRegion>,
     /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+    #[doc(hidden)]
     pub enable_partial_results_stabilization: std::option::Option<bool>,
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+    #[doc(hidden)]
     pub partial_results_stability:
         std::option::Option<crate::model::TranscribePartialResultsStability>,
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeContentIdentificationType>,
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+    #[doc(hidden)]
     pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model used during transcription.</p>
+    #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
 }
 impl EngineTranscribeSettings {
@@ -7095,8 +7265,10 @@ impl AsRef<str> for ChannelMessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Credential {
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl Credential {
@@ -7168,14 +7340,19 @@ impl Credential {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Termination {
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
+    #[doc(hidden)]
     pub cps_limit: std::option::Option<i32>,
     /// <p>The default caller ID phone number.</p>
+    #[doc(hidden)]
     pub default_phone_number: std::option::Option<std::string::String>,
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
+    #[doc(hidden)]
     pub calling_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
+    #[doc(hidden)]
     pub cidr_allowed_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When termination settings are disabled, outbound calls can not be made.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
 }
 impl Termination {
@@ -7319,10 +7496,13 @@ impl Termination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingConfiguration {
     /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
+    #[doc(hidden)]
     pub data_retention_in_hours: std::option::Option<i32>,
     /// <p>When true, media streaming to Amazon Kinesis is turned off.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The streaming notification targets.</p>
+    #[doc(hidden)]
     pub streaming_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
 }
@@ -7430,6 +7610,7 @@ impl StreamingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingNotificationTarget {
     /// <p>The streaming notification target.</p>
+    #[doc(hidden)]
     pub notification_target: std::option::Option<crate::model::NotificationTarget>,
 }
 impl StreamingNotificationTarget {
@@ -7546,12 +7727,16 @@ impl AsRef<str> for NotificationTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Proxy {
     /// <p>The default number of minutes allowed for proxy sessions.</p>
+    #[doc(hidden)]
     pub default_session_expiry_minutes: std::option::Option<i32>,
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The phone number to route calls to after a proxy session expires.</p>
+    #[doc(hidden)]
     pub fall_back_phone_number: std::option::Option<std::string::String>,
     /// <p>The countries for proxy phone numbers to be selected from.</p>
+    #[doc(hidden)]
     pub phone_number_countries: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Proxy {
@@ -7677,8 +7862,10 @@ impl Proxy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+    #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
 }
 impl Origination {
@@ -7761,14 +7948,19 @@ impl Origination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginationRoute {
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The designated origination route port. Defaults to 5060.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::OriginationRouteProtocol>,
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
+    #[doc(hidden)]
     pub weight: std::option::Option<i32>,
 }
 impl OriginationRoute {
@@ -7949,8 +8141,10 @@ impl AsRef<str> for OriginationRouteProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enable_sip_logs: std::option::Option<bool>,
     /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
+    #[doc(hidden)]
     pub enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfiguration {
@@ -8022,6 +8216,7 @@ impl LoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
+    #[doc(hidden)]
     pub dnis: std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
 }
 impl EmergencyCallingConfiguration {
@@ -8086,10 +8281,13 @@ impl EmergencyCallingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
+    #[doc(hidden)]
     pub emergency_phone_number: std::option::Option<std::string::String>,
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
+    #[doc(hidden)]
     pub test_phone_number: std::option::Option<std::string::String>,
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
+    #[doc(hidden)]
     pub calling_country: std::option::Option<std::string::String>,
 }
 impl DnisEmergencyCallingConfiguration {
@@ -8187,6 +8385,7 @@ impl DnisEmergencyCallingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipMediaApplicationLoggingConfiguration {
     /// <p>Enables application message logs for the SIP media application.</p>
+    #[doc(hidden)]
     pub enable_sip_media_application_message_logs: std::option::Option<bool>,
 }
 impl SipMediaApplicationLoggingConfiguration {
@@ -8248,8 +8447,10 @@ impl SipMediaApplicationLoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionSettings {
     /// <p>The chat room retention settings.</p>
+    #[doc(hidden)]
     pub room_retention_settings: std::option::Option<crate::model::RoomRetentionSettings>,
     /// <p>The chat conversation retention settings.</p>
+    #[doc(hidden)]
     pub conversation_retention_settings:
         std::option::Option<crate::model::ConversationRetentionSettings>,
 }
@@ -8343,6 +8544,7 @@ impl RetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConversationRetentionSettings {
     /// <p>The number of days for which to retain conversation messages.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl ConversationRetentionSettings {
@@ -8397,6 +8599,7 @@ impl ConversationRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoomRetentionSettings {
     /// <p>The number of days for which to retain chat-room messages.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl RoomRetentionSettings {
@@ -8451,10 +8654,13 @@ impl RoomRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventsConfiguration {
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
+    #[doc(hidden)]
     pub outbound_events_https_endpoint: std::option::Option<std::string::String>,
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl EventsConfiguration {
@@ -8555,8 +8761,10 @@ impl EventsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
+    #[doc(hidden)]
     pub app_instance_data_type: std::option::Option<crate::model::AppInstanceDataType>,
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AppInstanceStreamingConfiguration {
@@ -8688,6 +8896,7 @@ impl AsRef<str> for AppInstanceDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
+    #[doc(hidden)]
     pub channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
 }
 impl AppInstanceRetentionSettings {
@@ -8754,6 +8963,7 @@ impl AppInstanceRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelRetentionSettings {
     /// <p>The time in days to retain the messages in a channel.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl ChannelRetentionSettings {
@@ -8808,8 +9018,10 @@ impl ChannelRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberCountry {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The supported phone number types. </p>
+    #[doc(hidden)]
     pub supported_phone_number_types:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
 }
@@ -8900,16 +9112,22 @@ impl PhoneNumberCountry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberOrder {
     /// <p>The phone number order ID.</p>
+    #[doc(hidden)]
     pub phone_number_order_id: std::option::Option<std::string::String>,
     /// <p>The phone number order product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The status of the phone number order.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PhoneNumberOrderStatus>,
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
+    #[doc(hidden)]
     pub ordered_phone_numbers: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrder {
@@ -9076,8 +9294,10 @@ impl PhoneNumberOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderedPhoneNumber {
     /// <p>The phone number, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_number: std::option::Option<std::string::String>,
     /// <p>The phone number status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OrderedPhoneNumberStatus>,
 }
 impl OrderedPhoneNumber {
@@ -9277,12 +9497,16 @@ impl AsRef<str> for PhoneNumberOrderStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The media placement for the meeting.</p>
+    #[doc(hidden)]
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
 }
 impl Meeting {
@@ -9394,20 +9618,28 @@ impl Meeting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
+    #[doc(hidden)]
     pub audio_host_url: std::option::Option<std::string::String>,
     /// <p>The audio fallback URL.</p>
+    #[doc(hidden)]
     pub audio_fallback_url: std::option::Option<std::string::String>,
     /// <p>The screen data URL.</p>
+    #[doc(hidden)]
     pub screen_data_url: std::option::Option<std::string::String>,
     /// <p>The screen sharing URL.</p>
+    #[doc(hidden)]
     pub screen_sharing_url: std::option::Option<std::string::String>,
     /// <p>The screen viewing URL.</p>
+    #[doc(hidden)]
     pub screen_viewing_url: std::option::Option<std::string::String>,
     /// <p>The signaling URL.</p>
+    #[doc(hidden)]
     pub signaling_url: std::option::Option<std::string::String>,
     /// <p>The turn control URL.</p>
+    #[doc(hidden)]
     pub turn_control_url: std::option::Option<std::string::String>,
     /// <p>The event ingestion URL to which you send client meeting events.</p>
+    #[doc(hidden)]
     pub event_ingestion_url: std::option::Option<std::string::String>,
 }
 impl MediaPlacement {
@@ -9605,22 +9837,31 @@ impl MediaPlacement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaCapturePipeline {
     /// <p>The ID of a media capture pipeline.</p>
+    #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts will be saved.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The status of the media capture pipeline.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MediaPipelineStatus>,
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
+    #[doc(hidden)]
     pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
+    #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    #[doc(hidden)]
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
@@ -9842,8 +10083,10 @@ impl MediaCapturePipeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChimeSdkMeetingConfiguration {
     /// <p>The source configuration for a specified media capture pipline.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+    #[doc(hidden)]
     pub artifacts_configuration: std::option::Option<crate::model::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfiguration {
@@ -9927,10 +10170,13 @@ impl ChimeSdkMeetingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
+    #[doc(hidden)]
     pub audio: std::option::Option<crate::model::AudioArtifactsConfiguration>,
     /// <p>The configuration for the video artifacts.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::VideoArtifactsConfiguration>,
     /// <p>The configuration for the content artifacts.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::ContentArtifactsConfiguration>,
 }
 impl ArtifactsConfiguration {
@@ -10028,8 +10274,10 @@ impl ArtifactsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArtifactsState>,
     /// <p>The MUX type of the artifact configuration.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::ContentMuxType>,
 }
 impl ContentArtifactsConfiguration {
@@ -10213,8 +10461,10 @@ impl AsRef<str> for ArtifactsState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArtifactsState>,
     /// <p>The MUX type of the video artifact configuration object.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::VideoMuxType>,
 }
 impl VideoArtifactsConfiguration {
@@ -10343,6 +10593,7 @@ impl AsRef<str> for VideoMuxType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::AudioMuxType>,
 }
 impl AudioArtifactsConfiguration {
@@ -10455,6 +10706,7 @@ impl AsRef<str> for AudioMuxType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceConfiguration {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+    #[doc(hidden)]
     pub selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
 }
 impl SourceConfiguration {
@@ -10514,8 +10766,10 @@ impl SourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
+    #[doc(hidden)]
     pub attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
+    #[doc(hidden)]
     pub external_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SelectedVideoStreams {
@@ -10780,6 +11034,7 @@ impl AsRef<str> for MediaPipelineSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
+    #[doc(hidden)]
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
 }
 impl ChannelModeratedByAppInstanceUserSummary {
@@ -10837,16 +11092,22 @@ impl ChannelModeratedByAppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The mode of the channel.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The privacy setting of the channel.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the channel.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
+    #[doc(hidden)]
     pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
@@ -11047,6 +11308,7 @@ impl AsRef<str> for ChannelPrivacy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
+    #[doc(hidden)]
     pub moderator: std::option::Option<crate::model::Identity>,
 }
 impl ChannelModeratorSummary {
@@ -11101,8 +11363,10 @@ impl ChannelModeratorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>The ARN in an Identity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name in an Identity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Identity {
@@ -11174,22 +11438,31 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessageSummary {
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The metadata of the message.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The type of message.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message summary was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last edited.</p>
+    #[doc(hidden)]
     pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
+    #[doc(hidden)]
     pub redacted: bool,
 }
 impl ChannelMessageSummary {
@@ -11447,8 +11720,10 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembershipForAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
+    #[doc(hidden)]
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
     /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_membership_summary:
         std::option::Option<crate::model::AppInstanceUserMembershipSummary>,
 }
@@ -11536,8 +11811,10 @@ impl ChannelMembershipForAppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
+    #[doc(hidden)]
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
@@ -11670,6 +11947,7 @@ impl AsRef<str> for ChannelMembershipType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl ChannelMembershipSummary {
@@ -11724,6 +12002,7 @@ impl ChannelMembershipSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl ChannelBanSummary {
@@ -11779,10 +12058,13 @@ impl ChannelBanSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
+    #[doc(hidden)]
     pub join_token: std::option::Option<std::string::String>,
 }
 impl Attendee {
@@ -11874,10 +12156,13 @@ impl Attendee {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of an <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl AppInstanceUserSummary {
@@ -11969,10 +12254,13 @@ impl AppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceSummary {
     /// <p>The <code>AppInstance</code> ARN.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl AppInstanceSummary {
@@ -12064,6 +12352,7 @@ impl AppInstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
+    #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
 }
 impl AppInstanceAdminSummary {
@@ -12116,12 +12405,16 @@ impl AppInstanceAdminSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invite {
     /// <p>The invite ID.</p>
+    #[doc(hidden)]
     pub invite_id: std::option::Option<std::string::String>,
     /// <p>The status of the invite.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InviteStatus>,
     /// <p>The email address to which the invite is sent.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The status of the invite email.</p>
+    #[doc(hidden)]
     pub email_status: std::option::Option<crate::model::EmailStatus>,
 }
 impl Invite {
@@ -12295,8 +12588,10 @@ impl AsRef<str> for EmailStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminationHealth {
     /// <p>The timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source IP address.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl TerminationHealth {
@@ -12371,6 +12666,7 @@ impl TerminationHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl MessagingSessionEndpoint {
@@ -12423,26 +12719,37 @@ impl MessagingSessionEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessage {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of a message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The message content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The message metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The message type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
+    #[doc(hidden)]
     pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Hides the content of a message.</p>
+    #[doc(hidden)]
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
+    #[doc(hidden)]
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
 }
 impl ChannelMessage {
@@ -12682,10 +12989,13 @@ impl ChannelMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberError {
     /// <p>The phone number ID for which the action failed.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PhoneNumberError {
@@ -12783,12 +13093,16 @@ impl PhoneNumberError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModerator {
     /// <p>The moderator's data.</p>
+    #[doc(hidden)]
     pub moderator: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the moderator's channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the moderator was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
 }
 impl ChannelModerator {
@@ -12900,16 +13214,22 @@ impl ChannelModerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
+    #[doc(hidden)]
     pub invited_by: std::option::Option<crate::model::Identity>,
     /// <p>The membership type set for the channel member.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The data of the channel member.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the member's channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the channel membership was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel membership was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelMembership {
@@ -13061,12 +13381,16 @@ impl ChannelMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelBan {
     /// <p>The member being banned from the channel.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the channel from which a member is being banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the ban was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
 }
 impl ChannelBan {
@@ -13178,22 +13502,31 @@ impl ChannelBan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The mode of the channel.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The channel's privacy setting.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The channel's metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a member sent the last message in the channel.</p>
+    #[doc(hidden)]
     pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Channel {
@@ -13399,14 +13732,19 @@ impl Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUser {
@@ -13538,10 +13876,13 @@ impl AppInstanceUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
+    #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which an administrator was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceAdmin {
@@ -13636,14 +13977,19 @@ impl AppInstanceAdmin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstance {
     /// <p>The ARN of the messaging instance.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstance {
@@ -13775,10 +14121,13 @@ impl AppInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeError {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl CreateAttendeeError {
@@ -13873,8 +14222,10 @@ impl CreateAttendeeError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeRequestItem {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAttendeeRequestItem {
@@ -13958,8 +14309,10 @@ impl CreateAttendeeRequestItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingNotificationConfiguration {
     /// <p>The SNS topic ARN.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The SQS queue ARN.</p>
+    #[doc(hidden)]
     pub sqs_queue_arn: std::option::Option<std::string::String>,
 }
 impl MeetingNotificationConfiguration {
@@ -14037,10 +14390,13 @@ impl MeetingNotificationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserError {
     /// <p>The user ID for which the action failed.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UserError {
@@ -14135,12 +14491,16 @@ impl UserError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserRequestItem {
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The user license type.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::License>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The Alexa for Business metadata.</p>
+    #[doc(hidden)]
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
 }
 impl UpdateUserRequestItem {
@@ -14261,10 +14621,13 @@ impl UpdateUserRequestItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberRequestItem {
     /// <p>The phone number ID to update.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The product type to update.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The outbound calling name to update.</p>
+    #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberRequestItem {
@@ -14359,10 +14722,13 @@ impl UpdatePhoneNumberRequestItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberError {
     /// <p>The member ID.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl MemberError {
@@ -14457,8 +14823,10 @@ impl MemberError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MembershipItem {
     /// <p>The member ID.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The member role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
 impl MembershipItem {
@@ -14533,10 +14901,13 @@ impl MembershipItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipError {
     /// <p>The ARN of the member that the service couldn't add.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchCreateChannelMembershipError {
@@ -14631,12 +15002,16 @@ impl BatchCreateChannelMembershipError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
+    #[doc(hidden)]
     pub invited_by: std::option::Option<crate::model::Identity>,
     /// <p>The membership types set for the channel users.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The users successfully added to the request.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Identity>>,
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl BatchChannelMemberships {

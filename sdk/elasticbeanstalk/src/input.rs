@@ -8690,14 +8690,18 @@ impl ValidateConfigurationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateConfigurationSettingsInput {
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and an environment name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment to validate the settings against.</p>
     /// <p>Condition: You cannot specify both this and a configuration template name.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>A list of the options and desired values to evaluate.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -8740,12 +8744,15 @@ impl std::fmt::Debug for ValidateConfigurationSettingsInput {
 pub struct UpdateTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    #[doc(hidden)]
     pub tags_to_add: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    #[doc(hidden)]
     pub tags_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateTagsForResourceInput {
@@ -8780,33 +8787,45 @@ impl std::fmt::Debug for UpdateTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the application with which the environment is associated.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::EnvironmentTier>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform, if used.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
+    #[doc(hidden)]
     pub options_to_remove: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
 }
 impl UpdateEnvironmentInput {
@@ -8890,17 +8909,22 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 pub struct UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A new description for the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    #[doc(hidden)]
     pub options_to_remove: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
 }
 impl UpdateConfigurationTemplateInput {
@@ -8948,11 +8972,14 @@ impl std::fmt::Debug for UpdateConfigurationTemplateInput {
 pub struct UpdateApplicationVersionInput {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>A new description for this version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationVersionInput {
@@ -8986,8 +9013,10 @@ impl std::fmt::Debug for UpdateApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationResourceLifecycleInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle configuration.</p>
+    #[doc(hidden)]
     pub resource_lifecycle_config:
         std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
 }
@@ -9017,9 +9046,11 @@ impl std::fmt::Debug for UpdateApplicationResourceLifecycleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -9048,9 +9079,11 @@ impl std::fmt::Debug for UpdateApplicationInput {
 pub struct TerminateEnvironmentInput {
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
@@ -9060,8 +9093,10 @@ pub struct TerminateEnvironmentInput {
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p>
     /// <p> Default: <code>true</code> </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub terminate_resources: std::option::Option<bool>,
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
+    #[doc(hidden)]
     pub force_terminate: std::option::Option<bool>,
 }
 impl TerminateEnvironmentInput {
@@ -9108,15 +9143,19 @@ impl std::fmt::Debug for TerminateEnvironmentInput {
 pub struct SwapEnvironmentCnamEsInput {
     /// <p>The ID of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
+    #[doc(hidden)]
     pub source_environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
+    #[doc(hidden)]
     pub source_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
+    #[doc(hidden)]
     pub destination_environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
+    #[doc(hidden)]
     pub destination_environment_name: std::option::Option<std::string::String>,
 }
 impl SwapEnvironmentCnamEsInput {
@@ -9165,12 +9204,15 @@ pub struct RetrieveEnvironmentInfoInput {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The type of information to retrieve.</p>
+    #[doc(hidden)]
     pub info_type: std::option::Option<crate::model::EnvironmentInfoType>,
 }
 impl RetrieveEnvironmentInfoInput {
@@ -9207,9 +9249,11 @@ impl std::fmt::Debug for RetrieveEnvironmentInfoInput {
 pub struct RestartAppServerInput {
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl RestartAppServerInput {
@@ -9240,12 +9284,15 @@ pub struct RequestEnvironmentInfoInput {
     /// <p>The ID of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The type of information to request.</p>
+    #[doc(hidden)]
     pub info_type: std::option::Option<crate::model::EnvironmentInfoType>,
 }
 impl RequestEnvironmentInfoInput {
@@ -9282,9 +9329,11 @@ impl std::fmt::Debug for RequestEnvironmentInfoInput {
 pub struct RebuildEnvironmentInput {
     /// <p>The ID of the environment to rebuild.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment to rebuild.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl RebuildEnvironmentInput {
@@ -9314,6 +9363,7 @@ impl std::fmt::Debug for RebuildEnvironmentInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9336,11 +9386,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformVersionsInput {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PlatformFilter>>,
     /// <p>The maximum number of platform version values returned in one call.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformVersionsInput {
@@ -9396,11 +9449,14 @@ pub struct ListPlatformBranchesInput {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchFilter>>,
     /// <p>The maximum number of platform branch values returned in one call.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformBranchesInput {
@@ -9467,6 +9523,7 @@ impl std::fmt::Debug for ListAvailableSolutionStacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl DisassociateEnvironmentOperationsRoleInput {
@@ -9488,6 +9545,7 @@ impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
 }
 impl DescribePlatformVersionInput {
@@ -9509,12 +9567,16 @@ impl std::fmt::Debug for DescribePlatformVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesHealthInput {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::InstancesHealthAttribute>>,
     /// <p>Specify the pagination token returned by a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesHealthInput {
@@ -9553,28 +9615,40 @@ impl std::fmt::Debug for DescribeInstancesHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::EventSeverity>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>Pagination token. If specified, the events return the next batch of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -9651,24 +9725,32 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    #[doc(hidden)]
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    #[doc(hidden)]
     pub environment_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether to include deleted environments:</p>
     /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
     /// <p> <code>false</code>: Do not include deleted environments.</p>
+    #[doc(hidden)]
     pub include_deleted: std::option::Option<bool>,
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    #[doc(hidden)]
     pub included_deleted_back_to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentsInput {
@@ -9730,9 +9812,11 @@ impl std::fmt::Debug for DescribeEnvironmentsInput {
 pub struct DescribeEnvironmentResourcesInput {
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentResourcesInput {
@@ -9761,10 +9845,13 @@ impl std::fmt::Debug for DescribeEnvironmentResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The environment ID of the target environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>To show only actions with a particular status, specify a status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionStatus>,
 }
 impl DescribeEnvironmentManagedActionsInput {
@@ -9796,12 +9883,16 @@ impl std::fmt::Debug for DescribeEnvironmentManagedActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentManagedActionHistoryInput {
     /// <p>The environment ID of the target environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the target environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The pagination token returned by a previous request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return for a single request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl DescribeEnvironmentManagedActionHistoryInput {
@@ -9839,11 +9930,14 @@ impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryInput {
 pub struct DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
+    #[doc(hidden)]
     pub attribute_names:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentHealthAttribute>>,
 }
@@ -9880,12 +9974,15 @@ impl std::fmt::Debug for DescribeEnvironmentHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSettingsInput {
     /// <p>The application for the environment or configuration template.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationSettingsInput {
@@ -9919,16 +10016,22 @@ impl std::fmt::Debug for DescribeConfigurationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationOptionsInput {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment whose configuration options you want to describe.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the custom platform.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
 }
 impl DescribeConfigurationOptionsInput {
@@ -9975,14 +10078,18 @@ impl std::fmt::Debug for DescribeConfigurationOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionsInput {
     /// <p>Specify an application name to show only application versions for that application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Specify a version label to show a specific application version.</p>
+    #[doc(hidden)]
     pub version_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationVersionsInput {
@@ -10021,6 +10128,7 @@ impl std::fmt::Debug for DescribeApplicationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    #[doc(hidden)]
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeApplicationsInput {
@@ -10053,6 +10161,7 @@ impl std::fmt::Debug for DescribeAccountAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
 }
 impl DeletePlatformVersionInput {
@@ -10074,8 +10183,10 @@ impl std::fmt::Debug for DeletePlatformVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentConfigurationInput {
     /// <p>The name of the application the environment is associated with.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment to delete the draft configuration from.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentConfigurationInput {
@@ -10102,8 +10213,10 @@ impl std::fmt::Debug for DeleteEnvironmentConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationTemplateInput {
     /// <p>The name of the application to delete the configuration template from.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template to delete.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationTemplateInput {
@@ -10130,10 +10243,13 @@ impl std::fmt::Debug for DeleteConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The label of the version to delete.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
+    #[doc(hidden)]
     pub delete_source_bundle: std::option::Option<bool>,
 }
 impl DeleteApplicationVersionInput {
@@ -10165,8 +10281,10 @@ impl std::fmt::Debug for DeleteApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>When set to true, running environments will be terminated before deleting the application.</p>
+    #[doc(hidden)]
     pub terminate_env_by_force: std::option::Option<bool>,
 }
 impl DeleteApplicationInput {
@@ -10204,18 +10322,24 @@ impl std::fmt::Debug for CreateStorageLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformVersionInput {
     /// <p>The name of your custom platform.</p>
+    #[doc(hidden)]
     pub platform_name: std::option::Option<std::string::String>,
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
+    #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The location of the platform definition archive in Amazon S3.</p>
+    #[doc(hidden)]
     pub platform_definition_bundle: std::option::Option<crate::model::S3Location>,
     /// <p>The name of the builder environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The configuration option settings to apply to the builder environment.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     /// <p>Specifies the tags applied to the new platform version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePlatformVersionInput {
@@ -10268,42 +10392,56 @@ impl std::fmt::Debug for CreatePlatformVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the application that is associated with this environment.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A unique name for the environment.</p>
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>Your description for this environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
+    #[doc(hidden)]
     pub cname_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::EnvironmentTier>,
     /// <p>Specifies the tags applied to resources in the environment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
+    #[doc(hidden)]
     pub options_to_remove: std::option::Option<std::vec::Vec<crate::model::OptionSpecification>>,
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -10401,31 +10539,40 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationTemplateInput {
     /// <p>The name of the Elastic Beanstalk application to associate with this configuration template.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template.</p>
     /// <p>Constraint: This name must be unique per application.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     /// <p>You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"> <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
     /// <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.</p>
     /// <p>Values specified in <code>OptionSettings</code> override any values obtained from the <code>SourceConfiguration</code>.</p>
     /// <p>You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
     /// <p>Constraint: If both solution stack name and source configuration are specified, the solution stack of the source configuration template must match the specified solution stack name.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The ID of an environment whose settings you want to use to create the configuration template. You must specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>An optional description for this configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     /// <p>Specifies the tags applied to the configuration template.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConfigurationTemplateInput {
@@ -10497,30 +10644,39 @@ impl std::fmt::Debug for CreateConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationVersionInput {
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>A description of this application version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    #[doc(hidden)]
     pub source_build_information: std::option::Option<crate::model::SourceBuildInformation>,
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    #[doc(hidden)]
     pub source_bundle: std::option::Option<crate::model::S3Location>,
     /// <p>Settings for an AWS CodeBuild build.</p>
+    #[doc(hidden)]
     pub build_configuration: std::option::Option<crate::model::BuildConfiguration>,
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
+    #[doc(hidden)]
     pub auto_create_application: std::option::Option<bool>,
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
     /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
+    #[doc(hidden)]
     pub process: std::option::Option<bool>,
     /// <p>Specifies the tags applied to the application version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateApplicationVersionInput {
@@ -10592,14 +10748,18 @@ impl std::fmt::Debug for CreateApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. Must be unique within your account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Your description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
+    #[doc(hidden)]
     pub resource_lifecycle_config:
         std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateApplicationInput {
@@ -10639,10 +10799,13 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComposeEnvironmentsInput {
     /// <p>The name of the application to which the specified source bundles belong.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
+    #[doc(hidden)]
     pub version_labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ComposeEnvironmentsInput {
@@ -10674,6 +10837,7 @@ impl std::fmt::Debug for ComposeEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
+    #[doc(hidden)]
     pub cname_prefix: std::option::Option<std::string::String>,
 }
 impl CheckDnsAvailabilityInput {
@@ -10695,8 +10859,10 @@ impl std::fmt::Debug for CheckDnsAvailabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment to which to set the operations role.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
+    #[doc(hidden)]
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl AssociateEnvironmentOperationsRoleInput {
@@ -10723,10 +10889,13 @@ impl std::fmt::Debug for AssociateEnvironmentOperationsRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyEnvironmentManagedActionInput {
     /// <p>The name of the target environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The environment ID of the target environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The action ID of the scheduled managed action to execute.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl ApplyEnvironmentManagedActionInput {
@@ -10758,8 +10927,10 @@ impl std::fmt::Debug for ApplyEnvironmentManagedActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortEnvironmentUpdateInput {
     /// <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl AbortEnvironmentUpdateInput {

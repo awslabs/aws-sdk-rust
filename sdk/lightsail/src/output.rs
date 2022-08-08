@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelationalDatabaseParametersOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseParametersOutput {
@@ -67,6 +68,7 @@ impl UpdateRelationalDatabaseParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseOutput {
@@ -130,6 +132,7 @@ impl UpdateRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLoadBalancerAttributeOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateLoadBalancerAttributeOutput {
@@ -193,6 +196,7 @@ impl UpdateLoadBalancerAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateDomainEntryOutput {
@@ -256,6 +260,7 @@ impl UpdateDomainEntryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionBundleOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionBundleOutput {
@@ -313,6 +318,7 @@ impl UpdateDistributionBundleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionOutput {
@@ -370,6 +376,7 @@ impl UpdateDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
+    #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl UpdateContainerServiceOutput {
@@ -427,6 +434,7 @@ impl UpdateContainerServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBucketBundleOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateBucketBundleOutput {
@@ -490,8 +498,10 @@ impl UpdateBucketBundleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBucketOutput {
     /// <p>An object that describes the bucket that is updated.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<crate::model::Bucket>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateBucketOutput {
@@ -572,6 +582,7 @@ impl UpdateBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UntagResourceOutput {
@@ -635,6 +646,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnpeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UnpeerVpcOutput {
@@ -692,6 +704,7 @@ impl UnpeerVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TestAlarmOutput {
@@ -755,6 +768,7 @@ impl TestAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TagResourceOutput {
@@ -818,6 +832,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopRelationalDatabaseOutput {
@@ -881,6 +896,7 @@ impl StopRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopInstanceOutput {
@@ -944,6 +960,7 @@ impl StopInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartRelationalDatabaseOutput {
@@ -1007,6 +1024,7 @@ impl StartRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartInstanceOutput {
@@ -1070,6 +1088,7 @@ impl StartInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetResourceAccessForBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetResourceAccessForBucketOutput {
@@ -1133,6 +1152,7 @@ impl SetResourceAccessForBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIpAddressTypeOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetIpAddressTypeOutput {
@@ -1196,6 +1216,7 @@ impl SetIpAddressTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendContactMethodVerificationOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SendContactMethodVerificationOutput {
@@ -1259,10 +1280,13 @@ impl SendContactMethodVerificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl ResetDistributionCacheOutput {
@@ -1357,6 +1381,7 @@ impl ResetDistributionCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ReleaseStaticIpOutput {
@@ -1420,6 +1445,7 @@ impl ReleaseStaticIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerImageOutput {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
+    #[doc(hidden)]
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
 impl RegisterContainerImageOutput {
@@ -1477,6 +1503,7 @@ impl RegisterContainerImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootRelationalDatabaseOutput {
@@ -1540,6 +1567,7 @@ impl RebootRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootInstanceOutput {
@@ -1603,6 +1631,7 @@ impl RebootInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInstancePublicPortsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PutInstancePublicPortsOutput {
@@ -1660,6 +1689,7 @@ impl PutInstancePublicPortsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl PutAlarmOutput {
@@ -1723,6 +1753,7 @@ impl PutAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PeerVpcOutput {
@@ -1780,6 +1811,7 @@ impl PeerVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenInstancePublicPortsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl OpenInstancePublicPortsOutput {
@@ -1837,6 +1869,7 @@ impl OpenInstancePublicPortsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IsVpcPeeredOutput {
     /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
+    #[doc(hidden)]
     pub is_peered: std::option::Option<bool>,
 }
 impl IsVpcPeeredOutput {
@@ -1891,6 +1924,7 @@ impl IsVpcPeeredOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl ImportKeyPairOutput {
@@ -1948,10 +1982,12 @@ impl ImportKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStaticIpsOutput {
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
+    #[doc(hidden)]
     pub static_ips: std::option::Option<std::vec::Vec<crate::model::StaticIp>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetStaticIpsOutput {
@@ -2041,6 +2077,7 @@ impl GetStaticIpsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStaticIpOutput {
     /// <p>An array of key-value pairs containing information about the requested static IP.</p>
+    #[doc(hidden)]
     pub static_ip: std::option::Option<crate::model::StaticIp>,
 }
 impl GetStaticIpOutput {
@@ -2095,11 +2132,13 @@ impl GetStaticIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseSnapshotsOutput {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
+    #[doc(hidden)]
     pub relational_database_snapshots:
         std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseSnapshotsOutput {
@@ -2198,6 +2237,7 @@ impl GetRelationalDatabaseSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseSnapshotOutput {
     /// <p>An object describing the specified database snapshot.</p>
+    #[doc(hidden)]
     pub relational_database_snapshot: std::option::Option<crate::model::RelationalDatabaseSnapshot>,
 }
 impl GetRelationalDatabaseSnapshotOutput {
@@ -2264,10 +2304,12 @@ impl GetRelationalDatabaseSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabasesOutput {
     /// <p>An object describing the result of your get relational databases request.</p>
+    #[doc(hidden)]
     pub relational_databases: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabasesOutput {
@@ -2358,10 +2400,12 @@ impl GetRelationalDatabasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseParametersOutput {
     /// <p>An object describing the result of your get relational database parameters request.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseParametersOutput {
@@ -2452,8 +2496,10 @@ impl GetRelationalDatabaseParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseMetricDataOutput {
     /// <p>The name of the metric returned.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::RelationalDatabaseMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetRelationalDatabaseMetricDataOutput {
@@ -2537,8 +2583,10 @@ impl GetRelationalDatabaseMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The timestamp when the specified version of the master user password was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
@@ -2617,6 +2665,7 @@ impl GetRelationalDatabaseMasterUserPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseLogStreamsOutput {
     /// <p>An object describing the result of your get relational database log streams request.</p>
+    #[doc(hidden)]
     pub log_streams: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRelationalDatabaseLogStreamsOutput {
@@ -2680,10 +2729,13 @@ impl GetRelationalDatabaseLogStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseLogEventsOutput {
     /// <p>An object describing the result of your get relational database log events request.</p>
+    #[doc(hidden)]
     pub resource_log_events: std::option::Option<std::vec::Vec<crate::model::LogEvent>>,
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
+    #[doc(hidden)]
     pub next_backward_token: std::option::Option<std::string::String>,
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
+    #[doc(hidden)]
     pub next_forward_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseLogEventsOutput {
@@ -2787,11 +2839,13 @@ impl GetRelationalDatabaseLogEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseEventsOutput {
     /// <p>An object describing the result of your get relational database events request.</p>
+    #[doc(hidden)]
     pub relational_database_events:
         std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseEventsOutput {
@@ -2890,10 +2944,12 @@ impl GetRelationalDatabaseEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseBundlesOutput {
     /// <p>An object describing the result of your get relational database bundles request.</p>
+    #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBundlesOutput {
@@ -2984,10 +3040,12 @@ impl GetRelationalDatabaseBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseBlueprintsOutput {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
+    #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBlueprintsOutput {
@@ -3078,6 +3136,7 @@ impl GetRelationalDatabaseBlueprintsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseOutput {
     /// <p>An object describing the specified database.</p>
+    #[doc(hidden)]
     pub relational_database: std::option::Option<crate::model::RelationalDatabase>,
 }
 impl GetRelationalDatabaseOutput {
@@ -3135,6 +3194,7 @@ impl GetRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
 }
 impl GetRegionsOutput {
@@ -3198,15 +3258,18 @@ impl GetRegionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationsForResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
     /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
+    #[doc(hidden)]
     pub next_page_count: std::option::Option<std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsForResourceOutput {
@@ -3325,10 +3388,12 @@ impl GetOperationsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsOutput {
@@ -3418,6 +3483,7 @@ impl GetOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
@@ -3475,10 +3541,12 @@ impl GetOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerTlsPoliciesOutput {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
+    #[doc(hidden)]
     pub tls_policies: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancerTlsPoliciesOutput {
@@ -3569,6 +3637,7 @@ impl GetLoadBalancerTlsPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
+    #[doc(hidden)]
     pub tls_certificates:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
 }
@@ -3636,10 +3705,12 @@ impl GetLoadBalancerTlsCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancersOutput {
     /// <p>An array of LoadBalancer objects describing your load balancers.</p>
+    #[doc(hidden)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancersOutput {
@@ -3729,8 +3800,10 @@ impl GetLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerMetricDataOutput {
     /// <p>The name of the metric returned.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::LoadBalancerMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetLoadBalancerMetricDataOutput {
@@ -3814,6 +3887,7 @@ impl GetLoadBalancerMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerOutput {
     /// <p>An object containing information about your load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer: std::option::Option<crate::model::LoadBalancer>,
 }
 impl GetLoadBalancerOutput {
@@ -3871,10 +3945,12 @@ impl GetLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyPairsOutput {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
+    #[doc(hidden)]
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPair>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetKeyPairsOutput {
@@ -3964,6 +4040,7 @@ impl GetKeyPairsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
 }
 impl GetKeyPairOutput {
@@ -4018,6 +4095,7 @@ impl GetKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceStateOutput {
     /// <p>The state of the instance.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceState>,
 }
 impl GetInstanceStateOutput {
@@ -4073,10 +4151,12 @@ impl GetInstanceStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceSnapshotsOutput {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
+    #[doc(hidden)]
     pub instance_snapshots: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstanceSnapshotsOutput {
@@ -4167,6 +4247,7 @@ impl GetInstanceSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceSnapshotOutput {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
+    #[doc(hidden)]
     pub instance_snapshot: std::option::Option<crate::model::InstanceSnapshot>,
 }
 impl GetInstanceSnapshotOutput {
@@ -4224,10 +4305,12 @@ impl GetInstanceSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstancesOutput {
     /// <p>An array of key-value pairs containing information about your instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesOutput {
@@ -4317,6 +4400,7 @@ impl GetInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstancePortStatesOutput {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
+    #[doc(hidden)]
     pub port_states: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
 }
 impl GetInstancePortStatesOutput {
@@ -4380,8 +4464,10 @@ impl GetInstancePortStatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceMetricDataOutput {
     /// <p>The name of the metric returned.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::InstanceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetInstanceMetricDataOutput {
@@ -4465,6 +4551,7 @@ impl GetInstanceMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceAccessDetailsOutput {
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
+    #[doc(hidden)]
     pub access_details: std::option::Option<crate::model::InstanceAccessDetails>,
 }
 impl GetInstanceAccessDetailsOutput {
@@ -4522,6 +4609,7 @@ impl GetInstanceAccessDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceOutput {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
+    #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
 }
 impl GetInstanceOutput {
@@ -4576,11 +4664,13 @@ impl GetInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
+    #[doc(hidden)]
     pub export_snapshot_records:
         std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetExportSnapshotRecordsOutput {
@@ -4676,10 +4766,12 @@ impl GetExportSnapshotRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainsOutput {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDomainsOutput {
@@ -4769,6 +4861,7 @@ impl GetDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainOutput {
     /// <p>An array of key-value pairs containing information about your get domain request.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl GetDomainOutput {
@@ -4823,10 +4916,12 @@ impl GetDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionsOutput {
     /// <p>An array of objects that describe your distributions.</p>
+    #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDistributionsOutput {
@@ -4917,8 +5012,10 @@ impl GetDistributionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionMetricDataOutput {
     /// <p>The name of the metric returned.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::DistributionMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetDistributionMetricDataOutput {
@@ -5002,8 +5099,10 @@ impl GetDistributionMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDistributionLatestCacheResetOutput {
@@ -5078,6 +5177,7 @@ impl GetDistributionLatestCacheResetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
+    #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::DistributionBundle>>,
 }
 impl GetDistributionBundlesOutput {
@@ -5141,10 +5241,12 @@ impl GetDistributionBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiskSnapshotsOutput {
     /// <p>An array of objects containing information about all block storage disk snapshots.</p>
+    #[doc(hidden)]
     pub disk_snapshots: std::option::Option<std::vec::Vec<crate::model::DiskSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDiskSnapshotsOutput {
@@ -5234,6 +5336,7 @@ impl GetDiskSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiskSnapshotOutput {
     /// <p>An object containing information about the disk snapshot.</p>
+    #[doc(hidden)]
     pub disk_snapshot: std::option::Option<crate::model::DiskSnapshot>,
 }
 impl GetDiskSnapshotOutput {
@@ -5291,10 +5394,12 @@ impl GetDiskSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDisksOutput {
     /// <p>An array of objects containing information about all block storage disks.</p>
+    #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDisksOutput {
@@ -5384,6 +5489,7 @@ impl GetDisksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiskOutput {
     /// <p>An object containing information about the disk.</p>
+    #[doc(hidden)]
     pub disk: std::option::Option<crate::model::Disk>,
 }
 impl GetDiskOutput {
@@ -5436,6 +5542,7 @@ impl GetDiskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServicesOutput {
     /// <p>An array of objects that describe one or more container services.</p>
+    #[doc(hidden)]
     pub container_services: std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
 }
 impl GetContainerServicesOutput {
@@ -5500,6 +5607,7 @@ impl GetContainerServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServicePowersOutput {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
+    #[doc(hidden)]
     pub powers: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
 }
 impl GetContainerServicePowersOutput {
@@ -5563,8 +5671,10 @@ impl GetContainerServicePowersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServiceMetricDataOutput {
     /// <p>The name of the metric returned. </p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::ContainerServiceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetContainerServiceMetricDataOutput {
@@ -5648,6 +5758,7 @@ impl GetContainerServiceMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServiceDeploymentsOutput {
     /// <p>An array of objects that describe deployments for a container service.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
 }
 impl GetContainerServiceDeploymentsOutput {
@@ -5712,10 +5823,12 @@ impl GetContainerServiceDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerLogOutput {
     /// <p>An array of objects that describe the log events of a container.</p>
+    #[doc(hidden)]
     pub log_events: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetContainerLogOutput {
@@ -5806,6 +5919,7 @@ impl GetContainerLogOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerImagesOutput {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
+    #[doc(hidden)]
     pub container_images: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
 }
 impl GetContainerImagesOutput {
@@ -5870,6 +5984,7 @@ impl GetContainerImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
@@ -5945,6 +6060,7 @@ impl GetContainerApiMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
+    #[doc(hidden)]
     pub contact_methods: std::option::Option<std::vec::Vec<crate::model::ContactMethod>>,
 }
 impl GetContactMethodsOutput {
@@ -6008,11 +6124,13 @@ impl GetContactMethodsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFormationStackRecordsOutput {
     /// <p>A list of objects describing the CloudFormation stack records.</p>
+    #[doc(hidden)]
     pub cloud_formation_stack_records:
         std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationStackRecordsOutput {
@@ -6111,6 +6229,7 @@ impl GetCloudFormationStackRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
 impl GetCertificatesOutput {
@@ -6175,10 +6294,12 @@ impl GetCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBundlesOutput {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
+    #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::Bundle>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBundlesOutput {
@@ -6268,13 +6389,16 @@ impl GetBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketsOutput {
     /// <p>An array of objects that describe buckets.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    #[doc(hidden)]
     pub account_level_bpa_sync: std::option::Option<crate::model::AccountLevelBpaSync>,
 }
 impl GetBucketsOutput {
@@ -6389,8 +6513,10 @@ impl GetBucketsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketMetricDataOutput {
     /// <p>The name of the metric returned.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<crate::model::BucketMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
+    #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
 impl GetBucketMetricDataOutput {
@@ -6474,6 +6600,7 @@ impl GetBucketMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketBundlesOutput {
     /// <p>An object that describes bucket bundles.</p>
+    #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
 }
 impl GetBucketBundlesOutput {
@@ -6537,6 +6664,7 @@ impl GetBucketBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
+    #[doc(hidden)]
     pub access_keys: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
 }
 impl GetBucketAccessKeysOutput {
@@ -6600,10 +6728,12 @@ impl GetBucketAccessKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintsOutput {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
+    #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBlueprintsOutput {
@@ -6693,10 +6823,13 @@ impl GetBlueprintsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoSnapshotsOutput {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
+    #[doc(hidden)]
     pub auto_snapshots: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
 }
 impl GetAutoSnapshotsOutput {
@@ -6801,10 +6934,12 @@ impl GetAutoSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAlarmsOutput {
     /// <p>An array of objects that describe the alarms.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAlarmsOutput {
@@ -6894,10 +7029,12 @@ impl GetAlarmsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActiveNamesOutput {
     /// <p>The list of active names returned by the get active names request.</p>
+    #[doc(hidden)]
     pub active_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetActiveNamesOutput {
@@ -6987,6 +7124,7 @@ impl GetActiveNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ExportSnapshotOutput {
@@ -7050,6 +7188,7 @@ impl ExportSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAddOnOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl EnableAddOnOutput {
@@ -7113,10 +7252,13 @@ impl EnableAddOnOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DownloadDefaultKeyPairOutput {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    #[doc(hidden)]
     pub public_key_base64: std::option::Option<std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
+    #[doc(hidden)]
     pub private_key_base64: std::option::Option<std::string::String>,
     /// <p>The timestamp when the default key pair was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DownloadDefaultKeyPairOutput {
@@ -7214,6 +7356,7 @@ impl DownloadDefaultKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAddOnOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DisableAddOnOutput {
@@ -7277,6 +7420,7 @@ impl DisableAddOnOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachStaticIpOutput {
@@ -7340,6 +7484,7 @@ impl DetachStaticIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachInstancesFromLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachInstancesFromLoadBalancerOutput {
@@ -7403,6 +7548,7 @@ impl DetachInstancesFromLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachDiskOutput {
@@ -7466,6 +7612,7 @@ impl DetachDiskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachCertificateFromDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DetachCertificateFromDistributionOutput {
@@ -7523,6 +7670,7 @@ impl DetachCertificateFromDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRelationalDatabaseSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseSnapshotOutput {
@@ -7586,6 +7734,7 @@ impl DeleteRelationalDatabaseSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseOutput {
@@ -7649,6 +7798,7 @@ impl DeleteRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerTlsCertificateOutput {
@@ -7712,6 +7862,7 @@ impl DeleteLoadBalancerTlsCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerOutput {
@@ -7775,6 +7926,7 @@ impl DeleteLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKnownHostKeysOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteKnownHostKeysOutput {
@@ -7838,6 +7990,7 @@ impl DeleteKnownHostKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteKeyPairOutput {
@@ -7895,6 +8048,7 @@ impl DeleteKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceSnapshotOutput {
@@ -7958,6 +8112,7 @@ impl DeleteInstanceSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceOutput {
@@ -8021,6 +8176,7 @@ impl DeleteInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainEntryOutput {
@@ -8078,6 +8234,7 @@ impl DeleteDomainEntryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainOutput {
@@ -8135,6 +8292,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDistributionOutput {
@@ -8192,6 +8350,7 @@ impl DeleteDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDiskSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskSnapshotOutput {
@@ -8255,6 +8414,7 @@ impl DeleteDiskSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskOutput {
@@ -8378,6 +8538,7 @@ impl DeleteContainerImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteContactMethodOutput {
@@ -8441,6 +8602,7 @@ impl DeleteContactMethodOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteCertificateOutput {
@@ -8504,6 +8666,7 @@ impl DeleteCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketAccessKeyOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketAccessKeyOutput {
@@ -8567,6 +8730,7 @@ impl DeleteBucketAccessKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketOutput {
@@ -8630,6 +8794,7 @@ impl DeleteBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAutoSnapshotOutput {
@@ -8693,6 +8858,7 @@ impl DeleteAutoSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAlarmOutput {
@@ -8756,6 +8922,7 @@ impl DeleteAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseSnapshotOutput {
@@ -8819,6 +8986,7 @@ impl CreateRelationalDatabaseSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseFromSnapshotOutput {
@@ -8882,6 +9050,7 @@ impl CreateRelationalDatabaseFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseOutput {
@@ -8945,6 +9114,7 @@ impl CreateRelationalDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerTlsCertificateOutput {
@@ -9008,6 +9178,7 @@ impl CreateLoadBalancerTlsCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerOutput {
@@ -9071,12 +9242,16 @@ impl CreateLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    #[doc(hidden)]
     pub public_key_base64: std::option::Option<std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
+    #[doc(hidden)]
     pub private_key_base64: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateKeyPairOutput {
@@ -9191,6 +9366,7 @@ impl CreateKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstanceSnapshotOutput {
@@ -9254,6 +9430,7 @@ impl CreateInstanceSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstancesFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesFromSnapshotOutput {
@@ -9317,6 +9494,7 @@ impl CreateInstancesFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstancesOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesOutput {
@@ -9380,6 +9558,7 @@ impl CreateInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainEntryOutput {
@@ -9437,6 +9616,7 @@ impl CreateDomainEntryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainOutput {
@@ -9494,8 +9674,10 @@ impl CreateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionOutput {
     /// <p>An object that describes the distribution created.</p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::LightsailDistribution>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDistributionOutput {
@@ -9573,6 +9755,7 @@ impl CreateDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskSnapshotOutput {
@@ -9636,6 +9819,7 @@ impl CreateDiskSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskFromSnapshotOutput {
@@ -9699,6 +9883,7 @@ impl CreateDiskFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskOutput {
@@ -9762,6 +9947,7 @@ impl CreateDiskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerServiceRegistryLoginOutput {
     /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
+    #[doc(hidden)]
     pub registry_login: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
 }
 impl CreateContainerServiceRegistryLoginOutput {
@@ -9824,6 +10010,7 @@ impl CreateContainerServiceRegistryLoginOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerServiceDeploymentOutput {
     /// <p>An object that describes a container service.</p>
+    #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl CreateContainerServiceDeploymentOutput {
@@ -9881,6 +10068,7 @@ impl CreateContainerServiceDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
+    #[doc(hidden)]
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
 impl CreateContainerServiceOutput {
@@ -9938,6 +10126,7 @@ impl CreateContainerServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateContactMethodOutput {
@@ -10001,6 +10190,7 @@ impl CreateContactMethodOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationStackOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateCloudFormationStackOutput {
@@ -10064,8 +10254,10 @@ impl CreateCloudFormationStackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateOutput {
     /// <p>An object that describes the certificate created.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::CertificateSummary>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateCertificateOutput {
@@ -10149,8 +10341,10 @@ impl CreateCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketAccessKeyOutput {
     /// <p>An object that describes the access key that is created.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<crate::model::AccessKey>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateBucketAccessKeyOutput {
@@ -10234,8 +10428,10 @@ impl CreateBucketAccessKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketOutput {
     /// <p>An object that describes the bucket that is created.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<crate::model::Bucket>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateBucketOutput {
@@ -10316,6 +10512,7 @@ impl CreateBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CopySnapshotOutput {
@@ -10379,6 +10576,7 @@ impl CopySnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloseInstancePublicPortsOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CloseInstancePublicPortsOutput {
@@ -10436,6 +10634,7 @@ impl CloseInstancePublicPortsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachStaticIpOutput {
@@ -10500,6 +10699,7 @@ impl AttachStaticIpOutput {
 pub struct AttachLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachLoadBalancerTlsCertificateOutput {
@@ -10566,6 +10766,7 @@ impl AttachLoadBalancerTlsCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachInstancesToLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachInstancesToLoadBalancerOutput {
@@ -10629,6 +10830,7 @@ impl AttachInstancesToLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachDiskOutput {
@@ -10692,6 +10894,7 @@ impl AttachDiskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachCertificateToDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl AttachCertificateToDistributionOutput {
@@ -10749,6 +10952,7 @@ impl AttachCertificateToDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AllocateStaticIpOutput {

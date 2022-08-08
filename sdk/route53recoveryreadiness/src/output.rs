@@ -4,15 +4,20 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -177,12 +182,16 @@ impl UpdateResourceSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -324,12 +333,16 @@ impl UpdateRecoveryGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>Name of the resource set to be checked.</p>
+    #[doc(hidden)]
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -462,14 +475,19 @@ impl UpdateReadinessCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell ARNs.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    #[doc(hidden)]
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -691,6 +709,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourcesOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -764,8 +783,10 @@ impl ListTagsForResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of readiness rules for a specific resource type.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
 }
 impl ListRulesOutput {
@@ -846,8 +867,10 @@ impl ListRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSetsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of resource sets associated with the account.</p>
+    #[doc(hidden)]
     pub resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
 }
 impl ListResourceSetsOutput {
@@ -929,8 +952,10 @@ impl ListResourceSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryGroupsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of recovery groups.</p>
+    #[doc(hidden)]
     pub recovery_groups: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
 }
 impl ListRecoveryGroupsOutput {
@@ -1012,8 +1037,10 @@ impl ListRecoveryGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReadinessChecksOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of readiness checks associated with the account.</p>
+    #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
 }
 impl ListReadinessChecksOutput {
@@ -1095,8 +1122,10 @@ impl ListReadinessChecksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrossAccountAuthorizationsOutput {
     /// <p>A list of cross-account authorizations.</p>
+    #[doc(hidden)]
     pub cross_account_authorizations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrossAccountAuthorizationsOutput {
@@ -1184,8 +1213,10 @@ impl ListCrossAccountAuthorizationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCellsOutput {
     /// <p>A list of cells.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::model::CellOutput>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCellsOutput {
@@ -1266,15 +1297,20 @@ impl ListCellsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1439,10 +1475,13 @@ impl GetResourceSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The readiness status at a recovery group level.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>Summaries of the readiness checks for the recovery group.</p>
+    #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
@@ -1544,12 +1583,16 @@ impl GetRecoveryGroupReadinessSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1691,12 +1734,16 @@ impl GetRecoveryGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckStatusOutput {
     /// <p>Top level messages for readiness check status</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The readiness at rule level.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>Summary of the readiness of resources.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>,
 }
 impl GetReadinessCheckStatusOutput {
@@ -1823,10 +1870,13 @@ impl GetReadinessCheckStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckResourceStatusOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The readiness at a rule level.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>Details of the rule's results.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
 }
 impl GetReadinessCheckResourceStatusOutput {
@@ -1927,12 +1977,16 @@ impl GetReadinessCheckResourceStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>Name of the resource set to be checked.</p>
+    #[doc(hidden)]
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2065,10 +2119,13 @@ impl GetReadinessCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The readiness at a cell level.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>Summaries for the readiness checks that make up the cell.</p>
+    #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
 }
 impl GetCellReadinessSummaryOutput {
@@ -2170,14 +2227,19 @@ impl GetCellReadinessSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell ARNs.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    #[doc(hidden)]
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2339,10 +2401,13 @@ impl GetCellOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchitectureRecommendationsOutput {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
+    #[doc(hidden)]
     pub last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the recommendations for the customer's application.</p>
+    #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
 }
 impl GetArchitectureRecommendationsOutput {
@@ -2594,15 +2659,20 @@ impl DeleteCellOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2767,12 +2837,16 @@ impl CreateResourceSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2914,12 +2988,16 @@ impl CreateRecoveryGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>Name of the resource set to be checked.</p>
+    #[doc(hidden)]
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3052,6 +3130,7 @@ impl CreateReadinessCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrossAccountAuthorizationOutput {
     /// <p>The cross-account authorization.</p>
+    #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl CreateCrossAccountAuthorizationOutput {
@@ -3115,14 +3194,19 @@ impl CreateCrossAccountAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell ARNs.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    #[doc(hidden)]
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

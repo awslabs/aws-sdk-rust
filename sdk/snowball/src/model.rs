@@ -210,8 +210,10 @@ impl AsRef<str> for ShippingOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
+    #[doc(hidden)]
     pub nfs_on_device_service: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+    #[doc(hidden)]
     pub tgw_on_device_service: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfiguration {
@@ -301,8 +303,10 @@ impl OnDeviceServiceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TgwOnDeviceServiceConfiguration {
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
+    #[doc(hidden)]
     pub storage_limit: i32,
     /// <p>The scale unit of the virtual tapes on the device.</p>
+    #[doc(hidden)]
     pub storage_unit: std::option::Option<crate::model::StorageUnit>,
 }
 impl TgwOnDeviceServiceConfiguration {
@@ -428,9 +432,11 @@ impl AsRef<str> for StorageUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
+    #[doc(hidden)]
     pub storage_limit: i32,
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
+    #[doc(hidden)]
     pub storage_unit: std::option::Option<crate::model::StorageUnit>,
 }
 impl NfsOnDeviceServiceConfiguration {
@@ -508,10 +514,13 @@ impl NfsOnDeviceServiceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
+    #[doc(hidden)]
     pub s3_resources: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
     /// <p>The Python-language Lambda functions for this job.</p>
+    #[doc(hidden)]
     pub lambda_resources: std::option::Option<std::vec::Vec<crate::model::LambdaResource>>,
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
+    #[doc(hidden)]
     pub ec2_ami_resources: std::option::Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
 }
 impl JobResource {
@@ -629,8 +638,10 @@ impl JobResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The ID of the AMI on the Snow device.</p>
+    #[doc(hidden)]
     pub snowball_ami_id: std::option::Option<std::string::String>,
 }
 impl Ec2AmiResource {
@@ -705,8 +716,10 @@ impl Ec2AmiResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
+    #[doc(hidden)]
     pub event_triggers: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
 }
 impl LambdaResource {
@@ -788,6 +801,7 @@ impl LambdaResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTriggerDefinition {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
+    #[doc(hidden)]
     pub event_resource_arn: std::option::Option<std::string::String>,
 }
 impl EventTriggerDefinition {
@@ -845,10 +859,13 @@ impl EventTriggerDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Resource {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+    #[doc(hidden)]
     pub key_range: std::option::Option<crate::model::KeyRange>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    #[doc(hidden)]
     pub target_on_device_services:
         std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
 }
@@ -953,8 +970,10 @@ impl S3Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetOnDeviceService {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<crate::model::DeviceServiceName>,
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+    #[doc(hidden)]
     pub transfer_option: std::option::Option<crate::model::TransferOption>,
 }
 impl TargetOnDeviceService {
@@ -1146,8 +1165,10 @@ impl AsRef<str> for DeviceServiceName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyRange {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    #[doc(hidden)]
     pub begin_marker: std::option::Option<std::string::String>,
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    #[doc(hidden)]
     pub end_marker: std::option::Option<std::string::String>,
 }
 impl KeyRange {
@@ -1221,10 +1242,13 @@ impl KeyRange {
 pub struct Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The list of job states that will trigger a notification for this job.</p>
+    #[doc(hidden)]
     pub job_states_to_notify: std::option::Option<std::vec::Vec<crate::model::JobState>>,
     /// <p>Any change in job state will trigger a notification for this job.</p>
+    #[doc(hidden)]
     pub notify_all: bool,
 }
 impl Notification {
@@ -1441,24 +1465,34 @@ impl AsRef<str> for JobState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
+    #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
     /// <p>The end date the long-term pricing contract.</p>
+    #[doc(hidden)]
     pub long_term_pricing_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date of the long-term pricing contract.</p>
+    #[doc(hidden)]
     pub long_term_pricing_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of long-term pricing that was selected for the device.</p>
+    #[doc(hidden)]
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
     /// <p>The current active jobs on the device the long-term pricing type.</p>
+    #[doc(hidden)]
     pub current_active_job: std::option::Option<std::string::String>,
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
+    #[doc(hidden)]
     pub replacement_job: std::option::Option<std::string::String>,
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
+    #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
     /// <p>The status of the long-term pricing type.</p>
+    #[doc(hidden)]
     pub long_term_pricing_status: std::option::Option<std::string::String>,
     /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
+    #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
+    #[doc(hidden)]
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LongTermPricingListEntry {
@@ -1845,18 +1879,25 @@ impl AsRef<str> for LongTermPricingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobListEntry {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current state of this job.</p>
+    #[doc(hidden)]
     pub job_state: std::option::Option<crate::model::JobState>,
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
+    #[doc(hidden)]
     pub is_master: bool,
     /// <p>The type of job.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>The type of device used with this job.</p>
+    #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this job.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl JobListEntry {
@@ -2078,8 +2119,10 @@ impl AsRef<str> for JobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleImage {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The optional name of a compatible image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CompatibleImage {
@@ -2151,12 +2194,16 @@ impl CompatibleImage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
+    #[doc(hidden)]
     pub cluster_state: std::option::Option<crate::model::ClusterState>,
     /// <p>The creation date for this cluster.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ClusterListEntry {
@@ -2404,49 +2451,71 @@ impl AsRef<str> for ShippingLabelStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobMetadata {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the jobs.</p>
+    #[doc(hidden)]
     pub job_state: std::option::Option<crate::model::JobState>,
     /// <p>The type of job.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>The type of device used with this job.</p>
+    #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this job.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>The description of the job, provided at job creation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
+    #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
     /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
+    #[doc(hidden)]
     pub shipping_details: std::option::Option<crate::model::ShippingDetails>,
     /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    #[doc(hidden)]
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A value that defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
+    #[doc(hidden)]
     pub data_transfer_progress: std::option::Option<crate::model::DataTransfer>,
     /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
+    #[doc(hidden)]
     pub job_log_info: std::option::Option<crate::model::JobLogs>,
     /// <p>The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
+    #[doc(hidden)]
     pub forwarding_address_id: std::option::Option<std::string::String>,
     /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
+    #[doc(hidden)]
     pub device_configuration: std::option::Option<crate::model::DeviceConfiguration>,
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    #[doc(hidden)]
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
+    #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
+    #[doc(hidden)]
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
@@ -2977,6 +3046,7 @@ impl AsRef<str> for RemoteManagement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceConfiguration {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    #[doc(hidden)]
     pub snowcone_device_configuration:
         std::option::Option<crate::model::SnowconeDeviceConfiguration>,
 }
@@ -3044,6 +3114,7 @@ impl DeviceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
+    #[doc(hidden)]
     pub wireless_connection: std::option::Option<crate::model::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {
@@ -3101,6 +3172,7 @@ impl SnowconeDeviceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessConnection {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
+    #[doc(hidden)]
     pub is_wifi_enabled: bool,
 }
 impl WirelessConnection {
@@ -3155,6 +3227,7 @@ impl WirelessConnection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
+    #[doc(hidden)]
     pub ind: std::option::Option<crate::model::IndTaxDocuments>,
 }
 impl TaxDocuments {
@@ -3210,6 +3283,7 @@ impl TaxDocuments {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
+    #[doc(hidden)]
     pub gstin: std::option::Option<std::string::String>,
 }
 impl IndTaxDocuments {
@@ -3265,10 +3339,13 @@ impl IndTaxDocuments {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
+    #[doc(hidden)]
     pub job_completion_report_uri: std::option::Option<std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
+    #[doc(hidden)]
     pub job_success_log_uri: std::option::Option<std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
+    #[doc(hidden)]
     pub job_failure_log_uri: std::option::Option<std::string::String>,
 }
 impl JobLogs {
@@ -3366,12 +3443,16 @@ impl JobLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataTransfer {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
+    #[doc(hidden)]
     pub bytes_transferred: i64,
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
+    #[doc(hidden)]
     pub objects_transferred: i64,
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    #[doc(hidden)]
     pub total_bytes: i64,
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    #[doc(hidden)]
     pub total_objects: i64,
 }
 impl DataTransfer {
@@ -3483,10 +3564,13 @@ pub struct ShippingDetails {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
+    #[doc(hidden)]
     pub inbound_shipment: std::option::Option<crate::model::Shipment>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
+    #[doc(hidden)]
     pub outbound_shipment: std::option::Option<crate::model::Shipment>,
 }
 impl ShippingDetails {
@@ -3602,9 +3686,11 @@ impl ShippingDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Shipment {
     /// <p>Status information for a shipment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
+    #[doc(hidden)]
     pub tracking_number: std::option::Option<std::string::String>,
 }
 impl Shipment {
@@ -3682,26 +3768,36 @@ impl Shipment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The optional description of the cluster.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_state: std::option::Option<crate::model::ClusterState>,
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
+    #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this cluster.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>The automatically generated ID for a specific address.</p>
+    #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -3710,14 +3806,19 @@ pub struct ClusterMetadata {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
+    #[doc(hidden)]
     pub forwarding_address_id: std::option::Option<std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
+    #[doc(hidden)]
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
@@ -4071,32 +4172,46 @@ impl ClusterMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The unique ID for an address.</p>
+    #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
     /// <p>The name of a person to receive a Snow device at an address.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the company to receive a Snow device at an address.</p>
+    #[doc(hidden)]
     pub company: std::option::Option<std::string::String>,
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub street1: std::option::Option<std::string::String>,
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub street2: std::option::Option<std::string::String>,
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub street3: std::option::Option<std::string::String>,
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub state_or_province: std::option::Option<std::string::String>,
     /// <p>This field is no longer used and the value is ignored.</p>
+    #[doc(hidden)]
     pub prefecture_or_district: std::option::Option<std::string::String>,
     /// <p>This field is no longer used and the value is ignored.</p>
+    #[doc(hidden)]
     pub landmark: std::option::Option<std::string::String>,
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
+    #[doc(hidden)]
     pub is_restricted: bool,
 }
 impl Address {

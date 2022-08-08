@@ -13406,12 +13406,16 @@ impl UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The ID of the project to update.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>A new friendly name for the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A new description for the project.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
@@ -13448,26 +13452,35 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>A new friendly name for the portal.</p>
+    #[doc(hidden)]
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>A new description for the portal.</p>
+    #[doc(hidden)]
     pub portal_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
+    #[doc(hidden)]
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
     /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
     /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub portal_logo_image: std::option::Option<crate::model::Image>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The email address that sends alarm notifications.</p>
+    #[doc(hidden)]
     pub notification_sender_email: std::option::Option<std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl UpdatePortalInput {
@@ -13533,10 +13546,13 @@ impl std::fmt::Debug for UpdatePortalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway to be updated.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub capability_configuration: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayCapabilityConfigurationInput {
@@ -13568,8 +13584,10 @@ impl std::fmt::Debug for UpdateGatewayCapabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInput {
     /// <p>The ID of the gateway to update.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>A unique, friendly name for the gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInput {
@@ -13596,14 +13614,19 @@ impl std::fmt::Debug for UpdateGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardInput {
     /// <p>The ID of the dashboard to update.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>A new friendly name for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
     /// <p>A new description for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateDashboardInput {
@@ -13645,16 +13668,21 @@ impl std::fmt::Debug for UpdateDashboardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetPropertyInput {
     /// <p>The ID of the asset to be updated.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property to be updated.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
+    #[doc(hidden)]
     pub property_notification_state: std::option::Option<crate::model::PropertyNotificationState>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateAssetPropertyInput {
@@ -13703,23 +13731,30 @@ impl std::fmt::Debug for UpdateAssetPropertyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetModelInput {
     /// <p>The ID of the asset model to update.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>A unique, friendly name for the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_name: std::option::Option<std::string::String>,
     /// <p>A description for the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    #[doc(hidden)]
     pub asset_model_composite_models:
         std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateAssetModelInput {
@@ -13782,12 +13817,16 @@ impl std::fmt::Debug for UpdateAssetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>A unique, friendly name for the asset.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A description for the asset.</p>
+    #[doc(hidden)]
     pub asset_description: std::option::Option<std::string::String>,
 }
 impl UpdateAssetInput {
@@ -13824,14 +13863,19 @@ impl std::fmt::Debug for UpdateAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
+    #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    #[doc(hidden)]
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    #[doc(hidden)]
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateAccessPolicyInput {
@@ -13873,8 +13917,10 @@ impl std::fmt::Debug for UpdateAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys for tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13901,8 +13947,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13937,8 +13985,10 @@ pub struct PutStorageConfigurationInput {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
+    #[doc(hidden)]
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
@@ -13948,9 +13998,11 @@ pub struct PutStorageConfigurationInput {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub disassociated_data_storage:
         std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl PutStorageConfigurationInput {
@@ -14003,6 +14055,7 @@ impl std::fmt::Debug for PutStorageConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl PutLoggingOptionsInput {
@@ -14024,8 +14077,10 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl PutDefaultEncryptionConfigurationInput {
@@ -14052,18 +14107,23 @@ impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The alias prefix of the time series.</p>
+    #[doc(hidden)]
     pub alias_prefix: std::option::Option<std::string::String>,
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
     /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub time_series_type: std::option::Option<crate::model::ListTimeSeriesType>,
 }
 impl ListTimeSeriesInput {
@@ -14109,6 +14169,7 @@ impl std::fmt::Debug for ListTimeSeriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -14130,11 +14191,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>The ID of the portal.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -14167,11 +14231,14 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectAssetsInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectAssetsInput {
@@ -14204,9 +14271,11 @@ impl std::fmt::Debug for ListProjectAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortalsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPortalsInput {
@@ -14234,9 +14303,11 @@ impl std::fmt::Debug for ListPortalsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGatewaysInput {
@@ -14264,11 +14335,14 @@ impl std::fmt::Debug for ListGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDashboardsInput {
@@ -14301,10 +14375,13 @@ impl std::fmt::Debug for ListDashboardsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkImportJobsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ListBulkImportJobsFilter>,
 }
 impl ListBulkImportJobsInput {
@@ -14336,9 +14413,11 @@ impl std::fmt::Debug for ListBulkImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedAssetsInput {
     /// <p>The ID of the asset to query.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
@@ -14346,11 +14425,14 @@ pub struct ListAssociatedAssetsInput {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
+    #[doc(hidden)]
     pub traversal_direction: std::option::Option<crate::model::TraversalDirection>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssociatedAssetsInput {
@@ -14399,11 +14481,14 @@ impl std::fmt::Debug for ListAssociatedAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
@@ -14411,6 +14496,7 @@ pub struct ListAssetsInput {
     /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
     /// <p>Default: <code>ALL</code> </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ListAssetsFilter>,
 }
 impl ListAssetsInput {
@@ -14453,15 +14539,19 @@ impl std::fmt::Debug for ListAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetRelationshipsInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub traversal_type: std::option::Option<crate::model::TraversalType>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssetRelationshipsInput {
@@ -14501,9 +14591,11 @@ impl std::fmt::Debug for ListAssetRelationshipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssetModelsInput {
@@ -14531,19 +14623,26 @@ impl std::fmt::Debug for ListAssetModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
+    #[doc(hidden)]
     pub iam_arn: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPoliciesInput {
@@ -14596,26 +14695,37 @@ impl std::fmt::Debug for ListAccessPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub start_time_in_seconds: std::option::Option<i64>,
     /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
+    #[doc(hidden)]
     pub start_time_offset_in_nanos: std::option::Option<i32>,
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub end_time_in_seconds: std::option::Option<i64>,
     /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
+    #[doc(hidden)]
     pub end_time_offset_in_nanos: std::option::Option<i32>,
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<crate::model::Quality>,
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i64>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The interpolation type.</p>
     /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
@@ -14623,6 +14733,7 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
     /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
     /// <ul>
@@ -14631,6 +14742,7 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// </ul>
     /// </note>
     /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
+    #[doc(hidden)]
     pub interval_window_in_seconds: std::option::Option<i64>,
 }
 impl GetInterpolatedAssetPropertyValuesInput {
@@ -14729,24 +14841,33 @@ impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyValueHistoryInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The quality by which to filter asset data.</p>
+    #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
+    #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 100</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetAssetPropertyValueHistoryInput {
@@ -14810,10 +14931,13 @@ impl std::fmt::Debug for GetAssetPropertyValueHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyValueInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
 }
 impl GetAssetPropertyValueInput {
@@ -14845,28 +14969,39 @@ impl std::fmt::Debug for GetAssetPropertyValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyAggregatesInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The data aggregating function.</p>
+    #[doc(hidden)]
     pub aggregate_types: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
     /// <p>The time interval over which to aggregate data.</p>
+    #[doc(hidden)]
     pub resolution: std::option::Option<std::string::String>,
     /// <p>The quality by which to filter asset data.</p>
+    #[doc(hidden)]
     pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
+    #[doc(hidden)]
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 100</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetAssetPropertyAggregatesInput {
@@ -14940,12 +15075,16 @@ impl std::fmt::Debug for GetAssetPropertyAggregatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTimeSeriesFromAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateTimeSeriesFromAssetPropertyInput {
@@ -14982,12 +15121,16 @@ impl std::fmt::Debug for DisassociateTimeSeriesFromAssetPropertyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAssetsInput {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The ID of the child asset to disassociate.</p>
+    #[doc(hidden)]
     pub child_asset_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateAssetsInput {
@@ -15024,10 +15167,13 @@ impl std::fmt::Debug for DisassociateAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
 }
 impl DescribeTimeSeriesInput {
@@ -15070,6 +15216,7 @@ impl std::fmt::Debug for DescribeStorageConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
@@ -15091,6 +15238,7 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortalInput {
     /// <p>The ID of the portal.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
 }
 impl DescribePortalInput {
@@ -15123,8 +15271,10 @@ impl std::fmt::Debug for DescribeLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayCapabilityConfigurationInput {
@@ -15151,6 +15301,7 @@ impl std::fmt::Debug for DescribeGatewayCapabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayInput {
     /// <p>The ID of the gateway device.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInput {
@@ -15183,6 +15334,7 @@ impl std::fmt::Debug for DescribeDefaultEncryptionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
 }
 impl DescribeDashboardInput {
@@ -15204,6 +15356,7 @@ impl std::fmt::Debug for DescribeDashboardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBulkImportJobInput {
     /// <p>The ID of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeBulkImportJobInput {
@@ -15225,8 +15378,10 @@ impl std::fmt::Debug for DescribeBulkImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
 }
 impl DescribeAssetPropertyInput {
@@ -15253,6 +15408,7 @@ impl std::fmt::Debug for DescribeAssetPropertyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
 }
 impl DescribeAssetModelInput {
@@ -15274,6 +15430,7 @@ impl std::fmt::Debug for DescribeAssetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
 }
 impl DescribeAssetInput {
@@ -15295,6 +15452,7 @@ impl std::fmt::Debug for DescribeAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
+    #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessPolicyInput {
@@ -15316,12 +15474,16 @@ impl std::fmt::Debug for DescribeAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteTimeSeriesInput {
@@ -15358,8 +15520,10 @@ impl std::fmt::Debug for DeleteTimeSeriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -15386,8 +15550,10 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortalInput {
     /// <p>The ID of the portal to delete.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeletePortalInput {
@@ -15414,6 +15580,7 @@ impl std::fmt::Debug for DeletePortalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayInput {
@@ -15435,8 +15602,10 @@ impl std::fmt::Debug for DeleteGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the dashboard to delete.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteDashboardInput {
@@ -15463,8 +15632,10 @@ impl std::fmt::Debug for DeleteDashboardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetModelInput {
     /// <p>The ID of the asset model to delete.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAssetModelInput {
@@ -15491,8 +15662,10 @@ impl std::fmt::Debug for DeleteAssetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetInput {
     /// <p>The ID of the asset to delete.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAssetInput {
@@ -15519,8 +15692,10 @@ impl std::fmt::Debug for DeleteAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPolicyInput {
     /// <p>The ID of the access policy to be deleted.</p>
+    #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPolicyInput {
@@ -15547,14 +15722,19 @@ impl std::fmt::Debug for DeleteAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The ID of the portal in which to create the project.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>A friendly name for the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A description for the project.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15600,18 +15780,25 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortalInput {
     /// <p>A friendly name for the portal.</p>
+    #[doc(hidden)]
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>A description for the portal.</p>
+    #[doc(hidden)]
     pub portal_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
+    #[doc(hidden)]
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
+    #[doc(hidden)]
     pub portal_logo_image_file: std::option::Option<crate::model::ImageFile>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
@@ -15621,12 +15808,15 @@ pub struct CreatePortalInput {
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code> </p>
+    #[doc(hidden)]
     pub portal_auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p> <important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub notification_sender_email: std::option::Option<std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl CreatePortalInput {
@@ -15704,10 +15894,13 @@ impl std::fmt::Debug for CreatePortalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayInput {
     /// <p>A unique, friendly name for the gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
+    #[doc(hidden)]
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15743,16 +15936,22 @@ impl std::fmt::Debug for CreateGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDashboardInput {
     /// <p>The ID of the project in which to create the dashboard.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>A friendly name for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
     /// <p>A description for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15803,14 +16002,19 @@ impl std::fmt::Debug for CreateDashboardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    #[doc(hidden)]
     pub job_role_arn: std::option::Option<std::string::String>,
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    #[doc(hidden)]
     pub files: std::option::Option<std::vec::Vec<crate::model::File>>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    #[doc(hidden)]
     pub error_report_location: std::option::Option<crate::model::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    #[doc(hidden)]
     pub job_configuration: std::option::Option<crate::model::JobConfiguration>,
 }
 impl CreateBulkImportJobInput {
@@ -15852,23 +16056,30 @@ impl std::fmt::Debug for CreateBulkImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetModelInput {
     /// <p>A unique, friendly name for the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_name: std::option::Option<std::string::String>,
     /// <p>A description for the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchyDefinition>>,
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    #[doc(hidden)]
     pub asset_model_composite_models:
         std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModelDefinition>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15935,15 +16146,20 @@ impl std::fmt::Debug for CreateAssetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetInput {
     /// <p>A unique, friendly name for the asset.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model from which to create the asset.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A description for the asset.</p>
+    #[doc(hidden)]
     pub asset_description: std::option::Option<std::string::String>,
 }
 impl CreateAssetInput {
@@ -15988,14 +16204,19 @@ impl std::fmt::Debug for CreateAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPolicyInput {
     /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    #[doc(hidden)]
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    #[doc(hidden)]
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16041,6 +16262,7 @@ impl std::fmt::Debug for CreateAccessPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInput {
@@ -16062,15 +16284,18 @@ impl std::fmt::Debug for BatchPutAssetPropertyValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistoryInput {
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
     /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchGetAssetPropertyValueHistoryInput {
@@ -16108,8 +16333,10 @@ impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueInput {
@@ -16136,15 +16363,18 @@ impl std::fmt::Debug for BatchGetAssetPropertyValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
     /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchGetAssetPropertyAggregatesInput {
@@ -16182,10 +16412,13 @@ impl std::fmt::Debug for BatchGetAssetPropertyAggregatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateProjectAssetsInput {
     /// <p>The ID of the project from which to disassociate the assets.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the assets to be disassociated from the project.</p>
+    #[doc(hidden)]
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl BatchDisassociateProjectAssetsInput {
@@ -16217,10 +16450,13 @@ impl std::fmt::Debug for BatchDisassociateProjectAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateProjectAssetsInput {
     /// <p>The ID of the project to which to associate the assets.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the assets to be associated to the project.</p>
+    #[doc(hidden)]
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl BatchAssociateProjectAssetsInput {
@@ -16252,12 +16488,16 @@ impl std::fmt::Debug for BatchAssociateProjectAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTimeSeriesToAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateTimeSeriesToAssetPropertyInput {
@@ -16294,12 +16534,16 @@ impl std::fmt::Debug for AssociateTimeSeriesToAssetPropertyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAssetsInput {
     /// <p>The ID of the parent asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The ID of the child asset to be associated.</p>
+    #[doc(hidden)]
     pub child_asset_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateAssetsInput {

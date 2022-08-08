@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteDefinitionConfiguration {
     /// <p>Gets Suite Definition Configuration name.</p>
+    #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Gets the devices configured.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
     /// <p>Gets the tests intended for qualification in a suite.</p>
+    #[doc(hidden)]
     pub intended_for_qualification: bool,
     /// <p> Verifies if the test suite is a long duration test. </p>
+    #[doc(hidden)]
     pub is_long_duration_test: bool,
     /// <p>Gets test suite root group.</p>
+    #[doc(hidden)]
     pub root_group: std::option::Option<std::string::String>,
     /// <p>Gets the device permission ARN.</p>
+    #[doc(hidden)]
     pub device_permission_role_arn: std::option::Option<std::string::String>,
     /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
 }
 impl SuiteDefinitionConfiguration {
@@ -249,8 +256,10 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceUnderTest {
     /// <p>Lists devices thing ARN.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>Lists devices certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DeviceUnderTest {
@@ -325,10 +334,13 @@ impl DeviceUnderTest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteRunConfiguration {
     /// <p>Gets the primary device for suite run.</p>
+    #[doc(hidden)]
     pub primary_device: std::option::Option<crate::model::DeviceUnderTest>,
     /// <p>Gets test case list.</p>
+    #[doc(hidden)]
     pub selected_test_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>TRUE if multiple test suites run in parallel.</p>
+    #[doc(hidden)]
     pub parallel_run: bool,
 }
 impl SuiteRunConfiguration {
@@ -430,24 +442,34 @@ impl SuiteRunConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteRunInformation {
     /// <p>Suite definition ID of the suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Suite definition name of the suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Suite run ID of the suite run.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
+    #[doc(hidden)]
     pub end_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status of the suite run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SuiteRunStatus>,
     /// <p>Number of test cases that passed in the suite run.</p>
+    #[doc(hidden)]
     pub passed: i32,
     /// <p>Number of test cases that failed in the suite run.</p>
+    #[doc(hidden)]
     pub failed: i32,
 }
 impl SuiteRunInformation {
@@ -769,18 +791,25 @@ impl AsRef<str> for SuiteRunStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteDefinitionInformation {
     /// <p>Suite definition ID of the test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite name of the test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Specifies the devices that are under test for the test suite.</p>
+    #[doc(hidden)]
     pub default_devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
+    #[doc(hidden)]
     pub intended_for_qualification: bool,
     /// <p> Verifies if the test suite is a long duration test. </p>
+    #[doc(hidden)]
     pub is_long_duration_test: bool,
     /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SuiteDefinitionInformation {
@@ -959,6 +988,7 @@ impl SuiteDefinitionInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestResult {
     /// <p>Show each group of test results.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
 }
 impl TestResult {
@@ -1022,10 +1052,13 @@ impl TestResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupResult {
     /// <p>Group result ID.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>Group Result Name.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>Tests under Group Result.</p>
+    #[doc(hidden)]
     pub tests: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
 }
 impl GroupResult {
@@ -1123,10 +1156,13 @@ impl GroupResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCaseRun {
     /// <p>Provides the test case run ID.</p>
+    #[doc(hidden)]
     pub test_case_run_id: std::option::Option<std::string::String>,
     /// <p>Provides the test case run definition ID.</p>
+    #[doc(hidden)]
     pub test_case_definition_id: std::option::Option<std::string::String>,
     /// <p>Provides the test case run definition name.</p>
+    #[doc(hidden)]
     pub test_case_definition_name: std::option::Option<std::string::String>,
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
@@ -1139,18 +1175,25 @@ pub struct TestCaseRun {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Provides test case run start time.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides test case run end time.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides test case run log URL.</p>
+    #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
     /// <p>Provides test case run warnings.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::string::String>,
     /// <p>Provides test case run failure result.</p>
+    #[doc(hidden)]
     pub failure: std::option::Option<std::string::String>,
     /// <p> Provides the test scenarios for the test case run. </p>
+    #[doc(hidden)]
     pub test_scenarios: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
 }
 impl TestCaseRun {
@@ -1413,12 +1456,14 @@ impl TestCaseRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCaseScenario {
     /// <p>Provides test case scenario ID.</p>
+    #[doc(hidden)]
     pub test_case_scenario_id: std::option::Option<std::string::String>,
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
     /// <li> <p>Advanced</p> </li>
     /// <li> <p>Basic</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub test_case_scenario_type: std::option::Option<crate::model::TestCaseScenarioType>,
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
@@ -1431,10 +1476,13 @@ pub struct TestCaseScenario {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TestCaseScenarioStatus>,
     /// <p>Provides test case scenario failure result.</p>
+    #[doc(hidden)]
     pub failure: std::option::Option<std::string::String>,
     /// <p> </p>
+    #[doc(hidden)]
     pub system_message: std::option::Option<std::string::String>,
 }
 impl TestCaseScenario {

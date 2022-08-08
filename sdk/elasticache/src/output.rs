@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFailoverOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl TestFailoverOutput {
@@ -61,6 +62,7 @@ impl TestFailoverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl StartMigrationOutput {
@@ -123,6 +125,7 @@ pub struct RevokeCacheSecurityGroupIngressOutput {
     /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
     /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl RevokeCacheSecurityGroupIngressOutput {
@@ -199,6 +202,7 @@ impl RevokeCacheSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetCacheParameterGroupOutput {
@@ -259,6 +263,7 @@ impl ResetCacheParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsFromResourceOutput {
@@ -322,6 +327,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl RebootCacheClusterOutput {
@@ -382,6 +388,7 @@ pub struct RebalanceSlotsInGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl RebalanceSlotsInGlobalReplicationGroupOutput {
@@ -454,6 +461,7 @@ impl RebalanceSlotsInGlobalReplicationGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedCacheNodesOfferingOutput {
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
+    #[doc(hidden)]
     pub reserved_cache_node: std::option::Option<crate::model::ReservedCacheNode>,
 }
 impl PurchaseReservedCacheNodesOfferingOutput {
@@ -511,20 +519,28 @@ impl PurchaseReservedCacheNodesOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUserGroupOutput {
     /// <p>The ID of the user group.</p>
+    #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
+    #[doc(hidden)]
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
+    #[doc(hidden)]
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ModifyUserGroupOutput {
@@ -725,22 +741,31 @@ impl ModifyUserGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUserOutput {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The username of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    #[doc(hidden)]
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ModifyUserOutput {
@@ -949,6 +974,7 @@ impl ModifyUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationGroupShardConfigurationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl ModifyReplicationGroupShardConfigurationOutput {
@@ -1007,6 +1033,7 @@ impl ModifyReplicationGroupShardConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl ModifyReplicationGroupOutput {
@@ -1067,6 +1094,7 @@ pub struct ModifyGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl ModifyGlobalReplicationGroupOutput {
@@ -1143,6 +1171,7 @@ pub struct ModifyCacheSubnetGroupOutput {
     /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
     /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl ModifyCacheSubnetGroupOutput {
@@ -1216,6 +1245,7 @@ impl ModifyCacheSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyCacheParameterGroupOutput {
@@ -1276,6 +1306,7 @@ impl ModifyCacheParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl ModifyCacheClusterOutput {
@@ -1333,6 +1364,7 @@ impl ModifyCacheClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1397,8 +1429,10 @@ impl ListTagsForResourceOutput {
 pub struct ListAllowedNodeTypeModificationsOutput {
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+    #[doc(hidden)]
     pub scale_up_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+    #[doc(hidden)]
     pub scale_down_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAllowedNodeTypeModificationsOutput {
@@ -1492,6 +1526,7 @@ impl ListAllowedNodeTypeModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl IncreaseReplicaCountOutput {
@@ -1552,6 +1587,7 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
@@ -1628,6 +1664,7 @@ pub struct FailoverGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl FailoverGlobalReplicationGroupOutput {
@@ -1703,6 +1740,7 @@ pub struct DisassociateGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DisassociateGlobalReplicationGroupOutput {
@@ -1775,8 +1813,10 @@ impl DisassociateGlobalReplicationGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersOutput {
     /// <p>A list of users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -1857,8 +1897,10 @@ impl DescribeUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserGroupsOutput {
     /// <p>Returns a list of user groups.</p>
+    #[doc(hidden)]
     pub user_groups: std::option::Option<std::vec::Vec<crate::model::UserGroup>>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUserGroupsOutput {
@@ -1939,8 +1981,10 @@ impl DescribeUserGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUpdateActionsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns a list of update actions</p>
+    #[doc(hidden)]
     pub update_actions: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>,
 }
 impl DescribeUpdateActionsOutput {
@@ -2021,8 +2065,10 @@ impl DescribeUpdateActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeSnapshotsOutput {
@@ -2103,8 +2149,10 @@ impl DescribeSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceUpdatesOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of service updates</p>
+    #[doc(hidden)]
     pub service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
 }
 impl DescribeServiceUpdatesOutput {
@@ -2185,8 +2233,10 @@ impl DescribeServiceUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedCacheNodesOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
+    #[doc(hidden)]
     pub reserved_cache_nodes_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
 }
@@ -2277,8 +2327,10 @@ impl DescribeReservedCacheNodesOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedCacheNodesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
+    #[doc(hidden)]
     pub reserved_cache_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>,
 }
 impl DescribeReservedCacheNodesOutput {
@@ -2360,8 +2412,10 @@ impl DescribeReservedCacheNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    #[doc(hidden)]
     pub replication_groups: std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>,
 }
 impl DescribeReplicationGroupsOutput {
@@ -2443,8 +2497,10 @@ impl DescribeReplicationGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalReplicationGroupsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    #[doc(hidden)]
     pub global_replication_groups:
         std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
 }
@@ -2532,8 +2588,10 @@ impl DescribeGlobalReplicationGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -2614,6 +2672,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersOutput {
     /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
@@ -2671,8 +2730,10 @@ impl DescribeEngineDefaultParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
+    #[doc(hidden)]
     pub cache_subnet_groups: std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>,
 }
 impl DescribeCacheSubnetGroupsOutput {
@@ -2754,8 +2815,10 @@ impl DescribeCacheSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheSecurityGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
+    #[doc(hidden)]
     pub cache_security_groups: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>,
 }
 impl DescribeCacheSecurityGroupsOutput {
@@ -2839,10 +2902,13 @@ impl DescribeCacheSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Parameter</code> instances.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    #[doc(hidden)]
     pub cache_node_type_specific_parameters:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
 }
@@ -2959,8 +3025,10 @@ impl DescribeCacheParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
+    #[doc(hidden)]
     pub cache_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
 }
@@ -3045,8 +3113,10 @@ impl DescribeCacheParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    #[doc(hidden)]
     pub cache_engine_versions: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
 }
 impl DescribeCacheEngineVersionsOutput {
@@ -3130,8 +3200,10 @@ impl DescribeCacheEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
+    #[doc(hidden)]
     pub cache_clusters: std::option::Option<std::vec::Vec<crate::model::CacheCluster>>,
 }
 impl DescribeCacheClustersOutput {
@@ -3212,20 +3284,28 @@ impl DescribeCacheClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserGroupOutput {
     /// <p>The ID of the user group.</p>
+    #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
+    #[doc(hidden)]
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
+    #[doc(hidden)]
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserGroupOutput {
@@ -3426,22 +3506,31 @@ impl DeleteUserGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The username of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    #[doc(hidden)]
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserOutput {
@@ -3650,6 +3739,7 @@ impl DeleteUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl DeleteSnapshotOutput {
@@ -3704,6 +3794,7 @@ impl DeleteSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl DeleteReplicationGroupOutput {
@@ -3764,6 +3855,7 @@ pub struct DeleteGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DeleteGlobalReplicationGroupOutput {
@@ -3926,6 +4018,7 @@ impl DeleteCacheParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl DeleteCacheClusterOutput {
@@ -3983,6 +4076,7 @@ impl DeleteCacheClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl DecreaseReplicaCountOutput {
@@ -4043,6 +4137,7 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
@@ -4116,20 +4211,28 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserGroupOutput {
     /// <p>The ID of the user group.</p>
+    #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
+    #[doc(hidden)]
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
+    #[doc(hidden)]
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateUserGroupOutput {
@@ -4330,22 +4433,31 @@ impl CreateUserGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The username of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
+    #[doc(hidden)]
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    #[doc(hidden)]
     pub user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -4554,6 +4666,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
@@ -4608,6 +4721,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl CreateReplicationGroupOutput {
@@ -4668,6 +4782,7 @@ pub struct CreateGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl CreateGlobalReplicationGroupOutput {
@@ -4744,6 +4859,7 @@ pub struct CreateCacheSubnetGroupOutput {
     /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
     /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl CreateCacheSubnetGroupOutput {
@@ -4818,6 +4934,7 @@ pub struct CreateCacheSecurityGroupOutput {
     /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
     /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl CreateCacheSecurityGroupOutput {
@@ -4890,6 +5007,7 @@ impl CreateCacheSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCacheParameterGroupOutput {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
+    #[doc(hidden)]
     pub cache_parameter_group: std::option::Option<crate::model::CacheParameterGroup>,
 }
 impl CreateCacheParameterGroupOutput {
@@ -4947,6 +5065,7 @@ impl CreateCacheParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
+    #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl CreateCacheClusterOutput {
@@ -5004,6 +5123,7 @@ impl CreateCacheClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CopySnapshotOutput {
@@ -5058,6 +5178,7 @@ impl CopySnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
+    #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl CompleteMigrationOutput {
@@ -5115,9 +5236,11 @@ impl CompleteMigrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
+    #[doc(hidden)]
     pub processed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
+    #[doc(hidden)]
     pub unprocessed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
 }
@@ -5223,9 +5346,11 @@ impl BatchStopUpdateActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchApplyUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
+    #[doc(hidden)]
     pub processed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
+    #[doc(hidden)]
     pub unprocessed_update_actions:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
 }
@@ -5336,6 +5461,7 @@ pub struct AuthorizeCacheSecurityGroupIngressOutput {
     /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
     /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl AuthorizeCacheSecurityGroupIngressOutput {
@@ -5408,6 +5534,7 @@ impl AuthorizeCacheSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceOutput {

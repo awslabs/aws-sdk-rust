@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadMetadata {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub url_expiry: std::option::Option<std::string::String>,
     /// <p>The headers to be provided while uploading the file to the URL.</p>
+    #[doc(hidden)]
     pub headers_to_include:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -119,22 +122,31 @@ impl UploadMetadata {
 pub struct Item {
     /// <p>The time when the message or event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
     /// <p>The content of the message or event.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The type of content of the item.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The ID of the item.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Type of the item: message or event. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChatItemType>,
     /// <p>The ID of the sender in the session.</p>
+    #[doc(hidden)]
     pub participant_id: std::option::Option<std::string::String>,
     /// <p>The chat display name of the sender.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
+    #[doc(hidden)]
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
     /// <p>Provides information about the attachments.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
 }
 impl Item {
@@ -346,12 +358,16 @@ impl Item {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentItem {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
+    #[doc(hidden)]
     pub attachment_name: std::option::Option<std::string::String>,
     /// <p>Status of the attachment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ArtifactStatus>,
 }
 impl AttachmentItem {
@@ -682,11 +698,14 @@ impl AsRef<str> for ChatItemType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPosition {
     /// <p>The ID of the message or event where to start. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time in ISO format where to start.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
     /// <p>The start position of the most recent message where you want to start. </p>
+    #[doc(hidden)]
     pub most_recent: i32,
 }
 impl StartPosition {
@@ -891,9 +910,11 @@ impl AsRef<str> for ScanDirection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionCredentials {
     /// <p>The connection token.</p>
+    #[doc(hidden)]
     pub connection_token: std::option::Option<std::string::String>,
     /// <p>The expiration of the token.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub expiry: std::option::Option<std::string::String>,
 }
 impl ConnectionCredentials {
@@ -971,9 +992,11 @@ impl ConnectionCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Websocket {
     /// <p>The URL of the websocket.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The URL expiration timestamp in ISO date format.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub connection_expiry: std::option::Option<std::string::String>,
 }
 impl Websocket {

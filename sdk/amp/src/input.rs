@@ -3010,10 +3010,13 @@ impl UpdateWorkspaceAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesInput {
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// Maximum results to return in response (default=100, maximum=1000).
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkspacesInput {
@@ -3045,10 +3048,13 @@ impl std::fmt::Debug for ListWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
     /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// Optional, user-provided tags for this workspace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3084,8 +3090,10 @@ impl std::fmt::Debug for CreateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceInput {
     /// The ID of the workspace to delete.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceInput {
@@ -3112,10 +3120,13 @@ impl std::fmt::Debug for DeleteWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceAliasInput {
     /// The ID of the workspace being updated.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The new alias of the workspace.
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateWorkspaceAliasInput {
@@ -3147,6 +3158,7 @@ impl std::fmt::Debug for UpdateWorkspaceAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceInput {
     /// The ID of the workspace to describe.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceInput {
@@ -3168,12 +3180,16 @@ impl std::fmt::Debug for DescribeWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsNamespacesInput {
     /// The ID of the workspace.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Maximum results to return in response (default=100, maximum=1000).
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRuleGroupsNamespacesInput {
@@ -3210,14 +3226,19 @@ impl std::fmt::Debug for ListRuleGroupsNamespacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to create the rule group namespace.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The namespace data that define the rule groups.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// Optional, user-provided tags for this rule groups namespace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3263,10 +3284,13 @@ impl std::fmt::Debug for CreateRuleGroupsNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleGroupsNamespaceInput {
@@ -3298,12 +3322,16 @@ impl std::fmt::Debug for DeleteRuleGroupsNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The namespace data that define the rule groups.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl PutRuleGroupsNamespaceInput {
@@ -3340,8 +3368,10 @@ impl std::fmt::Debug for PutRuleGroupsNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuleGroupsNamespaceInput {
     /// The ID of the workspace to describe.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The rule groups namespace.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeRuleGroupsNamespaceInput {
@@ -3368,10 +3398,13 @@ impl std::fmt::Debug for DescribeRuleGroupsNamespaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlertManagerDefinitionInput {
     /// The ID of the workspace in which to create the alert manager definition.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The alert manager definition data.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAlertManagerDefinitionInput {
@@ -3403,8 +3436,10 @@ impl std::fmt::Debug for CreateAlertManagerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAlertManagerDefinitionInput {
@@ -3431,10 +3466,13 @@ impl std::fmt::Debug for DeleteAlertManagerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlertManagerDefinitionInput {
     /// The ID of the workspace in which to update the alert manager definition.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The alert manager definition data.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl PutAlertManagerDefinitionInput {
@@ -3466,6 +3504,7 @@ impl std::fmt::Debug for PutAlertManagerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlertManagerDefinitionInput {
     /// The ID of the workspace to describe.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeAlertManagerDefinitionInput {
@@ -3487,8 +3526,10 @@ impl std::fmt::Debug for DescribeAlertManagerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// The ARN of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// One or more tag keys
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3515,8 +3556,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// The ARN of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// The list of tags assigned to the resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3547,6 +3590,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// The ARN of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

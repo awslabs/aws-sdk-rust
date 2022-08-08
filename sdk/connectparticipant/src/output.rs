@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAttachmentUploadOutput {
     /// <p>A unique identifier for the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>Fields to be used while uploading the attachment.</p>
+    #[doc(hidden)]
     pub upload_metadata: std::option::Option<crate::model::UploadMetadata>,
 }
 impl StartAttachmentUploadOutput {
@@ -83,9 +85,11 @@ impl StartAttachmentUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageOutput {
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the message was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
 }
 impl SendMessageOutput {
@@ -163,9 +167,11 @@ impl SendMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEventOutput {
     /// <p>The ID of the response.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
 }
 impl SendEventOutput {
@@ -243,10 +249,13 @@ impl SendEventOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptOutput {
     /// <p>The initial contact ID for the contact. </p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The list of messages in the session.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<std::vec::Vec<crate::model::Item>>,
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTranscriptOutput {
@@ -347,8 +356,10 @@ impl GetTranscriptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttachmentOutput {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    #[doc(hidden)]
     pub url_expiry: std::option::Option<std::string::String>,
 }
 impl GetAttachmentOutput {
@@ -450,8 +461,10 @@ impl DisconnectParticipantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
+    #[doc(hidden)]
     pub websocket: std::option::Option<crate::model::Websocket>,
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
+    #[doc(hidden)]
     pub connection_credentials: std::option::Option<crate::model::ConnectionCredentials>,
 }
 impl CreateParticipantConnectionOutput {

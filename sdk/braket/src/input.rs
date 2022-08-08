@@ -2301,10 +2301,13 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchQuantumTasksInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchQuantumTasksFilter>>,
 }
 impl SearchQuantumTasksInput {
@@ -2336,23 +2339,32 @@ impl std::fmt::Debug for SearchQuantumTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ARN of the device to run the task on.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The parameters for the device to run the task on.</p>
+    #[doc(hidden)]
     pub device_parameters: std::option::Option<std::string::String>,
     /// <p>The number of shots to use for the task.</p>
+    #[doc(hidden)]
     pub shots: std::option::Option<i64>,
     /// <p>The S3 bucket to store task result files in.</p>
+    #[doc(hidden)]
     pub output_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The action associated with the task.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>Tags to be added to the quantum task you're creating.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    #[doc(hidden)]
     pub job_token: std::option::Option<std::string::String>,
 }
 impl CreateQuantumTaskInput {
@@ -2417,8 +2429,10 @@ impl std::fmt::Debug for CreateQuantumTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelQuantumTaskInput {
     /// <p>The ARN of the task to cancel.</p>
+    #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CancelQuantumTaskInput {
@@ -2445,6 +2459,7 @@ impl std::fmt::Debug for CancelQuantumTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
+    #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
 }
 impl GetQuantumTaskInput {
@@ -2466,10 +2481,13 @@ impl std::fmt::Debug for GetQuantumTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchJobsInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filter values to use when searching for a job.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchJobsFilter>>,
 }
 impl SearchJobsInput {
@@ -2501,29 +2519,41 @@ impl std::fmt::Debug for SearchJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
+    #[doc(hidden)]
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::JobOutputDataConfig>,
     /// <p>Information about the output locations for job checkpoint data.</p>
+    #[doc(hidden)]
     pub checkpoint_config: std::option::Option<crate::model::JobCheckpointConfig>,
     /// <p>The name of the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
+    #[doc(hidden)]
     pub stopping_condition: std::option::Option<crate::model::JobStoppingCondition>,
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
+    #[doc(hidden)]
     pub instance_config: std::option::Option<crate::model::InstanceConfig>,
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    #[doc(hidden)]
     pub hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub device_config: std::option::Option<crate::model::DeviceConfig>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2609,6 +2639,7 @@ impl std::fmt::Debug for CreateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobInput {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {
@@ -2630,6 +2661,7 @@ impl std::fmt::Debug for CancelJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
@@ -2651,10 +2683,13 @@ impl std::fmt::Debug for GetJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filter values to use to search for a device.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchDevicesFilter>>,
 }
 impl SearchDevicesInput {
@@ -2686,6 +2721,7 @@ impl std::fmt::Debug for SearchDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInput {
     /// <p>The ARN of the device to retrieve.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInput {
@@ -2707,8 +2743,10 @@ impl std::fmt::Debug for GetDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specify the keys for the tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2735,8 +2773,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specify the tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2767,6 +2807,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

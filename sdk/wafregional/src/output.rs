@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateXssMatchSetOutput {
@@ -59,6 +60,7 @@ impl UpdateXssMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateWebAclOutput {
@@ -113,6 +115,7 @@ impl UpdateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateSqlInjectionMatchSetOutput {
@@ -167,6 +170,7 @@ impl UpdateSqlInjectionMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateSizeConstraintSetOutput {
@@ -221,6 +225,7 @@ impl UpdateSizeConstraintSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupOutput {
@@ -275,6 +280,7 @@ impl UpdateRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleOutput {
@@ -329,6 +335,7 @@ impl UpdateRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetOutput {
@@ -383,6 +390,7 @@ impl UpdateRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexMatchSetOutput {
@@ -437,6 +445,7 @@ impl UpdateRegexMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRateBasedRuleOutput {
@@ -491,6 +500,7 @@ impl UpdateRateBasedRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateIpSetOutput {
@@ -545,6 +555,7 @@ impl UpdateIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateGeoMatchSetOutput {
@@ -599,6 +610,7 @@ impl UpdateGeoMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateByteMatchSetOutput {
@@ -743,6 +755,7 @@ impl PutPermissionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationOutput {
@@ -802,8 +815,10 @@ impl PutLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub xss_match_sets: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
 }
 impl ListXssMatchSetsOutput {
@@ -885,8 +900,10 @@ impl ListXssMatchSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsOutput {
     /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>WebACLSummary</code> objects.</p>
+    #[doc(hidden)]
     pub web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
 }
 impl ListWebAcLsOutput {
@@ -967,8 +984,10 @@ impl ListWebAcLsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
 }
 impl ListTagsForResourceOutput {
@@ -1043,8 +1062,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleGroup</code> objects.</p>
+    #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
 }
 impl ListSubscribedRuleGroupsOutput {
@@ -1126,8 +1147,10 @@ impl ListSubscribedRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub sql_injection_match_sets:
         std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
 }
@@ -1215,8 +1238,10 @@ impl ListSqlInjectionMatchSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSizeConstraintSetsOutput {
     /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub size_constraint_sets:
         std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
 }
@@ -1304,8 +1329,10 @@ impl ListSizeConstraintSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleSummary</code> objects.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
 }
 impl ListRulesOutput {
@@ -1386,8 +1413,10 @@ impl ListRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsOutput {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleGroup</code> objects.</p>
+    #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
 }
 impl ListRuleGroupsOutput {
@@ -1468,6 +1497,7 @@ impl ListRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForWebAclOutput {
     /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListResourcesForWebAclOutput {
@@ -1531,8 +1561,10 @@ impl ListResourcesForWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsOutput {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub regex_pattern_sets:
         std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
 }
@@ -1617,8 +1649,10 @@ impl ListRegexPatternSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexMatchSetsOutput {
     /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub regex_match_sets: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
 }
 impl ListRegexMatchSetsOutput {
@@ -1700,8 +1734,10 @@ impl ListRegexMatchSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRateBasedRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RuleSummary</code> objects.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
 }
 impl ListRateBasedRulesOutput {
@@ -1782,9 +1818,11 @@ impl ListRateBasedRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsOutput {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
+    #[doc(hidden)]
     pub logging_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
     /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListLoggingConfigurationsOutput {
@@ -1868,8 +1906,10 @@ impl ListLoggingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
 }
 impl ListIpSetsOutput {
@@ -1950,8 +1990,10 @@ impl ListIpSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeoMatchSetsOutput {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub geo_match_sets: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
 }
 impl ListGeoMatchSetsOutput {
@@ -2033,8 +2075,10 @@ impl ListGeoMatchSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByteMatchSetsOutput {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub byte_match_sets: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
 }
 impl ListByteMatchSetsOutput {
@@ -2116,8 +2160,10 @@ impl ListByteMatchSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivatedRulesInRuleGroupOutput {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
+    #[doc(hidden)]
     pub activated_rules: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
 }
 impl ListActivatedRulesInRuleGroupOutput {
@@ -2203,6 +2249,7 @@ pub struct GetXssMatchSetOutput {
     /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::model::XssMatchSet>,
 }
 impl GetXssMatchSetOutput {
@@ -2275,6 +2322,7 @@ impl GetXssMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclForResourceOutput {
     /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
+    #[doc(hidden)]
     pub web_acl_summary: std::option::Option<crate::model::WebAclSummary>,
 }
 impl GetWebAclForResourceOutput {
@@ -2338,6 +2386,7 @@ pub struct GetWebAclOutput {
     /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
     /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
 impl GetWebAclOutput {
@@ -2415,6 +2464,7 @@ pub struct GetSqlInjectionMatchSetOutput {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
 }
 impl GetSqlInjectionMatchSetOutput {
@@ -2497,6 +2547,7 @@ pub struct GetSizeConstraintSetOutput {
     /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
 }
 impl GetSizeConstraintSetOutput {
@@ -2569,10 +2620,13 @@ impl GetSizeConstraintSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
+    #[doc(hidden)]
     pub sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
+    #[doc(hidden)]
     pub population_size: i64,
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
+    #[doc(hidden)]
     pub time_window: std::option::Option<crate::model::TimeWindow>,
 }
 impl GetSampledRequestsOutput {
@@ -2674,6 +2728,7 @@ impl GetSampledRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupOutput {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
+    #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
 }
 impl GetRuleGroupOutput {
@@ -2735,6 +2790,7 @@ pub struct GetRuleOutput {
     /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
     /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl GetRuleOutput {
@@ -2799,6 +2855,7 @@ impl GetRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetOutput {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
+    #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
 }
 impl GetRegexPatternSetOutput {
@@ -2856,6 +2913,7 @@ impl GetRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexMatchSetOutput {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
+    #[doc(hidden)]
     pub regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
 }
 impl GetRegexMatchSetOutput {
@@ -2913,8 +2971,10 @@ impl GetRegexMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    #[doc(hidden)]
     pub managed_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A null value and not currently used.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl GetRateBasedRuleManagedKeysOutput {
@@ -2995,6 +3055,7 @@ impl GetRateBasedRuleManagedKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleOutput {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::RateBasedRule>,
 }
 impl GetRateBasedRuleOutput {
@@ -3047,6 +3108,7 @@ impl GetRateBasedRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyOutput {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyOutput {
@@ -3101,6 +3163,7 @@ impl GetPermissionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetLoggingConfigurationOutput {
@@ -3164,6 +3227,7 @@ pub struct GetIpSetOutput {
     /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
     /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
 }
 impl GetIpSetOutput {
@@ -3230,6 +3294,7 @@ impl GetIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeoMatchSetOutput {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
+    #[doc(hidden)]
     pub geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
 }
 impl GetGeoMatchSetOutput {
@@ -3287,6 +3352,7 @@ impl GetGeoMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeTokenStatusOutput {
     /// <p>The status of the change token.</p>
+    #[doc(hidden)]
     pub change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
 }
 impl GetChangeTokenStatusOutput {
@@ -3344,6 +3410,7 @@ impl GetChangeTokenStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeTokenOutput {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl GetChangeTokenOutput {
@@ -3403,6 +3470,7 @@ pub struct GetByteMatchSetOutput {
     /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
 }
 impl GetByteMatchSetOutput {
@@ -3505,6 +3573,7 @@ impl DisassociateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteXssMatchSetOutput {
@@ -3559,6 +3628,7 @@ impl DeleteXssMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteWebAclOutput {
@@ -3613,6 +3683,7 @@ impl DeleteWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetOutput {
@@ -3667,6 +3738,7 @@ impl DeleteSqlInjectionMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSizeConstraintSetOutput {
@@ -3721,6 +3793,7 @@ impl DeleteSizeConstraintSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleGroupOutput {
@@ -3775,6 +3848,7 @@ impl DeleteRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleOutput {
@@ -3829,6 +3903,7 @@ impl DeleteRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexPatternSetOutput {
@@ -3883,6 +3958,7 @@ impl DeleteRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexMatchSetOutput {
@@ -3937,6 +4013,7 @@ impl DeleteRegexMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRateBasedRuleOutput {
@@ -4051,6 +4128,7 @@ impl DeleteLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteIpSetOutput {
@@ -4105,6 +4183,7 @@ impl DeleteIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteGeoMatchSetOutput {
@@ -4159,6 +4238,7 @@ impl DeleteGeoMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteByteMatchSetOutput {
@@ -4213,8 +4293,10 @@ impl DeleteByteMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
+    #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::model::XssMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateXssMatchSetOutput {
@@ -4289,6 +4371,7 @@ impl CreateXssMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclMigrationStackOutput {
     /// <p>The URL of the template created in Amazon S3. </p>
+    #[doc(hidden)]
     pub s3_object_url: std::option::Option<std::string::String>,
 }
 impl CreateWebAclMigrationStackOutput {
@@ -4346,8 +4429,10 @@ impl CreateWebAclMigrationStackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclOutput {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
+    #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateWebAclOutput {
@@ -4419,8 +4504,10 @@ impl CreateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
+    #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSqlInjectionMatchSetOutput {
@@ -4500,8 +4587,10 @@ impl CreateSqlInjectionMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
+    #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSizeConstraintSetOutput {
@@ -4576,8 +4665,10 @@ impl CreateSizeConstraintSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupOutput {
     /// <p>An empty <code>RuleGroup</code>.</p>
+    #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRuleGroupOutput {
@@ -4652,8 +4743,10 @@ impl CreateRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRuleOutput {
@@ -4725,8 +4818,10 @@ impl CreateRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
+    #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexPatternSetOutput {
@@ -4801,8 +4896,10 @@ impl CreateRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexMatchSetOutput {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
+    #[doc(hidden)]
     pub regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexMatchSetOutput {
@@ -4877,8 +4974,10 @@ impl CreateRegexMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRateBasedRuleOutput {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::RateBasedRule>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRateBasedRuleOutput {
@@ -4950,8 +5049,10 @@ impl CreateRateBasedRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
+    #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateIpSetOutput {
@@ -5023,8 +5124,10 @@ impl CreateIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeoMatchSetOutput {
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
+    #[doc(hidden)]
     pub geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateGeoMatchSetOutput {
@@ -5099,8 +5202,10 @@ impl CreateGeoMatchSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
+    #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateByteMatchSetOutput {

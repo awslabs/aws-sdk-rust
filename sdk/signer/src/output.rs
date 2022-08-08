@@ -64,8 +64,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSigningJobOutput {
     /// <p>The ID of your signing job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the signing job owner.</p>
+    #[doc(hidden)]
     pub job_owner: std::option::Option<std::string::String>,
 }
 impl StartSigningJobOutput {
@@ -197,6 +199,7 @@ impl RevokeSignatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveProfilePermissionOutput {
     /// <p>An identifier for the current revision of the profile permissions.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemoveProfilePermissionOutput {
@@ -251,10 +254,13 @@ impl RemoveProfilePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSigningProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the signing profile being created.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The signing profile ARN, including the profile version.</p>
+    #[doc(hidden)]
     pub profile_version_arn: std::option::Option<std::string::String>,
 }
 impl PutSigningProfileOutput {
@@ -349,6 +355,7 @@ impl PutSigningProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags associated with the signing profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -422,8 +429,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
+    #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningProfilesOutput {
@@ -504,8 +513,10 @@ impl ListSigningProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningPlatformsOutput {
     /// <p>A list of all platforms that match the request parameters.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningPlatformsOutput {
@@ -586,8 +597,10 @@ impl ListSigningPlatformsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningJobsOutput {
     /// <p>A list of your signing jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
     /// <p>String for specifying the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningJobsOutput {
@@ -668,12 +681,16 @@ impl ListSigningJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilePermissionsOutput {
     /// <p>The identifier for the current revision of profile permissions.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
+    #[doc(hidden)]
     pub policy_size_bytes: i32,
     /// <p>List of permissions associated with the Signing Profile.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>String for specifying the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfilePermissionsOutput {
@@ -788,33 +805,47 @@ impl ListProfilePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningProfileOutput {
     /// <p>The name of the target signing profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The current version of the signing profile.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The signing profile ARN, including the profile version.</p>
+    #[doc(hidden)]
     pub profile_version_arn: std::option::Option<std::string::String>,
     /// <p>Revocation information for a signing profile.</p>
+    #[doc(hidden)]
     pub revocation_record: std::option::Option<crate::model::SigningProfileRevocationRecord>,
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
+    #[doc(hidden)]
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The ID of the platform that is used by the target signing profile.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
+    #[doc(hidden)]
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The validity period for a signing job.</p>
+    #[doc(hidden)]
     pub signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
+    #[doc(hidden)]
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
+    #[doc(hidden)]
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the target signing profile.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningProfileStatus>,
     /// <p>Reason for the status of the target signing profile.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1170,22 +1201,31 @@ impl GetSigningProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The display name of the target signing platform.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A list of partner entities that use the target signing platform.</p>
+    #[doc(hidden)]
     pub partner: std::option::Option<std::string::String>,
     /// <p>The validation template that is used by the target signing platform.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The category type of the target signing platform.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::Category>,
     /// <p>A list of configurations applied to the target platform at signing.</p>
+    #[doc(hidden)]
     pub signing_configuration: std::option::Option<crate::model::SigningConfiguration>,
     /// <p>The format of the target platform's signing image.</p>
+    #[doc(hidden)]
     pub signing_image_format: std::option::Option<crate::model::SigningImageFormat>,
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
+    #[doc(hidden)]
     pub max_size_in_mb: i32,
     /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
+    #[doc(hidden)]
     pub revocation_supported: bool,
 }
 impl GetSigningPlatformOutput {
@@ -1384,43 +1424,62 @@ impl GetSigningPlatformOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSigningJobOutput {
     /// <p>The ID of the signing job on output.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
+    #[doc(hidden)]
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>A human-readable name for the signing platform associated with the signing job.</p>
+    #[doc(hidden)]
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile that initiated the signing operation.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the signing profile used to initiate the signing job.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>A list of any overrides that were applied to the signing operation.</p>
+    #[doc(hidden)]
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
     /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
+    #[doc(hidden)]
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Date and time that the signing job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time that the signing job was completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
+    #[doc(hidden)]
     pub signature_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM principal that requested the signing job.</p>
+    #[doc(hidden)]
     pub requested_by: std::option::Option<std::string::String>,
     /// <p>Status of the signing job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>String value that contains the status reason.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    #[doc(hidden)]
     pub revocation_record: std::option::Option<crate::model::SigningJobRevocationRecord>,
     /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
+    #[doc(hidden)]
     pub signed_object: std::option::Option<crate::model::SignedObject>,
     /// <p>The AWS account ID of the job owner.</p>
+    #[doc(hidden)]
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The IAM entity that initiated the signing job.</p>
+    #[doc(hidden)]
     pub job_invoker: std::option::Option<std::string::String>,
 }
 impl DescribeSigningJobOutput {
@@ -1869,6 +1928,7 @@ impl CancelSigningProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddProfilePermissionOutput {
     /// <p>A unique identifier for the current profile revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl AddProfilePermissionOutput {

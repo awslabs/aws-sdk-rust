@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLogPatternOutput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The successfully created log pattern.</p>
+    #[doc(hidden)]
     pub log_pattern: std::option::Option<crate::model::LogPattern>,
 }
 impl UpdateLogPatternOutput {
@@ -143,6 +145,7 @@ impl UpdateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>Information about the application. </p>
+    #[doc(hidden)]
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
 }
 impl UpdateApplicationOutput {
@@ -260,6 +263,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the application. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -321,10 +325,13 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProblemsOutput {
     /// <p>The list of problems. </p>
+    #[doc(hidden)]
     pub problem_list: std::option::Option<std::vec::Vec<crate::model::Problem>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The name of the resource group. </p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl ListProblemsOutput {
@@ -425,10 +432,13 @@ impl ListProblemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogPatternSetsOutput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The list of log pattern sets.</p>
+    #[doc(hidden)]
     pub log_pattern_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternSetsOutput {
@@ -529,10 +539,13 @@ impl ListLogPatternSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogPatternsOutput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The list of log patterns.</p>
+    #[doc(hidden)]
     pub log_patterns: std::option::Option<std::vec::Vec<crate::model::LogPattern>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternsOutput {
@@ -633,8 +646,10 @@ impl ListLogPatternsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationHistoryOutput {
     /// <p> The list of configuration events and their corresponding details. </p>
+    #[doc(hidden)]
     pub event_list: std::option::Option<std::vec::Vec<crate::model::ConfigurationEvent>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationHistoryOutput {
@@ -715,9 +730,11 @@ impl ListConfigurationHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsOutput {
     /// <p>The list of application components.</p>
+    #[doc(hidden)]
     pub application_component_list:
         std::option::Option<std::vec::Vec<crate::model::ApplicationComponent>>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
@@ -807,8 +824,10 @@ impl ListComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>The list of applications.</p>
+    #[doc(hidden)]
     pub application_info_list: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -890,6 +909,7 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProblemObservationsOutput {
     /// <p>Observations related to the problem.</p>
+    #[doc(hidden)]
     pub related_observations: std::option::Option<crate::model::RelatedObservations>,
 }
 impl DescribeProblemObservationsOutput {
@@ -947,6 +967,7 @@ impl DescribeProblemObservationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProblemOutput {
     /// <p>Information about the problem. </p>
+    #[doc(hidden)]
     pub problem: std::option::Option<crate::model::Problem>,
 }
 impl DescribeProblemOutput {
@@ -1001,6 +1022,7 @@ impl DescribeProblemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObservationOutput {
     /// <p>Information about the observation.</p>
+    #[doc(hidden)]
     pub observation: std::option::Option<crate::model::Observation>,
 }
 impl DescribeObservationOutput {
@@ -1058,8 +1080,10 @@ impl DescribeObservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLogPatternOutput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The successfully created log pattern.</p>
+    #[doc(hidden)]
     pub log_pattern: std::option::Option<crate::model::LogPattern>,
 }
 impl DescribeLogPatternOutput {
@@ -1137,6 +1161,7 @@ impl DescribeLogPatternOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentConfigurationRecommendationOutput {
     /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    #[doc(hidden)]
     pub component_configuration: std::option::Option<std::string::String>,
 }
 impl DescribeComponentConfigurationRecommendationOutput {
@@ -1195,10 +1220,13 @@ impl DescribeComponentConfigurationRecommendationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentConfigurationOutput {
     /// <p>Indicates whether the application component is monitored.</p>
+    #[doc(hidden)]
     pub monitor: std::option::Option<bool>,
     /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    #[doc(hidden)]
     pub component_configuration: std::option::Option<std::string::String>,
 }
 impl DescribeComponentConfigurationOutput {
@@ -1290,8 +1318,10 @@ impl DescribeComponentConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentOutput {
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
+    #[doc(hidden)]
     pub application_component: std::option::Option<crate::model::ApplicationComponent>,
     /// <p>The list of resource ARNs that belong to the component.</p>
+    #[doc(hidden)]
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeComponentOutput {
@@ -1377,6 +1407,7 @@ impl DescribeComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationOutput {
     /// <p>Information about the application.</p>
+    #[doc(hidden)]
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
 }
 impl DescribeApplicationOutput {
@@ -1524,8 +1555,10 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLogPatternOutput {
     /// <p>The successfully created log pattern.</p>
+    #[doc(hidden)]
     pub log_pattern: std::option::Option<crate::model::LogPattern>,
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl CreateLogPatternOutput {
@@ -1633,6 +1666,7 @@ impl CreateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>Information about the application.</p>
+    #[doc(hidden)]
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
 }
 impl CreateApplicationOutput {

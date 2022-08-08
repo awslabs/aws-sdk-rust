@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricFilterMatchRecord {
     /// <p>The event number.</p>
+    #[doc(hidden)]
     pub event_number: i64,
     /// <p>The raw event data.</p>
+    #[doc(hidden)]
     pub event_message: std::option::Option<std::string::String>,
     /// <p>The values extracted from the event data by the filter.</p>
+    #[doc(hidden)]
     pub extracted_values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -121,8 +124,10 @@ impl MetricFilterMatchRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryCompileError {
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::QueryCompileErrorLocation>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl QueryCompileError {
@@ -197,8 +202,10 @@ impl QueryCompileError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryCompileErrorLocation {
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub start_char_offset: std::option::Option<i32>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub end_char_offset: std::option::Option<i32>,
 }
 impl QueryCompileErrorLocation {
@@ -326,10 +333,13 @@ impl AsRef<str> for Distribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePolicy {
     /// <p>The name of the resource policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The details of the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<i64>,
 }
 impl ResourcePolicy {
@@ -421,21 +431,27 @@ impl ResourcePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
+    #[doc(hidden)]
     pub metric_namespace: std::option::Option<std::string::String>,
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
+    #[doc(hidden)]
     pub metric_value: std::option::Option<std::string::String>,
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
     /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
     /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
     /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
     /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
     /// </important>
+    #[doc(hidden)]
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
 }
 impl MetricTransformation {
@@ -793,10 +809,13 @@ impl AsRef<str> for StandardUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectedLogEventsInfo {
     /// <p>The log events that are too new.</p>
+    #[doc(hidden)]
     pub too_new_log_event_start_index: std::option::Option<i32>,
     /// <p>The log events that are too old.</p>
+    #[doc(hidden)]
     pub too_old_log_event_end_index: std::option::Option<i32>,
     /// <p>The expired log events.</p>
+    #[doc(hidden)]
     pub expired_log_event_end_index: std::option::Option<i32>,
 }
 impl RejectedLogEventsInfo {
@@ -897,8 +916,10 @@ impl RejectedLogEventsInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The raw event message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InputLogEvent {
@@ -970,16 +991,22 @@ impl InputLogEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>The name of the destination.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
+    #[doc(hidden)]
     pub access_policy: std::option::Option<std::string::String>,
     /// <p>The ARN of this destination.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
 }
 impl Destination {
@@ -1208,10 +1235,13 @@ impl AsRef<str> for QueryStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
+    #[doc(hidden)]
     pub records_matched: f64,
     /// <p>The total number of log events scanned during the query.</p>
+    #[doc(hidden)]
     pub records_scanned: f64,
     /// <p>The total number of bytes in the log events scanned during the query.</p>
+    #[doc(hidden)]
     pub bytes_scanned: f64,
 }
 impl QueryStatistics {
@@ -1301,8 +1331,10 @@ impl QueryStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultField {
     /// <p>The log event field.</p>
+    #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
     /// <p>The value of this field.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResultField {
@@ -1374,8 +1406,10 @@ impl ResultField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogGroupField {
     /// <p>The name of a log field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The percentage of log events queried that contained the field.</p>
+    #[doc(hidden)]
     pub percent: i32,
 }
 impl LogGroupField {
@@ -1447,10 +1481,13 @@ impl LogGroupField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub ingestion_time: std::option::Option<i64>,
 }
 impl OutputLogEvent {
@@ -1539,8 +1576,10 @@ impl OutputLogEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchedLogStream {
     /// <p>The name of the log stream.</p>
+    #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether all the events in this log stream were searched.</p>
+    #[doc(hidden)]
     pub searched_completely: std::option::Option<bool>,
 }
 impl SearchedLogStream {
@@ -1615,14 +1654,19 @@ impl SearchedLogStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilteredLogEvent {
     /// <p>The name of the log stream to which this event belongs.</p>
+    #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub ingestion_time: std::option::Option<i64>,
     /// <p>The ID of the event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
 }
 impl FilteredLogEvent {
@@ -1748,18 +1792,25 @@ impl FilteredLogEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
     /// <p>The name of the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    #[doc(hidden)]
     pub filter_pattern: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
 }
 impl SubscriptionFilter {
@@ -1928,14 +1979,19 @@ impl SubscriptionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryDefinition {
     /// <p>The unique ID of the query definition.</p>
+    #[doc(hidden)]
     pub query_definition_id: std::option::Option<std::string::String>,
     /// <p>The name of the query definition.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The date that the query definition was most recently modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<i64>,
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
+    #[doc(hidden)]
     pub log_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryDefinition {
@@ -2070,14 +2126,19 @@ impl QueryDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryInfo {
     /// <p>The unique ID number of this query.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>The query string used in this query.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueryStatus>,
     /// <p>The date and time that this query was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<i64>,
     /// <p>The name of the log group scanned by this query.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl QueryInfo {
@@ -2203,15 +2264,20 @@ impl QueryInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricFilter {
     /// <p>The name of the metric filter.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    #[doc(hidden)]
     pub filter_pattern: std::option::Option<std::string::String>,
     /// <p>The metric transformations.</p>
+    #[doc(hidden)]
     pub metric_transformations:
         std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The name of the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl MetricFilter {
@@ -2352,24 +2418,32 @@ impl MetricFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogStream {
     /// <p>The name of the log stream.</p>
+    #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub first_event_timestamp: std::option::Option<i64>,
     /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    #[doc(hidden)]
     pub last_event_timestamp: std::option::Option<i64>,
     /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub last_ingestion_time: std::option::Option<i64>,
     /// <p>The sequence token.</p>
+    #[doc(hidden)]
     pub upload_sequence_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of bytes stored.</p>
     /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
     #[deprecated(
         note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
     )]
+    #[doc(hidden)]
     pub stored_bytes: std::option::Option<i64>,
 }
 impl LogStream {
@@ -2616,19 +2690,26 @@ impl AsRef<str> for OrderBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogGroup {
     /// <p>The name of the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    #[doc(hidden)]
     pub retention_in_days: std::option::Option<i32>,
     /// <p>The number of metric filters.</p>
+    #[doc(hidden)]
     pub metric_filter_count: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of bytes stored.</p>
+    #[doc(hidden)]
     pub stored_bytes: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl LogGroup {
@@ -2791,22 +2872,31 @@ impl LogGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTask {
     /// <p>The ID of the export task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The name of the export task.</p>
+    #[doc(hidden)]
     pub task_name: std::option::Option<std::string::String>,
     /// <p>The name of the log group from which logs data was exported.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<i64>,
     /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    #[doc(hidden)]
     pub to: std::option::Option<i64>,
     /// <p>The name of the S3 bucket to which the log data was exported.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
+    #[doc(hidden)]
     pub destination_prefix: std::option::Option<std::string::String>,
     /// <p>The status of the export task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExportTaskStatus>,
     /// <p>Execution information about the export task.</p>
+    #[doc(hidden)]
     pub execution_info: std::option::Option<crate::model::ExportTaskExecutionInfo>,
 }
 impl ExportTask {
@@ -3009,8 +3099,10 @@ impl ExportTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
     /// <p>The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<i64>,
 }
 impl ExportTaskExecutionInfo {
@@ -3082,8 +3174,10 @@ impl ExportTaskExecutionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTaskStatus {
     /// <p>The status code of the export task.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ExportTaskStatusCode>,
     /// <p>The status message related to the status code.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExportTaskStatus {

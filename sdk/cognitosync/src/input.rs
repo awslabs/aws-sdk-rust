@@ -3190,18 +3190,25 @@ impl UpdateRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The unique ID generated for this device by Cognito.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// A list of patch operations.
+    #[doc(hidden)]
     pub record_patches: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>,
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+    #[doc(hidden)]
     pub sync_session_token: std::option::Option<std::string::String>,
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
+    #[doc(hidden)]
     pub client_context: std::option::Option<std::string::String>,
 }
 impl UpdateRecordsInput {
@@ -3253,12 +3260,16 @@ impl std::fmt::Debug for UpdateRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeFromDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Unique ID for this identity.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the dataset from which to unsubcribe.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The unique ID generated for this device by Cognito.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl UnsubscribeFromDatasetInput {
@@ -3295,12 +3306,16 @@ impl std::fmt::Debug for UnsubscribeFromDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeToDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Unique ID for this identity.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the dataset to subcribe to.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The unique ID generated for this device by Cognito.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl SubscribeToDatasetInput {
@@ -3337,10 +3352,13 @@ impl std::fmt::Debug for SubscribeToDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
+    #[doc(hidden)]
     pub push_sync: std::option::Option<crate::model::PushSync>,
     /// Options to apply to this identity pool for Amazon Cognito streams.
+    #[doc(hidden)]
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
 impl SetIdentityPoolConfigurationInput {
@@ -3372,8 +3390,10 @@ impl std::fmt::Debug for SetIdentityPoolConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The events to configure</p>
+    #[doc(hidden)]
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3404,12 +3424,16 @@ impl std::fmt::Debug for SetCognitoEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The unique ID for this identity.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The push token.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl RegisterDeviceInput {
@@ -3446,18 +3470,25 @@ impl std::fmt::Debug for RegisterDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// The last server sync count for this record.
+    #[doc(hidden)]
     pub last_sync_count: std::option::Option<i64>,
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token containing a session ID, identity ID, and expiration.
+    #[doc(hidden)]
     pub sync_session_token: std::option::Option<std::string::String>,
 }
 impl ListRecordsInput {
@@ -3509,8 +3540,10 @@ impl std::fmt::Debug for ListRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoolUsageInput {
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned.
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListIdentityPoolUsageInput {
@@ -3537,12 +3570,16 @@ impl std::fmt::Debug for ListIdentityPoolUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned.
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDatasetsInput {
@@ -3579,6 +3616,7 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityPoolConfigurationInput {
@@ -3600,6 +3638,7 @@ impl std::fmt::Debug for GetIdentityPoolConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetCognitoEventsInput {
@@ -3621,6 +3660,7 @@ impl std::fmt::Debug for GetCognitoEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBulkPublishDetailsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetBulkPublishDetailsInput {
@@ -3642,8 +3682,10 @@ impl std::fmt::Debug for GetBulkPublishDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityUsageInput {
@@ -3670,6 +3712,7 @@ impl std::fmt::Debug for DescribeIdentityUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityPoolUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolUsageInput {
@@ -3691,10 +3734,13 @@ impl std::fmt::Debug for DescribeIdentityPoolUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -3726,10 +3772,13 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -3761,6 +3810,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkPublishInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl BulkPublishInput {

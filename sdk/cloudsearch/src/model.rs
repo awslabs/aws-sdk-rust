@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AccessPoliciesStatus {
@@ -81,10 +83,13 @@ impl AccessPoliciesStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp for when this option was last updated.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique integer that indicates when this option was last updated.</p>
+    #[doc(hidden)]
     pub update_version: i32,
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
@@ -93,8 +98,10 @@ pub struct OptionStatus {
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::OptionState>,
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
+    #[doc(hidden)]
     pub pending_deletion: std::option::Option<bool>,
 }
 impl OptionStatus {
@@ -315,8 +322,10 @@ impl AsRef<str> for OptionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::ScalingParameters>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl ScalingParametersStatus {
@@ -394,10 +403,13 @@ impl ScalingParametersStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
+    #[doc(hidden)]
     pub desired_instance_type: std::option::Option<crate::model::PartitionInstanceType>,
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
+    #[doc(hidden)]
     pub desired_replication_count: i32,
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
+    #[doc(hidden)]
     pub desired_partition_count: i32,
 }
 impl ScalingParameters {
@@ -640,8 +652,10 @@ impl AsRef<str> for PartitionInstanceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>The domain endpoint options configured for the domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::DomainEndpointOptions>,
     /// <p>The status of the configured domain endpoint options.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {
@@ -719,8 +733,10 @@ impl DomainEndpointOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainEndpointOptions {
     /// <p>Whether the domain is HTTPS only enabled.</p>
+    #[doc(hidden)]
     pub enforce_https: std::option::Option<bool>,
     /// <p>The minimum required TLS version</p>
+    #[doc(hidden)]
     pub tls_security_policy: std::option::Option<crate::model::TlsSecurityPolicy>,
 }
 impl DomainEndpointOptions {
@@ -850,8 +866,10 @@ impl AsRef<str> for TlsSecurityPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityOptionsStatus {
     /// <p>The availability options configured for the domain.</p>
+    #[doc(hidden)]
     pub options: bool,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AvailabilityOptionsStatus {
@@ -926,8 +944,10 @@ impl AvailabilityOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggesterStatus {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Suggester>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl SuggesterStatus {
@@ -1002,8 +1022,10 @@ impl SuggesterStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    #[doc(hidden)]
     pub suggester_name: std::option::Option<std::string::String>,
     /// <p>Options for a search suggester.</p>
+    #[doc(hidden)]
     pub document_suggester_options: std::option::Option<crate::model::DocumentSuggesterOptions>,
 }
 impl Suggester {
@@ -1090,10 +1112,13 @@ impl Suggester {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
+    #[doc(hidden)]
     pub fuzzy_matching: std::option::Option<crate::model::SuggesterFuzzyMatching>,
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
+    #[doc(hidden)]
     pub sort_expression: std::option::Option<std::string::String>,
 }
 impl DocumentSuggesterOptions {
@@ -1247,8 +1272,10 @@ impl AsRef<str> for SuggesterFuzzyMatching {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFieldStatus {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::IndexField>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl IndexFieldStatus {
@@ -1325,30 +1352,43 @@ pub struct IndexField {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub index_field_type: std::option::Option<crate::model::IndexFieldType>,
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub int_options: std::option::Option<crate::model::IntOptions>,
     /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub double_options: std::option::Option<crate::model::DoubleOptions>,
     /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub literal_options: std::option::Option<crate::model::LiteralOptions>,
     /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub text_options: std::option::Option<crate::model::TextOptions>,
     /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub date_options: std::option::Option<crate::model::DateOptions>,
     /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub lat_lon_options: std::option::Option<crate::model::LatLonOptions>,
     /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub int_array_options: std::option::Option<crate::model::IntArrayOptions>,
     /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub double_array_options: std::option::Option<crate::model::DoubleArrayOptions>,
     /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub literal_array_options: std::option::Option<crate::model::LiteralArrayOptions>,
     /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub text_array_options: std::option::Option<crate::model::TextArrayOptions>,
     /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+    #[doc(hidden)]
     pub date_array_options: std::option::Option<crate::model::DateArrayOptions>,
 }
 impl IndexField {
@@ -1652,14 +1692,19 @@ impl IndexField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A list of source fields to map to the field. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
 }
 impl DateArrayOptions {
@@ -1788,14 +1833,19 @@ impl DateArrayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A list of source fields to map to the field. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::string::String>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether highlights can be returned for the field.</p>
+    #[doc(hidden)]
     pub highlight_enabled: std::option::Option<bool>,
     /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
+    #[doc(hidden)]
     pub analysis_scheme: std::option::Option<std::string::String>,
 }
 impl TextArrayOptions {
@@ -1927,14 +1977,19 @@ impl TextArrayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LiteralArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A list of source fields to map to the field. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
 }
 impl LiteralArrayOptions {
@@ -2063,14 +2118,19 @@ impl LiteralArrayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoubleArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
     /// <p>A list of source fields to map to the field. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
 }
 impl DoubleArrayOptions {
@@ -2196,14 +2256,19 @@ impl DoubleArrayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<i64>,
     /// <p>A list of source fields to map to the field. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
 }
 impl IntArrayOptions {
@@ -2329,18 +2394,24 @@ impl IntArrayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LatLonOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
 }
 impl LatLonOptions {
@@ -2489,18 +2560,24 @@ impl LatLonOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
 }
 impl DateOptions {
@@ -2649,18 +2726,24 @@ impl DateOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
     /// <p>Whether highlights can be returned for the field.</p>
+    #[doc(hidden)]
     pub highlight_enabled: std::option::Option<bool>,
     /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
+    #[doc(hidden)]
     pub analysis_scheme: std::option::Option<std::string::String>,
 }
 impl TextOptions {
@@ -2812,18 +2895,24 @@ impl TextOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LiteralOptions {
     /// A value to use for the field if the field isn't specified for a document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
 }
 impl LiteralOptions {
@@ -2972,16 +3061,22 @@ impl LiteralOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoubleOptions {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
     /// <p>The name of the source field to map to the field. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
 }
 impl DoubleOptions {
@@ -3121,16 +3216,22 @@ impl DoubleOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntOptions {
     /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
+    #[doc(hidden)]
     pub default_value: std::option::Option<i64>,
     /// <p>The name of the source field to map to the field. </p>
+    #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
+    #[doc(hidden)]
     pub facet_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
+    #[doc(hidden)]
     pub search_enabled: std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
+    #[doc(hidden)]
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
+    #[doc(hidden)]
     pub sort_enabled: std::option::Option<bool>,
 }
 impl IntOptions {
@@ -3373,8 +3474,10 @@ impl AsRef<str> for IndexFieldType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpressionStatus {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Expression>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl ExpressionStatus {
@@ -3449,8 +3552,10 @@ impl ExpressionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Expression {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    #[doc(hidden)]
     pub expression_name: std::option::Option<std::string::String>,
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub expression_value: std::option::Option<std::string::String>,
 }
 impl Expression {
@@ -3528,30 +3633,43 @@ impl Expression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<bool>,
     /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+    #[doc(hidden)]
     pub deleted: std::option::Option<bool>,
     /// <p>The service endpoint for updating documents in a search domain.</p>
+    #[doc(hidden)]
     pub doc_service: std::option::Option<crate::model::ServiceEndpoint>,
     /// <p>The service endpoint for requesting search results from a search domain.</p>
+    #[doc(hidden)]
     pub search_service: std::option::Option<crate::model::ServiceEndpoint>,
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
+    #[doc(hidden)]
     pub requires_index_documents: std::option::Option<bool>,
     /// <p>True if processing is being done to activate the current domain configuration.</p>
+    #[doc(hidden)]
     pub processing: std::option::Option<bool>,
     /// <p>The instance type that is being used to process search requests.</p>
+    #[doc(hidden)]
     pub search_instance_type: std::option::Option<std::string::String>,
     /// <p>The number of partitions across which the search index is spread.</p>
+    #[doc(hidden)]
     pub search_partition_count: i32,
     /// <p>The number of search instances that are available to process search requests.</p>
+    #[doc(hidden)]
     pub search_instance_count: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limits: std::option::Option<crate::model::Limits>,
 }
 impl DomainStatus {
@@ -3819,8 +3937,10 @@ impl DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limits {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub maximum_replication_count: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub maximum_partition_count: i32,
 }
 impl Limits {
@@ -3892,6 +4012,7 @@ impl Limits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceEndpoint {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
 }
 impl ServiceEndpoint {
@@ -3946,8 +4067,10 @@ impl ServiceEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSchemeStatus {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::AnalysisScheme>,
     /// <p>The status of domain configuration option.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AnalysisSchemeStatus {
@@ -4025,10 +4148,13 @@ impl AnalysisSchemeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    #[doc(hidden)]
     pub analysis_scheme_name: std::option::Option<std::string::String>,
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
+    #[doc(hidden)]
     pub analysis_scheme_language: std::option::Option<crate::model::AnalysisSchemeLanguage>,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
+    #[doc(hidden)]
     pub analysis_options: std::option::Option<crate::model::AnalysisOptions>,
 }
 impl AnalysisScheme {
@@ -4132,14 +4258,19 @@ impl AnalysisScheme {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisOptions {
     /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub synonyms: std::option::Option<std::string::String>,
     /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+    #[doc(hidden)]
     pub stopwords: std::option::Option<std::string::String>,
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
+    #[doc(hidden)]
     pub stemming_dictionary: std::option::Option<std::string::String>,
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
+    #[doc(hidden)]
     pub japanese_tokenization_dictionary: std::option::Option<std::string::String>,
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
+    #[doc(hidden)]
     pub algorithmic_stemming: std::option::Option<crate::model::AlgorithmicStemming>,
 }
 impl AnalysisOptions {

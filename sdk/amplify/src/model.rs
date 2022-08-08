@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
+    #[doc(hidden)]
     pub webhook_arn: std::option::Option<std::string::String>,
     /// <p> The ID of the webhook. </p>
+    #[doc(hidden)]
     pub webhook_id: std::option::Option<std::string::String>,
     /// <p> The URL of the webhook. </p>
+    #[doc(hidden)]
     pub webhook_url: std::option::Option<std::string::String>,
     /// <p> The name for a branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The description for a webhook. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The create date and time for a webhook. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Updates the date and time for a webhook. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Webhook {
@@ -179,22 +186,31 @@ impl Webhook {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainAssociation {
     /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
+    #[doc(hidden)]
     pub domain_association_arn: std::option::Option<std::string::String>,
     /// <p> The name of the domain. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Enables the automated creation of subdomains for branches. </p>
+    #[doc(hidden)]
     pub enable_auto_sub_domain: std::option::Option<bool>,
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
+    #[doc(hidden)]
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+    #[doc(hidden)]
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
     /// <p> The current status of the domain association. </p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p> The reason for the current status of the domain association. </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p> The DNS record for certificate verification. </p>
+    #[doc(hidden)]
     pub certificate_verification_dns_record: std::option::Option<std::string::String>,
     /// <p> The subdomains for the domain association. </p>
+    #[doc(hidden)]
     pub sub_domains: std::option::Option<std::vec::Vec<crate::model::SubDomain>>,
 }
 impl DomainAssociation {
@@ -431,10 +447,13 @@ impl DomainAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
+    #[doc(hidden)]
     pub sub_domain_setting: std::option::Option<crate::model::SubDomainSetting>,
     /// <p> The verified status of the subdomain </p>
+    #[doc(hidden)]
     pub verified: std::option::Option<bool>,
     /// <p> The DNS record for the subdomain. </p>
+    #[doc(hidden)]
     pub dns_record: std::option::Option<std::string::String>,
 }
 impl SubDomain {
@@ -526,8 +545,10 @@ impl SubDomain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubDomainSetting {
     /// <p> The prefix setting for the subdomain. </p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p> The branch name setting for the subdomain. </p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl SubDomainSetting {
@@ -687,61 +708,88 @@ impl AsRef<str> for DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Branch {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub branch_arn: std::option::Option<std::string::String>,
     /// <p> The name for the branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The description for the branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The tag for the branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The current stage for the branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::Stage>,
     /// <p> The display name for the branch. This is used as the default domain prefix. </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub enable_notification: std::option::Option<bool>,
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The environment variables specific to a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub enable_auto_build: std::option::Option<bool>,
     /// <p> The custom domains for a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub custom_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The framework for a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub framework: std::option::Option<std::string::String>,
     /// <p> The ID of the active job for a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub active_job_id: std::option::Option<std::string::String>,
     /// <p> The total number of jobs that are part of an Amplify app. </p>
+    #[doc(hidden)]
     pub total_number_of_jobs: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for a branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    #[doc(hidden)]
     pub enable_performance_mode: std::option::Option<bool>,
     /// <p> The thumbnail URL for the branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub thumbnail_url: std::option::Option<std::string::String>,
     /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
+    #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<std::string::String>,
     /// <p> A list of custom resources that are linked to this branch. </p>
+    #[doc(hidden)]
     pub associated_resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Enables pull request previews for the branch. </p>
+    #[doc(hidden)]
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
+    #[doc(hidden)]
     pub pull_request_environment_name: std::option::Option<std::string::String>,
     /// <p> The destination branch if the branch is a pull request branch. </p>
+    #[doc(hidden)]
     pub destination_branch: std::option::Option<std::string::String>,
     /// <p> The source branch if the branch is a pull request branch. </p>
+    #[doc(hidden)]
     pub source_branch: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl Branch {
@@ -1411,57 +1459,81 @@ impl AsRef<str> for Stage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
     /// <p> The unique ID of the Amplify app. </p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p> The name for the Amplify app. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The tag for the Amplify app. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The description for the Amplify app. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The Git repository for the Amplify app. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The platform for the Amplify app. </p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> Creates a date and time for the Amplify app. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Updates the date and time for the Amplify app. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
+    #[doc(hidden)]
     pub iam_service_role_arn: std::option::Option<std::string::String>,
     /// <p> The environment variables for the Amplify app. </p>
+    #[doc(hidden)]
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The default domain for the Amplify app. </p>
+    #[doc(hidden)]
     pub default_domain: std::option::Option<std::string::String>,
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
+    #[doc(hidden)]
     pub enable_branch_auto_build: std::option::Option<bool>,
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
+    #[doc(hidden)]
     pub enable_branch_auto_deletion: std::option::Option<bool>,
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
+    #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
+    #[doc(hidden)]
     pub custom_rules: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
     /// <p> Describes the information about a production branch of the Amplify app. </p>
+    #[doc(hidden)]
     pub production_branch: std::option::Option<crate::model::ProductionBranch>,
     /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
+    #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
+    #[doc(hidden)]
     pub custom_headers: std::option::Option<std::string::String>,
     /// <p> Enables automated branch creation for the Amplify app. </p>
+    #[doc(hidden)]
     pub enable_auto_branch_creation: std::option::Option<bool>,
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
+    #[doc(hidden)]
     pub auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
+    #[doc(hidden)]
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
     /// <note>
     /// <p>This is for internal use.</p>
     /// </note>
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
+    #[doc(hidden)]
     pub repository_clone_method: std::option::Option<crate::model::RepositoryCloneMethod>,
 }
 impl App {
@@ -2088,26 +2160,36 @@ impl AsRef<str> for RepositoryCloneMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoBranchCreationConfig {
     /// <p> Describes the current stage for the autocreated branch. </p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::Stage>,
     /// <p> The framework for the autocreated branch. </p>
+    #[doc(hidden)]
     pub framework: std::option::Option<std::string::String>,
     /// <p> Enables auto building for the autocreated branch. </p>
+    #[doc(hidden)]
     pub enable_auto_build: std::option::Option<bool>,
     /// <p> The environment variables for the autocreated branch. </p>
+    #[doc(hidden)]
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
+    #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for the autocreated branch. </p>
+    #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    #[doc(hidden)]
     pub enable_performance_mode: std::option::Option<bool>,
     /// <p> The build specification (build spec) for the autocreated branch. </p>
+    #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
     /// <p> Enables pull request previews for the autocreated branch. </p>
+    #[doc(hidden)]
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
+    #[doc(hidden)]
     pub pull_request_environment_name: std::option::Option<std::string::String>,
 }
 impl AutoBranchCreationConfig {
@@ -2353,12 +2435,16 @@ impl AutoBranchCreationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductionBranch {
     /// <p> The last deploy time of the production branch. </p>
+    #[doc(hidden)]
     pub last_deploy_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the production branch. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p> The thumbnail URL for the production branch. </p>
+    #[doc(hidden)]
     pub thumbnail_url: std::option::Option<std::string::String>,
     /// <p> The branch name for the production branch. </p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl ProductionBranch {
@@ -2470,8 +2556,10 @@ impl ProductionBranch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p> The status code for a URL rewrite or redirect rule. </p>
     /// <dl>
@@ -2506,8 +2594,10 @@ pub struct CustomRule {
     /// <p>Represents a 404 rewrite rule.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
+    #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
 }
 impl CustomRule {
@@ -2764,22 +2854,31 @@ impl AsRef<str> for Platform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p> The Amazon Resource Name (ARN) for the job. </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p> The unique ID for the job. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p> The commit ID from a third-party repository provider for the job. </p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p> The commit message from a third-party repository provider for the job. </p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p> The commit date and time for the job. </p>
+    #[doc(hidden)]
     pub commit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The start date and time for the job. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The current status for the job. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p> The end date and time for the job. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl JobSummary {
@@ -3128,16 +3227,22 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environment_arn: std::option::Option<std::string::String>,
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p> The name of deployment artifacts. </p>
+    #[doc(hidden)]
     pub deployment_artifacts: std::option::Option<std::string::String>,
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BackendEnvironment {
@@ -3292,8 +3397,10 @@ impl BackendEnvironment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Artifact {
     /// <p> The file name for the artifact. </p>
+    #[doc(hidden)]
     pub artifact_file_name: std::option::Option<std::string::String>,
     /// <p> The unique ID for the artifact. </p>
+    #[doc(hidden)]
     pub artifact_id: std::option::Option<std::string::String>,
 }
 impl Artifact {
@@ -3368,8 +3475,10 @@ impl Artifact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::JobSummary>,
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
 }
 impl Job {
@@ -3450,27 +3559,38 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Step {
     /// <p> The name of the execution step. </p>
+    #[doc(hidden)]
     pub step_name: std::option::Option<std::string::String>,
     /// <p> The start date and time of the execution step. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the execution step. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p> The end date and time of the execution step. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The URL to the logs for the execution step. </p>
+    #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
     /// <p> The URL to the artifact for the execution step. </p>
+    #[doc(hidden)]
     pub artifacts_url: std::option::Option<std::string::String>,
     /// <p> The URL to the test artifact for the execution step. </p>
+    #[doc(hidden)]
     pub test_artifacts_url: std::option::Option<std::string::String>,
     /// <p> The URL to the test configuration for the execution step. </p>
+    #[doc(hidden)]
     pub test_config_url: std::option::Option<std::string::String>,
     /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
+    #[doc(hidden)]
     pub screenshots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The reason for the current step status. </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl Step {

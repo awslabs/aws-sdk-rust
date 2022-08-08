@@ -2175,6 +2175,7 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTaskInput {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelTaskInput {
@@ -2196,10 +2197,13 @@ impl std::fmt::Debug for CancelTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksInput {
     /// <p>A structure used to filter the list of tasks.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TaskState>,
     /// <p>The maximum number of tasks per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTasksInput {
@@ -2231,15 +2235,20 @@ impl std::fmt::Debug for ListTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskInput {
     /// <p>A list of managed device IDs.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::Command>,
     /// <p>A description of the task and its targets.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTaskInput {
@@ -2284,6 +2293,7 @@ impl std::fmt::Debug for CreateTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskInput {
     /// <p>The ID of the task to be described.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl DescribeTaskInput {
@@ -2305,12 +2315,16 @@ impl std::fmt::Debug for DescribeTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsInput {
     /// <p>The ID of the task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>A structure used to filter the tasks by their current state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExecutionState>,
     /// <p>The maximum number of tasks to list per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInput {
@@ -2347,8 +2361,10 @@ impl std::fmt::Debug for ListExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionInput {
     /// <p>The ID of the task that the action is describing.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the managed device.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
 }
 impl DescribeExecutionInput {
@@ -2375,12 +2391,16 @@ impl std::fmt::Debug for DescribeExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceResourcesInput {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>A structure used to filter the results by type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The maximum number of resources per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceResourcesInput {
@@ -2417,8 +2437,10 @@ impl std::fmt::Debug for ListDeviceResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceEc2InstancesInput {
     /// <p>The ID of the managed device.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>A list of instance IDs associated with the managed device.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDeviceEc2InstancesInput {
@@ -2445,10 +2467,13 @@ impl std::fmt::Debug for DescribeDeviceEc2InstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>The ID of the job used to order the device.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of devices to list per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesInput {
@@ -2480,6 +2505,7 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceInput {
     /// <p>The ID of the device that you are checking the information of.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
@@ -2501,8 +2527,10 @@ impl std::fmt::Debug for DescribeDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2529,8 +2557,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2561,6 +2591,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

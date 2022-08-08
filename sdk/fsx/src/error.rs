@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VolumeNotFound {
@@ -69,6 +70,7 @@ impl VolumeNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingVolumeConfiguration {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingVolumeConfiguration {
@@ -133,6 +135,7 @@ impl MissingVolumeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -197,8 +200,10 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleParameterError {
     /// <p>A parameter that is incompatible with the earlier request.</p>
+    #[doc(hidden)]
     pub parameter: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncompatibleParameterError {
@@ -282,6 +287,7 @@ impl IncompatibleParameterError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequest {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BadRequest {
@@ -346,6 +352,7 @@ impl BadRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperation {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperation {
@@ -410,6 +417,7 @@ impl UnsupportedOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageVirtualMachineNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageVirtualMachineNotFound {
@@ -474,6 +482,7 @@ impl StorageVirtualMachineNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotNotFound {
@@ -538,8 +547,10 @@ impl SnapshotNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<crate::model::ServiceLimit>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceLimitExceeded {
@@ -623,6 +634,7 @@ impl ServiceLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingFileSystemConfiguration {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingFileSystemConfiguration {
@@ -687,6 +699,7 @@ impl MissingFileSystemConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileSystemNotFound {
@@ -751,6 +764,7 @@ impl FileSystemNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryAssociationNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataRepositoryAssociationNotFound {
@@ -815,8 +829,10 @@ impl DataRepositoryAssociationNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
     /// <p>The resource ARN of the resource that can't be found.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFound {
@@ -900,8 +916,10 @@ impl ResourceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDoesNotSupportTagging {
     /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceDoesNotSupportTagging {
@@ -985,8 +1003,10 @@ impl ResourceDoesNotSupportTagging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotServiceResourceError {
     /// <p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotServiceResourceError {
@@ -1070,6 +1090,7 @@ impl NotServiceResourceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryTaskNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataRepositoryTaskNotFound {
@@ -1134,6 +1155,7 @@ impl DataRepositoryTaskNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDataRepositoryType {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDataRepositoryType {
@@ -1198,6 +1220,7 @@ impl InvalidDataRepositoryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupNotFound {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BackupNotFound {
@@ -1262,8 +1285,10 @@ impl BackupNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRestoring {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of a file system being restored from the backup.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl BackupRestoring {
@@ -1350,6 +1375,7 @@ impl BackupRestoring {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupInProgress {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BackupInProgress {
@@ -1414,8 +1440,10 @@ impl BackupInProgress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupBeingCopied {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl BackupBeingCopied {
@@ -1499,10 +1527,13 @@ impl BackupBeingCopied {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveDirectoryError {
     /// <p>The directory ID of the directory that an error pertains to.</p>
+    #[doc(hidden)]
     pub active_directory_id: std::option::Option<std::string::String>,
     /// <p>The type of Active Directory error.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ActiveDirectoryErrorType>,
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ActiveDirectoryError {
@@ -1609,6 +1640,7 @@ impl ActiveDirectoryError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPerUnitStorageThroughput {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPerUnitStorageThroughput {
@@ -1673,12 +1705,16 @@ impl InvalidPerUnitStorageThroughput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNetworkSettings {
     /// <p>Error message explaining what's wrong with network settings.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
     pub invalid_subnet_id: std::option::Option<std::string::String>,
     /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
     pub invalid_security_group_id: std::option::Option<std::string::String>,
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    #[doc(hidden)]
     pub invalid_route_table_id: std::option::Option<std::string::String>,
 }
 impl InvalidNetworkSettings {
@@ -1805,6 +1841,7 @@ impl InvalidNetworkSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidImportPath {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidImportPath {
@@ -1869,6 +1906,7 @@ impl InvalidImportPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExportPath {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidExportPath {
@@ -1933,6 +1971,7 @@ impl InvalidExportPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryTaskExecuting {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataRepositoryTaskExecuting {
@@ -1997,8 +2036,10 @@ impl DataRepositoryTaskExecuting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceBackupUnavailable {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl SourceBackupUnavailable {
@@ -2082,6 +2123,7 @@ impl SourceBackupUnavailable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSourceKmsKey {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSourceKmsKey {
@@ -2146,6 +2188,7 @@ impl InvalidSourceKmsKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegion {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRegion {
@@ -2210,6 +2253,7 @@ impl InvalidRegion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDestinationKmsKey {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDestinationKmsKey {
@@ -2274,6 +2318,7 @@ impl InvalidDestinationKmsKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleRegionForMultiAz {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatibleRegionForMultiAz {
@@ -2341,6 +2386,7 @@ impl IncompatibleRegionForMultiAz {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryTaskEnded {
     /// <p>A detailed error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataRepositoryTaskEnded {

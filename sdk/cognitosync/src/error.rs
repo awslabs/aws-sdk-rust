@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// Message returned by a TooManyRequestsException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -69,6 +70,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// Message returned by a ResourceNotFoundException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -133,6 +135,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     /// The message returned by a ResourceConflictException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConflictException {
@@ -197,6 +200,7 @@ impl ResourceConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     /// The message returned by a NotAuthorizedException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -261,6 +265,7 @@ impl NotAuthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// Message returned by LimitExceededException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -325,6 +330,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaThrottledException {
     /// <p>A message returned when an LambdaThrottledException is thrown</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LambdaThrottledException {
@@ -389,6 +395,7 @@ impl LambdaThrottledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// Message returned by InvalidParameterException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -453,6 +460,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaFunctionOutputException {
     /// <p>A message returned when an InvalidLambdaFunctionOutputException occurs</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLambdaFunctionOutputException {
@@ -517,6 +525,7 @@ impl InvalidLambdaFunctionOutputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
     /// Message returned by InternalErrorException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -581,6 +590,7 @@ impl InternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationException {
     /// Message returned by InvalidConfigurationException.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationException {
@@ -645,6 +655,7 @@ impl InvalidConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>The message returned by a ConcurrentModicationException.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -709,6 +720,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequestException {
     /// The message associated with the DuplicateRequestException exception.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateRequestException {
@@ -773,6 +785,7 @@ impl DuplicateRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyStreamedException {
     /// The message associated with the AlreadyStreamedException exception.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyStreamedException {

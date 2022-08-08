@@ -4776,12 +4776,16 @@ impl UpdateQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueInput {
     /// The new description for the queue, if you are changing it.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The name of the queue that you are modifying.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
+    #[doc(hidden)]
     pub reservation_plan_settings: std::option::Option<crate::model::ReservationPlanSettings>,
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueueStatus>,
 }
 impl UpdateQueueInput {
@@ -4820,12 +4824,16 @@ impl std::fmt::Debug for UpdateQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePresetInput {
     /// The new category for the preset, if you are changing it.
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// The new description for the preset, if you are changing it.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The name of the preset you are modifying.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Settings for preset
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::PresetSettings>,
 }
 impl UpdatePresetInput {
@@ -4862,22 +4870,31 @@ impl std::fmt::Debug for UpdatePresetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    #[doc(hidden)]
     pub acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
     /// The new category for the job template, if you are changing it.
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// The new description for the job template, if you are changing it.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Optional list of hop destinations.
+    #[doc(hidden)]
     pub hop_destinations: std::option::Option<std::vec::Vec<crate::model::HopDestination>>,
     /// The name of the job template you are modifying
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    #[doc(hidden)]
     pub priority: i32,
     /// The new queue for the job template, if you are changing it.
+    #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::JobTemplateSettings>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    #[doc(hidden)]
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
 }
 impl UpdateJobTemplateInput {
@@ -4943,8 +4960,10 @@ impl std::fmt::Debug for UpdateJobTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The keys of the tags that you want to remove from the resource.
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4971,8 +4990,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5003,6 +5024,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyInput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl PutPolicyInput {
@@ -5024,6 +5046,7 @@ impl std::fmt::Debug for PutPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5045,12 +5068,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesInput {
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+    #[doc(hidden)]
     pub list_by: std::option::Option<crate::model::QueueListBy>,
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
+    #[doc(hidden)]
     pub max_results: i32,
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl ListQueuesInput {
@@ -5087,14 +5114,19 @@ impl std::fmt::Debug for ListQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPresetsInput {
     /// Optionally, specify a preset category to limit responses to only presets from that category.
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    #[doc(hidden)]
     pub list_by: std::option::Option<crate::model::PresetListBy>,
     /// Optional. Number of presets, up to twenty, that will be returned at one time
+    #[doc(hidden)]
     pub max_results: i32,
     /// Use this string, provided with the response to a previous request, to request the next batch of presets.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl ListPresetsInput {
@@ -5136,14 +5168,19 @@ impl std::fmt::Debug for ListPresetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobTemplatesInput {
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    #[doc(hidden)]
     pub list_by: std::option::Option<crate::model::JobTemplateListBy>,
     /// Optional. Number of job templates, up to twenty, that will be returned at one time.
+    #[doc(hidden)]
     pub max_results: i32,
     /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl ListJobTemplatesInput {
@@ -5185,14 +5222,19 @@ impl std::fmt::Debug for ListJobTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
+    #[doc(hidden)]
     pub max_results: i32,
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
     /// Optional. Provide a queue name to get back only jobs from that queue.
+    #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
 }
 impl ListJobsInput {
@@ -5234,6 +5276,7 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueueInput {
     /// The name of the queue that you want information about.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetQueueInput {
@@ -5255,6 +5298,7 @@ impl std::fmt::Debug for GetQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPresetInput {
     /// The name of the preset.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetPresetInput {
@@ -5287,6 +5331,7 @@ impl std::fmt::Debug for GetPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTemplateInput {
     /// The name of the job template.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetJobTemplateInput {
@@ -5308,6 +5353,7 @@ impl std::fmt::Debug for GetJobTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobInput {
     /// the job ID of the job.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
@@ -5329,6 +5375,7 @@ impl std::fmt::Debug for GetJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCertificateInput {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DisassociateCertificateInput {
@@ -5350,10 +5397,13 @@ impl std::fmt::Debug for DisassociateCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsInput {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    #[doc(hidden)]
     pub max_results: i32,
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::DescribeEndpointsMode>,
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointsInput {
@@ -5385,6 +5435,7 @@ impl std::fmt::Debug for DescribeEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueueInput {
     /// The name of the queue that you want to delete.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteQueueInput {
@@ -5406,6 +5457,7 @@ impl std::fmt::Debug for DeleteQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePresetInput {
     /// The name of the preset to be deleted.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeletePresetInput {
@@ -5438,6 +5490,7 @@ impl std::fmt::Debug for DeletePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobTemplateInput {
     /// The name of the job template to be deleted.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteJobTemplateInput {
@@ -5459,16 +5512,22 @@ impl std::fmt::Debug for DeleteJobTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueueInput {
     /// Optional. A description of the queue that you are creating.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The name of the queue that you are creating.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+    #[doc(hidden)]
     pub reservation_plan_settings: std::option::Option<crate::model::ReservationPlanSettings>,
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueueStatus>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5521,14 +5580,19 @@ impl std::fmt::Debug for CreateQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresetInput {
     /// Optional. A category for the preset you are creating.
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// Optional. A description of the preset you are creating.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The name of the preset you are creating.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Settings for preset
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::PresetSettings>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5574,24 +5638,34 @@ impl std::fmt::Debug for CreatePresetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    #[doc(hidden)]
     pub acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
     /// Optional. A category for the job template you are creating
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// Optional. A description of the job template you are creating.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    #[doc(hidden)]
     pub hop_destinations: std::option::Option<std::vec::Vec<crate::model::HopDestination>>,
     /// The name of the job template you are creating.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    #[doc(hidden)]
     pub priority: i32,
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::JobTemplateSettings>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    #[doc(hidden)]
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5666,31 +5740,44 @@ impl std::fmt::Debug for CreateJobTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    #[doc(hidden)]
     pub acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
     /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    #[doc(hidden)]
     pub billing_tags_source: std::option::Option<crate::model::BillingTagsSource>,
     /// Optional. Idempotency token for CreateJob operation.
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    #[doc(hidden)]
     pub hop_destinations: std::option::Option<std::vec::Vec<crate::model::HopDestination>>,
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
+    #[doc(hidden)]
     pub job_template: std::option::Option<std::string::String>,
     /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    #[doc(hidden)]
     pub priority: i32,
     /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+    #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
     /// Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// JobSettings contains all the transcode settings for a job.
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::JobSettings>,
     /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+    #[doc(hidden)]
     pub simulate_reserved_queue: std::option::Option<crate::model::SimulateReservedQueue>,
     /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    #[doc(hidden)]
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
     /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+    #[doc(hidden)]
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5785,6 +5872,7 @@ impl std::fmt::Debug for CreateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobInput {
     /// The Job ID of the job to be cancelled.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {
@@ -5806,6 +5894,7 @@ impl std::fmt::Debug for CancelJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssociateCertificateInput {

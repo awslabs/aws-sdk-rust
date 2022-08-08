@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The subject line of the email.</p>
+    #[doc(hidden)]
     pub subject_part: std::option::Option<std::string::String>,
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
+    #[doc(hidden)]
     pub text_part: std::option::Option<std::string::String>,
     /// <p>The HTML body of the email.</p>
+    #[doc(hidden)]
     pub html_part: std::option::Option<std::string::String>,
 }
 impl Template {
@@ -126,16 +130,22 @@ pub struct ReceiptRule {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    #[doc(hidden)]
     pub recipients: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::ReceiptAction>>,
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub scan_enabled: bool,
 }
 impl ReceiptRule {
@@ -312,18 +322,25 @@ impl ReceiptRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
+    #[doc(hidden)]
     pub s3_action: std::option::Option<crate::model::S3Action>,
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
+    #[doc(hidden)]
     pub bounce_action: std::option::Option<crate::model::BounceAction>,
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
+    #[doc(hidden)]
     pub workmail_action: std::option::Option<crate::model::WorkmailAction>,
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
+    #[doc(hidden)]
     pub lambda_action: std::option::Option<crate::model::LambdaAction>,
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
+    #[doc(hidden)]
     pub stop_action: std::option::Option<crate::model::StopAction>,
     /// <p>Adds a header to the received email.</p>
+    #[doc(hidden)]
     pub add_header_action: std::option::Option<crate::model::AddHeaderAction>,
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
+    #[doc(hidden)]
     pub sns_action: std::option::Option<crate::model::SnsAction>,
 }
 impl ReceiptAction {
@@ -502,8 +519,10 @@ impl ReceiptAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is UTF-8.</p>
+    #[doc(hidden)]
     pub encoding: std::option::Option<crate::model::SnsActionEncoding>,
 }
 impl SnsAction {
@@ -634,8 +653,10 @@ impl AsRef<str> for SnsActionEncoding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddHeaderAction {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    #[doc(hidden)]
     pub header_name: std::option::Option<std::string::String>,
     /// <p>Must be less than 2048 characters, and must not contain newline characters ("\r" or "\n").</p>
+    #[doc(hidden)]
     pub header_value: std::option::Option<std::string::String>,
 }
 impl AddHeaderAction {
@@ -708,8 +729,10 @@ impl AddHeaderAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAction {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::StopScope>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl StopAction {
@@ -834,12 +857,15 @@ impl AsRef<str> for StopScope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the execution of the function will immediately result in a response, and a value of <code>Event</code> means that the function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p> <important>
     /// <p>There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code> only when you want to make a mail flow decision, such as whether to stop the receipt rule or the receipt rule set.</p>
     /// </important>
+    #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::model::InvocationType>,
 }
 impl LambdaAction {
@@ -993,8 +1019,10 @@ impl AsRef<str> for InvocationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkmailAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
+    #[doc(hidden)]
     pub organization_arn: std::option::Option<std::string::String>,
 }
 impl WorkmailAction {
@@ -1070,14 +1098,19 @@ impl WorkmailAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BounceAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    #[doc(hidden)]
     pub smtp_reply_code: std::option::Option<std::string::String>,
     /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Human-readable text to include in the bounce message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message will be sent.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
 }
 impl BounceAction {
@@ -1207,10 +1240,13 @@ impl BounceAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Action {
     /// <p>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
+    #[doc(hidden)]
     pub object_key_prefix: std::option::Option<std::string::String>,
     /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key you created in AWS KMS as follows:</p>
     /// <ul>
@@ -1220,6 +1256,7 @@ pub struct S3Action {
     /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not encrypt your emails.</p> <important>
     /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your AWS KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3Action {
@@ -1405,6 +1442,7 @@ impl AsRef<str> for TlsPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptions {
     /// <p>The custom subdomain that will be used to redirect email recipients to the Amazon SES event tracking domain.</p>
+    #[doc(hidden)]
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl TrackingOptions {
@@ -1469,16 +1507,22 @@ pub struct EventDestination {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The type of email sending events to publish to the event destination.</p>
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
+    #[doc(hidden)]
     pub cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
 impl EventDestination {
@@ -1665,6 +1709,7 @@ impl EventDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsDestination {
     /// <p>The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
@@ -1720,6 +1765,7 @@ impl SnsDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchDestination {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
+    #[doc(hidden)]
     pub dimension_configurations:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
 }
@@ -1797,14 +1843,17 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.</p>
+    #[doc(hidden)]
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must:</p>
     /// <ul>
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_dimension_value: std::option::Option<std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {
@@ -1988,8 +2037,10 @@ impl AsRef<str> for DimensionValueSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseDestination {
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
+    #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseDestination {
@@ -2271,12 +2322,14 @@ pub struct MessageTag {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the tag. The value must:</p>
     /// <ul>
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MessageTag {
@@ -2374,10 +2427,13 @@ impl MessageTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>The recipients to place on the To: line of the message.</p>
+    #[doc(hidden)]
     pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The recipients to place on the CC: line of the message.</p>
+    #[doc(hidden)]
     pub cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The recipients to place on the BCC: line of the message.</p>
+    #[doc(hidden)]
     pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Destination {
@@ -2498,6 +2554,7 @@ pub struct RawMessage {
     /// <p>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</p>
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl RawMessage {
@@ -2565,8 +2622,10 @@ impl RawMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<crate::model::Content>,
     /// <p>The message body.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<crate::model::Body>,
 }
 impl Message {
@@ -2638,8 +2697,10 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {
     /// <p>The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</p>
+    #[doc(hidden)]
     pub text: std::option::Option<crate::model::Content>,
     /// <p>The content of the message, in HTML format. Use this for email clients that can process HTML. You can include clickable links, formatted text, and much more in an HTML message.</p>
+    #[doc(hidden)]
     pub html: std::option::Option<crate::model::Content>,
 }
 impl Body {
@@ -2712,8 +2773,10 @@ impl Body {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Content {
     /// <p>The textual data of the content.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The character set of the content.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<std::string::String>,
 }
 impl Content {
@@ -2802,10 +2865,13 @@ pub struct BulkEmailDestinationStatus {
     /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BulkEmailStatus>,
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl BulkEmailDestinationStatus {
@@ -3068,10 +3134,13 @@ pub struct BulkEmailDestination {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    #[doc(hidden)]
     pub replacement_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    #[doc(hidden)]
     pub replacement_template_data: std::option::Option<std::string::String>,
 }
 impl BulkEmailDestination {
@@ -3182,12 +3251,16 @@ impl BulkEmailDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BouncedRecipientInfo {
     /// <p>The email address of the recipient of the bounced email.</p>
+    #[doc(hidden)]
     pub recipient: std::option::Option<std::string::String>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub recipient_arn: std::option::Option<std::string::String>,
     /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
+    #[doc(hidden)]
     pub bounce_type: std::option::Option<crate::model::BounceType>,
     /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
+    #[doc(hidden)]
     pub recipient_dsn_fields: std::option::Option<crate::model::RecipientDsnFields>,
 }
 impl BouncedRecipientInfo {
@@ -3305,18 +3378,25 @@ pub struct RecipientDsnFields {
     /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
     /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub final_recipient: std::option::Option<std::string::String>,
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::DsnAction>,
     /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
+    #[doc(hidden)]
     pub remote_mta: std::option::Option<std::string::String>,
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
+    #[doc(hidden)]
     pub diagnostic_code: std::option::Option<std::string::String>,
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+    #[doc(hidden)]
     pub last_attempt_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
+    #[doc(hidden)]
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
 }
 impl RecipientDsnFields {
@@ -3499,8 +3579,10 @@ impl RecipientDsnFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtensionField {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the header to add. Must be less than 2048 characters, and must not contain newline characters ("\r" or "\n").</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ExtensionField {
@@ -3718,10 +3800,13 @@ impl AsRef<str> for BounceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageDsn {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub reporting_mta: std::option::Option<std::string::String>,
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+    #[doc(hidden)]
     pub arrival_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
+    #[doc(hidden)]
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
 }
 impl MessageDsn {
@@ -3826,6 +3911,7 @@ impl MessageDsn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
 }
 impl DeliveryOptions {
@@ -3883,8 +3969,10 @@ impl DeliveryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateMetadata {
     /// <p>The name of the template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TemplateMetadata {
@@ -3966,8 +4054,10 @@ pub struct ReceiptRuleSetMetadata {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the receipt rule set was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReceiptRuleSetMetadata {
@@ -4063,8 +4153,10 @@ pub struct ReceiptFilter {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
+    #[doc(hidden)]
     pub ip_filter: std::option::Option<crate::model::ReceiptIpFilter>,
 }
 impl ReceiptFilter {
@@ -4155,8 +4247,10 @@ impl ReceiptFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ReceiptFilterPolicy>,
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl ReceiptIpFilter {
@@ -4341,14 +4435,19 @@ impl AsRef<str> for IdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplate {
     /// <p>The name of the custom verification email template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
+    #[doc(hidden)]
     pub template_subject: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    #[doc(hidden)]
     pub success_redirection_url: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    #[doc(hidden)]
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl CustomVerificationEmailTemplate {
@@ -4491,6 +4590,7 @@ pub struct ConfigurationSet {
     /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ConfigurationSet {
@@ -4555,14 +4655,19 @@ impl ConfigurationSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataPoint {
     /// <p>Time of the data point.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of emails that have been sent.</p>
+    #[doc(hidden)]
     pub delivery_attempts: i64,
     /// <p>Number of emails that have bounced.</p>
+    #[doc(hidden)]
     pub bounces: i64,
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
+    #[doc(hidden)]
     pub complaints: i64,
     /// <p>Number of emails rejected by Amazon SES.</p>
+    #[doc(hidden)]
     pub rejects: i64,
 }
 impl SendDataPoint {
@@ -4688,8 +4793,10 @@ impl SendDataPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    #[doc(hidden)]
     pub verification_status: std::option::Option<crate::model::VerificationStatus>,
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
+    #[doc(hidden)]
     pub verification_token: std::option::Option<std::string::String>,
 }
 impl IdentityVerificationAttributes {
@@ -4840,18 +4947,25 @@ impl AsRef<str> for VerificationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityNotificationAttributes {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    #[doc(hidden)]
     pub bounce_topic: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    #[doc(hidden)]
     pub complaint_topic: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    #[doc(hidden)]
     pub delivery_topic: std::option::Option<std::string::String>,
     /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    #[doc(hidden)]
     pub forwarding_enabled: bool,
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    #[doc(hidden)]
     pub headers_in_bounce_notifications_enabled: bool,
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    #[doc(hidden)]
     pub headers_in_complaint_notifications_enabled: bool,
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    #[doc(hidden)]
     pub headers_in_delivery_notifications_enabled: bool,
 }
 impl IdentityNotificationAttributes {
@@ -5038,11 +5152,14 @@ impl IdentityNotificationAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityMailFromDomainAttributes {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
+    #[doc(hidden)]
     pub mail_from_domain: std::option::Option<std::string::String>,
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
+    #[doc(hidden)]
     pub mail_from_domain_status: std::option::Option<crate::model::CustomMailFromStatus>,
     /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
+    #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl IdentityMailFromDomainAttributes {
@@ -5213,11 +5330,14 @@ impl AsRef<str> for CustomMailFromStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityDkimAttributes {
     /// <p>Is true if DKIM signing is enabled for email sent from the identity. It's false otherwise. The default value is true.</p>
+    #[doc(hidden)]
     pub dkim_enabled: bool,
     /// <p>Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens) published in the domain name's DNS. (This only applies to domain identities, not email address identities.)</p>
+    #[doc(hidden)]
     pub dkim_verification_status: std::option::Option<crate::model::VerificationStatus>,
     /// <p>A set of character strings that represent the domain's identity. Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IdentityDkimAttributes {
@@ -5323,13 +5443,16 @@ impl IdentityDkimAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReputationOptions {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
     /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     /// <p>If the value is <code>true</code>, reputation metrics are published. If the value is <code>false</code>, reputation metrics are not published. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
     /// <p>The date and time at which the reputation metrics for the configuration set were last reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
     /// <p>When you disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code> and later re-enable it, the reputation metrics for the configuration set (but not for the entire Amazon SES account) are reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
+    #[doc(hidden)]
     pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {

@@ -64,6 +64,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreBackupOutput {
     /// <p>Information on the <code>Backup</code> object created.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl RestoreBackupOutput {
@@ -118,6 +119,7 @@ impl RestoreBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterOutput {
     /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifyClusterOutput {
@@ -172,6 +174,7 @@ impl ModifyClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyBackupAttributesOutput {
     /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl ModifyBackupAttributesOutput {
@@ -226,8 +229,10 @@ impl ModifyBackupAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>A list of tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -308,8 +313,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitializeClusterOutput {
     /// <p>The cluster's state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     /// <p>A description of the cluster's state.</p>
+    #[doc(hidden)]
     pub state_message: std::option::Option<std::string::String>,
 }
 impl InitializeClusterOutput {
@@ -384,8 +391,10 @@ impl InitializeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
     /// <p>A list of clusters.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClustersOutput {
@@ -466,8 +475,10 @@ impl DescribeClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsOutput {
     /// <p>A list of backups.</p>
+    #[doc(hidden)]
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
     /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
@@ -548,6 +559,7 @@ impl DescribeBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmOutput {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
+    #[doc(hidden)]
     pub hsm_id: std::option::Option<std::string::String>,
 }
 impl DeleteHsmOutput {
@@ -602,6 +614,7 @@ impl DeleteHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>Information about the cluster that was deleted.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -656,6 +669,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupOutput {
     /// <p>Information on the <code>Backup</code> object deleted.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl DeleteBackupOutput {
@@ -710,6 +724,7 @@ impl DeleteBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmOutput {
     /// <p>Information about the HSM that was created.</p>
+    #[doc(hidden)]
     pub hsm: std::option::Option<crate::model::Hsm>,
 }
 impl CreateHsmOutput {
@@ -762,6 +777,7 @@ impl CreateHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>Information about the cluster that was created.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {
@@ -817,6 +833,7 @@ impl CreateClusterOutput {
 pub struct CopyBackupToRegionOutput {
     /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
+    #[doc(hidden)]
     pub destination_backup: std::option::Option<crate::model::DestinationBackup>,
 }
 impl CopyBackupToRegionOutput {

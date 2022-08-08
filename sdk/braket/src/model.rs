@@ -5,22 +5,31 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuantumTaskSummary {
     /// <p>The ARN of the task.</p>
+    #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QuantumTaskStatus>,
     /// <p>The ARN of the device the task ran on.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The shots used for the task.</p>
+    #[doc(hidden)]
     pub shots: std::option::Option<i64>,
     /// <p>The S3 bucket where the task result file is stored..</p>
+    #[doc(hidden)]
     pub output_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    #[doc(hidden)]
     pub output_s3_directory: std::option::Option<std::string::String>,
     /// <p>The time at which the task was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the task finished.</p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -333,10 +342,13 @@ impl AsRef<str> for QuantumTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchQuantumTasksFilter {
     /// <p>The name of the device used for the task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values to use for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An operator to use in the filter.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::SearchQuantumTasksFilterOperator>,
 }
 impl SearchQuantumTasksFilter {
@@ -563,20 +575,28 @@ impl AsRef<str> for CancellationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p>The status of the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobPrimaryStatus>,
     /// <p>The ARN of the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The date and time that the Amazon Braket job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job was started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job ended.</p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -861,10 +881,13 @@ impl AsRef<str> for JobPrimaryStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values to use for the jobs filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An operator to use for the jobs filter.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::SearchJobsFilterOperator>,
 }
 impl SearchJobsFilter {
@@ -1040,6 +1063,7 @@ impl AsRef<str> for SearchJobsFilterOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
 }
 impl DeviceConfig {
@@ -1094,10 +1118,13 @@ impl DeviceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceConfig {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::InstanceType>,
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+    #[doc(hidden)]
     pub volume_size_in_gb: std::option::Option<i32>,
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
 }
 impl InstanceConfig {
@@ -1432,6 +1459,7 @@ impl AsRef<str> for InstanceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+    #[doc(hidden)]
     pub max_runtime_in_seconds: std::option::Option<i32>,
 }
 impl JobStoppingCondition {
@@ -1486,8 +1514,10 @@ impl JobStoppingCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+    #[doc(hidden)]
     pub local_path: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl JobCheckpointConfig {
@@ -1559,8 +1589,10 @@ impl JobCheckpointConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobOutputDataConfig {
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<std::string::String>,
 }
 impl JobOutputDataConfig {
@@ -1632,10 +1664,13 @@ impl JobOutputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputFileConfig {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The MIME type of the data.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The location of the channel data.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
 impl InputFileConfig {
@@ -1727,6 +1762,7 @@ impl InputFileConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::model::S3DataSource>,
 }
 impl DataSource {
@@ -1784,6 +1820,7 @@ impl DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl S3DataSource {
@@ -1838,8 +1875,10 @@ impl S3DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmSpecification {
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+    #[doc(hidden)]
     pub script_mode_config: std::option::Option<crate::model::ScriptModeConfig>,
     /// <p>The container image used to create an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
 impl AlgorithmSpecification {
@@ -1917,6 +1956,7 @@ impl AlgorithmSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerImage {
     /// <p>The URI locating the container image.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl ContainerImage {
@@ -1969,10 +2009,13 @@ impl ContainerImage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub entry_point: std::option::Option<std::string::String>,
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+    #[doc(hidden)]
     pub compression_type: std::option::Option<crate::model::CompressionType>,
 }
 impl ScriptModeConfig {
@@ -2119,10 +2162,13 @@ impl AsRef<str> for CompressionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::JobEventType>,
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub time_of_event: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl JobEventDetails {
@@ -2320,14 +2366,19 @@ impl AsRef<str> for JobEventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSummary {
     /// <p>The ARN of the device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The name of the device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The provider of the device.</p>
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The type of the device.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<crate::model::DeviceType>,
     /// <p>The status of the device.</p>
+    #[doc(hidden)]
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
 }
 impl DeviceSummary {
@@ -2573,8 +2624,10 @@ impl AsRef<str> for DeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesFilter {
     /// <p>The name to use to filter results.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values to use to filter results.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SearchDevicesFilter {

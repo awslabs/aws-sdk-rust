@@ -154,6 +154,7 @@ impl StartCanaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource that you specified.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -227,8 +228,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>An array of structures that each contain information about one group.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -309,8 +312,10 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupResourcesOutput {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupResourcesOutput {
@@ -391,8 +396,10 @@ impl ListGroupResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedGroupsOutput {
@@ -473,6 +480,7 @@ impl ListAssociatedGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// <p>A structure that contains information about the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
@@ -525,8 +533,10 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryRunsOutput {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
+    #[doc(hidden)]
     pub canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCanaryRunsOutput {
@@ -607,6 +617,7 @@ impl GetCanaryRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryOutput {
     /// <p>A structure that contains the full information about the canary.</p>
+    #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
 }
 impl GetCanaryOutput {
@@ -691,8 +702,10 @@ impl DisassociateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeVersionsOutput {
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
+    #[doc(hidden)]
     pub runtime_versions: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRuntimeVersionsOutput {
@@ -774,8 +787,10 @@ impl DescribeRuntimeVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
+    #[doc(hidden)]
     pub canaries_last_run: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCanariesLastRunOutput {
@@ -857,8 +872,10 @@ impl DescribeCanariesLastRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
+    #[doc(hidden)]
     pub canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCanariesOutput {
@@ -999,6 +1016,7 @@ impl DeleteCanaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>A structure that contains information about the group that was just created.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
@@ -1051,6 +1069,7 @@ impl CreateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCanaryOutput {
     /// <p>The full details about the canary you have created.</p>
+    #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
 }
 impl CreateCanaryOutput {

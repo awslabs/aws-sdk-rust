@@ -55,8 +55,10 @@ impl AsRef<str> for LanguageCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl OutputDataConfig {
@@ -129,8 +131,10 @@ impl OutputDataConfig {
 pub struct InputDataConfig {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
     /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The path to the input data files in the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
@@ -205,32 +209,46 @@ impl InputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>The identifier assigned to the detection job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name that you assigned to the detection job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>A description of the status of a job.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the detection job was submitted for processing.</p>
+    #[doc(hidden)]
     pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the detection job completed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The language code of the input documents.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the file that describes the results of a batch job.</p>
+    #[doc(hidden)]
     pub manifest_file_path: std::option::Option<std::string::String>,
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl ComprehendMedicalAsyncJobProperties {
@@ -619,12 +637,16 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComprehendMedicalAsyncJobFilter {
     /// <p>Filters on the name of the job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+    #[doc(hidden)]
     pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+    #[doc(hidden)]
     pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ComprehendMedicalAsyncJobFilter {
@@ -739,6 +761,7 @@ impl ComprehendMedicalAsyncJobFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
+    #[doc(hidden)]
     pub original_text_characters: std::option::Option<i32>,
 }
 impl Characters {
@@ -793,10 +816,13 @@ impl Characters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnomedctDetails {
     /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+    #[doc(hidden)]
     pub edition: std::option::Option<std::string::String>,
     /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p> The version date of the SNOMED-CT ontology used. </p>
+    #[doc(hidden)]
     pub version_date: std::option::Option<std::string::String>,
 }
 impl SnomedctDetails {
@@ -885,24 +911,34 @@ impl SnomedctDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnomedctEntity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p> The segment of input text extracted as this entity. </p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::SnomedctEntityCategory>,
     /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SnomedctEntityType>,
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of the detected entity. </p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::SnomedctAttribute>>,
     /// <p> Contextual information for the entity. </p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+    #[doc(hidden)]
     pub snomedct_concepts: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
 }
 impl SnomedctEntity {
@@ -1144,10 +1180,13 @@ impl SnomedctEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnomedctConcept {
     /// <p> The description of the SNOMED-CT concept. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The numeric ID for the SNOMED-CT concept. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl SnomedctConcept {
@@ -1236,8 +1275,10 @@ impl SnomedctConcept {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnomedctTrait {
     /// <p> The name or contextual description of a detected trait. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SnomedctTraitName>,
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl SnomedctTrait {
@@ -1375,26 +1416,37 @@ impl AsRef<str> for SnomedctTraitName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnomedctAttribute {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::SnomedctEntityCategory>,
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SnomedctAttributeType>,
     /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    #[doc(hidden)]
     pub relationship_score: std::option::Option<f32>,
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::SnomedctRelationshipType>,
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute. </p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
+    #[doc(hidden)]
     pub snomedct_concepts: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
 }
 impl SnomedctAttribute {
@@ -1927,24 +1979,34 @@ impl AsRef<str> for SnomedctEntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p>The segment of input text extracted from which the entity was detected.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::RxNormEntityCategory>,
     /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RxNormEntityType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::RxNormAttribute>>,
     /// <p> Contextual information for the entity.</p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    #[doc(hidden)]
     pub rx_norm_concepts: std::option::Option<std::vec::Vec<crate::model::RxNormConcept>>,
 }
 impl RxNormEntity {
@@ -2186,10 +2248,13 @@ impl RxNormEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormConcept {
     /// <p>The description of the RxNorm concept.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>RxNorm concept ID, also known as the RxCUI.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl RxNormConcept {
@@ -2278,8 +2343,10 @@ impl RxNormConcept {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::RxNormTraitName>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl RxNormTrait {
@@ -2405,20 +2472,28 @@ impl AsRef<str> for RxNormTraitName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormAttribute {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RxNormAttributeType>,
     /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
+    #[doc(hidden)]
     pub relationship_score: std::option::Option<f32>,
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
 }
 impl RxNormAttribute {
@@ -2793,24 +2868,34 @@ impl AsRef<str> for RxNormEntityCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p>The segment of input text that is matched to the detected entity.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::Icd10CmEntityCategory>,
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Icd10CmEntityType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Icd10CmAttribute>>,
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    #[doc(hidden)]
     pub icd10_cm_concepts: std::option::Option<std::vec::Vec<crate::model::Icd10CmConcept>>,
 }
 impl Icd10CmEntity {
@@ -3052,10 +3137,13 @@ impl Icd10CmEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl Icd10CmConcept {
@@ -3144,8 +3232,10 @@ impl Icd10CmConcept {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::Icd10CmTraitName>,
     /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl Icd10CmTrait {
@@ -3283,24 +3373,34 @@ impl AsRef<str> for Icd10CmTraitName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmAttribute {
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Icd10CmAttributeType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
+    #[doc(hidden)]
     pub relationship_score: std::option::Option<f32>,
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The segment of input text which contains the detected attribute.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::Icd10CmEntityType>,
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::Icd10CmRelationshipType>,
 }
 impl Icd10CmAttribute {
@@ -3770,22 +3870,31 @@ impl AsRef<str> for Icd10CmEntityCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p> The segment of input text extracted as this entity.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p> The category of the entity.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::EntityType>,
     /// <p> Describes the specific type of entity with category of entities.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EntitySubType>,
     /// <p>Contextual information for the entity.</p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::Trait>>,
     /// <p> The extracted attributes that relate to this entity.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl Entity {
@@ -3997,24 +4106,34 @@ impl Entity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p> The type of attribute. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EntitySubType>,
     /// <p> The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as an attribute. </p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
     /// <p> The level of confidence that Comprehend Medical; has that this attribute is correctly related to this entity. </p>
+    #[doc(hidden)]
     pub relationship_score: std::option::Option<f32>,
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::RelationshipType>,
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p> The category of attribute. </p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::EntityType>,
     /// <p> Contextual information for this attribute. </p>
+    #[doc(hidden)]
     pub traits: std::option::Option<std::vec::Vec<crate::model::Trait>>,
 }
 impl Attribute {
@@ -4237,8 +4356,10 @@ impl Attribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AttributeName>,
     /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f32>,
 }
 impl Trait {
@@ -4832,8 +4953,10 @@ impl AsRef<str> for EntitySubType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnmappedAttribute {
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::Attribute>,
 }
 impl UnmappedAttribute {

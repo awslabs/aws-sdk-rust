@@ -150,20 +150,28 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryDescription {
     /// <p> The name of the repository. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
+    #[doc(hidden)]
     pub administrator_account: std::option::Option<std::string::String>,
     /// <p> The name of the domain that contains the repository. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the repository. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> A text description of the repository. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    #[doc(hidden)]
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
     /// <p> An array of external connections associated with the repository. </p>
+    #[doc(hidden)]
     pub external_connections:
         std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
 }
@@ -368,6 +376,7 @@ impl RepositoryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
+    #[doc(hidden)]
     pub external_connection_name: std::option::Option<std::string::String>,
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
     /// <ul>
@@ -376,8 +385,10 @@ pub struct RepositoryExternalConnectionInfo {
     /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub package_format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExternalConnectionStatus>,
 }
 impl RepositoryExternalConnectionInfo {
@@ -607,6 +618,7 @@ impl AsRef<str> for PackageFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepositoryInfo {
@@ -664,6 +676,7 @@ impl UpstreamRepositoryInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepository {
@@ -729,8 +742,10 @@ pub struct PackageVersionError {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::PackageVersionErrorCode>,
     /// <p> The error message associated with the error. </p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PackageVersionError {
@@ -910,8 +925,10 @@ impl AsRef<str> for PackageVersionErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p> The status of a package version. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl SuccessfulPackageVersionInfo {
@@ -1064,8 +1081,10 @@ impl AsRef<str> for PackageVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1137,10 +1156,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePolicy {
     /// <p> The ARN of the resource associated with the resource policy </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy. </p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p> The resource policy formatted in JSON. </p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl ResourcePolicy {
@@ -1229,6 +1251,7 @@ impl ResourcePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+    #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
 }
 impl PackageOriginConfiguration {
@@ -1286,8 +1309,10 @@ impl PackageOriginConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+    #[doc(hidden)]
     pub publish: std::option::Option<crate::model::AllowPublish>,
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+    #[doc(hidden)]
     pub upstream: std::option::Option<crate::model::AllowUpstream>,
 }
 impl PackageOriginRestrictions {
@@ -1475,16 +1500,22 @@ impl AsRef<str> for AllowPublish {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySummary {
     /// <p> The name of the repository. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account ID that manages the repository. </p>
+    #[doc(hidden)]
     pub administrator_account: std::option::Option<std::string::String>,
     /// <p> The name of the domain that contains the repository. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The ARN of the repository. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The description of the repository. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl RepositorySummary {
@@ -1627,12 +1658,16 @@ impl RepositorySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionSummary {
     /// <p> Information about a package version. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The revision associated with a package version. </p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::PackageVersionOrigin>,
 }
 impl PackageVersionSummary {
@@ -1744,8 +1779,10 @@ impl PackageVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionOrigin {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+    #[doc(hidden)]
     pub domain_entry_point: std::option::Option<crate::model::DomainEntryPoint>,
     /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+    #[doc(hidden)]
     pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
 }
 impl PackageVersionOrigin {
@@ -1882,8 +1919,10 @@ impl AsRef<str> for PackageVersionOriginType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainEntryPoint {
     /// <p>The name of the repository that a package was originally published to.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the external connection that a package was ingested from.</p>
+    #[doc(hidden)]
     pub external_connection_name: std::option::Option<std::string::String>,
 }
 impl DomainEntryPoint {
@@ -2017,12 +2056,16 @@ pub struct PackageDependency {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that this package depends on. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The type of a package dependency. The possible values depend on the package type. Example types are <code>compile</code>, <code>runtime</code>, and <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>, and <code>optional</code> for npm packages. </p>
+    #[doc(hidden)]
     pub dependency_type: std::option::Option<std::string::String>,
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
+    #[doc(hidden)]
     pub version_requirement: std::option::Option<std::string::String>,
 }
 impl PackageDependency {
@@ -2149,10 +2192,13 @@ impl PackageDependency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetSummary {
     /// <p> The name of the asset. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The size of the asset. </p>
+    #[doc(hidden)]
     pub size: std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
+    #[doc(hidden)]
     pub hashes: std::option::Option<
         std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
     >,
@@ -2327,6 +2373,7 @@ impl AsRef<str> for HashAlgorithm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageSummary {
     /// <p> The format of the package. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -2334,10 +2381,13 @@ pub struct PackageSummary {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+    #[doc(hidden)]
     pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
 }
 impl PackageSummary {
@@ -2470,16 +2520,22 @@ impl PackageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainSummary {
     /// <p> The name of the domain. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p> The ARN of the domain. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> A string that contains the status of the domain. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DomainStatus>,
     /// <p> A timestamp that contains the date and time the domain was created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The key used to encrypt the domain. </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
 }
 impl DomainSummary {
@@ -2683,6 +2739,7 @@ impl AsRef<str> for DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionDescription {
     /// <p> The format of the package version. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -2690,28 +2747,40 @@ pub struct PackageVersionDescription {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the requested package. </p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p> The version of the package. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p> The homepage associated with the package. </p>
+    #[doc(hidden)]
     pub home_page: std::option::Option<std::string::String>,
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
+    #[doc(hidden)]
     pub source_code_repository: std::option::Option<std::string::String>,
     /// <p> A timestamp that contains the date and time the package version was published. </p>
+    #[doc(hidden)]
     pub published_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Information about licenses associated with the package version. </p>
+    #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::LicenseInfo>>,
     /// <p> The revision of the package version. </p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p> A string that contains the status of the package version. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::PackageVersionOrigin>,
 }
 impl PackageVersionDescription {
@@ -3009,8 +3078,10 @@ impl PackageVersionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseInfo {
     /// <p> Name of the license. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The URL for license data. </p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl LicenseInfo {
@@ -3082,6 +3153,7 @@ impl LicenseInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -3089,10 +3161,13 @@ pub struct PackageDescription {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the package.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The package origin configuration for the package.</p>
+    #[doc(hidden)]
     pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
 }
 impl PackageDescription {
@@ -3225,22 +3300,31 @@ impl PackageDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDescription {
     /// <p> The name of the domain. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account ID that owns the domain. </p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the domain. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The current status of a domain. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DomainStatus>,
     /// <p> A timestamp that represents the date and time the domain was created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p> The number of repositories in the domain. </p>
+    #[doc(hidden)]
     pub repository_count: i32,
     /// <p> The total size of all assets in the domain. </p>
+    #[doc(hidden)]
     pub asset_size_bytes: i64,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
+    #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
 }
 impl DomainDescription {

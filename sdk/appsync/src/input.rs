@@ -9556,12 +9556,16 @@ impl UpdateTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTypeInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The new type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The new definition.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The new type format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
 impl UpdateTypeInput {
@@ -9598,32 +9602,43 @@ impl std::fmt::Debug for UpdateTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The new type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The new field name.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>The new data source name.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The new request mapping template.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The new response mapping template.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
+    #[doc(hidden)]
     pub pipeline_config: std::option::Option<crate::model::PipelineConfig>,
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
+    #[doc(hidden)]
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl UpdateResolverInput {
@@ -9701,23 +9716,32 @@ impl std::fmt::Debug for UpdateResolverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGraphqlApiInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub log_config: std::option::Option<crate::model::LogConfig>,
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    #[doc(hidden)]
     pub additional_authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    #[doc(hidden)]
     pub xray_enabled: bool,
     /// <p>Configuration for Lambda function authorization.</p>
+    #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl UpdateGraphqlApiInput {
@@ -9788,25 +9812,35 @@ impl std::fmt::Debug for UpdateGraphqlApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The function ID.</p>
+    #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> request mapping template.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl UpdateFunctionInput {
@@ -9874,8 +9908,10 @@ impl std::fmt::Debug for UpdateFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A description of the <code>DomainName</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDomainNameInput {
@@ -9902,28 +9938,39 @@ impl std::fmt::Debug for UpdateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The new name for the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description for the data source.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The new data source type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The new Amazon DynamoDB configuration.</p>
+    #[doc(hidden)]
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
     /// <p>The new Lambda configuration.</p>
+    #[doc(hidden)]
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
+    #[doc(hidden)]
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
+    #[doc(hidden)]
     pub open_search_service_config:
         std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
     /// <p>The new HTTP endpoint configuration.</p>
+    #[doc(hidden)]
     pub http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
     /// <p>The new relational database configuration.</p>
+    #[doc(hidden)]
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
@@ -10009,12 +10056,16 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiKeyInput {
     /// <p>The ID for the GraphQL API.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The API key ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
+    #[doc(hidden)]
     pub expires: i64,
 }
 impl UpdateApiKeyInput {
@@ -10051,15 +10102,18 @@ impl std::fmt::Debug for UpdateApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    #[doc(hidden)]
     pub ttl: i64,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
@@ -10083,6 +10137,7 @@ pub struct UpdateApiCacheInput {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
 }
 impl UpdateApiCacheInput {
@@ -10145,8 +10200,10 @@ impl std::fmt::Debug for UpdateApiCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of <code>TagKey</code> objects.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -10173,8 +10230,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A <code>TagMap</code> object.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10205,8 +10264,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaCreationInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The schema definition, in GraphQL schema language format.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<aws_smithy_types::Blob>,
 }
 impl StartSchemaCreationInput {
@@ -10233,12 +10294,16 @@ impl std::fmt::Debug for StartSchemaCreationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypesInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListTypesInput {
@@ -10275,6 +10340,7 @@ impl std::fmt::Debug for ListTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -10296,12 +10362,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolversByFunctionInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The function ID.</p>
+    #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListResolversByFunctionInput {
@@ -10338,12 +10408,16 @@ impl std::fmt::Debug for ListResolversByFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolversInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListResolversInput {
@@ -10380,8 +10454,10 @@ impl std::fmt::Debug for ListResolversInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphqlApisInput {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListGraphqlApisInput {
@@ -10408,10 +10484,13 @@ impl std::fmt::Debug for ListGraphqlApisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListFunctionsInput {
@@ -10443,8 +10522,10 @@ impl std::fmt::Debug for ListFunctionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesInput {
     /// <p>The API token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDomainNamesInput {
@@ -10471,10 +10552,13 @@ impl std::fmt::Debug for ListDomainNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDataSourcesInput {
@@ -10506,10 +10590,13 @@ impl std::fmt::Debug for ListDataSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiKeysInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListApiKeysInput {
@@ -10541,10 +10628,13 @@ impl std::fmt::Debug for ListApiKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypeInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
 impl GetTypeInput {
@@ -10576,6 +10666,7 @@ impl std::fmt::Debug for GetTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaCreationStatusInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl GetSchemaCreationStatusInput {
@@ -10597,10 +10688,13 @@ impl std::fmt::Debug for GetSchemaCreationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The resolver type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The resolver field name.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
 }
 impl GetResolverInput {
@@ -10632,10 +10726,13 @@ impl std::fmt::Debug for GetResolverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntrospectionSchemaInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The schema format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::OutputType>,
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
+    #[doc(hidden)]
     pub include_directives: std::option::Option<bool>,
 }
 impl GetIntrospectionSchemaInput {
@@ -10667,6 +10764,7 @@ impl std::fmt::Debug for GetIntrospectionSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGraphqlApiInput {
     /// <p>The API ID for the GraphQL API.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl GetGraphqlApiInput {
@@ -10688,8 +10786,10 @@ impl std::fmt::Debug for GetGraphqlApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> ID.</p>
+    #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
 }
 impl GetFunctionInput {
@@ -10716,6 +10816,7 @@ impl std::fmt::Debug for GetFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainNameInput {
@@ -10737,8 +10838,10 @@ impl std::fmt::Debug for GetDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSourceInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDataSourceInput {
@@ -10765,6 +10868,7 @@ impl std::fmt::Debug for GetDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiCacheInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl GetApiCacheInput {
@@ -10786,6 +10890,7 @@ impl std::fmt::Debug for GetApiCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiAssociationInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetApiAssociationInput {
@@ -10807,6 +10912,7 @@ impl std::fmt::Debug for GetApiAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushApiCacheInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl FlushApiCacheInput {
@@ -10828,8 +10934,10 @@ impl std::fmt::Debug for FlushApiCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateMappingTemplateInput {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl EvaluateMappingTemplateInput {
@@ -10856,6 +10964,7 @@ impl std::fmt::Debug for EvaluateMappingTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApiInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisassociateApiInput {
@@ -10877,8 +10986,10 @@ impl std::fmt::Debug for DisassociateApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTypeInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
 }
 impl DeleteTypeInput {
@@ -10905,10 +11016,13 @@ impl std::fmt::Debug for DeleteTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResolverInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The name of the resolver type.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The resolver field name.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
 }
 impl DeleteResolverInput {
@@ -10940,6 +11054,7 @@ impl std::fmt::Debug for DeleteResolverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGraphqlApiInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl DeleteGraphqlApiInput {
@@ -10961,8 +11076,10 @@ impl std::fmt::Debug for DeleteGraphqlApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> ID.</p>
+    #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionInput {
@@ -10989,6 +11106,7 @@ impl std::fmt::Debug for DeleteFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainNameInput {
@@ -11010,8 +11128,10 @@ impl std::fmt::Debug for DeleteDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
@@ -11038,8 +11158,10 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiKeyInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The ID for the API key.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteApiKeyInput {
@@ -11066,6 +11188,7 @@ impl std::fmt::Debug for DeleteApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiCacheInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl DeleteApiCacheInput {
@@ -11087,11 +11210,14 @@ impl std::fmt::Debug for DeleteApiCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTypeInput {
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
 impl CreateTypeInput {
@@ -11124,32 +11250,43 @@ impl std::fmt::Debug for CreateTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Type</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The name of the field to attach the resolver to.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>The name of the data source for which the resolver is being created.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The mapping template to use for requests.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The mapping template to use for responses from the data source.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
+    #[doc(hidden)]
     pub pipeline_config: std::option::Option<crate::model::PipelineConfig>,
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
+    #[doc(hidden)]
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl CreateResolverInput {
@@ -11227,24 +11364,33 @@ impl std::fmt::Debug for CreateResolverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon CloudWatch Logs configuration.</p>
+    #[doc(hidden)]
     pub log_config: std::option::Option<crate::model::LogConfig>,
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The Amazon Cognito user pool configuration.</p>
+    #[doc(hidden)]
     pub user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
     /// <p>The OIDC configuration.</p>
+    #[doc(hidden)]
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>A <code>TagMap</code> object.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    #[doc(hidden)]
     pub additional_authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    #[doc(hidden)]
     pub xray_enabled: bool,
     /// <p>Configuration for Lambda function authorization.</p>
+    #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl CreateGraphqlApiInput {
@@ -11318,23 +11464,32 @@ impl std::fmt::Debug for CreateGraphqlApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> response mapping template.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl CreateFunctionInput {
@@ -11397,10 +11552,13 @@ impl std::fmt::Debug for CreateFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainNameInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>A description of the <code>DomainName</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateDomainNameInput {
@@ -11432,28 +11590,39 @@ impl std::fmt::Debug for CreateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name for the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Amazon DynamoDB settings.</p>
+    #[doc(hidden)]
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
     /// <p>Lambda settings.</p>
+    #[doc(hidden)]
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
+    #[doc(hidden)]
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
+    #[doc(hidden)]
     pub open_search_service_config:
         std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
+    #[doc(hidden)]
     pub http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
+    #[doc(hidden)]
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
@@ -11539,10 +11708,13 @@ impl std::fmt::Debug for CreateDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiKeyInput {
     /// <p>The ID for your GraphQL API.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
+    #[doc(hidden)]
     pub expires: i64,
 }
 impl CreateApiKeyInput {
@@ -11574,19 +11746,24 @@ impl std::fmt::Debug for CreateApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    #[doc(hidden)]
     pub ttl: i64,
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    #[doc(hidden)]
     pub transit_encryption_enabled: bool,
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    #[doc(hidden)]
     pub at_rest_encryption_enabled: bool,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
@@ -11610,6 +11787,7 @@ pub struct CreateApiCacheInput {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
 }
 impl CreateApiCacheInput {
@@ -11688,8 +11866,10 @@ impl std::fmt::Debug for CreateApiCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApiInput {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl AssociateApiInput {

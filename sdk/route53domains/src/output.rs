@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViewBillingOutput {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
     /// <p>A summary of billing records.</p>
+    #[doc(hidden)]
     pub billing_records: std::option::Option<std::vec::Vec<crate::model::BillingRecord>>,
 }
 impl ViewBillingOutput {
@@ -120,6 +122,7 @@ impl UpdateTagsForDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameserversOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateDomainNameserversOutput {
@@ -174,6 +177,7 @@ impl UpdateDomainNameserversOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainContactPrivacyOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateDomainContactPrivacyOutput {
@@ -228,6 +232,7 @@ impl UpdateDomainContactPrivacyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateDomainContactOutput {
@@ -282,8 +287,10 @@ impl UpdateDomainContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl TransferDomainToAnotherAwsAccountOutput {
@@ -355,6 +362,7 @@ impl TransferDomainToAnotherAwsAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl TransferDomainOutput {
@@ -409,6 +417,7 @@ impl TransferDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
+    #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
 }
 impl RetrieveDomainAuthCodeOutput {
@@ -463,10 +472,13 @@ impl RetrieveDomainAuthCodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    #[doc(hidden)]
     pub is_already_verified: std::option::Option<bool>,
 }
 impl ResendContactReachabilityEmailOutput {
@@ -558,6 +570,7 @@ impl ResendContactReachabilityEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RenewDomainOutput {
@@ -612,6 +625,7 @@ impl RenewDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RejectDomainTransferFromAnotherAwsAccountOutput {
@@ -667,6 +681,7 @@ impl RejectDomainTransferFromAnotherAwsAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RegisterDomainOutput {
@@ -721,6 +736,7 @@ impl RegisterDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForDomainOutput {
@@ -784,9 +800,11 @@ impl ListTagsForDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
+    #[doc(hidden)]
     pub prices: std::option::Option<std::vec::Vec<crate::model::DomainPrice>>,
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
+    #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
 }
 impl ListPricesOutput {
@@ -873,8 +891,10 @@ impl ListPricesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsOutput {
     /// <p>Lists summaries of the operations.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
 }
 impl ListOperationsOutput {
@@ -958,8 +978,10 @@ impl ListOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p>A list of domains.</p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -1043,16 +1065,22 @@ impl ListDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
     /// <p>The current status of the requested operation in the system.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OperationStatus>,
     /// <p>Detailed information on the status including possible errors.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of a domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The type of operation that was requested.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OperationType>,
     /// <p>The date when the request was submitted.</p>
+    #[doc(hidden)]
     pub submitted_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetOperationDetailOutput {
@@ -1198,6 +1226,7 @@ impl GetOperationDetailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
+    #[doc(hidden)]
     pub suggestions_list: std::option::Option<std::vec::Vec<crate::model::DomainSuggestion>>,
 }
 impl GetDomainSuggestionsOutput {
@@ -1262,48 +1291,69 @@ impl GetDomainSuggestionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDetailOutput {
     /// <p>The name of a domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
     /// <p>Specifies whether the domain registration is set to renew automatically.</p>
+    #[doc(hidden)]
     pub auto_renew: std::option::Option<bool>,
     /// <p>Provides details about the domain administrative contact.</p>
+    #[doc(hidden)]
     pub admin_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides details about the domain registrant.</p>
+    #[doc(hidden)]
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides details about the domain technical contact.</p>
+    #[doc(hidden)]
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    #[doc(hidden)]
     pub admin_privacy: std::option::Option<bool>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    #[doc(hidden)]
     pub registrant_privacy: std::option::Option<bool>,
     /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    #[doc(hidden)]
     pub tech_privacy: std::option::Option<bool>,
     /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+    #[doc(hidden)]
     pub registrar_name: std::option::Option<std::string::String>,
     /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
+    #[doc(hidden)]
     pub who_is_server: std::option::Option<std::string::String>,
     /// <p>Web address of the registrar.</p>
+    #[doc(hidden)]
     pub registrar_url: std::option::Option<std::string::String>,
     /// <p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
+    #[doc(hidden)]
     pub abuse_contact_email: std::option::Option<std::string::String>,
     /// <p>Phone number for reporting abuse.</p>
+    #[doc(hidden)]
     pub abuse_contact_phone: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub registry_domain_id: std::option::Option<std::string::String>,
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+    #[doc(hidden)]
     pub reseller: std::option::Option<std::string::String>,
     /// <p>Deprecated.</p>
+    #[doc(hidden)]
     pub dns_sec: std::option::Option<std::string::String>,
     /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
     /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>
     /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
+    #[doc(hidden)]
     pub status_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDomainDetailOutput {
@@ -1758,6 +1808,7 @@ impl GetDomainDetailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactReachabilityStatusOutput {
     /// <p>The domain name for which you requested the reachability status.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether the registrant contact has responded. Values include the following:</p>
     /// <dl>
@@ -1780,6 +1831,7 @@ pub struct GetContactReachabilityStatusOutput {
     /// <p>The time limit expired before the registrant contact responded.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReachabilityStatus>,
 }
 impl GetContactReachabilityStatusOutput {
@@ -1914,6 +1966,7 @@ impl GetContactReachabilityStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl EnableDomainTransferLockOutput {
@@ -1998,6 +2051,7 @@ impl EnableDomainAutoRenewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DisableDomainTransferLockOutput {
@@ -2112,6 +2166,7 @@ impl DeleteTagsForDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteDomainOutput {
@@ -2166,6 +2221,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
+    #[doc(hidden)]
     pub transferability: std::option::Option<crate::model::DomainTransferability>,
 }
 impl CheckDomainTransferabilityOutput {
@@ -2282,6 +2338,7 @@ pub struct CheckDomainAvailabilityOutput {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub availability: std::option::Option<crate::model::DomainAvailability>,
 }
 impl CheckDomainAvailabilityOutput {
@@ -2516,6 +2573,7 @@ impl CheckDomainAvailabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDomainTransferToAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CancelDomainTransferToAnotherAwsAccountOutput {
@@ -2571,6 +2629,7 @@ impl CancelDomainTransferToAnotherAwsAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl AcceptDomainTransferFromAnotherAwsAccountOutput {

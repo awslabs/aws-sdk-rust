@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationTimeoutException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationTimeoutException {
@@ -69,6 +70,7 @@ impl OperationTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInputException {
@@ -133,6 +135,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceException {
@@ -197,6 +200,7 @@ impl InternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityNotFoundException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityNotFoundException {
@@ -261,6 +265,7 @@ impl EntityNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -325,6 +330,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueEncryptionException {
     /// <p>The message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlueEncryptionException {
@@ -389,6 +395,7 @@ impl GlueEncryptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNumberLimitExceededException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNumberLimitExceededException {
@@ -453,6 +460,7 @@ impl ResourceNumberLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotReadyException {
@@ -517,6 +525,7 @@ impl ResourceNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -581,6 +590,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -645,6 +655,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionMismatchException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VersionMismatchException {
@@ -709,6 +720,7 @@ impl VersionMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchedulerTransitioningException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchedulerTransitioningException {
@@ -773,6 +785,7 @@ impl SchedulerTransitioningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerRunningException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CrawlerRunningException {
@@ -837,6 +850,7 @@ impl CrawlerRunningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalBlueprintStateException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalBlueprintStateException {
@@ -901,6 +915,7 @@ impl IllegalBlueprintStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalWorkflowStateException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalWorkflowStateException {
@@ -965,6 +980,7 @@ impl IllegalWorkflowStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalSessionStateException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalSessionStateException {
@@ -1029,6 +1045,7 @@ impl IllegalSessionStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchedulerNotRunningException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchedulerNotRunningException {
@@ -1093,6 +1110,7 @@ impl SchedulerNotRunningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerStoppingException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CrawlerStoppingException {
@@ -1157,6 +1175,7 @@ impl CrawlerStoppingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerNotRunningException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CrawlerNotRunningException {
@@ -1221,6 +1240,7 @@ impl CrawlerNotRunningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentRunsExceededException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentRunsExceededException {
@@ -1285,6 +1305,7 @@ impl ConcurrentRunsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MlTransformNotReadyException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MlTransformNotReadyException {
@@ -1352,6 +1373,7 @@ impl MlTransformNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchedulerRunningException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchedulerRunningException {
@@ -1416,6 +1438,7 @@ impl SchedulerRunningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoScheduleException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoScheduleException {
@@ -1480,6 +1503,7 @@ impl NoScheduleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -1544,6 +1568,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionCheckFailureException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConditionCheckFailureException {
@@ -1608,6 +1633,7 @@ impl ConditionCheckFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionTypeMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PermissionTypeMismatchException {
@@ -1672,6 +1698,7 @@ impl PermissionTypeMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStateException {
@@ -1736,6 +1763,7 @@ impl InvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -1800,6 +1828,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotentParameterMismatchException {

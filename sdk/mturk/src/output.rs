@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQualificationTypeOutput {
     /// <p> Contains a QualificationType data structure.</p>
+    #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl UpdateQualificationTypeOutput {
@@ -301,6 +302,7 @@ impl RejectAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
+    #[doc(hidden)]
     pub notify_workers_failure_statuses:
         std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
 }
@@ -374,10 +376,13 @@ impl NotifyWorkersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkersWithQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The list of Qualification elements returned by this call. </p>
+    #[doc(hidden)]
     pub qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
 }
 impl ListWorkersWithQualificationTypeOutput {
@@ -475,10 +480,13 @@ impl ListWorkersWithQualificationTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerBlocksOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
+    #[doc(hidden)]
     pub worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
 }
 impl ListWorkerBlocksOutput {
@@ -576,16 +584,22 @@ impl ListWorkerBlocksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
+    #[doc(hidden)]
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
+    #[doc(hidden)]
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
+    #[doc(hidden)]
     pub assignment_review_report: std::option::Option<crate::model::ReviewReport>,
     /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
+    #[doc(hidden)]
     pub hit_review_report: std::option::Option<crate::model::ReviewReport>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReviewPolicyResultsForHitOutput {
@@ -737,10 +751,13 @@ impl ListReviewPolicyResultsForHitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewableHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
+    #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListReviewableHiTsOutput {
@@ -838,10 +855,13 @@ impl ListReviewableHiTsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationTypesOutput {
     /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of QualificationType elements returned by the query. </p>
+    #[doc(hidden)]
     pub qualification_types: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
 }
 impl ListQualificationTypesOutput {
@@ -940,10 +960,13 @@ impl ListQualificationTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationRequestsOutput {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
+    #[doc(hidden)]
     pub qualification_requests:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
 }
@@ -1045,10 +1068,13 @@ impl ListQualificationRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsForQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
+    #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListHiTsForQualificationTypeOutput {
@@ -1146,10 +1172,13 @@ impl ListHiTsForQualificationTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
+    #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListHiTsOutput {
@@ -1247,10 +1276,13 @@ impl ListHiTsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBonusPaymentsOutput {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
+    #[doc(hidden)]
     pub bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
 }
 impl ListBonusPaymentsOutput {
@@ -1348,10 +1380,13 @@ impl ListBonusPaymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssignmentsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p> The collection of Assignment data structures returned by this call.</p>
+    #[doc(hidden)]
     pub assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
 }
 impl ListAssignmentsForHitOutput {
@@ -1449,6 +1484,7 @@ impl ListAssignmentsForHitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
+    #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl GetQualificationTypeOutput {
@@ -1506,6 +1542,7 @@ impl GetQualificationTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationScoreOutput {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
+    #[doc(hidden)]
     pub qualification: std::option::Option<crate::model::Qualification>,
 }
 impl GetQualificationScoreOutput {
@@ -1563,6 +1600,7 @@ impl GetQualificationScoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
+    #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl GetHitOutput {
@@ -1615,6 +1653,7 @@ impl GetHitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileUploadUrlOutput {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    #[doc(hidden)]
     pub file_upload_url: std::option::Option<std::string::String>,
 }
 impl GetFileUploadUrlOutput {
@@ -1672,8 +1711,10 @@ impl GetFileUploadUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssignmentOutput {
     /// <p> The assignment. The response includes one Assignment element. </p>
+    #[doc(hidden)]
     pub assignment: std::option::Option<crate::model::Assignment>,
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
+    #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl GetAssignmentOutput {
@@ -1748,8 +1789,10 @@ impl GetAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountBalanceOutput {
     /// <p>A string representing a currency amount.</p>
+    #[doc(hidden)]
     pub available_balance: std::option::Option<std::string::String>,
     /// <p>A string representing a currency amount.</p>
+    #[doc(hidden)]
     pub on_hold_balance: std::option::Option<std::string::String>,
 }
 impl GetAccountBalanceOutput {
@@ -1977,6 +2020,7 @@ impl CreateWorkerBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQualificationTypeOutput {
     /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
+    #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl CreateQualificationTypeOutput {
@@ -2034,6 +2078,7 @@ impl CreateQualificationTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitWithHitTypeOutput {
@@ -2086,6 +2131,7 @@ impl CreateHitWithHitTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
 }
 impl CreateHitTypeOutput {
@@ -2140,6 +2186,7 @@ impl CreateHitTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitOutput {

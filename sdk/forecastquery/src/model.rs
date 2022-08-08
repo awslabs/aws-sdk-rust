@@ -11,6 +11,7 @@ pub struct Forecast {
     /// <li> <p>p50</p> </li>
     /// <li> <p>p90</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub predictions: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
     >,
@@ -109,8 +110,10 @@ impl Forecast {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The forecast value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl DataPoint {

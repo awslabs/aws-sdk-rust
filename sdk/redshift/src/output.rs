@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerStatusOutput {
     /// <p>The name of the database that receives data from the partner.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl UpdatePartnerStatusOutput {
@@ -80,6 +82,7 @@ impl UpdatePartnerStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateEncryptionKeyOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl RotateEncryptionKeyOutput {
@@ -134,6 +137,7 @@ impl RotateEncryptionKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSnapshotAccessOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl RevokeSnapshotAccessOutput {
@@ -188,22 +192,31 @@ impl RevokeSnapshotAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeEndpointAccessOutput {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    #[doc(hidden)]
     pub grantor: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<std::string::String>,
     /// <p>The cluster identifier.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
+    #[doc(hidden)]
     pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The status of the authorization action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    #[doc(hidden)]
     pub allowed_all_vp_cs: bool,
     /// <p>The VPCs allowed access to the cluster.</p>
+    #[doc(hidden)]
     pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    #[doc(hidden)]
     pub endpoint_count: i32,
 }
 impl RevokeEndpointAccessOutput {
@@ -415,6 +428,7 @@ impl RevokeEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
+    #[doc(hidden)]
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
 }
 impl RevokeClusterSecurityGroupIngressOutput {
@@ -474,6 +488,7 @@ impl RevokeClusterSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ResumeClusterOutput {
@@ -528,6 +543,7 @@ impl ResumeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromClusterSnapshotOutput {
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
+    #[doc(hidden)]
     pub table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
 }
 impl RestoreTableFromClusterSnapshotOutput {
@@ -585,6 +601,7 @@ impl RestoreTableFromClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromClusterSnapshotOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl RestoreFromClusterSnapshotOutput {
@@ -639,6 +656,7 @@ impl RestoreFromClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResizeClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ResizeClusterOutput {
@@ -693,8 +711,10 @@ impl ResizeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
+    #[doc(hidden)]
     pub parameter_group_status: std::option::Option<std::string::String>,
 }
 impl ResetClusterParameterGroupOutput {
@@ -772,15 +792,20 @@ impl ResetClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    #[doc(hidden)]
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl RejectDataShareOutput {
@@ -929,6 +954,7 @@ impl RejectDataShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl RebootClusterOutput {
@@ -983,6 +1009,7 @@ impl RebootClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedNodeOfferingOutput {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    #[doc(hidden)]
     pub reserved_node: std::option::Option<crate::model::ReservedNode>,
 }
 impl PurchaseReservedNodeOfferingOutput {
@@ -1040,6 +1067,7 @@ impl PurchaseReservedNodeOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl PauseClusterOutput {
@@ -1094,16 +1122,22 @@ impl PauseClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUsageLimitOutput {
     /// <p>The identifier of the usage limit.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster with a usage limit.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    #[doc(hidden)]
     pub feature_type: std::option::Option<crate::model::UsageLimitFeatureType>,
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    #[doc(hidden)]
     pub limit_type: std::option::Option<crate::model::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    #[doc(hidden)]
     pub amount: i64,
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
@@ -1111,8 +1145,10 @@ pub struct ModifyUsageLimitOutput {
     /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
     /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ModifyUsageLimitOutput {
@@ -1328,18 +1364,25 @@ impl ModifyUsageLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotScheduleOutput {
     /// <p>A list of ScheduleDefinitions.</p>
+    #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for the schedule.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The description of the schedule.</p>
+    #[doc(hidden)]
     pub schedule_description: std::option::Option<std::string::String>,
     /// <p>An optional set of tags describing the schedule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
+    #[doc(hidden)]
     pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
+    #[doc(hidden)]
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    #[doc(hidden)]
     pub associated_clusters:
         std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
 }
@@ -1545,6 +1588,7 @@ impl ModifySnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotCopyRetentionPeriodOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifySnapshotCopyRetentionPeriodOutput {
@@ -1599,25 +1643,34 @@ impl ModifySnapshotCopyRetentionPeriodOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyScheduledActionOutput {
     /// <p>The name of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    #[doc(hidden)]
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The description of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_description: std::option::Option<std::string::String>,
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
+    #[doc(hidden)]
     pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModifyScheduledActionOutput {
@@ -1850,6 +1903,7 @@ impl ModifyScheduledActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
     /// <p>Describes event subscriptions.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
@@ -1907,25 +1961,35 @@ impl ModifyEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_status: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
+    #[doc(hidden)]
     pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl ModifyEndpointAccessOutput {
@@ -2169,6 +2233,7 @@ impl ModifyEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group: std::option::Option<crate::model::ClusterSubnetGroup>,
 }
 impl ModifyClusterSubnetGroupOutput {
@@ -2256,6 +2321,7 @@ impl ModifyClusterSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl ModifyClusterSnapshotOutput {
@@ -2310,8 +2376,10 @@ impl ModifyClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
+    #[doc(hidden)]
     pub parameter_group_status: std::option::Option<std::string::String>,
 }
 impl ModifyClusterParameterGroupOutput {
@@ -2389,6 +2457,7 @@ impl ModifyClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterMaintenanceOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifyClusterMaintenanceOutput {
@@ -2443,6 +2512,7 @@ impl ModifyClusterMaintenanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterIamRolesOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifyClusterIamRolesOutput {
@@ -2497,6 +2567,7 @@ impl ModifyClusterIamRolesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterDbRevisionOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifyClusterDbRevisionOutput {
@@ -2551,6 +2622,7 @@ impl ModifyClusterDbRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl ModifyClusterOutput {
@@ -2605,8 +2677,10 @@ impl ModifyClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was replaced.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The updated content of the authentication profile in JSON format.</p>
+    #[doc(hidden)]
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
 impl ModifyAuthenticationProfileOutput {
@@ -2696,6 +2770,7 @@ impl ModifyAuthenticationProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAquaConfigurationOutput {
     /// <p>The updated AQUA configuration of the cluster. </p>
+    #[doc(hidden)]
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
 }
 impl ModifyAquaConfigurationOutput {
@@ -2753,8 +2828,10 @@ impl ModifyAquaConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedNodeExchangeOfferingsOutput {
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
+    #[doc(hidden)]
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
 }
@@ -2842,8 +2919,10 @@ impl GetReservedNodeExchangeOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedNodeExchangeConfigurationOptionsOutput {
     /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
+    #[doc(hidden)]
     pub reserved_node_configuration_option_list:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeConfigurationOption>>,
 }
@@ -2940,12 +3019,16 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClusterCredentialsWithIamOutput {
     /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>A temporary password that you provide when you connect to a database.</p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_refresh_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetClusterCredentialsWithIamOutput {
@@ -3057,10 +3140,13 @@ impl GetClusterCredentialsWithIamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClusterCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetClusterCredentialsOutput {
@@ -3152,6 +3238,7 @@ impl GetClusterCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSnapshotCopyOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl EnableSnapshotCopyOutput {
@@ -3206,20 +3293,28 @@ impl EnableSnapshotCopyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    #[doc(hidden)]
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
+    #[doc(hidden)]
     pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_message: std::option::Option<std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    #[doc(hidden)]
     pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
     /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingOutput {
@@ -3422,15 +3517,20 @@ impl EnableLoggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDataShareConsumerOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    #[doc(hidden)]
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl DisassociateDataShareConsumerOutput {
@@ -3579,6 +3679,7 @@ impl DisassociateDataShareConsumerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSnapshotCopyOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DisableSnapshotCopyOutput {
@@ -3633,20 +3734,28 @@ impl DisableSnapshotCopyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    #[doc(hidden)]
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
+    #[doc(hidden)]
     pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_message: std::option::Option<std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    #[doc(hidden)]
     pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
     /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableLoggingOutput {
@@ -3849,8 +3958,10 @@ impl DisableLoggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsageLimitsOutput {
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
+    #[doc(hidden)]
     pub usage_limits: std::option::Option<std::vec::Vec<crate::model::UsageLimit>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsageLimitsOutput {
@@ -3931,8 +4042,10 @@ impl DescribeUsageLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>A list of tags with their associated resources.</p>
+    #[doc(hidden)]
     pub tagged_resources: std::option::Option<std::vec::Vec<crate::model::TaggedResource>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTagsOutput {
@@ -4014,9 +4127,11 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
+    #[doc(hidden)]
     pub table_restore_status_details:
         std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTableRestoreStatusOutput {
@@ -4106,8 +4221,10 @@ impl DescribeTableRestoreStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorageOutput {
     /// <p>The total amount of storage currently used for snapshots.</p>
+    #[doc(hidden)]
     pub total_backup_size_in_mega_bytes: f64,
     /// <p>The total amount of storage currently provisioned.</p>
+    #[doc(hidden)]
     pub total_provisioned_storage_in_mega_bytes: f64,
 }
 impl DescribeStorageOutput {
@@ -4195,8 +4312,10 @@ impl DescribeStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotSchedulesOutput {
     /// <p>A list of SnapshotSchedules.</p>
+    #[doc(hidden)]
     pub snapshot_schedules: std::option::Option<std::vec::Vec<crate::model::SnapshotSchedule>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotSchedulesOutput {
@@ -4279,8 +4398,10 @@ impl DescribeSnapshotSchedulesOutput {
 pub struct DescribeSnapshotCopyGrantsOutput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
+    #[doc(hidden)]
     pub snapshot_copy_grants: std::option::Option<std::vec::Vec<crate::model::SnapshotCopyGrant>>,
 }
 impl DescribeSnapshotCopyGrantsOutput {
@@ -4365,8 +4486,10 @@ impl DescribeSnapshotCopyGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsOutput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>List of retrieved scheduled actions. </p>
+    #[doc(hidden)]
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
 }
 impl DescribeScheduledActionsOutput {
@@ -4448,42 +4571,58 @@ impl DescribeScheduledActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResizeOutput {
     /// <p>The node type that the cluster will have after the resize operation is complete.</p>
+    #[doc(hidden)]
     pub target_node_type: std::option::Option<std::string::String>,
     /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
+    #[doc(hidden)]
     pub target_number_of_nodes: std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
+    #[doc(hidden)]
     pub target_cluster_type: std::option::Option<std::string::String>,
     /// <p>The status of the resize operation.</p>
     /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
+    #[doc(hidden)]
     pub import_tables_completed: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
+    #[doc(hidden)]
     pub import_tables_in_progress: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
+    #[doc(hidden)]
     pub import_tables_not_started: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
+    #[doc(hidden)]
     pub avg_resize_rate_in_mega_bytes_per_second: std::option::Option<f64>,
     /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
+    #[doc(hidden)]
     pub total_resize_data_in_mega_bytes: std::option::Option<i64>,
     /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
+    #[doc(hidden)]
     pub progress_in_mega_bytes: std::option::Option<i64>,
     /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
+    #[doc(hidden)]
     pub elapsed_time_in_seconds: std::option::Option<i64>,
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
+    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: std::option::Option<i64>,
     /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
+    #[doc(hidden)]
     pub resize_type: std::option::Option<std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    #[doc(hidden)]
     pub target_encryption_type: std::option::Option<std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
+    #[doc(hidden)]
     pub data_transfer_progress_percent: std::option::Option<f64>,
 }
 impl DescribeResizeOutput {
@@ -4875,8 +5014,10 @@ impl DescribeResizeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <code>ReservedNode</code> objects.</p>
+    #[doc(hidden)]
     pub reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
 }
 impl DescribeReservedNodesOutput {
@@ -4957,8 +5098,10 @@ impl DescribeReservedNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeOfferingsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
+    #[doc(hidden)]
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
 }
@@ -5046,9 +5189,11 @@ impl DescribeReservedNodeOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeExchangeStatusOutput {
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
+    #[doc(hidden)]
     pub reserved_node_exchange_status_details:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReservedNodeExchangeStatusOutput {
@@ -5140,6 +5285,7 @@ impl DescribeReservedNodeExchangeStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnersOutput {
     /// <p>A list of partner integrations.</p>
+    #[doc(hidden)]
     pub partner_integration_info_list:
         std::option::Option<std::vec::Vec<crate::model::PartnerIntegrationInfo>>,
 }
@@ -5213,9 +5359,11 @@ impl DescribePartnersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableClusterOptionsOutput {
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
+    #[doc(hidden)]
     pub orderable_cluster_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableClusterOption>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableClusterOptionsOutput {
@@ -5302,9 +5450,11 @@ impl DescribeOrderableClusterOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeConfigurationOptionsOutput {
     /// <p>A list of valid node configurations.</p>
+    #[doc(hidden)]
     pub node_configuration_option_list:
         std::option::Option<std::vec::Vec<crate::model::NodeConfigurationOption>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeNodeConfigurationOptionsOutput {
@@ -5394,20 +5544,28 @@ impl DescribeNodeConfigurationOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingStatusOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    #[doc(hidden)]
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The last time that logs were delivered.</p>
+    #[doc(hidden)]
     pub last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
+    #[doc(hidden)]
     pub last_failure_message: std::option::Option<std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    #[doc(hidden)]
     pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
     /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoggingStatusOutput {
@@ -5610,8 +5768,10 @@ impl DescribeLoggingStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmConfigurationsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
+    #[doc(hidden)]
     pub hsm_configurations: std::option::Option<std::vec::Vec<crate::model::HsmConfiguration>>,
 }
 impl DescribeHsmConfigurationsOutput {
@@ -5693,8 +5853,10 @@ impl DescribeHsmConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmClientCertificatesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_client_certificates:
         std::option::Option<std::vec::Vec<crate::model::HsmClientCertificate>>,
 }
@@ -5782,8 +5944,10 @@ impl DescribeHsmClientCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
+    #[doc(hidden)]
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
@@ -5868,8 +6032,10 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Event</code> instances. </p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -5950,6 +6116,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of event categories descriptions.</p>
+    #[doc(hidden)]
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
@@ -6020,9 +6187,11 @@ impl DescribeEventCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointAuthorizationOutput {
     /// <p>The authorizations to an endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_authorization_list:
         std::option::Option<std::vec::Vec<crate::model::EndpointAuthorization>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAuthorizationOutput {
@@ -6112,8 +6281,10 @@ impl DescribeEndpointAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointAccessOutput {
     /// <p>The list of endpoints with access to the cluster.</p>
+    #[doc(hidden)]
     pub endpoint_access_list: std::option::Option<std::vec::Vec<crate::model::EndpointAccess>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAccessOutput {
@@ -6195,6 +6366,7 @@ impl DescribeEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultClusterParametersOutput {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
+    #[doc(hidden)]
     pub default_cluster_parameters: std::option::Option<crate::model::DefaultClusterParameters>,
 }
 impl DescribeDefaultClusterParametersOutput {
@@ -6261,8 +6433,10 @@ impl DescribeDefaultClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesForProducerOutput {
     /// <p>Shows the results of datashares available for producers.</p>
+    #[doc(hidden)]
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForProducerOutput {
@@ -6343,8 +6517,10 @@ impl DescribeDataSharesForProducerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesForConsumerOutput {
     /// <p>Shows the results of datashares available for consumers.</p>
+    #[doc(hidden)]
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForConsumerOutput {
@@ -6425,8 +6601,10 @@ impl DescribeDataSharesForConsumerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesOutput {
     /// <p>The results returned from describing datashares.</p>
+    #[doc(hidden)]
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesOutput {
@@ -6507,8 +6685,10 @@ impl DescribeDataSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterVersionsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Version</code> elements. </p>
+    #[doc(hidden)]
     pub cluster_versions: std::option::Option<std::vec::Vec<crate::model::ClusterVersion>>,
 }
 impl DescribeClusterVersionsOutput {
@@ -6590,8 +6770,10 @@ impl DescribeClusterVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterTracksOutput {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    #[doc(hidden)]
     pub maintenance_tracks: std::option::Option<std::vec::Vec<crate::model::MaintenanceTrack>>,
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterTracksOutput {
@@ -6673,8 +6855,10 @@ impl DescribeClusterTracksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSubnetGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
+    #[doc(hidden)]
     pub cluster_subnet_groups: std::option::Option<std::vec::Vec<crate::model::ClusterSubnetGroup>>,
 }
 impl DescribeClusterSubnetGroupsOutput {
@@ -6758,8 +6942,10 @@ impl DescribeClusterSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSnapshotsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Snapshot</code> instances. </p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeClusterSnapshotsOutput {
@@ -6840,8 +7026,10 @@ impl DescribeClusterSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSecurityGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
+    #[doc(hidden)]
     pub cluster_security_groups:
         std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroup>>,
 }
@@ -6929,8 +7117,10 @@ impl DescribeClusterSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
 impl DescribeClustersOutput {
@@ -7011,8 +7201,10 @@ impl DescribeClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParametersOutput {
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterParametersOutput {
@@ -7093,8 +7285,10 @@ impl DescribeClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParameterGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
+    #[doc(hidden)]
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroup>>,
 }
 impl DescribeClusterParameterGroupsOutput {
@@ -7176,8 +7370,10 @@ impl DescribeClusterParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterDbRevisionsOutput {
     /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of revisions.</p>
+    #[doc(hidden)]
     pub cluster_db_revisions: std::option::Option<std::vec::Vec<crate::model::ClusterDbRevision>>,
 }
 impl DescribeClusterDbRevisionsOutput {
@@ -7259,6 +7455,7 @@ impl DescribeClusterDbRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuthenticationProfilesOutput {
     /// <p>The list of authentication profiles.</p>
+    #[doc(hidden)]
     pub authentication_profiles:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProfile>>,
 }
@@ -7329,6 +7526,7 @@ impl DescribeAuthenticationProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>A list of attributes assigned to an account.</p>
+    #[doc(hidden)]
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
 }
 impl DescribeAccountAttributesOutput {
@@ -7543,8 +7741,10 @@ impl DeleteScheduledActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartnerOutput {
     /// <p>The name of the database that receives data from the partner.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl DeletePartnerOutput {
@@ -7709,25 +7909,35 @@ impl DeleteEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_status: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
+    #[doc(hidden)]
     pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl DeleteEndpointAccessOutput {
@@ -8001,6 +8211,7 @@ impl DeleteClusterSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl DeleteClusterSnapshotOutput {
@@ -8115,6 +8326,7 @@ impl DeleteClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -8169,6 +8381,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was deleted.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
 impl DeleteAuthenticationProfileOutput {
@@ -8232,15 +8445,20 @@ impl DeleteAuthenticationProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeauthorizeDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    #[doc(hidden)]
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl DeauthorizeDataShareOutput {
@@ -8389,16 +8607,22 @@ impl DeauthorizeDataShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageLimitOutput {
     /// <p>The identifier of the usage limit.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster with a usage limit.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    #[doc(hidden)]
     pub feature_type: std::option::Option<crate::model::UsageLimitFeatureType>,
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    #[doc(hidden)]
     pub limit_type: std::option::Option<crate::model::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    #[doc(hidden)]
     pub amount: i64,
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
@@ -8406,8 +8630,10 @@ pub struct CreateUsageLimitOutput {
     /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
     /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateUsageLimitOutput {
@@ -8653,18 +8879,25 @@ impl CreateTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotScheduleOutput {
     /// <p>A list of ScheduleDefinitions.</p>
+    #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for the schedule.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The description of the schedule.</p>
+    #[doc(hidden)]
     pub schedule_description: std::option::Option<std::string::String>,
     /// <p>An optional set of tags describing the schedule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
+    #[doc(hidden)]
     pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
+    #[doc(hidden)]
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    #[doc(hidden)]
     pub associated_clusters:
         std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
 }
@@ -8871,6 +9104,7 @@ impl CreateSnapshotScheduleOutput {
 pub struct CreateSnapshotCopyGrantOutput {
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    #[doc(hidden)]
     pub snapshot_copy_grant: std::option::Option<crate::model::SnapshotCopyGrant>,
 }
 impl CreateSnapshotCopyGrantOutput {
@@ -8931,25 +9165,34 @@ impl CreateSnapshotCopyGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledActionOutput {
     /// <p>The name of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    #[doc(hidden)]
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The description of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_description: std::option::Option<std::string::String>,
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ScheduledActionState>,
     /// <p>List of times when the scheduled action will run. </p>
+    #[doc(hidden)]
     pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateScheduledActionOutput {
@@ -9182,6 +9425,7 @@ impl CreateScheduledActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmConfigurationOutput {
     /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
+    #[doc(hidden)]
     pub hsm_configuration: std::option::Option<crate::model::HsmConfiguration>,
 }
 impl CreateHsmConfigurationOutput {
@@ -9239,6 +9483,7 @@ impl CreateHsmConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmClientCertificateOutput {
     /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate: std::option::Option<crate::model::HsmClientCertificate>,
 }
 impl CreateHsmClientCertificateOutput {
@@ -9298,6 +9543,7 @@ impl CreateHsmClientCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>Describes event subscriptions.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
@@ -9355,25 +9601,35 @@ impl CreateEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_status: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
+    #[doc(hidden)]
     pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl CreateEndpointAccessOutput {
@@ -9617,6 +9873,7 @@ impl CreateEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group: std::option::Option<crate::model::ClusterSubnetGroup>,
 }
 impl CreateClusterSubnetGroupOutput {
@@ -9674,6 +9931,7 @@ impl CreateClusterSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateClusterSnapshotOutput {
@@ -9728,6 +9986,7 @@ impl CreateClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterSecurityGroupOutput {
     /// <p>Describes a security group.</p>
+    #[doc(hidden)]
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
 }
 impl CreateClusterSecurityGroupOutput {
@@ -9787,6 +10046,7 @@ impl CreateClusterSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterParameterGroupOutput {
     /// <p>Describes a parameter group.</p>
+    #[doc(hidden)]
     pub cluster_parameter_group: std::option::Option<crate::model::ClusterParameterGroup>,
 }
 impl CreateClusterParameterGroupOutput {
@@ -9850,6 +10110,7 @@ impl CreateClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>Describes a cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {
@@ -9904,8 +10165,10 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was created.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The content of the authentication profile in JSON format.</p>
+    #[doc(hidden)]
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
 impl CreateAuthenticationProfileOutput {
@@ -9995,6 +10258,7 @@ impl CreateAuthenticationProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CopyClusterSnapshotOutput {
@@ -10049,42 +10313,58 @@ impl CopyClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelResizeOutput {
     /// <p>The node type that the cluster will have after the resize operation is complete.</p>
+    #[doc(hidden)]
     pub target_node_type: std::option::Option<std::string::String>,
     /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
+    #[doc(hidden)]
     pub target_number_of_nodes: std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
+    #[doc(hidden)]
     pub target_cluster_type: std::option::Option<std::string::String>,
     /// <p>The status of the resize operation.</p>
     /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
+    #[doc(hidden)]
     pub import_tables_completed: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
+    #[doc(hidden)]
     pub import_tables_in_progress: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
+    #[doc(hidden)]
     pub import_tables_not_started: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
+    #[doc(hidden)]
     pub avg_resize_rate_in_mega_bytes_per_second: std::option::Option<f64>,
     /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
+    #[doc(hidden)]
     pub total_resize_data_in_mega_bytes: std::option::Option<i64>,
     /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
+    #[doc(hidden)]
     pub progress_in_mega_bytes: std::option::Option<i64>,
     /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
+    #[doc(hidden)]
     pub elapsed_time_in_seconds: std::option::Option<i64>,
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
+    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: std::option::Option<i64>,
     /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
+    #[doc(hidden)]
     pub resize_type: std::option::Option<std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    #[doc(hidden)]
     pub target_encryption_type: std::option::Option<std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
+    #[doc(hidden)]
     pub data_transfer_progress_percent: std::option::Option<f64>,
 }
 impl CancelResizeOutput {
@@ -10476,8 +10756,10 @@ impl CancelResizeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchModifyClusterSnapshotsOutput {
     /// <p>A list of the snapshots that were modified.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any errors returned.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::SnapshotErrorMessage>>,
 }
 impl BatchModifyClusterSnapshotsOutput {
@@ -10567,8 +10849,10 @@ impl BatchModifyClusterSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteClusterSnapshotsOutput {
     /// <p>A list of the snapshot identifiers that were deleted. </p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any errors returned.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::SnapshotErrorMessage>>,
 }
 impl BatchDeleteClusterSnapshotsOutput {
@@ -10658,6 +10942,7 @@ impl BatchDeleteClusterSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeSnapshotAccessOutput {
     /// <p>Describes a snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl AuthorizeSnapshotAccessOutput {
@@ -10712,22 +10997,31 @@ impl AuthorizeSnapshotAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeEndpointAccessOutput {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    #[doc(hidden)]
     pub grantor: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<std::string::String>,
     /// <p>The cluster identifier.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
+    #[doc(hidden)]
     pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The status of the authorization action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    #[doc(hidden)]
     pub allowed_all_vp_cs: bool,
     /// <p>The VPCs allowed access to the cluster.</p>
+    #[doc(hidden)]
     pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    #[doc(hidden)]
     pub endpoint_count: i32,
 }
 impl AuthorizeEndpointAccessOutput {
@@ -10939,15 +11233,20 @@ impl AuthorizeEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    #[doc(hidden)]
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl AuthorizeDataShareOutput {
@@ -11096,6 +11395,7 @@ impl AuthorizeDataShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
+    #[doc(hidden)]
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
 }
 impl AuthorizeClusterSecurityGroupIngressOutput {
@@ -11155,15 +11455,20 @@ impl AuthorizeClusterSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDataShareConsumerOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    #[doc(hidden)]
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    #[doc(hidden)]
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl AssociateDataShareConsumerOutput {
@@ -11312,8 +11617,10 @@ impl AssociateDataShareConsumerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPartnerOutput {
     /// <p>The name of the database that receives data from the partner.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl AddPartnerOutput {
@@ -11388,6 +11695,7 @@ impl AddPartnerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptReservedNodeExchangeOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub exchanged_reserved_node: std::option::Option<crate::model::ReservedNode>,
 }
 impl AcceptReservedNodeExchangeOutput {

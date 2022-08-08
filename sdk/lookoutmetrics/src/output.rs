@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
 impl UpdateMetricSetOutput {
@@ -61,6 +62,7 @@ impl UpdateMetricSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyDetectorOutput {
     /// <p>The ARN of the updated detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalyDetectorOutput {
@@ -118,6 +120,7 @@ impl UpdateAnomalyDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAlertOutput {
     /// <p>The ARN of the updated alert.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAlertOutput {
@@ -262,6 +265,7 @@ impl PutFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -335,8 +339,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
+    #[doc(hidden)]
     pub metric_set_summary_list: std::option::Option<std::vec::Vec<crate::model::MetricSetSummary>>,
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricSetsOutput {
@@ -420,14 +426,19 @@ impl ListMetricSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupTimeSeriesOutput {
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the measure field.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>Timestamps for the anomalous metrics.</p>
+    #[doc(hidden)]
     pub timestamp_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of anomalous metrics.</p>
+    #[doc(hidden)]
     pub time_series_list: std::option::Option<std::vec::Vec<crate::model::TimeSeries>>,
 }
 impl ListAnomalyGroupTimeSeriesOutput {
@@ -571,11 +582,14 @@ impl ListAnomalyGroupTimeSeriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
+    #[doc(hidden)]
     pub anomaly_group_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AnomalyGroupSummary>>,
     /// <p>Aggregated details about the anomaly groups.</p>
+    #[doc(hidden)]
     pub anomaly_group_statistics: std::option::Option<crate::model::AnomalyGroupStatistics>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyGroupSummariesOutput {
@@ -691,9 +705,11 @@ impl ListAnomalyGroupSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+    #[doc(hidden)]
     pub inter_metric_impact_list:
         std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
@@ -780,9 +796,11 @@ impl ListAnomalyGroupRelatedMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyDetectorsOutput {
     /// <p>A list of anomaly detectors in the account in the current region.</p>
+    #[doc(hidden)]
     pub anomaly_detector_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorSummary>>,
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyDetectorsOutput {
@@ -872,8 +890,10 @@ impl ListAnomalyDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlertsOutput {
     /// <p>Contains information about an alert.</p>
+    #[doc(hidden)]
     pub alert_summary_list: std::option::Option<std::vec::Vec<crate::model::AlertSummary>>,
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlertsOutput {
@@ -955,8 +975,10 @@ impl ListAlertsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
+    #[doc(hidden)]
     pub header_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of records.</p>
+    #[doc(hidden)]
     pub sample_rows: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl GetSampleDataOutput {
@@ -1047,9 +1069,11 @@ impl GetSampleDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
+    #[doc(hidden)]
     pub anomaly_group_time_series_feedback:
         std::option::Option<std::vec::Vec<crate::model::TimeSeriesFeedback>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFeedbackOutput {
@@ -1139,6 +1163,7 @@ impl GetFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyGroupOutput {
     /// <p>Details about the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
 }
 impl GetAnomalyGroupOutput {
@@ -1196,6 +1221,7 @@ impl GetAnomalyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMetricSetConfigOutput {
     /// <p>The inferred dataset configuration for the datasource.</p>
+    #[doc(hidden)]
     pub detected_metric_set_config: std::option::Option<crate::model::DetectedMetricSetConfig>,
 }
 impl DetectMetricSetConfigOutput {
@@ -1262,30 +1288,43 @@ impl DetectMetricSetConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector that contains the dataset.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_name: std::option::Option<std::string::String>,
     /// <p>The dataset's description.</p>
+    #[doc(hidden)]
     pub metric_set_description: std::option::Option<std::string::String>,
     /// <p>The time at which the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the dataset was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>A list of the metrics defined by the dataset.</p>
+    #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
     /// <p>Contains information about the column used for tracking time in your source data.</p>
+    #[doc(hidden)]
     pub timestamp_column: std::option::Option<crate::model::TimestampColumn>,
     /// <p>A list of the dimensions chosen for analysis.</p>
+    #[doc(hidden)]
     pub dimension_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The interval at which the data will be analyzed for anomalies.</p>
+    #[doc(hidden)]
     pub metric_set_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>The time zone in which the dataset's data was recorded.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>Contains information about the dataset's source data.</p>
+    #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::MetricSource>,
 }
 impl DescribeMetricSetOutput {
@@ -1589,24 +1628,34 @@ impl DescribeMetricSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_name: std::option::Option<std::string::String>,
     /// <p>A description of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>Contains information about the detector's configuration.</p>
+    #[doc(hidden)]
     pub anomaly_detector_config: std::option::Option<crate::model::AnomalyDetectorConfigSummary>,
     /// <p>The time at which the detector was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the detector.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The reason that the detector failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The process that caused the detector to fail.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::AnomalyDetectorFailureType>,
 }
 impl DescribeAnomalyDetectorOutput {
@@ -1853,8 +1902,10 @@ impl DescribeAnomalyDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyDetectionExecutionsOutput {
     /// <p>A list of detection jobs.</p>
+    #[doc(hidden)]
     pub execution_list: std::option::Option<std::vec::Vec<crate::model::ExecutionStatus>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyDetectionExecutionsOutput {
@@ -1936,6 +1987,7 @@ impl DescribeAnomalyDetectionExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlertOutput {
     /// <p>Contains information about an alert.</p>
+    #[doc(hidden)]
     pub alert: std::option::Option<crate::model::Alert>,
 }
 impl DescribeAlertOutput {
@@ -2078,6 +2130,7 @@ impl DeactivateAnomalyDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
 impl CreateMetricSetOutput {
@@ -2135,6 +2188,7 @@ impl CreateMetricSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl CreateAnomalyDetectorOutput {
@@ -2192,6 +2246,7 @@ impl CreateAnomalyDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlertOutput {
     /// <p>The ARN of the alert.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
 }
 impl CreateAlertOutput {

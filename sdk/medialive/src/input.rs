@@ -10611,10 +10611,13 @@ impl UpdateReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReservationInput {
     /// Name of the reservation
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Renewal settings for the reservation
+    #[doc(hidden)]
     pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl UpdateReservationInput {
@@ -10646,10 +10649,13 @@ impl std::fmt::Debug for UpdateReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The new settings for a multiplex program.
+    #[doc(hidden)]
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The name of the program to update.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl UpdateMultiplexProgramInput {
@@ -10686,10 +10692,13 @@ impl std::fmt::Debug for UpdateMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMultiplexInput {
     /// ID of the multiplex to update.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The new settings for a multiplex.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// Name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateMultiplexInput {
@@ -10721,11 +10730,14 @@ impl std::fmt::Debug for UpdateMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
+    #[doc(hidden)]
     pub input_security_group_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
+    #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
 }
 impl UpdateInputSecurityGroupInput {
@@ -10760,12 +10772,16 @@ impl std::fmt::Debug for UpdateInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
+    #[doc(hidden)]
     pub hd_device_settings: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
     /// The unique ID of the input device. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
     /// The name that you assigned to this input device (not the unique ID).
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The settings that you want to apply to the UHD input device.
+    #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceConfigurableSettings>,
 }
 impl UpdateInputDeviceInput {
@@ -10806,21 +10822,29 @@ impl std::fmt::Debug for UpdateInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputInput {
     /// Destination settings for PUSH type inputs.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
     /// Settings for the devices.
+    #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceRequest>>,
     /// Unique ID of the input.
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// A list of security groups referenced by IDs to attach to the input.
+    #[doc(hidden)]
     pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    #[doc(hidden)]
     pub media_connect_flows:
         std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
     /// Name of the input.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
 }
 impl UpdateInputInput {
@@ -10879,10 +10903,13 @@ impl std::fmt::Debug for UpdateInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// Channel Id of the channel whose class should be updated.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A list of output destinations for this channel.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
 }
 impl UpdateChannelClassInput {
@@ -10914,24 +10941,34 @@ impl std::fmt::Debug for UpdateChannelClassInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// channel ID
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A list of output destinations for this channel.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The encoder settings for this channel.
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// Placeholder documentation for __listOfInputAttachment
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceUpdateSettings>,
     /// The name of the channel.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -11000,12 +11037,16 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
+    #[doc(hidden)]
     pub target_customer_id: std::option::Option<std::string::String>,
     /// The target AWS region to transfer the device.
+    #[doc(hidden)]
     pub target_region: std::option::Option<std::string::String>,
     /// An optional message for the recipient. Maximum 280 characters.
+    #[doc(hidden)]
     pub transfer_message: std::option::Option<std::string::String>,
 }
 impl TransferInputDeviceInput {
@@ -11042,6 +11083,7 @@ impl std::fmt::Debug for TransferInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMultiplexInput {
     /// The ID of the multiplex.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl StopMultiplexInput {
@@ -11063,6 +11105,7 @@ impl std::fmt::Debug for StopMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopChannelInput {
     /// A request to stop a running channel
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl StopChannelInput {
@@ -11084,6 +11127,7 @@ impl std::fmt::Debug for StopChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMultiplexInput {
     /// The ID of the multiplex.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl StartMultiplexInput {
@@ -11105,6 +11149,7 @@ impl std::fmt::Debug for StartMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInputDeviceMaintenanceWindowInput {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl StartInputDeviceMaintenanceWindowInput {
@@ -11126,6 +11171,7 @@ impl std::fmt::Debug for StartInputDeviceMaintenanceWindowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChannelInput {
     /// A request to start a channel
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl StartChannelInput {
@@ -11147,6 +11193,7 @@ impl std::fmt::Debug for StartChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInputDeviceTransferInput {
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl RejectInputDeviceTransferInput {
@@ -11168,8 +11215,10 @@ impl std::fmt::Debug for RejectInputDeviceTransferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootInputDeviceInput {
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+    #[doc(hidden)]
     pub force: std::option::Option<crate::model::RebootInputDeviceForce>,
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl RebootInputDeviceInput {
@@ -11196,18 +11245,25 @@ impl std::fmt::Debug for RebootInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingInput {
     /// Number of resources
+    #[doc(hidden)]
     pub count: i32,
     /// Name for the new reservation
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Offering to purchase, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Renewal settings for the reservation
+    #[doc(hidden)]
     pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// A collection of key-value pairs
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11263,6 +11319,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -11284,24 +11341,34 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReservationsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    #[doc(hidden)]
     pub channel_class: std::option::Option<std::string::String>,
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    #[doc(hidden)]
     pub maximum_bitrate: std::option::Option<std::string::String>,
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    #[doc(hidden)]
     pub maximum_framerate: std::option::Option<std::string::String>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    #[doc(hidden)]
     pub resolution: std::option::Option<std::string::String>,
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    #[doc(hidden)]
     pub special_feature: std::option::Option<std::string::String>,
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    #[doc(hidden)]
     pub video_quality: std::option::Option<std::string::String>,
 }
 impl ListReservationsInput {
@@ -11368,28 +11435,40 @@ impl std::fmt::Debug for ListReservationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    #[doc(hidden)]
     pub channel_class: std::option::Option<std::string::String>,
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
+    #[doc(hidden)]
     pub channel_configuration: std::option::Option<std::string::String>,
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
     /// Filter by offering duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    #[doc(hidden)]
     pub maximum_bitrate: std::option::Option<std::string::String>,
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    #[doc(hidden)]
     pub maximum_framerate: std::option::Option<std::string::String>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    #[doc(hidden)]
     pub resolution: std::option::Option<std::string::String>,
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    #[doc(hidden)]
     pub special_feature: std::option::Option<std::string::String>,
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    #[doc(hidden)]
     pub video_quality: std::option::Option<std::string::String>,
 }
 impl ListOfferingsInput {
@@ -11466,10 +11545,13 @@ impl std::fmt::Debug for ListOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The ID of the multiplex that the programs belong to.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The token to retrieve the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexProgramsInput {
@@ -11501,8 +11583,10 @@ impl std::fmt::Debug for ListMultiplexProgramsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiplexesInput {
     /// The maximum number of items to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// The token to retrieve the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexesInput {
@@ -11529,8 +11613,10 @@ impl std::fmt::Debug for ListMultiplexesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputSecurityGroupsInput {
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputSecurityGroupsInput {
@@ -11557,8 +11643,10 @@ impl std::fmt::Debug for ListInputSecurityGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputsInput {
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputsInput {
@@ -11585,10 +11673,13 @@ impl std::fmt::Debug for ListInputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub transfer_type: std::option::Option<std::string::String>,
 }
 impl ListInputDeviceTransfersInput {
@@ -11620,8 +11711,10 @@ impl std::fmt::Debug for ListInputDeviceTransfersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputDevicesInput {
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputDevicesInput {
@@ -11648,8 +11741,10 @@ impl std::fmt::Debug for ListInputDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsInput {
@@ -11676,10 +11771,13 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduleInput {
     /// Id of the channel whose schedule is being updated.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// Placeholder documentation for MaxResults
+    #[doc(hidden)]
     pub max_results: i32,
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScheduleInput {
@@ -11711,6 +11809,7 @@ impl std::fmt::Debug for DescribeScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl DescribeReservationInput {
@@ -11732,6 +11831,7 @@ impl std::fmt::Debug for DescribeReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
 }
 impl DescribeOfferingInput {
@@ -11753,8 +11853,10 @@ impl std::fmt::Debug for DescribeOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The name of the program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DescribeMultiplexProgramInput {
@@ -11781,6 +11883,7 @@ impl std::fmt::Debug for DescribeMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiplexInput {
     /// The ID of the multiplex.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl DescribeMultiplexInput {
@@ -11802,6 +11905,7 @@ impl std::fmt::Debug for DescribeMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
+    #[doc(hidden)]
     pub input_security_group_id: std::option::Option<std::string::String>,
 }
 impl DescribeInputSecurityGroupInput {
@@ -11823,8 +11927,10 @@ impl std::fmt::Debug for DescribeInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputDeviceThumbnailInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
+    #[doc(hidden)]
     pub accept: std::option::Option<crate::model::AcceptHeader>,
 }
 impl DescribeInputDeviceThumbnailInput {
@@ -11851,6 +11957,7 @@ impl std::fmt::Debug for DescribeInputDeviceThumbnailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl DescribeInputDeviceInput {
@@ -11872,6 +11979,7 @@ impl std::fmt::Debug for DescribeInputDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputInput {
     /// Unique ID of the input
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
 }
 impl DescribeInputInput {
@@ -11893,6 +12001,7 @@ impl std::fmt::Debug for DescribeInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// channel ID
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
@@ -11914,8 +12023,10 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// An array of tag keys to delete
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -11942,6 +12053,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduleInput {
     /// Id of the channel whose schedule is being deleted.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteScheduleInput {
@@ -11963,6 +12075,7 @@ impl std::fmt::Debug for DeleteScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl DeleteReservationInput {
@@ -11984,8 +12097,10 @@ impl std::fmt::Debug for DeleteReservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexProgramInput {
     /// The ID of the multiplex that the program belongs to.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The multiplex program name.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiplexProgramInput {
@@ -12012,6 +12127,7 @@ impl std::fmt::Debug for DeleteMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiplexInput {
     /// The ID of the multiplex.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl DeleteMultiplexInput {
@@ -12033,6 +12149,7 @@ impl std::fmt::Debug for DeleteMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
+    #[doc(hidden)]
     pub input_security_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteInputSecurityGroupInput {
@@ -12054,6 +12171,7 @@ impl std::fmt::Debug for DeleteInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInputInput {
     /// Unique ID of the input
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
 }
 impl DeleteInputInput {
@@ -12075,6 +12193,7 @@ impl std::fmt::Debug for DeleteInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// Unique ID of the channel.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -12096,8 +12215,10 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for Tags
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12128,10 +12249,13 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12167,12 +12291,16 @@ impl std::fmt::Debug for CreatePartnerInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The settings for this multiplex program.
+    #[doc(hidden)]
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// Name of multiplex program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// Unique request ID. This prevents retries from creating multiple resources.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateMultiplexProgramInput {
@@ -12214,14 +12342,19 @@ impl std::fmt::Debug for CreateMultiplexProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiplexInput {
     /// A list of availability zones for the multiplex. You must specify exactly two.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// Name of multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Unique request ID. This prevents retries from creating multiple resources.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12267,9 +12400,11 @@ impl std::fmt::Debug for CreateMultiplexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputSecurityGroupInput {
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
+    #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRuleCidr>>,
 }
 impl CreateInputSecurityGroupInput {
@@ -12299,28 +12434,39 @@ impl std::fmt::Debug for CreateInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputInput {
     /// Destination settings for PUSH type inputs.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestinationRequest>>,
     /// Settings for the devices.
+    #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of security groups referenced by IDs to attach to the input.
+    #[doc(hidden)]
     pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    #[doc(hidden)]
     pub media_connect_flows:
         std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
     /// Name of the input.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputType>,
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::InputVpcRequest>,
 }
 impl CreateInputInput {
@@ -12397,34 +12543,48 @@ impl std::fmt::Debug for CreateInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// Placeholder documentation for __listOfOutputDestination
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceCreateSettings>,
     /// Name of channel.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// Deprecated field that's only usable by whitelisted customers.
     #[deprecated]
+    #[doc(hidden)]
     pub reserved: std::option::Option<std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for the VPC outputs
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettings>,
 }
 impl CreateChannelInput {
@@ -12517,6 +12677,7 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimDeviceInput {
     /// The id of the device you want to claim.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ClaimDeviceInput {
@@ -12538,6 +12699,7 @@ impl std::fmt::Debug for ClaimDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl CancelInputDeviceTransferInput {
@@ -12559,10 +12721,13 @@ impl std::fmt::Debug for CancelInputDeviceTransferInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// Schedule actions to create in the schedule.
+    #[doc(hidden)]
     pub creates: std::option::Option<crate::model::BatchScheduleActionCreateRequest>,
     /// Schedule actions to delete from the schedule.
+    #[doc(hidden)]
     pub deletes: std::option::Option<crate::model::BatchScheduleActionDeleteRequest>,
 }
 impl BatchUpdateScheduleInput {
@@ -12594,8 +12759,10 @@ impl std::fmt::Debug for BatchUpdateScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopInput {
     /// List of channel IDs
+    #[doc(hidden)]
     pub channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of multiplex IDs
+    #[doc(hidden)]
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchStopInput {
@@ -12622,8 +12789,10 @@ impl std::fmt::Debug for BatchStopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStartInput {
     /// List of channel IDs
+    #[doc(hidden)]
     pub channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of multiplex IDs
+    #[doc(hidden)]
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchStartInput {
@@ -12650,12 +12819,16 @@ impl std::fmt::Debug for BatchStartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteInput {
     /// List of channel IDs
+    #[doc(hidden)]
     pub channel_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of input IDs
+    #[doc(hidden)]
     pub input_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of input security group IDs
+    #[doc(hidden)]
     pub input_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// List of multiplex IDs
+    #[doc(hidden)]
     pub multiplex_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteInput {
@@ -12692,6 +12865,7 @@ impl std::fmt::Debug for BatchDeleteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
+    #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl AcceptInputDeviceTransferInput {

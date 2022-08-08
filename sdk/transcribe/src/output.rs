@@ -4,11 +4,14 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyFilterOutput {
     /// <p>The name of the updated custom vocabulary filter.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your vocabulary filter.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time the specified vocabulary filter was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateVocabularyFilterOutput {
@@ -109,13 +112,17 @@ impl UpdateVocabularyFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyOutput {
     /// <p>The name of the updated custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your custom vocabulary.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time the specified vocabulary was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
 impl UpdateVocabularyOutput {
@@ -236,13 +243,17 @@ impl UpdateVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMedicalVocabularyOutput {
     /// <p>The name of the updated custom medical vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time the specified custom medical vocabulary was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
 impl UpdateMedicalVocabularyOutput {
@@ -363,6 +374,7 @@ impl UpdateMedicalVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
+    #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
 impl UpdateCallAnalyticsCategoryOutput {
@@ -480,6 +492,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTranscriptionJobOutput {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
 }
 impl StartTranscriptionJobOutput {
@@ -537,6 +550,7 @@ impl StartTranscriptionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the current medical transcription job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
 }
 impl StartMedicalTranscriptionJobOutput {
@@ -600,6 +614,7 @@ impl StartMedicalTranscriptionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
 }
 impl StartCallAnalyticsJobOutput {
@@ -657,8 +672,10 @@ impl StartCallAnalyticsJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabularyFiltersOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
+    #[doc(hidden)]
     pub vocabulary_filters: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
 }
 impl ListVocabularyFiltersOutput {
@@ -740,10 +757,13 @@ impl ListVocabularyFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabulariesOutput {
     /// <p>Lists all custom vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VocabularyState>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
+    #[doc(hidden)]
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
 }
 impl ListVocabulariesOutput {
@@ -844,10 +864,13 @@ impl ListVocabulariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTranscriptionJobsOutput {
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
+    #[doc(hidden)]
     pub transcription_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>,
 }
@@ -958,8 +981,10 @@ impl ListTranscriptionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) specified in your request.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Lists all tags associated with the given transcription job, vocabulary, model, or resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1040,10 +1065,13 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalVocabulariesOutput {
     /// <p>Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VocabularyState>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
+    #[doc(hidden)]
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
 }
 impl ListMedicalVocabulariesOutput {
@@ -1144,10 +1172,13 @@ impl ListMedicalVocabulariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalTranscriptionJobsOutput {
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
+    #[doc(hidden)]
     pub medical_transcription_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>,
 }
@@ -1258,8 +1289,10 @@ impl ListMedicalTranscriptionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguageModelsOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
+    #[doc(hidden)]
     pub models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
 }
 impl ListLanguageModelsOutput {
@@ -1340,10 +1373,13 @@ impl ListLanguageModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsJobsOutput {
     /// <p>Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
+    #[doc(hidden)]
     pub call_analytics_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
 }
@@ -1454,8 +1490,10 @@ impl ListCallAnalyticsJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsCategoriesOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
+    #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
 }
 impl ListCallAnalyticsCategoriesOutput {
@@ -1536,13 +1574,17 @@ impl ListCallAnalyticsCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyFilterOutput {
     /// <p>The name of the custom vocabulary filter you requested information about.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your vocabulary filter.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time the specified vocabulary filter was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 location where the vocabulary filter is stored; use this URI to view or download the vocabulary filter.</p>
+    #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
 }
 impl GetVocabularyFilterOutput {
@@ -1660,17 +1702,23 @@ impl GetVocabularyFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyOutput {
     /// <p>The name of the custom vocabulary you requested information about.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your custom vocabulary.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time the specified vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The S3 location where the vocabulary is stored; use this URI to view or download the vocabulary.</p>
+    #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
 }
 impl GetVocabularyOutput {
@@ -1828,6 +1876,7 @@ impl GetVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
 }
 impl GetTranscriptionJobOutput {
@@ -1885,17 +1934,23 @@ impl GetTranscriptionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalVocabularyOutput {
     /// <p>The name of the custom medical vocabulary you requested information about.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time the specified custom medical vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the medical vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The S3 location where the specified medical vocabulary is stored; use this URI to view or download the vocabulary.</p>
+    #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
 }
 impl GetMedicalVocabularyOutput {
@@ -2053,6 +2108,7 @@ impl GetMedicalVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
 }
 impl GetMedicalTranscriptionJobOutput {
@@ -2116,6 +2172,7 @@ impl GetMedicalTranscriptionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
+    #[doc(hidden)]
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
 }
 impl GetCallAnalyticsJobOutput {
@@ -2173,6 +2230,7 @@ impl GetCallAnalyticsJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
+    #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
 impl GetCallAnalyticsCategoryOutput {
@@ -2232,6 +2290,7 @@ pub struct DescribeLanguageModelOutput {
     /// <p>Provides information about the specified custom language model.</p>
     /// <p>This parameter also shows if the base language model you used to create your custom language model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the updated base model.</p>
     /// <p>If you tried to create a new custom language model and the request wasn't successful, you can use this <code>DescribeLanguageModel</code> to help identify the reason for this failure.</p>
+    #[doc(hidden)]
     pub language_model: std::option::Option<crate::model::LanguageModel>,
 }
 impl DescribeLanguageModelOutput {
@@ -2535,11 +2594,14 @@ impl DeleteCallAnalyticsCategoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyFilterOutput {
     /// <p>The name you chose for your custom vocabulary filter.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your vocabulary filter.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time you created your vocabulary filter.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateVocabularyFilterOutput {
@@ -2640,15 +2702,20 @@ impl CreateVocabularyFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyOutput {
     /// <p>The name you chose for your custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your custom vocabulary.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time you created your custom vocabulary.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl CreateVocabularyOutput {
@@ -2789,15 +2856,20 @@ impl CreateVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMedicalVocabularyOutput {
     /// <p>The name you chose for your custom medical vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time you created your custom medical vocabulary.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the medical transcription job request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl CreateMedicalVocabularyOutput {
@@ -2938,14 +3010,19 @@ impl CreateMedicalVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLanguageModelOutput {
     /// <p>The language code you selected for your custom language model.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
     /// <p>The Amazon Transcribe standard language model, or base model, you specified when creating your custom language model.</p>
+    #[doc(hidden)]
     pub base_model_name: std::option::Option<crate::model::BaseModelName>,
     /// <p>The name of your custom language model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
+    #[doc(hidden)]
     pub model_status: std::option::Option<crate::model::ModelStatus>,
 }
 impl CreateLanguageModelOutput {
@@ -3080,6 +3157,7 @@ impl CreateLanguageModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of your new category, including its associated rules.</p>
+    #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
 impl CreateCallAnalyticsCategoryOutput {

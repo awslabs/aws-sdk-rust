@@ -34,6 +34,7 @@ impl UpdateScalingPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
+    #[doc(hidden)]
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
 }
 impl GetScalingPlanResourceForecastDataOutput {
@@ -97,8 +98,10 @@ impl GetScalingPlanResourceForecastDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlansOutput {
     /// <p>Information about the scaling plans.</p>
+    #[doc(hidden)]
     pub scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlansOutput {
@@ -179,9 +182,11 @@ impl DescribeScalingPlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
+    #[doc(hidden)]
     pub scaling_plan_resources:
         std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlanResourcesOutput {
@@ -295,6 +300,7 @@ impl DeleteScalingPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
 }
 impl CreateScalingPlanOutput {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourcesOutput {
     /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
+    #[doc(hidden)]
     pub failed_resources_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
@@ -81,6 +82,7 @@ impl UntagResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourcesOutput {
     /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
+    #[doc(hidden)]
     pub failed_resources_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
@@ -188,8 +190,10 @@ impl StartReportCreationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagValuesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagValuesOutput {
@@ -273,8 +277,10 @@ impl GetTagValuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagKeysOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagKeysOutput {
@@ -358,8 +364,10 @@ impl GetTagKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
+    #[doc(hidden)]
     pub resource_tag_mapping_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
 }
@@ -450,8 +458,10 @@ impl GetResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
+    #[doc(hidden)]
     pub summary_list: std::option::Option<std::vec::Vec<crate::model::Summary>>,
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceSummaryOutput {
@@ -542,12 +552,16 @@ pub struct DescribeReportCreationOutput {
     /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
     /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<std::string::String>,
     /// <p>The date and time that the report was started. </p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>Details of the common errors that all operations return.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DescribeReportCreationOutput {

@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
@@ -128,12 +132,16 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -251,12 +259,16 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl MissingParameterValueException {
@@ -374,12 +386,16 @@ impl MissingParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
@@ -497,12 +513,16 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -620,12 +640,16 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
@@ -743,12 +767,16 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -866,16 +894,22 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
@@ -1030,12 +1064,16 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl InvalidResourceStateException {
@@ -1153,12 +1191,16 @@ impl InvalidResourceStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
 }
 impl DependencyFailureException {

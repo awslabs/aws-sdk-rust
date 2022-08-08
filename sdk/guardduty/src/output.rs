@@ -94,6 +94,7 @@ impl UpdateOrganizationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl UpdateMemberDetectorsOutput {
@@ -248,6 +249,7 @@ impl UpdateFindingsFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFilterOutput {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateFilterOutput {
@@ -420,6 +422,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringMembersOutput {
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl StopMonitoringMembersOutput {
@@ -484,6 +487,7 @@ impl StopMonitoringMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl StartMonitoringMembersOutput {
@@ -548,8 +552,10 @@ impl StartMonitoringMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThreatIntelSetsOutput {
     /// <p>The IDs of the ThreatIntelSet resources.</p>
+    #[doc(hidden)]
     pub threat_intel_set_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThreatIntelSetsOutput {
@@ -630,6 +636,7 @@ impl ListThreatIntelSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -703,8 +710,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishingDestinationsOutput {
     /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublishingDestinationsOutput {
@@ -785,8 +794,10 @@ impl ListPublishingDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
+    #[doc(hidden)]
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
@@ -867,8 +878,10 @@ impl ListOrganizationAdminAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
     /// <p>A list of members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -949,8 +962,10 @@ impl ListMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsOutput {
     /// <p>The IDs of the IPSet resources.</p>
+    #[doc(hidden)]
     pub ip_set_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpSetsOutput {
@@ -1031,8 +1046,10 @@ impl ListIpSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>A list of invitation descriptions.</p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -1113,8 +1130,10 @@ impl ListInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
     /// <p>The IDs of the findings that you're listing.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -1195,8 +1214,10 @@ impl ListFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersOutput {
     /// <p>A list of filter names.</p>
+    #[doc(hidden)]
     pub filter_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersOutput {
@@ -1277,8 +1298,10 @@ impl ListFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsOutput {
     /// <p>A list of detector IDs.</p>
+    #[doc(hidden)]
     pub detector_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsOutput {
@@ -1359,6 +1382,7 @@ impl ListDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl InviteMembersOutput {
@@ -1423,8 +1447,10 @@ impl InviteMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsOutput {
     /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
+    #[doc(hidden)]
     pub usage_statistics: std::option::Option<crate::model::UsageStatistics>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUsageStatisticsOutput {
@@ -1499,14 +1525,19 @@ impl GetUsageStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThreatIntelSetOutput {
     /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the threatIntelSet.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
     /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of threatIntelSet file uploaded.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ThreatIntelSetStatus>,
     /// <p>The tags of the threat list resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1656,8 +1687,10 @@ impl GetThreatIntelSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemainingFreeTrialDaysOutput {
     /// <p>The member accounts which were included in a request and were processed successfully.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::AccountFreeTrialInfo>>,
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetRemainingFreeTrialDaysOutput {
@@ -1748,8 +1781,10 @@ impl GetRemainingFreeTrialDaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersOutput {
     /// <p>A list of members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetMembersOutput {
@@ -1840,9 +1875,11 @@ impl GetMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
+    #[doc(hidden)]
     pub member_data_source_configurations:
         std::option::Option<std::vec::Vec<crate::model::MemberDataSourceConfiguration>>,
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetMemberDetectorsOutput {
@@ -1943,6 +1980,7 @@ impl GetMemberDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
+    #[doc(hidden)]
     pub master: std::option::Option<crate::model::Master>,
 }
 impl GetMasterAccountOutput {
@@ -1997,8 +2035,10 @@ impl GetMasterAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMalwareScanSettingsOutput {
     /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
+    #[doc(hidden)]
     pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
     /// <p>An enum value representing possible snapshot preservations.</p>
+    #[doc(hidden)]
     pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
 }
 impl GetMalwareScanSettingsOutput {
@@ -2084,14 +2124,19 @@ impl GetMalwareScanSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetOutput {
     /// <p>The user-friendly name for the IPSet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::IpSetFormat>,
     /// <p>The URI of the file that contains the IPSet.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of IPSet file that was uploaded.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IpSetStatus>,
     /// <p>The tags of the IPSet resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2235,6 +2280,7 @@ impl GetIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationsCountOutput {
     /// <p>The number of received invitations.</p>
+    #[doc(hidden)]
     pub invitations_count: i32,
 }
 impl GetInvitationsCountOutput {
@@ -2289,6 +2335,7 @@ impl GetInvitationsCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsStatisticsOutput {
     /// <p>The finding statistics object.</p>
+    #[doc(hidden)]
     pub finding_statistics: std::option::Option<crate::model::FindingStatistics>,
 }
 impl GetFindingsStatisticsOutput {
@@ -2346,6 +2393,7 @@ impl GetFindingsStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsOutput {
     /// <p>A list of findings.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
 impl GetFindingsOutput {
@@ -2409,16 +2457,22 @@ impl GetFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFilterOutput {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The tags of the filter resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2585,18 +2639,25 @@ impl GetFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorOutput {
     /// <p>The timestamp of when the detector was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>The publishing frequency of the finding.</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>The GuardDuty service role.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The detector status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorStatus>,
     /// <p>The last-updated timestamp for the detector.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
     /// <p>Describes which data sources are enabled for the detector.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurationsResult>,
     /// <p>The tags of the detector resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2794,6 +2855,7 @@ impl GetDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountOutput {
     /// <p>The administrator account details.</p>
+    #[doc(hidden)]
     pub administrator: std::option::Option<crate::model::Administrator>,
 }
 impl GetAdministratorAccountOutput {
@@ -2881,6 +2943,7 @@ impl EnableOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DisassociateMembersOutput {
@@ -3038,14 +3101,19 @@ impl DisableOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublishingDestinationOutput {
     /// <p>The ID of the publishing destination.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>The status of the publishing destination.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PublishingStatus>,
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
+    #[doc(hidden)]
     pub publishing_failure_start_timestamp: i64,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    #[doc(hidden)]
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
 }
 impl DescribePublishingDestinationOutput {
@@ -3193,10 +3261,13 @@ impl DescribePublishingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
+    #[doc(hidden)]
     pub member_account_limit_reached: bool,
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::OrganizationDataSourceConfigurationsResult>,
 }
 impl DescribeOrganizationConfigurationOutput {
@@ -3300,8 +3371,10 @@ impl DescribeOrganizationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMalwareScansOutput {
     /// <p>Contains information about malware scans.</p>
+    #[doc(hidden)]
     pub scans: std::option::Option<std::vec::Vec<crate::model::Scan>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMalwareScansOutput {
@@ -3442,6 +3515,7 @@ impl DeletePublishingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
     /// <p>The accounts that could not be processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteMembersOutput {
@@ -3536,6 +3610,7 @@ impl DeleteIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteInvitationsOutput {
@@ -3660,6 +3735,7 @@ impl DeleteDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeclineInvitationsOutput {
@@ -3724,6 +3800,7 @@ impl DeclineInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThreatIntelSetOutput {
     /// <p>The ID of the ThreatIntelSet resource.</p>
+    #[doc(hidden)]
     pub threat_intel_set_id: std::option::Option<std::string::String>,
 }
 impl CreateThreatIntelSetOutput {
@@ -3811,6 +3888,7 @@ impl CreateSampleFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublishingDestinationOutput {
     /// <p>The ID of the publishing destination that is created.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
 }
 impl CreatePublishingDestinationOutput {
@@ -3868,6 +3946,7 @@ impl CreatePublishingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
     /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateMembersOutput {
@@ -3932,6 +4011,7 @@ impl CreateMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetOutput {
     /// <p>The ID of the IPSet resource.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
 }
 impl CreateIpSetOutput {
@@ -3986,6 +4066,7 @@ impl CreateIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterOutput {
     /// <p>The name of the successfully created filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateFilterOutput {
@@ -4038,6 +4119,7 @@ impl CreateFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorOutput {
     /// <p>The unique ID of the created detector.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl CreateDetectorOutput {

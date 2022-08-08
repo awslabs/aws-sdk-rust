@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -69,6 +70,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NameInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NameInUseException {
@@ -133,6 +135,7 @@ impl NameInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -197,6 +200,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecretsManagerResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSecretsManagerResourceException {
@@ -261,6 +265,7 @@ impl InvalidSecretsManagerResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCertificateAuthorityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCertificateAuthorityException {
@@ -325,6 +330,7 @@ impl InvalidCertificateAuthorityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceNotRegisteredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeviceNotRegisteredException {
@@ -389,6 +395,7 @@ impl DeviceNotRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserStatusException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUserStatusException {
@@ -453,6 +460,7 @@ impl InvalidUserStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -517,6 +525,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -581,6 +590,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeviceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeviceException {
@@ -645,6 +655,7 @@ impl InvalidDeviceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedException {
@@ -709,8 +720,10 @@ impl UnauthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
@@ -797,6 +810,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAssociatedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAssociatedException {
@@ -861,6 +875,7 @@ impl ResourceAssociatedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidServiceLinkedRoleStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidServiceLinkedRoleStateException {
@@ -925,6 +940,7 @@ impl InvalidServiceLinkedRoleStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillNotLinkedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SkillNotLinkedException {

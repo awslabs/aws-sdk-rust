@@ -274,6 +274,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that was started.</p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl StartTaskExecutionOutput {
@@ -331,8 +332,10 @@ impl StartTaskExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksOutput {
     /// <p>A list of all the tasks that are returned.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTasksOutput {
@@ -413,8 +416,10 @@ impl ListTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
+    #[doc(hidden)]
     pub task_executions: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskExecutionsOutput {
@@ -496,8 +501,10 @@ impl ListTaskExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Array of resource tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of resource tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -578,8 +585,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
+    #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLocationsOutput {
@@ -660,8 +669,10 @@ impl ListLocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAgentsOutput {
     /// <p>A list of agents in your account.</p>
+    #[doc(hidden)]
     pub agents: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAgentsOutput {
@@ -743,33 +754,45 @@ impl ListAgentsOutput {
 pub struct DescribeTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskExecutionStatus>,
     /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>A list of filter rules that determines which files to include when running a task. The list should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The time that the task execution was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
+    #[doc(hidden)]
     pub estimated_files_to_transfer: i64,
     /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
+    #[doc(hidden)]
     pub estimated_bytes_to_transfer: i64,
     /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and sent over the network. </p>
     /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
+    #[doc(hidden)]
     pub files_transferred: i64,
     /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
+    #[doc(hidden)]
     pub bytes_written: i64,
     /// <p>The physical number of bytes transferred over the network.</p>
+    #[doc(hidden)]
     pub bytes_transferred: i64,
     /// <p>The result of the task execution.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::TaskExecutionResultDetail>,
 }
 impl DescribeTaskExecutionOutput {
@@ -1065,40 +1088,56 @@ impl DescribeTaskExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task that was described.</p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatus>,
     /// <p>The name of the task that was described.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task execution that is syncing files.</p>
+    #[doc(hidden)]
     pub current_task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    #[doc(hidden)]
     pub source_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    #[doc(hidden)]
     pub destination_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your subnet.</p>
+    #[doc(hidden)]
     pub source_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your subnet.</p>
+    #[doc(hidden)]
     pub destination_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
     /// <p>For each individual task execution, you can override these options by specifying the overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<std::string::String>,
     /// <p>The time that the task was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl DescribeTaskOutput {
@@ -1493,18 +1532,25 @@ impl DescribeTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the source SMB location that was described.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationSmbOutput {
@@ -1676,17 +1722,23 @@ impl DescribeLocationSmbOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the Amazon S3 location that was described.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+    #[doc(hidden)]
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the Amazon S3 bucket location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationS3Output {
@@ -1844,18 +1896,25 @@ impl DescribeLocationS3Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the object storage system location.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
+    #[doc(hidden)]
     pub server_port: std::option::Option<i32>,
     /// <p>The protocol that your object storage server uses to communicate.</p>
+    #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationObjectStorageOutput {
@@ -2029,14 +2088,19 @@ impl DescribeLocationObjectStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the source NFS location that was described.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    #[doc(hidden)]
     pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
     /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
     /// <p>The time that the NFS location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationNfsOutput {
@@ -2168,28 +2232,40 @@ impl DescribeLocationNfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationHdfsOutput {
     /// <p>The ARN of the HDFS cluster location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URI of the HDFS cluster location.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The NameNode that manage the HDFS namespace. </p>
+    #[doc(hidden)]
     pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    #[doc(hidden)]
     pub replication_factor: std::option::Option<i32>,
     /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    #[doc(hidden)]
     pub kms_key_provider_uri: std::option::Option<std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
+    #[doc(hidden)]
     pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
+    #[doc(hidden)]
     pub simple_user: std::option::Option<std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
+    #[doc(hidden)]
     pub kerberos_principal: std::option::Option<std::string::String>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the HDFS location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationHdfsOutput {
@@ -2466,16 +2542,22 @@ impl DescribeLocationHdfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the FSx for Windows File Server location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxWindowsOutput {
@@ -2627,15 +2709,20 @@ impl DescribeLocationFsxWindowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
     /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::FsxProtocol>,
     /// <p>The time that the FSx for OpenZFS location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationFsxOpenZfsOutput {
@@ -2776,18 +2863,25 @@ impl DescribeLocationFsxOpenZfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxOntapOutput {
     /// <p>The time that the location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the FSx for ONTAP file system location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::FsxProtocol>,
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the FSx for ONTAP file system.</p>
+    #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxOntapOutput {
@@ -2971,12 +3065,16 @@ impl DescribeLocationFsxOntapOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URI of the FSx for Lustre location that was described.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the FSx for Lustre location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationFsxLustreOutput {
@@ -3094,18 +3192,25 @@ impl DescribeLocationFsxLustreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the Amazon EFS file system location.</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub ec2_config: std::option::Option<crate::model::Ec2Config>,
     /// <p>The time that the location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub file_system_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
 }
 impl DescribeLocationEfsOutput {
@@ -3288,18 +3393,25 @@ impl DescribeLocationEfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
     /// <p>The name of the agent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgentStatus>,
     /// <p>The time that the agent last connected to DataSync.</p>
+    #[doc(hidden)]
     pub last_connection_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the agent was activated (that is, created in your account).</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    #[doc(hidden)]
     pub private_link_config: std::option::Option<crate::model::PrivateLinkConfig>,
 }
 impl DescribeAgentOutput {
@@ -3558,6 +3670,7 @@ impl DeleteAgentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl CreateTaskOutput {
@@ -3612,6 +3725,7 @@ impl CreateTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationSmbOutput {
@@ -3666,6 +3780,7 @@ impl CreateLocationSmbOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationS3Output {
@@ -3720,6 +3835,7 @@ impl CreateLocationS3Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageOutput {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationObjectStorageOutput {
@@ -3774,6 +3890,7 @@ impl CreateLocationObjectStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationNfsOutput {
@@ -3828,6 +3945,7 @@ impl CreateLocationNfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationHdfsOutput {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationHdfsOutput {
@@ -3882,6 +4000,7 @@ impl CreateLocationHdfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxWindowsOutput {
     /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsOutput {
@@ -3936,6 +4055,7 @@ impl CreateLocationFsxWindowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxOpenZfsOutput {
@@ -3990,6 +4110,7 @@ impl CreateLocationFsxOpenZfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxOntapOutput {
     /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxOntapOutput {
@@ -4044,6 +4165,7 @@ impl CreateLocationFsxOntapOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxLustreOutput {
@@ -4098,6 +4220,7 @@ impl CreateLocationFsxLustreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationEfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationEfsOutput {
@@ -4152,6 +4275,7 @@ impl CreateLocationEfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl CreateAgentOutput {

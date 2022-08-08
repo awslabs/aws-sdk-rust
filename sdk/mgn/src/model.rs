@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>Validate exception field name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Validate exception field message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,21 +148,29 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VcenterClient {
     /// <p>ID of vCenter client.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
     /// <p>Arn of vCenter client.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Hostname of vCenter client .</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>Vcenter UUID of vCenter client.</p>
+    #[doc(hidden)]
     pub vcenter_uuid: std::option::Option<std::string::String>,
     /// <p>Datacenter name of vCenter client.</p>
+    #[doc(hidden)]
     pub datacenter_name: std::option::Option<std::string::String>,
     /// <p>Last seen time of vCenter client.</p>
+    #[doc(hidden)]
     pub last_seen_datetime: std::option::Option<std::string::String>,
     /// <p>Tags for Source Server of vCenter client.</p>
+    #[doc(hidden)]
     pub source_server_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags for vCenter client.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -384,12 +394,16 @@ impl VcenterClient {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>Error details message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Error details code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Error details resourceId.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Error details resourceType.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -553,20 +567,28 @@ impl AsRef<str> for ReplicationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceProperties {
     /// <p>Source server last update date and time.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<std::string::String>,
     /// <p>Source server recommended instance type.</p>
+    #[doc(hidden)]
     pub recommended_instance_type: std::option::Option<std::string::String>,
     /// <p>Source server identification hints.</p>
+    #[doc(hidden)]
     pub identification_hints: std::option::Option<crate::model::IdentificationHints>,
     /// <p>Source server network interfaces.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>Source Server disks.</p>
+    #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
     /// <p>Source Server CPUs.</p>
+    #[doc(hidden)]
     pub cpus: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
     /// <p>Source server RAM in bytes.</p>
+    #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Source server OS.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<crate::model::Os>,
 }
 impl SourceProperties {
@@ -777,6 +799,7 @@ impl SourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Os {
     /// <p>OS full string.</p>
+    #[doc(hidden)]
     pub full_string: std::option::Option<std::string::String>,
 }
 impl Os {
@@ -831,8 +854,10 @@ impl Os {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cpu {
     /// <p>The number of CPU cores on the source server.</p>
+    #[doc(hidden)]
     pub cores: i64,
     /// <p>The source server's CPU model name.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl Cpu {
@@ -904,8 +929,10 @@ impl Cpu {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Disk {
     /// <p>The disk or device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
+    #[doc(hidden)]
     pub bytes: i64,
 }
 impl Disk {
@@ -977,10 +1004,13 @@ impl Disk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>Network interface Mac address.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>Network interface IPs.</p>
+    #[doc(hidden)]
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Network interface primary IP.</p>
+    #[doc(hidden)]
     pub is_primary: std::option::Option<bool>,
 }
 impl NetworkInterface {
@@ -1078,14 +1108,19 @@ impl NetworkInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentificationHints {
     /// <p>FQDN address identification hint.</p>
+    #[doc(hidden)]
     pub fqdn: std::option::Option<std::string::String>,
     /// <p>Hostname identification hint.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>vmWare UUID identification hint.</p>
+    #[doc(hidden)]
     pub vm_ware_uuid: std::option::Option<std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
+    #[doc(hidden)]
     pub aws_instance_id: std::option::Option<std::string::String>,
     /// <p>vCenter VM path identification hint.</p>
+    #[doc(hidden)]
     pub vm_path: std::option::Option<std::string::String>,
 }
 impl IdentificationHints {
@@ -1211,18 +1246,25 @@ impl IdentificationHints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycle {
     /// <p>Lifecycle added to service data and time.</p>
+    #[doc(hidden)]
     pub added_to_service_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle replication initiation date and time.</p>
+    #[doc(hidden)]
     pub first_byte_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle elapsed time and duration.</p>
+    #[doc(hidden)]
     pub elapsed_replication_duration: std::option::Option<std::string::String>,
     /// <p>Lifecycle last seen date and time.</p>
+    #[doc(hidden)]
     pub last_seen_by_service_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Test.</p>
+    #[doc(hidden)]
     pub last_test: std::option::Option<crate::model::LifeCycleLastTest>,
     /// <p>Lifecycle last Cutover.</p>
+    #[doc(hidden)]
     pub last_cutover: std::option::Option<crate::model::LifeCycleLastCutover>,
     /// <p>Lifecycle state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LifeCycleState>,
 }
 impl LifeCycle {
@@ -1508,10 +1550,13 @@ impl AsRef<str> for LifeCycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutover {
     /// <p>Lifecycle last Cutover initiated.</p>
+    #[doc(hidden)]
     pub initiated: std::option::Option<crate::model::LifeCycleLastCutoverInitiated>,
     /// <p>Lifecycle last Cutover reverted.</p>
+    #[doc(hidden)]
     pub reverted: std::option::Option<crate::model::LifeCycleLastCutoverReverted>,
     /// <p>Lifecycle Cutover finalized date and time.</p>
+    #[doc(hidden)]
     pub finalized: std::option::Option<crate::model::LifeCycleLastCutoverFinalized>,
 }
 impl LifeCycleLastCutover {
@@ -1609,6 +1654,7 @@ impl LifeCycleLastCutover {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutoverFinalized {
     /// <p>Lifecycle Cutover finalized date and time.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverFinalized {
@@ -1666,6 +1712,7 @@ impl LifeCycleLastCutoverFinalized {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverReverted {
@@ -1723,8 +1770,10 @@ impl LifeCycleLastCutoverReverted {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutoverInitiated {
     /// <p></p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverInitiated {
@@ -1799,10 +1848,13 @@ impl LifeCycleLastCutoverInitiated {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
+    #[doc(hidden)]
     pub initiated: std::option::Option<crate::model::LifeCycleLastTestInitiated>,
     /// <p>Lifecycle last Test reverted.</p>
+    #[doc(hidden)]
     pub reverted: std::option::Option<crate::model::LifeCycleLastTestReverted>,
     /// <p>Lifecycle last Test finalized.</p>
+    #[doc(hidden)]
     pub finalized: std::option::Option<crate::model::LifeCycleLastTestFinalized>,
 }
 impl LifeCycleLastTest {
@@ -1900,6 +1952,7 @@ impl LifeCycleLastTest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastTestFinalized {
     /// <p>Lifecycle Test failed API call date and time.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastTestFinalized {
@@ -1957,6 +2010,7 @@ impl LifeCycleLastTestFinalized {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastTestReverted {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastTestReverted {
@@ -2014,8 +2068,10 @@ impl LifeCycleLastTestReverted {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastTestInitiated {
     /// <p>Lifecycle last Test initiated API call date and time.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Test initiated Job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastTestInitiated {
@@ -2090,19 +2146,26 @@ impl LifeCycleLastTestInitiated {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInfo {
     /// <p>Request to query data replication lag duration.</p>
+    #[doc(hidden)]
     pub lag_duration: std::option::Option<std::string::String>,
     /// <p>Request to query the time when data replication will be complete.</p>
+    #[doc(hidden)]
     pub eta_date_time: std::option::Option<std::string::String>,
     /// <p>Request to query disks replicated.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
     /// <p>Request to query the data replication state.</p>
+    #[doc(hidden)]
     pub data_replication_state: std::option::Option<crate::model::DataReplicationState>,
     /// <p>Request to query whether data replication has been initiated.</p>
+    #[doc(hidden)]
     pub data_replication_initiation: std::option::Option<crate::model::DataReplicationInitiation>,
     /// <p>Error in obtaining data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_error: std::option::Option<crate::model::DataReplicationError>,
     /// <p>Request to query data replication last snapshot time.</p>
+    #[doc(hidden)]
     pub last_snapshot_date_time: std::option::Option<std::string::String>,
 }
 impl DataReplicationInfo {
@@ -2304,8 +2367,10 @@ impl DataReplicationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationError {
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::DataReplicationErrorString>,
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
 }
 impl DataReplicationError {
@@ -2552,10 +2617,13 @@ impl AsRef<str> for DataReplicationErrorString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInitiation {
     /// <p>Request to query data initiation start date and time.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>Request to query next data initiation date and time.</p>
+    #[doc(hidden)]
     pub next_attempt_date_time: std::option::Option<std::string::String>,
     /// <p>Request to query data initiation steps.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiation {
@@ -2660,8 +2728,10 @@ impl DataReplicationInitiation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInitiationStep {
     /// <p>Request to query data initiation step name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::DataReplicationInitiationStepName>,
     /// <p>Request to query data initiation status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataReplicationInitiationStepStatus>,
 }
 impl DataReplicationInitiationStep {
@@ -3045,14 +3115,19 @@ impl AsRef<str> for DataReplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInfoReplicatedDisk {
     /// <p>Request to query device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Request to query total amount of data replicated in bytes.</p>
+    #[doc(hidden)]
     pub total_storage_bytes: i64,
     /// <p>Request to query amount of data replicated in bytes.</p>
+    #[doc(hidden)]
     pub replicated_storage_bytes: i64,
     /// <p>Request to query amount of data rescanned in bytes.</p>
+    #[doc(hidden)]
     pub rescanned_storage_bytes: i64,
     /// <p>Request to query data replication backlog size in bytes.</p>
+    #[doc(hidden)]
     pub backlogged_storage_bytes: i64,
 }
 impl DataReplicationInfoReplicatedDisk {
@@ -3175,10 +3250,13 @@ impl DataReplicationInfoReplicatedDisk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>Launched instance Job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Launched instance first boot.</p>
+    #[doc(hidden)]
     pub first_boot: std::option::Option<crate::model::FirstBoot>,
 }
 impl LaunchedInstance {
@@ -3446,15 +3524,20 @@ impl AsRef<str> for ReplicationConfigurationEbsEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>Replication Configuration replicated disk device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Replication Configuration replicated disk boot disk.</p>
+    #[doc(hidden)]
     pub is_boot_disk: std::option::Option<bool>,
     /// <p>Replication Configuration replicated disk staging disk type.</p>
+    #[doc(hidden)]
     pub staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>Replication Configuration replicated disk IOPs.</p>
+    #[doc(hidden)]
     pub iops: i64,
     /// <p>Replication Configuration replicated disk throughput.</p>
+    #[doc(hidden)]
     pub throughput: i64,
 }
 impl ReplicationConfigurationReplicatedDisk {
@@ -3732,14 +3815,19 @@ impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostLaunchActions {
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub deployment: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub s3_log_bucket: std::option::Option<std::string::String>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub s3_output_key_prefix: std::option::Option<std::string::String>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub ssm_documents: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>,
 }
 impl PostLaunchActions {
@@ -3888,14 +3976,19 @@ impl PostLaunchActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmDocument {
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub ssm_document_name: std::option::Option<std::string::String>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub timeout_seconds: i32,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -4056,8 +4149,10 @@ impl SsmDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmParameterStoreParameter {
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub parameter_type: std::option::Option<crate::model::SsmParameterStoreParameterType>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
 }
 impl SsmParameterStoreParameter {
@@ -4302,6 +4397,7 @@ impl AsRef<str> for BootMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Licensing {
     /// <p>Configure BYOL OS licensing.</p>
+    #[doc(hidden)]
     pub os_byol: std::option::Option<bool>,
 }
 impl Licensing {
@@ -4466,6 +4562,7 @@ impl AsRef<str> for LaunchDisposition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
+    #[doc(hidden)]
     pub state:
         std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
@@ -4599,23 +4696,32 @@ impl AsRef<str> for ChangeServerLifeCycleStateSourceServerLifecycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>Job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>the ARN of the specific Job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JobType>,
     /// <p>Job initiated by field.</p>
+    #[doc(hidden)]
     pub initiated_by: std::option::Option<crate::model::InitiatedBy>,
     /// <p>Job creation time.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
     /// <p>Job end time.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<std::string::String>,
     /// <p>Job status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>Servers participating in a specific Job.</p>
+    #[doc(hidden)]
     pub participating_servers:
         std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
     /// <p>Tags associated with specific Job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4848,12 +4954,16 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Participating server launch status.</p>
+    #[doc(hidden)]
     pub launch_status: std::option::Option<crate::model::LaunchStatus>,
     /// <p>Participating server Source Server ID.</p>
+    #[doc(hidden)]
     pub launched_ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>Participating server Source Server ID.</p>
+    #[doc(hidden)]
     pub post_launch_actions_status: std::option::Option<crate::model::PostLaunchActionsStatus>,
 }
 impl ParticipatingServer {
@@ -4980,8 +5090,10 @@ impl ParticipatingServer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostLaunchActionsStatus {
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub ssm_agent_discovery_datetime: std::option::Option<std::string::String>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub post_launch_actions_launch_status_list:
         std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
 }
@@ -5085,14 +5197,19 @@ impl PostLaunchActionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobPostLaunchActionsLaunchStatus {
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub ssm_document: std::option::Option<crate::model::SsmDocument>,
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub ssm_document_type: std::option::Option<crate::model::SsmDocumentType>,
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub execution_status: std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
     /// <p>Job type.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl JobPostLaunchActionsLaunchStatus {
@@ -5591,25 +5708,35 @@ impl AsRef<str> for JobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceServer {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl SourceServer {
@@ -5858,12 +5985,16 @@ impl SourceServer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to filter Source Servers list by archived.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Request to filter Source Servers list by replication type.</p>
+    #[doc(hidden)]
     pub replication_types: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
     /// <p>Request to filter Source Servers list by life cycle states.</p>
+    #[doc(hidden)]
     pub life_cycle_states: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
 }
 impl DescribeSourceServersRequestFilters {
@@ -5998,38 +6129,53 @@ impl DescribeSourceServersRequestFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationTemplate {
     /// <p>Replication Configuration template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template bandwidth throttling.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6453,12 +6599,16 @@ impl ReplicationConfigurationTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchConfigurationTemplate {
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6597,10 +6747,13 @@ impl LaunchConfigurationTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobLog {
     /// <p>Job log event date and time.</p>
+    #[doc(hidden)]
     pub log_date_time: std::option::Option<std::string::String>,
     /// <p>Job log event.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::JobLogEvent>,
     /// <p>Job event data</p>
+    #[doc(hidden)]
     pub event_data: std::option::Option<crate::model::JobLogEventData>,
 }
 impl JobLog {
@@ -6695,12 +6848,16 @@ impl JobLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Job Event conversion Server ID.</p>
+    #[doc(hidden)]
     pub conversion_server_id: std::option::Option<std::string::String>,
     /// <p>Job Event Target instance ID.</p>
+    #[doc(hidden)]
     pub target_instance_id: std::option::Option<std::string::String>,
     /// <p>Job error.</p>
+    #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
 }
 impl JobLogEventData {
@@ -6943,10 +7100,13 @@ impl AsRef<str> for JobLogEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
+    #[doc(hidden)]
     pub job_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to describe Job log filters by date.</p>
+    #[doc(hidden)]
     pub from_date: std::option::Option<std::string::String>,
     /// <p>Request to describe job log items by last date.</p>
+    #[doc(hidden)]
     pub to_date: std::option::Option<std::string::String>,
 }
 impl DescribeJobsRequestFilters {

@@ -7491,14 +7491,17 @@ impl UpdateVocabularyFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want to update. Vocabulary filter names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>Use this parameter if you want to update your vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for updating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
+    #[doc(hidden)]
     pub words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_file_uri: std::option::Option<std::string::String>,
 }
 impl UpdateVocabularyFilterInput {
@@ -7537,18 +7540,22 @@ impl std::fmt::Debug for UpdateVocabularyFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyInput {
     /// <p>The name of the custom vocabulary you want to update. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. Each vocabulary must contain terms in only one language.</p>
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Use this parameter if you want to update your vocabulary by including all desired terms, as comma-separated values, within your request. The other option for updating your vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
+    #[doc(hidden)]
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
+    #[doc(hidden)]
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
 }
 impl UpdateVocabularyInput {
@@ -7591,11 +7598,14 @@ impl std::fmt::Debug for UpdateVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    #[doc(hidden)]
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
 }
 impl UpdateMedicalVocabularyInput {
@@ -7628,8 +7638,10 @@ impl std::fmt::Debug for UpdateMedicalVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
+    #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl UpdateCallAnalyticsCategoryInput {
@@ -7658,8 +7670,10 @@ pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
     /// <p>Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Removes the specified tag keys from the specified Amazon Transcribe resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7690,9 +7704,11 @@ pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to tag. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
     /// <p>Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -7723,6 +7739,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StartTranscriptionJobInput {
     /// <p>A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub transcription_job_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language spoken in the input media file.</p>
     /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
@@ -7730,19 +7747,24 @@ pub struct StartTranscriptionJobInput {
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p> <note>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     /// </note>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
     /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>Specify the format of your input media file.</p>
+    #[doc(hidden)]
     pub media_format: std::option::Option<crate::model::MediaFormat>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>The name of the Amazon S3 bucket where you want your transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
     /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    #[doc(hidden)]
     pub output_bucket_name: std::option::Option<std::string::String>,
     /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your transcription job (<code>TranscriptionJobName</code>).</p>
     /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
@@ -7753,6 +7775,7 @@ pub struct StartTranscriptionJobInput {
     /// <li> <p>If you specify 'my-first-transcription' as the <code>TranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.</p> </li>
     /// </ul>
     /// <p>If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.</p>
+    #[doc(hidden)]
     pub output_key: std::option::Option<std::string::String>,
     /// <p>The KMS key you want to use to encrypt your transcription output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -7770,47 +7793,59 @@ pub struct StartTranscriptionJobInput {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    #[doc(hidden)]
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
+    #[doc(hidden)]
     pub kms_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
     /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
     /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::Settings>,
     /// <p>Specify the custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
+    #[doc(hidden)]
     pub model_settings: std::option::Option<crate::model::ModelSettings>,
     /// <p>Allows you to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
     /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
+    #[doc(hidden)]
     pub job_execution_settings: std::option::Option<crate::model::JobExecutionSettings>,
     /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    #[doc(hidden)]
     pub content_redaction: std::option::Option<crate::model::ContentRedaction>,
     /// <p>Enables automatic language identification in your transcription job request.</p>
     /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can improve transcription accuracy.</p>
     /// <p>If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your automatic language identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    #[doc(hidden)]
     pub identify_language: std::option::Option<bool>,
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your media file contains more than one language.</p>
     /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can improve transcription accuracy.</p>
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    #[doc(hidden)]
     pub identify_multiple_languages: std::option::Option<bool>,
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    #[doc(hidden)]
     pub language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
     /// <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip (*.srt) formats.</p>
+    #[doc(hidden)]
     pub subtitles: std::option::Option<crate::model::Subtitles>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
     /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
     /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    #[doc(hidden)]
     pub language_id_settings: std::option::Option<
         std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     >,
@@ -7992,21 +8027,27 @@ impl std::fmt::Debug for StartTranscriptionJobInput {
 pub struct StartMedicalTranscriptionJobInput {
     /// <p>A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
     /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>Specify the format of your input media file.</p>
+    #[doc(hidden)]
     pub media_format: std::option::Option<crate::model::MediaFormat>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
     /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    #[doc(hidden)]
     pub output_bucket_name: std::option::Option<std::string::String>,
     /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your medical transcription job (<code>MedicalTranscriptionJobName</code>).</p>
     /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
@@ -8017,6 +8058,7 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <li> <p>If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>, 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript' as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.</p> </li>
     /// </ul>
     /// <p>If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.</p>
+    #[doc(hidden)]
     pub output_key: std::option::Option<std::string::String>,
     /// <p>The KMS key you want to use to encrypt your medical transcription output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -8034,22 +8076,29 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    #[doc(hidden)]
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
+    #[doc(hidden)]
     pub kms_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::MedicalTranscriptionSetting>,
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
     /// <p>Specify the predominant medical specialty represented in your media. For batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .</p>
+    #[doc(hidden)]
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation between two people (<code>CONVERSATION</code>).</p>
     /// <p>For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office visit.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartMedicalTranscriptionJobInput {
@@ -8182,8 +8231,10 @@ impl std::fmt::Debug for StartMedicalTranscriptionJobInput {
 pub struct StartCallAnalyticsJobInput {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub call_analytics_job_name: std::option::Option<std::string::String>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
     /// <ol>
@@ -8194,6 +8245,7 @@ pub struct StartCallAnalyticsJobInput {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -8211,14 +8263,18 @@ pub struct StartCallAnalyticsJobInput {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
+    #[doc(hidden)]
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::CallAnalyticsJobSettings>,
     /// <p>Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+    #[doc(hidden)]
     pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
 }
 impl StartCallAnalyticsJobInput {
@@ -8299,10 +8355,13 @@ impl std::fmt::Debug for StartCallAnalyticsJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabularyFiltersInput {
     /// <p>If your <code>ListVocabularyFilters</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom vocabulary filters to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Returns only the custom vocabulary filters that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl ListVocabularyFiltersInput {
@@ -8334,12 +8393,16 @@ impl std::fmt::Debug for ListVocabularyFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabulariesInput {
     /// <p>If your <code>ListVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom vocabularies to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+    #[doc(hidden)]
     pub state_equals: std::option::Option<crate::model::VocabularyState>,
     /// <p>Returns only the custom vocabularies that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl ListVocabulariesInput {
@@ -8376,12 +8439,16 @@ impl std::fmt::Debug for ListVocabulariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTranscriptionJobsInput {
     /// <p>Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
     /// <p>Returns only the transcription jobs that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub job_name_contains: std::option::Option<std::string::String>,
     /// <p>If your <code>ListTranscriptionJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of transcription jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTranscriptionJobsInput {
@@ -8420,6 +8487,7 @@ pub struct ListTagsForResourceInput {
     /// <p>Returns a list of all tags associated with the specified Amazon Resource Name (ARN). ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
     /// <p>Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8443,12 +8511,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalVocabulariesInput {
     /// <p>If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Returns only custom medical vocabularies with the specified state. Vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+    #[doc(hidden)]
     pub state_equals: std::option::Option<crate::model::VocabularyState>,
     /// <p>Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
 }
 impl ListMedicalVocabulariesInput {
@@ -8485,12 +8557,16 @@ impl std::fmt::Debug for ListMedicalVocabulariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalTranscriptionJobsInput {
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub job_name_contains: std::option::Option<std::string::String>,
     /// <p>If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMedicalTranscriptionJobsInput {
@@ -8527,12 +8603,16 @@ impl std::fmt::Debug for ListMedicalTranscriptionJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguageModelsInput {
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
+    #[doc(hidden)]
     pub status_equals: std::option::Option<crate::model::ModelStatus>,
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
     /// <p>If your <code>ListLanguageModels</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLanguageModelsInput {
@@ -8569,12 +8649,16 @@ impl std::fmt::Debug for ListLanguageModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsJobsInput {
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all Call Analytics jobs are returned.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
+    #[doc(hidden)]
     pub job_name_contains: std::option::Option<std::string::String>,
     /// <p>If your <code>ListCallAnalyticsJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCallAnalyticsJobsInput {
@@ -8611,8 +8695,10 @@ impl std::fmt::Debug for ListCallAnalyticsJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsCategoriesInput {
     /// <p>If your <code>ListCallAnalyticsCategories</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of Call Analytics categories to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCallAnalyticsCategoriesInput {
@@ -8639,6 +8725,7 @@ impl std::fmt::Debug for ListCallAnalyticsCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want information about. Vocabulary filter names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
 }
 impl GetVocabularyFilterInput {
@@ -8660,6 +8747,7 @@ impl std::fmt::Debug for GetVocabularyFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyInput {
     /// <p>The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl GetVocabularyInput {
@@ -8681,6 +8769,7 @@ impl std::fmt::Debug for GetVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptionJobInput {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub transcription_job_name: std::option::Option<std::string::String>,
 }
 impl GetTranscriptionJobInput {
@@ -8702,6 +8791,7 @@ impl std::fmt::Debug for GetTranscriptionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want information about. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl GetMedicalVocabularyInput {
@@ -8723,6 +8813,7 @@ impl std::fmt::Debug for GetMedicalVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalTranscriptionJobInput {
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
 }
 impl GetMedicalTranscriptionJobInput {
@@ -8747,6 +8838,7 @@ impl std::fmt::Debug for GetMedicalTranscriptionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsJobInput {
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub call_analytics_job_name: std::option::Option<std::string::String>,
 }
 impl GetCallAnalyticsJobInput {
@@ -8768,6 +8860,7 @@ impl std::fmt::Debug for GetCallAnalyticsJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
+    #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
 }
 impl GetCallAnalyticsCategoryInput {
@@ -8789,6 +8882,7 @@ impl std::fmt::Debug for GetCallAnalyticsCategoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLanguageModelInput {
     /// <p>The name of the custom language model you want information about. Model names are case sensitive.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DescribeLanguageModelInput {
@@ -8810,6 +8904,7 @@ impl std::fmt::Debug for DescribeLanguageModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
 }
 impl DeleteVocabularyFilterInput {
@@ -8831,6 +8926,7 @@ impl std::fmt::Debug for DeleteVocabularyFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyInput {
     /// <p>The name of the custom vocabulary you want to delete. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl DeleteVocabularyInput {
@@ -8852,6 +8948,7 @@ impl std::fmt::Debug for DeleteVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTranscriptionJobInput {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub transcription_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteTranscriptionJobInput {
@@ -8873,6 +8970,7 @@ impl std::fmt::Debug for DeleteTranscriptionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want to delete. Vocabulary names are case sensitive.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl DeleteMedicalVocabularyInput {
@@ -8894,6 +8992,7 @@ impl std::fmt::Debug for DeleteMedicalVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalTranscriptionJobInput {
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteMedicalTranscriptionJobInput {
@@ -8918,6 +9017,7 @@ impl std::fmt::Debug for DeleteMedicalTranscriptionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLanguageModelInput {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteLanguageModelInput {
@@ -8939,6 +9039,7 @@ impl std::fmt::Debug for DeleteLanguageModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsJobInput {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
+    #[doc(hidden)]
     pub call_analytics_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteCallAnalyticsJobInput {
@@ -8960,6 +9061,7 @@ impl std::fmt::Debug for DeleteCallAnalyticsJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
+    #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
 }
 impl DeleteCallAnalyticsCategoryInput {
@@ -8982,21 +9084,26 @@ impl std::fmt::Debug for DeleteCallAnalyticsCategoryInput {
 pub struct CreateVocabularyFilterInput {
     /// <p>A unique name, chosen by you, for your new custom vocabulary filter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new vocabulary filter with the same name as an existing vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter must contain terms in only one language.</p>
     /// <p>A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Use this parameter if you want to create your vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for creating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
+    #[doc(hidden)]
     pub words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_file_uri: std::option::Option<std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new filter.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVocabularyFilterInput {
@@ -9050,21 +9157,26 @@ impl std::fmt::Debug for CreateVocabularyFilterInput {
 pub struct CreateVocabularyInput {
     /// <p>A unique name, chosen by you, for your new custom vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new vocabulary with the same name as an existing vocabulary, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language of the entries in your custom vocabulary. Each vocabulary must contain terms in only one language.</p>
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Use this parameter if you want to create your vocabulary by including all desired terms, as comma-separated values, within your request. The other option for creating your vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
+    #[doc(hidden)]
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
+    #[doc(hidden)]
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new vocabulary.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVocabularyInput {
@@ -9115,14 +9227,18 @@ impl std::fmt::Debug for CreateVocabularyInput {
 pub struct CreateMedicalVocabularyInput {
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new medical vocabulary with the same name as an existing medical vocabulary, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    #[doc(hidden)]
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMedicalVocabularyInput {
@@ -9164,18 +9280,23 @@ pub struct CreateLanguageModelInput {
     /// <p>The language code that represents the language of your model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     /// <p>A custom language model can only be used to transcribe files in the same language as the model. For example, if you create a language model using US English (<code>en-US</code>), you can only apply this model to files that contain English audio.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
     /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model. Amazon Transcribe offers two options for base models: Wideband and Narrowband.</p>
     /// <p>If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz, choose <code>NarrowBand</code>.</p>
+    #[doc(hidden)]
     pub base_model_name: std::option::Option<crate::model::BaseModelName>,
     /// <p>A unique name, chosen by you, for your custom language model.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new language model with the same name as an existing language model, you get a <code>ConflictException</code> error.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.</p>
     /// <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code>, which is the Amazon S3 location of your training data, and <code>DataAccessRoleArn</code>, which is the Amazon Resource Name (ARN) of the role that has permission to access your specified Amazon S3 location. You can optionally include <code>TuningDataS3Uri</code>, which is the Amazon S3 location of your tuning data. If you specify different Amazon S3 locations for training and tuning data, the ARN you use must have permissions to access both locations.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLanguageModelInput {
@@ -9224,8 +9345,10 @@ impl std::fmt::Debug for CreateLanguageModelInput {
 pub struct CreateCallAnalyticsCategoryInput {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
+    #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
     /// <p>Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl CreateCallAnalyticsCategoryInput {

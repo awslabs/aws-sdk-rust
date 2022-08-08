@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSummary {
     /// <p>The task ID.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The state of the task assigned to one or many devices.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TaskState>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -307,12 +311,16 @@ impl Unlock {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionSummary {
     /// <p>The ID of the task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the execution.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the managed device that the task is being executed on.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>The state of the execution.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExecutionState>,
 }
 impl ExecutionSummary {
@@ -507,10 +515,13 @@ impl AsRef<str> for ExecutionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSummary {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ResourceSummary {
@@ -602,8 +613,10 @@ impl ResourceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
+    #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
     /// <p>When the instance summary was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceSummary {
@@ -678,31 +691,44 @@ impl InstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    #[doc(hidden)]
     pub ami_launch_index: std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The description of the current state of an instance.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceState>,
     /// <p>The instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
+    #[doc(hidden)]
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The public IPv4 address assigned to the instance.</p>
+    #[doc(hidden)]
     pub public_ip_address: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the instance was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
+    #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p>The security groups for the instance.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
     /// <p>The CPU options for the instance.</p>
+    #[doc(hidden)]
     pub cpu_options: std::option::Option<crate::model::CpuOptions>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    #[doc(hidden)]
     pub root_device_name: std::option::Option<std::string::String>,
 }
 impl Instance {
@@ -1010,8 +1036,10 @@ impl Instance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CpuOptions {
     /// <p>The number of cores that the CPU can use.</p>
+    #[doc(hidden)]
     pub core_count: std::option::Option<i32>,
     /// <p>The number of threads per core in the CPU.</p>
+    #[doc(hidden)]
     pub threads_per_core: std::option::Option<i32>,
 }
 impl CpuOptions {
@@ -1083,8 +1111,10 @@ impl CpuOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupIdentifier {
     /// <p>The security group ID.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The security group name.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl SecurityGroupIdentifier {
@@ -1156,8 +1186,10 @@ impl SecurityGroupIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    #[doc(hidden)]
     pub ebs: std::option::Option<crate::model::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {
@@ -1232,12 +1264,16 @@ impl InstanceBlockDeviceMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
+    #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>The attachment state.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AttachmentStatus>,
     /// <p>The ID of the Amazon EBS volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl EbsInstanceBlockDevice {
@@ -1424,8 +1460,10 @@ pub struct InstanceState {
     /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
     /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<i32>,
     /// <p>The current state of the instance.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::InstanceStateName>,
 }
 impl InstanceState {
@@ -1614,12 +1652,16 @@ impl AsRef<str> for InstanceStateName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    #[doc(hidden)]
     pub managed_device_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the job used to order the device.</p>
+    #[doc(hidden)]
     pub associated_with_job: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1755,10 +1797,13 @@ impl DeviceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
+    #[doc(hidden)]
     pub installed_version: std::option::Option<std::string::String>,
     /// <p>The version of the software being installed on the device.</p>
+    #[doc(hidden)]
     pub installing_version: std::option::Option<std::string::String>,
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
+    #[doc(hidden)]
     pub install_state: std::option::Option<std::string::String>,
 }
 impl SoftwareInformation {
@@ -1856,14 +1901,19 @@ impl SoftwareInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Capacity {
     /// <p>The name of the type of capacity, such as memory.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unit of measure for the type of capacity.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The total capacity on the device.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<i64>,
     /// <p>The amount of capacity used on the device.</p>
+    #[doc(hidden)]
     pub used: std::option::Option<i64>,
     /// <p>The amount of capacity available for use on the device.</p>
+    #[doc(hidden)]
     pub available: std::option::Option<i64>,
 }
 impl Capacity {
@@ -1986,18 +2036,25 @@ impl Capacity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalNetworkInterface {
     /// <p>The physical network interface ID.</p>
+    #[doc(hidden)]
     pub physical_network_interface_id: std::option::Option<std::string::String>,
     /// <p>The physical connector type.</p>
+    #[doc(hidden)]
     pub physical_connector_type: std::option::Option<crate::model::PhysicalConnectorType>,
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
+    #[doc(hidden)]
     pub ip_address_assignment: std::option::Option<crate::model::IpAddressAssignment>,
     /// <p>The IP address of the device.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The netmask used to divide the IP address into subnets.</p>
+    #[doc(hidden)]
     pub netmask: std::option::Option<std::string::String>,
     /// <p>The default gateway of the device.</p>
+    #[doc(hidden)]
     pub default_gateway: std::option::Option<std::string::String>,
     /// <p>The MAC address of the device.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
 }
 impl PhysicalNetworkInterface {

@@ -3079,8 +3079,10 @@ impl UpdateWorkspaceAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesInput {
     /// <p>The maximum number of workspaces to include in the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkspacesInput {
@@ -3107,36 +3109,49 @@ impl std::fmt::Debug for ListWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
+    #[doc(hidden)]
     pub account_access_type: std::option::Option<crate::model::AccountAccessType>,
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
+    #[doc(hidden)]
     pub organization_role_name: std::option::Option<std::string::String>,
     /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
+    #[doc(hidden)]
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
     /// <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
+    #[doc(hidden)]
     pub workspace_data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
+    #[doc(hidden)]
     pub workspace_description: std::option::Option<std::string::String>,
     /// <p>The name for the workspace. It does not have to be unique.</p>
+    #[doc(hidden)]
     pub workspace_name: std::option::Option<std::string::String>,
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
+    #[doc(hidden)]
     pub workspace_notification_destinations:
         std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
+    #[doc(hidden)]
     pub workspace_organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
+    #[doc(hidden)]
     pub workspace_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    #[doc(hidden)]
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
     /// <p>The list of tags associated with the workspace.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3236,6 +3251,7 @@ impl std::fmt::Debug for CreateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceInput {
@@ -3257,30 +3273,41 @@ impl std::fmt::Debug for DeleteWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
+    #[doc(hidden)]
     pub account_access_type: std::option::Option<crate::model::AccountAccessType>,
     /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    #[doc(hidden)]
     pub organization_role_name: std::option::Option<std::string::String>,
     /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
+    #[doc(hidden)]
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>
     /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
+    #[doc(hidden)]
     pub workspace_data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    #[doc(hidden)]
     pub workspace_description: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace to update.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A new name for the workspace to update.</p>
+    #[doc(hidden)]
     pub workspace_name: std::option::Option<std::string::String>,
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
+    #[doc(hidden)]
     pub workspace_notification_destinations:
         std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
+    #[doc(hidden)]
     pub workspace_organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    #[doc(hidden)]
     pub workspace_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateWorkspaceInput {
@@ -3363,6 +3390,7 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceInput {
     /// <p>The ID of the workspace to display information about.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceInput {
@@ -3384,9 +3412,11 @@ impl std::fmt::Debug for DescribeWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
+    #[doc(hidden)]
     pub update_instruction_batch:
         std::option::Option<std::vec::Vec<crate::model::UpdateInstruction>>,
     /// <p>The ID of the workspace to update.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl UpdatePermissionsInput {
@@ -3415,16 +3445,22 @@ impl std::fmt::Debug for UpdatePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
     /// <p>The maximum number of results to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups are returned.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl ListPermissionsInput {
@@ -3471,8 +3507,10 @@ impl std::fmt::Debug for ListPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLicenseInput {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The type of license to remove from the workspace.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
 }
 impl DisassociateLicenseInput {
@@ -3499,8 +3537,10 @@ impl std::fmt::Debug for DisassociateLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLicenseInput {
     /// <p>The ID of the workspace to associate the license with.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The type of license to associate with the workspace.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
 }
 impl AssociateLicenseInput {
@@ -3527,11 +3567,14 @@ impl std::fmt::Debug for AssociateLicenseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to update the authentication for.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    #[doc(hidden)]
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
+    #[doc(hidden)]
     pub saml_configuration: std::option::Option<crate::model::SamlConfiguration>,
 }
 impl UpdateWorkspaceAuthenticationInput {
@@ -3565,6 +3608,7 @@ impl std::fmt::Debug for UpdateWorkspaceAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceAuthenticationInput {
@@ -3586,8 +3630,10 @@ impl std::fmt::Debug for DescribeWorkspaceAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the workspace to delete.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceApiKeyInput {
@@ -3614,13 +3660,17 @@ impl std::fmt::Debug for DeleteWorkspaceApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key to create. Key names must be unique to the workspace.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>Specifies the permission level of the key.</p>
     /// <p>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> </p>
+    #[doc(hidden)]
     pub key_role: std::option::Option<std::string::String>,
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    #[doc(hidden)]
     pub seconds_to_live: std::option::Option<i32>,
     /// <p>The ID of the workspace in which to create an API key.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceApiKeyInput {
@@ -3658,8 +3708,10 @@ impl std::fmt::Debug for CreateWorkspaceApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource the tag association is removed from. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key values of the tag to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3686,8 +3738,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource the tag is associated with.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3718,6 +3772,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource the list of tags are associated with.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

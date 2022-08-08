@@ -178,23 +178,32 @@ impl AsRef<str> for ConflictType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Domain {
     /// <p>The service-generated identifier for the domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The client-provided name for the domain.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The client-provided description of the domain.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp at which the domain is created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp showing the domain's last update.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
+    #[doc(hidden)]
     pub server_side_encryption_update_details:
         std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
 }
@@ -419,10 +428,13 @@ impl Domain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionUpdateDetails {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
+    #[doc(hidden)]
     pub old_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
+    #[doc(hidden)]
     pub update_status: std::option::Option<crate::model::ServerSideEncryptionUpdateStatus>,
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionUpdateDetails {
@@ -582,6 +594,7 @@ impl AsRef<str> for ServerSideEncryptionUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key you want Voice ID to use to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
@@ -695,8 +708,10 @@ impl AsRef<str> for DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the key is 'Department'. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -768,28 +783,40 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpeakerEnrollmentJob {
     /// <p>The client-provided name for the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
+    #[doc(hidden)]
     pub enrollment_config: std::option::Option<crate::model::EnrollmentConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended. </p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
+    #[doc(hidden)]
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl SpeakerEnrollmentJob {
@@ -1058,6 +1085,7 @@ impl SpeakerEnrollmentJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobProgress {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
+    #[doc(hidden)]
     pub percent_complete: std::option::Option<i32>,
 }
 impl JobProgress {
@@ -1112,8 +1140,10 @@ impl JobProgress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
     /// <p>A description of the error that caused the batch job failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl FailureDetails {
@@ -1185,8 +1215,10 @@ impl FailureDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
     /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration job.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl OutputDataConfig {
@@ -1258,6 +1290,7 @@ impl OutputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
@@ -1312,8 +1345,10 @@ impl InputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnrollmentConfig {
     /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
+    #[doc(hidden)]
     pub existing_enrollment_action: std::option::Option<crate::model::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub fraud_detection_config:
         std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
 }
@@ -1407,8 +1442,10 @@ impl EnrollmentConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+    #[doc(hidden)]
     pub fraud_detection_action: std::option::Option<crate::model::FraudDetectionAction>,
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+    #[doc(hidden)]
     pub risk_threshold: std::option::Option<i32>,
 }
 impl EnrollmentJobFraudDetectionConfig {
@@ -1668,28 +1705,40 @@ impl AsRef<str> for SpeakerEnrollmentJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudsterRegistrationJob {
     /// <p>The client-provided name for the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    #[doc(hidden)]
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key iD in order to encrypt the file.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
+    #[doc(hidden)]
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl FraudsterRegistrationJob {
@@ -1958,9 +2007,11 @@ impl FraudsterRegistrationJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+    #[doc(hidden)]
     pub duplicate_registration_action:
         std::option::Option<crate::model::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
+    #[doc(hidden)]
     pub fraudster_similarity_threshold: std::option::Option<i32>,
 }
 impl RegistrationConfig {
@@ -2178,18 +2229,25 @@ impl AsRef<str> for FraudsterRegistrationJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Speaker {
     /// <p>The identifier of the domain that contains the speaker.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The client-provided identifier for the speaker.</p>
+    #[doc(hidden)]
     pub customer_speaker_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker.</p>
+    #[doc(hidden)]
     pub generated_speaker_id: std::option::Option<std::string::String>,
     /// <p>The current status of the speaker.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SpeakerStatus>,
     /// <p>A timestamp showing when the speaker is created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    #[doc(hidden)]
     pub last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Speaker {
@@ -2427,18 +2485,25 @@ impl AsRef<str> for SpeakerStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpeakerSummary {
     /// <p>The identifier of the domain that contains the speaker.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The client-provided identifier for the speaker.</p>
+    #[doc(hidden)]
     pub customer_speaker_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker. </p>
+    #[doc(hidden)]
     pub generated_speaker_id: std::option::Option<std::string::String>,
     /// <p>The current status of the speaker.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SpeakerStatus>,
     /// <p>A timestamp showing the speaker's creation time. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing the speaker's last update.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    #[doc(hidden)]
     pub last_accessed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SpeakerSummary {
@@ -2613,20 +2678,28 @@ impl SpeakerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpeakerEnrollmentJobSummary {
     /// <p>The client-provided name for the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended.</p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
+    #[doc(hidden)]
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl SpeakerEnrollmentJobSummary {
@@ -2815,20 +2888,28 @@ impl SpeakerEnrollmentJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudsterRegistrationJobSummary {
     /// <p>The client-provied name for the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A timestamp showing when the fraudster registration job is created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
+    #[doc(hidden)]
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
+    #[doc(hidden)]
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl FraudsterRegistrationJobSummary {
@@ -3017,23 +3098,32 @@ impl FraudsterRegistrationJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainSummary {
     /// <p>The service-generated identifier for the domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The client-provided name for the domain.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The client-provided description of the domain.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp showing when the domain is created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp showing the domain's last update.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.</p>
+    #[doc(hidden)]
     pub server_side_encryption_update_details:
         std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
 }
@@ -3258,18 +3348,25 @@ impl DomainSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudDetectionResult {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+    #[doc(hidden)]
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
+    #[doc(hidden)]
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
+    #[doc(hidden)]
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::FraudDetectionConfiguration>,
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
+    #[doc(hidden)]
     pub decision: std::option::Option<crate::model::FraudDetectionDecision>,
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+    #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>,
     /// <p>Details about each risk analyzed for this speaker.</p>
+    #[doc(hidden)]
     pub risk_details: std::option::Option<crate::model::FraudRiskDetails>,
 }
 impl FraudDetectionResult {
@@ -3459,6 +3556,7 @@ impl FraudDetectionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudRiskDetails {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
+    #[doc(hidden)]
     pub known_fraudster_risk: std::option::Option<crate::model::KnownFraudsterRisk>,
 }
 impl FraudRiskDetails {
@@ -3516,8 +3614,10 @@ impl FraudRiskDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnownFraudsterRisk {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
+    #[doc(hidden)]
     pub risk_score: std::option::Option<i32>,
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
+    #[doc(hidden)]
     pub generated_fraudster_id: std::option::Option<std::string::String>,
 }
 impl KnownFraudsterRisk {
@@ -3702,6 +3802,7 @@ impl AsRef<str> for FraudDetectionDecision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
+    #[doc(hidden)]
     pub risk_threshold: std::option::Option<i32>,
 }
 impl FraudDetectionConfiguration {
@@ -3756,20 +3857,28 @@ impl FraudDetectionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationResult {
     /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
+    #[doc(hidden)]
     pub authentication_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
+    #[doc(hidden)]
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
+    #[doc(hidden)]
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
+    #[doc(hidden)]
     pub customer_speaker_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
+    #[doc(hidden)]
     pub generated_speaker_id: std::option::Option<std::string::String>,
     /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
+    #[doc(hidden)]
     pub decision: std::option::Option<crate::model::AuthenticationDecision>,
     /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<i32>,
     /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AuthenticationConfiguration>,
 }
 impl AuthenticationResult {
@@ -3970,6 +4079,7 @@ impl AuthenticationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
+    #[doc(hidden)]
     pub acceptance_threshold: std::option::Option<i32>,
 }
 impl AuthenticationConfiguration {
@@ -4166,10 +4276,13 @@ impl AsRef<str> for StreamingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Fraudster {
     /// <p>The identifier for the domain containing the fraudster.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the fraudster.</p>
+    #[doc(hidden)]
     pub generated_fraudster_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when Voice ID identified the fraudster.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Fraudster {

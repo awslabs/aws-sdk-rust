@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestinationDefinition {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
+    #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
+    #[doc(hidden)]
     pub enabled: bool,
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// An object that contains information about an event destination that sends data to Amazon SNS.
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
 impl EventDestinationDefinition {
@@ -172,6 +177,7 @@ impl EventDestinationDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsDestination {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
@@ -309,8 +315,10 @@ impl AsRef<str> for EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseDestination {
     /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
+    #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseDestination {
@@ -385,8 +393,10 @@ impl KinesisFirehoseDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestination {
     /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestination {
@@ -461,10 +471,13 @@ impl CloudWatchLogsDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
+    #[doc(hidden)]
     pub call_instructions_message: std::option::Option<crate::model::CallInstructionsMessageType>,
     /// An object that defines a message that contains unformatted text.
+    #[doc(hidden)]
     pub plain_text_message: std::option::Option<crate::model::PlainTextMessageType>,
     /// An object that defines a message that contains SSML-formatted text.
+    #[doc(hidden)]
     pub ssml_message: std::option::Option<crate::model::SsmlMessageType>,
 }
 impl VoiceMessageContent {
@@ -568,10 +581,13 @@ impl VoiceMessageContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// The SSML-formatted text to deliver to the recipient.
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
 }
 impl SsmlMessageType {
@@ -663,10 +679,13 @@ impl SsmlMessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlainTextMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// The plain (not SSML-formatted) text to deliver to the recipient.
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
 }
 impl PlainTextMessageType {
@@ -758,6 +777,7 @@ impl PlainTextMessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CallInstructionsMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl CallInstructionsMessageType {
@@ -810,16 +830,22 @@ impl CallInstructionsMessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestination {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
+    #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
+    #[doc(hidden)]
     pub enabled: bool,
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// A name that identifies the event destination configuration.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// An object that contains information about an event destination that sends data to Amazon SNS.
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
 }
 impl EventDestination {

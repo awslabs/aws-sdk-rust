@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkflowOutput {
     /// <p>The name of the workflow which was specified in input.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateWorkflowOutput {
@@ -86,6 +87,7 @@ impl UpdateUserDefinedFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTriggerOutput {
     /// <p>The resulting trigger definition.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<crate::model::Trigger>,
 }
 impl UpdateTriggerOutput {
@@ -170,10 +172,13 @@ impl UpdateTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the registry that contains the schema.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaOutput {
@@ -265,8 +270,10 @@ impl UpdateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegistryOutput {
     /// <p>The name of the updated registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource name (ARN) of the updated registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
 }
 impl UpdateRegistryOutput {
@@ -371,6 +378,7 @@ impl UpdatePartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMlTransformOutput {
     /// <p>The unique identifier for the transform that was updated.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl UpdateMlTransformOutput {
@@ -425,6 +433,7 @@ impl UpdateMlTransformOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobOutput {
     /// <p>Returns the name of the updated job definition.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl UpdateJobOutput {
@@ -629,6 +638,7 @@ impl UpdateConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatisticsErrors.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsError>>,
 }
 impl UpdateColumnStatisticsForTableOutput {
@@ -692,6 +702,7 @@ impl UpdateColumnStatisticsForTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForPartitionOutput {
     /// <p>Error occurred during updating column statistics data.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsError>>,
 }
 impl UpdateColumnStatisticsForPartitionOutput {
@@ -785,6 +796,7 @@ impl UpdateClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBlueprintOutput {
     /// <p>Returns the name of the blueprint that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateBlueprintOutput {
@@ -927,6 +939,7 @@ impl StopWorkflowRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTriggerOutput {
     /// <p>The name of the trigger that was stopped.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopTriggerOutput {
@@ -979,6 +992,7 @@ impl StopTriggerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSessionOutput {
     /// <p>Returns the Id of the stopped session.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopSessionOutput {
@@ -1091,6 +1105,7 @@ impl StopCrawlerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkflowRunOutput {
     /// <p>An Id for the new run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StartWorkflowRunOutput {
@@ -1145,6 +1160,7 @@ impl StartWorkflowRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTriggerOutput {
     /// <p>The name of the trigger that was started.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartTriggerOutput {
@@ -1197,6 +1213,7 @@ impl StartTriggerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMlLabelingSetGenerationTaskRunOutput {
     /// <p>The unique run identifier that is associated with this task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl StartMlLabelingSetGenerationTaskRunOutput {
@@ -1251,6 +1268,7 @@ impl StartMlLabelingSetGenerationTaskRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMlEvaluationTaskRunOutput {
     /// <p>The unique identifier associated with this run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl StartMlEvaluationTaskRunOutput {
@@ -1305,6 +1323,7 @@ impl StartMlEvaluationTaskRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunOutput {
     /// <p>The ID assigned to this job run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl StartJobRunOutput {
@@ -1359,6 +1378,7 @@ impl StartJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl StartImportLabelsTaskRunOutput {
@@ -1413,6 +1433,7 @@ impl StartImportLabelsTaskRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl StartExportLabelsTaskRunOutput {
@@ -1527,6 +1548,7 @@ impl StartCrawlerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBlueprintRunOutput {
     /// <p>The run ID for this blueprint run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StartBlueprintRunOutput {
@@ -1581,8 +1603,10 @@ impl StartBlueprintRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesOutput {
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
+    #[doc(hidden)]
     pub table_list: std::option::Option<std::vec::Vec<crate::model::Table>>,
 }
 impl SearchTablesOutput {
@@ -1663,6 +1687,7 @@ impl SearchTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunStatementOutput {
     /// <p>Returns the Id of the statement that was run.</p>
+    #[doc(hidden)]
     pub id: i32,
 }
 impl RunStatementOutput {
@@ -1717,8 +1742,10 @@ impl RunStatementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeWorkflowRunOutput {
     /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
+    #[doc(hidden)]
     pub node_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResumeWorkflowRunOutput {
@@ -1799,6 +1826,7 @@ impl ResumeWorkflowRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetJobBookmarkOutput {
     /// <p>The reset bookmark entry.</p>
+    #[doc(hidden)]
     pub job_bookmark_entry: std::option::Option<crate::model::JobBookmarkEntry>,
 }
 impl ResetJobBookmarkOutput {
@@ -1856,20 +1884,28 @@ impl ResetJobBookmarkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSchemaVersionMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The latest version of the schema.</p>
+    #[doc(hidden)]
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The version ID for the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The metadata key.</p>
+    #[doc(hidden)]
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
+    #[doc(hidden)]
     pub metadata_value: std::option::Option<std::string::String>,
 }
 impl RemoveSchemaVersionMetadataOutput {
@@ -2052,10 +2088,13 @@ impl RemoveSchemaVersionMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterSchemaVersionOutput {
     /// <p>The unique ID that represents the version of this schema.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
 }
 impl RegisterSchemaVersionOutput {
@@ -2150,12 +2189,15 @@ impl RegisterSchemaVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuerySchemaVersionMetadataOutput {
     /// <p>A map of a metadata key and associated values.</p>
+    #[doc(hidden)]
     pub metadata_info_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetadataInfo>,
     >,
     /// <p>The unique version ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl QuerySchemaVersionMetadataOutput {
@@ -2298,20 +2340,28 @@ impl PutWorkflowRunPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSchemaVersionMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name for the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The name for the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The latest version of the schema.</p>
+    #[doc(hidden)]
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The unique version ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The metadata key.</p>
+    #[doc(hidden)]
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
+    #[doc(hidden)]
     pub metadata_value: std::option::Option<std::string::String>,
 }
 impl PutSchemaVersionMetadataOutput {
@@ -2494,6 +2544,7 @@ impl PutSchemaVersionMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
+    #[doc(hidden)]
     pub policy_hash: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -2578,8 +2629,10 @@ impl PutDataCatalogEncryptionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsOutput {
     /// <p>List of names of workflows in the account.</p>
+    #[doc(hidden)]
     pub workflows: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if not all workflow names have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkflowsOutput {
@@ -2660,8 +2713,10 @@ impl ListWorkflowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTriggersOutput {
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
+    #[doc(hidden)]
     pub trigger_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTriggersOutput {
@@ -2742,8 +2797,10 @@ impl ListTriggersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStatementsOutput {
     /// <p>Returns the list of statements.</p>
+    #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
     /// <p>A continuation token, if not all statements have yet been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStatementsOutput {
@@ -2824,10 +2881,13 @@ impl ListStatementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSessionsOutput {
     /// <p>Returns the ID of the session. </p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the session object. </p>
+    #[doc(hidden)]
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
     /// <p>The token for the next set of results, or null if there are no more result. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSessionsOutput {
@@ -2934,8 +2994,10 @@ impl ListSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaVersionsOutput {
     /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SchemaVersionListItem>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemaVersionsOutput {
@@ -3016,8 +3078,10 @@ impl ListSchemaVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasOutput {
     /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SchemaListItem>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemasOutput {
@@ -3098,8 +3162,10 @@ impl ListSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegistriesOutput {
     /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
+    #[doc(hidden)]
     pub registries: std::option::Option<std::vec::Vec<crate::model::RegistryListItem>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRegistriesOutput {
@@ -3180,8 +3246,10 @@ impl ListRegistriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
+    #[doc(hidden)]
     pub transform_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMlTransformsOutput {
@@ -3262,8 +3330,10 @@ impl ListMlTransformsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
+    #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -3344,8 +3414,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevEndpointsOutput {
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
+    #[doc(hidden)]
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevEndpointsOutput {
@@ -3426,8 +3498,10 @@ impl ListDevEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomEntityTypesOutput {
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+    #[doc(hidden)]
     pub custom_entity_types: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
     /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomEntityTypesOutput {
@@ -3509,8 +3583,10 @@ impl ListCustomEntityTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlsOutput {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+    #[doc(hidden)]
     pub crawls: std::option::Option<std::vec::Vec<crate::model::CrawlerHistory>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrawlsOutput {
@@ -3591,8 +3667,10 @@ impl ListCrawlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
+    #[doc(hidden)]
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrawlersOutput {
@@ -3673,8 +3751,10 @@ impl ListCrawlersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBlueprintsOutput {
     /// <p>List of names of blueprints in the account.</p>
+    #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBlueprintsOutput {
@@ -3785,8 +3865,10 @@ impl ImportCatalogToGlueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunsOutput {
     /// <p>A list of workflow run metadata objects.</p>
+    #[doc(hidden)]
     pub runs: std::option::Option<std::vec::Vec<crate::model::WorkflowRun>>,
     /// <p>A continuation token, if not all requested workflow runs have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetWorkflowRunsOutput {
@@ -3867,6 +3949,7 @@ impl GetWorkflowRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunPropertiesOutput {
     /// <p>The workflow run properties which were set during the specified run.</p>
+    #[doc(hidden)]
     pub run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3942,6 +4025,7 @@ impl GetWorkflowRunPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunOutput {
     /// <p>The requested workflow run metadata.</p>
+    #[doc(hidden)]
     pub run: std::option::Option<crate::model::WorkflowRun>,
 }
 impl GetWorkflowRunOutput {
@@ -3994,6 +4078,7 @@ impl GetWorkflowRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowOutput {
     /// <p>The resource metadata for the workflow.</p>
+    #[doc(hidden)]
     pub workflow: std::option::Option<crate::model::Workflow>,
 }
 impl GetWorkflowOutput {
@@ -4048,9 +4133,11 @@ impl GetWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
+    #[doc(hidden)]
     pub user_defined_functions:
         std::option::Option<std::vec::Vec<crate::model::UserDefinedFunction>>,
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUserDefinedFunctionsOutput {
@@ -4134,6 +4221,7 @@ impl GetUserDefinedFunctionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionOutput {
     /// <p>The requested function definition.</p>
+    #[doc(hidden)]
     pub user_defined_function: std::option::Option<crate::model::UserDefinedFunction>,
 }
 impl GetUserDefinedFunctionOutput {
@@ -4191,12 +4279,16 @@ impl GetUserDefinedFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredTableMetadataOutput {
     /// <p>Represents a collection of related data organized in columns and rows.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::Table>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cell_filters: std::option::Option<std::vec::Vec<crate::model::ColumnRowFilter>>,
 }
 impl GetUnfilteredTableMetadataOutput {
@@ -4326,9 +4418,11 @@ impl GetUnfilteredTableMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredPartitionsMetadataOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub unfiltered_partitions:
         std::option::Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUnfilteredPartitionsMetadataOutput {
@@ -4411,10 +4505,13 @@ impl GetUnfilteredPartitionsMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredPartitionMetadataOutput {
     /// <p>Represents a slice of table data.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<crate::model::Partition>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
 }
 impl GetUnfilteredPartitionMetadataOutput {
@@ -4522,8 +4619,10 @@ impl GetUnfilteredPartitionMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggersOutput {
     /// <p>A list of triggers for the specified job.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTriggersOutput {
@@ -4604,6 +4703,7 @@ impl GetTriggersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggerOutput {
     /// <p>The requested trigger definition.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<crate::model::Trigger>,
 }
 impl GetTriggerOutput {
@@ -4658,6 +4758,7 @@ impl GetTriggerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsOutput {
     /// <p>The requested tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4731,8 +4832,10 @@ impl GetTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionsOutput {
     /// <p>A list of strings identifying available versions of the specified table.</p>
+    #[doc(hidden)]
     pub table_versions: std::option::Option<std::vec::Vec<crate::model::TableVersion>>,
     /// <p>A continuation token, if the list of available versions does not include the last one.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTableVersionsOutput {
@@ -4813,6 +4916,7 @@ impl GetTableVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionOutput {
     /// <p>The requested table version.</p>
+    #[doc(hidden)]
     pub table_version: std::option::Option<crate::model::TableVersion>,
 }
 impl GetTableVersionOutput {
@@ -4870,8 +4974,10 @@ impl GetTableVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTablesOutput {
     /// <p>A list of the requested <code>Table</code> objects.</p>
+    #[doc(hidden)]
     pub table_list: std::option::Option<std::vec::Vec<crate::model::Table>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTablesOutput {
@@ -4952,6 +5058,7 @@ impl GetTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableOutput {
     /// <p>The <code>Table</code> object that defines the specified table.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::Table>,
 }
 impl GetTableOutput {
@@ -5004,6 +5111,7 @@ impl GetTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStatementOutput {
     /// <p>Returns the statement.</p>
+    #[doc(hidden)]
     pub statement: std::option::Option<crate::model::Statement>,
 }
 impl GetStatementOutput {
@@ -5061,6 +5169,7 @@ impl GetStatementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionOutput {
     /// <p>The session object is returned in the response.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::Session>,
 }
 impl GetSessionOutput {
@@ -5115,9 +5224,11 @@ impl GetSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
+    #[doc(hidden)]
     pub security_configurations:
         std::option::Option<std::vec::Vec<crate::model::SecurityConfiguration>>,
     /// <p>A continuation token, if there are more security configurations to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationsOutput {
@@ -5204,6 +5315,7 @@ impl GetSecurityConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecurityConfigurationOutput {
     /// <p>The requested security configuration.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<crate::model::SecurityConfiguration>,
 }
 impl GetSecurityConfigurationOutput {
@@ -5266,6 +5378,7 @@ impl GetSecurityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaVersionsDiffOutput {
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
+    #[doc(hidden)]
     pub diff: std::option::Option<std::string::String>,
 }
 impl GetSchemaVersionsDiffOutput {
@@ -5318,18 +5431,25 @@ impl GetSchemaVersionsDiffOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaVersionOutput {
     /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The schema definition for the schema ID.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
 }
 impl GetSchemaVersionOutput {
@@ -5498,14 +5618,19 @@ impl GetSchemaVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaByDefinitionOutput {
     /// <p>The schema ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The status of the schema version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
     /// <p>The date and time the schema was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
 }
 impl GetSchemaByDefinitionOutput {
@@ -5637,30 +5762,43 @@ impl GetSchemaByDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaOutput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>A description of schema if specified when created</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The compatibility mode of the schema.</p>
+    #[doc(hidden)]
     pub compatibility: std::option::Option<crate::model::Compatibility>,
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    #[doc(hidden)]
     pub schema_checkpoint: i64,
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
+    #[doc(hidden)]
     pub latest_schema_version: i64,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
+    #[doc(hidden)]
     pub next_schema_version: i64,
     /// <p>The status of the schema.</p>
+    #[doc(hidden)]
     pub schema_status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>The date and time the schema was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time the schema was updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<std::string::String>,
 }
 impl GetSchemaOutput {
@@ -5931,12 +6069,16 @@ impl GetSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>Contains the requested policy document, in JSON format.</p>
+    #[doc(hidden)]
     pub policy_in_json: std::option::Option<std::string::String>,
     /// <p>Contains the hash value associated with this policy.</p>
+    #[doc(hidden)]
     pub policy_hash: std::option::Option<std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the policy was last updated.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetResourcePolicyOutput {
@@ -6051,9 +6193,11 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesOutput {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
+    #[doc(hidden)]
     pub get_resource_policies_response_list:
         std::option::Option<std::vec::Vec<crate::model::GluePolicy>>,
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourcePoliciesOutput {
@@ -6143,16 +6287,22 @@ impl GetResourcePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryOutput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>A description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the registry.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistryStatus>,
     /// <p>The date and time the registry was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time the registry was updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<std::string::String>,
 }
 impl GetRegistryOutput {
@@ -6298,8 +6448,10 @@ impl GetRegistryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlanOutput {
     /// <p>A Python script to perform the mapping.</p>
+    #[doc(hidden)]
     pub python_script: std::option::Option<std::string::String>,
     /// <p>The Scala code to perform the mapping.</p>
+    #[doc(hidden)]
     pub scala_code: std::option::Option<std::string::String>,
 }
 impl GetPlanOutput {
@@ -6374,8 +6526,10 @@ impl GetPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionsOutput {
     /// <p>A list of requested partitions.</p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPartitionsOutput {
@@ -6456,9 +6610,11 @@ impl GetPartitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
+    #[doc(hidden)]
     pub partition_index_descriptor_list:
         std::option::Option<std::vec::Vec<crate::model::PartitionIndexDescriptor>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPartitionIndexesOutput {
@@ -6548,6 +6704,7 @@ impl GetPartitionIndexesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionOutput {
     /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<crate::model::Partition>,
 }
 impl GetPartitionOutput {
@@ -6605,8 +6762,10 @@ impl GetPartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformsOutput {
     /// <p>A list of machine learning transforms.</p>
+    #[doc(hidden)]
     pub transforms: std::option::Option<std::vec::Vec<crate::model::MlTransform>>,
     /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMlTransformsOutput {
@@ -6687,34 +6846,48 @@ impl GetMlTransformsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformOutput {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique name given to the transform when it was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the transform.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TransformStatusType>,
     /// <p>The date and time when the transform was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the transform was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of Glue table definitions used by the transform.</p>
+    #[doc(hidden)]
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>The latest evaluation metrics.</p>
+    #[doc(hidden)]
     pub evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
     /// <p>The number of labels available for this transform.</p>
+    #[doc(hidden)]
     pub label_count: i32,
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -6722,14 +6895,19 @@ pub struct GetMlTransformOutput {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i32>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    #[doc(hidden)]
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl GetMlTransformOutput {
@@ -7150,8 +7328,10 @@ impl GetMlTransformOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTaskRunsOutput {
     /// <p>A list of task runs that are associated with the transform.</p>
+    #[doc(hidden)]
     pub task_runs: std::option::Option<std::vec::Vec<crate::model::TaskRun>>,
     /// <p>A pagination token, if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMlTaskRunsOutput {
@@ -7232,24 +7412,34 @@ impl GetMlTaskRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTaskRunOutput {
     /// <p>The unique identifier of the task run.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
     /// <p>The status for this task run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatusType>,
     /// <p>The names of the log groups that are associated with the task run.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The list of properties that are associated with the task run.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::TaskRunProperties>,
     /// <p>The error strings that are associated with the task run.</p>
+    #[doc(hidden)]
     pub error_string: std::option::Option<std::string::String>,
     /// <p>The date and time when this task run started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    #[doc(hidden)]
     pub execution_time: i32,
 }
 impl GetMlTaskRunOutput {
@@ -7475,6 +7665,7 @@ impl GetMlTaskRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMappingOutput {
     /// <p>A list of mappings to the specified targets.</p>
+    #[doc(hidden)]
     pub mapping: std::option::Option<std::vec::Vec<crate::model::MappingEntry>>,
 }
 impl GetMappingOutput {
@@ -7538,8 +7729,10 @@ impl GetMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobsOutput {
     /// <p>A list of job definitions.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>A continuation token, if not all job definitions have yet been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetJobsOutput {
@@ -7620,8 +7813,10 @@ impl GetJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunsOutput {
     /// <p>A list of job-run metadata objects.</p>
+    #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
     /// <p>A continuation token, if not all requested job runs have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetJobRunsOutput {
@@ -7702,6 +7897,7 @@ impl GetJobRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunOutput {
     /// <p>The requested job-run metadata.</p>
+    #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
 impl GetJobRunOutput {
@@ -7756,6 +7952,7 @@ impl GetJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobBookmarkOutput {
     /// <p>A structure that defines a point that a job can resume processing.</p>
+    #[doc(hidden)]
     pub job_bookmark_entry: std::option::Option<crate::model::JobBookmarkEntry>,
 }
 impl GetJobBookmarkOutput {
@@ -7813,6 +8010,7 @@ impl GetJobBookmarkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
     /// <p>The requested job definition.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl GetJobOutput {
@@ -7865,8 +8063,10 @@ impl GetJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
+    #[doc(hidden)]
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::model::DevEndpoint>>,
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevEndpointsOutput {
@@ -7947,6 +8147,7 @@ impl GetDevEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevEndpointOutput {
     /// <p>A <code>DevEndpoint</code> definition.</p>
+    #[doc(hidden)]
     pub dev_endpoint: std::option::Option<crate::model::DevEndpoint>,
 }
 impl GetDevEndpointOutput {
@@ -8004,8 +8205,10 @@ impl GetDevEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataflowGraphOutput {
     /// <p>A list of the nodes in the resulting DAG.</p>
+    #[doc(hidden)]
     pub dag_nodes: std::option::Option<std::vec::Vec<crate::model::CodeGenNode>>,
     /// <p>A list of the edges in the resulting DAG.</p>
+    #[doc(hidden)]
     pub dag_edges: std::option::Option<std::vec::Vec<crate::model::CodeGenEdge>>,
 }
 impl GetDataflowGraphOutput {
@@ -8095,6 +8298,7 @@ impl GetDataflowGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataCatalogEncryptionSettingsOutput {
     /// <p>The requested security configuration.</p>
+    #[doc(hidden)]
     pub data_catalog_encryption_settings:
         std::option::Option<crate::model::DataCatalogEncryptionSettings>,
 }
@@ -8162,8 +8366,10 @@ impl GetDataCatalogEncryptionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabasesOutput {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
+    #[doc(hidden)]
     pub database_list: std::option::Option<std::vec::Vec<crate::model::Database>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDatabasesOutput {
@@ -8244,6 +8450,7 @@ impl GetDatabasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabaseOutput {
     /// <p>The definition of the specified database in the Data Catalog.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<crate::model::Database>,
 }
 impl GetDatabaseOutput {
@@ -8298,10 +8505,13 @@ impl GetDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomEntityTypeOutput {
     /// <p>The name of the custom pattern that you retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    #[doc(hidden)]
     pub regex_string: std::option::Option<std::string::String>,
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    #[doc(hidden)]
     pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetCustomEntityTypeOutput {
@@ -8399,8 +8609,10 @@ impl GetCustomEntityTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
+    #[doc(hidden)]
     pub crawlers: std::option::Option<std::vec::Vec<crate::model::Crawler>>,
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlersOutput {
@@ -8481,8 +8693,10 @@ impl GetCrawlersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
+    #[doc(hidden)]
     pub crawler_metrics_list: std::option::Option<std::vec::Vec<crate::model::CrawlerMetrics>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlerMetricsOutput {
@@ -8564,6 +8778,7 @@ impl GetCrawlerMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlerOutput {
     /// <p>The metadata for the specified crawler.</p>
+    #[doc(hidden)]
     pub crawler: std::option::Option<crate::model::Crawler>,
 }
 impl GetCrawlerOutput {
@@ -8618,8 +8833,10 @@ impl GetCrawlerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsOutput {
     /// <p>A list of requested connection definitions.</p>
+    #[doc(hidden)]
     pub connection_list: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectionsOutput {
@@ -8700,6 +8917,7 @@ impl GetConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionOutput {
     /// <p>The requested connection definition.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl GetConnectionOutput {
@@ -8757,8 +8975,10 @@ impl GetConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnError>>,
 }
 impl GetColumnStatisticsForTableOutput {
@@ -8849,8 +9069,10 @@ impl GetColumnStatisticsForTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForPartitionOutput {
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     /// <p>Error occurred during retrieving column statistics data.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnError>>,
 }
 impl GetColumnStatisticsForPartitionOutput {
@@ -8941,8 +9163,10 @@ impl GetColumnStatisticsForPartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifiersOutput {
     /// <p>The requested list of classifier objects.</p>
+    #[doc(hidden)]
     pub classifiers: std::option::Option<std::vec::Vec<crate::model::Classifier>>,
     /// <p>A continuation token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetClassifiersOutput {
@@ -9023,6 +9247,7 @@ impl GetClassifiersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifierOutput {
     /// <p>The requested classifier.</p>
+    #[doc(hidden)]
     pub classifier: std::option::Option<crate::model::Classifier>,
 }
 impl GetClassifierOutput {
@@ -9080,6 +9305,7 @@ impl GetClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCatalogImportStatusOutput {
     /// <p>The status of the specified catalog migration.</p>
+    #[doc(hidden)]
     pub import_status: std::option::Option<crate::model::CatalogImportStatus>,
 }
 impl GetCatalogImportStatusOutput {
@@ -9137,8 +9363,10 @@ impl GetCatalogImportStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintRunsOutput {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
+    #[doc(hidden)]
     pub blueprint_runs: std::option::Option<std::vec::Vec<crate::model::BlueprintRun>>,
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBlueprintRunsOutput {
@@ -9219,6 +9447,7 @@ impl GetBlueprintRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintRunOutput {
     /// <p>Returns a <code>BlueprintRun</code> object.</p>
+    #[doc(hidden)]
     pub blueprint_run: std::option::Option<crate::model::BlueprintRun>,
 }
 impl GetBlueprintRunOutput {
@@ -9276,6 +9505,7 @@ impl GetBlueprintRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintOutput {
     /// <p>Returns a <code>Blueprint</code> object.</p>
+    #[doc(hidden)]
     pub blueprint: std::option::Option<crate::model::Blueprint>,
 }
 impl GetBlueprintOutput {
@@ -9333,6 +9563,7 @@ impl GetBlueprintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowOutput {
     /// <p>Name of the workflow specified in input.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowOutput {
@@ -9415,6 +9646,7 @@ impl DeleteUserDefinedFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTriggerOutput {
     /// <p>The name of the trigger that was deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTriggerOutput {
@@ -9527,6 +9759,7 @@ impl DeleteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionOutput {
     /// <p>Returns the ID of the deleted session.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSessionOutput {
@@ -9609,6 +9842,7 @@ impl DeleteSecurityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaVersionsOutput {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
+    #[doc(hidden)]
     pub schema_version_errors:
         std::option::Option<std::vec::Vec<crate::model::SchemaVersionErrorItem>>,
 }
@@ -9679,10 +9913,13 @@ impl DeleteSchemaVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema being deleted.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The status of the schema.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaStatus>,
 }
 impl DeleteSchemaOutput {
@@ -9804,10 +10041,13 @@ impl DeleteResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegistryOutput {
     /// <p>The name of the registry being deleted.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistryStatus>,
 }
 impl DeleteRegistryOutput {
@@ -9962,6 +10202,7 @@ impl DeletePartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMlTransformOutput {
     /// <p>The unique identifier of the transform that was deleted.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlTransformOutput {
@@ -10016,6 +10257,7 @@ impl DeleteMlTransformOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobOutput {
     /// <p>The name of the job definition that was deleted.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl DeleteJobOutput {
@@ -10130,6 +10372,7 @@ impl DeleteDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomEntityTypeOutput {
     /// <p>The name of the custom pattern you deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteCustomEntityTypeOutput {
@@ -10332,6 +10575,7 @@ impl DeleteClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBlueprintOutput {
     /// <p>Returns the name of the blueprint that was deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteBlueprintOutput {
@@ -10384,6 +10628,7 @@ impl DeleteBlueprintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkflowOutput {
     /// <p>The name of the workflow which was provided as part of the request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateWorkflowOutput {
@@ -10466,6 +10711,7 @@ impl CreateUserDefinedFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTriggerOutput {
     /// <p>The name of the trigger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateTriggerOutput {
@@ -10548,6 +10794,7 @@ impl CreateTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSessionOutput {
     /// <p>Returns the session object in the response.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::Session>,
 }
 impl CreateSessionOutput {
@@ -10602,8 +10849,10 @@ impl CreateSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityConfigurationOutput {
     /// <p>The name assigned to the new security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the new security configuration was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSecurityConfigurationOutput {
@@ -10678,8 +10927,10 @@ impl CreateSecurityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptOutput {
     /// <p>The Python script generated from the DAG.</p>
+    #[doc(hidden)]
     pub python_script: std::option::Option<std::string::String>,
     /// <p>The Scala code generated from the DAG.</p>
+    #[doc(hidden)]
     pub scala_code: std::option::Option<std::string::String>,
 }
 impl CreateScriptOutput {
@@ -10754,33 +11005,47 @@ impl CreateScriptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaOutput {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>A description of the schema if specified when created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The schema compatibility mode.</p>
+    #[doc(hidden)]
     pub compatibility: std::option::Option<crate::model::Compatibility>,
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    #[doc(hidden)]
     pub schema_checkpoint: i64,
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
+    #[doc(hidden)]
     pub latest_schema_version: i64,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
+    #[doc(hidden)]
     pub next_schema_version: i64,
     /// <p>The status of the schema. </p>
+    #[doc(hidden)]
     pub schema_status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>The tags for the schema.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of the first schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The status of the first schema version created.</p>
+    #[doc(hidden)]
     pub schema_version_status: std::option::Option<crate::model::SchemaVersionStatus>,
 }
 impl CreateSchemaOutput {
@@ -11094,12 +11359,16 @@ impl CreateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegistryOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>A description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags for the registry.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11289,6 +11558,7 @@ impl CreatePartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMlTransformOutput {
     /// <p>A unique identifier that is generated for the transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl CreateMlTransformOutput {
@@ -11343,6 +11613,7 @@ impl CreateMlTransformOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>The unique name that was provided for this job definition.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
@@ -11395,41 +11666,59 @@ impl CreateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDevEndpointOutput {
     /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The current status of the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub yarn_endpoint_address: std::option::Option<std::string::String>,
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    #[doc(hidden)]
     pub zeppelin_remote_spark_interpreter_port: i32,
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
+    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
     /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -11437,6 +11726,7 @@ pub struct CreateDevEndpointOutput {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11910,6 +12200,7 @@ impl CreateDatabaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomEntityTypeOutput {
     /// <p>The name of the custom pattern you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateCustomEntityTypeOutput {
@@ -12052,6 +12343,7 @@ impl CreateClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBlueprintOutput {
     /// <p>Returns the name of the blueprint that was registered.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateBlueprintOutput {
@@ -12104,8 +12396,10 @@ impl CreateBlueprintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckSchemaVersionValidityOutput {
     /// <p>Return true, if the schema is valid and false otherwise.</p>
+    #[doc(hidden)]
     pub valid: bool,
     /// <p>A validation failure error message.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl CheckSchemaVersionValidityOutput {
@@ -12207,10 +12501,13 @@ impl CancelStatementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMlTaskRunOutput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
     /// <p>The status for this run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatusType>,
 }
 impl CancelMlTaskRunOutput {
@@ -12302,6 +12599,7 @@ impl CancelMlTaskRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePartitionOutput {
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionFailureEntry>>,
 }
 impl BatchUpdatePartitionOutput {
@@ -12368,9 +12666,11 @@ impl BatchUpdatePartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
+    #[doc(hidden)]
     pub successful_submissions:
         std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunSuccessfulSubmission>>,
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
 }
 impl BatchStopJobRunOutput {
@@ -12468,8 +12768,10 @@ impl BatchStopJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetWorkflowsOutput {
     /// <p>A list of workflow resource metadata.</p>
+    #[doc(hidden)]
     pub workflows: std::option::Option<std::vec::Vec<crate::model::Workflow>>,
     /// <p>A list of names of workflows not found.</p>
+    #[doc(hidden)]
     pub missing_workflows: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetWorkflowsOutput {
@@ -12559,8 +12861,10 @@ impl BatchGetWorkflowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetTriggersOutput {
     /// <p>A list of trigger definitions.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
     /// <p>A list of names of triggers not found.</p>
+    #[doc(hidden)]
     pub triggers_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetTriggersOutput {
@@ -12650,8 +12954,10 @@ impl BatchGetTriggersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetPartitionOutput {
     /// <p>A list of the requested partitions.</p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
+    #[doc(hidden)]
     pub unprocessed_keys: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchGetPartitionOutput {
@@ -12742,8 +13048,10 @@ impl BatchGetPartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetJobsOutput {
     /// <p>A list of job definitions.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>A list of names of jobs not found.</p>
+    #[doc(hidden)]
     pub jobs_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetJobsOutput {
@@ -12833,8 +13141,10 @@ impl BatchGetJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
+    #[doc(hidden)]
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::model::DevEndpoint>>,
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
+    #[doc(hidden)]
     pub dev_endpoints_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevEndpointsOutput {
@@ -12924,8 +13234,10 @@ impl BatchGetDevEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCustomEntityTypesOutput {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+    #[doc(hidden)]
     pub custom_entity_types: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
     /// <p>A list of the names of custom patterns that were not found.</p>
+    #[doc(hidden)]
     pub custom_entity_types_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomEntityTypesOutput {
@@ -13023,8 +13335,10 @@ impl BatchGetCustomEntityTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCrawlersOutput {
     /// <p>A list of crawler definitions.</p>
+    #[doc(hidden)]
     pub crawlers: std::option::Option<std::vec::Vec<crate::model::Crawler>>,
     /// <p>A list of names of crawlers that were not found.</p>
+    #[doc(hidden)]
     pub crawlers_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCrawlersOutput {
@@ -13114,8 +13428,10 @@ impl BatchGetCrawlersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBlueprintsOutput {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
+    #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
+    #[doc(hidden)]
     pub missing_blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBlueprintsOutput {
@@ -13205,6 +13521,7 @@ impl BatchGetBlueprintsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableVersionOutput {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
 }
 impl BatchDeleteTableVersionOutput {
@@ -13268,6 +13585,7 @@ impl BatchDeleteTableVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableOutput {
     /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableError>>,
 }
 impl BatchDeleteTableOutput {
@@ -13331,6 +13649,7 @@ impl BatchDeleteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeletePartitionOutput {
     /// <p>The errors encountered when trying to delete the requested partitions.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::PartitionError>>,
 }
 impl BatchDeletePartitionOutput {
@@ -13394,8 +13713,10 @@ impl BatchDeletePartitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteConnectionOutput {
     /// <p>A list of names of the connection definitions that were successfully deleted.</p>
+    #[doc(hidden)]
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ErrorDetail>,
     >,
@@ -13499,6 +13820,7 @@ impl BatchDeleteConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreatePartitionOutput {
     /// <p>The errors encountered when trying to create the requested partitions.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::PartitionError>>,
 }
 impl BatchCreatePartitionOutput {

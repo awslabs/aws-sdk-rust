@@ -16670,14 +16670,19 @@ impl UpdateWirelessGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWirelessGatewayInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The new name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A new description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    #[doc(hidden)]
     pub join_eui_filters: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    #[doc(hidden)]
     pub net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateWirelessGatewayInput {
@@ -16719,14 +16724,19 @@ impl std::fmt::Debug for UpdateWirelessGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the new destination for the device.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>The new name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A new description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated wireless device's configuration.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateDevice>,
 }
 impl UpdateWirelessDeviceInput {
@@ -16768,21 +16778,29 @@ impl std::fmt::Debug for UpdateWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    #[doc(hidden)]
     pub identifier_type: std::option::Option<crate::model::IdentifierType>,
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
     /// <p>Event configuration for the device registration state event.</p>
+    #[doc(hidden)]
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
     /// <p>Event configuration for the proximity event.</p>
+    #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
     /// <p>Event configuration for the join event.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Event configuration for the connection status event.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     /// <p>Event configuration for the message delivery status event.</p>
+    #[doc(hidden)]
     pub message_delivery_status:
         std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
@@ -16846,10 +16864,13 @@ impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePositionInput {
     /// <p>Resource identifier of the resource for which position is updated.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Resource type of the resource for which position is updated.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
     /// <p>The position information of the resource.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f32>>,
 }
 impl UpdatePositionInput {
@@ -16881,10 +16902,13 @@ impl std::fmt::Debug for UpdatePositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkUpdateAccount>,
     /// <p>The ID of the partner account to update.</p>
+    #[doc(hidden)]
     pub partner_account_id: std::option::Option<std::string::String>,
     /// <p>The partner type.</p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::PartnerType>,
 }
 impl UpdatePartnerAccountInput {
@@ -16916,18 +16940,25 @@ impl std::fmt::Debug for UpdatePartnerAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    #[doc(hidden)]
     pub trace_content: std::option::Option<crate::model::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
     pub wireless_devices_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
+    #[doc(hidden)]
     pub wireless_devices_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
     pub wireless_gateways_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
+    #[doc(hidden)]
     pub wireless_gateways_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
@@ -16985,12 +17016,16 @@ impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the multicast group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
 }
 impl UpdateMulticastGroupInput {
@@ -17027,11 +17062,14 @@ impl std::fmt::Debug for UpdateMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub default_log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless device log options.</p>
+    #[doc(hidden)]
     pub wireless_device_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
     /// <p>The list of wireless gateway log options.</p>
+    #[doc(hidden)]
     pub wireless_gateway_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
 }
@@ -17074,16 +17112,22 @@ impl std::fmt::Debug for UpdateLogLevelsByResourceTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of a FUOTA task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_image: std::option::Option<std::string::String>,
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_role: std::option::Option<std::string::String>,
 }
 impl UpdateFuotaTaskInput {
@@ -17130,16 +17174,21 @@ impl std::fmt::Debug for UpdateFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    #[doc(hidden)]
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    #[doc(hidden)]
     pub connection_status:
         std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+    #[doc(hidden)]
     pub message_delivery_status:
         std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
@@ -17192,14 +17241,19 @@ impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDestinationInput {
     /// <p>The new name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub expression_type: std::option::Option<crate::model::ExpressionType>,
     /// <p>The new rule name or topic rule to send messages to.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A new description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateDestinationInput {
@@ -17241,8 +17295,10 @@ impl std::fmt::Debug for UpdateDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the keys of the tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -17269,6 +17325,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestWirelessDeviceInput {
     /// <p>The ID of the wireless device to test.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl TestWirelessDeviceInput {
@@ -17290,8 +17347,10 @@ impl std::fmt::Debug for TestWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -17318,8 +17377,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information used with the multicast session.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
 }
 impl StartMulticastGroupSessionInput {
@@ -17346,8 +17407,10 @@ impl std::fmt::Debug for StartMulticastGroupSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
 }
 impl StartFuotaTaskInput {
@@ -17374,10 +17437,13 @@ impl std::fmt::Debug for StartFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
@@ -17410,10 +17476,13 @@ impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupIn
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
@@ -17446,12 +17515,16 @@ impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupInput
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToWirelessDeviceInput {
     /// <p>The ID of the wireless device to receive the data.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    #[doc(hidden)]
     pub transmit_mode: std::option::Option<i32>,
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    #[doc(hidden)]
     pub payload_data: std::option::Option<std::string::String>,
     /// <p>Metadata about the message request.</p>
+    #[doc(hidden)]
     pub wireless_metadata: std::option::Option<crate::model::WirelessMetadata>,
 }
 impl SendDataToWirelessDeviceInput {
@@ -17488,10 +17561,13 @@ impl std::fmt::Debug for SendDataToWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    #[doc(hidden)]
     pub payload_data: std::option::Option<std::string::String>,
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    #[doc(hidden)]
     pub wireless_metadata: std::option::Option<crate::model::MulticastWirelessMetadata>,
 }
 impl SendDataToMulticastGroupInput {
@@ -17525,8 +17601,10 @@ impl std::fmt::Debug for SendDataToMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResetResourceLogLevelInput {
@@ -17564,10 +17642,13 @@ impl std::fmt::Debug for ResetAllResourceLogLevelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl PutResourceLogLevelInput {
@@ -17599,12 +17680,16 @@ impl std::fmt::Debug for PutResourceLogLevelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPositionConfigurationInput {
     /// <p>Resource identifier used to update the position configuration.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
+    #[doc(hidden)]
     pub solvers: std::option::Option<crate::model::PositionSolverConfigurations>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl PutPositionConfigurationInput {
@@ -17641,10 +17726,13 @@ impl std::fmt::Debug for PutPositionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
+    #[doc(hidden)]
     pub task_definition_type: std::option::Option<crate::model::WirelessGatewayTaskDefinitionType>,
 }
 impl ListWirelessGatewayTaskDefinitionsInput {
@@ -17678,8 +17766,10 @@ impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessGatewaysInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListWirelessGatewaysInput {
@@ -17706,20 +17796,28 @@ impl std::fmt::Debug for ListWirelessGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless devices that use this destination.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
+    #[doc(hidden)]
     pub device_profile_id: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
+    #[doc(hidden)]
     pub service_profile_id: std::option::Option<std::string::String>,
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
+    #[doc(hidden)]
     pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub fuota_task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub multicast_group_id: std::option::Option<std::string::String>,
 }
 impl ListWirelessDevicesInput {
@@ -17776,6 +17874,7 @@ impl std::fmt::Debug for ListWirelessDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to list tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -17797,8 +17896,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListServiceProfilesInput {
@@ -17825,12 +17926,16 @@ impl std::fmt::Debug for ListServiceProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuedMessagesInput {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
+    #[doc(hidden)]
     pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
 }
 impl ListQueuedMessagesInput {
@@ -17867,10 +17972,13 @@ impl std::fmt::Debug for ListQueuedMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPositionConfigurationsInput {
     /// <p>Resource type for which position configurations are listed.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPositionConfigurationsInput {
@@ -17902,8 +18010,10 @@ impl std::fmt::Debug for ListPositionConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerAccountsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPartnerAccountsInput {
@@ -17930,8 +18040,10 @@ impl std::fmt::Debug for ListPartnerAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkAnalyzerConfigurationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkAnalyzerConfigurationsInput {
@@ -17958,10 +18070,13 @@ impl std::fmt::Debug for ListNetworkAnalyzerConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMulticastGroupsByFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListMulticastGroupsByFuotaTaskInput {
@@ -17993,8 +18108,10 @@ impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMulticastGroupsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListMulticastGroupsInput {
@@ -18021,8 +18138,10 @@ impl std::fmt::Debug for ListMulticastGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFuotaTasksInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListFuotaTasksInput {
@@ -18049,10 +18168,13 @@ impl std::fmt::Debug for ListFuotaTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::EventNotificationResourceType>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventConfigurationsInput {
@@ -18086,8 +18208,10 @@ impl std::fmt::Debug for ListEventConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDeviceProfilesInput {
@@ -18114,8 +18238,10 @@ impl std::fmt::Debug for ListDeviceProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDestinationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDestinationsInput {
@@ -18142,6 +18268,7 @@ impl std::fmt::Debug for ListDestinationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayTaskDefinitionInput {
@@ -18163,6 +18290,7 @@ impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayTaskInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayTaskInput {
@@ -18184,6 +18312,7 @@ impl std::fmt::Debug for GetWirelessGatewayTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
+    #[doc(hidden)]
     pub wireless_gateway_id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayStatisticsInput {
@@ -18205,6 +18334,7 @@ impl std::fmt::Debug for GetWirelessGatewayStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayFirmwareInformationInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayFirmwareInformationInput {
@@ -18226,6 +18356,7 @@ impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayCertificateInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayCertificateInput {
@@ -18247,8 +18378,10 @@ impl std::fmt::Debug for GetWirelessGatewayCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayInput {
     /// <p>The identifier of the wireless gateway to get.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The type of identifier used in <code>identifier</code>.</p>
+    #[doc(hidden)]
     pub identifier_type: std::option::Option<crate::model::WirelessGatewayIdType>,
 }
 impl GetWirelessGatewayInput {
@@ -18275,6 +18408,7 @@ impl std::fmt::Debug for GetWirelessGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessDeviceStatisticsInput {
     /// <p>The ID of the wireless device for which to get the data.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
 }
 impl GetWirelessDeviceStatisticsInput {
@@ -18296,8 +18430,10 @@ impl std::fmt::Debug for GetWirelessDeviceStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessDeviceInput {
     /// <p>The identifier of the wireless device to get.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The type of identifier used in <code>identifier</code>.</p>
+    #[doc(hidden)]
     pub identifier_type: std::option::Option<crate::model::WirelessDeviceIdType>,
 }
 impl GetWirelessDeviceInput {
@@ -18324,6 +18460,7 @@ impl std::fmt::Debug for GetWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceProfileInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetServiceProfileInput {
@@ -18345,6 +18482,7 @@ impl std::fmt::Debug for GetServiceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
 }
 impl GetServiceEndpointInput {
@@ -18366,8 +18504,10 @@ impl std::fmt::Debug for GetServiceEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetResourceLogLevelInput {
@@ -18394,10 +18534,13 @@ impl std::fmt::Debug for GetResourceLogLevelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    #[doc(hidden)]
     pub identifier_type: std::option::Option<crate::model::IdentifierType>,
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
 }
 impl GetResourceEventConfigurationInput {
@@ -18429,8 +18572,10 @@ impl std::fmt::Debug for GetResourceEventConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
 }
 impl GetPositionConfigurationInput {
@@ -18457,8 +18602,10 @@ impl std::fmt::Debug for GetPositionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPositionInput {
     /// <p>Resource identifier used to retrieve the position information.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Resource type of the resource for which position information is retrieved.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
 }
 impl GetPositionInput {
@@ -18485,8 +18632,10 @@ impl std::fmt::Debug for GetPositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
+    #[doc(hidden)]
     pub partner_account_id: std::option::Option<std::string::String>,
     /// <p>The partner type.</p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::PartnerType>,
 }
 impl GetPartnerAccountInput {
@@ -18513,6 +18662,7 @@ impl std::fmt::Debug for GetPartnerAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
 }
 impl GetNetworkAnalyzerConfigurationInput {
@@ -18534,6 +18684,7 @@ impl std::fmt::Debug for GetNetworkAnalyzerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetMulticastGroupSessionInput {
@@ -18555,6 +18706,7 @@ impl std::fmt::Debug for GetMulticastGroupSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetMulticastGroupInput {
@@ -18587,6 +18739,7 @@ impl std::fmt::Debug for GetLogLevelsByResourceTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFuotaTaskInput {
@@ -18619,6 +18772,7 @@ impl std::fmt::Debug for GetEventConfigurationByResourceTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceProfileInput {
     /// <p>The ID of the resource to get.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetDeviceProfileInput {
@@ -18640,6 +18794,7 @@ impl std::fmt::Debug for GetDeviceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDestinationInput {
     /// <p>The name of the resource to get.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDestinationInput {
@@ -18661,6 +18816,7 @@ impl std::fmt::Debug for GetDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessGatewayFromThingInput {
@@ -18682,6 +18838,7 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWirelessGatewayFromCertificateInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessGatewayFromCertificateInput {
@@ -18703,6 +18860,7 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWirelessDeviceFromThingInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessDeviceFromThingInput {
@@ -18724,8 +18882,10 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessDeviceFromMulticastGroupInput {
@@ -18752,8 +18912,10 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessDeviceFromFuotaTaskInput {
@@ -18780,8 +18942,10 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMulticastGroupFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub multicast_group_id: std::option::Option<std::string::String>,
 }
 impl DisassociateMulticastGroupFromFuotaTaskInput {
@@ -18808,8 +18972,10 @@ impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAwsAccountFromPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
+    #[doc(hidden)]
     pub partner_account_id: std::option::Option<std::string::String>,
     /// <p>The partner type.</p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::PartnerType>,
 }
 impl DisassociateAwsAccountFromPartnerAccountInput {
@@ -18836,6 +19002,7 @@ impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWirelessGatewayTaskDefinitionInput {
@@ -18857,6 +19024,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWirelessGatewayTaskInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWirelessGatewayTaskInput {
@@ -18878,6 +19046,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWirelessGatewayInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWirelessGatewayInput {
@@ -18899,6 +19068,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWirelessDeviceInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWirelessDeviceInput {
@@ -18920,6 +19090,7 @@ impl std::fmt::Debug for DeleteWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteServiceProfileInput {
@@ -18941,10 +19112,13 @@ impl std::fmt::Debug for DeleteServiceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueuedMessagesInput {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
+    #[doc(hidden)]
     pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
 }
 impl DeleteQueuedMessagesInput {
@@ -18976,6 +19150,7 @@ impl std::fmt::Debug for DeleteQueuedMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkAnalyzerConfigurationInput {
@@ -18997,6 +19172,7 @@ impl std::fmt::Debug for DeleteNetworkAnalyzerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteMulticastGroupInput {
@@ -19018,6 +19194,7 @@ impl std::fmt::Debug for DeleteMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFuotaTaskInput {
@@ -19039,6 +19216,7 @@ impl std::fmt::Debug for DeleteFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceProfileInput {
     /// <p>The ID of the resource to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceProfileInput {
@@ -19060,6 +19238,7 @@ impl std::fmt::Debug for DeleteDeviceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDestinationInput {
     /// <p>The name of the resource to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDestinationInput {
@@ -19081,14 +19260,19 @@ impl std::fmt::Debug for DeleteDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    #[doc(hidden)]
     pub auto_create_tasks: bool,
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the gateways to update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::UpdateWirelessGatewayTaskCreate>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWirelessGatewayTaskDefinitionInput {
@@ -19130,8 +19314,10 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayTaskInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    #[doc(hidden)]
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
 }
 impl CreateWirelessGatewayTaskInput {
@@ -19161,14 +19347,19 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayInput {
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The gateway configuration information to use to create the wireless gateway.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGateway>,
     /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateWirelessGatewayInput {
@@ -19210,18 +19401,25 @@ impl std::fmt::Debug for CreateWirelessGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the destination to assign to the new wireless device.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The device configuration information to use to create the wireless device.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDevice>,
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWirelessDeviceInput {
@@ -19273,12 +19471,16 @@ impl std::fmt::Debug for CreateWirelessDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceProfileInput {
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The service profile information to use to create the service profile.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanServiceProfile>,
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceProfileInput {
@@ -19315,18 +19517,25 @@ impl std::fmt::Debug for CreateServiceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    #[doc(hidden)]
     pub trace_content: std::option::Option<crate::model::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
     pub wireless_devices: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
     pub wireless_gateways: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateNetworkAnalyzerConfigurationInput {
@@ -19378,14 +19587,19 @@ impl std::fmt::Debug for CreateNetworkAnalyzerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMulticastGroupInput {
     /// <p>The name of the multicast group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the multicast group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMulticastGroupInput {
@@ -19427,18 +19641,25 @@ impl std::fmt::Debug for CreateMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFuotaTaskInput {
     /// <p>The name of a FUOTA task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTask>,
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_image: std::option::Option<std::string::String>,
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_role: std::option::Option<std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFuotaTaskInput {
@@ -19490,12 +19711,16 @@ impl std::fmt::Debug for CreateFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The device profile information to use to create the device profile.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceProfile>,
     /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateDeviceProfileInput {
@@ -19532,18 +19757,25 @@ impl std::fmt::Debug for CreateDeviceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDestinationInput {
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub expression_type: std::option::Option<crate::model::ExpressionType>,
     /// <p>The rule name or topic rule to send messages to.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateDestinationInput {
@@ -19595,6 +19827,7 @@ impl std::fmt::Debug for CreateDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CancelMulticastGroupSessionInput {
@@ -19616,8 +19849,10 @@ impl std::fmt::Debug for CancelMulticastGroupSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessGatewayWithThingInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to associate with the wireless gateway.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessGatewayWithThingInput {
@@ -19644,8 +19879,10 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
+    #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessGatewayWithCertificateInput {
@@ -19672,8 +19909,10 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessDeviceWithThingInput {
     /// <p>The ID of the resource to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to associate with the wireless device.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessDeviceWithThingInput {
@@ -19700,8 +19939,10 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessDeviceWithMulticastGroupInput {
@@ -19728,8 +19969,10 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessDeviceWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessDeviceWithFuotaTaskInput {
@@ -19756,8 +19999,10 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateMulticastGroupWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub multicast_group_id: std::option::Option<std::string::String>,
 }
 impl AssociateMulticastGroupWithFuotaTaskInput {
@@ -19784,10 +20029,13 @@ impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAwsAccountWithPartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AssociateAwsAccountWithPartnerAccountInput {

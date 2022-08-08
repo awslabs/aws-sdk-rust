@@ -165,18 +165,24 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The automation document's name.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The automation document's version to use when running.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
+    #[doc(hidden)]
     pub target_account: std::option::Option<crate::model::SsmTargetAccount>,
     /// <p>The key-value pair parameters to use when running the automation document.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
+    #[doc(hidden)]
     pub dynamic_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>,
     >,
@@ -694,6 +700,7 @@ impl UpdateReplicationSetAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegionAction {
@@ -748,8 +755,10 @@ impl DeleteRegionAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
+    #[doc(hidden)]
     pub sse_kms_key_id: std::option::Option<std::string::String>,
 }
 impl AddRegionAction {
@@ -875,8 +884,10 @@ impl RelatedItemsUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::ItemValue>,
     /// <p>The type of related item. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
 }
 impl ItemIdentifier {
@@ -1102,8 +1113,10 @@ impl ItemValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelatedItem {
     /// <p>Details about the related item.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<crate::model::ItemIdentifier>,
     /// <p>The title of the related item.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
 }
 impl RelatedItem {
@@ -1233,12 +1246,16 @@ impl AsRef<str> for IncidentRecordStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
+    #[doc(hidden)]
     pub trigger_arn: std::option::Option<std::string::String>,
     /// <p>The time that the incident was detected.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
+    #[doc(hidden)]
     pub raw_data: std::option::Option<std::string::String>,
 }
 impl TriggerDetails {
@@ -1347,14 +1364,19 @@ impl TriggerDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The timeline event ID.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
+    #[doc(hidden)]
     pub event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
 }
 impl EventSummary {
@@ -1592,8 +1614,10 @@ impl AsRef<str> for TimelineEventSort {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The key that you're filtering on.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::Condition>,
 }
 impl Filter {
@@ -1787,10 +1811,13 @@ impl AttributeValueList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the response plan. This can't include spaces.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The human readable name of the response plan. This can include spaces.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl ResponsePlanSummary {
@@ -1879,18 +1906,25 @@ impl ResponsePlanSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncidentRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The current status of the incident.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
     /// <p>Defines the impact to customers and applications.</p>
+    #[doc(hidden)]
     pub impact: std::option::Option<i32>,
     /// <p>The time the incident was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the incident was resolved.</p>
+    #[doc(hidden)]
     pub resolved_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What caused Incident Manager to create the incident.</p>
+    #[doc(hidden)]
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
 }
 impl IncidentRecordSummary {
@@ -2061,12 +2095,16 @@ impl IncidentRecordSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
+    #[doc(hidden)]
     pub invoked_by: std::option::Option<std::string::String>,
     /// <p>The resource that caused the incident to be created.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl IncidentRecordSource {
@@ -2172,16 +2210,22 @@ impl IncidentRecordSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimelineEvent {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the timeline event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
+    #[doc(hidden)]
     pub event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
+    #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
 }
 impl TimelineEvent {
@@ -2330,17 +2374,23 @@ impl TimelineEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncidentTemplate {
     /// <p>The title of the incident. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The impact of the incident on your customers and applications. </p>
+    #[doc(hidden)]
     pub impact: std::option::Option<i32>,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    #[doc(hidden)]
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    #[doc(hidden)]
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+    #[doc(hidden)]
     pub incident_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2516,10 +2566,13 @@ impl IncidentTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The ID of the resource policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
+    #[doc(hidden)]
     pub ram_resource_share_region: std::option::Option<std::string::String>,
 }
 impl ResourcePolicy {
@@ -2614,22 +2667,30 @@ impl ResourcePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
+    #[doc(hidden)]
     pub region_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
     >,
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationSetStatus>,
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
+    #[doc(hidden)]
     pub deletion_protected: std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about who created the replication set.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>When the replication set was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Who last modified the replication set.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
 }
 impl ReplicationSet {
@@ -2903,12 +2964,16 @@ impl AsRef<str> for ReplicationSetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub sse_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegionStatus>,
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    #[doc(hidden)]
     pub status_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RegionInfo {
@@ -3089,33 +3154,47 @@ impl AsRef<str> for RegionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The title of the incident.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The current status of the incident.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
     /// <p>The impact of the incident on customers and applications.</p>
+    #[doc(hidden)]
     pub impact: std::option::Option<i32>,
     /// <p>The time that Incident Manager created the incident record.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    #[doc(hidden)]
     pub resolved_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was most recently modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Who modified the incident most recently.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
+    #[doc(hidden)]
     pub automation_executions:
         std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
     /// <p>Details about the action that started the incident.</p>
+    #[doc(hidden)]
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
+    #[doc(hidden)]
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
+    #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    #[doc(hidden)]
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -3479,6 +3558,7 @@ impl AutomationExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
+    #[doc(hidden)]
     pub sse_kms_key_id: std::option::Option<std::string::String>,
 }
 impl RegionMapInputValue {

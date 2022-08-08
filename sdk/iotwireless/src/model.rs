@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
+    #[doc(hidden)]
     pub device_profile_id: std::option::Option<std::string::String>,
     /// <p>The ID of the service profile.</p>
+    #[doc(hidden)]
     pub service_profile_id: std::option::Option<std::string::String>,
     /// <p>ABP device object for update APIs for v1.1</p>
+    #[doc(hidden)]
     pub abp_v1_1: std::option::Option<crate::model::UpdateAbpV11>,
     /// <p>ABP device object for update APIs for v1.0.x</p>
+    #[doc(hidden)]
     pub abp_v1_0_x: std::option::Option<crate::model::UpdateAbpV10X>,
     /// <p>FPorts object for the positioning information of the device.</p>
+    #[doc(hidden)]
     pub f_ports: std::option::Option<crate::model::UpdateFPorts>,
 }
 impl LoRaWanUpdateDevice {
@@ -150,6 +155,7 @@ impl LoRaWanUpdateDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+    #[doc(hidden)]
     pub positioning: std::option::Option<crate::model::Positioning>,
 }
 impl UpdateFPorts {
@@ -207,10 +213,13 @@ impl UpdateFPorts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Positioning {
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub clock_sync: std::option::Option<i32>,
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub stream: std::option::Option<i32>,
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub gnss: std::option::Option<i32>,
 }
 impl Positioning {
@@ -299,6 +308,7 @@ impl Positioning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAbpV10X {
     /// <p>The FCnt init value.</p>
+    #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
 }
 impl UpdateAbpV10X {
@@ -353,6 +363,7 @@ impl UpdateAbpV10X {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAbpV11 {
     /// <p>The FCnt init value.</p>
+    #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
 }
 impl UpdateAbpV11 {
@@ -407,8 +418,10 @@ impl UpdateAbpV11 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageDeliveryStatusEventConfiguration {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -557,6 +570,7 @@ impl AsRef<str> for EventNotificationTopicStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkEventNotificationConfigurations {
     /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl SidewalkEventNotificationConfigurations {
@@ -620,9 +634,11 @@ impl SidewalkEventNotificationConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    #[doc(hidden)]
     pub lo_ra_wan:
         std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
     /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_gateway_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -720,6 +736,7 @@ impl ConnectionStatusEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub gateway_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
@@ -785,8 +802,10 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
     /// <p>Enum to denote whether the wireless device id join event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -880,6 +899,7 @@ impl JoinEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanJoinEventNotificationConfigurations {
     /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub dev_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {
@@ -943,8 +963,10 @@ impl LoRaWanJoinEventNotificationConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProximityEventConfiguration {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Enum to denote whether the wireless device id proximity event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -1038,8 +1060,10 @@ impl ProximityEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceRegistrationStateEventConfiguration {
     /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -1363,6 +1387,7 @@ impl AsRef<str> for PartnerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
+    #[doc(hidden)]
     pub app_server_private_key: std::option::Option<std::string::String>,
 }
 impl SidewalkUpdateAccount {
@@ -1420,8 +1445,10 @@ impl SidewalkUpdateAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+    #[doc(hidden)]
     pub wireless_device_frame_info: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl TraceContent {
@@ -1622,8 +1649,10 @@ impl AsRef<str> for WirelessDeviceFrameInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanMulticast {
     /// <p>Supported RfRegions</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    #[doc(hidden)]
     pub dl_class: std::option::Option<crate::model::DlClass>,
 }
 impl LoRaWanMulticast {
@@ -1816,10 +1845,13 @@ impl AsRef<str> for SupportedRfRegion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessGatewayLogOption {
     /// <p>The wireless gateway type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessGatewayType>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless gateway event log options.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
 }
 impl WirelessGatewayLogOption {
@@ -1922,8 +1954,10 @@ impl WirelessGatewayLogOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessGatewayEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::WirelessGatewayEvent>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl WirelessGatewayEventLogOption {
@@ -2104,10 +2138,13 @@ impl AsRef<str> for WirelessGatewayType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless device event log options.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
 }
 impl WirelessDeviceLogOption {
@@ -2210,8 +2247,10 @@ impl WirelessDeviceLogOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::WirelessDeviceEvent>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl WirelessDeviceEventLogOption {
@@ -2414,6 +2453,7 @@ impl AsRef<str> for WirelessDeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
 }
 impl LoRaWanFuotaTask {
@@ -2471,6 +2511,7 @@ impl LoRaWanFuotaTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
@@ -2535,6 +2576,7 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkResourceTypeEventConfiguration {
     /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -2602,6 +2644,7 @@ impl SidewalkResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionStatusResourceTypeEventConfiguration {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    #[doc(hidden)]
     pub lo_ra_wan:
         std::option::Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
 }
@@ -2670,6 +2713,7 @@ impl ConnectionStatusResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// <p>Enum to denote whether the wireless gateway connection status event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_gateway_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -2738,6 +2782,7 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinResourceTypeEventConfiguration {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
 }
 impl JoinResourceTypeEventConfiguration {
@@ -2801,6 +2846,7 @@ impl JoinResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanJoinResourceTypeEventConfiguration {
     /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    #[doc(hidden)]
     pub wireless_device_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -2868,6 +2914,7 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProximityResourceTypeEventConfiguration {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl ProximityResourceTypeEventConfiguration {
@@ -2931,6 +2978,7 @@ impl ProximityResourceTypeEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceRegistrationStateResourceTypeEventConfiguration {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {
@@ -3051,8 +3099,10 @@ impl AsRef<str> for ExpressionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key value.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -3124,12 +3174,16 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanMulticastSession {
     /// <p>Downlink data rate.</p>
+    #[doc(hidden)]
     pub dl_dr: std::option::Option<i32>,
     /// <p>Downlink frequency.</p>
+    #[doc(hidden)]
     pub dl_freq: std::option::Option<i32>,
     /// <p>Timestamp of when the multicast group session is to start.</p>
+    #[doc(hidden)]
     pub session_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long before a multicast group session is to timeout.</p>
+    #[doc(hidden)]
     pub session_timeout: std::option::Option<i32>,
 }
 impl LoRaWanMulticastSession {
@@ -3238,6 +3292,7 @@ impl LoRaWanMulticastSession {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanStartFuotaTask {
     /// <p>Start time of a FUOTA task.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LoRaWanStartFuotaTask {
@@ -3295,8 +3350,10 @@ impl LoRaWanStartFuotaTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessMetadata {
     /// <p>LoRaWAN device info.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkSendDataToDevice>,
 }
 impl WirelessMetadata {
@@ -3374,10 +3431,13 @@ impl WirelessMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkSendDataToDevice {
     /// <p>The sequence number.</p>
+    #[doc(hidden)]
     pub seq: std::option::Option<i32>,
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
+    #[doc(hidden)]
     pub ack_mode_retry_duration_secs: std::option::Option<i32>,
 }
 impl SidewalkSendDataToDevice {
@@ -3540,6 +3600,7 @@ impl AsRef<str> for MessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
 }
 impl LoRaWanSendDataToDevice {
@@ -3594,6 +3655,7 @@ impl LoRaWanSendDataToDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
 }
 impl MulticastWirelessMetadata {
@@ -3651,6 +3713,7 @@ impl MulticastWirelessMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
 }
 impl LoRaWanMulticastMetadata {
@@ -3705,6 +3768,7 @@ impl LoRaWanMulticastMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PositionSolverConfigurations {
     /// <p>The Semtech GNSS solver configuration object.</p>
+    #[doc(hidden)]
     pub semtech_gnss: std::option::Option<crate::model::SemtechGnssConfiguration>,
 }
 impl PositionSolverConfigurations {
@@ -3762,8 +3826,10 @@ impl PositionSolverConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
+    #[doc(hidden)]
     pub fec: std::option::Option<crate::model::PositionConfigurationFec>,
 }
 impl SemtechGnssConfiguration {
@@ -3951,10 +4017,13 @@ impl AsRef<str> for PositionConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWirelessGatewayTaskEntry {
     /// <p>The ID of the new wireless gateway task entry.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UpdateWirelessGatewayTaskEntry {
@@ -4046,8 +4115,10 @@ impl UpdateWirelessGatewayTaskEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanUpdateGatewayTaskEntry {
     /// <p>The version of the gateways that should receive the update.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
     /// <p>The firmware version to update the gateway to.</p>
+    #[doc(hidden)]
     pub update_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
 impl LoRaWanUpdateGatewayTaskEntry {
@@ -4125,10 +4196,13 @@ impl LoRaWanUpdateGatewayTaskEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The model number of the wireless gateway.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The basic station version of the wireless gateway.</p>
+    #[doc(hidden)]
     pub station: std::option::Option<std::string::String>,
 }
 impl LoRaWanGatewayVersion {
@@ -4271,16 +4345,22 @@ impl AsRef<str> for WirelessGatewayTaskDefinitionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless gateway reporting the data.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>LoRaWAN gateway info.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGateway>,
     /// <p>The date and time when the most recent uplink was received.</p>
+    #[doc(hidden)]
     pub last_uplink_received_at: std::option::Option<std::string::String>,
 }
 impl WirelessGatewayStatistics {
@@ -4426,14 +4506,19 @@ impl WirelessGatewayStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
+    #[doc(hidden)]
     pub gateway_eui: std::option::Option<std::string::String>,
     /// <p>The frequency band (RFRegion) value.</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    #[doc(hidden)]
     pub join_eui_filters: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    #[doc(hidden)]
     pub net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
+    #[doc(hidden)]
     pub sub_bands: std::option::Option<std::vec::Vec<i32>>,
 }
 impl LoRaWanGateway {
@@ -4581,26 +4666,37 @@ impl LoRaWanGateway {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device reporting the data.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The wireless device type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the destination to which the device is assigned.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p>
+    #[doc(hidden)]
     pub last_uplink_received_at: std::option::Option<std::string::String>,
     /// <p>LoRaWAN device info.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanListDevice>,
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkListDevice>,
     /// <p>The status of a wireless device in a FUOTA task.</p>
+    #[doc(hidden)]
     pub fuota_device_status: std::option::Option<crate::model::FuotaDeviceStatus>,
     /// <p>The status of the wireless device in the multicast group.</p>
+    #[doc(hidden)]
     pub multicast_device_status: std::option::Option<std::string::String>,
     /// <p>Id of the multicast group.</p>
+    #[doc(hidden)]
     pub mc_group_id: std::option::Option<i32>,
 }
 impl WirelessDeviceStatistics {
@@ -4949,12 +5045,16 @@ impl AsRef<str> for FuotaDeviceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
+    #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The sidewalk device identification.</p>
+    #[doc(hidden)]
     pub sidewalk_id: std::option::Option<std::string::String>,
     /// <p>The Sidewalk manufacturing series number.</p>
+    #[doc(hidden)]
     pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
+    #[doc(hidden)]
     pub device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
 }
 impl SidewalkListDevice {
@@ -5073,8 +5173,10 @@ impl SidewalkListDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
+    #[doc(hidden)]
     pub signing_alg: std::option::Option<crate::model::SigningAlg>,
     /// <p>The value of the chosen sidewalk certificate.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CertificateList {
@@ -5204,6 +5306,7 @@ impl AsRef<str> for SigningAlg {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
+    #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
 }
 impl LoRaWanListDevice {
@@ -5258,10 +5361,13 @@ impl LoRaWanListDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the service profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ServiceProfile {
@@ -5350,12 +5456,16 @@ impl ServiceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    #[doc(hidden)]
     pub transmit_mode: std::option::Option<i32>,
     /// <p>The time at which Iot Wireless received the downlink message.</p>
+    #[doc(hidden)]
     pub received_at: std::option::Option<std::string::String>,
     /// <p>LoRaWAN router info.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessage {
@@ -5464,12 +5574,16 @@ impl DownlinkQueueMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PositionConfigurationItem {
     /// <p>Resource identifier for the position configuration.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Resource type of the resource for the position configuration.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::PositionResourceType>,
     /// <p>The details of the positioning solver object used to compute the location.</p>
+    #[doc(hidden)]
     pub solvers: std::option::Option<crate::model::PositionSolverDetails>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl PositionConfigurationItem {
@@ -5584,6 +5698,7 @@ impl PositionConfigurationItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
+    #[doc(hidden)]
     pub semtech_gnss: std::option::Option<crate::model::SemtechGnssDetail>,
 }
 impl PositionSolverDetails {
@@ -5641,12 +5756,16 @@ impl PositionSolverDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::PositionSolverProvider>,
     /// <p>The type of positioning solver used.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PositionSolverType>,
     /// <p>The status indicating whether the solver is enabled.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
+    #[doc(hidden)]
     pub fec: std::option::Option<crate::model::PositionConfigurationFec>,
 }
 impl SemtechGnssDetail {
@@ -5866,10 +5985,13 @@ impl AsRef<str> for PositionSolverProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkAccountInfoWithFingerprint {
     /// <p>The Sidewalk Amazon ID.</p>
+    #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
+    #[doc(hidden)]
     pub fingerprint: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SidewalkAccountInfoWithFingerprint {
@@ -5958,8 +6080,10 @@ impl SidewalkAccountInfoWithFingerprint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkAnalyzerConfigurations {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl NetworkAnalyzerConfigurations {
@@ -6031,6 +6155,7 @@ impl NetworkAnalyzerConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MulticastGroupByFuotaTask {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl MulticastGroupByFuotaTask {
@@ -6083,10 +6208,13 @@ impl MulticastGroupByFuotaTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MulticastGroup {
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The arn of the multicast group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the multicast group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl MulticastGroup {
@@ -6175,10 +6303,13 @@ impl MulticastGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FuotaTask {
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The arn of a FUOTA task.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of a FUOTA task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl FuotaTask {
@@ -6267,12 +6398,16 @@ impl FuotaTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventConfigurationItem {
     /// <p>Resource identifier opted in for event messaging.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    #[doc(hidden)]
     pub identifier_type: std::option::Option<crate::model::IdentifierType>,
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    #[doc(hidden)]
     pub partner_type: std::option::Option<crate::model::EventNotificationPartnerType>,
     /// <p>Object of all event configurations and the status of the event topics.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<crate::model::EventNotificationItemConfigurations>,
 }
 impl EventConfigurationItem {
@@ -6389,15 +6524,20 @@ impl EventConfigurationItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventNotificationItemConfigurations {
     /// <p>Device registration state event configuration for an event configuration item.</p>
+    #[doc(hidden)]
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
     /// <p>Proximity event configuration for an event configuration item.</p>
+    #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
     /// <p>Join event configuration for an event configuration item.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Connection status event configuration for an event configuration item.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     /// <p>Message delivery status event configuration for an event configuration item.</p>
+    #[doc(hidden)]
     pub message_delivery_status:
         std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
@@ -6613,10 +6753,13 @@ impl AsRef<str> for EventNotificationResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceProfile {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the device profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeviceProfile {
@@ -6705,16 +6848,22 @@ impl DeviceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destinations {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub expression_type: std::option::Option<crate::model::ExpressionType>,
     /// <p>The rule name or topic rule to send messages to.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl Destinations {
@@ -6857,10 +7006,13 @@ impl Destinations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWirelessGatewayTaskCreate {
     /// <p>The link to the S3 bucket.</p>
+    #[doc(hidden)]
     pub update_data_source: std::option::Option<std::string::String>,
     /// <p>The IAM role used to read data from the S3 bucket.</p>
+    #[doc(hidden)]
     pub update_data_role: std::option::Option<std::string::String>,
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskCreate>,
 }
 impl UpdateWirelessGatewayTaskCreate {
@@ -6958,12 +7110,16 @@ impl UpdateWirelessGatewayTaskCreate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanUpdateGatewayTaskCreate {
     /// <p>The signature used to verify the update firmware.</p>
+    #[doc(hidden)]
     pub update_signature: std::option::Option<std::string::String>,
     /// <p>The CRC of the signature private key to check.</p>
+    #[doc(hidden)]
     pub sig_key_crc: std::option::Option<i64>,
     /// <p>The version of the gateways that should receive the update.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
     /// <p>The firmware version to update the gateway to.</p>
+    #[doc(hidden)]
     pub update_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
 impl LoRaWanUpdateGatewayTaskCreate {
@@ -7211,6 +7367,7 @@ impl AsRef<str> for ConnectionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
 impl LoRaWanGatewayCurrentVersion {
@@ -7327,12 +7484,16 @@ impl AsRef<str> for WirelessGatewayIdType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkDeviceMetadata {
     /// <p>The RSSI value.</p>
+    #[doc(hidden)]
     pub rssi: std::option::Option<i32>,
     /// <p>Sidewalk device battery level.</p>
+    #[doc(hidden)]
     pub battery_level: std::option::Option<crate::model::BatteryLevel>,
     /// <p>Sidewalk device status notification.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>Device state defines the device status of sidewalk device.</p>
+    #[doc(hidden)]
     pub device_state: std::option::Option<crate::model::DeviceState>,
 }
 impl SidewalkDeviceMetadata {
@@ -7638,16 +7799,22 @@ impl AsRef<str> for BatteryLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
+    #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
     /// <p>The FPort value.</p>
+    #[doc(hidden)]
     pub f_port: std::option::Option<i32>,
     /// <p>The DataRate value.</p>
+    #[doc(hidden)]
     pub data_rate: std::option::Option<i32>,
     /// <p>The device's channel frequency in Hz.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<i32>,
     /// <p>The date and time of the metadata.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>Information about the gateways accessed by the device.</p>
+    #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadata {
@@ -7797,10 +7964,13 @@ impl LoRaWanDeviceMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanGatewayMetadata {
     /// <p>The gateway's EUI value.</p>
+    #[doc(hidden)]
     pub gateway_eui: std::option::Option<std::string::String>,
     /// <p>The SNR value.</p>
+    #[doc(hidden)]
     pub snr: std::option::Option<f64>,
     /// <p>The RSSI value.</p>
+    #[doc(hidden)]
     pub rssi: std::option::Option<f64>,
 }
 impl LoRaWanGatewayMetadata {
@@ -7889,12 +8059,16 @@ impl LoRaWanGatewayMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkDevice {
     /// <p>The Sidewalk Amazon ID.</p>
+    #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The sidewalk device identification.</p>
+    #[doc(hidden)]
     pub sidewalk_id: std::option::Option<std::string::String>,
     /// <p>The Sidewalk manufacturing series number.</p>
+    #[doc(hidden)]
     pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
+    #[doc(hidden)]
     pub device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
 }
 impl SidewalkDevice {
@@ -8013,20 +8187,28 @@ impl SidewalkDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanDevice {
     /// <p>The DevEUI value.</p>
+    #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
     /// <p>The ID of the device profile for the new wireless device.</p>
+    #[doc(hidden)]
     pub device_profile_id: std::option::Option<std::string::String>,
     /// <p>The ID of the service profile.</p>
+    #[doc(hidden)]
     pub service_profile_id: std::option::Option<std::string::String>,
     /// <p>OTAA device object for v1.1 for create APIs</p>
+    #[doc(hidden)]
     pub otaa_v1_1: std::option::Option<crate::model::OtaaV11>,
     /// <p>OTAA device object for create APIs for v1.0.x</p>
+    #[doc(hidden)]
     pub otaa_v1_0_x: std::option::Option<crate::model::OtaaV10X>,
     /// <p>ABP device object for create APIs for v1.1</p>
+    #[doc(hidden)]
     pub abp_v1_1: std::option::Option<crate::model::AbpV11>,
     /// <p>LoRaWAN object for create APIs</p>
+    #[doc(hidden)]
     pub abp_v1_0_x: std::option::Option<crate::model::AbpV10X>,
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
+    #[doc(hidden)]
     pub f_ports: std::option::Option<crate::model::FPorts>,
 }
 impl LoRaWanDevice {
@@ -8209,12 +8391,16 @@ impl LoRaWanDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FPorts {
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub fuota: std::option::Option<i32>,
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub multicast: std::option::Option<i32>,
     /// <p>The Fport value.</p>
+    #[doc(hidden)]
     pub clock_sync: std::option::Option<i32>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    #[doc(hidden)]
     pub positioning: std::option::Option<crate::model::Positioning>,
 }
 impl FPorts {
@@ -8323,10 +8509,13 @@ impl FPorts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbpV10X {
     /// <p>The DevAddr value.</p>
+    #[doc(hidden)]
     pub dev_addr: std::option::Option<std::string::String>,
     /// <p>Session keys for ABP v1.0.x</p>
+    #[doc(hidden)]
     pub session_keys: std::option::Option<crate::model::SessionKeysAbpV10X>,
     /// <p>The FCnt init value.</p>
+    #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
 }
 impl AbpV10X {
@@ -8418,8 +8607,10 @@ impl AbpV10X {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
+    #[doc(hidden)]
     pub nwk_s_key: std::option::Option<std::string::String>,
     /// <p>The AppSKey value.</p>
+    #[doc(hidden)]
     pub app_s_key: std::option::Option<std::string::String>,
 }
 impl SessionKeysAbpV10X {
@@ -8491,10 +8682,13 @@ impl SessionKeysAbpV10X {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbpV11 {
     /// <p>The DevAddr value.</p>
+    #[doc(hidden)]
     pub dev_addr: std::option::Option<std::string::String>,
     /// <p>Session keys for ABP v1.1</p>
+    #[doc(hidden)]
     pub session_keys: std::option::Option<crate::model::SessionKeysAbpV11>,
     /// <p>The FCnt init value.</p>
+    #[doc(hidden)]
     pub f_cnt_start: std::option::Option<i32>,
 }
 impl AbpV11 {
@@ -8586,12 +8780,16 @@ impl AbpV11 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionKeysAbpV11 {
     /// <p>The FNwkSIntKey value.</p>
+    #[doc(hidden)]
     pub f_nwk_s_int_key: std::option::Option<std::string::String>,
     /// <p>The SNwkSIntKey value.</p>
+    #[doc(hidden)]
     pub s_nwk_s_int_key: std::option::Option<std::string::String>,
     /// <p>The NwkSEncKey value.</p>
+    #[doc(hidden)]
     pub nwk_s_enc_key: std::option::Option<std::string::String>,
     /// <p>The AppSKey value.</p>
+    #[doc(hidden)]
     pub app_s_key: std::option::Option<std::string::String>,
 }
 impl SessionKeysAbpV11 {
@@ -8706,10 +8904,13 @@ impl SessionKeysAbpV11 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaaV10X {
     /// <p>The AppKey value.</p>
+    #[doc(hidden)]
     pub app_key: std::option::Option<std::string::String>,
     /// <p>The AppEUI value.</p>
+    #[doc(hidden)]
     pub app_eui: std::option::Option<std::string::String>,
     /// <p>The GenAppKey value.</p>
+    #[doc(hidden)]
     pub gen_app_key: std::option::Option<std::string::String>,
 }
 impl OtaaV10X {
@@ -8798,10 +8999,13 @@ impl OtaaV10X {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaaV11 {
     /// <p>The AppKey value.</p>
+    #[doc(hidden)]
     pub app_key: std::option::Option<std::string::String>,
     /// <p>The NwkKey value.</p>
+    #[doc(hidden)]
     pub nwk_key: std::option::Option<std::string::String>,
     /// <p>The JoinEUI value.</p>
+    #[doc(hidden)]
     pub join_eui: std::option::Option<std::string::String>,
 }
 impl OtaaV11 {
@@ -8958,42 +9162,61 @@ impl AsRef<str> for WirelessDeviceIdType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
+    #[doc(hidden)]
     pub ul_rate: std::option::Option<i32>,
     /// <p>The ULBucketSize value.</p>
+    #[doc(hidden)]
     pub ul_bucket_size: std::option::Option<i32>,
     /// <p>The ULRatePolicy value.</p>
+    #[doc(hidden)]
     pub ul_rate_policy: std::option::Option<std::string::String>,
     /// <p>The DLRate value.</p>
+    #[doc(hidden)]
     pub dl_rate: std::option::Option<i32>,
     /// <p>The DLBucketSize value.</p>
+    #[doc(hidden)]
     pub dl_bucket_size: std::option::Option<i32>,
     /// <p>The DLRatePolicy value.</p>
+    #[doc(hidden)]
     pub dl_rate_policy: std::option::Option<std::string::String>,
     /// <p>The AddGWMetaData value.</p>
+    #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DevStatusReqFreq value.</p>
+    #[doc(hidden)]
     pub dev_status_req_freq: std::option::Option<i32>,
     /// <p>The ReportDevStatusBattery value.</p>
+    #[doc(hidden)]
     pub report_dev_status_battery: bool,
     /// <p>The ReportDevStatusMargin value.</p>
+    #[doc(hidden)]
     pub report_dev_status_margin: bool,
     /// <p>The DRMin value.</p>
+    #[doc(hidden)]
     pub dr_min: i32,
     /// <p>The DRMax value.</p>
+    #[doc(hidden)]
     pub dr_max: i32,
     /// <p>The ChannelMask value.</p>
+    #[doc(hidden)]
     pub channel_mask: std::option::Option<std::string::String>,
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+    #[doc(hidden)]
     pub pr_allowed: bool,
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
+    #[doc(hidden)]
     pub hr_allowed: bool,
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+    #[doc(hidden)]
     pub ra_allowed: bool,
     /// <p>The NwkGeoLoc value.</p>
+    #[doc(hidden)]
     pub nwk_geo_loc: bool,
     /// <p>The TargetPER value.</p>
+    #[doc(hidden)]
     pub target_per: i32,
     /// <p>The MinGwDiversity value.</p>
+    #[doc(hidden)]
     pub min_gw_diversity: std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfo {
@@ -9415,8 +9638,10 @@ impl AsRef<str> for WirelessGatewayServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Accuracy {
     /// <p>The horizontal accuracy of the estimated position in meters.</p>
+    #[doc(hidden)]
     pub horizontal_accuracy: std::option::Option<f32>,
     /// <p>The vertical accuracy of the estimated position in meters.</p>
+    #[doc(hidden)]
     pub vertical_accuracy: std::option::Option<f32>,
 }
 impl Accuracy {
@@ -9488,12 +9713,16 @@ impl Accuracy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<crate::model::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
+    #[doc(hidden)]
     pub dl_class: std::option::Option<crate::model::DlClass>,
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
+    #[doc(hidden)]
     pub number_of_devices_requested: std::option::Option<i32>,
     /// <p>Number of devices that are associated to the multicast group.</p>
+    #[doc(hidden)]
     pub number_of_devices_in_group: std::option::Option<i32>,
 }
 impl LoRaWanMulticastGet {
@@ -9608,8 +9837,10 @@ impl LoRaWanMulticastGet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<std::string::String>,
     /// <p>Start time of a FUOTA task.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LoRaWanFuotaTaskGetInfo {
@@ -9757,42 +9988,61 @@ impl AsRef<str> for FuotaTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanDeviceProfile {
     /// <p>The SupportsClassB value.</p>
+    #[doc(hidden)]
     pub supports_class_b: bool,
     /// <p>The ClassBTimeout value.</p>
+    #[doc(hidden)]
     pub class_b_timeout: std::option::Option<i32>,
     /// <p>The PingSlotPeriod value.</p>
+    #[doc(hidden)]
     pub ping_slot_period: std::option::Option<i32>,
     /// <p>The PingSlotDR value.</p>
+    #[doc(hidden)]
     pub ping_slot_dr: std::option::Option<i32>,
     /// <p>The PingSlotFreq value.</p>
+    #[doc(hidden)]
     pub ping_slot_freq: std::option::Option<i32>,
     /// <p>The SupportsClassC value.</p>
+    #[doc(hidden)]
     pub supports_class_c: bool,
     /// <p>The ClassCTimeout value.</p>
+    #[doc(hidden)]
     pub class_c_timeout: std::option::Option<i32>,
     /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
+    #[doc(hidden)]
     pub mac_version: std::option::Option<std::string::String>,
     /// <p>The version of regional parameters.</p>
+    #[doc(hidden)]
     pub reg_params_revision: std::option::Option<std::string::String>,
     /// <p>The RXDelay1 value.</p>
+    #[doc(hidden)]
     pub rx_delay1: std::option::Option<i32>,
     /// <p>The RXDROffset1 value.</p>
+    #[doc(hidden)]
     pub rx_dr_offset1: std::option::Option<i32>,
     /// <p>The RXDataRate2 value.</p>
+    #[doc(hidden)]
     pub rx_data_rate2: std::option::Option<i32>,
     /// <p>The RXFreq2 value.</p>
+    #[doc(hidden)]
     pub rx_freq2: std::option::Option<i32>,
     /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
+    #[doc(hidden)]
     pub factory_preset_freqs_list: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The MaxEIRP value.</p>
+    #[doc(hidden)]
     pub max_eirp: std::option::Option<i32>,
     /// <p>The MaxDutyCycle value.</p>
+    #[doc(hidden)]
     pub max_duty_cycle: std::option::Option<i32>,
     /// <p>The frequency band (RFRegion) value.</p>
+    #[doc(hidden)]
     pub rf_region: std::option::Option<std::string::String>,
     /// <p>The SupportsJoin value.</p>
+    #[doc(hidden)]
     pub supports_join: std::option::Option<bool>,
     /// <p>The Supports32BitFCnt value.</p>
+    #[doc(hidden)]
     pub supports32_bit_f_cnt: bool,
 }
 impl LoRaWanDeviceProfile {
@@ -10165,10 +10415,13 @@ impl LoRaWanDeviceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
+    #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DrMin value.</p>
+    #[doc(hidden)]
     pub dr_min: std::option::Option<i32>,
     /// <p>The DrMax value.</p>
+    #[doc(hidden)]
     pub dr_max: std::option::Option<i32>,
 }
 impl LoRaWanServiceProfile {
@@ -10257,8 +10510,10 @@ impl LoRaWanServiceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
+    #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The Sidewalk application server private key.</p>
+    #[doc(hidden)]
     pub app_server_private_key: std::option::Option<std::string::String>,
 }
 impl SidewalkAccountInfo {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
     /// <p>The description of an error found in the behaviors.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ValidationError {
@@ -62,14 +63,19 @@ impl ValidationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Behavior {
     /// <p>The name you've given to the behavior.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>What is measured by the behavior.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+    #[doc(hidden)]
     pub metric_dimension: std::option::Option<crate::model::MetricDimension>,
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
+    #[doc(hidden)]
     pub criteria: std::option::Option<crate::model::BehaviorCriteria>,
     /// <p> Suppresses alerts. </p>
+    #[doc(hidden)]
     pub suppress_alerts: std::option::Option<bool>,
 }
 impl Behavior {
@@ -204,18 +210,25 @@ pub struct BehaviorCriteria {
     /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
     /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The value to be compared with the <code>metric</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::MetricValue>,
     /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
     /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+    #[doc(hidden)]
     pub consecutive_datapoints_to_alarm: std::option::Option<i32>,
     /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
+    #[doc(hidden)]
     pub consecutive_datapoints_to_clear: std::option::Option<i32>,
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
+    #[doc(hidden)]
     pub statistical_threshold: std::option::Option<crate::model::StatisticalThreshold>,
     /// <p> The configuration of an ML Detect </p>
+    #[doc(hidden)]
     pub ml_detection_config: std::option::Option<crate::model::MachineLearningDetectionConfig>,
 }
 impl BehaviorCriteria {
@@ -419,6 +432,7 @@ impl BehaviorCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
+    #[doc(hidden)]
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
 impl MachineLearningDetectionConfig {
@@ -535,6 +549,7 @@ impl AsRef<str> for ConfidenceLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticalThreshold {
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<std::string::String>,
 }
 impl StatisticalThreshold {
@@ -589,16 +604,22 @@ impl StatisticalThreshold {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i64>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
+    #[doc(hidden)]
     pub cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
+    #[doc(hidden)]
     pub ports: std::option::Option<std::vec::Vec<i32>>,
     /// <p> The numeral value of a metric. </p>
+    #[doc(hidden)]
     pub number: std::option::Option<f64>,
     /// <p> The numeral values of a metric. </p>
+    #[doc(hidden)]
     pub numbers: std::option::Option<std::vec::Vec<f64>>,
     /// <p> The string values of a metric. </p>
+    #[doc(hidden)]
     pub strings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MetricValue {
@@ -866,8 +887,10 @@ impl AsRef<str> for ComparisonOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDimension {
     /// <p>A unique identifier for the dimension.</p>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::DimensionValueOperator>,
 }
 impl MetricDimension {
@@ -1067,8 +1090,10 @@ impl AsRef<str> for TopicRuleDestinationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingGroupProperties {
     /// <p>The thing group description.</p>
+    #[doc(hidden)]
     pub thing_group_description: std::option::Option<std::string::String>,
     /// <p>The thing group attributes in JSON format.</p>
+    #[doc(hidden)]
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
 }
 impl ThingGroupProperties {
@@ -1147,12 +1172,14 @@ impl ThingGroupProperties {
 pub struct AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
     /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub merge: bool,
 }
 impl AttributePayload {
@@ -1256,8 +1283,10 @@ impl AttributePayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamFile {
     /// <p>The file ID.</p>
+    #[doc(hidden)]
     pub file_id: std::option::Option<i32>,
     /// <p>The location of the file in S3.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl StreamFile {
@@ -1332,10 +1361,13 @@ impl StreamFile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The S3 key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The S3 bucket version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -1424,8 +1456,10 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricToRetain {
     /// <p>What is measured by the behavior.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
+    #[doc(hidden)]
     pub metric_dimension: std::option::Option<crate::model::MetricDimension>,
 }
 impl MetricToRetain {
@@ -1500,8 +1534,10 @@ impl MetricToRetain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
+    #[doc(hidden)]
     pub alert_target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AlertTarget {
@@ -1766,9 +1802,11 @@ impl AsRef<str> for AuditFrequency {
 pub struct ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
+    #[doc(hidden)]
     pub payload_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl ProvisioningHook {
@@ -1849,19 +1887,25 @@ impl ProvisioningHook {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MitigationActionParams {
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
+    #[doc(hidden)]
     pub update_device_certificate_params:
         std::option::Option<crate::model::UpdateDeviceCertificateParams>,
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
+    #[doc(hidden)]
     pub update_ca_certificate_params: std::option::Option<crate::model::UpdateCaCertificateParams>,
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
+    #[doc(hidden)]
     pub add_things_to_thing_group_params:
         std::option::Option<crate::model::AddThingsToThingGroupParams>,
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
+    #[doc(hidden)]
     pub replace_default_policy_version_params:
         std::option::Option<crate::model::ReplaceDefaultPolicyVersionParams>,
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
+    #[doc(hidden)]
     pub enable_io_t_logging_params: std::option::Option<crate::model::EnableIoTLoggingParams>,
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
+    #[doc(hidden)]
     pub publish_finding_to_sns_params: std::option::Option<crate::model::PublishFindingToSnsParams>,
 }
 impl MitigationActionParams {
@@ -2073,6 +2117,7 @@ impl MitigationActionParams {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl PublishFindingToSnsParams {
@@ -2127,8 +2172,10 @@ impl PublishFindingToSnsParams {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableIoTLoggingParams {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
+    #[doc(hidden)]
     pub role_arn_for_logging: std::option::Option<std::string::String>,
     /// <p>Specifies the type of information to be logged.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl EnableIoTLoggingParams {
@@ -2270,6 +2317,7 @@ impl AsRef<str> for LogLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<crate::model::PolicyTemplateName>,
 }
 impl ReplaceDefaultPolicyVersionParams {
@@ -2378,8 +2426,10 @@ impl AsRef<str> for PolicyTemplateName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
+    #[doc(hidden)]
     pub thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
+    #[doc(hidden)]
     pub override_dynamic_groups: std::option::Option<bool>,
 }
 impl AddThingsToThingGroupParams {
@@ -2460,6 +2510,7 @@ impl AddThingsToThingGroupParams {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::CaCertificateUpdateAction>,
 }
 impl UpdateCaCertificateParams {
@@ -2568,6 +2619,7 @@ impl AsRef<str> for CaCertificateUpdateAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::DeviceCertificateUpdateAction>,
 }
 impl UpdateDeviceCertificateParams {
@@ -2676,6 +2728,7 @@ impl AsRef<str> for DeviceCertificateUpdateAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionsRetryConfig {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+    #[doc(hidden)]
     pub criteria_list: std::option::Option<std::vec::Vec<crate::model::RetryCriteria>>,
 }
 impl JobExecutionsRetryConfig {
@@ -2739,8 +2792,10 @@ impl JobExecutionsRetryConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::RetryableFailureType>,
     /// <p>The number of retries allowed for a failure type for the job.</p>
+    #[doc(hidden)]
     pub number_of_retries: std::option::Option<i32>,
 }
 impl RetryCriteria {
@@ -2874,6 +2929,7 @@ impl AsRef<str> for RetryableFailureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
+    #[doc(hidden)]
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl TimeoutConfig {
@@ -2934,6 +2990,7 @@ impl TimeoutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
+    #[doc(hidden)]
     pub criteria_list: std::option::Option<std::vec::Vec<crate::model::AbortCriteria>>,
 }
 impl AbortConfig {
@@ -2997,13 +3054,17 @@ impl AbortConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::JobExecutionFailureType>,
     /// <p>The type of job action to take to initiate the job abort.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::AbortAction>,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    #[doc(hidden)]
     pub threshold_percentage: std::option::Option<f64>,
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
+    #[doc(hidden)]
     pub min_number_of_executed_things: std::option::Option<i32>,
 }
 impl AbortCriteria {
@@ -3235,8 +3296,10 @@ impl AsRef<str> for JobExecutionFailureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionsRolloutConfig {
     /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
+    #[doc(hidden)]
     pub maximum_per_minute: std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
+    #[doc(hidden)]
     pub exponential_rate: std::option::Option<crate::model::ExponentialRolloutRate>,
 }
 impl JobExecutionsRolloutConfig {
@@ -3311,11 +3374,14 @@ impl JobExecutionsRolloutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
+    #[doc(hidden)]
     pub base_rate_per_minute: std::option::Option<i32>,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    #[doc(hidden)]
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
+    #[doc(hidden)]
     pub rate_increase_criteria: std::option::Option<crate::model::RateIncreaseCriteria>,
 }
 impl ExponentialRolloutRate {
@@ -3412,8 +3478,10 @@ impl ExponentialRolloutRate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateIncreaseCriteria {
     /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
+    #[doc(hidden)]
     pub number_of_notified_things: std::option::Option<i32>,
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
+    #[doc(hidden)]
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
 impl RateIncreaseCriteria {
@@ -3490,8 +3558,10 @@ pub struct PresignedUrlConfig {
     /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
     /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
     /// </important>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+    #[doc(hidden)]
     pub expires_in_sec: std::option::Option<i64>,
 }
 impl PresignedUrlConfig {
@@ -3569,11 +3639,14 @@ impl PresignedUrlConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
+    #[doc(hidden)]
     pub thing_group_indexing_mode: std::option::Option<crate::model::ThingGroupIndexingMode>,
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+    #[doc(hidden)]
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
+    #[doc(hidden)]
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl ThingGroupIndexingConfiguration {
@@ -3692,8 +3765,10 @@ impl ThingGroupIndexingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Field {
     /// <p>The name of the field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the field.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FieldType>,
 }
 impl Field {
@@ -3884,12 +3959,14 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
     /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub thing_indexing_mode: std::option::Option<crate::model::ThingIndexingMode>,
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
     /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
     /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub thing_connectivity_indexing_mode:
         std::option::Option<crate::model::ThingConnectivityIndexingMode>,
     /// <p>Device Defender indexing mode. Valid values are:</p>
@@ -3898,6 +3975,7 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
     /// </ul>
     /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
+    #[doc(hidden)]
     pub device_defender_indexing_mode:
         std::option::Option<crate::model::DeviceDefenderIndexingMode>,
     /// <p>Named shadow indexing mode. Valid values are:</p>
@@ -3906,12 +3984,16 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
     /// </ul>
     /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
+    #[doc(hidden)]
     pub named_shadow_indexing_mode: std::option::Option<crate::model::NamedShadowIndexingMode>,
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+    #[doc(hidden)]
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Contains custom field names and their data type.</p>
+    #[doc(hidden)]
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::IndexingFilter>,
 }
 impl ThingIndexingConfiguration {
@@ -4185,6 +4267,7 @@ impl ThingIndexingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub named_shadow_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IndexingFilter {
@@ -4655,8 +4738,10 @@ impl AsRef<str> for FleetMetricUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregationType {
     /// <p>The name of the aggregation type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AggregationTypeName>,
     /// <p>A list of the values of aggregation types.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AggregationType {
@@ -4799,6 +4884,7 @@ impl AsRef<str> for AggregationTypeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>True to enable the configuration.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Configuration {
@@ -5011,8 +5097,10 @@ impl AsRef<str> for DomainConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizerConfig {
     /// <p>The name of the authorization service for a domain configuration.</p>
+    #[doc(hidden)]
     pub default_authorizer_name: std::option::Option<std::string::String>,
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
+    #[doc(hidden)]
     pub allow_authorizer_override: std::option::Option<bool>,
 }
 impl AuthorizerConfig {
@@ -5279,10 +5367,13 @@ impl AsRef<str> for CertificateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistrationConfig {
     /// <p>The template body.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The ARN of the role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl RegistrationConfig {
@@ -5487,6 +5578,7 @@ impl AsRef<str> for CaCertificateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingGroupProperties {
     /// <p>The description of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_description: std::option::Option<std::string::String>,
 }
 impl BillingGroupProperties {
@@ -5599,20 +5691,28 @@ impl AsRef<str> for AuthorizerStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIdentifier {
     /// <p>The ID of the certificate attached to the resource.</p>
+    #[doc(hidden)]
     pub device_certificate_id: std::option::Option<std::string::String>,
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
+    #[doc(hidden)]
     pub ca_certificate_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito identity pool.</p>
+    #[doc(hidden)]
     pub cognito_identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The client ID.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The version of the policy associated with the resource.</p>
+    #[doc(hidden)]
     pub policy_version_identifier: std::option::Option<crate::model::PolicyVersionIdentifier>,
     /// <p>The account with which the resource is associated.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that has overly permissive actions.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
+    #[doc(hidden)]
     pub role_alias_arn: std::option::Option<std::string::String>,
 }
 impl ResourceIdentifier {
@@ -5807,8 +5907,10 @@ impl ResourceIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyVersionIdentifier {
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The ID of the version of the policy associated with the resource.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<std::string::String>,
 }
 impl PolicyVersionIdentifier {
@@ -5883,6 +5985,7 @@ impl PolicyVersionIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AuditCheckConfiguration {
@@ -5937,10 +6040,13 @@ impl AuditCheckConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditNotificationTarget {
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>True if notifications to the target are enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AuditNotificationTarget {
@@ -6080,6 +6186,7 @@ impl AsRef<str> for AuditNotificationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
 }
 impl TlsContext {
@@ -6134,10 +6241,13 @@ impl TlsContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MqttContext {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
 }
 impl MqttContext {
@@ -6226,9 +6336,11 @@ impl MqttContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpContext {
     /// <p>The header keys and values in an HTTP authorization request.</p>
+    #[doc(hidden)]
     pub headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The query string keys and values in an HTTP authorization request.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
 }
 impl HttpContext {
@@ -6320,14 +6432,19 @@ impl HttpContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthResult {
     /// <p>Authorization information.</p>
+    #[doc(hidden)]
     pub auth_info: std::option::Option<crate::model::AuthInfo>,
     /// <p>The policies and statements that allowed the specified action.</p>
+    #[doc(hidden)]
     pub allowed: std::option::Option<crate::model::Allowed>,
     /// <p>The policies and statements that denied the specified action.</p>
+    #[doc(hidden)]
     pub denied: std::option::Option<crate::model::Denied>,
     /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
+    #[doc(hidden)]
     pub auth_decision: std::option::Option<crate::model::AuthDecision>,
     /// <p>Contains any missing context values found while evaluating policy.</p>
+    #[doc(hidden)]
     pub missing_context_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthResult {
@@ -6521,8 +6638,10 @@ impl AsRef<str> for AuthDecision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Denied {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
+    #[doc(hidden)]
     pub implicit_deny: std::option::Option<crate::model::ImplicitDeny>,
     /// <p>Information that explicitly denies the authorization. </p>
+    #[doc(hidden)]
     pub explicit_deny: std::option::Option<crate::model::ExplicitDeny>,
 }
 impl Denied {
@@ -6600,6 +6719,7 @@ impl Denied {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplicitDeny {
     /// <p>The policies that denied the authorization.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
 impl ExplicitDeny {
@@ -6663,8 +6783,10 @@ impl ExplicitDeny {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policy {
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl Policy {
@@ -6736,6 +6858,7 @@ impl Policy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImplicitDeny {
     /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
 impl ImplicitDeny {
@@ -6799,6 +6922,7 @@ impl ImplicitDeny {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Allowed {
     /// <p>A list of policies that allowed the authentication.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
 impl Allowed {
@@ -6862,8 +6986,10 @@ impl Allowed {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthInfo {
@@ -7010,8 +7136,10 @@ impl AsRef<str> for ActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -7083,8 +7211,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationEventOccurrenceRange {
     /// <p> The start date and time of a time period in which violation events occurred. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end date and time of a time period in which violation events occurred. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ViolationEventOccurrenceRange {
@@ -7162,10 +7292,13 @@ impl ViolationEventOccurrenceRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskTarget {
     /// <p> The unique identifiers of the violations. </p>
+    #[doc(hidden)]
     pub violation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The name of the security profile. </p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p> The name of the behavior. </p>
+    #[doc(hidden)]
     pub behavior_name: std::option::Option<std::string::String>,
 }
 impl DetectMitigationActionsTaskTarget {
@@ -7269,10 +7402,13 @@ impl DetectMitigationActionsTaskTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditMitigationActionsTaskTarget {
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
+    #[doc(hidden)]
     pub audit_task_id: std::option::Option<std::string::String>,
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
+    #[doc(hidden)]
     pub audit_check_to_reason_code_filter: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -7399,8 +7535,10 @@ impl AuditMitigationActionsTaskTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogTarget {
     /// <p>The target type.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::LogTargetType>,
     /// <p>The target name.</p>
+    #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
 }
 impl LogTarget {
@@ -7548,8 +7686,10 @@ impl AsRef<str> for LogTargetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingOptionsPayload {
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The log level.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl LoggingOptionsPayload {
@@ -7621,15 +7761,20 @@ impl LoggingOptionsPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingGroupDocument {
     /// <p>The thing group name.</p>
+    #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The thing group ID.</p>
+    #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The thing group description.</p>
+    #[doc(hidden)]
     pub thing_group_description: std::option::Option<std::string::String>,
     /// <p>The thing group attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Parent group names.</p>
+    #[doc(hidden)]
     pub parent_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ThingGroupDocument {
@@ -7790,23 +7935,31 @@ impl ThingGroupDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingDocument {
     /// <p>The thing name.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The thing ID.</p>
+    #[doc(hidden)]
     pub thing_id: std::option::Option<std::string::String>,
     /// <p>The thing type name.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>Thing group names.</p>
+    #[doc(hidden)]
     pub thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
+    #[doc(hidden)]
     pub shadow: std::option::Option<std::string::String>,
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+    #[doc(hidden)]
     pub device_defender: std::option::Option<std::string::String>,
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
+    #[doc(hidden)]
     pub connectivity: std::option::Option<crate::model::ThingConnectivity>,
 }
 impl ThingDocument {
@@ -8024,10 +8177,13 @@ impl ThingDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
+    #[doc(hidden)]
     pub connected: bool,
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    #[doc(hidden)]
     pub disconnect_reason: std::option::Option<std::string::String>,
 }
 impl ThingConnectivity {
@@ -8119,16 +8275,22 @@ impl ThingConnectivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
     /// <p>The description of the rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions associated with the rule.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Specifies whether the rule is disabled.</p>
+    #[doc(hidden)]
     pub rule_disabled: std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    #[doc(hidden)]
     pub aws_iot_sql_version: std::option::Option<std::string::String>,
     /// <p>The action to take when an error occurs.</p>
+    #[doc(hidden)]
     pub error_action: std::option::Option<crate::model::Action>,
 }
 impl TopicRulePayload {
@@ -8283,50 +8445,72 @@ impl TopicRulePayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>Write to a DynamoDB table.</p>
+    #[doc(hidden)]
     pub dynamo_db: std::option::Option<crate::model::DynamoDbAction>,
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
+    #[doc(hidden)]
     pub dynamo_d_bv2: std::option::Option<crate::model::DynamoDBv2Action>,
     /// <p>Invoke a Lambda function.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaAction>,
     /// <p>Publish to an Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub sns: std::option::Option<crate::model::SnsAction>,
     /// <p>Publish to an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub sqs: std::option::Option<crate::model::SqsAction>,
     /// <p>Write data to an Amazon Kinesis stream.</p>
+    #[doc(hidden)]
     pub kinesis: std::option::Option<crate::model::KinesisAction>,
     /// <p>Publish to another MQTT topic.</p>
+    #[doc(hidden)]
     pub republish: std::option::Option<crate::model::RepublishAction>,
     /// <p>Write to an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Action>,
     /// <p>Write to an Amazon Kinesis Firehose stream.</p>
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::FirehoseAction>,
     /// <p>Capture a CloudWatch metric.</p>
+    #[doc(hidden)]
     pub cloudwatch_metric: std::option::Option<crate::model::CloudwatchMetricAction>,
     /// <p>Change the state of a CloudWatch alarm.</p>
+    #[doc(hidden)]
     pub cloudwatch_alarm: std::option::Option<crate::model::CloudwatchAlarmAction>,
     /// <p>Send data to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloudwatch_logs: std::option::Option<crate::model::CloudwatchLogsAction>,
     /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub elasticsearch: std::option::Option<crate::model::ElasticsearchAction>,
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceAction>,
     /// <p>Sends message data to an IoT Analytics channel.</p>
+    #[doc(hidden)]
     pub iot_analytics: std::option::Option<crate::model::IotAnalyticsAction>,
     /// <p>Sends an input to an IoT Events detector.</p>
+    #[doc(hidden)]
     pub iot_events: std::option::Option<crate::model::IotEventsAction>,
     /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
+    #[doc(hidden)]
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
     /// <p>Starts execution of a Step Functions state machine.</p>
+    #[doc(hidden)]
     pub step_functions: std::option::Option<crate::model::StepFunctionsAction>,
     /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
+    #[doc(hidden)]
     pub timestream: std::option::Option<crate::model::TimestreamAction>,
     /// <p>Send data to an HTTPS endpoint.</p>
+    #[doc(hidden)]
     pub http: std::option::Option<crate::model::HttpAction>,
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub kafka: std::option::Option<crate::model::KafkaAction>,
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
+    #[doc(hidden)]
     pub open_search: std::option::Option<crate::model::OpenSearchAction>,
 }
 impl Action {
@@ -8795,14 +8979,19 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenSearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint of your OpenSearch domain.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The OpenSearch index where you want to store your data.</p>
+    #[doc(hidden)]
     pub index: std::option::Option<std::string::String>,
     /// <p>The type of document you are storing.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the document you are storing.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl OpenSearchAction {
@@ -8925,14 +9114,19 @@ impl OpenSearchAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Kafka message key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The Kafka message partition.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
+    #[doc(hidden)]
     pub client_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9079,12 +9273,16 @@ impl KafkaAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
+    #[doc(hidden)]
     pub confirmation_url: std::option::Option<std::string::String>,
     /// <p>The HTTP headers to send with the message data.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpActionHeader>>,
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
+    #[doc(hidden)]
     pub auth: std::option::Option<crate::model::HttpAuthorization>,
 }
 impl HttpAction {
@@ -9205,6 +9403,7 @@ impl HttpAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
+    #[doc(hidden)]
     pub sigv4: std::option::Option<crate::model::SigV4Authorization>,
 }
 impl HttpAuthorization {
@@ -9260,10 +9459,13 @@ impl HttpAuthorization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigV4Authorization {
     /// <p>The signing region.</p>
+    #[doc(hidden)]
     pub signing_region: std::option::Option<std::string::String>,
     /// <p>The service name to use while signing with Sig V4.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl SigV4Authorization {
@@ -9355,8 +9557,10 @@ impl SigV4Authorization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpActionHeader {
     /// <p>The HTTP header key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The HTTP header value. Substitution templates are supported.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl HttpActionHeader {
@@ -9428,16 +9632,21 @@ impl HttpActionHeader {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestreamAction {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of an Amazon Timestream database.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the database table into which to write the measure records.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::TimestreamDimension>>,
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::TimestreamTimestamp>,
 }
 impl TimestreamAction {
@@ -9582,9 +9791,11 @@ impl TimestreamAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestreamTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl TimestreamTimestamp {
@@ -9660,8 +9871,10 @@ impl TimestreamTimestamp {
 pub struct TimestreamDimension {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value to write in this column of the database record.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TimestreamDimension {
@@ -9736,10 +9949,13 @@ impl TimestreamDimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
+    #[doc(hidden)]
     pub execution_name_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
+    #[doc(hidden)]
     pub state_machine_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl StepFunctionsAction {
@@ -9834,9 +10050,11 @@ impl StepFunctionsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
+    #[doc(hidden)]
     pub put_asset_property_value_entries:
         std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotSiteWiseAction {
@@ -9926,14 +10144,19 @@ impl IotSiteWiseAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
+    #[doc(hidden)]
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntry {
@@ -10069,10 +10292,13 @@ impl PutAssetPropertyValueEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyValue {
     /// <p>The value of the asset property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::AssetPropertyVariant>,
     /// <p>The asset property value timestamp.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::AssetPropertyTimestamp>,
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<std::string::String>,
 }
 impl AssetPropertyValue {
@@ -10167,8 +10393,10 @@ impl AssetPropertyValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyTimestamp {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
+    #[doc(hidden)]
     pub time_in_seconds: std::option::Option<std::string::String>,
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
+    #[doc(hidden)]
     pub offset_in_nanos: std::option::Option<std::string::String>,
 }
 impl AssetPropertyTimestamp {
@@ -10327,16 +10555,20 @@ impl AssetPropertyVariant {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsAction {
     /// <p>The name of the IoT Events input.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
+    #[doc(hidden)]
     pub batch_mode: std::option::Option<bool>,
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotEventsAction {
@@ -10454,13 +10686,17 @@ impl IotEventsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotAnalyticsAction {
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
+    #[doc(hidden)]
     pub batch_mode: std::option::Option<bool>,
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotAnalyticsAction {
@@ -10569,8 +10805,10 @@ impl IotAnalyticsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl SalesforceAction {
@@ -10644,14 +10882,19 @@ impl SalesforceAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint of your OpenSearch domain.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The index where you want to store your data.</p>
+    #[doc(hidden)]
     pub index: std::option::Option<std::string::String>,
     /// <p>The type of document you are storing.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the document you are storing.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ElasticsearchAction {
@@ -10774,8 +11017,10 @@ impl ElasticsearchAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The CloudWatch log group to which the action sends data.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl CloudwatchLogsAction {
@@ -10850,12 +11095,16 @@ impl CloudwatchLogsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudwatchAlarmAction {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The CloudWatch alarm name.</p>
+    #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The reason for the alarm change.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
+    #[doc(hidden)]
     pub state_value: std::option::Option<std::string::String>,
 }
 impl CloudwatchAlarmAction {
@@ -10961,16 +11210,22 @@ impl CloudwatchAlarmAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudwatchMetricAction {
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The CloudWatch metric namespace name.</p>
+    #[doc(hidden)]
     pub metric_namespace: std::option::Option<std::string::String>,
     /// <p>The CloudWatch metric name.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The CloudWatch metric value.</p>
+    #[doc(hidden)]
     pub metric_value: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
+    #[doc(hidden)]
     pub metric_unit: std::option::Option<std::string::String>,
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
+    #[doc(hidden)]
     pub metric_timestamp: std::option::Option<std::string::String>,
 }
 impl CloudwatchMetricAction {
@@ -11116,13 +11371,17 @@ impl CloudwatchMetricAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirehoseAction {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The delivery stream name.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
+    #[doc(hidden)]
     pub separator: std::option::Option<std::string::String>,
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
+    #[doc(hidden)]
     pub batch_mode: std::option::Option<bool>,
 }
 impl FirehoseAction {
@@ -11234,12 +11493,16 @@ impl FirehoseAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Action {
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+    #[doc(hidden)]
     pub canned_acl: std::option::Option<crate::model::CannedAccessControlList>,
 }
 impl S3Action {
@@ -11436,10 +11699,13 @@ impl AsRef<str> for CannedAccessControlList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the MQTT topic.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
+    #[doc(hidden)]
     pub qos: std::option::Option<i32>,
 }
 impl RepublishAction {
@@ -11528,10 +11794,13 @@ impl RepublishAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis stream.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The partition key.</p>
+    #[doc(hidden)]
     pub partition_key: std::option::Option<std::string::String>,
 }
 impl KinesisAction {
@@ -11623,10 +11892,13 @@ impl KinesisAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>Specifies whether to use Base64 encoding.</p>
+    #[doc(hidden)]
     pub use_base64: std::option::Option<bool>,
 }
 impl SqsAction {
@@ -11715,10 +11987,13 @@ impl SqsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsAction {
     /// <p>The ARN of the SNS topic.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+    #[doc(hidden)]
     pub message_format: std::option::Option<crate::model::MessageFormat>,
 }
 impl SnsAction {
@@ -11865,6 +12140,7 @@ impl AsRef<str> for MessageFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaAction {
@@ -11920,10 +12196,12 @@ impl LambdaAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
+    #[doc(hidden)]
     pub put_item: std::option::Option<crate::model::PutItemInput>,
 }
 impl DynamoDBv2Action {
@@ -12004,6 +12282,7 @@ impl DynamoDBv2Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutItemInput {
     /// <p>The table where the message data will be written.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl PutItemInput {
@@ -12064,24 +12343,34 @@ impl PutItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDbAction {
     /// <p>The name of the DynamoDB table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The hash key name.</p>
+    #[doc(hidden)]
     pub hash_key_field: std::option::Option<std::string::String>,
     /// <p>The hash key value.</p>
+    #[doc(hidden)]
     pub hash_key_value: std::option::Option<std::string::String>,
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+    #[doc(hidden)]
     pub hash_key_type: std::option::Option<crate::model::DynamoKeyType>,
     /// <p>The range key name.</p>
+    #[doc(hidden)]
     pub range_key_field: std::option::Option<std::string::String>,
     /// <p>The range key value.</p>
+    #[doc(hidden)]
     pub range_key_value: std::option::Option<std::string::String>,
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+    #[doc(hidden)]
     pub range_key_type: std::option::Option<crate::model::DynamoKeyType>,
     /// <p>The action payload. This name can be customized.</p>
+    #[doc(hidden)]
     pub payload_field: std::option::Option<std::string::String>,
 }
 impl DynamoDbAction {
@@ -12488,25 +12777,35 @@ impl AsRef<str> for VerificationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationEvent {
     /// <p>The ID of the violation event.</p>
+    #[doc(hidden)]
     pub violation_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing responsible for the violation event.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the security profile whose behavior was violated.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The behavior that was violated.</p>
+    #[doc(hidden)]
     pub behavior: std::option::Option<crate::model::Behavior>,
     /// <p>The value of the metric (the measurement).</p>
+    #[doc(hidden)]
     pub metric_value: std::option::Option<crate::model::MetricValue>,
     /// <p> The details of a violation event. </p>
+    #[doc(hidden)]
     pub violation_event_additional_info:
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
+    #[doc(hidden)]
     pub violation_event_type: std::option::Option<crate::model::ViolationEventType>,
     /// <p>The verification state of the violation (detect alarm).</p>
+    #[doc(hidden)]
     pub verification_state: std::option::Option<crate::model::VerificationState>,
     /// <p>The description of the verification state of the violation.</p>
+    #[doc(hidden)]
     pub verification_state_description: std::option::Option<std::string::String>,
     /// <p>The time the violation event occurred.</p>
+    #[doc(hidden)]
     pub violation_event_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ViolationEvent {
@@ -12809,6 +13108,7 @@ impl AsRef<str> for ViolationEventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationEventAdditionalInfo {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
+    #[doc(hidden)]
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
 impl ViolationEventAdditionalInfo {
@@ -12925,8 +13225,10 @@ impl AsRef<str> for BehaviorCriteriaType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogTargetConfiguration {
     /// <p>A log target</p>
+    #[doc(hidden)]
     pub log_target: std::option::Option<crate::model::LogTarget>,
     /// <p>The logging level.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl LogTargetConfiguration {
@@ -13001,14 +13303,19 @@ impl LogTargetConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRuleListItem {
     /// <p>The rule ARN.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The pattern for the topic names that apply.</p>
+    #[doc(hidden)]
     pub topic_pattern: std::option::Option<std::string::String>,
     /// <p>The date and time the rule was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the rule is disabled.</p>
+    #[doc(hidden)]
     pub rule_disabled: std::option::Option<bool>,
 }
 impl TopicRuleListItem {
@@ -13137,6 +13444,7 @@ impl TopicRuleListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRuleDestinationSummary {
     /// <p>The topic rule destination ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
@@ -13165,16 +13473,22 @@ pub struct TopicRuleDestinationSummary {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
     /// <p>The date and time when the topic rule destination was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the topic rule destination was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason the topic rule destination is in the current status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Information about the HTTP URL.</p>
+    #[doc(hidden)]
     pub http_url_summary: std::option::Option<crate::model::HttpUrlDestinationSummary>,
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
+    #[doc(hidden)]
     pub vpc_destination_summary: std::option::Option<crate::model::VpcDestinationSummary>,
 }
 impl TopicRuleDestinationSummary {
@@ -13435,12 +13749,16 @@ impl TopicRuleDestinationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDestinationSummary {
     /// <p>The subnet IDs of the VPC destination.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups of the VPC destination.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl VpcDestinationSummary {
@@ -13564,6 +13882,7 @@ impl VpcDestinationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationSummary {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
+    #[doc(hidden)]
     pub confirmation_url: std::option::Option<std::string::String>,
 }
 impl HttpUrlDestinationSummary {
@@ -13621,12 +13940,16 @@ impl HttpUrlDestinationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingTypeDefinition {
     /// <p>The name of the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>The thing type ARN.</p>
+    #[doc(hidden)]
     pub thing_type_arn: std::option::Option<std::string::String>,
     /// <p>The ThingTypeProperties for the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
+    #[doc(hidden)]
     pub thing_type_metadata: std::option::Option<crate::model::ThingTypeMetadata>,
 }
 impl ThingTypeDefinition {
@@ -13744,10 +14067,13 @@ impl ThingTypeDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingTypeMetadata {
     /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
+    #[doc(hidden)]
     pub deprecated: bool,
     /// <p>The date and time when the thing type was deprecated.</p>
+    #[doc(hidden)]
     pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the thing type was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThingTypeMetadata {
@@ -13842,8 +14168,10 @@ impl ThingTypeMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingTypeProperties {
     /// <p>The description of the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_description: std::option::Option<std::string::String>,
     /// <p>A list of searchable thing attribute names.</p>
+    #[doc(hidden)]
     pub searchable_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ThingTypeProperties {
@@ -13927,15 +14255,20 @@ impl ThingTypeProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingAttribute {
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>The thing ARN.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>A list of thing attributes which are name-value pairs.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the thing record in the registry.</p>
+    #[doc(hidden)]
     pub version: i64,
 }
 impl ThingAttribute {
@@ -14209,8 +14542,10 @@ impl AsRef<str> for ReportType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupNameAndArn {
     /// <p>The group name.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The group ARN.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl GroupNameAndArn {
@@ -14282,6 +14617,7 @@ impl GroupNameAndArn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfileTarget {
     /// <p>The ARN of the security profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SecurityProfileTarget {
@@ -14334,12 +14670,16 @@ impl SecurityProfileTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSummary {
     /// <p>The stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The stream ARN.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The stream version.</p>
+    #[doc(hidden)]
     pub stream_version: std::option::Option<i32>,
     /// <p>A description of the stream.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl StreamSummary {
@@ -14445,8 +14785,10 @@ impl StreamSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfileTargetMapping {
     /// <p>Information that identifies the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_identifier: std::option::Option<crate::model::SecurityProfileIdentifier>,
     /// <p>Information about the target (thing group) associated with the security profile.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::SecurityProfileTarget>,
 }
 impl SecurityProfileTargetMapping {
@@ -14533,8 +14875,10 @@ impl SecurityProfileTargetMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfileIdentifier {
     /// <p>The name you've given to the security profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the security profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SecurityProfileIdentifier {
@@ -14606,14 +14950,19 @@ impl SecurityProfileIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledAuditMetadata {
     /// <p>The name of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
     /// <p>How often the scheduled audit occurs.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
     /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<std::string::String>,
     /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
 }
 impl ScheduledAuditMetadata {
@@ -14748,10 +15097,13 @@ impl ScheduledAuditMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningTemplateVersionSummary {
     /// <p>The ID of the fleet privisioning template version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<i32>,
     /// <p>The date when the provisioning template version was created</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
 }
 impl ProvisioningTemplateVersionSummary {
@@ -14843,18 +15195,25 @@ impl ProvisioningTemplateVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningTemplateSummary {
     /// <p>The ARN of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the provisioning template summary was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the provisioning template summary was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TemplateType>,
 }
 impl ProvisioningTemplateSummary {
@@ -15075,10 +15434,13 @@ impl AsRef<str> for TemplateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyVersion {
     /// <p>The policy version ID.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date and time the policy was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {
@@ -15170,16 +15532,22 @@ impl PolicyVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutgoingCertificate {
     /// <p>The certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ID.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
+    #[doc(hidden)]
     pub transferred_to: std::option::Option<std::string::String>,
     /// <p>The date the transfer was initiated.</p>
+    #[doc(hidden)]
     pub transfer_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The transfer message.</p>
+    #[doc(hidden)]
     pub transfer_message: std::option::Option<std::string::String>,
     /// <p>The certificate creation date.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OutgoingCertificate {
@@ -15337,10 +15705,13 @@ impl OutgoingCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaUpdateSummary {
     /// <p>The OTA update ID.</p>
+    #[doc(hidden)]
     pub ota_update_id: std::option::Option<std::string::String>,
     /// <p>The OTA update ARN.</p>
+    #[doc(hidden)]
     pub ota_update_arn: std::option::Option<std::string::String>,
     /// <p>The date when the OTA update was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OtaUpdateSummary {
@@ -15506,10 +15877,13 @@ impl AsRef<str> for OtaUpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    #[doc(hidden)]
     pub action_arn: std::option::Option<std::string::String>,
     /// <p>The date when this mitigation action was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MitigationActionIdentifier {
@@ -15679,8 +16053,10 @@ impl AsRef<str> for MitigationActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDatum {
     /// <p>The time the metric value was reported.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The value reported for the metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::MetricValue>,
 }
 impl MetricDatum {
@@ -15755,14 +16131,19 @@ impl MetricDatum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The unique Name for a managed template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The description for a managed template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version for a managed template.</p>
+    #[doc(hidden)]
     pub template_version: std::option::Option<std::string::String>,
 }
 impl ManagedJobTemplateSummary {
@@ -15900,12 +16281,16 @@ impl ManagedJobTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobTemplateSummary {
     /// <p>The ARN of the job template.</p>
+    #[doc(hidden)]
     pub job_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the job template.</p>
+    #[doc(hidden)]
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>A description of the job template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl JobTemplateSummary {
@@ -16020,24 +16405,33 @@ impl JobTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p>The job ARN.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ID of the thing group.</p>
+    #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The job summary status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
+    #[doc(hidden)]
     pub is_concurrent: std::option::Option<bool>,
 }
 impl JobSummary {
@@ -16372,8 +16766,10 @@ impl AsRef<str> for TargetSelection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionSummaryForThing {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Contains a subset of information about a job execution.</p>
+    #[doc(hidden)]
     pub job_execution_summary: std::option::Option<crate::model::JobExecutionSummary>,
 }
 impl JobExecutionSummaryForThing {
@@ -16448,16 +16844,22 @@ impl JobExecutionSummaryForThing {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionSummary {
     /// <p>The status of the job execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+    #[doc(hidden)]
     pub queued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+    #[doc(hidden)]
     pub retry_attempt: std::option::Option<i32>,
 }
 impl JobExecutionSummary {
@@ -16697,8 +17099,10 @@ impl AsRef<str> for JobExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionSummaryForJob {
     /// <p>The ARN of the thing on which the job execution is running.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>Contains a subset of information about a job execution.</p>
+    #[doc(hidden)]
     pub job_execution_summary: std::option::Option<crate::model::JobExecutionSummary>,
 }
 impl JobExecutionSummaryForJob {
@@ -16773,8 +17177,10 @@ impl JobExecutionSummaryForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetMetricNameAndArn {
     /// <p>The fleet metric name.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The fleet metric ARN.</p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl FleetMetricNameAndArn {
@@ -16851,10 +17257,13 @@ impl FleetMetricNameAndArn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainConfigurationSummary {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The type of service delivered by the endpoint.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
 }
 impl DomainConfigurationSummary {
@@ -17011,25 +17420,35 @@ impl AsRef<str> for ServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskSummary {
     /// <p> The unique identifier of the task. </p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p> The status of the task. </p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::DetectMitigationActionsTaskStatus>,
     /// <p> The date the task started. </p>
+    #[doc(hidden)]
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date the task ended. </p>
+    #[doc(hidden)]
     pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
     /// <p> Specifies the time period of which violation events occurred between. </p>
+    #[doc(hidden)]
     pub violation_event_occurrence_range:
         std::option::Option<crate::model::ViolationEventOccurrenceRange>,
     /// <p> Includes only active violations. </p>
+    #[doc(hidden)]
     pub only_active_violations_included: bool,
     /// <p> Includes suppressed alerts. </p>
+    #[doc(hidden)]
     pub suppressed_alerts_included: bool,
     /// <p> The definition of the actions. </p>
+    #[doc(hidden)]
     pub actions_definition: std::option::Option<std::vec::Vec<crate::model::MitigationAction>>,
     /// <p> The statistics of a mitigation action task. </p>
+    #[doc(hidden)]
     pub task_statistics: std::option::Option<crate::model::DetectMitigationActionsTaskStatistics>,
 }
 impl DetectMitigationActionsTaskSummary {
@@ -17297,10 +17716,13 @@ impl DetectMitigationActionsTaskSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
+    #[doc(hidden)]
     pub actions_executed: std::option::Option<i64>,
     /// <p> The actions that were skipped. </p>
+    #[doc(hidden)]
     pub actions_skipped: std::option::Option<i64>,
     /// <p> The actions that failed. </p>
+    #[doc(hidden)]
     pub actions_failed: std::option::Option<i64>,
 }
 impl DetectMitigationActionsTaskStatistics {
@@ -17389,12 +17811,16 @@ impl DetectMitigationActionsTaskStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MitigationAction {
     /// <p>A user-friendly name for the mitigation action.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the mitigation action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
+    #[doc(hidden)]
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
 }
 impl MitigationAction {
@@ -17566,22 +17992,31 @@ impl AsRef<str> for DetectMitigationActionsTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionExecution {
     /// <p> The unique identifier of the task. </p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the violation. </p>
+    #[doc(hidden)]
     pub violation_id: std::option::Option<std::string::String>,
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p> The name of the thing. </p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p> The date a mitigation action was started. </p>
+    #[doc(hidden)]
     pub execution_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date a mitigation action ended. </p>
+    #[doc(hidden)]
     pub execution_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of a mitigation action. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectMitigationActionExecutionStatus>,
     /// <p> The error code of a mitigation action. </p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p> The message of a mitigation action. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DetectMitigationActionExecution {
@@ -17849,17 +18284,22 @@ impl AsRef<str> for DetectMitigationActionExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The ARN of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The status of the certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The mode of the certificate.</p>
     /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
     /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+    #[doc(hidden)]
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
     /// <p>The date and time the certificate was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Certificate {
@@ -18006,13 +18446,17 @@ impl Certificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaCertificate {
     /// <p>The ARN of the CA certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the CA certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CaCertificateStatus>,
     /// <p>The date the CA certificate was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CaCertificate {
@@ -18133,8 +18577,10 @@ impl CaCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizerSummary {
     /// <p>The authorizer name.</p>
+    #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The authorizer ARN.</p>
+    #[doc(hidden)]
     pub authorizer_arn: std::option::Option<std::string::String>,
 }
 impl AuthorizerSummary {
@@ -18212,10 +18658,13 @@ impl AuthorizerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditTaskMetadata {
     /// <p>The ID of this audit.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
 }
 impl AuditTaskMetadata {
@@ -18428,14 +18877,19 @@ impl AsRef<str> for AuditTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditSuppression {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    #[doc(hidden)]
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    #[doc(hidden)]
     pub suppress_indefinitely: std::option::Option<bool>,
     /// <p> The description of the audit suppression. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AuditSuppression {
@@ -18564,10 +19018,13 @@ impl AuditSuppression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditMitigationActionsTaskMetadata {
     /// <p>The unique identifier for the task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The time at which the audit mitigation actions task was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the audit mitigation actions task.</p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::AuditMitigationActionsTaskStatus>,
 }
 impl AuditMitigationActionsTaskMetadata {
@@ -18730,22 +19187,31 @@ impl AsRef<str> for AuditMitigationActionsTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditMitigationActionExecutionMetadata {
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
+    #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The current status of the task being executed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AuditMitigationActionsExecutionStatus>,
     /// <p>The date and time when the task was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>If an error occurred, a message that describes the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuditMitigationActionExecutionMetadata {
@@ -19028,26 +19494,37 @@ impl AsRef<str> for AuditMitigationActionsExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditFinding {
     /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
+    #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
     /// <p>The ID of the audit that generated this result (finding).</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The audit check that generated this result.</p>
+    #[doc(hidden)]
     pub check_name: std::option::Option<std::string::String>,
     /// <p>The time the audit started.</p>
+    #[doc(hidden)]
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the result (finding) was discovered.</p>
+    #[doc(hidden)]
     pub finding_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the result (finding).</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::AuditFindingSeverity>,
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
+    #[doc(hidden)]
     pub non_compliant_resource: std::option::Option<crate::model::NonCompliantResource>,
     /// <p>The list of related resources.</p>
+    #[doc(hidden)]
     pub related_resources: std::option::Option<std::vec::Vec<crate::model::RelatedResource>>,
     /// <p>The reason the resource was noncompliant.</p>
+    #[doc(hidden)]
     pub reason_for_non_compliance: std::option::Option<std::string::String>,
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
+    #[doc(hidden)]
     pub reason_for_non_compliance_code: std::option::Option<std::string::String>,
     /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    #[doc(hidden)]
     pub is_suppressed: std::option::Option<bool>,
 }
 impl AuditFinding {
@@ -19308,10 +19785,13 @@ impl AuditFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelatedResource {
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information that identifies the resource.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     /// <p>Other information about the resource.</p>
+    #[doc(hidden)]
     pub additional_info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -19515,10 +19995,13 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NonCompliantResource {
     /// <p>The type of the noncompliant resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information that identifies the noncompliant resource.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     /// <p>Other information about the noncompliant resource.</p>
+    #[doc(hidden)]
     pub additional_info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -19697,25 +20180,35 @@ impl AsRef<str> for AuditFindingSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveViolation {
     /// <p>The ID of the active violation.</p>
+    #[doc(hidden)]
     pub violation_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing responsible for the active violation.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The security profile with the behavior is in violation.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The behavior that is being violated.</p>
+    #[doc(hidden)]
     pub behavior: std::option::Option<crate::model::Behavior>,
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
+    #[doc(hidden)]
     pub last_violation_value: std::option::Option<crate::model::MetricValue>,
     /// <p> The details of a violation event. </p>
+    #[doc(hidden)]
     pub violation_event_additional_info:
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
     /// <p>The verification state of the violation (detect alarm).</p>
+    #[doc(hidden)]
     pub verification_state: std::option::Option<crate::model::VerificationState>,
     /// <p>The description of the verification state of the violation.</p>
+    #[doc(hidden)]
     pub verification_state_description: std::option::Option<std::string::String>,
     /// <p>The time the most recent violation occurred.</p>
+    #[doc(hidden)]
     pub last_violation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the violation started.</p>
+    #[doc(hidden)]
     pub violation_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActiveViolation {
@@ -19959,6 +20452,7 @@ impl ActiveViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRuleDestination {
     /// <p>The topic rule destination URL.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
@@ -19987,16 +20481,22 @@ pub struct TopicRuleDestination {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
     /// <p>The date and time when the topic rule destination was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the topic rule destination was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional details or reason why the topic rule destination is in the current status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Properties of the HTTP URL.</p>
+    #[doc(hidden)]
     pub http_url_properties: std::option::Option<crate::model::HttpUrlDestinationProperties>,
     /// <p>Properties of the virtual private cloud (VPC) connection.</p>
+    #[doc(hidden)]
     pub vpc_properties: std::option::Option<crate::model::VpcDestinationProperties>,
 }
 impl TopicRuleDestination {
@@ -20255,12 +20755,16 @@ impl TopicRuleDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDestinationProperties {
     /// <p>The subnet IDs of the VPC destination.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups of the VPC destination.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl VpcDestinationProperties {
@@ -20384,6 +20888,7 @@ impl VpcDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationProperties {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
+    #[doc(hidden)]
     pub confirmation_url: std::option::Option<std::string::String>,
 }
 impl HttpUrlDestinationProperties {
@@ -20441,20 +20946,28 @@ impl HttpUrlDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRule {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
+    #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
     /// <p>The description of the rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the rule was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The actions associated with the rule.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Specifies whether the rule is disabled.</p>
+    #[doc(hidden)]
     pub rule_disabled: std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    #[doc(hidden)]
     pub aws_iot_sql_version: std::option::Option<std::string::String>,
     /// <p>The action to perform when an error occurs.</p>
+    #[doc(hidden)]
     pub error_action: std::option::Option<crate::model::Action>,
 }
 impl TopicRule {
@@ -20646,20 +21159,28 @@ impl TopicRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The average of the aggregated field values.</p>
+    #[doc(hidden)]
     pub average: std::option::Option<f64>,
     /// <p>The sum of the aggregated field values.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p>The minimum aggregated field value.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p>The maximum aggregated field value.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
     /// <p>The sum of the squares of the aggregated field values.</p>
+    #[doc(hidden)]
     pub sum_of_squares: std::option::Option<f64>,
     /// <p>The variance of the aggregated field values.</p>
+    #[doc(hidden)]
     pub variance: std::option::Option<f64>,
     /// <p>The standard deviation of the aggregated field values.</p>
+    #[doc(hidden)]
     pub std_deviation: std::option::Option<f64>,
 }
 impl Statistics {
@@ -20833,8 +21354,10 @@ impl Statistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PercentPair {
     /// <p>The percentile.</p>
+    #[doc(hidden)]
     pub percent: f64,
     /// <p>The value of the percentile.</p>
+    #[doc(hidden)]
     pub value: f64,
 }
 impl PercentPair {
@@ -20906,37 +21429,53 @@ impl PercentPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaUpdateInfo {
     /// <p>The OTA update ID.</p>
+    #[doc(hidden)]
     pub ota_update_id: std::option::Option<std::string::String>,
     /// <p>The OTA update ARN.</p>
+    #[doc(hidden)]
     pub ota_update_arn: std::option::Option<std::string::String>,
     /// <p>The date when the OTA update was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the OTA update was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the OTA update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets of the OTA update.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>Configuration for the rollout of OTA updates.</p>
+    #[doc(hidden)]
     pub aws_job_executions_rollout_config:
         std::option::Option<crate::model::AwsJobExecutionsRolloutConfig>,
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
+    #[doc(hidden)]
     pub aws_job_presigned_url_config: std::option::Option<crate::model::AwsJobPresignedUrlConfig>,
     /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
+    #[doc(hidden)]
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>A list of files associated with the OTA update.</p>
+    #[doc(hidden)]
     pub ota_update_files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
     /// <p>The status of the OTA update.</p>
+    #[doc(hidden)]
     pub ota_update_status: std::option::Option<crate::model::OtaUpdateStatus>,
     /// <p>The IoT job ID associated with the OTA update.</p>
+    #[doc(hidden)]
     pub aws_iot_job_id: std::option::Option<std::string::String>,
     /// <p>The IoT job ARN associated with the OTA update.</p>
+    #[doc(hidden)]
     pub aws_iot_job_arn: std::option::Option<std::string::String>,
     /// <p>Error information associated with the OTA update.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p>A collection of name/value pairs</p>
+    #[doc(hidden)]
     pub additional_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -21346,8 +21885,10 @@ impl OtaUpdateInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInfo {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorInfo {
@@ -21419,16 +21960,22 @@ impl ErrorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaUpdateFile {
     /// <p>The name of the file.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
+    #[doc(hidden)]
     pub file_type: std::option::Option<i32>,
     /// <p>The file version.</p>
+    #[doc(hidden)]
     pub file_version: std::option::Option<std::string::String>,
     /// <p>The location of the updated firmware.</p>
+    #[doc(hidden)]
     pub file_location: std::option::Option<crate::model::FileLocation>,
     /// <p>The code signing method of the file.</p>
+    #[doc(hidden)]
     pub code_signing: std::option::Option<crate::model::CodeSigning>,
     /// <p>A list of name/attribute pairs.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -21595,10 +22142,13 @@ impl OtaUpdateFile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigning {
     /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
+    #[doc(hidden)]
     pub aws_signer_job_id: std::option::Option<std::string::String>,
     /// <p>Describes the code-signing job.</p>
+    #[doc(hidden)]
     pub start_signing_job_parameter: std::option::Option<crate::model::StartSigningJobParameter>,
     /// <p>A custom method for code signing a file.</p>
+    #[doc(hidden)]
     pub custom_code_signing: std::option::Option<crate::model::CustomCodeSigning>,
 }
 impl CodeSigning {
@@ -21705,12 +22255,16 @@ impl CodeSigning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomCodeSigning {
     /// <p>The signature for the file.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<crate::model::CodeSigningSignature>,
     /// <p>The certificate chain.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<crate::model::CodeSigningCertificateChain>,
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
+    #[doc(hidden)]
     pub hash_algorithm: std::option::Option<std::string::String>,
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
+    #[doc(hidden)]
     pub signature_algorithm: std::option::Option<std::string::String>,
 }
 impl CustomCodeSigning {
@@ -21834,8 +22388,10 @@ impl CustomCodeSigning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
+    #[doc(hidden)]
     pub inline_document: std::option::Option<std::string::String>,
 }
 impl CodeSigningCertificateChain {
@@ -21913,6 +22469,7 @@ impl CodeSigningCertificateChain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningSignature {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
+    #[doc(hidden)]
     pub inline_document: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CodeSigningSignature {
@@ -21970,10 +22527,13 @@ impl CodeSigningSignature {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSigningJobParameter {
     /// <p>Describes the code-signing profile.</p>
+    #[doc(hidden)]
     pub signing_profile_parameter: std::option::Option<crate::model::SigningProfileParameter>,
     /// <p>The code-signing profile name.</p>
+    #[doc(hidden)]
     pub signing_profile_name: std::option::Option<std::string::String>,
     /// <p>The location to write the code-signed file.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
 }
 impl StartSigningJobParameter {
@@ -22077,6 +22637,7 @@ impl StartSigningJobParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl Destination {
@@ -22134,8 +22695,10 @@ impl Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p>The S3 bucket that contains the updated firmware.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The S3 prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -22207,10 +22770,13 @@ impl S3Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningProfileParameter {
     /// <p>Certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The hardware platform of your device.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The location of the code-signing certificate on your device.</p>
+    #[doc(hidden)]
     pub certificate_path_on_device: std::option::Option<std::string::String>,
 }
 impl SigningProfileParameter {
@@ -22308,8 +22874,10 @@ impl SigningProfileParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileLocation {
     /// <p>The stream that contains the OTA update.</p>
+    #[doc(hidden)]
     pub stream: std::option::Option<crate::model::Stream>,
     /// <p>The location of the updated firmware in S3.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl FileLocation {
@@ -22384,8 +22952,10 @@ impl FileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stream {
     /// <p>The stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The ID of a file associated with a stream.</p>
+    #[doc(hidden)]
     pub file_id: std::option::Option<i32>,
 }
 impl Stream {
@@ -22457,6 +23027,7 @@ impl Stream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobPresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+    #[doc(hidden)]
     pub expires_in_sec: std::option::Option<i64>,
 }
 impl AwsJobPresignedUrlConfig {
@@ -22511,8 +23082,10 @@ impl AwsJobPresignedUrlConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
+    #[doc(hidden)]
     pub maximum_per_minute: std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
+    #[doc(hidden)]
     pub exponential_rate: std::option::Option<crate::model::AwsJobExponentialRolloutRate>,
 }
 impl AwsJobExecutionsRolloutConfig {
@@ -22593,11 +23166,14 @@ impl AwsJobExecutionsRolloutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
+    #[doc(hidden)]
     pub base_rate_per_minute: std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
+    #[doc(hidden)]
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    #[doc(hidden)]
     pub rate_increase_criteria: std::option::Option<crate::model::AwsJobRateIncreaseCriteria>,
 }
 impl AwsJobExponentialRolloutRate {
@@ -22698,8 +23274,10 @@ impl AwsJobExponentialRolloutRate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobRateIncreaseCriteria {
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
+    #[doc(hidden)]
     pub number_of_notified_things: std::option::Option<i32>,
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
+    #[doc(hidden)]
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
 impl AwsJobRateIncreaseCriteria {
@@ -22829,10 +23407,13 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectivePolicy {
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The IAM policy document.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl EffectivePolicy {
@@ -22924,8 +23505,10 @@ impl EffectivePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
     /// <p>The value counted for the particular bucket.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
+    #[doc(hidden)]
     pub count: i32,
 }
 impl Bucket {
@@ -22997,6 +23580,7 @@ impl Bucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketsAggregationType {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+    #[doc(hidden)]
     pub terms_aggregation: std::option::Option<crate::model::TermsAggregation>,
 }
 impl BucketsAggregationType {
@@ -23054,6 +23638,7 @@ impl BucketsAggregationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
+    #[doc(hidden)]
     pub max_buckets: i32,
 }
 impl TermsAggregation {
@@ -23108,16 +23693,22 @@ impl TermsAggregation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BehaviorModelTrainingSummary {
     /// <p> The name of the security profile. </p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p> The name of the behavior. </p>
+    #[doc(hidden)]
     pub behavior_name: std::option::Option<std::string::String>,
     /// <p> The date a training model started collecting data. </p>
+    #[doc(hidden)]
     pub training_data_collection_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the behavior model. </p>
+    #[doc(hidden)]
     pub model_status: std::option::Option<crate::model::ModelStatus>,
     /// <p> The percentage of datapoints collected. </p>
+    #[doc(hidden)]
     pub datapoints_collection_percentage: std::option::Option<f64>,
     /// <p> The date the model was last refreshed. </p>
+    #[doc(hidden)]
     pub last_model_refresh_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BehaviorModelTrainingSummary {
@@ -23405,11 +23996,14 @@ impl AsRef<str> for DynamicGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingGroupMetadata {
     /// <p>The parent thing group name.</p>
+    #[doc(hidden)]
     pub parent_group_name: std::option::Option<std::string::String>,
     /// <p>The root parent thing group.</p>
+    #[doc(hidden)]
     pub root_to_parent_thing_groups:
         std::option::Option<std::vec::Vec<crate::model::GroupNameAndArn>>,
     /// <p>The UNIX timestamp of when the thing group was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThingGroupMetadata {
@@ -23519,20 +24113,28 @@ impl ThingGroupMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamInfo {
     /// <p>The stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The stream ARN.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The stream version.</p>
+    #[doc(hidden)]
     pub stream_version: std::option::Option<i32>,
     /// <p>The description of the stream.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The files to stream.</p>
+    #[doc(hidden)]
     pub files: std::option::Option<std::vec::Vec<crate::model::StreamFile>>,
     /// <p>The date when the stream was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the stream was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl StreamInfo {
@@ -23721,18 +24323,25 @@ impl StreamInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleAliasDescription {
     /// <p>The role alias.</p>
+    #[doc(hidden)]
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The ARN of the role alias.</p>
+    #[doc(hidden)]
     pub role_alias_arn: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The role alias owner.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The number of seconds for which the credential is valid.</p>
+    #[doc(hidden)]
     pub credential_duration_seconds: std::option::Option<i32>,
     /// <p>The UNIX timestamp of when the role alias was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RoleAliasDescription {
@@ -23903,14 +24512,19 @@ impl RoleAliasDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentParameter {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
+    #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
+    #[doc(hidden)]
     pub example: std::option::Option<std::string::String>,
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
+    #[doc(hidden)]
     pub optional: bool,
 }
 impl DocumentParameter {
@@ -24033,26 +24647,37 @@ impl DocumentParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to the job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
+    #[doc(hidden)]
     pub force_canceled: std::option::Option<bool>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<crate::model::JobExecutionStatusDetails>,
     /// <p>The ARN of the thing on which the job execution is running.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+    #[doc(hidden)]
     pub queued_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
+    #[doc(hidden)]
     pub approximate_seconds_before_timed_out: std::option::Option<i64>,
 }
 impl JobExecution {
@@ -24298,6 +24923,7 @@ impl JobExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionStatusDetails {
     /// <p>The job execution status.</p>
+    #[doc(hidden)]
     pub details_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -24373,58 +24999,80 @@ impl JobExecutionStatusDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
+    #[doc(hidden)]
     pub force_canceled: std::option::Option<bool>,
     /// <p>If the job was updated, provides the reason code for the update.</p>
+    #[doc(hidden)]
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>If the job was updated, describes the reason for the update.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A short text description of the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration for pre-signed S3 URLs.</p>
+    #[doc(hidden)]
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
+    #[doc(hidden)]
     pub job_executions_rollout_config:
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>Configuration for criteria to abort the job.</p>
+    #[doc(hidden)]
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job process.</p>
+    #[doc(hidden)]
     pub job_process_details: std::option::Option<crate::model::JobProcessDetails>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    #[doc(hidden)]
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
+    #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
+    #[doc(hidden)]
     pub job_template_arn: std::option::Option<std::string::String>,
     /// <p>The configuration for the criteria to retry the job.</p>
+    #[doc(hidden)]
     pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
     /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
+    #[doc(hidden)]
     pub is_concurrent: std::option::Option<bool>,
 }
 impl Job {
@@ -24940,22 +25588,31 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobProcessDetails {
     /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
+    #[doc(hidden)]
     pub processing_targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of things that cancelled the job.</p>
+    #[doc(hidden)]
     pub number_of_canceled_things: std::option::Option<i32>,
     /// <p>The number of things which successfully completed the job.</p>
+    #[doc(hidden)]
     pub number_of_succeeded_things: std::option::Option<i32>,
     /// <p>The number of things that failed executing the job.</p>
+    #[doc(hidden)]
     pub number_of_failed_things: std::option::Option<i32>,
     /// <p>The number of things that rejected the job.</p>
+    #[doc(hidden)]
     pub number_of_rejected_things: std::option::Option<i32>,
     /// <p>The number of things that are awaiting execution of the job.</p>
+    #[doc(hidden)]
     pub number_of_queued_things: std::option::Option<i32>,
     /// <p>The number of things currently executing the job.</p>
+    #[doc(hidden)]
     pub number_of_in_progress_things: std::option::Option<i32>,
     /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
+    #[doc(hidden)]
     pub number_of_removed_things: std::option::Option<i32>,
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
+    #[doc(hidden)]
     pub number_of_timed_out_things: std::option::Option<i32>,
 }
 impl JobProcessDetails {
@@ -25282,10 +25939,13 @@ impl AsRef<str> for DomainType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerCertificateSummary {
     /// <p>The ARN of the server certificate.</p>
+    #[doc(hidden)]
     pub server_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The status of the server certificate.</p>
+    #[doc(hidden)]
     pub server_certificate_status: std::option::Option<crate::model::ServerCertificateStatus>,
     /// <p>Details that explain the status of the server certificate.</p>
+    #[doc(hidden)]
     pub server_certificate_status_detail: std::option::Option<std::string::String>,
 }
 impl ServerCertificateSummary {
@@ -25450,25 +26110,35 @@ impl AsRef<str> for ServerCertificateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizerDescription {
     /// <p>The authorizer name.</p>
+    #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The authorizer ARN.</p>
+    #[doc(hidden)]
     pub authorizer_arn: std::option::Option<std::string::String>,
     /// <p>The authorizer's Lambda function ARN.</p>
+    #[doc(hidden)]
     pub authorizer_function_arn: std::option::Option<std::string::String>,
     /// <p>The key used to extract the token from the HTTP headers.</p>
+    #[doc(hidden)]
     pub token_key_name: std::option::Option<std::string::String>,
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
+    #[doc(hidden)]
     pub token_signing_public_keys:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the authorizer.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
+    #[doc(hidden)]
     pub signing_disabled: std::option::Option<bool>,
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    #[doc(hidden)]
     pub enable_caching_for_http: std::option::Option<bool>,
 }
 impl AuthorizerDescription {
@@ -25717,35 +26387,49 @@ impl AuthorizerDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateDescription {
     /// <p>The ARN of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+    #[doc(hidden)]
     pub ca_certificate_id: std::option::Option<std::string::String>,
     /// <p>The status of the certificate.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The certificate data, in PEM format.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
+    #[doc(hidden)]
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
+    #[doc(hidden)]
     pub previous_owned_by: std::option::Option<std::string::String>,
     /// <p>The date and time the certificate was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the certificate was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The customer version of the certificate.</p>
+    #[doc(hidden)]
     pub customer_version: std::option::Option<i32>,
     /// <p>The transfer data.</p>
+    #[doc(hidden)]
     pub transfer_data: std::option::Option<crate::model::TransferData>,
     /// <p>The generation ID of the certificate.</p>
+    #[doc(hidden)]
     pub generation_id: std::option::Option<std::string::String>,
     /// <p>When the certificate is valid.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::CertificateValidity>,
     /// <p>The mode of the certificate.</p>
     /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
     /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
     /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
+    #[doc(hidden)]
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
 }
 impl CertificateDescription {
@@ -26066,8 +26750,10 @@ impl CertificateDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateValidity {
     /// <p>The certificate is not valid before this date.</p>
+    #[doc(hidden)]
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
+    #[doc(hidden)]
     pub not_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CertificateValidity {
@@ -26145,14 +26831,19 @@ impl CertificateValidity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferData {
     /// <p>The transfer message.</p>
+    #[doc(hidden)]
     pub transfer_message: std::option::Option<std::string::String>,
     /// <p>The reason why the transfer was rejected.</p>
+    #[doc(hidden)]
     pub reject_reason: std::option::Option<std::string::String>,
     /// <p>The date the transfer took place.</p>
+    #[doc(hidden)]
     pub transfer_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the transfer was accepted.</p>
+    #[doc(hidden)]
     pub accept_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the transfer was rejected.</p>
+    #[doc(hidden)]
     pub reject_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TransferData {
@@ -26290,29 +26981,41 @@ impl TransferData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The CA certificate ID.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The status of a CA certificate.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CaCertificateStatus>,
     /// <p>The CA certificate data, in PEM format.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The owner of the CA certificate.</p>
+    #[doc(hidden)]
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The date the CA certificate was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
+    #[doc(hidden)]
     pub auto_registration_status: std::option::Option<crate::model::AutoRegistrationStatus>,
     /// <p>The date the CA certificate was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The customer version of the CA certificate.</p>
+    #[doc(hidden)]
     pub customer_version: std::option::Option<i32>,
     /// <p>The generation ID of the CA certificate.</p>
+    #[doc(hidden)]
     pub generation_id: std::option::Option<std::string::String>,
     /// <p>When the CA certificate is valid.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::CertificateValidity>,
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
+    #[doc(hidden)]
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
 }
 impl CaCertificateDescription {
@@ -26593,6 +27296,7 @@ impl CaCertificateDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingGroupMetadata {
     /// <p>The date the billing group was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BillingGroupMetadata {
@@ -26650,18 +27354,25 @@ impl BillingGroupMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditCheckDetails {
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+    #[doc(hidden)]
     pub check_run_status: std::option::Option<crate::model::AuditCheckRunStatus>,
     /// <p>True if the check is complete and found all resources compliant.</p>
+    #[doc(hidden)]
     pub check_compliant: std::option::Option<bool>,
     /// <p>The number of resources on which the check was performed.</p>
+    #[doc(hidden)]
     pub total_resources_count: std::option::Option<i64>,
     /// <p>The number of resources that were found noncompliant during the check.</p>
+    #[doc(hidden)]
     pub non_compliant_resources_count: std::option::Option<i64>,
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
+    #[doc(hidden)]
     pub suppressed_non_compliant_resources_count: std::option::Option<i64>,
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuditCheckDetails {
@@ -26912,18 +27623,25 @@ impl AsRef<str> for AuditCheckRunStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskStatistics {
     /// <p>The number of checks in this audit.</p>
+    #[doc(hidden)]
     pub total_checks: std::option::Option<i32>,
     /// <p>The number of checks in progress.</p>
+    #[doc(hidden)]
     pub in_progress_checks: std::option::Option<i32>,
     /// <p>The number of checks waiting for data collection.</p>
+    #[doc(hidden)]
     pub waiting_for_data_collection_checks: std::option::Option<i32>,
     /// <p>The number of checks that found compliant resources.</p>
+    #[doc(hidden)]
     pub compliant_checks: std::option::Option<i32>,
     /// <p>The number of checks that found noncompliant resources.</p>
+    #[doc(hidden)]
     pub non_compliant_checks: std::option::Option<i32>,
     /// <p>The number of checks.</p>
+    #[doc(hidden)]
     pub failed_checks: std::option::Option<i32>,
     /// <p>The number of checks that did not run because the audit was canceled.</p>
+    #[doc(hidden)]
     pub canceled_checks: std::option::Option<i32>,
 }
 impl TaskStatistics {
@@ -27086,14 +27804,19 @@ impl TaskStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskStatisticsForAuditCheck {
     /// <p>The total number of findings to which a task is being applied.</p>
+    #[doc(hidden)]
     pub total_findings_count: std::option::Option<i64>,
     /// <p>The number of findings for which at least one of the actions failed when applied.</p>
+    #[doc(hidden)]
     pub failed_findings_count: std::option::Option<i64>,
     /// <p>The number of findings for which all mitigation actions succeeded when applied.</p>
+    #[doc(hidden)]
     pub succeeded_findings_count: std::option::Option<i64>,
     /// <p>The number of findings skipped because of filter conditions provided in the parameters to the command.</p>
+    #[doc(hidden)]
     pub skipped_findings_count: std::option::Option<i64>,
     /// <p>The number of findings to which the mitigation action task was canceled when applied.</p>
+    #[doc(hidden)]
     pub canceled_findings_count: std::option::Option<i64>,
 }
 impl TaskStatisticsForAuditCheck {
@@ -27216,8 +27939,10 @@ impl TaskStatisticsForAuditCheck {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRuleDestinationConfiguration {
     /// <p>Configuration of the HTTP URL.</p>
+    #[doc(hidden)]
     pub http_url_configuration: std::option::Option<crate::model::HttpUrlDestinationConfiguration>,
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcDestinationConfiguration>,
 }
 impl TopicRuleDestinationConfiguration {
@@ -27307,12 +28032,16 @@ impl TopicRuleDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDestinationConfiguration {
     /// <p>The subnet IDs of the VPC destination.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups of the VPC destination.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl VpcDestinationConfiguration {
@@ -27436,6 +28165,7 @@ impl VpcDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationConfiguration {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
+    #[doc(hidden)]
     pub confirmation_url: std::option::Option<std::string::String>,
 }
 impl HttpUrlDestinationConfiguration {
@@ -27493,8 +28223,10 @@ impl HttpUrlDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyPair {
     /// <p>The public key.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
     /// <p>The private key.</p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
 }
 impl KeyPair {
@@ -27566,6 +28298,7 @@ impl KeyPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobTimeoutConfig {
     /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
+    #[doc(hidden)]
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl AwsJobTimeoutConfig {
@@ -27626,6 +28359,7 @@ impl AwsJobTimeoutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
+    #[doc(hidden)]
     pub abort_criteria_list: std::option::Option<std::vec::Vec<crate::model::AwsJobAbortCriteria>>,
 }
 impl AwsJobAbortConfig {
@@ -27690,13 +28424,17 @@ impl AwsJobAbortConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobAbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::AwsJobAbortCriteriaFailureType>,
     /// <p>The type of job action to take to initiate the job abort.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::AwsJobAbortCriteriaAbortAction>,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    #[doc(hidden)]
     pub threshold_percentage: std::option::Option<f64>,
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
+    #[doc(hidden)]
     pub min_number_of_executed_things: std::option::Option<i32>,
 }
 impl AwsJobAbortCriteria {

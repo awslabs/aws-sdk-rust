@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,8 +80,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DestinationConfig {
@@ -219,6 +223,7 @@ impl AsRef<str> for ClientMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeoutConfig {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    #[doc(hidden)]
     pub max_lifetime_timeout_minutes: std::option::Option<i32>,
 }
 impl TimeoutConfig {
@@ -276,16 +281,22 @@ impl TimeoutConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the tunnel. </p>
+    #[doc(hidden)]
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TunnelStatus>,
     /// <p>A description of the tunnel.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time the tunnel was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the tunnel was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TunnelSummary {
@@ -489,26 +500,37 @@ impl AsRef<str> for TunnelStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
+    #[doc(hidden)]
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TunnelStatus>,
     /// <p>The connection state of the source application.</p>
+    #[doc(hidden)]
     pub source_connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The connection state of the destination application.</p>
+    #[doc(hidden)]
     pub destination_connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A description of the tunnel.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
+    #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>Timeout configuration for the tunnel.</p>
+    #[doc(hidden)]
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>A list of tag metadata associated with the secure tunnel.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the tunnel was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the tunnel was updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Tunnel {
@@ -771,8 +793,10 @@ impl Tunnel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The last time the connection status was updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConnectionState {

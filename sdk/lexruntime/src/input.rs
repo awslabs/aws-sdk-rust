@@ -1479,15 +1479,20 @@ impl PutSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    #[doc(hidden)]
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
+    #[doc(hidden)]
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
@@ -1497,6 +1502,7 @@ pub struct PutSessionInput {
     /// <li> <p> <code>slotToElict</code> </p> </li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
+    #[doc(hidden)]
     pub recent_intent_summary_view: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
@@ -1512,9 +1518,11 @@ pub struct PutSessionInput {
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept: std::option::Option<std::string::String>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl PutSessionInput {
@@ -1600,8 +1608,10 @@ impl std::fmt::Debug for PutSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostTextInput {
     /// <p>The name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The alias of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
@@ -1611,20 +1621,25 @@ pub struct PostTextInput {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
+    #[doc(hidden)]
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
+    #[doc(hidden)]
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
+    #[doc(hidden)]
     pub input_text: std::option::Option<std::string::String>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl PostTextInput {
@@ -1692,8 +1707,10 @@ impl std::fmt::Debug for PostTextInput {
 #[non_exhaustive]
 pub struct PostContentInput {
     /// <p>Name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>Alias of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
@@ -1703,15 +1720,18 @@ pub struct PostContentInput {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
     /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
+    #[doc(hidden)]
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
     /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
+    #[doc(hidden)]
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
     /// <p> Indicates the audio format or text. The header value must start with one of the following prefixes: </p>
@@ -1731,6 +1751,7 @@ pub struct PostContentInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
     /// <p> The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request. </p>
@@ -1747,12 +1768,14 @@ pub struct PostContentInput {
     /// <li> <p>audio/* (defaults to mpeg)</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept: std::option::Option<std::string::String>,
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
     pub input_stream: aws_smithy_http::byte_stream::ByteStream,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::string::String>,
 }
 impl PostContentInput {
@@ -1859,13 +1882,17 @@ impl std::fmt::Debug for PostContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
+    #[doc(hidden)]
     pub checkpoint_label_filter: std::option::Option<std::string::String>,
 }
 impl GetSessionInput {
@@ -1903,10 +1930,13 @@ impl std::fmt::Debug for GetSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The identifier of the user associated with the session data.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteSessionInput {

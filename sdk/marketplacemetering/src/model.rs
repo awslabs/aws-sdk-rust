@@ -6,8 +6,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
+    #[doc(hidden)]
     pub allocated_usage_quantity: std::option::Option<i32>,
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UsageAllocation {
@@ -88,8 +90,10 @@ impl UsageAllocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a <code>tag</code>. A <code>key</code> is a label that acts like a category for the specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that makes up a <code>tag</code>. A <code>value</code> acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -163,14 +167,19 @@ impl Tag {
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    #[doc(hidden)]
     pub customer_identifier: std::option::Option<std::string::String>,
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    #[doc(hidden)]
     pub dimension: std::option::Option<std::string::String>,
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    #[doc(hidden)]
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
 }
 impl UsageRecord {
@@ -312,8 +321,10 @@ impl UsageRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageRecordResult {
     /// <p>The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.</p>
+    #[doc(hidden)]
     pub usage_record: std::option::Option<crate::model::UsageRecord>,
     /// <p>The <code>MeteringRecordId</code> is a unique identifier for this metering event.</p>
+    #[doc(hidden)]
     pub metering_record_id: std::option::Option<std::string::String>,
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
@@ -326,6 +337,7 @@ pub struct UsageRecordResult {
     /// </ul> </li>
     /// <li> <p> <i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UsageRecordResultStatus>,
 }
 impl UsageRecordResult {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message with more information about the validation exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,16 +148,22 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricSource {
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
+    #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::S3SourceConfig>,
     /// <p>Details about an AppFlow datasource.</p>
+    #[doc(hidden)]
     pub app_flow_config: std::option::Option<crate::model::AppFlowConfig>,
     /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
+    #[doc(hidden)]
     pub cloud_watch_config: std::option::Option<crate::model::CloudWatchConfig>,
     /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
+    #[doc(hidden)]
     pub rds_source_config: std::option::Option<crate::model::RdsSourceConfig>,
     /// <p>Details about an Amazon Redshift database datasource.</p>
+    #[doc(hidden)]
     pub redshift_source_config: std::option::Option<crate::model::RedshiftSourceConfig>,
     /// <p>Details about an Amazon Athena datasource.</p>
+    #[doc(hidden)]
     pub athena_source_config: std::option::Option<crate::model::AthenaSourceConfig>,
 }
 impl MetricSource {
@@ -315,18 +323,25 @@ impl MetricSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database's name.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The database's data catalog.</p>
+    #[doc(hidden)]
     pub data_catalog: std::option::Option<std::string::String>,
     /// <p>The database's table name.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The database's work group name.</p>
+    #[doc(hidden)]
     pub work_group_name: std::option::Option<std::string::String>,
     /// <p>The database's results path.</p>
+    #[doc(hidden)]
     pub s3_results_path: std::option::Option<std::string::String>,
     /// <p>Settings for backtest mode.</p>
+    #[doc(hidden)]
     pub back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
 }
 impl AthenaSourceConfig {
@@ -501,6 +516,7 @@ impl AthenaSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
+    #[doc(hidden)]
     pub run_back_test_mode: std::option::Option<bool>,
 }
 impl BackTestConfiguration {
@@ -555,20 +571,28 @@ impl BackTestConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftSourceConfig {
     /// <p>A string identifying the Redshift cluster.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database host.</p>
+    #[doc(hidden)]
     pub database_host: std::option::Option<std::string::String>,
     /// <p>The port number where the database can be accessed.</p>
+    #[doc(hidden)]
     pub database_port: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
+    #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The Redshift database name.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The table name of the Redshift database.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl RedshiftSourceConfig {
@@ -757,8 +781,10 @@ impl RedshiftSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub subnet_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of strings containing the list of security groups.</p>
+    #[doc(hidden)]
     pub security_group_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfiguration {
@@ -848,20 +874,28 @@ impl VpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsSourceConfig {
     /// <p>A string identifying the database instance.</p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>The host name of the database.</p>
+    #[doc(hidden)]
     pub database_host: std::option::Option<std::string::String>,
     /// <p>The port number where the database can be accessed.</p>
+    #[doc(hidden)]
     pub database_port: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
+    #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The name of the RDS database.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl RdsSourceConfig {
@@ -1050,8 +1084,10 @@ impl RdsSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Settings for backtest mode.</p>
+    #[doc(hidden)]
     pub back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
 }
 impl CloudWatchConfig {
@@ -1132,8 +1168,10 @@ impl CloudWatchConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> name of the flow.</p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl AppFlowConfig {
@@ -1205,12 +1243,16 @@ impl AppFlowConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SourceConfig {
     /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of templated paths to the source files.</p>
+    #[doc(hidden)]
     pub templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of paths to the historical data files.</p>
+    #[doc(hidden)]
     pub historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about a source file's formatting.</p>
+    #[doc(hidden)]
     pub file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
 }
 impl S3SourceConfig {
@@ -1340,8 +1382,10 @@ impl S3SourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileFormatDescriptor {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
+    #[doc(hidden)]
     pub csv_format_descriptor: std::option::Option<crate::model::CsvFormatDescriptor>,
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
+    #[doc(hidden)]
     pub json_format_descriptor: std::option::Option<crate::model::JsonFormatDescriptor>,
 }
 impl FileFormatDescriptor {
@@ -1421,8 +1465,10 @@ impl FileFormatDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
+    #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::JsonFileCompression>,
     /// <p>The character set in which the source JSON file is written.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<std::string::String>,
 }
 impl JsonFormatDescriptor {
@@ -1552,16 +1598,22 @@ impl AsRef<str> for JsonFileCompression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
+    #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::CsvFileCompression>,
     /// <p>The character set in which the source CSV file is written.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<std::string::String>,
     /// <p>Whether or not the source CSV file contains a header.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<bool>,
     /// <p>The character used to delimit the source CSV file.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>A list of the source CSV file's headers, if any.</p>
+    #[doc(hidden)]
     pub header_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The character used as a quote character.</p>
+    #[doc(hidden)]
     pub quote_symbol: std::option::Option<std::string::String>,
 }
 impl CsvFormatDescriptor {
@@ -1831,8 +1883,10 @@ impl AsRef<str> for Frequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampColumn {
     /// <p>The name of the timestamp column.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The format of the timestamp column.</p>
+    #[doc(hidden)]
     pub column_format: std::option::Option<std::string::String>,
 }
 impl TimestampColumn {
@@ -1907,10 +1961,13 @@ impl TimestampColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The function with which the metric is calculated.</p>
+    #[doc(hidden)]
     pub aggregation_function: std::option::Option<crate::model::AggregationFunction>,
     /// <p>The namespace for the metric.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl Metric {
@@ -2057,6 +2114,7 @@ impl AsRef<str> for AggregationFunction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
+    #[doc(hidden)]
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
 impl AnomalyDetectorConfig {
@@ -2117,8 +2175,10 @@ impl AnomalyDetectorConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
+    #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+    #[doc(hidden)]
     pub dimension_filter_list: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
 }
 impl AlertFilters {
@@ -2209,8 +2269,10 @@ impl AlertFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionFilter {
     /// <p>The name of the dimension to filter on.</p>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+    #[doc(hidden)]
     pub dimension_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DimensionFilter {
@@ -2294,8 +2356,10 @@ impl DimensionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
+    #[doc(hidden)]
     pub sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
     /// <p>A configuration for an AWS Lambda channel.</p>
+    #[doc(hidden)]
     pub lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
 }
 impl Action {
@@ -2373,8 +2437,10 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl LambdaConfiguration {
@@ -2446,8 +2512,10 @@ impl LambdaConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the target SNS topic.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The format of the SNS topic.</p>
     /// <ul>
@@ -2455,6 +2523,7 @@ pub struct SnsConfiguration {
     /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
     /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sns_format: std::option::Option<crate::model::SnsFormat>,
 }
 impl SnsConfiguration {
@@ -2623,10 +2692,13 @@ impl AsRef<str> for SnsFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyGroupTimeSeriesFeedback {
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the metric.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    #[doc(hidden)]
     pub is_anomaly: std::option::Option<bool>,
 }
 impl AnomalyGroupTimeSeriesFeedback {
@@ -2721,18 +2793,25 @@ impl AnomalyGroupTimeSeriesFeedback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricSetSummary {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector to which the dataset belongs.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The description of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_description: std::option::Option<std::string::String>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_name: std::option::Option<std::string::String>,
     /// <p>The time at which the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the dataset was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2928,10 +3007,13 @@ impl MetricSetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeries {
     /// <p>The ID of the metric.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>The dimensions of the metric.</p>
+    #[doc(hidden)]
     pub dimension_list: std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>,
     /// <p>The values for the metric.</p>
+    #[doc(hidden)]
     pub metric_value_list: std::option::Option<std::vec::Vec<f64>>,
 }
 impl TimeSeries {
@@ -3042,8 +3124,10 @@ impl TimeSeries {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionNameValue {
     /// <p>The name of the dimension.</p>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The value of the dimension.</p>
+    #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
 }
 impl DimensionNameValue {
@@ -3121,10 +3205,13 @@ impl DimensionNameValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyGroupStatistics {
     /// <p>The start of the time range that was searched.</p>
+    #[doc(hidden)]
     pub evaluation_start_date: std::option::Option<std::string::String>,
     /// <p>The number of groups found.</p>
+    #[doc(hidden)]
     pub total_count: i32,
     /// <p>Statistics for individual metrics within the group.</p>
+    #[doc(hidden)]
     pub itemized_metric_stats_list:
         std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
 }
@@ -3235,8 +3322,10 @@ impl AnomalyGroupStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemizedMetricStats {
     /// <p>The name of the measure.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The number of times that the measure appears.</p>
+    #[doc(hidden)]
     pub occurrence_count: i32,
 }
 impl ItemizedMetricStats {
@@ -3308,14 +3397,19 @@ impl ItemizedMetricStats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyGroupSummary {
     /// <p>The start time for the group.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The end time for the group.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The severity score of the group.</p>
+    #[doc(hidden)]
     pub anomaly_group_score: std::option::Option<f64>,
     /// <p>The name of the primary affected measure for the group.</p>
+    #[doc(hidden)]
     pub primary_metric_name: std::option::Option<std::string::String>,
 }
 impl AnomalyGroupSummary {
@@ -3445,12 +3539,16 @@ impl AnomalyGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::model::RelationshipType>,
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
+    #[doc(hidden)]
     pub contribution_percentage: std::option::Option<f64>,
 }
 impl InterMetricImpactDetails {
@@ -3620,18 +3718,25 @@ impl AsRef<str> for RelationshipType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetectorSummary {
     /// <p>The ARN of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_name: std::option::Option<std::string::String>,
     /// <p>A description of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>The time at which the detector was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the detector was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of detector.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3936,22 +4041,31 @@ impl AsRef<str> for AnomalyDetectorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlertSummary {
     /// <p>The ARN of the alert.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the alert.</p>
+    #[doc(hidden)]
     pub alert_name: std::option::Option<std::string::String>,
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
+    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>The type of the alert.</p>
+    #[doc(hidden)]
     pub alert_type: std::option::Option<crate::model::AlertType>,
     /// <p>The status of the alert.</p>
+    #[doc(hidden)]
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4291,12 +4405,16 @@ impl AsRef<str> for AlertType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings containing the list of templated paths.</p>
+    #[doc(hidden)]
     pub templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of strings containing the historical set of data paths.</p>
+    #[doc(hidden)]
     pub historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about a source file's formatting.</p>
+    #[doc(hidden)]
     pub file_format_descriptor: std::option::Option<crate::model::FileFormatDescriptor>,
 }
 impl SampleDataS3SourceConfig {
@@ -4426,8 +4544,10 @@ impl SampleDataS3SourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesFeedback {
     /// <p>The ID of the metric.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    #[doc(hidden)]
     pub is_anomaly: std::option::Option<bool>,
 }
 impl TimeSeriesFeedback {
@@ -4502,8 +4622,10 @@ impl TimeSeriesFeedback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the metric.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
 }
 impl AnomalyGroupTimeSeries {
@@ -4581,16 +4703,22 @@ impl AnomalyGroupTimeSeries {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyGroup {
     /// <p>The start time for the group.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The end time for the group.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The severity score of the group.</p>
+    #[doc(hidden)]
     pub anomaly_group_score: std::option::Option<f64>,
     /// <p>The name of the primary affected measure for the group.</p>
+    #[doc(hidden)]
     pub primary_metric_name: std::option::Option<std::string::String>,
     /// <p>A list of measures affected by the anomaly.</p>
+    #[doc(hidden)]
     pub metric_level_impact_list:
         std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
 }
@@ -4749,10 +4877,13 @@ impl AnomalyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricLevelImpact {
     /// <p>The name of the measure.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The number of anomalous metrics for the measure.</p>
+    #[doc(hidden)]
     pub num_time_series: i32,
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
+    #[doc(hidden)]
     pub contribution_matrix: std::option::Option<crate::model::ContributionMatrix>,
 }
 impl MetricLevelImpact {
@@ -4844,6 +4975,7 @@ impl MetricLevelImpact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
+    #[doc(hidden)]
     pub dimension_contribution_list:
         std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
 }
@@ -4917,8 +5049,10 @@ impl ContributionMatrix {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionContribution {
     /// <p>The name of the dimension.</p>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>A list of dimension values that contributed to the anomaly.</p>
+    #[doc(hidden)]
     pub dimension_value_contribution_list:
         std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
 }
@@ -5012,8 +5146,10 @@ impl DimensionContribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionValueContribution {
     /// <p>The value of the dimension.</p>
+    #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
     /// <p>The severity score of the value.</p>
+    #[doc(hidden)]
     pub contribution_score: std::option::Option<f64>,
 }
 impl DimensionValueContribution {
@@ -5088,10 +5224,13 @@ impl DimensionValueContribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedMetricSetConfig {
     /// <p>The dataset's offset.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<crate::model::DetectedField>,
     /// <p>The dataset's interval.</p>
+    #[doc(hidden)]
     pub metric_set_frequency: std::option::Option<crate::model::DetectedField>,
     /// <p>The dataset's data source.</p>
+    #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::DetectedMetricSource>,
 }
 impl DetectedMetricSetConfig {
@@ -5189,6 +5328,7 @@ impl DetectedMetricSetConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
+    #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::DetectedS3SourceConfig>,
 }
 impl DetectedMetricSource {
@@ -5246,6 +5386,7 @@ impl DetectedMetricSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
+    #[doc(hidden)]
     pub file_format_descriptor: std::option::Option<crate::model::DetectedFileFormatDescriptor>,
 }
 impl DetectedS3SourceConfig {
@@ -5309,8 +5450,10 @@ impl DetectedS3SourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedFileFormatDescriptor {
     /// <p>Details about a CSV format.</p>
+    #[doc(hidden)]
     pub csv_format_descriptor: std::option::Option<crate::model::DetectedCsvFormatDescriptor>,
     /// <p>Details about a JSON format.</p>
+    #[doc(hidden)]
     pub json_format_descriptor: std::option::Option<crate::model::DetectedJsonFormatDescriptor>,
 }
 impl DetectedFileFormatDescriptor {
@@ -5400,8 +5543,10 @@ impl DetectedFileFormatDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
+    #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::DetectedField>,
     /// <p>The format's character set.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<crate::model::DetectedField>,
 }
 impl DetectedJsonFormatDescriptor {
@@ -5479,10 +5624,13 @@ impl DetectedJsonFormatDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedField {
     /// <p>The field's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::AttributeValue>,
     /// <p>The field's confidence.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<crate::model::Confidence>,
     /// <p>The field's message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DetectedField {
@@ -5636,16 +5784,22 @@ impl AsRef<str> for Confidence {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeValue {
     /// <p>A string.</p>
+    #[doc(hidden)]
     pub s: std::option::Option<std::string::String>,
     /// <p>A number.</p>
+    #[doc(hidden)]
     pub n: std::option::Option<std::string::String>,
     /// <p>A binary value.</p>
+    #[doc(hidden)]
     pub b: std::option::Option<std::string::String>,
     /// <p>A list of strings.</p>
+    #[doc(hidden)]
     pub ss: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of numbers.</p>
+    #[doc(hidden)]
     pub ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of binary values.</p>
+    #[doc(hidden)]
     pub bs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AttributeValue {
@@ -5812,16 +5966,22 @@ impl AttributeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
+    #[doc(hidden)]
     pub file_compression: std::option::Option<crate::model::DetectedField>,
     /// <p>The format's charset.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<crate::model::DetectedField>,
     /// <p>Whether the format includes a header.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<crate::model::DetectedField>,
     /// <p>The format's delimiter.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<crate::model::DetectedField>,
     /// <p>The format's header list.</p>
+    #[doc(hidden)]
     pub header_list: std::option::Option<crate::model::DetectedField>,
     /// <p>The format's quote symbol.</p>
+    #[doc(hidden)]
     pub quote_symbol: std::option::Option<crate::model::DetectedField>,
 }
 impl DetectedCsvFormatDescriptor {
@@ -5979,6 +6139,7 @@ impl DetectedCsvFormatDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
+    #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::AutoDetectionS3SourceConfig>,
 }
 impl AutoDetectionMetricSource {
@@ -6041,8 +6202,10 @@ impl AutoDetectionMetricSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoDetectionS3SourceConfig {
     /// <p>The config's templated path list.</p>
+    #[doc(hidden)]
     pub templated_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The config's historical data path list.</p>
+    #[doc(hidden)]
     pub historical_data_path_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AutoDetectionS3SourceConfig {
@@ -6201,6 +6364,7 @@ impl AsRef<str> for AnomalyDetectorFailureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
+    #[doc(hidden)]
     pub anomaly_detector_frequency: std::option::Option<crate::model::Frequency>,
 }
 impl AnomalyDetectorConfigSummary {
@@ -6261,10 +6425,13 @@ impl AnomalyDetectorConfigSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionStatus {
     /// <p>The run's timestamp.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The run's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyDetectionTaskStatus>,
     /// <p>The reason that the run failed, if applicable.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl ExecutionStatus {
@@ -6432,26 +6599,37 @@ impl AsRef<str> for AnomalyDetectionTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alert {
     /// <p>Action that will be triggered when there is an alert.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>A description of the alert.</p>
+    #[doc(hidden)]
     pub alert_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the alert.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the alert.</p>
+    #[doc(hidden)]
     pub alert_name: std::option::Option<std::string::String>,
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
+    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>The type of the alert.</p>
+    #[doc(hidden)]
     pub alert_type: std::option::Option<crate::model::AlertType>,
     /// <p>The status of the alert.</p>
+    #[doc(hidden)]
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+    #[doc(hidden)]
     pub alert_filters: std::option::Option<crate::model::AlertFilters>,
 }
 impl Alert {

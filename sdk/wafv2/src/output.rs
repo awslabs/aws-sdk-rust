@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateWebAclOutput {
@@ -61,6 +62,7 @@ impl UpdateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupOutput {
@@ -118,6 +120,7 @@ impl UpdateRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetOutput {
@@ -175,11 +178,14 @@ impl UpdateRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
     /// <p>The version that is set to expire. </p>
+    #[doc(hidden)]
     pub expiring_version: std::option::Option<std::string::String>,
     /// <p>The time that the version will expire. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    #[doc(hidden)]
     pub expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutput {
@@ -280,6 +286,7 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateIpSetOutput {
@@ -427,6 +434,7 @@ impl PutPermissionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutManagedRuleSetVersionsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl PutManagedRuleSetVersionsOutput {
@@ -484,6 +492,7 @@ impl PutManagedRuleSetVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingConfigurationOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationOutput {
@@ -543,8 +552,10 @@ impl PutLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
 }
 impl ListWebAcLsOutput {
@@ -625,8 +636,10 @@ impl ListWebAcLsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The collection of tagging definitions for the resource. </p>
+    #[doc(hidden)]
     pub tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
 }
 impl ListTagsForResourceOutput {
@@ -701,8 +714,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
 }
 impl ListRuleGroupsOutput {
@@ -783,6 +798,7 @@ impl ListRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForWebAclOutput {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListResourcesForWebAclOutput {
@@ -846,8 +862,10 @@ impl ListResourcesForWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub regex_pattern_sets:
         std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
 }
@@ -932,8 +950,10 @@ impl ListRegexPatternSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileSdkReleasesOutput {
     /// <p>High level information for the available SDK releases. </p>
+    #[doc(hidden)]
     pub release_summaries: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListMobileSdkReleasesOutput {
@@ -1015,8 +1035,10 @@ impl ListMobileSdkReleasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedRuleSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Your managed rule sets. </p>
+    #[doc(hidden)]
     pub managed_rule_sets: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
 }
 impl ListManagedRuleSetsOutput {
@@ -1098,9 +1120,11 @@ impl ListManagedRuleSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub logging_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListLoggingConfigurationsOutput {
@@ -1184,8 +1208,10 @@ impl ListLoggingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
+    #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
 }
 impl ListIpSetsOutput {
@@ -1266,10 +1292,13 @@ impl ListIpSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The versions that are currently available for the specified managed rule group. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
     /// <p>The name of the version that's currently set as the default. </p>
+    #[doc(hidden)]
     pub current_default_version: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
@@ -1371,8 +1400,10 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub managed_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
 }
@@ -1457,6 +1488,7 @@ impl ListAvailableManagedRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclForResourceOutput {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
+    #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
 impl GetWebAclForResourceOutput {
@@ -1511,10 +1543,13 @@ impl GetWebAclForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclOutput {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
+    #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub lock_token: std::option::Option<std::string::String>,
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub application_integration_url: std::option::Option<std::string::String>,
 }
 impl GetWebAclOutput {
@@ -1612,10 +1647,13 @@ impl GetWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
+    #[doc(hidden)]
     pub sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
+    #[doc(hidden)]
     pub population_size: i64,
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
+    #[doc(hidden)]
     pub time_window: std::option::Option<crate::model::TimeWindow>,
 }
 impl GetSampledRequestsOutput {
@@ -1717,8 +1755,10 @@ impl GetSampledRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl GetRuleGroupOutput {
@@ -1793,8 +1833,10 @@ impl GetRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl GetRegexPatternSetOutput {
@@ -1869,8 +1911,10 @@ impl GetRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedStatementManagedKeysOutput {
     /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    #[doc(hidden)]
     pub managed_keys_ipv4: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
     /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    #[doc(hidden)]
     pub managed_keys_ipv6: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
 }
 impl GetRateBasedStatementManagedKeysOutput {
@@ -1960,6 +2004,7 @@ impl GetRateBasedStatementManagedKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyOutput {
     /// <p>The IAM policy that is attached to the specified rule group.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyOutput {
@@ -2014,6 +2059,7 @@ impl GetPermissionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileSdkReleaseOutput {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
+    #[doc(hidden)]
     pub mobile_sdk_release: std::option::Option<crate::model::MobileSdkRelease>,
 }
 impl GetMobileSdkReleaseOutput {
@@ -2071,8 +2117,10 @@ impl GetMobileSdkReleaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedRuleSetOutput {
     /// <p>The managed rule set that you requested. </p>
+    #[doc(hidden)]
     pub managed_rule_set: std::option::Option<crate::model::ManagedRuleSet>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl GetManagedRuleSetOutput {
@@ -2147,6 +2195,7 @@ impl GetManagedRuleSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetLoggingConfigurationOutput {
@@ -2206,8 +2255,10 @@ impl GetLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl GetIpSetOutput {
@@ -2279,6 +2330,7 @@ impl GetIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateMobileSdkReleaseUrlOutput {
     /// <p>The presigned download URL for the specified SDK release.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl GenerateMobileSdkReleaseUrlOutput {
@@ -2361,12 +2413,16 @@ impl DisassociateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedRuleGroupOutput {
     /// <p>The managed rule group's version. </p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+    #[doc(hidden)]
     pub capacity: i64,
     /// <p></p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
@@ -2377,10 +2433,13 @@ pub struct DescribeManagedRuleGroupOutput {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub label_namespace: std::option::Option<std::string::String>,
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
+    #[doc(hidden)]
     pub available_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
+    #[doc(hidden)]
     pub consumed_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
 }
 impl DescribeManagedRuleGroupOutput {
@@ -2774,6 +2833,7 @@ impl DeleteIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallManagerRuleGroupsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    #[doc(hidden)]
     pub next_web_acl_lock_token: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallManagerRuleGroupsOutput {
@@ -2831,6 +2891,7 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclOutput {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::WebAclSummary>,
 }
 impl CreateWebAclOutput {
@@ -2888,6 +2949,7 @@ impl CreateWebAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupOutput {
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::RuleGroupSummary>,
 }
 impl CreateRuleGroupOutput {
@@ -2945,6 +3007,7 @@ impl CreateRuleGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetOutput {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::RegexPatternSetSummary>,
 }
 impl CreateRegexPatternSetOutput {
@@ -3002,6 +3065,7 @@ impl CreateRegexPatternSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetOutput {
     /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::IpSetSummary>,
 }
 impl CreateIpSetOutput {
@@ -3059,6 +3123,7 @@ impl CreateIpSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckCapacityOutput {
     /// <p>The capacity required by the rules and scope.</p>
+    #[doc(hidden)]
     pub capacity: i64,
 }
 impl CheckCapacityOutput {

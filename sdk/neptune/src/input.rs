@@ -15507,6 +15507,7 @@ impl StopDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl StopDbClusterInput {
@@ -15528,6 +15529,7 @@ impl std::fmt::Debug for StopDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl StartDbClusterInput {
@@ -15555,6 +15557,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
@@ -15562,12 +15565,14 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+    #[doc(hidden)]
     pub restore_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The date and time to restore the DB cluster to.</p>
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
@@ -15579,24 +15584,31 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    #[doc(hidden)]
     pub restore_to_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
+    #[doc(hidden)]
     pub use_latest_restorable_time: bool,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be applied to the restored DB cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -15607,19 +15619,24 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
 }
 impl RestoreDbClusterToPointInTimeInput {
@@ -15769,6 +15786,7 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -15778,6 +15796,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
@@ -15785,28 +15804,37 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The database engine to use for the new DB cluster.</p>
     /// <p>Default: The same as source</p>
     /// <p>Constraint: Must be compatible with the engine of the source</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version of the database engine to use for the new DB cluster.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>Not supported.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the restored DB cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -15815,21 +15843,27 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
     /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
 }
 impl RestoreDbClusterFromSnapshotInput {
@@ -15973,12 +16007,15 @@ pub struct ResetDbParameterGroupInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ResetDbParameterGroupInput {
@@ -16016,10 +16053,13 @@ impl std::fmt::Debug for ResetDbParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ResetDbClusterParameterGroupInput {
@@ -16054,8 +16094,10 @@ impl std::fmt::Debug for ResetDbClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Neptune resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The tag key (name) of the tag to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -16082,8 +16124,10 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the event notification subscription you want to remove a source identifier from.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionInput {
@@ -16110,10 +16154,13 @@ impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRoleFromDbClusterInput {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl RemoveRoleFromDbClusterInput {
@@ -16145,8 +16192,10 @@ impl std::fmt::Debug for RemoveRoleFromDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFromGlobalClusterInput {
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RemoveFromGlobalClusterInput {
@@ -16177,9 +16226,11 @@ pub struct RebootDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.</p>
+    #[doc(hidden)]
     pub force_failover: std::option::Option<bool>,
 }
 impl RebootDbInstanceInput {
@@ -16211,6 +16262,7 @@ impl std::fmt::Debug for RebootDbInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteReadReplicaDbClusterInput {
     /// <p>Not supported.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl PromoteReadReplicaDbClusterInput {
@@ -16233,6 +16285,7 @@ impl std::fmt::Debug for PromoteReadReplicaDbClusterInput {
 pub struct ModifyGlobalClusterInput {
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -16242,15 +16295,19 @@ pub struct ModifyGlobalClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
+    #[doc(hidden)]
     pub new_global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+    #[doc(hidden)]
     pub allow_major_version_upgrade: std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInput {
@@ -16309,15 +16366,20 @@ impl std::fmt::Debug for ModifyGlobalClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the event notification subscription.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.</p>
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -16362,10 +16424,13 @@ pub struct ModifyDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the DB subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyDbSubnetGroupInput {
@@ -16406,11 +16471,13 @@ pub struct ModifyDbParameterGroupInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ModifyDbParameterGroupInput {
@@ -16448,23 +16515,28 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC.</p>
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetGroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match existing DBSecurityGroups.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -16472,19 +16544,24 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>If supplied, must match existing VpcSecurityGroupIds.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p> The daily time range during which automated backups are created if automated backups are enabled.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -16495,28 +16572,37 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Must not conflict with the preferred maintenance window</p> </li>
     /// <li> <p>Must be at least 30 minutes</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
+    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
     /// <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p> The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -16526,53 +16612,71 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
+    #[doc(hidden)]
     pub new_db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Not supported.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    #[doc(hidden)]
     pub tde_credential_arn: std::option::Option<std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
+    #[doc(hidden)]
     pub tde_credential_password: std::option::Option<std::string::String>,
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
+    #[doc(hidden)]
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Not supported.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    #[doc(hidden)]
     pub monitoring_interval: std::option::Option<i32>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option group for the DB instance.</p>
     /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p> Default: <code>8182</code> </p>
+    #[doc(hidden)]
     pub db_port_number: std::option::Option<i32>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+    #[doc(hidden)]
     pub monitoring_role_arn: std::option::Option<std::string::String>,
     /// <p>Not supported</p>
+    #[doc(hidden)]
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
+    #[doc(hidden)]
     pub promotion_tier: std::option::Option<i32>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>You can enable IAM database authentication for the following database engines</p>
     /// <p>Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub enable_performance_insights: std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
+    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration:
         std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
 }
 impl ModifyDbInstanceInput {
@@ -16856,15 +16960,19 @@ impl std::fmt::Debug for ModifyDbInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DB cluster snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon accounts.</p>
+    #[doc(hidden)]
     pub values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To remove authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account identifiers, or <code>all</code> to remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an Amazon account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
+    #[doc(hidden)]
     pub values_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyDbClusterSnapshotAttributeInput {
@@ -16907,8 +17015,10 @@ impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to modify.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ModifyDbClusterParameterGroupInput {
@@ -16938,12 +17048,16 @@ impl std::fmt::Debug for ModifyDbClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterEndpointInput {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyDbClusterEndpointInput {
@@ -16987,6 +17101,7 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -16996,10 +17111,12 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
+    #[doc(hidden)]
     pub new_db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -17007,18 +17124,24 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p> <i>Not supported by Neptune.</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
@@ -17029,24 +17152,30 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration:
         std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>
     /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
     /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
+    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
@@ -17057,10 +17186,13 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p> </li>
     /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_instance_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
 }
 impl ModifyDbClusterInput {
@@ -17230,8 +17362,10 @@ impl std::fmt::Debug for ModifyDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListTagsForResourceInput {
@@ -17259,8 +17393,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct FailoverGlobalClusterInput {
     /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
     /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+    #[doc(hidden)]
     pub target_db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl FailoverGlobalClusterInput {
@@ -17295,9 +17431,11 @@ pub struct FailoverDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Read Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
+    #[doc(hidden)]
     pub target_db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl FailoverDbClusterInput {
@@ -17332,6 +17470,7 @@ impl std::fmt::Debug for FailoverDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeValidDbInstanceModificationsInput {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeValidDbInstanceModificationsInput {
@@ -17353,6 +17492,7 @@ impl std::fmt::Debug for DescribeValidDbInstanceModificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsInput {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
@@ -17360,12 +17500,15 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
 }
 impl DescribePendingMaintenanceActionsInput {
@@ -17409,22 +17552,30 @@ impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>The name of the engine to retrieve DB instance options for.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<bool>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInput {
@@ -17484,12 +17635,15 @@ impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsInput {
 pub struct DescribeGlobalClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalClustersInput {
@@ -17524,14 +17678,18 @@ impl std::fmt::Debug for DescribeGlobalClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the event notification subscription you want to describe.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventSubscriptionsInput {
@@ -17579,27 +17737,36 @@ pub struct DescribeEventsInput {
     /// <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes to retrieve events for.</p>
     /// <p>Default: 60</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -17676,8 +17843,10 @@ impl std::fmt::Debug for DescribeEventsInput {
 pub struct DescribeEventCategoriesInput {
     /// <p>The type of source that is generating the events.</p>
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl DescribeEventCategoriesInput {
@@ -17705,14 +17874,18 @@ impl std::fmt::Debug for DescribeEventCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersInput {
     /// <p>The name of the DB parameter group family.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEngineDefaultParametersInput {
@@ -17751,14 +17924,18 @@ impl std::fmt::Debug for DescribeEngineDefaultParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersInput {
     /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEngineDefaultClusterParametersInput {
@@ -17797,14 +17974,18 @@ impl std::fmt::Debug for DescribeEngineDefaultClusterParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsInput {
     /// <p>The name of the DB subnet group to return details for.</p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous DescribeDBSubnetGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbSubnetGroupsInput {
@@ -17847,18 +18028,23 @@ pub struct DescribeDbParametersInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The parameter types to return.</p>
     /// <p>Default: All parameter types returned</p>
     /// <p>Valid Values: <code>user | system | engine-default</code> </p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbParametersInput {
@@ -17912,14 +18098,18 @@ pub struct DescribeDbParameterGroupsInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbParameterGroupsInput {
@@ -17966,6 +18156,7 @@ pub struct DescribeDbInstancesInput {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
@@ -17974,12 +18165,15 @@ pub struct DescribeDbInstancesInput {
     /// <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p> </li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbInstancesInput {
@@ -18028,29 +18222,38 @@ impl std::fmt::Debug for DescribeDbInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsInput {
     /// <p>The database engine to return.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
+    #[doc(hidden)]
     pub default_only: bool,
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    #[doc(hidden)]
     pub list_supported_character_sets: std::option::Option<bool>,
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    #[doc(hidden)]
     pub list_supported_timezones: std::option::Option<bool>,
 }
 impl DescribeDbEngineVersionsInput {
@@ -18126,6 +18329,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -18133,6 +18337,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -18143,20 +18348,26 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    #[doc(hidden)]
     pub snapshot_type: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
     /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub include_shared: bool,
     /// <p>True to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon account, and otherwise false. The default is <code>false</code>. The default is false.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub include_public: bool,
 }
 impl DescribeDbClusterSnapshotsInput {
@@ -18237,6 +18448,7 @@ impl std::fmt::Debug for DescribeDbClusterSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotAttributesInput {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterSnapshotAttributesInput {
@@ -18265,6 +18477,7 @@ pub struct DescribeDbClustersInput {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
@@ -18273,12 +18486,15 @@ pub struct DescribeDbClustersInput {
     /// <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p> </li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClustersInput {
@@ -18331,16 +18547,21 @@ pub struct DescribeDbClusterParametersInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersInput {
@@ -18395,14 +18616,18 @@ pub struct DescribeDbClusterParameterGroupsInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParameterGroupsInput {
@@ -18448,16 +18673,21 @@ impl std::fmt::Debug for DescribeDbClusterParameterGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterEndpointsInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterEndpointsInput {
@@ -18504,6 +18734,7 @@ impl std::fmt::Debug for DescribeDbClusterEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalClusterInput {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteGlobalClusterInput {
@@ -18525,6 +18756,7 @@ impl std::fmt::Debug for DeleteGlobalClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the event notification subscription you want to delete.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventSubscriptionInput {
@@ -18551,6 +18783,7 @@ pub struct DeleteDbSubnetGroupInput {
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
@@ -18583,6 +18816,7 @@ pub struct DeleteDbParameterGroupInput {
     /// <li> <p>You can't delete a default DB parameter group</p> </li>
     /// <li> <p>Cannot be associated with any DB instances</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbParameterGroupInput {
@@ -18614,6 +18848,7 @@ pub struct DeleteDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p> Determines whether a final DB snapshot is created before the DB instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified, a DB snapshot is created before the DB instance is deleted.</p>
     /// <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
@@ -18621,6 +18856,7 @@ pub struct DeleteDbInstanceInput {
     /// <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub skip_final_snapshot: bool,
     /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p> <note>
     /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
@@ -18632,6 +18868,7 @@ pub struct DeleteDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub final_db_snapshot_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDbInstanceInput {
@@ -18685,6 +18922,7 @@ impl std::fmt::Debug for DeleteDbInstanceInput {
 pub struct DeleteDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterSnapshotInput {
@@ -18716,6 +18954,7 @@ pub struct DeleteDbClusterParameterGroupInput {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterParameterGroupInput {
@@ -18746,6 +18985,7 @@ impl std::fmt::Debug for DeleteDbClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterEndpointInput {
@@ -18774,11 +19014,13 @@ pub struct DeleteDbClusterInput {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub skip_final_snapshot: bool,
     /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
     /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
@@ -18789,6 +19031,7 @@ pub struct DeleteDbClusterInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub final_db_snapshot_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterInput {
@@ -18838,18 +19081,24 @@ impl std::fmt::Debug for DeleteDbClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global database cluster.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    #[doc(hidden)]
     pub source_db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used in the global database.</p>
     /// <p>Valid values: <code>neptune</code> </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The storage encryption setting for the new global database cluster.</p>
+    #[doc(hidden)]
     pub storage_encrypted: std::option::Option<bool>,
 }
 impl CreateGlobalClusterInput {
@@ -18902,13 +19151,17 @@ impl std::fmt::Debug for CreateGlobalClusterInput {
 pub struct CreateEventSubscriptionInput {
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be less than 255 characters.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.</p>
     /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
@@ -18919,10 +19172,13 @@ pub struct CreateEventSubscriptionInput {
     /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>
     /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The tags to be applied to the new event subscription.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventSubscriptionInput {
@@ -18986,12 +19242,16 @@ pub struct CreateDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the DB subnet group.</p>
+    #[doc(hidden)]
     pub db_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the new DB subnet group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDbSubnetGroupInput {
@@ -19041,12 +19301,16 @@ pub struct CreateDbParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for the DB parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the new DB parameter group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDbParameterGroupInput {
@@ -19091,6 +19355,7 @@ impl std::fmt::Debug for CreateDbParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbInstanceInput {
     /// <p>Not supported.</p>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -19100,38 +19365,49 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
+    #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>neptune</code> </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
+    #[doc(hidden)]
     pub db_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
     /// <p> Example: <code>us-east-1d</code> </p>
     /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
@@ -19140,6 +19416,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The number of days for which automated backups are retained.</p>
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
@@ -19149,85 +19426,115 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Must be a value from 0 to 35</p> </li>
     /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p> The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p> Default: <code>8182</code> </p>
     /// <p>Type: Integer</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
     /// <p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>License model information for this DB instance.</p>
     /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub character_set_name: std::option::Option<std::string::String>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The tags to assign to the new instance.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>For information on creating a DB cluster, see <code>CreateDBCluster</code>.</p>
     /// <p>Type: String</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    #[doc(hidden)]
     pub tde_credential_arn: std::option::Option<std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
+    #[doc(hidden)]
     pub tde_credential_password: std::option::Option<std::string::String>,
     /// <p>Specifies whether the DB instance is encrypted.</p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>Default: false</p>
+    #[doc(hidden)]
     pub storage_encrypted: std::option::Option<bool>,
     /// <p>The Amazon KMS key identifier for an encrypted DB instance.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.</p>
     /// <p>Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specify the Active Directory Domain to create the instance in.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    #[doc(hidden)]
     pub monitoring_interval: std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+    #[doc(hidden)]
     pub monitoring_role_arn: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    #[doc(hidden)]
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
+    #[doc(hidden)]
     pub promotion_tier: std::option::Option<i32>,
     /// <p>The time zone of the DB instance.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune (ignored).</p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub enable_performance_insights: std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     /// <p>DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
 }
 impl CreateDbInstanceInput {
@@ -19537,6 +19844,7 @@ pub struct CreateDbClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -19544,8 +19852,10 @@ pub struct CreateDbClusterSnapshotInput {
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDbClusterSnapshotInput {
@@ -19598,12 +19908,16 @@ pub struct CreateDbClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for the DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDbClusterParameterGroupInput {
@@ -19649,16 +19963,22 @@ impl std::fmt::Debug for CreateDbClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterEndpointInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDbClusterEndpointInput {
@@ -19708,6 +20028,7 @@ impl std::fmt::Debug for CreateDbClusterEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterInput {
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -19715,12 +20036,16 @@ pub struct CreateDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub backup_retention_period: std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub character_set_name: std::option::Option<std::string::String>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    #[doc(hidden)]
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -19730,33 +20055,43 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>neptune</code> </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine to use for the new DB cluster.</p>
     /// <p>Example: <code>1.0.2.1</code> </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The port number on which the instances in the DB cluster accept connections.</p>
     /// <p> Default: <code>8182</code> </p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
@@ -19767,18 +20102,23 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
+    #[doc(hidden)]
     pub replication_source_identifier: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the new DB cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
+    #[doc(hidden)]
     pub storage_encrypted: std::option::Option<bool>,
     /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -19789,17 +20129,23 @@ pub struct CreateDbClusterInput {
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
+    #[doc(hidden)]
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
     /// <p>Default: <code>false</code>.</p>
+    #[doc(hidden)]
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+    #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterInput {
@@ -20008,6 +20354,7 @@ pub struct CopyDbParameterGroupInput {
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// <li> <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_db_parameter_group_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -20018,10 +20365,13 @@ pub struct CopyDbParameterGroupInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
+    #[doc(hidden)]
     pub target_db_parameter_group_identifier: std::option::Option<std::string::String>,
     /// <p>A description for the copied DB parameter group.</p>
+    #[doc(hidden)]
     pub target_db_parameter_group_description: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the copied DB parameter group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyDbParameterGroupInput {
@@ -20086,6 +20436,7 @@ pub struct CopyDbClusterSnapshotInput {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    #[doc(hidden)]
     pub source_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -20095,18 +20446,23 @@ pub struct CopyDbClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    #[doc(hidden)]
     pub target_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
     /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Not currently supported.</p>
+    #[doc(hidden)]
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyDbClusterSnapshotInput {
@@ -20182,6 +20538,7 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <li> <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
     /// <li> <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_db_cluster_parameter_group_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -20192,10 +20549,13 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
+    #[doc(hidden)]
     pub target_db_cluster_parameter_group_identifier: std::option::Option<std::string::String>,
     /// <p>A description for the copied DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub target_db_cluster_parameter_group_description: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyDbClusterParameterGroupInput {
@@ -20256,9 +20616,11 @@ impl std::fmt::Debug for CopyDbClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code> </p>
+    #[doc(hidden)]
     pub apply_action: std::option::Option<std::string::String>,
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
@@ -20267,6 +20629,7 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
     /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub opt_in_type: std::option::Option<std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {
@@ -20305,8 +20668,10 @@ impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {
@@ -20333,6 +20698,7 @@ impl std::fmt::Debug for AddTagsToResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the event notification subscription you want to add a source identifier to.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
@@ -20342,6 +20708,7 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>
     /// <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInput {
@@ -20375,10 +20742,13 @@ impl std::fmt::Debug for AddSourceIdentifierToSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRoleToDbClusterInput {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl AddRoleToDbClusterInput {

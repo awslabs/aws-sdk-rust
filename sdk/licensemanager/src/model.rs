@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
+    #[doc(hidden)]
     pub enable_integration: bool,
 }
 impl OrganizationConfiguration {
@@ -59,8 +60,10 @@ impl OrganizationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    #[doc(hidden)]
     pub ami_association_scope: std::option::Option<std::string::String>,
 }
 impl LicenseSpecification {
@@ -138,8 +141,10 @@ impl LicenseSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportFrequency {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<i32>,
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::ReportFrequencyType>,
 }
 impl ReportFrequency {
@@ -273,6 +278,7 @@ impl AsRef<str> for ReportFrequencyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
+    #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReportContext {
@@ -398,6 +404,7 @@ impl AsRef<str> for ReportType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
@@ -417,6 +424,7 @@ pub struct ProductInformation {
     /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
     /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub product_information_filter_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
 }
@@ -561,10 +569,13 @@ impl ProductInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductInformationFilter {
     /// <p>Filter name.</p>
+    #[doc(hidden)]
     pub product_information_filter_name: std::option::Option<std::string::String>,
     /// <p>Filter value.</p>
+    #[doc(hidden)]
     pub product_information_filter_value: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Logical operator.</p>
+    #[doc(hidden)]
     pub product_information_filter_comparator: std::option::Option<std::string::String>,
 }
 impl ProductInformationFilter {
@@ -742,8 +753,10 @@ impl AsRef<str> for LicenseConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -908,16 +921,22 @@ impl AsRef<str> for GrantStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConfigurationUsage {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Status of the resource.</p>
+    #[doc(hidden)]
     pub resource_status: std::option::Option<std::string::String>,
     /// <p>ID of the account that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was initially associated with the resource.</p>
+    #[doc(hidden)]
     pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of licenses consumed by the resource.</p>
+    #[doc(hidden)]
     pub consumed_licenses: std::option::Option<i64>,
 }
 impl LicenseConfigurationUsage {
@@ -1142,8 +1161,10 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Filter values. Filter values are case-sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -1224,18 +1245,25 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TokenData {
     /// <p>Token ID.</p>
+    #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
+    #[doc(hidden)]
     pub token_type: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<std::string::String>,
     /// <p>Data specified by the caller.</p>
+    #[doc(hidden)]
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
+    #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl TokenData {
@@ -1413,16 +1441,22 @@ impl TokenData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInventory {
     /// <p>ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Platform of the resource.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>Platform version of the resource in the inventory.</p>
+    #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>ID of the account that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owning_account_id: std::option::Option<std::string::String>,
 }
 impl ResourceInventory {
@@ -1574,10 +1608,13 @@ impl ResourceInventory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Condition of the filter.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::InventoryFilterCondition>,
     /// <p>Value of the filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl InventoryFilter {
@@ -1732,34 +1769,49 @@ impl AsRef<str> for InventoryFilterCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License name.</p>
+    #[doc(hidden)]
     pub license_name: std::option::Option<std::string::String>,
     /// <p>Product name.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>Product SKU.</p>
+    #[doc(hidden)]
     pub product_sku: std::option::Option<std::string::String>,
     /// <p>Granted license issuer.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<crate::model::IssuerDetails>,
     /// <p>Home Region of the granted license.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Granted license status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::DatetimeRange>,
     /// <p>Granted license beneficiary.</p>
+    #[doc(hidden)]
     pub beneficiary: std::option::Option<std::string::String>,
     /// <p>License entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>Configuration for consumption of the license.</p>
+    #[doc(hidden)]
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>Granted license metadata.</p>
+    #[doc(hidden)]
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>Creation time of the granted license.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<std::string::String>,
     /// <p>Version of the granted license.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Granted license received metadata.</p>
+    #[doc(hidden)]
     pub received_metadata: std::option::Option<crate::model::ReceivedMetadata>,
 }
 impl GrantedLicense {
@@ -2091,10 +2143,13 @@ impl GrantedLicense {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReceivedMetadata {
     /// <p>Received status.</p>
+    #[doc(hidden)]
     pub received_status: std::option::Option<crate::model::ReceivedStatus>,
     /// <p>Received status reason.</p>
+    #[doc(hidden)]
     pub received_status_reason: std::option::Option<std::string::String>,
     /// <p>Allowed operations.</p>
+    #[doc(hidden)]
     pub allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
 }
 impl ReceivedMetadata {
@@ -2370,8 +2425,10 @@ impl AsRef<str> for ReceivedStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metadata {
     /// <p>The key name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Metadata {
@@ -2443,10 +2500,13 @@ impl Metadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumptionConfiguration {
     /// <p>Renewal frequency.</p>
+    #[doc(hidden)]
     pub renew_type: std::option::Option<crate::model::RenewType>,
     /// <p>Details about a provisional configuration.</p>
+    #[doc(hidden)]
     pub provisional_configuration: std::option::Option<crate::model::ProvisionalConfiguration>,
     /// <p>Details about a borrow configuration.</p>
+    #[doc(hidden)]
     pub borrow_configuration: std::option::Option<crate::model::BorrowConfiguration>,
 }
 impl ConsumptionConfiguration {
@@ -2550,8 +2610,10 @@ impl ConsumptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
+    #[doc(hidden)]
     pub allow_early_check_in: std::option::Option<bool>,
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
+    #[doc(hidden)]
     pub max_time_to_live_in_minutes: std::option::Option<i32>,
 }
 impl BorrowConfiguration {
@@ -2626,6 +2688,7 @@ impl BorrowConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
+    #[doc(hidden)]
     pub max_time_to_live_in_minutes: std::option::Option<i32>,
 }
 impl ProvisionalConfiguration {
@@ -2742,16 +2805,22 @@ impl AsRef<str> for RenewType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entitlement {
     /// <p>Entitlement name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Entitlement resource. Use only if the unit is None.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
+    #[doc(hidden)]
     pub max_count: std::option::Option<i64>,
     /// <p>Indicates whether overages are allowed.</p>
+    #[doc(hidden)]
     pub overage: std::option::Option<bool>,
     /// <p>Entitlement unit.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::EntitlementUnit>,
     /// <p>Indicates whether check-ins are allowed.</p>
+    #[doc(hidden)]
     pub allow_check_in: std::option::Option<bool>,
 }
 impl Entitlement {
@@ -3077,8 +3146,10 @@ impl AsRef<str> for EntitlementUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
+    #[doc(hidden)]
     pub begin: std::option::Option<std::string::String>,
     /// <p>End of the time range.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
 }
 impl DatetimeRange {
@@ -3233,10 +3304,13 @@ impl AsRef<str> for LicenseStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssuerDetails {
     /// <p>Issuer name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    #[doc(hidden)]
     pub sign_key: std::option::Option<std::string::String>,
     /// <p>Issuer key fingerprint.</p>
+    #[doc(hidden)]
     pub key_fingerprint: std::option::Option<std::string::String>,
 }
 impl IssuerDetails {
@@ -3328,24 +3402,34 @@ impl IssuerDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant name.</p>
+    #[doc(hidden)]
     pub grant_name: std::option::Option<std::string::String>,
     /// <p>Parent ARN.</p>
+    #[doc(hidden)]
     pub parent_arn: std::option::Option<std::string::String>,
     /// <p>License ARN.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>The grantee principal ARN.</p>
+    #[doc(hidden)]
     pub grantee_principal_arn: std::option::Option<std::string::String>,
     /// <p>Home Region of the grant.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub grant_status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant status reason.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Granted operations.</p>
+    #[doc(hidden)]
     pub granted_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
 }
 impl Grant {
@@ -3572,32 +3656,46 @@ impl Grant {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct License {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License name.</p>
+    #[doc(hidden)]
     pub license_name: std::option::Option<std::string::String>,
     /// <p>Product name.</p>
+    #[doc(hidden)]
     pub product_name: std::option::Option<std::string::String>,
     /// <p>Product SKU.</p>
+    #[doc(hidden)]
     pub product_sku: std::option::Option<std::string::String>,
     /// <p>License issuer.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<crate::model::IssuerDetails>,
     /// <p>Home Region of the license.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>License status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    #[doc(hidden)]
     pub validity: std::option::Option<crate::model::DatetimeRange>,
     /// <p>License beneficiary.</p>
+    #[doc(hidden)]
     pub beneficiary: std::option::Option<std::string::String>,
     /// <p>License entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>Configuration for consumption of the license.</p>
+    #[doc(hidden)]
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>License metadata.</p>
+    #[doc(hidden)]
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>License creation time.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<std::string::String>,
     /// <p>License version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl License {
@@ -3909,30 +4007,43 @@ impl License {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportGenerator {
     /// <p>Name of the report generator.</p>
+    #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
     /// <p>Type of reports that are generated.</p>
+    #[doc(hidden)]
     pub report_type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
     /// <p>License configuration type for this generator.</p>
+    #[doc(hidden)]
     pub report_context: std::option::Option<crate::model::ReportContext>,
     /// <p>Details about how frequently reports are generated.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
     /// <p>Status of the last report generation attempt.</p>
+    #[doc(hidden)]
     pub last_run_status: std::option::Option<std::string::String>,
     /// <p>Failure message for the last report generation attempt.</p>
+    #[doc(hidden)]
     pub last_run_failure_reason: std::option::Option<std::string::String>,
     /// <p>Time the last report was generated at.</p>
+    #[doc(hidden)]
     pub last_report_generation_time: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
+    #[doc(hidden)]
     pub report_creator_account: std::option::Option<std::string::String>,
     /// <p>Description of the report generator.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Time the report was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<std::string::String>,
     /// <p>Tags associated with the report generator.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ReportGenerator {
@@ -4248,8 +4359,10 @@ impl ReportGenerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Prefix of the S3 bucket reports are published to.</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -4321,22 +4434,31 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
+    #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information about the license type this conversion task converted from.</p>
+    #[doc(hidden)]
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>Information about the license type this conversion task converted to.</p>
+    #[doc(hidden)]
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>The status of the conversion task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
     /// <p>The status message for the conversion task.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time the conversion task was started at.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the usage operation value of the resource was changed.</p>
+    #[doc(hidden)]
     pub license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the conversion task was completed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LicenseConversionTask {
@@ -4628,6 +4750,7 @@ impl AsRef<str> for LicenseConversionTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
+    #[doc(hidden)]
     pub usage_operation: std::option::Option<std::string::String>,
 }
 impl LicenseConversionContext {
@@ -4685,39 +4808,55 @@ impl LicenseConversionContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConfiguration {
     /// <p>Unique ID of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_id: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Name of the license configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the license configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Dimension to use to track the license inventory.</p>
+    #[doc(hidden)]
     pub license_counting_type: std::option::Option<crate::model::LicenseCountingType>,
     /// <p>License rules.</p>
+    #[doc(hidden)]
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Number of licenses managed by the license configuration.</p>
+    #[doc(hidden)]
     pub license_count: std::option::Option<i64>,
     /// <p>Number of available licenses as a hard limit.</p>
+    #[doc(hidden)]
     pub license_count_hard_limit: std::option::Option<bool>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
     /// <p>Number of licenses consumed. </p>
+    #[doc(hidden)]
     pub consumed_licenses: std::option::Option<i64>,
     /// <p>Status of the license configuration.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Account ID of the license configuration's owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Summaries for licenses consumed by various resources.</p>
+    #[doc(hidden)]
     pub consumed_license_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
     /// <p>Summaries for managed resources.</p>
+    #[doc(hidden)]
     pub managed_resource_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
     /// <p>Product information.</p>
+    #[doc(hidden)]
     pub product_information_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>Automated discovery information.</p>
+    #[doc(hidden)]
     pub automated_discovery_information:
         std::option::Option<crate::model::AutomatedDiscoveryInformation>,
 }
@@ -5112,6 +5251,7 @@ impl LicenseConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
+    #[doc(hidden)]
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutomatedDiscoveryInformation {
@@ -5169,8 +5309,10 @@ impl AutomatedDiscoveryInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Number of resources associated with licenses.</p>
+    #[doc(hidden)]
     pub association_count: std::option::Option<i64>,
 }
 impl ManagedResourceSummary {
@@ -5245,8 +5387,10 @@ impl ManagedResourceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Number of licenses consumed by the resource.</p>
+    #[doc(hidden)]
     pub consumed_licenses: std::option::Option<i64>,
 }
 impl ConsumedLicenseSummary {
@@ -5384,20 +5528,28 @@ impl AsRef<str> for LicenseCountingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Failure time.</p>
+    #[doc(hidden)]
     pub failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of the operation.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>The requester is "License Manager Automated Discovery".</p>
+    #[doc(hidden)]
     pub operation_requested_by: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub metadata_list: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
 }
 impl LicenseOperationFailure {
@@ -5598,14 +5750,19 @@ impl LicenseOperationFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConfigurationAssociation {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Type of server resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
+    #[doc(hidden)]
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was associated with the resource.</p>
+    #[doc(hidden)]
     pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    #[doc(hidden)]
     pub ami_association_scope: std::option::Option<std::string::String>,
 }
 impl LicenseConfigurationAssociation {
@@ -5740,6 +5897,7 @@ impl LicenseConfigurationAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseUsage {
     /// <p>License entitlement usages.</p>
+    #[doc(hidden)]
     pub entitlement_usages: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
 }
 impl LicenseUsage {
@@ -5804,12 +5962,16 @@ impl LicenseUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitlementUsage {
     /// <p>Entitlement usage name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Resource usage consumed.</p>
+    #[doc(hidden)]
     pub consumed_value: std::option::Option<std::string::String>,
     /// <p>Maximum entitlement usage count.</p>
+    #[doc(hidden)]
     pub max_count: std::option::Option<std::string::String>,
     /// <p>Entitlement usage unit.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::EntitlementDataUnit>,
 }
 impl EntitlementUsage {
@@ -6210,8 +6372,10 @@ impl AsRef<str> for TokenType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Issuer {
     /// <p>Issuer name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    #[doc(hidden)]
     pub sign_key: std::option::Option<std::string::String>,
 }
 impl Issuer {
@@ -6283,10 +6447,13 @@ impl Issuer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitlementData {
     /// <p>Entitlement data name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Entitlement data value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Entitlement data unit.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::EntitlementDataUnit>,
 }
 impl EntitlementData {

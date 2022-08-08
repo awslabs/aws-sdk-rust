@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetNotFoundException {
@@ -69,6 +70,7 @@ impl SubnetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LoadBalancerNotFoundException {
@@ -133,6 +135,7 @@ impl LoadBalancerNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnetException {
@@ -197,6 +200,7 @@ impl InvalidSubnetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationRequestException {
@@ -261,6 +265,7 @@ impl InvalidConfigurationRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZoneNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AvailabilityZoneNotSupportedException {
@@ -325,6 +330,7 @@ impl AvailabilityZoneNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocationIdNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AllocationIdNotFoundException {
@@ -389,6 +395,7 @@ impl AllocationIdNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecurityGroupException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSecurityGroupException {
@@ -453,6 +460,7 @@ impl InvalidSecurityGroupException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RuleNotFoundException {
@@ -517,6 +525,7 @@ impl RuleNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PriorityInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PriorityInUseException {
@@ -581,6 +590,7 @@ impl PriorityInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedException {
@@ -645,6 +655,7 @@ impl OperationNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -709,6 +720,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetGroupNotFoundException {
@@ -773,6 +785,7 @@ impl TargetGroupNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListenerNotFoundException {
@@ -837,6 +850,7 @@ impl ListenerNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTargetsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTargetsException {
@@ -901,6 +915,7 @@ impl TooManyTargetsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRegistrationsForTargetIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRegistrationsForTargetIdException {
@@ -965,6 +980,7 @@ impl TooManyRegistrationsForTargetIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetException {
@@ -1029,6 +1045,7 @@ impl InvalidTargetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedProtocolException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedProtocolException {
@@ -1093,6 +1110,7 @@ impl UnsupportedProtocolException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyUniqueTargetGroupsPerLoadBalancerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyUniqueTargetGroupsPerLoadBalancerException {
@@ -1158,6 +1176,7 @@ impl TooManyUniqueTargetGroupsPerLoadBalancerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyActionsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyActionsException {
@@ -1222,6 +1241,7 @@ impl TooManyActionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupAssociationLimitException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetGroupAssociationLimitException {
@@ -1286,6 +1306,7 @@ impl TargetGroupAssociationLimitException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLoadBalancerActionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLoadBalancerActionException {
@@ -1350,6 +1371,7 @@ impl InvalidLoadBalancerActionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleProtocolsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatibleProtocolsException {
@@ -1414,6 +1436,7 @@ impl IncompatibleProtocolsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyListenersException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyListenersException {
@@ -1478,6 +1501,7 @@ impl TooManyListenersException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCertificatesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCertificatesException {
@@ -1542,6 +1566,7 @@ impl TooManyCertificatesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SslPolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SslPolicyNotFoundException {
@@ -1606,6 +1631,7 @@ impl SslPolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateListenerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateListenerException {
@@ -1670,6 +1696,7 @@ impl DuplicateListenerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateNotFoundException {
@@ -1734,6 +1761,7 @@ impl CertificateNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlpnPolicyNotSupportedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlpnPolicyNotSupportedException {
@@ -1801,6 +1829,7 @@ impl AlpnPolicyNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthUnavailableException {
@@ -1865,6 +1894,7 @@ impl HealthUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -1929,6 +1959,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTargetGroupsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTargetGroupsException {
@@ -1993,6 +2024,7 @@ impl TooManyTargetGroupsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateTargetGroupNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateTargetGroupNameException {
@@ -2057,6 +2089,7 @@ impl DuplicateTargetGroupNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRulesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRulesException {
@@ -2121,6 +2154,7 @@ impl TooManyRulesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyLoadBalancersException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyLoadBalancersException {
@@ -2185,6 +2219,7 @@ impl TooManyLoadBalancersException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSchemeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSchemeException {
@@ -2249,6 +2284,7 @@ impl InvalidSchemeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateTagKeysException {
@@ -2313,6 +2349,7 @@ impl DuplicateTagKeysException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateLoadBalancerNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateLoadBalancerNameException {

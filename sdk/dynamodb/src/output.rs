@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
+    #[doc(hidden)]
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveOutput {
@@ -70,6 +71,7 @@ impl UpdateTimeToLiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableReplicaAutoScalingOutput {
     /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
+    #[doc(hidden)]
     pub table_auto_scaling_description:
         std::option::Option<crate::model::TableAutoScalingDescription>,
 }
@@ -137,6 +139,7 @@ impl UpdateTableReplicaAutoScalingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableOutput {
     /// <p>Represents the properties of the table.</p>
+    #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl UpdateTableOutput {
@@ -195,10 +198,12 @@ impl UpdateTableOutput {
 pub struct UpdateItemOutput {
     /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
     /// <p>The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
@@ -206,6 +211,7 @@ pub struct UpdateItemOutput {
     /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl UpdateItemOutput {
@@ -345,8 +351,10 @@ impl UpdateItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
+    #[doc(hidden)]
     pub replica_settings:
         std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
@@ -434,6 +442,7 @@ impl UpdateGlobalTableSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
+    #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl UpdateGlobalTableOutput {
@@ -497,10 +506,13 @@ impl UpdateGlobalTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContributorInsightsOutput {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the global secondary index, if applicable.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The status of contributor insights</p>
+    #[doc(hidden)]
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
 }
 impl UpdateContributorInsightsOutput {
@@ -601,6 +613,7 @@ impl UpdateContributorInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    #[doc(hidden)]
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
@@ -698,8 +711,10 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsOutput {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
+    #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -816,9 +831,11 @@ impl TransactWriteItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsOutput {
     /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     /// <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
     /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
+    #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
 }
 impl TransactGetItemsOutput {
@@ -942,23 +959,28 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanOutput {
     /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>The number of items in the response.</p>
     /// <p>If you set <code>ScanFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as <code>ScannedCount</code>.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
+    #[doc(hidden)]
     pub scanned_count: i32,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    #[doc(hidden)]
     pub last_evaluated_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl ScanOutput {
@@ -1144,6 +1166,7 @@ impl ScanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableToPointInTimeOutput {
     /// <p>Represents the properties of a table.</p>
+    #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl RestoreTableToPointInTimeOutput {
@@ -1201,6 +1224,7 @@ impl RestoreTableToPointInTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
+    #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl RestoreTableFromBackupOutput {
@@ -1258,23 +1282,28 @@ impl RestoreTableFromBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>The number of items in the response.</p>
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
+    #[doc(hidden)]
     pub scanned_count: i32,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
+    #[doc(hidden)]
     pub last_evaluated_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl QueryOutput {
@@ -1460,10 +1489,12 @@ impl QueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutItemOutput {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
@@ -1471,6 +1502,7 @@ pub struct PutItemOutput {
     /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl PutItemOutput {
@@ -1607,8 +1639,10 @@ impl PutItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOfResourceOutput {
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOfResourceOutput {
@@ -1690,9 +1724,11 @@ impl ListTagsOfResourceOutput {
 pub struct ListTablesOutput {
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
+    #[doc(hidden)]
     pub table_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
+    #[doc(hidden)]
     pub last_evaluated_table_name: std::option::Option<std::string::String>,
 }
 impl ListTablesOutput {
@@ -1782,8 +1818,10 @@ impl ListTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
+    #[doc(hidden)]
     pub global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
     /// <p>Last evaluated global table name.</p>
+    #[doc(hidden)]
     pub last_evaluated_global_table_name: std::option::Option<std::string::String>,
 }
 impl ListGlobalTablesOutput {
@@ -1873,8 +1911,10 @@ impl ListGlobalTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsOutput {
     /// <p>A list of <code>ExportSummary</code> objects.</p>
+    #[doc(hidden)]
     pub export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsOutput {
@@ -1956,9 +1996,11 @@ impl ListExportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContributorInsightsOutput {
     /// <p>A list of ContributorInsightsSummary.</p>
+    #[doc(hidden)]
     pub contributor_insights_summaries:
         std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
     /// <p>A token to go to the next page if there is one.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContributorInsightsOutput {
@@ -2048,10 +2090,12 @@ impl ListContributorInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupsOutput {
     /// <p>List of <code>BackupSummary</code> objects.</p>
+    #[doc(hidden)]
     pub backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
     /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>
     /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
+    #[doc(hidden)]
     pub last_evaluated_backup_arn: std::option::Option<std::string::String>,
 }
 impl ListBackupsOutput {
@@ -2142,10 +2186,12 @@ impl ListBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
+    #[doc(hidden)]
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
 }
 impl GetItemOutput {
@@ -2241,6 +2287,7 @@ impl GetItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTableToPointInTimeOutput {
     /// <p>Contains a description of the table export.</p>
+    #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
 impl ExportTableToPointInTimeOutput {
@@ -2298,8 +2345,10 @@ impl ExportTableToPointInTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteTransactionOutput {
     /// <p>The response to a PartiQL transaction.</p>
+    #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl ExecuteTransactionOutput {
@@ -2390,14 +2439,18 @@ impl ExecuteTransactionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
     >,
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
+    #[doc(hidden)]
     pub last_evaluated_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -2553,10 +2606,13 @@ impl ExecuteStatementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN for the specific Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the replication.</p>
+    #[doc(hidden)]
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
 }
 impl EnableKinesisStreamingDestinationOutput {
@@ -2648,10 +2704,13 @@ impl EnableKinesisStreamingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN for the specific Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the replication.</p>
+    #[doc(hidden)]
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
 }
 impl DisableKinesisStreamingDestinationOutput {
@@ -2743,6 +2802,7 @@ impl DisableKinesisStreamingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeToLiveOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
 }
 impl DescribeTimeToLiveOutput {
@@ -2806,6 +2866,7 @@ impl DescribeTimeToLiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableReplicaAutoScalingOutput {
     /// <p>Represents the auto scaling properties of the table.</p>
+    #[doc(hidden)]
     pub table_auto_scaling_description:
         std::option::Option<crate::model::TableAutoScalingDescription>,
 }
@@ -2873,6 +2934,7 @@ impl DescribeTableReplicaAutoScalingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableOutput {
     /// <p>The properties of the table.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableDescription>,
 }
 impl DescribeTableOutput {
@@ -2928,12 +2990,16 @@ impl DescribeTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLimitsOutput {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
+    #[doc(hidden)]
     pub account_max_read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
+    #[doc(hidden)]
     pub account_max_write_capacity_units: std::option::Option<i64>,
     /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
+    #[doc(hidden)]
     pub table_max_read_capacity_units: std::option::Option<i64>,
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
+    #[doc(hidden)]
     pub table_max_write_capacity_units: std::option::Option<i64>,
 }
 impl DescribeLimitsOutput {
@@ -3063,8 +3129,10 @@ impl DescribeLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKinesisStreamingDestinationOutput {
     /// <p>The name of the table being described.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The list of replica structures for the table being described.</p>
+    #[doc(hidden)]
     pub kinesis_data_stream_destinations:
         std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
 }
@@ -3155,8 +3223,10 @@ impl DescribeKinesisStreamingDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
+    #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
+    #[doc(hidden)]
     pub replica_settings:
         std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
 }
@@ -3244,6 +3314,7 @@ impl DescribeGlobalTableSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
+    #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl DescribeGlobalTableOutput {
@@ -3307,6 +3378,7 @@ impl DescribeGlobalTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportOutput {
     /// <p>Represents the properties of the export.</p>
+    #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
 }
 impl DescribeExportOutput {
@@ -3364,6 +3436,7 @@ impl DescribeExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
 }
 impl DescribeEndpointsOutput {
@@ -3427,14 +3500,19 @@ impl DescribeEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the global secondary index being described.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>List of names of the associated contributor insights rules.</p>
+    #[doc(hidden)]
     pub contributor_insights_rule_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Current status of contributor insights.</p>
+    #[doc(hidden)]
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
     /// <p>Timestamp of the last time the status was changed.</p>
+    #[doc(hidden)]
     pub last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
@@ -3444,6 +3522,7 @@ pub struct DescribeContributorInsightsOutput {
     /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
     /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub failure_exception: std::option::Option<crate::model::FailureException>,
 }
 impl DescribeContributorInsightsOutput {
@@ -3638,6 +3717,7 @@ impl DescribeContributorInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+    #[doc(hidden)]
     pub continuous_backups_description:
         std::option::Option<crate::model::ContinuousBackupsDescription>,
 }
@@ -3705,6 +3785,7 @@ impl DescribeContinuousBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
+    #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
 impl DescribeBackupOutput {
@@ -3762,6 +3843,7 @@ impl DescribeBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
+    #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl DeleteTableOutput {
@@ -3819,10 +3901,12 @@ impl DeleteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>DeleteItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the <code>DeleteItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
@@ -3830,6 +3914,7 @@ pub struct DeleteItemOutput {
     /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
 }
 impl DeleteItemOutput {
@@ -3966,6 +4051,7 @@ impl DeleteItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
+    #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
 }
 impl DeleteBackupOutput {
@@ -4023,6 +4109,7 @@ impl DeleteBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableOutput {
     /// <p>Represents the properties of the table.</p>
+    #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
 }
 impl CreateTableOutput {
@@ -4080,6 +4167,7 @@ impl CreateTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
+    #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
 }
 impl CreateGlobalTableOutput {
@@ -4143,6 +4231,7 @@ impl CreateGlobalTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupOutput {
     /// <p>Contains the details of the backup created for the table.</p>
+    #[doc(hidden)]
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
 }
 impl CreateBackupOutput {
@@ -4212,6 +4301,7 @@ pub struct BatchWriteItemOutput {
     /// </ul> </li>
     /// </ul>
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
+    #[doc(hidden)]
     pub unprocessed_items: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
     >,
@@ -4221,6 +4311,7 @@ pub struct BatchWriteItemOutput {
     /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -4233,6 +4324,7 @@ pub struct BatchWriteItemOutput {
     /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
     /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchWriteItemOutput {
@@ -4454,6 +4546,7 @@ impl BatchWriteItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetItemOutput {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    #[doc(hidden)]
     pub responses: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -4470,6 +4563,7 @@ pub struct BatchGetItemOutput {
     /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
+    #[doc(hidden)]
     pub unprocessed_keys: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
     >,
@@ -4479,6 +4573,7 @@ pub struct BatchGetItemOutput {
     /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
     /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchGetItemOutput {
@@ -4675,8 +4770,10 @@ impl BatchGetItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch.</p>
+    #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
+    #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
 }
 impl BatchExecuteStatementOutput {

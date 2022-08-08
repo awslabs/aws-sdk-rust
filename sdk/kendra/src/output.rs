@@ -334,6 +334,7 @@ impl StopDataSourceSyncJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataSourceSyncJobOutput {
     /// <p>Identifies a particular synchronization job.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl StartDataSourceSyncJobOutput {
@@ -388,17 +389,23 @@ impl StartDataSourceSyncJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryOutput {
     /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>The results of the search.</p>
+    #[doc(hidden)]
     pub result_items: std::option::Option<std::vec::Vec<crate::model::QueryResultItem>>,
     /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    #[doc(hidden)]
     pub facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
     /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    #[doc(hidden)]
     pub total_number_of_results: std::option::Option<i32>,
     /// <p>A list of warning codes and their messages on problems with your query.</p>
     /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>A list of information related to suggested spell corrections for a query.</p>
+    #[doc(hidden)]
     pub spell_corrected_queries:
         std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
 }
@@ -611,8 +618,10 @@ impl PutPrincipalMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThesauriOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of thesauri. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
+    #[doc(hidden)]
     pub thesaurus_summary_items: std::option::Option<std::vec::Vec<crate::model::ThesaurusSummary>>,
 }
 impl ListThesauriOutput {
@@ -696,6 +705,7 @@ impl ListThesauriOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags associated with the index, FAQ, or data source.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -759,9 +769,11 @@ pub struct ListQuerySuggestionsBlockListsOutput {
     /// <p>Summary items for a block list.</p>
     /// <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub block_list_summary_items:
         std::option::Option<std::vec::Vec<crate::model::QuerySuggestionsBlockListSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListQuerySuggestionsBlockListsOutput {
@@ -856,9 +868,11 @@ impl ListQuerySuggestionsBlockListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesOutput {
     /// <p>An array of summary information on the configuration of one or more indexes.</p>
+    #[doc(hidden)]
     pub index_configuration_summary_items:
         std::option::Option<std::vec::Vec<crate::model::IndexConfigurationSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIndicesOutput {
@@ -948,8 +962,10 @@ impl ListIndicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOlderThanOrderingIdOutput {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    #[doc(hidden)]
     pub groups_summaries: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOlderThanOrderingIdOutput {
@@ -1030,8 +1046,10 @@ impl ListGroupsOlderThanOrderingIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFaqsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>information about the FAQs associated with the specified index.</p>
+    #[doc(hidden)]
     pub faq_summary_items: std::option::Option<std::vec::Vec<crate::model::FaqSummary>>,
 }
 impl ListFaqsOutput {
@@ -1112,8 +1130,10 @@ impl ListFaqsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperiencesOutput {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
+    #[doc(hidden)]
     pub summary_items: std::option::Option<std::vec::Vec<crate::model::ExperiencesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperiencesOutput {
@@ -1195,8 +1215,10 @@ impl ListExperiencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperienceEntitiesOutput {
     /// <p>An array of summary information for one or more users or groups.</p>
+    #[doc(hidden)]
     pub summary_items: std::option::Option<std::vec::Vec<crate::model::ExperienceEntitiesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperienceEntitiesOutput {
@@ -1278,8 +1300,10 @@ impl ListExperienceEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityPersonasOutput {
     /// <p>An array of summary information for one or more users or groups.</p>
+    #[doc(hidden)]
     pub summary_items: std::option::Option<std::vec::Vec<crate::model::PersonasSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntityPersonasOutput {
@@ -1360,8 +1384,10 @@ impl ListEntityPersonasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source.</p>
+    #[doc(hidden)]
     pub history: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourceSyncJobsOutput {
@@ -1442,8 +1468,10 @@ impl ListDataSourceSyncJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesOutput {
     /// <p>An array of summary information for one or more data sources.</p>
+    #[doc(hidden)]
     pub summary_items: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourcesOutput {
@@ -1525,8 +1553,10 @@ impl ListDataSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessControlConfigurationsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The details of your access control configurations.</p>
+    #[doc(hidden)]
     pub access_control_configurations:
         std::option::Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
 }
@@ -1619,12 +1649,16 @@ impl ListAccessControlConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotsOutput {
     /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
+    #[doc(hidden)]
     pub snap_shot_time_filter: std::option::Option<crate::model::TimeRange>,
     /// <p>The column headers for the search metrics data.</p>
+    #[doc(hidden)]
     pub snapshots_data_header: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
+    #[doc(hidden)]
     pub snapshots_data: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSnapshotsOutput {
@@ -1752,8 +1786,10 @@ impl GetSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQuerySuggestionsOutput {
     /// <p>The unique identifier for a list of query suggestions for an index.</p>
+    #[doc(hidden)]
     pub query_suggestions_id: std::option::Option<std::string::String>,
     /// <p>A list of query suggestions for an index.</p>
+    #[doc(hidden)]
     pub suggestions: std::option::Option<std::vec::Vec<crate::model::Suggestion>>,
 }
 impl GetQuerySuggestionsOutput {
@@ -1837,6 +1873,7 @@ impl GetQuerySuggestionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePersonasFromEntitiesOutput {
     /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl DisassociatePersonasFromEntitiesOutput {
@@ -1901,6 +1938,7 @@ impl DisassociatePersonasFromEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEntitiesFromExperienceOutput {
     /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly remove access to your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl DisassociateEntitiesFromExperienceOutput {
@@ -1965,31 +2003,44 @@ impl DisassociateEntitiesFromExperienceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThesaurusOutput {
     /// <p>The identifier of the thesaurus.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The thesaurus name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The thesaurus description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ThesaurusStatus>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The Unix datetime that the thesaurus was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The size of the thesaurus file in bytes.</p>
+    #[doc(hidden)]
     pub file_size_bytes: std::option::Option<i64>,
     /// <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4. </p>
+    #[doc(hidden)]
     pub term_count: std::option::Option<i64>,
     /// <p>The number of synonym rules in the thesaurus file.</p>
+    #[doc(hidden)]
     pub synonym_rule_count: std::option::Option<i64>,
 }
 impl DescribeThesaurusOutput {
@@ -2267,25 +2318,34 @@ impl DescribeThesaurusOutput {
 pub struct DescribeQuerySuggestionsConfigOutput {
     /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
     /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QuerySuggestionsStatus>,
     /// <p>How recent your queries are in your query log time window (in days).</p>
+    #[doc(hidden)]
     pub query_log_look_back_window_in_days: std::option::Option<i32>,
     /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    #[doc(hidden)]
     pub include_queries_without_user_information: std::option::Option<bool>,
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    #[doc(hidden)]
     pub minimum_number_of_querying_users: std::option::Option<i32>,
     /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+    #[doc(hidden)]
     pub minimum_query_count: std::option::Option<i32>,
     /// <p>The date-time query suggestions for an index was last updated.</p>
+    #[doc(hidden)]
     pub last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    #[doc(hidden)]
     pub last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    #[doc(hidden)]
     pub total_suggestions_count: std::option::Option<i32>,
 }
 impl DescribeQuerySuggestionsConfigOutput {
@@ -2519,31 +2579,43 @@ impl DescribeQuerySuggestionsConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsBlockListOutput {
     /// <p>The identifier of the index for the block list.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the block list.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the block list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the block list.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
     /// <p>The error message containing details if there are issues processing the block list.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The date-time a block list for query suggestions was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time a block list for query suggestions was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
+    #[doc(hidden)]
     pub item_count: std::option::Option<i32>,
     /// <p>The current size of the block list text file in S3.</p>
+    #[doc(hidden)]
     pub file_size_bytes: std::option::Option<i64>,
     /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsBlockListOutput {
@@ -2809,10 +2881,13 @@ impl DescribeQuerySuggestionsBlockListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePrincipalMappingOutput {
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
@@ -2822,6 +2897,7 @@ pub struct DescribePrincipalMappingOutput {
     /// <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason – the reason an action could not be processed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group_ordering_id_summaries:
         std::option::Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
 }
@@ -2970,39 +3046,55 @@ impl DescribePrincipalMappingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexOutput {
     /// <p>The name of the index.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IndexStatus>,
     /// <p>The description for the index.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Unix datetime that the index was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the index was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
+    #[doc(hidden)]
     pub document_metadata_configurations:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
+    #[doc(hidden)]
     pub index_statistics: std::option::Option<crate::model::IndexStatistics>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    #[doc(hidden)]
     pub capacity_units: std::option::Option<crate::model::CapacityUnitsConfiguration>,
     /// <p>The user token configuration for the Amazon Kendra index.</p>
+    #[doc(hidden)]
     pub user_token_configurations:
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
+    #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -3391,28 +3483,40 @@ impl DescribeIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFaqOutput {
     /// <p>The identifier of the FAQ.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the FAQ.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The name that you gave the FAQ when it was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the FAQ that you provided when it was created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the FAQ was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the FAQ was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FaqStatus>,
     /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The file format used by the input files for the FAQ.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
 }
 impl DescribeFaqOutput {
@@ -3669,26 +3773,37 @@ impl DescribeFaqOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExperienceOutput {
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Shows the name of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>Shows the date-time your Amazon Kendra experience was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the description for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperienceStatus>,
     /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DescribeExperienceOutput {
@@ -3937,33 +4052,47 @@ impl DescribeExperienceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceOutput {
     /// <p>The identifier of the data source.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The name that you gave the data source when it was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>The Unix timestamp of when the data source was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp of when the data source was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data source.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
     /// <p>The schedule for Amazon Kendra to update the index.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    #[doc(hidden)]
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
@@ -4277,14 +4406,19 @@ impl DescribeDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessControlConfigurationOutput {
     /// <p>The name for the access control configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the access control configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    #[doc(hidden)]
     pub hierarchical_access_control_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
 }
@@ -4678,6 +4812,7 @@ impl DeleteAccessControlConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThesaurusOutput {
     /// <p>The unique identifier of the thesaurus. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusOutput {
@@ -4730,6 +4865,7 @@ impl CreateThesaurusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuerySuggestionsBlockListOutput {
     /// <p>The unique identifier of the created block list.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateQuerySuggestionsBlockListOutput {
@@ -4782,6 +4918,7 @@ impl CreateQuerySuggestionsBlockListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIndexOutput {
     /// <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateIndexOutput {
@@ -4834,6 +4971,7 @@ impl CreateIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFaqOutput {
     /// <p>The unique identifier of the FAQ.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateFaqOutput {
@@ -4886,6 +5024,7 @@ impl CreateFaqOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperienceOutput {
     /// <p>The identifier for your created Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateExperienceOutput {
@@ -4938,6 +5077,7 @@ impl CreateExperienceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateDataSourceOutput {
@@ -4990,6 +5130,7 @@ impl CreateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessControlConfigurationOutput {
     /// <p>The identifier of the access control configuration for your documents in an index.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateAccessControlConfigurationOutput {
@@ -5073,6 +5214,7 @@ impl ClearQuerySuggestionsOutput {
 pub struct BatchPutDocumentOutput {
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
+    #[doc(hidden)]
     pub failed_documents:
         std::option::Option<std::vec::Vec<crate::model::BatchPutDocumentResponseFailedDocument>>,
 }
@@ -5149,9 +5291,11 @@ impl BatchPutDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDocumentStatusOutput {
     /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchGetDocumentStatusResponseError>>,
     /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
+    #[doc(hidden)]
     pub document_status_list: std::option::Option<std::vec::Vec<crate::model::Status>>,
 }
 impl BatchGetDocumentStatusOutput {
@@ -5246,6 +5390,7 @@ impl BatchGetDocumentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDocumentOutput {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
+    #[doc(hidden)]
     pub failed_documents:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDocumentResponseFailedDocument>>,
 }
@@ -5319,6 +5464,7 @@ impl BatchDeleteDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePersonasToEntitiesOutput {
     /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl AssociatePersonasToEntitiesOutput {
@@ -5383,6 +5529,7 @@ impl AssociatePersonasToEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEntitiesToExperienceOutput {
     /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::model::FailedEntity>>,
 }
 impl AssociateEntitiesToExperienceOutput {

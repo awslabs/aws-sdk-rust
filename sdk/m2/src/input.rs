@@ -5987,12 +5987,16 @@ impl UpdateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
     /// <p>A pagination token to control the number of environments displayed in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environments to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The engine type for the environment.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl ListEnvironmentsInput {
@@ -6029,32 +6033,45 @@ impl std::fmt::Debug for ListEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of instance for the environment.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The engine type for the environment.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The version of the engine type for the environment.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The list of subnets associated with the VPC for this environment.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of security groups for the VPC associated with this environment.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional. The storage configurations for this environment.</p>
+    #[doc(hidden)]
     pub storage_configurations:
         std::option::Option<std::vec::Vec<crate::model::StorageConfiguration>>,
     /// <p>Specifies whether the environment is publicly accessible.</p>
+    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The details of a high availability configuration for this runtime environment.</p>
+    #[doc(hidden)]
     pub high_availability_config: std::option::Option<crate::model::HighAvailabilityConfig>,
     /// <p>The tags for the environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -6146,6 +6163,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentInput {
     /// <p>The unique identifier of the runtime environment you want to delete.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
@@ -6167,16 +6185,22 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The desired capacity for the environment to update.</p>
+    #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
     /// <p>The instance type for the environment to update.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The version of the runtime engine for the environment.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Indicates whether to update the environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
+    #[doc(hidden)]
     pub apply_during_maintenance_window: bool,
 }
 impl UpdateEnvironmentInput {
@@ -6229,6 +6253,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentInput {
     /// <p>The unique identifier of the runtime environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
@@ -6250,8 +6275,10 @@ impl std::fmt::Debug for GetEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopApplicationInput {
     /// <p>The unique identifier of the application you want to stop.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
+    #[doc(hidden)]
     pub force_stop: bool,
 }
 impl StopApplicationInput {
@@ -6278,10 +6305,13 @@ impl std::fmt::Debug for StopApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBatchJobInput {
     /// <p>The unique identifier of the application associated with this batch job.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the batch job.</p>
+    #[doc(hidden)]
     pub batch_job_identifier: std::option::Option<crate::model::BatchJobIdentifier>,
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
+    #[doc(hidden)]
     pub job_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6317,6 +6347,7 @@ impl std::fmt::Debug for StartBatchJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartApplicationInput {
     /// <p>The unique identifier of the application you want to start.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl StartApplicationInput {
@@ -6338,10 +6369,13 @@ impl std::fmt::Debug for StartApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The application identifier.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
@@ -6373,12 +6407,16 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsInput {
     /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ListDataSetsInput {
@@ -6415,10 +6453,13 @@ impl std::fmt::Debug for ListDataSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetImportHistoryInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl ListDataSetImportHistoryInput {
@@ -6450,20 +6491,28 @@ impl std::fmt::Debug for ListDataSetImportHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchJobExecutionsInput {
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of batch job executions to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of each batch job execution.</p>
+    #[doc(hidden)]
     pub execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of each batch job execution.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the batch job executions.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BatchJobExecutionStatus>,
     /// <p>The time after which the batch job executions started.</p>
+    #[doc(hidden)]
     pub started_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time before the batch job executions started.</p>
+    #[doc(hidden)]
     pub started_before: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListBatchJobExecutionsInput {
@@ -6520,12 +6569,16 @@ impl std::fmt::Debug for ListBatchJobExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchJobDefinitionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of batch job definitions to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ListBatchJobDefinitionsInput {
@@ -6562,10 +6615,13 @@ impl std::fmt::Debug for ListBatchJobDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of application versions to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsInput {
@@ -6597,8 +6653,10 @@ impl std::fmt::Debug for ListApplicationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
     /// <p>The unique identifier for the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentInput {
@@ -6625,8 +6683,10 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetImportTaskInput {
     /// <p>The application identifier.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl GetDataSetImportTaskInput {
@@ -6653,8 +6713,10 @@ impl std::fmt::Debug for GetDataSetImportTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetDetailsInput {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
 }
 impl GetDataSetDetailsInput {
@@ -6681,8 +6743,10 @@ impl std::fmt::Debug for GetDataSetDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchJobExecutionInput {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the batch job execution.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl GetBatchJobExecutionInput {
@@ -6709,8 +6773,10 @@ impl std::fmt::Debug for GetBatchJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The specific version of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
 }
 impl GetApplicationVersionInput {
@@ -6737,8 +6803,10 @@ impl std::fmt::Debug for GetApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationFromEnvironmentInput {
     /// <p>The unique identifier of the application you want to delete.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationFromEnvironmentInput {
@@ -6765,12 +6833,16 @@ impl std::fmt::Debug for DeleteApplicationFromEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>The identifier of the environment where this application will be deployed.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The application identifier.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The version of the application to deploy.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -6807,10 +6879,13 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetImportTaskInput {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The data set import task configuration.</p>
+    #[doc(hidden)]
     pub import_config: std::option::Option<crate::model::DataSetImportConfig>,
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDataSetImportTaskInput {
@@ -6842,8 +6917,10 @@ impl std::fmt::Debug for CreateDataSetImportTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the batch job execution.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl CancelBatchJobExecutionInput {
@@ -6870,12 +6947,16 @@ impl std::fmt::Debug for CancelBatchJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>A pagination token to control the number of applications displayed in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of applications to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The names of the applications.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -6912,17 +6993,23 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the target platform for this application.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p>A list of tags to apply to the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -6972,6 +7059,7 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The unique identifier of the application you want to delete.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -6993,12 +7081,16 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The unique identifier of the application you want to update.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The description of the application to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current version of the application to update.</p>
+    #[doc(hidden)]
     pub current_application_version: std::option::Option<i32>,
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::Definition>,
 }
 impl UpdateApplicationInput {
@@ -7038,6 +7130,7 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -7059,8 +7152,10 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7087,8 +7182,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7119,6 +7216,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -7140,10 +7238,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngineVersionsInput {
     /// <p>The type of target platform.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEngineVersionsInput {

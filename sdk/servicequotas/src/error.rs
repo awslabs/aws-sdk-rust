@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -69,6 +70,7 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceException {
@@ -133,6 +135,7 @@ impl ServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchResourceException {
@@ -197,6 +200,7 @@ impl NoSuchResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalArgumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalArgumentException {
@@ -261,6 +265,7 @@ impl IllegalArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -325,6 +330,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -389,6 +395,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyViolationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagPolicyViolationException {
@@ -453,6 +460,7 @@ impl TagPolicyViolationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
@@ -517,6 +525,7 @@ impl ResourceAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QuotaExceededException {
@@ -581,6 +590,7 @@ impl QuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceStateException {
@@ -645,6 +655,7 @@ impl InvalidResourceStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DependencyAccessDeniedException {
@@ -709,6 +720,7 @@ impl DependencyAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplatesNotAvailableInRegionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TemplatesNotAvailableInRegionException {
@@ -773,6 +785,7 @@ impl TemplatesNotAvailableInRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableOrganizationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAvailableOrganizationException {
@@ -837,6 +850,7 @@ impl NoAvailableOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsServiceAccessNotEnabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsServiceAccessNotEnabledException {
@@ -904,6 +918,7 @@ impl AwsServiceAccessNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPaginationTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPaginationTokenException {
@@ -968,6 +983,7 @@ impl InvalidPaginationTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaTemplateNotInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceQuotaTemplateNotInUseException {
@@ -1032,6 +1048,7 @@ impl ServiceQuotaTemplateNotInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotInAllFeaturesModeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationNotInAllFeaturesModeException {

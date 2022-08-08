@@ -1745,14 +1745,19 @@ impl UpdateAppMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
     /// <p>The maximum number of results to return in one operation. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAppMonitorDataInput {
@@ -1794,21 +1799,26 @@ impl std::fmt::Debug for GetAppMonitorDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppMonitorInput {
     /// <p>A name for the app monitor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
+    #[doc(hidden)]
     pub app_monitor_configuration: std::option::Option<crate::model::AppMonitorConfiguration>,
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     /// <p>If you omit this parameter, the default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub cw_log_enabled: std::option::Option<bool>,
 }
 impl CreateAppMonitorInput {
@@ -1861,8 +1871,10 @@ impl std::fmt::Debug for CreateAppMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppMonitorsInput {
     /// <p>The maximum number of results to return in one operation. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppMonitorsInput {
@@ -1889,6 +1901,7 @@ impl std::fmt::Debug for ListAppMonitorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppMonitorInput {
     /// <p>The name of the app monitor to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAppMonitorInput {
@@ -1910,12 +1923,16 @@ impl std::fmt::Debug for DeleteAppMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppMonitorInput {
     /// <p>The name of the app monitor to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
+    #[doc(hidden)]
     pub app_monitor_configuration: std::option::Option<crate::model::AppMonitorConfiguration>,
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
+    #[doc(hidden)]
     pub cw_log_enabled: std::option::Option<bool>,
 }
 impl UpdateAppMonitorInput {
@@ -1954,6 +1971,7 @@ impl std::fmt::Debug for UpdateAppMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppMonitorInput {
     /// <p>The app monitor to retrieve information for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAppMonitorInput {
@@ -1975,8 +1993,10 @@ impl std::fmt::Debug for GetAppMonitorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2003,8 +2023,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2035,14 +2057,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this batch of RUM event data.</p>
+    #[doc(hidden)]
     pub batch_id: std::option::Option<std::string::String>,
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
+    #[doc(hidden)]
     pub app_monitor_details: std::option::Option<crate::model::AppMonitorDetails>,
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
+    #[doc(hidden)]
     pub user_details: std::option::Option<crate::model::UserDetails>,
     /// <p>An array of structures that contain the telemetry event data.</p>
+    #[doc(hidden)]
     pub rum_events: std::option::Option<std::vec::Vec<crate::model::RumEvent>>,
 }
 impl PutRumEventsInput {
@@ -2084,6 +2111,7 @@ impl std::fmt::Debug for PutRumEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource that you want to see the tags of.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

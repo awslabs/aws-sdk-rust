@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVolumeOutput {
     /// <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
+    #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl UpdateVolumeOutput {
@@ -58,6 +59,7 @@ impl UpdateVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStorageVirtualMachineOutput {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
 }
 impl UpdateStorageVirtualMachineOutput {
@@ -121,6 +123,7 @@ impl UpdateStorageVirtualMachineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotOutput {
     /// <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl UpdateSnapshotOutput {
@@ -175,6 +178,7 @@ impl UpdateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFileSystemOutput {
     /// <p>A description of the file system that was updated.</p>
+    #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl UpdateFileSystemOutput {
@@ -232,6 +236,7 @@ impl UpdateFileSystemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is updated.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
 }
 impl UpdateDataRepositoryAssociationOutput {
@@ -349,8 +354,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreVolumeFromSnapshotOutput {
     /// <p>The ID of the volume that you restored.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle state of the volume being restored.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
 }
 impl RestoreVolumeFromSnapshotOutput {
@@ -425,6 +432,7 @@ impl RestoreVolumeFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseFileSystemNfsV3LocksOutput {
     /// <p>A description of a specific Amazon FSx file system.</p>
+    #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl ReleaseFileSystemNfsV3LocksOutput {
@@ -482,8 +490,10 @@ impl ReleaseFileSystemNfsV3LocksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags on the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -564,6 +574,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
 impl DisassociateFileSystemAliasesOutput {
@@ -627,8 +638,10 @@ impl DisassociateFileSystemAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesOutput {
     /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesOutput {
@@ -709,9 +722,11 @@ impl DescribeVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
+    #[doc(hidden)]
     pub storage_virtual_machines:
         std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStorageVirtualMachinesOutput {
@@ -798,8 +813,10 @@ impl DescribeStorageVirtualMachinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
     /// <p>An array of snapshots.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
@@ -880,8 +897,10 @@ impl DescribeSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemsOutput {
     /// <p>An array of file system descriptions.</p>
+    #[doc(hidden)]
     pub file_systems: std::option::Option<std::vec::Vec<crate::model::FileSystem>>,
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemsOutput {
@@ -962,8 +981,10 @@ impl DescribeFileSystemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
     /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemAliasesOutput {
@@ -1044,8 +1065,10 @@ impl DescribeFileSystemAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
+    #[doc(hidden)]
     pub data_repository_tasks: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataRepositoryTasksOutput {
@@ -1129,8 +1152,10 @@ impl DescribeDataRepositoryTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataRepositoryAssociationsOutput {
     /// <p>An array of one ore more data repository association descriptions.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDataRepositoryAssociationsOutput {
@@ -1212,8 +1237,10 @@ impl DescribeDataRepositoryAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsOutput {
     /// <p>An array of backups.</p>
+    #[doc(hidden)]
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
     /// <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
@@ -1294,10 +1321,13 @@ impl DescribeBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeOutput {
     /// <p>The ID of the volume that's being deleted.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
+    #[doc(hidden)]
     pub ontap_response: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
 }
 impl DeleteVolumeOutput {
@@ -1392,8 +1422,10 @@ impl DeleteVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageVirtualMachineOutput {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
 }
 impl DeleteStorageVirtualMachineOutput {
@@ -1474,8 +1506,10 @@ impl DeleteStorageVirtualMachineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
     /// <p>The ID of the deleted snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
 }
 impl DeleteSnapshotOutput {
@@ -1550,14 +1584,19 @@ impl DeleteSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemOutput {
     /// <p>The ID of the file system that's being deleted.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub windows_response: std::option::Option<crate::model::DeleteFileSystemWindowsResponse>,
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub lustre_response: std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    #[doc(hidden)]
     pub open_zfs_response: std::option::Option<crate::model::DeleteFileSystemOpenZfsResponse>,
 }
 impl DeleteFileSystemOutput {
@@ -1713,10 +1752,13 @@ impl DeleteFileSystemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataRepositoryAssociationOutput {
     /// <p>The ID of the data repository association being deleted.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub delete_data_in_file_system: std::option::Option<bool>,
 }
 impl DeleteDataRepositoryAssociationOutput {
@@ -1814,8 +1856,10 @@ impl DeleteDataRepositoryAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupOutput {
     /// <p>The ID of the backup that was deleted.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::BackupLifecycle>,
 }
 impl DeleteBackupOutput {
@@ -1890,6 +1934,7 @@ impl DeleteBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumeFromBackupOutput {
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
+    #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl CreateVolumeFromBackupOutput {
@@ -1944,6 +1989,7 @@ impl CreateVolumeFromBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumeOutput {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
+    #[doc(hidden)]
     pub volume: std::option::Option<crate::model::Volume>,
 }
 impl CreateVolumeOutput {
@@ -1998,6 +2044,7 @@ impl CreateVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorageVirtualMachineOutput {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
 }
 impl CreateStorageVirtualMachineOutput {
@@ -2061,6 +2108,7 @@ impl CreateStorageVirtualMachineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>A description of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
@@ -2115,6 +2163,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemFromBackupOutput {
     /// <p>A description of the file system.</p>
+    #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl CreateFileSystemFromBackupOutput {
@@ -2172,6 +2221,7 @@ impl CreateFileSystemFromBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemOutput {
     /// <p>The configuration of the file system that was created.</p>
+    #[doc(hidden)]
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
 impl CreateFileSystemOutput {
@@ -2229,6 +2279,7 @@ impl CreateFileSystemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataRepositoryTaskOutput {
     /// <p>The description of the data repository task that you just created.</p>
+    #[doc(hidden)]
     pub data_repository_task: std::option::Option<crate::model::DataRepositoryTask>,
 }
 impl CreateDataRepositoryTaskOutput {
@@ -2286,6 +2337,7 @@ impl CreateDataRepositoryTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is created.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::DataRepositoryAssociation>,
 }
 impl CreateDataRepositoryAssociationOutput {
@@ -2343,6 +2395,7 @@ impl CreateDataRepositoryAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupOutput {
     /// <p>A description of the backup.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CreateBackupOutput {
@@ -2397,6 +2450,7 @@ impl CreateBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupOutput {
     /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CopyBackupOutput {
@@ -2459,8 +2513,10 @@ pub struct CancelDataRepositoryTaskOutput {
     /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
     /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
     /// <p>The ID of the task being canceled.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDataRepositoryTaskOutput {
@@ -2559,6 +2615,7 @@ impl CancelDataRepositoryTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFileSystemAliasesOutput {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
 impl AssociateFileSystemAliasesOutput {

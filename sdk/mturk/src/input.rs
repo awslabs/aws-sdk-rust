@@ -6998,25 +6998,34 @@ impl UpdateQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQualificationTypeInput {
     /// <p>The ID of the Qualification type to update.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>The new description of the Qualification type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The new status of the Qualification type - Active | Inactive</p>
+    #[doc(hidden)]
     pub qualification_type_status: std::option::Option<crate::model::QualificationTypeStatus>,
     /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<std::string::String>,
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
+    #[doc(hidden)]
     pub answer_key: std::option::Option<std::string::String>,
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+    #[doc(hidden)]
     pub test_duration_in_seconds: std::option::Option<i64>,
     /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
+    #[doc(hidden)]
     pub retry_delay_in_seconds: std::option::Option<i64>,
     /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+    #[doc(hidden)]
     pub auto_granted: std::option::Option<bool>,
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+    #[doc(hidden)]
     pub auto_granted_value: std::option::Option<i32>,
 }
 impl UpdateQualificationTypeInput {
@@ -7083,10 +7092,13 @@ impl std::fmt::Debug for UpdateQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotificationSettingsInput {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
     /// <p> The notification specification for the HIT type. </p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::NotificationSpecification>,
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl UpdateNotificationSettingsInput {
@@ -7118,8 +7130,10 @@ impl std::fmt::Debug for UpdateNotificationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHitTypeOfHitInput {
     /// <p>The HIT to update.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>The ID of the new HIT type.</p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
 }
 impl UpdateHitTypeOfHitInput {
@@ -7146,12 +7160,14 @@ impl std::fmt::Debug for UpdateHitTypeOfHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHitReviewStatusInput {
     /// <p> The ID of the HIT to update. </p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
     /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
     /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub revert: std::option::Option<bool>,
 }
 impl UpdateHitReviewStatusInput {
@@ -7182,8 +7198,10 @@ impl std::fmt::Debug for UpdateHitReviewStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExpirationForHitInput {
     /// <p> The HIT to update. </p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p> The date and time at which you want the HIT to expire </p>
+    #[doc(hidden)]
     pub expire_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateExpirationForHitInput {
@@ -7210,8 +7228,10 @@ impl std::fmt::Debug for UpdateExpirationForHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTestEventNotificationInput {
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::NotificationSpecification>,
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+    #[doc(hidden)]
     pub test_event_type: std::option::Option<crate::model::EventType>,
 }
 impl SendTestEventNotificationInput {
@@ -7238,14 +7258,19 @@ impl std::fmt::Debug for SendTestEventNotificationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    #[doc(hidden)]
     pub bonus_amount: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment for which this bonus is paid.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
+    #[doc(hidden)]
     pub unique_request_token: std::option::Option<std::string::String>,
 }
 impl SendBonusInput {
@@ -7287,8 +7312,10 @@ impl std::fmt::Debug for SendBonusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectQualificationRequestInput {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    #[doc(hidden)]
     pub qualification_request_id: std::option::Option<std::string::String>,
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl RejectQualificationRequestInput {
@@ -7315,8 +7342,10 @@ impl std::fmt::Debug for RejectQualificationRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    #[doc(hidden)]
     pub requester_feedback: std::option::Option<std::string::String>,
 }
 impl RejectAssignmentInput {
@@ -7343,10 +7372,13 @@ impl std::fmt::Debug for RejectAssignmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersInput {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
+    #[doc(hidden)]
     pub message_text: std::option::Option<std::string::String>,
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
+    #[doc(hidden)]
     pub worker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NotifyWorkersInput {
@@ -7378,12 +7410,16 @@ impl std::fmt::Debug for NotifyWorkersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkersWithQualificationTypeInput {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QualificationStatus>,
     /// <p>Pagination Token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Limit the number of results returned. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkersWithQualificationTypeInput {
@@ -7420,8 +7456,10 @@ impl std::fmt::Debug for ListWorkersWithQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerBlocksInput {
     /// <p>Pagination token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkerBlocksInput {
@@ -7448,16 +7486,22 @@ impl std::fmt::Debug for ListWorkerBlocksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewPolicyResultsForHitInput {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
+    #[doc(hidden)]
     pub policy_levels: std::option::Option<std::vec::Vec<crate::model::ReviewPolicyLevel>>,
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
+    #[doc(hidden)]
     pub retrieve_actions: std::option::Option<bool>,
     /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
+    #[doc(hidden)]
     pub retrieve_results: std::option::Option<bool>,
     /// <p>Pagination token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Limit the number of results returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReviewPolicyResultsForHitInput {
@@ -7504,12 +7548,16 @@ impl std::fmt::Debug for ListReviewPolicyResultsForHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewableHiTsInput {
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReviewableHitStatus>,
     /// <p>Pagination Token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Limit the number of results returned. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReviewableHiTsInput {
@@ -7546,14 +7594,19 @@ impl std::fmt::Debug for ListReviewableHiTsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationTypesInput {
     /// <p> A text query against all of the searchable attributes of Qualification types. </p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
+    #[doc(hidden)]
     pub must_be_requestable: std::option::Option<bool>,
     /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
+    #[doc(hidden)]
     pub must_be_owned_by_caller: std::option::Option<bool>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return in a single call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQualificationTypesInput {
@@ -7595,10 +7648,13 @@ impl std::fmt::Debug for ListQualificationTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationRequestsInput {
     /// <p>The ID of the QualificationType.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return in a single call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQualificationRequestsInput {
@@ -7630,10 +7686,13 @@ impl std::fmt::Debug for ListQualificationRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsForQualificationTypeInput {
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>Pagination Token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Limit the number of results returned. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListHiTsForQualificationTypeInput {
@@ -7665,8 +7724,10 @@ impl std::fmt::Debug for ListHiTsForQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsInput {
     /// <p>Pagination token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListHiTsInput {
@@ -7693,12 +7754,16 @@ impl std::fmt::Debug for ListHiTsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBonusPaymentsInput {
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Pagination token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListBonusPaymentsInput {
@@ -7735,12 +7800,16 @@ impl std::fmt::Debug for ListBonusPaymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssignmentsForHitInput {
     /// <p>The ID of the HIT.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>Pagination token</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+    #[doc(hidden)]
     pub assignment_statuses: std::option::Option<std::vec::Vec<crate::model::AssignmentStatus>>,
 }
 impl ListAssignmentsForHitInput {
@@ -7777,6 +7846,7 @@ impl std::fmt::Debug for ListAssignmentsForHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationTypeInput {
     /// <p>The ID of the QualificationType.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
 }
 impl GetQualificationTypeInput {
@@ -7798,8 +7868,10 @@ impl std::fmt::Debug for GetQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationScoreInput {
     /// <p>The ID of the QualificationType.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
 }
 impl GetQualificationScoreInput {
@@ -7826,6 +7898,7 @@ impl std::fmt::Debug for GetQualificationScoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHitInput {
     /// <p>The ID of the HIT to be retrieved.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
 }
 impl GetHitInput {
@@ -7847,8 +7920,10 @@ impl std::fmt::Debug for GetHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileUploadUrlInput {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+    #[doc(hidden)]
     pub question_identifier: std::option::Option<std::string::String>,
 }
 impl GetFileUploadUrlInput {
@@ -7875,6 +7950,7 @@ impl std::fmt::Debug for GetFileUploadUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssignmentInput {
     /// <p>The ID of the Assignment to be retrieved.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
 }
 impl GetAssignmentInput {
@@ -7907,10 +7983,13 @@ impl std::fmt::Debug for GetAccountBalanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateQualificationFromWorkerInput {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DisassociateQualificationFromWorkerInput {
@@ -7942,8 +8021,10 @@ impl std::fmt::Debug for DisassociateQualificationFromWorkerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkerBlockInput {
     /// <p>The ID of the Worker to unblock.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DeleteWorkerBlockInput {
@@ -7970,6 +8051,7 @@ impl std::fmt::Debug for DeleteWorkerBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQualificationTypeInput {
     /// <p>The ID of the QualificationType to dispose.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
 }
 impl DeleteQualificationTypeInput {
@@ -7991,6 +8073,7 @@ impl std::fmt::Debug for DeleteQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHitInput {
     /// <p>The ID of the HIT to be deleted.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
 }
 impl DeleteHitInput {
@@ -8012,8 +8095,10 @@ impl std::fmt::Debug for DeleteHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkerBlockInput {
     /// <p>The ID of the Worker to block.</p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CreateWorkerBlockInput {
@@ -8040,31 +8125,41 @@ impl std::fmt::Debug for CreateWorkerBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQualificationTypeInput {
     /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
+    #[doc(hidden)]
     pub qualification_type_status: std::option::Option<crate::model::QualificationTypeStatus>,
     /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
     /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
+    #[doc(hidden)]
     pub retry_delay_in_seconds: std::option::Option<i64>,
     /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
     /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<std::string::String>,
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
     /// <p>Constraints: Must not be longer than 65535 bytes.</p>
     /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
+    #[doc(hidden)]
     pub answer_key: std::option::Option<std::string::String>,
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+    #[doc(hidden)]
     pub test_duration_in_seconds: std::option::Option<i64>,
     /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+    #[doc(hidden)]
     pub auto_granted: std::option::Option<bool>,
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+    #[doc(hidden)]
     pub auto_granted_value: std::option::Option<i32>,
 }
 impl CreateQualificationTypeInput {
@@ -8140,31 +8235,41 @@ impl std::fmt::Debug for CreateQualificationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitWithHitTypeInput {
     /// <p>The HIT type ID you want to create this HIT with.</p>
+    #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    #[doc(hidden)]
     pub max_assignments: std::option::Option<i32>,
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    #[doc(hidden)]
     pub lifetime_in_seconds: std::option::Option<i64>,
     /// <p> The data the person completing the HIT uses to produce the results. </p>
     /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    #[doc(hidden)]
     pub question: std::option::Option<std::string::String>,
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    #[doc(hidden)]
     pub requester_annotation: std::option::Option<std::string::String>,
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
+    #[doc(hidden)]
     pub unique_request_token: std::option::Option<std::string::String>,
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    #[doc(hidden)]
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    #[doc(hidden)]
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    #[doc(hidden)]
     pub hit_layout_id: std::option::Option<std::string::String>,
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    #[doc(hidden)]
     pub hit_layout_parameters: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
 }
 impl CreateHitWithHitTypeInput {
@@ -8240,18 +8345,25 @@ impl std::fmt::Debug for CreateHitWithHitTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitTypeInput {
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    #[doc(hidden)]
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    #[doc(hidden)]
     pub assignment_duration_in_seconds: std::option::Option<i64>,
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    #[doc(hidden)]
     pub reward: std::option::Option<std::string::String>,
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    #[doc(hidden)]
     pub qualification_requirements:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
 }
@@ -8315,44 +8427,60 @@ impl std::fmt::Debug for CreateHitTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitInput {
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    #[doc(hidden)]
     pub max_assignments: std::option::Option<i32>,
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    #[doc(hidden)]
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    #[doc(hidden)]
     pub lifetime_in_seconds: std::option::Option<i64>,
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    #[doc(hidden)]
     pub assignment_duration_in_seconds: std::option::Option<i64>,
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    #[doc(hidden)]
     pub reward: std::option::Option<std::string::String>,
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::string::String>,
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The data the person completing the HIT uses to produce the results. </p>
     /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    #[doc(hidden)]
     pub question: std::option::Option<std::string::String>,
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    #[doc(hidden)]
     pub requester_annotation: std::option::Option<std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    #[doc(hidden)]
     pub qualification_requirements:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
+    #[doc(hidden)]
     pub unique_request_token: std::option::Option<std::string::String>,
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    #[doc(hidden)]
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    #[doc(hidden)]
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    #[doc(hidden)]
     pub hit_layout_id: std::option::Option<std::string::String>,
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    #[doc(hidden)]
     pub hit_layout_parameters: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
 }
 impl CreateHitInput {
@@ -8469,10 +8597,13 @@ impl std::fmt::Debug for CreateHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAdditionalAssignmentsForHitInput {
     /// <p>The ID of the HIT to extend.</p>
+    #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>The number of additional assignments to request for this HIT.</p>
+    #[doc(hidden)]
     pub number_of_additional_assignments: std::option::Option<i32>,
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
+    #[doc(hidden)]
     pub unique_request_token: std::option::Option<std::string::String>,
 }
 impl CreateAdditionalAssignmentsForHitInput {
@@ -8507,12 +8638,16 @@ impl std::fmt::Debug for CreateAdditionalAssignmentsForHitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateQualificationWithWorkerInput {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
+    #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>The value of the Qualification to assign.</p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
     /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    #[doc(hidden)]
     pub send_notification: std::option::Option<bool>,
 }
 impl AssociateQualificationWithWorkerInput {
@@ -8549,10 +8684,13 @@ impl std::fmt::Debug for AssociateQualificationWithWorkerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApproveAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    #[doc(hidden)]
     pub requester_feedback: std::option::Option<std::string::String>,
     /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
+    #[doc(hidden)]
     pub override_rejection: std::option::Option<bool>,
 }
 impl ApproveAssignmentInput {
@@ -8584,8 +8722,10 @@ impl std::fmt::Debug for ApproveAssignmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
+    #[doc(hidden)]
     pub qualification_request_id: std::option::Option<std::string::String>,
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
 }
 impl AcceptQualificationRequestInput {

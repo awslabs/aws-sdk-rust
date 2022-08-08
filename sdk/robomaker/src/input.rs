@@ -9584,12 +9584,16 @@ impl UpdateWorldTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>The name of the template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The world template body.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the world template.</p>
+    #[doc(hidden)]
     pub template_location: std::option::Option<crate::model::TemplateLocation>,
 }
 impl UpdateWorldTemplateInput {
@@ -9626,18 +9630,25 @@ impl std::fmt::Debug for UpdateWorldTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The revision id for the robot application.</p>
+    #[doc(hidden)]
     pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateSimulationApplicationInput {
@@ -9691,14 +9702,19 @@ impl std::fmt::Debug for UpdateSimulationApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The revision id for the robot application.</p>
+    #[doc(hidden)]
     pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateRobotApplicationInput {
@@ -9740,8 +9756,10 @@ impl std::fmt::Debug for UpdateRobotApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9768,8 +9786,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9803,8 +9823,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
 }
 impl SyncDeploymentJobInput {
@@ -9831,13 +9853,17 @@ impl std::fmt::Debug for SyncDeploymentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSimulationJobBatchInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
+    #[doc(hidden)]
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
     /// <p>A list of simulation job requests to create in the batch.</p>
+    #[doc(hidden)]
     pub create_simulation_job_requests:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9883,6 +9909,7 @@ impl std::fmt::Debug for StartSimulationJobBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestartSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl RestartSimulationJobInput {
@@ -9907,8 +9934,10 @@ impl std::fmt::Debug for RestartSimulationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl RegisterRobotInput {
@@ -9935,8 +9964,10 @@ impl std::fmt::Debug for RegisterRobotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldTemplatesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorldTemplatesInput {
@@ -9963,10 +9994,13 @@ impl std::fmt::Debug for ListWorldTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldsInput {
@@ -9998,10 +10032,13 @@ impl std::fmt::Debug for ListWorldsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldGenerationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldGenerationJobsInput {
@@ -10033,10 +10070,13 @@ impl std::fmt::Debug for ListWorldGenerationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldExportJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldExportJobsInput {
@@ -10068,6 +10108,7 @@ impl std::fmt::Debug for ListWorldExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -10089,11 +10130,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobsInput {
@@ -10126,10 +10170,13 @@ impl std::fmt::Debug for ListSimulationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobBatchesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobBatchesInput {
@@ -10161,13 +10208,17 @@ impl std::fmt::Debug for ListSimulationJobBatchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationApplicationsInput {
     /// <p>The version qualifier of the simulation application.</p>
+    #[doc(hidden)]
     pub version_qualifier: std::option::Option<std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationApplicationsInput {
@@ -10208,11 +10259,14 @@ impl std::fmt::Debug for ListSimulationApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotsInput {
@@ -10245,13 +10299,17 @@ impl std::fmt::Debug for ListRobotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
+    #[doc(hidden)]
     pub version_qualifier: std::option::Option<std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotApplicationsInput {
@@ -10294,11 +10352,14 @@ pub struct ListFleetsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListFleetsInput {
@@ -10337,10 +10398,13 @@ impl std::fmt::Debug for ListFleetsInput {
 pub struct ListDeploymentJobsInput {
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeploymentJobsInput {
@@ -10373,8 +10437,10 @@ impl std::fmt::Debug for ListDeploymentJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    #[doc(hidden)]
     pub generation_job: std::option::Option<std::string::String>,
 }
 impl GetWorldTemplateBodyInput {
@@ -10401,6 +10467,7 @@ impl std::fmt::Debug for GetWorldTemplateBodyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
 }
 impl DescribeWorldTemplateInput {
@@ -10422,6 +10489,7 @@ impl std::fmt::Debug for DescribeWorldTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldGenerationJobInput {
@@ -10443,6 +10511,7 @@ impl std::fmt::Debug for DescribeWorldGenerationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldExportJobInput {
@@ -10464,6 +10533,7 @@ impl std::fmt::Debug for DescribeWorldExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    #[doc(hidden)]
     pub world: std::option::Option<std::string::String>,
 }
 impl DescribeWorldInput {
@@ -10485,6 +10555,7 @@ impl std::fmt::Debug for DescribeWorldInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
+    #[doc(hidden)]
     pub batch: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobBatchInput {
@@ -10506,6 +10577,7 @@ impl std::fmt::Debug for DescribeSimulationJobBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobInput {
@@ -10527,8 +10599,10 @@ impl std::fmt::Debug for DescribeSimulationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to describe.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationApplicationInput {
@@ -10555,8 +10629,10 @@ impl std::fmt::Debug for DescribeSimulationApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the robot application to describe.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<std::string::String>,
 }
 impl DescribeRobotApplicationInput {
@@ -10586,6 +10662,7 @@ impl std::fmt::Debug for DescribeRobotApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl DescribeRobotInput {
@@ -10610,6 +10687,7 @@ impl std::fmt::Debug for DescribeRobotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
 }
 impl DescribeFleetInput {
@@ -10634,6 +10712,7 @@ impl std::fmt::Debug for DescribeFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeDeploymentJobInput {
@@ -10658,8 +10737,10 @@ impl std::fmt::Debug for DescribeDeploymentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl DeregisterRobotInput {
@@ -10686,6 +10767,7 @@ impl std::fmt::Debug for DeregisterRobotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
 }
 impl DeleteWorldTemplateInput {
@@ -10707,8 +10789,10 @@ impl std::fmt::Debug for DeleteWorldTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to delete.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<std::string::String>,
 }
 impl DeleteSimulationApplicationInput {
@@ -10735,8 +10819,10 @@ impl std::fmt::Debug for DeleteSimulationApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the robot application to delete.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<std::string::String>,
 }
 impl DeleteRobotApplicationInput {
@@ -10766,6 +10852,7 @@ impl std::fmt::Debug for DeleteRobotApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl DeleteRobotInput {
@@ -10790,6 +10877,7 @@ impl std::fmt::Debug for DeleteRobotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
 }
 impl DeleteFleetInput {
@@ -10811,14 +10899,19 @@ impl std::fmt::Debug for DeleteFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The world template body.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the world template.</p>
+    #[doc(hidden)]
     pub template_location: std::option::Option<crate::model::TemplateLocation>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10864,15 +10957,20 @@ impl std::fmt::Debug for CreateWorldTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldGenerationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count.</p>
+    #[doc(hidden)]
     pub world_count: std::option::Option<crate::model::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    #[doc(hidden)]
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10921,14 +11019,19 @@ impl std::fmt::Debug for CreateWorldGenerationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldExportJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
+    #[doc(hidden)]
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The output location.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10974,14 +11077,19 @@ impl std::fmt::Debug for CreateWorldExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Location for output files generated by the simulation job.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
+    #[doc(hidden)]
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
+    #[doc(hidden)]
     pub max_job_duration_in_seconds: i64,
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
@@ -10998,23 +11106,30 @@ pub struct CreateSimulationJobInput {
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The robot application to use in the simulation job.</p>
+    #[doc(hidden)]
     pub robot_applications:
         std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>The simulation application to use in the simulation job.</p>
+    #[doc(hidden)]
     pub simulation_applications:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Compute information for the simulation job.</p>
+    #[doc(hidden)]
     pub compute: std::option::Option<crate::model::Compute>,
 }
 impl CreateSimulationJobInput {
@@ -11117,12 +11232,16 @@ impl std::fmt::Debug for CreateSimulationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    #[doc(hidden)]
     pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+    #[doc(hidden)]
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl CreateSimulationApplicationVersionInput {
@@ -11159,19 +11278,26 @@ impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationInput {
     /// <p>The name of the simulation application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationInput {
@@ -11228,12 +11354,16 @@ impl std::fmt::Debug for CreateSimulationApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    #[doc(hidden)]
     pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+    #[doc(hidden)]
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl CreateRobotApplicationVersionInput {
@@ -11270,15 +11400,20 @@ impl std::fmt::Debug for CreateRobotApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationInput {
@@ -11326,12 +11461,16 @@ impl std::fmt::Debug for CreateRobotApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotInput {
     /// <p>The name for the robot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The target architecture of the robot.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The Greengrass group id.</p>
+    #[doc(hidden)]
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11375,8 +11514,10 @@ impl std::fmt::Debug for CreateRobotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetInput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11410,15 +11551,20 @@ impl std::fmt::Debug for CreateFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The deployment application configuration.</p>
+    #[doc(hidden)]
     pub deployment_application_configs:
         std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11469,6 +11615,7 @@ impl std::fmt::Debug for CreateDeploymentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl CancelWorldGenerationJobInput {
@@ -11490,6 +11637,7 @@ impl std::fmt::Debug for CancelWorldGenerationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl CancelWorldExportJobInput {
@@ -11511,6 +11659,7 @@ impl std::fmt::Debug for CancelWorldExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
+    #[doc(hidden)]
     pub batch: std::option::Option<std::string::String>,
 }
 impl CancelSimulationJobBatchInput {
@@ -11532,6 +11681,7 @@ impl std::fmt::Debug for CancelSimulationJobBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl CancelSimulationJobInput {
@@ -11556,6 +11706,7 @@ impl std::fmt::Debug for CancelSimulationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDeploymentJobInput {
     /// <p>The deployment job ARN to cancel.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl CancelDeploymentJobInput {
@@ -11577,6 +11728,7 @@ impl std::fmt::Debug for CancelDeploymentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDescribeSimulationJobInput {
@@ -11598,6 +11750,7 @@ impl std::fmt::Debug for BatchDescribeSimulationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
+    #[doc(hidden)]
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteWorldsInput {

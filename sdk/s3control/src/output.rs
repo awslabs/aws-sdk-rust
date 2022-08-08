@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobStatusOutput {
     /// <p>The ID for the job whose status was updated.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status for the specified job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>The reason that the specified job's status was updated.</p>
+    #[doc(hidden)]
     pub status_update_reason: std::option::Option<std::string::String>,
 }
 impl UpdateJobStatusOutput {
@@ -99,8 +102,10 @@ impl UpdateJobStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The new priority assigned to the specified job.</p>
+    #[doc(hidden)]
     pub priority: i32,
 }
 impl UpdateJobPriorityOutput {
@@ -262,6 +267,7 @@ impl PutPublicAccessBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMultiRegionAccessPointPolicyOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl PutMultiRegionAccessPointPolicyOutput {
@@ -530,8 +536,10 @@ impl PutAccessPointConfigurationForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStorageLensConfigurationsOutput {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
+    #[doc(hidden)]
     pub storage_lens_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
 }
@@ -624,8 +632,10 @@ impl ListStorageLensConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegionalBucketsOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub regional_bucket_list: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
     /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRegionalBucketsOutput {
@@ -707,9 +717,11 @@ impl ListRegionalBucketsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
+    #[doc(hidden)]
     pub access_points:
         std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiRegionAccessPointsOutput {
@@ -793,8 +805,10 @@ impl ListMultiRegionAccessPointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>,
 }
 impl ListJobsOutput {
@@ -875,9 +889,11 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
+    #[doc(hidden)]
     pub object_lambda_access_point_list:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPointsForObjectLambdaOutput {
@@ -967,8 +983,10 @@ impl ListAccessPointsForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsOutput {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
+    #[doc(hidden)]
     pub access_point_list: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPointsOutput {
@@ -1049,6 +1067,7 @@ impl ListAccessPointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationTaggingOutput {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
 impl GetStorageLensConfigurationTaggingOutput {
@@ -1110,6 +1129,7 @@ impl GetStorageLensConfigurationTaggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationOutput {
     /// <p>The S3 Storage Lens configuration requested.</p>
+    #[doc(hidden)]
     pub storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
 }
 impl GetStorageLensConfigurationOutput {
@@ -1176,6 +1196,7 @@ impl GetStorageLensConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
@@ -1243,6 +1264,7 @@ impl GetPublicAccessBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyStatusOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+    #[doc(hidden)]
     pub established: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
@@ -1300,6 +1322,7 @@ impl GetMultiRegionAccessPointPolicyStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyOutput {
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
 }
 impl GetMultiRegionAccessPointPolicyOutput {
@@ -1359,6 +1382,7 @@ impl GetMultiRegionAccessPointPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointOutput {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
 }
 impl GetMultiRegionAccessPointOutput {
@@ -1416,6 +1440,7 @@ impl GetMultiRegionAccessPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTaggingOutput {
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl GetJobTaggingOutput {
@@ -1477,6 +1502,7 @@ impl GetJobTaggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl GetBucketTaggingOutput {
@@ -1540,6 +1566,7 @@ impl GetBucketTaggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyOutput {
     /// <p>The policy of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyOutput {
@@ -1594,6 +1621,7 @@ impl GetBucketPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
 impl GetBucketLifecycleConfigurationOutput {
@@ -1655,10 +1683,13 @@ impl GetBucketLifecycleConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketOutput {
     /// <p>The Outposts bucket requested.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetBucketOutput {
@@ -1753,6 +1784,7 @@ impl GetBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+    #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetAccessPointPolicyStatusForObjectLambdaOutput {
@@ -1811,6 +1843,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusOutput {
     /// <p>Indicates the current policy status of the specified access point.</p>
+    #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetAccessPointPolicyStatusOutput {
@@ -1868,6 +1901,7 @@ impl GetAccessPointPolicyStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyForObjectLambdaOutput {
     /// <p>Object Lambda Access Point resource policy document.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
@@ -1922,6 +1956,7 @@ impl GetAccessPointPolicyForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyOutput {
     /// <p>The access point policy associated with the specified access point.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyOutput {
@@ -1976,11 +2011,14 @@ impl GetAccessPointPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointForObjectLambdaOutput {
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAccessPointForObjectLambdaOutput {
@@ -2084,6 +2122,7 @@ impl GetAccessPointForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointConfigurationForObjectLambdaOutput {
     /// <p>Object Lambda Access Point configuration document.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
@@ -2142,27 +2181,36 @@ impl GetAccessPointConfigurationForObjectLambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointOutput {
     /// <p>The name of the specified access point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bucket associated with the specified access point.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
+    #[doc(hidden)]
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
     /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified access point was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name or alias of the access point.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ARN of the access point.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The VPC endpoint for the access point.</p>
+    #[doc(hidden)]
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2410,6 +2458,7 @@ impl GetAccessPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiRegionAccessPointOperationOutput {
     /// <p>A container element containing the details of the asynchronous operation.</p>
+    #[doc(hidden)]
     pub async_operation: std::option::Option<crate::model::AsyncOperation>,
 }
 impl DescribeMultiRegionAccessPointOperationOutput {
@@ -2468,6 +2517,7 @@ impl DescribeMultiRegionAccessPointOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::JobDescriptor>,
 }
 impl DescribeJobOutput {
@@ -2610,6 +2660,7 @@ impl DeletePublicAccessBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiRegionAccessPointOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointOutput {
@@ -2938,6 +2989,7 @@ impl DeleteAccessPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl CreateMultiRegionAccessPointOutput {
@@ -2995,6 +3047,7 @@ impl CreateMultiRegionAccessPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
@@ -3049,6 +3102,7 @@ impl CreateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketOutput {
     /// <p>The location of the bucket.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -3063,6 +3117,7 @@ pub struct CreateBucketOutput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
 }
 impl CreateBucketOutput {
@@ -3170,6 +3225,7 @@ impl CreateBucketOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointForObjectLambdaOutput {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointForObjectLambdaOutput {
@@ -3235,8 +3291,10 @@ pub struct CreateAccessPointOutput {
     /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The name or alias of the access point.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointOutput {

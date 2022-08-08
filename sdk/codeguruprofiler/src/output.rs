@@ -35,8 +35,10 @@ impl SubmitFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemovePermissionOutput {
@@ -108,6 +110,7 @@ impl RemovePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveNotificationChannelOutput {
     /// <p>The new notification configuration for this profiling group.</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl RemoveNotificationChannelOutput {
@@ -174,8 +177,10 @@ impl RemoveNotificationChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PutPermissionOutput {
@@ -277,8 +282,10 @@ impl PostAgentProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
+    #[doc(hidden)]
     pub profile_times: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileTimesOutput {
@@ -359,9 +366,11 @@ impl ListProfileTimesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
+    #[doc(hidden)]
     pub findings_report_summaries:
         std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsReportsOutput {
@@ -448,14 +457,19 @@ impl ListFindingsReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub profile_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
+    #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    #[doc(hidden)]
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
 }
 impl GetRecommendationsOutput {
@@ -606,10 +620,13 @@ impl GetRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content encoding of the profile.</p>
+    #[doc(hidden)]
     pub content_encoding: std::option::Option<std::string::String>,
 }
 impl GetProfileOutput {
@@ -701,8 +718,10 @@ impl GetProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the current revision of the returned policy.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetPolicyOutput {
@@ -774,6 +793,7 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNotificationConfigurationOutput {
     /// <p>The current notification configuration for this profiling group.</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl GetNotificationConfigurationOutput {
@@ -840,6 +860,7 @@ impl GetNotificationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureAgentOutput {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AgentConfiguration>,
 }
 impl ConfigureAgentOutput {
@@ -897,8 +918,10 @@ impl ConfigureAgentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetFrameMetricDataOutput {
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
     /// <ul>
@@ -906,10 +929,13 @@ pub struct BatchGetFrameMetricDataOutput {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::AggregationPeriod>,
     /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    #[doc(hidden)]
     pub end_times: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
+    #[doc(hidden)]
     pub unprocessed_end_times: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -917,6 +943,7 @@ pub struct BatchGetFrameMetricDataOutput {
         >,
     >,
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    #[doc(hidden)]
     pub frame_metric_data: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
 }
 impl BatchGetFrameMetricDataOutput {
@@ -1129,6 +1156,7 @@ impl BatchGetFrameMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl AddNotificationChannelsOutput {
@@ -1195,11 +1223,14 @@ impl AddNotificationChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
+    #[doc(hidden)]
     pub profiling_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
+    #[doc(hidden)]
     pub profiling_groups:
         std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfilingGroupsOutput {
@@ -1309,6 +1340,7 @@ impl ListProfilingGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
+    #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl CreateProfilingGroupOutput {
@@ -1396,6 +1428,7 @@ impl DeleteProfilingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
+    #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl UpdateProfilingGroupOutput {
@@ -1453,6 +1486,7 @@ impl UpdateProfilingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
+    #[doc(hidden)]
     pub profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
 }
 impl DescribeProfilingGroupOutput {
@@ -1570,6 +1604,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1643,8 +1678,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
+    #[doc(hidden)]
     pub report_summaries: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFindingsReportAccountSummaryOutput {

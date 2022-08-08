@@ -34,6 +34,7 @@ impl UpdateAutoScalingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateInstanceInAutoScalingGroupOutput {
     /// <p>A scaling activity.</p>
+    #[doc(hidden)]
     pub activity: std::option::Option<crate::model::Activity>,
 }
 impl TerminateInstanceInAutoScalingGroupOutput {
@@ -118,6 +119,7 @@ impl SuspendProcessesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceRefreshOutput {
     /// <p>A unique ID for tracking the progress of the request.</p>
+    #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
 }
 impl StartInstanceRefreshOutput {
@@ -385,8 +387,10 @@ impl PutScheduledUpdateGroupActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
 impl PutScalingPolicyOutput {
@@ -527,10 +531,13 @@ impl PutLifecycleHookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
+    #[doc(hidden)]
     pub load_forecast: std::option::Option<std::vec::Vec<crate::model::LoadForecast>>,
     /// <p>The capacity forecast.</p>
+    #[doc(hidden)]
     pub capacity_forecast: std::option::Option<crate::model::CapacityForecast>,
     /// <p>The time the forecast was made.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPredictiveScalingForecastOutput {
@@ -634,6 +641,7 @@ impl GetPredictiveScalingForecastOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExitStandbyOutput {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
 }
 impl ExitStandbyOutput {
@@ -727,6 +735,7 @@ impl ExecutePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnterStandbyOutput {
     /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
 }
 impl EnterStandbyOutput {
@@ -910,6 +919,7 @@ impl DetachLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachInstancesOutput {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
 }
 impl DetachInstancesOutput {
@@ -973,10 +983,13 @@ impl DetachInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWarmPoolOutput {
     /// <p>The warm pool configuration details. </p>
+    #[doc(hidden)]
     pub warm_pool_configuration: std::option::Option<crate::model::WarmPoolConfiguration>,
     /// <p>The instances that are currently in the warm pool.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWarmPoolOutput {
@@ -1083,6 +1096,7 @@ impl DescribeWarmPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTerminationPolicyTypesOutput {
     /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+    #[doc(hidden)]
     pub termination_policy_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTerminationPolicyTypesOutput {
@@ -1147,8 +1161,10 @@ impl DescribeTerminationPolicyTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTagsOutput {
@@ -1229,9 +1245,11 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
+    #[doc(hidden)]
     pub scheduled_update_group_actions:
         std::option::Option<std::vec::Vec<crate::model::ScheduledUpdateGroupAction>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledActionsOutput {
@@ -1321,6 +1339,7 @@ impl DescribeScheduledActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingProcessTypesOutput {
     /// <p>The names of the process types.</p>
+    #[doc(hidden)]
     pub processes: std::option::Option<std::vec::Vec<crate::model::ProcessType>>,
 }
 impl DescribeScalingProcessTypesOutput {
@@ -1384,8 +1403,10 @@ impl DescribeScalingProcessTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingActivitiesOutput {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingActivitiesOutput {
@@ -1466,8 +1487,10 @@ impl DescribeScalingActivitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePoliciesOutput {
     /// <p>The scaling policies.</p>
+    #[doc(hidden)]
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePoliciesOutput {
@@ -1549,9 +1572,11 @@ impl DescribePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationConfigurationsOutput {
     /// <p>The notification configurations.</p>
+    #[doc(hidden)]
     pub notification_configurations:
         std::option::Option<std::vec::Vec<crate::model::NotificationConfiguration>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationConfigurationsOutput {
@@ -1641,8 +1666,10 @@ impl DescribeNotificationConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricCollectionTypesOutput {
     /// <p>The metrics.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricCollectionType>>,
     /// <p>The granularities for the metrics.</p>
+    #[doc(hidden)]
     pub granularities: std::option::Option<std::vec::Vec<crate::model::MetricGranularityType>>,
 }
 impl DescribeMetricCollectionTypesOutput {
@@ -1733,9 +1760,11 @@ impl DescribeMetricCollectionTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
+    #[doc(hidden)]
     pub load_balancer_target_groups:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerTargetGroupState>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerTargetGroupsOutput {
@@ -1825,8 +1854,10 @@ impl DescribeLoadBalancerTargetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersOutput {
     /// <p>The load balancers.</p>
+    #[doc(hidden)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancerState>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
@@ -1908,6 +1939,7 @@ impl DescribeLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleHookTypesOutput {
     /// <p>The lifecycle hook types.</p>
+    #[doc(hidden)]
     pub lifecycle_hook_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLifecycleHookTypesOutput {
@@ -1971,6 +2003,7 @@ impl DescribeLifecycleHookTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
+    #[doc(hidden)]
     pub lifecycle_hooks: std::option::Option<std::vec::Vec<crate::model::LifecycleHook>>,
 }
 impl DescribeLifecycleHooksOutput {
@@ -2034,9 +2067,11 @@ impl DescribeLifecycleHooksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchConfigurationsOutput {
     /// <p>The launch configurations.</p>
+    #[doc(hidden)]
     pub launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchConfigurationsOutput {
@@ -2120,8 +2155,10 @@ impl DescribeLaunchConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
+    #[doc(hidden)]
     pub instance_refreshes: std::option::Option<std::vec::Vec<crate::model::InstanceRefresh>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceRefreshesOutput {
@@ -2203,6 +2240,7 @@ impl DescribeInstanceRefreshesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingNotificationTypesOutput {
     /// <p>The notification types.</p>
+    #[doc(hidden)]
     pub auto_scaling_notification_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAutoScalingNotificationTypesOutput {
@@ -2273,9 +2311,11 @@ impl DescribeAutoScalingNotificationTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingInstancesOutput {
     /// <p>The instances.</p>
+    #[doc(hidden)]
     pub auto_scaling_instances:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingInstanceDetails>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingInstancesOutput {
@@ -2362,8 +2402,10 @@ impl DescribeAutoScalingInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingGroupsOutput {
     /// <p>The groups.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingGroupsOutput {
@@ -2445,6 +2487,7 @@ impl DescribeAutoScalingGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAdjustmentTypesOutput {
     /// <p>The policy adjustment types.</p>
+    #[doc(hidden)]
     pub adjustment_types: std::option::Option<std::vec::Vec<crate::model::AdjustmentType>>,
 }
 impl DescribeAdjustmentTypesOutput {
@@ -2509,12 +2552,16 @@ impl DescribeAdjustmentTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
+    #[doc(hidden)]
     pub max_number_of_auto_scaling_groups: std::option::Option<i32>,
     /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
+    #[doc(hidden)]
     pub max_number_of_launch_configurations: std::option::Option<i32>,
     /// <p>The current number of groups for your account.</p>
+    #[doc(hidden)]
     pub number_of_auto_scaling_groups: std::option::Option<i32>,
     /// <p>The current number of launch configurations for your account.</p>
+    #[doc(hidden)]
     pub number_of_launch_configurations: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsOutput {
@@ -3004,6 +3051,7 @@ impl CompleteLifecycleActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelInstanceRefreshOutput {
     /// <p>The instance refresh ID.</p>
+    #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
 }
 impl CancelInstanceRefreshOutput {
@@ -3061,6 +3109,7 @@ impl CancelInstanceRefreshOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutScheduledUpdateGroupActionOutput {
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
+    #[doc(hidden)]
     pub failed_scheduled_update_group_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
 }
@@ -3139,6 +3188,7 @@ impl BatchPutScheduledUpdateGroupActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteScheduledActionOutput {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
+    #[doc(hidden)]
     pub failed_scheduled_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
 }

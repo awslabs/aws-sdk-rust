@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalyzersOutput {
     /// <p>The analyzers retrieved.</p>
+    #[doc(hidden)]
     pub analyzers: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnalyzersOutput {
@@ -87,6 +89,7 @@ impl ListAnalyzersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnalyzerOutput {
     /// <p>The ARN of the analyzer that was created by the request.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateAnalyzerOutput {
@@ -169,6 +172,7 @@ impl DeleteAnalyzerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
+    #[doc(hidden)]
     pub analyzer: std::option::Option<crate::model::AnalyzerSummary>,
 }
 impl GetAnalyzerOutput {
@@ -226,8 +230,10 @@ impl GetAnalyzerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
+    #[doc(hidden)]
     pub archive_rules: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArchiveRulesOutput {
@@ -399,6 +405,7 @@ impl UpdateArchiveRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
+    #[doc(hidden)]
     pub archive_rule: std::option::Option<crate::model::ArchiveRuleSummary>,
 }
 impl GetArchiveRuleOutput {
@@ -456,8 +463,10 @@ impl GetArchiveRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyOutput {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ValidatePolicyOutput {
@@ -659,6 +668,7 @@ impl StartResourceScanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPolicyGenerationOutput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPolicyGenerationOutput {
@@ -713,6 +723,7 @@ impl StartPolicyGenerationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are applied to the specified resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -786,8 +797,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyGenerationsOutput {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
+    #[doc(hidden)]
     pub policy_generations: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPolicyGenerationsOutput {
@@ -869,8 +882,10 @@ impl ListPolicyGenerationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -951,9 +966,11 @@ impl ListFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
+    #[doc(hidden)]
     pub analyzed_resources:
         std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnalyzedResourcesOutput {
@@ -1037,8 +1054,10 @@ impl ListAnalyzedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewsOutput {
     /// <p>A list of access previews retrieved for the analyzer.</p>
+    #[doc(hidden)]
     pub access_previews: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPreviewsOutput {
@@ -1120,8 +1139,10 @@ impl ListAccessPreviewsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewFindingsOutput {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
     /// <p>A token used for pagination of results returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPreviewFindingsOutput {
@@ -1202,8 +1223,10 @@ impl ListAccessPreviewFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedPolicyOutput {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
+    #[doc(hidden)]
     pub generated_policy_result: std::option::Option<crate::model::GeneratedPolicyResult>,
 }
 impl GetGeneratedPolicyOutput {
@@ -1287,6 +1310,7 @@ impl GetGeneratedPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::Finding>,
 }
 impl GetFindingOutput {
@@ -1341,6 +1365,7 @@ impl GetFindingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::AnalyzedResource>,
 }
 impl GetAnalyzedResourceOutput {
@@ -1398,6 +1423,7 @@ impl GetAnalyzedResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPreviewOutput {
     /// <p>An object that contains information about the access preview.</p>
+    #[doc(hidden)]
     pub access_preview: std::option::Option<crate::model::AccessPreview>,
 }
 impl GetAccessPreviewOutput {
@@ -1455,6 +1481,7 @@ impl GetAccessPreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateAccessPreviewOutput {

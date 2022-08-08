@@ -5,33 +5,47 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// The type of encryption that is used on the content ingested from this source.
+    #[doc(hidden)]
     pub decryption: std::option::Option<crate::model::Encryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The IP address that the flow will be listening on for incoming content.
+    #[doc(hidden)]
     pub ingest_ip: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
+    #[doc(hidden)]
     pub ingest_port: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
+    #[doc(hidden)]
     pub media_stream_source_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
     /// The name of the source.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
     /// The ARN of the source.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// Attributes related to the transport stream that are used in the source.
+    #[doc(hidden)]
     pub transport: std::option::Option<crate::model::Transport>,
     /// The name of the VPC interface that is used for this source.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub whitelist_cidr: std::option::Option<std::string::String>,
 }
 impl Source {
@@ -351,26 +365,37 @@ impl Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transport {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    #[doc(hidden)]
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    #[doc(hidden)]
     pub max_sync_buffer: i32,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    #[doc(hidden)]
     pub min_latency: i32,
     /// The protocol that is used by the source or output.
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull stream.
+    #[doc(hidden)]
     pub remote_id: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl Transport {
@@ -700,10 +725,13 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamSourceConfiguration {
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
     /// The transport parameters that are associated with an incoming media stream.
+    #[doc(hidden)]
     pub input_configurations: std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>,
     /// The name of the media stream.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl MediaStreamSourceConfiguration {
@@ -808,10 +836,13 @@ impl MediaStreamSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
+    #[doc(hidden)]
     pub input_ip: std::option::Option<std::string::String>,
     /// The port that the flow listens on for an incoming media stream.
+    #[doc(hidden)]
     pub input_port: i32,
     /// The VPC interface where the media stream comes in from.
+    #[doc(hidden)]
     pub interface: std::option::Option<crate::model::Interface>,
 }
 impl InputConfiguration {
@@ -903,6 +934,7 @@ impl InputConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Interface {
     /// The name of the VPC interface.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Interface {
@@ -1018,22 +1050,31 @@ impl AsRef<str> for EncodingName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Encryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
+    #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::Algorithm>,
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
+    #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    #[doc(hidden)]
     pub key_type: std::option::Option<crate::model::KeyType>,
     /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl Encryption {
@@ -1354,11 +1395,14 @@ impl AsRef<str> for Algorithm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamSourceConfigurationRequest {
     /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
     /// The transport parameters that you want to associate with the media stream.
+    #[doc(hidden)]
     pub input_configurations:
         std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
     /// The name of the media stream.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl MediaStreamSourceConfigurationRequest {
@@ -1468,8 +1512,10 @@ impl MediaStreamSourceConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
+    #[doc(hidden)]
     pub input_port: i32,
     /// The VPC interface that you want to use for the incoming media stream.
+    #[doc(hidden)]
     pub interface: std::option::Option<crate::model::InterfaceRequest>,
 }
 impl InputConfigurationRequest {
@@ -1544,6 +1590,7 @@ impl InputConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InterfaceRequest {
     /// The name of the VPC interface.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InterfaceRequest {
@@ -1596,22 +1643,31 @@ impl InterfaceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEncryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
+    #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::Algorithm>,
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
+    #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    #[doc(hidden)]
     pub key_type: std::option::Option<crate::model::KeyType>,
     /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl UpdateEncryption {
@@ -1814,31 +1870,44 @@ impl UpdateEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// A description of the output.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The address where you want to send the output.
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+    #[doc(hidden)]
     pub listener_address: std::option::Option<std::string::String>,
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
+    #[doc(hidden)]
     pub media_live_input_arn: std::option::Option<std::string::String>,
     /// The configuration for each media stream that is associated with the output.
+    #[doc(hidden)]
     pub media_stream_output_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
     /// The name of the output. This value must be unique within the current flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The ARN of the output.
+    #[doc(hidden)]
     pub output_arn: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
+    #[doc(hidden)]
     pub port: i32,
     /// Attributes related to the transport stream that are used in the output.
+    #[doc(hidden)]
     pub transport: std::option::Option<crate::model::Transport>,
     /// The name of the VPC interface attachment to use for this output.
+    #[doc(hidden)]
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
 impl Output {
@@ -2147,6 +2216,7 @@ impl Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl VpcInterfaceAttachment {
@@ -2204,13 +2274,17 @@ impl VpcInterfaceAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamOutputConfiguration {
     /// The transport parameters that are associated with each outbound media stream.
+    #[doc(hidden)]
     pub destination_configurations:
         std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
     /// Encoding parameters
+    #[doc(hidden)]
     pub encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
     /// The name of the media stream.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl MediaStreamOutputConfiguration {
@@ -2343,8 +2417,10 @@ impl MediaStreamOutputConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncodingParameters {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    #[doc(hidden)]
     pub compression_factor: f64,
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+    #[doc(hidden)]
     pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
 }
 impl EncodingParameters {
@@ -2474,12 +2550,16 @@ impl AsRef<str> for EncoderProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
+    #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
     /// The port to use when the content of the media stream is distributed to the output.
+    #[doc(hidden)]
     pub destination_port: i32,
     /// The VPC interface that is used for the media stream associated with the output.
+    #[doc(hidden)]
     pub interface: std::option::Option<crate::model::Interface>,
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
+    #[doc(hidden)]
     pub outbound_ip: std::option::Option<std::string::String>,
 }
 impl DestinationConfiguration {
@@ -2591,13 +2671,17 @@ impl DestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamOutputConfigurationRequest {
     /// The transport parameters that you want to associate with the media stream.
+    #[doc(hidden)]
     pub destination_configurations:
         std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
     /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
     /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+    #[doc(hidden)]
     pub encoding_parameters: std::option::Option<crate::model::EncodingParametersRequest>,
     /// The name of the media stream that is associated with the output.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl MediaStreamOutputConfigurationRequest {
@@ -2738,8 +2822,10 @@ impl MediaStreamOutputConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncodingParametersRequest {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    #[doc(hidden)]
     pub compression_factor: f64,
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
+    #[doc(hidden)]
     pub encoder_profile: std::option::Option<crate::model::EncoderProfile>,
 }
 impl EncodingParametersRequest {
@@ -2814,10 +2900,13 @@ impl EncodingParametersRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
+    #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+    #[doc(hidden)]
     pub destination_port: i32,
     /// The VPC interface that you want to use for the media stream associated with the output.
+    #[doc(hidden)]
     pub interface: std::option::Option<crate::model::InterfaceRequest>,
 }
 impl DestinationConfigurationRequest {
@@ -2912,20 +3001,28 @@ impl DestinationConfigurationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStream {
     /// Attributes that are related to the media stream.
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::MediaStreamAttributes>,
     /// The sample rate for the stream. This value is measured in Hz.
+    #[doc(hidden)]
     pub clock_rate: i32,
     /// A description that can help you quickly identify what your media stream is used for.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+    #[doc(hidden)]
     pub fmt: i32,
     /// A unique identifier for the media stream.
+    #[doc(hidden)]
     pub media_stream_id: i32,
     /// A name that helps you distinguish one media stream from another.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
     /// The type of media stream.
+    #[doc(hidden)]
     pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
+    #[doc(hidden)]
     pub video_format: std::option::Option<std::string::String>,
 }
 impl MediaStream {
@@ -3167,8 +3264,10 @@ impl AsRef<str> for MediaStreamType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamAttributes {
     /// A set of parameters that define the media stream.
+    #[doc(hidden)]
     pub fmtp: std::option::Option<crate::model::Fmtp>,
     /// The audio language, in a format that is recognized by the receiver.
+    #[doc(hidden)]
     pub lang: std::option::Option<std::string::String>,
 }
 impl MediaStreamAttributes {
@@ -3240,18 +3339,25 @@ impl MediaStreamAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Fmtp {
     /// The format of the audio channel.
+    #[doc(hidden)]
     pub channel_order: std::option::Option<std::string::String>,
     /// The format that is used for the representation of color.
+    #[doc(hidden)]
     pub colorimetry: std::option::Option<crate::model::Colorimetry>,
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    #[doc(hidden)]
     pub exact_framerate: std::option::Option<std::string::String>,
     /// The pixel aspect ratio (PAR) of the video.
+    #[doc(hidden)]
     pub par: std::option::Option<std::string::String>,
     /// The encoding range of the video.
+    #[doc(hidden)]
     pub range: std::option::Option<crate::model::Range>,
     /// The type of compression that was used to smooth the video’s appearance
+    #[doc(hidden)]
     pub scan_mode: std::option::Option<crate::model::ScanMode>,
     /// The transfer characteristic system (TCS) that is used in the video.
+    #[doc(hidden)]
     pub tcs: std::option::Option<crate::model::Tcs>,
 }
 impl Fmtp {
@@ -3705,8 +3811,10 @@ impl AsRef<str> for Colorimetry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
+    #[doc(hidden)]
     pub fmtp: std::option::Option<crate::model::FmtpRequest>,
     /// The audio language, in a format that is recognized by the receiver.
+    #[doc(hidden)]
     pub lang: std::option::Option<std::string::String>,
 }
 impl MediaStreamAttributesRequest {
@@ -3778,18 +3886,25 @@ impl MediaStreamAttributesRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FmtpRequest {
     /// The format of the audio channel.
+    #[doc(hidden)]
     pub channel_order: std::option::Option<std::string::String>,
     /// The format that is used for the representation of color.
+    #[doc(hidden)]
     pub colorimetry: std::option::Option<crate::model::Colorimetry>,
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
+    #[doc(hidden)]
     pub exact_framerate: std::option::Option<std::string::String>,
     /// The pixel aspect ratio (PAR) of the video.
+    #[doc(hidden)]
     pub par: std::option::Option<std::string::String>,
     /// The encoding range of the video.
+    #[doc(hidden)]
     pub range: std::option::Option<crate::model::Range>,
     /// The type of compression that was used to smooth the video’s appearance.
+    #[doc(hidden)]
     pub scan_mode: std::option::Option<crate::model::ScanMode>,
     /// The transfer characteristic system (TCS) that is used in the video.
+    #[doc(hidden)]
     pub tcs: std::option::Option<crate::model::Tcs>,
 }
 impl FmtpRequest {
@@ -3955,18 +4070,25 @@ impl FmtpRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// A description of the entitlement.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The type of encryption that will be used on the output that is associated with this entitlement.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// The ARN of the entitlement.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// An indication of whether the entitlement is enabled.
+    #[doc(hidden)]
     pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
     /// The name of the entitlement.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Entitlement {
@@ -4204,32 +4326,46 @@ impl AsRef<str> for EntitlementStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Flow {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The IP address from which video will be sent to output destinations.
+    #[doc(hidden)]
     pub egress_ip: std::option::Option<std::string::String>,
     /// The entitlements in this flow.
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
+    #[doc(hidden)]
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
     /// The name of the flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The outputs in this flow.
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// The settings for the source of the flow.
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// The settings for source failover.
+    #[doc(hidden)]
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// The current status of the flow.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// The VPC Interfaces for this flow.
+    #[doc(hidden)]
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
     /// The maintenance setting of a flow
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::Maintenance>,
 }
 impl Flow {
@@ -4558,12 +4694,16 @@ impl Flow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Maintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+    #[doc(hidden)]
     pub maintenance_deadline: std::option::Option<std::string::String>,
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    #[doc(hidden)]
     pub maintenance_scheduled_date: std::option::Option<std::string::String>,
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    #[doc(hidden)]
     pub maintenance_start_hour: std::option::Option<std::string::String>,
 }
 impl Maintenance {
@@ -4767,16 +4907,22 @@ impl AsRef<str> for MaintenanceDay {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcInterface {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// IDs of the network interfaces created in customer's account by MediaConnect.
+    #[doc(hidden)]
     pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The type of network interface.
+    #[doc(hidden)]
     pub network_interface_type: std::option::Option<crate::model::NetworkInterfaceType>,
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Security Group IDs to be used on ENI.
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Subnet must be in the AZ of the Flow
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl VpcInterface {
@@ -5071,12 +5217,16 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+    #[doc(hidden)]
     pub failover_mode: std::option::Option<crate::model::FailoverMode>,
     /// Search window time to look for dash-7 packets
+    #[doc(hidden)]
     pub recovery_window: i32,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    #[doc(hidden)]
     pub source_priority: std::option::Option<crate::model::SourcePriority>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl FailoverConfig {
@@ -5243,6 +5393,7 @@ impl AsRef<str> for State {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
+    #[doc(hidden)]
     pub primary_source: std::option::Option<std::string::String>,
 }
 impl SourcePriority {
@@ -5355,10 +5506,13 @@ impl AsRef<str> for FailoverMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenance {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    #[doc(hidden)]
     pub maintenance_scheduled_date: std::option::Option<std::string::String>,
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    #[doc(hidden)]
     pub maintenance_start_hour: std::option::Option<std::string::String>,
 }
 impl UpdateMaintenance {
@@ -5459,12 +5613,16 @@ impl UpdateMaintenance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+    #[doc(hidden)]
     pub failover_mode: std::option::Option<crate::model::FailoverMode>,
     /// Recovery window time to look for dash-7 packets
+    #[doc(hidden)]
     pub recovery_window: i32,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    #[doc(hidden)]
     pub source_priority: std::option::Option<crate::model::SourcePriority>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl UpdateFailoverConfig {
@@ -5576,30 +5734,43 @@ impl UpdateFailoverConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Reservation {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
+    #[doc(hidden)]
     pub duration: i32,
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::DurationUnits>,
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    #[doc(hidden)]
     pub offering_arn: std::option::Option<std::string::String>,
     /// A description of the offering. MediaConnect defines this value in the offering.
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
+    #[doc(hidden)]
     pub price_per_unit: std::option::Option<std::string::String>,
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
+    #[doc(hidden)]
     pub price_units: std::option::Option<crate::model::PriceUnits>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
+    #[doc(hidden)]
     pub reservation_arn: std::option::Option<std::string::String>,
     /// The name that you assigned to the reservation when you purchased the offering.
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
     /// The status of your reservation.
+    #[doc(hidden)]
     pub reservation_state: std::option::Option<crate::model::ReservationState>,
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ResourceSpecification>,
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
 }
 impl Reservation {
@@ -5890,8 +6061,10 @@ impl Reservation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
+    #[doc(hidden)]
     pub reserved_bitrate: i32,
     /// The type of resource and the unit that is being billed for.
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ResourceSpecification {
@@ -6182,20 +6355,28 @@ impl AsRef<str> for DurationUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Offering {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// The length of time that your reservation would be active.
+    #[doc(hidden)]
     pub duration: i32,
     /// The unit of measurement for the duration of the offering.
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::DurationUnits>,
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    #[doc(hidden)]
     pub offering_arn: std::option::Option<std::string::String>,
     /// A description of the offering.
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
+    #[doc(hidden)]
     pub price_per_unit: std::option::Option<std::string::String>,
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
+    #[doc(hidden)]
     pub price_units: std::option::Option<crate::model::PriceUnits>,
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ResourceSpecification>,
 }
 impl Offering {
@@ -6392,18 +6573,25 @@ impl Offering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedFlow {
     /// The Availability Zone that the flow was created in.
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// A description of the flow.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ARN of the flow.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// The current status of the flow.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// The maintenance setting of a flow
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::Maintenance>,
 }
 impl ListedFlow {
@@ -6624,10 +6812,13 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedEntitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// The ARN of the entitlement.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The name of the entitlement.
+    #[doc(hidden)]
     pub entitlement_name: std::option::Option<std::string::String>,
 }
 impl ListedEntitlement {
@@ -6730,16 +6921,22 @@ impl ListedEntitlement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantEntitlementRequest {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The type of encryption that will be used on the output that is associated with this entitlement.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+    #[doc(hidden)]
     pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
     /// The name of the entitlement. This value must be unique within the current flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GrantEntitlementRequest {
@@ -6902,6 +7099,7 @@ impl GrantEntitlementRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Messages {
     /// A list of errors that might have been generated from processes on this flow.
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Messages {
@@ -6965,8 +7163,10 @@ impl Messages {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddMaintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    #[doc(hidden)]
     pub maintenance_start_hour: std::option::Option<std::string::String>,
 }
 impl AddMaintenance {
@@ -7044,14 +7244,19 @@ impl AddMaintenance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcInterfaceRequest {
     /// The name of the VPC Interface. This value must be unique within the current flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
+    #[doc(hidden)]
     pub network_interface_type: std::option::Option<crate::model::NetworkInterfaceType>,
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Security Group IDs to be used on ENI.
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Subnet must be in the AZ of the Flow
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl VpcInterfaceRequest {
@@ -7188,37 +7393,53 @@ impl VpcInterfaceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source.
+    #[doc(hidden)]
     pub decryption: std::option::Option<crate::model::Encryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
+    #[doc(hidden)]
     pub ingest_port: i32,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    #[doc(hidden)]
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    #[doc(hidden)]
     pub max_sync_buffer: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
+    #[doc(hidden)]
     pub media_stream_source_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    #[doc(hidden)]
     pub min_latency: i32,
     /// The name of the source.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The protocol that is used by the source.
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface to use for this source.
+    #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub whitelist_cidr: std::option::Option<std::string::String>,
 }
 impl SetSourceRequest {
@@ -7563,35 +7784,50 @@ impl SetSourceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddOutputRequest {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The IP address from which video will be sent to output destinations.
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    #[doc(hidden)]
     pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
+    #[doc(hidden)]
     pub media_stream_output_configurations:
         std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    #[doc(hidden)]
     pub min_latency: i32,
     /// The name of the output. This value must be unique within the current flow.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
+    #[doc(hidden)]
     pub port: i32,
     /// The protocol to use for the output.
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull output stream.
+    #[doc(hidden)]
     pub remote_id: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    #[doc(hidden)]
     pub sender_control_port: i32,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    #[doc(hidden)]
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface attachment to use for this output.
+    #[doc(hidden)]
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
 impl AddOutputRequest {
@@ -7925,18 +8161,25 @@ impl AddOutputRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddMediaStreamRequest {
     /// The attributes that you want to assign to the new media stream.
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    #[doc(hidden)]
     pub clock_rate: i32,
     /// A description that can help you quickly identify what your media stream is used for.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// A unique identifier for the media stream.
+    #[doc(hidden)]
     pub media_stream_id: i32,
     /// A name that helps you distinguish one media stream from another.
+    #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
     /// The type of media stream.
+    #[doc(hidden)]
     pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
+    #[doc(hidden)]
     pub video_format: std::option::Option<std::string::String>,
 }
 impl AddMediaStreamRequest {

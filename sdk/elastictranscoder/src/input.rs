@@ -3182,12 +3182,14 @@ impl UpdatePipelineStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineStatusInput {
     /// <p>The identifier of the pipeline to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdatePipelineStatusInput {
@@ -3218,6 +3220,7 @@ impl std::fmt::Debug for UpdatePipelineStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineNotificationsInput {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -3228,6 +3231,7 @@ pub struct UpdatePipelineNotificationsInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub notifications: std::option::Option<crate::model::Notifications>,
 }
 impl UpdatePipelineNotificationsInput {
@@ -3262,16 +3266,21 @@ impl std::fmt::Debug for UpdatePipelineNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineInput {
     /// <p>The ID of the pipeline that you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
+    #[doc(hidden)]
     pub input_bucket: std::option::Option<std::string::String>,
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+    #[doc(hidden)]
     pub aws_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -3282,6 +3291,7 @@ pub struct UpdatePipelineInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub notifications: std::option::Option<crate::model::Notifications>,
     /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
@@ -3307,6 +3317,7 @@ pub struct UpdatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content_config: std::option::Option<crate::model::PipelineOutputConfig>,
     /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
@@ -3332,6 +3343,7 @@ pub struct UpdatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub thumbnail_config: std::option::Option<crate::model::PipelineOutputConfig>,
 }
 impl UpdatePipelineInput {
@@ -3445,12 +3457,16 @@ impl std::fmt::Debug for UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRoleInput {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    #[doc(hidden)]
     pub input_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    #[doc(hidden)]
     pub output_bucket: std::option::Option<std::string::String>,
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
+    #[doc(hidden)]
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestRoleInput {
@@ -3487,6 +3503,7 @@ impl std::fmt::Debug for TestRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadPresetInput {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ReadPresetInput {
@@ -3508,6 +3525,7 @@ impl std::fmt::Debug for ReadPresetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadPipelineInput {
     /// <p>The identifier of the pipeline to read.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ReadPipelineInput {
@@ -3529,6 +3547,7 @@ impl std::fmt::Debug for ReadPipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadJobInput {
     /// <p>The identifier of the job for which you want to get detailed information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ReadJobInput {
@@ -3550,8 +3569,10 @@ impl std::fmt::Debug for ReadJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPresetsInput {
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
+    #[doc(hidden)]
     pub ascending: std::option::Option<std::string::String>,
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListPresetsInput {
@@ -3578,8 +3599,10 @@ impl std::fmt::Debug for ListPresetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
     /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+    #[doc(hidden)]
     pub ascending: std::option::Option<std::string::String>,
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesInput {
@@ -3606,10 +3629,13 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsByStatusInput {
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    #[doc(hidden)]
     pub ascending: std::option::Option<std::string::String>,
     /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListJobsByStatusInput {
@@ -3641,10 +3667,13 @@ impl std::fmt::Debug for ListJobsByStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsByPipelineInput {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    #[doc(hidden)]
     pub ascending: std::option::Option<std::string::String>,
     /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListJobsByPipelineInput {
@@ -3676,6 +3705,7 @@ impl std::fmt::Debug for ListJobsByPipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePresetInput {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePresetInput {
@@ -3697,6 +3727,7 @@ impl std::fmt::Debug for DeletePresetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineInput {
     /// <p>The identifier of the pipeline that you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
@@ -3718,16 +3749,22 @@ impl std::fmt::Debug for DeletePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresetInput {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the preset.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    #[doc(hidden)]
     pub container: std::option::Option<std::string::String>,
     /// <p>A section of the request body that specifies the video parameters.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::VideoParameters>,
     /// <p>A section of the request body that specifies the audio parameters.</p>
+    #[doc(hidden)]
     pub audio: std::option::Option<crate::model::AudioParameters>,
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
+    #[doc(hidden)]
     pub thumbnails: std::option::Option<crate::model::Thumbnails>,
 }
 impl CreatePresetInput {
@@ -3775,8 +3812,10 @@ impl std::fmt::Debug for CreatePresetInput {
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
+    #[doc(hidden)]
     pub input_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
     /// <p>Specify this value when all of the following are true:</p>
@@ -3789,11 +3828,14 @@ pub struct CreatePipelineInput {
     /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
     /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    #[doc(hidden)]
     pub output_bucket: std::option::Option<std::string::String>,
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+    #[doc(hidden)]
     pub aws_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -3804,6 +3846,7 @@ pub struct CreatePipelineInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub notifications: std::option::Option<crate::model::Notifications>,
     /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
@@ -3829,6 +3872,7 @@ pub struct CreatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content_config: std::option::Option<crate::model::PipelineOutputConfig>,
     /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
     /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
@@ -3854,6 +3898,7 @@ pub struct CreatePipelineInput {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub thumbnail_config: std::option::Option<crate::model::PipelineOutputConfig>,
 }
 impl CreatePipelineInput {
@@ -3976,21 +4021,29 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::JobInput>,
     /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::model::JobInput>>,
     /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::CreateJobOutput>,
     /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::CreateJobOutput>>,
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
+    #[doc(hidden)]
     pub output_key_prefix: std::option::Option<std::string::String>,
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
+    #[doc(hidden)]
     pub playlists: std::option::Option<std::vec::Vec<crate::model::CreateJobPlaylist>>,
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
+    #[doc(hidden)]
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4053,6 +4106,7 @@ impl std::fmt::Debug for CreateJobInput {
 pub struct CancelJobInput {
     /// <p>The identifier of the job that you want to cancel.</p>
     /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {

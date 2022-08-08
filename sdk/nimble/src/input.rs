@@ -9576,8 +9576,10 @@ impl UpdateStudioComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStudioSsoConfigurationRepairInput {
@@ -9604,12 +9606,16 @@ impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStudioMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
+    #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>A list of members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::NewStudioMember>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutStudioMembersInput {
@@ -9646,10 +9652,13 @@ impl std::fmt::Debug for PutStudioMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListStudioMembersInput {
@@ -9681,8 +9690,10 @@ impl std::fmt::Debug for ListStudioMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioMemberInput {
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStudioMemberInput {
@@ -9709,10 +9720,13 @@ impl std::fmt::Debug for GetStudioMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioMemberInput {
@@ -9744,6 +9758,7 @@ impl std::fmt::Debug for DeleteStudioMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudiosInput {
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStudiosInput {
@@ -9765,20 +9780,27 @@ impl std::fmt::Debug for ListStudiosInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    #[doc(hidden)]
     pub admin_role_arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio encryption configuration.</p>
+    #[doc(hidden)]
     pub studio_encryption_configuration:
         std::option::Option<crate::model::StudioEncryptionConfiguration>,
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+    #[doc(hidden)]
     pub studio_name: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    #[doc(hidden)]
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioInput {
@@ -9838,8 +9860,10 @@ impl std::fmt::Debug for CreateStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
@@ -9866,14 +9890,19 @@ impl std::fmt::Debug for DeleteStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioInput {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    #[doc(hidden)]
     pub admin_role_arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    #[doc(hidden)]
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioInput {
@@ -9915,6 +9944,7 @@ impl std::fmt::Debug for UpdateStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioInput {
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStudioInput {
@@ -9936,14 +9966,19 @@ impl std::fmt::Debug for GetStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are in one of the given states. </p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::StudioComponentState>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<crate::model::StudioComponentType>>,
 }
 impl ListStudioComponentsInput {
@@ -9985,33 +10020,46 @@ impl std::fmt::Debug for ListStudioComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
+    #[doc(hidden)]
     pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
+    #[doc(hidden)]
     pub initialization_scripts:
         std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
+    #[doc(hidden)]
     pub script_parameters:
         std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
+    #[doc(hidden)]
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioComponentInput {
@@ -10105,10 +10153,13 @@ impl std::fmt::Debug for CreateStudioComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio component ID.</p>
+    #[doc(hidden)]
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioComponentInput {
@@ -10140,32 +10191,45 @@ impl std::fmt::Debug for DeleteStudioComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
+    #[doc(hidden)]
     pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
+    #[doc(hidden)]
     pub initialization_scripts:
         std::option::Option<std::vec::Vec<crate::model::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
+    #[doc(hidden)]
     pub script_parameters:
         std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
     /// <p>The studio component ID.</p>
+    #[doc(hidden)]
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
+    #[doc(hidden)]
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
     /// <p>The type of the studio component.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    #[doc(hidden)]
     pub secure_initialization_role_arn: std::option::Option<std::string::String>,
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioComponentInput {
@@ -10256,8 +10320,10 @@ impl std::fmt::Debug for UpdateStudioComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioComponentInput {
     /// <p>The studio component ID.</p>
+    #[doc(hidden)]
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStudioComponentInput {
@@ -10284,10 +10350,13 @@ impl std::fmt::Debug for GetStudioComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StopStreamingSessionInput {
@@ -10319,10 +10388,13 @@ impl std::fmt::Debug for StopStreamingSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStreamingSessionInput {
@@ -10354,10 +10426,13 @@ impl std::fmt::Debug for StartStreamingSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingSessionStreamInput {
     /// <p>The streaming session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The streaming session stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStreamingSessionStreamInput {
@@ -10389,12 +10464,16 @@ impl std::fmt::Debug for GetStreamingSessionStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionStreamInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The expiration time in seconds.</p>
+    #[doc(hidden)]
     pub expiration_in_seconds: i32,
     /// <p>The streaming session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl CreateStreamingSessionStreamInput {
@@ -10431,14 +10510,19 @@ impl std::fmt::Debug for CreateStreamingSessionStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingSessionsInput {
     /// <p>Filters the request to streaming sessions created by the given user.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the request to streaming session owned by the given user</p>
+    #[doc(hidden)]
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>Filters the request to only the provided session IDs.</p>
+    #[doc(hidden)]
     pub session_ids: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListStreamingSessionsInput {
@@ -10480,18 +10564,25 @@ impl std::fmt::Debug for ListStreamingSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
+    #[doc(hidden)]
     pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
     /// <p>The launch profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
+    #[doc(hidden)]
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The ID of the streaming image.</p>
+    #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10547,10 +10638,13 @@ impl std::fmt::Debug for CreateStreamingSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingSessionInput {
@@ -10582,8 +10676,10 @@ impl std::fmt::Debug for DeleteStreamingSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingSessionInput {
     /// <p>The streaming session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStreamingSessionInput {
@@ -10610,10 +10706,13 @@ impl std::fmt::Debug for GetStreamingSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingImagesInput {
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filter this request to streaming images with the given owner</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListStreamingImagesInput {
@@ -10645,16 +10744,22 @@ impl std::fmt::Debug for ListStreamingImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    #[doc(hidden)]
     pub ec2_image_id: std::option::Option<std::string::String>,
     /// <p>A friendly name for a streaming image resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10705,10 +10810,13 @@ impl std::fmt::Debug for CreateStreamingImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming image ID.</p>
+    #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingImageInput {
@@ -10740,14 +10848,19 @@ impl std::fmt::Debug for DeleteStreamingImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name for the streaming image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The streaming image ID.</p>
+    #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingImageInput {
@@ -10789,8 +10902,10 @@ impl std::fmt::Debug for UpdateStreamingImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingImageInput {
     /// <p>The streaming image ID.</p>
+    #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStreamingImageInput {
@@ -10817,14 +10932,19 @@ impl std::fmt::Debug for GetStreamingImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The persona.</p>
+    #[doc(hidden)]
     pub persona: std::option::Option<crate::model::LaunchProfilePersona>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileMemberInput {
@@ -10866,14 +10986,19 @@ impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLaunchProfileMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
+    #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>A list of members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::NewLaunchProfileMember>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutLaunchProfileMembersInput {
@@ -10915,12 +11040,16 @@ impl std::fmt::Debug for PutLaunchProfileMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchProfileMembersInput {
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The max number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListLaunchProfileMembersInput {
@@ -10957,10 +11086,13 @@ impl std::fmt::Debug for ListLaunchProfileMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileMemberInput {
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileMemberInput {
@@ -10992,14 +11124,19 @@ impl std::fmt::Debug for GetLaunchProfileMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileInitializationInput {
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The launch profile protocol versions supported by the client.</p>
+    #[doc(hidden)]
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The launch purpose.</p>
+    #[doc(hidden)]
     pub launch_purpose: std::option::Option<std::string::String>,
     /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileInitializationInput {
@@ -11044,8 +11181,10 @@ impl std::fmt::Debug for GetLaunchProfileInitializationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileDetailsInput {
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileDetailsInput {
@@ -11072,12 +11211,16 @@ impl std::fmt::Debug for GetLaunchProfileDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileMemberInput {
@@ -11114,14 +11257,19 @@ impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>Filter this request to launch profiles in any of the given states.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::LaunchProfileState>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListLaunchProfilesInput {
@@ -11163,22 +11311,31 @@ impl std::fmt::Debug for ListLaunchProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchProfileInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
+    #[doc(hidden)]
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    #[doc(hidden)]
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
+    #[doc(hidden)]
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    #[doc(hidden)]
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11249,10 +11406,13 @@ impl std::fmt::Debug for CreateLaunchProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileInput {
@@ -11284,20 +11444,28 @@ impl std::fmt::Debug for DeleteLaunchProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    #[doc(hidden)]
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
+    #[doc(hidden)]
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    #[doc(hidden)]
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileInput {
@@ -11359,8 +11527,10 @@ impl std::fmt::Debug for UpdateLaunchProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileInput {
     /// <p>The Launch Profile ID.</p>
+    #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchProfileInput {
@@ -11387,8 +11557,10 @@ impl std::fmt::Debug for GetLaunchProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulasInput {
     /// <p>The list of EULA IDs that should be returned</p>
+    #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEulasInput {
@@ -11415,6 +11587,7 @@ impl std::fmt::Debug for ListEulasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEulaInput {
     /// <p>The EULA ID.</p>
+    #[doc(hidden)]
     pub eula_id: std::option::Option<std::string::String>,
 }
 impl GetEulaInput {
@@ -11436,10 +11609,13 @@ impl std::fmt::Debug for GetEulaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
+    #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl ListEulaAcceptancesInput {
@@ -11471,10 +11647,13 @@ impl std::fmt::Debug for ListEulaAcceptancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEulasInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
+    #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A collection of EULA IDs.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl AcceptEulasInput {
@@ -11506,8 +11685,10 @@ impl std::fmt::Debug for AcceptEulasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11534,8 +11715,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11566,6 +11749,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

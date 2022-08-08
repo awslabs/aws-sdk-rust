@@ -850,6 +850,7 @@ impl StopHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl StopHumanLoopInput {
@@ -871,12 +872,16 @@ impl std::fmt::Debug for StopHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>An object that contains information about the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_input: std::option::Option<crate::model::HumanLoopInput>,
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+    #[doc(hidden)]
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
 impl StartHumanLoopInput {
@@ -913,16 +918,22 @@ impl std::fmt::Debug for StartHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A token to display the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListHumanLoopsInput {
@@ -969,6 +980,7 @@ impl std::fmt::Debug for ListHumanLoopsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl DescribeHumanLoopInput {
@@ -990,6 +1002,7 @@ impl std::fmt::Debug for DescribeHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl DeleteHumanLoopInput {

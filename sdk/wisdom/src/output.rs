@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKnowledgeBaseTemplateUriOutput {
     /// <p>The knowledge base to update.</p>
+    #[doc(hidden)]
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
 }
 impl UpdateKnowledgeBaseTemplateUriOutput {
@@ -61,12 +62,16 @@ impl UpdateKnowledgeBaseTemplateUriOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentUploadOutput {
     /// <p>The identifier of the upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The URL of the upload.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    #[doc(hidden)]
     pub url_expiry: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The headers to include in the upload.</p>
+    #[doc(hidden)]
     pub headers_to_include:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -196,8 +201,10 @@ impl StartContentUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContentOutput {
     /// <p>Summary information about the content.</p>
+    #[doc(hidden)]
     pub content_summaries: std::option::Option<std::vec::Vec<crate::model::ContentSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchContentOutput {
@@ -309,9 +316,11 @@ impl RemoveKnowledgeBaseTemplateUriOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
+    #[doc(hidden)]
     pub knowledge_base_summaries:
         std::option::Option<std::vec::Vec<crate::model::KnowledgeBaseSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKnowledgeBasesOutput {
@@ -398,6 +407,7 @@ impl ListKnowledgeBasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKnowledgeBaseOutput {
     /// <p>The knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
 }
 impl CreateKnowledgeBaseOutput {
@@ -485,6 +495,7 @@ impl DeleteKnowledgeBaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKnowledgeBaseOutput {
     /// <p>The knowledge base.</p>
+    #[doc(hidden)]
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
 }
 impl GetKnowledgeBaseOutput {
@@ -542,6 +553,7 @@ impl GetKnowledgeBaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentSummaryOutput {
     /// <p>The content summary.</p>
+    #[doc(hidden)]
     pub content_summary: std::option::Option<crate::model::ContentSummary>,
 }
 impl GetContentSummaryOutput {
@@ -599,8 +611,10 @@ impl GetContentSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContentsOutput {
     /// <p>Information about the content.</p>
+    #[doc(hidden)]
     pub content_summaries: std::option::Option<std::vec::Vec<crate::model::ContentSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContentsOutput {
@@ -682,6 +696,7 @@ impl ListContentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContentOutput {
     /// <p>The content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::ContentData>,
 }
 impl CreateContentOutput {
@@ -769,6 +784,7 @@ impl DeleteContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContentOutput {
     /// <p>The content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::ContentData>,
 }
 impl UpdateContentOutput {
@@ -826,6 +842,7 @@ impl UpdateContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentOutput {
     /// <p>The content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::ContentData>,
 }
 impl GetContentOutput {
@@ -883,8 +900,10 @@ impl GetContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSessionsOutput {
     /// <p>Summary information about the sessions.</p>
+    #[doc(hidden)]
     pub session_summaries: std::option::Option<std::vec::Vec<crate::model::SessionSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchSessionsOutput {
@@ -966,8 +985,10 @@ impl SearchSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryAssistantOutput {
     /// <p>The results of the query.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::ResultData>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryAssistantOutput {
@@ -1048,8 +1069,10 @@ impl QueryAssistantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of the recommendations.</p>
+    #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifiers of recommendations that are causing errors.</p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::NotifyRecommendationsReceivedError>>,
 }
@@ -1145,8 +1168,10 @@ impl NotifyRecommendationsReceivedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsOutput {
     /// <p>The recommendations.</p>
+    #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::RecommendationData>>,
     /// <p>The triggers corresponding to recommendations.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RecommendationTrigger>>,
 }
 impl GetRecommendationsOutput {
@@ -1238,8 +1263,10 @@ impl GetRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantsOutput {
     /// <p>Information about the assistants.</p>
+    #[doc(hidden)]
     pub assistant_summaries: std::option::Option<std::vec::Vec<crate::model::AssistantSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssistantsOutput {
@@ -1321,6 +1348,7 @@ impl ListAssistantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssistantOutput {
     /// <p>Information about the assistant.</p>
+    #[doc(hidden)]
     pub assistant: std::option::Option<crate::model::AssistantData>,
 }
 impl CreateAssistantOutput {
@@ -1408,6 +1436,7 @@ impl DeleteAssistantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssistantOutput {
     /// <p>Information about the assistant.</p>
+    #[doc(hidden)]
     pub assistant: std::option::Option<crate::model::AssistantData>,
 }
 impl GetAssistantOutput {
@@ -1465,6 +1494,7 @@ impl GetAssistantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSessionOutput {
     /// <p>The session.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::SessionData>,
 }
 impl CreateSessionOutput {
@@ -1522,6 +1552,7 @@ impl CreateSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionOutput {
     /// <p>The session.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::SessionData>,
 }
 impl GetSessionOutput {
@@ -1579,9 +1610,11 @@ impl GetSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantAssociationsOutput {
     /// <p>Summary information about assistant associations.</p>
+    #[doc(hidden)]
     pub assistant_association_summaries:
         std::option::Option<std::vec::Vec<crate::model::AssistantAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssistantAssociationsOutput {
@@ -1671,6 +1704,7 @@ impl ListAssistantAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssistantAssociationOutput {
     /// <p>The assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association: std::option::Option<crate::model::AssistantAssociationData>,
 }
 impl CreateAssistantAssociationOutput {
@@ -1764,6 +1798,7 @@ impl DeleteAssistantAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssistantAssociationOutput {
     /// <p>The assistant association.</p>
+    #[doc(hidden)]
     pub assistant_association: std::option::Option<crate::model::AssistantAssociationData>,
 }
 impl GetAssistantAssociationOutput {
@@ -1887,6 +1922,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemporarilyUnavailableException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>You can wait and then retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl ServiceTemporarilyUnavailableException {
@@ -90,10 +92,13 @@ impl ServiceTemporarilyUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchEntityException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::NoSuchEntityErrorCode>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl NoSuchEntityException {
@@ -197,10 +202,13 @@ impl NoSuchEntityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::InvalidInputErrorCode>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl InvalidInputException {
@@ -304,8 +312,10 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl InternalException {
@@ -389,10 +399,13 @@ impl InternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::AccessDeniedErrorCode>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl AccessDeniedException {
@@ -496,10 +509,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::LimitExceededErrorCode>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl LimitExceededException {
@@ -603,10 +619,13 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCrossAccountRoleException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::InvalidCrossAccountRoleErrorCode>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl InvalidCrossAccountRoleException {
@@ -712,12 +731,16 @@ impl InvalidCrossAccountRoleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentsAlreadyRunningAssessmentException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub agents: std::option::Option<std::vec::Vec<crate::model::AgentAlreadyRunningAssessment>>,
     /// <p></p>
+    #[doc(hidden)]
     pub agents_truncated: std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl AgentsAlreadyRunningAssessmentException {
@@ -845,8 +868,10 @@ impl AgentsAlreadyRunningAssessmentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl UnsupportedFeatureException {
@@ -930,12 +955,16 @@ impl UnsupportedFeatureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentRunInProgressException {
     /// <p>Details of the exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
+    #[doc(hidden)]
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
+    #[doc(hidden)]
     pub assessment_run_arns_truncated: std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
+    #[doc(hidden)]
     pub can_retry: std::option::Option<bool>,
 }
 impl AssessmentRunInProgressException {
@@ -1068,6 +1097,7 @@ impl AssessmentRunInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreviewGenerationInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PreviewGenerationInProgressException {

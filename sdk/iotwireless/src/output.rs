@@ -365,6 +365,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestWirelessDeviceOutput {
     /// <p>The result returned by the test.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl TestWirelessDeviceOutput {
@@ -579,6 +580,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendDataToWirelessDeviceOutput {
@@ -633,6 +635,7 @@ impl SendDataToWirelessDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendDataToMulticastGroupOutput {
     /// <p>ID of a multicast group message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendDataToMulticastGroupOutput {
@@ -807,8 +810,10 @@ impl PutPositionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessGatewayTaskDefinitionsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of task definitions.</p>
+    #[doc(hidden)]
     pub task_definitions:
         std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
 }
@@ -896,8 +901,10 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessGatewaysOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless gateway.</p>
+    #[doc(hidden)]
     pub wireless_gateway_list:
         std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
 }
@@ -985,8 +992,10 @@ impl ListWirelessGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessDevicesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_list:
         std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
 }
@@ -1074,6 +1083,7 @@ impl ListWirelessDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1135,8 +1145,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceProfilesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of service profiles.</p>
+    #[doc(hidden)]
     pub service_profile_list: std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>,
 }
 impl ListServiceProfilesOutput {
@@ -1218,8 +1230,10 @@ impl ListServiceProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuedMessagesOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The messages in the downlink queue.</p>
+    #[doc(hidden)]
     pub downlink_queue_messages_list:
         std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
 }
@@ -1310,9 +1324,11 @@ impl ListQueuedMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPositionConfigurationsOutput {
     /// <p>A list of position configurations.</p>
+    #[doc(hidden)]
     pub position_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPositionConfigurationsOutput {
@@ -1402,8 +1418,10 @@ impl ListPositionConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerAccountsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk:
         std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
 }
@@ -1490,8 +1508,10 @@ impl ListPartnerAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkAnalyzerConfigurationsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of network analyzer configurations.</p>
+    #[doc(hidden)]
     pub network_analyzer_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
 }
@@ -1582,8 +1602,10 @@ impl ListNetworkAnalyzerConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMulticastGroupsByFuotaTaskOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of multicast groups associated with a FUOTA task.</p>
+    #[doc(hidden)]
     pub multicast_group_list:
         std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
 }
@@ -1671,8 +1693,10 @@ impl ListMulticastGroupsByFuotaTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMulticastGroupsOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of multicast groups.</p>
+    #[doc(hidden)]
     pub multicast_group_list: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
 }
 impl ListMulticastGroupsOutput {
@@ -1754,8 +1778,10 @@ impl ListMulticastGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFuotaTasksOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+    #[doc(hidden)]
     pub fuota_task_list: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>,
 }
 impl ListFuotaTasksOutput {
@@ -1836,8 +1862,10 @@ impl ListFuotaTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventConfigurationsOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Event configurations of all events for a single resource.</p>
+    #[doc(hidden)]
     pub event_configurations_list:
         std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
 }
@@ -1925,8 +1953,10 @@ impl ListEventConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceProfilesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of device profiles.</p>
+    #[doc(hidden)]
     pub device_profile_list: std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>,
 }
 impl ListDeviceProfilesOutput {
@@ -2008,8 +2038,10 @@ impl ListDeviceProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDestinationsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of destinations.</p>
+    #[doc(hidden)]
     pub destination_list: std::option::Option<std::vec::Vec<crate::model::Destinations>>,
 }
 impl ListDestinationsOutput {
@@ -2090,12 +2122,16 @@ impl ListDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayTaskDefinitionOutput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    #[doc(hidden)]
     pub auto_create_tasks: bool,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the gateways to update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::UpdateWirelessGatewayTaskCreate>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayTaskDefinitionOutput {
@@ -2204,14 +2240,19 @@ impl GetWirelessGatewayTaskDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayTaskOutput {
     /// <p>The ID of the wireless gateway.</p>
+    #[doc(hidden)]
     pub wireless_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the WirelessGatewayTask.</p>
+    #[doc(hidden)]
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p>
+    #[doc(hidden)]
     pub last_uplink_received_at: std::option::Option<std::string::String>,
     /// <p>The date and time when the task was created.</p>
+    #[doc(hidden)]
     pub task_created_at: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
 }
 impl GetWirelessGatewayTaskOutput {
@@ -2355,10 +2396,13 @@ impl GetWirelessGatewayTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayStatisticsOutput {
     /// <p>The ID of the wireless gateway.</p>
+    #[doc(hidden)]
     pub wireless_gateway_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p>
+    #[doc(hidden)]
     pub last_uplink_received_at: std::option::Option<std::string::String>,
     /// <p>The connection status of the wireless gateway.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
 }
 impl GetWirelessGatewayStatisticsOutput {
@@ -2456,6 +2500,7 @@ impl GetWirelessGatewayStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayFirmwareInformationOutput {
     /// <p>Information about the wireless gateway's firmware.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
 }
 impl GetWirelessGatewayFirmwareInformationOutput {
@@ -2513,8 +2558,10 @@ impl GetWirelessGatewayFirmwareInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
+    #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
+    #[doc(hidden)]
     pub lo_ra_wan_network_server_certificate_id: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayCertificateOutput {
@@ -2600,18 +2647,25 @@ impl GetWirelessGatewayCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessGatewayOutput {
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless gateway.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the wireless gateway.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGateway>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl GetWirelessGatewayOutput {
@@ -2771,12 +2825,16 @@ impl GetWirelessGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessDeviceStatisticsOutput {
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p>
+    #[doc(hidden)]
     pub last_uplink_received_at: std::option::Option<std::string::String>,
     /// <p>Information about the wireless device's operations.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceMetadata>,
     /// <p>MetaData for Sidewalk device.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkDeviceMetadata>,
 }
 impl GetWirelessDeviceStatisticsOutput {
@@ -2894,24 +2952,34 @@ impl GetWirelessDeviceStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWirelessDeviceOutput {
     /// <p>The wireless device type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the destination to which the device is assigned.</p>
+    #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing associated with the wireless device.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>Information about the wireless device.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDevice>,
     /// <p>Sidewalk device object.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkDevice>,
 }
 impl GetWirelessDeviceOutput {
@@ -3131,12 +3199,16 @@ impl GetWirelessDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceProfileOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the service profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Information about the service profile.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGetServiceProfileInfo>,
 }
 impl GetServiceProfileOutput {
@@ -3245,10 +3317,13 @@ impl GetServiceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceEndpointOutput {
     /// <p>The endpoint's service type.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
     /// <p>The service endpoint value.</p>
+    #[doc(hidden)]
     pub service_endpoint: std::option::Option<std::string::String>,
     /// <p>The Root CA of the server trust certificate.</p>
+    #[doc(hidden)]
     pub server_trust: std::option::Option<std::string::String>,
 }
 impl GetServiceEndpointOutput {
@@ -3343,6 +3418,7 @@ impl GetServiceEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl GetResourceLogLevelOutput {
@@ -3397,15 +3473,20 @@ impl GetResourceLogLevelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceEventConfigurationOutput {
     /// <p>Event configuration for the device registration state event.</p>
+    #[doc(hidden)]
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
     /// <p>Event configuration for the proximity event.</p>
+    #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
     /// <p>Event configuration for the join event.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Event configuration for the connection status event.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     /// <p>Event configuration for the message delivery status event.</p>
+    #[doc(hidden)]
     pub message_delivery_status:
         std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
@@ -3562,8 +3643,10 @@ impl GetResourceEventConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
+    #[doc(hidden)]
     pub solvers: std::option::Option<crate::model::PositionSolverDetails>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl GetPositionConfigurationOutput {
@@ -3638,16 +3721,22 @@ impl GetPositionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPositionOutput {
     /// <p>The position information of the resource.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f32>>,
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+    #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::Accuracy>,
     /// <p>The type of solver used to identify the position of the resource.</p>
+    #[doc(hidden)]
     pub solver_type: std::option::Option<crate::model::PositionSolverType>,
     /// <p>The vendor of the positioning solver.</p>
+    #[doc(hidden)]
     pub solver_provider: std::option::Option<crate::model::PositionSolverProvider>,
     /// <p>The version of the positioning solver.</p>
+    #[doc(hidden)]
     pub solver_version: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
 }
 impl GetPositionOutput {
@@ -3802,8 +3891,10 @@ impl GetPositionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
     /// <p>Whether the partner account is linked to the AWS account.</p>
+    #[doc(hidden)]
     pub account_linked: bool,
 }
 impl GetPartnerAccountOutput {
@@ -3880,16 +3971,22 @@ impl GetPartnerAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkAnalyzerConfigurationOutput {
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    #[doc(hidden)]
     pub trace_content: std::option::Option<crate::model::TraceContent>,
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub wireless_devices: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub wireless_gateways: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetNetworkAnalyzerConfigurationOutput {
@@ -4050,6 +4147,7 @@ impl GetNetworkAnalyzerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMulticastGroupSessionOutput {
     /// <p>The LoRaWAN information used with the multicast session.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
 }
 impl GetMulticastGroupSessionOutput {
@@ -4107,18 +4205,25 @@ impl GetMulticastGroupSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMulticastGroupOutput {
     /// <p>The arn of the multicast group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the multicast group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the multicast group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastGet>,
     /// <p>Created at timestamp for the resource.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMulticastGroupOutput {
@@ -4281,11 +4386,14 @@ impl GetMulticastGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogLevelsByResourceTypesOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    #[doc(hidden)]
     pub default_log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless gateway log options.</p>
+    #[doc(hidden)]
     pub wireless_gateway_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
     /// <p>The list of wireless device log options.</p>
+    #[doc(hidden)]
     pub wireless_device_log_options:
         std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
 }
@@ -4414,22 +4522,31 @@ impl GetLogLevelsByResourceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of a FUOTA task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FuotaTaskStatus>,
     /// <p>The name of a FUOTA task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>,
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_image: std::option::Option<std::string::String>,
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    #[doc(hidden)]
     pub firmware_update_role: std::option::Option<std::string::String>,
     /// <p>Created at timestamp for the resource.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetFuotaTaskOutput {
@@ -4635,16 +4752,21 @@ impl GetFuotaTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
+    #[doc(hidden)]
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the proximity event.</p>
+    #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the join event.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the connection status event.</p>
+    #[doc(hidden)]
     pub connection_status:
         std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration object for the message delivery status event.</p>
+    #[doc(hidden)]
     pub message_delivery_status:
         std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
@@ -4816,12 +4938,16 @@ impl GetEventConfigurationByResourceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the device profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Information about the device profile.</p>
+    #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceProfile>,
 }
 impl GetDeviceProfileOutput {
@@ -4930,16 +5056,22 @@ impl GetDeviceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDestinationOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule name or topic rule to send messages to.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub expression_type: std::option::Option<crate::model::ExpressionType>,
     /// <p>The description of the resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl GetDestinationOutput {
@@ -5627,8 +5759,10 @@ impl DeleteDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayTaskDefinitionOutput {
     /// <p>The ID of the new wireless gateway task definition.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateWirelessGatewayTaskDefinitionOutput {
@@ -5700,8 +5834,10 @@ impl CreateWirelessGatewayTaskDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayTaskOutput {
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    #[doc(hidden)]
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
 }
 impl CreateWirelessGatewayTaskOutput {
@@ -5785,8 +5921,10 @@ impl CreateWirelessGatewayTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessGatewayOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new wireless gateway.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateWirelessGatewayOutput {
@@ -5858,8 +5996,10 @@ impl CreateWirelessGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWirelessDeviceOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new wireless device.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateWirelessDeviceOutput {
@@ -5931,8 +6071,10 @@ impl CreateWirelessDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceProfileOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new service profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateServiceProfileOutput {
@@ -6004,8 +6146,10 @@ impl CreateServiceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkAnalyzerConfigurationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Name of the network analyzer configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
@@ -6077,8 +6221,10 @@ impl CreateNetworkAnalyzerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMulticastGroupOutput {
     /// <p>The arn of the multicast group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the multicast group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateMulticastGroupOutput {
@@ -6150,8 +6296,10 @@ impl CreateMulticastGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of a FUOTA task.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateFuotaTaskOutput {
@@ -6223,8 +6371,10 @@ impl CreateFuotaTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the new device profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateDeviceProfileOutput {
@@ -6296,8 +6446,10 @@ impl CreateDeviceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDestinationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateDestinationOutput {
@@ -6429,6 +6581,7 @@ impl AssociateWirelessGatewayWithThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWirelessGatewayWithCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
+    #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessGatewayWithCertificateOutput {
@@ -6607,8 +6760,10 @@ impl AssociateMulticastGroupWithFuotaTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAwsAccountWithPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
+    #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
     /// <p>The Amazon Resource Name of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssociateAwsAccountWithPartnerAccountOutput {

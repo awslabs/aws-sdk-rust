@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedActionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedActionException {
@@ -69,6 +70,7 @@ impl UnsupportedActionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeNotFoundException {
@@ -133,6 +135,7 @@ impl TypeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -197,6 +200,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceLimitExceededException {
@@ -261,6 +265,7 @@ impl ServiceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceInternalErrorException {
@@ -325,6 +330,7 @@ impl ServiceInternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -389,6 +395,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConflictException {
@@ -453,6 +460,7 @@ impl ResourceConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PrivateTypeException {
@@ -517,6 +525,7 @@ impl PrivateTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotUpdatableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotUpdatableException {
@@ -581,6 +590,7 @@ impl NotUpdatableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotStabilizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotStabilizedException {
@@ -645,6 +655,7 @@ impl NotStabilizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NetworkFailureException {
@@ -709,6 +720,7 @@ impl NetworkFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -773,6 +785,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCredentialsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCredentialsException {
@@ -837,6 +850,7 @@ impl InvalidCredentialsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandlerInternalFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HandlerInternalFailureException {
@@ -901,6 +915,7 @@ impl HandlerInternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HandlerFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HandlerFailureException {
@@ -965,6 +980,7 @@ impl HandlerFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneralServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GeneralServiceException {
@@ -1029,6 +1045,7 @@ impl GeneralServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentOperationException {
@@ -1094,6 +1111,7 @@ impl ConcurrentOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientTokenConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientTokenConflictException {
@@ -1158,6 +1176,7 @@ impl ClientTokenConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -1222,6 +1241,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTokenNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestTokenNotFoundException {
@@ -1286,6 +1306,7 @@ impl RequestTokenNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {

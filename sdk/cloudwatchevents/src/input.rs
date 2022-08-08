@@ -8470,12 +8470,16 @@ impl UpdateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
     /// <p>The name of the connection to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the connection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of authorization to use for the connection.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
     /// <p>The authorization parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub auth_parameters: std::option::Option<crate::model::UpdateConnectionAuthRequestParameters>,
 }
 impl UpdateConnectionInput {
@@ -8516,12 +8520,16 @@ impl std::fmt::Debug for UpdateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateArchiveInput {
     /// <p>The name of the archive to update.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
     /// <p>The description for the archive.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event pattern to use to filter events sent to the archive.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The number of days to retain events in the archive.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl UpdateArchiveInput {
@@ -8558,16 +8566,22 @@ impl std::fmt::Debug for UpdateArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiDestinationInput {
     /// <p>The name of the API destination to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the API destination to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the connection to use for the API destination.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The URL to the endpoint to use for the API destination.</p>
+    #[doc(hidden)]
     pub invocation_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use for the API destination.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
+    #[doc(hidden)]
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
 }
 impl UpdateApiDestinationInput {
@@ -8617,8 +8631,10 @@ impl std::fmt::Debug for UpdateApiDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the EventBridge resource from which you are removing tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8645,6 +8661,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestEventPatternInput {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
     /// <ul>
@@ -8656,6 +8673,7 @@ pub struct TestEventPatternInput {
     /// <li> <p> <code>resources</code> </p> </li>
     /// <li> <p> <code>detail-type</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
 }
 impl TestEventPatternInput {
@@ -8691,8 +8709,10 @@ impl std::fmt::Debug for TestEventPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the EventBridge resource that you're adding tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8719,16 +8739,22 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplayInput {
     /// <p>The name of the replay to start.</p>
+    #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
     /// <p>A description for the replay to start.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the archive to replay events from.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    #[doc(hidden)]
     pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    #[doc(hidden)]
     pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::ReplayDestination>,
 }
 impl StartReplayInput {
@@ -8775,12 +8801,16 @@ impl std::fmt::Debug for StartReplayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTargetsInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the targets to remove from the rule.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl RemoveTargetsInput {
@@ -8817,10 +8847,13 @@ impl std::fmt::Debug for RemoveTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to remove all permissions.</p>
+    #[doc(hidden)]
     pub remove_all_permissions: bool,
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -8852,10 +8885,13 @@ impl std::fmt::Debug for RemovePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTargetsInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The targets to update or add to the rule.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
 }
 impl PutTargetsInput {
@@ -8887,21 +8923,29 @@ impl std::fmt::Debug for PutTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRuleInput {
     /// <p>The name of the rule that you are creating or updating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RuleState>,
     /// <p>A description of the rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the rule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl PutRuleInput {
@@ -8959,19 +9003,25 @@ impl std::fmt::Debug for PutRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionInput {
     /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The action that you are enabling the other account to perform.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
     /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
     /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
     /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
     /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::Condition>,
     /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutPermissionInput {
@@ -9021,6 +9071,7 @@ impl std::fmt::Debug for PutPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsRequestEntry>>,
 }
 impl PutPartnerEventsInput {
@@ -9042,6 +9093,7 @@ impl std::fmt::Debug for PutPartnerEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
 }
 impl PutEventsInput {
@@ -9063,12 +9115,16 @@ impl std::fmt::Debug for PutEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsByRuleInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTargetsByRuleInput {
@@ -9105,6 +9161,7 @@ impl std::fmt::Debug for ListTargetsByRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9126,12 +9183,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesInput {
     /// <p>The prefix matching the rule name.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListRulesInput {
@@ -9168,12 +9229,16 @@ impl std::fmt::Debug for ListRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleNamesByTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListRuleNamesByTargetInput {
@@ -9210,14 +9275,19 @@ impl std::fmt::Debug for ListRuleNamesByTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReplaysInput {
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The state of the replay.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>The ARN of the archive from which the events are replayed.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of replays to retrieve.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListReplaysInput {
@@ -9259,10 +9329,13 @@ impl std::fmt::Debug for ListReplaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerEventSourcesInput {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListPartnerEventSourcesInput {
@@ -9294,10 +9367,13 @@ impl std::fmt::Debug for ListPartnerEventSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerEventSourceAccountsInput {
     /// <p>The name of the partner event source to display account information about.</p>
+    #[doc(hidden)]
     pub event_source_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListPartnerEventSourceAccountsInput {
@@ -9329,10 +9405,13 @@ impl std::fmt::Debug for ListPartnerEventSourceAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSourcesInput {
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListEventSourcesInput {
@@ -9364,10 +9443,13 @@ impl std::fmt::Debug for ListEventSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventBusesInput {
     /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListEventBusesInput {
@@ -9399,12 +9481,16 @@ impl std::fmt::Debug for ListEventBusesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The state of the connection.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of connections to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListConnectionsInput {
@@ -9441,14 +9527,19 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArchivesInput {
     /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the event source associated with the archive.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the archive.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArchiveState>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListArchivesInput {
@@ -9490,12 +9581,16 @@ impl std::fmt::Debug for ListArchivesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiDestinationsInput {
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the connection specified for the API destination.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of API destinations to include in the response.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListApiDestinationsInput {
@@ -9532,8 +9627,10 @@ impl std::fmt::Debug for ListApiDestinationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableRuleInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl EnableRuleInput {
@@ -9560,8 +9657,10 @@ impl std::fmt::Debug for EnableRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableRuleInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl DisableRuleInput {
@@ -9588,8 +9687,10 @@ impl std::fmt::Debug for DisableRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuleInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl DescribeRuleInput {
@@ -9616,6 +9717,7 @@ impl std::fmt::Debug for DescribeRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplayInput {
     /// <p>The name of the replay to retrieve.</p>
+    #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
 }
 impl DescribeReplayInput {
@@ -9637,6 +9739,7 @@ impl std::fmt::Debug for DescribeReplayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnerEventSourceInput {
     /// <p>The name of the event source to display.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribePartnerEventSourceInput {
@@ -9658,6 +9761,7 @@ impl std::fmt::Debug for DescribePartnerEventSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSourceInput {
     /// <p>The name of the partner event source to display the details of.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeEventSourceInput {
@@ -9679,6 +9783,7 @@ impl std::fmt::Debug for DescribeEventSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventBusInput {
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeEventBusInput {
@@ -9700,6 +9805,7 @@ impl std::fmt::Debug for DescribeEventBusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionInput {
     /// <p>The name of the connection to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionInput {
@@ -9721,6 +9827,7 @@ impl std::fmt::Debug for DescribeConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeArchiveInput {
     /// <p>The name of the archive to retrieve.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
 }
 impl DescribeArchiveInput {
@@ -9742,6 +9849,7 @@ impl std::fmt::Debug for DescribeArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApiDestinationInput {
     /// <p>The name of the API destination to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeApiDestinationInput {
@@ -9763,10 +9871,13 @@ impl std::fmt::Debug for DescribeApiDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleInput {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl DeleteRuleInput {
@@ -9798,8 +9909,10 @@ impl std::fmt::Debug for DeleteRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartnerEventSourceInput {
     /// <p>The name of the event source to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
 }
 impl DeletePartnerEventSourceInput {
@@ -9826,6 +9939,7 @@ impl std::fmt::Debug for DeletePartnerEventSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventBusInput {
     /// <p>The name of the event bus to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEventBusInput {
@@ -9847,6 +9961,7 @@ impl std::fmt::Debug for DeleteEventBusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The name of the connection to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -9868,6 +9983,7 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteArchiveInput {
     /// <p>The name of the archive to delete.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
 }
 impl DeleteArchiveInput {
@@ -9889,6 +10005,7 @@ impl std::fmt::Debug for DeleteArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiDestinationInput {
     /// <p>The name of the destination to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteApiDestinationInput {
@@ -9910,6 +10027,7 @@ impl std::fmt::Debug for DeleteApiDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeauthorizeConnectionInput {
     /// <p>The name of the connection to remove authorization from.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeauthorizeConnectionInput {
@@ -9931,6 +10049,7 @@ impl std::fmt::Debug for DeauthorizeConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateEventSourceInput {
     /// <p>The name of the partner event source to deactivate.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeactivateEventSourceInput {
@@ -9952,8 +10071,10 @@ impl std::fmt::Debug for DeactivateEventSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerEventSourceInput {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
 }
 impl CreatePartnerEventSourceInput {
@@ -9982,10 +10103,13 @@ pub struct CreateEventBusInput {
     /// <p>The name of the new event bus. </p>
     /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
+    #[doc(hidden)]
     pub event_source_name: std::option::Option<std::string::String>,
     /// <p>Tags to associate with the event bus.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventBusInput {
@@ -10019,12 +10143,16 @@ impl std::fmt::Debug for CreateEventBusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>The name for the connection to create.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the connection to create.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of authorization to use for the connection.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
+    #[doc(hidden)]
     pub auth_parameters: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
 }
 impl CreateConnectionInput {
@@ -10065,14 +10193,19 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateArchiveInput {
     /// <p>The name for the archive to create.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus that sends events to the archive.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>A description for the archive.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An event pattern to use to filter events sent to the archive.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl CreateArchiveInput {
@@ -10114,16 +10247,22 @@ impl std::fmt::Debug for CreateArchiveInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiDestinationInput {
     /// <p>The name for the API destination to create.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the API destination to create.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
+    #[doc(hidden)]
     pub invocation_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
     /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
+    #[doc(hidden)]
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
 }
 impl CreateApiDestinationInput {
@@ -10173,6 +10312,7 @@ impl std::fmt::Debug for CreateApiDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReplayInput {
     /// <p>The name of the replay to cancel.</p>
+    #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
 }
 impl CancelReplayInput {
@@ -10194,6 +10334,7 @@ impl std::fmt::Debug for CancelReplayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ActivateEventSourceInput {

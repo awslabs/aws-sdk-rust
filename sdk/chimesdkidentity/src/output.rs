@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceUserEndpointOutput {
@@ -80,6 +82,7 @@ impl UpdateAppInstanceUserEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceUserOutput {
@@ -137,6 +140,7 @@ impl UpdateAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceOutput {
@@ -254,8 +258,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl RegisterAppInstanceUserEndpointOutput {
@@ -330,9 +336,11 @@ impl RegisterAppInstanceUserEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutAppInstanceRetentionSettingsOutput {
@@ -422,6 +430,7 @@ impl PutAppInstanceRetentionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -483,11 +492,14 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_users:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUsersOutput {
@@ -591,9 +603,11 @@ impl ListAppInstanceUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_endpoints:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUserEndpointsOutput {
@@ -683,8 +697,10 @@ impl ListAppInstanceUserEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instances: std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesOutput {
@@ -766,11 +782,14 @@ impl ListAppInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The information for each administrator.</p>
+    #[doc(hidden)]
     pub app_instance_admins:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsOutput {
@@ -874,9 +893,11 @@ impl ListAppInstanceAdminsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAppInstanceRetentionSettingsOutput {
@@ -966,6 +987,7 @@ impl GetAppInstanceRetentionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserEndpointOutput {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    #[doc(hidden)]
     pub app_instance_user_endpoint: std::option::Option<crate::model::AppInstanceUserEndpoint>,
 }
 impl DescribeAppInstanceUserEndpointOutput {
@@ -1032,6 +1054,7 @@ impl DescribeAppInstanceUserEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
 }
 impl DescribeAppInstanceUserOutput {
@@ -1089,6 +1112,7 @@ impl DescribeAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
 }
 impl DescribeAppInstanceAdminOutput {
@@ -1146,6 +1170,7 @@ impl DescribeAppInstanceAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    #[doc(hidden)]
     pub app_instance: std::option::Option<crate::model::AppInstance>,
 }
 impl DescribeAppInstanceOutput {
@@ -1323,6 +1348,7 @@ impl DeleteAppInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceUserOutput {
@@ -1380,8 +1406,10 @@ impl CreateAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceAdminOutput {
     /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceAdminOutput {
@@ -1459,6 +1487,7 @@ impl CreateAppInstanceAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceOutput {

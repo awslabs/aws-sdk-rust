@@ -345,10 +345,13 @@ impl SendAlexaOfferToMasterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAlexaOfferToMasterInput {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the sender client.</p>
+    #[doc(hidden)]
     pub sender_client_id: std::option::Option<std::string::String>,
     /// <p>The base64-encoded SDP offer content.</p>
+    #[doc(hidden)]
     pub message_payload: std::option::Option<std::string::String>,
 }
 impl SendAlexaOfferToMasterInput {
@@ -380,12 +383,16 @@ impl std::fmt::Debug for SendAlexaOfferToMasterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIceServerConfigInput {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>An optional user ID to be associated with the credentials.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl GetIceServerConfigInput {

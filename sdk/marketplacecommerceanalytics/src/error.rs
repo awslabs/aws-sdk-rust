@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketplaceCommerceAnalyticsException {
     /// This message describes details of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MarketplaceCommerceAnalyticsException {

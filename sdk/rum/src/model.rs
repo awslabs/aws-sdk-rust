@@ -8,8 +8,10 @@
 pub struct QueryFilter {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryFilter {
@@ -93,8 +95,10 @@ impl QueryFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
+    #[doc(hidden)]
     pub after: i64,
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
+    #[doc(hidden)]
     pub before: i64,
 }
 impl TimeRange {
@@ -166,22 +170,29 @@ impl TimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppMonitorConfiguration {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
+    #[doc(hidden)]
     pub excluded_pages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
+    #[doc(hidden)]
     pub included_pages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.</p>
+    #[doc(hidden)]
     pub favorite_pages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you more data but also incurs more costs.</p>
     /// <p>The number you specify is the percentage of user sessions that will be used.</p>
     /// <p>If you omit this parameter, the default of 10 is used.</p>
+    #[doc(hidden)]
     pub session_sample_rate: f64,
     /// <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
+    #[doc(hidden)]
     pub guest_role_arn: std::option::Option<std::string::String>,
     /// <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.</p>
+    #[doc(hidden)]
     pub allow_cookies: std::option::Option<bool>,
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
@@ -189,8 +200,10 @@ pub struct AppMonitorConfiguration {
     /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
     /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub telemetries: std::option::Option<std::vec::Vec<crate::model::Telemetry>>,
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
+    #[doc(hidden)]
     pub enable_x_ray: std::option::Option<bool>,
 }
 impl AppMonitorConfiguration {
@@ -509,14 +522,19 @@ impl AsRef<str> for Telemetry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique ID of this app monitor.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the app monitor was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<std::string::String>,
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<std::string::String>,
     /// <p>The current state of this app monitor.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StateEnum>,
 }
 impl AppMonitorSummary {
@@ -701,23 +719,32 @@ impl AsRef<str> for StateEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppMonitor {
     /// <p>The name of the app monitor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The unique ID of this app monitor.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that this app monitor was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<std::string::String>,
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with this app monitor.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current state of the app monitor.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StateEnum>,
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
+    #[doc(hidden)]
     pub app_monitor_configuration: std::option::Option<crate::model::AppMonitorConfiguration>,
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub data_storage: std::option::Option<crate::model::DataStorage>,
 }
 impl AppMonitor {
@@ -943,6 +970,7 @@ impl AppMonitor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
+    #[doc(hidden)]
     pub cw_log: std::option::Option<crate::model::CwLog>,
 }
 impl DataStorage {
@@ -997,8 +1025,10 @@ impl DataStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cw_log_enabled: std::option::Option<bool>,
     /// <p>The name of the log group where the copies are stored.</p>
+    #[doc(hidden)]
     pub cw_log_group: std::option::Option<std::string::String>,
 }
 impl CwLog {
@@ -1070,14 +1100,19 @@ impl CwLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RumEvent {
     /// <p>A unique ID for this event.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The exact time that this event occurred.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>A string containing details about the event.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl RumEvent {
@@ -1203,8 +1238,10 @@ impl RumEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDetails {
     /// <p>The ID of the user for this user session. This ID is generated by RUM and does not include any personally identifiable information about the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The session ID that the performance events are from.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl UserDetails {
@@ -1276,10 +1313,13 @@ impl UserDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppMonitorDetails {
     /// <p>The name of the app monitor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the app monitor.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the app monitor.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl AppMonitorDetails {

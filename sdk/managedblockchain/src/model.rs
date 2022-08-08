@@ -59,6 +59,7 @@ impl AsRef<str> for VoteValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NodeFabricLogPublishingConfiguration>,
 }
 impl NodeLogPublishingConfiguration {
@@ -118,8 +119,10 @@ impl NodeLogPublishingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
+    #[doc(hidden)]
     pub chaincode_logs: std::option::Option<crate::model::LogConfigurations>,
     /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
+    #[doc(hidden)]
     pub peer_logs: std::option::Option<crate::model::LogConfigurations>,
 }
 impl NodeFabricLogPublishingConfiguration {
@@ -197,6 +200,7 @@ impl NodeFabricLogPublishingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogConfigurations {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloudwatch: std::option::Option<crate::model::LogConfiguration>,
 }
 impl LogConfigurations {
@@ -254,6 +258,7 @@ impl LogConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogConfiguration {
     /// <p>Indicates whether logging is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl LogConfiguration {
@@ -308,6 +313,7 @@ impl LogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>,
 }
 impl MemberLogPublishingConfiguration {
@@ -371,6 +377,7 @@ impl MemberLogPublishingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
+    #[doc(hidden)]
     pub ca_logs: std::option::Option<crate::model::LogConfigurations>,
 }
 impl MemberFabricLogPublishingConfiguration {
@@ -429,10 +436,13 @@ impl MemberFabricLogPublishingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
+    #[doc(hidden)]
     pub vote: std::option::Option<crate::model::VoteValue>,
     /// <p> The name of the member that cast the vote. </p>
+    #[doc(hidden)]
     pub member_name: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the member that cast the vote. </p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl VoteSummary {
@@ -522,12 +532,16 @@ impl VoteSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p> The description of the proposal. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the member that created the proposal. </p>
+    #[doc(hidden)]
     pub proposed_by_member_id: std::option::Option<std::string::String>,
     /// <p> The name of the member that created the proposal. </p>
+    #[doc(hidden)]
     pub proposed_by_member_name: std::option::Option<std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
@@ -537,12 +551,16 @@ pub struct ProposalSummary {
     /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProposalStatus>,
     /// <p> The date and time that the proposal was created. </p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ProposalSummary {
@@ -825,16 +843,22 @@ impl AsRef<str> for ProposalStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeSummary {
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of the node.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Availability Zone in which the node exists.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The EC2 instance type for the node.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl NodeSummary {
@@ -1076,20 +1100,28 @@ impl AsRef<str> for NodeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkSummary {
     /// <p>The unique identifier of the network.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the network.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework_version: std::option::Option<std::string::String>,
     /// <p>The current status of the network.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl NetworkSummary {
@@ -1404,10 +1436,13 @@ impl AsRef<str> for Framework {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberSummary {
     /// <p>The unique identifier of the member.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the member.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the member.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the member.</p>
     /// <ul>
@@ -1419,12 +1454,16 @@ pub struct MemberSummary {
     /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An indicator of whether the member is owned by your AWS account or a different AWS account.</p>
+    #[doc(hidden)]
     pub is_owned: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl MemberSummary {
@@ -1698,10 +1737,13 @@ impl AsRef<str> for MemberStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invitation {
     /// <p>The unique identifier for the invitation.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the invitation was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the invitation:</p>
     /// <ul>
@@ -1711,10 +1753,13 @@ pub struct Invitation {
     /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
     /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InvitationStatus>,
     /// <p>A summary of network configuration properties.</p>
+    #[doc(hidden)]
     pub network_summary: std::option::Option<crate::model::NetworkSummary>,
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Invitation {
@@ -1958,16 +2003,22 @@ impl AsRef<str> for InvitationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Proposal {
     /// <p>The unique identifier of the proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the network for which the proposal is made.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The description of the proposal.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<crate::model::ProposalActions>,
     /// <p>The unique identifier of the member that created the proposal.</p>
+    #[doc(hidden)]
     pub proposed_by_member_id: std::option::Option<std::string::String>,
     /// <p>The name of the member that created the proposal.</p>
+    #[doc(hidden)]
     pub proposed_by_member_name: std::option::Option<std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
@@ -1977,22 +2028,30 @@ pub struct Proposal {
     /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProposalStatus>,
     /// <p> The date and time that the proposal was created. </p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
+    #[doc(hidden)]
     pub yes_vote_count: std::option::Option<i32>,
     /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
+    #[doc(hidden)]
     pub no_vote_count: std::option::Option<i32>,
     /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
+    #[doc(hidden)]
     pub outstanding_vote_count: std::option::Option<i32>,
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Proposal {
@@ -2331,8 +2390,10 @@ impl Proposal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
+    #[doc(hidden)]
     pub removals: std::option::Option<std::vec::Vec<crate::model::RemoveAction>>,
 }
 impl ProposalActions {
@@ -2423,6 +2484,7 @@ impl ProposalActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl RemoveAction {
@@ -2478,6 +2540,7 @@ impl RemoveAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteAction {
     /// <p>The AWS account ID to invite.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
 }
 impl InviteAction {
@@ -2532,23 +2595,31 @@ impl InviteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
     /// <p>The unique identifier of the network that the node is on.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member to which the node belongs.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The instance type of the node.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Attributes of the blockchain framework being used.</p>
+    #[doc(hidden)]
     pub framework_attributes: std::option::Option<crate::model::NodeFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub state_db: std::option::Option<crate::model::StateDbType>,
     /// <p>The status of the node.</p>
     /// <ul>
@@ -2562,17 +2633,22 @@ pub struct Node {
     /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl Node {
@@ -2983,8 +3059,10 @@ impl AsRef<str> for StateDbType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NodeFabricAttributes>,
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
+    #[doc(hidden)]
     pub ethereum: std::option::Option<crate::model::NodeEthereumAttributes>,
 }
 impl NodeFrameworkAttributes {
@@ -3062,8 +3140,10 @@ impl NodeFrameworkAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeEthereumAttributes {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
+    #[doc(hidden)]
     pub http_endpoint: std::option::Option<std::string::String>,
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
+    #[doc(hidden)]
     pub web_socket_endpoint: std::option::Option<std::string::String>,
 }
 impl NodeEthereumAttributes {
@@ -3141,8 +3221,10 @@ impl NodeEthereumAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
+    #[doc(hidden)]
     pub peer_endpoint: std::option::Option<std::string::String>,
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
+    #[doc(hidden)]
     pub peer_event_endpoint: std::option::Option<std::string::String>,
 }
 impl NodeFabricAttributes {
@@ -3220,30 +3302,42 @@ impl NodeFabricAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Network {
     /// <p>The unique identifier of the network.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the network.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Attributes of the blockchain framework for the network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework_version: std::option::Option<std::string::String>,
     /// <p>Attributes of the blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework_attributes: std::option::Option<crate::model::NetworkFrameworkAttributes>,
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_service_name: std::option::Option<std::string::String>,
     /// <p>The voting rules for the network to decide if a proposal is accepted.</p>
+    #[doc(hidden)]
     pub voting_policy: std::option::Option<crate::model::VotingPolicy>,
     /// <p>The current status of the network.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The date and time that the network was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Network {
@@ -3536,6 +3630,7 @@ impl Network {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
+    #[doc(hidden)]
     pub approval_threshold_policy: std::option::Option<crate::model::ApprovalThresholdPolicy>,
 }
 impl VotingPolicy {
@@ -3600,10 +3695,13 @@ impl VotingPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalThresholdPolicy {
     /// <p>The percentage of votes among all members that must be <code>YES</code> for a proposal to be approved. For example, a <code>ThresholdPercentage</code> value of <code>50</code> indicates 50%. The <code>ThresholdComparator</code> determines the precise comparison. If a <code>ThresholdPercentage</code> value of <code>50</code> is specified on a network with 10 members, along with a <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this indicates that 6 <code>YES</code> votes are required for the proposal to be approved.</p>
+    #[doc(hidden)]
     pub threshold_percentage: std::option::Option<i32>,
     /// <p>The duration from the time that a proposal is created until it expires. If members cast neither the required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are not carried out.</p>
+    #[doc(hidden)]
     pub proposal_duration_in_hours: std::option::Option<i32>,
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    #[doc(hidden)]
     pub threshold_comparator: std::option::Option<crate::model::ThresholdComparator>,
 }
 impl ApprovalThresholdPolicy {
@@ -3753,8 +3851,10 @@ impl AsRef<str> for ThresholdComparator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NetworkFabricAttributes>,
     /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
+    #[doc(hidden)]
     pub ethereum: std::option::Option<crate::model::NetworkEthereumAttributes>,
 }
 impl NetworkFrameworkAttributes {
@@ -3837,6 +3937,7 @@ pub struct NetworkEthereumAttributes {
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// <li> <p>ropsten = <code>3</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub chain_id: std::option::Option<std::string::String>,
 }
 impl NetworkEthereumAttributes {
@@ -3906,8 +4007,10 @@ impl NetworkEthereumAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFabricAttributes {
     /// <p>The endpoint of the ordering service for the network.</p>
+    #[doc(hidden)]
     pub ordering_service_endpoint: std::option::Option<std::string::String>,
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::Edition>,
 }
 impl NetworkFabricAttributes {
@@ -4038,16 +4141,22 @@ impl AsRef<str> for Edition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The unique identifier of the network to which the member belongs.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the member.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the member.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
+    #[doc(hidden)]
     pub framework_attributes: std::option::Option<crate::model::MemberFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a member.</p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::MemberLogPublishingConfiguration>,
     /// <p>The status of a member.</p>
@@ -4060,15 +4169,20 @@ pub struct Member {
     /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl Member {
@@ -4367,6 +4481,7 @@ impl Member {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricAttributes>,
 }
 impl MemberFrameworkAttributes {
@@ -4424,8 +4539,10 @@ impl MemberFrameworkAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The endpoint used to access the member's certificate authority.</p>
+    #[doc(hidden)]
     pub ca_endpoint: std::option::Option<std::string::String>,
 }
 impl MemberFabricAttributes {
@@ -4500,14 +4617,18 @@ impl MemberFabricAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub state_db: std::option::Option<crate::model::StateDbType>,
 }
 impl NodeConfiguration {
@@ -4638,16 +4759,21 @@ impl NodeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberConfiguration {
     /// <p>The name of the member.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the member.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
+    #[doc(hidden)]
     pub framework_configuration: std::option::Option<crate::model::MemberFrameworkConfiguration>,
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::MemberLogPublishingConfiguration>,
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates.</p>
@@ -4656,6 +4782,7 @@ pub struct MemberConfiguration {
     /// <li> <p> <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p> </li>
     /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl MemberConfiguration {
@@ -4854,6 +4981,7 @@ impl MemberConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberFrameworkConfiguration {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricConfiguration>,
 }
 impl MemberFrameworkConfiguration {
@@ -4911,8 +5039,10 @@ impl MemberFrameworkConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
+    #[doc(hidden)]
     pub admin_password: std::option::Option<std::string::String>,
 }
 impl MemberFabricConfiguration {
@@ -4990,6 +5120,7 @@ impl MemberFabricConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
+    #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfiguration {
@@ -5047,6 +5178,7 @@ impl NetworkFrameworkConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::Edition>,
 }
 impl NetworkFabricConfiguration {

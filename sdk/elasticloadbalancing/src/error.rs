@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyNotFoundException {
@@ -69,6 +70,7 @@ impl PolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListenerNotFoundException {
@@ -133,6 +135,7 @@ impl ListenerNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationRequestException {
@@ -197,6 +200,7 @@ impl InvalidConfigurationRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessPointNotFoundException {
@@ -261,6 +265,7 @@ impl AccessPointNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedProtocolException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedProtocolException {
@@ -325,6 +330,7 @@ impl UnsupportedProtocolException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateNotFoundException {
@@ -389,6 +395,7 @@ impl CertificateNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEndPointException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEndPointException {
@@ -453,6 +460,7 @@ impl InvalidEndPointException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerAttributeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LoadBalancerAttributeNotFoundException {
@@ -517,6 +525,7 @@ impl LoadBalancerAttributeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyThrottleException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DependencyThrottleException {
@@ -581,6 +590,7 @@ impl DependencyThrottleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PolicyTypeNotFoundException {
@@ -645,6 +655,7 @@ impl PolicyTypeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyPoliciesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyPoliciesException {
@@ -709,6 +720,7 @@ impl TooManyPoliciesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicatePolicyNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicatePolicyNameException {
@@ -773,6 +785,7 @@ impl DuplicatePolicyNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateListenerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateListenerException {
@@ -837,6 +850,7 @@ impl DuplicateListenerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -901,6 +915,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyAccessPointsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyAccessPointsException {
@@ -965,6 +980,7 @@ impl TooManyAccessPointsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetNotFoundException {
@@ -1029,6 +1045,7 @@ impl SubnetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedException {
@@ -1093,6 +1110,7 @@ impl OperationNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnetException {
@@ -1157,6 +1175,7 @@ impl InvalidSubnetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecurityGroupException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSecurityGroupException {
@@ -1221,6 +1240,7 @@ impl InvalidSecurityGroupException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSchemeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSchemeException {
@@ -1285,6 +1305,7 @@ impl InvalidSchemeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateTagKeysException {
@@ -1349,6 +1370,7 @@ impl DuplicateTagKeysException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateAccessPointNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateAccessPointNameException {

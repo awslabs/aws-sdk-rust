@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
@@ -93,8 +95,10 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>Request references a resource which does not exist.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -181,8 +185,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingVerification {
     /// <p> Your account is pending verification. </p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PendingVerification {
@@ -269,8 +275,10 @@ impl PendingVerification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -357,8 +365,10 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>User does not have sufficient access to perform this action.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -445,8 +455,10 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     /// <p>Unexpected error during processing of request.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
@@ -533,8 +545,10 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamUnavailable {
     /// <p>The stream is temporarily unavailable.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl StreamUnavailable {
@@ -621,8 +635,10 @@ impl StreamUnavailable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelNotBroadcasting {
     /// <p>The stream is offline for the given channel ARN.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ChannelNotBroadcasting {
@@ -709,8 +725,10 @@ impl ChannelNotBroadcasting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// <p>Request was denied due to request throttling.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -797,8 +815,10 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     /// <p>Request would cause a service quota to be exceeded.</p>
+    #[doc(hidden)]
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
 impl UpdateServiceAccessPoliciesOutput {
@@ -62,6 +63,7 @@ impl UpdateServiceAccessPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    #[doc(hidden)]
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
 impl UpdateScalingParametersOutput {
@@ -121,6 +123,7 @@ impl UpdateScalingParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEndpointOptionsOutput {
     /// <p>The newly-configured domain endpoint options.</p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
 }
 impl UpdateDomainEndpointOptionsOutput {
@@ -184,6 +187,7 @@ impl UpdateDomainEndpointOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityOptionsOutput {
     /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
+    #[doc(hidden)]
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
 impl UpdateAvailabilityOptionsOutput {
@@ -247,6 +251,7 @@ impl UpdateAvailabilityOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
+    #[doc(hidden)]
     pub domain_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -322,6 +327,7 @@ impl ListDomainNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
+    #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IndexDocumentsOutput {
@@ -385,6 +391,7 @@ impl IndexDocumentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
+    #[doc(hidden)]
     pub suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
 }
 impl DescribeSuggestersOutput {
@@ -448,6 +455,7 @@ impl DescribeSuggestersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain specified in the request.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
 impl DescribeServiceAccessPoliciesOutput {
@@ -505,6 +513,7 @@ impl DescribeServiceAccessPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    #[doc(hidden)]
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
 impl DescribeScalingParametersOutput {
@@ -564,6 +573,7 @@ impl DescribeScalingParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
+    #[doc(hidden)]
     pub index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
 }
 impl DescribeIndexFieldsOutput {
@@ -627,6 +637,7 @@ impl DescribeIndexFieldsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
+    #[doc(hidden)]
     pub expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
 }
 impl DescribeExpressionsOutput {
@@ -690,6 +701,7 @@ impl DescribeExpressionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsOutput {
     /// <p>A list that contains the status of each requested domain.</p>
+    #[doc(hidden)]
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
 }
 impl DescribeDomainsOutput {
@@ -754,6 +766,7 @@ impl DescribeDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
 }
 impl DescribeDomainEndpointOptionsOutput {
@@ -817,6 +830,7 @@ impl DescribeDomainEndpointOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
+    #[doc(hidden)]
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
 impl DescribeAvailabilityOptionsOutput {
@@ -880,6 +894,7 @@ impl DescribeAvailabilityOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
+    #[doc(hidden)]
     pub analysis_schemes: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
 }
 impl DescribeAnalysisSchemesOutput {
@@ -944,6 +959,7 @@ impl DescribeAnalysisSchemesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
+    #[doc(hidden)]
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
 }
 impl DeleteSuggesterOutput {
@@ -1001,6 +1017,7 @@ impl DeleteSuggesterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
+    #[doc(hidden)]
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
 }
 impl DeleteIndexFieldOutput {
@@ -1058,6 +1075,7 @@ impl DeleteIndexFieldOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
 }
 impl DeleteExpressionOutput {
@@ -1115,6 +1133,7 @@ impl DeleteExpressionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p>The current status of the search domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DeleteDomainOutput {
@@ -1172,6 +1191,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
+    #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DeleteAnalysisSchemeOutput {
@@ -1229,6 +1249,7 @@ impl DeleteAnalysisSchemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
+    #[doc(hidden)]
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
 }
 impl DefineSuggesterOutput {
@@ -1286,6 +1307,7 @@ impl DefineSuggesterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
+    #[doc(hidden)]
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
 }
 impl DefineIndexFieldOutput {
@@ -1343,6 +1365,7 @@ impl DefineIndexFieldOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
 }
 impl DefineExpressionOutput {
@@ -1400,6 +1423,7 @@ impl DefineExpressionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
+    #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DefineAnalysisSchemeOutput {
@@ -1457,6 +1481,7 @@ impl DefineAnalysisSchemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl CreateDomainOutput {
@@ -1514,6 +1539,7 @@ impl CreateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildSuggestersOutput {
     /// <p>A list of field names.</p>
+    #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BuildSuggestersOutput {

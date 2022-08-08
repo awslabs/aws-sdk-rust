@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadLayerPartOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the request.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The integer value of the last byte received in the request.</p>
+    #[doc(hidden)]
     pub last_byte_received: std::option::Option<i64>,
 }
 impl UploadLayerPartOutput {
@@ -178,12 +182,16 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLifecyclePolicyPreviewOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text.</p>
+    #[doc(hidden)]
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The status of the lifecycle policy preview request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LifecyclePolicyPreviewStatus>,
 }
 impl StartLifecyclePolicyPreviewOutput {
@@ -298,12 +306,16 @@ impl StartLifecyclePolicyPreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImageScanOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
+    #[doc(hidden)]
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
 }
 impl StartImageScanOutput {
@@ -418,10 +430,13 @@ impl StartImageScanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text applied to the repository.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl SetRepositoryPolicyOutput {
@@ -513,6 +528,7 @@ impl SetRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReplicationConfigurationOutput {
     /// <p>The contents of the replication configuration for the registry.</p>
+    #[doc(hidden)]
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
 }
 impl PutReplicationConfigurationOutput {
@@ -576,6 +592,7 @@ impl PutReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryScanningConfigurationOutput {
     /// <p>The scanning configuration for your registry.</p>
+    #[doc(hidden)]
     pub registry_scanning_configuration:
         std::option::Option<crate::model::RegistryScanningConfiguration>,
 }
@@ -643,8 +660,10 @@ impl PutRegistryScanningConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryPolicyOutput {
     /// <p>The registry ID.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The JSON policy text for your registry.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl PutRegistryPolicyOutput {
@@ -716,10 +735,13 @@ impl PutRegistryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text.</p>
+    #[doc(hidden)]
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
 }
 impl PutLifecyclePolicyOutput {
@@ -814,10 +836,13 @@ impl PutLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageTagMutabilityOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image tag mutability setting for the repository.</p>
+    #[doc(hidden)]
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
 }
 impl PutImageTagMutabilityOutput {
@@ -912,10 +937,13 @@ impl PutImageTagMutabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageScanningConfigurationOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image scanning configuration setting for the repository.</p>
+    #[doc(hidden)]
     pub image_scanning_configuration: std::option::Option<crate::model::ImageScanningConfiguration>,
 }
 impl PutImageScanningConfigurationOutput {
@@ -1019,6 +1047,7 @@ impl PutImageScanningConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageOutput {
     /// <p>Details of the image uploaded.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl PutImageOutput {
@@ -1071,6 +1100,7 @@ impl PutImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1132,8 +1162,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesOutput {
     /// <p>The list of image IDs for the requested repository.</p>
+    #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListImages</code> request. When the results of a <code>ListImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagesOutput {
@@ -1214,8 +1246,10 @@ impl ListImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadOutput {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
+    #[doc(hidden)]
     pub part_size: std::option::Option<i64>,
 }
 impl InitiateLayerUploadOutput {
@@ -1287,10 +1321,13 @@ impl InitiateLayerUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text associated with the repository.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyOutput {
@@ -1382,8 +1419,10 @@ impl GetRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryScanningConfigurationOutput {
     /// <p>The ID of the registry.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The scanning configuration for the registry.</p>
+    #[doc(hidden)]
     pub scanning_configuration: std::option::Option<crate::model::RegistryScanningConfiguration>,
 }
 impl GetRegistryScanningConfigurationOutput {
@@ -1464,8 +1503,10 @@ impl GetRegistryScanningConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryPolicyOutput {
     /// <p>The ID of the registry.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The JSON text of the permissions policy for a registry.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetRegistryPolicyOutput {
@@ -1537,19 +1578,26 @@ impl GetRegistryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyPreviewOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON lifecycle policy text.</p>
+    #[doc(hidden)]
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The status of the lifecycle policy preview request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LifecyclePolicyPreviewStatus>,
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The results of the lifecycle policy preview request.</p>
+    #[doc(hidden)]
     pub preview_results:
         std::option::Option<std::vec::Vec<crate::model::LifecyclePolicyPreviewResult>>,
     /// <p>The list of images that is returned as a result of the action.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::LifecyclePolicyPreviewSummary>,
 }
 impl GetLifecyclePolicyPreviewOutput {
@@ -1733,12 +1781,16 @@ impl GetLifecyclePolicyPreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON lifecycle policy text.</p>
+    #[doc(hidden)]
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
+    #[doc(hidden)]
     pub last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetLifecyclePolicyOutput {
@@ -1853,8 +1905,10 @@ impl GetLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDownloadUrlForLayerOutput {
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
+    #[doc(hidden)]
     pub download_url: std::option::Option<std::string::String>,
     /// <p>The digest of the image layer to download.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
 }
 impl GetDownloadUrlForLayerOutput {
@@ -1926,6 +1980,7 @@ impl GetDownloadUrlForLayerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenOutput {
     /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
+    #[doc(hidden)]
     pub authorization_data: std::option::Option<std::vec::Vec<crate::model::AuthorizationData>>,
 }
 impl GetAuthorizationTokenOutput {
@@ -1990,8 +2045,10 @@ impl GetAuthorizationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoriesOutput {
@@ -2072,8 +2129,10 @@ impl DescribeRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegistryOutput {
     /// <p>The ID of the registry.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The replication configuration for the registry.</p>
+    #[doc(hidden)]
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
 }
 impl DescribeRegistryOutput {
@@ -2154,9 +2213,11 @@ impl DescribeRegistryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePullThroughCacheRulesOutput {
     /// <p>The details of the pull through cache rules.</p>
+    #[doc(hidden)]
     pub pull_through_cache_rules:
         std::option::Option<std::vec::Vec<crate::model::PullThroughCacheRule>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePullThroughCacheRulesOutput {
@@ -2243,16 +2304,22 @@ impl DescribePullThroughCacheRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageScanFindingsOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
+    #[doc(hidden)]
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
     /// <p>The information contained in the image scan findings.</p>
+    #[doc(hidden)]
     pub image_scan_findings: std::option::Option<crate::model::ImageScanFindings>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImageScanFindingsOutput {
@@ -2404,8 +2471,10 @@ impl DescribeImageScanFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
+    #[doc(hidden)]
     pub image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagesOutput {
@@ -2486,10 +2555,13 @@ impl DescribeImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageReplicationStatusOutput {
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The replication status details for the images in the specified repository.</p>
+    #[doc(hidden)]
     pub replication_statuses:
         std::option::Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
 }
@@ -2597,10 +2669,13 @@ impl DescribeImageReplicationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy that was deleted from the repository.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPolicyOutput {
@@ -2692,6 +2767,7 @@ impl DeleteRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
     /// <p>The repository that was deleted.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl DeleteRepositoryOutput {
@@ -2749,8 +2825,10 @@ impl DeleteRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegistryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The contents of the registry permissions policy that was deleted.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl DeleteRegistryPolicyOutput {
@@ -2822,12 +2900,16 @@ impl DeleteRegistryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePullThroughCacheRuleOutput {
     /// <p>The Amazon ECR repository prefix associated with the request.</p>
+    #[doc(hidden)]
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub upstream_registry_url: std::option::Option<std::string::String>,
     /// <p>The timestamp associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl DeletePullThroughCacheRuleOutput {
@@ -2942,12 +3024,16 @@ impl DeletePullThroughCacheRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON lifecycle policy text.</p>
+    #[doc(hidden)]
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
+    #[doc(hidden)]
     pub last_evaluated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteLifecyclePolicyOutput {
@@ -3062,6 +3148,7 @@ impl DeleteLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl CreateRepositoryOutput {
@@ -3119,12 +3206,16 @@ impl CreateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePullThroughCacheRuleOutput {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub upstream_registry_url: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the pull through cache rule was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl CreatePullThroughCacheRuleOutput {
@@ -3239,12 +3330,16 @@ impl CreatePullThroughCacheRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the layer.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
 }
 impl CompleteLayerUploadOutput {
@@ -3353,9 +3448,11 @@ impl CompleteLayerUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRepositoryScanningConfigurationOutput {
     /// <p>The scanning configuration for the requested repositories.</p>
+    #[doc(hidden)]
     pub scanning_configurations:
         std::option::Option<std::vec::Vec<crate::model::RepositoryScanningConfiguration>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures:
         std::option::Option<std::vec::Vec<crate::model::RepositoryScanningConfigurationFailure>>,
 }
@@ -3463,8 +3560,10 @@ impl BatchGetRepositoryScanningConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetImageOutput {
     /// <p>A list of image objects corresponding to the image references in the request.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
 }
 impl BatchGetImageOutput {
@@ -3554,8 +3653,10 @@ impl BatchGetImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImageOutput {
     /// <p>The image IDs of the deleted images.</p>
+    #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
 }
 impl BatchDeleteImageOutput {
@@ -3645,8 +3746,10 @@ impl BatchDeleteImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityOutput {
     /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+    #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
 }
 impl BatchCheckLayerAvailabilityOutput {

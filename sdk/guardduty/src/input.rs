@@ -11797,14 +11797,19 @@ impl UpdateThreatIntelSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    #[doc(hidden)]
     pub threat_intel_set_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
+    #[doc(hidden)]
     pub activate: bool,
 }
 impl UpdateThreatIntelSetInput {
@@ -11846,10 +11851,13 @@ impl std::fmt::Debug for UpdateThreatIntelSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublishingDestinationInput {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to update.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    #[doc(hidden)]
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
 }
 impl UpdatePublishingDestinationInput {
@@ -11883,10 +11891,13 @@ impl std::fmt::Debug for UpdatePublishingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector to update the delegated administrator for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Describes which data sources will be updated.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::OrganizationDataSourceConfigurations>,
 }
 impl UpdateOrganizationConfigurationInput {
@@ -11920,10 +11931,13 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberDetectorsInput {
     /// <p>The detector ID of the administrator account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of member account IDs to be updated.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes which data sources will be updated.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
 }
 impl UpdateMemberDetectorsInput {
@@ -11955,10 +11969,13 @@ impl std::fmt::Debug for UpdateMemberDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMalwareScanSettingsInput {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+    #[doc(hidden)]
     pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
     /// <p>An enum value representing possible snapshot preservations.</p>
+    #[doc(hidden)]
     pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
 }
 impl UpdateMalwareScanSettingsInput {
@@ -11994,14 +12011,19 @@ impl std::fmt::Debug for UpdateMalwareScanSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated URI of the file that contains the IPSet. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
+    #[doc(hidden)]
     pub activate: bool,
 }
 impl UpdateIpSetInput {
@@ -12043,12 +12065,16 @@ impl std::fmt::Debug for UpdateIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsFeedbackInput {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The feedback for the finding.</p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<crate::model::Feedback>,
     /// <p>Additional feedback about the GuardDuty findings.</p>
+    #[doc(hidden)]
     pub comments: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsFeedbackInput {
@@ -12085,16 +12111,22 @@ impl std::fmt::Debug for UpdateFindingsFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFilterInput {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
     /// <p>The description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
 impl UpdateFilterInput {
@@ -12141,12 +12173,16 @@ impl std::fmt::Debug for UpdateFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
+    #[doc(hidden)]
     pub enable: bool,
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be updated.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
 }
 impl UpdateDetectorInput {
@@ -12188,8 +12224,10 @@ impl std::fmt::Debug for UpdateDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -12216,8 +12254,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnarchiveFindingsInput {
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings to unarchive.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnarchiveFindingsInput {
@@ -12244,8 +12284,10 @@ impl std::fmt::Debug for UnarchiveFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be added to a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12276,8 +12318,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringMembersInput {
     /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StopMonitoringMembersInput {
@@ -12304,8 +12348,10 @@ impl std::fmt::Debug for StopMonitoringMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartMonitoringMembersInput {
@@ -12332,10 +12378,13 @@ impl std::fmt::Debug for StartMonitoringMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThreatIntelSetsInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThreatIntelSetsInput {
@@ -12367,6 +12416,7 @@ impl std::fmt::Debug for ListThreatIntelSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -12388,10 +12438,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishingDestinationsInput {
     /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublishingDestinationsInput {
@@ -12423,8 +12476,10 @@ impl std::fmt::Debug for ListPublishingDestinationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -12451,12 +12506,16 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>The unique ID of the detector the member is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+    #[doc(hidden)]
     pub only_associated: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
@@ -12493,10 +12552,13 @@ impl std::fmt::Debug for ListMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpSetsInput {
@@ -12528,8 +12590,10 @@ impl std::fmt::Debug for ListIpSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
@@ -12556,6 +12620,7 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
@@ -12608,12 +12673,16 @@ pub struct ListFindingsInput {
     /// <li> <p>type</p> </li>
     /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>Represents the criteria used for sorting findings.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsInput {
@@ -12705,10 +12774,13 @@ impl std::fmt::Debug for ListFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersInput {
@@ -12740,8 +12812,10 @@ impl std::fmt::Debug for ListFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsInput {
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsInput {
@@ -12768,12 +12842,16 @@ impl std::fmt::Debug for ListDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
+    #[doc(hidden)]
     pub disable_email_notification: bool,
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InviteMembersInput {
@@ -12813,16 +12891,22 @@ impl std::fmt::Debug for InviteMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The type of usage statistics to retrieve.</p>
+    #[doc(hidden)]
     pub usage_statistic_type: std::option::Option<crate::model::UsageStatisticType>,
     /// <p>Represents the criteria used for querying usage.</p>
+    #[doc(hidden)]
     pub usage_criteria: std::option::Option<crate::model::UsageCriteria>,
     /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUsageStatisticsInput {
@@ -12869,8 +12953,10 @@ impl std::fmt::Debug for GetUsageStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
+    #[doc(hidden)]
     pub threat_intel_set_id: std::option::Option<std::string::String>,
 }
 impl GetThreatIntelSetInput {
@@ -12897,8 +12983,10 @@ impl std::fmt::Debug for GetThreatIntelSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemainingFreeTrialDaysInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRemainingFreeTrialDaysInput {
@@ -12925,8 +13013,10 @@ impl std::fmt::Debug for GetRemainingFreeTrialDaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
@@ -12953,8 +13043,10 @@ impl std::fmt::Debug for GetMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberDetectorsInput {
     /// <p>The detector ID for the administrator account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the member account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMemberDetectorsInput {
@@ -12982,6 +13074,7 @@ impl std::fmt::Debug for GetMemberDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl GetMasterAccountInput {
@@ -13003,6 +13096,7 @@ impl std::fmt::Debug for GetMasterAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMalwareScanSettingsInput {
     /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl GetMalwareScanSettingsInput {
@@ -13024,8 +13118,10 @@ impl std::fmt::Debug for GetMalwareScanSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the IPSet to retrieve.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
 }
 impl GetIpSetInput {
@@ -13063,11 +13159,14 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The types of finding statistics to retrieve.</p>
+    #[doc(hidden)]
     pub finding_statistic_types:
         std::option::Option<std::vec::Vec<crate::model::FindingStatisticType>>,
     /// <p>Represents the criteria that is used for querying findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
 impl GetFindingsStatisticsInput {
@@ -13101,10 +13200,13 @@ impl std::fmt::Debug for GetFindingsStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings that you want to retrieve.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Represents the criteria used for sorting findings.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl GetFindingsInput {
@@ -13136,8 +13238,10 @@ impl std::fmt::Debug for GetFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter you want to get.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
 }
 impl GetFilterInput {
@@ -13164,6 +13268,7 @@ impl std::fmt::Debug for GetFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorInput {
     /// <p>The unique ID of the detector that you want to get.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl GetDetectorInput {
@@ -13185,6 +13290,7 @@ impl std::fmt::Debug for GetDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl GetAdministratorAccountInput {
@@ -13206,6 +13312,7 @@ impl std::fmt::Debug for GetAdministratorAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
@@ -13227,8 +13334,10 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateMembersInput {
@@ -13258,6 +13367,7 @@ impl std::fmt::Debug for DisassociateMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFromMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DisassociateFromMasterAccountInput {
@@ -13279,6 +13389,7 @@ impl std::fmt::Debug for DisassociateFromMasterAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFromAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DisassociateFromAdministratorAccountInput {
@@ -13300,6 +13411,7 @@ impl std::fmt::Debug for DisassociateFromAdministratorAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableOrganizationAdminAccountInput {
@@ -13321,8 +13433,10 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to retrieve.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
 }
 impl DescribePublishingDestinationInput {
@@ -13349,6 +13463,7 @@ impl std::fmt::Debug for DescribePublishingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
@@ -13370,14 +13485,19 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMalwareScansInput {
     /// <p>The unique ID of the detector that the request is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>Represents the criteria used for sorting scan entries.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl DescribeMalwareScansInput {
@@ -13419,8 +13539,10 @@ impl std::fmt::Debug for DescribeMalwareScansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
+    #[doc(hidden)]
     pub threat_intel_set_id: std::option::Option<std::string::String>,
 }
 impl DeleteThreatIntelSetInput {
@@ -13447,8 +13569,10 @@ impl std::fmt::Debug for DeleteThreatIntelSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to delete.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
 }
 impl DeletePublishingDestinationInput {
@@ -13475,8 +13599,10 @@ impl std::fmt::Debug for DeletePublishingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteMembersInput {
@@ -13503,8 +13629,10 @@ impl std::fmt::Debug for DeleteMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetInput {
     /// <p>The unique ID of the detector associated with the IPSet.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the IPSet to delete.</p>
+    #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
 }
 impl DeleteIpSetInput {
@@ -13531,6 +13659,7 @@ impl std::fmt::Debug for DeleteIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsInput {
     /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInvitationsInput {
@@ -13552,8 +13681,10 @@ impl std::fmt::Debug for DeleteInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter that you want to delete.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
 }
 impl DeleteFilterInput {
@@ -13580,6 +13711,7 @@ impl std::fmt::Debug for DeleteFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorInput {
     /// <p>The unique ID of the detector that you want to delete.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorInput {
@@ -13601,6 +13733,7 @@ impl std::fmt::Debug for DeleteDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
     /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
@@ -13622,18 +13755,25 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThreatIntelSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
     /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
+    #[doc(hidden)]
     pub activate: bool,
     /// <p>The idempotency token for the create request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to a new threat list resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13689,8 +13829,10 @@ impl std::fmt::Debug for CreateThreatIntelSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSampleFindingsInput {
     /// <p>The ID of the detector to create sample findings for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The types of sample findings to generate.</p>
+    #[doc(hidden)]
     pub finding_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateSampleFindingsInput {
@@ -13717,12 +13859,16 @@ impl std::fmt::Debug for CreateSampleFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublishingDestinationInput {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
     /// <p>The idempotency token for the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePublishingDestinationInput {
@@ -13761,8 +13907,10 @@ impl std::fmt::Debug for CreatePublishingDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+    #[doc(hidden)]
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
 }
 impl CreateMembersInput {
@@ -13789,19 +13937,26 @@ impl std::fmt::Debug for CreateMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::IpSetFormat>,
     /// <p>The URI of the file that contains the IPSet. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+    #[doc(hidden)]
     pub activate: bool,
     /// <p>The idempotency token for the create request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to a new IP set resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13858,14 +14013,19 @@ impl std::fmt::Debug for CreateIpSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
     /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    #[doc(hidden)]
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     /// <p>You can only use the following attributes to query findings:</p>
@@ -13928,10 +14088,13 @@ pub struct CreateFilterInput {
     /// <li> <p>type</p> </li>
     /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The idempotency token for the create request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to a new filter resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14052,14 +14215,19 @@ impl std::fmt::Debug for CreateFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorInput {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
+    #[doc(hidden)]
     pub enable: bool,
     /// <p>The idempotency token for the create request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A value that specifies how frequently updated findings are exported.</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be enabled for the detector.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
     /// <p>The tags to be added to a new detector resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14110,8 +14278,10 @@ impl std::fmt::Debug for CreateDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings that you want to archive.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ArchiveFindingsInput {
@@ -14139,10 +14309,13 @@ impl std::fmt::Debug for ArchiveFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    #[doc(hidden)]
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
 }
 impl AcceptInvitationInput {
@@ -14174,10 +14347,13 @@ impl std::fmt::Debug for AcceptInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptAdministratorInvitationInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    #[doc(hidden)]
     pub administrator_id: std::option::Option<std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
 }
 impl AcceptAdministratorInvitationInput {

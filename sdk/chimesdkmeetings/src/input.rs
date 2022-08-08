@@ -3007,10 +3007,13 @@ impl UpdateAttendeeCapabilitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAttendeeCapabilitiesInput {
     /// <p>The ID of the meeting associated with the update request.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The ID of the attendee associated with the update request.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The capabilties that you want to update.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl UpdateAttendeeCapabilitiesInput {
@@ -3042,8 +3045,10 @@ impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource that you're removing tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys being removed from the resources.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3070,8 +3075,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Lists the requested tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3098,6 +3105,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl StopMeetingTranscriptionInput {
@@ -3119,8 +3127,10 @@ impl std::fmt::Debug for StopMeetingTranscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    #[doc(hidden)]
     pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
 }
 impl StartMeetingTranscriptionInput {
@@ -3152,6 +3162,7 @@ impl std::fmt::Debug for StartMeetingTranscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3173,10 +3184,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttendeesInput {
@@ -3208,6 +3222,7 @@ impl std::fmt::Debug for ListAttendeesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl GetMeetingInput {
@@ -3229,8 +3244,10 @@ impl std::fmt::Debug for GetMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl GetAttendeeInput {
@@ -3257,6 +3274,7 @@ impl std::fmt::Debug for GetAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl DeleteMeetingInput {
@@ -3278,8 +3296,10 @@ impl std::fmt::Debug for DeleteMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl DeleteAttendeeInput {
@@ -3306,26 +3326,36 @@ impl std::fmt::Debug for DeleteAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    #[doc(hidden)]
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    #[doc(hidden)]
     pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    #[doc(hidden)]
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    #[doc(hidden)]
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags in the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingWithAttendeesInput {
@@ -3401,22 +3431,30 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    #[doc(hidden)]
     pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    #[doc(hidden)]
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    #[doc(hidden)]
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    #[doc(hidden)]
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
     /// <ul>
@@ -3433,6 +3471,7 @@ pub struct CreateMeetingInput {
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingInput {
@@ -3517,8 +3556,10 @@ impl std::fmt::Debug for CreateMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeInput {
     /// <p>The unique ID of the meeting.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -3529,6 +3570,7 @@ pub struct CreateAttendeeInput {
     /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl CreateAttendeeInput {
@@ -3568,10 +3610,13 @@ impl std::fmt::Debug for CreateAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInput {
     /// <p>The ID of the meeting associated with the update request.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+    #[doc(hidden)]
     pub excluded_attendee_ids: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInput {
@@ -3603,8 +3648,10 @@ impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
 impl BatchCreateAttendeeInput {

@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSuiteDefinitionOutput {
     /// <p>Suite definition ID of the updated test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_arn: std::option::Option<std::string::String>,
     /// <p>Suite definition name of the updated test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the updated test suite.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the test suite was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp of when the test suite was updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSuiteDefinitionOutput {
@@ -261,10 +267,13 @@ impl StopSuiteRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSuiteRunOutput {
     /// <p>Suite Run ID of the started suite run.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
+    #[doc(hidden)]
     pub suite_run_arn: std::option::Option<std::string::String>,
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartSuiteRunOutput {
@@ -359,6 +368,7 @@ impl StartSuiteRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags attached to the IoT Device Advisor resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -432,8 +442,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteRunsOutput {
     /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
+    #[doc(hidden)]
     pub suite_runs_list: std::option::Option<std::vec::Vec<crate::model::SuiteRunInformation>>,
     /// <p>A token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteRunsOutput {
@@ -515,9 +527,11 @@ impl ListSuiteRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteDefinitionsOutput {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
+    #[doc(hidden)]
     pub suite_definition_information_list:
         std::option::Option<std::vec::Vec<crate::model::SuiteDefinitionInformation>>,
     /// <p>A token used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteDefinitionsOutput {
@@ -607,6 +621,7 @@ impl ListSuiteDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunReportOutput {
     /// <p>Download URL of the qualification report.</p>
+    #[doc(hidden)]
     pub qualification_report_download_url: std::option::Option<std::string::String>,
 }
 impl GetSuiteRunReportOutput {
@@ -670,26 +685,37 @@ impl GetSuiteRunReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunOutput {
     /// <p>Suite definition ID for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Suite run ID for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the suite run.</p>
+    #[doc(hidden)]
     pub suite_run_arn: std::option::Option<std::string::String>,
     /// <p>Suite run configuration for the test suite run.</p>
+    #[doc(hidden)]
     pub suite_run_configuration: std::option::Option<crate::model::SuiteRunConfiguration>,
     /// <p>Test results for the test suite run.</p>
+    #[doc(hidden)]
     pub test_result: std::option::Option<crate::model::TestResult>,
     /// <p>Date (in Unix epoch time) when the test suite run started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the test suite run ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status for the test suite run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SuiteRunStatus>,
     /// <p>Error reason for any test suite run failure.</p>
+    #[doc(hidden)]
     pub error_reason: std::option::Option<std::string::String>,
     /// <p>The tags attached to the suite run.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -965,21 +991,29 @@ impl GetSuiteRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteDefinitionOutput {
     /// <p>Suite definition ID of the suite definition.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the suite definition.</p>
+    #[doc(hidden)]
     pub suite_definition_arn: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the suite definition.</p>
+    #[doc(hidden)]
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Latest suite definition version of the suite definition.</p>
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// <p>Suite configuration of the suite definition.</p>
+    #[doc(hidden)]
     pub suite_definition_configuration:
         std::option::Option<crate::model::SuiteDefinitionConfiguration>,
     /// <p>Date (in Unix epoch time) when the suite definition was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags attached to the suite definition.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1204,6 +1238,7 @@ impl GetSuiteDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointOutput {
     /// <p>The response of an Device Advisor endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
 }
 impl GetEndpointOutput {
@@ -1288,12 +1323,16 @@ impl DeleteSuiteDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSuiteDefinitionOutput {
     /// <p>Creates a Device Advisor test suite with suite UUID.</p>
+    #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub suite_definition_arn: std::option::Option<std::string::String>,
     /// <p>Creates a Device Advisor test suite with suite definition name.</p>
+    #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
     /// <p>Creates a Device Advisor test suite with TimeStamp of when it was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSuiteDefinitionOutput {

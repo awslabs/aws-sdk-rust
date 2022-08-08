@@ -5,6 +5,7 @@
 pub struct UpdateResourceOutput {
     /// <p>Represents the current status of the resource update request.</p>
     /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
+    #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl UpdateResourceOutput {
@@ -65,11 +66,14 @@ impl UpdateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
     /// <p>The name of the resource type.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>Information about the specified resources, including primary identifier and resource model.</p>
+    #[doc(hidden)]
     pub resource_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ResourceDescription>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -170,9 +174,11 @@ impl ListResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceRequestsOutput {
     /// <p>The requests that match the specified filter criteria.</p>
+    #[doc(hidden)]
     pub resource_request_status_summaries:
         std::option::Option<std::vec::Vec<crate::model::ProgressEvent>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceRequestsOutput {
@@ -262,6 +268,7 @@ impl ListResourceRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
+    #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl GetResourceRequestStatusOutput {
@@ -319,8 +326,10 @@ impl GetResourceRequestStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceOutput {
     /// <p>The name of the resource type.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>Represents information about a provisioned resource.</p>
+    #[doc(hidden)]
     pub resource_description: std::option::Option<crate::model::ResourceDescription>,
 }
 impl GetResourceOutput {
@@ -396,6 +405,7 @@ impl GetResourceOutput {
 pub struct DeleteResourceOutput {
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+    #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl DeleteResourceOutput {
@@ -457,6 +467,7 @@ impl DeleteResourceOutput {
 pub struct CreateResourceOutput {
     /// <p>Represents the current status of the resource creation request.</p>
     /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+    #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl CreateResourceOutput {
@@ -517,6 +528,7 @@ impl CreateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelResourceRequestOutput {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl CancelResourceRequestOutput {

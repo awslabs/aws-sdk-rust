@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentOutput {
@@ -146,6 +147,7 @@ impl PublishMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -219,8 +221,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>Returns a list of Amazon MWAA environments.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Retrieves the next page of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -301,6 +305,7 @@ impl ListEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>An object containing all available details about the environment.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl GetEnvironmentOutput {
@@ -388,8 +393,10 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebLoginTokenOutput {
     /// <p>An Airflow web server login token.</p>
+    #[doc(hidden)]
     pub web_token: std::option::Option<std::string::String>,
     /// <p>The Airflow web server hostname for the environment.</p>
+    #[doc(hidden)]
     pub web_server_hostname: std::option::Option<std::string::String>,
 }
 impl CreateWebLoginTokenOutput {
@@ -464,6 +471,7 @@ impl CreateWebLoginTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {
@@ -516,8 +524,10 @@ impl CreateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCliTokenOutput {
     /// <p>An Airflow CLI login token.</p>
+    #[doc(hidden)]
     pub cli_token: std::option::Option<std::string::String>,
     /// <p>The Airflow web server hostname for the environment.</p>
+    #[doc(hidden)]
     pub web_server_hostname: std::option::Option<std::string::String>,
 }
 impl CreateCliTokenOutput {

@@ -5,30 +5,43 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
+    #[doc(hidden)]
     pub workgroup_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
+    #[doc(hidden)]
     pub workgroup_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The namespace the workgroup is associated with.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
+    #[doc(hidden)]
     pub base_capacity: std::option::Option<i32>,
     /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>An array of parameters to set for finer control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    #[doc(hidden)]
     pub config_parameters: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
     /// <p>An array of security group IDs to associate with the workgroup.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the workgroup.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkgroupStatus>,
     /// <p>The endpoint that is created from the workgroup.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The creation date of the workgroup.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Workgroup {
@@ -330,10 +343,13 @@ impl Workgroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
+    #[doc(hidden)]
     pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
 }
 impl Endpoint {
@@ -431,10 +447,13 @@ impl Endpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The VPC identifier that the endpoint is associated with.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
 }
 impl VpcEndpoint {
@@ -536,12 +555,16 @@ impl VpcEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The unique identifier of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
+    #[doc(hidden)]
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
 }
 impl NetworkInterface {
@@ -719,8 +742,10 @@ impl AsRef<str> for WorkgroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigParameter {
     /// <p>The key of the parameter. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
+    #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The value of the parameter to set.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl ConfigParameter {
@@ -798,8 +823,10 @@ impl ConfigParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key to use in the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -871,18 +898,25 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageLimit {
     /// <p>The identifier of the usage limit.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
+    #[doc(hidden)]
     pub usage_limit_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift Serverless feature to limit.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
     /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<i64>,
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
 }
 impl UsageLimit {
@@ -1227,44 +1261,64 @@ impl AsRef<str> for UsageLimitUsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The name of the namepsace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the snapshot was created.</p>
+    #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The username of the database within a snapshot.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The status of the snapshot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SnapshotStatus>,
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
+    #[doc(hidden)]
     pub total_backup_size_in_mega_bytes: std::option::Option<f64>,
     /// <p>The size of the incremental backup in megabytes.</p>
+    #[doc(hidden)]
     pub actual_incremental_backup_size_in_mega_bytes: std::option::Option<f64>,
     /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
+    #[doc(hidden)]
     pub backup_progress_in_mega_bytes: std::option::Option<f64>,
     /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
+    #[doc(hidden)]
     pub current_backup_rate_in_mega_bytes_per_second: std::option::Option<f64>,
     /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
+    #[doc(hidden)]
     pub estimated_seconds_to_completion: std::option::Option<i64>,
     /// <p>The amount of time it took to back up data into a snapshot.</p>
+    #[doc(hidden)]
     pub elapsed_time_in_seconds: std::option::Option<i64>,
     /// <p>The period of time, in days, of how long the snapshot is retained.</p>
+    #[doc(hidden)]
     pub snapshot_retention_period: std::option::Option<i32>,
     /// <p>The amount of days until the snapshot is deleted.</p>
+    #[doc(hidden)]
     pub snapshot_remaining_days: std::option::Option<i32>,
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
+    #[doc(hidden)]
     pub snapshot_retention_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
+    #[doc(hidden)]
     pub accounts_with_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
+    #[doc(hidden)]
     pub accounts_with_provisioned_restore_access:
         std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -1819,26 +1873,37 @@ impl AsRef<str> for SnapshotStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a namespace.</p>
+    #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
     /// <p>The name of the first database created in the namespace.</p>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
+    #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<crate::model::LogExport>>,
     /// <p>The status of the namespace.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NamespaceStatus>,
     /// <p>The date of when the namespace was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Namespace {
@@ -2217,14 +2282,19 @@ impl AsRef<str> for LogExport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
+    #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
     /// <p>The time the recovery point is created.</p>
+    #[doc(hidden)]
     pub recovery_point_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total size of the data in the recovery point in megabytes.</p>
+    #[doc(hidden)]
     pub total_size_in_mega_bytes: std::option::Option<f64>,
     /// <p>The name of the namespace the recovery point is associated with.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup the recovery point is associated with.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl RecoveryPoint {
@@ -2362,25 +2432,35 @@ impl RecoveryPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointAccess {
     /// <p>The name of the VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The status of the VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_status: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup associated with the endpoint.</p>
+    #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
     /// <p>The time that the endpoint was created.</p>
+    #[doc(hidden)]
     pub endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups associated with the endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl EndpointAccess {
@@ -2627,8 +2707,10 @@ impl EndpointAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The unique identifier of the VPC security group.</p>
+    #[doc(hidden)]
     pub vpc_security_group_id: std::option::Option<std::string::String>,
     /// <p>The status of the VPC security group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl VpcSecurityGroupMembership {
@@ -2703,8 +2785,10 @@ impl VpcSecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl ResourcePolicy {

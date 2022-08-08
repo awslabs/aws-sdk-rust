@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDefinedFunctionInput {
     /// <p>The name of the function.</p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The Java class that contains the function code.</p>
+    #[doc(hidden)]
     pub class_name: std::option::Option<std::string::String>,
     /// <p>The owner of the function.</p>
+    #[doc(hidden)]
     pub owner_name: std::option::Option<std::string::String>,
     /// <p>The owner type.</p>
+    #[doc(hidden)]
     pub owner_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The resource URIs for the function.</p>
+    #[doc(hidden)]
     pub resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
 }
 impl UserDefinedFunctionInput {
@@ -150,8 +155,10 @@ impl UserDefinedFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUri {
     /// <p>The type of the resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The URI for accessing the resource.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl ResourceUri {
@@ -344,24 +351,34 @@ impl AsRef<str> for PrincipalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trigger {
     /// <p>The name of the trigger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the workflow associated with the trigger.</p>
+    #[doc(hidden)]
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of trigger that this is.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TriggerType>,
     /// <p>The current state of the trigger.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TriggerState>,
     /// <p>A description of this trigger.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
+    #[doc(hidden)]
     pub predicate: std::option::Option<crate::model::Predicate>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    #[doc(hidden)]
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl Trigger {
@@ -593,8 +610,10 @@ impl Trigger {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+    #[doc(hidden)]
     pub batch_size: i32,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
+    #[doc(hidden)]
     pub batch_window: std::option::Option<i32>,
 }
 impl EventBatchingCondition {
@@ -666,8 +685,10 @@ impl EventBatchingCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Predicate {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
+    #[doc(hidden)]
     pub logical: std::option::Option<crate::model::Logical>,
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
+    #[doc(hidden)]
     pub conditions: std::option::Option<std::vec::Vec<crate::model::Condition>>,
 }
 impl Predicate {
@@ -748,14 +769,19 @@ impl Predicate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
     /// <p>A logical operator.</p>
+    #[doc(hidden)]
     pub logical_operator: std::option::Option<crate::model::LogicalOperator>,
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The name of the crawler to which this condition applies.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
     /// <p>The state of the crawler to which this condition applies.</p>
+    #[doc(hidden)]
     pub crawl_state: std::option::Option<crate::model::CrawlState>,
 }
 impl Condition {
@@ -1161,20 +1187,26 @@ impl AsRef<str> for Logical {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The name of a job to be run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>The name of the crawler to be used with this action.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
 }
 impl Action {
@@ -1351,6 +1383,7 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationProperty {
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
+    #[doc(hidden)]
     pub notify_delay_after: std::option::Option<i32>,
 }
 impl NotificationProperty {
@@ -1556,16 +1589,22 @@ impl AsRef<str> for TriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerUpdate {
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of this trigger.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
+    #[doc(hidden)]
     pub predicate: std::option::Option<crate::model::Predicate>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    #[doc(hidden)]
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl TriggerUpdate {
@@ -1726,33 +1765,46 @@ impl TriggerUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the table.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The table owner.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The last time that the table was accessed.</p>
+    #[doc(hidden)]
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that column statistics were computed for this table.</p>
+    #[doc(hidden)]
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
+    #[doc(hidden)]
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
+    #[doc(hidden)]
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    #[doc(hidden)]
     pub view_original_text: std::option::Option<std::string::String>,
     /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    #[doc(hidden)]
     pub view_expanded_text: std::option::Option<std::string::String>,
     /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    #[doc(hidden)]
     pub table_type: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    #[doc(hidden)]
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
 }
 impl TableInput {
@@ -2064,10 +2116,13 @@ impl TableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableIdentifier {
     /// <p>The ID of the Data Catalog in which the table resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database that contains the target table.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the target table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TableIdentifier {
@@ -2159,12 +2214,16 @@ impl TableIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Column {
     /// <p>The name of the <code>Column</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the <code>Column</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>A free-form text comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the column.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2291,34 +2350,48 @@ impl Column {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageDescriptor {
     /// <p>A list of the <code>Columns</code> in the table.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
+    #[doc(hidden)]
     pub additional_locations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
+    #[doc(hidden)]
     pub input_format: std::option::Option<std::string::String>,
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+    #[doc(hidden)]
     pub output_format: std::option::Option<std::string::String>,
     /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
+    #[doc(hidden)]
     pub compressed: bool,
     /// <p>Must be specified if the table contains any dimension columns.</p>
+    #[doc(hidden)]
     pub number_of_buckets: i32,
     /// <p>The serialization/deserialization (SerDe) information.</p>
+    #[doc(hidden)]
     pub serde_info: std::option::Option<crate::model::SerDeInfo>,
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
+    #[doc(hidden)]
     pub bucket_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list specifying the sort order of each bucket in the table.</p>
+    #[doc(hidden)]
     pub sort_columns: std::option::Option<std::vec::Vec<crate::model::Order>>,
     /// <p>The user-supplied properties in key-value form.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
+    #[doc(hidden)]
     pub skewed_info: std::option::Option<crate::model::SkewedInfo>,
     /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
+    #[doc(hidden)]
     pub stored_as_sub_directories: bool,
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
+    #[doc(hidden)]
     pub schema_reference: std::option::Option<crate::model::SchemaReference>,
 }
 impl StorageDescriptor {
@@ -2665,10 +2738,13 @@ impl StorageDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaReference {
     /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<i64>,
 }
 impl SchemaReference {
@@ -2760,10 +2836,13 @@ impl SchemaReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaId {
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema registry that contains the schema.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl SchemaId {
@@ -2855,10 +2934,13 @@ impl SchemaId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
+    #[doc(hidden)]
     pub skewed_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
+    #[doc(hidden)]
     pub skewed_column_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A mapping of skewed values to the columns that contain them.</p>
+    #[doc(hidden)]
     pub skewed_column_value_location_maps:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2989,8 +3071,10 @@ impl SkewedInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Order {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub column: std::option::Option<std::string::String>,
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    #[doc(hidden)]
     pub sort_order: i32,
 }
 impl Order {
@@ -3062,10 +3146,13 @@ impl Order {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerDeInfo {
     /// <p>Name of the SerDe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+    #[doc(hidden)]
     pub serialization_library: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3266,8 +3353,10 @@ impl AsRef<str> for Compatibility {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
+    #[doc(hidden)]
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
 }
 impl SchemaVersionNumber {
@@ -3339,8 +3428,10 @@ impl SchemaVersionNumber {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryId {
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
 }
 impl RegistryId {
@@ -3416,15 +3507,20 @@ impl RegistryId {
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The last time at which the partition was accessed.</p>
+    #[doc(hidden)]
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides information about the physical location where the partition is stored.</p>
+    #[doc(hidden)]
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
+    #[doc(hidden)]
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PartitionInput {
@@ -3652,8 +3748,10 @@ impl AsRef<str> for WorkerType {
 pub struct TransformParameters {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+    #[doc(hidden)]
     pub transform_type: std::option::Option<crate::model::TransformType>,
     /// <p>The parameters for the find matches algorithm.</p>
+    #[doc(hidden)]
     pub find_matches_parameters: std::option::Option<crate::model::FindMatchesParameters>,
 }
 impl TransformParameters {
@@ -3740,17 +3838,21 @@ impl TransformParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindMatchesParameters {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
+    #[doc(hidden)]
     pub primary_key_column_name: std::option::Option<std::string::String>,
     /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
     /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
     /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
+    #[doc(hidden)]
     pub precision_recall_tradeoff: std::option::Option<f64>,
     /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
     /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
+    #[doc(hidden)]
     pub accuracy_cost_tradeoff: std::option::Option<f64>,
     /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
+    #[doc(hidden)]
     pub enforce_provided_labels: std::option::Option<bool>,
 }
 impl FindMatchesParameters {
@@ -3925,33 +4027,44 @@ impl AsRef<str> for TransformType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobUpdate {
     /// <p>Description of the job being defined.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>This field is reserved for future use.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
+    #[doc(hidden)]
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job (required).</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub default_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    #[doc(hidden)]
     pub non_overridable_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The connections used for this job.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<crate::model::ConnectionsList>,
     /// <p>The maximum number of times to retry this job if it fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
+    #[doc(hidden)]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -3961,6 +4074,7 @@ pub struct JobUpdate {
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -3969,23 +4083,30 @@ pub struct JobUpdate {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration properties of a job notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    #[doc(hidden)]
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl JobUpdate {
@@ -4551,106 +4672,156 @@ impl AsRef<str> for ExecutionClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
+    #[doc(hidden)]
     pub athena_connector_source: std::option::Option<crate::model::AthenaConnectorSource>,
     /// <p>Specifies a connector to a JDBC data source.</p>
+    #[doc(hidden)]
     pub jdbc_connector_source: std::option::Option<crate::model::JdbcConnectorSource>,
     /// <p>Specifies a connector to an Apache Spark data source.</p>
+    #[doc(hidden)]
     pub spark_connector_source: std::option::Option<crate::model::SparkConnectorSource>,
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub catalog_source: std::option::Option<crate::model::CatalogSource>,
     /// <p>Specifies an Amazon Redshift data store.</p>
+    #[doc(hidden)]
     pub redshift_source: std::option::Option<crate::model::RedshiftSource>,
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub s3_catalog_source: std::option::Option<crate::model::S3CatalogSource>,
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_csv_source: std::option::Option<crate::model::S3CsvSource>,
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_json_source: std::option::Option<crate::model::S3JsonSource>,
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_parquet_source: std::option::Option<crate::model::S3ParquetSource>,
     /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub relational_catalog_source: std::option::Option<crate::model::RelationalCatalogSource>,
     /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub dynamo_db_catalog_source: std::option::Option<crate::model::DynamoDbCatalogSource>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    #[doc(hidden)]
     pub jdbc_connector_target: std::option::Option<crate::model::JdbcConnectorTarget>,
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
+    #[doc(hidden)]
     pub spark_connector_target: std::option::Option<crate::model::SparkConnectorTarget>,
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
+    #[doc(hidden)]
     pub catalog_target: std::option::Option<crate::model::BasicCatalogTarget>,
     /// <p>Specifies a target that uses Amazon Redshift.</p>
+    #[doc(hidden)]
     pub redshift_target: std::option::Option<crate::model::RedshiftTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub s3_catalog_target: std::option::Option<crate::model::S3CatalogTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
+    #[doc(hidden)]
     pub s3_glue_parquet_target: std::option::Option<crate::model::S3GlueParquetTarget>,
     /// <p>Specifies a data target that writes to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_direct_target: std::option::Option<crate::model::S3DirectTarget>,
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
+    #[doc(hidden)]
     pub apply_mapping: std::option::Option<crate::model::ApplyMapping>,
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
+    #[doc(hidden)]
     pub select_fields: std::option::Option<crate::model::SelectFields>,
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
+    #[doc(hidden)]
     pub drop_fields: std::option::Option<crate::model::DropFields>,
     /// <p>Specifies a transform that renames a single data property key.</p>
+    #[doc(hidden)]
     pub rename_field: std::option::Option<crate::model::RenameField>,
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub spigot: std::option::Option<crate::model::Spigot>,
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
+    #[doc(hidden)]
     pub join: std::option::Option<crate::model::Join>,
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
+    #[doc(hidden)]
     pub split_fields: std::option::Option<crate::model::SplitFields>,
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
+    #[doc(hidden)]
     pub select_from_collection: std::option::Option<crate::model::SelectFromCollection>,
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
+    #[doc(hidden)]
     pub fill_missing_values: std::option::Option<crate::model::FillMissingValues>,
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Filter>,
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
+    #[doc(hidden)]
     pub custom_code: std::option::Option<crate::model::CustomCode>,
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
+    #[doc(hidden)]
     pub spark_sql: std::option::Option<crate::model::SparkSql>,
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
+    #[doc(hidden)]
     pub direct_kinesis_source: std::option::Option<crate::model::DirectKinesisSource>,
     /// <p>Specifies an Apache Kafka data store.</p>
+    #[doc(hidden)]
     pub direct_kafka_source: std::option::Option<crate::model::DirectKafkaSource>,
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub catalog_kinesis_source: std::option::Option<crate::model::CatalogKinesisSource>,
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
+    #[doc(hidden)]
     pub catalog_kafka_source: std::option::Option<crate::model::CatalogKafkaSource>,
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
+    #[doc(hidden)]
     pub drop_null_fields: std::option::Option<crate::model::DropNullFields>,
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
+    #[doc(hidden)]
     pub merge: std::option::Option<crate::model::Merge>,
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
+    #[doc(hidden)]
     pub union: std::option::Option<crate::model::Union>,
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
+    #[doc(hidden)]
     pub pii_detection: std::option::Option<crate::model::PiiDetection>,
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
+    #[doc(hidden)]
     pub aggregate: std::option::Option<crate::model::Aggregate>,
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
+    #[doc(hidden)]
     pub drop_duplicates: std::option::Option<crate::model::DropDuplicates>,
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
+    #[doc(hidden)]
     pub governed_catalog_target: std::option::Option<crate::model::GovernedCatalogTarget>,
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
+    #[doc(hidden)]
     pub governed_catalog_source: std::option::Option<crate::model::GovernedCatalogSource>,
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub microsoft_sql_server_catalog_source:
         std::option::Option<crate::model::MicrosoftSqlServerCatalogSource>,
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub my_sql_catalog_source: std::option::Option<crate::model::MySqlCatalogSource>,
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub oracle_sql_catalog_source: std::option::Option<crate::model::OracleSqlCatalogSource>,
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub postgre_sql_catalog_source: std::option::Option<crate::model::PostgreSqlCatalogSource>,
     /// <p>Specifies a target that uses Microsoft SQL.</p>
+    #[doc(hidden)]
     pub microsoft_sql_server_catalog_target:
         std::option::Option<crate::model::MicrosoftSqlServerCatalogTarget>,
     /// <p>Specifies a target that uses MySQL.</p>
+    #[doc(hidden)]
     pub my_sql_catalog_target: std::option::Option<crate::model::MySqlCatalogTarget>,
     /// <p>Specifies a target that uses Oracle SQL.</p>
+    #[doc(hidden)]
     pub oracle_sql_catalog_target: std::option::Option<crate::model::OracleSqlCatalogTarget>,
     /// <p>Specifies a target that uses Postgres SQL.</p>
+    #[doc(hidden)]
     pub postgre_sql_catalog_target: std::option::Option<crate::model::PostgreSqlCatalogTarget>,
 }
 impl CodeGenConfigurationNode {
@@ -5758,12 +5929,16 @@ impl CodeGenConfigurationNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostgreSqlCatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl PostgreSqlCatalogTarget {
@@ -5878,12 +6053,16 @@ impl PostgreSqlCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OracleSqlCatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl OracleSqlCatalogTarget {
@@ -5998,12 +6177,16 @@ impl OracleSqlCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MySqlCatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl MySqlCatalogTarget {
@@ -6118,12 +6301,16 @@ impl MySqlCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl MicrosoftSqlServerCatalogTarget {
@@ -6238,10 +6425,13 @@ impl MicrosoftSqlServerCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostgreSqlCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl PostgreSqlCatalogSource {
@@ -6330,10 +6520,13 @@ impl PostgreSqlCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OracleSqlCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl OracleSqlCatalogSource {
@@ -6422,10 +6615,13 @@ impl OracleSqlCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MySqlCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl MySqlCatalogSource {
@@ -6514,10 +6710,13 @@ impl MySqlCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MicrosoftSqlServerCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl MicrosoftSqlServerCatalogSource {
@@ -6606,14 +6805,19 @@ impl MicrosoftSqlServerCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GovernedCatalogSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The database table to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    #[doc(hidden)]
     pub partition_predicate: std::option::Option<std::string::String>,
     /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
 }
 impl GovernedCatalogSource {
@@ -6747,8 +6951,10 @@ impl GovernedCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    #[doc(hidden)]
     pub bounded_size: std::option::Option<i64>,
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    #[doc(hidden)]
     pub bounded_files: std::option::Option<i64>,
 }
 impl S3SourceAdditionalOptions {
@@ -6820,16 +7026,22 @@ impl S3SourceAdditionalOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GovernedCatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
 }
 impl GovernedCatalogTarget {
@@ -6997,8 +7209,10 @@ impl GovernedCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
     pub enable_update_catalog: std::option::Option<bool>,
     /// <p>The update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
     pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
 }
 impl CatalogSchemaChangePolicy {
@@ -7128,10 +7342,13 @@ impl AsRef<str> for UpdateCatalogBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DropDuplicates {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the columns to be merged or removed if repeating.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl DropDuplicates {
@@ -7238,12 +7455,16 @@ impl DropDuplicates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Aggregate {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the fields to group by.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    #[doc(hidden)]
     pub aggs: std::option::Option<std::vec::Vec<crate::model::AggregateOperation>>,
 }
 impl Aggregate {
@@ -7376,9 +7597,11 @@ impl Aggregate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+    #[doc(hidden)]
     pub column: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+    #[doc(hidden)]
     pub agg_func: std::option::Option<crate::model::AggFunction>,
 }
 impl AggregateOperation {
@@ -7588,21 +7811,29 @@ impl AsRef<str> for AggFunction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PiiDetection {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node ID inputs to the transform.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates the type of PIIDetection transform. </p>
+    #[doc(hidden)]
     pub pii_type: std::option::Option<crate::model::PiiType>,
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
     /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+    #[doc(hidden)]
     pub entity_types_to_detect: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+    #[doc(hidden)]
     pub output_column_name: std::option::Option<std::string::String>,
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+    #[doc(hidden)]
     pub sample_fraction: std::option::Option<f64>,
     /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+    #[doc(hidden)]
     pub threshold_fraction: std::option::Option<f64>,
     /// <p>Indicates the value that will replace the detected entity. </p>
+    #[doc(hidden)]
     pub mask_value: std::option::Option<std::string::String>,
 }
 impl PiiDetection {
@@ -7863,12 +8094,15 @@ impl AsRef<str> for PiiType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Union {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node ID inputs to the transform.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    #[doc(hidden)]
     pub union_type: std::option::Option<crate::model::UnionType>,
 }
 impl Union {
@@ -8030,12 +8264,16 @@ impl AsRef<str> for UnionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Merge {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+    #[doc(hidden)]
     pub primary_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl Merge {
@@ -8160,13 +8398,17 @@ impl Merge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DropNullFields {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
+    #[doc(hidden)]
     pub null_check_box_list: std::option::Option<crate::model::NullCheckBoxList>,
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+    #[doc(hidden)]
     pub null_text_list: std::option::Option<std::vec::Vec<crate::model::NullValueField>>,
 }
 impl DropNullFields {
@@ -8296,8 +8538,10 @@ impl DropNullFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NullValueField {
     /// <p>The value of the null placeholder.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The datatype of the value.</p>
+    #[doc(hidden)]
     pub datatype: std::option::Option<crate::model::Datatype>,
 }
 impl NullValueField {
@@ -8369,8 +8613,10 @@ impl NullValueField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datatype {
     /// <p>The datatype of the value.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A label assigned to the datatype.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl Datatype {
@@ -8442,10 +8688,13 @@ impl Datatype {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NullCheckBoxList {
     /// <p>Specifies that an empty string is considered as a null value.</p>
+    #[doc(hidden)]
     pub is_empty: std::option::Option<bool>,
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+    #[doc(hidden)]
     pub is_null_string: std::option::Option<bool>,
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+    #[doc(hidden)]
     pub is_neg_one: std::option::Option<bool>,
 }
 impl NullCheckBoxList {
@@ -8534,18 +8783,25 @@ impl NullCheckBoxList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogKafkaSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The amount of time to spend processing each micro batch.</p>
+    #[doc(hidden)]
     pub window_size: std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    #[doc(hidden)]
     pub detect_schema: std::option::Option<bool>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>Specifies the streaming options.</p>
+    #[doc(hidden)]
     pub streaming_options: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    #[doc(hidden)]
     pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
 }
 impl CatalogKafkaSource {
@@ -8720,8 +8976,10 @@ impl CatalogKafkaSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDataPreviewOptions {
     /// <p>The polling time in milliseconds.</p>
+    #[doc(hidden)]
     pub polling_time: std::option::Option<i64>,
     /// <p>The limit to the number of records polled.</p>
+    #[doc(hidden)]
     pub record_polling_limit: std::option::Option<i64>,
 }
 impl StreamingDataPreviewOptions {
@@ -8793,34 +9051,49 @@ impl StreamingDataPreviewOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+    #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
     /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+    #[doc(hidden)]
     pub security_protocol: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
     /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    #[doc(hidden)]
     pub assign: std::option::Option<std::string::String>,
     /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    #[doc(hidden)]
     pub subscribe_pattern: std::option::Option<std::string::String>,
     /// <p>An optional classification.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>Specifies the delimiter character.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+    #[doc(hidden)]
     pub starting_offsets: std::option::Option<std::string::String>,
     /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+    #[doc(hidden)]
     pub ending_offsets: std::option::Option<std::string::String>,
     /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+    #[doc(hidden)]
     pub poll_timeout_ms: std::option::Option<i64>,
     /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+    #[doc(hidden)]
     pub num_retries: std::option::Option<i32>,
     /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+    #[doc(hidden)]
     pub retry_interval_ms: std::option::Option<i64>,
     /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+    #[doc(hidden)]
     pub max_offsets_per_trigger: std::option::Option<i64>,
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+    #[doc(hidden)]
     pub min_partitions: std::option::Option<i32>,
 }
 impl KafkaStreamingSourceOptions {
@@ -9134,18 +9407,25 @@ impl KafkaStreamingSourceOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogKinesisSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The amount of time to spend processing each micro batch.</p>
+    #[doc(hidden)]
     pub window_size: std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    #[doc(hidden)]
     pub detect_schema: std::option::Option<bool>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>Additional options for the Kinesis streaming data source.</p>
+    #[doc(hidden)]
     pub streaming_options: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
     /// <p>Additional options for data preview.</p>
+    #[doc(hidden)]
     pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
 }
 impl CatalogKinesisSource {
@@ -9320,40 +9600,58 @@ impl CatalogKinesisSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamingSourceOptions {
     /// <p>The URL of the Kinesis endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The name of the Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>An optional classification.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>Specifies the delimiter character.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+    #[doc(hidden)]
     pub starting_position: std::option::Option<crate::model::StartingPosition>,
     /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    #[doc(hidden)]
     pub max_fetch_time_in_ms: std::option::Option<i64>,
     /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    #[doc(hidden)]
     pub max_fetch_records_per_shard: std::option::Option<i64>,
     /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
+    #[doc(hidden)]
     pub max_record_per_read: std::option::Option<i64>,
     /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    #[doc(hidden)]
     pub add_idle_time_between_reads: std::option::Option<bool>,
     /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
+    #[doc(hidden)]
     pub idle_time_between_reads_in_ms: std::option::Option<i64>,
     /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
+    #[doc(hidden)]
     pub describe_shard_interval: std::option::Option<i64>,
     /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
+    #[doc(hidden)]
     pub num_retries: std::option::Option<i32>,
     /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
+    #[doc(hidden)]
     pub retry_interval_ms: std::option::Option<i64>,
     /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
+    #[doc(hidden)]
     pub max_retry_interval_ms: std::option::Option<i64>,
     /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
+    #[doc(hidden)]
     pub avoid_empty_batches: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
+    #[doc(hidden)]
     pub role_session_name: std::option::Option<std::string::String>,
 }
 impl KinesisStreamingSourceOptions {
@@ -9777,14 +10075,19 @@ impl AsRef<str> for StartingPosition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectKafkaSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the streaming options.</p>
+    #[doc(hidden)]
     pub streaming_options: std::option::Option<crate::model::KafkaStreamingSourceOptions>,
     /// <p>The amount of time to spend processing each micro batch.</p>
+    #[doc(hidden)]
     pub window_size: std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    #[doc(hidden)]
     pub detect_schema: std::option::Option<bool>,
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    #[doc(hidden)]
     pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
 }
 impl DirectKafkaSource {
@@ -9925,14 +10228,19 @@ impl DirectKafkaSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectKinesisSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The amount of time to spend processing each micro batch.</p>
+    #[doc(hidden)]
     pub window_size: std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    #[doc(hidden)]
     pub detect_schema: std::option::Option<bool>,
     /// <p>Additional options for the Kinesis streaming data source.</p>
+    #[doc(hidden)]
     pub streaming_options: std::option::Option<crate::model::KinesisStreamingSourceOptions>,
     /// <p>Additional options for data preview.</p>
+    #[doc(hidden)]
     pub data_preview_options: std::option::Option<crate::model::StreamingDataPreviewOptions>,
 }
 impl DirectKinesisSource {
@@ -10073,16 +10381,21 @@ impl DirectKinesisSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkSql {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+    #[doc(hidden)]
     pub sql_query: std::option::Option<std::string::String>,
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
+    #[doc(hidden)]
     pub sql_aliases: std::option::Option<std::vec::Vec<crate::model::SqlAlias>>,
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl SparkSql {
@@ -10238,6 +10551,7 @@ impl SparkSql {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
 }
 impl GlueSchema {
@@ -10302,8 +10616,10 @@ impl GlueSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueStudioSchemaColumn {
     /// <p>The name of the column in the Glue Studio schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The hive type for this column in the Glue Studio schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl GlueStudioSchemaColumn {
@@ -10375,8 +10691,10 @@ impl GlueStudioSchemaColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlAlias {
     /// <p>A table, or a column in a table.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
     /// <p>A temporary name given to a table, or a column in a table.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl SqlAlias {
@@ -10448,14 +10766,19 @@ impl SqlAlias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomCode {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom code that is used to perform the data transformation.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The name defined for the custom code node class.</p>
+    #[doc(hidden)]
     pub class_name: std::option::Option<std::string::String>,
     /// <p>Specifies the data schema for the custom code transform.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl CustomCode {
@@ -10596,12 +10919,16 @@ impl CustomCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+    #[doc(hidden)]
     pub logical_operator: std::option::Option<crate::model::FilterLogicalOperator>,
     /// <p>Specifies a filter expression.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::FilterExpression>>,
 }
 impl Filter {
@@ -10728,10 +11055,13 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::FilterOperation>,
     /// <p>Whether the expression is to be negated.</p>
+    #[doc(hidden)]
     pub negated: std::option::Option<bool>,
     /// <p>A list of filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::FilterValue>>,
 }
 impl FilterExpression {
@@ -10832,8 +11162,10 @@ impl FilterExpression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterValue {
     /// <p>The type of filter value.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FilterValueType>,
     /// <p>The value to be associated.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FilterValue {
@@ -11102,12 +11434,16 @@ impl AsRef<str> for FilterLogicalOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FillMissingValues {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+    #[doc(hidden)]
     pub imputed_path: std::option::Option<std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+    #[doc(hidden)]
     pub filled_path: std::option::Option<std::string::String>,
 }
 impl FillMissingValues {
@@ -11222,10 +11558,13 @@ impl FillMissingValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectFromCollection {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The index for the DynamicFrame to be selected.</p>
+    #[doc(hidden)]
     pub index: i32,
 }
 impl SelectFromCollection {
@@ -11323,10 +11662,13 @@ impl SelectFromCollection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplitFields {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl SplitFields {
@@ -11433,12 +11775,16 @@ impl SplitFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Join {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the type of join to be performed on the datasets.</p>
+    #[doc(hidden)]
     pub join_type: std::option::Option<crate::model::JoinType>,
     /// <p>A list of the two columns to be joined.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::JoinColumn>>,
 }
 impl Join {
@@ -11562,8 +11908,10 @@ impl Join {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinColumn {
     /// <p>The column to be joined.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
     /// <p>The key of the column to be joined.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl JoinColumn {
@@ -11715,14 +12063,19 @@ impl AsRef<str> for JoinType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Spigot {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+    #[doc(hidden)]
     pub topk: std::option::Option<i32>,
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+    #[doc(hidden)]
     pub prob: std::option::Option<f64>,
 }
 impl Spigot {
@@ -11854,12 +12207,16 @@ impl Spigot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenameField {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
+    #[doc(hidden)]
     pub target_path: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RenameField {
@@ -11992,10 +12349,13 @@ impl RenameField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DropFields {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl DropFields {
@@ -12102,10 +12462,13 @@ impl DropFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectFields {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON path to a variable in the data structure.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
 impl SelectFields {
@@ -12212,10 +12575,13 @@ impl SelectFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyMapping {
     /// <p>The name of the transform node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+    #[doc(hidden)]
     pub mapping: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
 }
 impl ApplyMapping {
@@ -12322,20 +12688,26 @@ impl ApplyMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mapping {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
+    #[doc(hidden)]
     pub to_key: std::option::Option<std::string::String>,
     /// <p>The table or column to be modified.</p>
+    #[doc(hidden)]
     pub from_path: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of the data to be modified.</p>
+    #[doc(hidden)]
     pub from_type: std::option::Option<std::string::String>,
     /// <p>The data type that the data is to be modified to.</p>
+    #[doc(hidden)]
     pub to_type: std::option::Option<std::string::String>,
     /// <p>If true, then the column is removed.</p>
+    #[doc(hidden)]
     pub dropped: std::option::Option<bool>,
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
+    #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::Mapping>>,
 }
 impl Mapping {
@@ -12505,18 +12877,25 @@ impl Mapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DirectTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>A single Amazon S3 path to write to.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<std::string::String>,
     /// <p>Specifies the data output format for the target.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TargetFormat>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::DirectSchemaChangePolicy>,
 }
 impl S3DirectTarget {
@@ -12704,12 +13083,16 @@ impl S3DirectTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
     pub enable_update_catalog: std::option::Option<bool>,
     /// <p>The update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
     pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>Specifies the database that the schema change policy applies to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
 impl DirectSchemaChangePolicy {
@@ -12885,16 +13268,22 @@ impl AsRef<str> for TargetFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3GlueParquetTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>A single Amazon S3 path to write to.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<crate::model::ParquetCompressionType>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::DirectSchemaChangePolicy>,
 }
 impl S3GlueParquetTarget {
@@ -13132,16 +13521,22 @@ impl AsRef<str> for ParquetCompressionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3CatalogTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
 }
 impl S3CatalogTarget {
@@ -13309,18 +13704,25 @@ impl S3CatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    #[doc(hidden)]
     pub redshift_tmp_dir: std::option::Option<std::string::String>,
     /// <p>The IAM role with permissions.</p>
+    #[doc(hidden)]
     pub tmp_dir_iam_role: std::option::Option<std::string::String>,
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
+    #[doc(hidden)]
     pub upsert_redshift_options: std::option::Option<crate::model::UpsertRedshiftTargetOptions>,
 }
 impl RedshiftTarget {
@@ -13501,10 +13903,13 @@ impl RedshiftTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsertRedshiftTargetOptions {
     /// <p>The physical location of the Redshift table.</p>
+    #[doc(hidden)]
     pub table_location: std::option::Option<std::string::String>,
     /// <p>The name of the connection to use to write to Redshift.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The keys used to determine whether to perform an update or insert.</p>
+    #[doc(hidden)]
     pub upsert_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpsertRedshiftTargetOptions {
@@ -13608,12 +14013,16 @@ impl UpsertRedshiftTargetOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BasicCatalogTarget {
     /// <p>The name of your data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl BasicCatalogTarget {
@@ -13728,19 +14137,26 @@ impl BasicCatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkConnectorTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a connection for an Apache Spark connector.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The name of an Apache Spark connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<std::string::String>,
     /// <p>Additional connection options for the connector.</p>
+    #[doc(hidden)]
     pub additional_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the data schema for the custom spark target.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl SparkConnectorTarget {
@@ -13944,21 +14360,29 @@ impl SparkConnectorTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JdbcConnectorTarget {
     /// <p>The name of the data target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the connection that is associated with the connector.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The name of the table in the data target.</p>
+    #[doc(hidden)]
     pub connection_table: std::option::Option<std::string::String>,
     /// <p>The name of a connector that will be used.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<std::string::String>,
     /// <p>Additional connection options for the connector.</p>
+    #[doc(hidden)]
     pub additional_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the data schema for the JDBC target.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl JdbcConnectorTarget {
@@ -14182,10 +14606,13 @@ impl JdbcConnectorTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDbCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl DynamoDbCatalogSource {
@@ -14274,10 +14701,13 @@ impl DynamoDbCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelationalCatalogSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl RelationalCatalogSource {
@@ -14366,26 +14796,37 @@ impl RelationalCatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ParquetSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
     pub compression_type: std::option::Option<crate::model::ParquetCompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    #[doc(hidden)]
     pub group_size: std::option::Option<std::string::String>,
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    #[doc(hidden)]
     pub group_files: std::option::Option<std::string::String>,
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    #[doc(hidden)]
     pub recurse: std::option::Option<bool>,
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    #[doc(hidden)]
     pub max_band: std::option::Option<i32>,
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    #[doc(hidden)]
     pub max_files_in_band: std::option::Option<i32>,
     /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl S3ParquetSource {
@@ -14649,12 +15090,16 @@ impl S3ParquetSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DirectSourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    #[doc(hidden)]
     pub bounded_size: std::option::Option<i64>,
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    #[doc(hidden)]
     pub bounded_files: std::option::Option<i64>,
     /// <p>Sets option to enable a sample path.</p>
+    #[doc(hidden)]
     pub enable_sample_path: std::option::Option<bool>,
     /// <p>If enabled, specifies the sample path.</p>
+    #[doc(hidden)]
     pub sample_path: std::option::Option<std::string::String>,
 }
 impl S3DirectSourceAdditionalOptions {
@@ -14760,30 +15205,43 @@ impl S3DirectSourceAdditionalOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3JsonSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    #[doc(hidden)]
     pub group_size: std::option::Option<std::string::String>,
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    #[doc(hidden)]
     pub group_files: std::option::Option<std::string::String>,
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    #[doc(hidden)]
     pub recurse: std::option::Option<bool>,
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    #[doc(hidden)]
     pub max_band: std::option::Option<i32>,
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    #[doc(hidden)]
     pub max_files_in_band: std::option::Option<i32>,
     /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
     /// <p>A JsonPath string defining the JSON data.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    #[doc(hidden)]
     pub multiline: std::option::Option<bool>,
     /// <p>Specifies the data schema for the S3 JSON source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl S3JsonSource {
@@ -15136,42 +15594,61 @@ impl AsRef<str> for CompressionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3CsvSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
+    #[doc(hidden)]
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
+    #[doc(hidden)]
     pub group_size: std::option::Option<std::string::String>,
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
+    #[doc(hidden)]
     pub group_files: std::option::Option<std::string::String>,
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
+    #[doc(hidden)]
     pub recurse: std::option::Option<bool>,
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
+    #[doc(hidden)]
     pub max_band: std::option::Option<i32>,
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
+    #[doc(hidden)]
     pub max_files_in_band: std::option::Option<i32>,
     /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+    #[doc(hidden)]
     pub separator: std::option::Option<crate::model::Separator>,
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
+    #[doc(hidden)]
     pub escaper: std::option::Option<std::string::String>,
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+    #[doc(hidden)]
     pub quote_char: std::option::Option<crate::model::QuoteChar>,
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
+    #[doc(hidden)]
     pub multiline: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub with_header: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
+    #[doc(hidden)]
     pub write_header: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub skip_first: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
+    #[doc(hidden)]
     pub optimize_performance: bool,
     /// <p>Specifies the data schema for the S3 CSV source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl S3CsvSource {
@@ -15707,14 +16184,19 @@ impl AsRef<str> for Separator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3CatalogSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The database table to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    #[doc(hidden)]
     pub partition_predicate: std::option::Option<std::string::String>,
     /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::S3SourceAdditionalOptions>,
 }
 impl S3CatalogSource {
@@ -15848,14 +16330,19 @@ impl S3CatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftSource {
     /// <p>The name of the Amazon Redshift data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The database table to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
+    #[doc(hidden)]
     pub redshift_tmp_dir: std::option::Option<std::string::String>,
     /// <p>The IAM role with permissions.</p>
+    #[doc(hidden)]
     pub tmp_dir_iam_role: std::option::Option<std::string::String>,
 }
 impl RedshiftSource {
@@ -15984,10 +16471,13 @@ impl RedshiftSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogSource {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<std::string::String>,
 }
 impl CatalogSource {
@@ -16076,17 +16566,23 @@ impl CatalogSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkConnectorSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<std::string::String>,
     /// <p>Additional connection options for the connector.</p>
+    #[doc(hidden)]
     pub additional_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies data schema for the custom spark source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl SparkConnectorSource {
@@ -16264,20 +16760,28 @@ impl SparkConnectorSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JdbcConnectorSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<std::string::String>,
     /// <p>Additional connection options for the connector.</p>
+    #[doc(hidden)]
     pub additional_options: std::option::Option<crate::model::JdbcConnectorOptions>,
     /// <p>The name of the table in the data source.</p>
+    #[doc(hidden)]
     pub connection_table: std::option::Option<std::string::String>,
     /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>Specifies the data schema for the custom JDBC source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl JdbcConnectorSource {
@@ -16477,20 +16981,28 @@ pub struct JdbcConnectorOptions {
     /// <p>Extra condition clause to filter data from source. For example:</p>
     /// <p> <code>BillingCity='Mountain View'</code> </p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+    #[doc(hidden)]
     pub filter_predicate: std::option::Option<std::string::String>,
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
+    #[doc(hidden)]
     pub partition_column: std::option::Option<std::string::String>,
     /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    #[doc(hidden)]
     pub lower_bound: std::option::Option<i64>,
     /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
+    #[doc(hidden)]
     pub upper_bound: std::option::Option<i64>,
     /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
+    #[doc(hidden)]
     pub num_partitions: std::option::Option<i64>,
     /// <p>The name of the job bookmark keys on which to sort.</p>
+    #[doc(hidden)]
     pub job_bookmark_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies an ascending or descending sort order.</p>
+    #[doc(hidden)]
     pub job_bookmark_keys_sort_order: std::option::Option<std::string::String>,
     /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
+    #[doc(hidden)]
     pub data_type_mapping: std::option::Option<
         std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>,
     >,
@@ -17058,18 +17570,25 @@ impl AsRef<str> for JdbcDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AthenaConnectorSource {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<std::string::String>,
     /// <p>The name of the table in the data source.</p>
+    #[doc(hidden)]
     pub connection_table: std::option::Option<std::string::String>,
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifies the data schema for the custom Athena source.</p>
+    #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
 }
 impl AthenaConnectorSource {
@@ -17247,6 +17766,7 @@ impl AthenaConnectorSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionsList {
     /// <p>A list of connections used by the job.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConnectionsList {
@@ -17310,10 +17830,13 @@ impl ConnectionsList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobCommand {
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
+    #[doc(hidden)]
     pub script_location: std::option::Option<std::string::String>,
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
+    #[doc(hidden)]
     pub python_version: std::option::Option<std::string::String>,
 }
 impl JobCommand {
@@ -17408,6 +17931,7 @@ impl JobCommand {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionProperty {
     /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
+    #[doc(hidden)]
     pub max_concurrent_runs: i32,
 }
 impl ExecutionProperty {
@@ -17464,10 +17988,12 @@ pub struct DevEndpointCustomLibraries {
     /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
 }
 impl DevEndpointCustomLibraries {
@@ -17557,19 +18083,25 @@ impl DevEndpointCustomLibraries {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseInput {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the database.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The location of the database (for example, an HDFS path). </p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Creates a set of default permissions on the table for principals. </p>
+    #[doc(hidden)]
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
+    #[doc(hidden)]
     pub target_database: std::option::Option<crate::model::DatabaseIdentifier>,
 }
 impl DatabaseInput {
@@ -17753,8 +18285,10 @@ impl DatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
 }
 impl DatabaseIdentifier {
@@ -17829,8 +18363,10 @@ impl DatabaseIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The permissions that are granted to the principal.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl PrincipalPermissions {
@@ -18007,6 +18543,7 @@ impl AsRef<str> for Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
+    #[doc(hidden)]
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
 impl DataLakePrincipal {
@@ -18070,8 +18607,10 @@ impl DataLakePrincipal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LakeFormationConfiguration {
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    #[doc(hidden)]
     pub use_lake_formation_credentials: std::option::Option<bool>,
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl LakeFormationConfiguration {
@@ -18153,6 +18692,7 @@ pub struct LineageConfiguration {
     /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
     /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub crawler_lineage_settings: std::option::Option<crate::model::CrawlerLineageSettings>,
 }
 impl LineageConfiguration {
@@ -18286,6 +18826,7 @@ pub struct RecrawlPolicy {
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
+    #[doc(hidden)]
     pub recrawl_behavior: std::option::Option<crate::model::RecrawlBehavior>,
 }
 impl RecrawlPolicy {
@@ -18415,8 +18956,10 @@ impl AsRef<str> for RecrawlBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaChangePolicy {
     /// <p>The update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
     pub update_behavior: std::option::Option<crate::model::UpdateBehavior>,
     /// <p>The deletion behavior when the crawler finds a deleted object.</p>
+    #[doc(hidden)]
     pub delete_behavior: std::option::Option<crate::model::DeleteBehavior>,
 }
 impl SchemaChangePolicy {
@@ -18608,16 +19151,22 @@ impl AsRef<str> for UpdateBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerTargets {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
+    #[doc(hidden)]
     pub s3_targets: std::option::Option<std::vec::Vec<crate::model::S3Target>>,
     /// <p>Specifies JDBC targets.</p>
+    #[doc(hidden)]
     pub jdbc_targets: std::option::Option<std::vec::Vec<crate::model::JdbcTarget>>,
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+    #[doc(hidden)]
     pub mongo_db_targets: std::option::Option<std::vec::Vec<crate::model::MongoDbTarget>>,
     /// <p>Specifies Amazon DynamoDB targets.</p>
+    #[doc(hidden)]
     pub dynamo_db_targets: std::option::Option<std::vec::Vec<crate::model::DynamoDbTarget>>,
     /// <p>Specifies Glue Data Catalog targets.</p>
+    #[doc(hidden)]
     pub catalog_targets: std::option::Option<std::vec::Vec<crate::model::CatalogTarget>>,
     /// <p>Specifies Delta data store targets.</p>
+    #[doc(hidden)]
     pub delta_targets: std::option::Option<std::vec::Vec<crate::model::DeltaTarget>>,
 }
 impl CrawlerTargets {
@@ -18813,10 +19362,13 @@ impl CrawlerTargets {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
+    #[doc(hidden)]
     pub delta_tables: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
+    #[doc(hidden)]
     pub write_manifest: std::option::Option<bool>,
 }
 impl DeltaTarget {
@@ -18917,10 +19469,13 @@ impl DeltaTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A list of the tables to be synchronized.</p>
+    #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
 }
 impl CatalogTarget {
@@ -19024,12 +19579,15 @@ impl CatalogTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDbTarget {
     /// <p>The name of the DynamoDB table to crawl.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
+    #[doc(hidden)]
     pub scan_all: std::option::Option<bool>,
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
+    #[doc(hidden)]
     pub scan_rate: std::option::Option<f64>,
 }
 impl DynamoDbTarget {
@@ -19124,11 +19682,14 @@ impl DynamoDbTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MongoDbTarget {
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
+    #[doc(hidden)]
     pub scan_all: std::option::Option<bool>,
 }
 impl MongoDbTarget {
@@ -19223,10 +19784,13 @@ impl MongoDbTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JdbcTarget {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The path of the JDBC target.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JdbcTarget {
@@ -19327,16 +19891,22 @@ impl JdbcTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Target {
     /// <p>The path to the Amazon S3 target.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
+    #[doc(hidden)]
     pub sample_size: std::option::Option<i32>,
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    #[doc(hidden)]
     pub event_queue_arn: std::option::Option<std::string::String>,
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    #[doc(hidden)]
     pub dlq_event_queue_arn: std::option::Option<std::string::String>,
 }
 impl S3Target {
@@ -19494,8 +20064,10 @@ impl S3Target {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionInput {
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the connection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the connection. Currently, these types are supported:</p>
     /// <ul>
@@ -19507,14 +20079,18 @@ pub struct ConnectionInput {
     /// <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p> </li>
     /// </ul>
     /// <p>SFTP is not supported.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
+    #[doc(hidden)]
     pub match_criteria: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
+    #[doc(hidden)]
     pub connection_properties: std::option::Option<
         std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
     >,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    #[doc(hidden)]
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
 }
@@ -19727,10 +20303,13 @@ impl ConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalConnectionRequirements {
     /// <p>The subnet ID used by the connection.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The security group ID list used by the connection.</p>
+    #[doc(hidden)]
     pub security_group_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
 }
 impl PhysicalConnectionRequirements {
@@ -20128,8 +20707,10 @@ impl AsRef<str> for ConnectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnStatisticsError {
     /// <p>The <code>ColumnStatistics</code> of the column.</p>
+    #[doc(hidden)]
     pub column_statistics: std::option::Option<crate::model::ColumnStatistics>,
     /// <p>An error message with the reason for the failure of an operation.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
 impl ColumnStatisticsError {
@@ -20204,8 +20785,10 @@ impl ColumnStatisticsError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetail {
     /// <p>The code associated with this error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {
@@ -20280,12 +20863,16 @@ impl ErrorDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The data type of the column.</p>
+    #[doc(hidden)]
     pub column_type: std::option::Option<std::string::String>,
     /// <p>The timestamp of when column statistics were generated.</p>
+    #[doc(hidden)]
     pub analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
+    #[doc(hidden)]
     pub statistics_data: std::option::Option<crate::model::ColumnStatisticsData>,
 }
 impl ColumnStatistics {
@@ -20397,24 +20984,32 @@ impl ColumnStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ColumnStatisticsType>,
     /// <p>Boolean column statistics data.</p>
+    #[doc(hidden)]
     pub boolean_column_statistics_data:
         std::option::Option<crate::model::BooleanColumnStatisticsData>,
     /// <p>Date column statistics data.</p>
+    #[doc(hidden)]
     pub date_column_statistics_data: std::option::Option<crate::model::DateColumnStatisticsData>,
     /// <p>Decimal column statistics data.</p>
+    #[doc(hidden)]
     pub decimal_column_statistics_data:
         std::option::Option<crate::model::DecimalColumnStatisticsData>,
     /// <p>Double column statistics data.</p>
+    #[doc(hidden)]
     pub double_column_statistics_data:
         std::option::Option<crate::model::DoubleColumnStatisticsData>,
     /// <p>Long column statistics data.</p>
+    #[doc(hidden)]
     pub long_column_statistics_data: std::option::Option<crate::model::LongColumnStatisticsData>,
     /// <p>String column statistics data.</p>
+    #[doc(hidden)]
     pub string_column_statistics_data:
         std::option::Option<crate::model::StringColumnStatisticsData>,
     /// <p>Binary column statistics data.</p>
+    #[doc(hidden)]
     pub binary_column_statistics_data:
         std::option::Option<crate::model::BinaryColumnStatisticsData>,
 }
@@ -20676,10 +21271,13 @@ impl ColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BinaryColumnStatisticsData {
     /// <p>The size of the longest bit sequence in the column.</p>
+    #[doc(hidden)]
     pub maximum_length: i64,
     /// <p>The average bit sequence length in the column.</p>
+    #[doc(hidden)]
     pub average_length: f64,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
 }
 impl BinaryColumnStatisticsData {
@@ -20768,12 +21366,16 @@ impl BinaryColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StringColumnStatisticsData {
     /// <p>The size of the longest string in the column.</p>
+    #[doc(hidden)]
     pub maximum_length: i64,
     /// <p>The average string length in the column.</p>
+    #[doc(hidden)]
     pub average_length: f64,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
+    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl StringColumnStatisticsData {
@@ -20879,12 +21481,16 @@ impl StringColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LongColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
+    #[doc(hidden)]
     pub minimum_value: i64,
     /// <p>The highest value in the column.</p>
+    #[doc(hidden)]
     pub maximum_value: i64,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
+    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl LongColumnStatisticsData {
@@ -20990,12 +21596,16 @@ impl LongColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoubleColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
+    #[doc(hidden)]
     pub minimum_value: f64,
     /// <p>The highest value in the column.</p>
+    #[doc(hidden)]
     pub maximum_value: f64,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
+    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl DoubleColumnStatisticsData {
@@ -21101,12 +21711,16 @@ impl DoubleColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecimalColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
+    #[doc(hidden)]
     pub minimum_value: std::option::Option<crate::model::DecimalNumber>,
     /// <p>The highest value in the column.</p>
+    #[doc(hidden)]
     pub maximum_value: std::option::Option<crate::model::DecimalNumber>,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
+    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl DecimalColumnStatisticsData {
@@ -21218,8 +21832,10 @@ impl DecimalColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
+    #[doc(hidden)]
     pub unscaled_value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
+    #[doc(hidden)]
     pub scale: i32,
 }
 impl DecimalNumber {
@@ -21294,12 +21910,16 @@ impl DecimalNumber {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
+    #[doc(hidden)]
     pub minimum_value: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The highest value in the column.</p>
+    #[doc(hidden)]
     pub maximum_value: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
+    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl DateColumnStatisticsData {
@@ -21411,10 +22031,13 @@ impl DateColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BooleanColumnStatisticsData {
     /// <p>The number of true values in the column.</p>
+    #[doc(hidden)]
     pub number_of_trues: i64,
     /// <p>The number of false values in the column.</p>
+    #[doc(hidden)]
     pub number_of_falses: i64,
     /// <p>The number of null values in the column.</p>
+    #[doc(hidden)]
     pub number_of_nulls: i64,
 }
 impl BooleanColumnStatisticsData {
@@ -21580,18 +22203,25 @@ impl AsRef<str> for ColumnStatisticsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
+    #[doc(hidden)]
     pub quote_symbol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<crate::model::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
+    #[doc(hidden)]
     pub header: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
+    #[doc(hidden)]
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
+    #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
 }
 impl UpdateCsvClassifierRequest {
@@ -21819,8 +22449,10 @@ impl AsRef<str> for CsvHeaderOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
 }
 impl UpdateJsonClassifierRequest {
@@ -21892,12 +22524,15 @@ impl UpdateJsonClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateXmlClassifierRequest {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An identifier of the data format that the classifier matches.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
+    #[doc(hidden)]
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl UpdateXmlClassifierRequest {
@@ -21995,12 +22630,16 @@ impl UpdateXmlClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGrokClassifierRequest {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The grok pattern used by this classifier.</p>
+    #[doc(hidden)]
     pub grok_pattern: std::option::Option<std::string::String>,
     /// <p>Optional custom grok patterns used by this classifier.</p>
+    #[doc(hidden)]
     pub custom_patterns: std::option::Option<std::string::String>,
 }
 impl UpdateGrokClassifierRequest {
@@ -22112,47 +22751,67 @@ impl UpdateGrokClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the table.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The owner of the table.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The time when the table definition was created in the Data Catalog.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that the table was updated.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
+    #[doc(hidden)]
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that column statistics were computed for this table.</p>
+    #[doc(hidden)]
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
+    #[doc(hidden)]
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
+    #[doc(hidden)]
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
+    #[doc(hidden)]
     pub view_original_text: std::option::Option<std::string::String>,
     /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
+    #[doc(hidden)]
     pub view_expanded_text: std::option::Option<std::string::String>,
     /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
+    #[doc(hidden)]
     pub table_type: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The person or entity who created the table.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
+    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    #[doc(hidden)]
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
     /// <p>The ID of the Data Catalog in which the table resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl Table {
@@ -22655,8 +23314,10 @@ impl AsRef<str> for ResourceShareType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortCriterion {
     /// <p>The name of the field on which to sort.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>An ascending or descending sort.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::Sort>,
 }
 impl SortCriterion {
@@ -22783,10 +23444,13 @@ impl AsRef<str> for Sort {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyPredicate {
     /// <p>The key of the property.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The comparator used to compare this property to others.</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::Comparator>,
 }
 impl PropertyPredicate {
@@ -22951,18 +23615,25 @@ impl AsRef<str> for Comparator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobBookmarkEntry {
     /// <p>The name of the job in question.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The version of the job.</p>
+    #[doc(hidden)]
     pub version: i32,
     /// <p>The run ID number.</p>
+    #[doc(hidden)]
     pub run: i32,
     /// <p>The attempt ID number.</p>
+    #[doc(hidden)]
     pub attempt: i32,
     /// <p>The unique run identifier associated with the previous job run.</p>
+    #[doc(hidden)]
     pub previous_run_id: std::option::Option<std::string::String>,
     /// <p>The run ID number.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The bookmark itself.</p>
+    #[doc(hidden)]
     pub job_bookmark: std::option::Option<std::string::String>,
 }
 impl JobBookmarkEntry {
@@ -23122,8 +23793,10 @@ impl JobBookmarkEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataKeyValuePair {
     /// <p>A metadata key.</p>
+    #[doc(hidden)]
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>A metadata key’s corresponding value.</p>
+    #[doc(hidden)]
     pub metadata_value: std::option::Option<std::string::String>,
 }
 impl MetadataKeyValuePair {
@@ -23261,10 +23934,13 @@ impl AsRef<str> for SchemaVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataInfo {
     /// <p>The metadata key’s corresponding value.</p>
+    #[doc(hidden)]
     pub metadata_value: std::option::Option<std::string::String>,
     /// <p>The time at which the entry was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>Other metadata belonging to the same metadata key.</p>
+    #[doc(hidden)]
     pub other_metadata_value_list:
         std::option::Option<std::vec::Vec<crate::model::OtherMetadataValueListItem>>,
 }
@@ -23372,8 +24048,10 @@ impl MetadataInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtherMetadataValueListItem {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
+    #[doc(hidden)]
     pub metadata_value: std::option::Option<std::string::String>,
     /// <p>The time at which the entry was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
 }
 impl OtherMetadataValueListItem {
@@ -23562,8 +24240,10 @@ impl AsRef<str> for ExistCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalogEncryptionSettings {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
+    #[doc(hidden)]
     pub encryption_at_rest: std::option::Option<crate::model::EncryptionAtRest>,
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
+    #[doc(hidden)]
     pub connection_password_encryption:
         std::option::Option<crate::model::ConnectionPasswordEncryption>,
 }
@@ -23653,10 +24333,12 @@ impl DataCatalogEncryptionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
+    #[doc(hidden)]
     pub return_connection_password_encrypted: bool,
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
+    #[doc(hidden)]
     pub aws_kms_key_id: std::option::Option<std::string::String>,
 }
 impl ConnectionPasswordEncryption {
@@ -23745,8 +24427,10 @@ impl ConnectionPasswordEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
+    #[doc(hidden)]
     pub catalog_encryption_mode: std::option::Option<crate::model::CatalogEncryptionMode>,
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
+    #[doc(hidden)]
     pub sse_aws_kms_key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionAtRest {
@@ -23885,18 +24569,25 @@ impl AsRef<str> for CatalogEncryptionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
     /// <p>The ID of the statement.</p>
+    #[doc(hidden)]
     pub id: i32,
     /// <p>The execution code of the statement.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The state while request is actioned.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StatementState>,
     /// <p>The output in JSON.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::StatementOutput>,
     /// <p>The code execution progress.</p>
+    #[doc(hidden)]
     pub progress: f64,
     /// <p>The unix time and date that the job definition was started.</p>
+    #[doc(hidden)]
     pub started_on: i64,
     /// <p>The unix time and date that the job definition was completed.</p>
+    #[doc(hidden)]
     pub completed_on: i64,
 }
 impl Statement {
@@ -24059,16 +24750,22 @@ impl Statement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatementOutput {
     /// <p>The code execution output.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<crate::model::StatementOutputData>,
     /// <p>The execution count of the output.</p>
+    #[doc(hidden)]
     pub execution_count: i32,
     /// <p>The status of the code execution output.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatementState>,
     /// <p>The name of the error in the output.</p>
+    #[doc(hidden)]
     pub error_name: std::option::Option<std::string::String>,
     /// <p>The error value of the output.</p>
+    #[doc(hidden)]
     pub error_value: std::option::Option<std::string::String>,
     /// <p>The traceback of the output.</p>
+    #[doc(hidden)]
     pub traceback: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StatementOutput {
@@ -24301,6 +24998,7 @@ impl AsRef<str> for StatementState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatementOutputData {
     /// <p>The code execution output in text format.</p>
+    #[doc(hidden)]
     pub text_plain: std::option::Option<std::string::String>,
 }
 impl StatementOutputData {
@@ -24355,31 +25053,44 @@ impl StatementOutputData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The ID of the session.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time and date when the session was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The session status. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SessionStatus>,
     /// <p>The error message displayed during the session.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The description of the session.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The command object.See SessionCommand.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::SessionCommand>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    #[doc(hidden)]
     pub default_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of connections used for the session.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<crate::model::ConnectionsList>,
     /// <p>The code execution progress of the session.</p>
+    #[doc(hidden)]
     pub progress: f64,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
 }
 impl Session {
@@ -24676,8 +25387,10 @@ impl Session {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionCommand {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+    #[doc(hidden)]
     pub python_version: std::option::Option<std::string::String>,
 }
 impl SessionCommand {
@@ -24830,14 +25543,19 @@ impl AsRef<str> for SessionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
 }
 impl SchemaVersionListItem {
@@ -24966,18 +25684,25 @@ impl SchemaVersionListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaListItem {
     /// <p>the name of the registry where the schema resides.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>A description for the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the schema.</p>
+    #[doc(hidden)]
     pub schema_status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>The date and time that a schema was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time that a schema was updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<std::string::String>,
 }
 impl SchemaListItem {
@@ -25199,16 +25924,22 @@ impl AsRef<str> for SchemaStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryListItem {
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>A description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the registry.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistryStatus>,
     /// <p>The data the registry was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date the registry was updated.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<std::string::String>,
 }
 impl RegistryListItem {
@@ -25409,8 +26140,10 @@ impl AsRef<str> for RegistryStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformSortCriteria {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    #[doc(hidden)]
     pub column: std::option::Option<crate::model::TransformSortColumnType>,
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    #[doc(hidden)]
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
 }
 impl TransformSortCriteria {
@@ -25616,23 +26349,32 @@ impl AsRef<str> for TransformSortColumnType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformFilterCriteria {
     /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
+    #[doc(hidden)]
     pub transform_type: std::option::Option<crate::model::TransformType>,
     /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TransformStatusType>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The time and date before which the transforms were created.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time and date after which the transforms were created.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified before this date.</p>
+    #[doc(hidden)]
     pub last_modified_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified after this date.</p>
+    #[doc(hidden)]
     pub last_modified_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters on datasets with a specific schema. The <code>Map
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
 }
 impl TransformFilterCriteria {
@@ -25853,8 +26595,10 @@ impl TransformFilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaColumn {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of data in the column.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl SchemaColumn {
@@ -25985,11 +26729,14 @@ impl AsRef<str> for TransformStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    #[doc(hidden)]
     pub regex_string: std::option::Option<std::string::String>,
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
+    #[doc(hidden)]
     pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CustomEntityType {
@@ -26090,24 +26837,34 @@ impl CustomEntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerHistory {
     /// <p>A UUID identifier for each crawl.</p>
+    #[doc(hidden)]
     pub crawl_id: std::option::Option<std::string::String>,
     /// <p>The state of the crawl.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CrawlerHistoryState>,
     /// <p>The date and time on which the crawl started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time on which the crawl ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>If an error occurred, the error message associated with the crawl.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The log group associated with the crawl.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The log stream associated with the crawl.</p>
+    #[doc(hidden)]
     pub log_stream: std::option::Option<std::string::String>,
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
+    #[doc(hidden)]
     pub message_prefix: std::option::Option<std::string::String>,
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
+    #[doc(hidden)]
     pub dpu_hour: f64,
 }
 impl CrawlerHistory {
@@ -26399,6 +27156,7 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub field_name: std::option::Option<crate::model::FieldName>,
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
@@ -26409,8 +27167,10 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The value provided for comparison on the crawl field. </p>
+    #[doc(hidden)]
     pub field_value: std::option::Option<std::string::String>,
 }
 impl CrawlsFilter {
@@ -26685,27 +27445,38 @@ impl AsRef<str> for FieldName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowRun {
     /// <p>Name of the workflow that was run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of this workflow run.</p>
+    #[doc(hidden)]
     pub workflow_run_id: std::option::Option<std::string::String>,
     /// <p>The ID of the previous workflow run.</p>
+    #[doc(hidden)]
     pub previous_run_id: std::option::Option<std::string::String>,
     /// <p>The workflow run properties which were set during the run.</p>
+    #[doc(hidden)]
     pub workflow_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow run was started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the workflow run completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the workflow run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkflowRunStatus>,
     /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The statistics of the run.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::WorkflowRunStatistics>,
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
+    #[doc(hidden)]
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
     /// <p>The batch condition that started the workflow run.</p>
+    #[doc(hidden)]
     pub starting_event_batch_condition:
         std::option::Option<crate::model::StartingEventBatchCondition>,
 }
@@ -26987,8 +27758,10 @@ impl WorkflowRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartingEventBatchCondition {
     /// <p>Number of events in the batch.</p>
+    #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
     /// <p>Duration of the batch window in seconds.</p>
+    #[doc(hidden)]
     pub batch_window: std::option::Option<i32>,
 }
 impl StartingEventBatchCondition {
@@ -27060,8 +27833,10 @@ impl StartingEventBatchCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowGraph {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
+    #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
+    #[doc(hidden)]
     pub edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
 }
 impl WorkflowGraph {
@@ -27151,8 +27926,10 @@ impl WorkflowGraph {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Edge {
     /// <p>The unique of the node within the workflow where the edge starts.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The unique of the node within the workflow where the edge ends.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
 }
 impl Edge {
@@ -27227,16 +28004,22 @@ impl Edge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
     /// <p>The type of Glue component represented by the node.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NodeType>,
     /// <p>The name of the Glue component represented by the node.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique Id assigned to the node within the workflow.</p>
+    #[doc(hidden)]
     pub unique_id: std::option::Option<std::string::String>,
     /// <p>Details of the Trigger when the node represents a Trigger.</p>
+    #[doc(hidden)]
     pub trigger_details: std::option::Option<crate::model::TriggerNodeDetails>,
     /// <p>Details of the Job when the node represents a Job.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobNodeDetails>,
     /// <p>Details of the crawler when the node represents a crawler.</p>
+    #[doc(hidden)]
     pub crawler_details: std::option::Option<crate::model::CrawlerNodeDetails>,
 }
 impl Node {
@@ -27385,6 +28168,7 @@ impl Node {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
+    #[doc(hidden)]
     pub crawls: std::option::Option<std::vec::Vec<crate::model::Crawl>>,
 }
 impl CrawlerNodeDetails {
@@ -27448,16 +28232,22 @@ impl CrawlerNodeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Crawl {
     /// <p>The state of the crawler.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CrawlState>,
     /// <p>The date and time on which the crawl started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time on which the crawl completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error message associated with the crawl.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The log group associated with the crawl.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The log stream associated with the crawl.</p>
+    #[doc(hidden)]
     pub log_stream: std::option::Option<std::string::String>,
 }
 impl Crawl {
@@ -27606,6 +28396,7 @@ impl Crawl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
+    #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
 }
 impl JobNodeDetails {
@@ -27669,41 +28460,56 @@ impl JobNodeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobRun {
     /// <p>The ID of this job run.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The number of the attempt to run this job.</p>
+    #[doc(hidden)]
     pub attempt: i32,
     /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
+    #[doc(hidden)]
     pub previous_run_id: std::option::Option<std::string::String>,
     /// <p>The name of the trigger that started this job run.</p>
+    #[doc(hidden)]
     pub trigger_name: std::option::Option<std::string::String>,
     /// <p>The name of the job definition being used in this run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The date and time at which this job run was started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this job run was modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that this job run completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.</p>
+    #[doc(hidden)]
     pub job_run_state: std::option::Option<crate::model::JobRunState>,
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An error message associated with this job run.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A list of predecessors to this job run.</p>
+    #[doc(hidden)]
     pub predecessor_runs: std::option::Option<std::vec::Vec<crate::model::Predecessor>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
+    #[doc(hidden)]
     pub allocated_capacity: i32,
     /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
+    #[doc(hidden)]
     pub execution_time: i32,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -27712,6 +28518,7 @@ pub struct JobRun {
     /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -27720,24 +28527,32 @@ pub struct JobRun {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    #[doc(hidden)]
     pub dpu_seconds: std::option::Option<f64>,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl JobRun {
@@ -28313,8 +29128,10 @@ impl JobRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Predecessor {
     /// <p>The name of the job definition used by the predecessor job run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job-run ID of the predecessor job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl Predecessor {
@@ -28386,6 +29203,7 @@ impl Predecessor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerNodeDetails {
     /// <p>The information of the trigger represented by the trigger node.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<crate::model::Trigger>,
 }
 impl TriggerNodeDetails {
@@ -28499,20 +29317,28 @@ impl AsRef<str> for NodeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowRunStatistics {
     /// <p>Total number of Actions in the workflow run.</p>
+    #[doc(hidden)]
     pub total_actions: i32,
     /// <p>Total number of Actions that timed out.</p>
+    #[doc(hidden)]
     pub timeout_actions: i32,
     /// <p>Total number of Actions that have failed.</p>
+    #[doc(hidden)]
     pub failed_actions: i32,
     /// <p>Total number of Actions that have stopped.</p>
+    #[doc(hidden)]
     pub stopped_actions: i32,
     /// <p>Total number of Actions that have succeeded.</p>
+    #[doc(hidden)]
     pub succeeded_actions: i32,
     /// <p>Total number Actions in running state.</p>
+    #[doc(hidden)]
     pub running_actions: i32,
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+    #[doc(hidden)]
     pub errored_actions: i32,
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+    #[doc(hidden)]
     pub waiting_actions: i32,
 }
 impl WorkflowRunStatistics {
@@ -28753,23 +29579,32 @@ impl AsRef<str> for WorkflowRunStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workflow {
     /// <p>The name of the workflow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
+    #[doc(hidden)]
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the workflow was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The information about the last execution of the workflow.</p>
+    #[doc(hidden)]
     pub last_run: std::option::Option<crate::model::WorkflowRun>,
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
+    #[doc(hidden)]
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    #[doc(hidden)]
     pub max_concurrent_runs: std::option::Option<i32>,
     /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
+    #[doc(hidden)]
     pub blueprint_details: std::option::Option<crate::model::BlueprintDetails>,
 }
 impl Workflow {
@@ -28995,8 +29830,10 @@ impl Workflow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlueprintDetails {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>The run ID for this blueprint.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl BlueprintDetails {
@@ -29071,20 +29908,28 @@ impl BlueprintDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDefinedFunction {
     /// <p>The name of the function.</p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database that contains the function.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The Java class that contains the function code.</p>
+    #[doc(hidden)]
     pub class_name: std::option::Option<std::string::String>,
     /// <p>The owner of the function.</p>
+    #[doc(hidden)]
     pub owner_name: std::option::Option<std::string::String>,
     /// <p>The owner type.</p>
+    #[doc(hidden)]
     pub owner_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The time at which the function was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The resource URIs for the function.</p>
+    #[doc(hidden)]
     pub resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl UserDefinedFunction {
@@ -29279,8 +30124,10 @@ impl UserDefinedFunction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnRowFilter {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub row_filter_expression: std::option::Option<std::string::String>,
 }
 impl ColumnRowFilter {
@@ -29410,10 +30257,13 @@ impl AsRef<str> for PermissionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditContext {
     /// <p>The context for the audit..</p>
+    #[doc(hidden)]
     pub additional_audit_context: std::option::Option<std::string::String>,
     /// <p>The requested columns for audit.</p>
+    #[doc(hidden)]
     pub requested_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>All columns request for audit.</p>
+    #[doc(hidden)]
     pub all_columns_requested: std::option::Option<bool>,
 }
 impl AuditContext {
@@ -29514,10 +30364,13 @@ impl AuditContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnfilteredPartition {
     /// <p>Represents a slice of table data.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<crate::model::Partition>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
 }
 impl UnfilteredPartition {
@@ -29625,23 +30478,32 @@ impl UnfilteredPartition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Partition {
     /// <p>The values of the partition.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the catalog database in which to create the partition.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the database table in which to create the partition.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The time at which the partition was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time at which the partition was accessed.</p>
+    #[doc(hidden)]
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides information about the physical location where the partition is stored.</p>
+    #[doc(hidden)]
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
+    #[doc(hidden)]
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl Partition {
@@ -29876,8 +30738,10 @@ impl Partition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    #[doc(hidden)]
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
+    #[doc(hidden)]
     pub total_segments: i32,
 }
 impl Segment {
@@ -29949,8 +30813,10 @@ impl Segment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableVersion {
     /// <p>The table in question.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::Table>,
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl TableVersion {
@@ -30022,10 +30888,13 @@ impl TableVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which this security configuration was created.</p>
+    #[doc(hidden)]
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The encryption configuration associated with this security configuration.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl SecurityConfiguration {
@@ -30126,10 +30995,13 @@ impl SecurityConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
+    #[doc(hidden)]
     pub s3_encryption: std::option::Option<std::vec::Vec<crate::model::S3Encryption>>,
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
+    #[doc(hidden)]
     pub cloud_watch_encryption: std::option::Option<crate::model::CloudWatchEncryption>,
     /// <p>The encryption configuration for job bookmarks.</p>
+    #[doc(hidden)]
     pub job_bookmarks_encryption: std::option::Option<crate::model::JobBookmarksEncryption>,
 }
 impl EncryptionConfiguration {
@@ -30241,9 +31113,11 @@ impl EncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobBookmarksEncryption {
     /// <p>The encryption mode to use for job bookmarks data.</p>
+    #[doc(hidden)]
     pub job_bookmarks_encryption_mode:
         std::option::Option<crate::model::JobBookmarksEncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl JobBookmarksEncryption {
@@ -30382,8 +31256,10 @@ impl AsRef<str> for JobBookmarksEncryptionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchEncryption {
     /// <p>The encryption mode to use for CloudWatch data.</p>
+    #[doc(hidden)]
     pub cloud_watch_encryption_mode: std::option::Option<crate::model::CloudWatchEncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchEncryption {
@@ -30522,8 +31398,10 @@ impl AsRef<str> for CloudWatchEncryptionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
+    #[doc(hidden)]
     pub s3_encryption_mode: std::option::Option<crate::model::S3EncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3Encryption {
@@ -30767,12 +31645,16 @@ impl AsRef<str> for DataFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GluePolicy {
     /// <p>Contains the requested policy document, in JSON format.</p>
+    #[doc(hidden)]
     pub policy_in_json: std::option::Option<std::string::String>,
     /// <p>Contains the hash value associated with this policy.</p>
+    #[doc(hidden)]
     pub policy_hash: std::option::Option<std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the policy was last updated.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GluePolicy {
@@ -30942,10 +31824,13 @@ impl AsRef<str> for Language {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>A JDBC location.</p>
+    #[doc(hidden)]
     pub jdbc: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
     /// <p>An Amazon DynamoDB table location.</p>
+    #[doc(hidden)]
     pub dynamo_db: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
 }
 impl Location {
@@ -31061,10 +31946,13 @@ impl Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeGenNodeArg {
     /// <p>The name of the argument or property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the argument or property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>True if the value is used as a parameter.</p>
+    #[doc(hidden)]
     pub param: bool,
 }
 impl CodeGenNodeArg {
@@ -31153,8 +32041,10 @@ impl CodeGenNodeArg {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogEntry {
     /// <p>The database in which the table metadata resides.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table in question.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl CatalogEntry {
@@ -31229,16 +32119,22 @@ impl CatalogEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MappingEntry {
     /// <p>The name of the source table.</p>
+    #[doc(hidden)]
     pub source_table: std::option::Option<std::string::String>,
     /// <p>The source path.</p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
     /// <p>The source type.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The target table.</p>
+    #[doc(hidden)]
     pub target_table: std::option::Option<std::string::String>,
     /// <p>The target path.</p>
+    #[doc(hidden)]
     pub target_path: std::option::Option<std::string::String>,
     /// <p>The target type.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
 }
 impl MappingEntry {
@@ -31378,8 +32274,10 @@ impl MappingEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
@@ -31389,8 +32287,10 @@ pub struct PartitionIndexDescriptor {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub index_status: std::option::Option<crate::model::PartitionIndexStatus>,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
+    #[doc(hidden)]
     pub backfill_errors: std::option::Option<std::vec::Vec<crate::model::BackfillError>>,
 }
 impl PartitionIndexDescriptor {
@@ -31546,8 +32446,10 @@ impl PartitionIndexDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackfillError {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::BackfillErrorCode>,
     /// <p>A list of a limited number of partitions in the response.</p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BackfillError {
@@ -31631,6 +32533,7 @@ impl BackfillError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionValueList {
     /// <p>The list of values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PartitionValueList {
@@ -31834,8 +32737,10 @@ impl AsRef<str> for PartitionIndexStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySchemaElement {
     /// <p>The name of a partition key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of a partition key.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl KeySchemaElement {
@@ -31907,34 +32812,47 @@ impl KeySchemaElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MlTransform {
     /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the machine learning transform.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TransformStatusType>,
     /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of Glue table definitions used by the transform.</p>
+    #[doc(hidden)]
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
     /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
+    #[doc(hidden)]
     pub evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
     /// <p>A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.</p>
+    #[doc(hidden)]
     pub label_count: i32,
     /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
     /// <ul>
     /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
     /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
@@ -31945,6 +32863,7 @@ pub struct MlTransform {
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -31959,15 +32878,20 @@ pub struct MlTransform {
     /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout in minutes of the machine learning transform.</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i32>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    #[doc(hidden)]
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl MlTransform {
@@ -32443,8 +33367,10 @@ impl MlTransform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformEncryption {
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
+    #[doc(hidden)]
     pub ml_user_data_encryption: std::option::Option<crate::model::MlUserDataEncryption>,
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub task_run_security_configuration_name: std::option::Option<std::string::String>,
 }
 impl TransformEncryption {
@@ -32537,9 +33463,11 @@ pub struct MlUserDataEncryption {
     /// <li> <p>DISABLED: encryption is disabled</p> </li>
     /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub ml_user_data_encryption_mode:
         std::option::Option<crate::model::MlUserDataEncryptionModeString>,
     /// <p>The ID for the customer-provided KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl MlUserDataEncryption {
@@ -32690,8 +33618,10 @@ impl AsRef<str> for MlUserDataEncryptionModeString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_type: std::option::Option<crate::model::TransformType>,
     /// <p>The evaluation metrics for the find matches algorithm.</p>
+    #[doc(hidden)]
     pub find_matches_metrics: std::option::Option<crate::model::FindMatchesMetrics>,
 }
 impl EvaluationMetrics {
@@ -32770,20 +33700,26 @@ impl EvaluationMetrics {
 pub struct FindMatchesMetrics {
     /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    #[doc(hidden)]
     pub area_under_pr_curve: std::option::Option<f64>,
     /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    #[doc(hidden)]
     pub precision: std::option::Option<f64>,
     /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+    #[doc(hidden)]
     pub recall: std::option::Option<f64>,
     /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
+    #[doc(hidden)]
     pub f1: std::option::Option<f64>,
     /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
+    #[doc(hidden)]
     pub confusion_matrix: std::option::Option<crate::model::ConfusionMatrix>,
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
+    #[doc(hidden)]
     pub column_importances: std::option::Option<std::vec::Vec<crate::model::ColumnImportance>>,
 }
 impl FindMatchesMetrics {
@@ -32952,8 +33888,10 @@ impl FindMatchesMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnImportance {
     /// <p>The name of a column.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The column importance score for the column, as a decimal.</p>
+    #[doc(hidden)]
     pub importance: std::option::Option<f64>,
 }
 impl ColumnImportance {
@@ -33026,12 +33964,16 @@ impl ColumnImportance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfusionMatrix {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
+    #[doc(hidden)]
     pub num_true_positives: std::option::Option<i64>,
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
+    #[doc(hidden)]
     pub num_false_positives: std::option::Option<i64>,
     /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
+    #[doc(hidden)]
     pub num_true_negatives: std::option::Option<i64>,
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
+    #[doc(hidden)]
     pub num_false_negatives: std::option::Option<i64>,
 }
 impl ConfusionMatrix {
@@ -33137,12 +34079,16 @@ impl ConfusionMatrix {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A table name in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection to the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
 }
 impl GlueTable {
@@ -33254,24 +34200,34 @@ impl GlueTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRun {
     /// <p>The unique identifier for the transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for this task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
     /// <p>The current status of the requested task run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatusType>,
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties associated with this task run.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::TaskRunProperties>,
     /// <p>The list of error strings associated with this task run.</p>
+    #[doc(hidden)]
     pub error_string: std::option::Option<std::string::String>,
     /// <p>The date and time that this task run started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last point in time that the requested task run was updated.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last point in time that the requested task run was completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    #[doc(hidden)]
     pub execution_time: i32,
 }
 impl TaskRun {
@@ -33497,17 +34453,22 @@ impl TaskRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRunProperties {
     /// <p>The type of task run.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::TaskType>,
     /// <p>The configuration properties for an importing labels task run.</p>
+    #[doc(hidden)]
     pub import_labels_task_run_properties:
         std::option::Option<crate::model::ImportLabelsTaskRunProperties>,
     /// <p>The configuration properties for an exporting labels task run.</p>
+    #[doc(hidden)]
     pub export_labels_task_run_properties:
         std::option::Option<crate::model::ExportLabelsTaskRunProperties>,
     /// <p>The configuration properties for a labeling set generation task run.</p>
+    #[doc(hidden)]
     pub labeling_set_generation_task_run_properties:
         std::option::Option<crate::model::LabelingSetGenerationTaskRunProperties>,
     /// <p>The configuration properties for a find matches task run.</p>
+    #[doc(hidden)]
     pub find_matches_task_run_properties:
         std::option::Option<crate::model::FindMatchesTaskRunProperties>,
 }
@@ -33680,10 +34641,13 @@ impl TaskRunProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindMatchesTaskRunProperties {
     /// <p>The job ID for the Find Matches task run.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name assigned to the job for the Find Matches task run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job run ID for the Find Matches task run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl FindMatchesTaskRunProperties {
@@ -33772,6 +34736,7 @@ impl FindMatchesTaskRunProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelingSetGenerationTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
+    #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl LabelingSetGenerationTaskRunProperties {
@@ -33829,6 +34794,7 @@ impl LabelingSetGenerationTaskRunProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
+    #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl ExportLabelsTaskRunProperties {
@@ -33886,8 +34852,10 @@ impl ExportLabelsTaskRunProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
+    #[doc(hidden)]
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
+    #[doc(hidden)]
     pub replace: bool,
 }
 impl ImportLabelsTaskRunProperties {
@@ -34118,8 +35086,10 @@ impl AsRef<str> for TaskStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
+    #[doc(hidden)]
     pub column: std::option::Option<crate::model::TaskRunSortColumnType>,
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
+    #[doc(hidden)]
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
 }
 impl TaskRunSortCriteria {
@@ -34256,12 +35226,16 @@ impl AsRef<str> for TaskRunSortColumnType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRunFilterCriteria {
     /// <p>The type of task run.</p>
+    #[doc(hidden)]
     pub task_run_type: std::option::Option<crate::model::TaskType>,
     /// <p>The current status of the task run.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatusType>,
     /// <p>Filter on task runs started before this date.</p>
+    #[doc(hidden)]
     pub started_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter on task runs started after this date.</p>
+    #[doc(hidden)]
     pub started_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TaskRunFilterCriteria {
@@ -34379,40 +35353,54 @@ impl TaskRunFilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The name you assign to this job definition.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>This field is reserved for future use.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The time and date that this job definition was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last point in time when this job definition was modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
+    #[doc(hidden)]
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub default_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    #[doc(hidden)]
     pub non_overridable_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The connections used for this job.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<crate::model::ConnectionsList>,
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
+    #[doc(hidden)]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -34422,6 +35410,7 @@ pub struct Job {
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -34430,24 +35419,31 @@ pub struct Job {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    #[doc(hidden)]
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl Job {
@@ -35021,22 +36017,31 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevEndpoint {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub yarn_endpoint_address: std::option::Option<std::string::String>,
     /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+    #[doc(hidden)]
     pub private_address: std::option::Option<std::string::String>,
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    #[doc(hidden)]
     pub zeppelin_remote_spark_interpreter_port: i32,
     /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub public_address: std::option::Option<std::string::String>,
     /// <p>The current status of this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -35045,44 +36050,59 @@ pub struct DevEndpoint {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The status of the last update.</p>
+    #[doc(hidden)]
     pub last_update_status: std::option::Option<std::string::String>,
     /// <p>The point in time at which this DevEndpoint was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
     /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
+    #[doc(hidden)]
     pub public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -35090,6 +36110,7 @@ pub struct DevEndpoint {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35701,10 +36722,13 @@ impl DevEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeGenEdge {
     /// <p>The ID of the node at which the edge starts.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The ID of the node at which the edge ends.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The target of the edge.</p>
+    #[doc(hidden)]
     pub target_parameter: std::option::Option<std::string::String>,
 }
 impl CodeGenEdge {
@@ -35796,12 +36820,16 @@ impl CodeGenEdge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of node that this is.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>Properties of the node, in the form of name-value pairs.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
     /// <p>The line number of the node.</p>
+    #[doc(hidden)]
     pub line_number: i32,
 }
 impl CodeGenNode {
@@ -35916,22 +36944,30 @@ impl CodeGenNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Database {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the database.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The location of the database (for example, an HDFS path).</p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define parameters and properties of the database.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the metadata database was created in the catalog.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Creates a set of default permissions on the table for principals. </p>
+    #[doc(hidden)]
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
+    #[doc(hidden)]
     pub target_database: std::option::Option<crate::model::DatabaseIdentifier>,
     /// <p>The ID of the Data Catalog in which the database resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl Database {
@@ -36149,44 +37185,64 @@ impl Database {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Crawler {
     /// <p>The name of the crawler.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A collection of targets to crawl.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
     /// <p>The name of the database in which the crawler's output is stored.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the crawler.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
+    #[doc(hidden)]
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    #[doc(hidden)]
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::SchemaChangePolicy>,
     /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
+    #[doc(hidden)]
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
     /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CrawlerState>,
     /// <p>The prefix added to the names of tables that are created.</p>
+    #[doc(hidden)]
     pub table_prefix: std::option::Option<std::string::String>,
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::Schedule>,
     /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
+    #[doc(hidden)]
     pub crawl_elapsed_time: i64,
     /// <p>The time that the crawler was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the crawler was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
+    #[doc(hidden)]
     pub last_crawl: std::option::Option<crate::model::LastCrawlInfo>,
     /// <p>The version of the crawler.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    #[doc(hidden)]
     pub crawler_security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    #[doc(hidden)]
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
 }
 impl Crawler {
@@ -36623,16 +37679,22 @@ impl Crawler {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastCrawlInfo {
     /// <p>Status of the last crawl.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LastCrawlStatus>,
     /// <p>If an error occurred, the error information about the last crawl.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The log group for the last crawl.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The log stream for the last crawl.</p>
+    #[doc(hidden)]
     pub log_stream: std::option::Option<std::string::String>,
     /// <p>The prefix for a message about this crawl.</p>
+    #[doc(hidden)]
     pub message_prefix: std::option::Option<std::string::String>,
     /// <p>The time at which the crawl started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LastCrawlInfo {
@@ -36843,8 +37905,10 @@ impl AsRef<str> for LastCrawlStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schedule {
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The state of the schedule.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ScheduleState>,
 }
 impl Schedule {
@@ -37040,20 +38104,28 @@ impl AsRef<str> for CrawlerState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrawlerMetrics {
     /// <p>The name of the crawler.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
     /// <p>The estimated time left to complete a running crawl.</p>
+    #[doc(hidden)]
     pub time_left_seconds: f64,
     /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
+    #[doc(hidden)]
     pub still_estimating: bool,
     /// <p>The duration of the crawler's most recent run, in seconds.</p>
+    #[doc(hidden)]
     pub last_runtime_seconds: f64,
     /// <p>The median duration of this crawler's runs, in seconds.</p>
+    #[doc(hidden)]
     pub median_runtime_seconds: f64,
     /// <p>The number of tables created by this crawler.</p>
+    #[doc(hidden)]
     pub tables_created: i32,
     /// <p>The number of tables updated by this crawler.</p>
+    #[doc(hidden)]
     pub tables_updated: i32,
     /// <p>The number of tables deleted by this crawler.</p>
+    #[doc(hidden)]
     pub tables_deleted: i32,
 }
 impl CrawlerMetrics {
@@ -37227,12 +38299,16 @@ impl CrawlerMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The name of the connection definition.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the connection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the connection. Currently, SFTP is not supported.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
+    #[doc(hidden)]
     pub match_criteria: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection:</p>
     /// <ul>
@@ -37275,17 +38351,22 @@ pub struct Connection {
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka Configuration</a>.</p> </li>
     /// <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub connection_properties: std::option::Option<
         std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
     >,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    #[doc(hidden)]
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
     /// <p>The time that this connection definition was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this connection definition was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user, group, or role that last updated this connection definition.</p>
+    #[doc(hidden)]
     pub last_updated_by: std::option::Option<std::string::String>,
 }
 impl Connection {
@@ -37650,8 +38731,10 @@ impl Connection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsFilter {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
+    #[doc(hidden)]
     pub match_criteria: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
 }
 impl GetConnectionsFilter {
@@ -37735,8 +38818,10 @@ impl GetConnectionsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnError {
     /// <p>The name of the column that failed.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>An error message with the reason for the failure of an operation.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
 impl ColumnError {
@@ -37809,12 +38894,16 @@ impl ColumnError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Classifier {
     /// <p>A classifier that uses <code>grok</code>.</p>
+    #[doc(hidden)]
     pub grok_classifier: std::option::Option<crate::model::GrokClassifier>,
     /// <p>A classifier for XML content.</p>
+    #[doc(hidden)]
     pub xml_classifier: std::option::Option<crate::model::XmlClassifier>,
     /// <p>A classifier for JSON content.</p>
+    #[doc(hidden)]
     pub json_classifier: std::option::Option<crate::model::JsonClassifier>,
     /// <p>A classifier for comma-separated values (CSV).</p>
+    #[doc(hidden)]
     pub csv_classifier: std::option::Option<crate::model::CsvClassifier>,
 }
 impl Classifier {
@@ -37932,24 +39021,34 @@ impl Classifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvClassifier {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
+    #[doc(hidden)]
     pub quote_symbol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<crate::model::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
+    #[doc(hidden)]
     pub header: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
+    #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
 }
 impl CsvClassifier {
@@ -38175,14 +39274,19 @@ impl CsvClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonClassifier {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
 }
 impl JsonClassifier {
@@ -38311,18 +39415,24 @@ impl JsonClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XmlClassifier {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An identifier of the data format that the classifier matches.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
+    #[doc(hidden)]
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl XmlClassifier {
@@ -38477,18 +39587,25 @@ impl XmlClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrokClassifier {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    #[doc(hidden)]
     pub grok_pattern: std::option::Option<std::string::String>,
     /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    #[doc(hidden)]
     pub custom_patterns: std::option::Option<std::string::String>,
 }
 impl GrokClassifier {
@@ -38657,10 +39774,13 @@ impl GrokClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogImportStatus {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    #[doc(hidden)]
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
+    #[doc(hidden)]
     pub import_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the person who initiated the migration.</p>
+    #[doc(hidden)]
     pub imported_by: std::option::Option<std::string::String>,
 }
 impl CatalogImportStatus {
@@ -38752,10 +39872,13 @@ impl CatalogImportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlueprintRun {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>The run ID for this blueprint run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
+    #[doc(hidden)]
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
@@ -38764,18 +39887,25 @@ pub struct BlueprintRun {
     /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
     /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::BlueprintRunState>,
     /// <p>The date and time that the blueprint run started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the blueprint run completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
+    #[doc(hidden)]
     pub rollback_error_message: std::option::Option<std::string::String>,
     /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl BlueprintRun {
@@ -39085,18 +40215,25 @@ impl AsRef<str> for BlueprintRunState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Blueprint {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the blueprint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the blueprint was registered.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the blueprint was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
+    #[doc(hidden)]
     pub parameter_spec: std::option::Option<std::string::String>,
     /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
+    #[doc(hidden)]
     pub blueprint_location: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
+    #[doc(hidden)]
     pub blueprint_service_location: std::option::Option<std::string::String>,
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
@@ -39105,10 +40242,13 @@ pub struct Blueprint {
     /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
     /// <li> <p>Failed — The blueprint registration failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BlueprintStatus>,
     /// <p>An error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
+    #[doc(hidden)]
     pub last_active_definition: std::option::Option<crate::model::LastActiveDefinition>,
 }
 impl Blueprint {
@@ -39363,14 +40503,19 @@ impl Blueprint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the blueprint was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
+    #[doc(hidden)]
     pub parameter_spec: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
+    #[doc(hidden)]
     pub blueprint_location: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_service_location: std::option::Option<std::string::String>,
 }
 impl LastActiveDefinition {
@@ -39571,8 +40716,10 @@ impl AsRef<str> for BlueprintStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaVersionErrorItem {
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The details of the error for the schema version.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl SchemaVersionErrorItem {
@@ -39647,8 +40794,10 @@ impl SchemaVersionErrorItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>The error code for an error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message for an error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -39723,8 +40872,10 @@ impl ErrorDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionIndex {
     /// <p>The keys for the partition index.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the partition index.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl PartitionIndex {
@@ -39805,18 +40956,25 @@ impl PartitionIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
+    #[doc(hidden)]
     pub quote_symbol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
+    #[doc(hidden)]
     pub contains_header: std::option::Option<crate::model::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
+    #[doc(hidden)]
     pub header: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
+    #[doc(hidden)]
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
+    #[doc(hidden)]
     pub allow_single_column: std::option::Option<bool>,
 }
 impl CreateCsvClassifierRequest {
@@ -39985,8 +41143,10 @@ impl CreateCsvClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
 }
 impl CreateJsonClassifierRequest {
@@ -40058,12 +41218,15 @@ impl CreateJsonClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateXmlClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The name of the classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
+    #[doc(hidden)]
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl CreateXmlClassifierRequest {
@@ -40161,12 +41324,16 @@ impl CreateXmlClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrokClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The name of the new classifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The grok pattern used by this classifier.</p>
+    #[doc(hidden)]
     pub grok_pattern: std::option::Option<std::string::String>,
     /// <p>Optional custom grok patterns used by this classifier.</p>
+    #[doc(hidden)]
     pub custom_patterns: std::option::Option<std::string::String>,
 }
 impl CreateGrokClassifierRequest {
@@ -40278,8 +41445,10 @@ impl CreateGrokClassifierRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
+    #[doc(hidden)]
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The details about the batch update partition error.</p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
 impl BatchUpdatePartitionFailureEntry {
@@ -40363,8 +41532,10 @@ impl BatchUpdatePartitionFailureEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
+    #[doc(hidden)]
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The structure used to update a partition.</p>
+    #[doc(hidden)]
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
 }
 impl BatchUpdatePartitionRequestEntry {
@@ -40448,10 +41619,13 @@ impl BatchUpdatePartitionRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopJobRunError {
     /// <p>The name of the job definition that is used in the job run in question.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>Specifies details about the error that was encountered.</p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
 impl BatchStopJobRunError {
@@ -40543,8 +41717,10 @@ impl BatchStopJobRunError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopJobRunSuccessfulSubmission {
     /// <p>The name of the job definition used in the job run that was stopped.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl BatchStopJobRunSuccessfulSubmission {
@@ -40616,10 +41792,13 @@ impl BatchStopJobRunSuccessfulSubmission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableVersionError {
     /// <p>The name of the table in question.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The details about the error.</p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
 impl TableVersionError {
@@ -40711,8 +41890,10 @@ impl TableVersionError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableError {
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The details about the error.</p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
 impl TableError {
@@ -40787,8 +41968,10 @@ impl TableError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionError {
     /// <p>The values that define the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The details about the partition error.</p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<crate::model::ErrorDetail>,
 }
 impl PartitionError {

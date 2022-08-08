@@ -5,20 +5,28 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The status of a product for a user.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The status message for a product for a user.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The start date of a subscription.</p>
+    #[doc(hidden)]
     pub subscription_start_date: std::option::Option<std::string::String>,
     /// <p>The end date of a subscription.</p>
+    #[doc(hidden)]
     pub subscription_end_date: std::option::Option<std::string::String>,
 }
 impl ProductUserSummary {
@@ -243,6 +251,7 @@ impl IdentityProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl ActiveDirectoryIdentityProvider {
@@ -297,12 +306,16 @@ impl ActiveDirectoryIdentityProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>The status of an identity provider.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The failure message associated with an identity provider.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
 }
 impl IdentityProviderSummary {
@@ -414,20 +427,28 @@ impl IdentityProviderSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The status of a user associated with an EC2 instance.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The status message for users of an EC2 instance.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date a user was associated with an EC2 instance.</p>
+    #[doc(hidden)]
     pub association_date: std::option::Option<std::string::String>,
     /// <p>The date a user was disassociated from an EC2 instance.</p>
+    #[doc(hidden)]
     pub disassociation_date: std::option::Option<std::string::String>,
 }
 impl InstanceUserSummary {
@@ -613,10 +634,13 @@ impl InstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of an attribute to use as a filter.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
     /// <p>The type of search (For example, eq, geq, leq)</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>Value of the filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -705,14 +729,19 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The status of an EC2 instance resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A list of provided user-based subscription products.</p>
+    #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date of the last status check.</p>
+    #[doc(hidden)]
     pub last_status_check_date: std::option::Option<std::string::String>,
     /// <p>The status message for an EC2 instance.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl InstanceSummary {

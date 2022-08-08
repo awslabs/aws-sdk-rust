@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryForecastOutput {
     /// <p>The forecast.</p>
+    #[doc(hidden)]
     pub forecast: std::option::Option<crate::model::Forecast>,
 }
 impl QueryForecastOutput {

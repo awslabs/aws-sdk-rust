@@ -226,8 +226,10 @@ impl AsRef<str> for MessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -388,52 +390,72 @@ impl AsRef<str> for KeyState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier for the KMS key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the KMS key was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The description of the KMS key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    #[doc(hidden)]
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    #[doc(hidden)]
     pub valid_to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::OriginType>,
     /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
+    #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
+    #[doc(hidden)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+    #[doc(hidden)]
     pub expiration_model: std::option::Option<crate::model::ExpirationModelType>,
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
+    #[doc(hidden)]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>Describes the type of key material in the KMS key.</p>
+    #[doc(hidden)]
     pub key_spec: std::option::Option<crate::model::KeySpec>,
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
+    #[doc(hidden)]
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
+    #[doc(hidden)]
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub multi_region: std::option::Option<bool>,
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -442,12 +464,15 @@ pub struct KeyMetadata {
     /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
     /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub multi_region_configuration: std::option::Option<crate::model::MultiRegionConfiguration>,
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
+    #[doc(hidden)]
     pub pending_deletion_window_in_days: std::option::Option<i32>,
     /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+    #[doc(hidden)]
     pub mac_algorithms: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
 }
 impl KeyMetadata {
@@ -1011,10 +1036,13 @@ impl KeyMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionConfiguration {
     /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
+    #[doc(hidden)]
     pub multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
     /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
+    #[doc(hidden)]
     pub primary_key: std::option::Option<crate::model::MultiRegionKey>,
     /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
+    #[doc(hidden)]
     pub replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
 }
 impl MultiRegionConfiguration {
@@ -1118,8 +1146,10 @@ impl MultiRegionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionKey {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl MultiRegionKey {
@@ -1769,23 +1799,32 @@ impl AsRef<str> for KeyUsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantListEntry {
     /// <p>The unique identifier for the KMS key to which the grant applies.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
+    #[doc(hidden)]
     pub grant_id: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the grant was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity that gets the permissions in the grant.</p>
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
+    #[doc(hidden)]
     pub grantee_principal: std::option::Option<std::string::String>,
     /// <p>The principal that can retire the grant.</p>
+    #[doc(hidden)]
     pub retiring_principal: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account under which the grant was issued.</p>
+    #[doc(hidden)]
     pub issuing_account: std::option::Option<std::string::String>,
     /// <p>The list of operations permitted by the grant.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::GrantConstraints>,
 }
 impl GrantListEntry {
@@ -2008,9 +2047,11 @@ impl GrantListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantConstraints {
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
+    #[doc(hidden)]
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
+    #[doc(hidden)]
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2255,8 +2296,10 @@ impl AsRef<str> for GrantOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyListEntry {
     /// <p>Unique identifier of the key.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>ARN of the key.</p>
+    #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
 }
 impl KeyListEntry {
@@ -2328,14 +2371,19 @@ impl KeyListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
+    #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>String that contains the key ARN.</p>
+    #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
+    #[doc(hidden)]
     pub target_key_id: std::option::Option<std::string::String>,
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AliasListEntry {
@@ -2720,17 +2768,22 @@ impl AsRef<str> for DataKeyPairSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
+    #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>The user-specified friendly name for the custom key store.</p>
+    #[doc(hidden)]
     pub custom_key_store_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
+    #[doc(hidden)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    #[doc(hidden)]
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
     /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
     /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
     /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
     /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
     /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Valid values are:</p>
@@ -2745,8 +2798,10 @@ pub struct CustomKeyStoresListEntry {
     /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CustomKeyStoresListEntry {

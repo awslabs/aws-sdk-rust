@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaleRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StaleRequestException {
@@ -69,6 +70,7 @@ impl StaleRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StackSetNotFoundException {
@@ -133,6 +135,7 @@ impl StackSetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstanceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StackInstanceNotFoundException {
@@ -197,6 +200,7 @@ impl StackInstanceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationInProgressException {
@@ -261,6 +265,7 @@ impl OperationInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationIdAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationIdAlreadyExistsException {
@@ -325,6 +330,7 @@ impl OperationIdAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOperationException {
@@ -389,6 +395,7 @@ impl InvalidOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TokenAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TokenAlreadyExistsException {
@@ -453,6 +460,7 @@ impl TokenAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapabilitiesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientCapabilitiesException {
@@ -517,6 +525,7 @@ impl InsufficientCapabilitiesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeNotFoundException {
@@ -581,6 +590,7 @@ impl TypeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CfnRegistryException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CfnRegistryException {
@@ -645,6 +655,7 @@ impl CfnRegistryException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotFoundException {
@@ -709,6 +720,7 @@ impl OperationNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationStatusCheckFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationStatusCheckFailedException {
@@ -773,6 +785,7 @@ impl OperationStatusCheckFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStateTransitionException {
@@ -837,6 +850,7 @@ impl InvalidStateTransitionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StackNotFoundException {
@@ -902,6 +916,7 @@ impl StackNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -966,6 +981,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ChangeSetNotFoundException {
@@ -1030,6 +1046,7 @@ impl ChangeSetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidChangeSetStatusException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidChangeSetStatusException {
@@ -1094,6 +1111,7 @@ impl InvalidChangeSetStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetNotEmptyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StackSetNotEmptyException {
@@ -1158,6 +1176,7 @@ impl StackSetNotEmptyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NameAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NameAlreadyExistsException {
@@ -1222,6 +1241,7 @@ impl NameAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatedButModifiedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreatedButModifiedException {
@@ -1286,6 +1306,7 @@ impl CreatedButModifiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -1350,6 +1371,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeConfigurationNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeConfigurationNotFoundException {

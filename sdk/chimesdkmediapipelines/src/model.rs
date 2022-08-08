@@ -87,8 +87,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -160,8 +162,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaCapturePipelineSummary {
     /// <p>The ID of a media capture pipeline.</p>
+    #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a media capture pipeline.</p>
+    #[doc(hidden)]
     pub media_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl MediaCapturePipelineSummary {
@@ -239,24 +243,34 @@ impl MediaCapturePipelineSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaCapturePipeline {
     /// <p>The ID of a media capture pipeline.</p>
+    #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a media capture pipeline.</p>
+    #[doc(hidden)]
     pub media_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are saved.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The status of the media capture pipeline.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MediaPipelineStatus>,
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
+    #[doc(hidden)]
     pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
+    #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the capture pipeline was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    #[doc(hidden)]
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
@@ -498,8 +512,10 @@ impl MediaCapturePipeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChimeSdkMeetingConfiguration {
     /// <p>The source configuration for a specified media capture pipline.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+    #[doc(hidden)]
     pub artifacts_configuration: std::option::Option<crate::model::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfiguration {
@@ -583,10 +599,13 @@ impl ChimeSdkMeetingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
+    #[doc(hidden)]
     pub audio: std::option::Option<crate::model::AudioArtifactsConfiguration>,
     /// <p>The configuration for the video artifacts.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::VideoArtifactsConfiguration>,
     /// <p>The configuration for the content artifacts.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::ContentArtifactsConfiguration>,
 }
 impl ArtifactsConfiguration {
@@ -684,8 +703,10 @@ impl ArtifactsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArtifactsState>,
     /// <p>The MUX type of the artifact configuration.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::ContentMuxType>,
 }
 impl ContentArtifactsConfiguration {
@@ -869,8 +890,10 @@ impl AsRef<str> for ArtifactsState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArtifactsState>,
     /// <p>The MUX type of the video artifact configuration object.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::VideoMuxType>,
 }
 impl VideoArtifactsConfiguration {
@@ -999,6 +1022,7 @@ impl AsRef<str> for VideoMuxType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
+    #[doc(hidden)]
     pub mux_type: std::option::Option<crate::model::AudioMuxType>,
 }
 impl AudioArtifactsConfiguration {
@@ -1111,6 +1135,7 @@ impl AsRef<str> for AudioMuxType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceConfiguration {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+    #[doc(hidden)]
     pub selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
 }
 impl SourceConfiguration {
@@ -1170,8 +1195,10 @@ impl SourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
+    #[doc(hidden)]
     pub attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
+    #[doc(hidden)]
     pub external_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SelectedVideoStreams {

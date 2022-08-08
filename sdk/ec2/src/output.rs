@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl WithdrawByoipCidrOutput {
@@ -61,6 +62,7 @@ impl WithdrawByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityGroupRuleDescriptionsIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
@@ -116,6 +118,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
@@ -171,6 +174,7 @@ impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnmonitorInstancesOutput {
     /// <p>The monitoring information.</p>
+    #[doc(hidden)]
     pub instance_monitorings: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
 }
 impl UnmonitorInstancesOutput {
@@ -265,10 +269,13 @@ impl UnassignPrivateIpAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnassignIpv6AddressesOutput {
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
+    #[doc(hidden)]
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    #[doc(hidden)]
     pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnassignIpv6AddressesOutput {
@@ -380,6 +387,7 @@ impl UnassignIpv6AddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateInstancesOutput {
     /// <p>Information about the terminated instances.</p>
+    #[doc(hidden)]
     pub terminating_instances:
         std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
 }
@@ -447,10 +455,13 @@ impl TerminateInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateClientVpnConnectionsOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
+    #[doc(hidden)]
     pub client_vpn_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The user who established the terminated client connections.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The current state of the client connections.</p>
+    #[doc(hidden)]
     pub connection_statuses:
         std::option::Option<std::vec::Vec<crate::model::TerminateConnectionStatus>>,
 }
@@ -558,6 +569,7 @@ impl TerminateClientVpnConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
+    #[doc(hidden)]
     pub stopping_instances: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
 }
 impl StopInstancesOutput {
@@ -622,6 +634,7 @@ impl StopInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartVpcEndpointServicePrivateDnsVerificationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl StartVpcEndpointServicePrivateDnsVerificationOutput {
@@ -678,6 +691,7 @@ impl StartVpcEndpointServicePrivateDnsVerificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNetworkInsightsAnalysisOutput {
     /// <p>Information about the network insights analysis.</p>
+    #[doc(hidden)]
     pub network_insights_analysis: std::option::Option<crate::model::NetworkInsightsAnalysis>,
 }
 impl StartNetworkInsightsAnalysisOutput {
@@ -741,6 +755,7 @@ impl StartNetworkInsightsAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The Network Access Scope analysis.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_analysis:
         std::option::Option<crate::model::NetworkInsightsAccessScopeAnalysis>,
 }
@@ -809,6 +824,7 @@ impl StartNetworkInsightsAccessScopeAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstancesOutput {
     /// <p>Information about the started instances.</p>
+    #[doc(hidden)]
     pub starting_instances: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
 }
 impl StartInstancesOutput {
@@ -903,8 +919,10 @@ impl SendDiagnosticInterruptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTransitGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
+    #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRoute>>,
     /// <p>Indicates whether there are additional routes available.</p>
+    #[doc(hidden)]
     pub additional_routes_available: std::option::Option<bool>,
 }
 impl SearchTransitGatewayRoutesOutput {
@@ -988,9 +1006,11 @@ impl SearchTransitGatewayRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTransitGatewayMulticastGroupsOutput {
     /// <p>Information about the transit gateway multicast group.</p>
+    #[doc(hidden)]
     pub multicast_groups:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchTransitGatewayMulticastGroupsOutput {
@@ -1077,8 +1097,10 @@ impl SearchTransitGatewayMulticastGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchLocalGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
+    #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::LocalGatewayRoute>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchLocalGatewayRoutesOutput {
@@ -1159,6 +1181,7 @@ impl SearchLocalGatewayRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunScheduledInstancesOutput {
     /// <p>The IDs of the newly launched instances.</p>
+    #[doc(hidden)]
     pub instance_id_set: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RunScheduledInstancesOutput {
@@ -1224,14 +1247,19 @@ impl RunScheduledInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunInstancesOutput {
     /// <p>[EC2-Classic only] The security groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
+    #[doc(hidden)]
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl RunInstancesOutput {
@@ -1375,8 +1403,10 @@ impl RunInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSecurityGroupIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
     /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+    #[doc(hidden)]
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupIngressOutput {
@@ -1458,8 +1488,10 @@ impl RevokeSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+    #[doc(hidden)]
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupEgressOutput {
@@ -1541,6 +1573,7 @@ impl RevokeSecurityGroupEgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeClientVpnIngressOutput {
     /// <p>The current state of the authorization rule.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
 }
 impl RevokeClientVpnIngressOutput {
@@ -1598,12 +1631,16 @@ impl RevokeClientVpnIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSnapshotTierOutput {
     /// <p>The ID of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the snapshot restore process started.</p>
+    #[doc(hidden)]
     pub restore_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
+    #[doc(hidden)]
     pub restore_duration: std::option::Option<i32>,
     /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
+    #[doc(hidden)]
     pub is_permanent_restore: std::option::Option<bool>,
 }
 impl RestoreSnapshotTierOutput {
@@ -1712,24 +1749,34 @@ impl RestoreSnapshotTierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSnapshotFromRecycleBinOutput {
     /// <p>The ID of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
+    #[doc(hidden)]
     pub progress: std::option::Option<std::string::String>,
     /// <p>The time stamp when the snapshot was initiated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the snapshot.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SnapshotState>,
     /// <p>The ID of the volume that was used to create the snapshot.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
 }
 impl RestoreSnapshotFromRecycleBinOutput {
@@ -1943,6 +1990,7 @@ impl RestoreSnapshotFromRecycleBinOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreManagedPrefixListVersionOutput {
     /// <p>Information about the prefix list.</p>
+    #[doc(hidden)]
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
 impl RestoreManagedPrefixListVersionOutput {
@@ -2000,6 +2048,7 @@ impl RestoreManagedPrefixListVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreImageFromRecycleBinOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl RestoreImageFromRecycleBinOutput {
@@ -2054,8 +2103,10 @@ impl RestoreImageFromRecycleBinOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreAddressToClassicOutput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>The move status for the IP address.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl RestoreAddressToClassicOutput {
@@ -2247,6 +2298,7 @@ impl ResetImageAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetFpgaImageAttributeOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ResetFpgaImageAttributeOutput {
@@ -2301,6 +2353,7 @@ impl ResetFpgaImageAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ResetEbsDefaultKmsKeyIdOutput {
@@ -2355,6 +2408,7 @@ impl ResetEbsDefaultKmsKeyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetAddressAttributeOutput {
     /// <p>Information about the IP address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::AddressAttribute>,
 }
 impl ResetAddressAttributeOutput {
@@ -2412,6 +2466,7 @@ impl ResetAddressAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestSpotInstancesOutput {
     /// <p>One or more Spot Instance requests.</p>
+    #[doc(hidden)]
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
 }
@@ -2479,6 +2534,7 @@ impl RequestSpotInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestSpotFleetOutput {
     /// <p>The ID of the Spot Fleet request.</p>
+    #[doc(hidden)]
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
 }
 impl RequestSpotFleetOutput {
@@ -2566,6 +2622,7 @@ impl ReportInstanceStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceTransitGatewayRouteOutput {
     /// <p>Information about the modified route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
 impl ReplaceTransitGatewayRouteOutput {
@@ -2621,8 +2678,10 @@ impl ReplaceTransitGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceRouteTableAssociationOutput {
     /// <p>The ID of the new association.</p>
+    #[doc(hidden)]
     pub new_association_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
+    #[doc(hidden)]
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
 }
 impl ReplaceRouteTableAssociationOutput {
@@ -2765,6 +2824,7 @@ impl ReplaceNetworkAclEntryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceNetworkAclAssociationOutput {
     /// <p>The ID of the new association.</p>
+    #[doc(hidden)]
     pub new_association_id: std::option::Option<std::string::String>,
 }
 impl ReplaceNetworkAclAssociationOutput {
@@ -2822,6 +2882,7 @@ impl ReplaceNetworkAclAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceIamInstanceProfileAssociationOutput {
     /// <p>Information about the IAM instance profile association.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
 }
@@ -2889,6 +2950,7 @@ impl ReplaceIamInstanceProfileAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseIpamPoolAllocationOutput {
     /// <p>Indicates if the release was successful.</p>
+    #[doc(hidden)]
     pub success: std::option::Option<bool>,
 }
 impl ReleaseIpamPoolAllocationOutput {
@@ -2943,8 +3005,10 @@ impl ReleaseIpamPoolAllocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ReleaseHostsOutput {
@@ -3064,6 +3128,7 @@ impl ReleaseAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectVpcPeeringConnectionOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl RejectVpcPeeringConnectionOutput {
@@ -3118,6 +3183,7 @@ impl RejectVpcPeeringConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectVpcEndpointConnectionsOutput {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl RejectVpcEndpointConnectionsOutput {
@@ -3181,6 +3247,7 @@ impl RejectVpcEndpointConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
@@ -3248,6 +3315,7 @@ impl RejectTransitGatewayVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
@@ -3315,6 +3383,7 @@ impl RejectTransitGatewayPeeringAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Describes the multicast domain associations.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl RejectTransitGatewayMulticastDomainAssociationsOutput {
@@ -3380,6 +3449,7 @@ impl RejectTransitGatewayMulticastDomainAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the transit gateway multicast group sources.</p>
+    #[doc(hidden)]
     pub registered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
 }
@@ -3448,6 +3518,7 @@ impl RegisterTransitGatewayMulticastGroupSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
     /// <p>Information about the registered transit gateway multicast group members.</p>
+    #[doc(hidden)]
     pub registered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
 }
@@ -3516,6 +3587,7 @@ impl RegisterTransitGatewayMulticastGroupMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
+    #[doc(hidden)]
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
 }
 impl RegisterInstanceEventNotificationAttributesOutput {
@@ -3580,6 +3652,7 @@ impl RegisterInstanceEventNotificationAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterImageOutput {
     /// <p>The ID of the newly registered AMI.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl RegisterImageOutput {
@@ -3664,6 +3737,7 @@ impl RebootInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseScheduledInstancesOutput {
     /// <p>Information about the Scheduled Instances.</p>
+    #[doc(hidden)]
     pub scheduled_instance_set: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
 }
 impl PurchaseScheduledInstancesOutput {
@@ -3730,6 +3804,7 @@ impl PurchaseScheduledInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstancesOfferingOutput {
     /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub reserved_instances_id: std::option::Option<std::string::String>,
 }
 impl PurchaseReservedInstancesOfferingOutput {
@@ -3787,14 +3862,19 @@ impl PurchaseReservedInstancesOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseHostReservationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
     /// <p>Describes the details of the purchase.</p>
+    #[doc(hidden)]
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
     /// <p>The total hourly price of the reservation calculated per hour.</p>
+    #[doc(hidden)]
     pub total_hourly_price: std::option::Option<std::string::String>,
     /// <p>The total amount charged to your account when you purchase the reservation.</p>
+    #[doc(hidden)]
     pub total_upfront_price: std::option::Option<std::string::String>,
 }
 impl PurchaseHostReservationOutput {
@@ -3935,8 +4015,10 @@ impl PurchaseHostReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionPublicIpv4PoolCidrOutput {
     /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>Describes an address range of an IPv4 address pool.</p>
+    #[doc(hidden)]
     pub pool_address_range: std::option::Option<crate::model::PublicIpv4PoolRange>,
 }
 impl ProvisionPublicIpv4PoolCidrOutput {
@@ -4011,6 +4093,7 @@ impl ProvisionPublicIpv4PoolCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionIpamPoolCidrOutput {
     /// <p>Information about the provisioned CIDR.</p>
+    #[doc(hidden)]
     pub ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
 }
 impl ProvisionIpamPoolCidrOutput {
@@ -4068,6 +4151,7 @@ impl ProvisionIpamPoolCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl ProvisionByoipCidrOutput {
@@ -4125,6 +4209,7 @@ impl ProvisionByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveByoipCidrToIpamOutput {
     /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl MoveByoipCidrToIpamOutput {
@@ -4182,8 +4267,10 @@ impl MoveByoipCidrToIpamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveAddressToVpcOutput {
     /// <p>The allocation ID for the Elastic IP address.</p>
+    #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The status of the move of the IP address.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl MoveAddressToVpcOutput {
@@ -4258,6 +4345,7 @@ impl MoveAddressToVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
+    #[doc(hidden)]
     pub instance_monitorings: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
 }
 impl MonitorInstancesOutput {
@@ -4322,6 +4410,7 @@ impl MonitorInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpnTunnelOptionsOutput {
     /// <p>Describes a VPN connection.</p>
+    #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnTunnelOptionsOutput {
@@ -4379,6 +4468,7 @@ impl ModifyVpnTunnelOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpnTunnelCertificateOutput {
     /// <p>Describes a VPN connection.</p>
+    #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnTunnelCertificateOutput {
@@ -4436,6 +4526,7 @@ impl ModifyVpnTunnelCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpnConnectionOptionsOutput {
     /// <p>Describes a VPN connection.</p>
+    #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnConnectionOptionsOutput {
@@ -4493,6 +4584,7 @@ impl ModifyVpnConnectionOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpnConnectionOutput {
     /// <p>Describes a VPN connection.</p>
+    #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl ModifyVpnConnectionOutput {
@@ -4550,6 +4642,7 @@ impl ModifyVpnConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcTenancyOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcTenancyOutput {
@@ -4604,9 +4697,11 @@ impl ModifyVpcTenancyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcPeeringConnectionOptionsOutput {
     /// <p>Information about the VPC peering connection options for the accepter VPC.</p>
+    #[doc(hidden)]
     pub accepter_peering_connection_options:
         std::option::Option<crate::model::PeeringConnectionOptions>,
     /// <p>Information about the VPC peering connection options for the requester VPC.</p>
+    #[doc(hidden)]
     pub requester_peering_connection_options:
         std::option::Option<crate::model::PeeringConnectionOptions>,
 }
@@ -4703,6 +4798,7 @@ impl ModifyVpcPeeringConnectionOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointServicePermissionsOutput {
@@ -4757,6 +4853,7 @@ impl ModifyVpcEndpointServicePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointServicePayerResponsibilityOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointServicePayerResponsibilityOutput {
@@ -4812,6 +4909,7 @@ impl ModifyVpcEndpointServicePayerResponsibilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointServiceConfigurationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointServiceConfigurationOutput {
@@ -4866,6 +4964,7 @@ impl ModifyVpcEndpointServiceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointConnectionNotificationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointConnectionNotificationOutput {
@@ -4920,6 +5019,7 @@ impl ModifyVpcEndpointConnectionNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcEndpointOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyVpcEndpointOutput {
@@ -5034,6 +5134,7 @@ impl ModifyVolumeAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVolumeOutput {
     /// <p>Information about the volume modification.</p>
+    #[doc(hidden)]
     pub volume_modification: std::option::Option<crate::model::VolumeModification>,
 }
 impl ModifyVolumeOutput {
@@ -5091,6 +5192,7 @@ impl ModifyVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
@@ -5158,6 +5260,7 @@ impl ModifyTransitGatewayVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the prefix list reference.</p>
+    #[doc(hidden)]
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
 }
@@ -5226,6 +5329,7 @@ impl ModifyTransitGatewayPrefixListReferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTransitGatewayOutput {
     /// <p>Describes a transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
 impl ModifyTransitGatewayOutput {
@@ -5283,6 +5387,7 @@ impl ModifyTransitGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
+    #[doc(hidden)]
     pub traffic_mirror_session: std::option::Option<crate::model::TrafficMirrorSession>,
 }
 impl ModifyTrafficMirrorSessionOutput {
@@ -5342,6 +5447,7 @@ impl ModifyTrafficMirrorSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTrafficMirrorFilterRuleOutput {
     /// <p>Modifies a Traffic Mirror rule.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter_rule: std::option::Option<crate::model::TrafficMirrorFilterRule>,
 }
 impl ModifyTrafficMirrorFilterRuleOutput {
@@ -5408,6 +5514,7 @@ impl ModifyTrafficMirrorFilterRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTrafficMirrorFilterNetworkServicesOutput {
     /// <p>The Traffic Mirror filter that the network service is associated with.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter: std::option::Option<crate::model::TrafficMirrorFilter>,
 }
 impl ModifyTrafficMirrorFilterNetworkServicesOutput {
@@ -5496,6 +5603,7 @@ impl ModifySubnetAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySpotFleetRequestOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifySpotFleetRequestOutput {
@@ -5550,8 +5658,10 @@ impl ModifySpotFleetRequestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotTierOutput {
     /// <p>The ID of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the archive process was started.</p>
+    #[doc(hidden)]
     pub tiering_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModifySnapshotTierOutput {
@@ -5656,6 +5766,7 @@ impl ModifySnapshotAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySecurityGroupRulesOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifySecurityGroupRulesOutput {
@@ -5710,6 +5821,7 @@ impl ModifySecurityGroupRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReservedInstancesOutput {
     /// <p>The ID for the modification.</p>
+    #[doc(hidden)]
     pub reserved_instances_modification_id: std::option::Option<std::string::String>,
 }
 impl ModifyReservedInstancesOutput {
@@ -5773,6 +5885,7 @@ impl ModifyReservedInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyPrivateDnsNameOptionsOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyPrivateDnsNameOptionsOutput {
@@ -5857,6 +5970,7 @@ impl ModifyNetworkInterfaceAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
+    #[doc(hidden)]
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
 impl ModifyManagedPrefixListOutput {
@@ -5914,6 +6028,7 @@ impl ModifyManagedPrefixListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
 }
 impl ModifyLaunchTemplateOutput {
@@ -5971,6 +6086,7 @@ impl ModifyLaunchTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyIpamScopeOutput {
     /// <p>The results of the modification.</p>
+    #[doc(hidden)]
     pub ipam_scope: std::option::Option<crate::model::IpamScope>,
 }
 impl ModifyIpamScopeOutput {
@@ -6028,6 +6144,7 @@ impl ModifyIpamScopeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyIpamResourceCidrOutput {
     /// <p>The CIDR for an IPAM resource.</p>
+    #[doc(hidden)]
     pub ipam_resource_cidr: std::option::Option<crate::model::IpamResourceCidr>,
 }
 impl ModifyIpamResourceCidrOutput {
@@ -6085,6 +6202,7 @@ impl ModifyIpamResourceCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyIpamPoolOutput {
     /// <p>The results of the modification.</p>
+    #[doc(hidden)]
     pub ipam_pool: std::option::Option<crate::model::IpamPool>,
 }
 impl ModifyIpamPoolOutput {
@@ -6139,6 +6257,7 @@ impl ModifyIpamPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyIpamOutput {
     /// <p>The results of the modification.</p>
+    #[doc(hidden)]
     pub ipam: std::option::Option<crate::model::Ipam>,
 }
 impl ModifyIpamOutput {
@@ -6191,6 +6310,7 @@ impl ModifyIpamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstancePlacementOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyInstancePlacementOutput {
@@ -6245,8 +6365,10 @@ impl ModifyInstancePlacementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceMetadataOptionsOutput {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The metadata options for the instance.</p>
+    #[doc(hidden)]
     pub instance_metadata_options:
         std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
 }
@@ -6328,8 +6450,10 @@ impl ModifyInstanceMetadataOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceMaintenanceOptionsOutput {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+    #[doc(hidden)]
     pub auto_recovery: std::option::Option<crate::model::InstanceAutoRecoveryState>,
 }
 impl ModifyInstanceMaintenanceOptionsOutput {
@@ -6404,6 +6528,7 @@ impl ModifyInstanceMaintenanceOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
+    #[doc(hidden)]
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
 impl ModifyInstanceEventWindowOutput {
@@ -6461,6 +6586,7 @@ impl ModifyInstanceEventWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceEventStartTimeOutput {
     /// <p>Describes a scheduled event for an instance.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::InstanceStatusEvent>,
 }
 impl ModifyInstanceEventStartTimeOutput {
@@ -6516,9 +6642,11 @@ impl ModifyInstanceEventStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceCreditSpecificationOutput {
     /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
+    #[doc(hidden)]
     pub successful_instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::SuccessfulInstanceCreditSpecificationItem>>,
     /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
+    #[doc(hidden)]
     pub unsuccessful_instance_credit_specifications: std::option::Option<
         std::vec::Vec<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
     >,
@@ -6640,6 +6768,7 @@ impl ModifyInstanceCreditSpecificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceCapacityReservationAttributesOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyInstanceCapacityReservationAttributesOutput {
@@ -6815,8 +6944,10 @@ impl ModifyIdentityIdFormatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ModifyHostsOutput {
@@ -6906,6 +7037,7 @@ impl ModifyHostsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyFpgaImageAttributeOutput {
     /// <p>Information about the attribute.</p>
+    #[doc(hidden)]
     pub fpga_image_attribute: std::option::Option<crate::model::FpgaImageAttribute>,
 }
 impl ModifyFpgaImageAttributeOutput {
@@ -6963,6 +7095,7 @@ impl ModifyFpgaImageAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyFleetOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyFleetOutput {
@@ -7017,6 +7150,7 @@ impl ModifyFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModifyEbsDefaultKmsKeyIdOutput {
@@ -7071,6 +7205,7 @@ impl ModifyEbsDefaultKmsKeyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
+    #[doc(hidden)]
     pub instance_family_credit_specification:
         std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
 }
@@ -7138,6 +7273,7 @@ impl ModifyDefaultCreditSpecificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClientVpnEndpointOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyClientVpnEndpointOutput {
@@ -7192,6 +7328,7 @@ impl ModifyClientVpnEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCapacityReservationFleetOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyCapacityReservationFleetOutput {
@@ -7246,6 +7383,7 @@ impl ModifyCapacityReservationFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyCapacityReservationOutput {
@@ -7300,6 +7438,7 @@ impl ModifyCapacityReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAvailabilityZoneGroupOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyAvailabilityZoneGroupOutput {
@@ -7354,6 +7493,7 @@ impl ModifyAvailabilityZoneGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAddressAttributeOutput {
     /// <p>Information about the Elastic IP address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::AddressAttribute>,
 }
 impl ModifyAddressAttributeOutput {
@@ -7411,8 +7551,10 @@ impl ModifyAddressAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotsInRecycleBinOutput {
     /// <p>Information about the snapshots.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotRecycleBinInfo>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotsInRecycleBinOutput {
@@ -7494,8 +7636,10 @@ impl ListSnapshotsInRecycleBinOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInRecycleBinOutput {
     /// <p>Information about the AMIs.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::ImageRecycleBinInfo>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagesInRecycleBinOutput {
@@ -7576,6 +7720,7 @@ impl ListImagesInRecycleBinOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportVolumeOutput {
     /// <p>Information about the conversion task.</p>
+    #[doc(hidden)]
     pub conversion_task: std::option::Option<crate::model::ConversionTask>,
 }
 impl ImportVolumeOutput {
@@ -7633,12 +7778,16 @@ impl ImportVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSnapshotOutput {
     /// <p>A description of the import snapshot task.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the import snapshot task.</p>
+    #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>Information about the import snapshot task.</p>
+    #[doc(hidden)]
     pub snapshot_task_detail: std::option::Option<crate::model::SnapshotTaskDetail>,
     /// <p>Any tags assigned to the import snapshot task.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportSnapshotOutput {
@@ -7762,12 +7911,16 @@ pub struct ImportKeyPairOutput {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The key pair name that you provided.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the resulting key pair.</p>
+    #[doc(hidden)]
     pub key_pair_id: std::option::Option<std::string::String>,
     /// <p>The tags applied to the imported key pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportKeyPairOutput {
@@ -7894,6 +8047,7 @@ impl ImportKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportInstanceOutput {
     /// <p>Information about the conversion task.</p>
+    #[doc(hidden)]
     pub conversion_task: std::option::Option<crate::model::ConversionTask>,
 }
 impl ImportInstanceOutput {
@@ -7951,37 +8105,53 @@ impl ImportInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportImageOutput {
     /// <p>The architecture of the virtual machine.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>A description of the import task.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the AMI is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The target hypervisor of the import task.</p>
+    #[doc(hidden)]
     pub hypervisor: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The task ID of the import image task.</p>
+    #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The license type of the virtual machine.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<std::string::String>,
     /// <p>The operating system of the virtual machine.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The progress of the task.</p>
+    #[doc(hidden)]
     pub progress: std::option::Option<std::string::String>,
     /// <p>Information about the snapshots.</p>
+    #[doc(hidden)]
     pub snapshot_details: std::option::Option<std::vec::Vec<crate::model::SnapshotDetail>>,
     /// <p>A brief status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A detailed status message of the import task.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The ARNs of the license configurations.</p>
+    #[doc(hidden)]
     pub license_specifications:
         std::option::Option<std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>>,
     /// <p>Any tags assigned to the import image task.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The usage operation value.</p>
+    #[doc(hidden)]
     pub usage_operation: std::option::Option<std::string::String>,
 }
 impl ImportImageOutput {
@@ -8337,6 +8507,7 @@ impl ImportImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportClientVpnClientCertificateRevocationListOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ImportClientVpnClientCertificateRevocationListOutput {
@@ -8393,9 +8564,11 @@ impl ImportClientVpnClientCertificateRevocationListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpnConnectionDeviceTypesOutput {
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
+    #[doc(hidden)]
     pub vpn_connection_device_types:
         std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetVpnConnectionDeviceTypesOutput {
@@ -8485,6 +8658,7 @@ impl GetVpnConnectionDeviceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpnConnectionDeviceSampleConfigurationOutput {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
+    #[doc(hidden)]
     pub vpn_connection_device_sample_configuration: std::option::Option<std::string::String>,
 }
 impl GetVpnConnectionDeviceSampleConfigurationOutput {
@@ -8551,9 +8725,11 @@ impl GetVpnConnectionDeviceSampleConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRouteTablePropagationsOutput {
     /// <p>Information about the route table propagations.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_propagations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTablePropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRouteTablePropagationsOutput {
@@ -8649,9 +8825,11 @@ impl GetTransitGatewayRouteTablePropagationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRouteTableAssociationsOutput {
     /// <p>Information about the associations.</p>
+    #[doc(hidden)]
     pub associations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTableAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRouteTableAssociationsOutput {
@@ -8741,9 +8919,11 @@ impl GetTransitGatewayRouteTableAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayPrefixListReferencesOutput {
     /// <p>Information about the prefix list references.</p>
+    #[doc(hidden)]
     pub transit_gateway_prefix_list_references:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPrefixListReference>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayPrefixListReferencesOutput {
@@ -8837,6 +9017,7 @@ impl GetTransitGatewayPrefixListReferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayPolicyTableEntriesOutput {
     /// <p>The entries for the transit gateway policy table.</p>
+    #[doc(hidden)]
     pub transit_gateway_policy_table_entries:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableEntry>>,
 }
@@ -8912,9 +9093,11 @@ impl GetTransitGatewayPolicyTableEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayPolicyTableAssociationsOutput {
     /// <p>Returns details about the transit gateway policy table association.</p>
+    #[doc(hidden)]
     pub associations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableAssociation>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayPolicyTableAssociationsOutput {
@@ -9004,9 +9187,11 @@ impl GetTransitGatewayPolicyTableAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
+    #[doc(hidden)]
     pub multicast_domain_associations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastDomainAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayMulticastDomainAssociationsOutput {
@@ -9100,9 +9285,11 @@ impl GetTransitGatewayMulticastDomainAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayAttachmentPropagationsOutput {
     /// <p>Information about the propagation route tables.</p>
+    #[doc(hidden)]
     pub transit_gateway_attachment_propagations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayAttachmentPropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayAttachmentPropagationsOutput {
@@ -9197,12 +9384,15 @@ impl GetTransitGatewayAttachmentPropagationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubnetCidrReservationsOutput {
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
+    #[doc(hidden)]
     pub subnet_ipv4_cidr_reservations:
         std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
+    #[doc(hidden)]
     pub subnet_ipv6_cidr_reservations:
         std::option::Option<std::vec::Vec<crate::model::SubnetCidrReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSubnetCidrReservationsOutput {
@@ -9331,8 +9521,10 @@ pub struct GetSpotPlacementScoresOutput {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
+    #[doc(hidden)]
     pub spot_placement_scores: std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSpotPlacementScoresOutput {
@@ -9428,6 +9620,7 @@ impl GetSpotPlacementScoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
+    #[doc(hidden)]
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl GetSerialConsoleAccessStatusOutput {
@@ -9488,24 +9681,33 @@ impl GetSerialConsoleAccessStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedInstancesExchangeQuoteOutput {
     /// <p>The currency of the transaction.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
+    #[doc(hidden)]
     pub is_valid_exchange: std::option::Option<bool>,
     /// <p>The new end date of the reservation term.</p>
+    #[doc(hidden)]
     pub output_reserved_instances_will_expire_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total true upfront charge for the exchange.</p>
+    #[doc(hidden)]
     pub payment_due: std::option::Option<std::string::String>,
     /// <p>The cost associated with the Reserved Instance.</p>
+    #[doc(hidden)]
     pub reserved_instance_value_rollup: std::option::Option<crate::model::ReservationValue>,
     /// <p>The configuration of your Convertible Reserved Instances.</p>
+    #[doc(hidden)]
     pub reserved_instance_value_set:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstanceReservationValue>>,
     /// <p>The cost associated with the Reserved Instance.</p>
+    #[doc(hidden)]
     pub target_configuration_value_rollup: std::option::Option<crate::model::ReservationValue>,
     /// <p>The values of the target Convertible Reserved Instances.</p>
+    #[doc(hidden)]
     pub target_configuration_value_set:
         std::option::Option<std::vec::Vec<crate::model::TargetReservationValue>>,
     /// <p>Describes the reason why the exchange cannot be completed.</p>
+    #[doc(hidden)]
     pub validation_failure_reason: std::option::Option<std::string::String>,
 }
 impl GetReservedInstancesExchangeQuoteOutput {
@@ -9777,10 +9979,13 @@ impl GetReservedInstancesExchangeQuoteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
+    #[doc(hidden)]
     pub password_data: std::option::Option<std::string::String>,
     /// <p>The time the data was last updated.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPasswordDataOutput {
@@ -9875,6 +10080,7 @@ impl GetPasswordDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkInsightsAccessScopeContentOutput {
     /// <p>The Network Access Scope content.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_content:
         std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
 }
@@ -9942,13 +10148,17 @@ impl GetNetworkInsightsAccessScopeContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
     /// <p>The ID of the Network Access Scope analysis.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
     /// <p>The status of Network Access Scope Analysis.</p>
+    #[doc(hidden)]
     pub analysis_status: std::option::Option<crate::model::AnalysisStatus>,
     /// <p>The findings associated with Network Access Scope Analysis.</p>
+    #[doc(hidden)]
     pub analysis_findings:
         std::option::Option<std::vec::Vec<crate::model::AccessScopeAnalysisFinding>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
@@ -10085,8 +10295,10 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedPrefixListEntriesOutput {
     /// <p>Information about the prefix list entries.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PrefixListEntry>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetManagedPrefixListEntriesOutput {
@@ -10167,9 +10379,11 @@ impl GetManagedPrefixListEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedPrefixListAssociationsOutput {
     /// <p>Information about the associations.</p>
+    #[doc(hidden)]
     pub prefix_list_associations:
         std::option::Option<std::vec::Vec<crate::model::PrefixListAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetManagedPrefixListAssociationsOutput {
@@ -10256,6 +10470,7 @@ impl GetManagedPrefixListAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchTemplateDataOutput {
     /// <p>The instance data.</p>
+    #[doc(hidden)]
     pub launch_template_data: std::option::Option<crate::model::ResponseLaunchTemplateData>,
 }
 impl GetLaunchTemplateDataOutput {
@@ -10319,8 +10534,10 @@ impl GetLaunchTemplateDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpamResourceCidrsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The resource CIDRs.</p>
+    #[doc(hidden)]
     pub ipam_resource_cidrs: std::option::Option<std::vec::Vec<crate::model::IpamResourceCidr>>,
 }
 impl GetIpamResourceCidrsOutput {
@@ -10402,8 +10619,10 @@ impl GetIpamResourceCidrsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpamPoolCidrsOutput {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
+    #[doc(hidden)]
     pub ipam_pool_cidrs: std::option::Option<std::vec::Vec<crate::model::IpamPoolCidr>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIpamPoolCidrsOutput {
@@ -10484,8 +10703,10 @@ impl GetIpamPoolCidrsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
+    #[doc(hidden)]
     pub ipam_pool_allocations: std::option::Option<std::vec::Vec<crate::model::IpamPoolAllocation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIpamPoolAllocationsOutput {
@@ -10569,8 +10790,10 @@ impl GetIpamPoolAllocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpamAddressHistoryOutput {
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
+    #[doc(hidden)]
     pub history_records: std::option::Option<std::vec::Vec<crate::model::IpamAddressHistoryRecord>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIpamAddressHistoryOutput {
@@ -10654,8 +10877,10 @@ impl GetIpamAddressHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceUefiDataOutput {
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+    #[doc(hidden)]
     pub uefi_data: std::option::Option<std::string::String>,
 }
 impl GetInstanceUefiDataOutput {
@@ -10727,9 +10952,11 @@ impl GetInstanceUefiDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceTypesFromInstanceRequirementsOutput {
     /// <p>The instance types with the specified instance attributes.</p>
+    #[doc(hidden)]
     pub instance_types:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInstanceTypesFromInstanceRequirementsOutput {
@@ -10820,12 +11047,16 @@ impl GetInstanceTypesFromInstanceRequirementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostReservationPurchasePreviewOutput {
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
     /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
+    #[doc(hidden)]
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
     /// <p>The potential total hourly price of the reservation per hour.</p>
+    #[doc(hidden)]
     pub total_hourly_price: std::option::Option<std::string::String>,
     /// <p>The potential total upfront price. This is billed immediately.</p>
+    #[doc(hidden)]
     pub total_upfront_price: std::option::Option<std::string::String>,
 }
 impl GetHostReservationPurchasePreviewOutput {
@@ -10949,8 +11180,10 @@ impl GetHostReservationPurchasePreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupsForCapacityReservationOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
+    #[doc(hidden)]
     pub capacity_reservation_groups:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservationGroup>>,
 }
@@ -11041,6 +11274,7 @@ impl GetGroupsForCapacityReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFlowLogsIntegrationTemplateOutput {
     /// <p>The generated CloudFormation template.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl GetFlowLogsIntegrationTemplateOutput {
@@ -11095,6 +11329,7 @@ impl GetFlowLogsIntegrationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsEncryptionByDefaultOutput {
     /// <p>Indicates whether encryption by default is enabled.</p>
+    #[doc(hidden)]
     pub ebs_encryption_by_default: std::option::Option<bool>,
 }
 impl GetEbsEncryptionByDefaultOutput {
@@ -11149,6 +11384,7 @@ impl GetEbsEncryptionByDefaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl GetEbsDefaultKmsKeyIdOutput {
@@ -11203,6 +11439,7 @@ impl GetEbsDefaultKmsKeyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
+    #[doc(hidden)]
     pub instance_family_credit_specification:
         std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
 }
@@ -11270,8 +11507,10 @@ impl GetDefaultCreditSpecificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConsoleScreenshotOutput {
     /// <p>The data that comprises the image.</p>
+    #[doc(hidden)]
     pub image_data: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl GetConsoleScreenshotOutput {
@@ -11343,10 +11582,13 @@ impl GetConsoleScreenshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>The time at which the output was last updated.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetConsoleOutputOutput {
@@ -11438,10 +11680,13 @@ impl GetConsoleOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoipPoolUsageOutput {
     /// <p>The ID of the customer-owned address pool.</p>
+    #[doc(hidden)]
     pub coip_pool_id: std::option::Option<std::string::String>,
     /// <p>Information about the address usage.</p>
+    #[doc(hidden)]
     pub coip_address_usages: std::option::Option<std::vec::Vec<crate::model::CoipAddressUsage>>,
     /// <p>The ID of the local gateway route table.</p>
+    #[doc(hidden)]
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
 }
 impl GetCoipPoolUsageOutput {
@@ -11549,14 +11794,19 @@ impl GetCoipPoolUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCapacityReservationUsageOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Capacity Reservation.</p>
+    #[doc(hidden)]
     pub capacity_reservation_id: std::option::Option<std::string::String>,
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The number of instances for which the Capacity Reservation reserves capacity.</p>
+    #[doc(hidden)]
     pub total_instance_count: std::option::Option<i32>,
     /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
+    #[doc(hidden)]
     pub available_instance_count: std::option::Option<i32>,
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
@@ -11566,8 +11816,10 @@ pub struct GetCapacityReservationUsageOutput {
     /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
+    #[doc(hidden)]
     pub instance_usages: std::option::Option<std::vec::Vec<crate::model::InstanceUsage>>,
 }
 impl GetCapacityReservationUsageOutput {
@@ -11763,9 +12015,11 @@ impl GetCapacityReservationUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedIpv6PoolCidrsOutput {
     /// <p>Information about the IPv6 CIDR block associations.</p>
+    #[doc(hidden)]
     pub ipv6_cidr_associations:
         std::option::Option<std::vec::Vec<crate::model::Ipv6CidrAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAssociatedIpv6PoolCidrsOutput {
@@ -11849,6 +12103,7 @@ impl GetAssociatedIpv6PoolCidrsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedEnclaveCertificateIamRolesOutput {
     /// <p>Information about the associated IAM roles.</p>
+    #[doc(hidden)]
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::AssociatedRole>>,
 }
 impl GetAssociatedEnclaveCertificateIamRolesOutput {
@@ -11914,6 +12169,7 @@ impl GetAssociatedEnclaveCertificateIamRolesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTransitGatewayRoutesOutput {
     /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<std::string::String>,
 }
 impl ExportTransitGatewayRoutesOutput {
@@ -11968,24 +12224,34 @@ impl ExportTransitGatewayRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportImageOutput {
     /// <p>A description of the image being exported.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The disk image format for the exported image.</p>
+    #[doc(hidden)]
     pub disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
     /// <p>The ID of the export image task.</p>
+    #[doc(hidden)]
     pub export_image_task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The percent complete of the export image task.</p>
+    #[doc(hidden)]
     pub progress: std::option::Option<std::string::String>,
     /// <p>Information about the destination Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_export_location: std::option::Option<crate::model::ExportTaskS3Location>,
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The status message for the export image task.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the export image task.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ExportImageOutput {
@@ -12214,6 +12480,7 @@ impl ExportImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportClientVpnClientConfigurationOutput {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
+    #[doc(hidden)]
     pub client_configuration: std::option::Option<std::string::String>,
 }
 impl ExportClientVpnClientConfigurationOutput {
@@ -12271,8 +12538,10 @@ impl ExportClientVpnClientConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportClientVpnClientCertificateRevocationListOutput {
     /// <p>Information about the client certificate revocation list.</p>
+    #[doc(hidden)]
     pub certificate_revocation_list: std::option::Option<std::string::String>,
     /// <p>The current state of the client certificate revocation list.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientCertificateRevocationListStatus>,
 }
 impl ExportClientVpnClientCertificateRevocationListOutput {
@@ -12363,6 +12632,7 @@ impl ExportClientVpnClientCertificateRevocationListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableVpcClassicLinkDnsSupportOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl EnableVpcClassicLinkDnsSupportOutput {
@@ -12417,6 +12687,7 @@ impl EnableVpcClassicLinkDnsSupportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableVpcClassicLinkOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl EnableVpcClassicLinkOutput {
@@ -12531,6 +12802,7 @@ impl EnableVgwRoutePropagationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
+    #[doc(hidden)]
     pub propagation: std::option::Option<crate::model::TransitGatewayPropagation>,
 }
 impl EnableTransitGatewayRouteTablePropagationOutput {
@@ -12589,6 +12861,7 @@ impl EnableTransitGatewayRouteTablePropagationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSerialConsoleAccessOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
+    #[doc(hidden)]
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl EnableSerialConsoleAccessOutput {
@@ -12649,6 +12922,7 @@ impl EnableSerialConsoleAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableIpamOrganizationAdminAccountOutput {
     /// <p>The result of enabling the IPAM account.</p>
+    #[doc(hidden)]
     pub success: std::option::Option<bool>,
 }
 impl EnableIpamOrganizationAdminAccountOutput {
@@ -12703,6 +12977,7 @@ impl EnableIpamOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableImageDeprecationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl EnableImageDeprecationOutput {
@@ -12757,9 +13032,11 @@ impl EnableImageDeprecationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
+    #[doc(hidden)]
     pub successful:
         std::option::Option<std::vec::Vec<crate::model::EnableFastSnapshotRestoreSuccessItem>>,
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
+    #[doc(hidden)]
     pub unsuccessful:
         std::option::Option<std::vec::Vec<crate::model::EnableFastSnapshotRestoreErrorItem>>,
 }
@@ -12866,24 +13143,33 @@ impl EnableFastSnapshotRestoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableFastLaunchOutput {
     /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
     /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    #[doc(hidden)]
     pub snapshot_configuration:
         std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
     /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+    #[doc(hidden)]
     pub launch_template:
         std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
     /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::FastLaunchStateCode>,
     /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    #[doc(hidden)]
     pub state_transition_reason: std::option::Option<std::string::String>,
     /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    #[doc(hidden)]
     pub state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnableFastLaunchOutput {
@@ -13104,6 +13390,7 @@ impl EnableFastLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
+    #[doc(hidden)]
     pub ebs_encryption_by_default: std::option::Option<bool>,
 }
 impl EnableEbsEncryptionByDefaultOutput {
@@ -13158,10 +13445,13 @@ impl EnableEbsEncryptionByDefaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateVpcCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
+    #[doc(hidden)]
     pub ipv6_cidr_block_association: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
     /// <p>Information about the IPv4 CIDR block association.</p>
+    #[doc(hidden)]
     pub cidr_block_association: std::option::Option<crate::model::VpcCidrBlockAssociation>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl DisassociateVpcCidrBlockOutput {
@@ -13271,8 +13561,10 @@ impl DisassociateVpcCidrBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTrunkInterfaceOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateTrunkInterfaceOutput {
@@ -13344,6 +13636,7 @@ impl DisassociateTrunkInterfaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayRouteTableOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::TransitGatewayAssociation>,
 }
 impl DisassociateTransitGatewayRouteTableOutput {
@@ -13401,6 +13694,7 @@ impl DisassociateTransitGatewayRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayPolicyTableOutput {
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
 }
 impl DisassociateTransitGatewayPolicyTableOutput {
@@ -13464,6 +13758,7 @@ impl DisassociateTransitGatewayPolicyTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl DisassociateTransitGatewayMulticastDomainOutput {
@@ -13528,9 +13823,11 @@ impl DisassociateTransitGatewayMulticastDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSubnetCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
+    #[doc(hidden)]
     pub ipv6_cidr_block_association:
         std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl DisassociateSubnetCidrBlockOutput {
@@ -13644,6 +13941,7 @@ impl DisassociateRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
+    #[doc(hidden)]
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
 impl DisassociateInstanceEventWindowOutput {
@@ -13701,6 +13999,7 @@ impl DisassociateInstanceEventWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
 }
@@ -13768,6 +14067,7 @@ impl DisassociateIamInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEnclaveCertificateIamRoleOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DisassociateEnclaveCertificateIamRoleOutput {
@@ -13822,8 +14122,10 @@ impl DisassociateEnclaveCertificateIamRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientVpnTargetNetworkOutput {
     /// <p>The ID of the target network association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The current state of the target network association.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssociationStatus>,
 }
 impl DisassociateClientVpnTargetNetworkOutput {
@@ -13931,6 +14233,7 @@ impl DisassociateAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableVpcClassicLinkDnsSupportOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DisableVpcClassicLinkDnsSupportOutput {
@@ -13985,6 +14288,7 @@ impl DisableVpcClassicLinkDnsSupportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableVpcClassicLinkOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DisableVpcClassicLinkOutput {
@@ -14069,6 +14373,7 @@ impl DisableVgwRoutePropagationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
+    #[doc(hidden)]
     pub propagation: std::option::Option<crate::model::TransitGatewayPropagation>,
 }
 impl DisableTransitGatewayRouteTablePropagationOutput {
@@ -14127,6 +14432,7 @@ impl DisableTransitGatewayRouteTablePropagationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSerialConsoleAccessOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
+    #[doc(hidden)]
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl DisableSerialConsoleAccessOutput {
@@ -14187,6 +14493,7 @@ impl DisableSerialConsoleAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableIpamOrganizationAdminAccountOutput {
     /// <p>The result of disabling the IPAM account.</p>
+    #[doc(hidden)]
     pub success: std::option::Option<bool>,
 }
 impl DisableIpamOrganizationAdminAccountOutput {
@@ -14241,6 +14548,7 @@ impl DisableIpamOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableImageDeprecationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DisableImageDeprecationOutput {
@@ -14295,9 +14603,11 @@ impl DisableImageDeprecationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
+    #[doc(hidden)]
     pub successful:
         std::option::Option<std::vec::Vec<crate::model::DisableFastSnapshotRestoreSuccessItem>>,
     /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
+    #[doc(hidden)]
     pub unsuccessful:
         std::option::Option<std::vec::Vec<crate::model::DisableFastSnapshotRestoreErrorItem>>,
 }
@@ -14404,24 +14714,33 @@ impl DisableFastSnapshotRestoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableFastLaunchOutput {
     /// <p>The ID of the image for which faster-launching has been turned off.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
     /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
+    #[doc(hidden)]
     pub snapshot_configuration:
         std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
     /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
+    #[doc(hidden)]
     pub launch_template:
         std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
     /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::FastLaunchStateCode>,
     /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    #[doc(hidden)]
     pub state_transition_reason: std::option::Option<std::string::String>,
     /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    #[doc(hidden)]
     pub state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DisableFastLaunchOutput {
@@ -14642,6 +14961,7 @@ impl DisableFastLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
+    #[doc(hidden)]
     pub ebs_encryption_by_default: std::option::Option<bool>,
 }
 impl DisableEbsEncryptionByDefaultOutput {
@@ -14726,16 +15046,22 @@ impl DetachVpnGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
+    #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The attachment state of the volume.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VolumeAttachmentState>,
     /// <p>The ID of the volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
 }
 impl DetachVolumeOutput {
@@ -14941,6 +15267,7 @@ impl DetachInternetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachClassicLinkVpcOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DetachClassicLinkVpcOutput {
@@ -14995,6 +15322,7 @@ impl DetachClassicLinkVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
+    #[doc(hidden)]
     pub vpn_gateways: std::option::Option<std::vec::Vec<crate::model::VpnGateway>>,
 }
 impl DescribeVpnGatewaysOutput {
@@ -15058,6 +15386,7 @@ impl DescribeVpnGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpnConnectionsOutput {
     /// <p>Information about one or more VPN connections.</p>
+    #[doc(hidden)]
     pub vpn_connections: std::option::Option<std::vec::Vec<crate::model::VpnConnection>>,
 }
 impl DescribeVpnConnectionsOutput {
@@ -15121,8 +15450,10 @@ impl DescribeVpnConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcsOutput {
     /// <p>Information about one or more VPCs.</p>
+    #[doc(hidden)]
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcsOutput {
@@ -15203,9 +15534,11 @@ impl DescribeVpcsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>Information about the VPC peering connections.</p>
+    #[doc(hidden)]
     pub vpc_peering_connections:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcPeeringConnectionsOutput {
@@ -15292,10 +15625,13 @@ impl DescribeVpcPeeringConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointServicesOutput {
     /// <p>A list of supported services.</p>
+    #[doc(hidden)]
     pub service_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the service.</p>
+    #[doc(hidden)]
     pub service_details: std::option::Option<std::vec::Vec<crate::model::ServiceDetail>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServicesOutput {
@@ -15402,8 +15738,10 @@ impl DescribeVpcEndpointServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointServicePermissionsOutput {
     /// <p>Information about one or more allowed principals.</p>
+    #[doc(hidden)]
     pub allowed_principals: std::option::Option<std::vec::Vec<crate::model::AllowedPrincipal>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServicePermissionsOutput {
@@ -15485,9 +15823,11 @@ impl DescribeVpcEndpointServicePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about one or more services.</p>
+    #[doc(hidden)]
     pub service_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServiceConfigurationsOutput {
@@ -15572,8 +15912,10 @@ impl DescribeVpcEndpointServiceConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointsOutput {
     /// <p>Information about the endpoints.</p>
+    #[doc(hidden)]
     pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointsOutput {
@@ -15654,9 +15996,11 @@ impl DescribeVpcEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointConnectionsOutput {
     /// <p>Information about one or more VPC endpoint connections.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_connections:
         std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionsOutput {
@@ -15743,9 +16087,11 @@ impl DescribeVpcEndpointConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>One or more notifications.</p>
+    #[doc(hidden)]
     pub connection_notification_set:
         std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
@@ -15836,8 +16182,10 @@ impl DescribeVpcEndpointConnectionNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcClassicLinkDnsSupportOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+    #[doc(hidden)]
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::ClassicLinkDnsSupport>>,
 }
 impl DescribeVpcClassicLinkDnsSupportOutput {
@@ -15918,6 +16266,7 @@ impl DescribeVpcClassicLinkDnsSupportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcClassicLinkOutput {
     /// <p>The ClassicLink status of one or more VPCs.</p>
+    #[doc(hidden)]
     pub vpcs: std::option::Option<std::vec::Vec<crate::model::VpcClassicLink>>,
 }
 impl DescribeVpcClassicLinkOutput {
@@ -15979,10 +16328,13 @@ impl DescribeVpcClassicLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcAttributeOutput {
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+    #[doc(hidden)]
     pub enable_dns_hostnames: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
+    #[doc(hidden)]
     pub enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeVpcAttributeOutput {
@@ -16079,8 +16431,10 @@ impl DescribeVpcAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumeStatusOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the status of the volumes.</p>
+    #[doc(hidden)]
     pub volume_statuses: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
 }
 impl DescribeVolumeStatusOutput {
@@ -16162,8 +16516,10 @@ impl DescribeVolumeStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
+    #[doc(hidden)]
     pub volumes_modifications: std::option::Option<std::vec::Vec<crate::model::VolumeModification>>,
     /// <p>Token for pagination, null if there are no more results </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesModificationsOutput {
@@ -16247,8 +16603,10 @@ impl DescribeVolumesModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesOutput {
     /// <p>Information about the volumes.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesOutput {
@@ -16329,10 +16687,13 @@ impl DescribeVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumeAttributeOutput {
     /// <p>The state of <code>autoEnableIO</code> attribute.</p>
+    #[doc(hidden)]
     pub auto_enable_io: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>A list of product codes.</p>
+    #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The ID of the volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl DescribeVolumeAttributeOutput {
@@ -16433,9 +16794,11 @@ impl DescribeVolumeAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrunkInterfaceAssociationsOutput {
     /// <p>Information about the trunk associations.</p>
+    #[doc(hidden)]
     pub interface_associations:
         std::option::Option<std::vec::Vec<crate::model::TrunkInterfaceAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrunkInterfaceAssociationsOutput {
@@ -16522,9 +16885,11 @@ impl DescribeTrunkInterfaceAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayVpcAttachmentsOutput {
     /// <p>Information about the VPC attachments.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachments:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayVpcAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayVpcAttachmentsOutput {
@@ -16614,8 +16979,10 @@ impl DescribeTransitGatewayVpcAttachmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewaysOutput {
     /// <p>Information about the transit gateways.</p>
+    #[doc(hidden)]
     pub transit_gateways: std::option::Option<std::vec::Vec<crate::model::TransitGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewaysOutput {
@@ -16697,9 +17064,11 @@ impl DescribeTransitGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayRouteTablesOutput {
     /// <p>Information about the transit gateway route tables.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_tables:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayRouteTablesOutput {
@@ -16789,9 +17158,11 @@ impl DescribeTransitGatewayRouteTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsOutput {
     /// <p>Describes the transit gateway route table announcement.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_announcements:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTableAnnouncement>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
@@ -16887,9 +17258,11 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayPolicyTablesOutput {
     /// <p>Describes the transit gateway policy tables.</p>
+    #[doc(hidden)]
     pub transit_gateway_policy_tables:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTable>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayPolicyTablesOutput {
@@ -16979,9 +17352,11 @@ impl DescribeTransitGatewayPolicyTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayPeeringAttachmentsOutput {
     /// <p>The transit gateway peering attachments.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering_attachments:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayPeeringAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayPeeringAttachmentsOutput {
@@ -17074,9 +17449,11 @@ impl DescribeTransitGatewayPeeringAttachmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayMulticastDomainsOutput {
     /// <p>Information about the transit gateway multicast domains.</p>
+    #[doc(hidden)]
     pub transit_gateway_multicast_domains:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastDomain>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayMulticastDomainsOutput {
@@ -17166,9 +17543,11 @@ impl DescribeTransitGatewayMulticastDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayConnectsOutput {
     /// <p>Information about the Connect attachments.</p>
+    #[doc(hidden)]
     pub transit_gateway_connects:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnect>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayConnectsOutput {
@@ -17255,9 +17634,11 @@ impl DescribeTransitGatewayConnectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayConnectPeersOutput {
     /// <p>Information about the Connect peers.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peers:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeer>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayConnectPeersOutput {
@@ -17347,9 +17728,11 @@ impl DescribeTransitGatewayConnectPeersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayAttachmentsOutput {
     /// <p>Information about the attachments.</p>
+    #[doc(hidden)]
     pub transit_gateway_attachments:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTransitGatewayAttachmentsOutput {
@@ -17439,9 +17822,11 @@ impl DescribeTransitGatewayAttachmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrafficMirrorTargetsOutput {
     /// <p>Information about one or more Traffic Mirror targets.</p>
+    #[doc(hidden)]
     pub traffic_mirror_targets:
         std::option::Option<std::vec::Vec<crate::model::TrafficMirrorTarget>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrafficMirrorTargetsOutput {
@@ -17525,9 +17910,11 @@ impl DescribeTrafficMirrorTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrafficMirrorSessionsOutput {
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
+    #[doc(hidden)]
     pub traffic_mirror_sessions:
         std::option::Option<std::vec::Vec<crate::model::TrafficMirrorSession>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrafficMirrorSessionsOutput {
@@ -17614,9 +18001,11 @@ impl DescribeTrafficMirrorSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrafficMirrorFiltersOutput {
     /// <p>Information about one or more Traffic Mirror filters.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filters:
         std::option::Option<std::vec::Vec<crate::model::TrafficMirrorFilter>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrafficMirrorFiltersOutput {
@@ -17700,8 +18089,10 @@ impl DescribeTrafficMirrorFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
@@ -17782,8 +18173,10 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubnetsOutput {
     /// <p>Information about one or more subnets.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubnetsOutput {
@@ -17864,9 +18257,11 @@ impl DescribeSubnetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
+    #[doc(hidden)]
     pub store_image_task_results:
         std::option::Option<std::vec::Vec<crate::model::StoreImageTaskResult>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStoreImageTasksOutput {
@@ -17953,8 +18348,10 @@ impl DescribeStoreImageTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStaleSecurityGroupsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the stale security groups.</p>
+    #[doc(hidden)]
     pub stale_security_group_set:
         std::option::Option<std::vec::Vec<crate::model::StaleSecurityGroup>>,
 }
@@ -18039,8 +18436,10 @@ impl DescribeStaleSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotPriceHistoryOutput {
     /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The historical Spot prices.</p>
+    #[doc(hidden)]
     pub spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
 }
 impl DescribeSpotPriceHistoryOutput {
@@ -18121,9 +18520,11 @@ impl DescribeSpotPriceHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
+    #[doc(hidden)]
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSpotInstanceRequestsOutput {
@@ -18207,8 +18608,10 @@ impl DescribeSpotInstanceRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetRequestsOutput {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the configuration of your Spot Fleet.</p>
+    #[doc(hidden)]
     pub spot_fleet_request_configs:
         std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
 }
@@ -18299,15 +18702,20 @@ impl DescribeSpotFleetRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
+    #[doc(hidden)]
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    #[doc(hidden)]
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
+    #[doc(hidden)]
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSpotFleetRequestHistoryOutput {
@@ -18451,10 +18859,13 @@ impl DescribeSpotFleetRequestHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetInstancesOutput {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+    #[doc(hidden)]
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
+    #[doc(hidden)]
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpotFleetInstancesOutput {
@@ -18556,6 +18967,7 @@ impl DescribeSpotFleetInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
+    #[doc(hidden)]
     pub spot_datafeed_subscription: std::option::Option<crate::model::SpotDatafeedSubscription>,
 }
 impl DescribeSpotDatafeedSubscriptionOutput {
@@ -18622,9 +19034,11 @@ impl DescribeSpotDatafeedSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotTierStatusOutput {
     /// <p>Information about the snapshot's storage tier.</p>
+    #[doc(hidden)]
     pub snapshot_tier_statuses:
         std::option::Option<std::vec::Vec<crate::model::SnapshotTierStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotTierStatusOutput {
@@ -18708,8 +19122,10 @@ impl DescribeSnapshotTierStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
@@ -18790,11 +19206,14 @@ impl DescribeSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotAttributeOutput {
     /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    #[doc(hidden)]
     pub create_volume_permissions:
         std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
     /// <p>The product codes.</p>
+    #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The ID of the EBS snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotAttributeOutput {
@@ -18907,8 +19326,10 @@ impl DescribeSnapshotAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityGroupsOutput {
     /// <p>Information about the security groups.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityGroupsOutput {
@@ -18989,8 +19410,10 @@ impl DescribeSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityGroupRulesOutput {
     /// <p>Information about security group rules.</p>
+    #[doc(hidden)]
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityGroupRulesOutput {
@@ -19072,6 +19495,7 @@ impl DescribeSecurityGroupRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
+    #[doc(hidden)]
     pub security_group_reference_set:
         std::option::Option<std::vec::Vec<crate::model::SecurityGroupReference>>,
 }
@@ -19145,8 +19569,10 @@ impl DescribeSecurityGroupReferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledInstancesOutput {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the Scheduled Instances.</p>
+    #[doc(hidden)]
     pub scheduled_instance_set: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
 }
 impl DescribeScheduledInstancesOutput {
@@ -19230,8 +19656,10 @@ impl DescribeScheduledInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledInstanceAvailabilityOutput {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the available Scheduled Instances.</p>
+    #[doc(hidden)]
     pub scheduled_instance_availability_set:
         std::option::Option<std::vec::Vec<crate::model::ScheduledInstanceAvailability>>,
 }
@@ -19322,8 +19750,10 @@ impl DescribeScheduledInstanceAvailabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteTablesOutput {
     /// <p>Information about one or more route tables.</p>
+    #[doc(hidden)]
     pub route_tables: std::option::Option<std::vec::Vec<crate::model::RouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRouteTablesOutput {
@@ -19404,9 +19834,11 @@ impl DescribeRouteTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
+    #[doc(hidden)]
     pub reserved_instances_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesOffering>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedInstancesOfferingsOutput {
@@ -19496,8 +19928,10 @@ impl DescribeReservedInstancesOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesModificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
+    #[doc(hidden)]
     pub reserved_instances_modifications:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
 }
@@ -19588,6 +20022,7 @@ impl DescribeReservedInstancesModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesListingsOutput {
     /// <p>Information about the Reserved Instance listing.</p>
+    #[doc(hidden)]
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
 }
@@ -19661,6 +20096,7 @@ impl DescribeReservedInstancesListingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
+    #[doc(hidden)]
     pub reserved_instances: std::option::Option<std::vec::Vec<crate::model::ReservedInstances>>,
 }
 impl DescribeReservedInstancesOutput {
@@ -19725,9 +20161,11 @@ impl DescribeReservedInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplaceRootVolumeTasksOutput {
     /// <p>Information about the root volume replacement task.</p>
+    #[doc(hidden)]
     pub replace_root_volume_tasks:
         std::option::Option<std::vec::Vec<crate::model::ReplaceRootVolumeTask>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplaceRootVolumeTasksOutput {
@@ -19814,6 +20252,7 @@ impl DescribeReplaceRootVolumeTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionsOutput {
     /// <p>Information about the Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
 }
 impl DescribeRegionsOutput {
@@ -19877,8 +20316,10 @@ impl DescribeRegionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublicIpv4PoolsOutput {
     /// <p>Information about the address pools.</p>
+    #[doc(hidden)]
     pub public_ipv4_pools: std::option::Option<std::vec::Vec<crate::model::PublicIpv4Pool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePublicIpv4PoolsOutput {
@@ -19960,8 +20401,10 @@ impl DescribePublicIpv4PoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePrincipalIdFormatOutput {
     /// <p>Information about the ID format settings for the ARN.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::PrincipalIdFormat>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePrincipalIdFormatOutput {
@@ -20042,8 +20485,10 @@ impl DescribePrincipalIdFormatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePrefixListsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>All available prefix lists.</p>
+    #[doc(hidden)]
     pub prefix_lists: std::option::Option<std::vec::Vec<crate::model::PrefixList>>,
 }
 impl DescribePrefixListsOutput {
@@ -20124,6 +20569,7 @@ impl DescribePrefixListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlacementGroupsOutput {
     /// <p>Information about the placement groups.</p>
+    #[doc(hidden)]
     pub placement_groups: std::option::Option<std::vec::Vec<crate::model::PlacementGroup>>,
 }
 impl DescribePlacementGroupsOutput {
@@ -20188,8 +20634,10 @@ impl DescribePlacementGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInterfacesOutput {
     /// <p>Information about one or more network interfaces.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInterfacesOutput {
@@ -20271,9 +20719,11 @@ impl DescribeNetworkInterfacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
+    #[doc(hidden)]
     pub network_interface_permissions:
         std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePermission>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInterfacePermissionsOutput {
@@ -20363,14 +20813,19 @@ impl DescribeNetworkInterfacePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInterfaceAttributeOutput {
     /// <p>The attachment (if any) of the network interface.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::NetworkInterfaceAttachment>,
     /// <p>The description of the network interface.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::AttributeValue>,
     /// <p>The security groups associated with the network interface.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
+    #[doc(hidden)]
     pub source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeNetworkInterfaceAttributeOutput {
@@ -20514,9 +20969,11 @@ impl DescribeNetworkInterfaceAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInsightsPathsOutput {
     /// <p>Information about the paths.</p>
+    #[doc(hidden)]
     pub network_insights_paths:
         std::option::Option<std::vec::Vec<crate::model::NetworkInsightsPath>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInsightsPathsOutput {
@@ -20600,9 +21057,11 @@ impl DescribeNetworkInsightsPathsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInsightsAnalysesOutput {
     /// <p>Information about the network insights analyses.</p>
+    #[doc(hidden)]
     pub network_insights_analyses:
         std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAnalysis>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInsightsAnalysesOutput {
@@ -20689,9 +21148,11 @@ impl DescribeNetworkInsightsAnalysesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInsightsAccessScopesOutput {
     /// <p>The Network Access Scopes.</p>
+    #[doc(hidden)]
     pub network_insights_access_scopes:
         std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScope>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInsightsAccessScopesOutput {
@@ -20781,9 +21242,11 @@ impl DescribeNetworkInsightsAccessScopesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesOutput {
     /// <p>The Network Access Scope analyses.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_analyses:
         std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScopeAnalysis>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
@@ -20878,8 +21341,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkAclsOutput {
     /// <p>Information about one or more network ACLs.</p>
+    #[doc(hidden)]
     pub network_acls: std::option::Option<std::vec::Vec<crate::model::NetworkAcl>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNetworkAclsOutput {
@@ -20960,8 +21425,10 @@ impl DescribeNetworkAclsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNatGatewaysOutput {
     /// <p>Information about the NAT gateways.</p>
+    #[doc(hidden)]
     pub nat_gateways: std::option::Option<std::vec::Vec<crate::model::NatGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNatGatewaysOutput {
@@ -21042,9 +21509,11 @@ impl DescribeNatGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMovingAddressesOutput {
     /// <p>The status for each Elastic IP address.</p>
+    #[doc(hidden)]
     pub moving_address_statuses:
         std::option::Option<std::vec::Vec<crate::model::MovingAddressStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMovingAddressesOutput {
@@ -21128,8 +21597,10 @@ impl DescribeMovingAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedPrefixListsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the prefix lists.</p>
+    #[doc(hidden)]
     pub prefix_lists: std::option::Option<std::vec::Vec<crate::model::ManagedPrefixList>>,
 }
 impl DescribeManagedPrefixListsOutput {
@@ -21211,9 +21682,11 @@ impl DescribeManagedPrefixListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewayVirtualInterfacesOutput {
     /// <p>Information about the virtual interfaces.</p>
+    #[doc(hidden)]
     pub local_gateway_virtual_interfaces:
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterface>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewayVirtualInterfacesOutput {
@@ -21303,9 +21776,11 @@ impl DescribeLocalGatewayVirtualInterfacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewayVirtualInterfaceGroupsOutput {
     /// <p>The virtual interface groups.</p>
+    #[doc(hidden)]
     pub local_gateway_virtual_interface_groups:
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterfaceGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewayVirtualInterfaceGroupsOutput {
@@ -21400,8 +21875,10 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewaysOutput {
     /// <p>Information about the local gateways.</p>
+    #[doc(hidden)]
     pub local_gateways: std::option::Option<std::vec::Vec<crate::model::LocalGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewaysOutput {
@@ -21482,9 +21959,11 @@ impl DescribeLocalGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewayRouteTableVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
+    #[doc(hidden)]
     pub local_gateway_route_table_vpc_associations:
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayRouteTableVpcAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewayRouteTableVpcAssociationsOutput {
@@ -21581,10 +22060,12 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     /// <p>Information about the associations.</p>
+    #[doc(hidden)]
     pub local_gateway_route_table_virtual_interface_group_associations: std::option::Option<
         std::vec::Vec<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
     >,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
@@ -21687,9 +22168,11 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocalGatewayRouteTablesOutput {
     /// <p>Information about the local gateway route tables.</p>
+    #[doc(hidden)]
     pub local_gateway_route_tables:
         std::option::Option<std::vec::Vec<crate::model::LocalGatewayRouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLocalGatewayRouteTablesOutput {
@@ -21779,9 +22262,11 @@ impl DescribeLocalGatewayRouteTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
+    #[doc(hidden)]
     pub launch_template_versions:
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateVersion>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplateVersionsOutput {
@@ -21868,8 +22353,10 @@ impl DescribeLaunchTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchTemplatesOutput {
     /// <p>Information about the launch templates.</p>
+    #[doc(hidden)]
     pub launch_templates: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplatesOutput {
@@ -21951,6 +22438,7 @@ impl DescribeLaunchTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyPairsOutput {
     /// <p>Information about the key pairs.</p>
+    #[doc(hidden)]
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPairInfo>>,
 }
 impl DescribeKeyPairsOutput {
@@ -22014,8 +22502,10 @@ impl DescribeKeyPairsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpv6PoolsOutput {
     /// <p>Information about the IPv6 address pools.</p>
+    #[doc(hidden)]
     pub ipv6_pools: std::option::Option<std::vec::Vec<crate::model::Ipv6Pool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeIpv6PoolsOutput {
@@ -22096,8 +22586,10 @@ impl DescribeIpv6PoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpamScopesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The scopes you want information on.</p>
+    #[doc(hidden)]
     pub ipam_scopes: std::option::Option<std::vec::Vec<crate::model::IpamScope>>,
 }
 impl DescribeIpamScopesOutput {
@@ -22178,8 +22670,10 @@ impl DescribeIpamScopesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpamsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the IPAMs.</p>
+    #[doc(hidden)]
     pub ipams: std::option::Option<std::vec::Vec<crate::model::Ipam>>,
 }
 impl DescribeIpamsOutput {
@@ -22260,8 +22754,10 @@ impl DescribeIpamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpamPoolsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the IPAM pools.</p>
+    #[doc(hidden)]
     pub ipam_pools: std::option::Option<std::vec::Vec<crate::model::IpamPool>>,
 }
 impl DescribeIpamPoolsOutput {
@@ -22342,8 +22838,10 @@ impl DescribeIpamPoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInternetGatewaysOutput {
     /// <p>Information about one or more internet gateways.</p>
+    #[doc(hidden)]
     pub internet_gateways: std::option::Option<std::vec::Vec<crate::model::InternetGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInternetGatewaysOutput {
@@ -22425,8 +22923,10 @@ impl DescribeInternetGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfo>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypesOutput {
@@ -22508,9 +23008,11 @@ impl DescribeInstanceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceTypeOfferingsOutput {
     /// <p>The instance types offered.</p>
+    #[doc(hidden)]
     pub instance_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeOffering>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypeOfferingsOutput {
@@ -22597,8 +23099,10 @@ impl DescribeInstanceTypeOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceStatusOutput {
     /// <p>Information about the status of the instances.</p>
+    #[doc(hidden)]
     pub instance_statuses: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceStatusOutput {
@@ -22680,8 +23184,10 @@ impl DescribeInstanceStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesOutput {
     /// <p>Information about the reservations.</p>
+    #[doc(hidden)]
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesOutput {
@@ -22762,9 +23268,11 @@ impl DescribeInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceEventWindowsOutput {
     /// <p>Information about the event windows.</p>
+    #[doc(hidden)]
     pub instance_event_windows:
         std::option::Option<std::vec::Vec<crate::model::InstanceEventWindow>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceEventWindowsOutput {
@@ -22848,6 +23356,7 @@ impl DescribeInstanceEventWindowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceEventNotificationAttributesOutput {
     /// <p>Information about the registered tag keys.</p>
+    #[doc(hidden)]
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
 }
 impl DescribeInstanceEventNotificationAttributesOutput {
@@ -22912,9 +23421,11 @@ impl DescribeInstanceEventNotificationAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
+    #[doc(hidden)]
     pub instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::InstanceCreditSpecification>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceCreditSpecificationsOutput {
@@ -23004,39 +23515,56 @@ impl DescribeInstanceCreditSpecificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAttributeOutput {
     /// <p>The security groups associated with the instance.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The block device mapping of the instance.</p>
+    #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+    #[doc(hidden)]
     pub disable_api_termination: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
+    #[doc(hidden)]
     pub ena_support: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    #[doc(hidden)]
     pub enclave_options: std::option::Option<crate::model::EnclaveOptions>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: std::option::Option<crate::model::AttributeValue>,
     /// <p>The instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::AttributeValue>,
     /// <p>The kernel ID.</p>
+    #[doc(hidden)]
     pub kernel_id: std::option::Option<crate::model::AttributeValue>,
     /// <p>A list of product codes.</p>
+    #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The RAM disk ID.</p>
+    #[doc(hidden)]
     pub ramdisk_id: std::option::Option<crate::model::AttributeValue>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
+    #[doc(hidden)]
     pub root_device_name: std::option::Option<crate::model::AttributeValue>,
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
+    #[doc(hidden)]
     pub source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
+    #[doc(hidden)]
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The user data.</p>
+    #[doc(hidden)]
     pub user_data: std::option::Option<crate::model::AttributeValue>,
     /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+    #[doc(hidden)]
     pub disable_api_stop: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeInstanceAttributeOutput {
@@ -23450,8 +23978,10 @@ impl DescribeInstanceAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportSnapshotTasksOutput {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
+    #[doc(hidden)]
     pub import_snapshot_tasks: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportSnapshotTasksOutput {
@@ -23535,8 +24065,10 @@ impl DescribeImportSnapshotTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportImageTasksOutput {
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
+    #[doc(hidden)]
     pub import_image_tasks: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportImageTasksOutput {
@@ -23618,6 +24150,7 @@ impl DescribeImportImageTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesOutput {
     /// <p>Information about the images.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
 }
 impl DescribeImagesOutput {
@@ -23681,30 +24214,42 @@ impl DescribeImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageAttributeOutput {
     /// <p>The block device mapping entries.</p>
+    #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>The ID of the AMI.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The launch permissions.</p>
+    #[doc(hidden)]
     pub launch_permissions: std::option::Option<std::vec::Vec<crate::model::LaunchPermission>>,
     /// <p>The product codes.</p>
+    #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>A description for the AMI.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::AttributeValue>,
     /// <p>The kernel ID.</p>
+    #[doc(hidden)]
     pub kernel_id: std::option::Option<crate::model::AttributeValue>,
     /// <p>The RAM disk ID.</p>
+    #[doc(hidden)]
     pub ramdisk_id: std::option::Option<crate::model::AttributeValue>,
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
+    #[doc(hidden)]
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The boot mode.</p>
+    #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::model::AttributeValue>,
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
+    #[doc(hidden)]
     pub tpm_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub uefi_data: std::option::Option<crate::model::AttributeValue>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
+    #[doc(hidden)]
     pub last_launched_time: std::option::Option<crate::model::AttributeValue>,
 }
 impl DescribeImageAttributeOutput {
@@ -24007,6 +24552,7 @@ impl DescribeImageAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdFormatOutput {
     /// <p>Information about the ID format for the resource.</p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
 impl DescribeIdFormatOutput {
@@ -24070,6 +24616,7 @@ impl DescribeIdFormatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityIdFormatOutput {
     /// <p>Information about the ID format for the resources.</p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
 impl DescribeIdentityIdFormatOutput {
@@ -24133,9 +24680,11 @@ impl DescribeIdentityIdFormatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamInstanceProfileAssociationsOutput {
     /// <p>Information about the IAM instance profile associations.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_associations:
         std::option::Option<std::vec::Vec<crate::model::IamInstanceProfileAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeIamInstanceProfileAssociationsOutput {
@@ -24225,8 +24774,10 @@ impl DescribeIamInstanceProfileAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHostsOutput {
     /// <p>Information about the Dedicated Hosts.</p>
+    #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<crate::model::Host>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeHostsOutput {
@@ -24307,8 +24858,10 @@ impl DescribeHostsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHostReservationsOutput {
     /// <p>Details about the reservation's configuration.</p>
+    #[doc(hidden)]
     pub host_reservation_set: std::option::Option<std::vec::Vec<crate::model::HostReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeHostReservationsOutput {
@@ -24390,8 +24943,10 @@ impl DescribeHostReservationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHostReservationOfferingsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the offerings.</p>
+    #[doc(hidden)]
     pub offering_set: std::option::Option<std::vec::Vec<crate::model::HostOffering>>,
 }
 impl DescribeHostReservationOfferingsOutput {
@@ -24472,8 +25027,10 @@ impl DescribeHostReservationOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFpgaImagesOutput {
     /// <p>Information about the FPGA images.</p>
+    #[doc(hidden)]
     pub fpga_images: std::option::Option<std::vec::Vec<crate::model::FpgaImage>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFpgaImagesOutput {
@@ -24554,6 +25111,7 @@ impl DescribeFpgaImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFpgaImageAttributeOutput {
     /// <p>Information about the attribute.</p>
+    #[doc(hidden)]
     pub fpga_image_attribute: std::option::Option<crate::model::FpgaImageAttribute>,
 }
 impl DescribeFpgaImageAttributeOutput {
@@ -24611,8 +25169,10 @@ impl DescribeFpgaImageAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowLogsOutput {
     /// <p>Information about the flow logs.</p>
+    #[doc(hidden)]
     pub flow_logs: std::option::Option<std::vec::Vec<crate::model::FlowLog>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFlowLogsOutput {
@@ -24693,8 +25253,10 @@ impl DescribeFlowLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetsOutput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the EC2 Fleets.</p>
+    #[doc(hidden)]
     pub fleets: std::option::Option<std::vec::Vec<crate::model::FleetData>>,
 }
 impl DescribeFleetsOutput {
@@ -24775,10 +25337,13 @@ impl DescribeFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInstancesOutput {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+    #[doc(hidden)]
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 Fleet.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl DescribeFleetInstancesOutput {
@@ -24877,15 +25442,20 @@ impl DescribeFleetInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
+    #[doc(hidden)]
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    #[doc(hidden)]
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC Fleet.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeFleetHistoryOutput {
@@ -25027,9 +25597,11 @@ impl DescribeFleetHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFastSnapshotRestoresOutput {
     /// <p>Information about the state of fast snapshot restores.</p>
+    #[doc(hidden)]
     pub fast_snapshot_restores:
         std::option::Option<std::vec::Vec<crate::model::DescribeFastSnapshotRestoreSuccessItem>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFastSnapshotRestoresOutput {
@@ -25119,9 +25691,11 @@ impl DescribeFastSnapshotRestoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFastLaunchImagesOutput {
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
+    #[doc(hidden)]
     pub fast_launch_images:
         std::option::Option<std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>>,
     /// <p>The token to use for the next set of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFastLaunchImagesOutput {
@@ -25210,6 +25784,7 @@ impl DescribeFastLaunchImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportTasksOutput {
     /// <p>Information about the export tasks.</p>
+    #[doc(hidden)]
     pub export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
 }
 impl DescribeExportTasksOutput {
@@ -25273,8 +25848,10 @@ impl DescribeExportTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportImageTasksOutput {
     /// <p>Information about the export image tasks.</p>
+    #[doc(hidden)]
     pub export_image_tasks: std::option::Option<std::vec::Vec<crate::model::ExportImageTask>>,
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportImageTasksOutput {
@@ -25356,10 +25933,13 @@ impl DescribeExportImageTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticGpusOutput {
     /// <p>Information about the Elastic Graphics accelerators.</p>
+    #[doc(hidden)]
     pub elastic_gpu_set: std::option::Option<std::vec::Vec<crate::model::ElasticGpus>>,
     /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeElasticGpusOutput {
@@ -25457,9 +26037,11 @@ impl DescribeElasticGpusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEgressOnlyInternetGatewaysOutput {
     /// <p>Information about the egress-only internet gateways.</p>
+    #[doc(hidden)]
     pub egress_only_internet_gateways:
         std::option::Option<std::vec::Vec<crate::model::EgressOnlyInternetGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEgressOnlyInternetGatewaysOutput {
@@ -25549,8 +26131,10 @@ impl DescribeEgressOnlyInternetGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDhcpOptionsOutput {
     /// <p>Information about one or more DHCP options sets.</p>
+    #[doc(hidden)]
     pub dhcp_options: std::option::Option<std::vec::Vec<crate::model::DhcpOptions>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDhcpOptionsOutput {
@@ -25631,6 +26215,7 @@ impl DescribeDhcpOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
+    #[doc(hidden)]
     pub customer_gateways: std::option::Option<std::vec::Vec<crate::model::CustomerGateway>>,
 }
 impl DescribeCustomerGatewaysOutput {
@@ -25695,6 +26280,7 @@ impl DescribeCustomerGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConversionTasksOutput {
     /// <p>Information about the conversion tasks.</p>
+    #[doc(hidden)]
     pub conversion_tasks: std::option::Option<std::vec::Vec<crate::model::ConversionTask>>,
 }
 impl DescribeConversionTasksOutput {
@@ -25759,8 +26345,10 @@ impl DescribeConversionTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCoipPoolsOutput {
     /// <p>Information about the address pools.</p>
+    #[doc(hidden)]
     pub coip_pools: std::option::Option<std::vec::Vec<crate::model::CoipPool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCoipPoolsOutput {
@@ -25841,8 +26429,10 @@ impl DescribeCoipPoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientVpnTargetNetworksOutput {
     /// <p>Information about the associated target networks.</p>
+    #[doc(hidden)]
     pub client_vpn_target_networks: std::option::Option<std::vec::Vec<crate::model::TargetNetwork>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientVpnTargetNetworksOutput {
@@ -25929,8 +26519,10 @@ impl DescribeClientVpnTargetNetworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientVpnRoutesOutput {
     /// <p>Information about the Client VPN endpoint routes.</p>
+    #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::ClientVpnRoute>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientVpnRoutesOutput {
@@ -26011,8 +26603,10 @@ impl DescribeClientVpnRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientVpnEndpointsOutput {
     /// <p>Information about the Client VPN endpoints.</p>
+    #[doc(hidden)]
     pub client_vpn_endpoints: std::option::Option<std::vec::Vec<crate::model::ClientVpnEndpoint>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientVpnEndpointsOutput {
@@ -26094,8 +26688,10 @@ impl DescribeClientVpnEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientVpnConnectionsOutput {
     /// <p>Information about the active and terminated client connections.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::ClientVpnConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientVpnConnectionsOutput {
@@ -26177,8 +26773,10 @@ impl DescribeClientVpnConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientVpnAuthorizationRulesOutput {
     /// <p>Information about the authorization rules.</p>
+    #[doc(hidden)]
     pub authorization_rules: std::option::Option<std::vec::Vec<crate::model::AuthorizationRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientVpnAuthorizationRulesOutput {
@@ -26260,8 +26858,10 @@ impl DescribeClientVpnAuthorizationRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClassicLinkInstancesOutput {
     /// <p>Information about one or more linked EC2-Classic instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::ClassicLinkInstance>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClassicLinkInstancesOutput {
@@ -26342,8 +26942,10 @@ impl DescribeClassicLinkInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCarrierGatewaysOutput {
     /// <p>Information about the carrier gateway.</p>
+    #[doc(hidden)]
     pub carrier_gateways: std::option::Option<std::vec::Vec<crate::model::CarrierGateway>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCarrierGatewaysOutput {
@@ -26425,8 +27027,10 @@ impl DescribeCarrierGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCapacityReservationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the Capacity Reservations.</p>
+    #[doc(hidden)]
     pub capacity_reservations:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservation>>,
 }
@@ -26511,9 +27115,11 @@ impl DescribeCapacityReservationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCapacityReservationFleetsOutput {
     /// <p>Information about the Capacity Reservation Fleets.</p>
+    #[doc(hidden)]
     pub capacity_reservation_fleets:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleet>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCapacityReservationFleetsOutput {
@@ -26603,8 +27209,10 @@ impl DescribeCapacityReservationFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
+    #[doc(hidden)]
     pub byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeByoipCidrsOutput {
@@ -26685,6 +27293,7 @@ impl DescribeByoipCidrsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBundleTasksOutput {
     /// <p>Information about the bundle tasks.</p>
+    #[doc(hidden)]
     pub bundle_tasks: std::option::Option<std::vec::Vec<crate::model::BundleTask>>,
 }
 impl DescribeBundleTasksOutput {
@@ -26748,6 +27357,7 @@ impl DescribeBundleTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityZonesOutput {
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
 }
 impl DescribeAvailabilityZonesOutput {
@@ -26812,8 +27422,10 @@ impl DescribeAvailabilityZonesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateIdFormatOutput {
     /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
+    #[doc(hidden)]
     pub use_long_ids_aggregated: std::option::Option<bool>,
     /// <p>Information about each resource's ID format.</p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
 impl DescribeAggregateIdFormatOutput {
@@ -26894,8 +27506,10 @@ impl DescribeAggregateIdFormatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressesAttributeOutput {
     /// <p>Information about the IP addresses.</p>
+    #[doc(hidden)]
     pub addresses: std::option::Option<std::vec::Vec<crate::model::AddressAttribute>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddressesAttributeOutput {
@@ -26976,6 +27590,7 @@ impl DescribeAddressesAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressesOutput {
     /// <p>Information about the Elastic IP addresses.</p>
+    #[doc(hidden)]
     pub addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
 }
 impl DescribeAddressesOutput {
@@ -27039,6 +27654,7 @@ impl DescribeAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>Information about the account attributes.</p>
+    #[doc(hidden)]
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
 }
 impl DescribeAccountAttributesOutput {
@@ -27103,6 +27719,7 @@ impl DescribeAccountAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the deregistered group sources.</p>
+    #[doc(hidden)]
     pub deregistered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupSources>,
 }
@@ -27173,6 +27790,7 @@ impl DeregisterTransitGatewayMulticastGroupSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTransitGatewayMulticastGroupMembersOutput {
     /// <p>Information about the deregistered members.</p>
+    #[doc(hidden)]
     pub deregistered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupMembers>,
 }
@@ -27243,6 +27861,7 @@ impl DeregisterTransitGatewayMulticastGroupMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
+    #[doc(hidden)]
     pub instance_tag_attribute: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
 }
 impl DeregisterInstanceEventNotificationAttributesOutput {
@@ -27337,8 +27956,10 @@ impl DeregisterImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionPublicIpv4PoolCidrOutput {
     /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The deprovisioned CIDRs.</p>
+    #[doc(hidden)]
     pub deprovisioned_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeprovisionPublicIpv4PoolCidrOutput {
@@ -27419,6 +28040,7 @@ impl DeprovisionPublicIpv4PoolCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionIpamPoolCidrOutput {
     /// <p>The deprovisioned pool CIDR.</p>
+    #[doc(hidden)]
     pub ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
 }
 impl DeprovisionIpamPoolCidrOutput {
@@ -27476,6 +28098,7 @@ impl DeprovisionIpamPoolCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl DeprovisionByoipCidrOutput {
@@ -27623,6 +28246,7 @@ impl DeleteVpnConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcPeeringConnectionOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DeleteVpcPeeringConnectionOutput {
@@ -27677,6 +28301,7 @@ impl DeleteVpcPeeringConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointServiceConfigurationsOutput {
@@ -27740,6 +28365,7 @@ impl DeleteVpcEndpointServiceConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointsOutput {
     /// <p>Information about the VPC endpoints that were not successfully deleted.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointsOutput {
@@ -27803,6 +28429,7 @@ impl DeleteVpcEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointConnectionNotificationsOutput {
     /// <p>Information about the notifications that could not be deleted successfully.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointConnectionNotificationsOutput {
@@ -27927,6 +28554,7 @@ impl DeleteVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the deleted VPC attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
@@ -27994,6 +28622,7 @@ impl DeleteTransitGatewayVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about a deleted transit gateway route table.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_announcement:
         std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
 }
@@ -28063,6 +28692,7 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayRouteTableOutput {
     /// <p>Information about the deleted transit gateway route table.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
 }
 impl DeleteTransitGatewayRouteTableOutput {
@@ -28129,6 +28759,7 @@ impl DeleteTransitGatewayRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayRouteOutput {
     /// <p>Information about the route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
 impl DeleteTransitGatewayRouteOutput {
@@ -28184,6 +28815,7 @@ impl DeleteTransitGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the deleted prefix list reference.</p>
+    #[doc(hidden)]
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
 }
@@ -28252,6 +28884,7 @@ impl DeleteTransitGatewayPrefixListReferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayPolicyTableOutput {
     /// <p>Provides details about the deleted transit gateway policy table.</p>
+    #[doc(hidden)]
     pub transit_gateway_policy_table: std::option::Option<crate::model::TransitGatewayPolicyTable>,
 }
 impl DeleteTransitGatewayPolicyTableOutput {
@@ -28318,6 +28951,7 @@ impl DeleteTransitGatewayPolicyTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
@@ -28385,6 +29019,7 @@ impl DeleteTransitGatewayPeeringAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayMulticastDomainOutput {
     /// <p>Information about the deleted transit gateway multicast domain.</p>
+    #[doc(hidden)]
     pub transit_gateway_multicast_domain:
         std::option::Option<crate::model::TransitGatewayMulticastDomain>,
 }
@@ -28452,6 +29087,7 @@ impl DeleteTransitGatewayMulticastDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayConnectPeerOutput {
     /// <p>Information about the deleted Connect peer.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer: std::option::Option<crate::model::TransitGatewayConnectPeer>,
 }
 impl DeleteTransitGatewayConnectPeerOutput {
@@ -28518,6 +29154,7 @@ impl DeleteTransitGatewayConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayConnectOutput {
     /// <p>Information about the deleted Connect attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect: std::option::Option<crate::model::TransitGatewayConnect>,
 }
 impl DeleteTransitGatewayConnectOutput {
@@ -28581,6 +29218,7 @@ impl DeleteTransitGatewayConnectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayOutput {
     /// <p>Information about the deleted transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
 impl DeleteTransitGatewayOutput {
@@ -28638,6 +29276,7 @@ impl DeleteTransitGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficMirrorTargetOutput {
     /// <p>The ID of the deleted Traffic Mirror target.</p>
+    #[doc(hidden)]
     pub traffic_mirror_target_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficMirrorTargetOutput {
@@ -28695,6 +29334,7 @@ impl DeleteTrafficMirrorTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficMirrorSessionOutput {
     /// <p>The ID of the deleted Traffic Mirror session.</p>
+    #[doc(hidden)]
     pub traffic_mirror_session_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficMirrorSessionOutput {
@@ -28752,6 +29392,7 @@ impl DeleteTrafficMirrorSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficMirrorFilterRuleOutput {
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficMirrorFilterRuleOutput {
@@ -28815,6 +29456,7 @@ impl DeleteTrafficMirrorFilterRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficMirrorFilterOutput {
     /// <p>The ID of the Traffic Mirror filter.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficMirrorFilterOutput {
@@ -28902,6 +29544,7 @@ impl DeleteTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetCidrReservationOutput {
     /// <p>Information about the deleted subnet CIDR reservation.</p>
+    #[doc(hidden)]
     pub deleted_subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
 }
 impl DeleteSubnetCidrReservationOutput {
@@ -29148,9 +29791,11 @@ impl DeleteRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueuedReservedInstancesOutput {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
+    #[doc(hidden)]
     pub successful_queued_purchase_deletions:
         std::option::Option<std::vec::Vec<crate::model::SuccessfulQueuedPurchaseDeletion>>,
     /// <p>Information about the queued purchases that could not be deleted.</p>
+    #[doc(hidden)]
     pub failed_queued_purchase_deletions:
         std::option::Option<std::vec::Vec<crate::model::FailedQueuedPurchaseDeletion>>,
 }
@@ -29263,6 +29908,7 @@ impl DeleteQueuedReservedInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicIpv4PoolOutput {
     /// <p>Information about the result of deleting the public IPv4 pool.</p>
+    #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
 }
 impl DeletePublicIpv4PoolOutput {
@@ -29347,6 +29993,7 @@ impl DeletePlacementGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkInterfacePermissionOutput {
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DeleteNetworkInterfacePermissionOutput {
@@ -29431,6 +30078,7 @@ impl DeleteNetworkInterfaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkInsightsPathOutput {
     /// <p>The ID of the path.</p>
+    #[doc(hidden)]
     pub network_insights_path_id: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkInsightsPathOutput {
@@ -29488,6 +30136,7 @@ impl DeleteNetworkInsightsPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkInsightsAnalysisOutput {
     /// <p>The ID of the network insights analysis.</p>
+    #[doc(hidden)]
     pub network_insights_analysis_id: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkInsightsAnalysisOutput {
@@ -29551,6 +30200,7 @@ impl DeleteNetworkInsightsAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The ID of the Network Access Scope analysis.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
@@ -29617,6 +30267,7 @@ impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkInsightsAccessScopeOutput {
     /// <p>The ID of the Network Access Scope.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_id: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkInsightsAccessScopeOutput {
@@ -29740,6 +30391,7 @@ impl DeleteNetworkAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNatGatewayOutput {
     /// <p>The ID of the NAT gateway.</p>
+    #[doc(hidden)]
     pub nat_gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteNatGatewayOutput {
@@ -29797,6 +30449,7 @@ impl DeleteNatGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
+    #[doc(hidden)]
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
 impl DeleteManagedPrefixListOutput {
@@ -29854,6 +30507,7 @@ impl DeleteManagedPrefixListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub local_gateway_route_table_vpc_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
 }
@@ -29923,6 +30577,7 @@ impl DeleteLocalGatewayRouteTableVpcAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::LocalGatewayRoute>,
 }
 impl DeleteLocalGatewayRouteOutput {
@@ -29978,10 +30633,12 @@ impl DeleteLocalGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
+    #[doc(hidden)]
     pub successfully_deleted_launch_template_versions: std::option::Option<
         std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
     >,
     /// <p>Information about the launch template versions that could not be deleted.</p>
+    #[doc(hidden)]
     pub unsuccessfully_deleted_launch_template_versions: std::option::Option<
         std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
     >,
@@ -30105,6 +30762,7 @@ impl DeleteLaunchTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
 }
 impl DeleteLaunchTemplateOutput {
@@ -30192,6 +30850,7 @@ impl DeleteKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpamScopeOutput {
     /// <p>Information about the results of the deletion.</p>
+    #[doc(hidden)]
     pub ipam_scope: std::option::Option<crate::model::IpamScope>,
 }
 impl DeleteIpamScopeOutput {
@@ -30249,6 +30908,7 @@ impl DeleteIpamScopeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpamPoolOutput {
     /// <p>Information about the results of the deletion.</p>
+    #[doc(hidden)]
     pub ipam_pool: std::option::Option<crate::model::IpamPool>,
 }
 impl DeleteIpamPoolOutput {
@@ -30303,6 +30963,7 @@ impl DeleteIpamPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpamOutput {
     /// <p>Information about the results of the deletion.</p>
+    #[doc(hidden)]
     pub ipam: std::option::Option<crate::model::Ipam>,
 }
 impl DeleteIpamOutput {
@@ -30385,6 +31046,7 @@ impl DeleteInternetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceEventWindowOutput {
     /// <p>The state of the event window.</p>
+    #[doc(hidden)]
     pub instance_event_window_state:
         std::option::Option<crate::model::InstanceEventWindowStateChange>,
 }
@@ -30452,6 +31114,7 @@ impl DeleteInstanceEventWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFpgaImageOutput {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl DeleteFpgaImageOutput {
@@ -30506,6 +31169,7 @@ impl DeleteFpgaImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowLogsOutput {
     /// <p>Information about the flow logs that could not be deleted successfully.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteFlowLogsOutput {
@@ -30569,9 +31233,11 @@ impl DeleteFlowLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
+    #[doc(hidden)]
     pub successful_fleet_deletions:
         std::option::Option<std::vec::Vec<crate::model::DeleteFleetSuccessItem>>,
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
+    #[doc(hidden)]
     pub unsuccessful_fleet_deletions:
         std::option::Option<std::vec::Vec<crate::model::DeleteFleetErrorItem>>,
 }
@@ -30680,6 +31346,7 @@ impl DeleteFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEgressOnlyInternetGatewayOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub return_code: std::option::Option<bool>,
 }
 impl DeleteEgressOnlyInternetGatewayOutput {
@@ -30794,6 +31461,7 @@ impl DeleteCustomerGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnRouteStatus>,
 }
 impl DeleteClientVpnRouteOutput {
@@ -30851,6 +31519,7 @@ impl DeleteClientVpnRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientVpnEndpointOutput {
     /// <p>The current state of the Client VPN endpoint.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnEndpointStatus>,
 }
 impl DeleteClientVpnEndpointOutput {
@@ -30908,6 +31577,7 @@ impl DeleteClientVpnEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCarrierGatewayOutput {
     /// <p>Information about the carrier gateway.</p>
+    #[doc(hidden)]
     pub carrier_gateway: std::option::Option<crate::model::CarrierGateway>,
 }
 impl DeleteCarrierGatewayOutput {
@@ -30965,6 +31635,7 @@ impl DeleteCarrierGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
+    #[doc(hidden)]
     pub vpn_gateway: std::option::Option<crate::model::VpnGateway>,
 }
 impl CreateVpnGatewayOutput {
@@ -31052,6 +31723,7 @@ impl CreateVpnConnectionRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpnConnectionOutput {
     /// <p>Information about the VPN connection.</p>
+    #[doc(hidden)]
     pub vpn_connection: std::option::Option<crate::model::VpnConnection>,
 }
 impl CreateVpnConnectionOutput {
@@ -31109,6 +31781,7 @@ impl CreateVpnConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringConnectionOutput {
     /// <p>Information about the VPC peering connection.</p>
+    #[doc(hidden)]
     pub vpc_peering_connection: std::option::Option<crate::model::VpcPeeringConnection>,
 }
 impl CreateVpcPeeringConnectionOutput {
@@ -31168,8 +31841,10 @@ impl CreateVpcPeeringConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcEndpointServiceConfigurationOutput {
     /// <p>Information about the service configuration.</p>
+    #[doc(hidden)]
     pub service_configuration: std::option::Option<crate::model::ServiceConfiguration>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointServiceConfigurationOutput {
@@ -31246,8 +31921,10 @@ impl CreateVpcEndpointServiceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcEndpointConnectionNotificationOutput {
     /// <p>Information about the notification.</p>
+    #[doc(hidden)]
     pub connection_notification: std::option::Option<crate::model::ConnectionNotification>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointConnectionNotificationOutput {
@@ -31328,8 +32005,10 @@ impl CreateVpcEndpointConnectionNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcEndpointOutput {
     /// <p>Information about the endpoint.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointOutput {
@@ -31404,6 +32083,7 @@ impl CreateVpcEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcOutput {
     /// <p>Information about the VPC.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl CreateVpcOutput {
@@ -31456,36 +32136,52 @@ impl CreateVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumeOutput {
     /// <p>Information about the volume attachments.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::VolumeAttachment>>,
     /// <p>The Availability Zone for the volume.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when volume creation was initiated.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiBs.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i32>,
     /// <p>The snapshot from which the volume was created, if applicable.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The volume state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VolumeState>,
     /// <p>The ID of the volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The volume type.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
+    #[doc(hidden)]
     pub fast_restored: std::option::Option<bool>,
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+    #[doc(hidden)]
     pub multi_attach_enabled: std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
+    #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
 impl CreateVolumeOutput {
@@ -31822,6 +32518,7 @@ impl CreateVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the VPC attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
@@ -31889,6 +32586,7 @@ impl CreateTransitGatewayVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about the transit gateway route table announcement.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_announcement:
         std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
 }
@@ -31958,6 +32656,7 @@ impl CreateTransitGatewayRouteTableAnnouncementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteTableOutput {
     /// <p>Information about the transit gateway route table.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
 }
 impl CreateTransitGatewayRouteTableOutput {
@@ -32024,6 +32723,7 @@ impl CreateTransitGatewayRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteOutput {
     /// <p>Information about the route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::TransitGatewayRoute>,
 }
 impl CreateTransitGatewayRouteOutput {
@@ -32079,6 +32779,7 @@ impl CreateTransitGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the prefix list reference.</p>
+    #[doc(hidden)]
     pub transit_gateway_prefix_list_reference:
         std::option::Option<crate::model::TransitGatewayPrefixListReference>,
 }
@@ -32147,6 +32848,7 @@ impl CreateTransitGatewayPrefixListReferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayPolicyTableOutput {
     /// <p>Describes the created transit gateway policy table.</p>
+    #[doc(hidden)]
     pub transit_gateway_policy_table: std::option::Option<crate::model::TransitGatewayPolicyTable>,
 }
 impl CreateTransitGatewayPolicyTableOutput {
@@ -32213,6 +32915,7 @@ impl CreateTransitGatewayPolicyTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
@@ -32280,6 +32983,7 @@ impl CreateTransitGatewayPeeringAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the transit gateway multicast domain.</p>
+    #[doc(hidden)]
     pub transit_gateway_multicast_domain:
         std::option::Option<crate::model::TransitGatewayMulticastDomain>,
 }
@@ -32347,6 +33051,7 @@ impl CreateTransitGatewayMulticastDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayConnectPeerOutput {
     /// <p>Information about the Connect peer.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer: std::option::Option<crate::model::TransitGatewayConnectPeer>,
 }
 impl CreateTransitGatewayConnectPeerOutput {
@@ -32413,6 +33118,7 @@ impl CreateTransitGatewayConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayConnectOutput {
     /// <p>Information about the Connect attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect: std::option::Option<crate::model::TransitGatewayConnect>,
 }
 impl CreateTransitGatewayConnectOutput {
@@ -32476,6 +33182,7 @@ impl CreateTransitGatewayConnectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayOutput {
     /// <p>Information about the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway: std::option::Option<crate::model::TransitGateway>,
 }
 impl CreateTransitGatewayOutput {
@@ -32533,8 +33240,10 @@ impl CreateTransitGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficMirrorTargetOutput {
     /// <p>Information about the Traffic Mirror target.</p>
+    #[doc(hidden)]
     pub traffic_mirror_target: std::option::Option<crate::model::TrafficMirrorTarget>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTrafficMirrorTargetOutput {
@@ -32609,8 +33318,10 @@ impl CreateTrafficMirrorTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
+    #[doc(hidden)]
     pub traffic_mirror_session: std::option::Option<crate::model::TrafficMirrorSession>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTrafficMirrorSessionOutput {
@@ -32687,8 +33398,10 @@ impl CreateTrafficMirrorSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficMirrorFilterRuleOutput {
     /// <p>The Traffic Mirror rule.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter_rule: std::option::Option<crate::model::TrafficMirrorFilterRule>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTrafficMirrorFilterRuleOutput {
@@ -32772,8 +33485,10 @@ impl CreateTrafficMirrorFilterRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficMirrorFilterOutput {
     /// <p>Information about the Traffic Mirror filter.</p>
+    #[doc(hidden)]
     pub traffic_mirror_filter: std::option::Option<crate::model::TrafficMirrorFilter>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTrafficMirrorFilterOutput {
@@ -32878,6 +33593,7 @@ impl CreateTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetCidrReservationOutput {
     /// <p>Information about the created subnet CIDR reservation.</p>
+    #[doc(hidden)]
     pub subnet_cidr_reservation: std::option::Option<crate::model::SubnetCidrReservation>,
 }
 impl CreateSubnetCidrReservationOutput {
@@ -32941,6 +33657,7 @@ impl CreateSubnetCidrReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetOutput {
     /// <p>Information about the subnet.</p>
+    #[doc(hidden)]
     pub subnet: std::option::Option<crate::model::Subnet>,
 }
 impl CreateSubnetOutput {
@@ -32995,6 +33712,7 @@ impl CreateSubnetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStoreImageTaskOutput {
     /// <p>The name of the stored AMI object in the S3 bucket.</p>
+    #[doc(hidden)]
     pub object_key: std::option::Option<std::string::String>,
 }
 impl CreateStoreImageTaskOutput {
@@ -33049,6 +33767,7 @@ impl CreateStoreImageTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
+    #[doc(hidden)]
     pub spot_datafeed_subscription: std::option::Option<crate::model::SpotDatafeedSubscription>,
 }
 impl CreateSpotDatafeedSubscriptionOutput {
@@ -33115,6 +33834,7 @@ impl CreateSpotDatafeedSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotsOutput {
     /// <p>List of snapshots.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotInfo>>,
 }
 impl CreateSnapshotsOutput {
@@ -33178,38 +33898,55 @@ impl CreateSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    #[doc(hidden)]
     pub data_encryption_key_id: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
+    #[doc(hidden)]
     pub progress: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The time stamp when the snapshot was initiated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The snapshot state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SnapshotState>,
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    #[doc(hidden)]
     pub state_message: std::option::Option<std::string::String>,
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
     /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    #[doc(hidden)]
     pub owner_alias: std::option::Option<std::string::String>,
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
+    #[doc(hidden)]
     pub storage_tier: std::option::Option<crate::model::StorageTier>,
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
+    #[doc(hidden)]
     pub restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSnapshotOutput {
@@ -33563,8 +34300,10 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityGroupOutput {
     /// <p>The ID of the security group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the security group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSecurityGroupOutput {
@@ -33645,6 +34384,7 @@ impl CreateSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteTableOutput {
     /// <p>Information about the route table.</p>
+    #[doc(hidden)]
     pub route_table: std::option::Option<crate::model::RouteTable>,
 }
 impl CreateRouteTableOutput {
@@ -33702,6 +34442,7 @@ impl CreateRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl CreateRouteOutput {
@@ -33756,6 +34497,7 @@ impl CreateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRestoreImageTaskOutput {
     /// <p>The AMI ID.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl CreateRestoreImageTaskOutput {
@@ -33810,6 +34552,7 @@ impl CreateRestoreImageTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReservedInstancesListingOutput {
     /// <p>Information about the Standard Reserved Instance listing.</p>
+    #[doc(hidden)]
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
 }
@@ -33883,6 +34626,7 @@ impl CreateReservedInstancesListingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplaceRootVolumeTaskOutput {
     /// <p>Information about the root volume replacement task.</p>
+    #[doc(hidden)]
     pub replace_root_volume_task: std::option::Option<crate::model::ReplaceRootVolumeTask>,
 }
 impl CreateReplaceRootVolumeTaskOutput {
@@ -33946,6 +34690,7 @@ impl CreateReplaceRootVolumeTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicIpv4PoolOutput {
     /// <p>The ID of the public IPv4 pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
 }
 impl CreatePublicIpv4PoolOutput {
@@ -34000,6 +34745,7 @@ impl CreatePublicIpv4PoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlacementGroupOutput {
     /// <p>Describes a placement group.</p>
+    #[doc(hidden)]
     pub placement_group: std::option::Option<crate::model::PlacementGroup>,
 }
 impl CreatePlacementGroupOutput {
@@ -34057,6 +34803,7 @@ impl CreatePlacementGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInterfacePermissionOutput {
     /// <p>Information about the permission for the network interface.</p>
+    #[doc(hidden)]
     pub interface_permission: std::option::Option<crate::model::NetworkInterfacePermission>,
 }
 impl CreateNetworkInterfacePermissionOutput {
@@ -34120,8 +34867,10 @@ impl CreateNetworkInterfacePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInterfaceOutput {
     /// <p>Information about the network interface.</p>
+    #[doc(hidden)]
     pub network_interface: std::option::Option<crate::model::NetworkInterface>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateNetworkInterfaceOutput {
@@ -34196,6 +34945,7 @@ impl CreateNetworkInterfaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInsightsPathOutput {
     /// <p>Information about the path.</p>
+    #[doc(hidden)]
     pub network_insights_path: std::option::Option<crate::model::NetworkInsightsPath>,
 }
 impl CreateNetworkInsightsPathOutput {
@@ -34253,9 +35003,11 @@ impl CreateNetworkInsightsPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInsightsAccessScopeOutput {
     /// <p>The Network Access Scope.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope:
         std::option::Option<crate::model::NetworkInsightsAccessScope>,
     /// <p>The Network Access Scope content.</p>
+    #[doc(hidden)]
     pub network_insights_access_scope_content:
         std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
 }
@@ -34382,6 +35134,7 @@ impl CreateNetworkAclEntryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
+    #[doc(hidden)]
     pub network_acl: std::option::Option<crate::model::NetworkAcl>,
 }
 impl CreateNetworkAclOutput {
@@ -34439,8 +35192,10 @@ impl CreateNetworkAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNatGatewayOutput {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Information about the NAT gateway.</p>
+    #[doc(hidden)]
     pub nat_gateway: std::option::Option<crate::model::NatGateway>,
 }
 impl CreateNatGatewayOutput {
@@ -34515,6 +35270,7 @@ impl CreateNatGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
+    #[doc(hidden)]
     pub prefix_list: std::option::Option<crate::model::ManagedPrefixList>,
 }
 impl CreateManagedPrefixListOutput {
@@ -34572,6 +35328,7 @@ impl CreateManagedPrefixListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub local_gateway_route_table_vpc_association:
         std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
 }
@@ -34641,6 +35398,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::LocalGatewayRoute>,
 }
 impl CreateLocalGatewayRouteOutput {
@@ -34696,8 +35454,10 @@ impl CreateLocalGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchTemplateVersionOutput {
     /// <p>Information about the launch template version.</p>
+    #[doc(hidden)]
     pub launch_template_version: std::option::Option<crate::model::LaunchTemplateVersion>,
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
+    #[doc(hidden)]
     pub warning: std::option::Option<crate::model::ValidationWarning>,
 }
 impl CreateLaunchTemplateVersionOutput {
@@ -34781,8 +35541,10 @@ impl CreateLaunchTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
+    #[doc(hidden)]
     pub warning: std::option::Option<crate::model::ValidationWarning>,
 }
 impl CreateLaunchTemplateOutput {
@@ -34863,14 +35625,19 @@ pub struct CreateKeyPairOutput {
     /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
+    #[doc(hidden)]
     pub key_material: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The ID of the key pair.</p>
+    #[doc(hidden)]
     pub key_pair_id: std::option::Option<std::string::String>,
     /// <p>Any tags applied to the key pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateKeyPairOutput {
@@ -35014,6 +35781,7 @@ impl CreateKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpamScopeOutput {
     /// <p>Information about the created scope.</p>
+    #[doc(hidden)]
     pub ipam_scope: std::option::Option<crate::model::IpamScope>,
 }
 impl CreateIpamScopeOutput {
@@ -35071,6 +35839,7 @@ impl CreateIpamScopeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpamPoolOutput {
     /// <p>Information about the IPAM pool created.</p>
+    #[doc(hidden)]
     pub ipam_pool: std::option::Option<crate::model::IpamPool>,
 }
 impl CreateIpamPoolOutput {
@@ -35125,6 +35894,7 @@ impl CreateIpamPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpamOutput {
     /// <p>Information about the IPAM created.</p>
+    #[doc(hidden)]
     pub ipam: std::option::Option<crate::model::Ipam>,
 }
 impl CreateIpamOutput {
@@ -35177,6 +35947,7 @@ impl CreateIpamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInternetGatewayOutput {
     /// <p>Information about the internet gateway.</p>
+    #[doc(hidden)]
     pub internet_gateway: std::option::Option<crate::model::InternetGateway>,
 }
 impl CreateInternetGatewayOutput {
@@ -35234,6 +36005,7 @@ impl CreateInternetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceExportTaskOutput {
     /// <p>Information about the export instance task.</p>
+    #[doc(hidden)]
     pub export_task: std::option::Option<crate::model::ExportTask>,
 }
 impl CreateInstanceExportTaskOutput {
@@ -35291,6 +36063,7 @@ impl CreateInstanceExportTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
+    #[doc(hidden)]
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
 impl CreateInstanceEventWindowOutput {
@@ -35348,6 +36121,7 @@ impl CreateInstanceEventWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageOutput {
     /// <p>The ID of the new AMI.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl CreateImageOutput {
@@ -35402,8 +36176,10 @@ impl CreateImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFpgaImageOutput {
     /// <p>The FPGA image identifier (AFI ID).</p>
+    #[doc(hidden)]
     pub fpga_image_id: std::option::Option<std::string::String>,
     /// <p>The global FPGA image identifier (AGFI ID).</p>
+    #[doc(hidden)]
     pub fpga_image_global_id: std::option::Option<std::string::String>,
 }
 impl CreateFpgaImageOutput {
@@ -35481,10 +36257,13 @@ impl CreateFpgaImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowLogsOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IDs of the flow logs.</p>
+    #[doc(hidden)]
     pub flow_log_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the flow logs that could not be created successfully.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl CreateFlowLogsOutput {
@@ -35591,10 +36370,13 @@ impl CreateFlowLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetOutput {
     /// <p>The ID of the EC2 Fleet.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
     /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
 }
 impl CreateFleetOutput {
@@ -35701,8 +36483,10 @@ impl CreateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEgressOnlyInternetGatewayOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Information about the egress-only internet gateway.</p>
+    #[doc(hidden)]
     pub egress_only_internet_gateway: std::option::Option<crate::model::EgressOnlyInternetGateway>,
 }
 impl CreateEgressOnlyInternetGatewayOutput {
@@ -35786,6 +36570,7 @@ impl CreateEgressOnlyInternetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDhcpOptionsOutput {
     /// <p>A set of DHCP options.</p>
+    #[doc(hidden)]
     pub dhcp_options: std::option::Option<crate::model::DhcpOptions>,
 }
 impl CreateDhcpOptionsOutput {
@@ -35843,6 +36628,7 @@ impl CreateDhcpOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDefaultVpcOutput {
     /// <p>Information about the VPC.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl CreateDefaultVpcOutput {
@@ -35895,6 +36681,7 @@ impl CreateDefaultVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDefaultSubnetOutput {
     /// <p>Information about the subnet.</p>
+    #[doc(hidden)]
     pub subnet: std::option::Option<crate::model::Subnet>,
 }
 impl CreateDefaultSubnetOutput {
@@ -35949,6 +36736,7 @@ impl CreateDefaultSubnetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
+    #[doc(hidden)]
     pub customer_gateway: std::option::Option<crate::model::CustomerGateway>,
 }
 impl CreateCustomerGatewayOutput {
@@ -36006,6 +36794,7 @@ impl CreateCustomerGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnRouteStatus>,
 }
 impl CreateClientVpnRouteOutput {
@@ -36063,10 +36852,13 @@ impl CreateClientVpnRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClientVpnEndpointOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
+    #[doc(hidden)]
     pub client_vpn_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The current state of the Client VPN endpoint.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnEndpointStatus>,
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
 }
 impl CreateClientVpnEndpointOutput {
@@ -36161,6 +36953,7 @@ impl CreateClientVpnEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCarrierGatewayOutput {
     /// <p>Information about the carrier gateway.</p>
+    #[doc(hidden)]
     pub carrier_gateway: std::option::Option<crate::model::CarrierGateway>,
 }
 impl CreateCarrierGatewayOutput {
@@ -36218,27 +37011,38 @@ impl CreateCarrierGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityReservationFleetOutput {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
     /// <p>The status of the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CapacityReservationFleetState>,
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
+    #[doc(hidden)]
     pub total_target_capacity: std::option::Option<i32>,
     /// <p>The requested capacity units that have been successfully reserved.</p>
+    #[doc(hidden)]
     pub total_fulfilled_capacity: std::option::Option<f64>,
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub instance_match_criteria: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub fleet_capacity_reservations:
         std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCapacityReservationFleetOutput {
@@ -36523,6 +37327,7 @@ impl CreateCapacityReservationFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityReservationOutput {
     /// <p>Information about the Capacity Reservation.</p>
+    #[doc(hidden)]
     pub capacity_reservation: std::option::Option<crate::model::CapacityReservation>,
 }
 impl CreateCapacityReservationOutput {
@@ -36580,8 +37385,10 @@ impl CreateCapacityReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotOutput {
     /// <p>The ID of the new snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Any tags applied to the new snapshot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopySnapshotOutput {
@@ -36662,6 +37469,7 @@ impl CopySnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyImageOutput {
     /// <p>The ID of the new AMI.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl CopyImageOutput {
@@ -36716,6 +37524,7 @@ impl CopyImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyFpgaImageOutput {
     /// <p>The ID of the new AFI.</p>
+    #[doc(hidden)]
     pub fpga_image_id: std::option::Option<std::string::String>,
 }
 impl CopyFpgaImageOutput {
@@ -36773,8 +37582,10 @@ impl CopyFpgaImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmProductInstanceOutput {
     /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl ConfirmProductInstanceOutput {
@@ -36846,6 +37657,7 @@ impl ConfirmProductInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
+    #[doc(hidden)]
     pub cancelled_spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::CancelledSpotInstanceRequest>>,
 }
@@ -36919,9 +37731,11 @@ impl CancelSpotInstanceRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSpotFleetRequestsOutput {
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
+    #[doc(hidden)]
     pub successful_fleet_requests:
         std::option::Option<std::vec::Vec<crate::model::CancelSpotFleetRequestsSuccessItem>>,
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
+    #[doc(hidden)]
     pub unsuccessful_fleet_requests:
         std::option::Option<std::vec::Vec<crate::model::CancelSpotFleetRequestsErrorItem>>,
 }
@@ -37031,6 +37845,7 @@ impl CancelSpotFleetRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReservedInstancesListingOutput {
     /// <p>The Reserved Instance listing.</p>
+    #[doc(hidden)]
     pub reserved_instances_listings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
 }
@@ -37104,10 +37919,13 @@ impl CancelReservedInstancesListingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelImportTaskOutput {
     /// <p>The ID of the task being canceled.</p>
+    #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>The current state of the task being canceled.</p>
+    #[doc(hidden)]
     pub previous_state: std::option::Option<std::string::String>,
     /// <p>The current state of the task being canceled.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl CancelImportTaskOutput {
@@ -37262,9 +38080,11 @@ impl CancelConversionTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCapacityReservationFleetsOutput {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
+    #[doc(hidden)]
     pub successful_fleet_cancellations:
         std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleetCancellationState>>,
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
+    #[doc(hidden)]
     pub failed_fleet_cancellations: std::option::Option<
         std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
     >,
@@ -37381,6 +38201,7 @@ impl CancelCapacityReservationFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl CancelCapacityReservationOutput {
@@ -37435,6 +38256,7 @@ impl CancelCapacityReservationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBundleTaskOutput {
     /// <p>Information about the bundle task.</p>
+    #[doc(hidden)]
     pub bundle_task: std::option::Option<crate::model::BundleTask>,
 }
 impl CancelBundleTaskOutput {
@@ -37492,6 +38314,7 @@ impl CancelBundleTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BundleInstanceOutput {
     /// <p>Information about the bundle task.</p>
+    #[doc(hidden)]
     pub bundle_task: std::option::Option<crate::model::BundleTask>,
 }
 impl BundleInstanceOutput {
@@ -37549,8 +38372,10 @@ impl BundleInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeSecurityGroupIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
+    #[doc(hidden)]
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
 }
 impl AuthorizeSecurityGroupIngressOutput {
@@ -37632,8 +38457,10 @@ impl AuthorizeSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
+    #[doc(hidden)]
     pub security_group_rules: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRule>>,
 }
 impl AuthorizeSecurityGroupEgressOutput {
@@ -37715,6 +38542,7 @@ impl AuthorizeSecurityGroupEgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeClientVpnIngressOutput {
     /// <p>The current state of the authorization rule.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
 }
 impl AuthorizeClientVpnIngressOutput {
@@ -37772,6 +38600,7 @@ impl AuthorizeClientVpnIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachVpnGatewayOutput {
     /// <p>Information about the attachment.</p>
+    #[doc(hidden)]
     pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
 }
 impl AttachVpnGatewayOutput {
@@ -37829,16 +38658,22 @@ impl AttachVpnGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
+    #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The attachment state of the volume.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VolumeAttachmentState>,
     /// <p>The ID of the volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
 }
 impl AttachVolumeOutput {
@@ -37984,8 +38819,10 @@ impl AttachVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachNetworkInterfaceOutput {
     /// <p>The ID of the network interface attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The index of the network card.</p>
+    #[doc(hidden)]
     pub network_card_index: std::option::Option<i32>,
 }
 impl AttachNetworkInterfaceOutput {
@@ -38090,6 +38927,7 @@ impl AttachInternetGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachClassicLinkVpcOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
 }
 impl AttachClassicLinkVpcOutput {
@@ -38144,10 +38982,13 @@ impl AttachClassicLinkVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateVpcCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
+    #[doc(hidden)]
     pub ipv6_cidr_block_association: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
     /// <p>Information about the IPv4 CIDR block association.</p>
+    #[doc(hidden)]
     pub cidr_block_association: std::option::Option<crate::model::VpcCidrBlockAssociation>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl AssociateVpcCidrBlockOutput {
@@ -38257,8 +39098,10 @@ impl AssociateVpcCidrBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTrunkInterfaceOutput {
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
+    #[doc(hidden)]
     pub interface_association: std::option::Option<crate::model::TrunkInterfaceAssociation>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateTrunkInterfaceOutput {
@@ -38339,6 +39182,7 @@ impl AssociateTrunkInterfaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayRouteTableOutput {
     /// <p>The ID of the association.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::TransitGatewayAssociation>,
 }
 impl AssociateTransitGatewayRouteTableOutput {
@@ -38396,6 +39240,7 @@ impl AssociateTransitGatewayRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayPolicyTableOutput {
     /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
 }
 impl AssociateTransitGatewayPolicyTableOutput {
@@ -38459,6 +39304,7 @@ impl AssociateTransitGatewayPolicyTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the transit gateway multicast domain associations.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl AssociateTransitGatewayMulticastDomainOutput {
@@ -38522,9 +39368,11 @@ impl AssociateTransitGatewayMulticastDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSubnetCidrBlockOutput {
     /// <p>Information about the IPv6 association.</p>
+    #[doc(hidden)]
     pub ipv6_cidr_block_association:
         std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl AssociateSubnetCidrBlockOutput {
@@ -38608,8 +39456,10 @@ impl AssociateSubnetCidrBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRouteTableOutput {
     /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
+    #[doc(hidden)]
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
 }
 impl AssociateRouteTableOutput {
@@ -38692,6 +39542,7 @@ impl AssociateRouteTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
+    #[doc(hidden)]
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
 }
 impl AssociateInstanceEventWindowOutput {
@@ -38749,6 +39600,7 @@ impl AssociateInstanceEventWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_association:
         std::option::Option<crate::model::IamInstanceProfileAssociation>,
 }
@@ -38816,10 +39668,13 @@ impl AssociateIamInstanceProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
+    #[doc(hidden)]
     pub certificate_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    #[doc(hidden)]
     pub certificate_s3_object_key: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
+    #[doc(hidden)]
     pub encryption_kms_key_id: std::option::Option<std::string::String>,
 }
 impl AssociateEnclaveCertificateIamRoleOutput {
@@ -38950,8 +39805,10 @@ impl AssociateDhcpOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientVpnTargetNetworkOutput {
     /// <p>The unique ID of the target network association.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The current state of the target network association.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssociationStatus>,
 }
 impl AssociateClientVpnTargetNetworkOutput {
@@ -39029,6 +39886,7 @@ impl AssociateClientVpnTargetNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAddressOutput {
     /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl AssociateAddressOutput {
@@ -39086,11 +39944,14 @@ impl AssociateAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignPrivateIpAddressesOutput {
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The private IP addresses assigned to the network interface.</p>
+    #[doc(hidden)]
     pub assigned_private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
+    #[doc(hidden)]
     pub assigned_ipv4_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
 }
@@ -39216,10 +40077,13 @@ impl AssignPrivateIpAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignIpv6AddressesOutput {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
+    #[doc(hidden)]
     pub assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
+    #[doc(hidden)]
     pub assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl AssignIpv6AddressesOutput {
@@ -39329,6 +40193,7 @@ impl AssignIpv6AddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     /// <p>The IDs of the applied security groups.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
@@ -39393,6 +40258,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateIpamPoolCidrOutput {
     /// <p>Information about the allocation created.</p>
+    #[doc(hidden)]
     pub ipam_pool_allocation: std::option::Option<crate::model::IpamPoolAllocation>,
 }
 impl AllocateIpamPoolCidrOutput {
@@ -39450,6 +40316,7 @@ impl AllocateIpamPoolCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
+    #[doc(hidden)]
     pub host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllocateHostsOutput {
@@ -39513,20 +40380,28 @@ impl AllocateHostsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateAddressOutput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of an address pool.</p>
+    #[doc(hidden)]
     pub public_ipv4_pool: std::option::Option<std::string::String>,
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
+    #[doc(hidden)]
     pub network_border_group: std::option::Option<std::string::String>,
     /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::DomainType>,
     /// <p>The customer-owned IP address.</p>
+    #[doc(hidden)]
     pub customer_owned_ip: std::option::Option<std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
+    #[doc(hidden)]
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
     /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    #[doc(hidden)]
     pub carrier_ip: std::option::Option<std::string::String>,
 }
 impl AllocateAddressOutput {
@@ -39715,6 +40590,7 @@ impl AllocateAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl AdvertiseByoipCidrOutput {
@@ -39772,6 +40648,7 @@ impl AdvertiseByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptVpcPeeringConnectionOutput {
     /// <p>Information about the VPC peering connection.</p>
+    #[doc(hidden)]
     pub vpc_peering_connection: std::option::Option<crate::model::VpcPeeringConnection>,
 }
 impl AcceptVpcPeeringConnectionOutput {
@@ -39831,6 +40708,7 @@ impl AcceptVpcPeeringConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptVpcEndpointConnectionsOutput {
     /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
+    #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl AcceptVpcEndpointConnectionsOutput {
@@ -39894,6 +40772,7 @@ impl AcceptVpcEndpointConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptTransitGatewayVpcAttachmentOutput {
     /// <p>The VPC attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_vpc_attachment:
         std::option::Option<crate::model::TransitGatewayVpcAttachment>,
 }
@@ -39961,6 +40840,7 @@ impl AcceptTransitGatewayVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering_attachment:
         std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
 }
@@ -40028,6 +40908,7 @@ impl AcceptTransitGatewayPeeringAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Describes the multicast domain associations.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
 }
 impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
@@ -40093,6 +40974,7 @@ impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptReservedInstancesExchangeQuoteOutput {
     /// <p>The ID of the successful exchange.</p>
+    #[doc(hidden)]
     pub exchange_id: std::option::Option<std::string::String>,
 }
 impl AcceptReservedInstancesExchangeQuoteOutput {

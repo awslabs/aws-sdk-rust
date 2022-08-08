@@ -5,24 +5,34 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAddress {
     /// <p>The first line of a customer address.</p>
+    #[doc(hidden)]
     pub address1: std::option::Option<std::string::String>,
     /// <p>The second line of a customer address.</p>
+    #[doc(hidden)]
     pub address2: std::option::Option<std::string::String>,
     /// <p>The third line of a customer address.</p>
+    #[doc(hidden)]
     pub address3: std::option::Option<std::string::String>,
     /// <p>The fourth line of a customer address.</p>
+    #[doc(hidden)]
     pub address4: std::option::Option<std::string::String>,
     /// <p>The city in which a customer lives.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The county in which a customer lives.</p>
+    #[doc(hidden)]
     pub county: std::option::Option<std::string::String>,
     /// <p>The state in which a customer lives.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The province in which a customer lives.</p>
+    #[doc(hidden)]
     pub province: std::option::Option<std::string::String>,
     /// <p>The country in which a customer lives.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The postal code of a customer address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
 }
 impl UpdateAddress {
@@ -348,12 +358,16 @@ impl AsRef<str> for PartyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    #[doc(hidden)]
     pub job_schedule: std::option::Option<crate::model::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
+    #[doc(hidden)]
     pub auto_merging: std::option::Option<crate::model::AutoMerging>,
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
+    #[doc(hidden)]
     pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingResponse {
@@ -470,6 +484,7 @@ impl MatchingResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_exporting: std::option::Option<crate::model::S3ExportingConfig>,
 }
 impl ExportingConfig {
@@ -527,8 +542,10 @@ impl ExportingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ExportingConfig {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_key_name: std::option::Option<std::string::String>,
 }
 impl S3ExportingConfig {
@@ -603,12 +620,16 @@ impl S3ExportingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
+    #[doc(hidden)]
     pub consolidation: std::option::Option<crate::model::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    #[doc(hidden)]
     pub min_allowed_confidence_score_for_merging: std::option::Option<f64>,
 }
 impl AutoMerging {
@@ -731,8 +752,10 @@ pub struct ConflictResolution {
     /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub conflict_resolving_model: std::option::Option<crate::model::ConflictResolvingModel>,
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
 }
 impl ConflictResolution {
@@ -880,6 +903,7 @@ impl AsRef<str> for ConflictResolvingModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Consolidation {
     /// <p>A list of matching criteria.</p>
+    #[doc(hidden)]
     pub matching_attributes_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
 }
@@ -950,8 +974,10 @@ impl Consolidation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSchedule {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
+    #[doc(hidden)]
     pub day_of_the_week: std::option::Option<crate::model::JobScheduleDayOfTheWeek>,
     /// <p>The time when the Identity Resolution Job should run every week.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<std::string::String>,
 }
 impl JobSchedule {
@@ -1109,12 +1135,16 @@ impl AsRef<str> for JobScheduleDayOfTheWeek {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
+    #[doc(hidden)]
     pub job_schedule: std::option::Option<crate::model::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
+    #[doc(hidden)]
     pub auto_merging: std::option::Option<crate::model::AutoMerging>,
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
+    #[doc(hidden)]
     pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingRequest {
@@ -1229,48 +1259,70 @@ impl MatchingRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Profile {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>A unique account number that you have given to the customer.</p>
+    #[doc(hidden)]
     pub account_number: std::option::Option<std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
+    #[doc(hidden)]
     pub additional_information: std::option::Option<std::string::String>,
     /// <p>The type of profile used to describe the customer.</p>
+    #[doc(hidden)]
     pub party_type: std::option::Option<crate::model::PartyType>,
     /// <p>The name of the customer’s business.</p>
+    #[doc(hidden)]
     pub business_name: std::option::Option<std::string::String>,
     /// <p>The customer’s first name.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The customer’s middle name.</p>
+    #[doc(hidden)]
     pub middle_name: std::option::Option<std::string::String>,
     /// <p>The customer’s last name.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The customer’s birth date. </p>
+    #[doc(hidden)]
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
+    #[doc(hidden)]
     pub gender: std::option::Option<crate::model::Gender>,
     /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
+    #[doc(hidden)]
     pub mobile_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s home phone number.</p>
+    #[doc(hidden)]
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s home phone number.</p>
+    #[doc(hidden)]
     pub business_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
+    #[doc(hidden)]
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
+    #[doc(hidden)]
     pub business_email_address: std::option::Option<std::string::String>,
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s shipping address.</p>
+    #[doc(hidden)]
     pub shipping_address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s mailing address.</p>
+    #[doc(hidden)]
     pub mailing_address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s billing address.</p>
+    #[doc(hidden)]
     pub billing_address: std::option::Option<crate::model::Address>,
     /// <p>A key value pair of attributes of a customer profile.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1742,24 +1794,34 @@ impl Profile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The first line of a customer address.</p>
+    #[doc(hidden)]
     pub address1: std::option::Option<std::string::String>,
     /// <p>The second line of a customer address.</p>
+    #[doc(hidden)]
     pub address2: std::option::Option<std::string::String>,
     /// <p>The third line of a customer address.</p>
+    #[doc(hidden)]
     pub address3: std::option::Option<std::string::String>,
     /// <p>The fourth line of a customer address.</p>
+    #[doc(hidden)]
     pub address4: std::option::Option<std::string::String>,
     /// <p>The city in which a customer lives.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The county in which a customer lives.</p>
+    #[doc(hidden)]
     pub county: std::option::Option<std::string::String>,
     /// <p>The state in which a customer lives.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The province in which a customer lives.</p>
+    #[doc(hidden)]
     pub province: std::option::Option<std::string::String>,
     /// <p>The country in which a customer lives.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The postal code of a customer address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
 }
 impl Address {
@@ -1967,8 +2029,10 @@ impl Address {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeKey {
     /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
+    #[doc(hidden)]
     pub standard_identifiers: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
     /// <p>The reference for the key name of the fields map.</p>
+    #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectTypeKey {
@@ -2147,10 +2211,13 @@ impl AsRef<str> for StandardIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The content type of the field. Used for determining equality when searching.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::FieldContentType>,
 }
 impl ObjectTypeField {
@@ -2309,16 +2376,22 @@ impl AsRef<str> for FieldContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
+    #[doc(hidden)]
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    #[doc(hidden)]
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>The trigger settings that determine how and when the flow runs.</p>
+    #[doc(hidden)]
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
 }
 impl FlowDefinition {
@@ -2473,8 +2546,10 @@ impl FlowDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
+    #[doc(hidden)]
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
 }
 impl TriggerConfig {
@@ -2552,6 +2627,7 @@ impl TriggerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerProperties {
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
+    #[doc(hidden)]
     pub scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
 }
 impl TriggerProperties {
@@ -2609,18 +2685,25 @@ impl TriggerProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledTriggerProperties {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
+    #[doc(hidden)]
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
+    #[doc(hidden)]
     pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
+    #[doc(hidden)]
     pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i64>,
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
+    #[doc(hidden)]
     pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {
@@ -2906,16 +2989,21 @@ impl AsRef<str> for TriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
     /// <p>The operation to be performed on the provided source fields.</p>
+    #[doc(hidden)]
     pub connector_operator: std::option::Option<crate::model::ConnectorOperator>,
     /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
+    #[doc(hidden)]
     pub destination_field: std::option::Option<std::string::String>,
     /// <p>The source fields to which a particular task is applied.</p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
+    #[doc(hidden)]
     pub task_properties: std::option::Option<
         std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     >,
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::TaskType>,
 }
 impl Task {
@@ -3278,14 +3366,19 @@ impl AsRef<str> for OperatorPropertiesKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorOperator {
     /// <p>The operation to be performed on the provided Marketo source fields.</p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoConnectorOperator>,
     /// <p>The operation to be performed on the provided Amazon S3 source fields.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3ConnectorOperator>,
     /// <p>The operation to be performed on the provided Salesforce source fields.</p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceConnectorOperator>,
     /// <p>The operation to be performed on the provided ServiceNow source fields.</p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowConnectorOperator>,
     /// <p>The operation to be performed on the provided Zendesk source fields.</p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
 }
 impl ConnectorOperator {
@@ -4123,12 +4216,16 @@ impl AsRef<str> for MarketoConnectorOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFlowConfig {
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::SourceConnectorType>,
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
+    #[doc(hidden)]
     pub incremental_pull_config: std::option::Option<crate::model::IncrementalPullConfig>,
     /// <p>Specifies the information that is required to query a particular source connector.</p>
+    #[doc(hidden)]
     pub source_connector_properties: std::option::Option<crate::model::SourceConnectorProperties>,
 }
 impl SourceFlowConfig {
@@ -4261,14 +4358,19 @@ impl SourceFlowConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceConnectorProperties {
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoSourceProperties>,
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3SourceProperties>,
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceSourceProperties>,
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowSourceProperties>,
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
 }
 impl SourceConnectorProperties {
@@ -4406,6 +4508,7 @@ impl SourceConnectorProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskSourceProperties {
     /// <p>The object specified in the Zendesk flow source.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ZendeskSourceProperties {
@@ -4460,6 +4563,7 @@ impl ZendeskSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ServiceNowSourceProperties {
@@ -4514,10 +4618,13 @@ impl ServiceNowSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
+    #[doc(hidden)]
     pub enable_dynamic_field_update: bool,
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
+    #[doc(hidden)]
     pub include_deleted_records: bool,
 }
 impl SalesforceSourceProperties {
@@ -4609,8 +4716,10 @@ impl SalesforceSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SourceProperties {
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
 }
 impl S3SourceProperties {
@@ -4685,6 +4794,7 @@ impl S3SourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketoSourceProperties {
     /// <p>The object specified in the Marketo flow source.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl MarketoSourceProperties {
@@ -4739,6 +4849,7 @@ impl MarketoSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncrementalPullConfig {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
+    #[doc(hidden)]
     pub datetime_type_field_name: std::option::Option<std::string::String>,
 }
 impl IncrementalPullConfig {
@@ -4863,46 +4974,67 @@ impl AsRef<str> for SourceConnectorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldSourceProfileIds {
     /// <p>A unique identifier for the account number field to be merged. </p>
+    #[doc(hidden)]
     pub account_number: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the additional information field to be merged.</p>
+    #[doc(hidden)]
     pub additional_information: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
+    #[doc(hidden)]
     pub party_type: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the business name field to be merged.</p>
+    #[doc(hidden)]
     pub business_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the first name field to be merged.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the middle name field to be merged.</p>
+    #[doc(hidden)]
     pub middle_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the last name field to be merged.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the birthdate field to be merged.</p>
+    #[doc(hidden)]
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the gender field to be merged.</p>
+    #[doc(hidden)]
     pub gender: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the phone number field to be merged.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the mobile phone number field to be merged.</p>
+    #[doc(hidden)]
     pub mobile_phone_number: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the home phone number field to be merged.</p>
+    #[doc(hidden)]
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the business phone number field to be merged.</p>
+    #[doc(hidden)]
     pub business_phone_number: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the email address field to be merged.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the personal email address field to be merged.</p>
+    #[doc(hidden)]
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
+    #[doc(hidden)]
     pub business_email_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the party type field to be merged.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the shipping address field to be merged.</p>
+    #[doc(hidden)]
     pub shipping_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the mailing address field to be merged.</p>
+    #[doc(hidden)]
     pub mailing_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the billing type field to be merged.</p>
+    #[doc(hidden)]
     pub billing_address: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the attributes field to be merged.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5354,16 +5486,22 @@ impl FieldSourceProfileIds {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsItem {
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Status of workflow execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Description for workflow execution status.</p>
+    #[doc(hidden)]
     pub status_description: std::option::Option<std::string::String>,
     /// <p>Creation timestamp for workflow.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Last updated timestamp for workflow.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListWorkflowsItem {
@@ -5649,10 +5787,13 @@ impl AsRef<str> for WorkflowType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypeTemplateItem {
     /// <p>A unique identifier for the object template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The name of the source of the object template.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The source of the object template.</p>
+    #[doc(hidden)]
     pub source_object: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectTypeTemplateItem {
@@ -5744,14 +5885,19 @@ impl ListProfileObjectTypeTemplateItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>Description of the profile object type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5904,10 +6050,13 @@ impl ListProfileObjectTypeItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectsItem {
     /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the ProfileObject generated by the service.</p>
+    #[doc(hidden)]
     pub profile_object_unique_key: std::option::Option<std::string::String>,
     /// <p>A JSON representation of a ProfileObject that belongs to a profile.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectsItem {
@@ -6002,8 +6151,10 @@ impl ListProfileObjectsItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectFilter {
     /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectFilter {
@@ -6084,22 +6235,30 @@ impl ObjectFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    #[doc(hidden)]
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl ListIntegrationItem {
@@ -6322,8 +6481,10 @@ impl ListIntegrationItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityResolutionJob {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
@@ -6335,16 +6496,22 @@ pub struct IdentityResolutionJob {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
     /// <p>The timestamp of when the job was started or will be started.</p>
+    #[doc(hidden)]
     pub job_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the job was completed.</p>
+    #[doc(hidden)]
     pub job_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Statistics about an Identity Resolution Job.</p>
+    #[doc(hidden)]
     pub job_stats: std::option::Option<crate::model::JobStats>,
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    #[doc(hidden)]
     pub exporting_location: std::option::Option<crate::model::ExportingLocation>,
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IdentityResolutionJob {
@@ -6557,6 +6724,7 @@ impl IdentityResolutionJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_exporting: std::option::Option<crate::model::S3ExportingLocation>,
 }
 impl ExportingLocation {
@@ -6614,8 +6782,10 @@ impl ExportingLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ExportingLocation {
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    #[doc(hidden)]
     pub s3_key_name: std::option::Option<std::string::String>,
 }
 impl S3ExportingLocation {
@@ -6690,10 +6860,13 @@ impl S3ExportingLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobStats {
     /// <p>The number of profiles reviewed.</p>
+    #[doc(hidden)]
     pub number_of_profiles_reviewed: i64,
     /// <p>The number of matches found.</p>
+    #[doc(hidden)]
     pub number_of_matches_found: i64,
     /// <p>The number of merges completed.</p>
+    #[doc(hidden)]
     pub number_of_merges_done: i64,
 }
 impl JobStats {
@@ -6868,12 +7041,16 @@ impl AsRef<str> for IdentityResolutionJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainItem {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7006,6 +7183,7 @@ impl ListDomainItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowStepItem {
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub appflow_integration: std::option::Option<crate::model::AppflowIntegrationWorkflowStep>,
 }
 impl WorkflowStepItem {
@@ -7069,20 +7247,28 @@ impl WorkflowStepItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppflowIntegrationWorkflowStep {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub execution_message: std::option::Option<std::string::String>,
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub records_processed: i64,
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub batch_records_start_time: std::option::Option<std::string::String>,
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub batch_records_end_time: std::option::Option<std::string::String>,
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppflowIntegrationWorkflowStep {
@@ -7271,6 +7457,7 @@ impl AppflowIntegrationWorkflowStep {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowMetrics {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub appflow_integration: std::option::Option<crate::model::AppflowIntegrationWorkflowMetrics>,
 }
 impl WorkflowMetrics {
@@ -7334,10 +7521,13 @@ impl WorkflowMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppflowIntegrationWorkflowMetrics {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub records_processed: i64,
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub steps_completed: i64,
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub total_steps: i64,
 }
 impl AppflowIntegrationWorkflowMetrics {
@@ -7426,6 +7616,7 @@ impl AppflowIntegrationWorkflowMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowAttributes {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    #[doc(hidden)]
     pub appflow_integration:
         std::option::Option<crate::model::AppflowIntegrationWorkflowAttributes>,
 }
@@ -7490,10 +7681,13 @@ impl WorkflowAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppflowIntegrationWorkflowAttributes {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+    #[doc(hidden)]
     pub source_connector_type: std::option::Option<crate::model::SourceConnectorType>,
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AppflowIntegrationWorkflowAttributes {
@@ -7588,10 +7782,13 @@ impl AppflowIntegrationWorkflowAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchItem {
     /// <p>The unique identifiers for this group of profiles that match.</p>
+    #[doc(hidden)]
     pub match_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for profiles that match.</p>
+    #[doc(hidden)]
     pub profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
+    #[doc(hidden)]
     pub confidence_score: std::option::Option<f64>,
 }
 impl MatchItem {
@@ -7689,12 +7886,16 @@ impl MatchItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainStats {
     /// <p>The total number of profiles currently in the domain.</p>
+    #[doc(hidden)]
     pub profile_count: i64,
     /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
+    #[doc(hidden)]
     pub metering_profile_count: i64,
     /// <p>The total number of objects in domain.</p>
+    #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total size, in bytes, of all objects in the domain.</p>
+    #[doc(hidden)]
     pub total_size: i64,
 }
 impl DomainStats {
@@ -7800,6 +8001,7 @@ impl DomainStats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegrationConfig {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+    #[doc(hidden)]
     pub appflow_integration: std::option::Option<crate::model::AppflowIntegration>,
 }
 impl IntegrationConfig {
@@ -7857,8 +8059,10 @@ impl IntegrationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppflowIntegration {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+    #[doc(hidden)]
     pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+    #[doc(hidden)]
     pub batches: std::option::Option<std::vec::Vec<crate::model::Batch>>,
 }
 impl AppflowIntegration {
@@ -7942,8 +8146,10 @@ impl AppflowIntegration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Batch {
     /// <p>Start time of batch to split ingestion.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of batch to split ingestion.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Batch {

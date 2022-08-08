@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
 }
 impl ValidateConfigurationSettingsOutput {
@@ -98,28 +99,40 @@ impl UpdateTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The name of this environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The ID of this environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this environment.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The application version deployed in this environment.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template used to originally launch this environment.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    #[doc(hidden)]
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
+    #[doc(hidden)]
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     /// <ul>
@@ -129,10 +142,12 @@ pub struct UpdateEnvironmentOutput {
     /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
     /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
     /// <p> <code>true:</code> There is an update in progress. </p>
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    #[doc(hidden)]
     pub abortable_operation_in_progress: std::option::Option<bool>,
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
@@ -142,18 +157,25 @@ pub struct UpdateEnvironmentOutput {
     /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
     /// <p> Default: <code>Grey</code> </p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
     /// <p>Describes the current tier of this environment.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::EnvironmentTier>,
     /// <p>A list of links to other environments in the same group.</p>
+    #[doc(hidden)]
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentOutput {
@@ -657,16 +679,22 @@ impl UpdateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationTemplateOutput {
     /// <p>The name of the solution stack this configuration set uses.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this configuration set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
@@ -675,12 +703,16 @@ pub struct UpdateConfigurationTemplateOutput {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -946,6 +978,7 @@ impl UpdateConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
 impl UpdateApplicationVersionOutput {
@@ -1009,8 +1042,10 @@ impl UpdateApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationResourceLifecycleOutput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle configuration.</p>
+    #[doc(hidden)]
     pub resource_lifecycle_config:
         std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
 }
@@ -1095,6 +1130,7 @@ impl UpdateApplicationResourceLifecycleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationDescription>,
 }
 impl UpdateApplicationOutput {
@@ -1152,28 +1188,40 @@ impl UpdateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateEnvironmentOutput {
     /// <p>The name of this environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The ID of this environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this environment.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The application version deployed in this environment.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template used to originally launch this environment.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    #[doc(hidden)]
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
+    #[doc(hidden)]
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     /// <ul>
@@ -1183,10 +1231,12 @@ pub struct TerminateEnvironmentOutput {
     /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
     /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
     /// <p> <code>true:</code> There is an update in progress. </p>
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    #[doc(hidden)]
     pub abortable_operation_in_progress: std::option::Option<bool>,
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
@@ -1196,18 +1246,25 @@ pub struct TerminateEnvironmentOutput {
     /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
     /// <p> Default: <code>Grey</code> </p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
     /// <p>Describes the current tier of this environment.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::EnvironmentTier>,
     /// <p>A list of links to other environments in the same group.</p>
+    #[doc(hidden)]
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl TerminateEnvironmentOutput {
@@ -1741,6 +1798,7 @@ impl SwapEnvironmentCnamEsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
+    #[doc(hidden)]
     pub environment_info:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
 }
@@ -1898,8 +1956,10 @@ impl RebuildEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key-value pairs.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1980,8 +2040,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformVersionsOutput {
     /// <p>Summary information about the platform versions.</p>
+    #[doc(hidden)]
     pub platform_summary_list: std::option::Option<std::vec::Vec<crate::model::PlatformSummary>>,
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformVersionsOutput {
@@ -2063,9 +2125,11 @@ impl ListPlatformVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
+    #[doc(hidden)]
     pub platform_branch_summary_list:
         std::option::Option<std::vec::Vec<crate::model::PlatformBranchSummary>>,
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformBranchesOutput {
@@ -2155,8 +2219,10 @@ impl ListPlatformBranchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
+    #[doc(hidden)]
     pub solution_stacks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
+    #[doc(hidden)]
     pub solution_stack_details:
         std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
 }
@@ -2283,6 +2349,7 @@ impl DisassociateEnvironmentOperationsRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
+    #[doc(hidden)]
     pub platform_description: std::option::Option<crate::model::PlatformDescription>,
 }
 impl DescribePlatformVersionOutput {
@@ -2342,11 +2409,14 @@ pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
     /// <cpuutilization></cpuutilization></code> type.</p>
+    #[doc(hidden)]
     pub instance_health_list:
         std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
+    #[doc(hidden)]
     pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Pagination token for the next page of results, if available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesHealthOutput {
@@ -2456,8 +2526,10 @@ impl DescribeInstancesHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p> A list of <code>EventDescription</code>. </p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::EventDescription>>,
     /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
@@ -2538,8 +2610,10 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentsOutput {
@@ -2621,6 +2695,7 @@ impl DescribeEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
+    #[doc(hidden)]
     pub environment_resources: std::option::Option<crate::model::EnvironmentResourceDescription>,
 }
 impl DescribeEnvironmentResourcesOutput {
@@ -2684,6 +2759,7 @@ impl DescribeEnvironmentResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
+    #[doc(hidden)]
     pub managed_actions: std::option::Option<std::vec::Vec<crate::model::ManagedAction>>,
 }
 impl DescribeEnvironmentManagedActionsOutput {
@@ -2747,9 +2823,11 @@ impl DescribeEnvironmentManagedActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
+    #[doc(hidden)]
     pub managed_action_history_items:
         std::option::Option<std::vec::Vec<crate::model::ManagedActionHistoryItem>>,
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentManagedActionHistoryOutput {
@@ -2839,20 +2917,28 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<std::string::String>,
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentHealth>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
+    #[doc(hidden)]
     pub color: std::option::Option<std::string::String>,
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
+    #[doc(hidden)]
     pub causes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Application request metrics for the environment.</p>
+    #[doc(hidden)]
     pub application_metrics: std::option::Option<crate::model::ApplicationMetrics>,
     /// <p>Summary health information for the instances in the environment.</p>
+    #[doc(hidden)]
     pub instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
+    #[doc(hidden)]
     pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeEnvironmentHealthOutput {
@@ -3053,6 +3139,7 @@ impl DescribeEnvironmentHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    #[doc(hidden)]
     pub configuration_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationSettingsDescription>>,
 }
@@ -3125,10 +3212,13 @@ impl DescribeConfigurationSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationOptionsOutput {
     /// <p>The name of the solution stack these configuration options belong to.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionDescription>>,
 }
 impl DescribeConfigurationOptionsOutput {
@@ -3230,9 +3320,11 @@ impl DescribeConfigurationOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
+    #[doc(hidden)]
     pub application_versions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationVersionsOutput {
@@ -3319,6 +3411,7 @@ impl DescribeApplicationVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
 }
 impl DescribeApplicationsOutput {
@@ -3383,6 +3476,7 @@ impl DescribeApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    #[doc(hidden)]
     pub resource_quotas: std::option::Option<crate::model::ResourceQuotas>,
 }
 impl DescribeAccountAttributesOutput {
@@ -3440,6 +3534,7 @@ impl DescribeAccountAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlatformVersionOutput {
     /// <p>Detailed information about the version of the custom platform.</p>
+    #[doc(hidden)]
     pub platform_summary: std::option::Option<crate::model::PlatformSummary>,
 }
 impl DeletePlatformVersionOutput {
@@ -3617,6 +3712,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
 }
 impl CreateStorageLocationOutput {
@@ -3671,10 +3767,12 @@ impl CreateStorageLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformVersionOutput {
     /// <p>Detailed information about the new version of the custom platform.</p>
+    #[doc(hidden)]
     pub platform_summary: std::option::Option<crate::model::PlatformSummary>,
     /// <p>The builder used to create the custom platform.</p>
     ///
     /// _Note: This member has been renamed from `builder`._
+    #[doc(hidden)]
     pub builder_value: std::option::Option<crate::model::Builder>,
 }
 impl CreatePlatformVersionOutput {
@@ -3751,28 +3849,40 @@ impl CreatePlatformVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The name of this environment.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The ID of this environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this environment.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The application version deployed in this environment.</p>
+    #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration template used to originally launch this environment.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    #[doc(hidden)]
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
+    #[doc(hidden)]
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date for this environment.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
     /// <ul>
@@ -3782,10 +3892,12 @@ pub struct CreateEnvironmentOutput {
     /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
     /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
     /// <p> <code>true:</code> There is an update in progress. </p>
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
+    #[doc(hidden)]
     pub abortable_operation_in_progress: std::option::Option<bool>,
     /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
@@ -3795,18 +3907,25 @@ pub struct CreateEnvironmentOutput {
     /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
     /// <p> Default: <code>Grey</code> </p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
     /// <p>Describes the current tier of this environment.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::EnvironmentTier>,
     /// <p>A list of links to other environments in the same group.</p>
+    #[doc(hidden)]
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {
@@ -4310,16 +4429,22 @@ impl CreateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationTemplateOutput {
     /// <p>The name of the solution stack this configuration set uses.</p>
+    #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
+    #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this configuration set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
@@ -4328,12 +4453,16 @@ pub struct CreateConfigurationTemplateOutput {
     /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
     /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
+    #[doc(hidden)]
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -4599,6 +4728,7 @@ impl CreateConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
 impl CreateApplicationVersionOutput {
@@ -4662,6 +4792,7 @@ impl CreateApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationDescription>,
 }
 impl CreateApplicationOutput {
@@ -4719,8 +4850,10 @@ impl CreateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComposeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ComposeEnvironmentsOutput {
@@ -4806,8 +4939,10 @@ pub struct CheckDnsAvailabilityOutput {
     /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub available: std::option::Option<bool>,
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
+    #[doc(hidden)]
     pub fully_qualified_cname: std::option::Option<std::string::String>,
 }
 impl CheckDnsAvailabilityOutput {
@@ -4924,12 +5059,16 @@ impl AssociateEnvironmentOperationsRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyEnvironmentManagedActionOutput {
     /// <p>The action ID of the managed action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>A description of the managed action.</p>
+    #[doc(hidden)]
     pub action_description: std::option::Option<std::string::String>,
     /// <p>The type of managed action.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The status of the managed action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ApplyEnvironmentManagedActionOutput {

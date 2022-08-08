@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTypeOutput {
     /// <p>The updated <code>Type</code> object.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl UpdateTypeOutput {
@@ -58,6 +59,7 @@ impl UpdateTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResolverOutput {
     /// <p>The updated <code>Resolver</code> object.</p>
+    #[doc(hidden)]
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
 impl UpdateResolverOutput {
@@ -112,6 +114,7 @@ impl UpdateResolverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGraphqlApiOutput {
     /// <p>The updated <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
 }
 impl UpdateGraphqlApiOutput {
@@ -169,6 +172,7 @@ impl UpdateGraphqlApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
 }
 impl UpdateFunctionOutput {
@@ -231,6 +235,7 @@ impl UpdateFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameOutput {
     /// <p>The configuration for the <code>DomainName</code>.</p>
+    #[doc(hidden)]
     pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
 }
 impl UpdateDomainNameOutput {
@@ -288,6 +293,7 @@ impl UpdateDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {
     /// <p>The updated <code>DataSource</code> object.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
 impl UpdateDataSourceOutput {
@@ -345,6 +351,7 @@ impl UpdateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiKeyOutput {
     /// <p>The API key.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<crate::model::ApiKey>,
 }
 impl UpdateApiKeyOutput {
@@ -399,6 +406,7 @@ impl UpdateApiKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
+    #[doc(hidden)]
     pub api_cache: std::option::Option<crate::model::ApiCache>,
 }
 impl UpdateApiCacheOutput {
@@ -513,6 +521,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaCreationOutput {
     /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaStatus>,
 }
 impl StartSchemaCreationOutput {
@@ -570,8 +579,10 @@ impl StartSchemaCreationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypesOutput {
     /// <p>The <code>Type</code> objects.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<crate::model::Type>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypesOutput {
@@ -652,6 +663,7 @@ impl ListTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>TagMap</code> object.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -725,8 +737,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolversByFunctionOutput {
     /// <p>The list of resolvers.</p>
+    #[doc(hidden)]
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
     /// <p>An identifier that you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolversByFunctionOutput {
@@ -807,8 +821,10 @@ impl ListResolversByFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolversOutput {
     /// <p>The <code>Resolver</code> objects.</p>
+    #[doc(hidden)]
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolversOutput {
@@ -889,8 +905,10 @@ impl ListResolversOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphqlApisOutput {
     /// <p>The <code>GraphqlApi</code> objects.</p>
+    #[doc(hidden)]
     pub graphql_apis: std::option::Option<std::vec::Vec<crate::model::GraphqlApi>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGraphqlApisOutput {
@@ -971,8 +989,10 @@ impl ListGraphqlApisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsOutput {
     /// <p>A list of <code>Function</code> objects.</p>
+    #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionsOutput {
@@ -1054,8 +1074,10 @@ impl ListFunctionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesOutput {
     /// <p>Lists configurations for multiple domain names.</p>
+    #[doc(hidden)]
     pub domain_name_configs: std::option::Option<std::vec::Vec<crate::model::DomainNameConfig>>,
     /// <p>The API token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainNamesOutput {
@@ -1137,8 +1159,10 @@ impl ListDomainNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesOutput {
     /// <p>The <code>DataSource</code> objects.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourcesOutput {
@@ -1219,8 +1243,10 @@ impl ListDataSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiKeysOutput {
     /// <p>The <code>ApiKey</code> objects.</p>
+    #[doc(hidden)]
     pub api_keys: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApiKeysOutput {
@@ -1301,6 +1327,7 @@ impl ListApiKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypeOutput {
     /// <p>The <code>Type</code> object.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl GetTypeOutput {
@@ -1355,8 +1382,10 @@ impl GetTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaCreationStatusOutput {
     /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>Detailed information about the status of the schema creation operation.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl GetSchemaCreationStatusOutput {
@@ -1431,6 +1460,7 @@ impl GetSchemaCreationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverOutput {
     /// <p>The <code>Resolver</code> object.</p>
+    #[doc(hidden)]
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
 impl GetResolverOutput {
@@ -1486,6 +1516,7 @@ impl GetResolverOutput {
 pub struct GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetIntrospectionSchemaOutput {
@@ -1543,6 +1574,7 @@ impl GetIntrospectionSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGraphqlApiOutput {
     /// <p>The <code>GraphqlApi</code> object.</p>
+    #[doc(hidden)]
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
 }
 impl GetGraphqlApiOutput {
@@ -1600,6 +1632,7 @@ impl GetGraphqlApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
 }
 impl GetFunctionOutput {
@@ -1662,6 +1695,7 @@ impl GetFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameOutput {
     /// <p>The configuration for the <code>DomainName</code>.</p>
+    #[doc(hidden)]
     pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
 }
 impl GetDomainNameOutput {
@@ -1719,6 +1753,7 @@ impl GetDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
 impl GetDataSourceOutput {
@@ -1776,6 +1811,7 @@ impl GetDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
+    #[doc(hidden)]
     pub api_cache: std::option::Option<crate::model::ApiCache>,
 }
 impl GetApiCacheOutput {
@@ -1830,6 +1866,7 @@ impl GetApiCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiAssociationOutput {
     /// <p>The <code>ApiAssociation</code> object.</p>
+    #[doc(hidden)]
     pub api_association: std::option::Option<crate::model::ApiAssociation>,
 }
 impl GetApiAssociationOutput {
@@ -1917,8 +1954,10 @@ impl FlushApiCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateMappingTemplateOutput {
     /// <p>The mapping template; this can be a request or response template.</p>
+    #[doc(hidden)]
     pub evaluation_result: std::option::Option<std::string::String>,
     /// <p>The <code>ErrorDetail</code> object.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
 impl EvaluateMappingTemplateOutput {
@@ -2263,6 +2302,7 @@ impl DeleteApiCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTypeOutput {
     /// <p>The <code>Type</code> object.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl CreateTypeOutput {
@@ -2317,6 +2357,7 @@ impl CreateTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResolverOutput {
     /// <p>The <code>Resolver</code> object.</p>
+    #[doc(hidden)]
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
 impl CreateResolverOutput {
@@ -2371,6 +2412,7 @@ impl CreateResolverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphqlApiOutput {
     /// <p>The <code>GraphqlApi</code>.</p>
+    #[doc(hidden)]
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
 }
 impl CreateGraphqlApiOutput {
@@ -2428,6 +2470,7 @@ impl CreateGraphqlApiOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
 }
 impl CreateFunctionOutput {
@@ -2490,6 +2533,7 @@ impl CreateFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainNameOutput {
     /// <p>The configuration for the <code>DomainName</code>.</p>
+    #[doc(hidden)]
     pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
 }
 impl CreateDomainNameOutput {
@@ -2547,6 +2591,7 @@ impl CreateDomainNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
 impl CreateDataSourceOutput {
@@ -2604,6 +2649,7 @@ impl CreateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiKeyOutput {
     /// <p>The API key.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<crate::model::ApiKey>,
 }
 impl CreateApiKeyOutput {
@@ -2658,6 +2704,7 @@ impl CreateApiKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
+    #[doc(hidden)]
     pub api_cache: std::option::Option<crate::model::ApiCache>,
 }
 impl CreateApiCacheOutput {
@@ -2712,6 +2759,7 @@ impl CreateApiCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApiOutput {
     /// <p>The <code>ApiAssociation</code> object.</p>
+    #[doc(hidden)]
     pub api_association: std::option::Option<crate::model::ApiAssociation>,
 }
 impl AssociateApiOutput {

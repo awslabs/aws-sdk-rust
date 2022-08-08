@@ -184,6 +184,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineReprocessingOutput {
     /// <p>The ID of the pipeline reprocessing activity that was started.</p>
+    #[doc(hidden)]
     pub reprocessing_id: std::option::Option<std::string::String>,
 }
 impl StartPipelineReprocessingOutput {
@@ -241,6 +242,7 @@ impl StartPipelineReprocessingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleChannelDataOutput {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
+    #[doc(hidden)]
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
 }
 impl SampleChannelDataOutput {
@@ -304,8 +306,10 @@ impl SampleChannelDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunPipelineActivityOutput {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
+    #[doc(hidden)]
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
+    #[doc(hidden)]
     pub log_result: std::option::Option<std::string::String>,
 }
 impl RunPipelineActivityOutput {
@@ -416,6 +420,7 @@ impl PutLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags (metadata) that you have assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -477,8 +482,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesOutput {
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
+    #[doc(hidden)]
     pub pipeline_summaries: std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesOutput {
@@ -560,8 +567,10 @@ impl ListPipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatastoresOutput {
     /// <p>A list of <code>DatastoreSummary</code> objects.</p>
+    #[doc(hidden)]
     pub datastore_summaries: std::option::Option<std::vec::Vec<crate::model::DatastoreSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatastoresOutput {
@@ -643,8 +652,10 @@ impl ListDatastoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
+    #[doc(hidden)]
     pub dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -726,9 +737,11 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetContentsOutput {
     /// <p>Summary information about dataset contents that have been created.</p>
+    #[doc(hidden)]
     pub dataset_content_summaries:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetContentsOutput {
@@ -815,8 +828,10 @@ impl ListDatasetContentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// <p>A list of <code>ChannelSummary</code> objects.</p>
+    #[doc(hidden)]
     pub channel_summaries: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -898,10 +913,13 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatasetContentOutput {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::DatasetEntry>>,
     /// <p>The time when the request was made.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the dataset content.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
 }
 impl GetDatasetContentOutput {
@@ -1005,6 +1023,7 @@ impl GetDatasetContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelineOutput {
     /// <p>A <code>Pipeline</code> object that contains information about the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
 impl DescribePipelineOutput {
@@ -1059,6 +1078,7 @@ impl DescribePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the IoT Analytics logging options.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl DescribeLoggingOptionsOutput {
@@ -1116,8 +1136,10 @@ impl DescribeLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatastoreOutput {
     /// <p>Information about the data store.</p>
+    #[doc(hidden)]
     pub datastore: std::option::Option<crate::model::Datastore>,
     /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::DatastoreStatistics>,
 }
 impl DescribeDatastoreOutput {
@@ -1195,6 +1217,7 @@ impl DescribeDatastoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>An object that contains information about the dataset.</p>
+    #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
 impl DescribeDatasetOutput {
@@ -1249,8 +1272,10 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// <p>An object that contains information about the channel.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::ChannelStatistics>,
 }
 impl DescribeChannelOutput {
@@ -1475,8 +1500,10 @@ impl DeleteChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineOutput {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_arn: std::option::Option<std::string::String>,
 }
 impl CreatePipelineOutput {
@@ -1551,10 +1578,13 @@ impl CreatePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatastoreOutput {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the data store.</p>
+    #[doc(hidden)]
     pub datastore_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, message data is kept for the data store.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl CreateDatastoreOutput {
@@ -1652,6 +1682,7 @@ impl CreateDatastoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetContentOutput {
     /// <p>The version ID of the dataset contents that are being created.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl CreateDatasetContentOutput {
@@ -1706,10 +1737,13 @@ impl CreateDatasetContentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl CreateDatasetOutput {
@@ -1801,10 +1835,13 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, message data is kept for the channel.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl CreateChannelOutput {
@@ -1926,6 +1963,7 @@ impl CancelPipelineReprocessingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages to the channel.</p>
+    #[doc(hidden)]
     pub batch_put_message_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
 }

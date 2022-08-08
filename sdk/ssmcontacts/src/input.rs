@@ -4462,10 +4462,13 @@ impl UpdateContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
 }
 impl UpdateContactChannelInput {
@@ -4497,10 +4500,13 @@ impl std::fmt::Debug for UpdateContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    #[doc(hidden)]
     pub plan: std::option::Option<crate::model::Plan>,
 }
 impl UpdateContactInput {
@@ -4532,8 +4538,10 @@ impl std::fmt::Debug for UpdateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key of the tag that you want to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4560,8 +4568,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4588,8 +4598,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    #[doc(hidden)]
     pub engagement_id: std::option::Option<std::string::String>,
     /// <p>The reason that you're stopping the engagement. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopEngagementInput {
@@ -4616,20 +4628,28 @@ impl std::fmt::Debug for StopEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_subject: std::option::Option<std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that the engagement is part of.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl StartEngagementInput {
@@ -4686,6 +4706,7 @@ impl std::fmt::Debug for StartEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl SendActivationCodeInput {
@@ -4707,8 +4728,10 @@ impl std::fmt::Debug for SendActivationCodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>Details of the resource policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutContactPolicyInput {
@@ -4735,6 +4758,7 @@ impl std::fmt::Debug for PutContactPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4756,10 +4780,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPagesByEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    #[doc(hidden)]
     pub engagement_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPagesByEngagementInput {
@@ -4791,10 +4818,13 @@ impl std::fmt::Debug for ListPagesByEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPagesByContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPagesByContactInput {
@@ -4826,10 +4856,13 @@ impl std::fmt::Debug for ListPagesByContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPageReceiptsInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
+    #[doc(hidden)]
     pub page_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of acknowledgements per page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPageReceiptsInput {
@@ -4861,12 +4894,16 @@ impl std::fmt::Debug for ListPageReceiptsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngagementsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engagements per page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time range to lists engagements for an incident.</p>
+    #[doc(hidden)]
     pub time_range_value: std::option::Option<crate::model::TimeRange>,
 }
 impl ListEngagementsInput {
@@ -4903,12 +4940,16 @@ impl std::fmt::Debug for ListEngagementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
+    #[doc(hidden)]
     pub alias_prefix: std::option::Option<std::string::String>,
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
 impl ListContactsInput {
@@ -4945,10 +4986,13 @@ impl std::fmt::Debug for ListContactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactChannelsInput {
     /// <p>The Amazon Resource Name (ARN) of the contact. </p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of contact channels per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListContactChannelsInput {
@@ -4980,6 +5024,7 @@ impl std::fmt::Debug for ListContactChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl GetContactPolicyInput {
@@ -5001,6 +5046,7 @@ impl std::fmt::Debug for GetContactPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl GetContactChannelInput {
@@ -5022,6 +5068,7 @@ impl std::fmt::Debug for GetContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl GetContactInput {
@@ -5043,6 +5090,7 @@ impl std::fmt::Debug for GetContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePageInput {
     /// <p>The ID of the engagement to a contact channel.</p>
+    #[doc(hidden)]
     pub page_id: std::option::Option<std::string::String>,
 }
 impl DescribePageInput {
@@ -5064,6 +5112,7 @@ impl std::fmt::Debug for DescribePageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    #[doc(hidden)]
     pub engagement_id: std::option::Option<std::string::String>,
 }
 impl DescribeEngagementInput {
@@ -5085,6 +5134,7 @@ impl std::fmt::Debug for DescribeEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteContactChannelInput {
@@ -5106,6 +5156,7 @@ impl std::fmt::Debug for DeleteContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl DeleteContactInput {
@@ -5127,6 +5178,7 @@ impl std::fmt::Debug for DeleteContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl DeactivateContactChannelInput {
@@ -5148,8 +5200,10 @@ impl std::fmt::Debug for DeactivateContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
@@ -5157,6 +5211,7 @@ pub struct CreateContactChannelInput {
     /// <li> <p> <code>VOICE</code> </p> </li>
     /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -5164,10 +5219,13 @@ pub struct CreateContactChannelInput {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
+    #[doc(hidden)]
     pub defer_activation: std::option::Option<bool>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactChannelInput {
@@ -5224,16 +5282,22 @@ impl std::fmt::Debug for CreateContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactInput {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan. </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactType>,
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    #[doc(hidden)]
     pub plan: std::option::Option<crate::model::Plan>,
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactInput {
@@ -5280,8 +5344,10 @@ impl std::fmt::Debug for CreateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
     /// <p>The code sent to the contact channel when it was created in the contact. </p>
+    #[doc(hidden)]
     pub activation_code: std::option::Option<std::string::String>,
 }
 impl ActivateContactChannelInput {
@@ -5308,17 +5374,23 @@ impl std::fmt::Debug for ActivateContactChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptPageInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    #[doc(hidden)]
     pub page_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
+    #[doc(hidden)]
     pub accept_type: std::option::Option<crate::model::AcceptType>,
     /// <p>Information provided by the user when the user acknowledges the page.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
     /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    #[doc(hidden)]
     pub accept_code: std::option::Option<std::string::String>,
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    #[doc(hidden)]
     pub accept_code_validation: std::option::Option<crate::model::AcceptCodeValidation>,
 }
 impl AcceptPageInput {

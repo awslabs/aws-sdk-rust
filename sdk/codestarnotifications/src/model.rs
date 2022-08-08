@@ -59,8 +59,10 @@ impl AsRef<str> for DetailType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>The target type. Can be an Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    #[doc(hidden)]
     pub target_address: std::option::Option<std::string::String>,
 }
 impl Target {
@@ -190,10 +192,13 @@ impl AsRef<str> for NotificationRuleStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+    #[doc(hidden)]
     pub target_address: std::option::Option<std::string::String>,
     /// <p>The type of the target (for example, SNS).</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The status of the target.</p>
+    #[doc(hidden)]
     pub target_status: std::option::Option<crate::model::TargetStatus>,
 }
 impl TargetSummary {
@@ -361,8 +366,10 @@ impl AsRef<str> for TargetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListTargetsFilterName>,
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ListTargetsFilter {
@@ -496,8 +503,10 @@ impl AsRef<str> for ListTargetsFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationRuleSummary {
     /// <p>The unique ID of the notification rule.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl NotificationRuleSummary {
@@ -569,8 +578,10 @@ impl NotificationRuleSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ListNotificationRulesFilter {
@@ -708,12 +719,16 @@ impl AsRef<str> for ListNotificationRulesFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTypeSummary {
     /// <p>The system-generated ID of the event.</p>
+    #[doc(hidden)]
     pub event_type_id: std::option::Option<std::string::String>,
     /// <p>The name of the service for which the event applies.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the event.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the event.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl EventTypeSummary {
@@ -828,8 +843,10 @@ impl EventTypeSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListEventTypesFilterName>,
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ListEventTypesFilter {

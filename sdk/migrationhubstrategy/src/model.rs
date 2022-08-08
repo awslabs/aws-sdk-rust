@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StrategyOption {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
+    #[doc(hidden)]
     pub strategy: std::option::Option<crate::model::Strategy>,
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
+    #[doc(hidden)]
     pub tool_name: std::option::Option<crate::model::TransformationToolName>,
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
+    #[doc(hidden)]
     pub target_destination: std::option::Option<crate::model::TargetDestination>,
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
+    #[doc(hidden)]
     pub is_preferred: std::option::Option<bool>,
 }
 impl StrategyOption {
@@ -432,10 +436,13 @@ impl AsRef<str> for Strategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceCode {
     /// <p> The type of repository to use for the source code. </p>
+    #[doc(hidden)]
     pub version_control: std::option::Option<crate::model::VersionControl>,
     /// <p> The branch of the source code. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p> The repository name for the source code. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl SourceCode {
@@ -640,8 +647,10 @@ impl AsRef<str> for InclusionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p> The key of the specific import group. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::GroupName>,
     /// <p> The value of the specific import group. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Group {
@@ -874,9 +883,11 @@ impl AsRef<str> for DataSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabasePreferences {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
+    #[doc(hidden)]
     pub database_management_preference:
         std::option::Option<crate::model::DatabaseManagementPreference>,
     /// <p> Specifies your preferred migration path. </p>
+    #[doc(hidden)]
     pub database_migration_preference:
         std::option::Option<crate::model::DatabaseMigrationPreference>,
 }
@@ -1041,6 +1052,7 @@ impl DatabaseMigrationPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
+    #[doc(hidden)]
     pub target_database_engine:
         std::option::Option<std::vec::Vec<crate::model::TargetDatabaseEngine>>,
 }
@@ -1206,6 +1218,7 @@ impl AsRef<str> for TargetDatabaseEngine {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Homogeneous {
     /// <p> The target database engine for homogeneous database migration preferences. </p>
+    #[doc(hidden)]
     pub target_database_engine:
         std::option::Option<std::vec::Vec<crate::model::HomogeneousTargetDatabaseEngine>>,
 }
@@ -1329,6 +1342,7 @@ impl AsRef<str> for HomogeneousTargetDatabaseEngine {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
+    #[doc(hidden)]
     pub target_database_engine:
         std::option::Option<std::vec::Vec<crate::model::HeterogeneousTargetDatabaseEngine>>,
 }
@@ -1558,6 +1572,7 @@ impl AsRef<str> for DatabaseManagementPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
+    #[doc(hidden)]
     pub management_preference: std::option::Option<crate::model::ManagementPreference>,
 }
 impl ApplicationPreferences {
@@ -1689,6 +1704,7 @@ impl ManagementPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
+    #[doc(hidden)]
     pub target_destination:
         std::option::Option<std::vec::Vec<crate::model::NoPreferenceTargetDestination>>,
 }
@@ -1849,6 +1865,7 @@ impl AsRef<str> for NoPreferenceTargetDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
+    #[doc(hidden)]
     pub target_destination:
         std::option::Option<std::vec::Vec<crate::model::SelfManageTargetDestination>>,
 }
@@ -1999,6 +2016,7 @@ impl AsRef<str> for SelfManageTargetDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
+    #[doc(hidden)]
     pub target_destination:
         std::option::Option<std::vec::Vec<crate::model::AwsManagedTargetDestination>>,
 }
@@ -2128,6 +2146,7 @@ impl AsRef<str> for AwsManagedTargetDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrioritizeBusinessGoals {
     /// <p> Rank of business goals based on priority. </p>
+    #[doc(hidden)]
     pub business_goals: std::option::Option<crate::model::BusinessGoals>,
 }
 impl PrioritizeBusinessGoals {
@@ -2185,12 +2204,16 @@ impl PrioritizeBusinessGoals {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessGoals {
     /// <p> Business goal to achieve migration at a fast pace. </p>
+    #[doc(hidden)]
     pub speed_of_migration: std::option::Option<i32>,
     /// <p> Business goal to reduce the operational overhead on the team by moving into managed services. </p>
+    #[doc(hidden)]
     pub reduce_operational_overhead_with_managed_services: std::option::Option<i32>,
     /// <p> Business goal to modernize infrastructure by moving to cloud native technologies. </p>
+    #[doc(hidden)]
     pub modernize_infrastructure_with_cloud_native_technologies: std::option::Option<i32>,
     /// <p> Business goal to reduce license costs. </p>
+    #[doc(hidden)]
     pub license_cost_reduction: std::option::Option<i32>,
 }
 impl BusinessGoals {
@@ -2316,32 +2339,45 @@ impl BusinessGoals {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerDetail {
     /// <p> The server ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of the server. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> A set of recommendations. </p>
+    #[doc(hidden)]
     pub recommendation_set: std::option::Option<crate::model::RecommendationSet>,
     /// <p> The status of assessment for the server. </p>
+    #[doc(hidden)]
     pub data_collection_status: std::option::Option<crate::model::RunTimeAssessmentStatus>,
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
+    #[doc(hidden)]
     pub list_antipattern_severity_summary:
         std::option::Option<std::vec::Vec<crate::model::AntipatternSeveritySummary>>,
     /// <p> System information about the server. </p>
+    #[doc(hidden)]
     pub system_info: std::option::Option<crate::model::SystemInfo>,
     /// <p> A list of strategy summaries. </p>
+    #[doc(hidden)]
     pub application_component_strategy_summary:
         std::option::Option<std::vec::Vec<crate::model::StrategySummary>>,
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
+    #[doc(hidden)]
     pub antipattern_report_s3_object: std::option::Option<crate::model::S3Object>,
     /// <p> The status of the anti-pattern report generation. </p>
+    #[doc(hidden)]
     pub antipattern_report_status: std::option::Option<crate::model::AntipatternReportStatus>,
     /// <p> A message about the status of the anti-pattern report generation. </p>
+    #[doc(hidden)]
     pub antipattern_report_status_message: std::option::Option<std::string::String>,
     /// <p> The type of server. </p>
+    #[doc(hidden)]
     pub server_type: std::option::Option<std::string::String>,
     /// <p> The timestamp of when the server was assessed. </p>
+    #[doc(hidden)]
     pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServerDetail {
@@ -2742,8 +2778,10 @@ impl AsRef<str> for AntipatternReportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Object {
     /// <p> The S3 bucket name. </p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name. </p>
+    #[doc(hidden)]
     pub s3key: std::option::Option<std::string::String>,
 }
 impl S3Object {
@@ -2815,8 +2853,10 @@ impl S3Object {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StrategySummary {
     /// <p> The name of recommended strategy. </p>
+    #[doc(hidden)]
     pub strategy: std::option::Option<crate::model::Strategy>,
     /// <p> The count of recommendations per strategy. </p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl StrategySummary {
@@ -2888,12 +2928,16 @@ impl StrategySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemInfo {
     /// <p> Operating system corresponding to a server. </p>
+    #[doc(hidden)]
     pub os_info: std::option::Option<crate::model::OsInfo>,
     /// <p> File system type for the server. </p>
+    #[doc(hidden)]
     pub file_system_type: std::option::Option<std::string::String>,
     /// <p> Networking information related to a server. </p>
+    #[doc(hidden)]
     pub network_info_list: std::option::Option<std::vec::Vec<crate::model::NetworkInfo>>,
     /// <p> CPU architecture type for the server. </p>
+    #[doc(hidden)]
     pub cpu_architecture: std::option::Option<std::string::String>,
 }
 impl SystemInfo {
@@ -3014,12 +3058,16 @@ impl SystemInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
+    #[doc(hidden)]
     pub interface_name: std::option::Option<std::string::String>,
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
+    #[doc(hidden)]
     pub net_mask: std::option::Option<std::string::String>,
 }
 impl NetworkInfo {
@@ -3128,8 +3176,10 @@ impl NetworkInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OsInfo {
     /// <p> Information about the type of operating system. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OsType>,
     /// <p> Information about the version of operating system. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl OsInfo {
@@ -3256,8 +3306,10 @@ impl AsRef<str> for OsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntipatternSeveritySummary {
     /// <p> Contains the severity of anti-patterns. </p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::Severity>,
     /// <p> Contains the count of anti-patterns. </p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl AntipatternSeveritySummary {
@@ -3471,10 +3523,13 @@ impl AsRef<str> for RunTimeAssessmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationSet {
     /// <p> The target destination for the recommendation set. </p>
+    #[doc(hidden)]
     pub transformation_tool: std::option::Option<crate::model::TransformationTool>,
     /// <p> The recommended target destination. </p>
+    #[doc(hidden)]
     pub target_destination: std::option::Option<crate::model::TargetDestination>,
     /// <p> The recommended strategy. </p>
+    #[doc(hidden)]
     pub strategy: std::option::Option<crate::model::Strategy>,
 }
 impl RecommendationSet {
@@ -3569,10 +3624,13 @@ impl RecommendationSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformationTool {
     /// <p> Name of the tool. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::TransformationToolName>,
     /// <p> Description of the tool. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> URL for installing the tool. </p>
+    #[doc(hidden)]
     pub tranformation_tool_installation_link: std::option::Option<std::string::String>,
 }
 impl TransformationTool {
@@ -3801,26 +3859,37 @@ impl AsRef<str> for ServerCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFileTaskInformation {
     /// <p> The ID of the import file task. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> Status of import file task. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImportFileTaskStatus>,
     /// <p> Start time of the import task. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The S3 bucket where the import file is located. </p>
+    #[doc(hidden)]
     pub input_s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
+    #[doc(hidden)]
     pub input_s3_key: std::option::Option<std::string::String>,
     /// <p> The S3 bucket name for status report of import task. </p>
+    #[doc(hidden)]
     pub status_report_s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not. </p>
+    #[doc(hidden)]
     pub status_report_s3_key: std::option::Option<std::string::String>,
     /// <p> The time that the import task completes. </p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The number of records successfully imported. </p>
+    #[doc(hidden)]
     pub number_of_records_success: std::option::Option<i32>,
     /// <p> The number of records that failed to be imported. </p>
+    #[doc(hidden)]
     pub number_of_records_failed: std::option::Option<i32>,
     /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
+    #[doc(hidden)]
     pub import_name: std::option::Option<std::string::String>,
 }
 impl ImportFileTaskInformation {
@@ -4151,18 +4220,25 @@ impl AsRef<str> for ImportFileTaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Collector {
     /// <p> The ID of the collector. </p>
+    #[doc(hidden)]
     pub collector_id: std::option::Option<std::string::String>,
     /// <p> IP address of the server that is hosting the collector. </p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p> Hostname of the server that is hosting the collector. </p>
+    #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
     /// <p> Indicates the health of a collector. </p>
+    #[doc(hidden)]
     pub collector_health: std::option::Option<crate::model::CollectorHealth>,
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
+    #[doc(hidden)]
     pub collector_version: std::option::Option<std::string::String>,
     /// <p> Time when the collector registered with the service. </p>
+    #[doc(hidden)]
     pub registered_time_stamp: std::option::Option<std::string::String>,
     /// <p> Time when the collector last pinged the service. </p>
+    #[doc(hidden)]
     pub last_activity_time_stamp: std::option::Option<std::string::String>,
 }
 impl Collector {
@@ -4386,44 +4462,63 @@ impl AsRef<str> for CollectorHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationComponentDetail {
     /// <p> The ID of the application component. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of application component. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The top recommendation set for the application component. </p>
+    #[doc(hidden)]
     pub recommendation_set: std::option::Option<crate::model::RecommendationSet>,
     /// <p> The status of analysis, if the application component has source code or an associated database. </p>
+    #[doc(hidden)]
     pub analysis_status: std::option::Option<crate::model::SrcCodeOrDbAnalysisStatus>,
     /// <p> A detailed description of the analysis status and any failure message. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
+    #[doc(hidden)]
     pub list_antipattern_severity_summary:
         std::option::Option<std::vec::Vec<crate::model::AntipatternSeveritySummary>>,
     /// <p> Configuration details for the database associated with the application component. </p>
+    #[doc(hidden)]
     pub database_config_detail: std::option::Option<crate::model::DatabaseConfigDetail>,
     /// <p> Details about the source code repository associated with the application component. </p>
+    #[doc(hidden)]
     pub source_code_repositories:
         std::option::Option<std::vec::Vec<crate::model::SourceCodeRepository>>,
     /// <p> The type of application component. </p>
+    #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p> The application component subtype.</p>
+    #[doc(hidden)]
     pub resource_sub_type: std::option::Option<crate::model::ResourceSubType>,
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    #[doc(hidden)]
     pub inclusion_status: std::option::Option<crate::model::InclusionStatus>,
     /// <p> The S3 bucket name and the Amazon S3 key name for the anti-pattern report. </p>
+    #[doc(hidden)]
     pub antipattern_report_s3_object: std::option::Option<crate::model::S3Object>,
     /// <p> The status of the anti-pattern report generation.</p>
+    #[doc(hidden)]
     pub antipattern_report_status: std::option::Option<crate::model::AntipatternReportStatus>,
     /// <p> The status message for the anti-pattern. </p>
+    #[doc(hidden)]
     pub antipattern_report_status_message: std::option::Option<std::string::String>,
     /// <p> OS version. </p>
+    #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p> OS driver. </p>
+    #[doc(hidden)]
     pub os_driver: std::option::Option<std::string::String>,
     /// <p> The timestamp of when the application component was assessed. </p>
+    #[doc(hidden)]
     pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ID of the server that the application component is running on. </p>
+    #[doc(hidden)]
     pub associated_server_id: std::option::Option<std::string::String>,
     /// <p> Set to true if the application component is running on multiple servers.</p>
+    #[doc(hidden)]
     pub more_server_association_exists: std::option::Option<bool>,
 }
 impl ApplicationComponentDetail {
@@ -5010,10 +5105,13 @@ impl AsRef<str> for AppType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceCodeRepository {
     /// <p> The repository name for the source code. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p> The branch of the source code. </p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p> The type of repository to use for the source code. </p>
+    #[doc(hidden)]
     pub version_control_type: std::option::Option<std::string::String>,
 }
 impl SourceCodeRepository {
@@ -5105,6 +5203,7 @@ impl SourceCodeRepository {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseConfigDetail {
     /// <p> AWS Secrets Manager key that holds the credentials that you use to connect to a database. </p>
+    #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl DatabaseConfigDetail {
@@ -5305,12 +5404,16 @@ impl AsRef<str> for ApplicationComponentCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerStrategy {
     /// <p> Strategy recommendation for the server. </p>
+    #[doc(hidden)]
     pub recommendation: std::option::Option<crate::model::RecommendationSet>,
     /// <p> The recommendation status of the strategy for the server. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StrategyRecommendation>,
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
+    #[doc(hidden)]
     pub number_of_application_components: std::option::Option<i32>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
+    #[doc(hidden)]
     pub is_preferred: std::option::Option<bool>,
 }
 impl ServerStrategy {
@@ -5487,8 +5590,10 @@ impl AsRef<str> for StrategyRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedApplication {
     /// <p> Name of the application as defined in Application Discovery Service. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> ID of the application as defined in Application Discovery Service. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl AssociatedApplication {
@@ -5560,16 +5665,22 @@ impl AssociatedApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationReportDetails {
     /// <p> The status of the recommendation report generation task. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecommendationReportStatus>,
     /// <p> The status message for recommendation report generation. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> The time that the recommendation report generation task starts. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time that the recommendation report generation task completes. </p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The S3 bucket where the report file is located. </p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name of the report file. </p>
+    #[doc(hidden)]
     pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RecommendationReportDetails {
@@ -5789,26 +5900,35 @@ impl AsRef<str> for RecommendationReportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
+    #[doc(hidden)]
     pub list_server_strategy_summary:
         std::option::Option<std::vec::Vec<crate::model::StrategySummary>>,
     /// <p> List of ApplicationComponentStrategySummary. </p>
+    #[doc(hidden)]
     pub list_application_component_strategy_summary:
         std::option::Option<std::vec::Vec<crate::model::StrategySummary>>,
     /// <p> List of AntipatternSeveritySummary. </p>
+    #[doc(hidden)]
     pub list_antipattern_severity_summary:
         std::option::Option<std::vec::Vec<crate::model::AntipatternSeveritySummary>>,
     /// <p> List of ApplicationComponentSummary. </p>
+    #[doc(hidden)]
     pub list_application_component_summary:
         std::option::Option<std::vec::Vec<crate::model::ApplicationComponentSummary>>,
     /// <p> List of ServerSummary. </p>
+    #[doc(hidden)]
     pub list_server_summary: std::option::Option<std::vec::Vec<crate::model::ServerSummary>>,
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
+    #[doc(hidden)]
     pub antipattern_report_s3_object: std::option::Option<crate::model::S3Object>,
     /// <p> The status of the anti-pattern report. </p>
+    #[doc(hidden)]
     pub antipattern_report_status: std::option::Option<crate::model::AntipatternReportStatus>,
     /// <p> The status message of the anti-pattern report. </p>
+    #[doc(hidden)]
     pub antipattern_report_status_message: std::option::Option<std::string::String>,
     /// <p> The time the assessment was performed. </p>
+    #[doc(hidden)]
     pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AssessmentSummary {
@@ -6111,8 +6231,10 @@ impl AssessmentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSummary {
     /// <p> Type of operating system for the servers. </p>
+    #[doc(hidden)]
     pub server_os_type: std::option::Option<crate::model::ServerOsType>,
     /// <p> Number of servers. </p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl ServerSummary {
@@ -6260,8 +6382,10 @@ impl AsRef<str> for ServerOsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationComponentSummary {
     /// <p> Contains the name of application types. </p>
+    #[doc(hidden)]
     pub app_type: std::option::Option<crate::model::AppType>,
     /// <p> Contains the count of application type. </p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl ApplicationComponentSummary {
@@ -6333,18 +6457,25 @@ impl ApplicationComponentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCollectionDetails {
     /// <p> The status of the assessment. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssessmentStatus>,
     /// <p> The total number of servers in the assessment. </p>
+    #[doc(hidden)]
     pub servers: std::option::Option<i32>,
     /// <p> The number of failed servers in the assessment. </p>
+    #[doc(hidden)]
     pub failed: std::option::Option<i32>,
     /// <p> The number of successful servers in the assessment. </p>
+    #[doc(hidden)]
     pub success: std::option::Option<i32>,
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
+    #[doc(hidden)]
     pub in_progress: std::option::Option<i32>,
     /// <p> The start time of assessment. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time the assessment completes. </p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataCollectionDetails {
@@ -6573,10 +6704,13 @@ impl AsRef<str> for AssessmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationComponentStrategy {
     /// <p> Strategy recommendation for the application component. </p>
+    #[doc(hidden)]
     pub recommendation: std::option::Option<crate::model::RecommendationSet>,
     /// <p> The recommendation status of a strategy for an application component. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StrategyRecommendation>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
+    #[doc(hidden)]
     pub is_preferred: std::option::Option<bool>,
 }
 impl ApplicationComponentStrategy {

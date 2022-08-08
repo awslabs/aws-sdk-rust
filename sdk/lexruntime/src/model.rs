@@ -145,10 +145,13 @@ impl AsRef<str> for MessageFormatType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The length of time or number of turns that a context remains active.</p>
+    #[doc(hidden)]
     pub time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -261,8 +264,10 @@ impl ActiveContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContextTimeToLive {
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+    #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
+    #[doc(hidden)]
     pub turns_to_live: std::option::Option<i32>,
 }
 impl ActiveContextTimeToLive {
@@ -334,11 +339,14 @@ impl ActiveContextTimeToLive {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentSummary {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
+    #[doc(hidden)]
     pub checkpoint_label: std::option::Option<std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
+    #[doc(hidden)]
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
@@ -347,6 +355,7 @@ pub struct IntentSummary {
     /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
     /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub confirmation_status: std::option::Option<crate::model::ConfirmationStatus>,
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
@@ -355,6 +364,7 @@ pub struct IntentSummary {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dialog_action_type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
@@ -362,8 +372,10 @@ pub struct IntentSummary {
     /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub fulfillment_state: std::option::Option<crate::model::FulfillmentState>,
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
 }
 impl IntentSummary {
@@ -804,13 +816,17 @@ pub struct DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
+    #[doc(hidden)]
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the slot that should be elicited from the user.</p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
@@ -818,8 +834,10 @@ pub struct DialogAction {
     /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub fulfillment_state: std::option::Option<crate::model::FulfillmentState>,
     /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <ul>
     /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
@@ -827,6 +845,7 @@ pub struct DialogAction {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
 }
 impl DialogAction {
@@ -1066,10 +1085,13 @@ impl DialogAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseCard {
     /// <p>The version of the response card format.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The content type of the response.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::ContentType>,
     /// <p>An array of attachment objects representing options.</p>
+    #[doc(hidden)]
     pub generic_attachments: std::option::Option<std::vec::Vec<crate::model::GenericAttachment>>,
 }
 impl ResponseCard {
@@ -1171,14 +1193,19 @@ impl ResponseCard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenericAttachment {
     /// <p>The title of the option.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The subtitle shown below the title.</p>
+    #[doc(hidden)]
     pub sub_title: std::option::Option<std::string::String>,
     /// <p>The URL of an attachment to the response card.</p>
+    #[doc(hidden)]
     pub attachment_link_url: std::option::Option<std::string::String>,
     /// <p>The URL of an image that is displayed to the user.</p>
+    #[doc(hidden)]
     pub image_url: std::option::Option<std::string::String>,
     /// <p>The list of options to show to the user.</p>
+    #[doc(hidden)]
     pub buttons: std::option::Option<std::vec::Vec<crate::model::Button>>,
 }
 impl GenericAttachment {
@@ -1313,8 +1340,10 @@ impl GenericAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Button {
     /// <p>Text that is visible to the user on the button.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Button {
@@ -1438,8 +1467,10 @@ impl AsRef<str> for ContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SentimentResponse {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
+    #[doc(hidden)]
     pub sentiment_label: std::option::Option<std::string::String>,
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
+    #[doc(hidden)]
     pub sentiment_score: std::option::Option<std::string::String>,
 }
 impl SentimentResponse {
@@ -1517,10 +1548,13 @@ impl SentimentResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictedIntent {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
+    #[doc(hidden)]
     pub nlu_intent_confidence: std::option::Option<crate::model::IntentConfidence>,
     /// <p>The slot and slot values associated with the predicted intent.</p>
+    #[doc(hidden)]
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1633,6 +1667,7 @@ impl PredictedIntent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentConfidence {
     /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
+    #[doc(hidden)]
     pub score: f64,
 }
 impl IntentConfidence {

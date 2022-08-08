@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableResourceMetricsOutput {
     /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::ResponseResourceMetric>>,
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableResourceMetricsOutput {
@@ -87,8 +89,10 @@ impl ListAvailableResourceMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableResourceDimensionsOutput {
     /// <p>The dimension information returned for requested metric types.</p>
+    #[doc(hidden)]
     pub metric_dimensions: std::option::Option<std::vec::Vec<crate::model::MetricDimensionGroups>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableResourceDimensionsOutput {
@@ -170,14 +174,19 @@ impl ListAvailableResourceDimensionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
+    #[doc(hidden)]
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
+    #[doc(hidden)]
     pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
+    #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceMetricsOutput {
@@ -316,8 +325,10 @@ impl GetResourceMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetadataOutput {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
+    #[doc(hidden)]
     pub features: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FeatureMetadata>,
     >,
@@ -412,6 +423,7 @@ impl GetResourceMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
 }
 impl GetDimensionKeyDetailsOutput {
@@ -475,14 +487,19 @@ impl GetDimensionKeyDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
+    #[doc(hidden)]
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
+    #[doc(hidden)]
     pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
     /// <p>The dimension keys that were requested.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDescription>>,
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDimensionKeysOutput {

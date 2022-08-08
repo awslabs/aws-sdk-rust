@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackOutput {
     /// <p>Information about the stack.</p>
+    #[doc(hidden)]
     pub stack: std::option::Option<crate::model::Stack>,
 }
 impl UpdateStackOutput {
@@ -86,6 +87,7 @@ impl UpdateImagePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetOutput {
     /// <p>Information about the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<crate::model::Fleet>,
 }
 impl UpdateFleetOutput {
@@ -138,6 +140,7 @@ impl UpdateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEntitlementOutput {
     /// <p>The entitlement.</p>
+    #[doc(hidden)]
     pub entitlement: std::option::Option<crate::model::Entitlement>,
 }
 impl UpdateEntitlementOutput {
@@ -195,6 +198,7 @@ impl UpdateEntitlementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDirectoryConfigOutput {
     /// <p>Information about the Directory Config object.</p>
+    #[doc(hidden)]
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
 }
 impl UpdateDirectoryConfigOutput {
@@ -252,6 +256,7 @@ impl UpdateDirectoryConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>Describes an application in the application catalog.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl UpdateApplicationOutput {
@@ -369,6 +374,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopImageBuilderOutput {
     /// <p>Information about the image builder.</p>
+    #[doc(hidden)]
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
 impl StopImageBuilderOutput {
@@ -456,6 +462,7 @@ impl StopFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImageBuilderOutput {
     /// <p>Information about the image builder.</p>
+    #[doc(hidden)]
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
 impl StartImageBuilderOutput {
@@ -543,6 +550,7 @@ impl StartFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The information about the tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -616,9 +624,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
+    #[doc(hidden)]
     pub entitled_applications:
         std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitledApplicationsOutput {
@@ -702,8 +712,10 @@ impl ListEntitledApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedStacksOutput {
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedStacksOutput {
@@ -784,8 +796,10 @@ impl ListAssociatedStacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedFleetsOutput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedFleetsOutput {
@@ -1046,9 +1060,11 @@ impl DisableUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserStackAssociationsOutput {
     /// <p>The UserStackAssociation objects.</p>
+    #[doc(hidden)]
     pub user_stack_associations:
         std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUserStackAssociationsOutput {
@@ -1135,8 +1151,10 @@ impl DescribeUserStackAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersOutput {
     /// <p>Information about users in the user pool.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -1217,9 +1235,11 @@ impl DescribeUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsageReportSubscriptionsOutput {
     /// <p>Information about the usage report subscription.</p>
+    #[doc(hidden)]
     pub usage_report_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::UsageReportSubscription>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsageReportSubscriptionsOutput {
@@ -1309,8 +1329,10 @@ impl DescribeUsageReportSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksOutput {
     /// <p>Information about the stacks.</p>
+    #[doc(hidden)]
     pub stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStacksOutput {
@@ -1391,8 +1413,10 @@ impl DescribeStacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSessionsOutput {
     /// <p>Information about the streaming sessions.</p>
+    #[doc(hidden)]
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSessionsOutput {
@@ -1473,8 +1497,10 @@ impl DescribeSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesOutput {
     /// <p>Information about the images.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagesOutput {
@@ -1555,11 +1581,14 @@ impl DescribeImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagePermissionsOutput {
     /// <p>The name of the private image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The permissions for a private image that you own. </p>
+    #[doc(hidden)]
     pub shared_image_permissions_list:
         std::option::Option<std::vec::Vec<crate::model::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagePermissionsOutput {
@@ -1666,8 +1695,10 @@ impl DescribeImagePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageBuildersOutput {
     /// <p>Information about the image builders.</p>
+    #[doc(hidden)]
     pub image_builders: std::option::Option<std::vec::Vec<crate::model::ImageBuilder>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImageBuildersOutput {
@@ -1748,8 +1779,10 @@ impl DescribeImageBuildersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetsOutput {
     /// <p>Information about the fleets.</p>
+    #[doc(hidden)]
     pub fleets: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetsOutput {
@@ -1830,8 +1863,10 @@ impl DescribeFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitlementsOutput {
     /// <p>The entitlements.</p>
+    #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEntitlementsOutput {
@@ -1912,8 +1947,10 @@ impl DescribeEntitlementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectoryConfigsOutput {
     /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    #[doc(hidden)]
     pub directory_configs: std::option::Option<std::vec::Vec<crate::model::DirectoryConfig>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectoryConfigsOutput {
@@ -1995,8 +2032,10 @@ impl DescribeDirectoryConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationsOutput {
     /// <p>The applications in the list.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationsOutput {
@@ -2077,9 +2116,11 @@ impl DescribeApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
+    #[doc(hidden)]
     pub application_fleet_associations:
         std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsOutput {
@@ -2169,8 +2210,10 @@ impl DescribeApplicationFleetAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppBlocksOutput {
     /// <p>The app blocks in the list.</p>
+    #[doc(hidden)]
     pub app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAppBlocksOutput {
@@ -2371,6 +2414,7 @@ impl DeleteImagePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageBuilderOutput {
     /// <p>Information about the image builder.</p>
+    #[doc(hidden)]
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
 impl DeleteImageBuilderOutput {
@@ -2428,6 +2472,7 @@ impl DeleteImageBuilderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageOutput {
     /// <p>Information about the image.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl DeleteImageOutput {
@@ -2661,8 +2706,10 @@ impl CreateUserOutput {
 pub struct CreateUsageReportSubscriptionOutput {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The schedule for generating usage reports.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
 }
 impl CreateUsageReportSubscriptionOutput {
@@ -2743,8 +2790,10 @@ impl CreateUsageReportSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUpdatedImageOutput {
     /// <p>Describes an image.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Indicates whether a new image can be created.</p>
+    #[doc(hidden)]
     pub can_update_image: bool,
 }
 impl CreateUpdatedImageOutput {
@@ -2816,8 +2865,10 @@ impl CreateUpdatedImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    #[doc(hidden)]
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+    #[doc(hidden)]
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateStreamingUrlOutput {
@@ -2895,6 +2946,7 @@ impl CreateStreamingUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackOutput {
     /// <p>Information about the stack.</p>
+    #[doc(hidden)]
     pub stack: std::option::Option<crate::model::Stack>,
 }
 impl CreateStackOutput {
@@ -2947,8 +2999,10 @@ impl CreateStackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageBuilderStreamingUrlOutput {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    #[doc(hidden)]
     pub streaming_url: std::option::Option<std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+    #[doc(hidden)]
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateImageBuilderStreamingUrlOutput {
@@ -3026,6 +3080,7 @@ impl CreateImageBuilderStreamingUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageBuilderOutput {
     /// <p>Information about the image builder.</p>
+    #[doc(hidden)]
     pub image_builder: std::option::Option<crate::model::ImageBuilder>,
 }
 impl CreateImageBuilderOutput {
@@ -3083,6 +3138,7 @@ impl CreateImageBuilderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetOutput {
     /// <p>Information about the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<crate::model::Fleet>,
 }
 impl CreateFleetOutput {
@@ -3135,6 +3191,7 @@ impl CreateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntitlementOutput {
     /// <p>The entitlement.</p>
+    #[doc(hidden)]
     pub entitlement: std::option::Option<crate::model::Entitlement>,
 }
 impl CreateEntitlementOutput {
@@ -3192,6 +3249,7 @@ impl CreateEntitlementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryConfigOutput {
     /// <p>Information about the directory configuration.</p>
+    #[doc(hidden)]
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
 }
 impl CreateDirectoryConfigOutput {
@@ -3249,6 +3307,7 @@ impl CreateDirectoryConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>Describes an application in the application catalog.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl CreateApplicationOutput {
@@ -3306,6 +3365,7 @@ impl CreateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppBlockOutput {
     /// <p>The app block.</p>
+    #[doc(hidden)]
     pub app_block: std::option::Option<crate::model::AppBlock>,
 }
 impl CreateAppBlockOutput {
@@ -3360,6 +3420,7 @@ impl CreateAppBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyImageOutput {
     /// <p>The name of the destination image.</p>
+    #[doc(hidden)]
     pub destination_image_name: std::option::Option<std::string::String>,
 }
 impl CopyImageOutput {
@@ -3417,6 +3478,7 @@ impl CopyImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
 }
 impl BatchDisassociateUserStackOutput {
@@ -3481,6 +3543,7 @@ impl BatchDisassociateUserStackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
 }
 impl BatchAssociateUserStackOutput {
@@ -3605,6 +3668,7 @@ impl AssociateApplicationToEntitlementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApplicationFleetOutput {
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
+    #[doc(hidden)]
     pub application_fleet_association:
         std::option::Option<crate::model::ApplicationFleetAssociation>,
 }

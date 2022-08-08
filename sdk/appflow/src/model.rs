@@ -82,14 +82,19 @@ impl AsRef<str> for FlowStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
     /// <p> The source fields to which a particular task is applied. </p>
+    #[doc(hidden)]
     pub source_fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The operation to be performed on the provided source fields. </p>
+    #[doc(hidden)]
     pub connector_operator: std::option::Option<crate::model::ConnectorOperator>,
     /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
+    #[doc(hidden)]
     pub destination_field: std::option::Option<std::string::String>,
     /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::TaskType>,
     /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
+    #[doc(hidden)]
     pub task_properties: std::option::Option<
         std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     >,
@@ -469,36 +474,52 @@ impl AsRef<str> for TaskType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorOperator {
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
+    #[doc(hidden)]
     pub amplitude: std::option::Option<crate::model::AmplitudeConnectorOperator>,
     /// <p> The operation to be performed on the provided Datadog source fields. </p>
+    #[doc(hidden)]
     pub datadog: std::option::Option<crate::model::DatadogConnectorOperator>,
     /// <p> The operation to be performed on the provided Dynatrace source fields. </p>
+    #[doc(hidden)]
     pub dynatrace: std::option::Option<crate::model::DynatraceConnectorOperator>,
     /// <p> The operation to be performed on the provided Google Analytics source fields. </p>
+    #[doc(hidden)]
     pub google_analytics: std::option::Option<crate::model::GoogleAnalyticsConnectorOperator>,
     /// <p> The operation to be performed on the provided Infor Nexus source fields. </p>
+    #[doc(hidden)]
     pub infor_nexus: std::option::Option<crate::model::InforNexusConnectorOperator>,
     /// <p> The operation to be performed on the provided Marketo source fields. </p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoConnectorOperator>,
     /// <p> The operation to be performed on the provided Amazon S3 source fields. </p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3ConnectorOperator>,
     /// <p> The operation to be performed on the provided Salesforce source fields. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceConnectorOperator>,
     /// <p> The operation to be performed on the provided ServiceNow source fields. </p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowConnectorOperator>,
     /// <p> The operation to be performed on the provided Singular source fields. </p>
+    #[doc(hidden)]
     pub singular: std::option::Option<crate::model::SingularConnectorOperator>,
     /// <p> The operation to be performed on the provided Slack source fields. </p>
+    #[doc(hidden)]
     pub slack: std::option::Option<crate::model::SlackConnectorOperator>,
     /// <p> The operation to be performed on the provided Trend Micro source fields. </p>
+    #[doc(hidden)]
     pub trendmicro: std::option::Option<crate::model::TrendmicroConnectorOperator>,
     /// <p> The operation to be performed on the provided Veeva source fields. </p>
+    #[doc(hidden)]
     pub veeva: std::option::Option<crate::model::VeevaConnectorOperator>,
     /// <p> The operation to be performed on the provided Zendesk source fields. </p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
     /// <p> The operation to be performed on the provided SAPOData source fields. </p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorOperator>,
     /// <p>Operators supported by the custom connector.</p>
+    #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::Operator>,
 }
 impl ConnectorOperator {
@@ -2875,12 +2896,16 @@ impl AsRef<str> for AmplitudeConnectorOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The API version that the destination connector uses.</p>
+    #[doc(hidden)]
     pub api_version: std::option::Option<std::string::String>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> This stores the information that is required to query a particular connector. </p>
+    #[doc(hidden)]
     pub destination_connector_properties:
         std::option::Option<crate::model::DestinationConnectorProperties>,
 }
@@ -3005,30 +3030,43 @@ impl DestinationFlowConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConnectorProperties {
     /// <p> The properties required to query Amazon Redshift. </p>
+    #[doc(hidden)]
     pub redshift: std::option::Option<crate::model::RedshiftDestinationProperties>,
     /// <p> The properties required to query Amazon S3. </p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3DestinationProperties>,
     /// <p> The properties required to query Salesforce. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceDestinationProperties>,
     /// <p> The properties required to query Snowflake. </p>
+    #[doc(hidden)]
     pub snowflake: std::option::Option<crate::model::SnowflakeDestinationProperties>,
     /// <p> The properties required to query Amazon EventBridge. </p>
+    #[doc(hidden)]
     pub event_bridge: std::option::Option<crate::model::EventBridgeDestinationProperties>,
     /// <p> The properties required to query Amazon Lookout for Metrics. </p>
+    #[doc(hidden)]
     pub lookout_metrics: std::option::Option<crate::model::LookoutMetricsDestinationProperties>,
     /// <p> The properties required to query Upsolver. </p>
+    #[doc(hidden)]
     pub upsolver: std::option::Option<crate::model::UpsolverDestinationProperties>,
     /// <p> The properties required to query Amazon Honeycode. </p>
+    #[doc(hidden)]
     pub honeycode: std::option::Option<crate::model::HoneycodeDestinationProperties>,
     /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
+    #[doc(hidden)]
     pub customer_profiles: std::option::Option<crate::model::CustomerProfilesDestinationProperties>,
     /// <p>The properties required to query Zendesk.</p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskDestinationProperties>,
     /// <p>The properties required to query Marketo.</p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoDestinationProperties>,
     /// <p>The properties that are required to query the custom Connector.</p>
+    #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorDestinationProperties>,
     /// <p>The properties required to query SAPOData.</p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataDestinationProperties>,
 }
 impl DestinationConnectorProperties {
@@ -3352,16 +3390,21 @@ impl DestinationConnectorProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SapoDataDestinationProperties {
     /// <p>The object path specified in the SAPOData flow destination.</p>
+    #[doc(hidden)]
     pub object_path: std::option::Option<std::string::String>,
     /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
     /// <p>For example, this setting would determine where to write the response from a destination connector upon a successful insert operation.</p>
+    #[doc(hidden)]
     pub success_response_handling_config:
         std::option::Option<crate::model::SuccessResponseHandlingConfig>,
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
+    #[doc(hidden)]
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
+    #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
 impl SapoDataDestinationProperties {
@@ -3578,10 +3621,13 @@ impl AsRef<str> for WriteOperationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorHandlingConfig {
     /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
+    #[doc(hidden)]
     pub fail_on_first_destination_error: bool,
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> Specifies the name of the Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl ErrorHandlingConfig {
@@ -3682,8 +3728,10 @@ impl ErrorHandlingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuccessResponseHandlingConfig {
     /// <p>The Amazon S3 bucket prefix.</p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl SuccessResponseHandlingConfig {
@@ -3758,14 +3806,19 @@ impl SuccessResponseHandlingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomConnectorDestinationProperties {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
+    #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
+    #[doc(hidden)]
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
+    #[doc(hidden)]
     pub custom_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3924,8 +3977,10 @@ impl CustomConnectorDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketoDestinationProperties {
     /// <p>The object specified in the Marketo flow destination.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl MarketoDestinationProperties {
@@ -4000,12 +4055,16 @@ impl MarketoDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
+    #[doc(hidden)]
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
+    #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
 impl ZendeskDestinationProperties {
@@ -4126,8 +4185,10 @@ impl ZendeskDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerProfilesDestinationProperties {
     /// <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
 }
 impl CustomerProfilesDestinationProperties {
@@ -4202,8 +4263,10 @@ impl CustomerProfilesDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoneycodeDestinationProperties {
     /// <p> The object specified in the Amazon Honeycode flow destination. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl HoneycodeDestinationProperties {
@@ -4278,10 +4341,13 @@ impl HoneycodeDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsolverDestinationProperties {
     /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
+    #[doc(hidden)]
     pub s3_output_format_config: std::option::Option<crate::model::UpsolverS3OutputFormatConfig>,
 }
 impl UpsolverDestinationProperties {
@@ -4382,10 +4448,13 @@ impl UpsolverDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsolverS3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub file_type: std::option::Option<crate::model::FileType>,
     /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
+    #[doc(hidden)]
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
+    #[doc(hidden)]
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
 }
 impl UpsolverS3OutputFormatConfig {
@@ -4480,6 +4549,7 @@ impl UpsolverS3OutputFormatConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
+    #[doc(hidden)]
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
 }
 impl AggregationConfig {
@@ -4592,8 +4662,10 @@ impl AsRef<str> for AggregationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefixConfig {
     /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
+    #[doc(hidden)]
     pub prefix_type: std::option::Option<crate::model::PrefixType>,
     /// <p> Determines the level of granularity that's included in the prefix. </p>
+    #[doc(hidden)]
     pub prefix_format: std::option::Option<crate::model::PrefixFormat>,
 }
 impl PrefixConfig {
@@ -4886,8 +4958,10 @@ impl LookoutMetricsDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBridgeDestinationProperties {
     /// <p> The object specified in the Amazon EventBridge flow destination. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl EventBridgeDestinationProperties {
@@ -4962,12 +5036,16 @@ impl EventBridgeDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeDestinationProperties {
     /// <p> The object specified in the Snowflake flow destination. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
+    #[doc(hidden)]
     pub intermediate_bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl SnowflakeDestinationProperties {
@@ -5082,12 +5160,16 @@ impl SnowflakeDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
+    #[doc(hidden)]
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+    #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
 impl SalesforceDestinationProperties {
@@ -5208,10 +5290,13 @@ impl SalesforceDestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
+    #[doc(hidden)]
     pub s3_output_format_config: std::option::Option<crate::model::S3OutputFormatConfig>,
 }
 impl S3DestinationProperties {
@@ -5311,16 +5396,20 @@ impl S3DestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub file_type: std::option::Option<crate::model::FileType>,
     /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
+    #[doc(hidden)]
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
+    #[doc(hidden)]
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>
     /// <ul>
     /// <li> <p> <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p> </li>
     /// <li> <p> <code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub preserve_source_data_typing: std::option::Option<bool>,
 }
 impl S3OutputFormatConfig {
@@ -5447,12 +5536,16 @@ impl S3OutputFormatConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
+    #[doc(hidden)]
     pub intermediate_bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    #[doc(hidden)]
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl RedshiftDestinationProperties {
@@ -5730,14 +5823,19 @@ impl AsRef<str> for ConnectorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The API version of the connector when it's used as a source in the flow.</p>
+    #[doc(hidden)]
     pub api_version: std::option::Option<std::string::String>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Specifies the information that is required to query a particular source connector. </p>
+    #[doc(hidden)]
     pub source_connector_properties: std::option::Option<crate::model::SourceConnectorProperties>,
     /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
+    #[doc(hidden)]
     pub incremental_pull_config: std::option::Option<crate::model::IncrementalPullConfig>,
 }
 impl SourceFlowConfig {
@@ -5887,6 +5985,7 @@ impl SourceFlowConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncrementalPullConfig {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
+    #[doc(hidden)]
     pub datetime_type_field_name: std::option::Option<std::string::String>,
 }
 impl IncrementalPullConfig {
@@ -5944,36 +6043,52 @@ impl IncrementalPullConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceConnectorProperties {
     /// <p> Specifies the information that is required for querying Amplitude. </p>
+    #[doc(hidden)]
     pub amplitude: std::option::Option<crate::model::AmplitudeSourceProperties>,
     /// <p> Specifies the information that is required for querying Datadog. </p>
+    #[doc(hidden)]
     pub datadog: std::option::Option<crate::model::DatadogSourceProperties>,
     /// <p> Specifies the information that is required for querying Dynatrace. </p>
+    #[doc(hidden)]
     pub dynatrace: std::option::Option<crate::model::DynatraceSourceProperties>,
     /// <p> Specifies the information that is required for querying Google Analytics. </p>
+    #[doc(hidden)]
     pub google_analytics: std::option::Option<crate::model::GoogleAnalyticsSourceProperties>,
     /// <p> Specifies the information that is required for querying Infor Nexus. </p>
+    #[doc(hidden)]
     pub infor_nexus: std::option::Option<crate::model::InforNexusSourceProperties>,
     /// <p> Specifies the information that is required for querying Marketo. </p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoSourceProperties>,
     /// <p> Specifies the information that is required for querying Amazon S3. </p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3SourceProperties>,
     /// <p> Specifies the information that is required for querying Salesforce. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceSourceProperties>,
     /// <p> Specifies the information that is required for querying ServiceNow. </p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowSourceProperties>,
     /// <p> Specifies the information that is required for querying Singular. </p>
+    #[doc(hidden)]
     pub singular: std::option::Option<crate::model::SingularSourceProperties>,
     /// <p> Specifies the information that is required for querying Slack. </p>
+    #[doc(hidden)]
     pub slack: std::option::Option<crate::model::SlackSourceProperties>,
     /// <p> Specifies the information that is required for querying Trend Micro. </p>
+    #[doc(hidden)]
     pub trendmicro: std::option::Option<crate::model::TrendmicroSourceProperties>,
     /// <p> Specifies the information that is required for querying Veeva. </p>
+    #[doc(hidden)]
     pub veeva: std::option::Option<crate::model::VeevaSourceProperties>,
     /// <p> Specifies the information that is required for querying Zendesk. </p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
     /// <p> The properties that are applied when using SAPOData as a flow source. </p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataSourceProperties>,
     /// <p>The properties that are applied when the custom connector is being used as a source.</p>
+    #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorSourceProperties>,
 }
 impl SourceConnectorProperties {
@@ -6343,8 +6458,10 @@ impl SourceConnectorProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
+    #[doc(hidden)]
     pub custom_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6437,6 +6554,7 @@ impl CustomConnectorSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
+    #[doc(hidden)]
     pub object_path: std::option::Option<std::string::String>,
 }
 impl SapoDataSourceProperties {
@@ -6491,6 +6609,7 @@ impl SapoDataSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskSourceProperties {
     /// <p> The object specified in the Zendesk flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ZendeskSourceProperties {
@@ -6545,14 +6664,19 @@ impl ZendeskSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p>The document type specified in the Veeva document extract flow.</p>
+    #[doc(hidden)]
     pub document_type: std::option::Option<std::string::String>,
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
+    #[doc(hidden)]
     pub include_source_files: bool,
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+    #[doc(hidden)]
     pub include_renditions: bool,
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
+    #[doc(hidden)]
     pub include_all_versions: bool,
 }
 impl VeevaSourceProperties {
@@ -6678,6 +6802,7 @@ impl VeevaSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl TrendmicroSourceProperties {
@@ -6732,6 +6857,7 @@ impl TrendmicroSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl SlackSourceProperties {
@@ -6786,6 +6912,7 @@ impl SlackSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingularSourceProperties {
     /// <p> The object specified in the Singular flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl SingularSourceProperties {
@@ -6840,6 +6967,7 @@ impl SingularSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowSourceProperties {
     /// <p> The object specified in the ServiceNow flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ServiceNowSourceProperties {
@@ -6894,10 +7022,13 @@ impl ServiceNowSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
+    #[doc(hidden)]
     pub enable_dynamic_field_update: bool,
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
+    #[doc(hidden)]
     pub include_deleted_records: bool,
 }
 impl SalesforceSourceProperties {
@@ -6989,10 +7120,13 @@ impl SalesforceSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SourceProperties {
     /// <p> The Amazon S3 bucket name where the source files are stored. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+    #[doc(hidden)]
     pub s3_input_format_config: std::option::Option<crate::model::S3InputFormatConfig>,
 }
 impl S3SourceProperties {
@@ -7089,6 +7223,7 @@ impl S3SourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub s3_input_file_type: std::option::Option<crate::model::S3InputFileType>,
 }
 impl S3InputFormatConfig {
@@ -7201,6 +7336,7 @@ impl AsRef<str> for S3InputFileType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketoSourceProperties {
     /// <p> The object specified in the Marketo flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl MarketoSourceProperties {
@@ -7255,6 +7391,7 @@ impl MarketoSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl InforNexusSourceProperties {
@@ -7309,6 +7446,7 @@ impl InforNexusSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GoogleAnalyticsSourceProperties {
     /// <p> The object specified in the Google Analytics flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl GoogleAnalyticsSourceProperties {
@@ -7363,6 +7501,7 @@ impl GoogleAnalyticsSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynatraceSourceProperties {
     /// <p> The object specified in the Dynatrace flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl DynatraceSourceProperties {
@@ -7417,6 +7556,7 @@ impl DynatraceSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatadogSourceProperties {
     /// <p> The object specified in the Datadog flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl DatadogSourceProperties {
@@ -7471,6 +7611,7 @@ impl DatadogSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl AmplitudeSourceProperties {
@@ -7525,8 +7666,10 @@ impl AmplitudeSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerConfig {
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+    #[doc(hidden)]
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
 }
 impl TriggerConfig {
@@ -7604,6 +7747,7 @@ impl TriggerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerProperties {
     /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
+    #[doc(hidden)]
     pub scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
 }
 impl TriggerProperties {
@@ -7661,21 +7805,29 @@ impl TriggerProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
+    #[doc(hidden)]
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
+    #[doc(hidden)]
     pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the scheduled flow ends. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</p>
+    #[doc(hidden)]
     pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time zone used when referring to the dates and times of a scheduled flow, such as <code>America/New_York</code>. This time zone is only a descriptive label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to schedule the flow.</p>
     /// <p>If you want to schedule a flow by using times in a particular time zone, indicate the time zone as a UTC offset in your timestamps. For example, the UTC offsets for the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00 EST</code>.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i64>,
     /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
+    #[doc(hidden)]
     pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow deactivates it.</p>
+    #[doc(hidden)]
     pub flow_error_deactivation_threshold: std::option::Option<i32>,
 }
 impl ScheduledTriggerProperties {
@@ -7987,8 +8139,10 @@ impl AsRef<str> for TriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfileConfig {
     /// <p> The connector-specific properties of the profile configuration. </p>
+    #[doc(hidden)]
     pub connector_profile_properties: std::option::Option<crate::model::ConnectorProfileProperties>,
     /// <p> The connector-specific credentials required by each connector. </p>
+    #[doc(hidden)]
     pub connector_profile_credentials:
         std::option::Option<crate::model::ConnectorProfileCredentials>,
 }
@@ -8085,41 +8239,59 @@ impl ConnectorProfileConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfileCredentials {
     /// <p> The connector-specific credentials required when using Amplitude. </p>
+    #[doc(hidden)]
     pub amplitude: std::option::Option<crate::model::AmplitudeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Datadog. </p>
+    #[doc(hidden)]
     pub datadog: std::option::Option<crate::model::DatadogConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Dynatrace. </p>
+    #[doc(hidden)]
     pub dynatrace: std::option::Option<crate::model::DynatraceConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Google Analytics. </p>
+    #[doc(hidden)]
     pub google_analytics:
         std::option::Option<crate::model::GoogleAnalyticsConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
+    #[doc(hidden)]
     pub honeycode: std::option::Option<crate::model::HoneycodeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Infor Nexus. </p>
+    #[doc(hidden)]
     pub infor_nexus: std::option::Option<crate::model::InforNexusConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Marketo. </p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Amazon Redshift. </p>
+    #[doc(hidden)]
     pub redshift: std::option::Option<crate::model::RedshiftConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Salesforce. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using ServiceNow. </p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Singular. </p>
+    #[doc(hidden)]
     pub singular: std::option::Option<crate::model::SingularConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Slack. </p>
+    #[doc(hidden)]
     pub slack: std::option::Option<crate::model::SlackConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Snowflake. </p>
+    #[doc(hidden)]
     pub snowflake: std::option::Option<crate::model::SnowflakeConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Trend Micro. </p>
+    #[doc(hidden)]
     pub trendmicro: std::option::Option<crate::model::TrendmicroConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Veeva. </p>
+    #[doc(hidden)]
     pub veeva: std::option::Option<crate::model::VeevaConnectorProfileCredentials>,
     /// <p> The connector-specific credentials required when using Zendesk. </p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileCredentials>,
     /// <p> The connector-specific profile credentials required when using SAPOData. </p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
     /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
+    #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorProfileCredentials>,
 }
 impl ConnectorProfileCredentials {
@@ -8599,14 +8771,19 @@ impl ConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The basic credentials that are required for the authentication of the user.</p>
+    #[doc(hidden)]
     pub basic: std::option::Option<crate::model::BasicAuthCredentials>,
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
+    #[doc(hidden)]
     pub oauth2: std::option::Option<crate::model::OAuth2Credentials>,
     /// <p>The API keys required for the authentication of the user.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<crate::model::ApiKeyCredentials>,
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
+    #[doc(hidden)]
     pub custom: std::option::Option<crate::model::CustomAuthCredentials>,
 }
 impl CustomConnectorProfileCredentials {
@@ -8744,8 +8921,10 @@ impl CustomConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
+    #[doc(hidden)]
     pub custom_authentication_type: std::option::Option<std::string::String>,
     /// <p>A map that holds custom authentication credentials.</p>
+    #[doc(hidden)]
     pub credentials_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8844,8 +9023,10 @@ impl CustomAuthCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiKeyCredentials {
     /// <p>The API key required for API key authentication.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>The API secret key required for API key authentication.</p>
+    #[doc(hidden)]
     pub api_secret_key: std::option::Option<std::string::String>,
 }
 impl ApiKeyCredentials {
@@ -8920,14 +9101,19 @@ impl ApiKeyCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuth2Credentials {
     /// <p>The identifier for the desired client.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>The access token used to access the connector on your behalf.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The refresh token used to refresh an expired access token.</p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl OAuth2Credentials {
@@ -9059,8 +9245,10 @@ impl OAuth2Credentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorOAuthRequest {
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+    #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+    #[doc(hidden)]
     pub redirect_uri: std::option::Option<std::string::String>,
 }
 impl ConnectorOAuthRequest {
@@ -9132,8 +9320,10 @@ impl ConnectorOAuthRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> The password to use to connect to a resource.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl BasicAuthCredentials {
@@ -9268,8 +9458,10 @@ impl AsRef<str> for AuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData basic authentication credentials. </p>
+    #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<crate::model::BasicAuthCredentials>,
     /// <p> The SAPOData OAuth type authentication credentials. </p>
+    #[doc(hidden)]
     pub o_auth_credentials: std::option::Option<crate::model::OAuthCredentials>,
 }
 impl SapoDataConnectorProfileCredentials {
@@ -9349,14 +9541,19 @@ impl SapoDataConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuthCredentials {
     /// <p> The identifier for the desired client. </p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The access token used to access protected SAPOData resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The refresh token used to refresh expired access token. </p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl OAuthCredentials {
@@ -9488,12 +9685,16 @@ impl OAuthCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Zendesk resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl ZendeskConnectorProfileCredentials {
@@ -9605,8 +9806,10 @@ impl ZendeskConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VeevaConnectorProfileCredentials {
     /// <p> The name of the user. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl VeevaConnectorProfileCredentials {
@@ -9678,6 +9881,7 @@ impl VeevaConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrendmicroConnectorProfileCredentials {
     /// <p> The Secret Access Key portion of the credentials. </p>
+    #[doc(hidden)]
     pub api_secret_key: std::option::Option<std::string::String>,
 }
 impl TrendmicroConnectorProfileCredentials {
@@ -9735,8 +9939,10 @@ impl TrendmicroConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeConnectorProfileCredentials {
     /// <p> The name of the user. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl SnowflakeConnectorProfileCredentials {
@@ -9808,12 +10014,16 @@ impl SnowflakeConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlackConnectorProfileCredentials {
     /// <p> The identifier for the client. </p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Slack resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl SlackConnectorProfileCredentials {
@@ -9925,6 +10135,7 @@ impl SlackConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingularConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
 }
 impl SingularConnectorProfileCredentials {
@@ -9979,8 +10190,10 @@ impl SingularConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowConnectorProfileCredentials {
     /// <p> The name of the user. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl ServiceNowConnectorProfileCredentials {
@@ -10052,12 +10265,16 @@ impl ServiceNowConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceConnectorProfileCredentials {
     /// <p> The credentials used to access protected Salesforce resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
+    #[doc(hidden)]
     pub client_credentials_arn: std::option::Option<std::string::String>,
 }
 impl SalesforceConnectorProfileCredentials {
@@ -10172,8 +10389,10 @@ impl SalesforceConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftConnectorProfileCredentials {
     /// <p> The name of the user. </p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl RedshiftConnectorProfileCredentials {
@@ -10245,12 +10464,16 @@ impl RedshiftConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketoConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Marketo resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl MarketoConnectorProfileCredentials {
@@ -10362,12 +10585,16 @@ impl MarketoConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the user. </p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p> The secret key used to sign requests. </p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p> The encryption keys used to encrypt data. </p>
+    #[doc(hidden)]
     pub datakey: std::option::Option<std::string::String>,
 }
 impl InforNexusConnectorProfileCredentials {
@@ -10479,10 +10706,13 @@ impl InforNexusConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoneycodeConnectorProfileCredentials {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl HoneycodeConnectorProfileCredentials {
@@ -10577,14 +10807,19 @@ impl HoneycodeConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Google Analytics resources. </p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
+    #[doc(hidden)]
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl GoogleAnalyticsConnectorProfileCredentials {
@@ -10716,6 +10951,7 @@ impl GoogleAnalyticsConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
+    #[doc(hidden)]
     pub api_token: std::option::Option<std::string::String>,
 }
 impl DynatraceConnectorProfileCredentials {
@@ -10770,8 +11006,10 @@ impl DynatraceConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatadogConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
+    #[doc(hidden)]
     pub application_key: std::option::Option<std::string::String>,
 }
 impl DatadogConnectorProfileCredentials {
@@ -10846,8 +11084,10 @@ impl DatadogConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p> The Secret Access Key portion of the credentials. </p>
+    #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
 }
 impl AmplitudeConnectorProfileCredentials {
@@ -10919,41 +11159,59 @@ impl AmplitudeConnectorProfileCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfileProperties {
     /// <p> The connector-specific properties required by Amplitude. </p>
+    #[doc(hidden)]
     pub amplitude: std::option::Option<crate::model::AmplitudeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Datadog. </p>
+    #[doc(hidden)]
     pub datadog: std::option::Option<crate::model::DatadogConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Dynatrace. </p>
+    #[doc(hidden)]
     pub dynatrace: std::option::Option<crate::model::DynatraceConnectorProfileProperties>,
     /// <p> The connector-specific properties required Google Analytics. </p>
+    #[doc(hidden)]
     pub google_analytics:
         std::option::Option<crate::model::GoogleAnalyticsConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Amazon Honeycode. </p>
+    #[doc(hidden)]
     pub honeycode: std::option::Option<crate::model::HoneycodeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Infor Nexus. </p>
+    #[doc(hidden)]
     pub infor_nexus: std::option::Option<crate::model::InforNexusConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Marketo. </p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Amazon Redshift. </p>
+    #[doc(hidden)]
     pub redshift: std::option::Option<crate::model::RedshiftConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Salesforce. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceConnectorProfileProperties>,
     /// <p> The connector-specific properties required by serviceNow. </p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Singular. </p>
+    #[doc(hidden)]
     pub singular: std::option::Option<crate::model::SingularConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Slack. </p>
+    #[doc(hidden)]
     pub slack: std::option::Option<crate::model::SlackConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Snowflake. </p>
+    #[doc(hidden)]
     pub snowflake: std::option::Option<crate::model::SnowflakeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Trend Micro. </p>
+    #[doc(hidden)]
     pub trendmicro: std::option::Option<crate::model::TrendmicroConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Veeva. </p>
+    #[doc(hidden)]
     pub veeva: std::option::Option<crate::model::VeevaConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Zendesk. </p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorProfileProperties>,
     /// <p> The connector-specific profile properties required when using SAPOData. </p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
     /// <p>The properties required by the custom connector.</p>
+    #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorProfileProperties>,
 }
 impl ConnectorProfileProperties {
@@ -11420,9 +11678,11 @@ impl ConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomConnectorProfileProperties {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
+    #[doc(hidden)]
     pub profile_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub o_auth2_properties: std::option::Option<crate::model::OAuth2Properties>,
 }
 impl CustomConnectorProfileProperties {
@@ -11517,10 +11777,13 @@ impl CustomConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub token_url: std::option::Option<std::string::String>,
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub o_auth2_grant_type: std::option::Option<crate::model::OAuth2GrantType>,
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+    #[doc(hidden)]
     pub token_url_custom_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11691,18 +11954,25 @@ impl AsRef<str> for OAuth2GrantType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
+    #[doc(hidden)]
     pub application_host_url: std::option::Option<std::string::String>,
     /// <p> The application path to catalog service. </p>
+    #[doc(hidden)]
     pub application_service_path: std::option::Option<std::string::String>,
     /// <p> The port number of the SAPOData instance. </p>
+    #[doc(hidden)]
     pub port_number: std::option::Option<i32>,
     /// <p> The client number for the client creating the connection. </p>
+    #[doc(hidden)]
     pub client_number: std::option::Option<std::string::String>,
     /// <p> The logon language of SAPOData instance. </p>
+    #[doc(hidden)]
     pub logon_language: std::option::Option<std::string::String>,
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
+    #[doc(hidden)]
     pub private_link_service_name: std::option::Option<std::string::String>,
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
+    #[doc(hidden)]
     pub o_auth_properties: std::option::Option<crate::model::OAuthProperties>,
 }
 impl SapoDataConnectorProfileProperties {
@@ -11877,10 +12147,13 @@ impl SapoDataConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
+    #[doc(hidden)]
     pub token_url: std::option::Option<std::string::String>,
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
+    #[doc(hidden)]
     pub auth_code_url: std::option::Option<std::string::String>,
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OAuthProperties {
@@ -11981,6 +12254,7 @@ impl OAuthProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskConnectorProfileProperties {
     /// <p> The location of the Zendesk resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl ZendeskConnectorProfileProperties {
@@ -12035,6 +12309,7 @@ impl ZendeskConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl VeevaConnectorProfileProperties {
@@ -12119,20 +12394,27 @@ impl TrendmicroConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeConnectorProfileProperties {
     /// <p> The name of the Snowflake warehouse. </p>
+    #[doc(hidden)]
     pub warehouse: std::option::Option<std::string::String>,
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
     /// .
     /// </stage></p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
+    #[doc(hidden)]
     pub private_link_service_name: std::option::Option<std::string::String>,
     /// <p> The name of the account. </p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl SnowflakeConnectorProfileProperties {
@@ -12301,6 +12583,7 @@ impl SnowflakeConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl SlackConnectorProfileProperties {
@@ -12385,6 +12668,7 @@ impl SingularConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl ServiceNowConnectorProfileProperties {
@@ -12439,8 +12723,10 @@ impl ServiceNowConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
+    #[doc(hidden)]
     pub is_sandbox_environment: bool,
 }
 impl SalesforceConnectorProfileProperties {
@@ -12512,12 +12798,16 @@ impl SalesforceConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
+    #[doc(hidden)]
     pub database_url: std::option::Option<std::string::String>,
     /// <p> A name for the associated Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl RedshiftConnectorProfileProperties {
@@ -12626,6 +12916,7 @@ impl RedshiftConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl MarketoConnectorProfileProperties {
@@ -12680,6 +12971,7 @@ impl MarketoConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl InforNexusConnectorProfileProperties {
@@ -12794,6 +13086,7 @@ impl GoogleAnalyticsConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl DynatraceConnectorProfileProperties {
@@ -12848,6 +13141,7 @@ impl DynatraceConnectorProfileProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
+    #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl DatadogConnectorProfileProperties {
@@ -12987,6 +13281,7 @@ impl AsRef<str> for ConnectionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
 }
 impl ConnectorProvisioningConfig {
@@ -13044,6 +13339,7 @@ impl ConnectorProvisioningConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaConnectorProvisioningConfig {
     /// <p>Lambda ARN of the connector being registered.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl LambdaConnectorProvisioningConfig {
@@ -13149,35 +13445,50 @@ impl AsRef<str> for ConnectorProvisioningType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowDefinition {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> A user-entered description of the flow. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
     /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub source_connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the source connector in the flow.</p>
+    #[doc(hidden)]
     pub source_connector_label: std::option::Option<std::string::String>,
     /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub destination_connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the destination connector in the flow.</p>
+    #[doc(hidden)]
     pub destination_connector_label: std::option::Option<std::string::String>,
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p> Specifies when the flow was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p> Specifies the account user name that most recently updated the flow. </p>
+    #[doc(hidden)]
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Describes the details of the most recent flow run. </p>
+    #[doc(hidden)]
     pub last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
 }
 impl FlowDefinition {
@@ -13534,10 +13845,13 @@ impl FlowDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionDetails {
     /// <p> Describes the details of the most recent flow run. </p>
+    #[doc(hidden)]
     pub most_recent_execution_message: std::option::Option<std::string::String>,
     /// <p> Specifies the time of the most recent flow run. </p>
+    #[doc(hidden)]
     pub most_recent_execution_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the status of the most recent flow run. </p>
+    #[doc(hidden)]
     pub most_recent_execution_status: std::option::Option<crate::model::ExecutionStatus>,
 }
 impl ExecutionDetails {
@@ -13711,26 +14025,37 @@ impl AsRef<str> for ExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorDetail {
     /// <p>A description about the registered connector.</p>
+    #[doc(hidden)]
     pub connector_description: std::option::Option<std::string::String>,
     /// <p>The name of the connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The owner of the connector.</p>
+    #[doc(hidden)]
     pub connector_owner: std::option::Option<std::string::String>,
     /// <p>The connector version.</p>
+    #[doc(hidden)]
     pub connector_version: std::option::Option<std::string::String>,
     /// <p>The application type of the connector.</p>
+    #[doc(hidden)]
     pub application_type: std::option::Option<std::string::String>,
     /// <p>The connector type.</p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>A label used for the connector.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p>The time at which the connector was registered.</p>
+    #[doc(hidden)]
     pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user who registered the connector.</p>
+    #[doc(hidden)]
     pub registered_by: std::option::Option<std::string::String>,
     /// <p>The provisioning type that the connector uses.</p>
+    #[doc(hidden)]
     pub connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
     /// <p>The connection mode that the connector supports.</p>
+    #[doc(hidden)]
     pub connector_modes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConnectorDetail {
@@ -14003,10 +14328,13 @@ impl ConnectorDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorEntity {
     /// <p> The name of the connector entity. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The label applied to the connector entity. </p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
+    #[doc(hidden)]
     pub has_nested_entities: bool,
 }
 impl ConnectorEntity {
@@ -14095,18 +14423,25 @@ impl ConnectorEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
+    #[doc(hidden)]
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p> Describes the result of the given flow run. </p>
+    #[doc(hidden)]
     pub execution_result: std::option::Option<crate::model::ExecutionResult>,
     /// <p> Specifies the start time of the flow run. </p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the time of the most recent update. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
+    #[doc(hidden)]
     pub data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
+    #[doc(hidden)]
     pub data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionRecord {
@@ -14281,12 +14616,16 @@ impl ExecutionRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p> The total number of bytes processed by the flow run. </p>
+    #[doc(hidden)]
     pub bytes_processed: std::option::Option<i64>,
     /// <p> The total number of bytes written as a result of the flow run. </p>
+    #[doc(hidden)]
     pub bytes_written: std::option::Option<i64>,
     /// <p> The number of records processed in the flow run. </p>
+    #[doc(hidden)]
     pub records_processed: std::option::Option<i64>,
 }
 impl ExecutionResult {
@@ -14395,8 +14734,10 @@ impl ExecutionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInfo {
     /// <p> Specifies the failure count for the attempted flow. </p>
+    #[doc(hidden)]
     pub put_failures_count: std::option::Option<i64>,
     /// <p> Specifies the error message that appears if a flow fails. </p>
+    #[doc(hidden)]
     pub execution_message: std::option::Option<std::string::String>,
 }
 impl ErrorInfo {
@@ -14471,61 +14812,87 @@ impl ErrorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorConfiguration {
     /// <p> Specifies whether the connector can be used as a source. </p>
+    #[doc(hidden)]
     pub can_use_as_source: bool,
     /// <p> Specifies whether the connector can be used as a destination. </p>
+    #[doc(hidden)]
     pub can_use_as_destination: bool,
     /// <p> Lists the connectors that are available for use as destinations. </p>
+    #[doc(hidden)]
     pub supported_destination_connectors:
         std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
     /// <p> Specifies the supported flow frequency for that connector. </p>
+    #[doc(hidden)]
     pub supported_scheduling_frequencies:
         std::option::Option<std::vec::Vec<crate::model::ScheduleFrequencyType>>,
     /// <p> Specifies if PrivateLink is enabled for that connector. </p>
+    #[doc(hidden)]
     pub is_private_link_enabled: bool,
     /// <p> Specifies if a PrivateLink endpoint URL is required. </p>
+    #[doc(hidden)]
     pub is_private_link_endpoint_url_required: bool,
     /// <p> Specifies the supported trigger types for the flow. </p>
+    #[doc(hidden)]
     pub supported_trigger_types: std::option::Option<std::vec::Vec<crate::model::TriggerType>>,
     /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+    #[doc(hidden)]
     pub connector_metadata: std::option::Option<crate::model::ConnectorMetadata>,
     /// <p>The connector type.</p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label used for registering the connector.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p>A description about the connector.</p>
+    #[doc(hidden)]
     pub connector_description: std::option::Option<std::string::String>,
     /// <p>The owner who developed the connector.</p>
+    #[doc(hidden)]
     pub connector_owner: std::option::Option<std::string::String>,
     /// <p>The connector name.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The connector version.</p>
+    #[doc(hidden)]
     pub connector_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The connection modes that the connector supports.</p>
+    #[doc(hidden)]
     pub connector_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The authentication config required for the connector.</p>
+    #[doc(hidden)]
     pub authentication_config: std::option::Option<crate::model::AuthenticationConfig>,
     /// <p>The required connector runtime settings.</p>
+    #[doc(hidden)]
     pub connector_runtime_settings:
         std::option::Option<std::vec::Vec<crate::model::ConnectorRuntimeSetting>>,
     /// <p>A list of API versions that are supported by the connector.</p>
+    #[doc(hidden)]
     pub supported_api_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of operators supported by the connector.</p>
+    #[doc(hidden)]
     pub supported_operators: std::option::Option<std::vec::Vec<crate::model::Operators>>,
     /// <p>A list of write operations supported by the connector.</p>
+    #[doc(hidden)]
     pub supported_write_operations:
         std::option::Option<std::vec::Vec<crate::model::WriteOperationType>>,
     /// <p>The provisioning type used to register the connector.</p>
+    #[doc(hidden)]
     pub connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
     /// <p>The configuration required for registering the connector.</p>
+    #[doc(hidden)]
     pub connector_provisioning_config:
         std::option::Option<crate::model::ConnectorProvisioningConfig>,
     /// <p>Logo URL of the connector.</p>
+    #[doc(hidden)]
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The date on which the connector was registered.</p>
+    #[doc(hidden)]
     pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about who registered the connector.</p>
+    #[doc(hidden)]
     pub registered_by: std::option::Option<std::string::String>,
 }
 impl ConnectorConfiguration {
@@ -15334,18 +15701,25 @@ impl AsRef<str> for Operators {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorRuntimeSetting {
     /// <p>Contains value information about the connector runtime setting.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Data type of the connector runtime setting.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>Indicates whether this connector runtime setting is required.</p>
+    #[doc(hidden)]
     pub is_required: bool,
     /// <p>A label used for connector runtime setting.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>A description about the connector runtime setting.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates the scope of the connector runtime setting.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
+    #[doc(hidden)]
     pub connector_supplied_value_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConnectorRuntimeSetting {
@@ -15518,16 +15892,22 @@ impl ConnectorRuntimeSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationConfig {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
+    #[doc(hidden)]
     pub is_basic_auth_supported: bool,
     /// <p>Indicates whether API key authentication is supported by the connector</p>
+    #[doc(hidden)]
     pub is_api_key_auth_supported: bool,
     /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
+    #[doc(hidden)]
     pub is_o_auth2_supported: bool,
     /// <p>Indicates whether custom authentication is supported by the connector</p>
+    #[doc(hidden)]
     pub is_custom_auth_supported: bool,
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub o_auth2_defaults: std::option::Option<crate::model::OAuth2Defaults>,
     /// <p>Contains information required for custom authentication.</p>
+    #[doc(hidden)]
     pub custom_auth_configs: std::option::Option<std::vec::Vec<crate::model::CustomAuthConfig>>,
 }
 impl AuthenticationConfig {
@@ -15680,8 +16060,10 @@ impl AuthenticationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomAuthConfig {
     /// <p>The authentication type that the custom connector uses.</p>
+    #[doc(hidden)]
     pub custom_authentication_type: std::option::Option<std::string::String>,
     /// <p>Information about authentication parameters required for authentication.</p>
+    #[doc(hidden)]
     pub auth_parameters: std::option::Option<std::vec::Vec<crate::model::AuthParameter>>,
 }
 impl CustomAuthConfig {
@@ -15768,16 +16150,22 @@ impl CustomAuthConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthParameter {
     /// <p>The authentication key required to authenticate with the connector.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Indicates whether this authentication parameter is required.</p>
+    #[doc(hidden)]
     pub is_required: bool,
     /// <p>Label used for authentication parameter.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>A description about the authentication parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
+    #[doc(hidden)]
     pub is_sensitive_field: bool,
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    #[doc(hidden)]
     pub connector_supplied_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthParameter {
@@ -15927,15 +16315,20 @@ impl AuthParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuth2Defaults {
     /// <p>OAuth 2.0 scopes that the connector supports.</p>
+    #[doc(hidden)]
     pub oauth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Token URLs that can be used for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub token_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Auth code URLs that can be used for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub auth_code_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>OAuth 2.0 grant types supported by the connector.</p>
+    #[doc(hidden)]
     pub oauth2_grant_types_supported:
         std::option::Option<std::vec::Vec<crate::model::OAuth2GrantType>>,
     /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub oauth2_custom_properties:
         std::option::Option<std::vec::Vec<crate::model::OAuth2CustomParameter>>,
 }
@@ -16119,18 +16512,25 @@ impl OAuth2Defaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuth2CustomParameter {
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+    #[doc(hidden)]
     pub is_required: bool,
     /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+    #[doc(hidden)]
     pub is_sensitive_field: bool,
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    #[doc(hidden)]
     pub connector_supplied_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OAuth2CustomPropType>,
 }
 impl OAuth2CustomParameter {
@@ -16355,46 +16755,67 @@ impl AsRef<str> for OAuth2CustomPropType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorMetadata {
     /// <p> The connector metadata specific to Amplitude. </p>
+    #[doc(hidden)]
     pub amplitude: std::option::Option<crate::model::AmplitudeMetadata>,
     /// <p> The connector metadata specific to Datadog. </p>
+    #[doc(hidden)]
     pub datadog: std::option::Option<crate::model::DatadogMetadata>,
     /// <p> The connector metadata specific to Dynatrace. </p>
+    #[doc(hidden)]
     pub dynatrace: std::option::Option<crate::model::DynatraceMetadata>,
     /// <p> The connector metadata specific to Google Analytics. </p>
+    #[doc(hidden)]
     pub google_analytics: std::option::Option<crate::model::GoogleAnalyticsMetadata>,
     /// <p> The connector metadata specific to Infor Nexus. </p>
+    #[doc(hidden)]
     pub infor_nexus: std::option::Option<crate::model::InforNexusMetadata>,
     /// <p> The connector metadata specific to Marketo. </p>
+    #[doc(hidden)]
     pub marketo: std::option::Option<crate::model::MarketoMetadata>,
     /// <p> The connector metadata specific to Amazon Redshift. </p>
+    #[doc(hidden)]
     pub redshift: std::option::Option<crate::model::RedshiftMetadata>,
     /// <p> The connector metadata specific to Amazon S3. </p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Metadata>,
     /// <p> The connector metadata specific to Salesforce. </p>
+    #[doc(hidden)]
     pub salesforce: std::option::Option<crate::model::SalesforceMetadata>,
     /// <p> The connector metadata specific to ServiceNow. </p>
+    #[doc(hidden)]
     pub service_now: std::option::Option<crate::model::ServiceNowMetadata>,
     /// <p> The connector metadata specific to Singular. </p>
+    #[doc(hidden)]
     pub singular: std::option::Option<crate::model::SingularMetadata>,
     /// <p> The connector metadata specific to Slack. </p>
+    #[doc(hidden)]
     pub slack: std::option::Option<crate::model::SlackMetadata>,
     /// <p> The connector metadata specific to Snowflake. </p>
+    #[doc(hidden)]
     pub snowflake: std::option::Option<crate::model::SnowflakeMetadata>,
     /// <p> The connector metadata specific to Trend Micro. </p>
+    #[doc(hidden)]
     pub trendmicro: std::option::Option<crate::model::TrendmicroMetadata>,
     /// <p> The connector metadata specific to Veeva. </p>
+    #[doc(hidden)]
     pub veeva: std::option::Option<crate::model::VeevaMetadata>,
     /// <p> The connector metadata specific to Zendesk. </p>
+    #[doc(hidden)]
     pub zendesk: std::option::Option<crate::model::ZendeskMetadata>,
     /// <p> The connector metadata specific to Amazon EventBridge. </p>
+    #[doc(hidden)]
     pub event_bridge: std::option::Option<crate::model::EventBridgeMetadata>,
     /// <p> The connector metadata specific to Upsolver. </p>
+    #[doc(hidden)]
     pub upsolver: std::option::Option<crate::model::UpsolverMetadata>,
     /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
+    #[doc(hidden)]
     pub customer_profiles: std::option::Option<crate::model::CustomerProfilesMetadata>,
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
+    #[doc(hidden)]
     pub honeycode: std::option::Option<crate::model::HoneycodeMetadata>,
     /// <p> The connector metadata specific to SAPOData. </p>
+    #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
 }
 impl ConnectorMetadata {
@@ -16881,6 +17302,7 @@ impl SapoDataMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoneycodeMetadata {
     /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HoneycodeMetadata {
@@ -17034,6 +17456,7 @@ impl EventBridgeMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZendeskMetadata {
     /// <p> The desired authorization scope for the Zendesk account. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ZendeskMetadata {
@@ -17157,6 +17580,7 @@ impl TrendmicroMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
+    #[doc(hidden)]
     pub supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SnowflakeMetadata {
@@ -17220,6 +17644,7 @@ impl SnowflakeMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SlackMetadata {
@@ -17343,6 +17768,7 @@ impl ServiceNowMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SalesforceMetadata {
@@ -17526,6 +17952,7 @@ impl InforNexusMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GoogleAnalyticsMetadata {
     /// <p> The desired authorization scope for the Google Analytics account. </p>
+    #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GoogleAnalyticsMetadata {
@@ -17750,24 +18177,34 @@ impl AsRef<str> for ScheduleFrequencyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label for the connector profile being created.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
+    #[doc(hidden)]
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> The Amazon Resource Name (ARN) of the connector profile credentials. </p>
+    #[doc(hidden)]
     pub credentials_arn: std::option::Option<std::string::String>,
     /// <p> The connector-specific properties of the profile configuration. </p>
+    #[doc(hidden)]
     pub connector_profile_properties: std::option::Option<crate::model::ConnectorProfileProperties>,
     /// <p> Specifies when the connector profile was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the connector profile was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the private connection provisioning state. </p>
+    #[doc(hidden)]
     pub private_connection_provisioning_state:
         std::option::Option<crate::model::PrivateConnectionProvisioningState>,
 }
@@ -18024,10 +18461,13 @@ impl ConnectorProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateConnectionProvisioningState {
     /// <p> Specifies the private connection provisioning status. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PrivateConnectionProvisioningStatus>,
     /// <p> Specifies the private connection provisioning failure reason. </p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p> Specifies the private connection provisioning failure cause. </p>
+    #[doc(hidden)]
     pub failure_cause: std::option::Option<crate::model::PrivateConnectionProvisioningFailureCause>,
 }
 impl PrivateConnectionProvisioningState {
@@ -18269,26 +18709,37 @@ impl AsRef<str> for PrivateConnectionProvisioningStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorEntityField {
     /// <p> The unique identifier of the connector field. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The parent identifier of the connector field.</p>
+    #[doc(hidden)]
     pub parent_identifier: std::option::Option<std::string::String>,
     /// <p> The label applied to a connector entity field. </p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>Booelan value that indicates whether this field can be used as a primary key.</p>
+    #[doc(hidden)]
     pub is_primary_key: bool,
     /// <p>Default value that can be assigned to this field.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>Booelan value that indicates whether this field is deprecated or not.</p>
+    #[doc(hidden)]
     pub is_deprecated: bool,
     /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+    #[doc(hidden)]
     pub supported_field_type_details: std::option::Option<crate::model::SupportedFieldTypeDetails>,
     /// <p> A description of the connector entity field. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceFieldProperties>,
     /// <p> The properties applied to a field when the connector is being used as a destination. </p>
+    #[doc(hidden)]
     pub destination_properties: std::option::Option<crate::model::DestinationFieldProperties>,
     /// <p>A map that has specific properties related to the ConnectorEntityField.</p>
+    #[doc(hidden)]
     pub custom_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18564,16 +19015,22 @@ impl ConnectorEntityField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationFieldProperties {
     /// <p> Specifies if the destination field can be created by the current user. </p>
+    #[doc(hidden)]
     pub is_creatable: bool,
     /// <p> Specifies if the destination field can have a null value. </p>
+    #[doc(hidden)]
     pub is_nullable: bool,
     /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
+    #[doc(hidden)]
     pub is_upsertable: bool,
     /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
+    #[doc(hidden)]
     pub is_updatable: bool,
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
+    #[doc(hidden)]
     pub is_defaulted_on_create: bool,
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
+    #[doc(hidden)]
     pub supported_write_operations:
         std::option::Option<std::vec::Vec<crate::model::WriteOperationType>>,
 }
@@ -18732,10 +19189,13 @@ impl DestinationFieldProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFieldProperties {
     /// <p> Indicates whether the field can be returned in a search result. </p>
+    #[doc(hidden)]
     pub is_retrievable: bool,
     /// <p> Indicates if the field can be queried. </p>
+    #[doc(hidden)]
     pub is_queryable: bool,
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
+    #[doc(hidden)]
     pub is_timestamp_field_for_incremental_queries: bool,
 }
 impl SourceFieldProperties {
@@ -18832,6 +19292,7 @@ impl SourceFieldProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
+    #[doc(hidden)]
     pub v1: std::option::Option<crate::model::FieldTypeDetails>,
 }
 impl SupportedFieldTypeDetails {
@@ -18887,18 +19348,25 @@ impl SupportedFieldTypeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
+    #[doc(hidden)]
     pub field_type: std::option::Option<std::string::String>,
     /// <p> The list of operators supported by a field. </p>
+    #[doc(hidden)]
     pub filter_operators: std::option::Option<std::vec::Vec<crate::model::Operator>>,
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
+    #[doc(hidden)]
     pub supported_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The regular expression pattern for the field name.</p>
+    #[doc(hidden)]
     pub value_regex_pattern: std::option::Option<std::string::String>,
     /// <p>The date format that the field supports.</p>
+    #[doc(hidden)]
     pub supported_date_format: std::option::Option<std::string::String>,
     /// <p>The range of values this field can hold.</p>
+    #[doc(hidden)]
     pub field_value_range: std::option::Option<crate::model::Range>,
     /// <p>This is the allowable length range for this field's value.</p>
+    #[doc(hidden)]
     pub field_length_range: std::option::Option<crate::model::Range>,
 }
 impl FieldTypeDetails {
@@ -19085,8 +19553,10 @@ impl FieldTypeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Range {
     /// <p>Maximum value supported by the field.</p>
+    #[doc(hidden)]
     pub maximum: f64,
     /// <p>Minimum value supported by the field.</p>
+    #[doc(hidden)]
     pub minimum: f64,
 }
 impl Range {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -69,6 +70,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceException {
@@ -133,6 +135,7 @@ impl ServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgsException {
@@ -197,6 +200,7 @@ impl InvalidArgsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2InstanceUnavailableException {
@@ -264,6 +268,7 @@ impl Ec2InstanceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceStateInvalidException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2InstanceStateInvalidException {
@@ -331,6 +336,7 @@ impl Ec2InstanceStateInvalidException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2InstanceNotFoundException {
@@ -398,6 +404,7 @@ impl Ec2InstanceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthException {
@@ -462,6 +469,7 @@ impl AuthException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerialConsoleSessionUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SerialConsoleSessionUnavailableException {
@@ -526,6 +534,7 @@ impl SerialConsoleSessionUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerialConsoleSessionLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SerialConsoleSessionLimitExceededException {
@@ -590,6 +599,7 @@ impl SerialConsoleSessionLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerialConsoleAccessDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SerialConsoleAccessDisabledException {
@@ -654,6 +664,7 @@ impl SerialConsoleAccessDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceTypeInvalidException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2InstanceTypeInvalidException {

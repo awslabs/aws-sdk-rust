@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>The <code>S3Destination</code> object.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Destination>,
 }
 impl Destination {
@@ -57,8 +58,10 @@ impl Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p>Name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -130,6 +133,7 @@ impl S3Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>The <code>S3Source</code> object.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Source>,
 }
 impl Source {
@@ -182,10 +186,13 @@ impl Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Source {
     /// <p>Name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl S3Source {
@@ -274,8 +281,10 @@ impl S3Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
+    #[doc(hidden)]
     pub signing_configuration: std::option::Option<crate::model::SigningConfigurationOverrides>,
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
+    #[doc(hidden)]
     pub signing_image_format: std::option::Option<crate::model::ImageFormat>,
 }
 impl SigningPlatformOverrides {
@@ -418,8 +427,10 @@ impl AsRef<str> for ImageFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
+    #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithm>,
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
+    #[doc(hidden)]
     pub hash_algorithm: std::option::Option<crate::model::HashAlgorithm>,
 }
 impl SigningConfigurationOverrides {
@@ -607,8 +618,10 @@ impl AsRef<str> for EncryptionAlgorithm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignatureValidityPeriod {
     /// <p>The numerical value of the time unit for signature validity.</p>
+    #[doc(hidden)]
     pub value: i32,
     /// <p>The time unit for signature validity.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ValidityType>,
 }
 impl SignatureValidityPeriod {
@@ -739,6 +752,7 @@ impl AsRef<str> for ValidityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl SigningMaterial {
@@ -796,27 +810,38 @@ impl SigningMaterial {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningProfile {
     /// <p>The name of the signing profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The version of a signing profile.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The ARN of a signing profile, including the profile version.</p>
+    #[doc(hidden)]
     pub profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ACM certificate that is available for use by a signing profile.</p>
+    #[doc(hidden)]
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The validity period for a signing job created using this signing profile.</p>
+    #[doc(hidden)]
     pub signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
     /// <p>The ID of a platform that is available for use by a signing profile.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The name of the signing platform.</p>
+    #[doc(hidden)]
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The parameters that are available for use by a code signing user.</p>
+    #[doc(hidden)]
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of a code signing profile.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningProfileStatus>,
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1165,22 +1190,31 @@ impl AsRef<str> for SigningProfileStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningPlatform {
     /// <p>The ID of a code signing; platform.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The display name of a code signing platform.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Any partner entities linked to a code signing platform.</p>
+    #[doc(hidden)]
     pub partner: std::option::Option<std::string::String>,
     /// <p>The types of targets that can be signed by a code signing platform.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The category of a code signing platform.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::Category>,
     /// <p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
+    #[doc(hidden)]
     pub signing_configuration: std::option::Option<crate::model::SigningConfiguration>,
     /// <p>The image format of a code signing platform or profile.</p>
+    #[doc(hidden)]
     pub signing_image_format: std::option::Option<crate::model::SigningImageFormat>,
     /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
+    #[doc(hidden)]
     pub max_size_in_mb: i32,
     /// <p>Indicates whether revocation is supported for the platform.</p>
+    #[doc(hidden)]
     pub revocation_supported: bool,
 }
 impl SigningPlatform {
@@ -1379,8 +1413,10 @@ impl SigningPlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningImageFormat {
     /// <p>The supported formats of a code signing image.</p>
+    #[doc(hidden)]
     pub supported_formats: std::option::Option<std::vec::Vec<crate::model::ImageFormat>>,
     /// <p>The default format of a code signing image.</p>
+    #[doc(hidden)]
     pub default_format: std::option::Option<crate::model::ImageFormat>,
 }
 impl SigningImageFormat {
@@ -1464,8 +1500,10 @@ impl SigningImageFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningConfiguration {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
+    #[doc(hidden)]
     pub encryption_algorithm_options: std::option::Option<crate::model::EncryptionAlgorithmOptions>,
     /// <p>The hash algorithm options that are available for a code signing job.</p>
+    #[doc(hidden)]
     pub hash_algorithm_options: std::option::Option<crate::model::HashAlgorithmOptions>,
 }
 impl SigningConfiguration {
@@ -1554,8 +1592,10 @@ impl SigningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<crate::model::HashAlgorithm>>,
     /// <p>The default hash algorithm that is used in a code signing job.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::HashAlgorithm>,
 }
 impl HashAlgorithmOptions {
@@ -1639,8 +1679,10 @@ impl HashAlgorithmOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionAlgorithmOptions {
     /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithm>>,
     /// <p>The default encryption algorithm that is used by a code signing job.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::EncryptionAlgorithm>,
 }
 impl EncryptionAlgorithmOptions {
@@ -1776,32 +1818,46 @@ impl AsRef<str> for Category {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningJob {
     /// <p>The ID of the signing job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A <code>Source</code> that contains information about a signing job's code image source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>
+    #[doc(hidden)]
     pub signed_object: std::option::Option<crate::model::SignedObject>,
     /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>
+    #[doc(hidden)]
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The date and time that the signing job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the signing job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>Indicates whether the signing job is revoked.</p>
+    #[doc(hidden)]
     pub is_revoked: bool,
     /// <p>The name of the signing profile that created a signing job.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the signing profile that created a signing job.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a signing platform.</p>
+    #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The name of a signing platform.</p>
+    #[doc(hidden)]
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The time when the signature of a signing job expires.</p>
+    #[doc(hidden)]
     pub signature_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The AWS account ID of the job owner.</p>
+    #[doc(hidden)]
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the job invoker.</p>
+    #[doc(hidden)]
     pub job_invoker: std::option::Option<std::string::String>,
 }
 impl SigningJob {
@@ -2157,6 +2213,7 @@ impl AsRef<str> for SigningStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3SignedObject>,
 }
 impl SignedObject {
@@ -2209,8 +2266,10 @@ impl SignedObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SignedObject {
     /// <p>Name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3SignedObject {
@@ -2282,12 +2341,16 @@ impl S3SignedObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
     /// <p>A unique identifier for a cross-account permission statement.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>The signing profile version that a permission applies to.</p>
+    #[doc(hidden)]
     pub profile_version: std::option::Option<std::string::String>,
 }
 impl Permission {
@@ -2396,10 +2459,13 @@ impl Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
+    #[doc(hidden)]
     pub revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the signing profile was revoked.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
+    #[doc(hidden)]
     pub revoked_by: std::option::Option<std::string::String>,
 }
 impl SigningProfileRevocationRecord {
@@ -2494,10 +2560,13 @@ impl SigningProfileRevocationRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time of revocation.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
+    #[doc(hidden)]
     pub revoked_by: std::option::Option<std::string::String>,
 }
 impl SigningJobRevocationRecord {

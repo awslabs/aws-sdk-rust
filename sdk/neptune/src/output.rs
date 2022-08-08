@@ -5,6 +5,7 @@
 pub struct StopDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
@@ -66,6 +67,7 @@ impl StopDbClusterOutput {
 pub struct StartDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
@@ -127,6 +129,7 @@ impl StartDbClusterOutput {
 pub struct RestoreDbClusterToPointInTimeOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
@@ -188,6 +191,7 @@ impl RestoreDbClusterToPointInTimeOutput {
 pub struct RestoreDbClusterFromSnapshotOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
@@ -248,6 +252,7 @@ impl RestoreDbClusterFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDbParameterGroupOutput {
     /// <p>Provides the name of the DB parameter group.</p>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbParameterGroupOutput {
@@ -313,6 +318,7 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbClusterParameterGroupOutput {
@@ -430,6 +436,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
@@ -518,6 +525,7 @@ impl RemoveRoleFromDbClusterOutput {
 pub struct RemoveFromGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl RemoveFromGlobalClusterOutput {
@@ -579,6 +587,7 @@ impl RemoveFromGlobalClusterOutput {
 pub struct RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
@@ -640,6 +649,7 @@ impl RebootDbInstanceOutput {
 pub struct PromoteReadReplicaDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl PromoteReadReplicaDbClusterOutput {
@@ -701,6 +711,7 @@ impl PromoteReadReplicaDbClusterOutput {
 pub struct ModifyGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl ModifyGlobalClusterOutput {
@@ -761,6 +772,7 @@ impl ModifyGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
@@ -819,6 +831,7 @@ impl ModifyEventSubscriptionOutput {
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
@@ -879,6 +892,7 @@ impl ModifyDbSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbParameterGroupOutput {
     /// <p>Provides the name of the DB parameter group.</p>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbParameterGroupOutput {
@@ -937,6 +951,7 @@ impl ModifyDbParameterGroupOutput {
 pub struct ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
@@ -998,6 +1013,7 @@ impl ModifyDbInstanceOutput {
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -1076,6 +1092,7 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
@@ -1170,24 +1187,34 @@ impl ModifyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterEndpointOutput {
@@ -1446,6 +1473,7 @@ impl ModifyDbClusterEndpointOutput {
 pub struct ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
@@ -1506,6 +1534,7 @@ impl ModifyDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1570,6 +1599,7 @@ impl ListTagsForResourceOutput {
 pub struct FailoverGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl FailoverGlobalClusterOutput {
@@ -1631,6 +1661,7 @@ impl FailoverGlobalClusterOutput {
 pub struct FailoverDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
@@ -1691,6 +1722,7 @@ impl FailoverDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
+    #[doc(hidden)]
     pub valid_db_instance_modifications_message:
         std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
 }
@@ -1759,9 +1791,11 @@ impl DescribeValidDbInstanceModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
+    #[doc(hidden)]
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -1853,9 +1887,11 @@ impl DescribePendingMaintenanceActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
+    #[doc(hidden)]
     pub orderable_db_instance_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
@@ -1945,8 +1981,10 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalClustersOutput {
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of global clusters and instances returned by this request.</p>
+    #[doc(hidden)]
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
 }
 impl DescribeGlobalClustersOutput {
@@ -2027,8 +2065,10 @@ impl DescribeGlobalClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
+    #[doc(hidden)]
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
@@ -2113,8 +2153,10 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> A list of <code>Event</code> instances.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -2195,6 +2237,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of EventCategoriesMap data types.</p>
+    #[doc(hidden)]
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
@@ -2265,6 +2308,7 @@ impl DescribeEventCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersOutput {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
@@ -2322,6 +2366,7 @@ impl DescribeEngineDefaultParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersOutput {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
@@ -2379,8 +2424,10 @@ impl DescribeEngineDefaultClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
+    #[doc(hidden)]
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
 }
 impl DescribeDbSubnetGroupsOutput {
@@ -2462,8 +2509,10 @@ impl DescribeDbSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbParametersOutput {
@@ -2544,8 +2593,10 @@ impl DescribeDbParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
+    #[doc(hidden)]
     pub db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
 }
 impl DescribeDbParameterGroupsOutput {
@@ -2627,8 +2678,10 @@ impl DescribeDbParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstancesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> A list of <code>DBInstance</code> instances.</p>
+    #[doc(hidden)]
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
 impl DescribeDbInstancesOutput {
@@ -2709,8 +2762,10 @@ impl DescribeDbInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> A list of <code>DBEngineVersion</code> elements.</p>
+    #[doc(hidden)]
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
 impl DescribeDbEngineVersionsOutput {
@@ -2792,8 +2847,10 @@ impl DescribeDbEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
 impl DescribeDbClusterSnapshotsOutput {
@@ -2876,6 +2933,7 @@ impl DescribeDbClusterSnapshotsOutput {
 pub struct DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -2946,8 +3004,10 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClustersOutput {
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
+    #[doc(hidden)]
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
 }
 impl DescribeDbClustersOutput {
@@ -3028,8 +3088,10 @@ impl DescribeDbClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersOutput {
@@ -3110,8 +3172,10 @@ impl DescribeDbClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster parameter groups.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
@@ -3202,8 +3266,10 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterEndpointsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
 }
 impl DescribeDbClusterEndpointsOutput {
@@ -3286,6 +3352,7 @@ impl DescribeDbClusterEndpointsOutput {
 pub struct DeleteGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl DeleteGlobalClusterOutput {
@@ -3346,6 +3413,7 @@ impl DeleteGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
@@ -3464,6 +3532,7 @@ impl DeleteDbParameterGroupOutput {
 pub struct DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
@@ -3525,6 +3594,7 @@ impl DeleteDbInstanceOutput {
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
@@ -3622,24 +3692,34 @@ impl DeleteDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterEndpointOutput {
@@ -3898,6 +3978,7 @@ impl DeleteDbClusterEndpointOutput {
 pub struct DeleteDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
@@ -3959,6 +4040,7 @@ impl DeleteDbClusterOutput {
 pub struct CreateGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl CreateGlobalClusterOutput {
@@ -4019,6 +4101,7 @@ impl CreateGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
@@ -4077,6 +4160,7 @@ impl CreateEventSubscriptionOutput {
 pub struct CreateDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
@@ -4138,6 +4222,7 @@ impl CreateDbSubnetGroupOutput {
 pub struct CreateDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CreateDbParameterGroupOutput {
@@ -4199,6 +4284,7 @@ impl CreateDbParameterGroupOutput {
 pub struct CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
@@ -4260,6 +4346,7 @@ impl CreateDbInstanceOutput {
 pub struct CreateDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
@@ -4321,6 +4408,7 @@ impl CreateDbClusterSnapshotOutput {
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
@@ -4397,24 +4485,34 @@ impl CreateDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterEndpointOutput {
@@ -4673,6 +4771,7 @@ impl CreateDbClusterEndpointOutput {
 pub struct CreateDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
@@ -4734,6 +4833,7 @@ impl CreateDbClusterOutput {
 pub struct CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CopyDbParameterGroupOutput {
@@ -4795,6 +4895,7 @@ impl CopyDbParameterGroupOutput {
 pub struct CopyDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
@@ -4856,6 +4957,7 @@ impl CopyDbClusterSnapshotOutput {
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
@@ -4925,6 +5027,7 @@ impl CopyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>Describes the pending maintenance actions for a resource.</p>
+    #[doc(hidden)]
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
@@ -5022,6 +5125,7 @@ impl AddTagsToResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddSourceIdentifierToSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {

@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Type {
     /// <p>The type name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type definition.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
 impl Type {
@@ -193,30 +198,41 @@ impl AsRef<str> for TypeDefinitionFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resolver {
     /// <p>The resolver type name.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The resolver field name.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>The resolver data source name.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The resolver Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resolver_arn: std::option::Option<std::string::String>,
     /// <p>The request mapping template.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The response mapping template.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
+    #[doc(hidden)]
     pub pipeline_config: std::option::Option<crate::model::PipelineConfig>,
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
+    #[doc(hidden)]
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl Resolver {
@@ -472,9 +488,11 @@ impl Resolver {
 pub struct CachingConfig {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    #[doc(hidden)]
     pub ttl: i64,
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
+    #[doc(hidden)]
     pub caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CachingConfig {
@@ -567,14 +585,17 @@ pub struct SyncConfig {
     /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
     /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub conflict_handler: std::option::Option<crate::model::ConflictHandlerType>,
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
     /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
     /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub conflict_detection: std::option::Option<crate::model::ConflictDetectionType>,
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
+    #[doc(hidden)]
     pub lambda_conflict_handler_config:
         std::option::Option<crate::model::LambdaConflictHandlerConfig>,
 }
@@ -709,6 +730,7 @@ impl SyncConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaConflictHandlerConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
+    #[doc(hidden)]
     pub lambda_conflict_handler_arn: std::option::Option<std::string::String>,
 }
 impl LambdaConflictHandlerConfig {
@@ -890,6 +912,7 @@ impl AsRef<str> for ConflictHandlerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
+    #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PipelineConfig {
@@ -1008,33 +1031,46 @@ impl AsRef<str> for ResolverKind {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GraphqlApi {
     /// <p>The API name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The authentication type.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The Amazon CloudWatch Logs configuration.</p>
+    #[doc(hidden)]
     pub log_config: std::option::Option<crate::model::LogConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
+    #[doc(hidden)]
     pub user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
     /// <p>The OpenID Connect configuration.</p>
+    #[doc(hidden)]
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>The Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The URIs.</p>
+    #[doc(hidden)]
     pub uris:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    #[doc(hidden)]
     pub additional_authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
+    #[doc(hidden)]
     pub xray_enabled: bool,
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
+    #[doc(hidden)]
     pub waf_web_acl_arn: std::option::Option<std::string::String>,
     /// <p>Configuration for Lambda function authorization.</p>
+    #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl GraphqlApi {
@@ -1379,12 +1415,15 @@ impl GraphqlApi {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAuthorizerConfig {
     /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables caching of responses.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
 }
 impl LambdaAuthorizerConfig {
@@ -1499,12 +1538,16 @@ impl LambdaAuthorizerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The OIDC configuration.</p>
+    #[doc(hidden)]
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
+    #[doc(hidden)]
     pub user_pool_config: std::option::Option<crate::model::CognitoUserPoolConfig>,
     /// <p>Configuration for Lambda function authorization.</p>
+    #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl AdditionalAuthenticationProvider {
@@ -1630,10 +1673,13 @@ impl AdditionalAuthenticationProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
+    #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
+    #[doc(hidden)]
     pub app_id_client_regex: std::option::Option<std::string::String>,
 }
 impl CognitoUserPoolConfig {
@@ -1725,12 +1771,16 @@ impl CognitoUserPoolConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenIdConnectConfig {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
+    #[doc(hidden)]
     pub iat_ttl: i64,
     /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
+    #[doc(hidden)]
     pub auth_ttl: i64,
 }
 impl OpenIdConnectConfig {
@@ -1909,12 +1959,16 @@ impl AsRef<str> for AuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPoolConfig {
     /// <p>The user pool ID.</p>
+    #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
+    #[doc(hidden)]
     pub default_action: std::option::Option<crate::model::DefaultAction>,
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
+    #[doc(hidden)]
     pub app_id_client_regex: std::option::Option<std::string::String>,
 }
 impl UserPoolConfig {
@@ -2095,10 +2149,13 @@ pub struct LogConfig {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub field_log_level: std::option::Option<crate::model::FieldLogLevel>,
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
+    #[doc(hidden)]
     pub exclude_verbose_content: bool,
 }
 impl LogConfig {
@@ -2294,25 +2351,35 @@ impl AsRef<str> for FieldLogLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionConfiguration {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Function</code> object.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> response mapping template.</p>
+    #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
+    #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The maximum batching size for a resolver.</p>
+    #[doc(hidden)]
     pub max_batch_size: i32,
 }
 impl FunctionConfiguration {
@@ -2538,14 +2605,19 @@ impl FunctionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNameConfig {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A description of the <code>DomainName</code> configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name that AppSync provides.</p>
+    #[doc(hidden)]
     pub appsync_domain_name: std::option::Option<std::string::String>,
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl DomainNameConfig {
@@ -2677,10 +2749,13 @@ impl DomainNameConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
     /// <p>The data source Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the data source.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
     /// <ul>
@@ -2692,21 +2767,29 @@ pub struct DataSource {
     /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
     /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>DynamoDB settings.</p>
+    #[doc(hidden)]
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
     /// <p>Lambda settings.</p>
+    #[doc(hidden)]
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
+    #[doc(hidden)]
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
+    #[doc(hidden)]
     pub open_search_service_config:
         std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
+    #[doc(hidden)]
     pub http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
+    #[doc(hidden)]
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
@@ -3013,9 +3096,11 @@ pub struct RelationalDatabaseDataSourceConfig {
     /// <ul>
     /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub relational_database_source_type:
         std::option::Option<crate::model::RelationalDatabaseSourceType>,
     /// <p>Amazon RDS HTTP endpoint settings.</p>
+    #[doc(hidden)]
     pub rds_http_endpoint_config: std::option::Option<crate::model::RdsHttpEndpointConfig>,
 }
 impl RelationalDatabaseDataSourceConfig {
@@ -3117,14 +3202,19 @@ impl RelationalDatabaseDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsHttpEndpointConfig {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Logical database name.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Logical schema name.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
+    #[doc(hidden)]
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
 }
 impl RdsHttpEndpointConfig {
@@ -3307,8 +3397,10 @@ impl AsRef<str> for RelationalDatabaseSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
+    #[doc(hidden)]
     pub authorization_config: std::option::Option<crate::model::AuthorizationConfig>,
 }
 impl HttpDataSourceConfig {
@@ -3386,8 +3478,10 @@ pub struct AuthorizationConfig {
     /// <ul>
     /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
     /// <p>The Identity and Access Management (IAM) settings.</p>
+    #[doc(hidden)]
     pub aws_iam_config: std::option::Option<crate::model::AwsIamConfig>,
 }
 impl AuthorizationConfig {
@@ -3474,8 +3568,10 @@ impl AuthorizationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsIamConfig {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
+    #[doc(hidden)]
     pub signing_region: std::option::Option<std::string::String>,
     /// <p>The signing service name for IAM authorization.</p>
+    #[doc(hidden)]
     pub signing_service_name: std::option::Option<std::string::String>,
 }
 impl AwsIamConfig {
@@ -3604,8 +3700,10 @@ impl AsRef<str> for AuthorizationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenSearchServiceDataSourceConfig {
     /// <p>The endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl OpenSearchServiceDataSourceConfig {
@@ -3678,8 +3776,10 @@ impl OpenSearchServiceDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl ElasticsearchDataSourceConfig {
@@ -3751,6 +3851,7 @@ impl ElasticsearchDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaDataSourceConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaDataSourceConfig {
@@ -3808,14 +3909,19 @@ impl LambdaDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamodbDataSourceConfig {
     /// <p>The table name.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
+    #[doc(hidden)]
     pub use_caller_credentials: bool,
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
+    #[doc(hidden)]
     pub delta_sync_config: std::option::Option<crate::model::DeltaSyncConfig>,
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
+    #[doc(hidden)]
     pub versioned: bool,
 }
 impl DynamodbDataSourceConfig {
@@ -3941,10 +4047,13 @@ impl DynamodbDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaSyncConfig {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
+    #[doc(hidden)]
     pub base_table_ttl: i64,
     /// <p>The Delta Sync table name.</p>
+    #[doc(hidden)]
     pub delta_sync_table_name: std::option::Option<std::string::String>,
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
+    #[doc(hidden)]
     pub delta_sync_table_ttl: i64,
 }
 impl DeltaSyncConfig {
@@ -4137,12 +4246,16 @@ impl AsRef<str> for DataSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiKey {
     /// <p>The API key ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
+    #[doc(hidden)]
     pub expires: i64,
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
+    #[doc(hidden)]
     pub deletes: i64,
 }
 impl ApiKey {
@@ -4249,16 +4362,20 @@ impl ApiKey {
 pub struct ApiCache {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    #[doc(hidden)]
     pub ttl: i64,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    #[doc(hidden)]
     pub transit_encryption_enabled: bool,
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    #[doc(hidden)]
     pub at_rest_encryption_enabled: bool,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
@@ -4282,6 +4399,7 @@ pub struct ApiCache {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
     /// <p>The cache instance status.</p>
     /// <ul>
@@ -4291,6 +4409,7 @@ pub struct ApiCache {
     /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
     /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApiCacheStatus>,
 }
 impl ApiCache {
@@ -4919,8 +5038,10 @@ impl AsRef<str> for OutputType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiAssociation {
     /// <p>The domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>Identifies the status of an association.</p>
     /// <ul>
@@ -4928,8 +5049,10 @@ pub struct ApiAssociation {
     /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
     /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
     /// <p>Details about the last deployment status.</p>
+    #[doc(hidden)]
     pub deployment_detail: std::option::Option<std::string::String>,
 }
 impl ApiAssociation {
@@ -5115,6 +5238,7 @@ impl AsRef<str> for AssociationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetail {
     /// <p>The error payload.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {

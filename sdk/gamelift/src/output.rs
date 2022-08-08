@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateMatchmakingRuleSetOutput {
     /// <p>A response indicating whether the rule set is valid.</p>
+    #[doc(hidden)]
     pub valid: std::option::Option<bool>,
 }
 impl ValidateMatchmakingRuleSetOutput {
@@ -57,6 +58,7 @@ impl ValidateMatchmakingRuleSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScriptOutput {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl UpdateScriptOutput {
@@ -111,6 +113,7 @@ impl UpdateScriptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuntimeConfigurationOutput {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
+    #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl UpdateRuntimeConfigurationOutput {
@@ -170,6 +173,7 @@ impl UpdateRuntimeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMatchmakingConfigurationOutput {
     /// <p>The updated matchmaking configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
 impl UpdateMatchmakingConfigurationOutput {
@@ -227,6 +231,7 @@ impl UpdateMatchmakingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameSessionQueueOutput {
     /// <p>An object that describes the newly updated game session queue.</p>
+    #[doc(hidden)]
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
 }
 impl UpdateGameSessionQueueOutput {
@@ -284,6 +289,7 @@ impl UpdateGameSessionQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
+    #[doc(hidden)]
     pub game_session: std::option::Option<crate::model::GameSession>,
 }
 impl UpdateGameSessionOutput {
@@ -341,6 +347,7 @@ impl UpdateGameSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerGroupOutput {
     /// <p>An object that describes the game server group resource with updated properties. </p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl UpdateGameServerGroupOutput {
@@ -398,6 +405,7 @@ impl UpdateGameServerGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerOutput {
     /// <p>Object that describes the newly updated game server.</p>
+    #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl UpdateGameServerOutput {
@@ -455,6 +463,7 @@ impl UpdateGameServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl UpdateFleetPortSettingsOutput {
@@ -509,13 +518,16 @@ impl UpdateFleetPortSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetCapacityOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl UpdateFleetCapacityOutput {
@@ -613,6 +625,7 @@ impl UpdateFleetCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl UpdateFleetAttributesOutput {
@@ -669,6 +682,7 @@ pub struct UpdateBuildOutput {
     /// <p>The updated build resource.</p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
 }
 impl UpdateBuildOutput {
@@ -725,6 +739,7 @@ impl UpdateBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasOutput {
     /// <p>The updated alias resource.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl UpdateAliasOutput {
@@ -837,6 +852,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl SuspendGameServerGroupOutput {
@@ -924,6 +940,7 @@ impl StopMatchmakingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopGameSessionPlacementOutput {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
+    #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl StopGameSessionPlacementOutput {
@@ -983,11 +1000,13 @@ impl StopGameSessionPlacementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFleetActionsOutput {
     /// <p>A unique identifier for the fleet to stop actions on.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl StopFleetActionsOutput {
@@ -1068,6 +1087,7 @@ impl StopFleetActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchmakingOutput {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    #[doc(hidden)]
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
 }
 impl StartMatchmakingOutput {
@@ -1125,6 +1145,7 @@ impl StartMatchmakingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchBackfillOutput {
     /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    #[doc(hidden)]
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
 }
 impl StartMatchBackfillOutput {
@@ -1182,6 +1203,7 @@ impl StartMatchBackfillOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGameSessionPlacementOutput {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl StartGameSessionPlacementOutput {
@@ -1241,11 +1263,13 @@ impl StartGameSessionPlacementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFleetActionsOutput {
     /// <p>A unique identifier for the fleet to restart actions on.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl StartFleetActionsOutput {
@@ -1326,8 +1350,10 @@ impl StartFleetActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchGameSessionsOutput {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
+    #[doc(hidden)]
     pub game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchGameSessionsOutput {
@@ -1408,6 +1434,7 @@ impl SearchGameSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl ResumeGameServerGroupOutput {
@@ -1465,8 +1492,10 @@ impl ResumeGameServerGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveAliasOutput {
     /// <p>The fleet identifier that the alias is pointing to.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl ResolveAliasOutput {
@@ -1538,8 +1567,10 @@ impl ResolveAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestUploadCredentialsOutput {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    #[doc(hidden)]
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
+    #[doc(hidden)]
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
 impl RequestUploadCredentialsOutput {
@@ -1617,6 +1648,7 @@ impl RequestUploadCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterGameServerOutput {
     /// <p>Object that describes the newly registered game server.</p>
+    #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl RegisterGameServerOutput {
@@ -1674,6 +1706,7 @@ impl RegisterGameServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutScalingPolicyOutput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PutScalingPolicyOutput {
@@ -1726,6 +1759,7 @@ impl PutScalingPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The collection of tags that have been assigned to the specified resource. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1787,8 +1821,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScriptsOutput {
     /// <p>A set of properties describing the requested script.</p>
+    #[doc(hidden)]
     pub scripts: std::option::Option<std::vec::Vec<crate::model::Script>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScriptsOutput {
@@ -1869,8 +1905,10 @@ impl ListScriptsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServersOutput {
     /// <p>A collection of game server objects that match the request.</p>
+    #[doc(hidden)]
     pub game_servers: std::option::Option<std::vec::Vec<crate::model::GameServer>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGameServersOutput {
@@ -1951,8 +1989,10 @@ impl ListGameServersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServerGroupsOutput {
     /// <p>A collection of game server group objects that match the request.</p>
+    #[doc(hidden)]
     pub game_server_groups: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGameServerGroupsOutput {
@@ -2034,8 +2074,10 @@ impl ListGameServerGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsOutput {
     /// <p>A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets by passing this result set to a <code>DescribeFleetAttributes</code>, <code>DescribeFleetCapacity</code>, or <code>DescribeFleetUtilization</code> call.</p>
+    #[doc(hidden)]
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsOutput {
@@ -2116,8 +2158,10 @@ impl ListFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsOutput {
     /// <p>A collection of build resources that match the request.</p>
+    #[doc(hidden)]
     pub builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsOutput {
@@ -2198,8 +2242,10 @@ impl ListBuildsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesOutput {
     /// <p>A collection of alias resources that match the request parameters.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAliasesOutput {
@@ -2280,6 +2326,7 @@ impl ListAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceAccessOutput {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
+    #[doc(hidden)]
     pub instance_access: std::option::Option<crate::model::InstanceAccess>,
 }
 impl GetInstanceAccessOutput {
@@ -2337,6 +2384,7 @@ impl GetInstanceAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGameSessionLogUrlOutput {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
+    #[doc(hidden)]
     pub pre_signed_url: std::option::Option<std::string::String>,
 }
 impl GetGameSessionLogUrlOutput {
@@ -2394,6 +2442,7 @@ impl GetGameSessionLogUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
+    #[doc(hidden)]
     pub vpc_peering_connections:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
 }
@@ -2464,6 +2513,7 @@ impl DescribeVpcPeeringConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringAuthorizationsOutput {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub vpc_peering_authorizations:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
 }
@@ -2537,6 +2587,7 @@ impl DescribeVpcPeeringAuthorizationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScriptOutput {
     /// <p>A set of properties describing the requested script.</p>
+    #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl DescribeScriptOutput {
@@ -2591,8 +2642,10 @@ impl DescribeScriptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPoliciesOutput {
     /// <p>A collection of objects containing the scaling policies matching the request.</p>
+    #[doc(hidden)]
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPoliciesOutput {
@@ -2674,6 +2727,7 @@ impl DescribeScalingPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeConfigurationOutput {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl DescribeRuntimeConfigurationOutput {
@@ -2733,8 +2787,10 @@ impl DescribeRuntimeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlayerSessionsOutput {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
+    #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePlayerSessionsOutput {
@@ -2815,8 +2871,10 @@ impl DescribePlayerSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMatchmakingRuleSetsOutput {
     /// <p>A collection of requested matchmaking rule set objects. </p>
+    #[doc(hidden)]
     pub rule_sets: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMatchmakingRuleSetsOutput {
@@ -2897,8 +2955,10 @@ impl DescribeMatchmakingRuleSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMatchmakingConfigurationsOutput {
@@ -2980,6 +3040,7 @@ impl DescribeMatchmakingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
+    #[doc(hidden)]
     pub ticket_list: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
 }
 impl DescribeMatchmakingOutput {
@@ -3043,8 +3104,10 @@ impl DescribeMatchmakingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesOutput {
     /// <p>A collection of objects containing properties for each instance returned.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesOutput {
@@ -3125,8 +3188,10 @@ impl DescribeInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
+    #[doc(hidden)]
     pub game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionsOutput {
@@ -3207,8 +3272,10 @@ impl DescribeGameSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionQueuesOutput {
     /// <p>A collection of objects that describe the requested game session queues.</p>
+    #[doc(hidden)]
     pub game_session_queues: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionQueuesOutput {
@@ -3290,6 +3357,7 @@ impl DescribeGameSessionQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionPlacementOutput {
     /// <p>Object that describes the requested game session placement.</p>
+    #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl DescribeGameSessionPlacementOutput {
@@ -3349,8 +3417,10 @@ impl DescribeGameSessionPlacementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
+    #[doc(hidden)]
     pub game_session_details: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionDetailsOutput {
@@ -3432,8 +3502,10 @@ impl DescribeGameSessionDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInstancesOutput {
     /// <p> The collection of requested game server instances. </p>
+    #[doc(hidden)]
     pub game_server_instances: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
     /// <p> A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameServerInstancesOutput {
@@ -3517,6 +3589,7 @@ impl DescribeGameServerInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerGroupOutput {
     /// <p>An object with the property settings for the requested game server group resource. </p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl DescribeGameServerGroupOutput {
@@ -3574,6 +3647,7 @@ impl DescribeGameServerGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerOutput {
     /// <p>Object that describes the requested game server.</p>
+    #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl DescribeGameServerOutput {
@@ -3631,8 +3705,10 @@ impl DescribeGameServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetUtilizationOutput {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
+    #[doc(hidden)]
     pub fleet_utilization: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetUtilizationOutput {
@@ -3714,17 +3790,22 @@ impl DescribeFleetUtilizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The port settings for the requested fleet ID.</p>
+    #[doc(hidden)]
     pub inbound_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+    #[doc(hidden)]
     pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeFleetPortSettingsOutput {
@@ -3869,6 +3950,7 @@ impl DescribeFleetPortSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationUtilizationOutput {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
+    #[doc(hidden)]
     pub fleet_utilization: std::option::Option<crate::model::FleetUtilization>,
 }
 impl DescribeFleetLocationUtilizationOutput {
@@ -3926,6 +4008,7 @@ impl DescribeFleetLocationUtilizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationCapacityOutput {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    #[doc(hidden)]
     pub fleet_capacity: std::option::Option<crate::model::FleetCapacity>,
 }
 impl DescribeFleetLocationCapacityOutput {
@@ -3983,15 +4066,19 @@ impl DescribeFleetLocationCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationAttributesOutput {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p> Location-specific information on the requested fleet's remote locations. </p>
+    #[doc(hidden)]
     pub location_attributes: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetLocationAttributesOutput {
@@ -4116,8 +4203,10 @@ impl DescribeFleetLocationAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetEventsOutput {
     /// <p>A collection of objects containing event log entries for the specified fleet.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetEventsOutput {
@@ -4198,8 +4287,10 @@ impl DescribeFleetEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetCapacityOutput {
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    #[doc(hidden)]
     pub fleet_capacity: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetCapacityOutput {
@@ -4280,8 +4371,10 @@ impl DescribeFleetCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAttributesOutput {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
+    #[doc(hidden)]
     pub fleet_attributes: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAttributesOutput {
@@ -4363,6 +4456,7 @@ impl DescribeFleetAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEc2InstanceLimitsOutput {
     /// <p>The maximum number of instances for the specified instance type.</p>
+    #[doc(hidden)]
     pub ec2_instance_limits: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
 }
 impl DescribeEc2InstanceLimitsOutput {
@@ -4429,6 +4523,7 @@ pub struct DescribeBuildOutput {
     /// <p>Set of properties describing the requested build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
 }
 impl DescribeBuildOutput {
@@ -4485,6 +4580,7 @@ impl DescribeBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAliasOutput {
     /// <p>The requested alias resource.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl DescribeAliasOutput {
@@ -4777,6 +4873,7 @@ impl DeleteGameSessionQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl DeleteGameServerGroupOutput {
@@ -4834,13 +4931,16 @@ impl DeleteGameServerGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
+    #[doc(hidden)]
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
 }
 impl DeleteFleetLocationsOutput {
@@ -5067,6 +5167,7 @@ impl CreateVpcPeeringConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
+    #[doc(hidden)]
     pub vpc_peering_authorization: std::option::Option<crate::model::VpcPeeringAuthorization>,
 }
 impl CreateVpcPeeringAuthorizationOutput {
@@ -5130,6 +5231,7 @@ impl CreateVpcPeeringAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptOutput {
     /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl CreateScriptOutput {
@@ -5184,6 +5286,7 @@ impl CreateScriptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
+    #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
 }
 impl CreatePlayerSessionsOutput {
@@ -5247,6 +5350,7 @@ impl CreatePlayerSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlayerSessionOutput {
     /// <p>Object that describes the newly created player session record.</p>
+    #[doc(hidden)]
     pub player_session: std::option::Option<crate::model::PlayerSession>,
 }
 impl CreatePlayerSessionOutput {
@@ -5304,6 +5408,7 @@ impl CreatePlayerSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMatchmakingRuleSetOutput {
     /// <p>The newly created matchmaking rule set.</p>
+    #[doc(hidden)]
     pub rule_set: std::option::Option<crate::model::MatchmakingRuleSet>,
 }
 impl CreateMatchmakingRuleSetOutput {
@@ -5361,6 +5466,7 @@ impl CreateMatchmakingRuleSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMatchmakingConfigurationOutput {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
 impl CreateMatchmakingConfigurationOutput {
@@ -5418,6 +5524,7 @@ impl CreateMatchmakingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameSessionQueueOutput {
     /// <p>An object that describes the newly created game session queue.</p>
+    #[doc(hidden)]
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
 }
 impl CreateGameSessionQueueOutput {
@@ -5475,6 +5582,7 @@ impl CreateGameSessionQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameSessionOutput {
     /// <p>Object that describes the newly created game session record.</p>
+    #[doc(hidden)]
     pub game_session: std::option::Option<crate::model::GameSession>,
 }
 impl CreateGameSessionOutput {
@@ -5532,6 +5640,7 @@ impl CreateGameSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameServerGroupOutput {
     /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl CreateGameServerGroupOutput {
@@ -5589,13 +5698,16 @@ impl CreateGameServerGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that was updated with new locations.</p>
+    #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
+    #[doc(hidden)]
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
 }
 impl CreateFleetLocationsOutput {
@@ -5702,8 +5814,10 @@ impl CreateFleetLocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetOutput {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    #[doc(hidden)]
     pub fleet_attributes: std::option::Option<crate::model::FleetAttributes>,
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
+    #[doc(hidden)]
     pub location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
 }
 impl CreateFleetOutput {
@@ -5789,10 +5903,13 @@ pub struct CreateBuildOutput {
     /// <p>The newly created build resource, including a unique build IDs and status. </p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    #[doc(hidden)]
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
+    #[doc(hidden)]
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
 impl CreateBuildOutput {
@@ -5889,6 +6006,7 @@ impl CreateBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasOutput {
     /// <p>The newly created alias resource.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl CreateAliasOutput {
@@ -5941,6 +6059,7 @@ impl CreateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimGameServerOutput {
     /// <p>Object that describes the newly claimed game server.</p>
+    #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl ClaimGameServerOutput {

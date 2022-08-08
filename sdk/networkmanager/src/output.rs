@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcAttachmentOutput {
     /// <p>Describes the updated VPC attachment.</p>
+    #[doc(hidden)]
     pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
 }
 impl UpdateVpcAttachmentOutput {
@@ -61,6 +62,7 @@ impl UpdateVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteOutput {
     /// <p>Information about the site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl UpdateSiteOutput {
@@ -113,8 +115,10 @@ impl UpdateSiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkResourceMetadataOutput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The updated resource metadata.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -207,6 +211,7 @@ impl UpdateNetworkResourceMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkOutput {
     /// <p>Information about the link.</p>
+    #[doc(hidden)]
     pub link: std::option::Option<crate::model::Link>,
 }
 impl UpdateLinkOutput {
@@ -259,6 +264,7 @@ impl UpdateLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalNetworkOutput {
     /// <p>Information about the global network object.</p>
+    #[doc(hidden)]
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
 }
 impl UpdateGlobalNetworkOutput {
@@ -316,6 +322,7 @@ impl UpdateGlobalNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceOutput {
     /// <p>Information about the device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
 }
 impl UpdateDeviceOutput {
@@ -370,6 +377,7 @@ impl UpdateDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCoreNetworkOutput {
     /// <p>Returns information about a core network update.</p>
+    #[doc(hidden)]
     pub core_network: std::option::Option<crate::model::CoreNetwork>,
 }
 impl UpdateCoreNetworkOutput {
@@ -427,6 +435,7 @@ impl UpdateCoreNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
     /// <p>Information about the connection.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl UpdateConnectionOutput {
@@ -544,6 +553,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRouteAnalysisOutput {
     /// <p>The route analysis.</p>
+    #[doc(hidden)]
     pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
 }
 impl StartRouteAnalysisOutput {
@@ -601,6 +611,7 @@ impl StartRouteAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOrganizationServiceAccessUpdateOutput {
     /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
+    #[doc(hidden)]
     pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
 }
 impl StartOrganizationServiceAccessUpdateOutput {
@@ -658,6 +669,7 @@ impl StartOrganizationServiceAccessUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreCoreNetworkPolicyVersionOutput {
     /// <p>Describes the restored core network policy.</p>
+    #[doc(hidden)]
     pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
 }
 impl RestoreCoreNetworkPolicyVersionOutput {
@@ -715,6 +727,7 @@ impl RestoreCoreNetworkPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectAttachmentOutput {
     /// <p>Describes the rejected attachment request.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
 impl RejectAttachmentOutput {
@@ -772,6 +785,7 @@ impl RejectAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
+    #[doc(hidden)]
     pub transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
 }
 impl RegisterTransitGatewayOutput {
@@ -868,6 +882,7 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCoreNetworkPolicyOutput {
     /// <p>Describes the changed core network policy.</p>
+    #[doc(hidden)]
     pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
 }
 impl PutCoreNetworkPolicyOutput {
@@ -925,6 +940,7 @@ impl PutCoreNetworkPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -988,8 +1004,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPeeringsOutput {
     /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+    #[doc(hidden)]
     pub peerings: std::option::Option<std::vec::Vec<crate::model::Peering>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPeeringsOutput {
@@ -1070,8 +1088,10 @@ impl ListPeeringsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationServiceAccessStatusOutput {
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
+    #[doc(hidden)]
     pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationServiceAccessStatusOutput {
@@ -1146,8 +1166,10 @@ impl ListOrganizationServiceAccessStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreNetworksOutput {
     /// <p>Describes the list of core networks.</p>
+    #[doc(hidden)]
     pub core_networks: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreNetworksOutput {
@@ -1229,9 +1251,11 @@ impl ListCoreNetworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreNetworkPolicyVersionsOutput {
     /// <p>Describes core network policy versions.</p>
+    #[doc(hidden)]
     pub core_network_policy_versions:
         std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyVersion>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreNetworkPolicyVersionsOutput {
@@ -1321,8 +1345,10 @@ impl ListCoreNetworkPolicyVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectPeersOutput {
     /// <p>Describes the Connect peers.</p>
+    #[doc(hidden)]
     pub connect_peers: std::option::Option<std::vec::Vec<crate::model::ConnectPeerSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectPeersOutput {
@@ -1404,8 +1430,10 @@ impl ListConnectPeersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachmentsOutput {
     /// <p>Describes the list of attachments.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttachmentsOutput {
@@ -1486,6 +1514,7 @@ impl ListAttachmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcAttachmentOutput {
     /// <p>Returns details about a VPC attachment.</p>
+    #[doc(hidden)]
     pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
 }
 impl GetVpcAttachmentOutput {
@@ -1543,6 +1572,7 @@ impl GetVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRouteTableAttachmentOutput {
     /// <p>Returns information about the transit gateway route table attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_attachment:
         std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
 }
@@ -1610,9 +1640,11 @@ impl GetTransitGatewayRouteTableAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRegistrationsOutput {
     /// <p>The transit gateway registrations.</p>
+    #[doc(hidden)]
     pub transit_gateway_registrations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRegistration>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRegistrationsOutput {
@@ -1702,6 +1734,7 @@ impl GetTransitGatewayRegistrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayPeeringOutput {
     /// <p>Returns information about a transit gateway peering. </p>
+    #[doc(hidden)]
     pub transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
 }
 impl GetTransitGatewayPeeringOutput {
@@ -1765,9 +1798,11 @@ impl GetTransitGatewayPeeringOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayConnectPeerAssociationsOutput {
     /// <p>Information about the transit gateway Connect peer associations.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_associations:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeerAssociation>>,
     /// <p>The token to use for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayConnectPeerAssociationsOutput {
@@ -1863,6 +1898,7 @@ impl GetTransitGatewayConnectPeerAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteToSiteVpnAttachmentOutput {
     /// <p>Describes the site-to-site attachment.</p>
+    #[doc(hidden)]
     pub site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
 }
 impl GetSiteToSiteVpnAttachmentOutput {
@@ -1929,8 +1965,10 @@ impl GetSiteToSiteVpnAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSitesOutput {
     /// <p>The sites.</p>
+    #[doc(hidden)]
     pub sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSitesOutput {
@@ -2011,6 +2049,7 @@ impl GetSitesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteAnalysisOutput {
     /// <p>The route analysis.</p>
+    #[doc(hidden)]
     pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
 }
 impl GetRouteAnalysisOutput {
@@ -2068,6 +2107,7 @@ impl GetRouteAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>The resource policy document.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -2125,8 +2165,10 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkTelemetryOutput {
     /// <p>The network telemetry.</p>
+    #[doc(hidden)]
     pub network_telemetry: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkTelemetryOutput {
@@ -2208,15 +2250,20 @@ impl GetNetworkTelemetryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkRoutesOutput {
     /// <p>The ARN of the route table.</p>
+    #[doc(hidden)]
     pub route_table_arn: std::option::Option<std::string::String>,
     /// <p>Describes a core network segment edge.</p>
+    #[doc(hidden)]
     pub core_network_segment_edge:
         std::option::Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
     /// <p>The route table type.</p>
+    #[doc(hidden)]
     pub route_table_type: std::option::Option<crate::model::RouteTableType>,
     /// <p>The route table creation time.</p>
+    #[doc(hidden)]
     pub route_table_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The network routes.</p>
+    #[doc(hidden)]
     pub network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
 }
 impl GetNetworkRoutesOutput {
@@ -2366,8 +2413,10 @@ impl GetNetworkRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourcesOutput {
     /// <p>The network resources.</p>
+    #[doc(hidden)]
     pub network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourcesOutput {
@@ -2449,8 +2498,10 @@ impl GetNetworkResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourceRelationshipsOutput {
     /// <p>The resource relationships.</p>
+    #[doc(hidden)]
     pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourceRelationshipsOutput {
@@ -2531,9 +2582,11 @@ impl GetNetworkResourceRelationshipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourceCountsOutput {
     /// <p>The count of resources.</p>
+    #[doc(hidden)]
     pub network_resource_counts:
         std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourceCountsOutput {
@@ -2620,8 +2673,10 @@ impl GetNetworkResourceCountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinksOutput {
     /// <p>The links.</p>
+    #[doc(hidden)]
     pub links: std::option::Option<std::vec::Vec<crate::model::Link>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLinksOutput {
@@ -2702,8 +2757,10 @@ impl GetLinksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinkAssociationsOutput {
     /// <p>The link associations.</p>
+    #[doc(hidden)]
     pub link_associations: std::option::Option<std::vec::Vec<crate::model::LinkAssociation>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLinkAssociationsOutput {
@@ -2785,8 +2842,10 @@ impl GetLinkAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicesOutput {
     /// <p>The devices.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevicesOutput {
@@ -2867,9 +2926,11 @@ impl GetDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomerGatewayAssociationsOutput {
     /// <p>The customer gateway associations.</p>
+    #[doc(hidden)]
     pub customer_gateway_associations:
         std::option::Option<std::vec::Vec<crate::model::CustomerGatewayAssociation>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCustomerGatewayAssociationsOutput {
@@ -2959,6 +3020,7 @@ impl GetCustomerGatewayAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkPolicyOutput {
     /// <p>The details about a core network policy.</p>
+    #[doc(hidden)]
     pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
 }
 impl GetCoreNetworkPolicyOutput {
@@ -3016,8 +3078,10 @@ impl GetCoreNetworkPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkChangeSetOutput {
     /// <p>Describes a core network changes.</p>
+    #[doc(hidden)]
     pub core_network_changes: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChange>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCoreNetworkChangeSetOutput {
@@ -3099,9 +3163,11 @@ impl GetCoreNetworkChangeSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkChangeEventsOutput {
     /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+    #[doc(hidden)]
     pub core_network_change_events:
         std::option::Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCoreNetworkChangeEventsOutput {
@@ -3191,6 +3257,7 @@ impl GetCoreNetworkChangeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkOutput {
     /// <p>Details about a core network.</p>
+    #[doc(hidden)]
     pub core_network: std::option::Option<crate::model::CoreNetwork>,
 }
 impl GetCoreNetworkOutput {
@@ -3248,9 +3315,11 @@ impl GetCoreNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectPeerAssociationsOutput {
     /// <p>Displays a list of Connect peer associations.</p>
+    #[doc(hidden)]
     pub connect_peer_associations:
         std::option::Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectPeerAssociationsOutput {
@@ -3337,6 +3406,7 @@ impl GetConnectPeerAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectPeerOutput {
     /// <p>Returns information about a core network Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
 }
 impl GetConnectPeerOutput {
@@ -3394,8 +3464,10 @@ impl GetConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsOutput {
     /// <p>Information about the connections.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     /// <p>The token to use for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectionsOutput {
@@ -3476,6 +3548,7 @@ impl GetConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectAttachmentOutput {
     /// <p>Details about the Connect attachment.</p>
+    #[doc(hidden)]
     pub connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
 }
 impl GetConnectAttachmentOutput {
@@ -3563,6 +3636,7 @@ impl ExecuteCoreNetworkChangeSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_association:
         std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
 }
@@ -3631,6 +3705,7 @@ impl DisassociateTransitGatewayConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLinkOutput {
     /// <p>Information about the link association.</p>
+    #[doc(hidden)]
     pub link_association: std::option::Option<crate::model::LinkAssociation>,
 }
 impl DisassociateLinkOutput {
@@ -3688,6 +3763,7 @@ impl DisassociateLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCustomerGatewayOutput {
     /// <p>Information about the customer gateway association.</p>
+    #[doc(hidden)]
     pub customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
 }
 impl DisassociateCustomerGatewayOutput {
@@ -3754,6 +3830,7 @@ impl DisassociateCustomerGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectPeerOutput {
     /// <p>Describes the Connect peer association.</p>
+    #[doc(hidden)]
     pub connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
 }
 impl DisassociateConnectPeerOutput {
@@ -3817,8 +3894,10 @@ impl DisassociateConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalNetworksOutput {
     /// <p>Information about the global networks.</p>
+    #[doc(hidden)]
     pub global_networks: std::option::Option<std::vec::Vec<crate::model::GlobalNetwork>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalNetworksOutput {
@@ -3899,6 +3978,7 @@ impl DescribeGlobalNetworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTransitGatewayOutput {
     /// <p>The transit gateway registration information.</p>
+    #[doc(hidden)]
     pub transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
 }
 impl DeregisterTransitGatewayOutput {
@@ -3965,6 +4045,7 @@ impl DeregisterTransitGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSiteOutput {
     /// <p>Information about the site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl DeleteSiteOutput {
@@ -4047,6 +4128,7 @@ impl DeleteResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePeeringOutput {
     /// <p>Information about a deleted peering connection.</p>
+    #[doc(hidden)]
     pub peering: std::option::Option<crate::model::Peering>,
 }
 impl DeletePeeringOutput {
@@ -4101,6 +4183,7 @@ impl DeletePeeringOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLinkOutput {
     /// <p>Information about the link.</p>
+    #[doc(hidden)]
     pub link: std::option::Option<crate::model::Link>,
 }
 impl DeleteLinkOutput {
@@ -4153,6 +4236,7 @@ impl DeleteLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalNetworkOutput {
     /// <p>Information about the global network.</p>
+    #[doc(hidden)]
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
 }
 impl DeleteGlobalNetworkOutput {
@@ -4210,6 +4294,7 @@ impl DeleteGlobalNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceOutput {
     /// <p>Information about the device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
 }
 impl DeleteDeviceOutput {
@@ -4264,6 +4349,7 @@ impl DeleteDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreNetworkPolicyVersionOutput {
     /// <p>Returns information about the deleted policy version. </p>
+    #[doc(hidden)]
     pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
 }
 impl DeleteCoreNetworkPolicyVersionOutput {
@@ -4321,6 +4407,7 @@ impl DeleteCoreNetworkPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreNetworkOutput {
     /// <p>Information about the deleted core network.</p>
+    #[doc(hidden)]
     pub core_network: std::option::Option<crate::model::CoreNetwork>,
 }
 impl DeleteCoreNetworkOutput {
@@ -4378,6 +4465,7 @@ impl DeleteCoreNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectPeerOutput {
     /// <p>Information about the deleted Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
 }
 impl DeleteConnectPeerOutput {
@@ -4435,6 +4523,7 @@ impl DeleteConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>Information about the connection.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl DeleteConnectionOutput {
@@ -4492,6 +4581,7 @@ impl DeleteConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttachmentOutput {
     /// <p>Information about the deleted attachment.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
 impl DeleteAttachmentOutput {
@@ -4549,6 +4639,7 @@ impl DeleteAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcAttachmentOutput {
     /// <p>Provides details about the VPC attachment.</p>
+    #[doc(hidden)]
     pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
 }
 impl CreateVpcAttachmentOutput {
@@ -4606,6 +4697,7 @@ impl CreateVpcAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteTableAttachmentOutput {
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_attachment:
         std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
 }
@@ -4674,6 +4766,7 @@ impl CreateTransitGatewayRouteTableAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayPeeringOutput {
     /// <p>Returns information about the transit gateway peering connection request.</p>
+    #[doc(hidden)]
     pub transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
 }
 impl CreateTransitGatewayPeeringOutput {
@@ -4737,6 +4830,7 @@ impl CreateTransitGatewayPeeringOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteToSiteVpnAttachmentOutput {
     /// <p>Details about a site-to-site VPN attachment.</p>
+    #[doc(hidden)]
     pub site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
 }
 impl CreateSiteToSiteVpnAttachmentOutput {
@@ -4803,6 +4897,7 @@ impl CreateSiteToSiteVpnAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteOutput {
     /// <p>Information about the site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl CreateSiteOutput {
@@ -4855,6 +4950,7 @@ impl CreateSiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLinkOutput {
     /// <p>Information about the link.</p>
+    #[doc(hidden)]
     pub link: std::option::Option<crate::model::Link>,
 }
 impl CreateLinkOutput {
@@ -4907,6 +5003,7 @@ impl CreateLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalNetworkOutput {
     /// <p>Information about the global network object.</p>
+    #[doc(hidden)]
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
 }
 impl CreateGlobalNetworkOutput {
@@ -4964,6 +5061,7 @@ impl CreateGlobalNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceOutput {
     /// <p>Information about the device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
 }
 impl CreateDeviceOutput {
@@ -5018,6 +5116,7 @@ impl CreateDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreNetworkOutput {
     /// <p>Returns details about a core network.</p>
+    #[doc(hidden)]
     pub core_network: std::option::Option<crate::model::CoreNetwork>,
 }
 impl CreateCoreNetworkOutput {
@@ -5075,6 +5174,7 @@ impl CreateCoreNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectPeerOutput {
     /// <p>The response to the request.</p>
+    #[doc(hidden)]
     pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
 }
 impl CreateConnectPeerOutput {
@@ -5132,6 +5232,7 @@ impl CreateConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
     /// <p>Information about the connection.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl CreateConnectionOutput {
@@ -5189,6 +5290,7 @@ impl CreateConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectAttachmentOutput {
     /// <p>The response to a Connect attachment request.</p>
+    #[doc(hidden)]
     pub connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
 }
 impl CreateConnectAttachmentOutput {
@@ -5246,6 +5348,7 @@ impl CreateConnectAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_association:
         std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
 }
@@ -5314,6 +5417,7 @@ impl AssociateTransitGatewayConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLinkOutput {
     /// <p>The link association.</p>
+    #[doc(hidden)]
     pub link_association: std::option::Option<crate::model::LinkAssociation>,
 }
 impl AssociateLinkOutput {
@@ -5371,6 +5475,7 @@ impl AssociateLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCustomerGatewayOutput {
     /// <p>The customer gateway association.</p>
+    #[doc(hidden)]
     pub customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
 }
 impl AssociateCustomerGatewayOutput {
@@ -5437,6 +5542,7 @@ impl AssociateCustomerGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectPeerOutput {
     /// <p>The response to the Connect peer request.</p>
+    #[doc(hidden)]
     pub connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
 }
 impl AssociateConnectPeerOutput {
@@ -5500,6 +5606,7 @@ impl AssociateConnectPeerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptAttachmentOutput {
     /// <p>The response to the attachment request. </p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
 impl AcceptAttachmentOutput {

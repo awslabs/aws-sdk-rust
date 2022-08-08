@@ -1432,14 +1432,19 @@ impl UpdateLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
     /// <p>A description of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
+    #[doc(hidden)]
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
 }
 impl UpdateLifecyclePolicyInput {
@@ -1481,8 +1486,10 @@ impl std::fmt::Debug for UpdateLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -1509,8 +1516,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1541,6 +1550,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -1562,6 +1572,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyInput {
@@ -1583,17 +1594,22 @@ impl std::fmt::Debug for GetLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePoliciesInput {
     /// <p>The identifiers of the data lifecycle policies.</p>
+    #[doc(hidden)]
     pub policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The activation state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GettablePolicyStateValues>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    #[doc(hidden)]
     pub target_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+    #[doc(hidden)]
     pub tags_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetLifecyclePoliciesInput {
@@ -1638,6 +1654,7 @@ impl std::fmt::Debug for GetLifecyclePoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {
@@ -1659,14 +1676,19 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
     /// <p>The configuration details of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,32 +80,46 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The case ID.</p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The quota name.</p>
+    #[doc(hidden)]
     pub quota_name: std::option::Option<std::string::String>,
     /// <p>The new, increased value for the quota.</p>
+    #[doc(hidden)]
     pub desired_value: std::option::Option<f64>,
     /// <p>The state of the quota increase request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RequestStatus>,
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the most recent change.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM identity of the requester.</p>
+    #[doc(hidden)]
     pub requester: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
+    #[doc(hidden)]
     pub quota_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether the quota is global.</p>
+    #[doc(hidden)]
     pub global_quota: bool,
     /// <p>The unit of measurement.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl RequestedServiceQuotaChange {
@@ -461,20 +477,28 @@ impl AsRef<str> for RequestStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The quota name.</p>
+    #[doc(hidden)]
     pub quota_name: std::option::Option<std::string::String>,
     /// <p>The new, increased value of the quota.</p>
+    #[doc(hidden)]
     pub desired_value: std::option::Option<f64>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The unit of measurement.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>Indicates whether the quota is global.</p>
+    #[doc(hidden)]
     pub global_quota: bool,
 }
 impl ServiceQuotaIncreaseRequestInTemplate {
@@ -648,8 +672,10 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInfo {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl ServiceInfo {
@@ -721,28 +747,40 @@ impl ServiceInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuota {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
+    #[doc(hidden)]
     pub quota_arn: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The quota name.</p>
+    #[doc(hidden)]
     pub quota_name: std::option::Option<std::string::String>,
     /// <p>The quota value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>The unit of measurement.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>Indicates whether the quota value can be increased.</p>
+    #[doc(hidden)]
     pub adjustable: bool,
     /// <p>Indicates whether the quota is global.</p>
+    #[doc(hidden)]
     pub global_quota: bool,
     /// <p>Information about the measurement.</p>
+    #[doc(hidden)]
     pub usage_metric: std::option::Option<crate::model::MetricInfo>,
     /// <p>The period of time.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::QuotaPeriod>,
     /// <p>The error code and error reason.</p>
+    #[doc(hidden)]
     pub error_reason: std::option::Option<crate::model::ErrorReason>,
 }
 impl ServiceQuota {
@@ -996,8 +1034,10 @@ pub struct ErrorReason {
     /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
     /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorReason {
@@ -1161,8 +1201,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuotaPeriod {
     /// <p>The value.</p>
+    #[doc(hidden)]
     pub period_value: std::option::Option<i32>,
     /// <p>The time unit.</p>
+    #[doc(hidden)]
     pub period_unit: std::option::Option<crate::model::PeriodUnit>,
 }
 impl QuotaPeriod {
@@ -1320,13 +1362,17 @@ impl AsRef<str> for PeriodUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricInfo {
     /// <p>The namespace of the metric.</p>
+    #[doc(hidden)]
     pub metric_namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
+    #[doc(hidden)]
     pub metric_dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
+    #[doc(hidden)]
     pub metric_statistic_recommendation: std::option::Option<std::string::String>,
 }
 impl MetricInfo {

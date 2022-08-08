@@ -214,8 +214,10 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAvailabilityConfigurationOutput {
     /// <p>Boolean indicating whether the test passed or failed.</p>
+    #[doc(hidden)]
     pub test_passed: bool,
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl TestAvailabilityConfigurationOutput {
@@ -320,6 +322,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMailboxExportJobOutput {
     /// <p>The job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartMailboxExportJobOutput {
@@ -644,8 +647,10 @@ impl PutAccessControlRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>The overview of users for an organization.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -726,6 +731,7 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -787,8 +793,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
     /// <p>One page of the organization's resource representation.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -869,8 +877,10 @@ impl ListResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDelegatesOutput {
     /// <p>One page of the resource's delegates.</p>
+    #[doc(hidden)]
     pub delegates: std::option::Option<std::vec::Vec<crate::model::Delegate>>,
     /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDelegatesOutput {
@@ -951,9 +961,11 @@ impl ListResourceDelegatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationsOutput {
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
+    #[doc(hidden)]
     pub organization_summaries:
         std::option::Option<std::vec::Vec<crate::model::OrganizationSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationsOutput {
@@ -1037,6 +1049,7 @@ impl ListOrganizationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessRulesOutput {
     /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
 }
 impl ListMobileDeviceAccessRulesOutput {
@@ -1098,8 +1111,10 @@ impl ListMobileDeviceAccessRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMobileDeviceAccessOverridesOutput {
     /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMobileDeviceAccessOverridesOutput {
@@ -1181,8 +1196,10 @@ impl ListMobileDeviceAccessOverridesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailDomainsOutput {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+    #[doc(hidden)]
     pub mail_domains: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailDomainsOutput {
@@ -1264,8 +1281,10 @@ impl ListMailDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsOutput {
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailboxPermissionsOutput {
@@ -1346,8 +1365,10 @@ impl ListMailboxPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxExportJobsOutput {
     /// <p>The mailbox export job details.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::MailboxExportJob>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailboxExportJobsOutput {
@@ -1428,8 +1449,10 @@ impl ListMailboxExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>The overview of groups for an organization.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -1510,8 +1533,10 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupMembersOutput {
     /// <p>The members associated to the group.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupMembersOutput {
@@ -1592,9 +1617,11 @@ impl ListGroupMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailabilityConfigurationsOutput {
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    #[doc(hidden)]
     pub availability_configurations:
         std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailabilityConfigurationsOutput {
@@ -1684,8 +1711,10 @@ impl ListAvailabilityConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesOutput {
     /// <p>The entity's paginated aliases.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAliasesOutput {
@@ -1766,6 +1795,7 @@ impl ListAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessControlRulesOutput {
     /// <p>The access control rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::AccessControlRule>>,
 }
 impl ListAccessControlRulesOutput {
@@ -1827,16 +1857,22 @@ impl ListAccessControlRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessOverrideOutput {
     /// <p>The WorkMail user to which the access override applies.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The device to which the access override applies.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A description of the override.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the override was first created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the description was last modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMobileDeviceAccessOverrideOutput {
@@ -1985,8 +2021,10 @@ impl GetMobileDeviceAccessOverrideOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessEffectOutput {
     /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
+    #[doc(hidden)]
     pub matched_rules:
         std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
 }
@@ -2074,15 +2112,20 @@ impl GetMobileDeviceAccessEffectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailDomainOutput {
     /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+    #[doc(hidden)]
     pub is_test_domain: bool,
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
+    #[doc(hidden)]
     pub is_default: bool,
     /// <p> Indicates the status of the domain ownership verification.</p>
+    #[doc(hidden)]
     pub ownership_verification_status:
         std::option::Option<crate::model::DnsRecordVerificationStatus>,
     /// <p>Indicates the status of a DKIM verification.</p>
+    #[doc(hidden)]
     pub dkim_verification_status: std::option::Option<crate::model::DnsRecordVerificationStatus>,
 }
 impl GetMailDomainOutput {
@@ -2235,8 +2278,10 @@ impl GetMailDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailboxDetailsOutput {
     /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
+    #[doc(hidden)]
     pub mailbox_quota: std::option::Option<i32>,
     /// <p>The current mailbox size, in MB, for the specified user.</p>
+    #[doc(hidden)]
     pub mailbox_size: f64,
 }
 impl GetMailboxDetailsOutput {
@@ -2308,12 +2353,16 @@ impl GetMailboxDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultRetentionPolicyOutput {
     /// <p>The retention policy ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The retention policy name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The retention policy description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The retention policy folder configurations.</p>
+    #[doc(hidden)]
     pub folder_configurations:
         std::option::Option<std::vec::Vec<crate::model::FolderConfiguration>>,
 }
@@ -2432,8 +2481,10 @@ impl GetDefaultRetentionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessControlEffectOutput {
     /// <p>The rule effect.</p>
+    #[doc(hidden)]
     pub effect: std::option::Option<crate::model::AccessControlRuleEffect>,
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
+    #[doc(hidden)]
     pub matched_rules: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetAccessControlEffectOutput {
@@ -2577,20 +2628,28 @@ impl DisassociateDelegateFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>The identifier for the described user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The name for the user.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The email of the user.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The display name of the user.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    #[doc(hidden)]
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserOutput {
@@ -2770,20 +2829,28 @@ impl DescribeUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceOutput {
     /// <p>The identifier of the described resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The email of the described resource.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The name of the described resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the described resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
     /// <p>The booking options for the described resource.</p>
+    #[doc(hidden)]
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
     /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeResourceOutput {
@@ -2966,22 +3033,31 @@ impl DescribeResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOutput {
     /// <p>The identifier of an organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The alias for an organization.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The state of an organization.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of directory associated with the WorkMail organization.</p>
+    #[doc(hidden)]
     pub directory_type: std::option::Option<std::string::String>,
     /// <p>The default mail domain associated with the organization.</p>
+    #[doc(hidden)]
     pub default_mail_domain: std::option::Option<std::string::String>,
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub completed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationOutput {
@@ -3187,28 +3263,40 @@ impl DescribeOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMailboxExportJobOutput {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket prefix.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<std::string::String>,
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    #[doc(hidden)]
     pub estimated_progress: i32,
     /// <p>The state of the mailbox export job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MailboxExportJobState>,
     /// <p>Error information for failed mailbox export jobs.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<std::string::String>,
     /// <p>The mailbox export job start timestamp.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The mailbox export job end timestamp.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMailboxExportJobOutput {
@@ -3462,6 +3550,7 @@ impl DescribeMailboxExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInboundDmarcSettingsOutput {
     /// <p>Lists the enforcement setting of the applied policy.</p>
+    #[doc(hidden)]
     pub enforced: bool,
 }
 impl DescribeInboundDmarcSettingsOutput {
@@ -3516,16 +3605,22 @@ impl DescribeInboundDmarcSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupOutput {
     /// <p>The identifier of the described group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The name of the described group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The email of the described group.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGroupOutput {
@@ -3671,8 +3766,10 @@ impl DescribeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEmailMonitoringConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeEmailMonitoringConfigurationOutput {
@@ -3897,8 +3994,10 @@ impl DeleteResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationOutput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The state of the organization.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationOutput {
@@ -4213,6 +4312,7 @@ impl DeleteAccessControlRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The identifier for the new user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -4267,6 +4367,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceOutput {
     /// <p>The identifier of the new resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl CreateResourceOutput {
@@ -4321,6 +4422,7 @@ impl CreateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationOutput {
     /// <p>The organization ID.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl CreateOrganizationOutput {
@@ -4378,6 +4480,7 @@ impl CreateOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMobileDeviceAccessRuleOutput {
     /// <p>The identifier for the newly created mobile device access rule.</p>
+    #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
 }
 impl CreateMobileDeviceAccessRuleOutput {
@@ -4441,6 +4544,7 @@ impl CreateMobileDeviceAccessRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl CreateGroupOutput {

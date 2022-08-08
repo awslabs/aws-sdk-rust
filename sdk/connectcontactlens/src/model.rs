@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::Transcript>,
     /// <p>The matched category rules.</p>
+    #[doc(hidden)]
     pub categories: std::option::Option<crate::model::Categories>,
 }
 impl RealtimeContactAnalysisSegment {
@@ -84,8 +86,10 @@ impl RealtimeContactAnalysisSegment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
+    #[doc(hidden)]
     pub matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The category rule that was matched and when it occurred in the transcript.</p>
+    #[doc(hidden)]
     pub matched_details: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
     >,
@@ -189,6 +193,7 @@ impl Categories {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
+    #[doc(hidden)]
     pub points_of_interest: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
 }
 impl CategoryDetails {
@@ -253,8 +258,10 @@ impl CategoryDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
+    #[doc(hidden)]
     pub begin_offset_millis: i32,
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
+    #[doc(hidden)]
     pub end_offset_millis: i32,
 }
 impl PointOfInterest {
@@ -326,20 +333,28 @@ impl PointOfInterest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the participant.</p>
+    #[doc(hidden)]
     pub participant_id: std::option::Option<std::string::String>,
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
+    #[doc(hidden)]
     pub participant_role: std::option::Option<std::string::String>,
     /// <p>The content of the transcript.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The beginning offset in the contact for this transcript.</p>
+    #[doc(hidden)]
     pub begin_offset_millis: i32,
     /// <p>The end offset in the contact for this transcript.</p>
+    #[doc(hidden)]
     pub end_offset_millis: i32,
     /// <p>The sentiment of the detected for this piece of transcript.</p>
+    #[doc(hidden)]
     pub sentiment: std::option::Option<crate::model::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
+    #[doc(hidden)]
     pub issues_detected: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
 }
 impl Transcript {
@@ -531,6 +546,7 @@ impl Transcript {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
+    #[doc(hidden)]
     pub character_offsets: std::option::Option<crate::model::CharacterOffsets>,
 }
 impl IssueDetected {
@@ -588,8 +604,10 @@ impl IssueDetected {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
+    #[doc(hidden)]
     pub begin_offset_char: i32,
     /// <p>The end of the issue.</p>
+    #[doc(hidden)]
     pub end_offset_char: i32,
 }
 impl CharacterOffsets {

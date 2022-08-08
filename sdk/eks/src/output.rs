@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNodegroupVersionOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl UpdateNodegroupVersionOutput {
@@ -58,6 +59,7 @@ impl UpdateNodegroupVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNodegroupConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl UpdateNodegroupConfigOutput {
@@ -112,6 +114,7 @@ impl UpdateNodegroupConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterVersionOutput {
     /// <p>The full description of the specified update</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl UpdateClusterVersionOutput {
@@ -166,6 +169,7 @@ impl UpdateClusterVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl UpdateClusterConfigOutput {
@@ -220,6 +224,7 @@ impl UpdateClusterConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAddonOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl UpdateAddonOutput {
@@ -334,6 +339,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterClusterOutput {
     /// <p>An object representing an Amazon EKS cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl RegisterClusterOutput {
@@ -388,8 +394,10 @@ impl RegisterClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUpdatesOutput {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
+    #[doc(hidden)]
     pub update_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUpdatesOutput {
@@ -470,6 +478,7 @@ impl ListUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -543,8 +552,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodegroupsOutput {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
+    #[doc(hidden)]
     pub nodegroups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodegroupsOutput {
@@ -625,9 +636,11 @@ impl ListNodegroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
+    #[doc(hidden)]
     pub identity_provider_configs:
         std::option::Option<std::vec::Vec<crate::model::IdentityProviderConfig>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProviderConfigsOutput {
@@ -714,8 +727,10 @@ impl ListIdentityProviderConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFargateProfilesOutput {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
+    #[doc(hidden)]
     pub fargate_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFargateProfilesOutput {
@@ -796,8 +811,10 @@ impl ListFargateProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -878,10 +895,12 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAddonsOutput {
     /// <p>A list of available add-ons.</p>
+    #[doc(hidden)]
     pub addons: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAddonsOutput {
@@ -968,6 +987,7 @@ impl ListAddonsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateIdentityProviderConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl DisassociateIdentityProviderConfigOutput {
@@ -1022,6 +1042,7 @@ impl DisassociateIdentityProviderConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUpdateOutput {
     /// <p>The full description of the specified update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl DescribeUpdateOutput {
@@ -1076,6 +1097,7 @@ impl DescribeUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodegroupOutput {
     /// <p>The full description of your node group.</p>
+    #[doc(hidden)]
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
 }
 impl DescribeNodegroupOutput {
@@ -1133,6 +1155,7 @@ impl DescribeNodegroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderConfigOutput {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    #[doc(hidden)]
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfigResponse>,
 }
 impl DescribeIdentityProviderConfigOutput {
@@ -1196,6 +1219,7 @@ impl DescribeIdentityProviderConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFargateProfileOutput {
     /// <p>The full description of your Fargate profile.</p>
+    #[doc(hidden)]
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
 impl DescribeFargateProfileOutput {
@@ -1253,6 +1277,7 @@ impl DescribeFargateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
     /// <p>The full description of your specified cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DescribeClusterOutput {
@@ -1307,10 +1332,12 @@ impl DescribeClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddonVersionsOutput {
     /// <p>The list of available versions with Kubernetes version compatibility.</p>
+    #[doc(hidden)]
     pub addons: std::option::Option<std::vec::Vec<crate::model::AddonInfo>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddonVersionsOutput {
@@ -1397,6 +1424,7 @@ impl DescribeAddonVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddonOutput {
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DescribeAddonOutput {
@@ -1449,6 +1477,7 @@ impl DescribeAddonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterClusterOutput {
     /// <p>An object representing an Amazon EKS cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeregisterClusterOutput {
@@ -1503,6 +1532,7 @@ impl DeregisterClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNodegroupOutput {
     /// <p>The full description of your deleted node group.</p>
+    #[doc(hidden)]
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
 }
 impl DeleteNodegroupOutput {
@@ -1560,6 +1590,7 @@ impl DeleteNodegroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFargateProfileOutput {
     /// <p>The deleted Fargate profile.</p>
+    #[doc(hidden)]
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
 impl DeleteFargateProfileOutput {
@@ -1617,6 +1648,7 @@ impl DeleteFargateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>The full description of the cluster to delete.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -1671,6 +1703,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAddonOutput {
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DeleteAddonOutput {
@@ -1723,6 +1756,7 @@ impl DeleteAddonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNodegroupOutput {
     /// <p>The full description of your new node group.</p>
+    #[doc(hidden)]
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
 }
 impl CreateNodegroupOutput {
@@ -1780,6 +1814,7 @@ impl CreateNodegroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFargateProfileOutput {
     /// <p>The full description of your new Fargate profile.</p>
+    #[doc(hidden)]
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
 impl CreateFargateProfileOutput {
@@ -1837,6 +1872,7 @@ impl CreateFargateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The full description of your new cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {
@@ -1891,6 +1927,7 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddonOutput {
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl CreateAddonOutput {
@@ -1943,8 +1980,10 @@ impl CreateAddonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateIdentityProviderConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2037,6 +2076,7 @@ impl AssociateIdentityProviderConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEncryptionConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
+    #[doc(hidden)]
     pub update: std::option::Option<crate::model::Update>,
 }
 impl AssociateEncryptionConfigOutput {

@@ -94,8 +94,10 @@ impl SetQueueAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageBatchOutput {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl SendMessageBatchOutput {
@@ -186,16 +188,21 @@ impl SendMessageBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageOutput {
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_body: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+    #[doc(hidden)]
     pub md5_of_message_system_attributes: std::option::Option<std::string::String>,
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl SendMessageOutput {
@@ -372,6 +379,7 @@ impl RemovePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReceiveMessageOutput {
     /// <p>A list of messages.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl ReceiveMessageOutput {
@@ -465,6 +473,7 @@ impl PurgeQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueueTagsOutput {
     /// <p>The list of all tags added to the specified queue.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -538,8 +547,10 @@ impl ListQueueTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesOutput {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
+    #[doc(hidden)]
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListQueuesOutput {
@@ -620,8 +631,10 @@ impl ListQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeadLetterSourceQueuesOutput {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
+    #[doc(hidden)]
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeadLetterSourceQueuesOutput {
@@ -702,6 +715,7 @@ impl ListDeadLetterSourceQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueueUrlOutput {
     /// <p>The URL of the queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl GetQueueUrlOutput {
@@ -756,6 +770,7 @@ impl GetQueueUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueueAttributesOutput {
     /// <p>A map of attributes to their respective values.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
@@ -863,8 +878,10 @@ impl DeleteQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageBatchOutput {
     /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl DeleteMessageBatchOutput {
@@ -987,6 +1004,7 @@ impl DeleteMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl CreateQueueOutput {
@@ -1041,9 +1059,11 @@ impl CreateQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub successful:
         std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl ChangeMessageVisibilityBatchOutput {

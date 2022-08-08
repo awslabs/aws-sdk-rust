@@ -3791,13 +3791,17 @@ impl UpdateAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::string::String>,
 }
 impl UpdateAttributeGroupInput {
@@ -3835,11 +3839,14 @@ impl std::fmt::Debug for UpdateAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The name or ID of the application that will be updated.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -3872,8 +3879,10 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys to remove from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3900,8 +3909,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modified tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3932,8 +3943,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncResourceInput {
     /// <p>The type of resource of which the application will be associated.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl SyncResourceInput {
@@ -3960,6 +3973,7 @@ impl std::fmt::Debug for SyncResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3981,10 +3995,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributeGroupsForApplicationInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>This token retrieves the next page of results after a previous API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttributeGroupsForApplicationInput {
@@ -4016,8 +4033,10 @@ impl std::fmt::Debug for ListAttributeGroupsForApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributeGroupsInput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttributeGroupsInput {
@@ -4044,10 +4063,13 @@ impl std::fmt::Debug for ListAttributeGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedResourcesInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssociatedResourcesInput {
@@ -4079,10 +4101,13 @@ impl std::fmt::Debug for ListAssociatedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedAttributeGroupsInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssociatedAttributeGroupsInput {
@@ -4114,8 +4139,10 @@ impl std::fmt::Debug for ListAssociatedAttributeGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationsInput {
@@ -4142,6 +4169,7 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl GetAttributeGroupInput {
@@ -4163,10 +4191,13 @@ impl std::fmt::Debug for GetAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedResourceInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The type of resource associated with the application.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name or ID of the resource associated with the application.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl GetAssociatedResourceInput {
@@ -4198,6 +4229,7 @@ impl std::fmt::Debug for GetAssociatedResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -4219,10 +4251,13 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The type of the resource that is being disassociated.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name or ID of the resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceInput {
@@ -4254,8 +4289,10 @@ impl std::fmt::Debug for DisassociateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAttributeGroupInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl DisassociateAttributeGroupInput {
@@ -4282,6 +4319,7 @@ impl std::fmt::Debug for DisassociateAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl DeleteAttributeGroupInput {
@@ -4303,6 +4341,7 @@ impl std::fmt::Debug for DeleteAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -4324,15 +4363,20 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttributeGroupInput {
     /// <p>The name of the attribute group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::string::String>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAttributeGroupInput {
@@ -4377,13 +4421,17 @@ impl std::fmt::Debug for CreateAttributeGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -4423,10 +4471,13 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The type of resource of which the application will be associated.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name or ID of the resource of which the application will be associated.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl AssociateResourceInput {
@@ -4458,8 +4509,10 @@ impl std::fmt::Debug for AssociateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAttributeGroupInput {
     /// <p>The name or ID of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl AssociateAttributeGroupInput {

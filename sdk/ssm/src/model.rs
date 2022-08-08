@@ -5,15 +5,20 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
+    #[doc(hidden)]
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
+    #[doc(hidden)]
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
+    #[doc(hidden)]
     pub include_future_regions: bool,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub enable_all_ops_data_sources: bool,
 }
 impl ResourceDataSyncSource {
@@ -157,8 +162,10 @@ impl ResourceDataSyncSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
+    #[doc(hidden)]
     pub organization_source_type: std::option::Option<std::string::String>,
     /// <p>The Organizations organization units included in the sync.</p>
+    #[doc(hidden)]
     pub organizational_units:
         std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncOrganizationalUnit>>,
 }
@@ -251,6 +258,7 @@ impl ResourceDataSyncAwsOrganizationsSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
+    #[doc(hidden)]
     pub organizational_unit_id: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncOrganizationalUnit {
@@ -308,8 +316,10 @@ impl ResourceDataSyncOrganizationalUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchSource {
     /// <p>The name specified to identify the patch source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
+    #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value of the yum repo configuration. For example:</p>
     /// <p> <code>[main]</code> </p>
@@ -318,6 +328,7 @@ pub struct PatchSource {
     /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
 }
 impl PatchSource {
@@ -569,6 +580,7 @@ impl AsRef<str> for PatchComplianceLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
+    #[doc(hidden)]
     pub patch_rules: std::option::Option<std::vec::Vec<crate::model::PatchRule>>,
 }
 impl PatchRuleGroup {
@@ -632,15 +644,20 @@ impl PatchRuleGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchRule {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
+    #[doc(hidden)]
     pub patch_filter_group: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
+    #[doc(hidden)]
     pub compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    #[doc(hidden)]
     pub approve_after_days: std::option::Option<i32>,
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    #[doc(hidden)]
     pub approve_until_date: std::option::Option<std::string::String>,
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub enable_non_security: std::option::Option<bool>,
 }
 impl PatchRule {
@@ -775,6 +792,7 @@ impl PatchRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
+    #[doc(hidden)]
     pub patch_filters: std::option::Option<std::vec::Vec<crate::model::PatchFilter>>,
 }
 impl PatchFilterGroup {
@@ -842,9 +860,11 @@ impl PatchFilterGroup {
 pub struct PatchFilter {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::PatchFilterKey>,
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PatchFilter {
@@ -1182,6 +1202,7 @@ impl AsRef<str> for OperatingSystem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataValue {
     /// <p>Metadata value to assign to an Application Manager application.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MetadataValue {
@@ -1377,6 +1398,7 @@ impl AsRef<str> for OpsItemStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl RelatedOpsItem {
@@ -1431,6 +1453,7 @@ impl RelatedOpsItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemNotification {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl OpsItemNotification {
@@ -1483,8 +1506,10 @@ impl OpsItemNotification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemDataValue {
     /// <p>The value of the OperationalData key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OpsItemDataType>,
 }
 impl OpsItemDataValue {
@@ -1671,10 +1696,13 @@ impl AsRef<str> for MaintenanceWindowTaskCutoffBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored .</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>(Optional) The S3 bucket subfolder. </p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
+    #[doc(hidden)]
     pub s3_region: std::option::Option<std::string::String>,
 }
 impl LoggingInfo {
@@ -1769,12 +1797,16 @@ impl LoggingInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
+    #[doc(hidden)]
     pub run_command: std::option::Option<crate::model::MaintenanceWindowRunCommandParameters>,
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
+    #[doc(hidden)]
     pub automation: std::option::Option<crate::model::MaintenanceWindowAutomationParameters>,
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
+    #[doc(hidden)]
     pub step_functions: std::option::Option<crate::model::MaintenanceWindowStepFunctionsParameters>,
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::MaintenanceWindowLambdaParameters>,
 }
 impl MaintenanceWindowTaskInvocationParameters {
@@ -1915,10 +1947,13 @@ impl MaintenanceWindowTaskInvocationParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowLambdaParameters {
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
+    #[doc(hidden)]
     pub client_context: std::option::Option<std::string::String>,
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
+    #[doc(hidden)]
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>JSON to provide to your Lambda function as input.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl MaintenanceWindowLambdaParameters {
@@ -2015,8 +2050,10 @@ impl MaintenanceWindowLambdaParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowStepFunctionsParameters {
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl MaintenanceWindowStepFunctionsParameters {
@@ -2088,6 +2125,7 @@ impl MaintenanceWindowStepFunctionsParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowAutomationParameters {
     /// <p>The version of an Automation runbook to use during task execution.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
     /// <p>For information about specifying and updating task parameters, see <code>RegisterTaskWithMaintenanceWindow</code> and <code>UpdateMaintenanceWindowTask</code>.</p> <note>
@@ -2095,6 +2133,7 @@ pub struct MaintenanceWindowAutomationParameters {
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// <p>For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for these parameters.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -2212,31 +2251,42 @@ impl MaintenanceWindowAutomationParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowRunCommandParameters {
     /// <p>Information about the commands to run.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
+    #[doc(hidden)]
     pub document_hash: std::option::Option<std::string::String>,
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
+    #[doc(hidden)]
     pub document_hash_type: std::option::Option<crate::model::DocumentHashType>,
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
+    #[doc(hidden)]
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
+    #[doc(hidden)]
     pub timeout_seconds: std::option::Option<i32>,
 }
 impl MaintenanceWindowRunCommandParameters {
@@ -2521,14 +2571,17 @@ impl MaintenanceWindowRunCommandParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfig {
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
+    #[doc(hidden)]
     pub notification_arn: std::option::Option<std::string::String>,
     /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub notification_events: std::option::Option<std::vec::Vec<crate::model::NotificationEvent>>,
     /// <p>The type of notification.</p>
     /// <ul>
     /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
     /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<crate::model::NotificationType>,
 }
 impl NotificationConfig {
@@ -2834,8 +2887,10 @@ impl AsRef<str> for DocumentHashType {
 pub struct CloudWatchOutputConfig {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
     /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_enabled: bool,
 }
 impl CloudWatchOutputConfig {
@@ -2919,6 +2974,7 @@ impl CloudWatchOutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MaintenanceWindowTaskParameterValueExpression {
@@ -3028,9 +3084,11 @@ impl MaintenanceWindowTaskParameterValueExpression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>User-defined criteria for sending commands that target managed nodes that meet the criteria.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
     /// <p>Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of 50.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Target {
@@ -3114,8 +3172,10 @@ impl Target {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentReviews {
     /// <p>The action to take on a document approval review request.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::DocumentReviewAction>,
     /// <p>A comment entered by a user in your organization about the document review request.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
 }
 impl DocumentReviews {
@@ -3200,8 +3260,10 @@ impl DocumentReviews {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentReviewCommentSource {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DocumentReviewCommentType>,
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl DocumentReviewCommentSource {
@@ -3390,10 +3452,13 @@ impl AsRef<str> for DocumentReviewAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentDefaultVersionDescription {
     /// <p>The name of the document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The default version of the document.</p>
+    #[doc(hidden)]
     pub default_version: std::option::Option<std::string::String>,
     /// <p>The default version of the artifact associated with the document.</p>
+    #[doc(hidden)]
     pub default_version_name: std::option::Option<std::string::String>,
 }
 impl DocumentDefaultVersionDescription {
@@ -3488,69 +3553,99 @@ impl DocumentDefaultVersionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
+    #[doc(hidden)]
     pub sha1: std::option::Option<std::string::String>,
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
+    #[doc(hidden)]
     pub hash: std::option::Option<std::string::String>,
     /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
+    #[doc(hidden)]
     pub hash_type: std::option::Option<crate::model::DocumentHashType>,
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The version of the artifact associated with the document.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services user account that created the document.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date when the document was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the SSM document.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    #[doc(hidden)]
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>A description of the document. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
     /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
+    #[doc(hidden)]
     pub platform_types: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The type of document.</p>
+    #[doc(hidden)]
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the document.</p>
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// <p>The default version.</p>
+    #[doc(hidden)]
     pub default_version: std::option::Option<std::string::String>,
     /// <p>The document format, either JSON or YAML.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Details about the document attachments, including names, locations, sizes, and so on.</p>
+    #[doc(hidden)]
     pub attachments_information:
         std::option::Option<std::vec::Vec<crate::model::AttachmentInformation>>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    #[doc(hidden)]
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
     /// <p>The user in your organization who created the document.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>Details about the review of a document.</p>
+    #[doc(hidden)]
     pub review_information: std::option::Option<std::vec::Vec<crate::model::ReviewInformation>>,
     /// <p>The version of the document currently approved for use in the organization.</p>
+    #[doc(hidden)]
     pub approved_version: std::option::Option<std::string::String>,
     /// <p>The version of the document that is currently under review.</p>
+    #[doc(hidden)]
     pub pending_review_version: std::option::Option<std::string::String>,
     /// <p>The current status of the review.</p>
+    #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
     /// <p>The classification of a document to help you identify and categorize its use.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value that identifies a document's category.</p>
+    #[doc(hidden)]
     pub category_enum: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DocumentDescription {
@@ -4291,10 +4386,13 @@ impl AsRef<str> for ReviewStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReviewInformation {
     /// <p>The time that the reviewer took action on the document review request.</p>
+    #[doc(hidden)]
     pub reviewed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the document review request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReviewStatus>,
     /// <p>The reviewer assigned to take action on the document review request.</p>
+    #[doc(hidden)]
     pub reviewer: std::option::Option<std::string::String>,
 }
 impl ReviewInformation {
@@ -4389,8 +4487,10 @@ impl ReviewInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The document version required by the current document.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DocumentRequires {
@@ -4462,6 +4562,7 @@ impl DocumentRequires {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentInformation {
     /// <p>The name of the attachment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AttachmentInformation {
@@ -4514,8 +4615,10 @@ impl AttachmentInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The name of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -4813,12 +4916,16 @@ impl AsRef<str> for PlatformType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentParameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of parameter. The type can be either String or StringList.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DocumentParameterType>,
     /// <p>A description of what the parameter does, how to use it, the default value, and whether or not the parameter is optional.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl DocumentParameter {
@@ -5052,6 +5159,7 @@ impl AsRef<str> for DocumentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentsSource {
     /// <p>The key of a key-value pair that identifies the location of an attachment to a document.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AttachmentsSourceKey>,
     /// <p>The value of a key-value pair that identifies the location of an attachment to a document. The format for <b>Value</b> depends on the type of key you specify.</p>
     /// <ul>
@@ -5059,8 +5167,10 @@ pub struct AttachmentsSource {
     /// <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p> </li>
     /// <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the document attachment file.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AttachmentsSource {
@@ -5235,62 +5345,88 @@ impl AsRef<str> for AttachmentsSourceKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationDescription {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The date when the association was made.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the association was last updated.</p>
+    #[doc(hidden)]
     pub last_update_association_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The association status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssociationStatus>,
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub overview: std::option::Option<crate::model::AssociationOverview>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document. </p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The managed nodes targeted by the request. </p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where you want to store the output details of the request.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>The date on which the association was last run.</p>
+    #[doc(hidden)]
     pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date on which the association was successfully run.</p>
+    #[doc(hidden)]
     pub last_successful_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The association name.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
+    #[doc(hidden)]
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    #[doc(hidden)]
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -5939,14 +6075,19 @@ impl AssociationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    #[doc(hidden)]
     pub target_location_max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    #[doc(hidden)]
     pub target_location_max_errors: std::option::Option<std::string::String>,
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
+    #[doc(hidden)]
     pub execution_role_name: std::option::Option<std::string::String>,
 }
 impl TargetLocation {
@@ -6228,6 +6369,7 @@ impl AsRef<str> for AssociationComplianceSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociationOutputLocation {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3OutputLocation>,
 }
 impl InstanceAssociationOutputLocation {
@@ -6285,10 +6427,13 @@ impl InstanceAssociationOutputLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputLocation {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
+    #[doc(hidden)]
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl S3OutputLocation {
@@ -6386,10 +6531,13 @@ impl S3OutputLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationOverview {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A detailed status of the association.</p>
+    #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
+    #[doc(hidden)]
     pub association_status_aggregated_count:
         std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -6501,12 +6649,16 @@ impl AssociationOverview {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationStatus {
     /// <p>The date when the status changed.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AssociationStatusName>,
     /// <p>The reason for the status.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A user-defined string.</p>
+    #[doc(hidden)]
     pub additional_info: std::option::Option<std::string::String>,
 }
 impl AssociationStatus {
@@ -6734,28 +6886,37 @@ impl AsRef<str> for StopType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Runbook {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    #[doc(hidden)]
     pub target_parameter_name: std::option::Option<std::string::String>,
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
 impl Runbook {
@@ -7083,26 +7244,36 @@ impl AsRef<str> for ExecutionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Command {
     /// <p>A unique identifier for this command.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The name of the document requested for execution.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The Systems Manager document (SSM document) version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub expires_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The managed node IDs against which this command was requested.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The date and time the command was requested.</p>
+    #[doc(hidden)]
     pub requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the command.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommandStatus>,
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -7117,32 +7288,46 @@ pub struct Command {
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+    #[doc(hidden)]
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The number of targets for the command.</p>
+    #[doc(hidden)]
     pub target_count: i32,
     /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
+    #[doc(hidden)]
     pub completed_count: i32,
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
+    #[doc(hidden)]
     pub error_count: i32,
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
+    #[doc(hidden)]
     pub delivery_timed_out_count: i32,
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes. </p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes. </p>
+    #[doc(hidden)]
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
+    #[doc(hidden)]
     pub timeout_seconds: i32,
 }
 impl Command {
@@ -7857,14 +8042,19 @@ impl AsRef<str> for SignalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSetting {
     /// <p>The ID of the service setting.</p>
+    #[doc(hidden)]
     pub setting_id: std::option::Option<std::string::String>,
     /// <p>The value of the service setting.</p>
+    #[doc(hidden)]
     pub setting_value: std::option::Option<std::string::String>,
     /// <p>The last time the service setting was modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The ARN of the service setting.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
@@ -7872,6 +8062,7 @@ pub struct ServiceSetting {
     /// <li> <p>Customized: The current setting use a custom value specified by the customer.</p> </li>
     /// <li> <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ServiceSetting {
@@ -8359,18 +8550,24 @@ impl AsRef<str> for ParameterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItem {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The schema version for the inventory item.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The time the inventory information was collected.</p>
+    #[doc(hidden)]
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
+    #[doc(hidden)]
     pub content_hash: std::option::Option<std::string::String>,
     /// <p>The inventory data of the inventory type.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
+    #[doc(hidden)]
     pub context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8608,14 +8805,19 @@ impl AsRef<str> for ComplianceUploadType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::ComplianceSeverity>,
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
+    #[doc(hidden)]
     pub details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8898,10 +9100,13 @@ impl AsRef<str> for ComplianceSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    #[doc(hidden)]
     pub execution_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
+    #[doc(hidden)]
     pub execution_type: std::option::Option<std::string::String>,
 }
 impl ComplianceExecutionSummary {
@@ -9047,24 +9252,34 @@ impl AsRef<str> for DocumentPermissionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncItem {
     /// <p>The name of the resource data sync.</p>
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from multiple Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Information about the source where the data was synchronized. </p>
+    #[doc(hidden)]
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSourceWithState>,
     /// <p>Configuration information for the target S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::ResourceDataSyncS3Destination>,
     /// <p>The last time the configuration attempted to sync (UTC).</p>
+    #[doc(hidden)]
     pub last_sync_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>
+    #[doc(hidden)]
     pub last_successful_sync_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the resource data sync was changed. </p>
+    #[doc(hidden)]
     pub sync_last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status reported by the last sync.</p>
+    #[doc(hidden)]
     pub last_status: std::option::Option<crate::model::LastResourceDataSyncStatus>,
     /// <p>The date and time the configuration was created (UTC).</p>
+    #[doc(hidden)]
     pub sync_created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status message details reported by the last sync.</p>
+    #[doc(hidden)]
     pub last_sync_status_message: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncItem {
@@ -9362,16 +9577,22 @@ impl AsRef<str> for LastResourceDataSyncStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncS3Destination {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>An Amazon S3 prefix for the bucket.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
+    #[doc(hidden)]
     pub sync_format: std::option::Option<crate::model::ResourceDataSyncS3Format>,
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
+    #[doc(hidden)]
     pub awskms_key_arn: std::option::Option<std::string::String>,
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
+    #[doc(hidden)]
     pub destination_data_sharing:
         std::option::Option<crate::model::ResourceDataSyncDestinationDataSharing>,
 }
@@ -9527,6 +9748,7 @@ impl ResourceDataSyncS3Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncDestinationDataSharing {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
+    #[doc(hidden)]
     pub destination_data_sharing_type: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncDestinationDataSharing {
@@ -9645,21 +9867,27 @@ impl AsRef<str> for ResourceDataSyncS3Format {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncSourceWithState {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>singleAccountMultiRegions</code>.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+    #[doc(hidden)]
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
+    #[doc(hidden)]
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
+    #[doc(hidden)]
     pub include_future_regions: bool,
     /// <p>The data type name for including resource data sync state. There are four sync states:</p>
     /// <p> <code>OrganizationNotExists</code>: Your organization doesn't exist.</p>
     /// <p> <code>NoPermissions</code>: The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.</p>
     /// <p> <code>InvalidOrganizationalUnit</code>: You specified or selected an invalid unit in the resource data sync configuration.</p>
     /// <p> <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in Organizations.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub enable_all_ops_data_sources: bool,
 }
 impl ResourceDataSyncSourceWithState {
@@ -9832,20 +10060,28 @@ impl ResourceDataSyncSourceWithState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceComplianceSummaryItem {
     /// <p>The compliance type.</p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The resource ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The compliance status for the resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The highest severity item found for the resource. The resource is compliant for this item.</p>
+    #[doc(hidden)]
     pub overall_severity: std::option::Option<crate::model::ComplianceSeverity>,
     /// <p>Information about the execution.</p>
+    #[doc(hidden)]
     pub execution_summary: std::option::Option<crate::model::ComplianceExecutionSummary>,
     /// <p>A list of items that are compliant for the resource.</p>
+    #[doc(hidden)]
     pub compliant_summary: std::option::Option<crate::model::CompliantSummary>,
     /// <p>A list of items that aren't compliant for the resource.</p>
+    #[doc(hidden)]
     pub non_compliant_summary: std::option::Option<crate::model::NonCompliantSummary>,
 }
 impl ResourceComplianceSummaryItem {
@@ -10045,8 +10281,10 @@ impl ResourceComplianceSummaryItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
+    #[doc(hidden)]
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
+    #[doc(hidden)]
     pub severity_summary: std::option::Option<crate::model::SeveritySummary>,
 }
 impl NonCompliantSummary {
@@ -10121,16 +10359,22 @@ impl NonCompliantSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub critical_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub high_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub medium_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub low_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub informational_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
+    #[doc(hidden)]
     pub unspecified_count: i32,
 }
 impl SeveritySummary {
@@ -10270,8 +10514,10 @@ impl SeveritySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
+    #[doc(hidden)]
     pub compliant_count: i32,
     /// <p>A summary of the compliance severity by compliance type.</p>
+    #[doc(hidden)]
     pub severity_summary: std::option::Option<crate::model::SeveritySummary>,
 }
 impl CompliantSummary {
@@ -10346,10 +10592,13 @@ impl CompliantSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceStringFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for which to search.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComplianceQueryOperatorType>,
 }
 impl ComplianceStringFilter {
@@ -10523,14 +10772,19 @@ impl AsRef<str> for ComplianceQueryOperatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadata {
     /// <p>The ID of the Application Manager application.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
     /// <p>The date the OpsMetadata object was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user name who last updated the OpsMetadata object.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The date the OpsMetadata objects was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OpsMetadata {
@@ -10665,8 +10919,10 @@ impl OpsMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataFilter {
     /// <p>A filter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A filter value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OpsMetadataFilter {
@@ -10747,22 +11003,31 @@ impl OpsMetadataFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemRelatedItemSummary {
     /// <p>The OpsItem ID.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The association type.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
+    #[doc(hidden)]
     pub resource_uri: std::option::Option<std::string::String>,
     /// <p>Information about the user or resource that created an OpsItem event.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::OpsItemIdentity>,
     /// <p>The time the related-item association was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user or resource that created an OpsItem event.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::model::OpsItemIdentity>,
     /// <p>The time the related-item association was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OpsItemRelatedItemSummary {
@@ -10974,6 +11239,7 @@ impl OpsItemRelatedItemSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl OpsItemIdentity {
@@ -11026,10 +11292,13 @@ impl OpsItemIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemRelatedItemsFilter {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::OpsItemRelatedItemsFilterKey>,
     /// <p>The values for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::OpsItemRelatedItemsFilterOperator>,
 }
 impl OpsItemRelatedItemsFilter {
@@ -11245,18 +11514,25 @@ impl AsRef<str> for OpsItemRelatedItemsFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemEventSummary {
     /// <p>The ID of the OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of the OpsItem event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The source of the OpsItem event.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The type of information provided as a detail.</p>
+    #[doc(hidden)]
     pub detail_type: std::option::Option<std::string::String>,
     /// <p>Specific information about the OpsItem event.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
     /// <p>Information about the user or resource that created the OpsItem event.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::OpsItemIdentity>,
     /// <p>The date and time the OpsItem event was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OpsItemEventSummary {
@@ -11419,10 +11695,13 @@ impl OpsItemEventSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemEventFilter {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::OpsItemEventFilterKey>,
     /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::OpsItemEventFilterOperator>,
 }
 impl OpsItemEventFilter {
@@ -11628,12 +11907,15 @@ impl AsRef<str> for OpsItemEventFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InventoryQueryOperatorType>,
 }
 impl InventoryFilter {
@@ -11818,24 +12100,34 @@ impl AsRef<str> for InventoryQueryOperatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentVersionInfo {
     /// <p>The document name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The date the document was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An identifier for the default version of the document.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The document format, either JSON or YAML.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    #[doc(hidden)]
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The current status of the approval review for the latest version of the document.</p>
+    #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
 }
 impl DocumentVersionInfo {
@@ -12061,34 +12353,49 @@ impl DocumentVersionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the SSM document was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services user account that created the document.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The operating system platform. </p>
+    #[doc(hidden)]
     pub platform_types: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The document type.</p>
+    #[doc(hidden)]
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The document format, either JSON or YAML.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    #[doc(hidden)]
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
     /// <p>The current status of a document review.</p>
+    #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
     /// <p>The user in your organization who created the document.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
 }
 impl DocumentIdentifier {
@@ -12474,8 +12781,10 @@ impl DocumentIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentKeyValuesFilter {
     /// <p>The name of the filter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the filter key.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DocumentKeyValuesFilter {
@@ -12556,8 +12865,10 @@ impl DocumentKeyValuesFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::DocumentFilterKey>,
     /// <p>The value of the filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DocumentFilter {
@@ -12695,6 +13006,7 @@ impl AsRef<str> for DocumentFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentMetadataResponseInfo {
     /// <p>Details about a reviewer's response to a document review request.</p>
+    #[doc(hidden)]
     pub reviewer_response:
         std::option::Option<std::vec::Vec<crate::model::DocumentReviewerResponseSource>>,
 }
@@ -12765,16 +13077,21 @@ impl DocumentMetadataResponseInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentReviewerResponseSource {
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
+    #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
     /// <p>The user in your organization assigned to review a document request.</p>
+    #[doc(hidden)]
     pub reviewer: std::option::Option<std::string::String>,
 }
 impl DocumentReviewerResponseSource {
@@ -12973,10 +13290,13 @@ impl AsRef<str> for DocumentMetadataEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceSummaryItem {
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
+    #[doc(hidden)]
     pub compliant_summary: std::option::Option<crate::model::CompliantSummary>,
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
+    #[doc(hidden)]
     pub non_compliant_summary: std::option::Option<crate::model::NonCompliantSummary>,
 }
 impl ComplianceSummaryItem {
@@ -13074,22 +13394,31 @@ impl ComplianceSummaryItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::ComplianceSeverity>,
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    #[doc(hidden)]
     pub execution_summary: std::option::Option<crate::model::ComplianceExecutionSummary>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
+    #[doc(hidden)]
     pub details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13325,6 +13654,7 @@ pub struct CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::CommandFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -13367,6 +13697,7 @@ pub struct CommandFilter {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CommandFilter {
@@ -13640,20 +13971,28 @@ impl AsRef<str> for CommandFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommandInvocation {
     /// <p>The command against which this invocation was requested.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The managed node ID in which this invocation was requested.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified host name of the managed node.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The document name that was requested for execution.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The Systems Manager document (SSM document) version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The time and date the request was sent to this managed node.</p>
+    #[doc(hidden)]
     pub requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the invocation succeeded, failed, or is pending.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommandInvocationStatus>,
     /// <p>A detailed status of the command execution for each invocation (each managed node targeted by the command). StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -13668,20 +14007,28 @@ pub struct CommandInvocation {
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p> Gets the trace output sent by the agent. </p>
+    #[doc(hidden)]
     pub trace_output: std::option::Option<std::string::String>,
     /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
+    #[doc(hidden)]
     pub standard_output_url: std::option::Option<std::string::String>,
     /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
+    #[doc(hidden)]
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>Plugins processed by the command.</p>
+    #[doc(hidden)]
     pub command_plugins: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per managed node basis.</p>
+    #[doc(hidden)]
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
 impl CommandInvocation {
@@ -14072,8 +14419,10 @@ impl CommandInvocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommandPlugin {
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommandPluginStatus>,
     /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -14087,20 +14436,28 @@ pub struct CommandPlugin {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>A numeric response code generated after running the plugin. </p>
+    #[doc(hidden)]
     pub response_code: i32,
     /// <p>The time the plugin started running. </p>
+    #[doc(hidden)]
     pub response_start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
+    #[doc(hidden)]
     pub response_finish_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Output of the plugin execution.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_output_url: std::option::Option<std::string::String>,
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
+    #[doc(hidden)]
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
     /// <p> <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code> </p>
@@ -14108,6 +14465,7 @@ pub struct CommandPlugin {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
     /// <p> <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code> </p>
@@ -14115,6 +14473,7 @@ pub struct CommandPlugin {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
+    #[doc(hidden)]
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl CommandPlugin {
@@ -14612,48 +14971,67 @@ impl AsRef<str> for CommandInvocationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationVersionInfo {
     /// <p>The ID created by the system when the association was created.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The date the association version was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name specified when the association was created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of an Amazon Web Services Systems Manager document (SSM document) used when the association version was created.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Parameters specified when the association version was created.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The targets specified for the association when the association version was created. </p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The cron or rate schedule specified for the association when the association version was created.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 specified for the association when the association version was created.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>The name specified for the association version when the association version was created.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
+    #[doc(hidden)]
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    #[doc(hidden)]
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations for this version only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you wanted to run the association when this association version was created.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -15154,30 +15532,42 @@ impl AssociationVersionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Association {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The ID created by the system when you create an association. An association is a binding between a document and a set of targets with a schedule.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The managed nodes targeted by the request to create an association. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The date on which the association was last run.</p>
+    #[doc(hidden)]
     pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub overview: std::option::Option<crate::model::AssociationOverview>,
     /// <p>A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal Time (UTC).</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The association name.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -15491,8 +15881,10 @@ pub struct AssociationFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AssociationFilterKey>,
     /// <p>The filter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AssociationFilter {
@@ -15661,28 +16053,37 @@ impl AsRef<str> for AssociationFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ParameterType>,
     /// <p>The parameter value.</p> <note>
     /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
     /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
+    #[doc(hidden)]
     pub selector: std::option::Option<std::string::String>,
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
+    #[doc(hidden)]
     pub source_result: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl Parameter {
@@ -15901,11 +16302,14 @@ pub struct ParameterStringFilter {
     /// <p>For <code>DescribeParameters</code>, all of the listed patterns are valid except <code>Label</code>.</p>
     /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>For all filters used with <code>DescribeParameters</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>, valid options include <code>Recursive</code> and <code>OneLevel</code>.)</p>
     /// <p>For filters used with <code>GetParametersByPath</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using <code>Label</code> as the Key name, the only valid option is <code>Equals</code>.)</p>
+    #[doc(hidden)]
     pub option: std::option::Option<std::string::String>,
     /// <p>The value you want to search for.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ParameterStringFilter {
@@ -16018,32 +16422,45 @@ impl ParameterStringFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterHistory {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of parameter used.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ParameterType>,
     /// <p>The ID of the query key used for this parameter.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>Information about the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Parameter names can include the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
+    #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>Labels assigned to the parameter version.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The parameter tier.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ParameterTier>,
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl ParameterHistory {
@@ -16336,10 +16753,13 @@ impl ParameterHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<std::string::String>,
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
+    #[doc(hidden)]
     pub policy_status: std::option::Option<std::string::String>,
 }
 impl ParameterInlinePolicy {
@@ -16431,8 +16851,10 @@ impl ParameterInlinePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsEntity {
     /// <p>The query ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The data returned by the query.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsEntityItem>,
     >,
@@ -16527,8 +16949,10 @@ impl OpsEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
+    #[doc(hidden)]
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>The details of an OpsData summary.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
@@ -16621,6 +17045,7 @@ impl OpsEntityItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
 }
 impl OpsResultAttribute {
@@ -16675,17 +17100,23 @@ impl OpsResultAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsAggregator {
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
+    #[doc(hidden)]
     pub aggregator_type: std::option::Option<std::string::String>,
     /// <p>The data type name to use for viewing counts of OpsData.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The aggregator value.</p>
+    #[doc(hidden)]
     pub values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The aggregator filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
+    #[doc(hidden)]
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
 }
 impl OpsAggregator {
@@ -16869,10 +17300,13 @@ impl OpsAggregator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of filter.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OpsFilterOperatorType>,
 }
 impl OpsFilter {
@@ -17052,52 +17486,73 @@ impl AsRef<str> for OpsFilterOperatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The OpsItem description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    #[doc(hidden)]
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OpsItem {
@@ -17660,12 +18115,16 @@ impl AsRef<str> for MaintenanceWindowExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItemSchema {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The schema version for the inventory item.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::InventoryItemAttribute>>,
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl InventoryItemSchema {
@@ -17781,8 +18240,10 @@ impl InventoryItemSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the inventory item attribute. </p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::InventoryAttributeDataType>,
 }
 impl InventoryItemAttribute {
@@ -17912,8 +18373,10 @@ impl AsRef<str> for InventoryAttributeDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryResultEntity {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The data section in the inventory result entity JSON.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::InventoryResultItem>,
     >,
@@ -18008,14 +18471,19 @@ impl InventoryResultEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The schema version for the inventory result item/</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The time inventory item data was captured.</p>
+    #[doc(hidden)]
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
+    #[doc(hidden)]
     pub content_hash: std::option::Option<std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
+    #[doc(hidden)]
     pub content: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
@@ -18162,6 +18630,7 @@ impl InventoryResultItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
 }
 impl ResultAttribute {
@@ -18216,10 +18685,13 @@ impl ResultAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryAggregator {
     /// <p>The inventory type and attribute name for aggregation.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
+    #[doc(hidden)]
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::InventoryAggregator>>,
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::InventoryGroup>>,
 }
 impl InventoryAggregator {
@@ -18327,8 +18799,10 @@ impl InventoryAggregator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryGroup {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
 }
 impl InventoryGroup {
@@ -18409,14 +18883,19 @@ impl InventoryGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentContent {
     /// <p>The name of an attachment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The size of an attachment in bytes.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>The cryptographic hash value of the document content.</p>
+    #[doc(hidden)]
     pub hash: std::option::Option<std::string::String>,
     /// <p>The hash algorithm used to calculate the hash value.</p>
+    #[doc(hidden)]
     pub hash_type: std::option::Option<crate::model::AttachmentHashType>,
     /// <p>The URL location of the attachment content.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl AttachmentContent {
@@ -18593,24 +19072,33 @@ impl AsRef<str> for AttachmentHashType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BaselineOverride {
     /// <p>The operating system rule used by the patch baseline override.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>A set of patch filters, typically used for approval rules.</p>
+    #[doc(hidden)]
     pub global_filters: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A set of rules defining the approval rules for a patch baseline.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
+    #[doc(hidden)]
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    #[doc(hidden)]
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub approved_patches_enable_non_security: bool,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl BaselineOverride {
@@ -18976,76 +19464,107 @@ impl AsRef<str> for CalendarState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecution {
     /// <p>The execution ID.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The name of the Automation runbook used during the execution.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the document to use during execution.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The time the execution started.</p>
+    #[doc(hidden)]
     pub execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the execution finished.</p>
+    #[doc(hidden)]
     pub execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status of the Automation.</p>
+    #[doc(hidden)]
     pub automation_execution_status: std::option::Option<crate::model::AutomationExecutionStatus>,
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
+    #[doc(hidden)]
     pub step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
     /// <p>A boolean value that indicates if the response contains the full list of the Automation step executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.</p>
+    #[doc(hidden)]
     pub step_executions_truncated: bool,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>The automation execution mode.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ExecutionMode>,
     /// <p>The AutomationExecutionId of the parent automation.</p>
+    #[doc(hidden)]
     pub parent_automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
+    #[doc(hidden)]
     pub executed_by: std::option::Option<std::string::String>,
     /// <p>The name of the step that is currently running.</p>
+    #[doc(hidden)]
     pub current_step_name: std::option::Option<std::string::String>,
     /// <p>The action of the step that is currently running.</p>
+    #[doc(hidden)]
     pub current_action: std::option::Option<std::string::String>,
     /// <p>The parameter name.</p>
+    #[doc(hidden)]
     pub target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The specified targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
     /// <p>A list of resolved targets in the rate control execution.</p>
+    #[doc(hidden)]
     pub resolved_targets: std::option::Option<crate::model::ResolvedTargets>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution started.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The MaxErrors value specified by the user when the execution started.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The target of the execution.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the Automation.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
+    #[doc(hidden)]
     pub progress_counters: std::option::Option<crate::model::ProgressCounters>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
+    #[doc(hidden)]
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
+    #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
+    #[doc(hidden)]
     pub runbooks: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The name of the Change Manager change request.</p>
+    #[doc(hidden)]
     pub change_request_name: std::option::Option<std::string::String>,
 }
 impl AutomationExecution {
@@ -19845,14 +20364,19 @@ impl AsRef<str> for AutomationSubtype {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressCounters {
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
+    #[doc(hidden)]
     pub total_steps: i32,
     /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
+    #[doc(hidden)]
     pub success_steps: i32,
     /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
+    #[doc(hidden)]
     pub failed_steps: i32,
     /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
+    #[doc(hidden)]
     pub cancelled_steps: i32,
     /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
+    #[doc(hidden)]
     pub timed_out_steps: i32,
 }
 impl ProgressCounters {
@@ -19975,8 +20499,10 @@ impl ProgressCounters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
+    #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl ResolvedTargets {
@@ -20057,53 +20583,75 @@ impl ResolvedTargets {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepExecution {
     /// <p>The name of this execution step.</p>
+    #[doc(hidden)]
     pub step_name: std::option::Option<std::string::String>,
     /// <p>The action this step performs. The action determines the behavior of the step.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The timeout seconds of the step.</p>
+    #[doc(hidden)]
     pub timeout_seconds: std::option::Option<i64>,
     /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
+    #[doc(hidden)]
     pub on_failure: std::option::Option<std::string::String>,
     /// <p>The maximum number of tries to run the action of the step. The default value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub max_attempts: std::option::Option<i32>,
     /// <p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field isn't populated.</p>
+    #[doc(hidden)]
     pub execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded, this field isn't populated.</p>
+    #[doc(hidden)]
     pub execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status for this step.</p>
+    #[doc(hidden)]
     pub step_status: std::option::Option<crate::model::AutomationExecutionStatus>,
     /// <p>The response code returned by the execution of the step.</p>
+    #[doc(hidden)]
     pub response_code: std::option::Option<std::string::String>,
     /// <p>Fully-resolved values passed into the step before execution.</p>
+    #[doc(hidden)]
     pub inputs:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Returned values from the execution of the step.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>A message associated with the response code for an execution.</p>
+    #[doc(hidden)]
     pub response: std::option::Option<std::string::String>,
     /// <p>If a step failed, this message explains why the execution failed.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>Information about the Automation failure.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>The unique ID of a step execution.</p>
+    #[doc(hidden)]
     pub step_execution_id: std::option::Option<std::string::String>,
     /// <p>A user-specified list of parameters to override when running a step.</p>
+    #[doc(hidden)]
     pub overridden_parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
+    #[doc(hidden)]
     pub is_end: std::option::Option<bool>,
     /// <p>The next step after the step succeeds.</p>
+    #[doc(hidden)]
     pub next_step: std::option::Option<std::string::String>,
     /// <p>The flag which can be used to help decide whether the failure of current step leads to the Automation failure.</p>
+    #[doc(hidden)]
     pub is_critical: std::option::Option<bool>,
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
+    #[doc(hidden)]
     pub valid_next_steps: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The targets for the step execution.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
+    #[doc(hidden)]
     pub target_location: std::option::Option<crate::model::TargetLocation>,
 }
 impl StepExecution {
@@ -20619,10 +21167,13 @@ impl StepExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureDetails {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
+    #[doc(hidden)]
     pub failure_stage: std::option::Option<std::string::String>,
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
+    #[doc(hidden)]
     pub failure_type: std::option::Option<std::string::String>,
     /// <p>Detailed information about the Automation step failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -20887,26 +21438,37 @@ impl AsRef<str> for AutomationExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The ID of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The managed node that the Session Manager session connected to.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SessionStatus>,
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services user account that started the session.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The reason for connecting to the instance.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub output_url: std::option::Option<crate::model::SessionManagerOutputUrl>,
     /// <p>The maximum duration of a session before it terminates.</p>
+    #[doc(hidden)]
     pub max_session_duration: std::option::Option<std::string::String>,
 }
 impl Session {
@@ -21149,8 +21711,10 @@ impl Session {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub s3_output_url: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_url: std::option::Option<std::string::String>,
 }
 impl SessionManagerOutputUrl {
@@ -21306,6 +21870,7 @@ impl AsRef<str> for SessionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::SessionFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -21324,6 +21889,7 @@ pub struct SessionFilter {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SessionFilter {
@@ -21712,8 +22278,10 @@ impl AsRef<str> for PatchProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchGroupPatchBaselineMapping {
     /// <p>The name of the patch group registered with the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>The patch baseline the patch group is registered with.</p>
+    #[doc(hidden)]
     pub baseline_identity: std::option::Option<crate::model::PatchBaselineIdentity>,
 }
 impl PatchGroupPatchBaselineMapping {
@@ -21788,14 +22356,19 @@ impl PatchGroupPatchBaselineMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchBaselineIdentity {
     /// <p>The ID of the patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_name: std::option::Option<std::string::String>,
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The description of the patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_description: std::option::Option<std::string::String>,
     /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
+    #[doc(hidden)]
     pub default_baseline: bool,
 }
 impl PatchBaselineIdentity {
@@ -21933,8 +22506,10 @@ impl PatchBaselineIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchOrchestratorFilter {
     /// <p>The key for the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PatchOrchestratorFilter {
@@ -22015,27 +22590,38 @@ impl PatchOrchestratorFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterMetadata {
     /// <p>The parameter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ParameterType>,
     /// <p>The ID of the query key used for this parameter.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>Description of the parameter actions.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A parameter name can include only the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
+    #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The parameter tier.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ParameterTier>,
     /// <p>A list of policies associated with a parameter.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl ParameterMetadata {
@@ -22282,8 +22868,10 @@ impl ParameterMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParametersFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::ParametersFilterKey>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ParametersFilter {
@@ -22426,40 +23014,57 @@ impl AsRef<str> for ParametersFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemSummary {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The impacted Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. </p>
+    #[doc(hidden)]
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
     /// <p>A list of OpsItems by category.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>A list of OpsItems by severity.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OpsItemSummary {
@@ -22834,10 +23439,13 @@ impl OpsItemSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::OpsItemFilterKey>,
     /// <p>The filter value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator used by the filter call.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::OpsItemFilterOperator>,
 }
 impl OpsItemFilter {
@@ -23191,12 +23799,16 @@ impl AsRef<str> for OpsItemFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowTask {
     /// <p>The ID of the maintenance window where the task is registered.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The task ID.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
     /// <p>The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The type of task.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
     /// <instanceid1>
@@ -23207,10 +23819,12 @@ pub struct MaintenanceWindowTask {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -23218,28 +23832,36 @@ pub struct MaintenanceWindowTask {
         >,
     >,
     /// <p>The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The task name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the task.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl MaintenanceWindowTask {
@@ -23640,8 +24262,10 @@ impl MaintenanceWindowTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MaintenanceWindowFilter {
@@ -23722,10 +24346,13 @@ impl MaintenanceWindowFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowTarget {
     /// <p>The ID of the maintenance window to register the target with.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the target.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The type of target that is being registered with the maintenance window.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
@@ -23740,12 +24367,16 @@ pub struct MaintenanceWindowTarget {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The name for the maintenance window target.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the target.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl MaintenanceWindowTarget {
@@ -23958,8 +24589,10 @@ impl MaintenanceWindowTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowIdentityForTarget {
     /// <p>The ID of the maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl MaintenanceWindowIdentityForTarget {
@@ -24031,10 +24664,13 @@ impl MaintenanceWindowIdentityForTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledWindowExecution {
     /// <p>The ID of the maintenance window to be run.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window to be run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
+    #[doc(hidden)]
     pub execution_time: std::option::Option<std::string::String>,
 }
 impl ScheduledWindowExecution {
@@ -24126,28 +24762,40 @@ impl ScheduledWindowExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowIdentity {
     /// <p>The ID of the maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the maintenance window.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the maintenance window is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The duration of the maintenance window in hours.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
+    #[doc(hidden)]
     pub schedule_timezone: std::option::Option<std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
+    #[doc(hidden)]
     pub next_execution_time: std::option::Option<std::string::String>,
 }
 impl MaintenanceWindowIdentity {
@@ -24395,20 +25043,28 @@ impl MaintenanceWindowIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowExecutionTaskIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
+    #[doc(hidden)]
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the task execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status of the task execution. Not available for all status values.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the task execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the task execution finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The type of task that ran.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
 }
 impl MaintenanceWindowExecutionTaskIdentity {
@@ -24603,28 +25259,40 @@ impl MaintenanceWindowExecutionTaskIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
+    #[doc(hidden)]
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the task invocation.</p>
+    #[doc(hidden)]
     pub invocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The task type.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The parameters that were provided for the invocation when it was run.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The status of the task invocation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status of the task invocation. Not available for all status values. </p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the invocation started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the invocation finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
 }
 impl MaintenanceWindowExecutionTaskInvocationIdentity {
@@ -24897,16 +25565,22 @@ impl MaintenanceWindowExecutionTaskInvocationIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowExecution {
     /// <p>The ID of the maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the maintenance window execution.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the execution finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MaintenanceWindowExecution {
@@ -25061,18 +25735,25 @@ impl MaintenanceWindowExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDeletionStatusItem {
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
+    #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>The name of the inventory data type.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The UTC timestamp when the delete operation started.</p>
+    #[doc(hidden)]
     pub deletion_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
+    #[doc(hidden)]
     pub last_status: std::option::Option<crate::model::InventoryDeletionStatus>,
     /// <p>Information about the status.</p>
+    #[doc(hidden)]
     pub last_status_message: std::option::Option<std::string::String>,
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
     /// <p>The UTC timestamp of when the last status report.</p>
+    #[doc(hidden)]
     pub last_status_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InventoryDeletionStatusItem {
@@ -25244,10 +25925,13 @@ impl InventoryDeletionStatusItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
+    #[doc(hidden)]
     pub total_count: i32,
     /// <p>Remaining number of items to delete.</p>
+    #[doc(hidden)]
     pub remaining_count: i32,
     /// <p>A list of counts and versions for deleted items.</p>
+    #[doc(hidden)]
     pub summary_items:
         std::option::Option<std::vec::Vec<crate::model::InventoryDeletionSummaryItem>>,
 }
@@ -25349,10 +26033,13 @@ impl InventoryDeletionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDeletionSummaryItem {
     /// <p>The inventory type version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>A count of the number of deleted items.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The remaining number of items to delete.</p>
+    #[doc(hidden)]
     pub remaining_count: i32,
 }
 impl InventoryDeletionSummaryItem {
@@ -25496,47 +26183,65 @@ impl AsRef<str> for InventoryDeletionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstancePatchState {
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group the managed node belongs to.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>The ID of the patch baseline used to patch the managed node.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub install_override_list: std::option::Option<std::string::String>,
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
+    #[doc(hidden)]
     pub installed_count: i32,
     /// <p>The number of patches not specified in the patch baseline that are installed on the managed node.</p>
+    #[doc(hidden)]
     pub installed_other_count: i32,
     /// <p>The number of patches installed by Patch Manager since the last time the managed node was rebooted.</p>
+    #[doc(hidden)]
     pub installed_pending_reboot_count: std::option::Option<i32>,
     /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
+    #[doc(hidden)]
     pub installed_rejected_count: std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that are applicable for the managed node but aren't currently installed.</p>
+    #[doc(hidden)]
     pub missing_count: i32,
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</p>
+    #[doc(hidden)]
     pub failed_count: i32,
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub unreported_not_applicable_count: std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
+    #[doc(hidden)]
     pub not_applicable_count: i32,
     /// <p>The time the most recent patching operation was started on the managed node.</p>
+    #[doc(hidden)]
     pub operation_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the most recent patching operation completed on the managed node.</p>
+    #[doc(hidden)]
     pub operation_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of patching operation that was performed: or </p>
     /// <ul>
     /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
     /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::PatchOperationType>,
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
+    #[doc(hidden)]
     pub last_no_reboot_install_operation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
@@ -25545,12 +26250,16 @@ pub struct InstancePatchState {
     /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
     /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub reboot_option: std::option::Option<crate::model::RebootOption>,
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub critical_non_compliant_count: std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub security_non_compliant_count: std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub other_non_compliant_count: std::option::Option<i32>,
 }
 impl InstancePatchState {
@@ -26175,10 +26884,13 @@ pub struct InstancePatchStateFilter {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of comparison that should be performed for the value.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InstancePatchStateOperatorType>,
 }
 impl InstancePatchStateFilter {
@@ -26372,19 +27084,26 @@ impl AsRef<str> for InstancePatchStateOperatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchComplianceData {
     /// <p>The title of the patch.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The operating system-specific ID of the patch.</p>
+    #[doc(hidden)]
     pub kb_id: std::option::Option<std::string::String>,
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::PatchComplianceDataState>,
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
+    #[doc(hidden)]
     pub installed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    #[doc(hidden)]
     pub cve_ids: std::option::Option<std::string::String>,
 }
 impl PatchComplianceData {
@@ -26636,49 +27355,70 @@ impl AsRef<str> for PatchComplianceDataState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInformation {
     /// <p>The managed node ID. </p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Connection status of SSM Agent. </p> <note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
+    #[doc(hidden)]
     pub ping_status: std::option::Option<crate::model::PingStatus>,
     /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
+    #[doc(hidden)]
     pub last_ping_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of SSM Agent running on your Linux managed node. </p>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
     /// <p>Indicates whether the latest version of SSM Agent is running on your Linux managed node. This field doesn't indicate whether or not the latest version is installed on Windows managed nodes, because some older versions of Windows Server use the EC2Config service to process Systems Manager requests.</p>
+    #[doc(hidden)]
     pub is_latest_version: std::option::Option<bool>,
     /// <p>The operating system platform type. </p>
+    #[doc(hidden)]
     pub platform_type: std::option::Option<crate::model::PlatformType>,
     /// <p>The name of the operating system platform running on your managed node. </p>
+    #[doc(hidden)]
     pub platform_name: std::option::Option<std::string::String>,
     /// <p>The version of the OS platform running on your managed node. </p>
+    #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
+    #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
+    #[doc(hidden)]
     pub registration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code> property using the <code>CreateActivation</code> command. It is applied to the managed node by specifying the Activation Code and Activation ID when you install SSM Agent on the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code> tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IP address of the managed node.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The fully qualified host name of the managed node.</p>
+    #[doc(hidden)]
     pub computer_name: std::option::Option<std::string::String>,
     /// <p>The status of the association.</p>
+    #[doc(hidden)]
     pub association_status: std::option::Option<std::string::String>,
     /// <p>The date the association was last run.</p>
+    #[doc(hidden)]
     pub last_association_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date the association was successfully run.</p>
+    #[doc(hidden)]
     pub last_successful_association_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub association_overview:
         std::option::Option<crate::model::InstanceAggregatedAssociationOverview>,
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
 }
 impl InstanceInformation {
@@ -27211,8 +27951,10 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
+    #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>The number of associations for the managed node(s).</p>
+    #[doc(hidden)]
     pub instance_association_status_aggregated_count:
         std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -27431,8 +28173,10 @@ pub struct InstanceInformationStringFilter {
     /// <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag Key"</p> <important>
     /// <p> <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
     /// </important>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceInformationStringFilter {
@@ -27523,8 +28267,10 @@ impl InstanceInformationStringFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInformationFilter {
     /// <p>The name of the filter. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::InstanceInformationFilterKey>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub value_set: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceInformationFilter {
@@ -27696,28 +28442,40 @@ impl AsRef<str> for InstanceInformationFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociationStatusInfo {
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The name of the association.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The association document versions.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The version of the association applied to the managed node.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The managed node ID where the association was created.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The date the association ran. </p>
+    #[doc(hidden)]
     pub execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status information about the association.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Detailed status information about the association.</p>
+    #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>Summary information about association execution.</p>
+    #[doc(hidden)]
     pub execution_summary: std::option::Option<std::string::String>,
     /// <p>An error code returned by the request to create the association.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub output_url: std::option::Option<crate::model::InstanceAssociationOutputUrl>,
     /// <p>The name of the association applied to the managed node.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
 }
 impl InstanceAssociationStatusInfo {
@@ -27983,6 +28741,7 @@ impl InstanceAssociationStatusInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub s3_output_url: std::option::Option<crate::model::S3OutputUrl>,
 }
 impl InstanceAssociationOutputUrl {
@@ -28040,6 +28799,7 @@ impl InstanceAssociationOutputUrl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub output_url: std::option::Option<std::string::String>,
 }
 impl S3OutputUrl {
@@ -28094,8 +28854,10 @@ impl S3OutputUrl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectivePatch {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
+    #[doc(hidden)]
     pub patch: std::option::Option<crate::model::Patch>,
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
+    #[doc(hidden)]
     pub patch_status: std::option::Option<crate::model::PatchStatus>,
 }
 impl EffectivePatch {
@@ -28170,10 +28932,13 @@ impl EffectivePatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchStatus {
     /// <p>The approval status of a patch.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::PatchDeploymentStatus>,
     /// <p>The compliance severity level for a patch.</p>
+    #[doc(hidden)]
     pub compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
+    #[doc(hidden)]
     pub approval_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PatchStatus {
@@ -28341,50 +29106,73 @@ pub struct Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date the patch was released.</p>
+    #[doc(hidden)]
     pub release_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The title of the patch.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The description of the patch.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The URL where more information can be obtained about the patch.</p>
+    #[doc(hidden)]
     pub content_url: std::option::Option<std::string::String>,
     /// <p>The name of the vendor providing the patch.</p>
+    #[doc(hidden)]
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
+    #[doc(hidden)]
     pub product_family: std::option::Option<std::string::String>,
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
+    #[doc(hidden)]
     pub msrc_severity: std::option::Option<std::string::String>,
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
+    #[doc(hidden)]
     pub kb_number: std::option::Option<std::string::String>,
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
+    #[doc(hidden)]
     pub msrc_number: std::option::Option<std::string::String>,
     /// <p>The language of the patch if it's language-specific.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub advisory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub bugzilla_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub cve_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub epoch: i32,
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub release: std::option::Option<std::string::String>,
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub arch: std::option::Option<std::string::String>,
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
 }
 impl Patch {
@@ -28858,12 +29646,16 @@ impl Patch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociation {
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The content of the association document for the managed node(s).</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Version information for the association on the managed node.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
 }
 impl InstanceAssociation {
@@ -28975,8 +29767,10 @@ impl InstanceAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSharingInfo {
     /// <p>The Amazon Web Services account ID where the current document is shared.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The version of the current document shared with the account.</p>
+    #[doc(hidden)]
     pub shared_document_version: std::option::Option<std::string::String>,
 }
 impl AccountSharingInfo {
@@ -29051,8 +29845,10 @@ impl AccountSharingInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::StepExecutionFilterKey>,
     /// <p>The values of the filter key.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StepExecutionFilter {
@@ -29214,68 +30010,96 @@ impl AsRef<str> for StepExecutionFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionMetadata {
     /// <p>The execution ID.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The name of the Automation runbook used during execution.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The document version used during the execution.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The status of the execution.</p>
+    #[doc(hidden)]
     pub automation_execution_status: std::option::Option<crate::model::AutomationExecutionStatus>,
     /// <p>The time the execution started.</p>
+    #[doc(hidden)]
     pub execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the execution finished. This isn't populated if the execution is still in progress.</p>
+    #[doc(hidden)]
     pub execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The IAM role ARN of the user who ran the automation.</p>
+    #[doc(hidden)]
     pub executed_by: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where execution information is stored.</p>
+    #[doc(hidden)]
     pub log_file: std::option::Option<std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The Automation execution mode.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ExecutionMode>,
     /// <p>The execution ID of the parent automation.</p>
+    #[doc(hidden)]
     pub parent_automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The name of the step that is currently running.</p>
+    #[doc(hidden)]
     pub current_step_name: std::option::Option<std::string::String>,
     /// <p>The action of the step that is currently running.</p>
+    #[doc(hidden)]
     pub current_action: std::option::Option<std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
+    #[doc(hidden)]
     pub target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The targets defined by the user when starting the automation.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
     /// <p>A list of targets that resolved during the execution.</p>
+    #[doc(hidden)]
     pub resolved_targets: std::option::Option<crate::model::ResolvedTargets>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when starting the automation.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The <code>MaxErrors</code> value specified by the user when starting the automation.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    #[doc(hidden)]
     pub automation_type: std::option::Option<crate::model::AutomationType>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
+    #[doc(hidden)]
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
+    #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
+    #[doc(hidden)]
     pub runbooks: std::option::Option<std::vec::Vec<crate::model::Runbook>>,
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The name of the Change Manager change request.</p>
+    #[doc(hidden)]
     pub change_request_name: std::option::Option<std::string::String>,
 }
 impl AutomationExecutionMetadata {
@@ -29988,8 +30812,10 @@ impl AsRef<str> for AutomationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AutomationExecutionFilterKey>,
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AutomationExecutionFilter {
@@ -30181,22 +31007,31 @@ impl AsRef<str> for AutomationExecutionFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecutionTarget {
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The execution ID.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource type, for example, EC2.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The association execution status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Detailed information about the execution status.</p>
+    #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>The date of the last execution.</p>
+    #[doc(hidden)]
     pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The location where the association details are saved.</p>
+    #[doc(hidden)]
     pub output_source: std::option::Option<crate::model::OutputSource>,
 }
 impl AssociationExecutionTarget {
@@ -30405,8 +31240,10 @@ impl AssociationExecutionTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputSource {
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
+    #[doc(hidden)]
     pub output_source_id: std::option::Option<std::string::String>,
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
+    #[doc(hidden)]
     pub output_source_type: std::option::Option<std::string::String>,
 }
 impl OutputSource {
@@ -30484,8 +31321,10 @@ impl OutputSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AssociationExecutionTargetsFilterKey>,
     /// <p>The value specified for the key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AssociationExecutionTargetsFilter {
@@ -30619,20 +31458,28 @@ impl AsRef<str> for AssociationExecutionTargetsFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecution {
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
+    #[doc(hidden)]
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The execution ID for the association.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the association execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Detailed status information about the execution.</p>
+    #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>The time the execution started.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date of the last execution.</p>
+    #[doc(hidden)]
     pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
+    #[doc(hidden)]
     pub resource_count_by_status: std::option::Option<std::string::String>,
 }
 impl AssociationExecution {
@@ -30824,10 +31671,13 @@ impl AssociationExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecutionFilter {
     /// <p>The key value used in the request.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::AssociationExecutionFilterKey>,
     /// <p>The value specified for the key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The filter type specified in the request.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AssociationFilterOperatorType>,
 }
 impl AssociationExecutionFilter {
@@ -31040,24 +31890,34 @@ impl AsRef<str> for AssociationExecutionFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Activation {
     /// <p>The ID created by Systems Manager when you submitted the activation.</p>
+    #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>A user defined description of the activation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A name for the managed node when it is created.</p>
+    #[doc(hidden)]
     pub default_instance_name: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role to assign to the managed node.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
+    #[doc(hidden)]
     pub registration_limit: i32,
     /// <p>The number of managed nodes already registered with this activation.</p>
+    #[doc(hidden)]
     pub registrations_count: i32,
     /// <p>The date when this activation can no longer be used to register managed nodes.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the activation is expired.</p>
+    #[doc(hidden)]
     pub expired: bool,
     /// <p>The date the activation was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the activation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Activation {
@@ -31286,8 +32146,10 @@ impl Activation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub filter_key: std::option::Option<crate::model::DescribeActivationsFilterKeys>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub filter_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeActivationsFilter {
@@ -31485,10 +32347,13 @@ impl AsRef<str> for InventorySchemaDeleteOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedCreateAssociation {
     /// <p>The association.</p>
+    #[doc(hidden)]
     pub entry: std::option::Option<crate::model::CreateAssociationBatchRequestEntry>,
     /// <p>A description of the failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The source of the failure.</p>
+    #[doc(hidden)]
     pub fault: std::option::Option<crate::model::Fault>,
 }
 impl FailedCreateAssociation {
@@ -31645,48 +32510,66 @@ pub struct CreateAssociationBatchRequestEntry {
     /// <p>For example:</p>
     /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document. </p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The managed nodes targeted by the request.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where you want to store the results of this request.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>Specify a descriptive name for the association.</p>
+    #[doc(hidden)]
     pub association_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
+    #[doc(hidden)]
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
+    #[doc(hidden)]
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    #[doc(hidden)]
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
+    #[doc(hidden)]
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    #[doc(hidden)]
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -32194,8 +33077,10 @@ impl CreateAssociationBatchRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistrationMetadataItem {
     /// <p>Reserved for internal use.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Reserved for internal use.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl RegistrationMetadataItem {

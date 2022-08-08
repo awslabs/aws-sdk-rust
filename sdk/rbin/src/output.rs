@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>The retention rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource type retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl UpdateRuleOutput {
@@ -228,6 +234,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags assigned to the retention rule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -289,8 +296,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
     /// <p>Information about the retention rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesOutput {
@@ -371,16 +380,22 @@ impl ListRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The retention rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource type retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl GetRuleOutput {
@@ -565,18 +580,25 @@ impl DeleteRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>The retention rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the tags assigned to the retention rule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The resource type retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl CreateRuleOutput {

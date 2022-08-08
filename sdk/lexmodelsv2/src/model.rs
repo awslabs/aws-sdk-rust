@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
+    #[doc(hidden)]
     pub grammar_slot_type_setting: std::option::Option<crate::model::GrammarSlotTypeSetting>,
 }
 impl ExternalSourceSetting {
@@ -68,6 +69,7 @@ impl ExternalSourceSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrammarSlotTypeSetting {
     /// <p>The source of the grammar used to create the slot type.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::GrammarSlotTypeSource>,
 }
 impl GrammarSlotTypeSetting {
@@ -125,10 +127,13 @@ impl GrammarSlotTypeSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The path to the grammar in the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_object_key: std::option::Option<std::string::String>,
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl GrammarSlotTypeSource {
@@ -228,10 +233,13 @@ pub struct SlotValueSelectionSetting {
     /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the valueSelectionStrategy, the default is OriginalValue. </p>
+    #[doc(hidden)]
     pub resolution_strategy: std::option::Option<crate::model::SlotValueResolutionStrategy>,
     /// <p>A regular expression used to validate the value of a slot.</p>
+    #[doc(hidden)]
     pub regex_filter: std::option::Option<crate::model::SlotValueRegexFilter>,
     /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+    #[doc(hidden)]
     pub advanced_recognition_setting: std::option::Option<crate::model::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSetting {
@@ -359,6 +367,7 @@ impl SlotValueSelectionSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+    #[doc(hidden)]
     pub audio_recognition_strategy: std::option::Option<crate::model::AudioRecognitionStrategy>,
 }
 impl AdvancedRecognitionSetting {
@@ -494,6 +503,7 @@ pub struct SlotValueRegexFilter {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl SlotValueRegexFilter {
@@ -645,8 +655,10 @@ impl AsRef<str> for SlotValueResolutionStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
+    #[doc(hidden)]
     pub sample_value: std::option::Option<crate::model::SampleValue>,
     /// <p>Additional values related to the slot type entry.</p>
+    #[doc(hidden)]
     pub synonyms: std::option::Option<std::vec::Vec<crate::model::SampleValue>>,
 }
 impl SlotTypeValue {
@@ -730,6 +742,7 @@ impl SlotTypeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleValue {
     /// <p>The value that can be used for a slot type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SampleValue {
@@ -784,6 +797,7 @@ pub struct MultipleValuesSetting {
     /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
     /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub allow_multiple_values: bool,
 }
 impl MultipleValuesSetting {
@@ -844,6 +858,7 @@ impl MultipleValuesSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObfuscationSetting {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
+    #[doc(hidden)]
     pub obfuscation_setting_type: std::option::Option<crate::model::ObfuscationSettingType>,
 }
 impl ObfuscationSetting {
@@ -962,15 +977,20 @@ impl AsRef<str> for ObfuscationSettingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
+    #[doc(hidden)]
     pub default_value_specification:
         std::option::Option<crate::model::SlotDefaultValueSpecification>,
     /// <p>Specifies whether the slot is required or optional.</p>
+    #[doc(hidden)]
     pub slot_constraint: std::option::Option<crate::model::SlotConstraint>,
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
+    #[doc(hidden)]
     pub prompt_specification: std::option::Option<crate::model::PromptSpecification>,
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    #[doc(hidden)]
     pub wait_and_continue_specification:
         std::option::Option<crate::model::WaitAndContinueSpecification>,
 }
@@ -1134,13 +1154,17 @@ impl SlotValueElicitationSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WaitAndContinueSpecification {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    #[doc(hidden)]
     pub waiting_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    #[doc(hidden)]
     pub continue_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+    #[doc(hidden)]
     pub still_waiting_response:
         std::option::Option<crate::model::StillWaitingResponseSpecification>,
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl WaitAndContinueSpecification {
@@ -1261,12 +1285,16 @@ impl WaitAndContinueSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+    #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+    #[doc(hidden)]
     pub frequency_in_seconds: std::option::Option<i32>,
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+    #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
 impl StillWaitingResponseSpecification {
@@ -1381,8 +1409,10 @@ impl StillWaitingResponseSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<crate::model::Message>,
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
+    #[doc(hidden)]
     pub variations: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl MessageGroup {
@@ -1463,12 +1493,16 @@ impl MessageGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>A message in plain text format.</p>
+    #[doc(hidden)]
     pub plain_text_message: std::option::Option<crate::model::PlainTextMessage>,
     /// <p>A message in a custom format defined by the client application.</p>
+    #[doc(hidden)]
     pub custom_payload: std::option::Option<crate::model::CustomPayload>,
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
+    #[doc(hidden)]
     pub ssml_message: std::option::Option<crate::model::SsmlMessage>,
     /// <p>A message that defines a response card that the client application can show to the user.</p>
+    #[doc(hidden)]
     pub image_response_card: std::option::Option<crate::model::ImageResponseCard>,
 }
 impl Message {
@@ -1587,12 +1621,16 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
+    #[doc(hidden)]
     pub subtitle: std::option::Option<std::string::String>,
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
+    #[doc(hidden)]
     pub image_url: std::option::Option<std::string::String>,
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
+    #[doc(hidden)]
     pub buttons: std::option::Option<std::vec::Vec<crate::model::Button>>,
 }
 impl ImageResponseCard {
@@ -1707,8 +1745,10 @@ impl ImageResponseCard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Button {
     /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Button {
@@ -1780,6 +1820,7 @@ impl Button {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SsmlMessage {
@@ -1832,6 +1873,7 @@ impl SsmlMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPayload {
     /// <p>The string that is sent to your application.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomPayload {
@@ -1884,6 +1926,7 @@ impl CustomPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlainTextMessage {
     /// <p>The message to send to the user.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl PlainTextMessage {
@@ -1936,8 +1979,10 @@ impl PlainTextMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseSpecification {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
+    #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
+    #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
 impl ResponseSpecification {
@@ -2018,6 +2063,7 @@ impl ResponseSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
+    #[doc(hidden)]
     pub utterance: std::option::Option<std::string::String>,
 }
 impl SampleUtterance {
@@ -2072,12 +2118,16 @@ impl SampleUtterance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
+    #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i32>,
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
+    #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
     /// <p>Indicates how a message is selected from a message group among retries.</p>
+    #[doc(hidden)]
     pub message_selection_strategy: std::option::Option<crate::model::MessageSelectionStrategy>,
 }
 impl PromptSpecification {
@@ -2314,6 +2364,7 @@ impl AsRef<str> for SlotConstraint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
+    #[doc(hidden)]
     pub default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecification {
@@ -2378,6 +2429,7 @@ impl SlotDefaultValueSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl SlotDefaultValue {
@@ -2435,10 +2487,13 @@ impl SlotDefaultValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub kendra_index: std::option::Option<std::string::String>,
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
+    #[doc(hidden)]
     pub query_filter_string_enabled: bool,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
+    #[doc(hidden)]
     pub query_filter_string: std::option::Option<std::string::String>,
 }
 impl KendraConfiguration {
@@ -2533,10 +2588,13 @@ impl KendraConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputContext {
     /// <p>The name of the output context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
+    #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
+    #[doc(hidden)]
     pub turns_to_live: std::option::Option<i32>,
 }
 impl OutputContext {
@@ -2625,6 +2683,7 @@ impl OutputContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputContext {
     /// <p>The name of the context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputContext {
@@ -2677,8 +2736,10 @@ impl InputContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
+    #[doc(hidden)]
     pub closing_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl IntentClosingSetting {
@@ -2754,10 +2815,13 @@ impl IntentClosingSetting {
 pub struct IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    #[doc(hidden)]
     pub prompt_specification: std::option::Option<crate::model::PromptSpecification>,
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
+    #[doc(hidden)]
     pub declination_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl IntentConfirmationSetting {
@@ -2857,8 +2921,10 @@ impl IntentConfirmationSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotPriority {
     /// <p>The priority that a slot should be elicited.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The unique identifier of the slot.</p>
+    #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
 }
 impl SlotPriority {
@@ -2930,11 +2996,14 @@ impl SlotPriority {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FulfillmentCodeHookSettings {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
+    #[doc(hidden)]
     pub post_fulfillment_status_specification:
         std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
+    #[doc(hidden)]
     pub fulfillment_updates_specification:
         std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
 }
@@ -3049,12 +3118,16 @@ impl FulfillmentCodeHookSettings {
 pub struct FulfillmentUpdatesSpecification {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
+    #[doc(hidden)]
     pub start_response: std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
+    #[doc(hidden)]
     pub update_response: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
 }
 impl FulfillmentUpdatesSpecification {
@@ -3181,10 +3254,13 @@ impl FulfillmentUpdatesSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FulfillmentUpdateResponseSpecification {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
+    #[doc(hidden)]
     pub frequency_in_seconds: std::option::Option<i32>,
     /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
+    #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
 impl FulfillmentUpdateResponseSpecification {
@@ -3282,10 +3358,13 @@ impl FulfillmentUpdateResponseSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FulfillmentStartResponseSpecification {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
+    #[doc(hidden)]
     pub delay_in_seconds: std::option::Option<i32>,
     /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
+    #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
 impl FulfillmentStartResponseSpecification {
@@ -3383,10 +3462,13 @@ impl FulfillmentStartResponseSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostFulfillmentStatusSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
     pub success_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
     pub failure_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
     pub timeout_response: std::option::Option<crate::model::ResponseSpecification>,
 }
 impl PostFulfillmentStatusSpecification {
@@ -3484,6 +3566,7 @@ impl PostFulfillmentStatusSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl DialogCodeHookSettings {
@@ -3656,11 +3739,14 @@ impl AsRef<str> for ImportExportFileFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
+    #[doc(hidden)]
     pub bot_export_specification: std::option::Option<crate::model::BotExportSpecification>,
     /// <p>Parameters for exporting a bot locale.</p>
+    #[doc(hidden)]
     pub bot_locale_export_specification:
         std::option::Option<crate::model::BotLocaleExportSpecification>,
     /// <p>The parameters required to export a custom vocabulary.</p>
+    #[doc(hidden)]
     pub custom_vocabulary_export_specification:
         std::option::Option<crate::model::CustomVocabularyExportSpecification>,
 }
@@ -3783,10 +3869,13 @@ impl ExportResourceSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVocabularyExportSpecification {
     /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl CustomVocabularyExportSpecification {
@@ -3875,10 +3964,13 @@ impl CustomVocabularyExportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to export.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl BotLocaleExportSpecification {
@@ -3967,8 +4059,10 @@ impl BotLocaleExportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
 }
 impl BotExportSpecification {
@@ -4040,10 +4134,13 @@ impl BotExportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionSetting {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
+    #[doc(hidden)]
     pub bot_locale_export_password: std::option::Option<std::string::String>,
     /// <p>The password used to encrypt the associated transcript file.</p>
+    #[doc(hidden)]
     pub associated_transcripts_password: std::option::Option<std::string::String>,
 }
 impl EncryptionSetting {
@@ -4147,6 +4244,7 @@ impl EncryptionSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
+    #[doc(hidden)]
     pub s3_bucket_transcript_source: std::option::Option<crate::model::S3BucketTranscriptSource>,
 }
 impl TranscriptSourceSetting {
@@ -4213,14 +4311,19 @@ impl TranscriptSourceSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub path_format: std::option::Option<crate::model::PathFormat>,
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
+    #[doc(hidden)]
     pub transcript_format: std::option::Option<crate::model::TranscriptFormat>,
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
+    #[doc(hidden)]
     pub transcript_filter: std::option::Option<crate::model::TranscriptFilter>,
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3BucketTranscriptSource {
@@ -4355,6 +4458,7 @@ impl S3BucketTranscriptSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
+    #[doc(hidden)]
     pub lex_transcript_filter: std::option::Option<crate::model::LexTranscriptFilter>,
 }
 impl TranscriptFilter {
@@ -4412,6 +4516,7 @@ impl TranscriptFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
+    #[doc(hidden)]
     pub date_range_filter: std::option::Option<crate::model::DateRangeFilter>,
 }
 impl LexTranscriptFilter {
@@ -4469,8 +4574,10 @@ impl LexTranscriptFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating the end date for the date range filter.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DateRangeFilter {
@@ -4599,6 +4706,7 @@ impl AsRef<str> for TranscriptFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
+    #[doc(hidden)]
     pub object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathFormat {
@@ -4838,9 +4946,11 @@ impl AsRef<str> for BotLocaleStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
     /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<crate::model::VoiceEngine>,
 }
 impl VoiceSettings {
@@ -5033,6 +5143,7 @@ impl AsRef<str> for BotAliasStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SentimentAnalysisSettings {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
+    #[doc(hidden)]
     pub detect_sentiment: bool,
 }
 impl SentimentAnalysisSettings {
@@ -5087,8 +5198,10 @@ impl SentimentAnalysisSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
+    #[doc(hidden)]
     pub text_log_settings: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
+    #[doc(hidden)]
     pub audio_log_settings: std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>,
 }
 impl ConversationLogSettings {
@@ -5180,8 +5293,10 @@ impl ConversationLogSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioLogSetting {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::AudioLogDestination>,
 }
 impl AudioLogSetting {
@@ -5256,6 +5371,7 @@ impl AudioLogSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<crate::model::S3BucketLogDestination>,
 }
 impl AudioLogDestination {
@@ -5313,10 +5429,13 @@ impl AudioLogDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
+    #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>The S3 prefix to assign to audio log files.</p>
+    #[doc(hidden)]
     pub log_prefix: std::option::Option<std::string::String>,
 }
 impl S3BucketLogDestination {
@@ -5408,8 +5527,10 @@ impl S3BucketLogDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::TextLogDestination>,
 }
 impl TextLogSetting {
@@ -5484,6 +5605,7 @@ impl TextLogSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
+    #[doc(hidden)]
     pub cloud_watch: std::option::Option<crate::model::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestination {
@@ -5546,8 +5668,10 @@ impl TextLogDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The prefix of the log stream name within the log group that you specified </p>
+    #[doc(hidden)]
     pub log_prefix: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogGroupLogDestination {
@@ -5622,8 +5746,10 @@ impl CloudWatchLogGroupLogDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotAliasLocaleSettings {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
+    #[doc(hidden)]
     pub code_hook_specification: std::option::Option<crate::model::CodeHookSpecification>,
 }
 impl BotAliasLocaleSettings {
@@ -5704,6 +5830,7 @@ impl BotAliasLocaleSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
+    #[doc(hidden)]
     pub lambda_code_hook: std::option::Option<crate::model::LambdaCodeHook>,
 }
 impl CodeHookSpecification {
@@ -5761,8 +5888,10 @@ impl CodeHookSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
+    #[doc(hidden)]
     pub code_hook_interface_version: std::option::Option<std::string::String>,
 }
 impl LambdaCodeHook {
@@ -5926,6 +6055,7 @@ impl AsRef<str> for BotStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataPrivacy {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
+    #[doc(hidden)]
     pub child_directed: bool,
 }
 impl DataPrivacy {
@@ -6102,11 +6232,14 @@ impl AsRef<str> for MergeStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
+    #[doc(hidden)]
     pub bot_import_specification: std::option::Option<crate::model::BotImportSpecification>,
     /// <p>Parameters for importing a bot locale.</p>
+    #[doc(hidden)]
     pub bot_locale_import_specification:
         std::option::Option<crate::model::BotLocaleImportSpecification>,
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+    #[doc(hidden)]
     pub custom_vocabulary_import_specification:
         std::option::Option<crate::model::CustomVocabularyImportSpecification>,
 }
@@ -6229,10 +6362,13 @@ impl ImportResourceSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to import the custom vocabulary to.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl CustomVocabularyImportSpecification {
@@ -6321,10 +6457,13 @@ impl CustomVocabularyImportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
@@ -6334,8 +6473,10 @@ pub struct BotLocaleImportSpecification {
     /// <li> <p> <code>IntentB</code> </p> </li>
     /// <li> <p> <code>IntentC</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
+    #[doc(hidden)]
     pub voice_settings: std::option::Option<crate::model::VoiceSettings>,
 }
 impl BotLocaleImportSpecification {
@@ -6488,19 +6629,25 @@ impl BotLocaleImportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotImportSpecification {
     /// <p>The name that Amazon Lex should use for the bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
+    #[doc(hidden)]
     pub data_privacy: std::option::Option<crate::model::DataPrivacy>,
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
+    #[doc(hidden)]
     pub bot_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
+    #[doc(hidden)]
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6693,6 +6840,7 @@ impl BotImportSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
 }
 impl AssociatedTranscript {
@@ -6747,8 +6895,10 @@ impl AssociatedTranscript {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
     /// <p>The values to use to filter the transcript.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociatedTranscriptFilter {
@@ -6942,14 +7092,19 @@ impl AsRef<str> for SearchOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeSummary {
     /// <p>The unique identifier assigned to the slot type.</p>
+    #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub slot_type_name: std::option::Option<std::string::String>,
     /// <p>The description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
+    #[doc(hidden)]
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
@@ -6957,6 +7112,7 @@ pub struct SlotTypeSummary {
     /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub slot_type_category: std::option::Option<crate::model::SlotTypeCategory>,
 }
 impl SlotTypeSummary {
@@ -7185,10 +7341,13 @@ impl AsRef<str> for SlotTypeCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeFilter {
     /// <p>The name of the field to use for filtering.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SlotTypeFilterName>,
     /// <p>The value to use to filter the response.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::SlotTypeFilterOperator>,
 }
 impl SlotTypeFilter {
@@ -7402,8 +7561,10 @@ impl AsRef<str> for SlotTypeFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SlotTypeSortAttribute>,
     /// <p>The order to sort the list. You can say ascending or descending.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl SlotTypeSortBy {
@@ -7588,19 +7749,26 @@ impl AsRef<str> for SlotTypeSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotSummary {
     /// <p>The unique identifier of the slot.</p>
+    #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
     /// <p>The name given to the slot.</p>
+    #[doc(hidden)]
     pub slot_name: std::option::Option<std::string::String>,
     /// <p>The description of the slot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
+    #[doc(hidden)]
     pub slot_constraint: std::option::Option<crate::model::SlotConstraint>,
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
+    #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
+    #[doc(hidden)]
     pub value_elicitation_prompt_specification:
         std::option::Option<crate::model::PromptSpecification>,
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotSummary {
@@ -7775,10 +7943,13 @@ impl SlotSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SlotFilterName>,
     /// <p>The value to use to filter the response.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::SlotFilterOperator>,
 }
 impl SlotFilter {
@@ -7988,8 +8159,10 @@ impl AsRef<str> for SlotFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotSortBy {
     /// <p>The attribute to use to sort the list.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SlotSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl SlotSortBy {
@@ -8119,10 +8292,13 @@ impl AsRef<str> for SlotSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendedIntentSummary {
     /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
+    #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
     /// <p>The name of a recommended intent associated with the bot recommendation.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
+    #[doc(hidden)]
     pub sample_utterances_count: std::option::Option<i32>,
 }
 impl RecommendedIntentSummary {
@@ -8211,18 +8387,25 @@ impl RecommendedIntentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentSummary {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
+    #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>The description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
+    #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
+    #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
+    #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IntentSummary {
@@ -8403,10 +8586,13 @@ impl IntentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::IntentFilterName>,
     /// <p>The value to use for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::IntentFilterOperator>,
 }
 impl IntentFilter {
@@ -8616,8 +8802,10 @@ impl AsRef<str> for IntentFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentSortBy {
     /// <p>The attribute to use to sort the list of intents.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::IntentSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl IntentSortBy {
@@ -8747,20 +8935,28 @@ impl AsRef<str> for IntentSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
+    #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
+    #[doc(hidden)]
     pub imported_resource_id: std::option::Option<std::string::String>,
     /// <p>The name that you gave the imported resource.</p>
+    #[doc(hidden)]
     pub imported_resource_name: std::option::Option<std::string::String>,
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
+    #[doc(hidden)]
     pub import_status: std::option::Option<crate::model::ImportStatus>,
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
+    #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The date and time that the import was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the import was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of resource that was imported.</p>
+    #[doc(hidden)]
     pub imported_resource_type: std::option::Option<crate::model::ImportResourceType>,
 }
 impl ImportSummary {
@@ -9014,10 +9210,13 @@ impl AsRef<str> for ImportResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ImportFilterName>,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::ImportFilterOperator>,
 }
 impl ImportFilter {
@@ -9227,8 +9426,10 @@ impl AsRef<str> for ImportFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSortBy {
     /// <p>The export field to use for sorting.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::ImportSortAttribute>,
     /// <p>The order to sort the list.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl ImportSortBy {
@@ -9354,16 +9555,22 @@ impl AsRef<str> for ImportSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
     /// <p>Information about the bot or bot locale that was exported.</p>
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
     /// <p>The file format used in the export files.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
+    #[doc(hidden)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The date and time that the export was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the export was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExportSummary {
@@ -9524,10 +9731,13 @@ impl ExportSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ExportFilterName>,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::ExportFilterOperator>,
 }
 impl ExportFilter {
@@ -9737,8 +9947,10 @@ impl AsRef<str> for ExportFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSortBy {
     /// <p>The export field to use for sorting.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::ExportSortAttribute>,
     /// <p>The order to sort the list.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl ExportSortBy {
@@ -9864,8 +10076,10 @@ impl AsRef<str> for ExportSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInSlotTypeSummary {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
+    #[doc(hidden)]
     pub slot_type_signature: std::option::Option<std::string::String>,
     /// <p>The description of the built-in slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl BuiltInSlotTypeSummary {
@@ -9940,8 +10154,10 @@ impl BuiltInSlotTypeSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BuiltInSlotTypeSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl BuiltInSlotTypeSortBy {
@@ -10067,8 +10283,10 @@ impl AsRef<str> for BuiltInSlotTypeSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInIntentSummary {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
+    #[doc(hidden)]
     pub intent_signature: std::option::Option<std::string::String>,
     /// <p>The description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl BuiltInIntentSummary {
@@ -10143,8 +10361,10 @@ impl BuiltInIntentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltInIntentSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BuiltInIntentSortAttribute>,
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl BuiltInIntentSortBy {
@@ -10270,14 +10490,19 @@ impl AsRef<str> for BuiltInIntentSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The description of the version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
+    #[doc(hidden)]
     pub bot_status: std::option::Option<crate::model::BotStatus>,
     /// <p>A timestamp of the date and time that the version was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotVersionSummary {
@@ -10406,8 +10631,10 @@ impl BotVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotVersionSortBy {
     /// <p>The attribute to use to sort the list of versions.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotVersionSortAttribute>,
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl BotVersionSortBy {
@@ -10533,16 +10760,22 @@ impl AsRef<str> for BotVersionSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
+    #[doc(hidden)]
     pub bot_status: std::option::Option<crate::model::BotStatus>,
     /// <p>The latest numerical version in use for the bot.</p>
+    #[doc(hidden)]
     pub latest_bot_version: std::option::Option<std::string::String>,
     /// <p>The date and time that the bot was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotSummary {
@@ -10691,10 +10924,13 @@ impl BotSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotFilter {
     /// <p>The name of the field to filter the list of bots.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::BotFilterName>,
     /// <p>The value to use for filtering the list of bots.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::BotFilterOperator>,
 }
 impl BotFilter {
@@ -10901,8 +11137,10 @@ impl AsRef<str> for BotFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotSortBy {
     /// <p>The attribute to use to sort the list of bots.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl BotSortBy {
@@ -11029,12 +11267,16 @@ impl AsRef<str> for BotSortAttribute {
 pub struct BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    #[doc(hidden)]
     pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    #[doc(hidden)]
     pub bot_recommendation_id: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotRecommendationSummary {
@@ -11161,16 +11403,22 @@ impl BotRecommendationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The name of the bot locale.</p>
+    #[doc(hidden)]
     pub locale_name: std::option::Option<std::string::String>,
     /// <p>The description of the bot locale.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
+    #[doc(hidden)]
     pub bot_locale_status: std::option::Option<crate::model::BotLocaleStatus>,
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
+    #[doc(hidden)]
     pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotLocaleSummary {
@@ -11324,10 +11572,13 @@ impl BotLocaleSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::BotLocaleFilterName>,
     /// <p>The value to use for filtering the list of bots.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::BotLocaleFilterOperator>,
 }
 impl BotLocaleFilter {
@@ -11537,8 +11788,10 @@ impl AsRef<str> for BotLocaleFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotLocaleSortAttribute>,
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl BotLocaleSortBy {
@@ -11664,18 +11917,25 @@ impl AsRef<str> for BotLocaleSortAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The name of the bot alias.</p>
+    #[doc(hidden)]
     pub bot_alias_name: std::option::Option<std::string::String>,
     /// <p>The description of the bot alias.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the bot that the bot alias references.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
+    #[doc(hidden)]
     pub bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotAliasSummary {
@@ -11844,18 +12104,24 @@ impl BotAliasSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedUtterancesSummary {
     /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
+    #[doc(hidden)]
     pub utterance: std::option::Option<std::string::String>,
     /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
+    #[doc(hidden)]
     pub hit_count: std::option::Option<i32>,
     /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
+    #[doc(hidden)]
     pub missed_count: std::option::Option<i32>,
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
+    #[doc(hidden)]
     pub utterance_first_recorded_in_aggregation_duration:
         std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
+    #[doc(hidden)]
     pub utterance_last_recorded_in_aggregation_duration:
         std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
+    #[doc(hidden)]
     pub contains_data_from_deleted_resources: std::option::Option<bool>,
 }
 impl AggregatedUtterancesSummary {
@@ -12029,6 +12295,7 @@ impl AggregatedUtterancesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
+    #[doc(hidden)]
     pub relative_aggregation_duration:
         std::option::Option<crate::model::RelativeAggregationDuration>,
 }
@@ -12102,6 +12369,7 @@ impl UtteranceAggregationDuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
+    #[doc(hidden)]
     pub time_dimension: std::option::Option<crate::model::TimeDimension>,
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
@@ -12109,6 +12377,7 @@ pub struct RelativeAggregationDuration {
     /// <li> <p> <code>Days</code> - 3</p> </li>
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub time_value: i32,
 }
 impl RelativeAggregationDuration {
@@ -12257,10 +12526,13 @@ impl AsRef<str> for TimeDimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
     /// <p>The value to use for filtering the list of bots.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
 }
 impl AggregatedUtterancesFilter {
@@ -12472,8 +12744,10 @@ impl AsRef<str> for AggregatedUtterancesFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::SortOrder>,
 }
 impl AggregatedUtterancesSortBy {
@@ -12672,10 +12946,13 @@ impl AsRef<str> for CustomVocabularyStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
+    #[doc(hidden)]
     pub bot_locale_export_url: std::option::Option<std::string::String>,
     /// <p>The presigned url link of the associated transcript.</p>
+    #[doc(hidden)]
     pub associated_transcripts_url: std::option::Option<std::string::String>,
     /// <p>The statistical summary of the bot recommendation results.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::BotRecommendationResultStatistics>,
 }
 impl BotRecommendationResults {
@@ -12781,8 +13058,10 @@ impl BotRecommendationResults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotRecommendationResultStatistics {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<crate::model::IntentStatistics>,
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
+    #[doc(hidden)]
     pub slot_types: std::option::Option<crate::model::SlotTypeStatistics>,
 }
 impl BotRecommendationResultStatistics {
@@ -12860,6 +13139,7 @@ impl BotRecommendationResultStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
+    #[doc(hidden)]
     pub discovered_slot_type_count: std::option::Option<i32>,
 }
 impl SlotTypeStatistics {
@@ -12917,6 +13197,7 @@ impl SlotTypeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentStatistics {
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
+    #[doc(hidden)]
     pub discovered_intent_count: std::option::Option<i32>,
 }
 impl IntentStatistics {
@@ -12971,8 +13252,10 @@ impl IntentStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
     /// <p>A timestamp of the date and time that the event occurred.</p>
+    #[doc(hidden)]
     pub event_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotLocaleHistoryEvent {
@@ -13047,10 +13330,13 @@ impl BotLocaleHistoryEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The date and time that the event started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event ended.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEvent {
@@ -13145,8 +13431,10 @@ impl BotAliasHistoryEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
     /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Principal {
@@ -13273,6 +13561,7 @@ impl AsRef<str> for Effect {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
+    #[doc(hidden)]
     pub source_bot_version: std::option::Option<std::string::String>,
 }
 impl BotVersionLocaleDetails {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the validation exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
 }
 impl ValidationException {
@@ -93,8 +95,10 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ServiceQuotaExceededExceptionReason>,
 }
 impl ServiceQuotaExceededException {
@@ -183,8 +187,10 @@ impl ServiceQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ResourceNotFoundExceptionReason>,
 }
 impl ResourceNotFoundException {
@@ -271,8 +277,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestThrottledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::RequestThrottledExceptionReason>,
 }
 impl RequestThrottledException {
@@ -359,6 +367,7 @@ impl RequestThrottledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -423,6 +432,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -487,6 +497,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentLimitExceededException {
@@ -551,8 +562,10 @@ impl ConcurrentLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AccessDeniedExceptionReason>,
 }
 impl AccessDeniedException {

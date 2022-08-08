@@ -4,24 +4,34 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSnapshotOutput {
     /// <p>The description of the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The status of the snapshot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The timestamp when the snapshot was created.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume, in GiB.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the parent snapshot.</p>
+    #[doc(hidden)]
     pub parent_snapshot_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl StartSnapshotOutput {
@@ -244,8 +254,10 @@ impl StartSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl PutSnapshotBlockOutput {
@@ -320,14 +332,19 @@ impl PutSnapshotBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
+    #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p>The time when the <code>BlockToken</code> expires.</p>
+    #[doc(hidden)]
     pub expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume in GB.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotBlocksOutput {
@@ -462,14 +479,19 @@ impl ListSnapshotBlocksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
+    #[doc(hidden)]
     pub changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
     /// <p>The time when the <code>BlockToken</code> expires.</p>
+    #[doc(hidden)]
     pub expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the volume in GB.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangedBlocksOutput {
@@ -603,12 +625,15 @@ impl ListChangedBlocksOutput {
 #[non_exhaustive]
 pub struct GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
+    #[doc(hidden)]
     pub data_length: std::option::Option<i32>,
     /// <p>The data content of the block.</p>
     pub block_data: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl GetSnapshotBlockOutput {
@@ -720,6 +745,7 @@ impl GetSnapshotBlockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CompleteSnapshotOutput {

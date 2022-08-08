@@ -94,14 +94,19 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the inference scheduler being stopped. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
+    #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
 impl StopInferenceSchedulerOutput {
@@ -233,14 +238,19 @@ impl StopInferenceSchedulerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the ML model being used by the inference scheduler. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the inference scheduler being started. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
+    #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
 impl StartInferenceSchedulerOutput {
@@ -372,8 +382,10 @@ impl StartInferenceSchedulerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
 impl StartDataIngestionJobOutput {
@@ -448,6 +460,7 @@ impl StartDataIngestionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> Any tags associated with the resource. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -509,9 +522,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSensorStatisticsOutput {
     /// <p> Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
+    #[doc(hidden)]
     pub sensor_statistics_summaries:
         std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
     /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSensorStatisticsOutput {
@@ -601,8 +616,10 @@ impl ListSensorStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
+    #[doc(hidden)]
     pub model_summaries: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
 }
 impl ListModelsOutput {
@@ -683,8 +700,10 @@ impl ListModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
+    #[doc(hidden)]
     pub inference_scheduler_summaries:
         std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
 }
@@ -775,8 +794,10 @@ impl ListInferenceSchedulersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceExecutionsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
+    #[doc(hidden)]
     pub inference_execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
 }
@@ -867,8 +888,10 @@ impl ListInferenceExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceEventsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+    #[doc(hidden)]
     pub inference_event_summaries:
         std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
 }
@@ -956,8 +979,10 @@ impl ListInferenceEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
+    #[doc(hidden)]
     pub dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
 }
 impl ListDatasetsOutput {
@@ -1039,8 +1064,10 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIngestionJobsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
+    #[doc(hidden)]
     pub data_ingestion_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
 }
@@ -1131,48 +1158,69 @@ impl ListDataIngestionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelOutput {
     /// <p>The name of the ML model being described. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset being used by the ML being described. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>Specifies configuration information about the labels input, including its S3 location. </p>
+    #[doc(hidden)]
     pub labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
+    #[doc(hidden)]
     pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
+    #[doc(hidden)]
     pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
+    #[doc(hidden)]
     pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
+    #[doc(hidden)]
     pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    #[doc(hidden)]
     pub data_pre_processing_configuration:
         std::option::Option<crate::model::DataPreProcessingConfiguration>,
     /// <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>Indicates the time at which the training of the ML model began. </p>
+    #[doc(hidden)]
     pub training_execution_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time at which the training of the ML model was completed. </p>
+    #[doc(hidden)]
     pub training_execution_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
+    #[doc(hidden)]
     pub failed_reason: std::option::Option<std::string::String>,
     /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
+    #[doc(hidden)]
     pub model_metrics: std::option::Option<std::string::String>,
     /// <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time and date at which the ML model was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    #[doc(hidden)]
     pub off_condition: std::option::Option<std::string::String>,
 }
 impl DescribeModelOutput {
@@ -1641,30 +1689,43 @@ impl DescribeModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the ML model of the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    #[doc(hidden)]
     pub data_delay_offset_in_minutes: std::option::Option<i64>,
     /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    #[doc(hidden)]
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p>Specifies the time at which the inference scheduler was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    #[doc(hidden)]
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
     /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
+    #[doc(hidden)]
     pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
 }
 impl DescribeInferenceSchedulerOutput {
@@ -1965,31 +2026,44 @@ impl DescribeInferenceSchedulerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>The name of the dataset being described. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the dataset. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    #[doc(hidden)]
     pub ingestion_input_configuration:
         std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+    #[doc(hidden)]
     pub data_quality_summary: std::option::Option<crate::model::DataQualitySummary>,
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
+    #[doc(hidden)]
     pub ingested_files_summary: std::option::Option<crate::model::IngestedFilesSummary>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    #[doc(hidden)]
     pub data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    #[doc(hidden)]
     pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetOutput {
@@ -2286,31 +2360,44 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    #[doc(hidden)]
     pub ingestion_input_configuration:
         std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the data ingestion job was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
+    #[doc(hidden)]
     pub failed_reason: std::option::Option<std::string::String>,
     /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+    #[doc(hidden)]
     pub data_quality_summary: std::option::Option<crate::model::DataQualitySummary>,
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
+    #[doc(hidden)]
     pub ingested_files_summary: std::option::Option<crate::model::IngestedFilesSummary>,
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
+    #[doc(hidden)]
     pub status_detail: std::option::Option<std::string::String>,
     /// <p> Indicates the size of the ingested dataset. </p>
+    #[doc(hidden)]
     pub ingested_data_size: std::option::Option<i64>,
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
+    #[doc(hidden)]
     pub data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
+    #[doc(hidden)]
     pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDataIngestionJobOutput {
@@ -2697,8 +2784,10 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
 }
 impl CreateModelOutput {
@@ -2770,10 +2859,13 @@ impl CreateModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
+    #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>The name of inference scheduler being created. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
 impl CreateInferenceSchedulerOutput {
@@ -2871,10 +2963,13 @@ impl CreateInferenceSchedulerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset being created. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
 impl CreateDatasetOutput {

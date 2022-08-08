@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -79,8 +81,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricPolicy {
     /// <p>A setting to enable or disable metrics at the container level.</p>
+    #[doc(hidden)]
     pub container_level_metrics: std::option::Option<crate::model::ContainerLevelMetrics>,
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
+    #[doc(hidden)]
     pub metric_policy_rules: std::option::Option<std::vec::Vec<crate::model::MetricPolicyRule>>,
 }
 impl MetricPolicy {
@@ -171,8 +175,10 @@ impl MetricPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
+    #[doc(hidden)]
     pub object_group: std::option::Option<std::string::String>,
     /// <p>A name that allows you to refer to the object group.</p>
+    #[doc(hidden)]
     pub object_group_name: std::option::Option<std::string::String>,
 }
 impl MetricPolicyRule {
@@ -303,18 +309,23 @@ impl AsRef<str> for ContainerLevelMetrics {
 pub struct CorsRule {
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
+    #[doc(hidden)]
     pub allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
+    #[doc(hidden)]
     pub allowed_methods: std::option::Option<std::vec::Vec<crate::model::MethodName>>,
     /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p>
     /// <p>This element can contain only one wildcard character (*).</p>
+    #[doc(hidden)]
     pub allowed_headers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
     /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
+    #[doc(hidden)]
     pub max_age_seconds: i32,
     /// <p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>This element is optional for each rule.</p>
+    #[doc(hidden)]
     pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CorsRule {
@@ -551,8 +562,10 @@ impl AsRef<str> for MethodName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Container {
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>Unix timestamp.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p>
     /// <p>arn:aws:<region>
@@ -564,12 +577,16 @@ pub struct Container {
     /// </account>
     /// </region></p>
     /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the container.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContainerStatus>,
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub access_logging_enabled: std::option::Option<bool>,
 }
 impl Container {

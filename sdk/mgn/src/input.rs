@@ -5839,8 +5839,10 @@ impl UpdateSourceServerReplicationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVcenterClientsInput {
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVcenterClientsInput {
@@ -5867,6 +5869,7 @@ impl std::fmt::Debug for DescribeVcenterClientsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl DeleteVcenterClientInput {
@@ -5888,8 +5891,10 @@ impl std::fmt::Debug for DeleteVcenterClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Replication type to which to update source server.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
 }
 impl UpdateSourceServerReplicationTypeInput {
@@ -5916,38 +5921,53 @@ impl std::fmt::Debug for UpdateSourceServerReplicationTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Update replication configuration name request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Update replication configuration Staging Area subnet request.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Update replication configuration Replication Server instance type request.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Update replication configuration replicated disks request.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Update replication configuration EBS encryption request.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Update replication configuration bandwidth throttling request.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Update replication configuration data plane routing request.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration create Public IP request.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Update replication configuration Staging Area Tags request.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6069,23 +6089,32 @@ impl std::fmt::Debug for UpdateReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration by Source Server ID request.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Update Launch configuration name request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Update Launch configuration launch disposition request.</p>
+    #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Update Launch configuration Target instance right sizing request.</p>
+    #[doc(hidden)]
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Update Launch configuration copy Private IP request.</p>
+    #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Update Launch configuration copy Tags request.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>Update Launch configuration licensing request.</p>
+    #[doc(hidden)]
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Update Launch configuration boot mode request.</p>
+    #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::model::BootMode>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl UpdateLaunchConfigurationInput {
@@ -6152,6 +6181,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationInput {
     /// <p>ID of source server on which to start replication.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl StartReplicationInput {
@@ -6173,6 +6203,7 @@ impl std::fmt::Debug for StartReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl RetryDataReplicationInput {
@@ -6194,6 +6225,7 @@ impl std::fmt::Debug for RetryDataReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarkAsArchivedInput {
     /// <p>Mark as archived by Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl MarkAsArchivedInput {
@@ -6215,6 +6247,7 @@ impl std::fmt::Debug for MarkAsArchivedInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationConfigurationInput {
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl GetReplicationConfigurationInput {
@@ -6236,6 +6269,7 @@ impl std::fmt::Debug for GetReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchConfigurationInput {
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl GetLaunchConfigurationInput {
@@ -6257,6 +6291,7 @@ impl std::fmt::Debug for GetLaunchConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl FinalizeCutoverInput {
@@ -6278,6 +6313,7 @@ impl std::fmt::Debug for FinalizeCutoverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl DisconnectFromServiceInput {
@@ -6299,8 +6335,10 @@ impl std::fmt::Debug for DisconnectFromServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The request to change the source server migration lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle:
         std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycle>,
 }
@@ -6330,8 +6368,10 @@ impl std::fmt::Debug for ChangeServerLifeCycleStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateTargetInstancesInput {
     /// <p>Terminate Target instance by Source Server IDs.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Terminate Target instance by Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6362,8 +6402,10 @@ impl std::fmt::Debug for TerminateTargetInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Start Test by Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6394,8 +6436,10 @@ impl std::fmt::Debug for StartTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCutoverInput {
     /// <p>Start Cutover by Source Server IDs.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Start Cutover by Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6426,10 +6470,13 @@ impl std::fmt::Debug for StartCutoverInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceServersInput {
     /// <p>Request to filter Source Servers list.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::DescribeSourceServersRequestFilters>,
     /// <p>Request to filter Source Servers list by maximum results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to filter Source Servers list by next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSourceServersInput {
@@ -6463,6 +6510,7 @@ impl std::fmt::Debug for DescribeSourceServersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSourceServerInput {
     /// <p>Request to delete Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl DeleteSourceServerInput {
@@ -6484,11 +6532,14 @@ impl std::fmt::Debug for DeleteSourceServerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to describe Replication Configuration template by max results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to describe Replication Configuration template by next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesInput {
@@ -6525,34 +6576,47 @@ impl std::fmt::Debug for DescribeReplicationConfigurationTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6665,6 +6729,7 @@ impl std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationConfigurationTemplateInput {
     /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationConfigurationTemplateInput {
@@ -6689,35 +6754,49 @@ impl std::fmt::Debug for DeleteReplicationConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Update replication configuration template ARN request.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Update replication configuration template Staging Area subnet ID request.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Update replication configuration template Replication Server instance type request.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Update replication configuration template use dedicated Replication Server request.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Update replication configuration template use default large Staging Disk type request.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Update replication configuration template EBS encryption request.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Update replication configuration template EBS encryption key ARN request.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Update replication configuration template bandwidth throttling request.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Update replication configuration template data plane routing request.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration template create Public IP request.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Update replication configuration template Staging Area Tags request.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6835,10 +6914,13 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchConfigurationTemplatesInput {
@@ -6875,8 +6957,10 @@ impl std::fmt::Debug for DescribeLaunchConfigurationTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationTemplateInput {
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6907,6 +6991,7 @@ impl std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchConfigurationTemplateInput {
     /// <p>ID of resource to be deleted.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchConfigurationTemplateInput {
@@ -6931,8 +7016,10 @@ impl std::fmt::Debug for DeleteLaunchConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Update Launch configuration Target instance right sizing request.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Update Launch configuration Target instance right sizing request.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl UpdateLaunchConfigurationTemplateInput {
@@ -6962,10 +7049,13 @@ impl std::fmt::Debug for UpdateLaunchConfigurationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobLogItemsInput {
     /// <p>Request to describe Job log job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Request to describe Job log item maximum results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to describe Job log next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobLogItemsInput {
@@ -6997,10 +7087,13 @@ impl std::fmt::Debug for DescribeJobLogItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsInput {
     /// <p>Request to describe Job log filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::DescribeJobsRequestFilters>,
     /// <p>Request to describe job log items by max results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to describe job log items by next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobsInput {
@@ -7032,6 +7125,7 @@ impl std::fmt::Debug for DescribeJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobInput {
     /// <p>Request to delete Job from service by Job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DeleteJobInput {
@@ -7053,8 +7147,10 @@ impl std::fmt::Debug for DeleteJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Untag resource by ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Untag resource by Keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7081,8 +7177,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Tag resource by ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag resource by Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7113,6 +7211,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>List tags for resource request by ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

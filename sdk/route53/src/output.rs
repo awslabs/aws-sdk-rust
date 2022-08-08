@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
 }
 impl UpdateTrafficPolicyInstanceOutput {
@@ -68,6 +69,7 @@ impl UpdateTrafficPolicyInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyCommentOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
+    #[doc(hidden)]
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
 }
 impl UpdateTrafficPolicyCommentOutput {
@@ -125,6 +127,7 @@ impl UpdateTrafficPolicyCommentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
+    #[doc(hidden)]
     pub hosted_zone: std::option::Option<crate::model::HostedZone>,
 }
 impl UpdateHostedZoneCommentOutput {
@@ -182,6 +185,7 @@ impl UpdateHostedZoneCommentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHealthCheckOutput {
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl UpdateHealthCheckOutput {
@@ -239,16 +243,22 @@ impl UpdateHealthCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
+    #[doc(hidden)]
     pub nameserver: std::option::Option<std::string::String>,
     /// <p>The name of the resource record set that you submitted a request for.</p>
+    #[doc(hidden)]
     pub record_name: std::option::Option<std::string::String>,
     /// <p>The type of the resource record set that you submitted a request for.</p>
+    #[doc(hidden)]
     pub record_type: std::option::Option<crate::model::RrType>,
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
+    #[doc(hidden)]
     pub record_data: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
+    #[doc(hidden)]
     pub response_code: std::option::Option<std::string::String>,
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
 }
 impl TestDnsAnswerOutput {
@@ -400,10 +410,13 @@ impl TestDnsAnswerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
+    #[doc(hidden)]
     pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
 }
 impl ListVpcAssociationAuthorizationsOutput {
@@ -504,13 +517,17 @@ impl ListVpcAssociationAuthorizationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyVersionsOutput {
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
+    #[doc(hidden)]
     pub traffic_policies: std::option::Option<std::vec::Vec<crate::model::TrafficPolicy>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    #[doc(hidden)]
     pub traffic_policy_version_marker: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyVersionsOutput {
@@ -638,17 +655,23 @@ impl ListTrafficPolicyVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesByPolicyOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    #[doc(hidden)]
     pub traffic_policy_instances:
         std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance in the next group of traffic policy instances.</p>
+    #[doc(hidden)]
     pub hosted_zone_id_marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesByPolicyOutput {
@@ -823,15 +846,20 @@ impl ListTrafficPolicyInstancesByPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
+    #[doc(hidden)]
     pub traffic_policy_instances:
         std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance in the next group of traffic policy instances.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesByHostedZoneOutput {
@@ -987,17 +1015,23 @@ impl ListTrafficPolicyInstancesByHostedZoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    #[doc(hidden)]
     pub traffic_policy_instances:
         std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    #[doc(hidden)]
     pub hosted_zone_id_marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesOutput {
@@ -1172,13 +1206,17 @@ impl ListTrafficPolicyInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub traffic_policy_summaries:
         std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
+    #[doc(hidden)]
     pub traffic_policy_id_marker: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPoliciesOutput {
@@ -1302,6 +1340,7 @@ impl ListTrafficPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
+    #[doc(hidden)]
     pub resource_tag_sets: std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
 }
 impl ListTagsForResourcesOutput {
@@ -1366,6 +1405,7 @@ impl ListTagsForResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
+    #[doc(hidden)]
     pub resource_tag_set: std::option::Option<crate::model::ResourceTagSet>,
 }
 impl ListTagsForResourceOutput {
@@ -1423,14 +1463,19 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub delegation_sets: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListReusableDelegationSetsOutput {
@@ -1562,19 +1607,25 @@ impl ListReusableDelegationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
+    #[doc(hidden)]
     pub resource_record_sets: std::option::Option<std::vec::Vec<crate::model::ResourceRecordSet>>,
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    #[doc(hidden)]
     pub next_record_name: std::option::Option<std::string::String>,
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    #[doc(hidden)]
     pub next_record_type: std::option::Option<crate::model::RrType>,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub next_record_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of records you requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListResourceRecordSetsOutput {
@@ -1742,9 +1793,11 @@ impl ListResourceRecordSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub query_logging_configs: std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListQueryLoggingConfigsOutput {
@@ -1831,10 +1884,13 @@ impl ListQueryLoggingConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_summaries: std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostedZonesByVpcOutput {
@@ -1933,20 +1989,27 @@ impl ListHostedZonesByVpcOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByNameOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zones: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
     /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    #[doc(hidden)]
     pub next_dns_name: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    #[doc(hidden)]
     pub next_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListHostedZonesByNameOutput {
@@ -2127,15 +2190,20 @@ impl ListHostedZonesByNameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zones: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListHostedZonesOutput {
@@ -2270,14 +2338,19 @@ impl ListHostedZonesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHealthChecksOutput {
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub health_checks: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListHealthChecksOutput {
@@ -2409,17 +2482,23 @@ impl ListHealthChecksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
+    #[doc(hidden)]
     pub geo_location_details_list:
         std::option::Option<std::vec::Vec<crate::model::GeoLocationDetails>>,
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    #[doc(hidden)]
     pub next_continent_code: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    #[doc(hidden)]
     pub next_country_code: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    #[doc(hidden)]
     pub next_subdivision_code: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListGeoLocationsOutput {
@@ -2584,8 +2663,10 @@ impl ListGeoLocationsOutput {
 pub struct ListCidrLocationsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the list of CIDR locations.</p>
+    #[doc(hidden)]
     pub cidr_locations: std::option::Option<std::vec::Vec<crate::model::LocationSummary>>,
 }
 impl ListCidrLocationsOutput {
@@ -2671,8 +2752,10 @@ impl ListCidrLocationsOutput {
 pub struct ListCidrCollectionsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A complex type with information about the CIDR collection.</p>
+    #[doc(hidden)]
     pub cidr_collections: std::option::Option<std::vec::Vec<crate::model::CollectionSummary>>,
 }
 impl ListCidrCollectionsOutput {
@@ -2758,8 +2841,10 @@ impl ListCidrCollectionsOutput {
 pub struct ListCidrBlocksOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the CIDR blocks.</p>
+    #[doc(hidden)]
     pub cidr_blocks: std::option::Option<std::vec::Vec<crate::model::CidrBlockSummary>>,
 }
 impl ListCidrBlocksOutput {
@@ -2843,6 +2928,7 @@ impl ListCidrBlocksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_count: std::option::Option<i32>,
 }
 impl GetTrafficPolicyInstanceCountOutput {
@@ -2903,6 +2989,7 @@ impl GetTrafficPolicyInstanceCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the traffic policy instance.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
 }
 impl GetTrafficPolicyInstanceOutput {
@@ -2966,6 +3053,7 @@ impl GetTrafficPolicyInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
+    #[doc(hidden)]
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
 }
 impl GetTrafficPolicyOutput {
@@ -3023,8 +3111,10 @@ impl GetTrafficPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<crate::model::ReusableDelegationSetLimit>,
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    #[doc(hidden)]
     pub count: i64,
 }
 impl GetReusableDelegationSetLimitOutput {
@@ -3099,6 +3189,7 @@ impl GetReusableDelegationSetLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
+    #[doc(hidden)]
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
 }
 impl GetReusableDelegationSetOutput {
@@ -3156,6 +3247,7 @@ impl GetReusableDelegationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryLoggingConfigOutput {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
+    #[doc(hidden)]
     pub query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
 }
 impl GetQueryLoggingConfigOutput {
@@ -3213,8 +3305,10 @@ impl GetQueryLoggingConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<crate::model::HostedZoneLimit>,
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
+    #[doc(hidden)]
     pub count: i64,
 }
 impl GetHostedZoneLimitOutput {
@@ -3289,6 +3383,7 @@ impl GetHostedZoneLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub hosted_zone_count: std::option::Option<i64>,
 }
 impl GetHostedZoneCountOutput {
@@ -3343,10 +3438,13 @@ impl GetHostedZoneCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneOutput {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone: std::option::Option<crate::model::HostedZone>,
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
+    #[doc(hidden)]
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    #[doc(hidden)]
     pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
 }
 impl GetHostedZoneOutput {
@@ -3450,6 +3548,7 @@ impl GetHostedZoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
+    #[doc(hidden)]
     pub health_check_observations:
         std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
 }
@@ -3520,6 +3619,7 @@ impl GetHealthCheckStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
+    #[doc(hidden)]
     pub health_check_observations:
         std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
 }
@@ -3590,6 +3690,7 @@ impl GetHealthCheckLastFailureReasonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub health_check_count: std::option::Option<i64>,
 }
 impl GetHealthCheckCountOutput {
@@ -3644,6 +3745,7 @@ impl GetHealthCheckCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl GetHealthCheckOutput {
@@ -3701,6 +3803,7 @@ impl GetHealthCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeoLocationOutput {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
+    #[doc(hidden)]
     pub geo_location_details: std::option::Option<crate::model::GeoLocationDetails>,
 }
 impl GetGeoLocationOutput {
@@ -3758,8 +3861,10 @@ impl GetGeoLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDnssecOutput {
     /// <p>A string repesenting the status of DNSSEC.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
+    #[doc(hidden)]
     pub key_signing_keys: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
 }
 impl GetDnssecOutput {
@@ -3844,6 +3949,7 @@ impl GetDnssecOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCheckerIpRangesOutput {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
+    #[doc(hidden)]
     pub checker_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetCheckerIpRangesOutput {
@@ -3907,6 +4013,7 @@ impl GetCheckerIpRangesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl GetChangeOutput {
@@ -3964,8 +4071,10 @@ impl GetChangeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<crate::model::AccountLimit>,
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
+    #[doc(hidden)]
     pub count: i64,
 }
 impl GetAccountLimitOutput {
@@ -4037,6 +4146,7 @@ impl GetAccountLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl EnableHostedZoneDnssecOutput {
@@ -4094,6 +4204,7 @@ impl EnableHostedZoneDnssecOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateVpcFromHostedZoneOutput {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl DisassociateVpcFromHostedZoneOutput {
@@ -4151,6 +4262,7 @@ impl DisassociateVpcFromHostedZoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl DisableHostedZoneDnssecOutput {
@@ -4358,6 +4470,7 @@ impl DeleteQueryLoggingConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl DeleteKeySigningKeyOutput {
@@ -4415,6 +4528,7 @@ impl DeleteKeySigningKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl DeleteHostedZoneOutput {
@@ -4532,6 +4646,7 @@ impl DeleteCidrCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl DeactivateKeySigningKeyOutput {
@@ -4589,8 +4704,10 @@ impl DeactivateKeySigningKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationOutput {
@@ -4665,8 +4782,10 @@ impl CreateVpcAssociationAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyVersionOutput {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
+    #[doc(hidden)]
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
     /// <p>A unique URL that represents a new traffic policy version.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateTrafficPolicyVersionOutput {
@@ -4741,8 +4860,10 @@ impl CreateTrafficPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the new traffic policy instance.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance: std::option::Option<crate::model::TrafficPolicyInstance>,
     /// <p>A unique URL that represents a new traffic policy instance.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateTrafficPolicyInstanceOutput {
@@ -4823,8 +4944,10 @@ impl CreateTrafficPolicyInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the new traffic policy.</p>
+    #[doc(hidden)]
     pub traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
     /// <p>A unique URL that represents a new traffic policy.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateTrafficPolicyOutput {
@@ -4899,8 +5022,10 @@ impl CreateTrafficPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReusableDelegationSetOutput {
     /// <p>A complex type that contains name server information.</p>
+    #[doc(hidden)]
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>The unique URL representing the new reusable delegation set.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateReusableDelegationSetOutput {
@@ -4975,8 +5100,10 @@ impl CreateReusableDelegationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueryLoggingConfigOutput {
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
+    #[doc(hidden)]
     pub query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
     /// <p>The unique URL representing the new query logging configuration.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateQueryLoggingConfigOutput {
@@ -5051,10 +5178,13 @@ impl CreateQueryLoggingConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
     /// <p>The key-signing key (KSK) that the request creates.</p>
+    #[doc(hidden)]
     pub key_signing_key: std::option::Option<crate::model::KeySigningKey>,
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateKeySigningKeyOutput {
@@ -5149,14 +5279,19 @@ impl CreateKeySigningKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHostedZoneOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone: std::option::Option<crate::model::HostedZone>,
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
+    #[doc(hidden)]
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateHostedZoneOutput {
@@ -5288,8 +5423,10 @@ impl CreateHostedZoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHealthCheckOutput {
     /// <p>A complex type that contains identifying information about the health check.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
     /// <p>The unique URL representing the new health check.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateHealthCheckOutput {
@@ -5364,8 +5501,10 @@ impl CreateHealthCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCidrCollectionOutput {
     /// <p>A complex type that contains information about the CIDR collection.</p>
+    #[doc(hidden)]
     pub collection: std::option::Option<crate::model::CidrCollection>,
     /// <p>A unique URL that represents the location for the CIDR collection.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateCidrCollectionOutput {
@@ -5471,6 +5610,7 @@ impl ChangeTagsForResourceOutput {
 pub struct ChangeResourceRecordSetsOutput {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl ChangeResourceRecordSetsOutput {
@@ -5531,6 +5671,7 @@ impl ChangeResourceRecordSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ChangeCidrCollectionOutput {
@@ -5583,6 +5724,7 @@ impl ChangeCidrCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl AssociateVpcWithHostedZoneOutput {
@@ -5640,6 +5782,7 @@ impl AssociateVpcWithHostedZoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    #[doc(hidden)]
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
 impl ActivateKeySigningKeyOutput {

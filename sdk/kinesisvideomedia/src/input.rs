@@ -165,10 +165,13 @@ impl GetMediaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaInput {
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    #[doc(hidden)]
     pub start_selector: std::option::Option<crate::model::StartSelector>,
 }
 impl GetMediaInput {

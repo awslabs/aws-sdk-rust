@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -70,6 +71,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidStateException {
@@ -134,6 +136,7 @@ impl KmsInvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidMacException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidMacException {
@@ -198,6 +201,7 @@ impl KmsInvalidMacException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInternalException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInternalException {
@@ -262,6 +266,7 @@ impl KmsInternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeyUnavailableException {
@@ -332,6 +337,7 @@ impl KeyUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyUsageException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKeyUsageException {
@@ -396,6 +402,7 @@ impl InvalidKeyUsageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGrantTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGrantTokenException {
@@ -460,6 +467,7 @@ impl InvalidGrantTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisabledException {
@@ -524,6 +532,7 @@ impl DisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidSignatureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidSignatureException {
@@ -591,6 +600,7 @@ impl KmsInvalidSignatureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyTimeoutException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DependencyTimeoutException {
@@ -655,6 +665,7 @@ impl DependencyTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -719,6 +730,7 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArnException {
@@ -783,6 +795,7 @@ impl InvalidArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomKeyStoreNotFoundException {
@@ -847,6 +860,7 @@ impl CustomKeyStoreNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNameInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomKeyStoreNameInUseException {
@@ -917,6 +931,7 @@ impl CustomKeyStoreNameInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomKeyStoreInvalidStateException {
@@ -983,6 +998,7 @@ impl CustomKeyStoreInvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotRelatedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmClusterNotRelatedException {
@@ -1047,6 +1063,7 @@ impl CloudHsmClusterNotRelatedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmClusterNotFoundException {
@@ -1111,6 +1128,7 @@ impl CloudHsmClusterNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotActiveException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmClusterNotActiveException {
@@ -1182,6 +1200,7 @@ impl CloudHsmClusterNotActiveException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInvalidConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmClusterInvalidConfigurationException {
@@ -1246,6 +1265,7 @@ impl CloudHsmClusterInvalidConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -1310,6 +1330,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagException {
@@ -1374,6 +1395,7 @@ impl TagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGrantIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGrantIdException {
@@ -1438,6 +1460,7 @@ impl InvalidGrantIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedPolicyDocumentException {
@@ -1502,6 +1525,7 @@ impl MalformedPolicyDocumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -1567,6 +1591,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCiphertextException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCiphertextException {
@@ -1631,6 +1656,7 @@ impl InvalidCiphertextException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncorrectKeyException {
@@ -1695,6 +1721,7 @@ impl IncorrectKeyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMarkerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMarkerException {
@@ -1759,6 +1786,7 @@ impl InvalidMarkerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidImportTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidImportTokenException {
@@ -1823,6 +1851,7 @@ impl InvalidImportTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyMaterialException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncorrectKeyMaterialException {
@@ -1887,6 +1916,7 @@ impl IncorrectKeyMaterialException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredImportTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredImportTokenException {
@@ -1951,6 +1981,7 @@ impl ExpiredImportTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreHasCmKsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomKeyStoreHasCmKsException {
@@ -2019,6 +2050,7 @@ impl CustomKeyStoreHasCmKsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectTrustAnchorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncorrectTrustAnchorException {
@@ -2084,6 +2116,7 @@ impl IncorrectTrustAnchorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmClusterInUseException {
@@ -2148,6 +2181,7 @@ impl CloudHsmClusterInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAliasNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAliasNameException {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmTagException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmTagException {
@@ -69,6 +70,7 @@ impl CloudHsmTagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmServiceException {
@@ -133,6 +135,7 @@ impl CloudHsmServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmResourceNotFoundException {
@@ -197,6 +200,7 @@ impl CloudHsmResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmInvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmInvalidRequestException {
@@ -261,6 +265,7 @@ impl CloudHsmInvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmInternalFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmInternalFailureException {
@@ -325,6 +330,7 @@ impl CloudHsmInternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudHsmAccessDeniedException {

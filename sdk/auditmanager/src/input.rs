@@ -10719,6 +10719,7 @@ impl ValidateAssessmentReportIntegrityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateAssessmentReportIntegrityInput {
     /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
+    #[doc(hidden)]
     pub s3_relative_path: std::option::Option<std::string::String>,
 }
 impl ValidateAssessmentReportIntegrityInput {
@@ -10740,13 +10741,17 @@ impl std::fmt::Debug for ValidateAssessmentReportIntegrityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
+    #[doc(hidden)]
     pub sns_topic: std::option::Option<std::string::String>,
     /// <p> The default storage destination for assessment reports. </p>
+    #[doc(hidden)]
     pub default_assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
     /// <p> A list of the default audit owners. </p>
+    #[doc(hidden)]
     pub default_process_owners: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p> The KMS key details. </p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl UpdateSettingsInput {
@@ -10788,18 +10793,25 @@ impl std::fmt::Debug for UpdateSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateControlInput {
     /// <p> The identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p> The name of the updated control. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The optional description of the control. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The steps that you should follow to determine if the control is met. </p>
+    #[doc(hidden)]
     pub testing_information: std::option::Option<std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
+    #[doc(hidden)]
     pub action_plan_title: std::option::Option<std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    #[doc(hidden)]
     pub action_plan_instructions: std::option::Option<std::string::String>,
     /// <p> The data mapping sources for the control. </p>
+    #[doc(hidden)]
     pub control_mapping_sources:
         std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
 }
@@ -10854,8 +10866,10 @@ impl std::fmt::Debug for UpdateControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentStatusInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The current status of the assessment. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssessmentStatus>,
 }
 impl UpdateAssessmentStatusInput {
@@ -10882,10 +10896,13 @@ impl std::fmt::Debug for UpdateAssessmentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the share request. </p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    #[doc(hidden)]
     pub request_type: std::option::Option<crate::model::ShareRequestType>,
     /// <p>Specifies the update action for the share request.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ShareRequestAction>,
 }
 impl UpdateAssessmentFrameworkShareInput {
@@ -10917,14 +10934,19 @@ impl std::fmt::Debug for UpdateAssessmentFrameworkShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentFrameworkInput {
     /// <p> The unique identifier for the framework. </p>
+    #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
     /// <p> The name of the framework to be updated. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the updated framework. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
+    #[doc(hidden)]
     pub control_sets:
         std::option::Option<std::vec::Vec<crate::model::UpdateAssessmentFrameworkControlSet>>,
 }
@@ -10969,12 +10991,16 @@ impl std::fmt::Debug for UpdateAssessmentFrameworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlSetStatusInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The status of the control set that's being updated. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ControlSetStatus>,
     /// <p> The comment that's related to the status update. </p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl UpdateAssessmentControlSetStatusInput {
@@ -11011,14 +11037,19 @@ impl std::fmt::Debug for UpdateAssessmentControlSetStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p> The status of the control. </p>
+    #[doc(hidden)]
     pub control_status: std::option::Option<crate::model::ControlStatus>,
     /// <p> The comment body text for the control. </p>
+    #[doc(hidden)]
     pub comment_body: std::option::Option<std::string::String>,
 }
 impl UpdateAssessmentControlInput {
@@ -11060,17 +11091,23 @@ impl std::fmt::Debug for UpdateAssessmentControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The name of the assessment to be updated. </p>
+    #[doc(hidden)]
     pub assessment_name: std::option::Option<std::string::String>,
     /// <p> The description of the assessment. </p>
+    #[doc(hidden)]
     pub assessment_description: std::option::Option<std::string::String>,
     /// <p> The scope of the assessment. </p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
+    #[doc(hidden)]
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
     /// <p> The list of roles for the assessment. </p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
 }
 impl UpdateAssessmentInput {
@@ -11122,8 +11159,10 @@ impl std::fmt::Debug for UpdateAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The name or key of the tag. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11150,8 +11189,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags that are associated with the resource. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11182,12 +11223,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the custom framework to be shared. </p>
+    #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services account of the recipient. </p>
+    #[doc(hidden)]
     pub destination_account: std::option::Option<std::string::String>,
     /// <p> The Amazon Web Services Region of the recipient. </p>
+    #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
     /// <p> An optional comment from the sender about the share request. </p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl StartAssessmentFrameworkShareInput {
@@ -11224,6 +11269,7 @@ impl std::fmt::Debug for StartAssessmentFrameworkShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterOrganizationAdminAccountInput {
     /// <p> The identifier for the delegated administrator account. </p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl RegisterOrganizationAdminAccountInput {
@@ -11245,8 +11291,10 @@ impl std::fmt::Debug for RegisterOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAccountInput {
     /// <p> The KMS key details. </p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p> The delegated administrator account for Audit Manager. </p>
+    #[doc(hidden)]
     pub delegated_admin_account: std::option::Option<std::string::String>,
 }
 impl RegisterAccountInput {
@@ -11273,6 +11321,7 @@ impl std::fmt::Debug for RegisterAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -11294,8 +11343,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListNotificationsInput {
@@ -11322,10 +11373,13 @@ impl std::fmt::Debug for ListNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeywordsForDataSourceInput {
     /// <p> The control mapping data source that the keywords apply to. </p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::SourceType>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListKeywordsForDataSourceInput {
@@ -11357,10 +11411,13 @@ impl std::fmt::Debug for ListKeywordsForDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlsInput {
     /// <p> The type of control, such as a standard control or a custom control. </p>
+    #[doc(hidden)]
     pub control_type: std::option::Option<crate::model::ControlType>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListControlsInput {
@@ -11392,10 +11449,13 @@ impl std::fmt::Debug for ListControlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
+    #[doc(hidden)]
     pub control_domain_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListControlInsightsByControlDomainInput {
@@ -11427,10 +11487,13 @@ impl std::fmt::Debug for ListControlInsightsByControlDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsByAssessmentInput {
     /// <p>The unique identifier for the active assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListControlDomainInsightsByAssessmentInput {
@@ -11462,8 +11525,10 @@ impl std::fmt::Debug for ListControlDomainInsightsByAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsInput {
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListControlDomainInsightsInput {
@@ -11490,10 +11555,13 @@ impl std::fmt::Debug for ListControlDomainInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentsInput {
     /// <p> The current status of the assessment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AssessmentStatus>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentsInput {
@@ -11525,8 +11593,10 @@ impl std::fmt::Debug for ListAssessmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentReportsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentReportsInput {
@@ -11553,10 +11623,13 @@ impl std::fmt::Debug for ListAssessmentReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentFrameworkShareRequestsInput {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
+    #[doc(hidden)]
     pub request_type: std::option::Option<crate::model::ShareRequestType>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentFrameworkShareRequestsInput {
@@ -11588,10 +11661,13 @@ impl std::fmt::Debug for ListAssessmentFrameworkShareRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentFrameworksInput {
     /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    #[doc(hidden)]
     pub framework_type: std::option::Option<crate::model::FrameworkType>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentFrameworksInput {
@@ -11623,12 +11699,16 @@ impl std::fmt::Debug for ListAssessmentFrameworksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
+    #[doc(hidden)]
     pub control_domain_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the active assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentControlInsightsByControlDomainInput {
@@ -11665,6 +11745,7 @@ impl std::fmt::Debug for ListAssessmentControlInsightsByControlDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSettingsInput {
     /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SettingAttribute>,
 }
 impl GetSettingsInput {
@@ -11708,6 +11789,7 @@ impl std::fmt::Debug for GetOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsByAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl GetInsightsByAssessmentInput {
@@ -11740,14 +11822,19 @@ impl std::fmt::Debug for GetInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEvidenceFoldersByAssessmentControlInput {
@@ -11789,10 +11876,13 @@ impl std::fmt::Debug for GetEvidenceFoldersByAssessmentControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEvidenceFoldersByAssessmentInput {
@@ -11824,10 +11914,13 @@ impl std::fmt::Debug for GetEvidenceFoldersByAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFolderInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
 }
 impl GetEvidenceFolderInput {
@@ -11859,14 +11952,19 @@ impl std::fmt::Debug for GetEvidenceFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceByEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEvidenceByEvidenceFolderInput {
@@ -11908,12 +12006,16 @@ impl std::fmt::Debug for GetEvidenceByEvidenceFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the evidence. </p>
+    #[doc(hidden)]
     pub evidence_id: std::option::Option<std::string::String>,
 }
 impl GetEvidenceInput {
@@ -11950,8 +12052,10 @@ impl std::fmt::Debug for GetEvidenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDelegationsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetDelegationsInput {
@@ -11978,6 +12082,7 @@ impl std::fmt::Debug for GetDelegationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetControlInput {
     /// <p> The identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
 }
 impl GetControlInput {
@@ -11999,14 +12104,19 @@ impl std::fmt::Debug for GetControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeLogsInput {
     /// <p>The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetChangeLogsInput {
@@ -12048,8 +12158,10 @@ impl std::fmt::Debug for GetChangeLogsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportUrlInput {
     /// <p> The unique identifier for the assessment report. </p>
+    #[doc(hidden)]
     pub assessment_report_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentReportUrlInput {
@@ -12076,6 +12188,7 @@ impl std::fmt::Debug for GetAssessmentReportUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
+    #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentFrameworkInput {
@@ -12097,6 +12210,7 @@ impl std::fmt::Debug for GetAssessmentFrameworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentInput {
@@ -12129,8 +12243,10 @@ impl std::fmt::Debug for GetAccountStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAssessmentReportEvidenceFolderInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
 }
 impl DisassociateAssessmentReportEvidenceFolderInput {
@@ -12157,6 +12273,7 @@ impl std::fmt::Debug for DisassociateAssessmentReportEvidenceFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterOrganizationAdminAccountInput {
     /// <p> The identifier for the administrator account. </p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInput {
@@ -12189,6 +12306,7 @@ impl std::fmt::Debug for DeregisterAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteControlInput {
     /// <p> The unique identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
 }
 impl DeleteControlInput {
@@ -12210,8 +12328,10 @@ impl std::fmt::Debug for DeleteControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentReportInput {
     /// <p> The unique identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the assessment report. </p>
+    #[doc(hidden)]
     pub assessment_report_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentReportInput {
@@ -12238,8 +12358,10 @@ impl std::fmt::Debug for DeleteAssessmentReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentFrameworkShareInput {
     /// <p>The unique identifier for the share request to be deleted.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    #[doc(hidden)]
     pub request_type: std::option::Option<crate::model::ShareRequestType>,
 }
 impl DeleteAssessmentFrameworkShareInput {
@@ -12266,6 +12388,7 @@ impl std::fmt::Debug for DeleteAssessmentFrameworkShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the custom framework. </p>
+    #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentFrameworkInput {
@@ -12287,6 +12410,7 @@ impl std::fmt::Debug for DeleteAssessmentFrameworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentInput {
@@ -12308,19 +12432,26 @@ impl std::fmt::Debug for DeleteAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlInput {
     /// <p> The name of the control. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the control. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The steps to follow to determine if the control is satisfied. </p>
+    #[doc(hidden)]
     pub testing_information: std::option::Option<std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
+    #[doc(hidden)]
     pub action_plan_title: std::option::Option<std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    #[doc(hidden)]
     pub action_plan_instructions: std::option::Option<std::string::String>,
     /// <p> The data mapping sources for the control. </p>
+    #[doc(hidden)]
     pub control_mapping_sources:
         std::option::Option<std::vec::Vec<crate::model::CreateControlMappingSource>>,
     /// <p> The tags that are associated with the control. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12378,10 +12509,13 @@ impl std::fmt::Debug for CreateControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentReportInput {
     /// <p> The name of the new assessment report. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the assessment report. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentReportInput {
@@ -12413,15 +12547,20 @@ impl std::fmt::Debug for CreateAssessmentReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentFrameworkInput {
     /// <p> The name of the new custom framework. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> An optional description for the new custom framework. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
+    #[doc(hidden)]
     pub control_sets:
         std::option::Option<std::vec::Vec<crate::model::CreateAssessmentFrameworkControlSet>>,
     /// <p> The tags that are associated with the framework. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12469,19 +12608,26 @@ impl std::fmt::Debug for CreateAssessmentFrameworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentInput {
     /// <p> The name of the assessment to be created. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The optional description of the assessment to be created. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
+    #[doc(hidden)]
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p> The list of roles for the assessment. </p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p> The identifier for the framework that the assessment will be created from. </p>
+    #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
     /// <p> The tags that are associated with the assessment. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12542,12 +12688,16 @@ impl std::fmt::Debug for CreateAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportEvidenceToAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control set. </p>
+    #[doc(hidden)]
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the control. </p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p> The list of manual evidence objects. </p>
+    #[doc(hidden)]
     pub manual_evidence: std::option::Option<std::vec::Vec<crate::model::ManualEvidence>>,
 }
 impl BatchImportEvidenceToAssessmentControlInput {
@@ -12584,10 +12734,13 @@ impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateAssessmentReportEvidenceInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
     /// <p> The list of evidence identifiers. </p>
+    #[doc(hidden)]
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDisassociateAssessmentReportEvidenceInput {
@@ -12619,8 +12772,10 @@ impl std::fmt::Debug for BatchDisassociateAssessmentReportEvidenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDelegationByAssessmentInput {
     /// <p> The identifiers for the delegations. </p>
+    #[doc(hidden)]
     pub delegation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl BatchDeleteDelegationByAssessmentInput {
@@ -12647,9 +12802,11 @@ impl std::fmt::Debug for BatchDeleteDelegationByAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateDelegationByAssessmentInput {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
+    #[doc(hidden)]
     pub create_delegation_requests:
         std::option::Option<std::vec::Vec<crate::model::CreateDelegationRequest>>,
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentInput {
@@ -12681,10 +12838,13 @@ impl std::fmt::Debug for BatchCreateDelegationByAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateAssessmentReportEvidenceInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
     /// <p> The list of evidence identifiers. </p>
+    #[doc(hidden)]
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchAssociateAssessmentReportEvidenceInput {
@@ -12716,8 +12876,10 @@ impl std::fmt::Debug for BatchAssociateAssessmentReportEvidenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
+    #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder_id: std::option::Option<std::string::String>,
 }
 impl AssociateAssessmentReportEvidenceFolderInput {

@@ -4,14 +4,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateAssessmentReportIntegrityOutput {
     /// <p> Specifies whether the signature key is valid. </p>
+    #[doc(hidden)]
     pub signature_valid: std::option::Option<bool>,
     /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
+    #[doc(hidden)]
     pub signature_algorithm: std::option::Option<std::string::String>,
     /// <p> The date and time signature that specifies when the assessment report was created. </p>
+    #[doc(hidden)]
     pub signature_date_time: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the validation signature key. </p>
+    #[doc(hidden)]
     pub signature_key_id: std::option::Option<std::string::String>,
     /// <p> Represents any errors that occurred when validating the assessment report. </p>
+    #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ValidateAssessmentReportIntegrityOutput {
@@ -152,6 +157,7 @@ impl ValidateAssessmentReportIntegrityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSettingsOutput {
     /// <p> The current list of settings. </p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::Settings>,
 }
 impl UpdateSettingsOutput {
@@ -206,6 +212,7 @@ impl UpdateSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
+    #[doc(hidden)]
     pub control: std::option::Option<crate::model::Control>,
 }
 impl UpdateControlOutput {
@@ -260,6 +267,7 @@ impl UpdateControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentStatusOutput {
     /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl UpdateAssessmentStatusOutput {
@@ -317,6 +325,7 @@ impl UpdateAssessmentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentFrameworkShareOutput {
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+    #[doc(hidden)]
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
 }
@@ -384,6 +393,7 @@ impl UpdateAssessmentFrameworkShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentFrameworkOutput {
     /// <p> The name of the framework. </p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
 }
 impl UpdateAssessmentFrameworkOutput {
@@ -441,6 +451,7 @@ impl UpdateAssessmentFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlSetStatusOutput {
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    #[doc(hidden)]
     pub control_set: std::option::Option<crate::model::AssessmentControlSet>,
 }
 impl UpdateAssessmentControlSetStatusOutput {
@@ -498,6 +509,7 @@ impl UpdateAssessmentControlSetStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
+    #[doc(hidden)]
     pub control: std::option::Option<crate::model::AssessmentControl>,
 }
 impl UpdateAssessmentControlOutput {
@@ -555,6 +567,7 @@ impl UpdateAssessmentControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentOutput {
     /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl UpdateAssessmentOutput {
@@ -672,6 +685,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentFrameworkShareOutput {
     /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
+    #[doc(hidden)]
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
 }
@@ -739,8 +753,10 @@ impl StartAssessmentFrameworkShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterOrganizationAdminAccountOutput {
     /// <p> The identifier for the delegated administrator account. </p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the organization. </p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl RegisterOrganizationAdminAccountOutput {
@@ -818,6 +834,7 @@ impl RegisterOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAccountOutput {
     /// <p> The status of the account registration request. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccountStatus>,
 }
 impl RegisterAccountOutput {
@@ -875,6 +892,7 @@ impl RegisterAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The list of tags that the <code>ListTagsForResource</code> API returned. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -948,8 +966,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationsOutput {
     /// <p> The returned list of notifications. </p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationsOutput {
@@ -1030,8 +1050,10 @@ impl ListNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeywordsForDataSourceOutput {
     /// <p> The list of keywords for the event mapping source. </p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKeywordsForDataSourceOutput {
@@ -1112,8 +1134,10 @@ impl ListKeywordsForDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlsOutput {
     /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    #[doc(hidden)]
     pub control_metadata_list: std::option::Option<std::vec::Vec<crate::model::ControlMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlsOutput {
@@ -1195,9 +1219,11 @@ impl ListControlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlInsightsByControlDomainOutput {
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
+    #[doc(hidden)]
     pub control_insights_metadata:
         std::option::Option<std::vec::Vec<crate::model::ControlInsightsMetadataItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlInsightsByControlDomainOutput {
@@ -1284,9 +1310,11 @@ impl ListControlInsightsByControlDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsByAssessmentOutput {
     /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+    #[doc(hidden)]
     pub control_domain_insights:
         std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlDomainInsightsByAssessmentOutput {
@@ -1373,9 +1401,11 @@ impl ListControlDomainInsightsByAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsOutput {
     /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
+    #[doc(hidden)]
     pub control_domain_insights:
         std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlDomainInsightsOutput {
@@ -1462,9 +1492,11 @@ impl ListControlDomainInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentsOutput {
     /// <p> The metadata that's associated with the assessment. </p>
+    #[doc(hidden)]
     pub assessment_metadata:
         std::option::Option<std::vec::Vec<crate::model::AssessmentMetadataItem>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentsOutput {
@@ -1548,9 +1580,11 @@ impl ListAssessmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentReportsOutput {
     /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    #[doc(hidden)]
     pub assessment_reports:
         std::option::Option<std::vec::Vec<crate::model::AssessmentReportMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentReportsOutput {
@@ -1634,9 +1668,11 @@ impl ListAssessmentReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentFrameworkShareRequestsOutput {
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
+    #[doc(hidden)]
     pub assessment_framework_share_requests:
         std::option::Option<std::vec::Vec<crate::model::AssessmentFrameworkShareRequest>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentFrameworkShareRequestsOutput {
@@ -1728,9 +1764,11 @@ impl ListAssessmentFrameworkShareRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentFrameworksOutput {
     /// <p> The list of metadata objects for the framework. </p>
+    #[doc(hidden)]
     pub framework_metadata_list:
         std::option::Option<std::vec::Vec<crate::model::AssessmentFrameworkMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentFrameworksOutput {
@@ -1817,9 +1855,11 @@ impl ListAssessmentFrameworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentControlInsightsByControlDomainOutput {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+    #[doc(hidden)]
     pub control_insights_by_assessment:
         std::option::Option<std::vec::Vec<crate::model::ControlInsightsMetadataByAssessmentItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentControlInsightsByControlDomainOutput {
@@ -1913,6 +1953,7 @@ impl ListAssessmentControlInsightsByControlDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSettingsOutput {
     /// <p> The settings object that holds all supported Audit Manager settings. </p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::Settings>,
 }
 impl GetSettingsOutput {
@@ -1967,6 +2008,7 @@ impl GetSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServicesInScopeOutput {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    #[doc(hidden)]
     pub service_metadata: std::option::Option<std::vec::Vec<crate::model::ServiceMetadata>>,
 }
 impl GetServicesInScopeOutput {
@@ -2031,8 +2073,10 @@ impl GetServicesInScopeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationAdminAccountOutput {
     /// <p> The identifier for the administrator account. </p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the organization. </p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl GetOrganizationAdminAccountOutput {
@@ -2110,6 +2154,7 @@ impl GetOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsByAssessmentOutput {
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    #[doc(hidden)]
     pub insights: std::option::Option<crate::model::InsightsByAssessment>,
 }
 impl GetInsightsByAssessmentOutput {
@@ -2167,6 +2212,7 @@ impl GetInsightsByAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsOutput {
     /// <p>The analytics data that the <code>GetInsights</code> API returned. </p>
+    #[doc(hidden)]
     pub insights: std::option::Option<crate::model::Insights>,
 }
 impl GetInsightsOutput {
@@ -2221,9 +2267,11 @@ impl GetInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentControlOutput {
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+    #[doc(hidden)]
     pub evidence_folders:
         std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceFoldersByAssessmentControlOutput {
@@ -2307,9 +2355,11 @@ impl GetEvidenceFoldersByAssessmentControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentOutput {
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
+    #[doc(hidden)]
     pub evidence_folders:
         std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceFoldersByAssessmentOutput {
@@ -2393,6 +2443,7 @@ impl GetEvidenceFoldersByAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFolderOutput {
     /// <p> The folder that the evidence is stored in. </p>
+    #[doc(hidden)]
     pub evidence_folder: std::option::Option<crate::model::AssessmentEvidenceFolder>,
 }
 impl GetEvidenceFolderOutput {
@@ -2450,8 +2501,10 @@ impl GetEvidenceFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceByEvidenceFolderOutput {
     /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
+    #[doc(hidden)]
     pub evidence: std::option::Option<std::vec::Vec<crate::model::Evidence>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceByEvidenceFolderOutput {
@@ -2532,6 +2585,7 @@ impl GetEvidenceByEvidenceFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceOutput {
     /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    #[doc(hidden)]
     pub evidence: std::option::Option<crate::model::Evidence>,
 }
 impl GetEvidenceOutput {
@@ -2586,8 +2640,10 @@ impl GetEvidenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDelegationsOutput {
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
+    #[doc(hidden)]
     pub delegations: std::option::Option<std::vec::Vec<crate::model::DelegationMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDelegationsOutput {
@@ -2669,6 +2725,7 @@ impl GetDelegationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetControlOutput {
     /// <p> The name of the control that the <code>GetControl</code> API returned. </p>
+    #[doc(hidden)]
     pub control: std::option::Option<crate::model::Control>,
 }
 impl GetControlOutput {
@@ -2723,8 +2780,10 @@ impl GetControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeLogsOutput {
     /// <p>The list of user activity for the control. </p>
+    #[doc(hidden)]
     pub change_logs: std::option::Option<std::vec::Vec<crate::model::ChangeLog>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChangeLogsOutput {
@@ -2805,6 +2864,7 @@ impl GetChangeLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportUrlOutput {
     /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    #[doc(hidden)]
     pub pre_signed_url: std::option::Option<crate::model::Url>,
 }
 impl GetAssessmentReportUrlOutput {
@@ -2859,6 +2919,7 @@ impl GetAssessmentReportUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentFrameworkOutput {
     /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
 }
 impl GetAssessmentFrameworkOutput {
@@ -2916,8 +2977,10 @@ impl GetAssessmentFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::Assessment>,
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub user_role: std::option::Option<crate::model::Role>,
 }
 impl GetAssessmentOutput {
@@ -2992,6 +3055,7 @@ impl GetAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountStatusOutput {
     /// <p> The status of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccountStatus>,
 }
 impl GetAccountStatusOutput {
@@ -3110,6 +3174,7 @@ impl DeregisterOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterAccountOutput {
     /// <p> The registration status of the account. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccountStatus>,
 }
 impl DeregisterAccountOutput {
@@ -3317,6 +3382,7 @@ impl DeleteAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlOutput {
     /// <p> The new control that the <code>CreateControl</code> API returned. </p>
+    #[doc(hidden)]
     pub control: std::option::Option<crate::model::Control>,
 }
 impl CreateControlOutput {
@@ -3371,6 +3437,7 @@ impl CreateControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentReportOutput {
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    #[doc(hidden)]
     pub assessment_report: std::option::Option<crate::model::AssessmentReport>,
 }
 impl CreateAssessmentReportOutput {
@@ -3428,6 +3495,7 @@ impl CreateAssessmentReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentFrameworkOutput {
     /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
 }
 impl CreateAssessmentFrameworkOutput {
@@ -3485,6 +3553,7 @@ impl CreateAssessmentFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl CreateAssessmentOutput {
@@ -3542,6 +3611,7 @@ impl CreateAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportEvidenceToAssessmentControlOutput {
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
+    #[doc(hidden)]
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchImportEvidenceToAssessmentControlError>,
     >,
@@ -3616,8 +3686,10 @@ impl BatchImportEvidenceToAssessmentControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateAssessmentReportEvidenceOutput {
     /// <p> The identifier for the evidence. </p>
+    #[doc(hidden)]
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
 }
 impl BatchDisassociateAssessmentReportEvidenceOutput {
@@ -3709,6 +3781,7 @@ impl BatchDisassociateAssessmentReportEvidenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDelegationByAssessmentOutput {
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDelegationByAssessmentError>>,
 }
@@ -3782,8 +3855,10 @@ impl BatchDeleteDelegationByAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateDelegationByAssessmentOutput {
     /// <p> The delegations that are associated with the assessment. </p>
+    #[doc(hidden)]
     pub delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchCreateDelegationByAssessmentError>>,
 }
@@ -3883,8 +3958,10 @@ impl BatchCreateDelegationByAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateAssessmentReportEvidenceOutput {
     /// <p> The list of evidence identifiers. </p>
+    #[doc(hidden)]
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
 }
 impl BatchAssociateAssessmentReportEvidenceOutput {

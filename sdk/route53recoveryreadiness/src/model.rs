@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
+    #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
     /// <p>The DNS target resource.</p>
+    #[doc(hidden)]
     pub dns_target_resource: std::option::Option<crate::model::DnsTargetResource>,
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
+    #[doc(hidden)]
     pub readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl Resource {
@@ -128,14 +132,19 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsTargetResource {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
+    #[doc(hidden)]
     pub hosted_zone_arn: std::option::Option<std::string::String>,
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
+    #[doc(hidden)]
     pub record_set_id: std::option::Option<std::string::String>,
     /// <p>The type of DNS record of the target resource.</p>
+    #[doc(hidden)]
     pub record_type: std::option::Option<std::string::String>,
     /// <p>The target resource of the DNS target resource.</p>
+    #[doc(hidden)]
     pub target_resource: std::option::Option<crate::model::TargetResource>,
 }
 impl DnsTargetResource {
@@ -267,8 +276,10 @@ impl DnsTargetResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetResource {
     /// <p>The Network Load Balancer Resource.</p>
+    #[doc(hidden)]
     pub nlb_resource: std::option::Option<crate::model::NlbResource>,
     /// <p>The Route 53 resource.</p>
+    #[doc(hidden)]
     pub r53_resource: std::option::Option<crate::model::R53ResourceRecord>,
 }
 impl TargetResource {
@@ -346,8 +357,10 @@ impl TargetResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct R53ResourceRecord {
     /// <p>The DNS target domain name.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The Route 53 Resource Record Set ID.</p>
+    #[doc(hidden)]
     pub record_set_id: std::option::Option<std::string::String>,
 }
 impl R53ResourceRecord {
@@ -422,6 +435,7 @@ impl R53ResourceRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NlbResource {
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl NlbResource {
@@ -474,10 +488,13 @@ impl NlbResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
     /// <p>The resource type that the readiness rule applies to.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The description of a readiness rule.</p>
+    #[doc(hidden)]
     pub rule_description: std::option::Option<std::string::String>,
     /// <p>The ID for the readiness rule.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl ListRulesOutput {
@@ -572,15 +589,20 @@ impl ListRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -745,12 +767,16 @@ impl ResourceSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -892,12 +918,16 @@ impl RecoveryGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_arn: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>Name of the resource set to be checked.</p>
+    #[doc(hidden)]
     pub resource_set: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1030,14 +1060,19 @@ impl ReadinessCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell ARNs.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    #[doc(hidden)]
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1199,8 +1234,10 @@ impl CellOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadinessCheckSummary {
     /// <p>The readiness status of this readiness check.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>The name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl ReadinessCheckSummary {
@@ -1343,12 +1380,16 @@ impl AsRef<str> for Readiness {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceResult {
     /// <p>The component id of the resource.</p>
+    #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
     /// <p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>
+    #[doc(hidden)]
     pub last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The readiness of a resource.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ResourceResult {
@@ -1460,6 +1501,7 @@ impl ResourceResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The text of a readiness check message.</p>
+    #[doc(hidden)]
     pub message_text: std::option::Option<std::string::String>,
 }
 impl Message {
@@ -1514,12 +1556,16 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleResult {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
+    #[doc(hidden)]
     pub last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the resource's readiness.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>The readiness at rule level.</p>
+    #[doc(hidden)]
     pub readiness: std::option::Option<crate::model::Readiness>,
     /// <p>The identifier of the rule.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl RuleResult {
@@ -1640,6 +1686,7 @@ impl RuleResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommendation {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
+    #[doc(hidden)]
     pub recommendation_text: std::option::Option<std::string::String>,
 }
 impl Recommendation {

@@ -3745,17 +3745,23 @@ impl UpdateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
+    #[doc(hidden)]
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
+    #[doc(hidden)]
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    #[doc(hidden)]
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
 }
 impl UpdateFlowInput {
@@ -3807,10 +3813,13 @@ impl std::fmt::Debug for UpdateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorProfileInput {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
+    #[doc(hidden)]
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    #[doc(hidden)]
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl UpdateConnectorProfileInput {
@@ -3844,8 +3853,10 @@ impl std::fmt::Debug for UpdateConnectorProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3872,8 +3883,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnregisterConnectorInput {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl UnregisterConnectorInput {
@@ -3900,8 +3913,10 @@ impl std::fmt::Debug for UnregisterConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3932,6 +3947,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
@@ -3953,6 +3969,7 @@ impl std::fmt::Debug for StopFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
@@ -3974,12 +3991,16 @@ impl std::fmt::Debug for StartFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterConnectorInput {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p>A description about the connector that's being registered.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
+    #[doc(hidden)]
     pub connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    #[doc(hidden)]
     pub connector_provisioning_config:
         std::option::Option<crate::model::ConnectorProvisioningConfig>,
 }
@@ -4027,6 +4048,7 @@ impl std::fmt::Debug for RegisterConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4048,8 +4070,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowsInput {
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsInput {
@@ -4076,8 +4100,10 @@ impl std::fmt::Debug for ListFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorsInput {
     /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the next page of data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorsInput {
@@ -4104,12 +4130,16 @@ impl std::fmt::Debug for ListConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    #[doc(hidden)]
     pub entities_path: std::option::Option<std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
+    #[doc(hidden)]
     pub api_version: std::option::Option<std::string::String>,
 }
 impl ListConnectorEntitiesInput {
@@ -4146,10 +4176,13 @@ impl std::fmt::Debug for ListConnectorEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFlowExecutionRecordsInput {
@@ -4181,6 +4214,7 @@ impl std::fmt::Debug for DescribeFlowExecutionRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl DescribeFlowInput {
@@ -4202,10 +4236,13 @@ impl std::fmt::Debug for DescribeFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorsInput {
@@ -4237,14 +4274,19 @@ impl std::fmt::Debug for DescribeConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesInput {
@@ -4286,12 +4328,16 @@ impl std::fmt::Debug for DescribeConnectorProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
+    #[doc(hidden)]
     pub connector_entity_name: std::option::Option<std::string::String>,
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
+    #[doc(hidden)]
     pub api_version: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorEntityInput {
@@ -4328,8 +4374,10 @@ impl std::fmt::Debug for DescribeConnectorEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorInput {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorInput {
@@ -4356,8 +4404,10 @@ impl std::fmt::Debug for DescribeConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeleteFlowInput {
@@ -4384,8 +4434,10 @@ impl std::fmt::Debug for DeleteFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeleteConnectorProfileInput {
@@ -4412,21 +4464,29 @@ impl std::fmt::Debug for DeleteConnectorProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow you want to create. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    #[doc(hidden)]
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
+    #[doc(hidden)]
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    #[doc(hidden)]
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
+    #[doc(hidden)]
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4492,16 +4552,22 @@ impl std::fmt::Debug for CreateFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    #[doc(hidden)]
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    #[doc(hidden)]
     pub connector_label: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    #[doc(hidden)]
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific configuration and credentials. </p>
+    #[doc(hidden)]
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl CreateConnectorProfileInput {

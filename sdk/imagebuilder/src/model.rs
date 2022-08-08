@@ -10,8 +10,10 @@ pub struct InstanceMetadataOptions {
     /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
+    #[doc(hidden)]
     pub http_tokens: std::option::Option<std::string::String>,
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
+    #[doc(hidden)]
     pub http_put_response_hop_limit: std::option::Option<i32>,
 }
 impl InstanceMetadataOptions {
@@ -101,6 +103,7 @@ impl InstanceMetadataOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Logging {
     /// <p>The Amazon S3 logging configuration.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3Logs>,
 }
 impl Logging {
@@ -155,8 +158,10 @@ impl Logging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl S3Logs {
@@ -290,10 +295,13 @@ impl AsRef<str> for PipelineStatus {
 pub struct Schedule {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
+    #[doc(hidden)]
     pub pipeline_execution_start_condition:
         std::option::Option<crate::model::PipelineExecutionStartCondition>,
 }
@@ -463,8 +471,10 @@ impl AsRef<str> for PipelineExecutionStartCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    #[doc(hidden)]
     pub image_tests_enabled: std::option::Option<bool>,
     /// <p>The maximum time in minutes that tests are permitted to run.</p>
+    #[doc(hidden)]
     pub timeout_minutes: std::option::Option<i32>,
 }
 impl ImageTestsConfiguration {
@@ -536,21 +546,28 @@ impl ImageTestsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Distribution {
     /// <p>The target Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
+    #[doc(hidden)]
     pub ami_distribution_configuration:
         std::option::Option<crate::model::AmiDistributionConfiguration>,
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
+    #[doc(hidden)]
     pub container_distribution_configuration:
         std::option::Option<crate::model::ContainerDistributionConfiguration>,
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
+    #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
+    #[doc(hidden)]
     pub launch_template_configurations:
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
+    #[doc(hidden)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+    #[doc(hidden)]
     pub fast_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
 }
@@ -790,14 +807,19 @@ impl Distribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastLaunchConfiguration {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+    #[doc(hidden)]
     pub snapshot_configuration: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
     /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    #[doc(hidden)]
     pub max_parallel_launches: std::option::Option<i32>,
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+    #[doc(hidden)]
     pub launch_template: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
     /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl FastLaunchConfiguration {
@@ -940,10 +962,13 @@ impl FastLaunchConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastLaunchLaunchTemplateSpecification {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+    #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+    #[doc(hidden)]
     pub launch_template_name: std::option::Option<std::string::String>,
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+    #[doc(hidden)]
     pub launch_template_version: std::option::Option<std::string::String>,
 }
 impl FastLaunchLaunchTemplateSpecification {
@@ -1041,6 +1066,7 @@ impl FastLaunchLaunchTemplateSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastLaunchSnapshotConfiguration {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+    #[doc(hidden)]
     pub target_resource_count: std::option::Option<i32>,
 }
 impl FastLaunchSnapshotConfiguration {
@@ -1095,6 +1121,7 @@ impl FastLaunchSnapshotConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
@@ -1102,10 +1129,13 @@ pub struct S3ExportConfiguration {
     /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
     /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
 }
 impl S3ExportConfiguration {
@@ -1288,10 +1318,13 @@ impl AsRef<str> for DiskImageFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
+    #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>The account ID that this configuration applies to.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    #[doc(hidden)]
     pub set_default_version: bool,
 }
 impl LaunchTemplateConfiguration {
@@ -1383,10 +1416,13 @@ impl LaunchTemplateConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container distribution configuration.</p>
+    #[doc(hidden)]
     pub container_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The destination repository for the container distribution configuration.</p>
+    #[doc(hidden)]
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
 }
 impl ContainerDistributionConfiguration {
@@ -1489,8 +1525,10 @@ impl ContainerDistributionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::ContainerRepositoryService>,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl TargetContainerRepository {
@@ -1619,17 +1657,23 @@ impl AsRef<str> for ContainerRepositoryService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmiDistributionConfiguration {
     /// <p>The name of the output AMI.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of an account to which you want to distribute an image.</p>
+    #[doc(hidden)]
     pub target_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
+    #[doc(hidden)]
     pub ami_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
+    #[doc(hidden)]
     pub launch_permission: std::option::Option<crate::model::LaunchPermissionConfiguration>,
 }
 impl AmiDistributionConfiguration {
@@ -1807,12 +1851,16 @@ impl AmiDistributionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
+    #[doc(hidden)]
     pub organization_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
+    #[doc(hidden)]
     pub organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LaunchPermissionConfiguration {
@@ -1955,24 +2003,33 @@ impl LaunchPermissionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date on which the infrastructure configuration was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The date on which the infrastructure configuration was last updated.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags attached to the image created by Image Builder.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance types of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub instance_profile_name: std::option::Option<std::string::String>,
 }
 impl InfrastructureConfigurationSummary {
@@ -2215,8 +2272,10 @@ impl InfrastructureConfigurationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -2310,10 +2369,13 @@ pub struct ImageVersion {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of this specific version of an Image Builder image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether this image is an AMI or a container image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -2332,14 +2394,19 @@ pub struct ImageVersion {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The owner of the image version.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
@@ -2347,6 +2414,7 @@ pub struct ImageVersion {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
 }
 impl ImageVersion {
@@ -2870,18 +2938,25 @@ impl AsRef<str> for Ownership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the image recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The platform of the image recipe.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The owner of the image recipe.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The base image of the image recipe.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The date on which this image recipe was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags of the image recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3059,38 +3134,55 @@ impl ImageRecipeSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the image pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the image pipeline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The platform of the image pipeline.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The image tests configuration of the image pipeline.</p>
+    #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
     /// <p>The schedule of the image pipeline.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::Schedule>,
     /// <p>The status of the image pipeline.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineStatus>,
     /// <p>The date on which this image pipeline was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The date on which this image pipeline was last updated.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The date on which this image pipeline was last run.</p>
+    #[doc(hidden)]
     pub date_last_run: std::option::Option<std::string::String>,
     /// <p>The date on which this image pipeline will next be run.</p>
+    #[doc(hidden)]
     pub date_next_run: std::option::Option<std::string::String>,
     /// <p>The tags of this image pipeline.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3486,26 +3578,37 @@ impl ImagePipeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is an AMI or container image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The version of the image.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The platform of the image.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The state of the image.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>The owner of the image.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date on which this image was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The output resources produced when creating this image.</p>
+    #[doc(hidden)]
     pub output_resources: std::option::Option<crate::model::OutputResources>,
     /// <p>The tags of the image.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -3514,6 +3617,7 @@ pub struct ImageSummary {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
 }
 impl ImageSummary {
@@ -3796,8 +3900,10 @@ impl ImageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
+    #[doc(hidden)]
     pub amis: std::option::Option<std::vec::Vec<crate::model::Ami>>,
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
 }
 impl OutputResources {
@@ -3887,8 +3993,10 @@ impl OutputResources {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Container {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>A list of URIs for containers created in the context Region.</p>
+    #[doc(hidden)]
     pub image_uris: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Container {
@@ -3969,16 +4077,22 @@ impl Container {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EC2 AMI.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> Image state shows the image status and the reason for that status.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>The account ID of the owner of the AMI.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl Ami {
@@ -4118,8 +4232,10 @@ impl Ami {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageState {
     /// <p>The status of the image.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImageStatus>,
     /// <p>The reason for the image's status.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ImageState {
@@ -4294,8 +4410,10 @@ impl AsRef<str> for ImageStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The version of the package as reported to the operating system package manager.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
 }
 impl ImagePackage {
@@ -4370,19 +4488,26 @@ impl ImagePackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the distribution configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the distribution configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date on which the distribution configuration was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The date on which the distribution configuration was updated.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags associated with the distribution configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of Regions where the container image is distributed to.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DistributionConfigurationSummary {
@@ -4568,20 +4693,28 @@ impl DistributionConfigurationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the type of container, such as "Docker".</p>
+    #[doc(hidden)]
     pub container_type: std::option::Option<crate::model::ContainerType>,
     /// <p>The name of the container recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The system platform for the container, such as Windows or Linux.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The owner of the container recipe.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The base image for the container recipe.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The date when this container recipe was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4843,8 +4976,10 @@ pub struct ComponentVersion {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the component.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -4863,18 +4998,25 @@ pub struct ComponentVersion {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The platform of the component.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The owner of the component.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date that the component was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
 }
 impl ComponentVersion {
@@ -5216,28 +5358,40 @@ impl AsRef<str> for ComponentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The platform of the component.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes the current status of the component.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ComponentState>,
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The owner of the component.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component.</p>
+    #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The date that the component was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags associated with the component.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5515,8 +5669,10 @@ impl ComponentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentState {
     /// <p>The current state of the component.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComponentStatus>,
     /// <p>Describes how or why the component changed state.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ComponentState {
@@ -5693,39 +5849,55 @@ impl AsRef<str> for ComponentFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The instance types of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub instance_profile_name: std::option::Option<std::string::String>,
     /// <p>The security group IDs of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::Logging>,
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<std::string::String>,
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub terminate_instance_on_failure: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The date on which the infrastructure configuration was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The date on which the infrastructure configuration was last updated.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6121,34 +6293,48 @@ impl InfrastructureConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The name of the image recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the image recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The platform of the image recipe.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The owner of the image recipe.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The version of the image recipe.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The components of the image recipe.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>The base image of the image recipe.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
+    #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p>The date on which this image recipe was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags of the image recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory to be used during build and test workflows.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    #[doc(hidden)]
     pub additional_instance_configuration:
         std::option::Option<crate::model::AdditionalInstanceConfiguration>,
 }
@@ -6485,6 +6671,7 @@ impl ImageRecipe {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
+    #[doc(hidden)]
     pub systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
@@ -6493,6 +6680,7 @@ pub struct AdditionalInstanceConfiguration {
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
+    #[doc(hidden)]
     pub user_data_override: std::option::Option<std::string::String>,
 }
 impl AdditionalInstanceConfiguration {
@@ -6588,6 +6776,7 @@ impl AdditionalInstanceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemsManagerAgent {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
+    #[doc(hidden)]
     pub uninstall_after_build: std::option::Option<bool>,
 }
 impl SystemsManagerAgent {
@@ -6642,12 +6831,16 @@ impl SystemsManagerAgent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    #[doc(hidden)]
     pub ebs: std::option::Option<crate::model::EbsInstanceBlockDeviceSpecification>,
     /// <p>Use to manage instance ephemeral devices.</p>
+    #[doc(hidden)]
     pub virtual_name: std::option::Option<std::string::String>,
     /// <p>Use to remove a mapping from the base image.</p>
+    #[doc(hidden)]
     pub no_device: std::option::Option<std::string::String>,
 }
 impl InstanceBlockDeviceMapping {
@@ -6756,20 +6949,28 @@ impl InstanceBlockDeviceMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>Use to configure delete on termination of the associated device.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>Use to configure device IOPS.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The snapshot that defines the device contents.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Use to override the device's volume size.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
     /// <p>Use to override the device's volume type.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::EbsVolumeType>,
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. </p>
+    #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecification {
@@ -7021,8 +7222,10 @@ impl AsRef<str> for EbsVolumeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
     /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
 }
 impl ComponentConfiguration {
@@ -7106,8 +7309,10 @@ impl ComponentConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Sets the value for the named component parameter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ComponentParameter {
@@ -7201,10 +7406,13 @@ pub struct Image {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is an AMI or container image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -7223,35 +7431,50 @@ pub struct Image {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The platform of the image.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The state of the image.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>The image recipe used when creating the image.</p>
+    #[doc(hidden)]
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
     /// <p>The recipe that is used to create an Image Builder container image.</p>
+    #[doc(hidden)]
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
     /// <p>The name of the image pipeline that created this image.</p>
+    #[doc(hidden)]
     pub source_pipeline_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
+    #[doc(hidden)]
     pub source_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The infrastructure used when creating this image.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration:
         std::option::Option<crate::model::InfrastructureConfiguration>,
     /// <p>The distribution configuration used when creating this image.</p>
+    #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
     /// <p>The image tests configuration used when creating this image.</p>
+    #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
     /// <p>The date on which this image was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The output resources produced when creating this image.</p>
+    #[doc(hidden)]
     pub output_resources: std::option::Option<crate::model::OutputResources>,
     /// <p>The tags of the image.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -7260,6 +7483,7 @@ pub struct Image {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
 }
 impl Image {
@@ -7799,20 +8023,28 @@ impl Image {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the distribution configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the distribution configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
+    #[doc(hidden)]
     pub distributions: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
+    #[doc(hidden)]
     pub timeout_minutes: std::option::Option<i32>,
     /// <p>The date on which this distribution configuration was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The date on which this distribution configuration was last updated.</p>
+    #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags of the distribution configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8029,16 +8261,22 @@ pub struct ContainerRecipe {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the type of container, such as Docker.</p>
+    #[doc(hidden)]
     pub container_type: std::option::Option<crate::model::ContainerType>,
     /// <p>The name of the container recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the container recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The system platform for the container, such as Windows or Linux.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The owner of the container recipe.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -8057,27 +8295,38 @@ pub struct ContainerRecipe {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Components for build and test that are included in the container recipe.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    #[doc(hidden)]
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
+    #[doc(hidden)]
     pub dockerfile_template_data: std::option::Option<std::string::String>,
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A flag that indicates if the target container is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The base image for the container recipe.</p>
+    #[doc(hidden)]
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The date when this container recipe was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The destination repository for the container image.</p>
+    #[doc(hidden)]
     pub target_repository: std::option::Option<crate::model::TargetContainerRepository>,
 }
 impl ContainerRecipe {
@@ -8543,8 +8792,10 @@ impl ContainerRecipe {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceConfiguration {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    #[doc(hidden)]
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
 }
@@ -8632,36 +8883,52 @@ impl InstanceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component.</p>
+    #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The platform of the component.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ComponentState>,
     /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
     /// <p>The owner of the component.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>Component data contains the YAML document content for the component.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The KMS key identifier used to encrypt the component.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The encryption status of the component.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The date that the component was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
     /// <p>The tags associated with the component.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9017,12 +9284,16 @@ impl Component {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The default value of this parameter if no input is provided.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes this parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ComponentParameterDetail {

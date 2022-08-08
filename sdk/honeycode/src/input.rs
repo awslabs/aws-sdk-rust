@@ -3201,8 +3201,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3229,8 +3231,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3262,18 +3266,24 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StartTableDataImportJobInput {
     /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::ImportDataSource>,
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::ImportSourceDataFormat>,
     /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub destination_table_id: std::option::Option<std::string::String>,
     /// <p> The options for customizing this import request. </p>
+    #[doc(hidden)]
     pub import_options: std::option::Option<crate::model::ImportOptions>,
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartTableDataImportJobInput {
@@ -3324,16 +3334,21 @@ impl std::fmt::Debug for StartTableDataImportJobInput {
 pub struct QueryTableRowsInput {
     /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
+    #[doc(hidden)]
     pub filter_formula: std::option::Option<crate::model::Filter>,
     /// <p>The maximum number of rows to return in each page of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryTableRowsInput {
@@ -3378,6 +3393,7 @@ impl std::fmt::Debug for QueryTableRowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3400,11 +3416,14 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListTablesInput {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in each page of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTablesInput {
@@ -3439,16 +3458,21 @@ impl std::fmt::Debug for ListTablesInput {
 pub struct ListTableRowsInput {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table whose rows are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    #[doc(hidden)]
     pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of rows to return in each page of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableRowsInput {
@@ -3494,12 +3518,15 @@ impl std::fmt::Debug for ListTableRowsInput {
 pub struct ListTableColumnsInput {
     /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table whose columns are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableColumnsInput {
@@ -3534,21 +3561,28 @@ impl std::fmt::Debug for ListTableColumnsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeScreenAutomationInput {
     /// <p>The ID of the workbook that contains the screen automation.</p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the app that contains the screen automation.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The ID of the screen that contains the screen automation.</p>
+    #[doc(hidden)]
     pub screen_id: std::option::Option<std::string::String>,
     /// <p>The ID of the automation action to be performed.</p>
+    #[doc(hidden)]
     pub screen_automation_id: std::option::Option<std::string::String>,
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    #[doc(hidden)]
     pub variables: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::VariableValue>,
     >,
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
     /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl InvokeScreenAutomationInput {
@@ -3605,20 +3639,26 @@ impl std::fmt::Debug for InvokeScreenAutomationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetScreenDataInput {
     /// <p>The ID of the workbook that contains the screen.</p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the app that contains the screen.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The ID of the screen.</p>
+    #[doc(hidden)]
     pub screen_id: std::option::Option<std::string::String>,
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
+    #[doc(hidden)]
     pub variables: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::VariableValue>,
     >,
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetScreenDataInput {
@@ -3672,12 +3712,15 @@ impl std::fmt::Debug for GetScreenDataInput {
 pub struct DescribeTableDataImportJobInput {
     /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeTableDataImportJobInput {
@@ -3713,15 +3756,19 @@ impl std::fmt::Debug for DescribeTableDataImportJobInput {
 pub struct BatchUpsertTableRowsInput {
     /// <p>The ID of the workbook where the rows are being upserted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table where the rows are being upserted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
+    #[doc(hidden)]
     pub rows_to_upsert: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>,
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchUpsertTableRowsInput {
@@ -3763,15 +3810,19 @@ impl std::fmt::Debug for BatchUpsertTableRowsInput {
 pub struct BatchUpdateTableRowsInput {
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table where the rows are being updated.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
     /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
+    #[doc(hidden)]
     pub rows_to_update: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>,
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchUpdateTableRowsInput {
@@ -3813,15 +3864,19 @@ impl std::fmt::Debug for BatchUpdateTableRowsInput {
 pub struct BatchDeleteTableRowsInput {
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
     /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
+    #[doc(hidden)]
     pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchDeleteTableRowsInput {
@@ -3863,15 +3918,19 @@ impl std::fmt::Debug for BatchDeleteTableRowsInput {
 pub struct BatchCreateTableRowsInput {
     /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the table where the new rows are being added.</p>
     /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
+    #[doc(hidden)]
     pub rows_to_create: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>,
     /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchCreateTableRowsInput {

@@ -377,16 +377,22 @@ impl AsRef<str> for ObjectLockMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyPartResult {
     /// <p>Entity tag of the object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Date and time at which the object was uploaded.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl CopyPartResult {
@@ -814,6 +820,7 @@ impl ContinuationEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressEvent {
     /// <p>The Progress event details.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::Progress>,
 }
 impl ProgressEvent {
@@ -868,10 +875,13 @@ impl ProgressEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Progress {
     /// <p>The current number of object bytes scanned.</p>
+    #[doc(hidden)]
     pub bytes_scanned: i64,
     /// <p>The current number of uncompressed object bytes processed.</p>
+    #[doc(hidden)]
     pub bytes_processed: i64,
     /// <p>The current number of bytes of records payload data returned.</p>
+    #[doc(hidden)]
     pub bytes_returned: i64,
 }
 impl Progress {
@@ -960,6 +970,7 @@ impl Progress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatsEvent {
     /// <p>The Stats event details.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::Stats>,
 }
 impl StatsEvent {
@@ -1014,10 +1025,13 @@ impl StatsEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stats {
     /// <p>The total number of object bytes scanned.</p>
+    #[doc(hidden)]
     pub bytes_scanned: i64,
     /// <p>The total number of uncompressed object bytes processed.</p>
+    #[doc(hidden)]
     pub bytes_processed: i64,
     /// <p>The total number of bytes of records payload data returned.</p>
+    #[doc(hidden)]
     pub bytes_returned: i64,
 }
 impl Stats {
@@ -1106,6 +1120,7 @@ impl Stats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl RecordsEvent {
@@ -1165,6 +1180,7 @@ pub struct ScanRange {
     /// 50
     /// </start>
     /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
+    #[doc(hidden)]
     pub start: i64,
     /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
     /// <scanrange>
@@ -1172,6 +1188,7 @@ pub struct ScanRange {
     /// 50
     /// </end>
     /// </scanrange></code> means scan the last 50 bytes.</p>
+    #[doc(hidden)]
     pub end: i64,
 }
 impl ScanRange {
@@ -1273,8 +1290,10 @@ impl ScanRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
+    #[doc(hidden)]
     pub csv: std::option::Option<crate::model::CsvOutput>,
     /// <p>Specifies JSON as request's output serialization format.</p>
+    #[doc(hidden)]
     pub json: std::option::Option<crate::model::JsonOutput>,
 }
 impl OutputSerialization {
@@ -1346,6 +1365,7 @@ impl OutputSerialization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
+    #[doc(hidden)]
     pub record_delimiter: std::option::Option<std::string::String>,
 }
 impl JsonOutput {
@@ -1407,14 +1427,19 @@ pub struct CsvOutput {
     /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
     /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub quote_fields: std::option::Option<crate::model::QuoteFields>,
     /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
+    #[doc(hidden)]
     pub quote_escape_character: std::option::Option<std::string::String>,
     /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
+    #[doc(hidden)]
     pub record_delimiter: std::option::Option<std::string::String>,
     /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
+    #[doc(hidden)]
     pub field_delimiter: std::option::Option<std::string::String>,
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
+    #[doc(hidden)]
     pub quote_character: std::option::Option<std::string::String>,
 }
 impl CsvOutput {
@@ -1619,12 +1644,16 @@ impl AsRef<str> for QuoteFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
+    #[doc(hidden)]
     pub csv: std::option::Option<crate::model::CsvInput>,
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
+    #[doc(hidden)]
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p>Specifies JSON as object's input serialization format.</p>
+    #[doc(hidden)]
     pub json: std::option::Option<crate::model::JsonInput>,
     /// <p>Specifies Parquet as object's input serialization format.</p>
+    #[doc(hidden)]
     pub parquet: std::option::Option<crate::model::ParquetInput>,
 }
 impl InputSerialization {
@@ -1766,6 +1795,7 @@ impl ParquetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JsonType>,
 }
 impl JsonInput {
@@ -1939,21 +1969,28 @@ pub struct CsvInput {
     /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
     /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
+    #[doc(hidden)]
     pub comments: std::option::Option<std::string::String>,
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
+    #[doc(hidden)]
     pub quote_escape_character: std::option::Option<std::string::String>,
     /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
+    #[doc(hidden)]
     pub record_delimiter: std::option::Option<std::string::String>,
     /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
+    #[doc(hidden)]
     pub field_delimiter: std::option::Option<std::string::String>,
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
     /// <p>Default: <code>"</code> </p>
     /// <p>Ancestors: <code>CSV</code> </p>
+    #[doc(hidden)]
     pub quote_character: std::option::Option<std::string::String>,
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
+    #[doc(hidden)]
     pub allow_quoted_record_delimiter: bool,
 }
 impl CsvInput {
@@ -2216,6 +2253,7 @@ impl AsRef<str> for FileHeaderInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestProgress {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl RequestProgress {
@@ -2322,18 +2360,25 @@ impl AsRef<str> for ExpressionType {
 pub struct RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
+    #[doc(hidden)]
     pub glacier_job_parameters: std::option::Option<crate::model::GlacierJobParameters>,
     /// <p>Type of restore request.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RestoreRequestType>,
     /// <p>Retrieval tier at which the restore will be processed.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The optional description for the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Describes the parameters for Select job types.</p>
+    #[doc(hidden)]
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Describes the location where the restore job's output is stored.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
 }
 impl RestoreRequest {
@@ -2507,6 +2552,7 @@ impl RestoreRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl OutputLocation {
@@ -2559,20 +2605,28 @@ impl OutputLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The name of the bucket where the restore results will be placed.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix that is prepended to the restore results for this request.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Contains the type of server-side encryption used.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// <p>The canned ACL to apply to the restore results.</p>
+    #[doc(hidden)]
     pub canned_acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>A list of grants that control access to the staged results.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>The tag-set that is applied to the restore results.</p>
+    #[doc(hidden)]
     pub tagging: std::option::Option<crate::model::Tagging>,
     /// <p>A list of metadata to store with the restore results in S3.</p>
+    #[doc(hidden)]
     pub user_metadata: std::option::Option<std::vec::Vec<crate::model::MetadataEntry>>,
     /// <p>The class of storage used to store the restore results.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
 }
 impl S3Location {
@@ -2773,8 +2827,10 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataEntry {
     /// <p>Name of the Object.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Value of the Object.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MetadataEntry {
@@ -2846,6 +2902,7 @@ impl MetadataEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tagging {
     /// <p>A collection for a set of tags</p>
+    #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Tagging {
@@ -2909,8 +2966,10 @@ impl Tagging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Name of the object key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2982,8 +3041,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Grant {
     /// <p>The person being granted permissions.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::Grantee>,
     /// <p>Specifies the permission given to the grantee.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::Permission>,
 }
 impl Grant {
@@ -3125,6 +3186,7 @@ impl AsRef<str> for Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Grantee {
     /// <p>Screen name of the grantee.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Email address of the grantee.</p> <note>
     /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
@@ -3140,12 +3202,16 @@ pub struct Grantee {
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The canonical user ID of the grantee.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>URI of the grantee group.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>Type of grantee</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl Grantee {
@@ -3452,10 +3518,13 @@ impl AsRef<str> for ObjectCannedAcl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, aws:kms).</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer managed key to use for encryption of job results. Amazon S3 only supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
+    #[doc(hidden)]
     pub kms_context: std::option::Option<std::string::String>,
 }
 impl Encryption {
@@ -3547,12 +3616,16 @@ impl Encryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
+    #[doc(hidden)]
     pub input_serialization: std::option::Option<crate::model::InputSerialization>,
     /// <p>The type of the provided expression (for example, SQL).</p>
+    #[doc(hidden)]
     pub expression_type: std::option::Option<crate::model::ExpressionType>,
     /// <p>The expression that is used to query the object.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>Describes how the results of the Select job are serialized.</p>
+    #[doc(hidden)]
     pub output_serialization: std::option::Option<crate::model::OutputSerialization>,
 }
 impl SelectParameters {
@@ -3777,6 +3850,7 @@ impl AsRef<str> for RestoreRequestType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
 }
 impl GlacierJobParameters {
@@ -3835,15 +3909,19 @@ pub struct PublicAccessBlockConfiguration {
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
+    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+    #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
+    #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {
@@ -3976,8 +4054,10 @@ impl PublicAccessBlockConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ObjectLockRetentionMode>,
     /// <p>The date on which this Object Lock Retention will expire.</p>
+    #[doc(hidden)]
     pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ObjectLockRetention {
@@ -4110,8 +4190,10 @@ impl AsRef<str> for ObjectLockRetentionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockConfiguration {
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
+    #[doc(hidden)]
     pub object_lock_enabled: std::option::Option<crate::model::ObjectLockEnabled>,
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::ObjectLockRule>,
 }
 impl ObjectLockConfiguration {
@@ -4189,6 +4271,7 @@ impl ObjectLockConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockRule {
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    #[doc(hidden)]
     pub default_retention: std::option::Option<crate::model::DefaultRetention>,
 }
 impl ObjectLockRule {
@@ -4251,10 +4334,13 @@ impl ObjectLockRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ObjectLockRetentionMode>,
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
+    #[doc(hidden)]
     pub years: i32,
 }
 impl DefaultRetention {
@@ -4397,6 +4483,7 @@ impl AsRef<str> for ObjectLockEnabled {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHold {
@@ -4454,8 +4541,10 @@ impl ObjectLockLegalHold {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlPolicy {
     /// <p>A list of grants.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>Container for the bucket owner's display name and ID.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
 }
 impl AccessControlPolicy {
@@ -4536,8 +4625,10 @@ impl AccessControlPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Owner {
     /// <p>Container for the display name of the owner.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Container for the ID of the owner.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Owner {
@@ -4609,14 +4700,18 @@ impl Owner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
+    #[doc(hidden)]
     pub error_document: std::option::Option<crate::model::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
+    #[doc(hidden)]
     pub index_document: std::option::Option<crate::model::IndexDocument>,
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
+    #[doc(hidden)]
     pub redirect_all_requests_to: std::option::Option<crate::model::RedirectAllRequestsTo>,
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
+    #[doc(hidden)]
     pub routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
 }
 impl WebsiteConfiguration {
@@ -4752,8 +4847,10 @@ impl WebsiteConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingRule {
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::Condition>,
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
+    #[doc(hidden)]
     pub redirect: std::option::Option<crate::model::Redirect>,
 }
 impl RoutingRule {
@@ -4828,18 +4925,23 @@ impl RoutingRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Redirect {
     /// <p>The host name to use in the redirect request.</p>
+    #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
     /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
+    #[doc(hidden)]
     pub http_redirect_code: std::option::Option<std::string::String>,
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub replace_key_prefix_with: std::option::Option<std::string::String>,
     /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub replace_key_with: std::option::Option<std::string::String>,
 }
 impl Redirect {
@@ -5038,10 +5140,12 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
     /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
+    #[doc(hidden)]
     pub http_error_code_returned_equals: std::option::Option<std::string::String>,
     /// <p>The object key name prefix when the redirect is applied. For example, to redirect requests for <code>ExamplePage.html</code>, the key prefix will be <code>ExamplePage.html</code>. To redirect request for all pages with the prefix <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all objects in the <code>docs/</code> folder. Required when the parent element <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions are specified, both must be true for the redirect to be applied.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub key_prefix_equals: std::option::Option<std::string::String>,
 }
 impl Condition {
@@ -5131,8 +5235,10 @@ impl Condition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedirectAllRequestsTo {
     /// <p>Name of the host where requests are redirected.</p>
+    #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
 }
 impl RedirectAllRequestsTo {
@@ -5206,6 +5312,7 @@ pub struct IndexDocument {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub suffix: std::option::Option<std::string::String>,
 }
 impl IndexDocument {
@@ -5268,6 +5375,7 @@ pub struct ErrorDocument {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl ErrorDocument {
@@ -5326,8 +5434,10 @@ impl ErrorDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
+    #[doc(hidden)]
     pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
     /// <p>The versioning state of the bucket.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
 }
 impl VersioningConfiguration {
@@ -5515,6 +5625,7 @@ impl AsRef<str> for MfaDelete {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
+    #[doc(hidden)]
     pub payer: std::option::Option<crate::model::Payer>,
 }
 impl RequestPaymentConfiguration {
@@ -5622,8 +5733,10 @@ impl AsRef<str> for Payer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
 }
 impl ReplicationConfiguration {
@@ -5704,29 +5817,38 @@ impl ReplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRule {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ReplicationRuleFilter>,
     /// <p>Specifies whether the rule is enabled.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationRuleStatus>,
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
+    #[doc(hidden)]
     pub source_selection_criteria: std::option::Option<crate::model::SourceSelectionCriteria>,
     /// <p></p>
+    #[doc(hidden)]
     pub existing_object_replication: std::option::Option<crate::model::ExistingObjectReplication>,
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
     /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub delete_marker_replication: std::option::Option<crate::model::DeleteMarkerReplication>,
 }
 impl ReplicationRule {
@@ -5982,6 +6104,7 @@ pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplication {
@@ -6100,19 +6223,26 @@ impl AsRef<str> for DeleteMarkerReplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
+    #[doc(hidden)]
     pub access_control_translation: std::option::Option<crate::model::AccessControlTranslation>,
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
+    #[doc(hidden)]
     pub replication_time: std::option::Option<crate::model::ReplicationTime>,
     /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<crate::model::Metrics>,
 }
 impl Destination {
@@ -6299,8 +6429,10 @@ impl Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MetricsStatus>,
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+    #[doc(hidden)]
     pub event_threshold: std::option::Option<crate::model::ReplicationTimeValue>,
 }
 impl Metrics {
@@ -6379,6 +6511,7 @@ impl Metrics {
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
+    #[doc(hidden)]
     pub minutes: i32,
 }
 impl ReplicationTimeValue {
@@ -6491,8 +6624,10 @@ impl AsRef<str> for MetricsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationTimeStatus>,
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
+    #[doc(hidden)]
     pub time: std::option::Option<crate::model::ReplicationTimeValue>,
 }
 impl ReplicationTime {
@@ -6625,6 +6760,7 @@ impl AsRef<str> for ReplicationTimeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub replica_kms_key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
@@ -6682,6 +6818,7 @@ impl EncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::OwnerOverride>,
 }
 impl AccessControlTranslation {
@@ -6788,6 +6925,7 @@ impl AsRef<str> for OwnerOverride {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExistingObjectReplication {
     /// <p></p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExistingObjectReplicationStatus>,
 }
 impl ExistingObjectReplication {
@@ -6900,10 +7038,12 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSelectionCriteria {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
+    #[doc(hidden)]
     pub sse_kms_encrypted_objects: std::option::Option<crate::model::SseKmsEncryptedObjects>,
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
     /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
+    #[doc(hidden)]
     pub replica_modifications: std::option::Option<crate::model::ReplicaModifications>,
 }
 impl SourceSelectionCriteria {
@@ -6997,6 +7137,7 @@ impl SourceSelectionCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicaModificationsStatus>,
 }
 impl ReplicaModifications {
@@ -7109,6 +7250,7 @@ impl AsRef<str> for ReplicaModificationsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
 }
 impl SseKmsEncryptedObjects {
@@ -7354,8 +7496,10 @@ impl ReplicationRuleFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRuleAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>An array of tags containing key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ReplicationRuleAndOperator {
@@ -7436,6 +7580,7 @@ impl ReplicationRuleAndOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::OwnershipControlsRule>>,
 }
 impl OwnershipControls {
@@ -7500,6 +7645,7 @@ pub struct OwnershipControlsRule {
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    #[doc(hidden)]
     pub object_ownership: std::option::Option<crate::model::ObjectOwnership>,
 }
 impl OwnershipControlsRule {
@@ -7639,13 +7785,17 @@ impl AsRef<str> for ObjectOwnership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
+    #[doc(hidden)]
     pub topic_configurations: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
+    #[doc(hidden)]
     pub queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
+    #[doc(hidden)]
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
+    #[doc(hidden)]
     pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl NotificationConfiguration {
@@ -7831,12 +7981,16 @@ impl EventBridgeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl LambdaFunctionConfiguration {
@@ -7957,6 +8111,7 @@ impl LambdaFunctionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::S3KeyFilter>,
 }
 impl NotificationConfigurationFilter {
@@ -8009,6 +8164,7 @@ impl NotificationConfigurationFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
+    #[doc(hidden)]
     pub filter_rules: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl S3KeyFilter {
@@ -8072,8 +8228,10 @@ impl S3KeyFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterRule {
     /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FilterRuleName>,
     /// <p>The value that the filter searches for in object key names.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FilterRule {
@@ -8262,12 +8420,16 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
+    #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>A collection of bucket events for which to send notifications</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl QueueConfiguration {
@@ -8385,12 +8547,16 @@ impl QueueConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl TopicConfiguration {
@@ -8508,8 +8674,10 @@ impl TopicConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsConfiguration {
     /// <p>The ID used to identify the metrics configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::MetricsFilter>,
 }
 impl MetricsConfiguration {
@@ -8665,10 +8833,13 @@ impl MetricsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsAndOperator {
     /// <p>The prefix used when evaluating an AND predicate.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags used when evaluating an AND predicate.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl MetricsAndOperator {
@@ -8769,6 +8940,7 @@ impl MetricsAndOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLoggingStatus {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
+    #[doc(hidden)]
     pub logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
 }
 impl BucketLoggingStatus {
@@ -8826,11 +8998,14 @@ impl BucketLoggingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingEnabled {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
+    #[doc(hidden)]
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>Container for granting information.</p>
     /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub target_grants: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
+    #[doc(hidden)]
     pub target_prefix: std::option::Option<std::string::String>,
 }
 impl LoggingEnabled {
@@ -8938,8 +9113,10 @@ impl LoggingEnabled {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGrant {
     /// <p>Container for the person being granted permissions.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::Grantee>,
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::BucketLogsPermission>,
 }
 impl TargetGrant {
@@ -9073,6 +9250,7 @@ impl AsRef<str> for BucketLogsPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
 impl BucketLifecycleConfiguration {
@@ -9134,27 +9312,36 @@ impl BucketLifecycleConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<crate::model::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExpirationStatus>,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
+    #[doc(hidden)]
     pub transitions: std::option::Option<std::vec::Vec<crate::model::Transition>>,
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
+    #[doc(hidden)]
     pub noncurrent_version_transitions:
         std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
+    #[doc(hidden)]
     pub noncurrent_version_expiration:
         std::option::Option<crate::model::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub abort_incomplete_multipart_upload:
         std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
 }
@@ -9415,6 +9602,7 @@ impl LifecycleRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortIncompleteMultipartUpload {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
+    #[doc(hidden)]
     pub days_after_initiation: i32,
 }
 impl AbortIncompleteMultipartUpload {
@@ -9469,8 +9657,10 @@ impl AbortIncompleteMultipartUpload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub noncurrent_days: i32,
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionExpiration {
@@ -9542,10 +9732,13 @@ impl NoncurrentVersionExpiration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionTransition {
@@ -9715,10 +9908,13 @@ impl AsRef<str> for TransitionStorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>The storage class to which you want the object to transition.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
 impl Transition {
@@ -9963,12 +10159,16 @@ impl LifecycleRuleFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Minimum object size to which the rule applies.</p>
+    #[doc(hidden)]
     pub object_size_greater_than: i64,
     /// <p>Maximum object size to which the rule applies.</p>
+    #[doc(hidden)]
     pub object_size_less_than: i64,
 }
 impl LifecycleRuleAndOperator {
@@ -10083,10 +10283,13 @@ impl LifecycleRuleAndOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    #[doc(hidden)]
     pub expired_object_delete_marker: bool,
 }
 impl LifecycleExpiration {
@@ -10181,19 +10384,26 @@ impl LifecycleExpiration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryConfiguration {
     /// <p>Contains information about where to publish the inventory results.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::InventoryDestination>,
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::InventoryFilter>,
     /// <p>The ID used to identify the inventory configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
+    #[doc(hidden)]
     pub included_object_versions:
         std::option::Option<crate::model::InventoryIncludedObjectVersions>,
     /// <p>Contains the optional fields that are included in the inventory results.</p>
+    #[doc(hidden)]
     pub optional_fields: std::option::Option<std::vec::Vec<crate::model::InventoryOptionalField>>,
     /// <p>Specifies the schedule for generating inventory results.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::InventorySchedule>,
 }
 impl InventoryConfiguration {
@@ -10378,6 +10588,7 @@ impl InventoryConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::InventoryFrequency>,
 }
 impl InventorySchedule {
@@ -10658,6 +10869,7 @@ impl AsRef<str> for InventoryIncludedObjectVersions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl InventoryFilter {
@@ -10712,6 +10924,7 @@ impl InventoryFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDestination {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
+    #[doc(hidden)]
     pub s3_bucket_destination: std::option::Option<crate::model::InventoryS3BucketDestination>,
 }
 impl InventoryDestination {
@@ -10777,14 +10990,19 @@ pub struct InventoryS3BucketDestination {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies the output format of the inventory results.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::InventoryFormat>,
     /// <p>The prefix that is prepended to all inventory results.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::InventoryEncryption>,
 }
 impl InventoryS3BucketDestination {
@@ -10919,8 +11137,10 @@ impl InventoryS3BucketDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
+    #[doc(hidden)]
     pub sses3: std::option::Option<crate::model::Sses3>,
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
+    #[doc(hidden)]
     pub ssekms: std::option::Option<crate::model::Ssekms>,
 }
 impl InventoryEncryption {
@@ -10992,6 +11212,7 @@ impl InventoryEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssekms {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl Ssekms {
@@ -11136,12 +11357,16 @@ impl AsRef<str> for InventoryFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::IntelligentTieringFilter>,
     /// <p>Specifies the status of the configuration.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IntelligentTieringStatus>,
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
+    #[doc(hidden)]
     pub tierings: std::option::Option<std::vec::Vec<crate::model::Tiering>>,
 }
 impl IntelligentTieringConfiguration {
@@ -11262,8 +11487,10 @@ impl IntelligentTieringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tiering {
     /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
+    #[doc(hidden)]
     pub access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
 }
 impl Tiering {
@@ -11450,10 +11677,13 @@ pub struct IntelligentTieringFilter {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A container of a key value name pair.</p>
+    #[doc(hidden)]
     pub tag: std::option::Option<crate::model::Tag>,
     /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<crate::model::IntelligentTieringAndOperator>,
 }
 impl IntelligentTieringFilter {
@@ -11551,8 +11781,10 @@ impl IntelligentTieringFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntelligentTieringAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl IntelligentTieringAndOperator {
@@ -11633,6 +11865,7 @@ impl IntelligentTieringAndOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
 }
 impl ServerSideEncryptionConfiguration {
@@ -11695,10 +11928,12 @@ impl ServerSideEncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
+    #[doc(hidden)]
     pub apply_server_side_encryption_by_default:
         std::option::Option<crate::model::ServerSideEncryptionByDefault>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub bucket_key_enabled: bool,
 }
 impl ServerSideEncryptionRule {
@@ -11786,6 +12021,7 @@ impl ServerSideEncryptionRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+    #[doc(hidden)]
     pub sse_algorithm: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
     /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you are using encryption with cross-account or Amazon Web Services service operations you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
@@ -11796,6 +12032,7 @@ pub struct ServerSideEncryptionByDefault {
     /// </ul> <important>
     /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
+    #[doc(hidden)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionByDefault {
@@ -11897,6 +12134,7 @@ impl ServerSideEncryptionByDefault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
+    #[doc(hidden)]
     pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl CorsConfiguration {
@@ -11960,16 +12198,22 @@ impl CorsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CorsRule {
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+    #[doc(hidden)]
     pub allowed_headers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+    #[doc(hidden)]
     pub allowed_methods: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
+    #[doc(hidden)]
     pub allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
+    #[doc(hidden)]
     pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
+    #[doc(hidden)]
     pub max_age_seconds: i32,
 }
 impl CorsRule {
@@ -12145,10 +12389,13 @@ impl CorsRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::AnalyticsFilter>,
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    #[doc(hidden)]
     pub storage_class_analysis: std::option::Option<crate::model::StorageClassAnalysis>,
 }
 impl AnalyticsConfiguration {
@@ -12245,6 +12492,7 @@ impl AnalyticsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageClassAnalysis {
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
+    #[doc(hidden)]
     pub data_export: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
 }
 impl StorageClassAnalysis {
@@ -12304,8 +12552,10 @@ impl StorageClassAnalysis {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageClassAnalysisDataExport {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
+    #[doc(hidden)]
     pub output_schema_version: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
     /// <p>The place to store the data for an analysis.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::AnalyticsExportDestination>,
 }
 impl StorageClassAnalysisDataExport {
@@ -12389,6 +12639,7 @@ impl StorageClassAnalysisDataExport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsExportDestination {
     /// <p>A destination signifying output to an S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_destination: std::option::Option<crate::model::AnalyticsS3BucketDestination>,
 }
 impl AnalyticsExportDestination {
@@ -12452,14 +12703,18 @@ impl AnalyticsExportDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsS3BucketDestination {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::AnalyticsS3ExportFileFormat>,
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
     /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
+    #[doc(hidden)]
     pub bucket_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl AnalyticsS3BucketDestination {
@@ -12745,8 +13000,10 @@ impl AnalyticsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsAndOperator {
     /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags to use when evaluating an AND predicate.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AnalyticsAndOperator {
@@ -12895,6 +13152,7 @@ impl AsRef<str> for BucketCannedAcl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BucketAccelerateStatus>,
 }
 impl AccelerateConfiguration {
@@ -13007,8 +13265,10 @@ impl AsRef<str> for BucketAccelerateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Initiator {
     /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Name of the Principal.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl Initiator {
@@ -13080,20 +13340,28 @@ impl Initiator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Part {
     /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
+    #[doc(hidden)]
     pub part_number: i32,
     /// <p>Date and time at which the part was uploaded.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Entity tag returned when the part was uploaded.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl Part {
@@ -13337,6 +13605,7 @@ impl AsRef<str> for EncodingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommonPrefix {
     /// <p>Container for the specified common prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl CommonPrefix {
@@ -13391,14 +13660,19 @@ impl CommonPrefix {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMarkerEntry {
     /// <p>The account that created the delete marker.&gt;</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>The object key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Version ID of an object.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
+    #[doc(hidden)]
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {
@@ -13524,22 +13798,31 @@ impl DeleteMarkerEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::ObjectVersionStorageClass>,
     /// <p>The object key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Version ID of an object.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
+    #[doc(hidden)]
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the owner of the object.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
 }
 impl ObjectVersion {
@@ -13797,8 +14080,10 @@ impl AsRef<str> for ObjectVersionStorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
@@ -13806,14 +14091,19 @@ pub struct Object {
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
     /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::ObjectStorageClass>,
     /// <p>The owner of the object</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
 }
 impl Object {
@@ -14094,18 +14384,25 @@ impl AsRef<str> for ObjectStorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipartUpload {
     /// <p>Upload ID that identifies the multipart upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>Key of the object for which the multipart upload was initiated.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Date and time at which the multipart upload was initiated.</p>
+    #[doc(hidden)]
     pub initiated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The class of storage used to store the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>Identifies who initiated the multipart upload.</p>
+    #[doc(hidden)]
     pub initiator: std::option::Option<crate::model::Initiator>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl MultipartUpload {
@@ -14274,8 +14571,10 @@ impl MultipartUpload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Bucket {
@@ -14456,16 +14755,22 @@ impl AsRef<str> for ChecksumMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectAttributesParts {
     /// <p>The total number of parts.</p>
+    #[doc(hidden)]
     pub total_parts_count: i32,
     /// <p>The marker for the current part.</p>
+    #[doc(hidden)]
     pub part_number_marker: std::option::Option<std::string::String>,
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_part_number_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of parts allowed in the response.</p>
+    #[doc(hidden)]
     pub max_parts: i32,
     /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+    #[doc(hidden)]
     pub parts: std::option::Option<std::vec::Vec<crate::model::ObjectPart>>,
 }
 impl GetObjectAttributesParts {
@@ -14620,16 +14925,22 @@ impl GetObjectAttributesParts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectPart {
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
+    #[doc(hidden)]
     pub part_number: i32,
     /// <p>The size of the uploaded part in bytes.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl ObjectPart {
@@ -14781,12 +15092,16 @@ impl ObjectPart {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Checksum {
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl Checksum {
@@ -15032,6 +15347,7 @@ impl AsRef<str> for MfaDeleteStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyStatus {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
+    #[doc(hidden)]
     pub is_public: bool,
 }
 impl PolicyStatus {
@@ -15259,8 +15575,10 @@ impl AsRef<str> for BucketLocationConstraint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Error {
     /// <p>The error key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the error.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     /// <p class="title"> <b>Amazon S3 error codes</b> </p>
@@ -15883,8 +16201,10 @@ pub struct Error {
     /// </ul> </li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Error {
@@ -17850,12 +18170,16 @@ impl Error {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletedObject {
     /// <p>The name of the deleted object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the deleted object.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    #[doc(hidden)]
     pub delete_marker: bool,
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
+    #[doc(hidden)]
     pub delete_marker_version_id: std::option::Option<std::string::String>,
 }
 impl DeletedObject {
@@ -17964,8 +18288,10 @@ impl DeletedObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Delete {
     /// <p>The objects to delete.</p>
+    #[doc(hidden)]
     pub objects: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifier>>,
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
+    #[doc(hidden)]
     pub quiet: bool,
 }
 impl Delete {
@@ -18048,8 +18374,10 @@ pub struct ObjectIdentifier {
     /// <p>Key name of the object.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>VersionId for the specific version of the object to delete.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl ObjectIdentifier {
@@ -18127,6 +18455,7 @@ impl ObjectIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+    #[doc(hidden)]
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {
@@ -18189,16 +18518,22 @@ impl CreateBucketConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyObjectResult {
     /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl CopyObjectResult {
@@ -18464,6 +18799,7 @@ impl AsRef<str> for MetadataDirective {
 pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
     /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
+    #[doc(hidden)]
     pub parts: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
 }
 impl CompletedMultipartUpload {
@@ -18528,16 +18864,22 @@ impl CompletedMultipartUpload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_crc32_c: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha1: std::option::Option<std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
+    #[doc(hidden)]
     pub part_number: i32,
 }
 impl CompletedPart {

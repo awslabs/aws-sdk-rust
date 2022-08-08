@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationError {
@@ -69,6 +70,7 @@ impl ValidationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailable {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailable {
@@ -133,6 +135,7 @@ impl ServiceUnavailable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailure {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailure {
@@ -197,6 +200,7 @@ impl InternalFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessForbidden {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessForbidden {
@@ -261,6 +265,7 @@ impl AccessForbidden {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFound {

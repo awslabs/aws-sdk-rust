@@ -7067,8 +7067,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to remove from the Amazon SWF domain.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7095,8 +7097,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the domain of the deprecated workflow type.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
 impl UndeprecateWorkflowTypeInput {
@@ -7123,6 +7127,7 @@ impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateDomainInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UndeprecateDomainInput {
@@ -7144,8 +7149,10 @@ impl std::fmt::Debug for UndeprecateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateActivityTypeInput {
     /// <p>The name of the domain of the deprecated activity type.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The activity type to undeprecate.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
 }
 impl UndeprecateActivityTypeInput {
@@ -7172,14 +7179,19 @@ impl std::fmt::Debug for UndeprecateActivityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateWorkflowExecutionInput {
     /// <p>The domain of the workflow execution to terminate.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflowId of the workflow execution to terminate.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The runId of the workflow execution to terminate.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p> A descriptive reason for terminating the workflow execution.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p> Details for terminating the workflow execution.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
@@ -7190,6 +7202,7 @@ pub struct TerminateWorkflowExecutionInput {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
 }
 impl TerminateWorkflowExecutionInput {
@@ -7244,9 +7257,11 @@ impl std::fmt::Debug for TerminateWorkflowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl TagResourceInput {
@@ -7274,33 +7289,42 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkflowExecutionInput {
     /// <p>The name of the domain in which the workflow execution is created.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of the workflow to start.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -7311,10 +7335,12 @@ pub struct StartWorkflowExecutionInput {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
+    #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The IAM role to attach to this workflow execution.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl StartWorkflowExecutionInput {
@@ -7413,14 +7439,19 @@ impl std::fmt::Debug for StartWorkflowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflowId of the workflow execution to signal.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The runId of the workflow execution to signal.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    #[doc(hidden)]
     pub signal_name: std::option::Option<std::string::String>,
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
 }
 impl SignalWorkflowExecutionInput {
@@ -7464,10 +7495,13 @@ pub struct RespondDecisionTaskCompletedInput {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
+    #[doc(hidden)]
     pub decisions: std::option::Option<std::vec::Vec<crate::model::Decision>>,
     /// <p>User defined context to add to workflow execution.</p>
+    #[doc(hidden)]
     pub execution_context: std::option::Option<std::string::String>,
 }
 impl RespondDecisionTaskCompletedInput {
@@ -7503,10 +7537,13 @@ pub struct RespondActivityTaskFailedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>Description of the error that may assist in diagnostics.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p> Detailed information about the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskFailedInput {
@@ -7542,8 +7579,10 @@ pub struct RespondActivityTaskCompletedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCompletedInput {
@@ -7574,8 +7613,10 @@ pub struct RespondActivityTaskCanceledInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p> Information about the cancellation.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCanceledInput {
@@ -7604,10 +7645,13 @@ impl std::fmt::Debug for RespondActivityTaskCanceledInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflowId of the workflow execution to cancel.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The runId of the workflow execution to cancel.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl RequestCancelWorkflowExecutionInput {
@@ -7639,27 +7683,35 @@ impl std::fmt::Debug for RequestCancelWorkflowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the workflow type.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the workflow type.</p> <note>
     /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Textual description of the workflow type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
+    #[doc(hidden)]
     pub default_execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -7668,10 +7720,12 @@ pub struct RegisterWorkflowTypeInput {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_child_policy: std::option::Option<crate::model::ChildPolicy>,
     /// <p>The default IAM role attached to this workflow type.</p> <note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub default_lambda_role: std::option::Option<std::string::String>,
 }
 impl RegisterWorkflowTypeInput {
@@ -7760,15 +7814,19 @@ impl std::fmt::Debug for RegisterWorkflowTypeInput {
 pub struct RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A text description of the domain.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl RegisterDomainInput {
@@ -7812,33 +7870,43 @@ impl std::fmt::Debug for RegisterDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the activity type within the domain.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the activity type.</p> <note>
     /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>A textual description of the activity type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_heartbeat_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
     /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
+    #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_schedule_to_start_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    #[doc(hidden)]
     pub default_task_schedule_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl RegisterActivityTypeInput {
@@ -7928,8 +7996,10 @@ pub struct RecordActivityTaskHeartbeatInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
     /// </important>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>If specified, contains details about the progress of the task.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl RecordActivityTaskHeartbeatInput {
@@ -7958,21 +8028,27 @@ impl std::fmt::Debug for RecordActivityTaskHeartbeatInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for decision tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl PollForDecisionTaskInput {
@@ -8024,11 +8100,14 @@ impl std::fmt::Debug for PollForDecisionTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for activity tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
 }
 impl PollForActivityTaskInput {
@@ -8061,17 +8140,23 @@ impl std::fmt::Debug for PollForActivityTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowTypesInput {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>If specified, lists the workflow type with this name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the workflow types to list.</p>
+    #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl ListWorkflowTypesInput {
@@ -8119,6 +8204,7 @@ impl std::fmt::Debug for ListWorkflowTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8140,27 +8226,35 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
+    #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
 impl ListOpenWorkflowExecutionsInput {
@@ -8225,12 +8319,16 @@ impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
 pub struct ListDomainsInput {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the domains to list.</p>
+    #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl ListDomainsInput {
@@ -8268,37 +8366,47 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClosedWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl ListClosedWorkflowExecutionsInput {
@@ -8378,17 +8486,23 @@ impl std::fmt::Debug for ListClosedWorkflowExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivityTypesInput {
     /// <p>The name of the domain in which the activity types have been registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>If specified, only lists the activity types that have this name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the activity types to list.</p>
+    #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl ListActivityTypesInput {
@@ -8436,15 +8550,20 @@ impl std::fmt::Debug for ListActivityTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowExecutionHistoryInput {
     /// <p>The name of the domain containing the workflow execution.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow execution for which to return the history.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    #[doc(hidden)]
     pub maximum_page_size: i32,
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
 }
 impl GetWorkflowExecutionHistoryInput {
@@ -8487,8 +8606,10 @@ impl std::fmt::Debug for GetWorkflowExecutionHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowTypeInput {
     /// <p>The name of the domain in which this workflow type is registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflow type to describe.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
 impl DescribeWorkflowTypeInput {
@@ -8515,8 +8636,10 @@ impl std::fmt::Debug for DescribeWorkflowTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflow execution to describe.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
 }
 impl DescribeWorkflowExecutionInput {
@@ -8543,6 +8666,7 @@ impl std::fmt::Debug for DescribeWorkflowExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p>The name of the domain to describe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -8564,8 +8688,10 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
 }
 impl DescribeActivityTypeInput {
@@ -8592,8 +8718,10 @@ impl std::fmt::Debug for DescribeActivityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateWorkflowTypeInput {
     /// <p>The name of the domain in which the workflow type is registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The workflow type to deprecate.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
 impl DeprecateWorkflowTypeInput {
@@ -8620,6 +8748,7 @@ impl std::fmt::Debug for DeprecateWorkflowTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateDomainInput {
     /// <p>The name of the domain to deprecate.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeprecateDomainInput {
@@ -8641,8 +8770,10 @@ impl std::fmt::Debug for DeprecateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The activity type to deprecate.</p>
+    #[doc(hidden)]
     pub activity_type: std::option::Option<crate::model::ActivityType>,
 }
 impl DeprecateActivityTypeInput {
@@ -8669,8 +8800,10 @@ impl std::fmt::Debug for DeprecateActivityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the task list.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
 }
 impl CountPendingDecisionTasksInput {
@@ -8697,8 +8830,10 @@ impl std::fmt::Debug for CountPendingDecisionTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountPendingActivityTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the task list.</p>
+    #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
 }
 impl CountPendingActivityTasksInput {
@@ -8725,20 +8860,25 @@ impl std::fmt::Debug for CountPendingActivityTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
+    #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
 impl CountOpenWorkflowExecutionsInput {
@@ -8786,30 +8926,37 @@ impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountClosedWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
     /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
     /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
+    #[doc(hidden)]
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
 }
 impl CountClosedWorkflowExecutionsInput {

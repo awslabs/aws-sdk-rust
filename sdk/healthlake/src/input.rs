@@ -2302,8 +2302,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2330,8 +2332,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The user specified key and value pair tags being added to a Data Store. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -2358,16 +2362,22 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFhirImportJobInput {
     /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
+    #[doc(hidden)]
     pub job_output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The AWS-generated Data Store ID.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartFhirImportJobInput {
@@ -2414,14 +2424,19 @@ impl std::fmt::Debug for StartFhirImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFhirExportJobInput {
     /// <p>The user generated name for an export job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>An optional user provided token used for ensuring idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartFhirExportJobInput {
@@ -2463,6 +2478,7 @@ impl std::fmt::Debug for StartFhirExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2484,18 +2500,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirImportJobsInput {
     /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter limits the response to the import job with the specified job name. </p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p> This parameter limits the response to the import job with the specified job status. </p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
+    #[doc(hidden)]
     pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
+    #[doc(hidden)]
     pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirImportJobsInput {
@@ -2547,18 +2570,25 @@ impl std::fmt::Debug for ListFhirImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirExportJobsInput {
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> This parameter limits the response to the export job with the specified job name. </p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
+    #[doc(hidden)]
     pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
+    #[doc(hidden)]
     pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirExportJobsInput {
@@ -2610,10 +2640,13 @@ impl std::fmt::Debug for ListFhirExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirDatastoresInput {
     /// <p>Lists all filters associated with a FHIR Data Store request.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::DatastoreFilter>,
     /// <p>Fetches the next page of Data Stores when results are paginated.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFhirDatastoresInput {
@@ -2645,8 +2678,10 @@ impl std::fmt::Debug for ListFhirDatastoresInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirImportJobInput {
     /// <p>The AWS-generated ID of the Data Store.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The AWS-generated job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeFhirImportJobInput {
@@ -2673,8 +2708,10 @@ impl std::fmt::Debug for DescribeFhirImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirExportJobInput {
     /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The AWS generated ID for an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeFhirExportJobInput {
@@ -2701,6 +2738,7 @@ impl std::fmt::Debug for DescribeFhirExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirDatastoreInput {
     /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
 }
 impl DescribeFhirDatastoreInput {
@@ -2722,6 +2760,7 @@ impl std::fmt::Debug for DescribeFhirDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFhirDatastoreInput {
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
 }
 impl DeleteFhirDatastoreInput {
@@ -2743,16 +2782,22 @@ impl std::fmt::Debug for DeleteFhirDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFhirDatastoreInput {
     /// <p>The user generated name for the Data Store.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+    #[doc(hidden)]
     pub datastore_type_version: std::option::Option<crate::model::FhirVersion>,
     /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
+    #[doc(hidden)]
     pub sse_configuration: std::option::Option<crate::model::SseConfiguration>,
     /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
+    #[doc(hidden)]
     pub preload_data_config: std::option::Option<crate::model::PreloadDataConfig>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> Resource tags that are applied to a Data Store when it is created. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFhirDatastoreInput {

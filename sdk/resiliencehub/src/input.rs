@@ -7035,16 +7035,22 @@ impl UpdateResiliencyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The name of the policy</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
+    #[doc(hidden)]
     pub policy_description: std::option::Option<std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
+    #[doc(hidden)]
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
     >,
@@ -7099,14 +7105,19 @@ impl std::fmt::Debug for UpdateResiliencyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
+    #[doc(hidden)]
     pub clear_resiliency_policy_arn: std::option::Option<bool>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
 }
 impl UpdateAppInput {
@@ -7153,8 +7164,10 @@ impl std::fmt::Debug for UpdateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7181,8 +7194,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7213,14 +7228,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The name for the assessment.</p>
+    #[doc(hidden)]
     pub assessment_name: std::option::Option<std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7266,8 +7286,10 @@ impl std::fmt::Debug for StartAppAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl ResolveAppVersionResourcesInput {
@@ -7294,16 +7316,22 @@ impl std::fmt::Debug for ResolveAppVersionResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveDraftAppVersionResourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The names of the resources to remove from the resource mappings.</p>
+    #[doc(hidden)]
     pub resource_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
+    #[doc(hidden)]
     pub logical_stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the registered applications to remove from the resource mappings.</p>
+    #[doc(hidden)]
     pub app_registry_app_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the resource groups to remove from the resource mappings.</p>
+    #[doc(hidden)]
     pub resource_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> </p>
+    #[doc(hidden)]
     pub terraform_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveDraftAppVersionResourceMappingsInput {
@@ -7350,8 +7378,10 @@ impl std::fmt::Debug for RemoveDraftAppVersionResourceMappingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDraftAppVersionTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the body of the app template.</p>
+    #[doc(hidden)]
     pub app_template_body: std::option::Option<std::string::String>,
 }
 impl PutDraftAppVersionTemplateInput {
@@ -7378,6 +7408,7 @@ impl std::fmt::Debug for PutDraftAppVersionTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishAppVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl PublishAppVersionInput {
@@ -7399,14 +7430,19 @@ impl std::fmt::Debug for PublishAppVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUnsupportedAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUnsupportedAppVersionResourcesInput {
@@ -7448,10 +7484,13 @@ impl std::fmt::Debug for ListUnsupportedAppVersionResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestRecommendationsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListTestRecommendationsInput {
@@ -7483,6 +7522,7 @@ impl std::fmt::Debug for ListTestRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -7504,8 +7544,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuggestedResiliencyPoliciesInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSuggestedResiliencyPoliciesInput {
@@ -7532,10 +7574,13 @@ impl std::fmt::Debug for ListSuggestedResiliencyPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSopRecommendationsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListSopRecommendationsInput {
@@ -7567,10 +7612,13 @@ impl std::fmt::Debug for ListSopRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResiliencyPoliciesInput {
     /// <p>The name of the policy</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResiliencyPoliciesInput {
@@ -7602,18 +7650,25 @@ impl std::fmt::Debug for ListResiliencyPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationTemplatesInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    #[doc(hidden)]
     pub reverse_order: std::option::Option<bool>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplateStatus>>,
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
     /// <p>The name for one of the listed recommendation templates.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendationTemplatesInput {
@@ -7668,10 +7723,13 @@ impl std::fmt::Debug for ListRecommendationTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionsInput {
@@ -7703,14 +7761,19 @@ impl std::fmt::Debug for ListAppVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionResourcesInput {
@@ -7752,12 +7815,16 @@ impl std::fmt::Debug for ListAppVersionResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionResourceMappingsInput {
@@ -7794,12 +7861,16 @@ impl std::fmt::Debug for ListAppVersionResourceMappingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name for the one of the listed applications.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl ListAppsInput {
@@ -7836,10 +7907,13 @@ impl std::fmt::Debug for ListAppsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppComponentRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppComponentRecommendationsInput {
@@ -7871,10 +7945,13 @@ impl std::fmt::Debug for ListAppComponentRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppComponentCompliancesInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListAppComponentCompliancesInput {
@@ -7906,20 +7983,28 @@ impl std::fmt::Debug for ListAppComponentCompliancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppAssessmentsInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name for the assessment.</p>
+    #[doc(hidden)]
     pub assessment_name: std::option::Option<std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
+    #[doc(hidden)]
     pub assessment_status: std::option::Option<std::vec::Vec<crate::model::AssessmentStatus>>,
     /// <p>The current status of compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
+    #[doc(hidden)]
     pub invoker: std::option::Option<crate::model::AssessmentInvoker>,
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    #[doc(hidden)]
     pub reverse_order: std::option::Option<bool>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppAssessmentsInput {
@@ -7976,10 +8061,13 @@ impl std::fmt::Debug for ListAppAssessmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmRecommendationsInput {
@@ -8011,10 +8099,13 @@ impl std::fmt::Debug for ListAlarmRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportResourcesToDraftAppVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
+    #[doc(hidden)]
     pub source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of terraform file s3 URLs you need to import. </p>
+    #[doc(hidden)]
     pub terraform_sources: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
 }
 impl ImportResourcesToDraftAppVersionInput {
@@ -8046,6 +8137,7 @@ impl std::fmt::Debug for ImportResourcesToDraftAppVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResiliencyPolicyInput {
@@ -8067,6 +8159,7 @@ impl std::fmt::Debug for DescribeResiliencyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDraftAppVersionResourcesImportStatusInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusInput {
@@ -8088,8 +8181,10 @@ impl std::fmt::Debug for DescribeDraftAppVersionResourcesImportStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionTemplateInput {
@@ -8116,10 +8211,13 @@ impl std::fmt::Debug for DescribeAppVersionTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionResourcesResolutionStatusInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionResourcesResolutionStatusInput {
@@ -8151,6 +8249,7 @@ impl std::fmt::Debug for DescribeAppVersionResourcesResolutionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppAssessmentInput {
@@ -8172,6 +8271,7 @@ impl std::fmt::Debug for DescribeAppAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInput {
@@ -8193,8 +8293,10 @@ impl std::fmt::Debug for DescribeAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteResiliencyPolicyInput {
@@ -8221,8 +8323,10 @@ impl std::fmt::Debug for DeleteResiliencyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecommendationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteRecommendationTemplateInput {
@@ -8252,8 +8356,10 @@ impl std::fmt::Debug for DeleteRecommendationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAppAssessmentInput {
@@ -8280,10 +8386,13 @@ impl std::fmt::Debug for DeleteAppAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
+    #[doc(hidden)]
     pub force_delete: std::option::Option<bool>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
@@ -8315,20 +8424,27 @@ impl std::fmt::Debug for DeleteAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResiliencyPolicyInput {
     /// <p>The name of the policy</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
+    #[doc(hidden)]
     pub policy_description: std::option::Option<std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
+    #[doc(hidden)]
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
     >,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8390,6 +8506,7 @@ impl std::fmt::Debug for CreateResiliencyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommendationTemplateInput {
     /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The format for the recommendation template.</p>
     /// <dl>
@@ -8406,6 +8523,7 @@ pub struct CreateRecommendationTemplateInput {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TemplateFormat>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
@@ -8428,18 +8546,24 @@ pub struct CreateRecommendationTemplateInput {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub recommendation_types:
         std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The name for the recommendation template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl CreateRecommendationTemplateInput {
@@ -8535,17 +8659,23 @@ impl std::fmt::Debug for CreateRecommendationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>The name for the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
 }
 impl CreateAppInput {
@@ -8597,8 +8727,10 @@ impl std::fmt::Debug for CreateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddDraftAppVersionResourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+    #[doc(hidden)]
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
 }
 impl AddDraftAppVersionResourceMappingsInput {

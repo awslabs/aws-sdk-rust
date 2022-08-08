@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p> The name of the field. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The message associated with the validation exception with information to help determine its cause. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -164,8 +166,10 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
+    #[doc(hidden)]
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    #[doc(hidden)]
     pub logs_anomaly_detection:
         std::option::Option<crate::model::LogsAnomalyDetectionIntegrationConfig>,
 }
@@ -250,6 +254,7 @@ impl UpdateServiceIntegrationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogsAnomalyDetectionIntegrationConfig {
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+    #[doc(hidden)]
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
 impl LogsAnomalyDetectionIntegrationConfig {
@@ -363,6 +368,7 @@ impl AsRef<str> for OptInStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsCenterIntegrationConfig {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+    #[doc(hidden)]
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
 impl OpsCenterIntegrationConfig {
@@ -420,6 +426,7 @@ impl OpsCenterIntegrationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceCollectionFilter {
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub cloud_formation: std::option::Option<crate::model::UpdateCloudFormationCollectionFilter>,
     /// <p>The updated Amazon Web Services tags used to filter the resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
@@ -431,6 +438,7 @@ pub struct UpdateResourceCollectionFilter {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::UpdateTagCollectionFilter>>,
 }
 impl UpdateResourceCollectionFilter {
@@ -550,9 +558,11 @@ pub struct UpdateTagCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub app_boundary_key: std::option::Option<std::string::String>,
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateTagCollectionFilter {
@@ -645,6 +655,7 @@ impl UpdateTagCollectionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateCloudFormationCollectionFilter {
@@ -763,6 +774,7 @@ impl AsRef<str> for UpdateResourceCollectionAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSourcesConfig {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
+    #[doc(hidden)]
     pub amazon_code_guru_profiler:
         std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
 }
@@ -827,6 +839,7 @@ impl EventSourcesConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonCodeGuruProfilerIntegration {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EventSourceOptInStatus>,
 }
 impl AmazonCodeGuruProfilerIntegration {
@@ -939,6 +952,7 @@ impl AsRef<str> for EventSourceOptInStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostEstimationResourceCollectionFilter {
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
+    #[doc(hidden)]
     pub cloud_formation:
         std::option::Option<crate::model::CloudFormationCostEstimationResourceCollectionFilter>,
     /// <p>The Amazon Web Services tags used to filter the resource collection that is used for a cost estimate.</p>
@@ -951,6 +965,7 @@ pub struct CostEstimationResourceCollectionFilter {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::vec::Vec<crate::model::TagCostEstimationResourceCollectionFilter>>,
 }
@@ -1082,9 +1097,11 @@ pub struct TagCostEstimationResourceCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub app_boundary_key: std::option::Option<std::string::String>,
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagCostEstimationResourceCollectionFilter {
@@ -1177,6 +1194,7 @@ impl TagCostEstimationResourceCollectionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
+    #[doc(hidden)]
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CloudFormationCostEstimationResourceCollectionFilter {
@@ -1241,20 +1259,28 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactiveInsightSummary {
     /// <p> The ID of a reactive summary. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of a reactive insight. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p> The status of a reactive insight. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
+    #[doc(hidden)]
     pub associated_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReactiveInsightSummary {
@@ -1453,6 +1479,7 @@ impl ReactiveInsightSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub service_names: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
 }
 impl ServiceCollection {
@@ -1689,6 +1716,7 @@ impl AsRef<str> for ServiceName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceCollection {
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub cloud_formation: std::option::Option<crate::model::CloudFormationCollection>,
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
@@ -1700,6 +1728,7 @@ pub struct ResourceCollection {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagCollection>>,
 }
 impl ResourceCollection {
@@ -1821,9 +1850,11 @@ pub struct TagCollection {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub app_boundary_key: std::option::Option<std::string::String>,
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagCollection {
@@ -1916,6 +1947,7 @@ impl TagCollection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationCollection {
     /// <p> An array of CloudFormation stack names. </p>
+    #[doc(hidden)]
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CloudFormationCollection {
@@ -1979,8 +2011,10 @@ impl CloudFormationCollection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightTimeRange {
     /// <p> The time when the behavior described in an insight started. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when the behavior described in an insight ended. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InsightTimeRange {
@@ -2172,22 +2206,31 @@ impl AsRef<str> for InsightSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProactiveInsightSummary {
     /// <p>The ID of the proactive insight. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the proactive insight. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p>The status of the proactive insight. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
+    #[doc(hidden)]
     pub associated_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ProactiveInsightSummary {
@@ -2406,8 +2449,10 @@ impl ProactiveInsightSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictionTimeRange {
     /// <p> The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when the behavior in a proactive insight is expected to end. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictionTimeRange {
@@ -2540,12 +2585,16 @@ impl AsRef<str> for InsightType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchOrganizationInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
+    #[doc(hidden)]
     pub severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
     /// <p> An array of status values used to search for insights. </p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
 impl SearchOrganizationInsightsFilters {
@@ -2675,8 +2724,10 @@ impl SearchOrganizationInsightsFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTimeRange {
     /// <p> The start time of the time range. </p>
+    #[doc(hidden)]
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the time range. </p>
+    #[doc(hidden)]
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartTimeRange {
@@ -2754,12 +2805,16 @@ impl StartTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
+    #[doc(hidden)]
     pub severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
     /// <p> An array of status values used to search for insights. </p>
+    #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
 impl SearchInsightsFilters {
@@ -2889,8 +2944,10 @@ impl SearchInsightsFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightFeedback {
     /// <p> The insight feedback ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The feedback provided by the customer. </p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<crate::model::InsightFeedbackOption>,
 }
 impl InsightFeedback {
@@ -3038,20 +3095,27 @@ impl AsRef<str> for InsightFeedbackOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommendation {
     /// <p> A description of the problem. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A hyperlink to information to help you address the problem. </p>
+    #[doc(hidden)]
     pub link: std::option::Option<std::string::String>,
     /// <p> The name of the recommendation. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
+    #[doc(hidden)]
     pub related_events:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedEvent>>,
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
+    #[doc(hidden)]
     pub related_anomalies:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
     /// <p>The category type of the recommendation.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
 }
 impl Recommendation {
@@ -3235,12 +3299,15 @@ impl Recommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
+    #[doc(hidden)]
     pub resources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomalyResource>>,
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub source_details:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomalySourceDetail>>,
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
+    #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
 }
 impl RecommendationRelatedAnomaly {
@@ -3364,6 +3431,7 @@ impl RecommendationRelatedAnomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
+    #[doc(hidden)]
     pub cloud_watch_metrics: std::option::Option<
         std::vec::Vec<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
     >,
@@ -3439,8 +3507,10 @@ impl RecommendationRelatedAnomalySourceDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedCloudWatchMetricsSourceDetail {
     /// <p>The name of the CloudWatch metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl RecommendationRelatedCloudWatchMetricsSourceDetail {
@@ -3513,8 +3583,10 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedAnomalyResource {
     /// <p> The name of the resource. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The type of the resource. Resource types take the same form that is used by Amazon Web Services CloudFormation resource type identifiers, <code>service-provider::service-name::data-type-name</code>. For example, <code>AWS::RDS::DBCluster</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl RecommendationRelatedAnomalyResource {
@@ -3586,8 +3658,10 @@ impl RecommendationRelatedAnomalyResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedEvent {
     /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedEventResource>>,
 }
@@ -3677,8 +3751,10 @@ impl RecommendationRelatedEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationRelatedEventResource {
     /// <p> The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl RecommendationRelatedEventResource {
@@ -3844,22 +3920,31 @@ impl AsRef<str> for Locale {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactiveOrganizationInsightSummary {
     /// <p>The ID of the insight summary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_id: std::option::Option<std::string::String>,
     /// <p>The name of the insight summary.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p> An array of status values used to search for insights. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
 impl ReactiveOrganizationInsightSummary {
@@ -4068,24 +4153,34 @@ impl ReactiveOrganizationInsightSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProactiveOrganizationInsightSummary {
     /// <p>The ID of the insight summary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_id: std::option::Option<std::string::String>,
     /// <p>The name of the insight summary.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p> An array of status values used to search for insights. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
 impl ProactiveOrganizationInsightSummary {
@@ -4314,10 +4409,13 @@ impl ProactiveOrganizationInsightSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsStatusFilter {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    #[doc(hidden)]
     pub ongoing: std::option::Option<crate::model::ListInsightsOngoingStatusFilter>,
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    #[doc(hidden)]
     pub closed: std::option::Option<crate::model::ListInsightsClosedStatusFilter>,
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+    #[doc(hidden)]
     pub any: std::option::Option<crate::model::ListInsightsAnyStatusFilter>,
 }
 impl ListInsightsStatusFilter {
@@ -4415,8 +4513,10 @@ impl ListInsightsStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsAnyStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InsightType>,
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
+    #[doc(hidden)]
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
 }
 impl ListInsightsAnyStatusFilter {
@@ -4491,8 +4591,10 @@ impl ListInsightsAnyStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsClosedStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InsightType>,
     /// <p> A time range used to specify when the behavior of the filtered insights ended. </p>
+    #[doc(hidden)]
     pub end_time_range: std::option::Option<crate::model::EndTimeRange>,
 }
 impl ListInsightsClosedStatusFilter {
@@ -4567,8 +4669,10 @@ impl ListInsightsClosedStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndTimeRange {
     /// <p> The earliest end time in the time range. </p>
+    #[doc(hidden)]
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The latest end time in the time range. </p>
+    #[doc(hidden)]
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EndTimeRange {
@@ -4646,6 +4750,7 @@ impl EndTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl ListInsightsOngoingStatusFilter {
@@ -4703,8 +4808,10 @@ impl ListInsightsOngoingStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationChannel {
     /// <p> The ID of a notification channel. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
+    #[doc(hidden)]
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
 }
 impl NotificationChannel {
@@ -4782,6 +4889,7 @@ pub struct NotificationChannelConfig {
     /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
     /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
     /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
+    #[doc(hidden)]
     pub sns: std::option::Option<crate::model::SnsChannelConfig>,
 }
 impl NotificationChannelConfig {
@@ -4849,6 +4957,7 @@ impl NotificationChannelConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsChannelConfig {
     /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsChannelConfig {
@@ -4903,10 +5012,13 @@ impl SnsChannelConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
+    #[doc(hidden)]
     pub monitored_resource_name: std::option::Option<std::string::String>,
     /// <p> The type of resource being monitored. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p> The permission status of a resource. </p>
+    #[doc(hidden)]
     pub resource_permission: std::option::Option<crate::model::ResourcePermission>,
 }
 impl MonitoredResourceIdentifier {
@@ -5056,8 +5168,10 @@ impl AsRef<str> for ResourcePermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
+    #[doc(hidden)]
     pub resource_permission: std::option::Option<crate::model::ResourcePermission>,
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+    #[doc(hidden)]
     pub resource_type_filters: std::option::Option<std::vec::Vec<crate::model::ResourceTypeFilter>>,
 }
 impl ListMonitoredResourcesFilters {
@@ -5195,20 +5309,28 @@ impl AsRef<str> for ResourceTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> The ID of the event. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Services source that emitted the event. </p>
+    #[doc(hidden)]
     pub event_source: std::option::Option<std::string::String>,
     /// <p> The name of the event. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::EventDataSource>,
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
+    #[doc(hidden)]
     pub event_class: std::option::Option<crate::model::EventClass>,
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::EventResource>>,
 }
 impl Event {
@@ -5400,10 +5522,13 @@ impl Event {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventResource {
     /// <p> The type of resource that emitted an event. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p> The name of the resource that emitted an event. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the resource that emitted an event. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl EventResource {
@@ -5620,16 +5745,22 @@ impl AsRef<str> for EventDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p> A time range during which you want the filtered events to have occurred. </p>
+    #[doc(hidden)]
     pub event_time_range: std::option::Option<crate::model::EventTimeRange>,
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
+    #[doc(hidden)]
     pub event_class: std::option::Option<crate::model::EventClass>,
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
+    #[doc(hidden)]
     pub event_source: std::option::Option<std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::EventDataSource>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
 }
 impl ListEventsFilters {
@@ -5781,8 +5912,10 @@ impl ListEventsFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTimeRange {
     /// <p> The time when the event started. </p>
+    #[doc(hidden)]
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when the event ended. </p>
+    #[doc(hidden)]
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventTimeRange {
@@ -5860,14 +5993,19 @@ impl EventTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalousLogGroup {
     /// <p> The name of the CloudWatch log group. </p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+    #[doc(hidden)]
     pub impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time the anomalous log events stopped. </p>
+    #[doc(hidden)]
     pub impact_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
+    #[doc(hidden)]
     pub number_of_log_lines_scanned: i32,
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+    #[doc(hidden)]
     pub log_anomaly_showcases: std::option::Option<std::vec::Vec<crate::model::LogAnomalyShowcase>>,
 }
 impl AnomalousLogGroup {
@@ -6014,6 +6152,7 @@ impl AnomalousLogGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
+    #[doc(hidden)]
     pub log_anomaly_classes: std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
 }
 impl LogAnomalyShowcase {
@@ -6078,18 +6217,25 @@ impl LogAnomalyShowcase {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogAnomalyClass {
     /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
+    #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p> The type of log anomaly that has been detected. </p>
+    #[doc(hidden)]
     pub log_anomaly_type: std::option::Option<crate::model::LogAnomalyType>,
     /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
+    #[doc(hidden)]
     pub log_anomaly_token: std::option::Option<std::string::String>,
     /// <p> The ID of the log event. </p>
+    #[doc(hidden)]
     pub log_event_id: std::option::Option<std::string::String>,
     /// <p> The explanation for why the log event is considered an anomaly. </p>
+    #[doc(hidden)]
     pub explanation: std::option::Option<std::string::String>,
     /// <p> The number of log lines where this anomalous log event occurs. </p>
+    #[doc(hidden)]
     pub number_of_log_lines_occurrences: i32,
     /// <p> The time of the first occurrence of the anomalous log event. </p>
+    #[doc(hidden)]
     pub log_event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LogAnomalyClass {
@@ -6354,34 +6500,47 @@ impl AsRef<str> for LogAnomalyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactiveAnomalySummary {
     /// <p> The ID of the reactive anomaly. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::AnomalySeverity>,
     /// <p> The status of the reactive anomaly. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
+    #[doc(hidden)]
     pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub source_details: std::option::Option<crate::model::AnomalySourceDetails>,
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
+    #[doc(hidden)]
     pub associated_insight_id: std::option::Option<std::string::String>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
     /// <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p> </li>
     /// <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AnomalyType>,
     /// <p>The name of the reactive anomaly.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the reactive anomaly.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the causal anomaly that is associated with this reactive anomaly. The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+    #[doc(hidden)]
     pub causal_anomaly_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services resources in which anomalous behavior was detected by DevOps Guru.</p>
+    #[doc(hidden)]
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ReactiveAnomalySummary {
@@ -6695,8 +6854,10 @@ impl ReactiveAnomalySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyResource {
     /// <p>The name of the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AnomalyResource {
@@ -6823,9 +6984,11 @@ impl AsRef<str> for AnomalyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
+    #[doc(hidden)]
     pub cloud_watch_metrics:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
+    #[doc(hidden)]
     pub performance_insights_metrics:
         std::option::Option<std::vec::Vec<crate::model::PerformanceInsightsMetricsDetail>>,
 }
@@ -6935,17 +7098,23 @@ impl AnomalySourceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsMetricsDetail {
     /// <p>The name used for a specific Performance Insights metric.</p>
+    #[doc(hidden)]
     pub metric_display_name: std::option::Option<std::string::String>,
     /// <p>The unit of measure for a metric. For example, a session or a process.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
+    #[doc(hidden)]
     pub metric_query: std::option::Option<crate::model::PerformanceInsightsMetricQuery>,
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
+    #[doc(hidden)]
     pub reference_data:
         std::option::Option<std::vec::Vec<crate::model::PerformanceInsightsReferenceData>>,
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
+    #[doc(hidden)]
     pub stats_at_anomaly: std::option::Option<std::vec::Vec<crate::model::PerformanceInsightsStat>>,
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
+    #[doc(hidden)]
     pub stats_at_baseline:
         std::option::Option<std::vec::Vec<crate::model::PerformanceInsightsStat>>,
 }
@@ -7135,8 +7304,10 @@ impl PerformanceInsightsMetricsDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsStat {
     /// <p>The statistic type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The value of the statistic.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl PerformanceInsightsStat {
@@ -7208,8 +7379,10 @@ impl PerformanceInsightsStat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsReferenceData {
     /// <p>The name of the reference data.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>. </p>
+    #[doc(hidden)]
     pub comparison_values:
         std::option::Option<crate::model::PerformanceInsightsReferenceComparisonValues>,
 }
@@ -7291,8 +7464,10 @@ impl PerformanceInsightsReferenceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsReferenceComparisonValues {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
+    #[doc(hidden)]
     pub reference_scalar: std::option::Option<crate::model::PerformanceInsightsReferenceScalar>,
     /// <p>A metric that DevOps Guru compares to actual metric values. This reference metric is used to determine if an actual metric should be considered anomalous.</p>
+    #[doc(hidden)]
     pub reference_metric: std::option::Option<crate::model::PerformanceInsightsReferenceMetric>,
 }
 impl PerformanceInsightsReferenceComparisonValues {
@@ -7382,6 +7557,7 @@ impl PerformanceInsightsReferenceComparisonValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
+    #[doc(hidden)]
     pub metric_query: std::option::Option<crate::model::PerformanceInsightsMetricQuery>,
 }
 impl PerformanceInsightsReferenceMetric {
@@ -7452,14 +7628,17 @@ pub struct PerformanceInsightsMetricQuery {
     /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<crate::model::PerformanceInsightsMetricDimensionGroup>,
     /// <p>One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code> API query. Restrictions:</p>
     /// <ul>
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7626,6 +7805,7 @@ pub struct PerformanceInsightsMetricDimensionGroup {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -7648,8 +7828,10 @@ pub struct PerformanceInsightsMetricDimensionGroup {
     /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl PerformanceInsightsMetricDimensionGroup {
@@ -7840,6 +8022,7 @@ impl PerformanceInsightsMetricDimensionGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PerformanceInsightsReferenceScalar {
     /// <p>The reference value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl PerformanceInsightsReferenceScalar {
@@ -7892,18 +8075,25 @@ impl PerformanceInsightsReferenceScalar {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMetricsDetail {
     /// <p> The name of the CloudWatch metric. </p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> An array of CloudWatch dimensions associated with </p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDimension>>,
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+    #[doc(hidden)]
     pub stat: std::option::Option<crate::model::CloudWatchMetricsStat>,
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
+    #[doc(hidden)]
     pub period: i32,
     /// <p>This object returns anomaly metric data.</p>
+    #[doc(hidden)]
     pub metric_data_summary: std::option::Option<crate::model::CloudWatchMetricsDataSummary>,
 }
 impl CloudWatchMetricsDetail {
@@ -8082,9 +8272,11 @@ impl CloudWatchMetricsDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
+    #[doc(hidden)]
     pub timestamp_metric_value_pair_list:
         std::option::Option<std::vec::Vec<crate::model::TimestampMetricValuePair>>,
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::CloudWatchMetricDataStatusCode>,
 }
 impl CloudWatchMetricsDataSummary {
@@ -8238,8 +8430,10 @@ impl AsRef<str> for CloudWatchMetricDataStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampMetricValuePair {
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
+    #[doc(hidden)]
     pub metric_value: std::option::Option<f64>,
 }
 impl TimestampMetricValuePair {
@@ -8402,8 +8596,10 @@ impl AsRef<str> for CloudWatchMetricsStat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMetricsDimension {
     /// <p> The name of the CloudWatch dimension. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The value of the CloudWatch dimension. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CloudWatchMetricsDimension {
@@ -8475,8 +8671,10 @@ impl CloudWatchMetricsDimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyReportedTimeRange {
     /// <p> The time when an anomaly is opened. </p>
+    #[doc(hidden)]
     pub open_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when an anomaly is closed. </p>
+    #[doc(hidden)]
     pub close_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AnomalyReportedTimeRange {
@@ -8554,8 +8752,10 @@ impl AnomalyReportedTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyTimeRange {
     /// <p> The time when the anomalous behavior started. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time when the anomalous behavior ended. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AnomalyTimeRange {
@@ -8747,30 +8947,43 @@ impl AsRef<str> for AnomalySeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProactiveAnomalySummary {
     /// <p>The ID of the anomaly.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::AnomalySeverity>,
     /// <p>The status of the anomaly.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p> The time of the anomaly's most recent update. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
+    #[doc(hidden)]
     pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub source_details: std::option::Option<crate::model::AnomalySourceDetails>,
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
+    #[doc(hidden)]
     pub associated_insight_id: std::option::Option<std::string::String>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<f64>,
     /// <p>The metadata of the source which detects proactive anomalies.</p>
+    #[doc(hidden)]
     pub source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    #[doc(hidden)]
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ProactiveAnomalySummary {
@@ -9078,10 +9291,13 @@ impl ProactiveAnomalySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalySourceMetadata {
     /// <p>The source of the anomaly.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The name of the anomaly's resource.</p>
+    #[doc(hidden)]
     pub source_resource_name: std::option::Option<std::string::String>,
     /// <p>The anomaly's resource type.</p>
+    #[doc(hidden)]
     pub source_resource_type: std::option::Option<std::string::String>,
 }
 impl AnomalySourceMetadata {
@@ -9176,6 +9392,7 @@ impl AnomalySourceMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceCollectionFilter {
     /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
+    #[doc(hidden)]
     pub cloud_formation: std::option::Option<crate::model::CloudFormationCollectionFilter>,
     /// <p>The Amazon Web Services tags used to filter the resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
@@ -9187,6 +9404,7 @@ pub struct ResourceCollectionFilter {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagCollectionFilter>>,
 }
 impl ResourceCollectionFilter {
@@ -9305,9 +9523,11 @@ pub struct TagCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub app_boundary_key: std::option::Option<std::string::String>,
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagCollectionFilter {
@@ -9400,6 +9620,7 @@ impl TagCollectionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationCollectionFilter {
     /// <p> An array of CloudFormation stack names. </p>
+    #[doc(hidden)]
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CloudFormationCollectionFilter {
@@ -9522,8 +9743,10 @@ impl AsRef<str> for ResourceCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostEstimationTimeRange {
     /// <p>The start time of the cost estimation.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the cost estimation.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CostEstimationTimeRange {
@@ -9601,14 +9824,19 @@ impl CostEstimationTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceResourceCost {
     /// <p>The type of the Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CostEstimationServiceResourceState>,
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The price per hour to analyze the resources in the service. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
+    #[doc(hidden)]
     pub unit_cost: f64,
     /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
+    #[doc(hidden)]
     pub cost: f64,
 }
 impl ServiceResourceCost {
@@ -9844,8 +10072,10 @@ impl AsRef<str> for CostEstimationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+    #[doc(hidden)]
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    #[doc(hidden)]
     pub logs_anomaly_detection: std::option::Option<crate::model::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfig {
@@ -9929,6 +10159,7 @@ impl ServiceIntegrationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogsAnomalyDetectionIntegration {
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+    #[doc(hidden)]
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
 impl LogsAnomalyDetectionIntegration {
@@ -9986,6 +10217,7 @@ impl LogsAnomalyDetectionIntegration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsCenterIntegration {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+    #[doc(hidden)]
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
 impl OpsCenterIntegration {
@@ -10045,11 +10277,14 @@ pub struct TagHealth {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
+    #[doc(hidden)]
     pub app_boundary_key: std::option::Option<std::string::String>,
     /// <p>The value in an Amazon Web Services tag.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
+    #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
     /// <p>Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services tag, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
+    #[doc(hidden)]
     pub insight: std::option::Option<crate::model::InsightHealth>,
 }
 impl TagHealth {
@@ -10153,10 +10388,13 @@ impl TagHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightHealth {
     /// <p> The number of open proactive insights. </p>
+    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p> The number of open reactive insights. </p>
+    #[doc(hidden)]
     pub open_reactive_insights: i32,
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
+    #[doc(hidden)]
     pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
 }
 impl InsightHealth {
@@ -10251,8 +10489,10 @@ impl InsightHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceHealth {
     /// <p>The name of the Amazon Web Services service.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<crate::model::ServiceName>,
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
+    #[doc(hidden)]
     pub insight: std::option::Option<crate::model::ServiceInsightHealth>,
 }
 impl ServiceHealth {
@@ -10330,8 +10570,10 @@ impl ServiceHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInsightHealth {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
+    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
+    #[doc(hidden)]
     pub open_reactive_insights: i32,
 }
 impl ServiceInsightHealth {
@@ -10403,8 +10645,10 @@ impl ServiceInsightHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationHealth {
     /// <p> The name of the CloudFormation stack. </p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
+    #[doc(hidden)]
     pub insight: std::option::Option<crate::model::InsightHealth>,
 }
 impl CloudFormationHealth {
@@ -10479,8 +10723,10 @@ impl CloudFormationHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountHealth {
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
+    #[doc(hidden)]
     pub insight: std::option::Option<crate::model::AccountInsightHealth>,
 }
 impl AccountHealth {
@@ -10555,8 +10801,10 @@ impl AccountHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountInsightHealth {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub open_reactive_insights: i32,
 }
 impl AccountInsightHealth {
@@ -10696,20 +10944,28 @@ impl AsRef<str> for OrganizationResourceCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactiveInsight {
     /// <p> The ID of a reactive insight. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of a reactive insight. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p> The status of a reactive insight. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
+    #[doc(hidden)]
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
     /// <p>Describes the reactive insight.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ReactiveInsight {
@@ -10898,22 +11154,31 @@ impl ReactiveInsight {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProactiveInsight {
     /// <p>The ID of the proactive insight. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the proactive insight. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::InsightSeverity>,
     /// <p>The status of the proactive insight. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InsightStatus>,
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    #[doc(hidden)]
     pub insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
+    #[doc(hidden)]
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
     /// <p>Describes the proactive insight.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ProactiveInsight {
@@ -11122,34 +11387,47 @@ impl ProactiveInsight {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactiveAnomaly {
     /// <p>The ID of the reactive anomaly. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::AnomalySeverity>,
     /// <p> The status of the anomaly. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
+    #[doc(hidden)]
     pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub source_details: std::option::Option<crate::model::AnomalySourceDetails>,
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
+    #[doc(hidden)]
     pub associated_insight_id: std::option::Option<std::string::String>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
     /// <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p> </li>
     /// <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AnomalyType>,
     /// <p>The name of the reactive anomaly.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the reactive anomaly.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the causal anomaly that is associated with this reactive anomaly. The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+    #[doc(hidden)]
     pub causal_anomaly_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services resources in which anomalous behavior was detected by DevOps Guru.</p>
+    #[doc(hidden)]
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ReactiveAnomaly {
@@ -11463,30 +11741,43 @@ impl ReactiveAnomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProactiveAnomaly {
     /// <p> The ID of a proactive anomaly. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::AnomalySeverity>,
     /// <p> The status of a proactive anomaly. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p> The time of the anomaly's most recent update. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
+    #[doc(hidden)]
     pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
+    #[doc(hidden)]
     pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
+    #[doc(hidden)]
     pub source_details: std::option::Option<crate::model::AnomalySourceDetails>,
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
+    #[doc(hidden)]
     pub associated_insight_id: std::option::Option<std::string::String>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<f64>,
     /// <p>The metadata for the anomaly.</p>
+    #[doc(hidden)]
     pub source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    #[doc(hidden)]
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ProactiveAnomaly {

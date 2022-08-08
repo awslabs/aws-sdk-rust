@@ -19,12 +19,16 @@ pub struct StartSelector {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub start_selector_type: std::option::Option<crate::model::StartSelectorType>,
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
+    #[doc(hidden)]
     pub after_fragment_number: std::option::Option<std::string::String>,
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
+    #[doc(hidden)]
     pub continuation_token: std::option::Option<std::string::String>,
 }
 impl StartSelector {

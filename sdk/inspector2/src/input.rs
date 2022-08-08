@@ -4940,6 +4940,7 @@ impl UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
+    #[doc(hidden)]
     pub auto_enable: std::option::Option<crate::model::AutoEnable>,
 }
 impl UpdateOrganizationConfigurationInput {
@@ -4961,16 +4962,22 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFilterInput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>A description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Defines the criteria to be update in the filter.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The reason the filter was updated.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl UpdateFilterInput {
@@ -5017,6 +5024,7 @@ impl std::fmt::Debug for UpdateFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    #[doc(hidden)]
     pub ecr_configuration: std::option::Option<crate::model::EcrConfiguration>,
 }
 impl UpdateConfigurationInput {
@@ -5038,8 +5046,10 @@ impl std::fmt::Debug for UpdateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5066,8 +5076,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be added to a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5098,10 +5110,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageTotalsInput {
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListUsageTotalsInput {
@@ -5133,6 +5148,7 @@ impl std::fmt::Debug for ListUsageTotalsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5154,10 +5170,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
+    #[doc(hidden)]
     pub only_associated: std::option::Option<bool>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
@@ -5189,12 +5208,16 @@ impl std::fmt::Debug for ListMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Details on the filters to apply to your finding results.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>Details on the sort criteria to apply to your finding results.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl ListFindingsInput {
@@ -5231,14 +5254,19 @@ impl std::fmt::Debug for ListFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
+    #[doc(hidden)]
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
+    #[doc(hidden)]
     pub aggregation_request: std::option::Option<crate::model::AggregationRequest>,
 }
 impl ListFindingAggregationsInput {
@@ -5280,12 +5308,16 @@ impl std::fmt::Debug for ListFindingAggregationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersInput {
     /// <p>The Amazon resource number (ARN) of the filter.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action the filter applies to matched findings.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFiltersInput {
@@ -5322,8 +5354,10 @@ impl std::fmt::Debug for ListFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDelegatedAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdminAccountsInput {
@@ -5350,10 +5384,13 @@ impl std::fmt::Debug for ListDelegatedAdminAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoverageStatisticsInput {
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
     /// <p>The value to group the results by.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<crate::model::GroupKey>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoverageStatisticsInput {
@@ -5385,10 +5422,13 @@ impl std::fmt::Debug for ListCoverageStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoverageInput {
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
 }
 impl ListCoverageInput {
@@ -5420,10 +5460,13 @@ impl std::fmt::Debug for ListCoverageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountPermissionsInput {
     /// <p>The service scan type to check permissions for.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The maximum number of results to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountPermissionsInput {
@@ -5455,6 +5498,7 @@ impl std::fmt::Debug for ListAccountPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetMemberInput {
@@ -5476,6 +5520,7 @@ impl std::fmt::Debug for GetMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsReportStatusInput {
     /// <p>The ID of the report to retrieve the status of.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl GetFindingsReportStatusInput {
@@ -5519,8 +5564,10 @@ impl std::fmt::Debug for GetConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
+    #[doc(hidden)]
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token for the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl EnableDelegatedAdminAccountInput {
@@ -5550,10 +5597,13 @@ impl std::fmt::Debug for EnableDelegatedAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableInput {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource scan types you want to enable.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceScanType>>,
     /// <p>The idempotency token for the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl EnableInput {
@@ -5585,6 +5635,7 @@ impl std::fmt::Debug for EnableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberInput {
@@ -5606,6 +5657,7 @@ impl std::fmt::Debug for DisassociateMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
+    #[doc(hidden)]
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableDelegatedAdminAccountInput {
@@ -5630,8 +5682,10 @@ impl std::fmt::Debug for DisableDelegatedAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableInput {
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource scan types you want to disable.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceScanType>>,
 }
 impl DisableInput {
@@ -5669,6 +5723,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFilterInput {
     /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteFilterInput {
@@ -5690,10 +5745,13 @@ impl std::fmt::Debug for DeleteFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFindingsReportInput {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The format to generate the report in.</p>
+    #[doc(hidden)]
     pub report_format: std::option::Option<crate::model::ReportFormat>,
     /// <p>The Amazon S3 export destination for the report.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::Destination>,
 }
 impl CreateFindingsReportInput {
@@ -5725,17 +5783,23 @@ impl std::fmt::Debug for CreateFindingsReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>A description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
+    #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of tags for the filter.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The reason for creating the filter.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CreateFilterInput {
@@ -5785,6 +5849,7 @@ impl std::fmt::Debug for CreateFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelFindingsReportInput {
     /// <p>The ID of the report to be canceled.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl CancelFindingsReportInput {
@@ -5806,6 +5871,7 @@ impl std::fmt::Debug for CancelFindingsReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetFreeTrialInfoInput {
     /// <p>The account IDs to get free trial status for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetFreeTrialInfoInput {
@@ -5827,6 +5893,7 @@ impl std::fmt::Debug for BatchGetFreeTrialInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAccountStatusInput {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetAccountStatusInput {
@@ -5848,6 +5915,7 @@ impl std::fmt::Debug for BatchGetAccountStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl AssociateMemberInput {

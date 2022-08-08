@@ -154,12 +154,16 @@ impl UpdateFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator.</p>
+    #[doc(hidden)]
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
     /// <p>The aggregation Region.</p>
+    #[doc(hidden)]
     pub finding_aggregation_region: std::option::Option<std::string::String>,
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    #[doc(hidden)]
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFindingAggregatorOutput {
@@ -376,6 +380,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -449,8 +454,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>The list of Security Hub administrator accounts.</p>
+    #[doc(hidden)]
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
@@ -531,8 +538,10 @@ impl ListOrganizationAdminAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
     /// <p>Member details returned by the operation.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -613,8 +622,10 @@ impl ListMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>The details of the invitations returned by the operation.</p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -695,9 +706,11 @@ impl ListInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
+    #[doc(hidden)]
     pub finding_aggregators: std::option::Option<std::vec::Vec<crate::model::FindingAggregator>>,
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingAggregatorsOutput {
@@ -782,8 +795,10 @@ impl ListFindingAggregatorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnabledProductsForImportOutput {
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
+    #[doc(hidden)]
     pub product_subscriptions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnabledProductsForImportOutput {
@@ -864,6 +879,7 @@ impl ListEnabledProductsForImportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersOutput {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl InviteMembersOutput {
@@ -927,8 +943,10 @@ impl InviteMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersOutput {
     /// <p>The list of details about the Security Hub member accounts.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl GetMembersOutput {
@@ -1018,6 +1036,7 @@ impl GetMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountOutput {
     /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    #[doc(hidden)]
     pub master: std::option::Option<crate::model::Invitation>,
 }
 impl GetMasterAccountOutput {
@@ -1072,6 +1091,7 @@ impl GetMasterAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationsCountOutput {
     /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    #[doc(hidden)]
     pub invitations_count: i32,
 }
 impl GetInvitationsCountOutput {
@@ -1126,8 +1146,10 @@ impl GetInvitationsCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsOutput {
     /// <p>The insights returned by the operation.</p>
+    #[doc(hidden)]
     pub insights: std::option::Option<std::vec::Vec<crate::model::Insight>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightsOutput {
@@ -1208,6 +1230,7 @@ impl GetInsightsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightResultsOutput {
     /// <p>The insight results returned by the operation.</p>
+    #[doc(hidden)]
     pub insight_results: std::option::Option<crate::model::InsightResults>,
 }
 impl GetInsightResultsOutput {
@@ -1265,8 +1288,10 @@ impl GetInsightResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsOutput {
     /// <p>The findings that matched the filters specified in the request.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFindingsOutput {
@@ -1347,12 +1372,16 @@ impl GetFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator.</p>
+    #[doc(hidden)]
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
     /// <p>The aggregation Region.</p>
+    #[doc(hidden)]
     pub finding_aggregation_region: std::option::Option<std::string::String>,
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    #[doc(hidden)]
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetFindingAggregatorOutput {
@@ -1479,9 +1508,11 @@ impl GetFindingAggregatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnabledStandardsOutput {
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
+    #[doc(hidden)]
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEnabledStandardsOutput {
@@ -1568,6 +1599,7 @@ impl GetEnabledStandardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountOutput {
     /// <p>Details about an invitation.</p>
+    #[doc(hidden)]
     pub administrator: std::option::Option<crate::model::Invitation>,
 }
 impl GetAdministratorAccountOutput {
@@ -1685,6 +1717,7 @@ impl EnableOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableImportFindingsForProductOutput {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
+    #[doc(hidden)]
     pub product_subscription_arn: std::option::Option<std::string::String>,
 }
 impl EnableImportFindingsForProductOutput {
@@ -1922,8 +1955,10 @@ impl DisableImportFindingsForProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsControlsOutput {
     /// <p>A list of security standards controls.</p>
+    #[doc(hidden)]
     pub controls: std::option::Option<std::vec::Vec<crate::model::StandardsControl>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStandardsControlsOutput {
@@ -2004,8 +2039,10 @@ impl DescribeStandardsControlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsOutput {
     /// <p>A list of available standards.</p>
+    #[doc(hidden)]
     pub standards: std::option::Option<std::vec::Vec<crate::model::Standard>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStandardsOutput {
@@ -2086,8 +2123,10 @@ impl DescribeStandardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductsOutput {
     /// <p>A list of products, including details for each product.</p>
+    #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<crate::model::Product>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeProductsOutput {
@@ -2169,12 +2208,15 @@ impl DescribeProductsOutput {
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
+    #[doc(hidden)]
     pub member_account_limit_reached: bool,
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    #[doc(hidden)]
     pub auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
 }
 impl DescribeOrganizationConfigurationOutput {
@@ -2281,11 +2323,14 @@ impl DescribeOrganizationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHubOutput {
     /// <p>The ARN of the Hub resource that was retrieved.</p>
+    #[doc(hidden)]
     pub hub_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when Security Hub was enabled in the account.</p>
+    #[doc(hidden)]
     pub subscribed_at: std::option::Option<std::string::String>,
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+    #[doc(hidden)]
     pub auto_enable_controls: bool,
 }
 impl DescribeHubOutput {
@@ -2380,8 +2425,10 @@ impl DescribeHubOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActionTargetsOutput {
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    #[doc(hidden)]
     pub action_targets: std::option::Option<std::vec::Vec<crate::model::ActionTarget>>,
     /// <p>The pagination token to use to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeActionTargetsOutput {
@@ -2462,6 +2509,7 @@ impl DescribeActionTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
     /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeleteMembersOutput {
@@ -2525,6 +2573,7 @@ impl DeleteMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
     /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeleteInvitationsOutput {
@@ -2588,6 +2637,7 @@ impl DeleteInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInsightOutput {
     /// <p>The ARN of the insight that was deleted.</p>
+    #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInsightOutput {
@@ -2672,6 +2722,7 @@ impl DeleteFindingAggregatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteActionTargetOutput {
     /// <p>The ARN of the custom action target that was deleted.</p>
+    #[doc(hidden)]
     pub action_target_arn: std::option::Option<std::string::String>,
 }
 impl DeleteActionTargetOutput {
@@ -2729,6 +2780,7 @@ impl DeleteActionTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeclineInvitationsOutput {
@@ -2792,6 +2844,7 @@ impl DeclineInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl CreateMembersOutput {
@@ -2855,6 +2908,7 @@ impl CreateMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInsightOutput {
     /// <p>The ARN of the insight created.</p>
+    #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
 }
 impl CreateInsightOutput {
@@ -2909,12 +2963,16 @@ impl CreateInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
+    #[doc(hidden)]
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
     /// <p>The aggregation Region.</p>
+    #[doc(hidden)]
     pub finding_aggregation_region: std::option::Option<std::string::String>,
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    #[doc(hidden)]
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateFindingAggregatorOutput {
@@ -3041,6 +3099,7 @@ impl CreateFindingAggregatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActionTargetOutput {
     /// <p>The ARN for the custom action target.</p>
+    #[doc(hidden)]
     pub action_target_arn: std::option::Option<std::string::String>,
 }
 impl CreateActionTargetOutput {
@@ -3098,9 +3157,11 @@ impl CreateActionTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateFindingsOutput {
     /// <p>The list of findings that were updated successfully.</p>
+    #[doc(hidden)]
     pub processed_findings:
         std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
     /// <p>The list of findings that were not updated.</p>
+    #[doc(hidden)]
     pub unprocessed_findings:
         std::option::Option<std::vec::Vec<crate::model::BatchUpdateFindingsUnprocessedFinding>>,
 }
@@ -3205,10 +3266,13 @@ impl BatchUpdateFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportFindingsOutput {
     /// <p>The number of findings that failed to import.</p>
+    #[doc(hidden)]
     pub failed_count: i32,
     /// <p>The number of findings that were successfully imported.</p>
+    #[doc(hidden)]
     pub success_count: i32,
     /// <p>The list of findings that failed to import.</p>
+    #[doc(hidden)]
     pub failed_findings: std::option::Option<std::vec::Vec<crate::model::ImportFindingsError>>,
 }
 impl BatchImportFindingsOutput {
@@ -3307,6 +3371,7 @@ impl BatchImportFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEnableStandardsOutput {
     /// <p>The details of the standards subscriptions that were enabled.</p>
+    #[doc(hidden)]
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
 }
@@ -3377,6 +3442,7 @@ impl BatchEnableStandardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisableStandardsOutput {
     /// <p>The details of the standards subscriptions that were disabled.</p>
+    #[doc(hidden)]
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
 }

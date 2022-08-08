@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>Additional information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
+    #[doc(hidden)]
     pub retryable: bool,
 }
 impl InvalidRequestException {
@@ -90,8 +92,10 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmServiceException {
     /// <p>Additional information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
+    #[doc(hidden)]
     pub retryable: bool,
 }
 impl CloudHsmServiceException {
@@ -175,8 +179,10 @@ impl CloudHsmServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmInternalException {
     /// <p>Additional information about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
+    #[doc(hidden)]
     pub retryable: bool,
 }
 impl CloudHsmInternalException {

@@ -71,8 +71,10 @@ impl AsRef<str> for ParallelDataStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The format of the parallel data input file.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ParallelDataFormat>,
 }
 impl ParallelDataConfig {
@@ -208,10 +210,12 @@ pub struct TranslationSettings {
     /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
     /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
     /// <p>For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub formality: std::option::Option<crate::model::Formality>,
     /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
     /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
     /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub profanity: std::option::Option<crate::model::Profanity>,
 }
 impl TranslationSettings {
@@ -407,8 +411,10 @@ impl AsRef<str> for Formality {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppliedTerminology {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
+    #[doc(hidden)]
     pub terms: std::option::Option<std::vec::Vec<crate::model::Term>>,
 }
 impl AppliedTerminology {
@@ -489,8 +495,10 @@ impl AppliedTerminology {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
+    #[doc(hidden)]
     pub source_text: std::option::Option<std::string::String>,
     /// <p>The target text of the term being translated by the custom terminology.</p>
+    #[doc(hidden)]
     pub target_text: std::option::Option<std::string::String>,
 }
 impl Term {
@@ -645,8 +653,10 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The encryption key used to encrypt this object.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl OutputDataConfig {
@@ -721,8 +731,10 @@ impl OutputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl EncryptionKey {
@@ -850,6 +862,7 @@ pub struct InputDataConfig {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
     /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
     /// </note>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
@@ -862,6 +875,7 @@ pub struct InputDataConfig {
     /// </ul> <important>
     /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
@@ -969,34 +983,49 @@ impl InputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextTranslationJobProperties {
     /// <p>The ID of the translation job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The user-defined name of the translation job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the translation job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
+    #[doc(hidden)]
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
+    #[doc(hidden)]
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
+    #[doc(hidden)]
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The time at which the translation job was submitted.</p>
+    #[doc(hidden)]
     pub submitted_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the translation job ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input configuration properties that were specified when the job was requested.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output configuration properties that were specified when the job was requested.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Settings that configure the translation output.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TextTranslationJobProperties {
@@ -1343,10 +1372,13 @@ impl TextTranslationJobProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetails {
     /// <p>The number of documents successfully processed during a translation job.</p>
+    #[doc(hidden)]
     pub translated_documents_count: std::option::Option<i32>,
     /// <p>The number of documents that could not be processed during a translation job.</p>
+    #[doc(hidden)]
     pub documents_with_errors_count: std::option::Option<i32>,
     /// <p>The number of documents used as input in a translation job.</p>
+    #[doc(hidden)]
     pub input_documents_count: std::option::Option<i32>,
 }
 impl JobDetails {
@@ -1441,12 +1473,16 @@ impl JobDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Filters the list of jobs based by job status.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+    #[doc(hidden)]
     pub submitted_before_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+    #[doc(hidden)]
     pub submitted_after_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TextTranslationJobFilter {
@@ -1561,24 +1597,34 @@ impl TextTranslationJobFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyProperties {
     /// <p>The name of the custom terminology.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the custom terminology properties.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
+    #[doc(hidden)]
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The encryption key for the custom terminology.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
     /// <p>The size of the file used when importing a custom terminology.</p>
+    #[doc(hidden)]
     pub size_bytes: std::option::Option<i32>,
     /// <p>The number of terms included in the custom terminology.</p>
+    #[doc(hidden)]
     pub term_count: std::option::Option<i32>,
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
     /// <dl>
@@ -1595,12 +1641,16 @@ pub struct TerminologyProperties {
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub directionality: std::option::Option<crate::model::Directionality>,
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
+    #[doc(hidden)]
     pub skipped_term_count: std::option::Option<i32>,
     /// <p>The format of the custom terminology input file.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
 impl TerminologyProperties {
@@ -2059,38 +2109,55 @@ impl AsRef<str> for Directionality {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelDataProperties {
     /// <p>The custom name assigned to the parallel data resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description assigned to the parallel data resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The source language of the translations in the parallel data file.</p>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
+    #[doc(hidden)]
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    #[doc(hidden)]
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+    #[doc(hidden)]
     pub imported_data_size: std::option::Option<i64>,
     /// <p>The number of records successfully imported from the parallel data input file.</p>
+    #[doc(hidden)]
     pub imported_record_count: std::option::Option<i64>,
     /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
+    #[doc(hidden)]
     pub failed_record_count: std::option::Option<i64>,
     /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
+    #[doc(hidden)]
     pub skipped_record_count: std::option::Option<i64>,
     /// <p>The encryption key used to encrypt this object.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
     /// <p>The time at which the parallel data resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the parallel data resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
+    #[doc(hidden)]
     pub latest_update_attempt_status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The time that the most recent update was attempted.</p>
+    #[doc(hidden)]
     pub latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ParallelDataProperties {
@@ -2548,8 +2615,10 @@ impl AsRef<str> for DisplayLanguageCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Language {
     /// <p>Language name of the supported language.</p>
+    #[doc(hidden)]
     pub language_name: std::option::Option<std::string::String>,
     /// <p>Language code for the supported language.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
 }
 impl Language {
@@ -2627,12 +2696,14 @@ impl Language {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
+    #[doc(hidden)]
     pub repository_type: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl TerminologyDataLocation {
@@ -2719,8 +2790,10 @@ impl TerminologyDataLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
+    #[doc(hidden)]
     pub file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The data format of the custom terminology.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -2738,6 +2811,7 @@ pub struct TerminologyData {
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
+    #[doc(hidden)]
     pub directionality: std::option::Option<crate::model::Directionality>,
 }
 impl TerminologyData {
@@ -2928,12 +3002,14 @@ impl AsRef<str> for MergeStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelDataDataLocation {
     /// <p>Describes the repository that contains the parallel data input file.</p>
+    #[doc(hidden)]
     pub repository_type: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl ParallelDataDataLocation {

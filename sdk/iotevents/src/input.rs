@@ -4412,10 +4412,13 @@ impl UpdateInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputInput {
     /// <p>The name of the input you want to update.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>A brief description of the input.</p>
+    #[doc(hidden)]
     pub input_description: std::option::Option<std::string::String>,
     /// <p>The definition of the input.</p>
+    #[doc(hidden)]
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
 }
 impl UpdateInputInput {
@@ -4447,14 +4450,19 @@ impl std::fmt::Debug for UpdateInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorModelInput {
     /// <p>The name of the detector model that is updated.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>Information that defines how a detector operates.</p>
+    #[doc(hidden)]
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
     /// <p>A brief description of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    #[doc(hidden)]
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl UpdateDetectorModelInput {
@@ -4501,20 +4509,28 @@ impl std::fmt::Debug for UpdateDetectorModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAlarmModelInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The description of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<i32>,
     /// <p>Defines when your alarm is invoked.</p>
+    #[doc(hidden)]
     pub alarm_rule: std::option::Option<crate::model::AlarmRule>,
     /// <p>Contains information about one or more notification actions.</p>
+    #[doc(hidden)]
     pub alarm_notification: std::option::Option<crate::model::AlarmNotification>,
     /// <p>Contains information about one or more alarm actions.</p>
+    #[doc(hidden)]
     pub alarm_event_actions: std::option::Option<crate::model::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
+    #[doc(hidden)]
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
 }
 impl UpdateAlarmModelInput {
@@ -4571,8 +4587,10 @@ impl std::fmt::Debug for UpdateAlarmModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the keys of the tags to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4599,8 +4617,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modified tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4627,6 +4647,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
+    #[doc(hidden)]
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
 }
 impl StartDetectorModelAnalysisInput {
@@ -4650,6 +4671,7 @@ impl std::fmt::Debug for StartDetectorModelAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingOptionsInput {
     /// <p>The new values of the AWS IoT Events logging options.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl PutLoggingOptionsInput {
@@ -4671,6 +4693,7 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4692,8 +4715,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputsInput {
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInputsInput {
@@ -4720,10 +4745,13 @@ impl std::fmt::Debug for ListInputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputRoutingsInput {
     /// <p> The identifer of the routed input. </p>
+    #[doc(hidden)]
     pub input_identifier: std::option::Option<crate::model::InputIdentifier>,
     /// <p> The maximum number of results to be returned per request. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token that you can use to return the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputRoutingsInput {
@@ -4755,10 +4783,13 @@ impl std::fmt::Debug for ListInputRoutingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorModelVersionsInput {
     /// <p>The name of the detector model whose versions are returned.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDetectorModelVersionsInput {
@@ -4790,8 +4821,10 @@ impl std::fmt::Debug for ListDetectorModelVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDetectorModelsInput {
@@ -4818,10 +4851,13 @@ impl std::fmt::Debug for ListDetectorModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmModelVersionsInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmModelVersionsInput {
@@ -4853,8 +4889,10 @@ impl std::fmt::Debug for ListAlarmModelVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmModelsInput {
@@ -4881,10 +4919,13 @@ impl std::fmt::Debug for ListAlarmModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorModelAnalysisResultsInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetDetectorModelAnalysisResultsInput {
@@ -4927,6 +4968,7 @@ impl std::fmt::Debug for DescribeLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputInput {
     /// <p>The name of the input.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
 }
 impl DescribeInputInput {
@@ -4948,6 +4990,7 @@ impl std::fmt::Debug for DescribeInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorModelAnalysisInput {
@@ -4969,8 +5012,10 @@ impl std::fmt::Debug for DescribeDetectorModelAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_version: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorModelInput {
@@ -4997,8 +5042,10 @@ impl std::fmt::Debug for DescribeDetectorModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmModelInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmModelInput {
@@ -5025,6 +5072,7 @@ impl std::fmt::Debug for DescribeAlarmModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInputInput {
     /// <p>The name of the input to delete.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
 }
 impl DeleteInputInput {
@@ -5046,6 +5094,7 @@ impl std::fmt::Debug for DeleteInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorModelInput {
@@ -5067,6 +5116,7 @@ impl std::fmt::Debug for DeleteDetectorModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlarmModelInput {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
 }
 impl DeleteAlarmModelInput {
@@ -5088,12 +5138,16 @@ impl std::fmt::Debug for DeleteAlarmModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputInput {
     /// <p>The name you want to give to the input.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>A brief description of the input.</p>
+    #[doc(hidden)]
     pub input_description: std::option::Option<std::string::String>,
     /// <p>The definition of the input.</p>
+    #[doc(hidden)]
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
     /// <p>Metadata that can be used to manage the input.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateInputInput {
@@ -5130,18 +5184,25 @@ impl std::fmt::Debug for CreateInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorModelInput {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>Information that defines how the detectors operate.</p>
+    #[doc(hidden)]
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
     /// <p>A brief description of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata that can be used to manage the detector model.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    #[doc(hidden)]
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl CreateDetectorModelInput {
@@ -5198,25 +5259,35 @@ impl std::fmt::Debug for CreateDetectorModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlarmModelInput {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>A description that tells you what the alarm model detects.</p>
+    #[doc(hidden)]
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<i32>,
     /// <p>Defines when your alarm is invoked.</p>
+    #[doc(hidden)]
     pub alarm_rule: std::option::Option<crate::model::AlarmRule>,
     /// <p>Contains information about one or more notification actions.</p>
+    #[doc(hidden)]
     pub alarm_notification: std::option::Option<crate::model::AlarmNotification>,
     /// <p>Contains information about one or more alarm actions.</p>
+    #[doc(hidden)]
     pub alarm_event_actions: std::option::Option<crate::model::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
+    #[doc(hidden)]
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
 }
 impl CreateAlarmModelInput {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connector.</p>
+    #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
 }
 impl UpdateConnectorOutput {
@@ -83,8 +85,10 @@ impl UpdateConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerConfigurationsOutput {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of worker configuration descriptions.</p>
+    #[doc(hidden)]
     pub worker_configurations:
         std::option::Option<std::vec::Vec<crate::model::WorkerConfigurationSummary>>,
 }
@@ -172,8 +176,10 @@ impl ListWorkerConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomPluginsOutput {
     /// <p>An array of custom plugin descriptions.</p>
+    #[doc(hidden)]
     pub custom_plugins: std::option::Option<std::vec::Vec<crate::model::CustomPluginSummary>>,
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomPluginsOutput {
@@ -255,8 +261,10 @@ impl ListCustomPluginsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorsOutput {
     /// <p>An array of connector descriptions.</p>
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorSummary>>,
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorsOutput {
@@ -337,14 +345,19 @@ impl ListConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The latest revision of the custom configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::WorkerConfigurationRevisionDescription>,
     /// <p>The name of the worker configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeWorkerConfigurationOutput {
@@ -482,18 +495,25 @@ impl DescribeWorkerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomPluginOutput {
     /// <p>The time that the custom plugin was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The state of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
     /// <p>The description of the custom plugin.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
     /// <p>The name of the custom plugin.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Details about the state of a custom plugin.</p>
+    #[doc(hidden)]
     pub state_description: std::option::Option<crate::model::StateDescription>,
 }
 impl DescribeCustomPluginOutput {
@@ -667,41 +687,58 @@ impl DescribeCustomPluginOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorOutput {
     /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<crate::model::CapacityDescription>,
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    #[doc(hidden)]
     pub connector_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A summary description of the connector.</p>
+    #[doc(hidden)]
     pub connector_description: std::option::Option<std::string::String>,
     /// <p>The name of the connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The state of the connector.</p>
+    #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
     /// <p>The time the connector was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current version of the connector.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The Apache Kafka cluster that the connector is connected to.</p>
+    #[doc(hidden)]
     pub kafka_cluster: std::option::Option<crate::model::KafkaClusterDescription>,
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
+    #[doc(hidden)]
     pub kafka_cluster_client_authentication:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit:
         std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    #[doc(hidden)]
     pub kafka_connect_version: std::option::Option<std::string::String>,
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_delivery: std::option::Option<crate::model::LogDeliveryDescription>,
     /// <p>Specifies which plugins were used for this connector.</p>
+    #[doc(hidden)]
     pub plugins: std::option::Option<std::vec::Vec<crate::model::PluginDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
+    #[doc(hidden)]
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies which worker configuration was used for the connector.</p>
+    #[doc(hidden)]
     pub worker_configuration: std::option::Option<crate::model::WorkerConfigurationDescription>,
     /// <p>Details about the state of a connector.</p>
+    #[doc(hidden)]
     pub state_description: std::option::Option<crate::model::StateDescription>,
 }
 impl DescribeConnectorOutput {
@@ -1132,8 +1169,10 @@ impl DescribeConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The state of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
 }
 impl DeleteCustomPluginOutput {
@@ -1211,8 +1250,10 @@ impl DeleteCustomPluginOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The state of the connector that you requested to delete.</p>
+    #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
 }
 impl DeleteConnectorOutput {
@@ -1290,12 +1331,16 @@ impl DeleteConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest revision of the worker configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
     /// <p>The name of the worker configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateWorkerConfigurationOutput {
@@ -1416,12 +1461,16 @@ impl CreateWorkerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The state of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
     /// <p>The name of the custom plugin.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The revision of the custom plugin.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl CreateCustomPluginOutput {
@@ -1533,10 +1582,13 @@ impl CreateCustomPluginOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The state of the connector.</p>
+    #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
 }
 impl CreateConnectorOutput {

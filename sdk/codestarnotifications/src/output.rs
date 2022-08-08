@@ -64,6 +64,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeOutput {
@@ -116,6 +117,7 @@ impl UnsubscribeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>The list of tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -189,6 +191,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SubscribeOutput {
@@ -241,8 +244,10 @@ impl SubscribeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsOutput {
     /// <p>The list of notification rule targets. </p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsOutput {
@@ -323,6 +328,7 @@ impl ListTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the notification rule.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -396,8 +402,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    #[doc(hidden)]
     pub notification_rules:
         std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
 }
@@ -482,8 +490,10 @@ impl ListNotificationRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTypesOutput {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
+    #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventTypesOutput {
@@ -564,26 +574,37 @@ impl ListEventTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the notification rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the event types associated with the notification rule.</p>
+    #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>A list of the SNS topics associated with the notification rule.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    #[doc(hidden)]
     pub detail_type: std::option::Option<crate::model::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -889,6 +910,7 @@ impl DeleteTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteNotificationRuleOutput {
@@ -941,6 +963,7 @@ impl DeleteNotificationRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateNotificationRuleOutput {

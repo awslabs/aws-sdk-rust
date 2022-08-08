@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason the request's validation failed. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// <p>The fields that caused the error, if applicable. </p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl ValidationException {
@@ -122,8 +125,10 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Number of seconds you can safely retry after the call. </p>
+    #[doc(hidden)]
     pub retry_after_seconds: i32,
 }
 impl ThrottlingException {
@@ -207,10 +212,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Resource identifier that was not found. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Resource type that was not found. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -314,8 +322,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Number of seconds you can retry after the call. </p>
+    #[doc(hidden)]
     pub retry_after_seconds: i32,
 }
 impl InternalServerException {
@@ -399,6 +409,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -463,14 +474,19 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Identifier of the resource affected. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Type of the resource affected. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The unique code identifier of the service limit that is being exceeded. </p>
+    #[doc(hidden)]
     pub limit_code: std::option::Option<std::string::String>,
     /// <p>The unique code for the service of the limit that is being exceeded. </p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
 }
 impl ServiceLimitExceededException {
@@ -608,10 +624,13 @@ impl ServiceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Identifier of the resource in use. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Type of the resource in use. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {

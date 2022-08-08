@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagKeyOnly {
     /// <p>The name of the key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl TagKeyOnly {
@@ -57,6 +58,7 @@ impl TagKeyOnly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl Instance {
@@ -112,17 +114,22 @@ impl Instance {
 pub struct LoadBalancerAttributes {
     /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub cross_zone_load_balancing: std::option::Option<crate::model::CrossZoneLoadBalancing>,
     /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::AccessLog>,
     /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_draining: std::option::Option<crate::model::ConnectionDraining>,
     /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
     /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_settings: std::option::Option<crate::model::ConnectionSettings>,
     /// <p>Any additional attributes.</p>
+    #[doc(hidden)]
     pub additional_attributes:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
 }
@@ -292,8 +299,10 @@ pub struct AdditionalAttribute {
     /// <ul>
     /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>This value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AdditionalAttribute {
@@ -377,6 +386,7 @@ impl AdditionalAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
+    #[doc(hidden)]
     pub idle_timeout: std::option::Option<i32>,
 }
 impl ConnectionSettings {
@@ -431,8 +441,10 @@ impl ConnectionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionDraining {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
 }
 impl ConnectionDraining {
@@ -504,13 +516,17 @@ impl ConnectionDraining {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessLog {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
     /// <p>Default: 60 minutes</p>
+    #[doc(hidden)]
     pub emit_interval: std::option::Option<i32>,
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_prefix: std::option::Option<std::string::String>,
 }
 impl AccessLog {
@@ -625,6 +641,7 @@ impl AccessLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossZoneLoadBalancing {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl CrossZoneLoadBalancing {
@@ -679,8 +696,10 @@ impl CrossZoneLoadBalancing {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagDescription {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagDescription {
@@ -764,8 +783,10 @@ impl TagDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -837,41 +858,57 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[doc(hidden)]
     pub canonical_hosted_zone_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
+    #[doc(hidden)]
     pub canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
     /// <p>The listeners for the load balancer.</p>
+    #[doc(hidden)]
     pub listener_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ListenerDescription>>,
     /// <p>The policies defined for the load balancer.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<crate::model::Policies>,
     /// <p>Information about your EC2 instances.</p>
+    #[doc(hidden)]
     pub backend_server_descriptions:
         std::option::Option<std::vec::Vec<crate::model::BackendServerDescription>>,
     /// <p>The Availability Zones for the load balancer.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the subnets for the load balancer.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC for the load balancer.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances for the load balancer.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>Information about the health checks conducted on the load balancer.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+    #[doc(hidden)]
     pub source_security_group: std::option::Option<crate::model::SourceSecurityGroup>,
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time the load balancer was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
+    #[doc(hidden)]
     pub scheme: std::option::Option<std::string::String>,
 }
 impl LoadBalancerDescription {
@@ -1283,8 +1320,10 @@ impl LoadBalancerDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSecurityGroup {
     /// <p>The owner of the security group.</p>
+    #[doc(hidden)]
     pub owner_alias: std::option::Option<std::string::String>,
     /// <p>The name of the security group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl SourceSecurityGroup {
@@ -1360,15 +1399,20 @@ pub struct HealthCheck {
     /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
     /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
+    #[doc(hidden)]
     pub timeout: i32,
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
+    #[doc(hidden)]
     pub unhealthy_threshold: i32,
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
+    #[doc(hidden)]
     pub healthy_threshold: i32,
 }
 impl HealthCheck {
@@ -1506,8 +1550,10 @@ impl HealthCheck {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
+    #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The names of the policies enabled for the EC2 instance.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BackendServerDescription {
@@ -1588,12 +1634,15 @@ impl BackendServerDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
+    #[doc(hidden)]
     pub app_cookie_stickiness_policies:
         std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
+    #[doc(hidden)]
     pub lb_cookie_stickiness_policies:
         std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
+    #[doc(hidden)]
     pub other_policies: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Policies {
@@ -1727,8 +1776,10 @@ impl Policies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LbCookieStickinessPolicy {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
+    #[doc(hidden)]
     pub cookie_expiration_period: std::option::Option<i64>,
 }
 impl LbCookieStickinessPolicy {
@@ -1800,8 +1851,10 @@ impl LbCookieStickinessPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppCookieStickinessPolicy {
     /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the application cookie used for stickiness.</p>
+    #[doc(hidden)]
     pub cookie_name: std::option::Option<std::string::String>,
 }
 impl AppCookieStickinessPolicy {
@@ -1873,8 +1926,10 @@ impl AppCookieStickinessPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerDescription {
     /// <p>The listener.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListenerDescription {
@@ -1956,17 +2011,22 @@ impl ListenerDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
+    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    #[doc(hidden)]
     pub instance_protocol: std::option::Option<std::string::String>,
     /// <p>The port on which the instance is listening.</p>
+    #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+    #[doc(hidden)]
     pub ssl_certificate_id: std::option::Option<std::string::String>,
 }
 impl Listener {
@@ -2104,10 +2164,13 @@ impl Listener {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
+    #[doc(hidden)]
     pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>A description of the policy type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    #[doc(hidden)]
     pub policy_attribute_type_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
 }
@@ -2218,12 +2281,16 @@ impl PolicyTypeDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<std::string::String>,
     /// <p>A description of the attribute.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The default value of the attribute, if applicable.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
@@ -2233,6 +2300,7 @@ pub struct PolicyAttributeTypeDescription {
     /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cardinality: std::option::Option<std::string::String>,
 }
 impl PolicyAttributeTypeDescription {
@@ -2385,10 +2453,13 @@ impl PolicyAttributeTypeDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyDescription {
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy type.</p>
+    #[doc(hidden)]
     pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>The policy attributes.</p>
+    #[doc(hidden)]
     pub policy_attribute_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
 }
@@ -2499,8 +2570,10 @@ impl PolicyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyAttributeDescription {
     /// <p>The name of the attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl PolicyAttributeDescription {
@@ -2578,12 +2651,15 @@ impl PolicyAttributeDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceState {
     /// <p>The ID of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
+    #[doc(hidden)]
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
@@ -2600,6 +2676,7 @@ pub struct InstanceState {
     /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
     /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl InstanceState {
@@ -2758,8 +2835,10 @@ pub struct Limit {
     /// <li> <p>classic-load-balancers</p> </li>
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the limit.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
 }
 impl Limit {
@@ -2846,8 +2925,10 @@ impl Limit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyAttribute {
     /// <p>The name of the attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl PolicyAttribute {

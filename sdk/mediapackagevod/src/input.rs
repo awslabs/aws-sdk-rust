@@ -2783,8 +2783,10 @@ impl UpdatePackagingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackagingGroupInput {
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UpdatePackagingGroupInput {
@@ -2811,8 +2813,10 @@ impl std::fmt::Debug for UpdatePackagingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// A comma-separated list of the tag keys to remove from the resource.
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2839,8 +2843,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2871,6 +2877,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2892,8 +2899,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagingGroupsInput {
     /// Upper bound on number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagingGroupsInput {
@@ -2920,10 +2929,13 @@ impl std::fmt::Debug for ListPackagingGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagingConfigurationsInput {
     /// Upper bound on number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
 }
 impl ListPackagingConfigurationsInput {
@@ -2955,10 +2967,13 @@ impl std::fmt::Debug for ListPackagingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsInput {
     /// Upper bound on number of records to return.
+    #[doc(hidden)]
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Returns Assets associated with the specified PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
 }
 impl ListAssetsInput {
@@ -2990,6 +3005,7 @@ impl std::fmt::Debug for ListAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribePackagingGroupInput {
@@ -3011,6 +3027,7 @@ impl std::fmt::Debug for DescribePackagingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagingConfigurationInput {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribePackagingConfigurationInput {
@@ -3032,6 +3049,7 @@ impl std::fmt::Debug for DescribePackagingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetInput {
     /// The ID of an MediaPackage VOD Asset resource.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeAssetInput {
@@ -3053,6 +3071,7 @@ impl std::fmt::Debug for DescribeAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackagingGroupInput {
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePackagingGroupInput {
@@ -3074,6 +3093,7 @@ impl std::fmt::Debug for DeletePackagingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePackagingConfigurationInput {
@@ -3095,6 +3115,7 @@ impl std::fmt::Debug for DeletePackagingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetInput {
     /// The ID of the MediaPackage VOD Asset resource to delete.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteAssetInput {
@@ -3116,12 +3137,16 @@ impl std::fmt::Debug for DeleteAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackagingGroupInput {
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3162,18 +3187,25 @@ impl std::fmt::Debug for CreatePackagingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackagingConfigurationInput {
     /// A CMAF packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the PackagingConfiguration.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// The ID of a PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3229,16 +3261,22 @@ impl std::fmt::Debug for CreatePackagingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetInput {
     /// The unique identifier for the Asset.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// The resource ID to include in SPEKE key requests.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// ARN of the source object in S3.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// The IAM role ARN used to access the source S3 bucket.
+    #[doc(hidden)]
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3289,8 +3327,10 @@ impl std::fmt::Debug for CreateAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ConfigureLogsInput {

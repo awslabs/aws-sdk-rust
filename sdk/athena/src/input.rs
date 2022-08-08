@@ -6189,12 +6189,16 @@ impl UpdateWorkGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkGroupInput {
     /// <p>The specified workgroup that will be updated.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The workgroup description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    #[doc(hidden)]
     pub configuration_updates: std::option::Option<crate::model::WorkGroupConfigurationUpdates>,
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkGroupState>,
 }
 impl UpdateWorkGroupInput {
@@ -6233,12 +6237,16 @@ impl std::fmt::Debug for UpdateWorkGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The workgroup for the prepared statement.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The query string for the prepared statement.</p>
+    #[doc(hidden)]
     pub query_statement: std::option::Option<std::string::String>,
     /// <p>The description of the prepared statement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdatePreparedStatementInput {
@@ -6275,12 +6283,16 @@ impl std::fmt::Debug for UpdatePreparedStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNamedQueryInput {
     /// <p>The unique identifier (UUID) of the query.</p>
+    #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
     /// <p>The name of the query.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The query description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The contents of the query with all query statements.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
 }
 impl UpdateNamedQueryInput {
@@ -6317,10 +6329,13 @@ impl std::fmt::Debug for UpdateNamedQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataCatalogInput {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>New or modified text that describes the data catalog.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -6331,6 +6346,7 @@ pub struct UpdateDataCatalogInput {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6379,8 +6395,10 @@ impl std::fmt::Debug for UpdateDataCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6407,8 +6425,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6435,6 +6455,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopQueryExecutionInput {
     /// <p>The unique ID of the query execution to stop.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl StopQueryExecutionInput {
@@ -6456,18 +6477,24 @@ impl std::fmt::Debug for StopQueryExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The database within which the query executes.</p>
+    #[doc(hidden)]
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    #[doc(hidden)]
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The name of the workgroup in which the query is being started.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    #[doc(hidden)]
     pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartQueryExecutionInput {
@@ -6518,8 +6545,10 @@ impl std::fmt::Debug for StartQueryExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkGroupsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workgroups to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkGroupsInput {
@@ -6546,10 +6575,13 @@ impl std::fmt::Debug for ListWorkGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Lists the tags for the resource with the specified ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -6581,14 +6613,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTableMetadataInput {
     /// <p>The name of the data catalog for which table metadata should be returned.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database for which table metadata should be returned.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTableMetadataInput {
@@ -6630,10 +6667,13 @@ impl std::fmt::Debug for ListTableMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueryExecutionsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of query executions to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListQueryExecutionsInput {
@@ -6665,10 +6705,13 @@ impl std::fmt::Debug for ListQueryExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPreparedStatementsInput {
     /// <p>The workgroup to list the prepared statements for.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPreparedStatementsInput {
@@ -6700,10 +6743,13 @@ impl std::fmt::Debug for ListPreparedStatementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamedQueriesInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of queries to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListNamedQueriesInput {
@@ -6735,8 +6781,10 @@ impl std::fmt::Debug for ListNamedQueriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngineVersionsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engine versions to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEngineVersionsInput {
@@ -6763,8 +6811,10 @@ impl std::fmt::Debug for ListEngineVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataCatalogsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of data catalogs to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataCatalogsInput {
@@ -6791,10 +6841,13 @@ impl std::fmt::Debug for ListDataCatalogsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatabasesInput {
@@ -6826,6 +6879,7 @@ impl std::fmt::Debug for ListDatabasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl GetWorkGroupInput {
@@ -6847,10 +6901,13 @@ impl std::fmt::Debug for GetWorkGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableMetadataInput {
     /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the table metadata to return.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table for which metadata is returned.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl GetTableMetadataInput {
@@ -6882,6 +6939,7 @@ impl std::fmt::Debug for GetTableMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryRuntimeStatisticsInput {
     /// <p>The unique ID of the query execution.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl GetQueryRuntimeStatisticsInput {
@@ -6903,10 +6961,13 @@ impl std::fmt::Debug for GetQueryRuntimeStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryResultsInput {
     /// <p>The unique ID of the query execution.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results (rows) to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetQueryResultsInput {
@@ -6938,6 +6999,7 @@ impl std::fmt::Debug for GetQueryResultsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryExecutionInput {
     /// <p>The unique ID of the query execution.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl GetQueryExecutionInput {
@@ -6959,8 +7021,10 @@ impl std::fmt::Debug for GetQueryExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPreparedStatementInput {
     /// <p>The name of the prepared statement to retrieve.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl GetPreparedStatementInput {
@@ -6987,6 +7051,7 @@ impl std::fmt::Debug for GetPreparedStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl GetNamedQueryInput {
@@ -7008,6 +7073,7 @@ impl std::fmt::Debug for GetNamedQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDataCatalogInput {
@@ -7029,8 +7095,10 @@ impl std::fmt::Debug for GetDataCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabaseInput {
     /// <p>The name of the data catalog that contains the database to return.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database to return.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
 }
 impl GetDatabaseInput {
@@ -7057,8 +7125,10 @@ impl std::fmt::Debug for GetDatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    #[doc(hidden)]
     pub recursive_delete_option: std::option::Option<bool>,
 }
 impl DeleteWorkGroupInput {
@@ -7085,8 +7155,10 @@ impl std::fmt::Debug for DeleteWorkGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePreparedStatementInput {
     /// <p>The name of the prepared statement to delete.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl DeletePreparedStatementInput {
@@ -7113,6 +7185,7 @@ impl std::fmt::Debug for DeletePreparedStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
+    #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl DeleteNamedQueryInput {
@@ -7134,6 +7207,7 @@ impl std::fmt::Debug for DeleteNamedQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataCatalogInput {
     /// <p>The name of the data catalog to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDataCatalogInput {
@@ -7155,12 +7229,16 @@ impl std::fmt::Debug for DeleteDataCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkGroupInput {
@@ -7197,12 +7275,16 @@ impl std::fmt::Debug for CreateWorkGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The query string for the prepared statement.</p>
+    #[doc(hidden)]
     pub query_statement: std::option::Option<std::string::String>,
     /// <p>The description of the prepared statement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreatePreparedStatementInput {
@@ -7239,18 +7321,24 @@ impl std::fmt::Debug for CreatePreparedStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamedQueryInput {
     /// <p>The query name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The query description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The database to which the query belongs.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The contents of the query with all query statements.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup in which the named query is being created.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl CreateNamedQueryInput {
@@ -7299,10 +7387,13 @@ impl std::fmt::Debug for CreateNamedQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataCatalogInput {
     /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -7319,9 +7410,11 @@ pub struct CreateDataCatalogInput {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataCatalogInput {
@@ -7380,6 +7473,7 @@ impl std::fmt::Debug for CreateDataCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
+    #[doc(hidden)]
     pub query_execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetQueryExecutionInput {
@@ -7401,8 +7495,10 @@ impl std::fmt::Debug for BatchGetQueryExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
+    #[doc(hidden)]
     pub prepared_statement_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl BatchGetPreparedStatementInput {
@@ -7429,6 +7525,7 @@ impl std::fmt::Debug for BatchGetPreparedStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetNamedQueryInput {
     /// <p>An array of query IDs.</p>
+    #[doc(hidden)]
     pub named_query_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetNamedQueryInput {

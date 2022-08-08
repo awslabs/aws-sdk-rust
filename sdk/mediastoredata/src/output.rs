@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectOutput {
     /// <p>The SHA256 digest of the object that is persisted.</p>
+    #[doc(hidden)]
     pub content_sha256: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the object in the container.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
 }
 impl PutObjectOutput {
@@ -102,8 +105,10 @@ impl PutObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListItemsOutput {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Item>>,
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListItemsOutput {
@@ -186,18 +191,25 @@ pub struct GetObjectOutput {
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
+    #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The range of bytes to retrieve.</p>
+    #[doc(hidden)]
     pub content_range: std::option::Option<std::string::String>,
     /// <p>The length of the object in bytes.</p>
+    #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
     /// <p>The content type of the object.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The ETag that represents a unique instance of the object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
+    #[doc(hidden)]
     pub status_code: i32,
 }
 impl GetObjectOutput {
@@ -386,15 +398,20 @@ impl GetObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObjectOutput {
     /// <p>The ETag that represents a unique instance of the object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The content type of the object.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The length of the object in bytes.</p>
+    #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
+    #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeObjectOutput {

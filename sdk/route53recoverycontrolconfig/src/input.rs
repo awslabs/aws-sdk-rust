@@ -3705,8 +3705,10 @@ impl UpdateSafetyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSafetyRuleInput {
     /// <p>The assertion rule to update.</p>
+    #[doc(hidden)]
     pub assertion_rule_update: std::option::Option<crate::model::AssertionRuleUpdate>,
     /// <p>The gating rule to update.</p>
+    #[doc(hidden)]
     pub gating_rule_update: std::option::Option<crate::model::GatingRuleUpdate>,
 }
 impl UpdateSafetyRuleInput {
@@ -3733,8 +3735,10 @@ impl std::fmt::Debug for UpdateSafetyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_name: std::option::Option<std::string::String>,
 }
 impl UpdateRoutingControlInput {
@@ -3761,8 +3765,10 @@ impl std::fmt::Debug for UpdateRoutingControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_name: std::option::Option<std::string::String>,
 }
 impl UpdateControlPanelInput {
@@ -3789,8 +3795,10 @@ impl std::fmt::Debug for UpdateControlPanelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys for the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3817,8 +3825,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3849,6 +3859,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3870,10 +3881,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSafetyRulesInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSafetyRulesInput {
@@ -3905,10 +3919,13 @@ impl std::fmt::Debug for ListSafetyRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutingControlsInput {
@@ -3940,10 +3957,13 @@ impl std::fmt::Debug for ListRoutingControlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlPanelsInput {
     /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlPanelsInput {
@@ -3975,8 +3995,10 @@ impl std::fmt::Debug for ListControlPanelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersInput {
@@ -4003,10 +4025,13 @@ impl std::fmt::Debug for ListClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedRoute53HealthChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl ListAssociatedRoute53HealthChecksInput {
@@ -4038,6 +4063,7 @@ impl std::fmt::Debug for ListAssociatedRoute53HealthChecksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSafetyRuleInput {
@@ -4059,6 +4085,7 @@ impl std::fmt::Debug for DescribeSafetyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRoutingControlInput {
@@ -4080,6 +4107,7 @@ impl std::fmt::Debug for DescribeRoutingControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
 impl DescribeControlPanelInput {
@@ -4101,6 +4129,7 @@ impl std::fmt::Debug for DescribeControlPanelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
@@ -4122,6 +4151,7 @@ impl std::fmt::Debug for DescribeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSafetyRuleInput {
@@ -4143,6 +4173,7 @@ impl std::fmt::Debug for DeleteSafetyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRoutingControlInput {
@@ -4164,6 +4195,7 @@ impl std::fmt::Debug for DeleteRoutingControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
 impl DeleteControlPanelInput {
@@ -4185,6 +4217,7 @@ impl std::fmt::Debug for DeleteControlPanelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
@@ -4206,12 +4239,16 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
+    #[doc(hidden)]
     pub assertion_rule: std::option::Option<crate::model::NewAssertionRule>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The gating rule requested.</p>
+    #[doc(hidden)]
     pub gating_rule: std::option::Option<crate::model::NewGatingRule>,
     /// <p>The tags associated with the safety rule.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4252,12 +4289,16 @@ impl std::fmt::Debug for CreateSafetyRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoutingControlInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_name: std::option::Option<std::string::String>,
 }
 impl CreateRoutingControlInput {
@@ -4294,12 +4335,16 @@ impl std::fmt::Debug for CreateRoutingControlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlPanelInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the control panel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4340,10 +4385,13 @@ impl std::fmt::Debug for CreateControlPanelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

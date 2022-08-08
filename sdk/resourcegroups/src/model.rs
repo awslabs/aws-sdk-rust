@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The resource query that determines which AWS resources are members of the associated resource group.</p>
+    #[doc(hidden)]
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
 }
 impl GroupQuery {
@@ -113,8 +115,10 @@ pub struct ResourceQuery {
     /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::QueryType>,
     /// <p>The query that defines a group or a search.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
 }
 impl ResourceQuery {
@@ -281,10 +285,13 @@ impl AsRef<str> for QueryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The ARN of the resource group.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the resource group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl Group {
@@ -373,6 +380,7 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingResource {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PendingResource {
@@ -427,10 +435,13 @@ impl PendingResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedResource {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The error message text associated with the failure.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The error code associated with the failure.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
 }
 impl FailedResource {
@@ -522,8 +533,10 @@ impl FailedResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryError {
     /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::QueryErrorCode>,
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl QueryError {
@@ -656,8 +669,10 @@ impl AsRef<str> for QueryErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIdentifier {
     /// <p>The ARN of a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceIdentifier {
@@ -732,8 +747,10 @@ impl ResourceIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupConfigurationItem {
     /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
 }
 impl GroupConfigurationItem {
@@ -815,8 +832,10 @@ impl GroupConfigurationItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupConfigurationParameter {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GroupConfigurationParameter {
@@ -897,8 +916,10 @@ impl GroupConfigurationParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupIdentifier {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource group.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl GroupIdentifier {
@@ -970,8 +991,10 @@ impl GroupIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::GroupFilterName>,
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GroupFilter {
@@ -1110,10 +1133,12 @@ impl AsRef<str> for GroupFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<crate::model::ResourceIdentifier>,
     /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
 impl ListGroupResourcesItem {
@@ -1197,6 +1222,7 @@ impl ListGroupResourcesItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceStatus {
     /// <p>The current status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ResourceStatusValue>,
 }
 impl ResourceStatus {
@@ -1303,8 +1329,10 @@ impl AsRef<str> for ResourceStatusValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ResourceFilterName>,
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourceFilter {
@@ -1439,13 +1467,17 @@ impl AsRef<str> for ResourceFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
+    #[doc(hidden)]
     pub proposed_configuration:
         std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
     /// <p>The current status of an attempt to update the group configuration.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GroupConfigurationStatus>,
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl GroupConfiguration {

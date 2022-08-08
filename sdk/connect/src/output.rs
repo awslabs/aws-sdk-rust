@@ -214,28 +214,40 @@ impl UpdateUserHierarchyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the task template resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the task template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
     /// <p>Fields that are part of the template.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>The timestamp when the task template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the task template was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateTaskTemplateOutput {
@@ -865,8 +877,10 @@ impl UpdateQueueHoursOfOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberOutput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberOutput {
@@ -1334,8 +1348,10 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferContactOutput {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl TransferContactOutput {
@@ -1557,6 +1573,7 @@ impl StopContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl StartTaskContactOutput {
@@ -1611,6 +1628,7 @@ impl StartTaskContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOutboundVoiceContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl StartOutboundVoiceContactOutput {
@@ -1665,6 +1683,7 @@ impl StartOutboundVoiceContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
+    #[doc(hidden)]
     pub streaming_id: std::option::Option<std::string::String>,
 }
 impl StartContactStreamingOutput {
@@ -1749,10 +1768,13 @@ impl StartContactRecordingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChatContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance. </p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
+    #[doc(hidden)]
     pub participant_id: std::option::Option<std::string::String>,
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
+    #[doc(hidden)]
     pub participant_token: std::option::Option<std::string::String>,
 }
 impl StartChatContactOutput {
@@ -1847,9 +1869,11 @@ impl StartChatContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchVocabulariesOutput {
     /// <p>The list of the available custom vocabularies.</p>
+    #[doc(hidden)]
     pub vocabulary_summary_list:
         std::option::Option<std::vec::Vec<crate::model::VocabularySummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchVocabulariesOutput {
@@ -1933,10 +1957,13 @@ impl SearchVocabulariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersOutput {
     /// <p>Information about the users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSearchSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of users who matched your search query.</p>
+    #[doc(hidden)]
     pub approximate_total_count: std::option::Option<i64>,
 }
 impl SearchUsersOutput {
@@ -2034,8 +2061,10 @@ impl SearchUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of available phone numbers that you can claim for your Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub available_numbers_list:
         std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
 }
@@ -2213,8 +2242,10 @@ impl PutUserStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>Information about the users.</p>
+    #[doc(hidden)]
     pub user_summary_list: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -2295,9 +2326,11 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserHierarchyGroupsOutput {
     /// <p>Information about the hierarchy groups.</p>
+    #[doc(hidden)]
     pub user_hierarchy_group_summary_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchyGroupSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserHierarchyGroupsOutput {
@@ -2387,8 +2420,10 @@ impl ListUserHierarchyGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUseCasesOutput {
     /// <p>The use cases.</p>
+    #[doc(hidden)]
     pub use_case_summary_list: std::option::Option<std::vec::Vec<crate::model::UseCase>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUseCasesOutput {
@@ -2469,10 +2504,12 @@ impl ListUseCasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskTemplatesOutput {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
+    #[doc(hidden)]
     pub task_templates: std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskTemplatesOutput {
@@ -2560,6 +2597,7 @@ impl ListTaskTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2633,9 +2671,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
+    #[doc(hidden)]
     pub security_profile_summary_list:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesOutput {
@@ -2725,8 +2765,10 @@ impl ListSecurityProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilePermissionsOutput {
     /// <p>The permissions granted to the security profile.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilePermissionsOutput {
@@ -2807,8 +2849,10 @@ impl ListSecurityProfilePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityKeysOutput {
     /// <p>The security keys.</p>
+    #[doc(hidden)]
     pub security_keys: std::option::Option<std::vec::Vec<crate::model::SecurityKey>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityKeysOutput {
@@ -2889,9 +2933,11 @@ impl ListSecurityKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingProfilesOutput {
     /// <p>Information about the routing profiles.</p>
+    #[doc(hidden)]
     pub routing_profile_summary_list:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutingProfilesOutput {
@@ -2981,8 +3027,10 @@ impl ListRoutingProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingProfileQueuesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the routing profiles.</p>
+    #[doc(hidden)]
     pub routing_profile_queue_config_summary_list:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfigSummary>>,
 }
@@ -3078,9 +3126,11 @@ impl ListRoutingProfileQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQuickConnectsOutput {
     /// <p>Information about the quick connects.</p>
+    #[doc(hidden)]
     pub quick_connect_summary_list:
         std::option::Option<std::vec::Vec<crate::model::QuickConnectSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListQuickConnectsOutput {
@@ -3170,8 +3220,10 @@ impl ListQuickConnectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesOutput {
     /// <p>Information about the queues.</p>
+    #[doc(hidden)]
     pub queue_summary_list: std::option::Option<std::vec::Vec<crate::model::QueueSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListQueuesOutput {
@@ -3253,8 +3305,10 @@ impl ListQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueueQuickConnectsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quick connects.</p>
+    #[doc(hidden)]
     pub quick_connect_summary_list:
         std::option::Option<std::vec::Vec<crate::model::QuickConnectSummary>>,
 }
@@ -3345,8 +3399,10 @@ impl ListQueueQuickConnectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPromptsOutput {
     /// <p>Information about the prompts.</p>
+    #[doc(hidden)]
     pub prompt_summary_list: std::option::Option<std::vec::Vec<crate::model::PromptSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPromptsOutput {
@@ -3428,8 +3484,10 @@ impl ListPromptsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances.</p>
+    #[doc(hidden)]
     pub list_phone_numbers_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>>,
 }
@@ -3520,9 +3578,11 @@ impl ListPhoneNumbersV2Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersOutput {
     /// <p>Information about the phone numbers.</p>
+    #[doc(hidden)]
     pub phone_number_summary_list:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersOutput {
@@ -3609,8 +3669,10 @@ impl ListPhoneNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLexBotsOutput {
     /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    #[doc(hidden)]
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBot>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLexBotsOutput {
@@ -3691,8 +3753,10 @@ impl ListLexBotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLambdaFunctionsOutput {
     /// <p>The Lambdafunction ARNs associated with the specified instance.</p>
+    #[doc(hidden)]
     pub lambda_functions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLambdaFunctionsOutput {
@@ -3773,9 +3837,11 @@ impl ListLambdaFunctionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationAssociationsOutput {
     /// <p>The associations.</p>
+    #[doc(hidden)]
     pub integration_association_summary_list:
         std::option::Option<std::vec::Vec<crate::model::IntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIntegrationAssociationsOutput {
@@ -3867,8 +3933,10 @@ impl ListIntegrationAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceStorageConfigsOutput {
     /// <p>A valid storage type.</p>
+    #[doc(hidden)]
     pub storage_configs: std::option::Option<std::vec::Vec<crate::model::InstanceStorageConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceStorageConfigsOutput {
@@ -3950,8 +4018,10 @@ impl ListInstanceStorageConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
     /// <p>Information about the instances.</p>
+    #[doc(hidden)]
     pub instance_summary_list: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -4033,8 +4103,10 @@ impl ListInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceAttributesOutput {
     /// <p>The attribute types.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceAttributesOutput {
@@ -4115,9 +4187,11 @@ impl ListInstanceAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHoursOfOperationsOutput {
     /// <p>Information about the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_summary_list:
         std::option::Option<std::vec::Vec<crate::model::HoursOfOperationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHoursOfOperationsOutput {
@@ -4207,9 +4281,11 @@ impl ListHoursOfOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDefaultVocabulariesOutput {
     /// <p>A list of default vocabularies.</p>
+    #[doc(hidden)]
     pub default_vocabulary_list:
         std::option::Option<std::vec::Vec<crate::model::DefaultVocabulary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDefaultVocabulariesOutput {
@@ -4293,10 +4369,12 @@ impl ListDefaultVocabulariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactReferencesOutput {
     /// <p>Information about the contact flows.</p>
+    #[doc(hidden)]
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactReferencesOutput {
@@ -4384,9 +4462,11 @@ impl ListContactReferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowsOutput {
     /// <p>Information about the contact flows.</p>
+    #[doc(hidden)]
     pub contact_flow_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ContactFlowSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactFlowsOutput {
@@ -4473,9 +4553,11 @@ impl ListContactFlowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowModulesOutput {
     /// <p>Information about the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_modules_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactFlowModulesOutput {
@@ -4565,8 +4647,10 @@ impl ListContactFlowModulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsOutput {
     /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    #[doc(hidden)]
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsOutput {
@@ -4647,8 +4731,10 @@ impl ListBotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApprovedOriginsOutput {
     /// <p>The approved origins.</p>
+    #[doc(hidden)]
     pub origins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApprovedOriginsOutput {
@@ -4729,8 +4815,10 @@ impl ListApprovedOriginsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAgentStatusesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A summary of agent statuses.</p>
+    #[doc(hidden)]
     pub agent_status_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>>,
 }
@@ -4818,30 +4906,43 @@ impl ListAgentStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the task template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
     /// <p>Fields that are part of the template.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>The timestamp when the task template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the task template was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5149,9 +5250,11 @@ impl GetTaskTemplateOutput {
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
+    #[doc(hidden)]
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::HistoricalMetricResult>>,
 }
 impl GetMetricDataOutput {
@@ -5239,6 +5342,7 @@ impl GetMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
 }
 impl GetFederationTokenOutput {
@@ -5296,8 +5400,10 @@ impl GetFederationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentUserDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the user data that is returned.</p>
+    #[doc(hidden)]
     pub user_data_list: std::option::Option<std::vec::Vec<crate::model::UserData>>,
 }
 impl GetCurrentUserDataOutput {
@@ -5379,10 +5485,13 @@ impl GetCurrentUserDataOutput {
 pub struct GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the real-time metrics.</p>
+    #[doc(hidden)]
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
+    #[doc(hidden)]
     pub data_snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCurrentMetricDataOutput {
@@ -5487,6 +5596,7 @@ impl GetCurrentMetricDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactAttributesOutput {
     /// <p>Information about the attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5832,6 +5942,7 @@ impl DisassociateApprovedOriginOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVocabularyOutput {
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    #[doc(hidden)]
     pub vocabulary: std::option::Option<crate::model::Vocabulary>,
 }
 impl DescribeVocabularyOutput {
@@ -5889,6 +6000,7 @@ impl DescribeVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserHierarchyStructureOutput {
     /// <p>Information about the hierarchy structure.</p>
+    #[doc(hidden)]
     pub hierarchy_structure: std::option::Option<crate::model::HierarchyStructure>,
 }
 impl DescribeUserHierarchyStructureOutput {
@@ -5946,6 +6058,7 @@ impl DescribeUserHierarchyStructureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserHierarchyGroupOutput {
     /// <p>Information about the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group: std::option::Option<crate::model::HierarchyGroup>,
 }
 impl DescribeUserHierarchyGroupOutput {
@@ -6003,6 +6116,7 @@ impl DescribeUserHierarchyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>Information about the user account and configuration settings.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl DescribeUserOutput {
@@ -6055,6 +6169,7 @@ impl DescribeUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityProfileOutput {
     /// <p>The security profile.</p>
+    #[doc(hidden)]
     pub security_profile: std::option::Option<crate::model::SecurityProfile>,
 }
 impl DescribeSecurityProfileOutput {
@@ -6112,6 +6227,7 @@ impl DescribeSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingProfileOutput {
     /// <p>The routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile: std::option::Option<crate::model::RoutingProfile>,
 }
 impl DescribeRoutingProfileOutput {
@@ -6169,6 +6285,7 @@ impl DescribeRoutingProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuickConnectOutput {
     /// <p>Information about the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect: std::option::Option<crate::model::QuickConnect>,
 }
 impl DescribeQuickConnectOutput {
@@ -6226,6 +6343,7 @@ impl DescribeQuickConnectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQueueOutput {
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl DescribeQueueOutput {
@@ -6278,6 +6396,7 @@ impl DescribeQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhoneNumberOutput {
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub claimed_phone_number_summary: std::option::Option<crate::model::ClaimedPhoneNumberSummary>,
 }
 impl DescribePhoneNumberOutput {
@@ -6344,6 +6463,7 @@ impl DescribePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceStorageConfigOutput {
     /// <p>A valid storage type.</p>
+    #[doc(hidden)]
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
 }
 impl DescribeInstanceStorageConfigOutput {
@@ -6401,6 +6521,7 @@ impl DescribeInstanceStorageConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAttributeOutput {
     /// <p>The type of attribute.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::Attribute>,
 }
 impl DescribeInstanceAttributeOutput {
@@ -6458,6 +6579,7 @@ impl DescribeInstanceAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceOutput {
     /// <p>The name of the instance.</p>
+    #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
 }
 impl DescribeInstanceOutput {
@@ -6512,6 +6634,7 @@ impl DescribeInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHoursOfOperationOutput {
     /// <p>The hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation: std::option::Option<crate::model::HoursOfOperation>,
 }
 impl DescribeHoursOfOperationOutput {
@@ -6569,6 +6692,7 @@ impl DescribeHoursOfOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowModuleOutput {
     /// <p>Information about the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module: std::option::Option<crate::model::ContactFlowModule>,
 }
 impl DescribeContactFlowModuleOutput {
@@ -6626,6 +6750,7 @@ impl DescribeContactFlowModuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowOutput {
     /// <p>Information about the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow: std::option::Option<crate::model::ContactFlow>,
 }
 impl DescribeContactFlowOutput {
@@ -6683,6 +6808,7 @@ impl DescribeContactFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactOutput {
     /// <p>Information about the contact.</p>
+    #[doc(hidden)]
     pub contact: std::option::Option<crate::model::Contact>,
 }
 impl DescribeContactOutput {
@@ -6737,6 +6863,7 @@ impl DescribeContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentStatusOutput {
     /// <p>The agent status.</p>
+    #[doc(hidden)]
     pub agent_status: std::option::Option<crate::model::AgentStatus>,
 }
 impl DescribeAgentStatusOutput {
@@ -6794,10 +6921,13 @@ impl DescribeAgentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
     /// <p>The current state of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VocabularyState>,
 }
 impl DeleteVocabularyOutput {
@@ -7225,10 +7355,13 @@ impl DeleteContactFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
     /// <p>The current state of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VocabularyState>,
 }
 impl CreateVocabularyOutput {
@@ -7326,8 +7459,10 @@ impl CreateVocabularyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserHierarchyGroupOutput {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    #[doc(hidden)]
     pub hierarchy_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateUserHierarchyGroupOutput {
@@ -7405,8 +7540,10 @@ impl CreateUserHierarchyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -7478,8 +7615,10 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUseCaseOutput {
     /// <p>The identifier of the use case.</p>
+    #[doc(hidden)]
     pub use_case_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    #[doc(hidden)]
     pub use_case_arn: std::option::Option<std::string::String>,
 }
 impl CreateUseCaseOutput {
@@ -7551,8 +7690,10 @@ impl CreateUseCaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskTemplateOutput {
     /// <p>The identifier of the task template resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateTaskTemplateOutput {
@@ -7624,8 +7765,10 @@ impl CreateTaskTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityProfileOutput {
     /// <p>The identifier for the security profle.</p>
+    #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateSecurityProfileOutput {
@@ -7703,8 +7846,10 @@ impl CreateSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoutingProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
 }
 impl CreateRoutingProfileOutput {
@@ -7782,8 +7927,10 @@ impl CreateRoutingProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
+    #[doc(hidden)]
     pub quick_connect_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect. </p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl CreateQuickConnectOutput {
@@ -7861,8 +8008,10 @@ impl CreateQuickConnectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueueOutput {
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
 }
 impl CreateQueueOutput {
@@ -7934,8 +8083,10 @@ impl CreateQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationAssociationOutput {
     /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
+    #[doc(hidden)]
     pub integration_association_arn: std::option::Option<std::string::String>,
 }
 impl CreateIntegrationAssociationOutput {
@@ -8022,8 +8173,10 @@ impl CreateIntegrationAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceOutput {
     /// <p>The identifier for the instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateInstanceOutput {
@@ -8095,8 +8248,10 @@ impl CreateInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHoursOfOperationOutput {
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_arn: std::option::Option<std::string::String>,
 }
 impl CreateHoursOfOperationOutput {
@@ -8174,8 +8329,10 @@ impl CreateHoursOfOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowModuleOutput {
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowModuleOutput {
@@ -8247,8 +8404,10 @@ impl CreateContactFlowModuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowOutput {
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowOutput {
@@ -8326,8 +8485,10 @@ impl CreateContactFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAgentStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_id: std::option::Option<std::string::String>,
 }
 impl CreateAgentStatusOutput {
@@ -8405,8 +8566,10 @@ impl CreateAgentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimPhoneNumberOutput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
 }
 impl ClaimPhoneNumberOutput {
@@ -8484,6 +8647,7 @@ impl ClaimPhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSecurityKeyOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl AssociateSecurityKeyOutput {
@@ -8691,6 +8855,7 @@ impl AssociateLambdaFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateInstanceStorageConfigOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl AssociateInstanceStorageConfigOutput {

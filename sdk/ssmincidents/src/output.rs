@@ -244,6 +244,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartIncidentOutput {
     /// <p>The ARN of the newly created incident record.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
 }
 impl StartIncidentOutput {
@@ -301,6 +302,7 @@ impl StartIncidentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The ID of the resource policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -355,8 +357,10 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimelineEventsOutput {
     /// <p>Details about each event that occurred during the incident.</p>
+    #[doc(hidden)]
     pub event_summaries: std::option::Option<std::vec::Vec<crate::model::EventSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTimelineEventsOutput {
@@ -437,6 +441,7 @@ impl ListTimelineEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags for the response plan.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -510,9 +515,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
+    #[doc(hidden)]
     pub response_plan_summaries:
         std::option::Option<std::vec::Vec<crate::model::ResponsePlanSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResponsePlansOutput {
@@ -596,8 +603,10 @@ impl ListResponsePlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReplicationSetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
+    #[doc(hidden)]
     pub replication_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReplicationSetsOutput {
@@ -678,8 +687,10 @@ impl ListReplicationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRelatedItemsOutput {
     /// <p>Details about each related item.</p>
+    #[doc(hidden)]
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRelatedItemsOutput {
@@ -760,9 +771,11 @@ impl ListRelatedItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
+    #[doc(hidden)]
     pub incident_record_summaries:
         std::option::Option<std::vec::Vec<crate::model::IncidentRecordSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIncidentRecordsOutput {
@@ -849,6 +862,7 @@ impl ListIncidentRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimelineEventOutput {
     /// <p>Details about the timeline event.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::TimelineEvent>,
 }
 impl GetTimelineEventOutput {
@@ -904,18 +918,25 @@ impl GetTimelineEventOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The long format name of the response plan. Can contain spaces.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create the incident when using this response plan.</p>
+    #[doc(hidden)]
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
+    #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl GetResponsePlanOutput {
@@ -1090,8 +1111,10 @@ impl GetResponsePlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesOutput {
     /// <p>Details about the resource policy attached to the response plan.</p>
+    #[doc(hidden)]
     pub resource_policies: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourcePoliciesOutput {
@@ -1173,6 +1196,7 @@ impl GetResourcePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationSetOutput {
     /// <p>Details of the replication set.</p>
+    #[doc(hidden)]
     pub replication_set: std::option::Option<crate::model::ReplicationSet>,
 }
 impl GetReplicationSetOutput {
@@ -1230,6 +1254,7 @@ impl GetReplicationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIncidentRecordOutput {
     /// <p>Details the structure of the incident record.</p>
+    #[doc(hidden)]
     pub incident_record: std::option::Option<crate::model::IncidentRecord>,
 }
 impl GetIncidentRecordOutput {
@@ -1437,8 +1462,10 @@ impl DeleteIncidentRecordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the event for easy reference later. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
 }
 impl CreateTimelineEventOutput {
@@ -1513,6 +1540,7 @@ impl CreateTimelineEventOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponsePlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateResponsePlanOutput {
@@ -1565,6 +1593,7 @@ impl CreateResponsePlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication set. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateReplicationSetOutput {

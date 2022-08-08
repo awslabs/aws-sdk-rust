@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSamplingRuleOutput {
     /// <p>The updated rule definition and metadata.</p>
+    #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl UpdateSamplingRuleOutput {
@@ -61,6 +62,7 @@ impl UpdateSamplingRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
     /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl UpdateGroupOutput {
@@ -173,6 +175,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTraceSegmentsOutput {
     /// <p>Segments that failed processing.</p>
+    #[doc(hidden)]
     pub unprocessed_trace_segments:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
 }
@@ -276,6 +279,7 @@ impl PutTelemetryRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEncryptionConfigOutput {
     /// <p>The new encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl PutEncryptionConfigOutput {
@@ -333,8 +337,10 @@ impl PutEncryptionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -415,12 +421,16 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTraceSummariesOutput {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
+    #[doc(hidden)]
     pub trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
     /// <p>The start time of this page of results.</p>
+    #[doc(hidden)]
     pub approximate_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
+    #[doc(hidden)]
     pub traces_processed_count: std::option::Option<i64>,
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceSummariesOutput {
@@ -538,8 +548,10 @@ impl GetTraceSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTraceGraphOutput {
     /// <p>The services that have processed one of the specified requests.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceGraphOutput {
@@ -620,11 +632,14 @@ impl GetTraceGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimeSeriesServiceStatisticsOutput {
     /// <p>The collection of statistics.</p>
+    #[doc(hidden)]
     pub time_series_service_statistics:
         std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
+    #[doc(hidden)]
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTimeSeriesServiceStatisticsOutput {
@@ -734,14 +749,19 @@ impl GetTimeSeriesServiceStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceGraphOutput {
     /// <p>The start of the time frame for which the graph was generated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which the graph was generated.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The services that have processed a traced request during the specified time frame.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
+    #[doc(hidden)]
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetServiceGraphOutput {
@@ -882,11 +902,14 @@ impl GetServiceGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingTargetsOutput {
     /// <p>Updated rules that the service should use to sample requests.</p>
+    #[doc(hidden)]
     pub sampling_target_documents:
         std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+    #[doc(hidden)]
     pub last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
+    #[doc(hidden)]
     pub unprocessed_statistics:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
 }
@@ -1009,9 +1032,11 @@ impl GetSamplingTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingStatisticSummariesOutput {
     /// <p>Information about the number of requests instrumented for each sampling rule.</p>
+    #[doc(hidden)]
     pub sampling_statistic_summaries:
         std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingStatisticSummariesOutput {
@@ -1101,8 +1126,10 @@ impl GetSamplingStatisticSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingRulesOutput {
     /// <p>Rule definitions and metadata.</p>
+    #[doc(hidden)]
     pub sampling_rule_records: std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingRulesOutput {
@@ -1186,8 +1213,10 @@ impl GetSamplingRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSummariesOutput {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
+    #[doc(hidden)]
     pub insight_summaries: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightSummariesOutput {
@@ -1269,18 +1298,25 @@ impl GetInsightSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightImpactGraphOutput {
     /// <p>The insight's unique identifier.</p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The provided start time.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The provided end time. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
+    #[doc(hidden)]
     pub service_graph_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
+    #[doc(hidden)]
     pub service_graph_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightImpactGraphOutput {
@@ -1459,8 +1495,10 @@ impl GetInsightImpactGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightEventsOutput {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
+    #[doc(hidden)]
     pub insight_events: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
     /// <p>Use this token to retrieve the next page of insight events.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightEventsOutput {
@@ -1541,6 +1579,7 @@ impl GetInsightEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightOutput {
     /// <p>The summary information of an insight.</p>
+    #[doc(hidden)]
     pub insight: std::option::Option<crate::model::Insight>,
 }
 impl GetInsightOutput {
@@ -1595,8 +1634,10 @@ impl GetInsightOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupsOutput {
     /// <p>The collection of all active groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetGroupsOutput {
@@ -1677,6 +1718,7 @@ impl GetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
@@ -1729,6 +1771,7 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEncryptionConfigOutput {
     /// <p>The encryption configuration document.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl GetEncryptionConfigOutput {
@@ -1786,6 +1829,7 @@ impl GetEncryptionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSamplingRuleOutput {
     /// <p>The deleted rule definition and metadata.</p>
+    #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl DeleteSamplingRuleOutput {
@@ -1873,6 +1917,7 @@ impl DeleteGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSamplingRuleOutput {
     /// <p>The saved rule definition and metadata.</p>
+    #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl CreateSamplingRuleOutput {
@@ -1930,6 +1975,7 @@ impl CreateSamplingRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
@@ -1982,10 +2028,13 @@ impl CreateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetTracesOutput {
     /// <p>Full traces for the specified requests.</p>
+    #[doc(hidden)]
     pub traces: std::option::Option<std::vec::Vec<crate::model::Trace>>,
     /// <p>Trace IDs of requests that haven't been processed.</p>
+    #[doc(hidden)]
     pub unprocessed_trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetTracesOutput {

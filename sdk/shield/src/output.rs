@@ -184,6 +184,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -245,10 +246,12 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesInProtectionGroupOutput {
@@ -335,10 +338,12 @@ impl ListResourcesInProtectionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectionsOutput {
     /// <p>The array of enabled <code>Protection</code> objects.</p>
+    #[doc(hidden)]
     pub protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionsOutput {
@@ -425,10 +430,12 @@ impl ListProtectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectionGroupsOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionGroupsOutput {
@@ -516,10 +523,12 @@ impl ListProtectionGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttacksOutput {
     /// <p>The attack information for the specified time range.</p>
+    #[doc(hidden)]
     pub attack_summaries: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttacksOutput {
@@ -607,6 +616,7 @@ impl ListAttacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
+    #[doc(hidden)]
     pub subscription_state: std::option::Option<crate::model::SubscriptionState>,
 }
 impl GetSubscriptionStateOutput {
@@ -875,6 +885,7 @@ impl DisableApplicationLayerAutomaticResponseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscriptionOutput {
     /// <p>The Shield Advanced subscription details for an account.</p>
+    #[doc(hidden)]
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
 impl DescribeSubscriptionOutput {
@@ -932,6 +943,7 @@ impl DescribeSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionGroupOutput {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    #[doc(hidden)]
     pub protection_group: std::option::Option<crate::model::ProtectionGroup>,
 }
 impl DescribeProtectionGroupOutput {
@@ -989,6 +1001,7 @@ impl DescribeProtectionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionOutput {
     /// <p>The <code>Protection</code> that you requested. </p>
+    #[doc(hidden)]
     pub protection: std::option::Option<crate::model::Protection>,
 }
 impl DescribeProtectionOutput {
@@ -1046,6 +1059,7 @@ impl DescribeProtectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEmergencyContactSettingsOutput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    #[doc(hidden)]
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
 impl DescribeEmergencyContactSettingsOutput {
@@ -1110,8 +1124,10 @@ impl DescribeEmergencyContactSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDrtAccessOutput {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
+    #[doc(hidden)]
     pub log_bucket_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDrtAccessOutput {
@@ -1192,8 +1208,10 @@ impl DescribeDrtAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackStatisticsOutput {
     /// <p>The time range of the attack.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>The data that describes the attacks detected during the time period.</p>
+    #[doc(hidden)]
     pub data_items: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
 }
 impl DescribeAttackStatisticsOutput {
@@ -1278,6 +1296,7 @@ impl DescribeAttackStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackOutput {
     /// <p>The attack that you requested. </p>
+    #[doc(hidden)]
     pub attack: std::option::Option<crate::model::AttackDetail>,
 }
 impl DescribeAttackOutput {
@@ -1486,6 +1505,7 @@ impl CreateProtectionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProtectionOutput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
+    #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
 }
 impl CreateProtectionOutput {

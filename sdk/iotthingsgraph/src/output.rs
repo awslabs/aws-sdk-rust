@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadEntityDefinitionsOutput {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl UploadEntityDefinitionsOutput {
@@ -58,6 +59,7 @@ impl UploadEntityDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSystemTemplateOutput {
     /// <p>An object containing summary information about the updated system.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
 }
 impl UpdateSystemTemplateOutput {
@@ -115,6 +117,7 @@ impl UpdateSystemTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowTemplateOutput {
     /// <p>An object containing summary information about the updated workflow.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
 }
 impl UpdateFlowTemplateOutput {
@@ -202,6 +205,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeploySystemInstanceOutput {
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
 }
 impl UndeploySystemInstanceOutput {
@@ -289,8 +293,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchThingsOutput {
     /// <p>An array of things in the result set.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<crate::model::Thing>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchThingsOutput {
@@ -371,8 +377,10 @@ impl SearchThingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSystemTemplatesOutput {
     /// <p>An array of objects that contain summary information about each system deployment in the result set.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::SystemTemplateSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchSystemTemplatesOutput {
@@ -454,8 +462,10 @@ impl SearchSystemTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSystemInstancesOutput {
     /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::SystemInstanceSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchSystemInstancesOutput {
@@ -537,8 +547,10 @@ impl SearchSystemInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFlowTemplatesOutput {
     /// <p>An array of objects that contain summary information about each workflow in the result set.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::FlowTemplateSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchFlowTemplatesOutput {
@@ -619,8 +631,10 @@ impl SearchFlowTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFlowExecutionsOutput {
     /// <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::FlowExecutionSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchFlowExecutionsOutput {
@@ -702,8 +716,10 @@ impl SearchFlowExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchEntitiesOutput {
     /// <p>An array of descriptions for each entity returned in the search result.</p>
+    #[doc(hidden)]
     pub descriptions: std::option::Option<std::vec::Vec<crate::model::EntityDescription>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchEntitiesOutput {
@@ -785,8 +801,10 @@ impl SearchEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The token that specifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -867,8 +885,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowExecutionMessagesOutput {
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::FlowExecutionMessage>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowExecutionMessagesOutput {
@@ -949,18 +969,25 @@ impl ListFlowExecutionMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUploadStatusOutput {
     /// <p>The ID of the upload.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
+    #[doc(hidden)]
     pub upload_status: std::option::Option<crate::model::UploadStatus>,
     /// <p>The ARN of the upload.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The name of the upload's namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
     /// <p>The reason for an upload failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date at which the upload was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetUploadStatusOutput {
@@ -1138,8 +1165,10 @@ impl GetUploadStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSystemTemplateRevisionsOutput {
     /// <p>An array of objects that contain summary data about the system template revisions.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::SystemTemplateSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSystemTemplateRevisionsOutput {
@@ -1221,6 +1250,7 @@ impl GetSystemTemplateRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSystemTemplateOutput {
     /// <p>An object that contains summary data about the system.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::SystemTemplateDescription>,
 }
 impl GetSystemTemplateOutput {
@@ -1278,6 +1308,7 @@ impl GetSystemTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSystemInstanceOutput {
     /// <p>An object that describes the system instance.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::SystemInstanceDescription>,
 }
 impl GetSystemInstanceOutput {
@@ -1335,14 +1366,19 @@ impl GetSystemInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamespaceDeletionStatusOutput {
     /// <p>The ARN of the namespace that is being deleted.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The name of the namespace that is being deleted.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The status of the deletion request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NamespaceDeletionStatus>,
     /// <p>An error code returned by the namespace deletion task.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::NamespaceDeletionStatusErrorCodes>,
     /// <p>An error code returned by the namespace deletion task.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl GetNamespaceDeletionStatusOutput {
@@ -1485,8 +1521,10 @@ impl GetNamespaceDeletionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFlowTemplateRevisionsOutput {
     /// <p>An array of objects that provide summary data about each revision.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::FlowTemplateSummary>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFlowTemplateRevisionsOutput {
@@ -1567,6 +1605,7 @@ impl GetFlowTemplateRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFlowTemplateOutput {
     /// <p>The object that describes the specified workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::FlowTemplateDescription>,
 }
 impl GetFlowTemplateOutput {
@@ -1624,6 +1663,7 @@ impl GetFlowTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntitiesOutput {
     /// <p>An array of descriptions for the specified entities.</p>
+    #[doc(hidden)]
     pub descriptions: std::option::Option<std::vec::Vec<crate::model::EntityDescription>>,
 }
 impl GetEntitiesOutput {
@@ -1718,14 +1758,19 @@ impl DissociateEntityFromThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceOutput {
     /// <p>The ARN of the namespace.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The name of the namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
+    #[doc(hidden)]
     pub tracking_namespace_name: std::option::Option<std::string::String>,
     /// <p>The version of the public namespace that the latest version is tracking.</p>
+    #[doc(hidden)]
     pub tracking_namespace_version: std::option::Option<i64>,
     /// <p>The version of the user's namespace to describe.</p>
+    #[doc(hidden)]
     pub namespace_version: std::option::Option<i64>,
 }
 impl DescribeNamespaceOutput {
@@ -1920,8 +1965,10 @@ impl DeprecateFlowTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploySystemInstanceOutput {
     /// <p>An object that contains summary information about a system instance that was deployed. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
+    #[doc(hidden)]
     pub greengrass_deployment_id: std::option::Option<std::string::String>,
 }
 impl DeploySystemInstanceOutput {
@@ -2059,8 +2106,10 @@ impl DeleteSystemInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
     /// <p>The ARN of the namespace to be deleted.</p>
+    #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
     /// <p>The name of the namespace to be deleted.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl DeleteNamespaceOutput {
@@ -2168,6 +2217,7 @@ impl DeleteFlowTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSystemTemplateOutput {
     /// <p>The summary object that describes the created system.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
 }
 impl CreateSystemTemplateOutput {
@@ -2225,6 +2275,7 @@ impl CreateSystemTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSystemInstanceOutput {
     /// <p>The summary object that describes the new system instance.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
 }
 impl CreateSystemInstanceOutput {
@@ -2282,6 +2333,7 @@ impl CreateSystemInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowTemplateOutput {
     /// <p>The summary object that describes the created workflow.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
 }
 impl CreateFlowTemplateOutput {

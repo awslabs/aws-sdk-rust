@@ -154,6 +154,7 @@ impl StopEngagementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
+    #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
 }
 impl StartEngagementOutput {
@@ -271,6 +272,7 @@ impl PutContactPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags related to the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -332,8 +334,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPagesByEngagementOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of engagements to contact channels.</p>
+    #[doc(hidden)]
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
 }
 impl ListPagesByEngagementOutput {
@@ -414,8 +418,10 @@ impl ListPagesByEngagementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPagesByContactOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of engagements to a contact's contact channel.</p>
+    #[doc(hidden)]
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
 }
 impl ListPagesByContactOutput {
@@ -496,8 +502,10 @@ impl ListPagesByContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPageReceiptsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of each acknowledgement.</p>
+    #[doc(hidden)]
     pub receipts: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
 }
 impl ListPageReceiptsOutput {
@@ -578,8 +586,10 @@ impl ListPageReceiptsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngagementsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
+    #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
 }
 impl ListEngagementsOutput {
@@ -660,8 +670,10 @@ impl ListEngagementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
+    #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::Contact>>,
 }
 impl ListContactsOutput {
@@ -742,8 +754,10 @@ impl ListContactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactChannelsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of contact channels related to the specified contact.</p>
+    #[doc(hidden)]
     pub contact_channels: std::option::Option<std::vec::Vec<crate::model::ContactChannel>>,
 }
 impl ListContactChannelsOutput {
@@ -825,8 +839,10 @@ impl ListContactChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactPolicyOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetContactPolicyOutput {
@@ -898,16 +914,22 @@ impl GetContactPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactChannelOutput {
     /// <p>The ARN of the contact that the channel belongs to.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact channel</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    #[doc(hidden)]
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
+    #[doc(hidden)]
     pub activation_status: std::option::Option<crate::model::ActivationStatus>,
 }
 impl GetContactChannelOutput {
@@ -1056,14 +1078,19 @@ impl GetContactChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactType>,
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
+    #[doc(hidden)]
     pub plan: std::option::Option<crate::model::Plan>,
 }
 impl GetContactOutput {
@@ -1186,28 +1213,40 @@ impl GetContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    #[doc(hidden)]
     pub page_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
+    #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the contact that was engaged.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_subject: std::option::Option<std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that engaged the contact channel.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time the engagement was sent to the contact channel.</p>
+    #[doc(hidden)]
     pub sent_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel acknowledged the engagement.</p>
+    #[doc(hidden)]
     pub read_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel received the engagement.</p>
+    #[doc(hidden)]
     pub delivery_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribePageOutput {
@@ -1467,24 +1506,34 @@ impl DescribePageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the engagement.</p>
+    #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_subject: std::option::Option<std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    #[doc(hidden)]
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident in which the engagement occurred.</p>
+    #[doc(hidden)]
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that the engagement started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the engagement ended.</p>
+    #[doc(hidden)]
     pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeEngagementOutput {
@@ -1797,6 +1846,7 @@ impl DeactivateContactChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactChannelOutput {
@@ -1854,6 +1904,7 @@ impl CreateContactChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactOutput {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactOutput {

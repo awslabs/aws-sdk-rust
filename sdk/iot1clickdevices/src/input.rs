@@ -2097,8 +2097,10 @@ impl UpdateDeviceStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceStateInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl UpdateDeviceStateInput {
@@ -2125,8 +2127,10 @@ impl std::fmt::Debug for UpdateDeviceStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collections of tag keys. For example, {"key1","key2"}</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2153,6 +2157,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnclaimDeviceInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl UnclaimDeviceInput {
@@ -2174,9 +2179,11 @@ impl std::fmt::Debug for UnclaimDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2208,6 +2215,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2229,10 +2237,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>The type of the device, such as "button".</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesInput {
@@ -2264,14 +2275,19 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceEventsInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    #[doc(hidden)]
     pub from_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    #[doc(hidden)]
     pub to_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDeviceEventsInput {
@@ -2313,10 +2329,13 @@ impl std::fmt::Debug for ListDeviceEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeDeviceMethodInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device method to invoke.</p>
+    #[doc(hidden)]
     pub device_method: std::option::Option<crate::model::DeviceMethod>,
     /// <p>A JSON encoded string containing the device method request parameters.</p>
+    #[doc(hidden)]
     pub device_method_parameters: std::option::Option<std::string::String>,
 }
 impl InvokeDeviceMethodInput {
@@ -2348,6 +2367,7 @@ impl std::fmt::Debug for InvokeDeviceMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl InitiateDeviceClaimInput {
@@ -2369,6 +2389,7 @@ impl std::fmt::Debug for InitiateDeviceClaimInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceMethodsInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl GetDeviceMethodsInput {
@@ -2390,9 +2411,11 @@ impl std::fmt::Debug for GetDeviceMethodsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizeDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2424,6 +2447,7 @@ impl std::fmt::Debug for FinalizeDeviceClaimInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceInput {
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
@@ -2445,6 +2469,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimDevicesByClaimCodeInput {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    #[doc(hidden)]
     pub claim_code: std::option::Option<std::string::String>,
 }
 impl ClaimDevicesByClaimCodeInput {

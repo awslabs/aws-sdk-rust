@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateSyncConfig {
     /// <p>The template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>A subdirectory path to your template bundle version.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
 }
 impl TemplateSyncConfig {
@@ -280,24 +286,34 @@ impl AsRef<str> for TemplateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateVersionSummary {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The latest major version that's associated with the version of a service template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of a service template.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>The recommended minor version of the service template.</p>
+    #[doc(hidden)]
     pub recommended_minor_version: std::option::Option<std::string::String>,
     /// <p>The service template minor version status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
     /// <p>A service template minor version status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A description of the version of a service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of a service template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of a service template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceTemplateVersionSummary {
@@ -597,32 +613,45 @@ impl AsRef<str> for TemplateVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The latest major version that's associated with the version of a service template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of a service template.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>The recommended minor version of the service template.</p>
+    #[doc(hidden)]
     pub recommended_minor_version: std::option::Option<std::string::String>,
     /// <p>The service template version status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
     /// <p>A service template version status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A description of the version of a service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of a service template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of a service template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
+    #[doc(hidden)]
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
     /// <p>The schema of the version of a service template.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
     >,
@@ -1000,8 +1029,10 @@ impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the compatible environment template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
 }
 impl CompatibleEnvironmentTemplate {
@@ -1079,8 +1110,10 @@ impl CompatibleEnvironmentTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the resource tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the resource tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1152,8 +1185,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleEnvironmentTemplateInput {
     /// <p>The compatible environment template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the compatible environment template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
 }
 impl CompatibleEnvironmentTemplateInput {
@@ -1268,8 +1303,10 @@ impl TemplateVersionSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ObjectSource {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3ObjectSource {
@@ -1341,20 +1378,28 @@ impl S3ObjectSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateSummary {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service template name as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The recommended version of the service template.</p>
+    #[doc(hidden)]
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
+    #[doc(hidden)]
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl ServiceTemplateSummary {
@@ -1591,22 +1636,31 @@ impl AsRef<str> for Provisioning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplate {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service template name as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The recommended version of the service template.</p>
+    #[doc(hidden)]
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
+    #[doc(hidden)]
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl ServiceTemplate {
@@ -1812,20 +1866,28 @@ impl ServiceTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSummary {
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time when the service was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ServiceStatus>,
     /// <p>A service status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl ServiceSummary {
@@ -2132,30 +2194,43 @@ impl AsRef<str> for ServiceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time when the service was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the service.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ServiceStatus>,
     /// <p>A service status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The formatted specification that defines the service.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The service pipeline detail data.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
+    #[doc(hidden)]
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the source code repository.</p>
+    #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl Service {
@@ -2438,24 +2513,34 @@ impl Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service pipeline was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service pipeline was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service template that was used to create the service pipeline.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The deployment status of the service pipeline.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>A service pipeline deployment status message.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that was used to create the service pipeline.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
 }
 impl ServicePipeline {
@@ -2847,11 +2932,14 @@ impl AsRef<str> for DeploymentUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedResource {
     /// <p>The provisioned resource name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The provisioned resource identifier.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
 }
 impl ProvisionedResource {
@@ -3007,8 +3095,10 @@ impl AsRef<str> for ProvisionedResourceEngine {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Output {
     /// <p>The output key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The output value.</p>
+    #[doc(hidden)]
     pub value_string: std::option::Option<std::string::String>,
 }
 impl Output {
@@ -3080,28 +3170,40 @@ impl Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service instance was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service that the service instance belongs to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment that the service instance was deployed into.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The service instance template major version.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The service instance template minor version.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The service instance deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>A service instance deployment status message.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
 }
 impl ServiceInstanceSummary {
@@ -3379,30 +3481,43 @@ impl ServiceInstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInstance {
     /// <p>The name of the service instance.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the service instance was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the service instance was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the service instance was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service that the service instance belongs to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the environment that the service instance was deployed into.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the service template that was used to create the service instance.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the service template that was used to create the service instance.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service instance.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The service instance deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The message associated with the service instance deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that was used to create the service instance.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
 }
 impl ServiceInstance {
@@ -3697,10 +3812,13 @@ impl ServiceInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) for a repository.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl RepositorySummary {
@@ -3792,14 +3910,19 @@ impl RepositorySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
     /// <p>The repository Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The repository Amazon Web Services CodeStar connection that connects Proton to your repository.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
 }
 impl Repository {
@@ -3931,24 +4054,34 @@ impl Repository {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplateVersionSummary {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The latest major version that's associated with the version of an environment template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The version of an environment template.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>The recommended minor version of the environment template.</p>
+    #[doc(hidden)]
     pub recommended_minor_version: std::option::Option<std::string::String>,
     /// <p>The status of the version of an environment template.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
     /// <p>The status message of the version of an environment template.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A description of the version of an environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of an environment template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of an environment template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentTemplateVersionSummary {
@@ -4180,26 +4313,37 @@ impl EnvironmentTemplateVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplateVersion {
     /// <p>The name of the version of an environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The latest major version that's associated with the version of an environment template.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of an environment template.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>The recommended minor version of the environment template.</p>
+    #[doc(hidden)]
     pub recommended_minor_version: std::option::Option<std::string::String>,
     /// <p>The status of the version of an environment template.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
     /// <p>The status message of the version of an environment template.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A description of the minor version of an environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the version of an environment template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the version of an environment template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The schema of the version of an environment template.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl EnvironmentTemplateVersion {
@@ -4448,20 +4592,28 @@ impl EnvironmentTemplateVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplateSummary {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the environment template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the environment template as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The recommended version of the environment template.</p>
+    #[doc(hidden)]
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl EnvironmentTemplateSummary {
@@ -4647,22 +4799,31 @@ impl EnvironmentTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplate {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the environment template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the environment template as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the recommended version of the environment template.</p>
+    #[doc(hidden)]
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>The customer provided encryption key for the environment template.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl EnvironmentTemplate {
@@ -4868,38 +5029,54 @@ impl EnvironmentTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time when the environment was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the environment was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the environment template.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the environment template.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The environment deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>An environment deployment status message.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
+    #[doc(hidden)]
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
+    #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
+    #[doc(hidden)]
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentSummary {
@@ -5269,8 +5446,10 @@ impl EnvironmentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
 }
 impl EnvironmentTemplateFilter {
@@ -5348,42 +5527,60 @@ impl EnvironmentTemplateFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time when the environment was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the environment was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the environment template.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the environment template.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The environment deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>An environment deployment status message.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
+    #[doc(hidden)]
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
+    #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
+    #[doc(hidden)]
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>The environment spec.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl Environment {
@@ -5790,12 +5987,16 @@ impl Environment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the repository branch.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
 }
 impl RepositoryBranch {
@@ -5904,10 +6105,13 @@ impl RepositoryBranch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranchInput {
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
 }
 impl RepositoryBranchInput {
@@ -5999,26 +6203,36 @@ impl RepositoryBranchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
+    #[doc(hidden)]
     pub management_account_id: std::option::Option<std::string::String>,
     /// <p>The environment account that's connected to the environment account connection.</p>
+    #[doc(hidden)]
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>The IAM service role that's associated with the environment account connection.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the environment that's associated with the environment account connection.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the environment account connection request was made.</p>
+    #[doc(hidden)]
     pub requested_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment account connection was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnection {
@@ -6312,26 +6526,36 @@ impl AsRef<str> for EnvironmentAccountConnectionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentAccountConnectionSummary {
     /// <p>The ID of the environment account connection.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
+    #[doc(hidden)]
     pub management_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
+    #[doc(hidden)]
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>The IAM service role that's associated with the environment account connection.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the environment that's associated with the environment account connection.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The time when the environment account connection request was made.</p>
+    #[doc(hidden)]
     pub requested_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the environment account connection was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnectionSummary {
@@ -6630,26 +6854,37 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentSummary {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that this component is associated with.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The time when the component was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the component was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the component was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the component was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The component deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The message associated with the component deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
 }
 impl ComponentSummary {
@@ -6908,30 +7143,43 @@ impl ComponentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Component {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that this component is associated with.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The time when the component was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the component was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the component was last attempted.</p>
+    #[doc(hidden)]
     pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the component was last deployed successfully.</p>
+    #[doc(hidden)]
     pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The component deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The message associated with the component deployment status.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_spec: std::option::Option<std::string::String>,
 }
 impl Component {
@@ -7278,8 +7526,10 @@ impl AsRef<str> for ComponentDeploymentUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    #[doc(hidden)]
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    #[doc(hidden)]
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
 impl AccountSettings {
@@ -7425,12 +7675,16 @@ impl AsRef<str> for ResourceDeploymentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The resource that is synced from.</p>
+    #[doc(hidden)]
     pub parent: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>The directory in the repository.</p>
+    #[doc(hidden)]
     pub directory: std::option::Option<std::string::String>,
 }
 impl RepositorySyncDefinition {
@@ -7587,14 +7841,19 @@ impl AsRef<str> for SyncType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Revision {
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
+    #[doc(hidden)]
     pub sha: std::option::Option<std::string::String>,
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
+    #[doc(hidden)]
     pub directory: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
 }
 impl Revision {
@@ -7723,16 +7982,22 @@ impl Revision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
+    #[doc(hidden)]
     pub initial_revision: std::option::Option<crate::model::Revision>,
     /// <p>Detail data for the target revision.</p>
+    #[doc(hidden)]
     pub target_revision: std::option::Option<crate::model::Revision>,
     /// <p>The resource that is synced to.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The time when the sync attempt started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the sync attempt.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceSyncStatus>,
     /// <p>An array of events with detail data.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::ResourceSyncEvent>>,
 }
 impl ResourceSyncAttempt {
@@ -7893,12 +8158,16 @@ impl ResourceSyncAttempt {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSyncEvent {
     /// <p>The type of event.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The external ID for the event.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>The time when the event occurred.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A resource sync event.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
 }
 impl ResourceSyncEvent {
@@ -8071,10 +8340,13 @@ impl AsRef<str> for ResourceSyncStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The sync attempt status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RepositorySyncStatus>,
     /// <p>Detail data for sync attempt events.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::RepositorySyncEvent>>,
 }
 impl RepositorySyncAttempt {
@@ -8178,12 +8450,16 @@ impl RepositorySyncAttempt {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySyncEvent {
     /// <p>The type of event.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The external ID of the sync event.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>The time that the sync event occurred.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Event detail for a repository sync attempt.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
 }
 impl RepositorySyncEvent {

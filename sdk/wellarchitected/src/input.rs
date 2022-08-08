@@ -8321,19 +8321,23 @@ impl UpgradeLensReviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
+    #[doc(hidden)]
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpgradeLensReviewInput {
@@ -8377,10 +8381,13 @@ impl std::fmt::Debug for UpgradeLensReviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
 }
 impl UpdateWorkloadShareInput {
@@ -8412,28 +8419,39 @@ impl std::fmt::Debug for UpdateWorkloadShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The environment for the workload.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    #[doc(hidden)]
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    #[doc(hidden)]
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
+    #[doc(hidden)]
     pub architectural_design: std::option::Option<std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    #[doc(hidden)]
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
+    #[doc(hidden)]
     pub is_review_owner_update_acknowledged: bool,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
@@ -8466,12 +8484,16 @@ pub struct UpdateWorkloadInput {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
+    #[doc(hidden)]
     pub industry: std::option::Option<std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>The improvement status for a workload.</p>
+    #[doc(hidden)]
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
 }
 impl UpdateWorkloadInput {
@@ -8600,8 +8622,10 @@ impl std::fmt::Debug for UpdateWorkloadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>Share invitation action taken by contributor.</p>
+    #[doc(hidden)]
     pub share_invitation_action: std::option::Option<crate::model::ShareInvitationAction>,
 }
 impl UpdateShareInvitationInput {
@@ -8630,15 +8654,19 @@ impl std::fmt::Debug for UpdateShareInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub lens_notes: std::option::Option<std::string::String>,
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    #[doc(hidden)]
     pub pillar_notes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8682,6 +8710,7 @@ impl std::fmt::Debug for UpdateLensReviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The status of organization sharing settings.</p>
+    #[doc(hidden)]
     pub organization_sharing_status: std::option::Option<crate::model::OrganizationSharingStatus>,
 }
 impl UpdateGlobalSettingsInput {
@@ -8708,26 +8737,34 @@ impl std::fmt::Debug for UpdateGlobalSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
+    #[doc(hidden)]
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
+    #[doc(hidden)]
     pub choice_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ChoiceUpdate>,
     >,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
+    #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The reason why a question is not applicable to your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AnswerReason>,
 }
 impl UpdateAnswerInput {
@@ -8792,8 +8829,10 @@ impl std::fmt::Debug for UpdateAnswerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8820,8 +8859,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8852,14 +8893,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadSharesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The status of a workload share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
 }
 impl ListWorkloadSharesInput {
@@ -8901,10 +8947,13 @@ impl std::fmt::Debug for ListWorkloadSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    #[doc(hidden)]
     pub workload_name_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListWorkloadsInput {
@@ -8936,6 +8985,7 @@ impl std::fmt::Debug for ListWorkloadsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8957,14 +9007,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    #[doc(hidden)]
     pub workload_name_prefix: std::option::Option<std::string::String>,
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
+    #[doc(hidden)]
     pub lens_name_prefix: std::option::Option<std::string::String>,
     /// <p>The type of share invitations to be returned.</p>
+    #[doc(hidden)]
     pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListShareInvitationsInput {
@@ -9006,10 +9061,13 @@ impl std::fmt::Debug for ListShareInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListNotificationsInput {
@@ -9041,10 +9099,13 @@ impl std::fmt::Debug for ListNotificationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMilestonesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListMilestonesInput {
@@ -9079,14 +9140,19 @@ pub struct ListLensSharesInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+    #[doc(hidden)]
     pub shared_with_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The status of a workload share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
 }
 impl ListLensSharesInput {
@@ -9131,13 +9197,17 @@ impl std::fmt::Debug for ListLensSharesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListLensReviewsInput {
@@ -9175,21 +9245,27 @@ impl std::fmt::Debug for ListLensReviewsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewImprovementsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListLensReviewImprovementsInput {
@@ -9241,14 +9317,19 @@ impl std::fmt::Debug for ListLensReviewImprovementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensesInput {
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The type of lenses to be returned.</p>
+    #[doc(hidden)]
     pub lens_type: std::option::Option<crate::model::LensType>,
     /// <p>The status of lenses to be returned.</p>
+    #[doc(hidden)]
     pub lens_status: std::option::Option<crate::model::LensStatusType>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub lens_name: std::option::Option<std::string::String>,
 }
 impl ListLensesInput {
@@ -9290,21 +9371,27 @@ impl std::fmt::Debug for ListLensesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnswersInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListAnswersInput {
@@ -9359,15 +9446,19 @@ pub struct ImportLensInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The JSON representation of a lens.</p>
+    #[doc(hidden)]
     pub json_string: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags to associate to a lens.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9414,6 +9505,7 @@ impl std::fmt::Debug for ImportLensInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
 }
 impl GetWorkloadInput {
@@ -9435,9 +9527,11 @@ impl std::fmt::Debug for GetWorkloadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMilestoneInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl GetMilestoneInput {
@@ -9468,10 +9562,13 @@ pub struct GetLensVersionDifferenceInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The base version of the lens.</p>
+    #[doc(hidden)]
     pub base_lens_version: std::option::Option<std::string::String>,
     /// <p>The lens version to target a difference for.</p>
+    #[doc(hidden)]
     pub target_lens_version: std::option::Option<std::string::String>,
 }
 impl GetLensVersionDifferenceInput {
@@ -9506,14 +9603,17 @@ impl std::fmt::Debug for GetLensVersionDifferenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewReportInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl GetLensReviewReportInput {
@@ -9549,14 +9649,17 @@ impl std::fmt::Debug for GetLensReviewReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl GetLensReviewInput {
@@ -9595,8 +9698,10 @@ pub struct GetLensInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The lens version to be retrieved.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
 }
 impl GetLensInput {
@@ -9626,16 +9731,20 @@ impl std::fmt::Debug for GetLensInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl GetAnswerInput {
@@ -9679,8 +9788,10 @@ pub struct ExportLensInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The lens version to be exported.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
 }
 impl ExportLensInput {
@@ -9710,9 +9821,11 @@ impl std::fmt::Debug for ExportLensInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateLensesInput {
@@ -9740,13 +9853,16 @@ impl std::fmt::Debug for DisassociateLensesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DeleteWorkloadShareInput {
@@ -9781,11 +9897,13 @@ impl std::fmt::Debug for DeleteWorkloadShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DeleteWorkloadInput {
@@ -9815,16 +9933,19 @@ impl std::fmt::Debug for DeleteWorkloadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLensShareInput {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DeleteLensShareInput {
@@ -9865,13 +9986,16 @@ pub struct DeleteLensInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The status of the lens to be deleted.</p>
+    #[doc(hidden)]
     pub lens_status: std::option::Option<crate::model::LensStatusType>,
 }
 impl DeleteLensInput {
@@ -9909,15 +10033,19 @@ impl std::fmt::Debug for DeleteLensInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadShareInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateWorkloadShareInput {
@@ -9958,22 +10086,31 @@ impl std::fmt::Debug for CreateWorkloadShareInput {
 pub struct CreateWorkloadInput {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The environment for the workload.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    #[doc(hidden)]
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    #[doc(hidden)]
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
+    #[doc(hidden)]
     pub architectural_design: std::option::Option<std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    #[doc(hidden)]
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
@@ -10006,19 +10143,25 @@ pub struct CreateWorkloadInput {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
+    #[doc(hidden)]
     pub industry: std::option::Option<std::string::String>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be associated with the workload.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10148,14 +10291,17 @@ impl std::fmt::Debug for CreateWorkloadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMilestoneInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
+    #[doc(hidden)]
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateMilestoneInput {
@@ -10194,15 +10340,19 @@ pub struct CreateLensVersionInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The version of the lens being created.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>Set to true if this new major lens version.</p>
+    #[doc(hidden)]
     pub is_major_version: bool,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensVersionInput {
@@ -10248,13 +10398,16 @@ pub struct CreateLensShareInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensShareInput {
@@ -10292,9 +10445,11 @@ impl std::fmt::Debug for CreateLensShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateLensesInput {

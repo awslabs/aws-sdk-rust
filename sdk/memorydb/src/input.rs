@@ -6434,10 +6434,13 @@ impl UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>The name of the user</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication_mode: std::option::Option<crate::model::AuthenticationMode>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
 }
 impl UpdateUserInput {
@@ -6469,10 +6472,13 @@ impl std::fmt::Debug for UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubnetGroupInput {
     /// <p>The name of the subnet group</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the subnet group</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The EC2 subnet IDs for the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateSubnetGroupInput {
@@ -6504,8 +6510,10 @@ impl std::fmt::Debug for UpdateSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParameterGroupInput {
     /// <p>The name of the parameter group to update.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
+    #[doc(hidden)]
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInput {
@@ -6534,32 +6542,46 @@ impl std::fmt::Debug for UpdateParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
     /// <p>The name of the cluster to update</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The description of the cluster to update</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The SecurityGroupIds to update</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maintenance window to update</p>
+    #[doc(hidden)]
     pub maintenance_window: std::option::Option<std::string::String>,
     /// <p>The SNS topic ARN to update</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
+    #[doc(hidden)]
     pub sns_topic_status: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to update</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The number of replicas that will reside in each shard</p>
+    #[doc(hidden)]
     pub replica_configuration: std::option::Option<crate::model::ReplicaConfigurationRequest>,
     /// <p>The number of shards in the cluster</p>
+    #[doc(hidden)]
     pub shard_configuration: std::option::Option<crate::model::ShardConfigurationRequest>,
     /// <p>The Access Control List that is associated with the cluster</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
 }
 impl UpdateClusterInput {
@@ -6650,10 +6672,13 @@ impl std::fmt::Debug for UpdateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAclInput {
     /// <p>The name of the Access Control List</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>The list of users to add to the Access Control List</p>
+    #[doc(hidden)]
     pub user_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of users to remove from the Access Control List</p>
+    #[doc(hidden)]
     pub user_names_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateAclInput {
@@ -6685,8 +6710,10 @@ impl std::fmt::Debug for UpdateAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of keys of the tags that are to be removed</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6713,8 +6740,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6741,10 +6770,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetParameterGroupInput {
     /// <p>The name of the parameter group to reset.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
+    #[doc(hidden)]
     pub all_parameters: bool,
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
+    #[doc(hidden)]
     pub parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResetParameterGroupInput {
@@ -6776,6 +6808,7 @@ impl std::fmt::Debug for ResetParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -6797,6 +6830,7 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAllowedNodeTypeUpdatesInput {
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
 }
 impl ListAllowedNodeTypeUpdatesInput {
@@ -6818,8 +6852,10 @@ impl std::fmt::Debug for ListAllowedNodeTypeUpdatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverShardInput {
     /// <p>The cluster being failed over</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The name of the shard</p>
+    #[doc(hidden)]
     pub shard_name: std::option::Option<std::string::String>,
 }
 impl FailoverShardInput {
@@ -6846,12 +6882,16 @@ impl std::fmt::Debug for FailoverShardInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersInput {
     /// <p>The name of the user</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Filter to determine the list of users to return.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsersInput {
@@ -6888,10 +6928,13 @@ impl std::fmt::Debug for DescribeUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubnetGroupsInput {
     /// <p>The name of the subnet group to return details for.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubnetGroupsInput {
@@ -6923,16 +6966,22 @@ impl std::fmt::Debug for DescribeSubnetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsInput {
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
+    #[doc(hidden)]
     pub show_detail: std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {
@@ -6979,14 +7028,19 @@ impl std::fmt::Debug for DescribeSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceUpdatesInput {
     /// <p>The unique ID of the service update to describe.</p>
+    #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The list of cluster names to identify service updates to apply</p>
+    #[doc(hidden)]
     pub cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status(es) of the service updates to filter on</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::vec::Vec<crate::model::ServiceUpdateStatus>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeServiceUpdatesInput {
@@ -7028,10 +7082,13 @@ impl std::fmt::Debug for DescribeServiceUpdatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersInput {
     /// <p>he name of a specific parameter group to return details for.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersInput {
@@ -7063,10 +7120,13 @@ impl std::fmt::Debug for DescribeParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParameterGroupsInput {
     /// <p>The name of a specific parameter group to return details for.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParameterGroupsInput {
@@ -7098,18 +7158,25 @@ impl std::fmt::Debug for DescribeParameterGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes worth of events to retrieve.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -7161,14 +7228,19 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineVersionsInput {
     /// <p>The Redis engine version</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of a specific parameter group family to return details for.</p>
+    #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
+    #[doc(hidden)]
     pub default_only: bool,
 }
 impl DescribeEngineVersionsInput {
@@ -7210,12 +7282,16 @@ impl std::fmt::Debug for DescribeEngineVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersInput {
     /// <p>The name of the cluster</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
+    #[doc(hidden)]
     pub show_shard_details: std::option::Option<bool>,
 }
 impl DescribeClustersInput {
@@ -7252,10 +7328,13 @@ impl std::fmt::Debug for DescribeClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcLsInput {
     /// <p>The name of the ACL</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcLsInput {
@@ -7287,6 +7366,7 @@ impl std::fmt::Debug for DescribeAcLsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>The name of the user to delete</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -7308,6 +7388,7 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetGroupInput {
     /// <p>The name of the subnet group to delete</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteSubnetGroupInput {
@@ -7329,6 +7410,7 @@ impl std::fmt::Debug for DeleteSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotInput {
     /// <p>The name of the snapshot to delete</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotInput {
@@ -7350,6 +7432,7 @@ impl std::fmt::Debug for DeleteSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterGroupInput {
     /// <p>The name of the parameter group to delete.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteParameterGroupInput {
@@ -7371,8 +7454,10 @@ impl std::fmt::Debug for DeleteParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to be deleted</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    #[doc(hidden)]
     pub final_snapshot_name: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
@@ -7399,6 +7484,7 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAclInput {
     /// <p>The name of the Access Control List to delete</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
 }
 impl DeleteAclInput {
@@ -7420,12 +7506,16 @@ impl std::fmt::Debug for DeleteAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    #[doc(hidden)]
     pub authentication_mode: std::option::Option<crate::model::AuthenticationMode>,
     /// <p>Access permissions string used for this user.</p>
+    #[doc(hidden)]
     pub access_string: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateUserInput {
@@ -7462,12 +7552,16 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetGroupInput {
     /// <p>The name of the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A description for the subnet group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSubnetGroupInput {
@@ -7504,12 +7598,16 @@ impl std::fmt::Debug for CreateSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>The snapshot is created from this cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>A name for the snapshot being created.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotInput {
@@ -7546,12 +7644,16 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group family that the parameter group can be used with.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>An optional description of the parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateParameterGroupInput {
@@ -7588,48 +7690,69 @@ impl std::fmt::Debug for CreateParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group associated with the cluster.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the cluster.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of shards the cluster will contain. The default value is 1. </p>
+    #[doc(hidden)]
     pub num_shards: std::option::Option<i32>,
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
+    #[doc(hidden)]
     pub num_replicas_per_shard: std::option::Option<i32>,
     /// <p>The name of the subnet group to be used for the cluster.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of security group names to associate with this cluster.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    #[doc(hidden)]
     pub maintenance_window: std::option::Option<std::string::String>,
     /// <p>The port number on which each of the nodes accepts connections.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
+    #[doc(hidden)]
     pub tls_enabled: std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
+    #[doc(hidden)]
     pub snapshot_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    #[doc(hidden)]
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    #[doc(hidden)]
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
 }
 impl CreateClusterInput {
@@ -7756,10 +7879,13 @@ impl std::fmt::Debug for CreateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAclInput {
     /// <p>The name of the Access Control List.</p>
+    #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
     /// <p>The list of users that belong to the Access Control List.</p>
+    #[doc(hidden)]
     pub user_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAclInput {
@@ -7791,14 +7917,19 @@ impl std::fmt::Debug for CreateAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
+    #[doc(hidden)]
     pub source_snapshot_name: std::option::Option<std::string::String>,
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
+    #[doc(hidden)]
     pub target_snapshot_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
+    #[doc(hidden)]
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopySnapshotInput {
@@ -7840,8 +7971,10 @@ impl std::fmt::Debug for CopySnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateClusterInput {
     /// <p>The cluster names to apply the updates.</p>
+    #[doc(hidden)]
     pub cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique ID of the service update</p>
+    #[doc(hidden)]
     pub service_update: std::option::Option<crate::model::ServiceUpdateRequest>,
 }
 impl BatchUpdateClusterInput {

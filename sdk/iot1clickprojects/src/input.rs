@@ -2814,10 +2814,13 @@ impl UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The name of the project to be updated.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional user-defined description for the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
+    #[doc(hidden)]
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
 }
 impl UpdateProjectInput {
@@ -2849,10 +2852,13 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePlacementInput {
     /// <p>The name of the placement to update.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project containing the placement to be updated.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2888,8 +2894,10 @@ impl std::fmt::Debug for UpdatePlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource whose tag you want to remove.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of those tags which you want to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2916,8 +2924,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2948,6 +2958,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2969,8 +2980,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -2997,10 +3010,13 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlacementsInput {
     /// <p>The project containing the placements to be listed.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPlacementsInput {
@@ -3032,8 +3048,10 @@ impl std::fmt::Debug for ListPlacementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicesInPlacementInput {
     /// <p>The name of the project containing the placement.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement to get the devices from.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
 }
 impl GetDevicesInPlacementInput {
@@ -3060,10 +3078,13 @@ impl std::fmt::Debug for GetDevicesInPlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDeviceFromPlacementInput {
     /// <p>The name of the project that contains the placement.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement that the device should be removed from.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The device ID that should be removed from the placement.</p>
+    #[doc(hidden)]
     pub device_template_name: std::option::Option<std::string::String>,
 }
 impl DisassociateDeviceFromPlacementInput {
@@ -3095,6 +3116,7 @@ impl std::fmt::Debug for DisassociateDeviceFromPlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
@@ -3116,8 +3138,10 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlacementInput {
     /// <p>The name of the placement within a project.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The project containing the placement to be described.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DescribePlacementInput {
@@ -3144,6 +3168,7 @@ impl std::fmt::Debug for DescribePlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The name of the empty project to delete.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -3165,8 +3190,10 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlacementInput {
     /// <p>The name of the empty placement to delete.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The project containing the empty placement to delete.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DeletePlacementInput {
@@ -3193,12 +3220,16 @@ impl std::fmt::Debug for DeletePlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name of the project to create.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional description for the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
+    #[doc(hidden)]
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
     /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3239,10 +3270,13 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlacementInput {
     /// <p>The name of the placement to be created.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project in which to create the placement.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3278,12 +3312,16 @@ impl std::fmt::Debug for CreatePlacementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDeviceWithPlacementInput {
     /// <p>The name of the project containing the placement in which to associate the device.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement in which to associate the device.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device template name to associate with the device ID.</p>
+    #[doc(hidden)]
     pub device_template_name: std::option::Option<std::string::String>,
 }
 impl AssociateDeviceWithPlacementInput {

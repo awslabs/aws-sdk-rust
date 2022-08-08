@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecordsOutput {
     /// A list of records that have been updated.
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
 impl UpdateRecordsOutput {
@@ -128,10 +129,13 @@ impl SubscribeToDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
+    #[doc(hidden)]
     pub push_sync: std::option::Option<crate::model::PushSync>,
     /// Options to apply to this identity pool for Amazon Cognito streams.
+    #[doc(hidden)]
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
 impl SetIdentityPoolConfigurationOutput {
@@ -256,6 +260,7 @@ impl SetCognitoEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl RegisterDeviceOutput {
@@ -310,22 +315,31 @@ impl RegisterDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordsOutput {
     /// A list of all records.
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Total number of records.
+    #[doc(hidden)]
     pub count: i32,
     /// Server sync count for this dataset.
+    #[doc(hidden)]
     pub dataset_sync_count: std::option::Option<i64>,
     /// The user/device that made the last change to this record.
+    #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
     /// Names of merged datasets.
+    #[doc(hidden)]
     pub merged_dataset_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Indicates whether the dataset exists.
+    #[doc(hidden)]
     pub dataset_exists: bool,
     /// A boolean value specifying whether to delete the dataset locally.
+    #[doc(hidden)]
     pub dataset_deleted_after_requested_sync_count: bool,
     /// A token containing a session ID, identity ID, and expiration.
+    #[doc(hidden)]
     pub sync_session_token: std::option::Option<std::string::String>,
 }
 impl ListRecordsOutput {
@@ -548,12 +562,16 @@ impl ListRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
+    #[doc(hidden)]
     pub identity_pool_usages: std::option::Option<std::vec::Vec<crate::model::IdentityPoolUsage>>,
     /// The maximum number of results to be returned.
+    #[doc(hidden)]
     pub max_results: i32,
     /// Total number of identities for the identity pool.
+    #[doc(hidden)]
     pub count: i32,
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityPoolUsageOutput {
@@ -669,10 +687,13 @@ impl ListIdentityPoolUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// A set of datasets.
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
     /// Number of datasets returned.
+    #[doc(hidden)]
     pub count: i32,
     /// A pagination token for obtaining the next page of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -770,10 +791,13 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
+    #[doc(hidden)]
     pub push_sync: std::option::Option<crate::model::PushSync>,
     /// Options to apply to this identity pool for Amazon Cognito streams.
+    #[doc(hidden)]
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
 impl GetIdentityPoolConfigurationOutput {
@@ -868,6 +892,7 @@ impl GetIdentityPoolConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
+    #[doc(hidden)]
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -943,18 +968,23 @@ impl GetCognitoEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// The date/time at which the last bulk publish was initiated.
+    #[doc(hidden)]
     pub bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
+    #[doc(hidden)]
     pub bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
+    #[doc(hidden)]
     pub bulk_publish_status: std::option::Option<crate::model::BulkPublishStatus>,
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
 }
 impl GetBulkPublishDetailsOutput {
@@ -1107,6 +1137,7 @@ impl GetBulkPublishDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityUsageOutput {
     /// Usage information for the identity.
+    #[doc(hidden)]
     pub identity_usage: std::option::Option<crate::model::IdentityUsage>,
 }
 impl DescribeIdentityUsageOutput {
@@ -1164,6 +1195,7 @@ impl DescribeIdentityUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
+    #[doc(hidden)]
     pub identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
 }
 impl DescribeIdentityPoolUsageOutput {
@@ -1221,6 +1253,7 @@ impl DescribeIdentityPoolUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
+    #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
 impl DescribeDatasetOutput {
@@ -1275,6 +1308,7 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetOutput {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
+    #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
 impl DeleteDatasetOutput {
@@ -1329,6 +1363,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkPublishOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl BulkPublishOutput {

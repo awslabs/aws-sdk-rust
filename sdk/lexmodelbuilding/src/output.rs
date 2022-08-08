@@ -64,20 +64,28 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMigrationOutput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub v1_bot_name: std::option::Option<std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
+    #[doc(hidden)]
     pub v1_bot_version: std::option::Option<std::string::String>,
     /// <p>The locale used for the Amazon Lex V1 bot. </p>
+    #[doc(hidden)]
     pub v1_bot_locale: std::option::Option<crate::model::Locale>,
     /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
+    #[doc(hidden)]
     pub v2_bot_id: std::option::Option<std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub v2_bot_role: std::option::Option<std::string::String>,
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
     /// <p>The strategy used to conduct the migration.</p>
+    #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
+    #[doc(hidden)]
     pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartMigrationOutput {
@@ -263,18 +271,25 @@ impl StartMigrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportOutput {
     /// <p>The name given to the import job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of resource to import.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The action to take when there is a merge conflict.</p>
+    #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The identifier for the specific import job.</p>
+    #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
+    #[doc(hidden)]
     pub import_status: std::option::Option<crate::model::ImportStatus>,
     /// <p>A list of tags added to the imported bot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A timestamp for the date and time that the import job was requested.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartImportOutput {
@@ -452,26 +467,37 @@ impl StartImportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSlotTypeOutput {
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    #[doc(hidden)]
     pub enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
     /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    #[doc(hidden)]
     pub value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
     /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p>The built-in slot type used as the parent of the slot type.</p>
+    #[doc(hidden)]
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
+    #[doc(hidden)]
     pub slot_type_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
@@ -743,42 +769,61 @@ impl PutSlotTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntentOutput {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of intent slots that are configured for the intent.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::vec::Vec<crate::model::Slot>>,
     /// <p> An array of sample utterances that are configured for the intent. </p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
+    #[doc(hidden)]
     pub confirmation_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    #[doc(hidden)]
     pub rejection_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
+    #[doc(hidden)]
     pub follow_up_prompt: std::option::Option<crate::model::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
+    #[doc(hidden)]
     pub conclusion_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
+    #[doc(hidden)]
     pub dialog_code_hook: std::option::Option<crate::model::CodeHook>,
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
+    #[doc(hidden)]
     pub fulfillment_activity: std::option::Option<crate::model::FulfillmentActivity>,
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
+    #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    #[doc(hidden)]
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
 }
 impl PutIntentOutput {
@@ -1205,22 +1250,31 @@ impl PutIntentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBotAliasOutput {
     /// <p>The name of the alias.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the bot that the alias points to.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The name of the bot that the alias points to.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot alias was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The checksum for the current version of the alias.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
+    #[doc(hidden)]
     pub conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
     /// <p>A list of tags associated with a bot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutBotAliasOutput {
@@ -1431,49 +1485,69 @@ impl PutBotAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBotOutput {
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::Intent>>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    #[doc(hidden)]
     pub enable_model_improvements: std::option::Option<bool>,
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
+    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
     /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
+    #[doc(hidden)]
     pub clarification_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
     /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
     /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
     /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
     /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
     /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
     /// <p>Checksum of the bot that you created.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The target locale for the bot. </p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
     /// <p> <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    #[doc(hidden)]
     pub create_version: std::option::Option<bool>,
     /// <p> <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
+    #[doc(hidden)]
     pub detect_sentiment: std::option::Option<bool>,
     /// <p>A list of tags associated with the bot.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutBotOutput {
@@ -1908,6 +1982,7 @@ impl PutBotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1969,8 +2044,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUtterancesViewOutput {
     /// <p>The name of the bot for which utterance information was returned.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
+    #[doc(hidden)]
     pub utterances: std::option::Option<std::vec::Vec<crate::model::UtteranceList>>,
 }
 impl GetUtterancesViewOutput {
@@ -2051,8 +2128,10 @@ impl GetUtterancesViewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypeVersionsOutput {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSlotTypeVersionsOutput {
@@ -2133,8 +2212,10 @@ impl GetSlotTypeVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypesOutput {
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
+    #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSlotTypesOutput {
@@ -2215,24 +2296,34 @@ impl GetSlotTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSlotTypeOutput {
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    #[doc(hidden)]
     pub enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the slot type.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    #[doc(hidden)]
     pub value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
     /// <p>The built-in slot type used as a parent for the slot type.</p>
+    #[doc(hidden)]
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
+    #[doc(hidden)]
     pub slot_type_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
@@ -2487,8 +2578,10 @@ impl GetSlotTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
+    #[doc(hidden)]
     pub migration_summaries: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetMigrationsOutput {
@@ -2570,29 +2663,39 @@ impl GetMigrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMigrationOutput {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
+    #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub v1_bot_name: std::option::Option<std::string::String>,
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub v1_bot_version: std::option::Option<std::string::String>,
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub v1_bot_locale: std::option::Option<crate::model::Locale>,
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
+    #[doc(hidden)]
     pub v2_bot_id: std::option::Option<std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub v2_bot_role: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
+    #[doc(hidden)]
     pub migration_status: std::option::Option<crate::model::MigrationStatus>,
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
+    #[doc(hidden)]
     pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
+    #[doc(hidden)]
     pub alerts: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
 }
 impl GetMigrationOutput {
@@ -2839,8 +2942,10 @@ impl GetMigrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentVersionsOutput {
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIntentVersionsOutput {
@@ -2921,8 +3026,10 @@ impl GetIntentVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentsOutput {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
     /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetIntentsOutput {
@@ -3003,40 +3110,58 @@ impl GetIntentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntentOutput {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of intent slots configured for the intent.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::vec::Vec<crate::model::Slot>>,
     /// <p>An array of sample utterances configured for the intent.</p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    #[doc(hidden)]
     pub confirmation_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    #[doc(hidden)]
     pub rejection_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
+    #[doc(hidden)]
     pub follow_up_prompt: std::option::Option<crate::model::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
+    #[doc(hidden)]
     pub conclusion_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    #[doc(hidden)]
     pub dialog_code_hook: std::option::Option<crate::model::CodeHook>,
     /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    #[doc(hidden)]
     pub fulfillment_activity: std::option::Option<crate::model::FulfillmentActivity>,
     /// <p>A unique identifier for a built-in intent.</p>
+    #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the intent.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the intent.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    #[doc(hidden)]
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
 }
 impl GetIntentOutput {
@@ -3446,18 +3571,25 @@ impl GetIntentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportOutput {
     /// <p>The name given to the import job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of resource imported.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
+    #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The identifier for the specific import job.</p>
+    #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
+    #[doc(hidden)]
     pub import_status: std::option::Option<crate::model::ImportStatus>,
     /// <p>A string that describes why an import job failed to complete.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A timestamp for the date and time that the import job was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetImportOutput {
@@ -3635,12 +3767,16 @@ impl GetImportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportOutput {
     /// <p>The name of the bot being exported.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the bot being exported.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The type of the exported resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The format of the exported data.</p>
+    #[doc(hidden)]
     pub export_type: std::option::Option<crate::model::ExportType>,
     /// <p>The status of the export. </p>
     /// <ul>
@@ -3648,10 +3784,13 @@ pub struct GetExportOutput {
     /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
     /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl GetExportOutput {
@@ -3835,8 +3974,10 @@ impl GetExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinSlotTypesOutput {
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
+    #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
     /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBuiltinSlotTypesOutput {
@@ -3918,8 +4059,10 @@ impl GetBuiltinSlotTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinIntentsOutput {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentMetadata>>,
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBuiltinIntentsOutput {
@@ -4000,10 +4143,13 @@ impl GetBuiltinIntentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBuiltinIntentOutput {
     /// <p>The unique identifier for a built-in intent.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
     /// <p>A list of locales that the intent supports.</p>
+    #[doc(hidden)]
     pub supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
     /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentSlot>>,
 }
 impl GetBuiltinIntentOutput {
@@ -4110,8 +4256,10 @@ impl GetBuiltinIntentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotVersionsOutput {
     /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBotVersionsOutput {
@@ -4192,8 +4340,10 @@ impl GetBotVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotsOutput {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
+    #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBotsOutput {
@@ -4274,9 +4424,11 @@ impl GetBotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    #[doc(hidden)]
     pub bot_channel_associations:
         std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBotChannelAssociationsOutput {
@@ -4363,18 +4515,25 @@ impl GetBotChannelAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotChannelAssociationOutput {
     /// <p>The name of the association between the bot and the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the association between the bot and the channel.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the association between the bot and the channel was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the messaging platform.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub bot_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the bot channel. </p>
@@ -4383,8 +4542,10 @@ pub struct GetBotChannelAssociationOutput {
     /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
     /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl GetBotChannelAssociationOutput {
@@ -4619,8 +4780,10 @@ impl GetBotChannelAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
+    #[doc(hidden)]
     pub bot_aliases: std::option::Option<std::vec::Vec<crate::model::BotAliasMetadata>>,
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBotAliasesOutput {
@@ -4701,20 +4864,28 @@ impl GetBotAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotAliasOutput {
     /// <p>The name of the bot alias.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot alias.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the bot that the alias points to.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The name of the bot that the alias points to.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot alias was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Checksum of the bot alias.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
+    #[doc(hidden)]
     pub conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
 }
 impl GetBotAliasOutput {
@@ -4899,45 +5070,63 @@ impl GetBotAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotOutput {
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::Intent>>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    #[doc(hidden)]
     pub enable_model_improvements: std::option::Option<bool>,
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
+    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
     /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    #[doc(hidden)]
     pub clarification_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
     /// <p>The status of the bot. </p>
     /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
     /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
     /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
     /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The target locale for the bot. </p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
     /// <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
+    #[doc(hidden)]
     pub detect_sentiment: std::option::Option<bool>,
 }
 impl GetBotOutput {
@@ -5599,24 +5788,34 @@ impl DeleteBotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotTypeVersionOutput {
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    #[doc(hidden)]
     pub enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version assigned to the new slot type version. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    #[doc(hidden)]
     pub value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
     /// <p>The built-in slot type used a the parent of the slot type.</p>
+    #[doc(hidden)]
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
+    #[doc(hidden)]
     pub slot_type_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
@@ -5871,40 +6070,58 @@ impl CreateSlotTypeVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntentVersionOutput {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of slot types that defines the information required to fulfill the intent.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::vec::Vec<crate::model::Slot>>,
     /// <p>An array of sample utterances configured for the intent. </p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
+    #[doc(hidden)]
     pub confirmation_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    #[doc(hidden)]
     pub rejection_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. </p>
+    #[doc(hidden)]
     pub follow_up_prompt: std::option::Option<crate::model::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> field fulfills the intent, Amazon Lex conveys this statement to the user. </p>
+    #[doc(hidden)]
     pub conclusion_statement: std::option::Option<crate::model::Statement>,
     /// <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
+    #[doc(hidden)]
     pub dialog_code_hook: std::option::Option<crate::model::CodeHook>,
     /// <p> Describes how the intent is fulfilled. </p>
+    #[doc(hidden)]
     pub fulfillment_activity: std::option::Option<crate::model::FulfillmentActivity>,
     /// <p>A unique identifier for a built-in intent.</p>
+    #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version number assigned to the new version of the intent.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Checksum of the intent version created.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    #[doc(hidden)]
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
 }
 impl CreateIntentVersionOutput {
@@ -6314,39 +6531,56 @@ impl CreateIntentVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotVersionOutput {
     /// <p>The name of the bot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::Intent>>,
     /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    #[doc(hidden)]
     pub clarification_prompt: std::option::Option<crate::model::Prompt>,
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
     /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the bot version was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>
+    #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
     /// <p>Checksum identifying the version of the bot that was created.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The version of the bot. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> Specifies the target locale for the bot. </p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    #[doc(hidden)]
     pub enable_model_improvements: std::option::Option<bool>,
     /// <p>Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.</p>
+    #[doc(hidden)]
     pub detect_sentiment: std::option::Option<bool>,
 }
 impl CreateBotVersionOutput {

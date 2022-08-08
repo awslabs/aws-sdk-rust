@@ -34,6 +34,7 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortalOutput {
     /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl UpdatePortalOutput {
@@ -91,6 +92,7 @@ impl UpdatePortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
+    #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -99,6 +101,7 @@ pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
+    #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl UpdateGatewayCapabilityConfigurationOutput {
@@ -286,6 +289,7 @@ impl UpdateAssetPropertyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetModelOutput {
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl UpdateAssetModelOutput {
@@ -343,6 +347,7 @@ impl UpdateAssetModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetOutput {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl UpdateAssetOutput {
@@ -494,8 +499,10 @@ pub struct PutStorageConfigurationOutput {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
+    #[doc(hidden)]
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
@@ -505,11 +512,14 @@ pub struct PutStorageConfigurationOutput {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub disassociated_data_storage:
         std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Contains current status information for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutStorageConfigurationOutput {
@@ -719,10 +729,13 @@ impl PutLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
+    #[doc(hidden)]
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutDefaultEncryptionConfigurationOutput {
@@ -817,8 +830,10 @@ impl PutDefaultEncryptionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
+    #[doc(hidden)]
     pub time_series_summaries: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTimeSeriesOutput {
@@ -900,6 +915,7 @@ impl ListTimeSeriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -973,8 +989,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>A list that summarizes each project in the portal.</p>
+    #[doc(hidden)]
     pub project_summaries: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -1056,8 +1074,10 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
+    #[doc(hidden)]
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectAssetsOutput {
@@ -1138,8 +1158,10 @@ impl ListProjectAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortalsOutput {
     /// <p>A list that summarizes each portal.</p>
+    #[doc(hidden)]
     pub portal_summaries: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPortalsOutput {
@@ -1221,8 +1243,10 @@ impl ListPortalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysOutput {
     /// <p>A list that summarizes each gateway.</p>
+    #[doc(hidden)]
     pub gateway_summaries: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysOutput {
@@ -1304,8 +1328,10 @@ impl ListGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
     /// <p>A list that summarizes each dashboard in the project.</p>
+    #[doc(hidden)]
     pub dashboard_summaries: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDashboardsOutput {
@@ -1387,8 +1413,10 @@ impl ListDashboardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkImportJobsOutput {
     /// <p>One or more job summaries to list.</p>
+    #[doc(hidden)]
     pub job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBulkImportJobsOutput {
@@ -1469,8 +1497,10 @@ impl ListBulkImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
+    #[doc(hidden)]
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedAssetsOutput {
@@ -1552,8 +1582,10 @@ impl ListAssociatedAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsOutput {
     /// <p>A list that summarizes each asset.</p>
+    #[doc(hidden)]
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetsOutput {
@@ -1634,9 +1666,11 @@ impl ListAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
+    #[doc(hidden)]
     pub asset_relationship_summaries:
         std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetRelationshipsOutput {
@@ -1726,8 +1760,10 @@ impl ListAssetRelationshipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
+    #[doc(hidden)]
     pub asset_model_summaries: std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetModelsOutput {
@@ -1809,9 +1845,11 @@ impl ListAssetModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPoliciesOutput {
     /// <p>A list that summarizes each access policy.</p>
+    #[doc(hidden)]
     pub access_policy_summaries:
         std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPoliciesOutput {
@@ -1895,9 +1933,11 @@ impl ListAccessPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
+    #[doc(hidden)]
     pub interpolated_asset_property_values:
         std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
@@ -1987,9 +2027,11 @@ impl GetInterpolatedAssetPropertyValuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
+    #[doc(hidden)]
     pub asset_property_value_history:
         std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAssetPropertyValueHistoryOutput {
@@ -2079,6 +2121,7 @@ impl GetAssetPropertyValueHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyValueOutput {
     /// <p>The current asset property value.</p>
+    #[doc(hidden)]
     pub property_value: std::option::Option<crate::model::AssetPropertyValue>,
 }
 impl GetAssetPropertyValueOutput {
@@ -2136,8 +2179,10 @@ impl GetAssetPropertyValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetPropertyAggregatesOutput {
     /// <p>The requested aggregated values.</p>
+    #[doc(hidden)]
     pub aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAssetPropertyAggregatesOutput {
@@ -2280,22 +2325,30 @@ impl DisassociateAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeSeriesOutput {
     /// <p>The ID of the asset in which the asset property was created.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias that identifies the time series.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The ID of the time series.</p>
+    #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeTimeSeriesOutput {
@@ -2497,8 +2550,10 @@ pub struct DescribeStorageConfigurationOutput {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
+    #[doc(hidden)]
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
@@ -2508,13 +2563,17 @@ pub struct DescribeStorageConfigurationOutput {
     /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub disassociated_data_storage:
         std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Contains current status information for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeStorageConfigurationOutput {
@@ -2714,19 +2773,26 @@ impl DescribeStorageConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The ID of the portal that the project is in.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The project's description.</p>
+    #[doc(hidden)]
     pub project_description: std::option::Option<std::string::String>,
     /// <p>The date the project was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub project_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the project was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub project_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeProjectOutput {
@@ -2895,35 +2961,50 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortalOutput {
     /// <p>The ID of the portal.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The name of the portal.</p>
+    #[doc(hidden)]
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
+    #[doc(hidden)]
     pub portal_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+    #[doc(hidden)]
     pub portal_client_id: std::option::Option<std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    #[doc(hidden)]
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
+    #[doc(hidden)]
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>The current status of the portal, which contains a state and any error message.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub portal_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub portal_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The portal's logo image, which is available at a URL.</p>
+    #[doc(hidden)]
     pub portal_logo_image_location: std::option::Option<crate::model::ImageLocation>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The service to use to authenticate users to the portal.</p>
+    #[doc(hidden)]
     pub portal_auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p>
+    #[doc(hidden)]
     pub notification_sender_email: std::option::Option<std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl DescribePortalOutput {
@@ -3252,6 +3333,7 @@ impl DescribePortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingOptionsOutput {
     /// <p>The current logging options.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl DescribeLoggingOptionsOutput {
@@ -3309,10 +3391,13 @@ impl DescribeLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the gateway capability.</p>
+    #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub capability_configuration: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -3320,6 +3405,7 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl DescribeGatewayCapabilityConfigurationOutput {
@@ -3451,20 +3537,27 @@ impl DescribeGatewayCapabilityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayOutput {
     /// <p>The ID of the gateway device.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The name of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The gateway's platform.</p>
+    #[doc(hidden)]
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    #[doc(hidden)]
     pub gateway_capability_summaries:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGatewayOutput {
@@ -3651,10 +3744,13 @@ impl DescribeGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
+    #[doc(hidden)]
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl DescribeDefaultEncryptionConfigurationOutput {
@@ -3749,21 +3845,29 @@ impl DescribeDefaultEncryptionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardOutput {
     /// <p>The ID of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
     /// <p>The ID of the project that the dashboard is in.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The dashboard's description.</p>
+    #[doc(hidden)]
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[doc(hidden)]
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub dashboard_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub dashboard_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDashboardOutput {
@@ -3961,8 +4065,10 @@ impl DescribeDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBulkImportJobOutput {
     /// <p>The ID of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -3973,18 +4079,25 @@ pub struct DescribeBulkImportJobOutput {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    #[doc(hidden)]
     pub job_role_arn: std::option::Option<std::string::String>,
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    #[doc(hidden)]
     pub files: std::option::Option<std::vec::Vec<crate::model::File>>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    #[doc(hidden)]
     pub error_report_location: std::option::Option<crate::model::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    #[doc(hidden)]
     pub job_configuration: std::option::Option<crate::model::JobConfiguration>,
     /// <p>The date the job was created, in Unix epoch TIME.</p>
+    #[doc(hidden)]
     pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the job was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub job_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeBulkImportJobOutput {
@@ -4223,15 +4336,20 @@ impl DescribeBulkImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
+    #[doc(hidden)]
     pub asset_property: std::option::Option<crate::model::Property>,
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
+    #[doc(hidden)]
     pub composite_model: std::option::Option<crate::model::CompositeModelProperty>,
 }
 impl DescribeAssetPropertyOutput {
@@ -4366,29 +4484,39 @@ impl DescribeAssetPropertyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    #[doc(hidden)]
     pub asset_model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_name: std::option::Option<std::string::String>,
     /// <p>The asset model's description.</p>
+    #[doc(hidden)]
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The list of asset properties for the asset model.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+    #[doc(hidden)]
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
+    #[doc(hidden)]
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
     /// <p>The list of composite asset models for the asset model.</p>
+    #[doc(hidden)]
     pub asset_model_composite_models:
         std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub asset_model_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub asset_model_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
+    #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl DescribeAssetModelOutput {
@@ -4668,29 +4796,40 @@ impl DescribeAssetModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetOutput {
     /// <p>The ID of the asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    #[doc(hidden)]
     pub asset_arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model that was used to create the asset.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The list of asset properties for the asset.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
+    #[doc(hidden)]
     pub asset_properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
+    #[doc(hidden)]
     pub asset_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     /// <p>The composite models for the asset.</p>
+    #[doc(hidden)]
     pub asset_composite_models:
         std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub asset_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub asset_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the asset, which contains a state and any error message.</p>
+    #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A description for the asset.</p>
+    #[doc(hidden)]
     pub asset_description: std::option::Option<std::string::String>,
 }
 impl DescribeAssetOutput {
@@ -4968,19 +5107,26 @@ impl DescribeAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
+    #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
     /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
+    #[doc(hidden)]
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
+    #[doc(hidden)]
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    #[doc(hidden)]
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub access_policy_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
+    #[doc(hidden)]
     pub access_policy_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAccessPolicyOutput {
@@ -5229,6 +5375,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortalOutput {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl DeletePortalOutput {
@@ -5346,6 +5493,7 @@ impl DeleteDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetModelOutput {
     /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl DeleteAssetModelOutput {
@@ -5403,6 +5551,7 @@ impl DeleteAssetModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetOutput {
     /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl DeleteAssetOutput {
@@ -5490,9 +5639,11 @@ impl DeleteAccessPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
@@ -5567,15 +5718,20 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
+    #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    #[doc(hidden)]
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
     /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
+    #[doc(hidden)]
     pub sso_application_id: std::option::Option<std::string::String>,
 }
 impl CreatePortalOutput {
@@ -5710,9 +5866,11 @@ impl CreatePortalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayOutput {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayOutput {
@@ -5787,9 +5945,11 @@ impl CreateGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDashboardOutput {
     /// <p>The ID of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
 }
 impl CreateDashboardOutput {
@@ -5867,8 +6027,10 @@ impl CreateDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBulkImportJobOutput {
     /// <p>The ID of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -5879,6 +6041,7 @@ pub struct CreateBulkImportJobOutput {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl CreateBulkImportJobOutput {
@@ -5994,11 +6157,14 @@ impl CreateBulkImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetModelOutput {
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    #[doc(hidden)]
     pub asset_model_arn: std::option::Option<std::string::String>,
     /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl CreateAssetModelOutput {
@@ -6099,11 +6265,14 @@ impl CreateAssetModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetOutput {
     /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    #[doc(hidden)]
     pub asset_arn: std::option::Option<std::string::String>,
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl CreateAssetOutput {
@@ -6198,9 +6367,11 @@ impl CreateAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
+    #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
 }
 impl CreateAccessPolicyOutput {
@@ -6281,6 +6452,7 @@ impl CreateAccessPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
 }
@@ -6353,18 +6525,22 @@ impl BatchPutAssetPropertyValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueHistoryOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
     >,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    #[doc(hidden)]
     pub success_entries: std::option::Option<
         std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
     >,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    #[doc(hidden)]
     pub skipped_entries: std::option::Option<
         std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
     >,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryOutput {
@@ -6524,15 +6700,19 @@ impl BatchGetAssetPropertyValueHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    #[doc(hidden)]
     pub success_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    #[doc(hidden)]
     pub skipped_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueOutput {
@@ -6691,17 +6871,21 @@ impl BatchGetAssetPropertyValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAssetPropertyAggregatesOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
+    #[doc(hidden)]
     pub success_entries: std::option::Option<
         std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
     >,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
+    #[doc(hidden)]
     pub skipped_entries: std::option::Option<
         std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
     >,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyAggregatesOutput {
@@ -6861,6 +7045,7 @@ impl BatchGetAssetPropertyAggregatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
 }
 impl BatchDisassociateProjectAssetsOutput {
@@ -6924,6 +7109,7 @@ impl BatchDisassociateProjectAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
 }
 impl BatchAssociateProjectAssetsOutput {

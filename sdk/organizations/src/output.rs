@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePolicyOutput {
     /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl UpdatePolicyOutput {
@@ -58,6 +59,7 @@ impl UpdatePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationalUnitOutput {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
+    #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl UpdateOrganizationalUnitOutput {
@@ -265,8 +267,10 @@ impl MoveAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsForPolicyOutput {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsForPolicyOutput {
@@ -347,8 +351,10 @@ impl ListTargetsForPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -429,8 +435,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRootsOutput {
     /// <p>A list of roots that are defined in an organization.</p>
+    #[doc(hidden)]
     pub roots: std::option::Option<std::vec::Vec<crate::model::Root>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRootsOutput {
@@ -511,8 +519,10 @@ impl ListRootsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesForTargetOutput {
     /// <p>The list of policies that match the criteria in the request.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesForTargetOutput {
@@ -593,8 +603,10 @@ impl ListPoliciesForTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesOutput {
     /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -675,8 +687,10 @@ impl ListPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListParentsOutput {
     /// <p>A list of parents for the specified child account or OU.</p>
+    #[doc(hidden)]
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListParentsOutput {
@@ -757,8 +771,10 @@ impl ListParentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
+    #[doc(hidden)]
     pub organizational_units: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationalUnitsForParentOutput {
@@ -840,8 +856,10 @@ impl ListOrganizationalUnitsForParentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForOrganizationOutput {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    #[doc(hidden)]
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHandshakesForOrganizationOutput {
@@ -922,8 +940,10 @@ impl ListHandshakesForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForAccountOutput {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
+    #[doc(hidden)]
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHandshakesForAccountOutput {
@@ -1004,8 +1024,10 @@ impl ListHandshakesForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDelegatedServicesForAccountOutput {
     /// <p>The services for which the account is a delegated administrator.</p>
+    #[doc(hidden)]
     pub delegated_services: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedServicesForAccountOutput {
@@ -1087,9 +1109,11 @@ impl ListDelegatedServicesForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
+    #[doc(hidden)]
     pub delegated_administrators:
         std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdministratorsOutput {
@@ -1176,9 +1200,11 @@ impl ListDelegatedAdministratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreateAccountStatusOutput {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
+    #[doc(hidden)]
     pub create_account_statuses:
         std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCreateAccountStatusOutput {
@@ -1262,8 +1288,10 @@ impl ListCreateAccountStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChildrenOutput {
     /// <p>The list of children of the specified parent container.</p>
+    #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::Child>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChildrenOutput {
@@ -1344,9 +1372,11 @@ impl ListChildrenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsServiceAccessForOrganizationOutput {
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
+    #[doc(hidden)]
     pub enabled_service_principals:
         std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAwsServiceAccessForOrganizationOutput {
@@ -1436,8 +1466,10 @@ impl ListAwsServiceAccessForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForParentOutput {
     /// <p>A list of the accounts in the specified root or OU.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsForParentOutput {
@@ -1518,8 +1550,10 @@ impl ListAccountsForParentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsOutput {
     /// <p>A list of objects in the organization.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsOutput {
@@ -1630,6 +1664,7 @@ impl LeaveOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteAccountToOrganizationOutput {
     /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl InviteAccountToOrganizationOutput {
@@ -1687,6 +1722,7 @@ impl InviteAccountToOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
+    #[doc(hidden)]
     pub root: std::option::Option<crate::model::Root>,
 }
 impl EnablePolicyTypeOutput {
@@ -1769,6 +1805,7 @@ impl EnableAwsServiceAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAllFeaturesOutput {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl EnableAllFeaturesOutput {
@@ -1826,6 +1863,7 @@ impl EnableAllFeaturesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
+    #[doc(hidden)]
     pub root: std::option::Option<crate::model::Root>,
 }
 impl DisablePolicyTypeOutput {
@@ -1938,6 +1976,7 @@ impl DetachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePolicyOutput {
     /// <p>A structure that contains details about the specified policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl DescribePolicyOutput {
@@ -1992,6 +2031,7 @@ impl DescribePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationalUnitOutput {
     /// <p>A structure that contains details about the specified OU.</p>
+    #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl DescribeOrganizationalUnitOutput {
@@ -2051,6 +2091,7 @@ pub struct DescribeOrganizationOutput {
     /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
+    #[doc(hidden)]
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl DescribeOrganizationOutput {
@@ -2114,6 +2155,7 @@ impl DescribeOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHandshakeOutput {
     /// <p>A structure that contains information about the specified handshake.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl DescribeHandshakeOutput {
@@ -2171,6 +2213,7 @@ impl DescribeHandshakeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectivePolicyOutput {
     /// <p>The contents of the effective policy.</p>
+    #[doc(hidden)]
     pub effective_policy: std::option::Option<crate::model::EffectivePolicy>,
 }
 impl DescribeEffectivePolicyOutput {
@@ -2228,6 +2271,7 @@ impl DescribeEffectivePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
+    #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl DescribeCreateAccountStatusOutput {
@@ -2285,6 +2329,7 @@ impl DescribeCreateAccountStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOutput {
     /// <p>A structure that contains information about the requested account.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<crate::model::Account>,
 }
 impl DescribeAccountOutput {
@@ -2459,6 +2504,7 @@ impl DeleteOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineHandshakeOutput {
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl DeclineHandshakeOutput {
@@ -2516,6 +2562,7 @@ impl DeclineHandshakeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyOutput {
     /// <p>A structure that contains details about the newly created policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl CreatePolicyOutput {
@@ -2570,6 +2617,7 @@ impl CreatePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationalUnitOutput {
     /// <p>A structure that contains details about the newly created OU.</p>
+    #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl CreateOrganizationalUnitOutput {
@@ -2627,6 +2675,7 @@ impl CreateOrganizationalUnitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationOutput {
     /// <p>A structure that contains details about the newly created organization.</p>
+    #[doc(hidden)]
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl CreateOrganizationOutput {
@@ -2684,6 +2733,7 @@ impl CreateOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGovCloudAccountOutput {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
+    #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateGovCloudAccountOutput {
@@ -2741,6 +2791,7 @@ impl CreateGovCloudAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountOutput {
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
+    #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateAccountOutput {
@@ -2828,6 +2879,7 @@ impl CloseAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelHandshakeOutput {
     /// <p>A structure that contains details about the handshake that you canceled.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl CancelHandshakeOutput {
@@ -2915,6 +2967,7 @@ impl AttachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptHandshakeOutput {
     /// <p>A structure that contains details about the accepted handshake.</p>
+    #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl AcceptHandshakeOutput {

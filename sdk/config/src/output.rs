@@ -94,8 +94,10 @@ impl StopConfigurationRecorderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRemediationExecutionOutput {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl StartRemediationExecutionOutput {
@@ -239,10 +241,13 @@ impl StartConfigRulesEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectResourceConfigOutput {
     /// <p>Returns the results for the SQL query.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the <code>QueryInfo</code> object.</p>
+    #[doc(hidden)]
     pub query_info: std::option::Option<crate::model::QueryInfo>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SelectResourceConfigOutput {
@@ -343,10 +348,13 @@ impl SelectResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectAggregateResourceConfigOutput {
     /// <p>Returns the results for the SQL query.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Details about the query.</p>
+    #[doc(hidden)]
     pub query_info: std::option::Option<crate::model::QueryInfo>,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SelectAggregateResourceConfigOutput {
@@ -447,6 +455,7 @@ impl SelectAggregateResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStoredQueryOutput {
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    #[doc(hidden)]
     pub query_arn: std::option::Option<std::string::String>,
 }
 impl PutStoredQueryOutput {
@@ -501,6 +510,7 @@ impl PutStoredQueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionConfigurationOutput {
     /// <p>Returns a retention configuration object.</p>
+    #[doc(hidden)]
     pub retention_configuration: std::option::Option<crate::model::RetentionConfiguration>,
 }
 impl PutRetentionConfigurationOutput {
@@ -594,6 +604,7 @@ impl PutResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRemediationExceptionsOutput {
     /// <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    #[doc(hidden)]
     pub failed_batches:
         std::option::Option<std::vec::Vec<crate::model::FailedRemediationExceptionBatch>>,
 }
@@ -666,6 +677,7 @@ impl PutRemediationExceptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRemediationConfigurationsOutput {
     /// <p>Returns a list of failed remediation batch objects.</p>
+    #[doc(hidden)]
     pub failed_batches: std::option::Option<std::vec::Vec<crate::model::FailedRemediationBatch>>,
 }
 impl PutRemediationConfigurationsOutput {
@@ -730,6 +742,7 @@ impl PutRemediationConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConformancePackOutput {
     /// <p>ARN of the organization conformance pack.</p>
+    #[doc(hidden)]
     pub organization_conformance_pack_arn: std::option::Option<std::string::String>,
 }
 impl PutOrganizationConformancePackOutput {
@@ -793,6 +806,7 @@ impl PutOrganizationConformancePackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConfigRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
+    #[doc(hidden)]
     pub organization_config_rule_arn: std::option::Option<std::string::String>,
 }
 impl PutOrganizationConfigRuleOutput {
@@ -886,6 +900,7 @@ impl PutExternalEvaluationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server error.</p>
+    #[doc(hidden)]
     pub failed_evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
 }
 impl PutEvaluationsOutput {
@@ -979,6 +994,7 @@ impl PutDeliveryChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConformancePackOutput {
     /// <p>ARN of the conformance pack.</p>
+    #[doc(hidden)]
     pub conformance_pack_arn: std::option::Option<std::string::String>,
 }
 impl PutConformancePackOutput {
@@ -1066,6 +1082,7 @@ impl PutConfigurationRecorderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationAggregatorOutput {
     /// <p>Returns a ConfigurationAggregator object.</p>
+    #[doc(hidden)]
     pub configuration_aggregator: std::option::Option<crate::model::ConfigurationAggregator>,
 }
 impl PutConfigurationAggregatorOutput {
@@ -1159,6 +1176,7 @@ impl PutConfigRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAggregationAuthorizationOutput {
     /// <p>Returns an AggregationAuthorization object. </p>
+    #[doc(hidden)]
     pub aggregation_authorization: std::option::Option<crate::model::AggregationAuthorization>,
 }
 impl PutAggregationAuthorizationOutput {
@@ -1222,8 +1240,10 @@ impl PutAggregationAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -1304,9 +1324,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStoredQueriesOutput {
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
+    #[doc(hidden)]
     pub stored_query_metadata:
         std::option::Option<std::vec::Vec<crate::model::StoredQueryMetadata>>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStoredQueriesOutput {
@@ -1390,8 +1412,10 @@ impl ListStoredQueriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
+    #[doc(hidden)]
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoveredResourcesOutput {
@@ -1473,8 +1497,10 @@ impl ListDiscoveredResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConformancePackComplianceScoresOutput {
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_compliance_scores:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackComplianceScore>>,
 }
@@ -1565,9 +1591,11 @@ impl ListConformancePackComplianceScoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAggregateDiscoveredResourcesOutput {
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
+    #[doc(hidden)]
     pub resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AggregateResourceIdentifier>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAggregateDiscoveredResourcesOutput {
@@ -1654,6 +1682,7 @@ impl ListAggregateDiscoveredResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStoredQueryOutput {
     /// <p>Returns a <code>StoredQuery</code> object.</p>
+    #[doc(hidden)]
     pub stored_query: std::option::Option<crate::model::StoredQuery>,
 }
 impl GetStoredQueryOutput {
@@ -1711,8 +1740,10 @@ impl GetStoredQueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceConfigHistoryOutput {
     /// <p>A list that contains the configuration history of one or more resources.</p>
+    #[doc(hidden)]
     pub configuration_items: std::option::Option<std::vec::Vec<crate::model::ConfigurationItem>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceConfigHistoryOutput {
@@ -1794,6 +1825,7 @@ impl GetResourceConfigHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationCustomRulePolicyOutput {
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyOutput {
@@ -1848,9 +1880,11 @@ impl GetOrganizationCustomRulePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConformancePackDetailedStatusOutput {
     /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    #[doc(hidden)]
     pub organization_conformance_pack_detailed_statuses:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePackDetailedStatus>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOrganizationConformancePackDetailedStatusOutput {
@@ -1948,9 +1982,11 @@ impl GetOrganizationConformancePackDetailedStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConfigRuleDetailedStatusOutput {
     /// <p>A list of <code>MemberAccountStatus</code> objects.</p>
+    #[doc(hidden)]
     pub organization_config_rule_detailed_status:
         std::option::Option<std::vec::Vec<crate::model::MemberAccountStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOrganizationConfigRuleDetailedStatusOutput {
@@ -2050,10 +2086,13 @@ pub struct GetDiscoveredResourceCountsOutput {
     /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
     /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
+    #[doc(hidden)]
     pub total_discovered_resources: i64,
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
+    #[doc(hidden)]
     pub resource_counts: std::option::Option<std::vec::Vec<crate::model::ResourceCount>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsOutput {
@@ -2172,6 +2211,7 @@ impl GetDiscoveredResourceCountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomRulePolicyOutput {
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetCustomRulePolicyOutput {
@@ -2226,9 +2266,11 @@ impl GetCustomRulePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConformancePackComplianceSummaryOutput {
     /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    #[doc(hidden)]
     pub conformance_pack_compliance_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackComplianceSummary>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConformancePackComplianceSummaryOutput {
@@ -2323,11 +2365,14 @@ impl GetConformancePackComplianceSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConformancePackComplianceDetailsOutput {
     /// <p>Name of the conformance pack.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_rule_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackEvaluationResult>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConformancePackComplianceDetailsOutput {
@@ -2442,6 +2487,7 @@ impl GetConformancePackComplianceDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByResourceTypeOutput {
     /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
+    #[doc(hidden)]
     pub compliance_summaries_by_resource_type:
         std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryByResourceType>>,
 }
@@ -2519,6 +2565,7 @@ impl GetComplianceSummaryByResourceTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByConfigRuleOutput {
     /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
+    #[doc(hidden)]
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
 impl GetComplianceSummaryByConfigRuleOutput {
@@ -2576,8 +2623,10 @@ impl GetComplianceSummaryByConfigRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
+    #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceOutput {
@@ -2659,8 +2708,10 @@ impl GetComplianceDetailsByResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleOutput {
     /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
+    #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleOutput {
@@ -2742,6 +2793,7 @@ impl GetComplianceDetailsByConfigRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateResourceConfigOutput {
     /// <p>Returns a <code>ConfigurationItem</code> object.</p>
+    #[doc(hidden)]
     pub configuration_item: std::option::Option<crate::model::ConfigurationItem>,
 }
 impl GetAggregateResourceConfigOutput {
@@ -2799,13 +2851,17 @@ impl GetAggregateResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateDiscoveredResourceCountsOutput {
     /// <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
+    #[doc(hidden)]
     pub total_discovered_resources: i64,
     /// <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
+    #[doc(hidden)]
     pub group_by_key: std::option::Option<std::string::String>,
     /// <p>Returns a list of GroupedResourceCount objects.</p>
+    #[doc(hidden)]
     pub grouped_resource_counts:
         std::option::Option<std::vec::Vec<crate::model::GroupedResourceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateDiscoveredResourceCountsOutput {
@@ -2929,11 +2985,14 @@ impl GetAggregateDiscoveredResourceCountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateConformancePackComplianceSummaryOutput {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
+    #[doc(hidden)]
     pub aggregate_conformance_pack_compliance_summaries:
         std::option::Option<std::vec::Vec<crate::model::AggregateConformancePackComplianceSummary>>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub group_by_key: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConformancePackComplianceSummaryOutput {
@@ -3048,11 +3107,14 @@ impl GetAggregateConformancePackComplianceSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateConfigRuleComplianceSummaryOutput {
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    #[doc(hidden)]
     pub group_by_key: std::option::Option<std::string::String>,
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
+    #[doc(hidden)]
     pub aggregate_compliance_counts:
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConfigRuleComplianceSummaryOutput {
@@ -3160,9 +3222,11 @@ impl GetAggregateConfigRuleComplianceSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateComplianceDetailsByConfigRuleOutput {
     /// <p>Returns an AggregateEvaluationResults object.</p>
+    #[doc(hidden)]
     pub aggregate_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::AggregateEvaluationResult>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateComplianceDetailsByConfigRuleOutput {
@@ -3253,9 +3317,11 @@ impl GetAggregateComplianceDetailsByConfigRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRetentionConfigurationsOutput {
     /// <p>Returns a retention configuration object.</p>
+    #[doc(hidden)]
     pub retention_configurations:
         std::option::Option<std::vec::Vec<crate::model::RetentionConfiguration>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRetentionConfigurationsOutput {
@@ -3342,9 +3408,11 @@ impl DescribeRetentionConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExecutionStatusOutput {
     /// <p>Returns a list of remediation execution statuses objects.</p>
+    #[doc(hidden)]
     pub remediation_execution_statuses:
         std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRemediationExecutionStatusOutput {
@@ -3434,9 +3502,11 @@ impl DescribeRemediationExecutionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExceptionsOutput {
     /// <p>Returns a list of remediation exception objects.</p>
+    #[doc(hidden)]
     pub remediation_exceptions:
         std::option::Option<std::vec::Vec<crate::model::RemediationException>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRemediationExceptionsOutput {
@@ -3520,6 +3590,7 @@ impl DescribeRemediationExceptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationConfigurationsOutput {
     /// <p>Returns a remediation configuration object.</p>
+    #[doc(hidden)]
     pub remediation_configurations:
         std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
 }
@@ -3593,9 +3664,11 @@ impl DescribeRemediationConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingAggregationRequestsOutput {
     /// <p>Returns a PendingAggregationRequests object.</p>
+    #[doc(hidden)]
     pub pending_aggregation_requests:
         std::option::Option<std::vec::Vec<crate::model::PendingAggregationRequest>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePendingAggregationRequestsOutput {
@@ -3685,9 +3758,11 @@ impl DescribePendingAggregationRequestsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePackStatusesOutput {
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
+    #[doc(hidden)]
     pub organization_conformance_pack_statuses:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePackStatus>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePackStatusesOutput {
@@ -3782,9 +3857,11 @@ impl DescribeOrganizationConformancePackStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePacksOutput {
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
+    #[doc(hidden)]
     pub organization_conformance_packs:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePack>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePacksOutput {
@@ -3874,9 +3951,11 @@ impl DescribeOrganizationConformancePacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRuleStatusesOutput {
     /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
+    #[doc(hidden)]
     pub organization_config_rule_statuses:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRuleStatusesOutput {
@@ -3966,9 +4045,11 @@ impl DescribeOrganizationConfigRuleStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRulesOutput {
     /// <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
+    #[doc(hidden)]
     pub organization_config_rules:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRule>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRulesOutput {
@@ -4055,6 +4136,7 @@ impl DescribeOrganizationConfigRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelStatusOutput {
     /// <p>A list that contains the status of a specified delivery channel.</p>
+    #[doc(hidden)]
     pub delivery_channels_status:
         std::option::Option<std::vec::Vec<crate::model::DeliveryChannelStatus>>,
 }
@@ -4125,6 +4207,7 @@ impl DescribeDeliveryChannelStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
+    #[doc(hidden)]
     pub delivery_channels: std::option::Option<std::vec::Vec<crate::model::DeliveryChannel>>,
 }
 impl DescribeDeliveryChannelsOutput {
@@ -4189,9 +4272,11 @@ impl DescribeDeliveryChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePackStatusOutput {
     /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_status_details:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackStatusDetail>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePackStatusOutput {
@@ -4281,9 +4366,11 @@ impl DescribeConformancePackStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePacksOutput {
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_details:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackDetail>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePacksOutput {
@@ -4370,11 +4457,14 @@ impl DescribeConformancePacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePackComplianceOutput {
     /// <p>Name of the conformance pack.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_rule_compliance_list:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackRuleCompliance>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePackComplianceOutput {
@@ -4486,6 +4576,7 @@ impl DescribeConformancePackComplianceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecorderStatusOutput {
     /// <p>A list that contains status of the specified recorders.</p>
+    #[doc(hidden)]
     pub configuration_recorders_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorderStatus>>,
 }
@@ -4559,6 +4650,7 @@ impl DescribeConfigurationRecorderStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
+    #[doc(hidden)]
     pub configuration_recorders:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorder>>,
 }
@@ -4629,9 +4721,11 @@ impl DescribeConfigurationRecordersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
     /// <p>Returns an AggregatedSourceStatus object. </p>
+    #[doc(hidden)]
     pub aggregated_source_status_list:
         std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationAggregatorSourcesStatusOutput {
@@ -4722,9 +4816,11 @@ impl DescribeConfigurationAggregatorSourcesStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationAggregatorsOutput {
     /// <p>Returns a ConfigurationAggregators object.</p>
+    #[doc(hidden)]
     pub configuration_aggregators:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationAggregator>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationAggregatorsOutput {
@@ -4811,8 +4907,10 @@ impl DescribeConfigurationAggregatorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesOutput {
     /// <p>The details about your Config rules.</p>
+    #[doc(hidden)]
     pub config_rules: std::option::Option<std::vec::Vec<crate::model::ConfigRule>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRulesOutput {
@@ -4893,9 +4991,11 @@ impl DescribeConfigRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusOutput {
     /// <p>Status information about your Config managed rules.</p>
+    #[doc(hidden)]
     pub config_rules_evaluation_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigRuleEvaluationStatus>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRuleEvaluationStatusOutput {
@@ -4985,9 +5085,11 @@ impl DescribeConfigRuleEvaluationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
+    #[doc(hidden)]
     pub compliance_by_resources:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByResource>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByResourceOutput {
@@ -5074,9 +5176,11 @@ impl DescribeComplianceByResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleOutput {
     /// <p>Indicates whether each of the specified Config rules is compliant.</p>
+    #[doc(hidden)]
     pub compliance_by_config_rules:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByConfigRule>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByConfigRuleOutput {
@@ -5166,9 +5270,11 @@ impl DescribeComplianceByConfigRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsOutput {
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
+    #[doc(hidden)]
     pub aggregation_authorizations:
         std::option::Option<std::vec::Vec<crate::model::AggregationAuthorization>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregationAuthorizationsOutput {
@@ -5258,9 +5364,11 @@ impl DescribeAggregationAuthorizationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateComplianceByConformancePacksOutput {
     /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
+    #[doc(hidden)]
     pub aggregate_compliance_by_conformance_packs:
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceByConformancePack>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConformancePacksOutput {
@@ -5356,9 +5464,11 @@ impl DescribeAggregateComplianceByConformancePacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateComplianceByConfigRulesOutput {
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
+    #[doc(hidden)]
     pub aggregate_compliance_by_config_rules:
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceByConfigRule>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesOutput {
@@ -5453,6 +5563,7 @@ impl DescribeAggregateComplianceByConfigRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverConfigSnapshotOutput {
     /// <p>The ID of the snapshot that is being created.</p>
+    #[doc(hidden)]
     pub config_snapshot_id: std::option::Option<std::string::String>,
 }
 impl DeliverConfigSnapshotOutput {
@@ -5600,6 +5711,7 @@ impl DeleteResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemediationExceptionsOutput {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    #[doc(hidden)]
     pub failed_batches:
         std::option::Option<std::vec::Vec<crate::model::FailedDeleteRemediationExceptionsBatch>>,
 }
@@ -6003,9 +6115,11 @@ impl DeleteAggregationAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
+    #[doc(hidden)]
     pub base_configuration_items:
         std::option::Option<std::vec::Vec<crate::model::BaseConfigurationItem>>,
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    #[doc(hidden)]
     pub unprocessed_resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl BatchGetResourceConfigOutput {
@@ -6102,9 +6216,11 @@ impl BatchGetResourceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAggregateResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
+    #[doc(hidden)]
     pub base_configuration_items:
         std::option::Option<std::vec::Vec<crate::model::BaseConfigurationItem>>,
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
+    #[doc(hidden)]
     pub unprocessed_resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AggregateResourceIdentifier>>,
 }

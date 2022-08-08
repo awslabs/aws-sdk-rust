@@ -5338,10 +5338,13 @@ impl UpdateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The description of the workspace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
 }
 impl UpdateWorkspaceInput {
@@ -5373,14 +5376,19 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the scene.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    #[doc(hidden)]
     pub content_location: std::option::Option<std::string::String>,
     /// <p>The description of this scene.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateSceneInput {
@@ -5422,18 +5430,24 @@ impl std::fmt::Debug for UpdateSceneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub component_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentUpdateRequest>,
     >,
     /// <p>An object that describes the update request for a parent entity.</p>
+    #[doc(hidden)]
     pub parent_entity_update: std::option::Option<crate::model::ParentEntityUpdateRequest>,
 }
 impl UpdateEntityInput {
@@ -5486,20 +5500,27 @@ impl std::fmt::Debug for UpdateEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    #[doc(hidden)]
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionRequest>,
     >,
     /// <p>Specifies the component type that this component type extends.</p>
+    #[doc(hidden)]
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionRequest>,
     >,
@@ -5561,8 +5582,10 @@ impl std::fmt::Debug for UpdateComponentTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5589,8 +5612,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to add to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5621,8 +5646,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesInput {
     /// <p>The maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkspacesInput {
@@ -5649,10 +5676,13 @@ impl std::fmt::Debug for ListWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5684,10 +5714,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScenesInput {
@@ -5719,14 +5752,18 @@ impl std::fmt::Debug for ListScenesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,
     /// <p>The maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesInput {
@@ -5765,12 +5802,16 @@ impl std::fmt::Debug for ListEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A list of objects that filter the request.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListComponentTypesFilter>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComponentTypesInput {
@@ -5807,6 +5848,7 @@ impl std::fmt::Debug for ListComponentTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl GetWorkspaceInput {
@@ -5828,8 +5870,10 @@ impl std::fmt::Debug for GetWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the scene.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
 }
 impl GetSceneInput {
@@ -5856,40 +5900,54 @@ impl std::fmt::Debug for GetSceneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>A list of properties whose value histories the request retrieves.</p>
+    #[doc(hidden)]
     pub selected_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of objects that filter the property value history request.</p>
+    #[doc(hidden)]
     pub property_filters: std::option::Option<std::vec::Vec<crate::model::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use startTime instead."
     )]
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest property value to return.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use endTime instead."
     )]
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
+    #[doc(hidden)]
     pub interpolation: std::option::Option<crate::model::InterpolationParameters>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The time direction to use in the result order.</p>
+    #[doc(hidden)]
     pub order_by_time: std::option::Option<crate::model::OrderByTime>,
     /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryInput {
@@ -5984,14 +6042,19 @@ impl std::fmt::Debug for GetPropertyValueHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The ID of the component type whose property values the operation returns.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity whose property values the operation returns.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The properties whose values the operation returns.</p>
+    #[doc(hidden)]
     pub selected_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the workspace whose values the operation returns.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueInput {
@@ -6033,8 +6096,10 @@ impl std::fmt::Debug for GetPropertyValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntityInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl GetEntityInput {
@@ -6061,8 +6126,10 @@ impl std::fmt::Debug for GetEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
 }
 impl GetComponentTypeInput {
@@ -6089,6 +6156,7 @@ impl std::fmt::Debug for GetComponentTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceInput {
@@ -6110,8 +6178,10 @@ impl std::fmt::Debug for DeleteWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSceneInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the scene to delete.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
 }
 impl DeleteSceneInput {
@@ -6138,10 +6208,13 @@ impl std::fmt::Debug for DeleteSceneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity to delete.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
+    #[doc(hidden)]
     pub is_recursive: std::option::Option<bool>,
 }
 impl DeleteEntityInput {
@@ -6173,8 +6246,10 @@ impl std::fmt::Debug for DeleteEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the component type to delete.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
 }
 impl DeleteComponentTypeInput {
@@ -6201,14 +6276,19 @@ impl std::fmt::Debug for DeleteComponentTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The description of the workspace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>Metadata that you can use to manage the workspace</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6254,16 +6334,22 @@ impl std::fmt::Debug for CreateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the scene.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    #[doc(hidden)]
     pub content_location: std::option::Option<std::string::String>,
     /// <p>The description for this scene.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of capabilities that the scene uses to render itself.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Metadata that you can use to manage the scene.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6314,20 +6400,27 @@ impl std::fmt::Debug for CreateSceneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentRequest>,
     >,
     /// <p>The ID of the entity's parent entity.</p>
+    #[doc(hidden)]
     pub parent_entity_id: std::option::Option<std::string::String>,
     /// <p>Metadata that you can use to manage the entity.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6387,24 +6480,32 @@ impl std::fmt::Debug for CreateEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    #[doc(hidden)]
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionRequest>,
     >,
     /// <p>Specifies the parent component type to extend.</p>
+    #[doc(hidden)]
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionRequest>,
     >,
     /// <p>Metadata that you can use to manage the component type.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6473,8 +6574,10 @@ impl std::fmt::Debug for CreateComponentTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
 }
 impl BatchPutPropertyValuesInput {

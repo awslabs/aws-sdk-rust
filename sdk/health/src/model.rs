@@ -7,10 +7,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventType {
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::EventTypeCategory>,
 }
 impl EventType {
@@ -170,10 +173,13 @@ impl AsRef<str> for EventTypeCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTypeFilter {
     /// <p>A list of event type codes.</p>
+    #[doc(hidden)]
     pub event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub event_type_categories: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
 }
 impl EventTypeFilter {
@@ -292,12 +298,16 @@ pub struct OrganizationEvent {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services service that is affected by the event, such as EC2 and RDS.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    #[doc(hidden)]
     pub event_type_code: std::option::Option<std::string::String>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub event_type_category: std::option::Option<crate::model::EventTypeCategory>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
@@ -305,16 +315,22 @@ pub struct OrganizationEvent {
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_scope_code: std::option::Option<crate::model::EventScopeCode>,
     /// <p>The Amazon Web Services Region name of the event.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The date and time that the event began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent date and time that the event was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::EventStatusCode>,
 }
 impl OrganizationEvent {
@@ -682,26 +698,37 @@ impl AsRef<str> for EventScopeCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationEventFilter {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
+    #[doc(hidden)]
     pub event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    #[doc(hidden)]
     pub aws_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<crate::model::DateTimeRange>,
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<crate::model::DateTimeRange>,
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<crate::model::DateTimeRange>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
+    #[doc(hidden)]
     pub entity_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
+    #[doc(hidden)]
     pub entity_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub event_type_categories: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
     /// <p>A list of event status codes.</p>
+    #[doc(hidden)]
     pub event_status_codes: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
 }
 impl OrganizationEventFilter {
@@ -1009,8 +1036,10 @@ impl OrganizationEventFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateTimeRange {
     /// <p>The starting date and time of a time range.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ending date and time of a time range.</p>
+    #[doc(hidden)]
     pub to: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DateTimeRange {
@@ -1090,24 +1119,34 @@ pub struct Event {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    #[doc(hidden)]
     pub event_type_code: std::option::Option<std::string::String>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub event_type_category: std::option::Option<crate::model::EventTypeCategory>,
     /// <p>The Amazon Web Services Region name of the event.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Availability Zone of the event. For example, us-east-1a.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The date and time that the event began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent date and time that the event was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::EventStatusCode>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
@@ -1115,6 +1154,7 @@ pub struct Event {
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_scope_code: std::option::Option<crate::model::EventScopeCode>,
 }
 impl Event {
@@ -1384,34 +1424,47 @@ impl Event {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    #[doc(hidden)]
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
+    #[doc(hidden)]
     pub event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services Availability Zones.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of dates and times that the event began.</p>
+    #[doc(hidden)]
     pub start_times: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
     /// <p>A list of dates and times that the event ended.</p>
+    #[doc(hidden)]
     pub end_times: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
     /// <p>A list of dates and times that the event was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_times: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
+    #[doc(hidden)]
     pub entity_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
+    #[doc(hidden)]
     pub entity_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    #[doc(hidden)]
     pub event_type_categories: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
     /// <p>A list of event status codes.</p>
+    #[doc(hidden)]
     pub event_status_codes: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
 }
 impl EventFilter {
@@ -1806,12 +1859,15 @@ impl EventFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationEventDetailsErrorItem {
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The name of the error.</p>
+    #[doc(hidden)]
     pub error_name: std::option::Option<std::string::String>,
     /// <p>A message that describes the error.</p>
     /// <p>If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following errors, follow the recommendations in the message:</p>
@@ -1820,6 +1876,7 @@ pub struct OrganizationEventDetailsErrorItem {
     /// <li> <p>We couldn't find an account specific event for the specified Amazon Web Services account. To find an event that is public, you must enter a null value for the Amazon Web Services account ID in the request.</p> </li>
     /// <li> <p>Your Amazon Web Services account doesn't include the Amazon Web Services Support plan required to use the Health API. You must have either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl OrganizationEventDetailsErrorItem {
@@ -1955,6 +2012,7 @@ impl OrganizationEventDetailsErrorItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationEventDetails {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>Summary information about an Health event.</p>
     /// <p>Health events can be public or account-specific:</p>
@@ -1963,10 +2021,13 @@ pub struct OrganizationEventDetails {
     /// <li> <p> <i>Account-specific</i> events are specific to either your Amazon Web Services account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, Health provides information about the event and the affected resources in the account.</p> </li>
     /// </ul>
     /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
+    #[doc(hidden)]
     pub event_description: std::option::Option<crate::model::EventDescription>,
     /// <p>Additional metadata about the event.</p>
+    #[doc(hidden)]
     pub event_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2117,6 +2178,7 @@ impl OrganizationEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDescription {
     /// <p>The most recent description of the event.</p>
+    #[doc(hidden)]
     pub latest_description: std::option::Option<std::string::String>,
 }
 impl EventDescription {
@@ -2176,8 +2238,10 @@ pub struct EventAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl EventAccountFilter {
@@ -2260,10 +2324,13 @@ pub struct EventDetailsErrorItem {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The name of the error.</p>
+    #[doc(hidden)]
     pub error_name: std::option::Option<std::string::String>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl EventDetailsErrorItem {
@@ -2361,10 +2428,13 @@ impl EventDetailsErrorItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDetails {
     /// <p>Summary information about the event.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The most recent description of the event.</p>
+    #[doc(hidden)]
     pub event_description: std::option::Option<crate::model::EventDescription>,
     /// <p>Additional metadata about the event.</p>
+    #[doc(hidden)]
     pub event_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2477,8 +2547,10 @@ impl EventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventAggregate {
     /// <p>The issue type for the associated count.</p>
+    #[doc(hidden)]
     pub aggregate_value: std::option::Option<std::string::String>,
     /// <p>The number of events of the associated issue type.</p>
+    #[doc(hidden)]
     pub count: i32,
 }
 impl EventAggregate {
@@ -2606,8 +2678,10 @@ pub struct EntityAggregate {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The number of entities that match the criteria for the specified events.</p>
+    #[doc(hidden)]
     pub count: i32,
 }
 impl EntityAggregate {
@@ -2685,14 +2759,18 @@ impl EntityAggregate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAffectedEntitiesErrorItem {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The name of the error.</p>
+    #[doc(hidden)]
     pub error_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl OrganizationAffectedEntitiesErrorItem {
@@ -2810,24 +2888,32 @@ impl OrganizationAffectedEntitiesErrorItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
+    #[doc(hidden)]
     pub entity_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the affected entity.</p>
+    #[doc(hidden)]
     pub entity_value: std::option::Option<std::string::String>,
     /// <p>The URL of the affected entity.</p>
+    #[doc(hidden)]
     pub entity_url: std::option::Option<std::string::String>,
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The most recent time that the entity was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::EntityStatusCode>,
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3102,20 +3188,26 @@ impl AsRef<str> for EntityStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    #[doc(hidden)]
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
+    #[doc(hidden)]
     pub entity_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of IDs for affected entities.</p>
+    #[doc(hidden)]
     pub entity_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
+    #[doc(hidden)]
     pub last_updated_times: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
+    #[doc(hidden)]
     pub status_codes: std::option::Option<std::vec::Vec<crate::model::EntityStatusCode>>,
 }
 impl EntityFilter {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field that failed validation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message describing why the field failed validation.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,22 +148,31 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSettings {
     /// <p>The ARN of the user settings.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
+    #[doc(hidden)]
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    #[doc(hidden)]
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    #[doc(hidden)]
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    #[doc(hidden)]
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    #[doc(hidden)]
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
+    #[doc(hidden)]
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    #[doc(hidden)]
     pub disconnect_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    #[doc(hidden)]
     pub idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
 }
 impl UserSettings {
@@ -446,28 +457,40 @@ impl AsRef<str> for EnabledType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Portal {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The renderer that is used in streaming sessions.</p>
+    #[doc(hidden)]
     pub renderer_type: std::option::Option<crate::model::RendererType>,
     /// <p>The browser that users see when using a streaming session.</p>
+    #[doc(hidden)]
     pub browser_type: std::option::Option<crate::model::BrowserType>,
     /// <p>The status of the web portal.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    #[doc(hidden)]
     pub portal_endpoint: std::option::Option<std::string::String>,
     /// <p>The name of the web portal.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The creation date of the web portal.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the browser settings that is associated with this web portal.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the trust store that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the trust store that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
     /// <p>A message that explains why the web portal is in its current status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl Portal {
@@ -900,14 +923,19 @@ impl AsRef<str> for RendererType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkSettings {
     /// <p>The ARN of the network settings.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
+    #[doc(hidden)]
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The VPC that streaming instances will connect to.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more security groups used to control access from streaming instances to your VPC. </p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkSettings {
@@ -1060,10 +1088,13 @@ impl NetworkSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
     /// <p>The identity provider name.</p>
+    #[doc(hidden)]
     pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>The identity provider type.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
@@ -1106,6 +1137,7 @@ pub struct IdentityProvider {
     /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub identity_provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1444,10 +1476,13 @@ impl AsRef<str> for IdentityProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
+    #[doc(hidden)]
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
+    #[doc(hidden)]
     pub browser_policy: std::option::Option<std::string::String>,
 }
 impl BrowserSettings {
@@ -1551,8 +1586,10 @@ impl BrowserSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1624,20 +1661,28 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    #[doc(hidden)]
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    #[doc(hidden)]
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    #[doc(hidden)]
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    #[doc(hidden)]
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
+    #[doc(hidden)]
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    #[doc(hidden)]
     pub disconnect_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    #[doc(hidden)]
     pub idle_disconnect_timeout_in_minutes: std::option::Option<i32>,
 }
 impl UserSettingsSummary {
@@ -1841,6 +1886,7 @@ impl UserSettingsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustStoreSummary {
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl TrustStoreSummary {
@@ -1898,14 +1944,19 @@ impl TrustStoreSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateSummary {
     /// <p>A hexadecimal identifier for the certificate.</p>
+    #[doc(hidden)]
     pub thumbprint: std::option::Option<std::string::String>,
     /// <p>The entity the certificate belongs to.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The entity that issued the certificate.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The certificate is not valid before this date.</p>
+    #[doc(hidden)]
     pub not_valid_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
+    #[doc(hidden)]
     pub not_valid_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CertificateSummary {
@@ -2034,26 +2085,37 @@ impl CertificateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortalSummary {
     /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The renderer that is used in streaming sessions.</p>
+    #[doc(hidden)]
     pub renderer_type: std::option::Option<crate::model::RendererType>,
     /// <p>The browser type of the web portal.</p>
+    #[doc(hidden)]
     pub browser_type: std::option::Option<crate::model::BrowserType>,
     /// <p>The status of the web portal.</p>
+    #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    #[doc(hidden)]
     pub portal_endpoint: std::option::Option<std::string::String>,
     /// <p>The name of the web portal.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The creation date of the web portal.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the trust that is associated with this web portal.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl PortalSummary {
@@ -2305,8 +2367,10 @@ impl PortalSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkSettingsSummary {
     /// <p>The ARN of the network settings.</p>
+    #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the network settings.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkSettingsSummary {
@@ -2381,10 +2445,13 @@ impl NetworkSettingsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderSummary {
     /// <p>The ARN of the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
     /// <p>The identity provider name.</p>
+    #[doc(hidden)]
     pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>The identity provider type.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl IdentityProviderSummary {
@@ -2484,6 +2551,7 @@ impl IdentityProviderSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrowserSettingsSummary {
     /// <p>The ARN of the browser settings.</p>
+    #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
 }
 impl BrowserSettingsSummary {
@@ -2541,16 +2609,22 @@ impl BrowserSettingsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>A hexadecimal identifier for the certificate.</p>
+    #[doc(hidden)]
     pub thumbprint: std::option::Option<std::string::String>,
     /// <p>The entity the certificate belongs to.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The entity that issued the certificate.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The certificate is not valid before this date.</p>
+    #[doc(hidden)]
     pub not_valid_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
+    #[doc(hidden)]
     pub not_valid_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The body of the certificate.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Certificate {
@@ -2696,8 +2770,10 @@ impl Certificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
+    #[doc(hidden)]
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the trust store.</p>
+    #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl TrustStore {

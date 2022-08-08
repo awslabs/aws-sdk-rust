@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceAccountException {
     /// <p>Any additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceAccountException {
@@ -69,6 +70,7 @@ impl ServiceAccountException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     /// <p>Any additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -133,6 +135,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOperationException {
@@ -197,6 +200,7 @@ impl InvalidOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArgumentException {
     /// <p>Any additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ArgumentException {
@@ -261,6 +265,7 @@ impl ArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>Any additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -325,6 +330,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceException {
@@ -389,8 +395,10 @@ impl InternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TagOperationException {
@@ -477,8 +485,10 @@ impl TagOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
@@ -565,8 +575,10 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TagPolicyException {
@@ -653,6 +665,7 @@ impl TagPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotencyException {
     /// <p>Any additional information about the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotencyException {
@@ -717,6 +730,7 @@ impl IdempotencyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotEligibleException {
     /// <p>The HTTP response code of a Not Eligible exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotEligibleException {
@@ -781,6 +795,7 @@ impl NotEligibleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotDeleteException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CannotDeleteException {

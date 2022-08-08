@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairOutput {
     /// <p>Information about a studio.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl StartStudioSsoConfigurationRepairOutput {
@@ -88,8 +89,10 @@ impl PutStudioMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioMembersOutput {
     /// <p>A list of admin members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStudioMembersOutput {
@@ -170,6 +173,7 @@ impl ListStudioMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioMemberOutput {
     /// <p>The member.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::StudioMembership>,
 }
 impl GetStudioMemberOutput {
@@ -257,8 +261,10 @@ impl DeleteStudioMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudiosOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of studios.</p>
+    #[doc(hidden)]
     pub studios: std::option::Option<std::vec::Vec<crate::model::Studio>>,
 }
 impl ListStudiosOutput {
@@ -339,6 +345,7 @@ impl ListStudiosOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioOutput {
     /// <p>Information about a studio.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl CreateStudioOutput {
@@ -393,6 +400,7 @@ impl CreateStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioOutput {
     /// <p>Information about a studio.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl DeleteStudioOutput {
@@ -447,6 +455,7 @@ impl DeleteStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioOutput {
     /// <p>Information about a studio.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl UpdateStudioOutput {
@@ -501,6 +510,7 @@ impl UpdateStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioOutput {
     /// <p>Information about a studio.</p>
+    #[doc(hidden)]
     pub studio: std::option::Option<crate::model::Studio>,
 }
 impl GetStudioOutput {
@@ -555,8 +565,10 @@ impl GetStudioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioComponentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of studio components.</p>
+    #[doc(hidden)]
     pub studio_components: std::option::Option<std::vec::Vec<crate::model::StudioComponent>>,
 }
 impl ListStudioComponentsOutput {
@@ -638,6 +650,7 @@ impl ListStudioComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentOutput {
     /// <p>Information about the studio component.</p>
+    #[doc(hidden)]
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
 impl CreateStudioComponentOutput {
@@ -695,6 +708,7 @@ impl CreateStudioComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioComponentOutput {
     /// <p>Information about the studio component.</p>
+    #[doc(hidden)]
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
 impl DeleteStudioComponentOutput {
@@ -752,6 +766,7 @@ impl DeleteStudioComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioComponentOutput {
     /// <p>Information about the studio component.</p>
+    #[doc(hidden)]
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
 impl UpdateStudioComponentOutput {
@@ -809,6 +824,7 @@ impl UpdateStudioComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioComponentOutput {
     /// <p>Information about the studio component.</p>
+    #[doc(hidden)]
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
 impl GetStudioComponentOutput {
@@ -866,6 +882,7 @@ impl GetStudioComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionOutput {
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StopStreamingSessionOutput {
@@ -923,6 +940,7 @@ impl StopStreamingSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionOutput {
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StartStreamingSessionOutput {
@@ -980,6 +998,7 @@ impl StartStreamingSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingSessionStreamOutput {
     /// <p>The stream.</p>
+    #[doc(hidden)]
     pub stream: std::option::Option<crate::model::StreamingSessionStream>,
 }
 impl GetStreamingSessionStreamOutput {
@@ -1037,6 +1056,7 @@ impl GetStreamingSessionStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionStreamOutput {
     /// <p>The stream.</p>
+    #[doc(hidden)]
     pub stream: std::option::Option<crate::model::StreamingSessionStream>,
 }
 impl CreateStreamingSessionStreamOutput {
@@ -1094,8 +1114,10 @@ impl CreateStreamingSessionStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingSessionsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of streaming sessions.</p>
+    #[doc(hidden)]
     pub sessions: std::option::Option<std::vec::Vec<crate::model::StreamingSession>>,
 }
 impl ListStreamingSessionsOutput {
@@ -1176,6 +1198,7 @@ impl ListStreamingSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionOutput {
     /// <p>The session.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl CreateStreamingSessionOutput {
@@ -1233,6 +1256,7 @@ impl CreateStreamingSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingSessionOutput {
     /// <p>The session.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl DeleteStreamingSessionOutput {
@@ -1290,6 +1314,7 @@ impl DeleteStreamingSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingSessionOutput {
     /// <p>The session.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl GetStreamingSessionOutput {
@@ -1347,8 +1372,10 @@ impl GetStreamingSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingImagesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of streaming images.</p>
+    #[doc(hidden)]
     pub streaming_images: std::option::Option<std::vec::Vec<crate::model::StreamingImage>>,
 }
 impl ListStreamingImagesOutput {
@@ -1430,6 +1457,7 @@ impl ListStreamingImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingImageOutput {
     /// <p>The streaming image.</p>
+    #[doc(hidden)]
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl CreateStreamingImageOutput {
@@ -1487,6 +1515,7 @@ impl CreateStreamingImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingImageOutput {
     /// <p>The streaming image.</p>
+    #[doc(hidden)]
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl DeleteStreamingImageOutput {
@@ -1547,6 +1576,7 @@ pub struct UpdateStreamingImageOutput {
     /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
     /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
     /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+    #[doc(hidden)]
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl UpdateStreamingImageOutput {
@@ -1613,6 +1643,7 @@ impl UpdateStreamingImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingImageOutput {
     /// <p>The streaming image.</p>
+    #[doc(hidden)]
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl GetStreamingImageOutput {
@@ -1670,6 +1701,7 @@ impl GetStreamingImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileMemberOutput {
     /// <p>The updated member. </p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::LaunchProfileMembership>,
 }
 impl UpdateLaunchProfileMemberOutput {
@@ -1757,8 +1789,10 @@ impl PutLaunchProfileMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchProfileMembersOutput {
     /// <p>A list of members.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::LaunchProfileMembership>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchProfileMembersOutput {
@@ -1840,6 +1874,7 @@ impl ListLaunchProfileMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileMemberOutput {
     /// <p>The member.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::LaunchProfileMembership>,
 }
 impl GetLaunchProfileMemberOutput {
@@ -1897,6 +1932,7 @@ impl GetLaunchProfileMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileInitializationOutput {
     /// <p>The launch profile initialization.</p>
+    #[doc(hidden)]
     pub launch_profile_initialization:
         std::option::Option<crate::model::LaunchProfileInitialization>,
 }
@@ -1964,10 +2000,13 @@ impl GetLaunchProfileInitializationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileDetailsOutput {
     /// <p>The launch profile.</p>
+    #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
     /// <p>A collection of streaming images.</p>
+    #[doc(hidden)]
     pub streaming_images: std::option::Option<std::vec::Vec<crate::model::StreamingImage>>,
     /// <p>A collection of studio component summaries.</p>
+    #[doc(hidden)]
     pub studio_component_summaries:
         std::option::Option<std::vec::Vec<crate::model::StudioComponentSummary>>,
 }
@@ -2118,8 +2157,10 @@ impl DeleteLaunchProfileMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchProfilesOutput {
     /// <p>A collection of launch profiles.</p>
+    #[doc(hidden)]
     pub launch_profiles: std::option::Option<std::vec::Vec<crate::model::LaunchProfile>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchProfilesOutput {
@@ -2200,6 +2241,7 @@ impl ListLaunchProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchProfileOutput {
     /// <p>The launch profile.</p>
+    #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
 impl CreateLaunchProfileOutput {
@@ -2257,6 +2299,7 @@ impl CreateLaunchProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileOutput {
     /// <p>The launch profile.</p>
+    #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
 impl DeleteLaunchProfileOutput {
@@ -2314,6 +2357,7 @@ impl DeleteLaunchProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileOutput {
     /// <p>The launch profile.</p>
+    #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
 impl UpdateLaunchProfileOutput {
@@ -2371,6 +2415,7 @@ impl UpdateLaunchProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchProfileOutput {
     /// <p>The launch profile.</p>
+    #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
 impl GetLaunchProfileOutput {
@@ -2428,8 +2473,10 @@ impl GetLaunchProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulasOutput {
     /// <p>A collection of EULA resources.</p>
+    #[doc(hidden)]
     pub eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEulasOutput {
@@ -2510,6 +2557,7 @@ impl ListEulasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEulaOutput {
     /// <p>The EULA.</p>
+    #[doc(hidden)]
     pub eula: std::option::Option<crate::model::Eula>,
 }
 impl GetEulaOutput {
@@ -2562,8 +2610,10 @@ impl GetEulaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulaAcceptancesOutput {
     /// <p>A collection of EULA acceptances.</p>
+    #[doc(hidden)]
     pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEulaAcceptancesOutput {
@@ -2645,6 +2695,7 @@ impl ListEulaAcceptancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
+    #[doc(hidden)]
     pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
 }
 impl AcceptEulasOutput {
@@ -2769,6 +2820,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

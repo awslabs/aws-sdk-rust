@@ -578,18 +578,25 @@ pub struct StartSupportDataExportInput {
     /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub data_set_type: std::option::Option<crate::model::SupportDataSetType>,
     /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
+    #[doc(hidden)]
     pub from_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    #[doc(hidden)]
     pub role_name_arn: std::option::Option<std::string::String>,
     /// The name (friendly name, not ARN) of the destination S3 bucket.
+    #[doc(hidden)]
     pub destination_s3_bucket_name: std::option::Option<std::string::String>,
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+    #[doc(hidden)]
     pub destination_s3_prefix: std::option::Option<std::string::String>,
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
+    #[doc(hidden)]
     pub customer_defined_values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -683,18 +690,25 @@ pub struct GenerateDataSetInput {
     /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub data_set_type: std::option::Option<crate::model::DataSetType>,
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
+    #[doc(hidden)]
     pub data_set_publication_date: std::option::Option<aws_smithy_types::DateTime>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    #[doc(hidden)]
     pub role_name_arn: std::option::Option<std::string::String>,
     /// The name (friendly name, not ARN) of the destination S3 bucket.
+    #[doc(hidden)]
     pub destination_s3_bucket_name: std::option::Option<std::string::String>,
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+    #[doc(hidden)]
     pub destination_s3_prefix: std::option::Option<std::string::String>,
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
+    #[doc(hidden)]
     pub customer_defined_values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

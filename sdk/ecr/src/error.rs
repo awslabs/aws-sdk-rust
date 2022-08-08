@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadNotFoundException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UploadNotFoundException {
@@ -69,6 +70,7 @@ impl UploadNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerException {
@@ -133,6 +135,7 @@ impl ServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotFoundException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNotFoundException {
@@ -197,6 +200,7 @@ impl RepositoryNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -261,8 +265,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The error code returned by KMS.</p>
+    #[doc(hidden)]
     pub kms_error: std::option::Option<std::string::String>,
 }
 impl KmsException {
@@ -346,6 +352,7 @@ impl KmsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -410,14 +417,19 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerPartException {
     /// <p>The registry ID associated with the exception.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the exception.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the exception.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
+    #[doc(hidden)]
     pub last_valid_byte_received: std::option::Option<i64>,
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLayerPartException {
@@ -555,6 +567,7 @@ impl InvalidLayerPartException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -619,6 +632,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagParameterException {
@@ -683,6 +697,7 @@ impl InvalidTagParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LifecyclePolicyPreviewInProgressException {
@@ -747,6 +762,7 @@ impl LifecyclePolicyPreviewInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LifecyclePolicyNotFoundException {
@@ -811,6 +827,7 @@ impl LifecyclePolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -875,6 +892,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedImageTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedImageTypeException {
@@ -939,6 +957,7 @@ impl UnsupportedImageTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageNotFoundException {
@@ -1003,6 +1022,7 @@ impl ImageNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferencedImagesNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReferencedImagesNotFoundException {
@@ -1067,6 +1087,7 @@ impl ReferencedImagesNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersNotFoundException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayersNotFoundException {
@@ -1131,6 +1152,7 @@ impl LayersNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTagAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageTagAlreadyExistsException {
@@ -1195,6 +1217,7 @@ impl ImageTagAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDigestDoesNotMatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageDigestDoesNotMatchException {
@@ -1259,6 +1282,7 @@ impl ImageDigestDoesNotMatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageAlreadyExistsException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageAlreadyExistsException {
@@ -1323,6 +1347,7 @@ impl ImageAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryPolicyNotFoundException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryPolicyNotFoundException {
@@ -1387,6 +1412,7 @@ impl RepositoryPolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryPolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegistryPolicyNotFoundException {
@@ -1451,6 +1477,7 @@ impl RegistryPolicyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LifecyclePolicyPreviewNotFoundException {
@@ -1515,6 +1542,7 @@ impl LifecyclePolicyPreviewNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerInaccessibleException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerInaccessibleException {
@@ -1579,6 +1607,7 @@ impl LayerInaccessibleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullThroughCacheRuleNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullThroughCacheRuleNotFoundException {
@@ -1643,6 +1672,7 @@ impl PullThroughCacheRuleNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ScanNotFoundException {
@@ -1707,6 +1737,7 @@ impl ScanNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotEmptyException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryNotEmptyException {
@@ -1771,6 +1802,7 @@ impl RepositoryNotEmptyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAlreadyExistsException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RepositoryAlreadyExistsException {
@@ -1835,6 +1867,7 @@ impl RepositoryAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedUpstreamRegistryException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedUpstreamRegistryException {
@@ -1899,6 +1932,7 @@ impl UnsupportedUpstreamRegistryException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullThroughCacheRuleAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PullThroughCacheRuleAlreadyExistsException {
@@ -1963,6 +1997,7 @@ impl PullThroughCacheRuleAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerPartTooSmallException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerPartTooSmallException {
@@ -2027,6 +2062,7 @@ impl LayerPartTooSmallException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerAlreadyExistsException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerAlreadyExistsException {
@@ -2091,6 +2127,7 @@ impl LayerAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLayerException {
@@ -2155,6 +2192,7 @@ impl InvalidLayerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmptyUploadException {
     /// <p>The error message associated with the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmptyUploadException {

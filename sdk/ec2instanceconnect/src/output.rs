@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Is true if the request succeeds and an error otherwise.</p>
+    #[doc(hidden)]
     pub success: bool,
 }
 impl SendSshPublicKeyOutput {
@@ -77,8 +79,10 @@ impl SendSshPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendSerialConsoleSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Is true if the request succeeds and an error otherwise.</p>
+    #[doc(hidden)]
     pub success: bool,
 }
 impl SendSerialConsoleSshPublicKeyOutput {

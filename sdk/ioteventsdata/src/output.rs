@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsOutput {
     /// <p>A list of summary information about the detectors (instances).</p>
+    #[doc(hidden)]
     pub detector_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsOutput {
@@ -87,8 +89,10 @@ impl ListDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmsOutput {
     /// <p>A list that summarizes each alarm.</p>
+    #[doc(hidden)]
     pub alarm_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmsOutput {
@@ -169,6 +173,7 @@ impl ListAlarmsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorOutput {
     /// <p>Information about the detector (instance).</p>
+    #[doc(hidden)]
     pub detector: std::option::Option<crate::model::Detector>,
 }
 impl DescribeDetectorOutput {
@@ -223,6 +228,7 @@ impl DescribeDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmOutput {
     /// <p>Contains information about an alarm.</p>
+    #[doc(hidden)]
     pub alarm: std::option::Option<crate::model::Alarm>,
 }
 impl DescribeAlarmOutput {
@@ -275,6 +281,7 @@ impl DescribeAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorOutput {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
+    #[doc(hidden)]
     pub batch_update_detector_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
 }
@@ -348,6 +355,7 @@ impl BatchUpdateDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSnoozeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchSnoozeAlarmOutput {
@@ -414,6 +422,7 @@ impl BatchSnoozeAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResetAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchResetAlarmOutput {
@@ -480,6 +489,7 @@ impl BatchResetAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
+    #[doc(hidden)]
     pub batch_put_message_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
 }
@@ -553,6 +563,7 @@ impl BatchPutMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEnableAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchEnableAlarmOutput {
@@ -619,6 +630,7 @@ impl BatchEnableAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisableAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchDisableAlarmOutput {
@@ -685,6 +697,7 @@ impl BatchDisableAlarmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub batch_delete_detector_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
 }
@@ -758,6 +771,7 @@ impl BatchDeleteDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAcknowledgeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchAcknowledgeAlarmOutput {

@@ -4,26 +4,37 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePoolOutput {
     /// <p>The ARN of the pool.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The current status of the pool update request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PoolStatus>,
     /// <p>The type of message for the pool to use.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    #[doc(hidden)]
     pub shared_routes_enabled: bool,
     /// <p>When set to true the pool can't be deleted.</p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdatePoolOutput {
@@ -271,34 +282,49 @@ impl UpdatePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The phone number that was updated.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NumberStatus>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>Specifies if the number could be used for text messages, voice or both.</p>
+    #[doc(hidden)]
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     /// <p>The type of number that was requested.</p>
+    #[doc(hidden)]
     pub number_type: std::option::Option<crate::model::NumberType>,
     /// <p>The monthly leasing price of the phone number, in US dollars.</p>
+    #[doc(hidden)]
     pub monthly_leasing_price: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>This is true if self managed opt-out are enabled.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the phone number.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>When set to true the phone number can't be deleted.</p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdatePhoneNumberOutput {
@@ -642,10 +668,13 @@ impl UpdatePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
 impl UpdateEventDestinationOutput {
@@ -803,6 +832,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVoiceMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit to enforce on sending voice messages.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl SetVoiceMessageSpendLimitOverrideOutput {
@@ -857,6 +887,7 @@ impl SetVoiceMessageSpendLimitOverrideOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTextMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit to enforce on sending text messages.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl SetTextMessageSpendLimitOverrideOutput {
@@ -911,10 +942,13 @@ impl SetTextMessageSpendLimitOverrideOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultSenderIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set that was updated.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
+    #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
 }
 impl SetDefaultSenderIdOutput {
@@ -1009,10 +1043,13 @@ impl SetDefaultSenderIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultMessageTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set that was updated.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The new default message type of the configuration set.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
 }
 impl SetDefaultMessageTypeOutput {
@@ -1110,6 +1147,7 @@ impl SetDefaultMessageTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendVoiceMessageOutput {
     /// <p>The unique identifier for the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendVoiceMessageOutput {
@@ -1164,6 +1202,7 @@ impl SendVoiceMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTextMessageOutput {
     /// <p>The unique identifier for the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendTextMessageOutput {
@@ -1218,38 +1257,55 @@ impl SendTextMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestPhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the new phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The new phone number that was requested.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NumberStatus>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
+    #[doc(hidden)]
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     /// <p>The type of number that was released.</p>
+    #[doc(hidden)]
     pub number_type: std::option::Option<crate::model::RequestableNumberType>,
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
+    #[doc(hidden)]
     pub monthly_leasing_price: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The ARN used to identify the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The unique identifier of the pool associated with the phone number </p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RequestPhoneNumberOutput {
@@ -1636,32 +1692,46 @@ impl RequestPhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleasePhoneNumberOutput {
     /// <p>The PhoneNumberArn of the phone number that was released.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId of the phone number that was released.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The phone number that was released.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NumberStatus>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
     /// <p>The message type that was associated with the phone number.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>Specifies if the number could be used for text messages, voice, or both.</p>
+    #[doc(hidden)]
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     /// <p>The type of number that was released.</p>
+    #[doc(hidden)]
     pub number_type: std::option::Option<crate::model::NumberType>,
     /// <p>The monthly price of the phone number, in US dollars.</p>
+    #[doc(hidden)]
     pub monthly_leasing_price: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReleasePhoneNumberOutput {
@@ -1985,14 +2055,19 @@ impl ReleasePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOptedOutNumberOutput {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
+    #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
     /// <p>The OptOutListName that the phone number was removed from.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number that was added to the OptOutList.</p>
+    #[doc(hidden)]
     pub opted_out_number: std::option::Option<std::string::String>,
     /// <p>The time that the phone number was added to the OptOutList, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub opted_out_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    #[doc(hidden)]
     pub end_user_opted_out: bool,
 }
 impl PutOptedOutNumberOutput {
@@ -2127,14 +2202,19 @@ impl PutOptedOutNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutKeywordOutput {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
+    #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The keyword that was added.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
     /// <p>The message associated with the keyword.</p>
+    #[doc(hidden)]
     pub keyword_message: std::option::Option<std::string::String>,
     /// <p>The action to perform when the keyword is used.</p>
+    #[doc(hidden)]
     pub keyword_action: std::option::Option<crate::model::KeywordAction>,
 }
 impl PutKeywordOutput {
@@ -2269,8 +2349,10 @@ impl PutKeywordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that are associated with the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -2351,13 +2433,17 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoolOriginationIdentitiesOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The unique PoolId of the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
+    #[doc(hidden)]
     pub origination_identities:
         std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoolOriginationIdentitiesOutput {
@@ -2478,14 +2564,19 @@ impl ListPoolOriginationIdentitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
+    #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
 }
 impl DisassociateOriginationIdentityOutput {
@@ -2617,8 +2708,10 @@ impl DisassociateOriginationIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpendLimitsOutput {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
+    #[doc(hidden)]
     pub spend_limits: std::option::Option<std::vec::Vec<crate::model::SpendLimit>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSpendLimitsOutput {
@@ -2699,8 +2792,10 @@ impl DescribeSpendLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSenderIdsOutput {
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
+    #[doc(hidden)]
     pub sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSenderIdsOutput {
@@ -2782,8 +2877,10 @@ impl DescribeSenderIdsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePoolsOutput {
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
+    #[doc(hidden)]
     pub pools: std::option::Option<std::vec::Vec<crate::model::PoolInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePoolsOutput {
@@ -2864,8 +2961,10 @@ impl DescribePoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhoneNumbersOutput {
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePhoneNumbersOutput {
@@ -2947,8 +3046,10 @@ impl DescribePhoneNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptOutListsOutput {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
+    #[doc(hidden)]
     pub opt_out_lists: std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOptOutListsOutput {
@@ -3030,13 +3131,17 @@ impl DescribeOptOutListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptedOutNumbersOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
+    #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
     /// <p>The name of the OptOutList.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
+    #[doc(hidden)]
     pub opted_out_numbers:
         std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOptedOutNumbersOutput {
@@ -3160,12 +3265,16 @@ impl DescribeOptedOutNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeywordsOutput {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
+    #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>An array of KeywordInformation objects that contain the results.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<crate::model::KeywordInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeKeywordsOutput {
@@ -3286,9 +3395,11 @@ impl DescribeKeywordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSetsOutput {
     /// <p>An array of ConfigurationSets objects.</p>
+    #[doc(hidden)]
     pub configuration_sets:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationSetsOutput {
@@ -3375,8 +3486,10 @@ impl DescribeConfigurationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
+    #[doc(hidden)]
     pub account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountLimitsOutput {
@@ -3457,8 +3570,10 @@ impl DescribeAccountLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>An array of AccountAttributes objects.</p>
+    #[doc(hidden)]
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountAttributesOutput {
@@ -3540,6 +3655,7 @@ impl DescribeAccountAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit, in US dollars.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl DeleteVoiceMessageSpendLimitOverrideOutput {
@@ -3594,6 +3710,7 @@ impl DeleteVoiceMessageSpendLimitOverrideOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTextMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit, in US dollars.</p>
+    #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
 }
 impl DeleteTextMessageSpendLimitOverrideOutput {
@@ -3648,8 +3765,10 @@ impl DeleteTextMessageSpendLimitOverrideOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The PoolId of the pool that was deleted.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The current status of the pool.</p>
     /// <ul>
@@ -3657,20 +3776,28 @@ pub struct DeletePoolOutput {
     /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
     /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PoolStatus>,
     /// <p>The message type that was associated with the deleted pool.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    #[doc(hidden)]
     pub shared_routes_enabled: bool,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeletePoolOutput {
@@ -3913,10 +4040,13 @@ impl DeletePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOptOutListOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
+    #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
     /// <p>The name of the OptOutList that was removed.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteOptOutListOutput {
@@ -4014,14 +4144,19 @@ impl DeleteOptOutListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOptedOutNumberOutput {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
+    #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
     /// <p>The OptOutListName that the phone number was removed from.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>The phone number that was removed from the OptOutList.</p>
+    #[doc(hidden)]
     pub opted_out_number: std::option::Option<std::string::String>,
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub opted_out_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    #[doc(hidden)]
     pub end_user_opted_out: bool,
 }
 impl DeleteOptedOutNumberOutput {
@@ -4156,14 +4291,19 @@ impl DeleteOptedOutNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeywordOutput {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
+    #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The keyword that was deleted.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
     /// <p>The message that was associated with the deleted keyword.</p>
+    #[doc(hidden)]
     pub keyword_message: std::option::Option<std::string::String>,
     /// <p>The action that was associated with the deleted keyword.</p>
+    #[doc(hidden)]
     pub keyword_action: std::option::Option<crate::model::KeywordAction>,
 }
 impl DeleteKeywordOutput {
@@ -4298,10 +4438,13 @@ impl DeleteKeywordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set the event destination was deleted from.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The event destination object that was deleted.</p>
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
 impl DeleteEventDestinationOutput {
@@ -4399,10 +4542,13 @@ impl DeleteEventDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDefaultSenderIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The current sender ID for the configuration set.</p>
+    #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
 }
 impl DeleteDefaultSenderIdOutput {
@@ -4497,10 +4643,13 @@ impl DeleteDefaultSenderIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDefaultMessageTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The current message type for the configuration set.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
 }
 impl DeleteDefaultMessageTypeOutput {
@@ -4598,16 +4747,22 @@ impl DeleteDefaultMessageTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the deleted configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
+    #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
     /// <p>The default message type of the configuration set that was deleted.</p>
+    #[doc(hidden)]
     pub default_message_type: std::option::Option<crate::model::MessageType>,
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
+    #[doc(hidden)]
     pub default_sender_id: std::option::Option<std::string::String>,
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteConfigurationSetOutput {
@@ -4772,8 +4927,10 @@ impl DeleteConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePoolOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the pool.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The current status of the pool.</p>
     /// <ul>
@@ -4781,24 +4938,34 @@ pub struct CreatePoolOutput {
     /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
     /// <li> <p>DELETING: The pool is being deleted.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PoolStatus>,
     /// <p>The type of message for the pool to use.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    #[doc(hidden)]
     pub two_way_channel_arn: std::option::Option<std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    #[doc(hidden)]
     pub shared_routes_enabled: bool,
     /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreatePoolOutput {
@@ -5087,12 +5254,16 @@ impl CreatePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOptOutListOutput {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
+    #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
     /// <p>The name of the new OptOutList.</p>
+    #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateOptOutListOutput {
@@ -5216,10 +5387,13 @@ impl CreateOptOutListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventDestinationOutput {
     /// <p>The ARN of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The details of the destination where events are logged.</p>
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
 impl CreateEventDestinationOutput {
@@ -5317,12 +5491,16 @@ impl CreateEventDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
     /// <p>The name of the new configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An array of key and value pair tags that's associated with the configuration set.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateConfigurationSetOutput {
@@ -5446,14 +5624,19 @@ impl CreateConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
+    #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
+    #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
+    #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
 }
 impl AssociateOriginationIdentityOutput {

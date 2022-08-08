@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
+    #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    #[doc(hidden)]
     pub end_of_meeting_reminder: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
     /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
+    #[doc(hidden)]
     pub instant_booking: std::option::Option<crate::model::UpdateInstantBooking>,
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
+    #[doc(hidden)]
     pub require_check_in: std::option::Option<crate::model::UpdateRequireCheckIn>,
 }
 impl UpdateMeetingRoomConfiguration {
@@ -137,8 +141,10 @@ impl UpdateMeetingRoomConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
+    #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
     /// <p>Whether require check in is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl UpdateRequireCheckIn {
@@ -210,8 +216,10 @@ impl UpdateRequireCheckIn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl UpdateInstantBooking {
@@ -283,10 +291,13 @@ impl UpdateInstantBooking {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndOfMeetingReminder {
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    #[doc(hidden)]
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl UpdateEndOfMeetingReminder {
@@ -632,8 +643,10 @@ impl AsRef<str> for DistanceUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipAddress {
     /// <p>The URI for the SIP address.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the SIP address.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SipType>,
 }
 impl SipAddress {
@@ -756,8 +769,10 @@ impl AsRef<str> for SipType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The raw value of the phone number.</p>
+    #[doc(hidden)]
     pub number: std::option::Option<std::string::String>,
     /// <p>The type of the phone number.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PhoneNumberType>,
 }
 impl PhoneNumber {
@@ -896,6 +911,7 @@ impl AsRef<str> for PhoneNumberType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
+    #[doc(hidden)]
     pub require_pin: std::option::Option<crate::model::RequirePin>,
 }
 impl MeetingSetting {
@@ -1012,12 +1028,16 @@ impl AsRef<str> for RequirePin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PstnDialIn {
     /// <p>The zip code.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The phone number to call to join the conference.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    #[doc(hidden)]
     pub one_click_id_delay: std::option::Option<std::string::String>,
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    #[doc(hidden)]
     pub one_click_pin_delay: std::option::Option<std::string::String>,
 }
 impl PstnDialIn {
@@ -1129,8 +1149,10 @@ impl PstnDialIn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpDialIn {
     /// <p>The IP address.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
+    #[doc(hidden)]
     pub comms_protocol: std::option::Option<crate::model::CommsProtocol>,
 }
 impl IpDialIn {
@@ -1362,6 +1384,7 @@ impl AsRef<str> for ConferenceProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReportRecurrence {
     /// <p>The start date.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
 }
 impl BusinessReportRecurrence {
@@ -1471,8 +1494,10 @@ impl AsRef<str> for BusinessReportFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of a tag. Tag keys are case-sensitive. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1632,10 +1657,13 @@ impl AsRef<str> for Feature {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Content {
     /// <p>The list of text messages.</p>
+    #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<crate::model::Text>>,
     /// <p>The list of SSML messages.</p>
+    #[doc(hidden)]
     pub ssml_list: std::option::Option<std::vec::Vec<crate::model::Ssml>>,
     /// <p>The list of audio messages.</p>
+    #[doc(hidden)]
     pub audio_list: std::option::Option<std::vec::Vec<crate::model::Audio>>,
 }
 impl Content {
@@ -1759,8 +1787,10 @@ impl Content {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl Audio {
@@ -1883,8 +1913,10 @@ impl AsRef<str> for Locale {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Ssml {
@@ -1956,8 +1988,10 @@ impl Ssml {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The value of the text message.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Text {
@@ -2029,8 +2063,10 @@ impl Text {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The key of a filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The values of a filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -2111,16 +2147,22 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserData {
     /// <p>The ARN of a user.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The first name of a user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of a user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email of a user.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The enrollment status of a user.</p>
+    #[doc(hidden)]
     pub enrollment_status: std::option::Option<crate::model::EnrollmentStatus>,
     /// <p>The enrollment ARN of a user.</p>
+    #[doc(hidden)]
     pub enrollment_id: std::option::Option<std::string::String>,
 }
 impl UserData {
@@ -2339,8 +2381,10 @@ impl AsRef<str> for EnrollmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sort {
     /// <p>The sort key of a sort object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The sort value of a sort object.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::SortValue>,
 }
 impl Sort {
@@ -2467,10 +2511,13 @@ impl AsRef<str> for SortValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillGroupData {
     /// <p>The skill group ARN of a skill group.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The skill group name of a skill group.</p>
+    #[doc(hidden)]
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The description of a skill group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl SkillGroupData {
@@ -2565,16 +2612,22 @@ impl SkillGroupData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoomData {
     /// <p>The ARN of a room.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The name of a room.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>The description of a room.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The provider calendar ARN of a room.</p>
+    #[doc(hidden)]
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>The profile ARN of a room.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The profile name of a room.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
 }
 impl RoomData {
@@ -2717,22 +2770,31 @@ impl RoomData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProfileData {
     /// <p>The ARN of a room profile.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of a room profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>Retrieves if the profile data is default or not.</p>
+    #[doc(hidden)]
     pub is_default: std::option::Option<bool>,
     /// <p>The address of a room profile.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The time zone of a room profile.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The distance unit of a room profile.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>The temperature unit of a room profile.</p>
+    #[doc(hidden)]
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>The wake word of a room profile.</p>
+    #[doc(hidden)]
     pub wake_word: std::option::Option<crate::model::WakeWord>,
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl ProfileData {
@@ -2929,18 +2991,25 @@ impl ProfileData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkProfileData {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub ssid: std::option::Option<std::string::String>,
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    #[doc(hidden)]
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
+    #[doc(hidden)]
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl NetworkProfileData {
@@ -3230,30 +3299,43 @@ impl AsRef<str> for NetworkSecurityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceData {
     /// <p>The ARN of a device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The serial number of a device.</p>
+    #[doc(hidden)]
     pub device_serial_number: std::option::Option<std::string::String>,
     /// <p>The type of a device.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The name of a device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The software version of a device.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
     /// <p>The MAC address of a device.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The status of a device.</p>
+    #[doc(hidden)]
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_name: std::option::Option<std::string::String>,
     /// <p>The room ARN associated with a device.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The name of the room associated with a device.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about a device's status.</p>
+    #[doc(hidden)]
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
     /// <p>The time (in epoch) when the device data was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceData {
@@ -3533,10 +3615,13 @@ impl DeviceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
+    #[doc(hidden)]
     pub device_status_details: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
     /// <p>The latest available information about the connection status of a device. </p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time (in epoch) when the device connection status changed.</p>
+    #[doc(hidden)]
     pub connection_status_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceStatusInfo {
@@ -3703,8 +3788,10 @@ impl AsRef<str> for ConnectionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceStatusDetail {
     /// <p>The list of available features on the device.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<crate::model::Feature>,
     /// <p>The device status detail code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::DeviceStatusDetailCode>,
 }
 impl DeviceStatusDetail {
@@ -3987,18 +4074,25 @@ impl AsRef<str> for DeviceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactData {
     /// <p>The ARN of the contact.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact to display on the console.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The first name of the contact, used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the contact, used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
+    #[doc(hidden)]
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
 }
 impl ContactData {
@@ -4173,10 +4267,13 @@ impl ContactData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddressBookData {
     /// <p>The ARN of the address book.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
     /// <p>The name of the address book.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the address book.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AddressBookData {
@@ -4268,8 +4365,10 @@ impl AddressBookData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The parameter value of a room skill parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl RoomSkillParameter {
@@ -4347,6 +4446,7 @@ impl RoomSkillParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
+    #[doc(hidden)]
     pub default_conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl ConferencePreference {
@@ -4410,10 +4510,13 @@ impl ConferencePreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
+    #[doc(hidden)]
     pub friendly_name: std::option::Option<std::string::String>,
     /// <p>The description of the smart home appliance.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the manufacturer of the smart home appliance.</p>
+    #[doc(hidden)]
     pub manufacturer_name: std::option::Option<std::string::String>,
 }
 impl SmartHomeAppliance {
@@ -4508,18 +4611,25 @@ impl SmartHomeAppliance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillsStoreSkill {
     /// <p>The ARN of the skill.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The name of the skill.</p>
+    #[doc(hidden)]
     pub skill_name: std::option::Option<std::string::String>,
     /// <p>Short description about the skill.</p>
+    #[doc(hidden)]
     pub short_description: std::option::Option<std::string::String>,
     /// <p>The URL where the skill icon resides.</p>
+    #[doc(hidden)]
     pub icon_url: std::option::Option<std::string::String>,
     /// <p>Sample utterances that interact with the skill.</p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the skill.</p>
+    #[doc(hidden)]
     pub skill_details: std::option::Option<crate::model::SkillDetails>,
     /// <p>Linking support for a skill.</p>
+    #[doc(hidden)]
     pub supports_linking: bool,
 }
 impl SkillsStoreSkill {
@@ -4691,26 +4801,36 @@ impl SkillsStoreSkill {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillDetails {
     /// <p>The description of the product.</p>
+    #[doc(hidden)]
     pub product_description: std::option::Option<std::string::String>,
     /// <p>The phrase used to trigger the skill.</p>
+    #[doc(hidden)]
     pub invocation_phrase: std::option::Option<std::string::String>,
     /// <p>The date when the skill was released.</p>
+    #[doc(hidden)]
     pub release_date: std::option::Option<std::string::String>,
     /// <p>The URL of the end user license agreement.</p>
+    #[doc(hidden)]
     pub end_user_license_agreement: std::option::Option<std::string::String>,
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
+    #[doc(hidden)]
     pub generic_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The details about what the skill supports organized as bullet points.</p>
+    #[doc(hidden)]
     pub bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The updates added in bullet points.</p>
+    #[doc(hidden)]
     pub new_in_this_version_bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of skills.</p>
+    #[doc(hidden)]
     pub skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
+    #[doc(hidden)]
     pub reviews:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The details about the developer that published the skill.</p>
+    #[doc(hidden)]
     pub developer_info: std::option::Option<crate::model::DeveloperInfo>,
 }
 impl SkillDetails {
@@ -4999,12 +5119,16 @@ impl SkillDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeveloperInfo {
     /// <p>The name of the developer.</p>
+    #[doc(hidden)]
     pub developer_name: std::option::Option<std::string::String>,
     /// <p>The URL of the privacy policy.</p>
+    #[doc(hidden)]
     pub privacy_policy: std::option::Option<std::string::String>,
     /// <p>The email of the developer.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The website of the developer.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl DeveloperInfo {
@@ -5116,8 +5240,10 @@ impl DeveloperInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Category {
     /// <p>The ID of the skill store category.</p>
+    #[doc(hidden)]
     pub category_id: std::option::Option<i64>,
     /// <p>The name of the skill store category.</p>
+    #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
 }
 impl Category {
@@ -5192,14 +5318,19 @@ impl Category {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillSummary {
     /// <p>The ARN of the skill summary.</p>
+    #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The name of the skill.</p>
+    #[doc(hidden)]
     pub skill_name: std::option::Option<std::string::String>,
     /// <p>Linking support for a skill.</p>
+    #[doc(hidden)]
     pub supports_linking: bool,
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
+    #[doc(hidden)]
     pub enablement_type: std::option::Option<crate::model::EnablementType>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
+    #[doc(hidden)]
     pub skill_type: std::option::Option<crate::model::SkillType>,
 }
 impl SkillSummary {
@@ -5552,14 +5683,19 @@ impl AsRef<str> for EnablementTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewaySummary {
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the gateway.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the gateway.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
 }
 impl GatewaySummary {
@@ -5688,10 +5824,13 @@ impl GatewaySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayGroupSummary {
     /// <p>The ARN of the gateway group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the gateway group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the gateway group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl GatewayGroupSummary {
@@ -5780,10 +5919,13 @@ impl GatewayGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceEvent {
     /// <p>The type of device event.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeviceEventType>,
     /// <p>The value of the event.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the event occurred. </p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceEvent {
@@ -5933,16 +6075,22 @@ impl AsRef<str> for DeviceEventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConferenceProvider {
     /// <p>The ARN of the newly created conference provider.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the conference provider.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of conference providers.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ConferenceProviderType>,
     /// <p>The IP endpoint and protocol for calling.</p>
+    #[doc(hidden)]
     pub ip_dial_in: std::option::Option<crate::model::IpDialIn>,
     /// <p>The information for PSTN conferencing.</p>
+    #[doc(hidden)]
     pub pstn_dial_in: std::option::Option<crate::model::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
+    #[doc(hidden)]
     pub meeting_setting: std::option::Option<crate::model::MeetingSetting>,
 }
 impl ConferenceProvider {
@@ -6094,20 +6242,28 @@ impl ConferenceProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReportSchedule {
     /// <p>The ARN of the business report schedule.</p>
+    #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
     /// <p>The name identifier of the schedule.</p>
+    #[doc(hidden)]
     pub schedule_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket name of the output reports.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
+    #[doc(hidden)]
     pub content_range: std::option::Option<crate::model::BusinessReportContentRange>,
     /// <p>The recurrence of the reports.</p>
+    #[doc(hidden)]
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
     /// <p>The details of the last business report delivery for a specified time interval.</p>
+    #[doc(hidden)]
     pub last_business_report: std::option::Option<crate::model::BusinessReport>,
 }
 impl BusinessReportSchedule {
@@ -6302,14 +6458,19 @@ impl BusinessReportSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BusinessReportStatus>,
     /// <p>The failure code.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::BusinessReportFailureCode>,
     /// <p>The S3 location of the output reports.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::BusinessReportS3Location>,
     /// <p>The time of report delivery.</p>
+    #[doc(hidden)]
     pub delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The download link where a user can download the report.</p>
+    #[doc(hidden)]
     pub download_url: std::option::Option<std::string::String>,
 }
 impl BusinessReport {
@@ -6444,8 +6605,10 @@ impl BusinessReport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReportS3Location {
     /// <p>The path of the business report.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The S3 bucket name of the output reports.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl BusinessReportS3Location {
@@ -6635,6 +6798,7 @@ impl AsRef<str> for BusinessReportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
+    #[doc(hidden)]
     pub interval: std::option::Option<crate::model::BusinessReportInterval>,
 }
 impl BusinessReportContentRange {
@@ -6751,10 +6915,13 @@ impl AsRef<str> for BusinessReportInterval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkillGroup {
     /// <p>The ARN of a skill group.</p>
+    #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of a skill group.</p>
+    #[doc(hidden)]
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The description of a skill group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl SkillGroup {
@@ -6849,14 +7016,19 @@ impl SkillGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Room {
     /// <p>The ARN of a room.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The name of a room.</p>
+    #[doc(hidden)]
     pub room_name: std::option::Option<std::string::String>,
     /// <p>The description of a room.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The provider calendar ARN of a room.</p>
+    #[doc(hidden)]
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>The profile ARN of a room.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl Room {
@@ -6982,34 +7154,49 @@ impl Room {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Profile {
     /// <p>The ARN of a room profile.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of a room profile.</p>
+    #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
     /// <p>Retrieves if the profile is default or not.</p>
+    #[doc(hidden)]
     pub is_default: std::option::Option<bool>,
     /// <p>The address of a room profile.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The time zone of a room profile.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The distance unit of a room profile.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>The temperature unit of a room profile.</p>
+    #[doc(hidden)]
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>The wake word of a room profile.</p>
+    #[doc(hidden)]
     pub wake_word: std::option::Option<crate::model::WakeWord>,
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>The setup mode of a room profile.</p>
+    #[doc(hidden)]
     pub setup_mode_disabled: std::option::Option<bool>,
     /// <p>The max volume limit of a room profile.</p>
+    #[doc(hidden)]
     pub max_volume_limit: std::option::Option<i32>,
     /// <p>The PSTN setting of a room profile.</p>
+    #[doc(hidden)]
     pub pstn_enabled: std::option::Option<bool>,
     /// <p>Whether data retention of the profile is enabled.</p>
+    #[doc(hidden)]
     pub data_retention_opt_in: std::option::Option<bool>,
     /// <p>The ARN of the address book.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
     /// <p>Meeting room settings of a room profile.</p>
+    #[doc(hidden)]
     pub meeting_room_configuration: std::option::Option<crate::model::MeetingRoomConfiguration>,
 }
 impl Profile {
@@ -7323,12 +7510,16 @@ impl Profile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
+    #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    #[doc(hidden)]
     pub end_of_meeting_reminder: std::option::Option<crate::model::EndOfMeetingReminder>,
     /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
+    #[doc(hidden)]
     pub instant_booking: std::option::Option<crate::model::InstantBooking>,
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
+    #[doc(hidden)]
     pub require_check_in: std::option::Option<crate::model::RequireCheckIn>,
 }
 impl MeetingRoomConfiguration {
@@ -7454,8 +7645,10 @@ impl MeetingRoomConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
+    #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
     /// <p>Whether require check in is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl RequireCheckIn {
@@ -7527,8 +7720,10 @@ impl RequireCheckIn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
+    #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl InstantBooking {
@@ -7600,10 +7795,13 @@ impl InstantBooking {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndOfMeetingReminder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    #[doc(hidden)]
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl EndOfMeetingReminder {
@@ -7704,24 +7902,34 @@ impl EndOfMeetingReminder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkProfile {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub ssid: std::option::Option<std::string::String>,
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    #[doc(hidden)]
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    #[doc(hidden)]
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
+    #[doc(hidden)]
     pub current_password: std::option::Option<std::string::String>,
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    #[doc(hidden)]
     pub next_password: std::option::Option<std::string::String>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
+    #[doc(hidden)]
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkProfile {
@@ -7959,10 +8167,13 @@ impl NetworkProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayGroup {
     /// <p>The ARN of the gateway group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the gateway group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the gateway group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl GatewayGroup {
@@ -8051,14 +8262,19 @@ impl GatewayGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Gateway {
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the gateway.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the gateway.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
+    #[doc(hidden)]
     pub gateway_group_arn: std::option::Option<std::string::String>,
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
 }
 impl Gateway {
@@ -8187,24 +8403,34 @@ impl Gateway {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The ARN of a device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The serial number of a device.</p>
+    #[doc(hidden)]
     pub device_serial_number: std::option::Option<std::string::String>,
     /// <p>The type of a device.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The name of a device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The software version of a device.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
     /// <p>The MAC address of a device.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The room ARN of a device.</p>
+    #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
     /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
+    #[doc(hidden)]
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>Detailed information about a device's status.</p>
+    #[doc(hidden)]
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
     /// <p>Detailed information about a device's network profile.</p>
+    #[doc(hidden)]
     pub network_profile_info: std::option::Option<crate::model::DeviceNetworkProfileInfo>,
 }
 impl Device {
@@ -8433,10 +8659,13 @@ impl Device {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the certificate associated with a device.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the certificate expires.</p>
+    #[doc(hidden)]
     pub certificate_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceNetworkProfileInfo {
@@ -8537,18 +8766,25 @@ impl DeviceNetworkProfileInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The ARN of the contact.</p>
+    #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact to display on the console.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The first name of the contact, used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the contact, used to call the contact on the device.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
+    #[doc(hidden)]
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
 }
 impl Contact {
@@ -8723,10 +8959,13 @@ impl Contact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddressBook {
     /// <p>The ARN of the address book.</p>
+    #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
     /// <p>The name of the address book.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the address book.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AddressBook {
@@ -8869,12 +9108,16 @@ impl AsRef<str> for DeviceUsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
+    #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
     /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
+    #[doc(hidden)]
     pub end_of_meeting_reminder: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
     /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
+    #[doc(hidden)]
     pub instant_booking: std::option::Option<crate::model::CreateInstantBooking>,
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
+    #[doc(hidden)]
     pub require_check_in: std::option::Option<crate::model::CreateRequireCheckIn>,
 }
 impl CreateMeetingRoomConfiguration {
@@ -9001,8 +9244,10 @@ impl CreateMeetingRoomConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRequireCheckIn {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
+    #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
     /// <p>Whether require check in is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl CreateRequireCheckIn {
@@ -9074,8 +9319,10 @@ impl CreateRequireCheckIn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl CreateInstantBooking {
@@ -9147,10 +9394,13 @@ impl CreateInstantBooking {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndOfMeetingReminder {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
+    #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    #[doc(hidden)]
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl CreateEndOfMeetingReminder {

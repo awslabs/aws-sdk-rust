@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFailoverNotAvailableFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TestFailoverNotAvailableFault {
@@ -69,6 +70,7 @@ impl TestFailoverNotAvailableFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationGroupNotFoundFault {
@@ -133,6 +135,7 @@ impl ReplicationGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NodeGroupNotFoundFault {
@@ -197,6 +200,7 @@ impl NodeGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReplicationGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidReplicationGroupStateFault {
@@ -261,6 +265,7 @@ impl InvalidReplicationGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p>A parameter value is invalid.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -325,6 +330,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterCombinationException {
     /// <p>Two or more parameters that must not be used together were used together.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterCombinationException {
@@ -389,6 +395,7 @@ impl InvalidParameterCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsKeyFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKmsKeyFault {
@@ -453,6 +460,7 @@ impl InvalidKmsKeyFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCacheClusterStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCacheClusterStateFault {
@@ -517,6 +525,7 @@ impl InvalidCacheClusterStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiCallRateForCustomerExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApiCallRateForCustomerExceededFault {
@@ -584,6 +593,7 @@ impl ApiCallRateForCustomerExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupAlreadyUnderMigrationFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationGroupAlreadyUnderMigrationFault {
@@ -648,6 +658,7 @@ impl ReplicationGroupAlreadyUnderMigrationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCacheSecurityGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCacheSecurityGroupStateFault {
@@ -712,6 +723,7 @@ impl InvalidCacheSecurityGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSecurityGroupNotFoundFault {
@@ -776,6 +788,7 @@ impl CacheSecurityGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationNotFoundFault {
@@ -840,6 +853,7 @@ impl AuthorizationNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGlobalReplicationGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGlobalReplicationGroupStateFault {
@@ -904,6 +918,7 @@ impl InvalidGlobalReplicationGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCacheParameterGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCacheParameterGroupStateFault {
@@ -968,6 +983,7 @@ impl InvalidCacheParameterGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheParameterGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheParameterGroupNotFoundFault {
@@ -1032,6 +1048,7 @@ impl CacheParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserNotFoundFault {
@@ -1096,6 +1113,7 @@ impl UserNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserGroupNotFoundFault {
@@ -1160,6 +1178,7 @@ impl UserGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagNotFoundFault {
@@ -1224,6 +1243,7 @@ impl TagNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotNotFoundFault {
@@ -1288,6 +1308,7 @@ impl SnapshotNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNodeNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReservedCacheNodeNotFoundFault {
@@ -1352,6 +1373,7 @@ impl ReservedCacheNodeNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArnFault {
@@ -1416,6 +1438,7 @@ impl InvalidArnFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSubnetGroupNotFoundFault {
@@ -1480,6 +1503,7 @@ impl CacheSubnetGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheClusterNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheClusterNotFoundFault {
@@ -1544,6 +1568,7 @@ impl CacheClusterNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalReplicationGroupNotFoundFault {
@@ -1608,6 +1633,7 @@ impl GlobalReplicationGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagQuotaPerResourceExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagQuotaPerResourceExceeded {
@@ -1672,6 +1698,7 @@ impl TagQuotaPerResourceExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNodesOfferingNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReservedCacheNodesOfferingNotFoundFault {
@@ -1736,6 +1763,7 @@ impl ReservedCacheNodesOfferingNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNodeQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReservedCacheNodeQuotaExceededFault {
@@ -1800,6 +1828,7 @@ impl ReservedCacheNodeQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedCacheNodeAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReservedCacheNodeAlreadyExistsFault {
@@ -1864,6 +1893,7 @@ impl ReservedCacheNodeAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLinkedRoleNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceLinkedRoleNotFoundFault {
@@ -1928,6 +1958,7 @@ impl ServiceLinkedRoleNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUserGroupStateFault {
@@ -1992,6 +2023,7 @@ impl InvalidUserGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateUserNameFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateUserNameFault {
@@ -2056,6 +2088,7 @@ impl DuplicateUserNameFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultUserRequired {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DefaultUserRequired {
@@ -2120,6 +2153,7 @@ impl DefaultUserRequired {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUserStateFault {
@@ -2184,6 +2218,7 @@ impl InvalidUserStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeQuotaForCustomerExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NodeQuotaForCustomerExceededFault {
@@ -2248,6 +2283,7 @@ impl NodeQuotaForCustomerExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupsPerReplicationGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NodeGroupsPerReplicationGroupQuotaExceededFault {
@@ -2313,6 +2349,7 @@ impl NodeGroupsPerReplicationGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidVpcNetworkStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidVpcNetworkStateFault {
@@ -2380,6 +2417,7 @@ impl InvalidVpcNetworkStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCacheClusterCapacityFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientCacheClusterCapacityFault {
@@ -2444,6 +2482,7 @@ impl InsufficientCacheClusterCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeQuotaForClusterExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NodeQuotaForClusterExceededFault {
@@ -2508,6 +2547,7 @@ impl NodeQuotaForClusterExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotAllowedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetNotAllowedFault {
@@ -2572,6 +2612,7 @@ impl SubnetNotAllowedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetInUse {
@@ -2636,6 +2677,7 @@ impl SubnetInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnet {
@@ -2700,6 +2742,7 @@ impl InvalidSubnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSubnetQuotaExceededFault {
@@ -2764,6 +2807,7 @@ impl CacheSubnetQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoOperationFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoOperationFault {
@@ -2828,6 +2872,7 @@ impl NoOperationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterQuotaForCustomerExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterQuotaForCustomerExceededFault {
@@ -2892,6 +2937,7 @@ impl ClusterQuotaForCustomerExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUpdateNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUpdateNotFoundFault {
@@ -2956,6 +3002,7 @@ impl ServiceUpdateNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultUserAssociatedToUserGroupFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DefaultUserAssociatedToUserGroupFault {
@@ -3020,6 +3067,7 @@ impl DefaultUserAssociatedToUserGroupFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnapshotStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSnapshotStateFault {
@@ -3084,6 +3132,7 @@ impl InvalidSnapshotStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotQuotaExceededFault {
@@ -3153,6 +3202,7 @@ impl SnapshotQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotFeatureNotSupportedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotFeatureNotSupportedFault {
@@ -3217,6 +3267,7 @@ impl SnapshotFeatureNotSupportedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotAlreadyExistsFault {
@@ -3281,6 +3332,7 @@ impl SnapshotAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetGroupInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSubnetGroupInUse {
@@ -3345,6 +3397,7 @@ impl CacheSubnetGroupInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserGroupQuotaExceededFault {
@@ -3409,6 +3462,7 @@ impl UserGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserGroupAlreadyExistsFault {
@@ -3473,6 +3527,7 @@ impl UserGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserQuotaExceededFault {
@@ -3537,6 +3592,7 @@ impl UserQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserAlreadyExistsFault {
@@ -3601,6 +3657,7 @@ impl UserAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationGroupAlreadyExistsFault {
@@ -3665,6 +3722,7 @@ impl ReplicationGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalReplicationGroupAlreadyExistsFault {
@@ -3729,6 +3787,7 @@ impl GlobalReplicationGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSubnetGroupQuotaExceededFault {
@@ -3793,6 +3852,7 @@ impl CacheSubnetGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSubnetGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSubnetGroupAlreadyExistsFault {
@@ -3857,6 +3917,7 @@ impl CacheSubnetGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSecurityGroupQuotaExceededFault {
@@ -3921,6 +3982,7 @@ impl CacheSecurityGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheSecurityGroupAlreadyExistsFault {
@@ -3985,6 +4047,7 @@ impl CacheSecurityGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheParameterGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheParameterGroupQuotaExceededFault {
@@ -4049,6 +4112,7 @@ impl CacheParameterGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheParameterGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheParameterGroupAlreadyExistsFault {
@@ -4113,6 +4177,7 @@ impl CacheParameterGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheClusterAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CacheClusterAlreadyExistsFault {
@@ -4177,6 +4242,7 @@ impl CacheClusterAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupNotUnderMigrationFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationGroupNotUnderMigrationFault {
@@ -4241,6 +4307,7 @@ impl ReplicationGroupNotUnderMigrationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationAlreadyExistsFault {

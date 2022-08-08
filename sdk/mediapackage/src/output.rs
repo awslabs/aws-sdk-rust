@@ -4,37 +4,53 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of the Channel the OriginEndpoint is associated with.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A short string appended to the end of the OriginEndpoint URL.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    #[doc(hidden)]
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    #[doc(hidden)]
     pub time_delay_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOriginEndpointOutput {
@@ -394,18 +410,25 @@ impl UpdateOriginEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -652,18 +675,25 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateIngestEndpointCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -851,18 +881,25 @@ impl RotateIngestEndpointCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1049,6 +1086,7 @@ impl RotateChannelCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1121,8 +1159,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginEndpointsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of OriginEndpoint records.
+    #[doc(hidden)]
     pub origin_endpoints: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
 }
 impl ListOriginEndpointsOutput {
@@ -1204,8 +1244,10 @@ impl ListOriginEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHarvestJobsOutput {
     /// A list of HarvestJob records.
+    #[doc(hidden)]
     pub harvest_jobs: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>,
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHarvestJobsOutput {
@@ -1286,8 +1328,10 @@ impl ListHarvestJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// A list of Channel records.
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -1368,37 +1412,53 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of the Channel the OriginEndpoint is associated with.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A short string appended to the end of the OriginEndpoint URL.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    #[doc(hidden)]
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    #[doc(hidden)]
     pub time_delay_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeOriginEndpointOutput {
@@ -1758,22 +1818,31 @@ impl DescribeOriginEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The ID of the Channel that the HarvestJob will harvest from.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The time the HarvestJob was submitted
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The end of the time-window which will be harvested.
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    #[doc(hidden)]
     pub origin_endpoint_id: std::option::Option<std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
     /// The start of the time-window which will be harvested.
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl DescribeHarvestJobOutput {
@@ -1970,18 +2039,25 @@ impl DescribeHarvestJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2228,37 +2304,53 @@ impl DeleteChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of the Channel the OriginEndpoint is associated with.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A short string appended to the end of the OriginEndpoint URL.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    #[doc(hidden)]
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    #[doc(hidden)]
     pub time_delay_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateOriginEndpointOutput {
@@ -2618,22 +2710,31 @@ impl CreateOriginEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The ID of the Channel that the HarvestJob will harvest from.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The time the HarvestJob was submitted
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The end of the time-window which will be harvested.
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    #[doc(hidden)]
     pub origin_endpoint_id: std::option::Option<std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
     /// The start of the time-window which will be harvested.
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CreateHarvestJobOutput {
@@ -2830,18 +2931,25 @@ impl CreateHarvestJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3028,18 +3136,25 @@ impl CreateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    #[doc(hidden)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
+    #[doc(hidden)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

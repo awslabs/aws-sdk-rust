@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The Cost Category's effective start date. </p>
+    #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl UpdateCostCategoryDefinitionOutput {
@@ -83,6 +85,7 @@ impl UpdateCostCategoryDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
 }
@@ -152,6 +155,7 @@ impl UpdateCostAllocationTagsStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionOutput {
     /// <p>A cost anomaly subscription ARN. </p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalySubscriptionOutput {
@@ -209,6 +213,7 @@ impl UpdateAnomalySubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalyMonitorOutput {
@@ -323,6 +328,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
 }
 impl ProvideAnomalyFeedbackOutput {
@@ -377,6 +383,7 @@ impl ProvideAnomalyFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the resource. </p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl ListTagsForResourceOutput {
@@ -440,9 +447,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_references:
         std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCostCategoryDefinitionsOutput {
@@ -529,8 +538,10 @@ impl ListCostCategoryDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
+    #[doc(hidden)]
     pub cost_allocation_tags: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCostAllocationTagsOutput {
@@ -612,8 +623,10 @@ impl ListCostAllocationTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageForecastOutput {
     /// <p>How much you're forecasted to use over the forecast period.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::MetricValue>,
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
+    #[doc(hidden)]
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
 impl GetUsageForecastOutput {
@@ -695,12 +708,16 @@ impl GetUsageForecastOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The tags that match your request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
+    #[doc(hidden)]
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of query results.</p>
+    #[doc(hidden)]
     pub total_size: std::option::Option<i32>,
 }
 impl GetTagsOutput {
@@ -818,13 +835,17 @@ impl GetTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
+    #[doc(hidden)]
     pub savings_plans_utilization_details:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
     /// <p>The time period of the request. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
@@ -954,9 +975,11 @@ impl GetSavingsPlansUtilizationDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
+    #[doc(hidden)]
     pub savings_plans_utilizations_by_time:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
 }
 impl GetSavingsPlansUtilizationOutput {
@@ -1049,11 +1072,14 @@ impl GetSavingsPlansUtilizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Information that regards this specific recommendation set.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
+    #[doc(hidden)]
     pub savings_plans_purchase_recommendation:
         std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
@@ -1166,9 +1192,11 @@ impl GetSavingsPlansPurchaseRecommendationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
+    #[doc(hidden)]
     pub savings_plans_coverages:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansCoverageOutput {
@@ -1255,15 +1283,20 @@ impl GetSavingsPlansCoverageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRightsizingRecommendationOutput {
     /// <p>Information regarding this specific recommendation set.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::RightsizingRecommendationMetadata>,
     /// <p>Summary of this recommendation set.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::RightsizingRecommendationSummary>,
     /// <p>Recommendations to rightsize resources.</p>
+    #[doc(hidden)]
     pub rightsizing_recommendations:
         std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
 }
 impl GetRightsizingRecommendationOutput {
@@ -1424,10 +1457,13 @@ impl GetRightsizingRecommendationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
+    #[doc(hidden)]
     pub utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::ReservationAggregates>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationUtilizationOutput {
@@ -1532,11 +1568,14 @@ impl GetReservationUtilizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationPurchaseRecommendationOutput {
     /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
     /// <p>Recommendations for reservations to purchase.</p>
+    #[doc(hidden)]
     pub recommendations:
         std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
     /// <p>The pagination token for the next set of retrievable results.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationPurchaseRecommendationOutput {
@@ -1654,10 +1693,13 @@ impl GetReservationPurchaseRecommendationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
+    #[doc(hidden)]
     pub coverages_by_time: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
     /// <p>The total amount of instance usage that a reservation covered.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::Coverage>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationCoverageOutput {
@@ -1798,13 +1840,17 @@ pub struct GetDimensionValuesOutput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimension_values:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
+    #[doc(hidden)]
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of search results.</p>
+    #[doc(hidden)]
     pub total_size: std::option::Option<i32>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDimensionValuesOutput {
@@ -2045,8 +2091,10 @@ impl GetDimensionValuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::MetricValue>,
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
+    #[doc(hidden)]
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
 impl GetCostForecastOutput {
@@ -2128,15 +2176,20 @@ impl GetCostForecastOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The names of the Cost Categories.</p>
+    #[doc(hidden)]
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
+    #[doc(hidden)]
     pub cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of objects that are returned.</p>
+    #[doc(hidden)]
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of objects.</p>
+    #[doc(hidden)]
     pub total_size: std::option::Option<i32>,
 }
 impl GetCostCategoriesOutput {
@@ -2283,12 +2336,16 @@ impl GetCostCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageWithResourcesOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
+    #[doc(hidden)]
     pub group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The time period that's covered by the results in the response.</p>
+    #[doc(hidden)]
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
+    #[doc(hidden)]
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
 }
@@ -2435,12 +2492,16 @@ impl GetCostAndUsageWithResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
+    #[doc(hidden)]
     pub group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The time period that's covered by the results in the response.</p>
+    #[doc(hidden)]
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
+    #[doc(hidden)]
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
 }
@@ -2587,9 +2648,11 @@ impl GetCostAndUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
+    #[doc(hidden)]
     pub anomaly_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomalySubscriptionsOutput {
@@ -2676,8 +2739,10 @@ impl GetAnomalySubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
+    #[doc(hidden)]
     pub anomaly_monitors: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomalyMonitorsOutput {
@@ -2762,8 +2827,10 @@ impl GetAnomalyMonitorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
+    #[doc(hidden)]
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomaliesOutput {
@@ -2847,6 +2914,7 @@ impl GetAnomaliesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionOutput {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
+    #[doc(hidden)]
     pub cost_category: std::option::Option<crate::model::CostCategory>,
 }
 impl DescribeCostCategoryDefinitionOutput {
@@ -2904,8 +2972,10 @@ impl DescribeCostCategoryDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
+    #[doc(hidden)]
     pub effective_end: std::option::Option<std::string::String>,
 }
 impl DeleteCostCategoryDefinitionOutput {
@@ -3043,8 +3113,10 @@ impl DeleteAnomalyMonitorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your newly created Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The Cost Category's effective start date. </p>
+    #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl CreateCostCategoryDefinitionOutput {
@@ -3122,6 +3194,7 @@ impl CreateCostCategoryDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalySubscriptionOutput {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl CreateAnomalySubscriptionOutput {
@@ -3179,6 +3252,7 @@ impl CreateAnomalySubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl CreateAnomalyMonitorOutput {

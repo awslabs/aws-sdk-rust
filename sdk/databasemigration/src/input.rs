@@ -13054,6 +13054,7 @@ impl UpdateSubscriptionsToEventBridgeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubscriptionsToEventBridgeInput {
     /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
+    #[doc(hidden)]
     pub force_move: std::option::Option<bool>,
 }
 impl UpdateSubscriptionsToEventBridgeInput {
@@ -13075,8 +13076,10 @@ impl std::fmt::Debug for UpdateSubscriptionsToEventBridgeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl TestConnectionInput {
@@ -13103,6 +13106,7 @@ impl std::fmt::Debug for TestConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopReplicationTaskInput {
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
 impl StopReplicationTaskInput {
@@ -13124,32 +13128,41 @@ impl std::fmt::Debug for StopReplicationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
+    #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
+    #[doc(hidden)]
     pub result_location_bucket: std::option::Option<std::string::String>,
     /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
+    #[doc(hidden)]
     pub result_location_folder: std::option::Option<std::string::String>,
     /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
     /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
     /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result_encryption_mode: std::option::Option<std::string::String>,
     /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+    #[doc(hidden)]
     pub result_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>Unique name to identify the assessment run.</p>
+    #[doc(hidden)]
     pub assessment_run_name: std::option::Option<std::string::String>,
     /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub include_only: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
+    #[doc(hidden)]
     pub exclude: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartReplicationTaskAssessmentRunInput {
@@ -13221,6 +13234,7 @@ impl std::fmt::Debug for StartReplicationTaskAssessmentRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskAssessmentInput {
     /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
 impl StartReplicationTaskAssessmentInput {
@@ -13242,14 +13256,17 @@ impl std::fmt::Debug for StartReplicationTaskAssessmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The type of replication task to start.</p>
     /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
     /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
+    #[doc(hidden)]
     pub start_replication_task_type:
         std::option::Option<crate::model::StartReplicationTaskTypeValue>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    #[doc(hidden)]
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -13258,10 +13275,12 @@ pub struct StartReplicationTaskInput {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cdc_start_position: std::option::Option<std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    #[doc(hidden)]
     pub cdc_stop_position: std::option::Option<std::string::String>,
 }
 impl StartReplicationTaskInput {
@@ -13330,8 +13349,10 @@ impl std::fmt::Debug for RunFleetAdvisorLsaAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key (name) of the tag to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -13358,12 +13379,15 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReloadTablesInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The name and schema of the table to be reloaded. </p>
+    #[doc(hidden)]
     pub tables_to_reload: std::option::Option<std::vec::Vec<crate::model::TableToReload>>,
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
+    #[doc(hidden)]
     pub reload_option: std::option::Option<crate::model::ReloadOptionValue>,
 }
 impl ReloadTablesInput {
@@ -13397,8 +13421,10 @@ impl std::fmt::Debug for ReloadTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
 }
 impl RefreshSchemasInput {
@@ -13425,10 +13451,13 @@ impl std::fmt::Debug for RefreshSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    #[doc(hidden)]
     pub force_failover: std::option::Option<bool>,
     /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    #[doc(hidden)]
     pub force_planned_failover: std::option::Option<bool>,
 }
 impl RebootReplicationInstanceInput {
@@ -13460,8 +13489,10 @@ impl std::fmt::Debug for RebootReplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
+    #[doc(hidden)]
     pub target_replication_instance_arn: std::option::Option<std::string::String>,
 }
 impl MoveReplicationTaskInput {
@@ -13491,6 +13522,7 @@ impl std::fmt::Debug for MoveReplicationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The replication task identifier.</p>
     /// <p>Constraints:</p>
@@ -13499,15 +13531,20 @@ pub struct ModifyReplicationTaskInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub replication_task_identifier: std::option::Option<std::string::String>,
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+    #[doc(hidden)]
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
+    #[doc(hidden)]
     pub table_mappings: std::option::Option<std::string::String>,
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
+    #[doc(hidden)]
     pub replication_task_settings: std::option::Option<std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    #[doc(hidden)]
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -13516,12 +13553,15 @@ pub struct ModifyReplicationTaskInput {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cdc_start_position: std::option::Option<std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    #[doc(hidden)]
     pub cdc_stop_position: std::option::Option<std::string::String>,
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub task_data: std::option::Option<std::string::String>,
 }
 impl ModifyReplicationTaskInput {
@@ -13601,10 +13641,13 @@ impl std::fmt::Debug for ModifyReplicationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationSubnetGroupInput {
     /// <p>The name of the replication instance subnet group.</p>
+    #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
     /// <p>A description for the replication instance subnet group.</p>
+    #[doc(hidden)]
     pub replication_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>A list of subnet IDs.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyReplicationSubnetGroupInput {
@@ -13642,29 +13685,38 @@ impl std::fmt::Debug for ModifyReplicationSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
+    #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
+    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+    #[doc(hidden)]
     pub replication_instance_class: std::option::Option<std::string::String>,
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
+    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
@@ -13673,8 +13725,10 @@ pub struct ModifyReplicationInstanceInput {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub replication_instance_identifier: std::option::Option<std::string::String>,
 }
 impl ModifyReplicationInstanceInput {
@@ -13774,15 +13828,20 @@ impl std::fmt::Debug for ModifyReplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be modified.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -13825,36 +13884,52 @@ impl std::fmt::Debug for ModifyEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+    #[doc(hidden)]
     pub endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
     /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    #[doc(hidden)]
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>The user name to be used to login to the endpoint database.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password to be used to login to the endpoint database.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The name of the server where the endpoint database resides.</p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>The port used by the endpoint database.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
+    #[doc(hidden)]
     pub extra_connection_attributes: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
+    #[doc(hidden)]
     pub ssl_mode: std::option::Option<crate::model::DmsSslModeValue>,
     /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The external table definition.</p>
+    #[doc(hidden)]
     pub external_table_definition: std::option::Option<std::string::String>,
     /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub dynamo_db_settings: std::option::Option<crate::model::DynamoDbSettings>,
     /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub s3_settings: std::option::Option<crate::model::S3Settings>,
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Attributes include the following:</p>
@@ -13864,35 +13939,50 @@ pub struct ModifyEndpointInput {
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
+    #[doc(hidden)]
     pub dms_transfer_settings: std::option::Option<crate::model::DmsTransferSettings>,
     /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub mongo_db_settings: std::option::Option<crate::model::MongoDbSettings>,
     /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub kinesis_settings: std::option::Option<crate::model::KinesisSettings>,
     /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
     /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
     /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub neptune_settings: std::option::Option<crate::model::NeptuneSettings>,
     /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
+    #[doc(hidden)]
     pub redshift_settings: std::option::Option<crate::model::RedshiftSettings>,
     /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub postgre_sql_settings: std::option::Option<crate::model::PostgreSqlSettings>,
     /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub my_sql_settings: std::option::Option<crate::model::MySqlSettings>,
     /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub oracle_settings: std::option::Option<crate::model::OracleSettings>,
     /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub sybase_settings: std::option::Option<crate::model::SybaseSettings>,
     /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub microsoft_sql_server_settings:
         std::option::Option<crate::model::MicrosoftSqlServerSettings>,
     /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
     /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
     /// <p>Settings in JSON format for the Redis target endpoint.</p>
+    #[doc(hidden)]
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
     /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
     /// <ul>
@@ -13901,8 +13991,10 @@ pub struct ModifyEndpointInput {
     /// </ul>
     /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
     /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
+    #[doc(hidden)]
     pub exact_settings: std::option::Option<bool>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    #[doc(hidden)]
     pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl ModifyEndpointInput {
@@ -14109,8 +14201,10 @@ impl std::fmt::Debug for ModifyEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
+    #[doc(hidden)]
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListTagsForResourceInput {
@@ -14137,13 +14231,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+    #[doc(hidden)]
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    #[doc(hidden)]
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportCertificateInput {
@@ -14181,16 +14279,20 @@ impl std::fmt::Debug for ImportCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableStatisticsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 500.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
     /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl DescribeTableStatisticsInput {
@@ -14231,12 +14333,15 @@ impl std::fmt::Debug for DescribeTableStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeSchemasInput {
@@ -14271,14 +14376,18 @@ impl std::fmt::Debug for DescribeSchemasInput {
 pub struct DescribeReplicationTasksInput {
     /// <p>Filters applied to replication tasks.</p>
     /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+    #[doc(hidden)]
     pub without_settings: std::option::Option<bool>,
 }
 impl DescribeReplicationTasksInput {
@@ -14319,10 +14428,13 @@ impl std::fmt::Debug for DescribeReplicationTasksInput {
 pub struct DescribeReplicationTaskIndividualAssessmentsInput {
     /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsInput {
@@ -14356,10 +14468,13 @@ impl std::fmt::Debug for DescribeReplicationTaskIndividualAssessmentsInput {
 pub struct DescribeReplicationTaskAssessmentRunsInput {
     /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskAssessmentRunsInput {
@@ -14392,12 +14507,15 @@ impl std::fmt::Debug for DescribeReplicationTaskAssessmentRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentResultsInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskAssessmentResultsInput {
@@ -14432,12 +14550,15 @@ impl std::fmt::Debug for DescribeReplicationTaskAssessmentResultsInput {
 pub struct DescribeReplicationSubnetGroupsInput {
     /// <p>Filters applied to replication subnet groups.</p>
     /// <p>Valid filter names: replication-subnet-group-id</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationSubnetGroupsInput {
@@ -14472,12 +14593,15 @@ impl std::fmt::Debug for DescribeReplicationSubnetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstanceTaskLogsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstanceTaskLogsInput {
@@ -14512,12 +14636,15 @@ impl std::fmt::Debug for DescribeReplicationInstanceTaskLogsInput {
 pub struct DescribeReplicationInstancesInput {
     /// <p>Filters applied to replication instances.</p>
     /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstancesInput {
@@ -14552,6 +14679,7 @@ impl std::fmt::Debug for DescribeReplicationInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRefreshSchemasStatusInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRefreshSchemasStatusInput {
@@ -14573,14 +14701,18 @@ impl std::fmt::Debug for DescribeRefreshSchemasStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
 }
 impl DescribePendingMaintenanceActionsInput {
@@ -14621,8 +14753,10 @@ pub struct DescribeOrderableReplicationInstancesInput {
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesInput {
@@ -14663,10 +14797,13 @@ pub struct DescribeFleetAdvisorSchemasInput {
     /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorSchemasInput {
@@ -14714,10 +14851,13 @@ pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryInput {
@@ -14753,8 +14893,10 @@ impl std::fmt::Debug for DescribeFleetAdvisorSchemaObjectSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorLsaAnalysisInput {
     /// <p>Sets the maximum number of records returned in the response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorLsaAnalysisInput {
@@ -14790,10 +14932,13 @@ pub struct DescribeFleetAdvisorDatabasesInput {
     /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorDatabasesInput {
@@ -14839,10 +14984,13 @@ pub struct DescribeFleetAdvisorCollectorsInput {
     /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorCollectorsInput {
@@ -14879,15 +15027,19 @@ impl std::fmt::Debug for DescribeFleetAdvisorCollectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the DMS event subscription to be described.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>Filters applied to event subscriptions.</p>
     /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventSubscriptionsInput {
@@ -14927,25 +15079,34 @@ impl std::fmt::Debug for DescribeEventSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
     /// <p> The identifier of an event source.</p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The start time for the events to be listed.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the events to be listed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration of the events to be listed.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>A list of event categories for the source type that you've chosen.</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -15011,8 +15172,10 @@ impl std::fmt::Debug for DescribeEventsInput {
 pub struct DescribeEventCategoriesInput {
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>Filters applied to the event categories.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl DescribeEventCategoriesInput {
@@ -15041,12 +15204,15 @@ impl std::fmt::Debug for DescribeEventCategoriesInput {
 pub struct DescribeEndpointTypesInput {
     /// <p>Filters applied to the endpoint types.</p>
     /// <p>Valid filter names: engine-name | endpoint-type</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointTypesInput {
@@ -15081,10 +15247,13 @@ impl std::fmt::Debug for DescribeEndpointTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointSettingsInput {
     /// <p>The databse engine used for your source or target endpoint.</p>
+    #[doc(hidden)]
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointSettingsInput {
@@ -15117,12 +15286,15 @@ impl std::fmt::Debug for DescribeEndpointSettingsInput {
 pub struct DescribeEndpointsInput {
     /// <p>Filters applied to the endpoints.</p>
     /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointsInput {
@@ -15158,12 +15330,15 @@ impl std::fmt::Debug for DescribeEndpointsInput {
 pub struct DescribeConnectionsInput {
     /// <p>The filters applied to the connection.</p>
     /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionsInput {
@@ -15198,11 +15373,14 @@ impl std::fmt::Debug for DescribeConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesInput {
     /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 10</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesInput {
@@ -15235,18 +15413,25 @@ impl std::fmt::Debug for DescribeCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicableIndividualAssessmentsInput {
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
+    #[doc(hidden)]
     pub source_engine_name: std::option::Option<std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
+    #[doc(hidden)]
     pub target_engine_name: std::option::Option<std::string::String>,
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
+    #[doc(hidden)]
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
     /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeApplicableIndividualAssessmentsInput {
@@ -15309,6 +15494,7 @@ impl std::fmt::Debug for DescribeAccountAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationTaskAssessmentRunInput {
@@ -15333,6 +15519,7 @@ impl std::fmt::Debug for DeleteReplicationTaskAssessmentRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationTaskInput {
@@ -15354,6 +15541,7 @@ impl std::fmt::Debug for DeleteReplicationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationSubnetGroupInput {
     /// <p>The subnet group name of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationSubnetGroupInput {
@@ -15378,6 +15566,7 @@ impl std::fmt::Debug for DeleteReplicationSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationInstanceInput {
@@ -15399,6 +15588,7 @@ impl std::fmt::Debug for DeleteReplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetAdvisorDatabasesInput {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    #[doc(hidden)]
     pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFleetAdvisorDatabasesInput {
@@ -15420,6 +15610,7 @@ impl std::fmt::Debug for DeleteFleetAdvisorDatabasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetAdvisorCollectorInput {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
 }
 impl DeleteFleetAdvisorCollectorInput {
@@ -15441,6 +15632,7 @@ impl std::fmt::Debug for DeleteFleetAdvisorCollectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventSubscriptionInput {
@@ -15462,6 +15654,7 @@ impl std::fmt::Debug for DeleteEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
@@ -15483,8 +15676,10 @@ impl std::fmt::Debug for DeleteEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -15511,6 +15706,7 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInput {
@@ -15538,21 +15734,29 @@ pub struct CreateReplicationTaskInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub replication_task_identifier: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
+    #[doc(hidden)]
     pub source_endpoint_arn: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
+    #[doc(hidden)]
     pub target_endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+    #[doc(hidden)]
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
     /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub table_mappings: std::option::Option<std::string::String>,
     /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub replication_task_settings: std::option::Option<std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+    #[doc(hidden)]
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -15561,16 +15765,21 @@ pub struct CreateReplicationTaskInput {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub cdc_start_position: std::option::Option<std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+    #[doc(hidden)]
     pub cdc_stop_position: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the replication task.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub task_data: std::option::Option<std::string::String>,
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl CreateReplicationTaskInput {
@@ -15672,12 +15881,16 @@ pub struct CreateReplicationSubnetGroupInput {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
     /// <p>The description for the subnet group.</p>
+    #[doc(hidden)]
     pub replication_subnet_group_description: std::option::Option<std::string::String>,
     /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tags to be assigned to the subnet group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateReplicationSubnetGroupInput {
@@ -15729,43 +15942,58 @@ pub struct CreateReplicationInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
+    #[doc(hidden)]
     pub replication_instance_identifier: std::option::Option<std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
+    #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+    #[doc(hidden)]
     pub replication_instance_class: std::option::Option<std::string::String>,
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A subnet group to associate with the replication instance.</p>
+    #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the replication instance.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
+    #[doc(hidden)]
     pub dns_name_servers: std::option::Option<std::string::String>,
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl CreateReplicationInstanceInput {
@@ -15888,12 +16116,16 @@ impl std::fmt::Debug for CreateReplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetAdvisorCollectorInput {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    #[doc(hidden)]
     pub collector_name: std::option::Option<std::string::String>,
     /// <p>A summary description of your Fleet Advisor collector.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
 }
 impl CreateFleetAdvisorCollectorInput {
@@ -15930,21 +16162,28 @@ impl std::fmt::Debug for CreateFleetAdvisorCollectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
     /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of identifiers for which DMS provides notification events.</p>
     /// <p>If you don't specify a value, notifications are provided for all sources.</p>
     /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
+    #[doc(hidden)]
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the event subscription.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventSubscriptionInput {
@@ -15999,40 +16238,57 @@ impl std::fmt::Debug for CreateEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    #[doc(hidden)]
     pub endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
     /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    #[doc(hidden)]
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>The user name to be used to log in to the endpoint database.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password to be used to log in to the endpoint database.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The name of the server where the endpoint database resides.</p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>The port used by the endpoint database.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub extra_connection_attributes: std::option::Option<std::string::String>,
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the endpoint.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
+    #[doc(hidden)]
     pub ssl_mode: std::option::Option<crate::model::DmsSslModeValue>,
     /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The external table definition. </p>
+    #[doc(hidden)]
     pub external_table_definition: std::option::Option<std::string::String>,
     /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub dynamo_db_settings: std::option::Option<crate::model::DynamoDbSettings>,
     /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub s3_settings: std::option::Option<crate::model::S3Settings>,
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Possible settings include the following:</p>
@@ -16042,39 +16298,56 @@ pub struct CreateEndpointInput {
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
+    #[doc(hidden)]
     pub dms_transfer_settings: std::option::Option<crate::model::DmsTransferSettings>,
     /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub mongo_db_settings: std::option::Option<crate::model::MongoDbSettings>,
     /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub kinesis_settings: std::option::Option<crate::model::KinesisSettings>,
     /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
     /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
+    #[doc(hidden)]
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
     /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub neptune_settings: std::option::Option<crate::model::NeptuneSettings>,
     /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
+    #[doc(hidden)]
     pub redshift_settings: std::option::Option<crate::model::RedshiftSettings>,
     /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub postgre_sql_settings: std::option::Option<crate::model::PostgreSqlSettings>,
     /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub my_sql_settings: std::option::Option<crate::model::MySqlSettings>,
     /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub oracle_settings: std::option::Option<crate::model::OracleSettings>,
     /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub sybase_settings: std::option::Option<crate::model::SybaseSettings>,
     /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub microsoft_sql_server_settings:
         std::option::Option<crate::model::MicrosoftSqlServerSettings>,
     /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
+    #[doc(hidden)]
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
     /// <p>Settings in JSON format for the target Redis endpoint.</p>
+    #[doc(hidden)]
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+    #[doc(hidden)]
     pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl CreateEndpointInput {
@@ -16282,6 +16555,7 @@ impl std::fmt::Debug for CreateEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl CancelReplicationTaskAssessmentRunInput {
@@ -16306,9 +16580,11 @@ impl std::fmt::Debug for CancelReplicationTaskAssessmentRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
+    #[doc(hidden)]
     pub apply_action: std::option::Option<std::string::String>,
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
     /// <p>Valid values:</p>
@@ -16317,6 +16593,7 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
     /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub opt_in_type: std::option::Option<std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {
@@ -16356,8 +16633,10 @@ impl std::fmt::Debug for ApplyPendingMaintenanceActionInput {
 pub struct AddTagsToResourceInput {
     /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
     /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {

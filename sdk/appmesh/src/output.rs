@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
+    #[doc(hidden)]
     pub meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMeshesOutput {
@@ -86,6 +88,7 @@ impl ListMeshesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
+    #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl CreateMeshOutput {
@@ -138,6 +141,7 @@ impl CreateMeshOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
+    #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl DeleteMeshOutput {
@@ -190,6 +194,7 @@ impl DeleteMeshOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
+    #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl UpdateMeshOutput {
@@ -242,6 +247,7 @@ impl UpdateMeshOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
+    #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl DescribeMeshOutput {
@@ -294,8 +300,10 @@ impl DescribeMeshOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
+    #[doc(hidden)]
     pub virtual_services: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualServicesOutput {
@@ -377,6 +385,7 @@ impl ListVirtualServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualServiceOutput {
     /// <p>The full description of your virtual service following the create call.</p>
+    #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl CreateVirtualServiceOutput {
@@ -434,6 +443,7 @@ impl CreateVirtualServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
+    #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl DeleteVirtualServiceOutput {
@@ -491,6 +501,7 @@ impl DeleteVirtualServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
+    #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl UpdateVirtualServiceOutput {
@@ -548,6 +559,7 @@ impl UpdateVirtualServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualServiceOutput {
     /// <p>The full description of your virtual service.</p>
+    #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl DescribeVirtualServiceOutput {
@@ -605,8 +617,10 @@ impl DescribeVirtualServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
+    #[doc(hidden)]
     pub virtual_routers: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualRoutersOutput {
@@ -688,6 +702,7 @@ impl ListVirtualRoutersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualRouterOutput {
     /// <p>The full description of your virtual router following the create call.</p>
+    #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl CreateVirtualRouterOutput {
@@ -745,6 +760,7 @@ impl CreateVirtualRouterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualRouterOutput {
     /// <p>The virtual router that was deleted.</p>
+    #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl DeleteVirtualRouterOutput {
@@ -802,6 +818,7 @@ impl DeleteVirtualRouterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
+    #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl UpdateVirtualRouterOutput {
@@ -859,6 +876,7 @@ impl UpdateVirtualRouterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
+    #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl DescribeVirtualRouterOutput {
@@ -916,8 +934,10 @@ impl DescribeVirtualRouterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
+    #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutesOutput {
@@ -998,6 +1018,7 @@ impl ListRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteOutput {
     /// <p>The full description of your mesh following the create call.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl CreateRouteOutput {
@@ -1050,6 +1071,7 @@ impl CreateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl DeleteRouteOutput {
@@ -1102,6 +1124,7 @@ impl DeleteRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl UpdateRouteOutput {
@@ -1154,6 +1177,7 @@ impl UpdateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteOutput {
     /// <p>The full description of your route.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl DescribeRouteOutput {
@@ -1206,8 +1230,10 @@ impl DescribeRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
+    #[doc(hidden)]
     pub virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualNodesOutput {
@@ -1288,6 +1314,7 @@ impl ListVirtualNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualNodeOutput {
     /// <p>The full description of your virtual node following the create call.</p>
+    #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl CreateVirtualNodeOutput {
@@ -1345,6 +1372,7 @@ impl CreateVirtualNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualNodeOutput {
     /// <p>The virtual node that was deleted.</p>
+    #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl DeleteVirtualNodeOutput {
@@ -1402,6 +1430,7 @@ impl DeleteVirtualNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
+    #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl UpdateVirtualNodeOutput {
@@ -1459,6 +1488,7 @@ impl UpdateVirtualNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualNodeOutput {
     /// <p>The full description of your virtual node.</p>
+    #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl DescribeVirtualNodeOutput {
@@ -1516,8 +1546,10 @@ impl DescribeVirtualNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualGatewaysOutput {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
+    #[doc(hidden)]
     pub virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualGatewaysOutput {
@@ -1599,6 +1631,7 @@ impl ListVirtualGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway following the create call.</p>
+    #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl CreateVirtualGatewayOutput {
@@ -1656,6 +1689,7 @@ impl CreateVirtualGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
+    #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl DeleteVirtualGatewayOutput {
@@ -1713,6 +1747,7 @@ impl DeleteVirtualGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualGatewayOutput {
     /// <p>A full description of the virtual gateway that was updated.</p>
+    #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl UpdateVirtualGatewayOutput {
@@ -1770,6 +1805,7 @@ impl UpdateVirtualGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl DescribeVirtualGatewayOutput {
@@ -1827,8 +1863,10 @@ impl DescribeVirtualGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
+    #[doc(hidden)]
     pub gateway_routes: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewayRoutesOutput {
@@ -1910,6 +1948,7 @@ impl ListGatewayRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayRouteOutput {
     /// <p>The full description of your gateway route following the create call.</p>
+    #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl CreateGatewayRouteOutput {
@@ -1967,6 +2006,7 @@ impl CreateGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
+    #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl DeleteGatewayRouteOutput {
@@ -2024,6 +2064,7 @@ impl DeleteGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
+    #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl UpdateGatewayRouteOutput {
@@ -2081,6 +2122,7 @@ impl UpdateGatewayRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
+    #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl DescribeGatewayRouteOutput {
@@ -2198,8 +2240,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {

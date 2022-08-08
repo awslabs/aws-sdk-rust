@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl UpdateQueueOutput {
@@ -56,6 +57,7 @@ impl UpdateQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl UpdatePresetOutput {
@@ -110,6 +112,7 @@ impl UpdatePresetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl UpdateJobTemplateOutput {
@@ -227,6 +230,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl PutPolicyOutput {
@@ -281,6 +285,7 @@ impl PutPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<crate::model::ResourceTags>,
 }
 impl ListTagsForResourceOutput {
@@ -338,8 +343,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesOutput {
     /// Use this string to request the next batch of queues.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// List of queues.
+    #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
 }
 impl ListQueuesOutput {
@@ -420,8 +427,10 @@ impl ListQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPresetsOutput {
     /// Use this string to request the next batch of presets.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// List of presets
+    #[doc(hidden)]
     pub presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
 }
 impl ListPresetsOutput {
@@ -502,8 +511,10 @@ impl ListPresetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobTemplatesOutput {
     /// List of Job templates.
+    #[doc(hidden)]
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
     /// Use this string to request the next batch of job templates.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobTemplatesOutput {
@@ -584,8 +595,10 @@ impl ListJobTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// List of jobs
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// Use this string to request the next batch of jobs.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -666,6 +679,7 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl GetQueueOutput {
@@ -718,6 +732,7 @@ impl GetQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl GetPresetOutput {
@@ -772,6 +787,7 @@ impl GetPresetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl GetPolicyOutput {
@@ -826,6 +842,7 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl GetJobTemplateOutput {
@@ -883,6 +900,7 @@ impl GetJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl GetJobOutput {
@@ -965,8 +983,10 @@ impl DisassociateCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsOutput {
     /// List of endpoints
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// Use this string to request the next batch of endpoints.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointsOutput {
@@ -1167,6 +1187,7 @@ impl DeleteJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
 }
 impl CreateQueueOutput {
@@ -1219,6 +1240,7 @@ impl CreateQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl CreatePresetOutput {
@@ -1273,6 +1295,7 @@ impl CreatePresetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl CreateJobTemplateOutput {
@@ -1330,6 +1353,7 @@ impl CreateJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl CreateJobOutput {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
@@ -90,8 +92,10 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -175,8 +179,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -260,8 +266,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTypeException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTypeException {
@@ -345,8 +353,10 @@ impl InvalidTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalException {
@@ -430,8 +440,10 @@ impl InternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BaseException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BaseException {
@@ -515,8 +527,10 @@ impl BaseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisabledOperationException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DisabledOperationException {
@@ -600,8 +614,10 @@ impl DisabledOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     /// <p>A machine-parsable string error or warning code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A human-readable string error or warning message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceAlreadyExistsException {

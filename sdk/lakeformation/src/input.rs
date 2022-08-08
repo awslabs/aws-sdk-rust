@@ -7428,12 +7428,16 @@ impl UpdateTableStorageOptimizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableStorageOptimizerInput {
     /// <p>The Catalog ID of the table.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Name of the database where the table is present.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Name of the table for which to enable the storage optimizer.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Name of the table for which to enable the storage optimizer.</p>
+    #[doc(hidden)]
     pub storage_optimizer_config: std::option::Option<
         std::collections::HashMap<
             crate::model::OptimizerType,
@@ -7482,14 +7486,19 @@ impl std::fmt::Debug for UpdateTableStorageOptimizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableObjectsInput {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database containing the governed table to update.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The governed table to update.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The transaction at which to do the write.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    #[doc(hidden)]
     pub write_operations: std::option::Option<std::vec::Vec<crate::model::WriteOperation>>,
 }
 impl UpdateTableObjectsInput {
@@ -7531,8 +7540,10 @@ impl std::fmt::Debug for UpdateTableObjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UpdateResourceInput {
@@ -7559,12 +7570,16 @@ impl std::fmt::Debug for UpdateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_values_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLfTagInput {
@@ -7601,6 +7616,7 @@ impl std::fmt::Debug for UpdateLfTagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTransactionInput {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    #[doc(hidden)]
     pub transaction_type: std::option::Option<crate::model::TransactionType>,
 }
 impl StartTransactionInput {
@@ -7622,8 +7638,10 @@ impl std::fmt::Debug for StartTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryPlanningInput {
     /// <p>A structure containing information about the query plan.</p>
+    #[doc(hidden)]
     pub query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
 }
 impl StartQueryPlanningInput {
@@ -7652,12 +7670,16 @@ impl std::fmt::Debug for StartQueryPlanningInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
 }
 impl SearchTablesByLfTagsInput {
@@ -7694,12 +7716,16 @@ impl std::fmt::Debug for SearchTablesByLfTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDatabasesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
 }
 impl SearchDatabasesByLfTagsInput {
@@ -7736,14 +7762,19 @@ impl std::fmt::Debug for SearchDatabasesByLfTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokePermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The principal to be revoked permissions on the resource.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The resource to which permissions are to be revoked.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
+    #[doc(hidden)]
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl RevokePermissionsInput {
@@ -7790,10 +7821,13 @@ impl std::fmt::Debug for RevokePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveLfTagsFromResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The LF-tags to be removed from the resource.</p>
+    #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl RemoveLfTagsFromResourceInput {
@@ -7825,11 +7859,14 @@ impl std::fmt::Debug for RemoveLfTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    #[doc(hidden)]
     pub use_service_linked_role: std::option::Option<bool>,
     /// <p>The identifier for the role that registers the resource.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl RegisterResourceInput {
@@ -7862,8 +7899,10 @@ impl std::fmt::Debug for RegisterResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    #[doc(hidden)]
     pub data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
 }
 impl PutDataLakeSettingsInput {
@@ -7890,12 +7929,16 @@ impl std::fmt::Debug for PutDataLakeSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTransactionsInput {
     /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::TransactionStatusFilter>,
     /// <p>The maximum number of transactions to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTransactionsInput {
@@ -7932,16 +7975,22 @@ impl std::fmt::Debug for ListTransactionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTableStorageOptimizersInput {
     /// <p>The Catalog ID of the table.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Name of the database where the table is present.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    #[doc(hidden)]
     pub storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
     /// <p>The number of storage optimizers to return on each call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableStorageOptimizersInput {
@@ -7988,10 +8037,13 @@ impl std::fmt::Debug for ListTableStorageOptimizersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    #[doc(hidden)]
     pub filter_condition_list: std::option::Option<std::vec::Vec<crate::model::FilterCondition>>,
     /// <p>The maximum number of resource results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesInput {
@@ -8023,19 +8075,26 @@ impl std::fmt::Debug for ListResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies a principal to filter the permissions returned.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>Specifies a resource type to filter the permissions returned.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::DataLakeResourceType>,
     /// <p>A resource where you will get a list of the principal permissions.</p>
     /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Indicates that related permissions should be included in the results.</p>
+    #[doc(hidden)]
     pub include_related: std::option::Option<std::string::String>,
 }
 impl ListPermissionsInput {
@@ -8088,12 +8147,16 @@ impl std::fmt::Debug for ListPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
+    #[doc(hidden)]
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLfTagsInput {
@@ -8130,10 +8193,13 @@ impl std::fmt::Debug for ListLfTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataCellsFilterInput {
     /// <p>A table in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableResource>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataCellsFilterInput {
@@ -8165,15 +8231,20 @@ impl std::fmt::Debug for ListDataCellsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
     /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
+    #[doc(hidden)]
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl GrantPermissionsInput {
@@ -8221,10 +8292,13 @@ impl std::fmt::Debug for GrantPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkUnitsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
     /// <p>The ID of the plan query operation.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl GetWorkUnitsInput {
@@ -8256,10 +8330,13 @@ impl std::fmt::Debug for GetWorkUnitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkUnitResultsInput {
     /// <p>The ID of the plan query operation for which to get results.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+    #[doc(hidden)]
     pub work_unit_id: i64,
     /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+    #[doc(hidden)]
     pub work_unit_token: std::option::Option<std::string::String>,
 }
 impl GetWorkUnitResultsInput {
@@ -8291,14 +8368,19 @@ impl std::fmt::Debug for GetWorkUnitResultsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemporaryGlueTableCredentialsInput {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
+    #[doc(hidden)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
+    #[doc(hidden)]
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
+    #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
@@ -8346,16 +8428,22 @@ impl std::fmt::Debug for GetTemporaryGlueTableCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemporaryGluePartitionCredentialsInput {
     /// <p>The ARN of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>A list of partition values identifying a single partition.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<crate::model::PartitionValueList>,
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
+    #[doc(hidden)]
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
+    #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
@@ -8408,14 +8496,19 @@ impl std::fmt::Debug for GetTemporaryGluePartitionCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableObjectsInput {
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database containing the governed table.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The governed table for which to retrieve objects.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+    #[doc(hidden)]
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
@@ -8423,10 +8516,13 @@ pub struct GetTableObjectsInput {
     /// <li> <p>The logical operators supported are: AND</p> </li>
     /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub partition_predicate: std::option::Option<std::string::String>,
     /// <p>Specifies how many values to return in a page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTableObjectsInput {
@@ -8488,10 +8584,13 @@ impl std::fmt::Debug for GetTableObjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>Indicates whether to show the assigned LF-tags.</p>
+    #[doc(hidden)]
     pub show_assigned_lf_tags: std::option::Option<bool>,
 }
 impl GetResourceLfTagsInput {
@@ -8523,6 +8622,7 @@ impl std::fmt::Debug for GetResourceLfTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryStatisticsInput {
     /// <p>The ID of the plan query operation.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl GetQueryStatisticsInput {
@@ -8544,6 +8644,7 @@ impl std::fmt::Debug for GetQueryStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryStateInput {
     /// <p>The ID of the plan query operation.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl GetQueryStateInput {
@@ -8565,8 +8666,10 @@ impl std::fmt::Debug for GetQueryStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
 }
 impl GetLfTagInput {
@@ -8593,12 +8696,16 @@ impl std::fmt::Debug for GetLfTagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEffectivePermissionsForPathInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEffectivePermissionsForPathInput {
@@ -8635,6 +8742,7 @@ impl std::fmt::Debug for GetEffectivePermissionsForPathInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetDataLakeSettingsInput {
@@ -8656,6 +8764,7 @@ impl std::fmt::Debug for GetDataLakeSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendTransactionInput {
     /// <p>The transaction to extend.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl ExtendTransactionInput {
@@ -8677,6 +8786,7 @@ impl std::fmt::Debug for ExtendTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransactionInput {
     /// <p>The transaction for which to return status.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl DescribeTransactionInput {
@@ -8698,6 +8808,7 @@ impl std::fmt::Debug for DescribeTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResourceInput {
@@ -8719,6 +8830,7 @@ impl std::fmt::Debug for DescribeResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeregisterResourceInput {
@@ -8740,14 +8852,19 @@ impl std::fmt::Debug for DeregisterResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectsOnCancelInput {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database that contains the governed table.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the governed table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>ID of the transaction that the writes occur in.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    #[doc(hidden)]
     pub objects: std::option::Option<std::vec::Vec<crate::model::VirtualObject>>,
 }
 impl DeleteObjectsOnCancelInput {
@@ -8789,8 +8906,10 @@ impl std::fmt::Debug for DeleteObjectsOnCancelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag to delete.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
 }
 impl DeleteLfTagInput {
@@ -8817,12 +8936,16 @@ impl std::fmt::Debug for DeleteLfTagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataCellsFilterInput {
     /// <p>The ID of the catalog to which the table belongs.</p>
+    #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
     /// <p>A database in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A table in the database.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name given by the user to the data filter cell.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDataCellsFilterInput {
@@ -8859,10 +8982,13 @@ impl std::fmt::Debug for DeleteDataCellsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateLfTagInput {
@@ -8894,6 +9020,7 @@ impl std::fmt::Debug for CreateLfTagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataCellsFilterInput {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    #[doc(hidden)]
     pub table_data: std::option::Option<crate::model::DataCellsFilter>,
 }
 impl CreateDataCellsFilterInput {
@@ -8915,6 +9042,7 @@ impl std::fmt::Debug for CreateDataCellsFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitTransactionInput {
     /// <p>The transaction to commit.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CommitTransactionInput {
@@ -8936,6 +9064,7 @@ impl std::fmt::Debug for CommitTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTransactionInput {
     /// <p>The transaction to cancel.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CancelTransactionInput {
@@ -8957,8 +9086,10 @@ impl std::fmt::Debug for CancelTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRevokePermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
 }
 impl BatchRevokePermissionsInput {
@@ -8985,8 +9116,10 @@ impl std::fmt::Debug for BatchRevokePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
 }
 impl BatchGrantPermissionsInput {
@@ -9013,10 +9146,13 @@ impl std::fmt::Debug for BatchGrantPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddLfTagsToResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The LF-tags to attach to the resource.</p>
+    #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl AddLfTagsToResourceInput {

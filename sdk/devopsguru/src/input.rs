@@ -4952,6 +4952,7 @@ impl UpdateServiceIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationInput {
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    #[doc(hidden)]
     pub service_integration: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
 }
 impl UpdateServiceIntegrationInput {
@@ -4975,8 +4976,10 @@ impl std::fmt::Debug for UpdateServiceIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceCollectionInput {
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::UpdateResourceCollectionAction>,
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    #[doc(hidden)]
     pub resource_collection: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInput {
@@ -5005,6 +5008,7 @@ impl std::fmt::Debug for UpdateResourceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventSourcesConfigInput {
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
+    #[doc(hidden)]
     pub event_sources: std::option::Option<crate::model::EventSourcesConfig>,
 }
 impl UpdateEventSourcesConfigInput {
@@ -5026,9 +5030,11 @@ impl std::fmt::Debug for UpdateEventSourcesConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCostEstimationInput {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    #[doc(hidden)]
     pub resource_collection:
         std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
     /// <p>The idempotency token used to identify each cost estimate request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartCostEstimationInput {
@@ -5057,16 +5063,22 @@ impl std::fmt::Debug for StartCostEstimationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchOrganizationInsightsInput {
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
+    #[doc(hidden)]
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchOrganizationInsightsInput {
@@ -5113,14 +5125,19 @@ impl std::fmt::Debug for SearchOrganizationInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInsightsInput {
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    #[doc(hidden)]
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::SearchInsightsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchInsightsInput {
@@ -5162,6 +5179,7 @@ impl std::fmt::Debug for SearchInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveNotificationChannelInput {
     /// <p> The ID of the notification channel to be removed. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RemoveNotificationChannelInput {
@@ -5183,6 +5201,7 @@ impl std::fmt::Debug for RemoveNotificationChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFeedbackInput {
     /// <p> The feedback from customers is about the recommendations in this insight. </p>
+    #[doc(hidden)]
     pub insight_feedback: std::option::Option<crate::model::InsightFeedback>,
 }
 impl PutFeedbackInput {
@@ -5204,12 +5223,16 @@ impl std::fmt::Debug for PutFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsInput {
     /// <p> The ID of the requested insight. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A locale that specifies the language to use for recommendations.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsInput {
@@ -5246,14 +5269,19 @@ impl std::fmt::Debug for ListRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationInsightsInput {
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationInsightsInput {
@@ -5295,6 +5323,7 @@ impl std::fmt::Debug for ListOrganizationInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationChannelsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationChannelsInput {
@@ -5316,10 +5345,13 @@ impl std::fmt::Debug for ListNotificationChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMonitoredResourcesInput {
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMonitoredResourcesInput {
@@ -5351,10 +5383,13 @@ impl std::fmt::Debug for ListMonitoredResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsInput {
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsInput {
@@ -5386,12 +5421,16 @@ impl std::fmt::Debug for ListInsightsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsInput {
     /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListEventsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListEventsInput {
@@ -5428,10 +5467,13 @@ impl std::fmt::Debug for ListEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalousLogGroupsInput {
     /// <p> The ID of the insight containing the log groups. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalousLogGroupsInput {
@@ -5463,14 +5505,19 @@ impl std::fmt::Debug for ListAnomalousLogGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+    #[doc(hidden)]
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListAnomaliesForInsightInput {
@@ -5512,8 +5559,10 @@ impl std::fmt::Debug for ListAnomaliesForInsightInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionInput {
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionInput {
@@ -5542,6 +5591,7 @@ impl std::fmt::Debug for GetResourceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostEstimationInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCostEstimationInput {
@@ -5574,8 +5624,10 @@ impl std::fmt::Debug for DescribeServiceIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeResourceCollectionHealthInput {
@@ -5604,15 +5656,20 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[doc(hidden)]
     pub organization_resource_collection_type:
         std::option::Option<crate::model::OrganizationResourceCollectionType>,
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeOrganizationResourceCollectionHealthInput {
@@ -5659,12 +5716,16 @@ impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    #[doc(hidden)]
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    #[doc(hidden)]
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeOrganizationOverviewInput {
@@ -5701,8 +5762,10 @@ impl std::fmt::Debug for DescribeOrganizationOverviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationHealthInput {
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
+    #[doc(hidden)]
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeOrganizationHealthInput {
@@ -5729,8 +5792,10 @@ impl std::fmt::Debug for DescribeOrganizationHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInsightInput {
     /// <p> The ID of the insight. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the member account in the organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DescribeInsightInput {
@@ -5757,6 +5822,7 @@ impl std::fmt::Debug for DescribeInsightInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeedbackInput {
     /// <p> The ID of the insight for which the feedback was provided. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
 }
 impl DescribeFeedbackInput {
@@ -5789,8 +5855,10 @@ impl std::fmt::Debug for DescribeEventSourcesConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyInput {
     /// <p> The ID of the anomaly. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyInput {
@@ -5817,8 +5885,10 @@ impl std::fmt::Debug for DescribeAnomalyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    #[doc(hidden)]
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    #[doc(hidden)]
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAccountOverviewInput {
@@ -5856,6 +5926,7 @@ impl std::fmt::Debug for DescribeAccountHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInsightInput {
     /// <p>The ID of the insight.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteInsightInput {
@@ -5877,6 +5948,7 @@ impl std::fmt::Debug for DeleteInsightInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelInput {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    #[doc(hidden)]
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInput {

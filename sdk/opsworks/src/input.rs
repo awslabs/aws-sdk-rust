@@ -14091,10 +14091,13 @@ impl UpdateVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVolumeInput {
     /// <p>The volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The new name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new mount point.</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
 }
 impl UpdateVolumeInput {
@@ -14126,12 +14129,16 @@ impl std::fmt::Debug for UpdateVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    #[doc(hidden)]
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's new SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
+    #[doc(hidden)]
     pub allow_self_management: std::option::Option<bool>,
 }
 impl UpdateUserProfileInput {
@@ -14168,16 +14175,21 @@ impl std::fmt::Debug for UpdateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The stack's new name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
     /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
@@ -14189,6 +14201,7 @@ pub struct UpdateStackInput {
     /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    #[doc(hidden)]
     pub default_os: std::option::Option<std::string::String>,
     /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
@@ -14205,26 +14218,36 @@ pub struct UpdateStackInput {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    #[doc(hidden)]
     pub hostname_theme: std::option::Option<std::string::String>,
     /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
+    #[doc(hidden)]
     pub default_availability_zone: std::option::Option<std::string::String>,
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    #[doc(hidden)]
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
+    #[doc(hidden)]
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    #[doc(hidden)]
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
     /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    #[doc(hidden)]
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
@@ -14233,6 +14256,7 @@ pub struct UpdateStackInput {
     /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub use_opsworks_security_groups: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -14242,6 +14266,7 @@ pub struct UpdateStackInput {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl UpdateStackInput {
@@ -14398,10 +14423,13 @@ impl std::fmt::Debug for UpdateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
+    #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
     /// <p>The master user name.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The database password.</p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
 }
 impl UpdateRdsDbInstanceInput {
@@ -14433,6 +14461,7 @@ impl std::fmt::Debug for UpdateRdsDbInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UpdateMyUserProfileInput {
@@ -14454,45 +14483,62 @@ impl std::fmt::Debug for UpdateMyUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLayerInput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>The layer name, which is used by the console.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
+    #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
     >,
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
     /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
+    #[doc(hidden)]
     pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    #[doc(hidden)]
     pub packages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    #[doc(hidden)]
     pub volume_configurations:
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
+    #[doc(hidden)]
     pub enable_auto_healing: std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_elastic_ips: std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_public_ips: std::option::Option<bool>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    #[doc(hidden)]
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    #[doc(hidden)]
     pub use_ebs_optimized_instances: std::option::Option<bool>,
     /// <p></p>
+    #[doc(hidden)]
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
@@ -14620,14 +14666,19 @@ impl std::fmt::Debug for UpdateLayerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The instance's layer IDs.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    #[doc(hidden)]
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
     /// <p>The instance host name.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
     /// <ul>
@@ -14641,18 +14692,24 @@ pub struct UpdateInstanceInput {
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
+    #[doc(hidden)]
     pub os: std::option::Option<std::string::String>,
     /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The instance's Amazon EC2 key name.</p>
+    #[doc(hidden)]
     pub ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>This property cannot be updated.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -14661,6 +14718,7 @@ pub struct UpdateInstanceInput {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl UpdateInstanceInput {
@@ -14756,8 +14814,10 @@ impl std::fmt::Debug for UpdateInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The new name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateElasticIpInput {
@@ -14784,24 +14844,34 @@ impl std::fmt::Debug for UpdateElasticIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The app name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The app's data sources.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The app type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
+    #[doc(hidden)]
     pub app_source: std::option::Option<crate::model::Source>,
     /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether SSL is enabled for the app.</p>
+    #[doc(hidden)]
     pub enable_ssl: std::option::Option<bool>,
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    #[doc(hidden)]
     pub ssl_configuration: std::option::Option<crate::model::SslConfiguration>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
     >,
@@ -14809,6 +14879,7 @@ pub struct UpdateAppInput {
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
+    #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
 impl UpdateAppInput {
@@ -14887,8 +14958,10 @@ impl std::fmt::Debug for UpdateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -14915,6 +14988,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnassignVolumeInput {
     /// <p>The volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl UnassignVolumeInput {
@@ -14936,6 +15010,7 @@ impl std::fmt::Debug for UnassignVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnassignInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UnassignInstanceInput {
@@ -14957,6 +15032,7 @@ impl std::fmt::Debug for UnassignInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
@@ -14966,6 +15042,7 @@ pub struct TagResourceInput {
     /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
     /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15003,6 +15080,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStackInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl StopStackInput {
@@ -15024,8 +15102,10 @@ impl std::fmt::Debug for StopStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    #[doc(hidden)]
     pub force: std::option::Option<bool>,
 }
 impl StopInstanceInput {
@@ -15052,6 +15132,7 @@ impl std::fmt::Debug for StopInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStackInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl StartStackInput {
@@ -15073,6 +15154,7 @@ impl std::fmt::Debug for StartStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl StartInstanceInput {
@@ -15094,8 +15176,10 @@ impl std::fmt::Debug for StartInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTimeBasedAutoScalingInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    #[doc(hidden)]
     pub auto_scaling_schedule: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
 }
 impl SetTimeBasedAutoScalingInput {
@@ -15124,12 +15208,16 @@ impl std::fmt::Debug for SetTimeBasedAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPermissionInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
+    #[doc(hidden)]
     pub allow_ssh: std::option::Option<bool>,
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    #[doc(hidden)]
     pub allow_sudo: std::option::Option<bool>,
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
@@ -15140,6 +15228,7 @@ pub struct SetPermissionInput {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[doc(hidden)]
     pub level: std::option::Option<std::string::String>,
 }
 impl SetPermissionInput {
@@ -15189,12 +15278,16 @@ impl std::fmt::Debug for SetPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLoadBasedAutoScalingInput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>Enables load-based auto scaling for the layer.</p>
+    #[doc(hidden)]
     pub enable: std::option::Option<bool>,
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    #[doc(hidden)]
     pub up_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    #[doc(hidden)]
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
 }
 impl SetLoadBasedAutoScalingInput {
@@ -15231,8 +15324,10 @@ impl std::fmt::Debug for SetLoadBasedAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterVolumeInput {
     /// <p>The Amazon EBS volume ID.</p>
+    #[doc(hidden)]
     pub ec2_volume_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl RegisterVolumeInput {
@@ -15259,12 +15354,16 @@ impl std::fmt::Debug for RegisterVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRdsDbInstanceInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The Amazon RDS instance's ARN.</p>
+    #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
     /// <p>The database's master user name.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The database password.</p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
 }
 impl RegisterRdsDbInstanceInput {
@@ -15301,18 +15400,25 @@ impl std::fmt::Debug for RegisterRdsDbInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceInput {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The instance's hostname.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The instance's public IP address.</p>
+    #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>The instance's private IP address.</p>
+    #[doc(hidden)]
     pub private_ip: std::option::Option<std::string::String>,
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
+    #[doc(hidden)]
     pub rsa_public_key: std::option::Option<std::string::String>,
     /// <p>The instances public RSA key fingerprint.</p>
+    #[doc(hidden)]
     pub rsa_public_key_fingerprint: std::option::Option<std::string::String>,
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
+    #[doc(hidden)]
     pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
 impl RegisterInstanceInput {
@@ -15367,8 +15473,10 @@ impl std::fmt::Debug for RegisterInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl RegisterElasticIpInput {
@@ -15395,8 +15503,10 @@ impl std::fmt::Debug for RegisterElasticIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterEcsClusterInput {
     /// <p>The cluster's ARN.</p>
+    #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl RegisterEcsClusterInput {
@@ -15423,6 +15533,7 @@ impl std::fmt::Debug for RegisterEcsClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl RebootInstanceInput {
@@ -15444,10 +15555,13 @@ impl std::fmt::Debug for RebootInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -15479,8 +15593,10 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantAccessInput {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    #[doc(hidden)]
     pub valid_for_in_minutes: std::option::Option<i32>,
 }
 impl GrantAccessInput {
@@ -15507,6 +15623,7 @@ impl std::fmt::Debug for GrantAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostnameSuggestionInput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
 }
 impl GetHostnameSuggestionInput {
@@ -15528,6 +15645,7 @@ impl std::fmt::Debug for GetHostnameSuggestionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
 }
 impl DisassociateElasticIpInput {
@@ -15549,8 +15667,10 @@ impl std::fmt::Debug for DisassociateElasticIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
+    #[doc(hidden)]
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
 }
 impl DetachElasticLoadBalancerInput {
@@ -15580,12 +15700,16 @@ impl std::fmt::Debug for DetachElasticLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
+    #[doc(hidden)]
     pub raid_array_id: std::option::Option<std::string::String>,
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
+    #[doc(hidden)]
     pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeVolumesInput {
@@ -15622,6 +15746,7 @@ impl std::fmt::Debug for DescribeVolumesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfilesInput {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    #[doc(hidden)]
     pub iam_user_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeUserProfilesInput {
@@ -15643,6 +15768,7 @@ impl std::fmt::Debug for DescribeUserProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeBasedAutoScalingInput {
     /// <p>An array of instance IDs.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTimeBasedAutoScalingInput {
@@ -15664,6 +15790,7 @@ impl std::fmt::Debug for DescribeTimeBasedAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSummaryInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DescribeStackSummaryInput {
@@ -15685,6 +15812,7 @@ impl std::fmt::Debug for DescribeStackSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksInput {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    #[doc(hidden)]
     pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeStacksInput {
@@ -15706,6 +15834,7 @@ impl std::fmt::Debug for DescribeStacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackProvisioningParametersInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DescribeStackProvisioningParametersInput {
@@ -15727,10 +15856,13 @@ impl std::fmt::Debug for DescribeStackProvisioningParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceErrorsInput {
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
+    #[doc(hidden)]
     pub service_error_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeServiceErrorsInput {
@@ -15762,8 +15894,10 @@ impl std::fmt::Debug for DescribeServiceErrorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRdsDbInstancesInput {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array containing the ARNs of the instances to be described.</p>
+    #[doc(hidden)]
     pub rds_db_instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRdsDbInstancesInput {
@@ -15790,10 +15924,13 @@ impl std::fmt::Debug for DescribeRdsDbInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRaidArraysInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    #[doc(hidden)]
     pub raid_array_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRaidArraysInput {
@@ -15825,8 +15962,10 @@ impl std::fmt::Debug for DescribeRaidArraysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionsInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DescribePermissionsInput {
@@ -15875,6 +16014,7 @@ impl std::fmt::Debug for DescribeMyUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBasedAutoScalingInput {
     /// <p>An array of layer IDs.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoadBasedAutoScalingInput {
@@ -15896,8 +16036,10 @@ impl std::fmt::Debug for DescribeLoadBasedAutoScalingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLayersInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLayersInput {
@@ -15924,10 +16066,13 @@ impl std::fmt::Debug for DescribeLayersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesInput {
     /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeInstancesInput {
@@ -15959,8 +16104,10 @@ impl std::fmt::Debug for DescribeInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticLoadBalancersInput {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeElasticLoadBalancersInput {
@@ -15987,10 +16134,13 @@ impl std::fmt::Debug for DescribeElasticLoadBalancersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticIpsInput {
     /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
+    #[doc(hidden)]
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeElasticIpsInput {
@@ -16022,12 +16172,16 @@ impl std::fmt::Debug for DescribeElasticIpsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEcsClustersInput {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
+    #[doc(hidden)]
     pub ecs_cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEcsClustersInput {
@@ -16064,10 +16218,13 @@ impl std::fmt::Debug for DescribeEcsClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentsInput {
     /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
+    #[doc(hidden)]
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDeploymentsInput {
@@ -16099,10 +16256,13 @@ impl std::fmt::Debug for DescribeDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommandsInput {
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
+    #[doc(hidden)]
     pub command_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCommandsInput {
@@ -16134,8 +16294,10 @@ impl std::fmt::Debug for DescribeCommandsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppsInput {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+    #[doc(hidden)]
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAppsInput {
@@ -16162,8 +16324,10 @@ impl std::fmt::Debug for DescribeAppsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentVersionsInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The configuration manager.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
 }
 impl DescribeAgentVersionsInput {
@@ -16192,6 +16356,7 @@ impl std::fmt::Debug for DescribeAgentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterVolumeInput {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl DeregisterVolumeInput {
@@ -16213,6 +16378,7 @@ impl std::fmt::Debug for DeregisterVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
+    #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeregisterRdsDbInstanceInput {
@@ -16234,6 +16400,7 @@ impl std::fmt::Debug for DeregisterRdsDbInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DeregisterInstanceInput {
@@ -16255,6 +16422,7 @@ impl std::fmt::Debug for DeregisterInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
 }
 impl DeregisterElasticIpInput {
@@ -16276,6 +16444,7 @@ impl std::fmt::Debug for DeregisterElasticIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterEcsClusterInput {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
 }
 impl DeregisterEcsClusterInput {
@@ -16297,6 +16466,7 @@ impl std::fmt::Debug for DeregisterEcsClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserProfileInput {
@@ -16318,6 +16488,7 @@ impl std::fmt::Debug for DeleteUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DeleteStackInput {
@@ -16339,6 +16510,7 @@ impl std::fmt::Debug for DeleteStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLayerInput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
 }
 impl DeleteLayerInput {
@@ -16360,10 +16532,13 @@ impl std::fmt::Debug for DeleteLayerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Whether to delete the instance Elastic IP address.</p>
+    #[doc(hidden)]
     pub delete_elastic_ip: std::option::Option<bool>,
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
+    #[doc(hidden)]
     pub delete_volumes: std::option::Option<bool>,
 }
 impl DeleteInstanceInput {
@@ -16395,6 +16570,7 @@ impl std::fmt::Debug for DeleteInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
@@ -16416,12 +16592,16 @@ impl std::fmt::Debug for DeleteAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileInput {
     /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    #[doc(hidden)]
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's public SSH key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
+    #[doc(hidden)]
     pub allow_self_management: std::option::Option<bool>,
 }
 impl CreateUserProfileInput {
@@ -16458,10 +16638,12 @@ impl std::fmt::Debug for CreateUserProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackInput {
     /// <p>The stack name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
     /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
     /// <ul>
@@ -16475,14 +16657,18 @@ pub struct CreateStackInput {
     /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
     /// <ul>
@@ -16494,6 +16680,7 @@ pub struct CreateStackInput {
     /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
     /// </ul>
     /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    #[doc(hidden)]
     pub default_os: std::option::Option<std::string::String>,
     /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
@@ -16510,20 +16697,27 @@ pub struct CreateStackInput {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    #[doc(hidden)]
     pub hostname_theme: std::option::Option<std::string::String>,
     /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+    #[doc(hidden)]
     pub default_availability_zone: std::option::Option<std::string::String>,
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    #[doc(hidden)]
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
+    #[doc(hidden)]
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
@@ -16532,12 +16726,16 @@ pub struct CreateStackInput {
     /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub use_opsworks_security_groups: std::option::Option<bool>,
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    #[doc(hidden)]
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    #[doc(hidden)]
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -16547,6 +16745,7 @@ pub struct CreateStackInput {
     /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl CreateStackInput {
@@ -16721,48 +16920,66 @@ impl std::fmt::Debug for CreateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLayerInput {
     /// <p>The layer stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LayerType>,
     /// <p>The layer name, which is used by the console.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
+    #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
     >,
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>An array containing the layer custom security group IDs.</p>
+    #[doc(hidden)]
     pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
+    #[doc(hidden)]
     pub packages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    #[doc(hidden)]
     pub volume_configurations:
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
+    #[doc(hidden)]
     pub enable_auto_healing: std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_elastic_ips: std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_public_ips: std::option::Option<bool>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
+    #[doc(hidden)]
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    #[doc(hidden)]
     pub use_ebs_optimized_instances: std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
+    #[doc(hidden)]
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
@@ -16896,14 +17113,19 @@ impl std::fmt::Debug for CreateLayerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array that contains the instance's layer IDs.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    #[doc(hidden)]
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
     /// <p>The instance host name.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
@@ -16916,30 +17138,41 @@ pub struct CreateInstanceInput {
     /// </ul>
     /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The instance's Amazon EC2 key-pair name.</p>
+    #[doc(hidden)]
     pub ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    #[doc(hidden)]
     pub virtualization_type: std::option::Option<std::string::String>,
     /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to create an Amazon EBS-optimized instance.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -16947,8 +17180,10 @@ pub struct CreateInstanceInput {
     /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
     /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<std::string::String>,
 }
 impl CreateInstanceInput {
@@ -17076,20 +17311,27 @@ impl std::fmt::Debug for CreateInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The instance IDs for the deployment targets.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The layer IDs for the deployment targets.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::DeploymentCommand>,
     /// <p>A user-defined comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -17143,26 +17385,37 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The app's short name.</p>
+    #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
     /// <p>The app name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The app's data source.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
+    #[doc(hidden)]
     pub app_source: std::option::Option<crate::model::Source>,
     /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
+    #[doc(hidden)]
     pub enable_ssl: std::option::Option<bool>,
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    #[doc(hidden)]
     pub ssl_configuration: std::option::Option<crate::model::SslConfiguration>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
     >,
@@ -17170,6 +17423,7 @@ pub struct CreateAppInput {
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
+    #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
 impl CreateAppInput {
@@ -17253,10 +17507,13 @@ impl std::fmt::Debug for CreateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneStackInput {
     /// <p>The source stack ID.</p>
+    #[doc(hidden)]
     pub source_stack_id: std::option::Option<std::string::String>,
     /// <p>The cloned stack name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
     /// <ul>
@@ -17270,16 +17527,20 @@ pub struct CloneStackInput {
     /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's operating system, which must be set to one of the following.</p>
     /// <ul>
@@ -17293,6 +17554,7 @@ pub struct CloneStackInput {
     /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
+    #[doc(hidden)]
     pub default_os: std::option::Option<std::string::String>,
     /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
@@ -17309,20 +17571,27 @@ pub struct CloneStackInput {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    #[doc(hidden)]
     pub hostname_theme: std::option::Option<std::string::String>,
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+    #[doc(hidden)]
     pub default_availability_zone: std::option::Option<std::string::String>,
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    #[doc(hidden)]
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether to use custom cookbooks.</p>
+    #[doc(hidden)]
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
@@ -17331,16 +17600,22 @@ pub struct CloneStackInput {
     /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub use_opsworks_security_groups: std::option::Option<bool>,
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    #[doc(hidden)]
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    #[doc(hidden)]
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>Whether to clone the source stack's permissions.</p>
+    #[doc(hidden)]
     pub clone_permissions: std::option::Option<bool>,
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
+    #[doc(hidden)]
     pub clone_app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -17350,6 +17625,7 @@ pub struct CloneStackInput {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl CloneStackInput {
@@ -17541,8 +17817,10 @@ impl std::fmt::Debug for CloneStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
+    #[doc(hidden)]
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
 }
 impl AttachElasticLoadBalancerInput {
@@ -17572,8 +17850,10 @@ impl std::fmt::Debug for AttachElasticLoadBalancerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl AssociateElasticIpInput {
@@ -17600,8 +17880,10 @@ impl std::fmt::Debug for AssociateElasticIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignVolumeInput {
     /// <p>The volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl AssignVolumeInput {
@@ -17628,8 +17910,10 @@ impl std::fmt::Debug for AssignVolumeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignInstanceInput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssignInstanceInput {

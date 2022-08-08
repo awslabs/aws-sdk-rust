@@ -59,18 +59,25 @@ impl AsRef<str> for WorkGroupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub enforce_work_group_configuration: std::option::Option<bool>,
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
+    #[doc(hidden)]
     pub result_configuration_updates: std::option::Option<crate::model::ResultConfigurationUpdates>,
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
+    #[doc(hidden)]
     pub publish_cloud_watch_metrics_enabled: std::option::Option<bool>,
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
+    #[doc(hidden)]
     pub bytes_scanned_cutoff_per_query: std::option::Option<i64>,
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
+    #[doc(hidden)]
     pub remove_bytes_scanned_cutoff_per_query: std::option::Option<bool>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub requester_pays_enabled: std::option::Option<bool>,
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl WorkGroupConfigurationUpdates {
@@ -266,8 +273,10 @@ impl WorkGroupConfigurationUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineVersion {
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
+    #[doc(hidden)]
     pub selected_engine_version: std::option::Option<std::string::String>,
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
+    #[doc(hidden)]
     pub effective_engine_version: std::option::Option<std::string::String>,
 }
 impl EngineVersion {
@@ -345,21 +354,29 @@ impl EngineVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultConfigurationUpdates {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
     /// <p>If set to "true", indicates that the previously-specified query results location (also known as a client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub remove_output_location: std::option::Option<bool>,
     /// <p>The encryption configuration for the query results.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub remove_encryption_configuration: std::option::Option<bool>,
     /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
     /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub remove_expected_bucket_owner: std::option::Option<bool>,
     /// <p>The ACL configuration for the query results.</p>
+    #[doc(hidden)]
     pub acl_configuration: std::option::Option<crate::model::AclConfiguration>,
     /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub remove_acl_configuration: std::option::Option<bool>,
 }
 impl ResultConfigurationUpdates {
@@ -566,6 +583,7 @@ impl ResultConfigurationUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AclConfiguration {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_acl_option: std::option::Option<crate::model::S3AclOption>,
 }
 impl AclConfiguration {
@@ -675,8 +693,10 @@ impl AsRef<str> for S3AclOption {
 pub struct EncryptionConfiguration {
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
+    #[doc(hidden)]
     pub encryption_option: std::option::Option<crate::model::EncryptionOption>,
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key ARN or ID.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
@@ -872,8 +892,10 @@ impl AsRef<str> for DataCatalogType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A tag key. The tag key length is from 1 to 128 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys are case-sensitive and must be unique per resource. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A tag value. The tag value length is from 0 to 256 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag values are case-sensitive. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -997,13 +1019,17 @@ impl AsRef<str> for ThrottleReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultConfiguration {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
     /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the encryption configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
     /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub acl_configuration: std::option::Option<crate::model::AclConfiguration>,
 }
 impl ResultConfiguration {
@@ -1130,8 +1156,10 @@ impl ResultConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryExecutionContext {
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the data catalog used in the query execution.</p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
 }
 impl QueryExecutionContext {
@@ -1203,14 +1231,19 @@ impl QueryExecutionContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroupSummary {
     /// <p>The name of the workgroup.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the workgroup.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkGroupState>,
     /// <p>The workgroup description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The workgroup creation date and time.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl WorkGroupSummary {
@@ -1342,18 +1375,25 @@ impl WorkGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableMetadata {
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that the table was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the table was accessed.</p>
+    #[doc(hidden)]
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
+    #[doc(hidden)]
     pub table_type: std::option::Option<std::string::String>,
     /// <p>A list of the columns in the table.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>A list of the partition keys in the table.</p>
+    #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>A set of custom key/value pairs for table properties.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1555,10 +1595,13 @@ impl TableMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Column {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the column.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Optional information about the column.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl Column {
@@ -1647,8 +1690,10 @@ impl Column {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PreparedStatementSummary {
@@ -1726,8 +1771,10 @@ impl PreparedStatementSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalogSummary {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The data catalog type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
 }
 impl DataCatalogSummary {
@@ -1802,10 +1849,13 @@ impl DataCatalogSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Database {
     /// <p>The name of the database.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the database.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A set of custom key/value pairs.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1915,14 +1965,19 @@ impl Database {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroup {
     /// <p>The workgroup name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkGroupState>,
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for query results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the workgroup was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkGroup {
@@ -2054,16 +2109,22 @@ impl WorkGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
+    #[doc(hidden)]
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    #[doc(hidden)]
     pub enforce_work_group_configuration: std::option::Option<bool>,
     /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
+    #[doc(hidden)]
     pub publish_cloud_watch_metrics_enabled: std::option::Option<bool>,
     /// <p>The upper data usage limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
+    #[doc(hidden)]
     pub bytes_scanned_cutoff_per_query: std::option::Option<i64>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub requester_pays_enabled: std::option::Option<bool>,
     /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl WorkGroupConfiguration {
@@ -2227,10 +2288,13 @@ impl WorkGroupConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryRuntimeStatistics {
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::QueryRuntimeStatisticsTimeline>,
     /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+    #[doc(hidden)]
     pub rows: std::option::Option<crate::model::QueryRuntimeStatisticsRows>,
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
+    #[doc(hidden)]
     pub output_stage: std::option::Option<crate::model::QueryStage>,
 }
 impl QueryRuntimeStatistics {
@@ -2328,22 +2392,31 @@ impl QueryRuntimeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStage {
     /// <p>The identifier for a stage.</p>
+    #[doc(hidden)]
     pub stage_id: std::option::Option<i64>,
     /// <p>State of the stage after query execution.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The number of bytes output from the stage after execution.</p>
+    #[doc(hidden)]
     pub output_bytes: std::option::Option<i64>,
     /// <p>The number of rows output from the stage after execution.</p>
+    #[doc(hidden)]
     pub output_rows: std::option::Option<i64>,
     /// <p>The number of bytes input into the stage for execution.</p>
+    #[doc(hidden)]
     pub input_bytes: std::option::Option<i64>,
     /// <p>The number of rows input into the stage for execution.</p>
+    #[doc(hidden)]
     pub input_rows: std::option::Option<i64>,
     /// <p>Time taken to execute this stage.</p>
+    #[doc(hidden)]
     pub execution_time: std::option::Option<i64>,
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+    #[doc(hidden)]
     pub query_stage_plan: std::option::Option<crate::model::QueryStagePlanNode>,
     /// <p>List of sub query stages that form this stage execution plan.</p>
+    #[doc(hidden)]
     pub sub_stages: std::option::Option<std::vec::Vec<crate::model::QueryStage>>,
 }
 impl QueryStage {
@@ -2546,12 +2619,16 @@ impl QueryStage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStagePlanNode {
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the operation this query stage plan node is performing.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+    #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::QueryStagePlanNode>>,
     /// <p>Source plan node IDs.</p>
+    #[doc(hidden)]
     pub remote_sources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryStagePlanNode {
@@ -2675,12 +2752,16 @@ impl QueryStagePlanNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryRuntimeStatisticsRows {
     /// <p>The number of rows read to execute the query.</p>
+    #[doc(hidden)]
     pub input_rows: std::option::Option<i64>,
     /// <p>The number of bytes read to execute the query.</p>
+    #[doc(hidden)]
     pub input_bytes: std::option::Option<i64>,
     /// <p>The number of bytes returned by the query.</p>
+    #[doc(hidden)]
     pub output_bytes: std::option::Option<i64>,
     /// <p>The number of rows returned by the query.</p>
+    #[doc(hidden)]
     pub output_rows: std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsRows {
@@ -2786,14 +2867,19 @@ impl QueryRuntimeStatisticsRows {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryRuntimeStatisticsTimeline {
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+    #[doc(hidden)]
     pub query_queue_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+    #[doc(hidden)]
     pub query_planning_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that the query took to execute.</p>
+    #[doc(hidden)]
     pub engine_execution_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+    #[doc(hidden)]
     pub service_processing_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to run the query.</p>
+    #[doc(hidden)]
     pub total_execution_time_in_millis: std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsTimeline {
@@ -2943,8 +3029,10 @@ impl QueryRuntimeStatisticsTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSet {
     /// <p>The rows in the table.</p>
+    #[doc(hidden)]
     pub rows: std::option::Option<std::vec::Vec<crate::model::Row>>,
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
+    #[doc(hidden)]
     pub result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
 }
 impl ResultSet {
@@ -3028,6 +3116,7 @@ impl ResultSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
+    #[doc(hidden)]
     pub column_info: std::option::Option<std::vec::Vec<crate::model::ColumnInfo>>,
 }
 impl ResultSetMetadata {
@@ -3091,24 +3180,34 @@ impl ResultSetMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
+    #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The schema name (database name) to which the query results belong.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The table name for the query results.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A column label.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The data type of the column.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
+    #[doc(hidden)]
     pub precision: i32,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
+    #[doc(hidden)]
     pub scale: i32,
     /// <p>Indicates the column's nullable status.</p>
+    #[doc(hidden)]
     pub nullable: std::option::Option<crate::model::ColumnNullable>,
     /// <p>Indicates whether values in the column are case-sensitive.</p>
+    #[doc(hidden)]
     pub case_sensitive: bool,
 }
 impl ColumnInfo {
@@ -3378,6 +3477,7 @@ impl AsRef<str> for ColumnNullable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Row {
     /// <p>The data that populates a row in a query result table.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::vec::Vec<crate::model::Datum>>,
 }
 impl Row {
@@ -3439,6 +3539,7 @@ impl Row {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datum {
     /// <p>The value of the datum.</p>
+    #[doc(hidden)]
     pub var_char_value: std::option::Option<std::string::String>,
 }
 impl Datum {
@@ -3496,24 +3597,34 @@ impl Datum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
     /// <p>The SQL query statements which the query execution ran.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
+    #[doc(hidden)]
     pub statement_type: std::option::Option<crate::model::StatementType>,
     /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
+    #[doc(hidden)]
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The database in which the query execution occurred.</p>
+    #[doc(hidden)]
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueryExecutionStatus>,
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::QueryExecutionStatistics>,
     /// <p>The name of the workgroup in which the query ran.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The engine version that executed the query.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    #[doc(hidden)]
     pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryExecution {
@@ -3757,18 +3868,25 @@ impl QueryExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query took to execute.</p>
+    #[doc(hidden)]
     pub engine_execution_time_in_millis: std::option::Option<i64>,
     /// <p>The number of bytes in the data that was queried.</p>
+    #[doc(hidden)]
     pub data_scanned_in_bytes: std::option::Option<i64>,
     /// <p>The location and file name of a data manifest file. The manifest file is saved to the Athena query results location in Amazon S3. The manifest file tracks files that the query wrote to Amazon S3. If the query fails, the manifest file also tracks files that the query intended to write. The manifest is useful for identifying orphaned files resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[doc(hidden)]
     pub data_manifest_location: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds that Athena took to run the query.</p>
+    #[doc(hidden)]
     pub total_execution_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+    #[doc(hidden)]
     pub query_queue_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+    #[doc(hidden)]
     pub query_planning_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+    #[doc(hidden)]
     pub service_processing_time_in_millis: std::option::Option<i64>,
 }
 impl QueryExecutionStatistics {
@@ -3957,14 +4075,19 @@ pub struct QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
     /// <p>Athena automatically retries your queries in cases of certain transient errors. As a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::QueryExecutionState>,
     /// <p>Further detail about the status of the query.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that the query was submitted.</p>
+    #[doc(hidden)]
     pub submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the query completed.</p>
+    #[doc(hidden)]
     pub completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides information about an Athena query error.</p>
+    #[doc(hidden)]
     pub athena_error: std::option::Option<crate::model::AthenaError>,
 }
 impl QueryExecutionStatus {
@@ -4111,12 +4234,16 @@ pub struct AthenaError {
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
+    #[doc(hidden)]
     pub error_category: std::option::Option<i32>,
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[doc(hidden)]
     pub error_type: std::option::Option<i32>,
     /// <p>True if the query might succeed if resubmitted.</p>
+    #[doc(hidden)]
     pub retryable: bool,
     /// <p>Contains a short description of the error that occurred.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl AthenaError {
@@ -4360,14 +4487,19 @@ impl AsRef<str> for StatementType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreparedStatement {
     /// <p>The name of the prepared statement.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The query string for the prepared statement.</p>
+    #[doc(hidden)]
     pub query_statement: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    #[doc(hidden)]
     pub work_group_name: std::option::Option<std::string::String>,
     /// <p>The description of the prepared statement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PreparedStatement {
@@ -4502,16 +4634,22 @@ impl PreparedStatement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamedQuery {
     /// <p>The query name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The query description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The database to which the query belongs.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The SQL statements that make up the query.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the query.</p>
+    #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup that contains the named query.</p>
+    #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl NamedQuery {
@@ -4654,10 +4792,13 @@ impl NamedQuery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the data catalog.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -4673,6 +4814,7 @@ pub struct DataCatalog {
     /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4841,10 +4983,13 @@ impl DataCatalog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedQueryExecutionId {
     /// <p>The unique identifier of the query execution.</p>
+    #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedQueryExecutionId {
@@ -4939,8 +5084,10 @@ impl UnprocessedQueryExecutionId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedPreparedStatementName {
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The error code returned when the request for the prepared statement failed.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
@@ -4948,6 +5095,7 @@ pub struct UnprocessedPreparedStatementName {
     /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
     /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedPreparedStatementName {
@@ -5057,10 +5205,13 @@ impl UnprocessedPreparedStatementName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedNamedQueryId {
     /// <p>The unique identifier of the named query.</p>
+    #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
     /// <p>The error code returned when the processing request for the named query failed, if applicable.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message returned when the processing request for the named query failed, if applicable.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedNamedQueryId {

@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCustomerOutput {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
+    #[doc(hidden)]
     pub customer_identifier: std::option::Option<std::string::String>,
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    #[doc(hidden)]
     pub customer_aws_account_id: std::option::Option<std::string::String>,
 }
 impl ResolveCustomerOutput {
@@ -103,8 +106,10 @@ impl ResolveCustomerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
+    #[doc(hidden)]
     pub public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>JWT Token</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
 }
 impl RegisterUsageOutput {
@@ -184,6 +189,7 @@ impl RegisterUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeterUsageOutput {
     /// <p>Metering record id.</p>
+    #[doc(hidden)]
     pub metering_record_id: std::option::Option<std::string::String>,
 }
 impl MeterUsageOutput {
@@ -241,8 +247,10 @@ impl MeterUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::UsageRecordResult>>,
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
+    #[doc(hidden)]
     pub unprocessed_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
 }
 impl BatchMeterUsageOutput {

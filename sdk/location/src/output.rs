@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
+    #[doc(hidden)]
     pub consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackerConsumersOutput {
@@ -86,8 +88,10 @@ impl ListTrackerConsumersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePositionsOutput {
@@ -173,8 +177,10 @@ impl ListDevicePositionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionHistoryOutput {
     /// <p>Contains the position history details for the requested device.</p>
+    #[doc(hidden)]
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevicePositionHistoryOutput {
@@ -256,16 +262,22 @@ impl GetDevicePositionHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionOutput {
     /// <p>The device whose position you retrieved.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub received_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
+    #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
+    #[doc(hidden)]
     pub position_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -471,6 +483,7 @@ impl DisassociateTrackerConsumerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
 }
 impl BatchUpdateDevicePositionOutput {
@@ -535,8 +548,10 @@ impl BatchUpdateDevicePositionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
+    #[doc(hidden)]
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
 }
 impl BatchGetDevicePositionOutput {
@@ -628,6 +643,7 @@ impl BatchGetDevicePositionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
+    #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
 }
@@ -730,8 +746,10 @@ impl AssociateTrackerConsumerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackersOutput {
     /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackersOutput {
@@ -813,13 +831,16 @@ impl ListTrackersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTrackerOutput {
@@ -950,13 +971,16 @@ impl DeleteTrackerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateTrackerOutput {
@@ -1057,33 +1081,43 @@ impl UpdateTrackerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the tracker resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The position filtering method of the tracker resource.</p>
+    #[doc(hidden)]
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
 impl DescribeTrackerOutput {
@@ -1350,13 +1384,17 @@ impl DescribeTrackerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+    #[doc(hidden)]
     pub route_matrix:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
     /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+    #[doc(hidden)]
     pub snapped_departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+    #[doc(hidden)]
     pub snapped_destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
 }
 impl CalculateRouteMatrixOutput {
@@ -1518,8 +1556,10 @@ pub struct CalculateRouteOutput {
     /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
     /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::CalculateRouteSummary>,
 }
 impl CalculateRouteOutput {
@@ -1633,9 +1673,11 @@ impl CalculateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your AWS account</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRouteCalculatorsOutput {
@@ -1724,16 +1766,19 @@ pub struct CreateRouteCalculatorOutput {
     /// <ul>
     /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRouteCalculatorOutput {
@@ -1888,13 +1933,16 @@ impl DeleteRouteCalculatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRouteCalculatorOutput {
@@ -2001,29 +2049,35 @@ impl UpdateRouteCalculatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteCalculatorOutput {
     /// <p>The name of the route calculator resource being described.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
@@ -2031,8 +2085,10 @@ pub struct DescribeRouteCalculatorOutput {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Tags associated with route calculator resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2296,9 +2352,11 @@ impl DescribeRouteCalculatorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
 }
 impl SearchPlaceIndexForTextOutput {
@@ -2385,8 +2443,10 @@ impl SearchPlaceIndexForTextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
     /// <p>A list of place suggestions that best match the search text.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
 }
 impl SearchPlaceIndexForSuggestionsOutput {
@@ -2477,8 +2537,10 @@ impl SearchPlaceIndexForSuggestionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
 }
 impl SearchPlaceIndexForPositionOutput {
@@ -2565,8 +2627,10 @@ impl SearchPlaceIndexForPositionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaceIndexesOutput {
@@ -2648,13 +2712,16 @@ impl ListPlaceIndexesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreatePlaceIndexOutput {
@@ -2785,13 +2852,16 @@ impl DeletePlaceIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdatePlaceIndexOutput {
@@ -2892,23 +2962,29 @@ impl UpdatePlaceIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
@@ -2916,10 +2992,13 @@ pub struct DescribePlaceIndexOutput {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The specified data storage option for requesting Places.</p>
+    #[doc(hidden)]
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>Tags associated with place index resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3185,8 +3264,10 @@ impl DescribePlaceIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
+    #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapTileOutput {
@@ -3258,8 +3339,10 @@ impl GetMapTileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapStyleDescriptorOutput {
     /// <p>Contains the body of the style descriptor.</p>
+    #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapStyleDescriptorOutput {
@@ -3331,8 +3414,10 @@ impl GetMapStyleDescriptorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapSpritesOutput {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
+    #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapSpritesOutput {
@@ -3404,8 +3489,10 @@ impl GetMapSpritesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapGlyphsOutput {
     /// <p>The blob's content type.</p>
+    #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapGlyphsOutput {
@@ -3477,8 +3564,10 @@ impl GetMapGlyphsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMapsOutput {
     /// <p>Contains a list of maps in your AWS account</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMapsOutput {
@@ -3559,13 +3648,16 @@ impl ListMapsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMapOutput {
     /// <p>The name of the map resource.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateMapOutput {
@@ -3696,13 +3788,16 @@ impl DeleteMapOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateMapOutput {
@@ -3803,30 +3898,39 @@ impl UpdateMapOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MapConfiguration>,
     /// <p>The optional description for the map resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags associated with the map resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMapOutput {
@@ -4070,10 +4174,13 @@ impl DescribeMapOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGeofenceOutput {
     /// <p>The geofence identifier entered in the request.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutGeofenceOutput {
@@ -4168,8 +4275,10 @@ impl PutGeofenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofencesOutput {
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofencesOutput {
@@ -4251,8 +4360,10 @@ impl ListGeofencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
@@ -4262,10 +4373,13 @@ pub struct GetGeofenceOutput {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetGeofenceOutput {
@@ -4418,8 +4532,10 @@ impl GetGeofenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
+    #[doc(hidden)]
     pub successes: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
 }
 impl BatchPutGeofenceOutput {
@@ -4510,6 +4626,7 @@ impl BatchPutGeofenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
 }
 impl BatchEvaluateGeofencesOutput {
@@ -4574,6 +4691,7 @@ impl BatchEvaluateGeofencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteGeofenceOutput {
     /// <p>Contains error details for each geofence that failed to delete.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
 }
 impl BatchDeleteGeofenceOutput {
@@ -4638,9 +4756,11 @@ impl BatchDeleteGeofenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your AWS account.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofenceCollectionsOutput {
@@ -4729,13 +4849,16 @@ impl ListGeofenceCollectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateGeofenceCollectionOutput {
@@ -4872,13 +4995,16 @@ impl DeleteGeofenceCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateGeofenceCollectionOutput {
@@ -4985,31 +5111,40 @@ impl UpdateGeofenceCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the geofence collection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGeofenceCollectionOutput {
@@ -5325,6 +5460,7 @@ pub struct ListTagsForResourceOutput {
     /// <ul>
     /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

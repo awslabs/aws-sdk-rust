@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -188,12 +190,16 @@ impl AsRef<str> for PerformanceMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemSize {
     /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
+    #[doc(hidden)]
     pub value: i64,
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
+    #[doc(hidden)]
     pub value_in_ia: std::option::Option<i64>,
     /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
+    #[doc(hidden)]
     pub value_in_standard: std::option::Option<i64>,
 }
 impl FileSystemSize {
@@ -382,8 +388,10 @@ impl AsRef<str> for LifeCycleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicy {
     /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    #[doc(hidden)]
     pub transition_to_ia: std::option::Option<crate::model::TransitionToIaRules>,
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
+    #[doc(hidden)]
     pub transition_to_primary_storage_class:
         std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
 }
@@ -601,6 +609,7 @@ pub struct BackupPolicy {
     /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl BackupPolicy {
@@ -736,8 +745,10 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIdPreference {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
+    #[doc(hidden)]
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl ResourceIdPreference {
@@ -931,16 +942,22 @@ impl AsRef<str> for ResourceIdType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    #[doc(hidden)]
     pub source_file_system_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
+    #[doc(hidden)]
     pub source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    #[doc(hidden)]
     pub original_source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>Describes when the replication configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of destination objects. Only one destination object is supported.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
 }
 impl ReplicationConfigurationDescription {
@@ -1110,12 +1127,16 @@ impl ReplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The ID of the destination Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
+    #[doc(hidden)]
     pub last_replicated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Destination {
@@ -1293,24 +1314,34 @@ impl AsRef<str> for ReplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountTargetDescription {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>System-assigned mount target ID.</p>
+    #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
     /// <p>The ID of the file system for which the mount target is intended.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The ID of the mount target's subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>Lifecycle state of the mount target.</p>
+    #[doc(hidden)]
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl MountTargetDescription {
@@ -1536,38 +1567,55 @@ impl MountTargetDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemDescription {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The opaque string specified in the request.</p>
+    #[doc(hidden)]
     pub creation_token: std::option::Option<std::string::String>,
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
+    #[doc(hidden)]
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The lifecycle phase of the file system.</p>
+    #[doc(hidden)]
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
+    #[doc(hidden)]
     pub number_of_mount_targets: i32,
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
+    #[doc(hidden)]
     pub size_in_bytes: std::option::Option<crate::model::FileSystemSize>,
     /// <p>The performance mode of the file system.</p>
+    #[doc(hidden)]
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
+    #[doc(hidden)]
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    #[doc(hidden)]
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    #[doc(hidden)]
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl FileSystemDescription {
@@ -1939,24 +1987,34 @@ impl FileSystemDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointDescription {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
+    #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the EFS file system that the access point applies to.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
+    #[doc(hidden)]
     pub posix_user: std::option::Option<crate::model::PosixUser>,
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    #[doc(hidden)]
     pub root_directory: std::option::Option<crate::model::RootDirectory>,
     /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Identifies the lifecycle phase of the access point.</p>
+    #[doc(hidden)]
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
 }
 impl AccessPointDescription {
@@ -2191,10 +2249,12 @@ impl AccessPointDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootDirectory {
     /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
     /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
     /// </important>
+    #[doc(hidden)]
     pub creation_info: std::option::Option<crate::model::CreationInfo>,
 }
 impl RootDirectory {
@@ -2278,10 +2338,13 @@ impl RootDirectory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    #[doc(hidden)]
     pub owner_uid: std::option::Option<i64>,
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    #[doc(hidden)]
     pub owner_gid: std::option::Option<i64>,
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::string::String>,
 }
 impl CreationInfo {
@@ -2370,10 +2433,13 @@ impl CreationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
+    #[doc(hidden)]
     pub uid: std::option::Option<i64>,
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
+    #[doc(hidden)]
     pub gid: std::option::Option<i64>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
+    #[doc(hidden)]
     pub secondary_gids: std::option::Option<std::vec::Vec<i64>>,
 }
 impl PosixUser {
@@ -2471,8 +2537,10 @@ impl PosixUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationToCreate {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
+    #[doc(hidden)]
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
     /// <ul>
@@ -2481,6 +2549,7 @@ pub struct DestinationToCreate {
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
     /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl DestinationToCreate {

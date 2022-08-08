@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
+    #[doc(hidden)]
     pub message_ttl_seconds: std::option::Option<i32>,
 }
 impl SingleMasterConfiguration {
@@ -59,8 +60,10 @@ impl SingleMasterConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConfigurationStatus>,
     /// <p>The destination information required to deliver a notification to a customer.</p>
+    #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::NotificationDestinationConfig>,
 }
 impl NotificationConfiguration {
@@ -144,6 +147,7 @@ impl NotificationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationDestinationConfig {
     /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl NotificationDestinationConfig {
@@ -251,22 +255,30 @@ impl AsRef<str> for ConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConfigurationStatus>,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    #[doc(hidden)]
     pub image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
+    #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::ImageGenerationDestinationConfig>,
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    #[doc(hidden)]
     pub sampling_interval: std::option::Option<i32>,
     /// <p>The accepted image format.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+    #[doc(hidden)]
     pub format_config: std::option::Option<
         std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
     >,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    #[doc(hidden)]
     pub width_pixels: std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    #[doc(hidden)]
     pub height_pixels: std::option::Option<i32>,
 }
 impl ImageGenerationConfiguration {
@@ -582,8 +594,10 @@ impl AsRef<str> for Format {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
 }
 impl ImageGenerationDestinationConfig {
@@ -768,8 +782,10 @@ impl AsRef<str> for UpdateDataRetentionOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag that is associated with the specified signaling channel.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag that is associated with the specified signaling channel.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -841,22 +857,31 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamInfo {
     /// <p>The name of the device that is associated with the stream.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The name of the stream.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The <code>MediaType</code> of the stream. </p>
+    #[doc(hidden)]
     pub media_type: std::option::Option<std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version of the stream.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The status of the stream.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>A time stamp that indicates when the stream was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long the stream retains data, in hours.</p>
+    #[doc(hidden)]
     pub data_retention_in_hours: std::option::Option<i32>,
 }
 impl StreamInfo {
@@ -1113,8 +1138,10 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamNameCondition {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>A value to compare.</p>
+    #[doc(hidden)]
     pub comparison_value: std::option::Option<std::string::String>,
 }
 impl StreamNameCondition {
@@ -1243,18 +1270,25 @@ impl AsRef<str> for ComparisonOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelInfo {
     /// <p>The name of the signaling channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The type of the signaling channel.</p>
+    #[doc(hidden)]
     pub channel_type: std::option::Option<crate::model::ChannelType>,
     /// <p>Current status of the signaling channel.</p>
+    #[doc(hidden)]
     pub channel_status: std::option::Option<crate::model::Status>,
     /// <p>The time at which the signaling channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    #[doc(hidden)]
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
     /// <p>The current version of the signaling channel.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ChannelInfo {
@@ -1487,8 +1521,10 @@ impl AsRef<str> for ChannelType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelNameCondition {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>A value to compare.</p>
+    #[doc(hidden)]
     pub comparison_value: std::option::Option<std::string::String>,
 }
 impl ChannelNameCondition {
@@ -1566,8 +1602,10 @@ impl ChannelNameCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ChannelProtocol>,
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
+    #[doc(hidden)]
     pub resource_endpoint: std::option::Option<std::string::String>,
 }
 impl ResourceEndpointListItem {
@@ -1700,8 +1738,10 @@ impl AsRef<str> for ChannelProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleMasterChannelEndpointConfiguration {
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::ChannelRole>,
 }
 impl SingleMasterChannelEndpointConfiguration {

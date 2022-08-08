@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
+    #[doc(hidden)]
     pub change_id: std::option::Option<std::string::String>,
     /// <p>Contains an optional message associated with the domain configuration change.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ChangeProgressDetails {
@@ -78,22 +80,31 @@ impl ChangeProgressDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageDetails {
     /// <p>Internal ID of the package.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>User-specified name of the package.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>Currently supports only TXT-DICTIONARY.</p>
+    #[doc(hidden)]
     pub package_type: std::option::Option<crate::model::PackageType>,
     /// <p>User-specified description of the package.</p>
+    #[doc(hidden)]
     pub package_description: std::option::Option<std::string::String>,
     /// <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.</p>
+    #[doc(hidden)]
     pub package_status: std::option::Option<crate::model::PackageStatus>,
     /// <p>The timestamp of when the package was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub available_package_version: std::option::Option<std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl PackageDetails {
@@ -305,8 +316,10 @@ impl PackageDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -520,8 +533,10 @@ impl AsRef<str> for PackageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageSource {
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Key (file name) of the package.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl PackageSource {
@@ -596,8 +611,10 @@ impl PackageSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunResults {
     /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<std::string::String>,
     /// <p>Contains an optional message associated with the DryRunResults.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DryRunResults {
@@ -672,36 +689,51 @@ impl DryRunResults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainConfig {
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or Elasticsearch domain.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::VersionStatus>,
     /// <p>The <code>ClusterConfig</code> for the domain. </p>
+    #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::model::ClusterConfigStatus>,
     /// <p>The <code>EBSOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub ebs_options: std::option::Option<crate::model::EbsOptionsStatus>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
     /// <p>The <code>SnapshotOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptionsStatus>,
     /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
+    #[doc(hidden)]
     pub vpc_options: std::option::Option<crate::model::VpcDerivedInfoStatus>,
     /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+    #[doc(hidden)]
     pub cognito_options: std::option::Option<crate::model::CognitoOptionsStatus>,
     /// <p>The <code>EncryptionAtRestOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub encryption_at_rest_options:
         std::option::Option<crate::model::EncryptionAtRestOptionsStatus>,
     /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptionsStatus>,
     /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
+    #[doc(hidden)]
     pub advanced_options: std::option::Option<crate::model::AdvancedOptionsStatus>,
     /// <p>Log publishing options for the given domain.</p>
+    #[doc(hidden)]
     pub log_publishing_options: std::option::Option<crate::model::LogPublishingOptionsStatus>,
     /// <p>The <code>DomainEndpointOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
     /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptionsStatus>,
     /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+    #[doc(hidden)]
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsStatus>,
     /// <p>Specifies change details of the domain configuration change.</p>
+    #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl DomainConfig {
@@ -1081,8 +1113,10 @@ impl DomainConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptionsStatus {
     /// <p>Specifies Auto-Tune options for the domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::AutoTuneOptions>,
     /// <p>The status of the Auto-Tune options for the domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AutoTuneStatus>,
 }
 impl AutoTuneOptionsStatus {
@@ -1160,16 +1194,22 @@ impl AutoTuneOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneStatus {
     /// <p>The timestamp of the Auto-Tune options creation date.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Auto-Tune options were last updated.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the Auto-Tune options.</p>
+    #[doc(hidden)]
     pub update_version: i32,
     /// <p>The <code>AutoTuneState</code> for the domain. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AutoTuneState>,
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Indicates whether the domain is being deleted.</p>
+    #[doc(hidden)]
     pub pending_deletion: std::option::Option<bool>,
 }
 impl AutoTuneStatus {
@@ -1416,10 +1456,13 @@ impl AsRef<str> for AutoTuneState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptions {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::AutoTuneDesiredState>,
     /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK. </p>
+    #[doc(hidden)]
     pub rollback_on_disable: std::option::Option<crate::model::RollbackOnDisable>,
     /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
 }
@@ -1530,10 +1573,13 @@ impl AutoTuneOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneMaintenanceSchedule {
     /// <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+    #[doc(hidden)]
     pub start_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub duration: std::option::Option<crate::model::Duration>,
     /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub cron_expression_for_recurrence: std::option::Option<std::string::String>,
 }
 impl AutoTuneMaintenanceSchedule {
@@ -1634,8 +1680,10 @@ impl AutoTuneMaintenanceSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub value: i64,
     /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::TimeUnit>,
 }
 impl Duration {
@@ -1872,8 +1920,10 @@ impl AsRef<str> for AutoTuneDesiredState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedSecurityOptionsStatus {
     /// <p>Advanced security options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::AdvancedSecurityOptions>,
     /// <p>Status of the advanced security options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AdvancedSecurityOptionsStatus {
@@ -1951,14 +2001,19 @@ impl AdvancedSecurityOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionStatus {
     /// <p>The timestamp of when the entity was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last time the entity was updated.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the entity.</p>
+    #[doc(hidden)]
     pub update_version: i32,
     /// <p>Provides the <code>OptionState</code> for the domain. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::OptionState>,
     /// <p>Indicates whether the domain is being deleted.</p>
+    #[doc(hidden)]
     pub pending_deletion: std::option::Option<bool>,
 }
 impl OptionStatus {
@@ -2150,14 +2205,19 @@ impl AsRef<str> for OptionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedSecurityOptions {
     /// <p>True if advanced security is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>True if the internal user database is enabled.</p>
+    #[doc(hidden)]
     pub internal_user_database_enabled: std::option::Option<bool>,
     /// <p>Describes the SAML application configured for a domain.</p>
+    #[doc(hidden)]
     pub saml_options: std::option::Option<crate::model::SamlOptionsOutput>,
     /// <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+    #[doc(hidden)]
     pub anonymous_auth_disable_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
+    #[doc(hidden)]
     pub anonymous_auth_enabled: std::option::Option<bool>,
 }
 impl AdvancedSecurityOptions {
@@ -2295,14 +2355,19 @@ impl AdvancedSecurityOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamlOptionsOutput {
     /// <p>True if SAML is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>Describes the SAML identity provider's information.</p>
+    #[doc(hidden)]
     pub idp: std::option::Option<crate::model::SamlIdp>,
     /// <p>The key used for matching the SAML subject attribute.</p>
+    #[doc(hidden)]
     pub subject_key: std::option::Option<std::string::String>,
     /// <p>The key used for matching the SAML roles attribute.</p>
+    #[doc(hidden)]
     pub roles_key: std::option::Option<std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
+    #[doc(hidden)]
     pub session_timeout_minutes: std::option::Option<i32>,
 }
 impl SamlOptionsOutput {
@@ -2425,8 +2490,10 @@ impl SamlOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamlIdp {
     /// <p>The metadata of the SAML application in XML format.</p>
+    #[doc(hidden)]
     pub metadata_content: std::option::Option<std::string::String>,
     /// <p>The unique entity ID of the application in SAML identity provider.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl SamlIdp {
@@ -2501,8 +2568,10 @@ impl SamlIdp {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>Options to configure the endpoint for the domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::DomainEndpointOptions>,
     /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {
@@ -2580,6 +2649,7 @@ impl DomainEndpointOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainEndpointOptions {
     /// <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+    #[doc(hidden)]
     pub enforce_https: std::option::Option<bool>,
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br><br> Can be one of the following values: </p>
     /// <ul>
@@ -2587,12 +2657,16 @@ pub struct DomainEndpointOptions {
     /// <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLSv1.2 </li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub tls_security_policy: std::option::Option<crate::model::TlsSecurityPolicy>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
+    #[doc(hidden)]
     pub custom_endpoint_enabled: std::option::Option<bool>,
     /// <p>The fully qualified domain for your custom endpoint.</p>
+    #[doc(hidden)]
     pub custom_endpoint: std::option::Option<std::string::String>,
     /// <p>The ACM certificate ARN for your custom endpoint.</p>
+    #[doc(hidden)]
     pub custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
 }
 impl DomainEndpointOptions {
@@ -2800,10 +2874,12 @@ impl AsRef<str> for TlsSecurityPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<
         std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
     >,
     /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {
@@ -2904,8 +2980,10 @@ impl LogPublishingOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPublishingOption {
     /// <p>ARN of the Cloudwatch log group to publish logs to.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Whether the given log publishing option is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl LogPublishingOption {
@@ -3072,9 +3150,11 @@ impl AsRef<str> for LogType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedOptionsStatus {
     /// <p>The status of advanced options for the specified domain.</p>
+    #[doc(hidden)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AdvancedOptionsStatus {
@@ -3169,8 +3249,10 @@ impl AdvancedOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeToNodeEncryptionOptionsStatus {
     /// <p>The node-to-node encryption options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl NodeToNodeEncryptionOptionsStatus {
@@ -3248,6 +3330,7 @@ impl NodeToNodeEncryptionOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeToNodeEncryptionOptions {
     /// <p>True to enable node-to-node encryption.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl NodeToNodeEncryptionOptions {
@@ -3302,8 +3385,10 @@ impl NodeToNodeEncryptionOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionAtRestOptionsStatus {
     /// <p>The Encryption At Rest options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>The status of the Encryption At Rest options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl EncryptionAtRestOptionsStatus {
@@ -3381,8 +3466,10 @@ impl EncryptionAtRestOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionAtRestOptions {
     /// <p>The option to enable encryption at rest.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The KMS key ID for encryption at rest options.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionAtRestOptions {
@@ -3454,8 +3541,10 @@ impl EncryptionAtRestOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoOptionsStatus {
     /// <p>Cognito options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::CognitoOptions>,
     /// <p>The status of the Cognito options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl CognitoOptionsStatus {
@@ -3533,12 +3622,16 @@ impl CognitoOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoOptions {
     /// <p>The option to enable Cognito for OpenSearch Dashboards authentication.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Cognito user pool ID for OpenSearch Dashboards authentication.</p>
+    #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The Cognito identity pool ID for OpenSearch Dashboards authentication.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The role ARN that provides OpenSearch permissions for accessing Cognito resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CognitoOptions {
@@ -3647,8 +3740,10 @@ impl CognitoOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::VpcDerivedInfo>,
     /// <p>The status of the VPC options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl VpcDerivedInfoStatus {
@@ -3726,12 +3821,16 @@ impl VpcDerivedInfoStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDerivedInfo {
     /// <p>The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The subnets for the VPC endpoint.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups for the VPC endpoint.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcDerivedInfo {
@@ -3864,8 +3963,10 @@ impl VpcDerivedInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotOptionsStatus {
     /// <p>The daily snapshot options specified for the domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::SnapshotOptions>,
     /// <p>The status of a daily automated snapshot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl SnapshotOptionsStatus {
@@ -3943,6 +4044,7 @@ impl SnapshotOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotOptions {
     /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
+    #[doc(hidden)]
     pub automated_snapshot_start_hour: std::option::Option<i32>,
 }
 impl SnapshotOptions {
@@ -4003,8 +4105,10 @@ impl SnapshotOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
     /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AccessPoliciesStatus {
@@ -4079,8 +4183,10 @@ impl AccessPoliciesStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsOptionsStatus {
     /// <p>The EBS options for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::EbsOptions>,
     /// <p>The status of the EBS options for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl EbsOptionsStatus {
@@ -4155,14 +4261,19 @@ impl EbsOptionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsOptions {
     /// <p>Whether EBS-based storage is enabled.</p>
+    #[doc(hidden)]
     pub ebs_enabled: std::option::Option<bool>,
     /// <p>The volume type for EBS-based storage.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Integer to specify the size of an EBS volume.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
     /// <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>The Throughput for GP3 EBS volume (SSD).</p>
+    #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
 impl EbsOptions {
@@ -4352,8 +4463,10 @@ impl AsRef<str> for VolumeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterConfigStatus {
     /// <p>The cluster configuration for the specified domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::ClusterConfig>,
     /// <p>The cluster configuration status for the specified domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl ClusterConfigStatus {
@@ -4431,26 +4544,37 @@ impl ClusterConfigStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterConfig {
     /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p>The number of instances in the specified domain cluster.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub dedicated_master_enabled: std::option::Option<bool>,
     /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub zone_awareness_enabled: std::option::Option<bool>,
     /// <p>The zone awareness configuration for a domain when zone awareness is enabled.</p>
+    #[doc(hidden)]
     pub zone_awareness_config: std::option::Option<crate::model::ZoneAwarenessConfig>,
     /// <p>The instance type for a dedicated master node.</p>
+    #[doc(hidden)]
     pub dedicated_master_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>
+    #[doc(hidden)]
     pub dedicated_master_count: std::option::Option<i32>,
     /// <p>True to enable UltraWarm storage.</p>
+    #[doc(hidden)]
     pub warm_enabled: std::option::Option<bool>,
     /// <p>The instance type for the OpenSearch cluster's warm nodes.</p>
+    #[doc(hidden)]
     pub warm_type: std::option::Option<crate::model::OpenSearchWarmPartitionInstanceType>,
     /// <p>The number of UltraWarm nodes in the cluster.</p>
+    #[doc(hidden)]
     pub warm_count: std::option::Option<i32>,
     /// <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+    #[doc(hidden)]
     pub cold_storage_options: std::option::Option<crate::model::ColdStorageOptions>,
 }
 impl ClusterConfig {
@@ -4708,6 +4832,7 @@ impl ClusterConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl ColdStorageOptions {
@@ -5356,6 +5481,7 @@ impl AsRef<str> for OpenSearchPartitionInstanceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZoneAwarenessConfig {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
+    #[doc(hidden)]
     pub availability_zone_count: std::option::Option<i32>,
 }
 impl ZoneAwarenessConfig {
@@ -5410,8 +5536,10 @@ impl ZoneAwarenessConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionStatus {
     /// <p>The OpenSearch version for the specified OpenSearch domain.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
     /// <p>The status of the OpenSearch version options for the specified OpenSearch domain.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl VersionStatus {
@@ -5486,14 +5614,19 @@ impl VersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedSecurityOptionsInput {
     /// <p>True if advanced security is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>True if the internal user database is enabled.</p>
+    #[doc(hidden)]
     pub internal_user_database_enabled: std::option::Option<bool>,
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
+    #[doc(hidden)]
     pub master_user_options: std::option::Option<crate::model::MasterUserOptions>,
     /// <p>The SAML application configuration for the domain.</p>
+    #[doc(hidden)]
     pub saml_options: std::option::Option<crate::model::SamlOptionsInput>,
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
+    #[doc(hidden)]
     pub anonymous_auth_enabled: std::option::Option<bool>,
 }
 impl AdvancedSecurityOptionsInput {
@@ -5628,18 +5761,25 @@ impl AdvancedSecurityOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamlOptionsInput {
     /// <p>True if SAML is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The SAML Identity Provider's information.</p>
+    #[doc(hidden)]
     pub idp: std::option::Option<crate::model::SamlIdp>,
     /// <p>The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    #[doc(hidden)]
     pub master_user_name: std::option::Option<std::string::String>,
     /// <p>The backend role that the SAML master user is mapped to.</p>
+    #[doc(hidden)]
     pub master_backend_role: std::option::Option<std::string::String>,
     /// <p>Element of the SAML assertion to use for username. Default is NameID.</p>
+    #[doc(hidden)]
     pub subject_key: std::option::Option<std::string::String>,
     /// <p>Element of the SAML assertion to use for backend roles. Default is roles.</p>
+    #[doc(hidden)]
     pub roles_key: std::option::Option<std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60. </p>
+    #[doc(hidden)]
     pub session_timeout_minutes: std::option::Option<i32>,
 }
 impl SamlOptionsInput {
@@ -5802,10 +5942,13 @@ impl SamlOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MasterUserOptions {
     /// <p>ARN for the master user (if IAM is enabled).</p>
+    #[doc(hidden)]
     pub master_user_arn: std::option::Option<std::string::String>,
     /// <p>The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    #[doc(hidden)]
     pub master_user_name: std::option::Option<std::string::String>,
     /// <p>The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
 }
 impl MasterUserOptions {
@@ -5903,8 +6046,10 @@ impl MasterUserOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOptions {
     /// <p>The subnets for the VPC endpoint.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups for the VPC endpoint.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcOptions {
@@ -5994,20 +6139,28 @@ impl VpcOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSoftwareOptions {
     /// <p>The current service software version present on the domain.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The new service software version if one is available.</p>
+    #[doc(hidden)]
     pub new_version: std::option::Option<std::string::String>,
     /// <p> <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update your service software version. </p>
+    #[doc(hidden)]
     pub update_available: std::option::Option<bool>,
     /// <p> <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't cancel your service software update. </p>
+    #[doc(hidden)]
     pub cancellable: std::option::Option<bool>,
     /// <p>The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>. </p>
+    #[doc(hidden)]
     pub update_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The description of the <code>UpdateStatus</code>. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software. </p>
+    #[doc(hidden)]
     pub automated_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
+    #[doc(hidden)]
     pub optional_deployment: std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {
@@ -6263,12 +6416,16 @@ impl AsRef<str> for DeploymentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InboundConnection {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+    #[doc(hidden)]
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+    #[doc(hidden)]
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection ID for the inbound cross-cluster connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::InboundConnectionStatus>,
 }
 impl InboundConnection {
@@ -6407,8 +6564,10 @@ pub struct InboundConnectionStatus {
     /// <li>DELETING: Inbound connection deletion is in progress.</li>
     /// <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
     /// </ul>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::InboundConnectionStatusCode>,
     /// <p>Verbose information for the inbound connection status.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InboundConnectionStatus {
@@ -6601,6 +6760,7 @@ impl AsRef<str> for InboundConnectionStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainInformationContainer {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub aws_domain_information: std::option::Option<crate::model::AwsDomainInformation>,
 }
 impl DomainInformationContainer {
@@ -6660,10 +6820,13 @@ impl DomainInformationContainer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsDomainInformation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl AwsDomainInformation {
@@ -6752,8 +6915,10 @@ impl AwsDomainInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -6825,22 +6990,31 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainPackageDetails {
     /// <p>The internal ID of the package.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>User-specified name of the package.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>Currently supports only TXT-DICTIONARY.</p>
+    #[doc(hidden)]
     pub package_type: std::option::Option<crate::model::PackageType>,
     /// <p>The timestamp of the most recent update to the package association status.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the domain you've associated a package with.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and DISSOCIATION_FAILED.</p>
+    #[doc(hidden)]
     pub domain_package_status: std::option::Option<crate::model::DomainPackageStatus>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a synonym file.</p>
+    #[doc(hidden)]
     pub reference_path: std::option::Option<std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl DomainPackageDetails {
@@ -7122,18 +7296,25 @@ impl AsRef<str> for DomainPackageStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTypeDetails {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub encryption_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cognito_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub app_logs_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub advanced_security_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub warm_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceTypeDetails {
@@ -7307,8 +7488,10 @@ impl InstanceTypeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainInfo {
     /// <p>The <code>DomainName</code>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Specifies the <code>EngineType</code> of the domain.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl DomainInfo {
@@ -7565,8 +7748,10 @@ impl AsRef<str> for UpgradeStep {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeHistory {
     /// <p>A string that briefly describes the upgrade.</p>
+    #[doc(hidden)]
     pub upgrade_name: std::option::Option<std::string::String>,
     /// <p>UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
@@ -7576,8 +7761,10 @@ pub struct UpgradeHistory {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub upgrade_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
+    #[doc(hidden)]
     pub steps_list: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
 }
 impl UpgradeHistory {
@@ -7725,6 +7912,7 @@ pub struct UpgradeStepItem {
     /// <li>Upgrade</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
     /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
@@ -7734,10 +7922,13 @@ pub struct UpgradeStepItem {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub upgrade_step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
+    #[doc(hidden)]
     pub issues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The floating point value representing the progress percentage of a particular step.</p>
+    #[doc(hidden)]
     pub progress_percent: std::option::Option<f64>,
 }
 impl UpgradeStepItem {
@@ -7897,10 +8088,13 @@ impl UpgradeStepItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionHistory {
     /// <p>The package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>A message associated with the package version.</p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the package was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PackageVersionHistory {
@@ -7998,8 +8192,10 @@ impl PackageVersionHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version of OpenSearch a domain is on.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>List of supported OpenSearch versions. </p>
+    #[doc(hidden)]
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompatibleVersionsMap {
@@ -8083,32 +8279,46 @@ impl CompatibleVersionsMap {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedInstance {
     /// <p>The customer-specified identifier to track this reservation.</p>
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the reservation.</p>
+    #[doc(hidden)]
     pub reserved_instance_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub billing_subscription_id: std::option::Option<i64>,
     /// <p>The offering identifier.</p>
+    #[doc(hidden)]
     pub reserved_instance_offering_id: std::option::Option<std::string::String>,
     /// <p>The OpenSearch instance type offered by the reserved instance offering.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p>The time the reservation started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The duration, in seconds, for which the OpenSearch instance is reserved.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.</p>
+    #[doc(hidden)]
     pub fixed_price: std::option::Option<f64>,
     /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
+    #[doc(hidden)]
     pub usage_price: std::option::Option<f64>,
     /// <p>The currency code for the reserved OpenSearch instance offering.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>The number of OpenSearch instances that have been reserved.</p>
+    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>The state of the reserved OpenSearch instance.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The payment option as defined in the reserved OpenSearch instance offering.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::ReservedInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
+    #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
 }
 impl ReservedInstance {
@@ -8432,8 +8642,10 @@ impl ReservedInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
+    #[doc(hidden)]
     pub recurring_charge_amount: std::option::Option<f64>,
     /// <p>The frequency of the recurring charge.</p>
+    #[doc(hidden)]
     pub recurring_charge_frequency: std::option::Option<std::string::String>,
 }
 impl RecurringCharge {
@@ -8570,20 +8782,28 @@ impl AsRef<str> for ReservedInstancePaymentOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedInstanceOffering {
     /// <p>The OpenSearch reserved instance offering identifier.</p>
+    #[doc(hidden)]
     pub reserved_instance_offering_id: std::option::Option<std::string::String>,
     /// <p>The OpenSearch instance type offered by the reserved instance offering.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.</p>
+    #[doc(hidden)]
     pub fixed_price: std::option::Option<f64>,
     /// <p>The rate you are charged for each hour the domain that is using the offering is running.</p>
+    #[doc(hidden)]
     pub usage_price: std::option::Option<f64>,
     /// <p>The currency code for the reserved OpenSearch instance offering.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>Payment option for the reserved OpenSearch instance offering</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::ReservedInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
+    #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
 }
 impl ReservedInstanceOffering {
@@ -8796,8 +9016,10 @@ impl ReservedInstanceOffering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::DescribePackagesFilterName>,
     /// <p>A list of values for the specified field.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribePackagesFilter {
@@ -8940,14 +9162,19 @@ impl AsRef<str> for DescribePackagesFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundConnection {
     /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
+    #[doc(hidden)]
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The <code> <code>DomainInformation</code> </code> for the remote OpenSearch domain. </p>
+    #[doc(hidden)]
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection ID for the outbound cross-cluster connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The connection alias for the outbound cross-cluster connection.</p>
+    #[doc(hidden)]
     pub connection_alias: std::option::Option<std::string::String>,
     /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the outbound connection. </p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
 }
 impl OutboundConnection {
@@ -9110,8 +9337,10 @@ pub struct OutboundConnectionStatus {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and can no longer be used.</li>
     /// </ul>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::OutboundConnectionStatusCode>,
     /// <p>Verbose information for the outbound connection status.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OutboundConnectionStatus {
@@ -9320,8 +9549,10 @@ impl AsRef<str> for OutboundConnectionStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p> The name of the filter. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Contains one or more values for the filter. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -9402,10 +9633,13 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limits {
     /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
+    #[doc(hidden)]
     pub storage_types: std::option::Option<std::vec::Vec<crate::model::StorageType>>,
     /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
+    #[doc(hidden)]
     pub instance_limits: std::option::Option<crate::model::InstanceLimits>,
     /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
+    #[doc(hidden)]
     pub additional_limits: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
 }
 impl Limits {
@@ -9521,8 +9755,10 @@ pub struct AdditionalLimit {
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> up to which you don't need any master nodes to govern them.
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub limit_name: std::option::Option<std::string::String>,
     /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
+    #[doc(hidden)]
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdditionalLimit {
@@ -9618,6 +9854,7 @@ impl AdditionalLimit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimits {
     /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
+    #[doc(hidden)]
     pub instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
 }
 impl InstanceLimits {
@@ -9675,8 +9912,10 @@ impl InstanceLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceCountLimits {
     /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
+    #[doc(hidden)]
     pub minimum_instance_count: i32,
     /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
+    #[doc(hidden)]
     pub maximum_instance_count: i32,
 }
 impl InstanceCountLimits {
@@ -9753,6 +9992,7 @@ pub struct StorageType {
     /// <li>ebs</li> Elastic block storage attached to the instance
     /// </ol>
     /// <p></p>
+    #[doc(hidden)]
     pub storage_type_name: std::option::Option<std::string::String>,
     /// <p> Sub-type of the given storage type. List of available sub-storage options: "instance" storageType has no storageSubType. "ebs" storageType has the following valid storageSubTypes: </p>
     /// <ol>
@@ -9762,8 +10002,10 @@ pub struct StorageType {
     /// <li>io1</li>
     /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
     /// <p></p>
+    #[doc(hidden)]
     pub storage_sub_type_name: std::option::Option<std::string::String>,
     /// <p>Limits that are applicable for the given storage type. </p>
+    #[doc(hidden)]
     pub storage_type_limits: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
 }
 impl StorageType {
@@ -9913,8 +10155,10 @@ pub struct StorageTypeLimit {
     /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
     /// </ol>
     /// <p></p>
+    #[doc(hidden)]
     pub limit_name: std::option::Option<std::string::String>,
     /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
+    #[doc(hidden)]
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageTypeLimit {
@@ -10022,59 +10266,84 @@ impl StorageTypeLimit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainStatus {
     /// <p>The unique identifier for the specified domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if domain creation is still in progress. </p>
+    #[doc(hidden)]
     pub created: std::option::Option<bool>,
     /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. </p>
+    #[doc(hidden)]
     pub deleted: std::option::Option<bool>,
     /// <p>The domain endpoint that you use to submit index and search requests.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>. </p>
+    #[doc(hidden)]
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing configuration changes. <code>False</code> if the configuration is active. </p>
+    #[doc(hidden)]
     pub processing: std::option::Option<bool>,
     /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active. </p>
+    #[doc(hidden)]
     pub upgrade_processing: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The type and number of instances in the domain.</p>
+    #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::model::ClusterConfig>,
     /// <p>The <code>EBSOptions</code> for the specified domain. </p>
+    #[doc(hidden)]
     pub ebs_options: std::option::Option<crate::model::EbsOptions>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<std::string::String>,
     /// <p>The status of the <code>SnapshotOptions</code>. </p>
+    #[doc(hidden)]
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptions>,
     /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
+    #[doc(hidden)]
     pub vpc_options: std::option::Option<crate::model::VpcDerivedInfo>,
     /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+    #[doc(hidden)]
     pub cognito_options: std::option::Option<crate::model::CognitoOptions>,
     /// <p>The status of the <code>EncryptionAtRestOptions</code>. </p>
+    #[doc(hidden)]
     pub encryption_at_rest_options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>. </p>
+    #[doc(hidden)]
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
     /// <p>The status of the <code>AdvancedOptions</code>. </p>
+    #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Log publishing options for the given domain.</p>
+    #[doc(hidden)]
     pub log_publishing_options: std::option::Option<
         std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
     >,
     /// <p>The current status of the domain's service software.</p>
+    #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
     /// <p>The current status of the domain's endpoint options.</p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptions>,
     /// <p>The current status of the domain's advanced security options.</p>
+    #[doc(hidden)]
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptions>,
     /// <p>The current status of the domain's Auto-Tune options.</p>
+    #[doc(hidden)]
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsOutput>,
     /// <p>Specifies change details of the domain configuration change.</p>
+    #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl DomainStatus {
@@ -10682,8 +10951,10 @@ impl DomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptionsOutput {
     /// <p>The <code>AutoTuneState</code> for the domain. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AutoTuneState>,
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl AutoTuneOptionsOutput {
@@ -10761,18 +11032,25 @@ impl AutoTuneOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
+    #[doc(hidden)]
     pub change_id: std::option::Option<std::string::String>,
     /// <p>The time at which the configuration change is made on the domain.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The overall status of the domain configuration change. This field can take the following values: <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code></p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OverallChangeStatus>,
     /// <p>The list of properties involved in the domain configuration change that are still in pending.</p>
+    #[doc(hidden)]
     pub pending_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of properties involved in the domain configuration change that are completed.</p>
+    #[doc(hidden)]
     pub completed_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The total number of stages required for the configuration change.</p>
+    #[doc(hidden)]
     pub total_number_of_stages: i32,
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
+    #[doc(hidden)]
     pub change_progress_stages:
         std::option::Option<std::vec::Vec<crate::model::ChangeProgressStage>>,
 }
@@ -10966,12 +11244,16 @@ impl ChangeProgressStatusDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeProgressStage {
     /// <p>The name of the specific progress stage.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The overall status of a specific progress stage.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The description of the progress stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The last updated timestamp of the progress stage.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChangeProgressStage {
@@ -11143,8 +11425,10 @@ impl AsRef<str> for OverallChangeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTune {
     /// <p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>
+    #[doc(hidden)]
     pub auto_tune_type: std::option::Option<crate::model::AutoTuneType>,
     /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub auto_tune_details: std::option::Option<crate::model::AutoTuneDetails>,
 }
 impl AutoTune {
@@ -11222,6 +11506,7 @@ impl AutoTune {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneDetails {
     /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub scheduled_auto_tune_details: std::option::Option<crate::model::ScheduledAutoTuneDetails>,
 }
 impl AutoTuneDetails {
@@ -11288,12 +11573,16 @@ impl AutoTuneDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledAutoTuneDetails {
     /// <p>The timestamp of the Auto-Tune action scheduled for the domain.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ScheduledAutoTuneActionType>,
     /// <p>The Auto-Tune action description.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::ScheduledAutoTuneSeverityType>,
 }
 impl ScheduledAutoTuneDetails {
@@ -11570,8 +11859,10 @@ impl AsRef<str> for AutoTuneType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptionsInput {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::AutoTuneDesiredState>,
     /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
 }

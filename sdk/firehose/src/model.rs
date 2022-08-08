@@ -5,22 +5,31 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointDestinationUpdate {
     /// <p>Describes the configuration of the HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::HttpEndpointConfiguration>,
     /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The configuration of the request sent to the HTTP endpoint specified as the destination.</p>
+    #[doc(hidden)]
     pub request_configuration: std::option::Option<crate::model::HttpEndpointRequestConfiguration>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::HttpEndpointRetryOptions>,
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::HttpEndpointS3BackupMode>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
 }
 impl HttpEndpointDestinationUpdate {
@@ -264,21 +273,29 @@ impl HttpEndpointDestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl S3DestinationUpdate {
@@ -485,10 +502,13 @@ impl S3DestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOptions {
     /// <p>Enables or disables CloudWatch logging.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
+    #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOptions {
@@ -583,8 +603,10 @@ impl CloudWatchLoggingOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
+    #[doc(hidden)]
     pub no_encryption_config: std::option::Option<crate::model::NoEncryptionConfig>,
     /// <p>The encryption key.</p>
+    #[doc(hidden)]
     pub kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
 }
 impl EncryptionConfiguration {
@@ -662,6 +684,7 @@ impl EncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub awskms_key_arn: std::option::Option<std::string::String>,
 }
 impl KmsEncryptionConfig {
@@ -838,8 +861,10 @@ impl AsRef<str> for CompressionFormat {
 pub struct BufferingHints {
     /// <p>Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value is 5. This parameter is optional but if you specify a value for it, you must also specify a value for <code>IntervalInSeconds</code>, and vice versa.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB or higher.</p>
+    #[doc(hidden)]
     pub size_in_m_bs: std::option::Option<i32>,
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value for <code>SizeInMBs</code>, and vice versa.</p>
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i32>,
 }
 impl BufferingHints {
@@ -969,6 +994,7 @@ impl AsRef<str> for HttpEndpointS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to the custom destination via HTTPS endpoint fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from the specified destination after each attempt. </p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl HttpEndpointRetryOptions {
@@ -1023,8 +1049,10 @@ impl HttpEndpointRetryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The data processors.</p>
+    #[doc(hidden)]
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
 }
 impl ProcessingConfiguration {
@@ -1105,8 +1133,10 @@ impl ProcessingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Processor {
     /// <p>The type of processor.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProcessorType>,
     /// <p>The processor parameters.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ProcessorParameter>>,
 }
 impl Processor {
@@ -1187,8 +1217,10 @@ impl Processor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<crate::model::ProcessorParameterName>,
     /// <p>The parameter value.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl ProcessorParameter {
@@ -1427,8 +1459,10 @@ impl AsRef<str> for ProcessorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointRequestConfiguration {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
+    #[doc(hidden)]
     pub content_encoding: std::option::Option<crate::model::ContentEncoding>,
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub common_attributes:
         std::option::Option<std::vec::Vec<crate::model::HttpEndpointCommonAttribute>>,
 }
@@ -1519,8 +1553,10 @@ impl HttpEndpointRequestConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointCommonAttribute {
     /// <p>The name of the HTTP endpoint common attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value of the HTTP endpoint common attribute.</p>
+    #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl HttpEndpointCommonAttribute {
@@ -1654,8 +1690,10 @@ impl AsRef<str> for ContentEncoding {
 pub struct HttpEndpointBufferingHints {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5. </p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
+    #[doc(hidden)]
     pub size_in_m_bs: std::option::Option<i32>,
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i32>,
 }
 impl HttpEndpointBufferingHints {
@@ -1732,10 +1770,13 @@ pub struct HttpEndpointConfiguration {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
 }
 impl HttpEndpointConfiguration {
@@ -1830,23 +1871,32 @@ impl HttpEndpointConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplunkDestinationUpdate {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    #[doc(hidden)]
     pub hec_endpoint: std::option::Option<std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
+    #[doc(hidden)]
     pub hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
     /// <p>A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
+    #[doc(hidden)]
     pub hec_token: std::option::Option<std::string::String>,
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    #[doc(hidden)]
     pub hec_acknowledgment_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::SplunkRetryOptions>,
     /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::SplunkS3BackupMode>,
     /// <p>Your update to the configuration of the backup Amazon S3 location.</p>
+    #[doc(hidden)]
     pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl SplunkDestinationUpdate {
@@ -2134,6 +2184,7 @@ impl AsRef<str> for SplunkS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplunkRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl SplunkRetryOptions {
@@ -2243,27 +2294,38 @@ impl AsRef<str> for HecEndpointType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonopensearchserviceDestinationUpdate {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_rotation_period:
         std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl AmazonopensearchserviceDestinationUpdate {
@@ -2542,6 +2604,7 @@ impl AmazonopensearchserviceDestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonopensearchserviceRetryOptions {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl AmazonopensearchserviceRetryOptions {
@@ -2596,8 +2659,10 @@ impl AmazonopensearchserviceRetryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonopensearchserviceBufferingHints {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i32>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub size_in_m_bs: std::option::Option<i32>,
 }
 impl AmazonopensearchserviceBufferingHints {
@@ -2736,28 +2801,39 @@ impl AsRef<str> for AmazonopensearchserviceIndexRotationPeriod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions for&nbsp;<code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code>&nbsp;after assuming the IAM role specified in <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
     /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for <code>TypeName</code>. </p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. Default value is&nbsp;<code>OneDay</code>.</p>
+    #[doc(hidden)]
     pub index_rotation_period: std::option::Option<crate::model::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values are used. </p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::ElasticsearchBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::ElasticsearchRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl ElasticsearchDestinationUpdate {
@@ -3032,6 +3108,7 @@ impl ElasticsearchDestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchRetryOptions {
     /// <p>After an initial failure to deliver to Amazon ES, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl ElasticsearchRetryOptions {
@@ -3086,9 +3163,11 @@ impl ElasticsearchRetryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchBufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i32>,
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
+    #[doc(hidden)]
     pub size_in_m_bs: std::option::Option<i32>,
 }
 impl ElasticsearchBufferingHints {
@@ -3230,27 +3309,38 @@ impl AsRef<str> for ElasticsearchIndexRotationPeriod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
+    #[doc(hidden)]
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
     /// <p>The <code>COPY</code> command.</p>
+    #[doc(hidden)]
     pub copy_command: std::option::Option<crate::model::CopyCommand>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The user password.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
+    #[doc(hidden)]
     pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::RedshiftS3BackupMode>,
     /// <p>The Amazon S3 destination for backup.</p>
+    #[doc(hidden)]
     pub s3_backup_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationUpdate {
@@ -3572,6 +3662,7 @@ impl AsRef<str> for RedshiftS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftRetryOptions {
     /// <p>The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl RedshiftRetryOptions {
@@ -3626,8 +3717,10 @@ impl RedshiftRetryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyCommand {
     /// <p>The name of the target table. The table must already exist in the database.</p>
+    #[doc(hidden)]
     pub data_table_name: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of column names.</p>
+    #[doc(hidden)]
     pub data_table_columns: std::option::Option<std::string::String>,
     /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
     /// <p> <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
@@ -3636,6 +3729,7 @@ pub struct CopyCommand {
     /// <p> <code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields are fixed width in the source, with each width specified after every column in the table.</p>
     /// <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in JSON format, and the path specified is the format of the data.</p>
     /// <p>For more examples, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon Redshift COPY command examples</a>.</p>
+    #[doc(hidden)]
     pub copy_options: std::option::Option<std::string::String>,
 }
 impl CopyCommand {
@@ -3748,31 +3842,44 @@ impl CopyCommand {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::S3BackupMode>,
     /// <p>The Amazon S3 destination for backup.</p>
+    #[doc(hidden)]
     pub s3_backup_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
+    #[doc(hidden)]
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a> </p>
+    #[doc(hidden)]
     pub dynamic_partitioning_configuration:
         std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
@@ -4101,8 +4208,10 @@ impl ExtendedS3DestinationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::RetryOptions>,
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl DynamicPartitioningConfiguration {
@@ -4177,6 +4286,7 @@ impl DynamicPartitioningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl RetryOptions {
@@ -4231,12 +4341,16 @@ impl RetryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataFormatConversionConfiguration {
     /// <p>Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
+    #[doc(hidden)]
     pub schema_configuration: std::option::Option<crate::model::SchemaConfiguration>,
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
+    #[doc(hidden)]
     pub input_format_configuration: std::option::Option<crate::model::InputFormatConfiguration>,
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
+    #[doc(hidden)]
     pub output_format_configuration: std::option::Option<crate::model::OutputFormatConfiguration>,
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl DataFormatConversionConfiguration {
@@ -4369,6 +4483,7 @@ impl DataFormatConversionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputFormatConfiguration {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
+    #[doc(hidden)]
     pub serializer: std::option::Option<crate::model::Serializer>,
 }
 impl OutputFormatConfiguration {
@@ -4426,8 +4541,10 @@ impl OutputFormatConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Serializer {
     /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
+    #[doc(hidden)]
     pub parquet_ser_de: std::option::Option<crate::model::ParquetSerDe>,
     /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
+    #[doc(hidden)]
     pub orc_ser_de: std::option::Option<crate::model::OrcSerDe>,
 }
 impl Serializer {
@@ -4505,26 +4622,36 @@ impl Serializer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrcSerDe {
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
+    #[doc(hidden)]
     pub stripe_size_bytes: std::option::Option<i32>,
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    #[doc(hidden)]
     pub block_size_bytes: std::option::Option<i32>,
     /// <p>The number of rows between index entries. The default is 10,000 and the minimum is 1,000.</p>
+    #[doc(hidden)]
     pub row_index_stride: std::option::Option<i32>,
     /// <p>Set this to <code>true</code> to indicate that you want stripes to be padded to the HDFS block boundaries. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enable_padding: std::option::Option<bool>,
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
     /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    #[doc(hidden)]
     pub padding_tolerance: std::option::Option<f64>,
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<crate::model::OrcCompression>,
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    #[doc(hidden)]
     pub bloom_filter_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
+    #[doc(hidden)]
     pub bloom_filter_false_positive_probability: std::option::Option<f64>,
     /// <p>Represents the fraction of the total number of non-null rows. To turn off dictionary encoding, set this fraction to a number that is less than the number of distinct keys in a dictionary. To always use dictionary encoding, set this threshold to 1.</p>
+    #[doc(hidden)]
     pub dictionary_key_threshold: std::option::Option<f64>,
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
+    #[doc(hidden)]
     pub format_version: std::option::Option<crate::model::OrcFormatVersion>,
 }
 impl OrcSerDe {
@@ -4874,16 +5001,22 @@ impl AsRef<str> for OrcCompression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParquetSerDe {
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    #[doc(hidden)]
     pub block_size_bytes: std::option::Option<i32>,
     /// <p>The Parquet page size. Column chunks are divided into pages. A page is conceptually an indivisible unit (in terms of compression and encoding). The minimum value is 64 KiB and the default is 1 MiB.</p>
+    #[doc(hidden)]
     pub page_size_bytes: std::option::Option<i32>,
     /// <p>The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<crate::model::ParquetCompression>,
     /// <p>Indicates whether to enable dictionary compression.</p>
+    #[doc(hidden)]
     pub enable_dictionary_compression: std::option::Option<bool>,
     /// <p>The maximum amount of padding to apply. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 0.</p>
+    #[doc(hidden)]
     pub max_padding_bytes: std::option::Option<i32>,
     /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
+    #[doc(hidden)]
     pub writer_version: std::option::Option<crate::model::ParquetWriterVersion>,
 }
 impl ParquetSerDe {
@@ -5149,6 +5282,7 @@ impl AsRef<str> for ParquetCompression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
+    #[doc(hidden)]
     pub deserializer: std::option::Option<crate::model::Deserializer>,
 }
 impl InputFormatConfiguration {
@@ -5206,8 +5340,10 @@ impl InputFormatConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deserializer {
     /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
+    #[doc(hidden)]
     pub open_x_json_ser_de: std::option::Option<crate::model::OpenXJsonSerDe>,
     /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
+    #[doc(hidden)]
     pub hive_json_ser_de: std::option::Option<crate::model::HiveJsonSerDe>,
 }
 impl Deserializer {
@@ -5285,6 +5421,7 @@ impl Deserializer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HiveJsonSerDe {
     /// <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
+    #[doc(hidden)]
     pub timestamp_formats: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HiveJsonSerDe {
@@ -5349,10 +5486,13 @@ impl HiveJsonSerDe {
 pub struct OpenXJsonSerDe {
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
     /// <p>The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub convert_dots_in_json_keys_to_underscores: std::option::Option<bool>,
     /// <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before deserializing them.</p>
+    #[doc(hidden)]
     pub case_insensitive: std::option::Option<bool>,
     /// <p>Maps column names to JSON keys that aren't identical to the column names. This is useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code> is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.</p>
+    #[doc(hidden)]
     pub column_to_json_key_mappings:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5477,20 +5617,26 @@ pub struct SchemaConfiguration {
     /// <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the AWS Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies the AWS Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>If you don't specify an AWS Region, the default is the current Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl SchemaConfiguration {
@@ -5706,8 +5852,10 @@ impl AsRef<str> for S3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>An optional string, which you can use to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -5779,12 +5927,14 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
+    #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and decryption. Kinesis Data Firehose manages that grant. </p>
     /// <p>When you invoke <code>StartDeliveryStreamEncryption</code> to change the CMK for a delivery stream that is encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.</p>
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>. </p> <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer guide.</p>
     /// </important>
+    #[doc(hidden)]
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
 impl DeliveryStreamEncryptionConfigurationInput {
@@ -5923,10 +6073,13 @@ impl AsRef<str> for KeyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordBatchResponseEntry {
     /// <p>The ID of the record.</p>
+    #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
     /// <p>The error code for an individual record result.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message for an individual record result.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutRecordBatchResponseEntry {
@@ -6018,6 +6171,7 @@ impl PutRecordBatchResponseEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Record {
@@ -6125,14 +6279,19 @@ impl AsRef<str> for DeliveryStreamType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
+    #[doc(hidden)]
     pub delivery_stream_status: std::option::Option<crate::model::DeliveryStreamStatus>,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
+    #[doc(hidden)]
     pub failure_description: std::option::Option<crate::model::FailureDescription>,
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_encryption_configuration:
         std::option::Option<crate::model::DeliveryStreamEncryptionConfiguration>,
     /// <p>The delivery stream type. This can be one of the following values:</p>
@@ -6140,18 +6299,25 @@ pub struct DeliveryStreamDescription {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the delivery stream was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the delivery stream was last updated.</p>
+    #[doc(hidden)]
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::SourceDescription>,
     /// <p>The destinations.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::DestinationDescription>>,
     /// <p>Indicates whether there are more destinations available to list.</p>
+    #[doc(hidden)]
     pub has_more_destinations: std::option::Option<bool>,
 }
 impl DeliveryStreamDescription {
@@ -6454,25 +6620,33 @@ impl DeliveryStreamDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>[Deprecated] The destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub extended_s3_destination_description:
         std::option::Option<crate::model::ExtendedS3DestinationDescription>,
     /// <p>The destination in Amazon Redshift.</p>
+    #[doc(hidden)]
     pub redshift_destination_description:
         std::option::Option<crate::model::RedshiftDestinationDescription>,
     /// <p>The destination in Amazon ES.</p>
+    #[doc(hidden)]
     pub elasticsearch_destination_description:
         std::option::Option<crate::model::ElasticsearchDestinationDescription>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub amazonopensearchservice_destination_description:
         std::option::Option<crate::model::AmazonopensearchserviceDestinationDescription>,
     /// <p>The destination in Splunk.</p>
+    #[doc(hidden)]
     pub splunk_destination_description:
         std::option::Option<crate::model::SplunkDestinationDescription>,
     /// <p>Describes the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub http_endpoint_destination_description:
         std::option::Option<crate::model::HttpEndpointDestinationDescription>,
 }
@@ -6736,22 +6910,31 @@ impl DestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::HttpEndpointDescription>,
     /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The configuration of request sent to the HTTP endpoint specified as the destination.</p>
+    #[doc(hidden)]
     pub request_configuration: std::option::Option<crate::model::HttpEndpointRequestConfiguration>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::HttpEndpointRetryOptions>,
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::HttpEndpointS3BackupMode>,
     /// <p>Describes a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
 }
 impl HttpEndpointDestinationDescription {
@@ -7004,20 +7187,28 @@ impl HttpEndpointDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl S3DestinationDescription {
@@ -7221,8 +7412,10 @@ impl S3DestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl HttpEndpointDescription {
@@ -7294,22 +7487,31 @@ impl HttpEndpointDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplunkDestinationDescription {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    #[doc(hidden)]
     pub hec_endpoint: std::option::Option<std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
+    #[doc(hidden)]
     pub hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
     /// <p>A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
+    #[doc(hidden)]
     pub hec_token: std::option::Option<std::string::String>,
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    #[doc(hidden)]
     pub hec_acknowledgment_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::SplunkRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::SplunkS3BackupMode>,
     /// <p>The Amazon S3 destination.&gt;</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl SplunkDestinationDescription {
@@ -7548,31 +7750,44 @@ impl SplunkDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonopensearchserviceDestinationDescription {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_rotation_period:
         std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
     /// <p>Describes a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
+    #[doc(hidden)]
     pub vpc_configuration_description:
         std::option::Option<crate::model::VpcConfigurationDescription>,
 }
@@ -7917,6 +8132,7 @@ impl AmazonopensearchserviceDestinationDescription {
 pub struct VpcConfigurationDescription {
     /// <p>The IDs of the subnets that Kinesis Data Firehose uses to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
@@ -7930,10 +8146,13 @@ pub struct VpcConfigurationDescription {
     /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group rules</a> in the Amazon VPC documentation.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon ES destination's VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfigurationDescription {
@@ -8148,31 +8367,44 @@ impl AsRef<str> for AmazonopensearchserviceS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     /// <p>Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.</p>
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.</p>
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index rotation period</p>
+    #[doc(hidden)]
     pub index_rotation_period: std::option::Option<crate::model::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::ElasticsearchBufferingHints>,
     /// <p>The Amazon ES retry options.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::ElasticsearchRetryOptions>,
     /// <p>The Amazon S3 backup mode.</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::ElasticsearchS3BackupMode>,
     /// <p>The Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
+    #[doc(hidden)]
     pub vpc_configuration_description:
         std::option::Option<crate::model::VpcConfigurationDescription>,
 }
@@ -8558,24 +8790,34 @@ impl AsRef<str> for ElasticsearchS3BackupMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
+    #[doc(hidden)]
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
     /// <p>The <code>COPY</code> command.</p>
+    #[doc(hidden)]
     pub copy_command: std::option::Option<crate::model::CopyCommand>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon S3 backup mode.</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::RedshiftS3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_backup_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationDescription {
@@ -8837,31 +9079,44 @@ impl RedshiftDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon S3 backup mode.</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::S3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_backup_description: std::option::Option<crate::model::S3DestinationDescription>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
+    #[doc(hidden)]
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a> </p>
+    #[doc(hidden)]
     pub dynamic_partitioning_configuration:
         std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
@@ -9196,6 +9451,7 @@ impl ExtendedS3DestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_source_description:
         std::option::Option<crate::model::KinesisStreamSourceDescription>,
 }
@@ -9263,10 +9519,13 @@ impl SourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+    #[doc(hidden)]
     pub kinesis_stream_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
+    #[doc(hidden)]
     pub delivery_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl KinesisStreamSourceDescription {
@@ -9361,12 +9620,16 @@ impl KinesisStreamSourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryStreamEncryptionConfiguration {
     /// <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.</p>
+    #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
+    #[doc(hidden)]
     pub key_type: std::option::Option<crate::model::KeyType>,
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeliveryStreamEncryptionStatus>,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
+    #[doc(hidden)]
     pub failure_description: std::option::Option<crate::model::FailureDescription>,
 }
 impl DeliveryStreamEncryptionConfiguration {
@@ -9478,8 +9741,10 @@ impl DeliveryStreamEncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureDescription {
     /// <p>The type of error that caused the failure.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeliveryStreamFailureType>,
     /// <p>A message providing details about the error that caused the failure.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl FailureDescription {
@@ -9828,22 +10093,31 @@ impl AsRef<str> for DeliveryStreamStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpEndpointDestinationConfiguration {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::HttpEndpointConfiguration>,
     /// <p>The buffering options that can be used before data is delivered to the specified destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must also provide a value for the other. </p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    #[doc(hidden)]
     pub request_configuration: std::option::Option<crate::model::HttpEndpointRequestConfiguration>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::HttpEndpointRetryOptions>,
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::HttpEndpointS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
 }
 impl HttpEndpointDestinationConfiguration {
@@ -10089,21 +10363,29 @@ impl HttpEndpointDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl S3DestinationConfiguration {
@@ -10310,23 +10592,32 @@ impl S3DestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplunkDestinationConfiguration {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    #[doc(hidden)]
     pub hec_endpoint: std::option::Option<std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
+    #[doc(hidden)]
     pub hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
     /// <p>This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
+    #[doc(hidden)]
     pub hec_token: std::option::Option<std::string::String>,
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    #[doc(hidden)]
     pub hec_acknowledgment_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::SplunkRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::SplunkS3BackupMode>,
     /// <p>The configuration for the backup Amazon S3 location.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl SplunkDestinationConfiguration {
@@ -10561,31 +10852,44 @@ impl SplunkDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonopensearchserviceDestinationConfiguration {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub index_rotation_period:
         std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>Describes a data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl AmazonopensearchserviceDestinationConfiguration {
@@ -10913,6 +11217,7 @@ impl AmazonopensearchserviceDestinationConfiguration {
 pub struct VpcConfiguration {
     /// <p>The IDs of the subnets that you want Kinesis Data Firehose to use to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:</p>
     /// <ul>
@@ -10926,8 +11231,10 @@ pub struct VpcConfiguration {
     /// <li> <p> <code>ec2:DeleteNetworkInterface</code> </p> </li>
     /// </ul>
     /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by creating more ENIs when necessary. You might therefore see a degradation in performance.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The IDs of the security groups that you want Kinesis Data Firehose to use when it creates ENIs in the VPC of the Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify different security groups here, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group rules</a> in the Amazon VPC documentation.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfiguration {
@@ -11070,33 +11377,46 @@ impl VpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions for&nbsp;<code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code>&nbsp;after assuming the role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+    #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
+    #[doc(hidden)]
     pub cluster_endpoint: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time.</p>
     /// <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
+    #[doc(hidden)]
     pub index_rotation_period: std::option::Option<crate::model::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::ElasticsearchBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::ElasticsearchRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>elasticsearch-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
     /// <p>You can't change this backup mode after you create the delivery stream. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::ElasticsearchS3BackupMode>,
     /// <p>The configuration for the backup Amazon S3 location.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl ElasticsearchDestinationConfiguration {
@@ -11416,27 +11736,38 @@ impl ElasticsearchDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The database connection string.</p>
+    #[doc(hidden)]
     pub cluster_jdbcurl: std::option::Option<std::string::String>,
     /// <p>The <code>COPY</code> command.</p>
+    #[doc(hidden)]
     pub copy_command: std::option::Option<crate::model::CopyCommand>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The user password.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    #[doc(hidden)]
     pub retry_options: std::option::Option<crate::model::RedshiftRetryOptions>,
     /// <p>The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data. Restrictions are described in the topic for <code>CreateDeliveryStream</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::RedshiftS3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_backup_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationConfiguration {
@@ -11711,31 +12042,44 @@ impl RedshiftDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedS3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    #[doc(hidden)]
     pub error_output_prefix: std::option::Option<std::string::String>,
     /// <p>The buffering option.</p>
+    #[doc(hidden)]
     pub buffering_hints: std::option::Option<crate::model::BufferingHints>,
     /// <p>The compression format. If no value is specified, the default is UNCOMPRESSED.</p>
+    #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
     /// <p>The data processing configuration.</p>
+    #[doc(hidden)]
     pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
     /// <p>The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    #[doc(hidden)]
     pub s3_backup_mode: std::option::Option<crate::model::S3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_backup_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
+    #[doc(hidden)]
     pub data_format_conversion_configuration:
         std::option::Option<crate::model::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a> </p>
+    #[doc(hidden)]
     pub dynamic_partitioning_configuration:
         std::option::Option<crate::model::DynamicPartitioningConfiguration>,
 }
@@ -12070,8 +12414,10 @@ impl ExtendedS3DestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamSourceConfiguration {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
+    #[doc(hidden)]
     pub kinesis_stream_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM) ARN Format</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamSourceConfiguration {

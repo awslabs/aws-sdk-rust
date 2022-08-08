@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl UpdateUserOutput {
@@ -78,6 +80,7 @@ impl UpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerOutput {
     /// <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl UpdateServerOutput {
@@ -132,6 +135,7 @@ impl UpdateServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileOutput {
     /// <p>Returns the identifier for the profile that's being updated.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateProfileOutput {
@@ -186,6 +190,7 @@ impl UpdateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorOutput {
     /// <p>Returns the identifier of the connector object that you are updating.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorOutput {
@@ -240,6 +245,7 @@ impl UpdateConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl UpdateCertificateOutput {
@@ -297,6 +303,7 @@ impl UpdateCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
 }
 impl UpdateAgreementOutput {
@@ -351,8 +358,10 @@ impl UpdateAgreementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl UpdateAccessOutput {
@@ -454,14 +463,18 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestIdentityProviderOutput {
     /// <p>The response that is returned from your API Gateway.</p>
+    #[doc(hidden)]
     pub response: std::option::Option<std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    #[doc(hidden)]
     pub status_code: i32,
     /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The endpoint of the service used to authenticate a user.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl TestIdentityProviderOutput {
@@ -663,6 +676,7 @@ impl StartServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFileTransferOutput {
     /// <p>Returns the unique identifier for this file transfer. </p>
+    #[doc(hidden)]
     pub transfer_id: std::option::Option<std::string::String>,
 }
 impl StartFileTransferOutput {
@@ -747,8 +761,10 @@ impl SendWorkflowStepStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsOutput {
     /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
+    #[doc(hidden)]
     pub workflows: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
 }
 impl ListWorkflowsOutput {
@@ -829,10 +845,13 @@ impl ListWorkflowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::ListedUser>>,
 }
 impl ListUsersOutput {
@@ -930,10 +949,13 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The ARN you specified to list the tags of.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1031,8 +1053,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServersOutput {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of servers that were listed.</p>
+    #[doc(hidden)]
     pub servers: std::option::Option<std::vec::Vec<crate::model::ListedServer>>,
 }
 impl ListServersOutput {
@@ -1113,8 +1137,10 @@ impl ListServersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityPoliciesOutput {
     /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of security policies that were listed.</p>
+    #[doc(hidden)]
     pub security_policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSecurityPoliciesOutput {
@@ -1195,8 +1221,10 @@ impl ListSecurityPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilesOutput {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns an array, where each item contains the details of a profile.</p>
+    #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
 }
 impl ListProfilesOutput {
@@ -1277,8 +1305,10 @@ impl ListProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Returns the details for each execution.</p>
     /// <ul>
@@ -1287,6 +1317,7 @@ pub struct ListExecutionsOutput {
     /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
     /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
 }
 impl ListExecutionsOutput {
@@ -1402,8 +1433,10 @@ impl ListExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorsOutput {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns an array, where each item contains the details of a connector.</p>
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
 }
 impl ListConnectorsOutput {
@@ -1484,8 +1517,10 @@ impl ListConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
 }
 impl ListCertificatesOutput {
@@ -1567,8 +1602,10 @@ impl ListCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
+    #[doc(hidden)]
     pub agreements: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
 }
 impl ListAgreementsOutput {
@@ -1649,10 +1686,13 @@ impl ListAgreementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
+    #[doc(hidden)]
     pub accesses: std::option::Option<std::vec::Vec<crate::model::ListedAccess>>,
 }
 impl ListAccessesOutput {
@@ -1750,10 +1790,13 @@ impl ListAccessesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The name given to a public key by the system that was imported.</p>
+    #[doc(hidden)]
     pub ssh_public_key_id: std::option::Option<std::string::String>,
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl ImportSshPublicKeyOutput {
@@ -1845,6 +1888,7 @@ impl ImportSshPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl ImportCertificateOutput {
@@ -1902,6 +1946,7 @@ impl ImportCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowOutput {
     /// <p>The structure that contains the details of the workflow.</p>
+    #[doc(hidden)]
     pub workflow: std::option::Option<crate::model::DescribedWorkflow>,
 }
 impl DescribeWorkflowOutput {
@@ -1959,8 +2004,10 @@ impl DescribeWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::DescribedUser>,
 }
 impl DescribeUserOutput {
@@ -2032,6 +2079,7 @@ impl DescribeUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServerOutput {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::DescribedServer>,
 }
 impl DescribeServerOutput {
@@ -2089,6 +2137,7 @@ impl DescribeServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityPolicyOutput {
     /// <p>An array containing the properties of the security policy.</p>
+    #[doc(hidden)]
     pub security_policy: std::option::Option<crate::model::DescribedSecurityPolicy>,
 }
 impl DescribeSecurityPolicyOutput {
@@ -2146,6 +2195,7 @@ impl DescribeSecurityPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProfileOutput {
     /// <p>The details of the specified profile, returned as an object.</p>
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::DescribedProfile>,
 }
 impl DescribeProfileOutput {
@@ -2203,8 +2253,10 @@ impl DescribeProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The structure that contains the details of the workflow' execution.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::DescribedExecution>,
 }
 impl DescribeExecutionOutput {
@@ -2279,6 +2331,7 @@ impl DescribeExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorOutput {
     /// <p>The structure that contains the details of the connector.</p>
+    #[doc(hidden)]
     pub connector: std::option::Option<crate::model::DescribedConnector>,
 }
 impl DescribeConnectorOutput {
@@ -2336,6 +2389,7 @@ impl DescribeConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
     /// <p>The details for the specified certificate, returned as an object.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::DescribedCertificate>,
 }
 impl DescribeCertificateOutput {
@@ -2393,6 +2447,7 @@ impl DescribeCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgreementOutput {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+    #[doc(hidden)]
     pub agreement: std::option::Option<crate::model::DescribedAgreement>,
 }
 impl DescribeAgreementOutput {
@@ -2450,8 +2505,10 @@ impl DescribeAgreementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The external ID of the server that the access is attached to.</p>
+    #[doc(hidden)]
     pub access: std::option::Option<crate::model::DescribedAccess>,
 }
 impl DescribeAccessOutput {
@@ -2796,6 +2853,7 @@ impl DeleteAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkflowOutput {
@@ -2850,8 +2908,10 @@ impl CreateWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The ID of the server that the user is attached to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies a user account associated with a server.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -2923,6 +2983,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerOutput {
     /// <p>The service-assigned ID of the server that is created.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl CreateServerOutput {
@@ -2977,6 +3038,7 @@ impl CreateServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileOutput {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl CreateProfileOutput {
@@ -3031,6 +3093,7 @@ impl CreateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl CreateConnectorOutput {
@@ -3085,6 +3148,7 @@ impl CreateConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAgreementOutput {
     /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+    #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
 }
 impl CreateAgreementOutput {
@@ -3139,8 +3203,10 @@ impl CreateAgreementOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessOutput {

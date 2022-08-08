@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteRackPhysicalPropertiesOutput {
     /// <p>Information about a site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl UpdateSiteRackPhysicalPropertiesOutput {
@@ -56,8 +57,10 @@ impl UpdateSiteRackPhysicalPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteAddressOutput {
     /// <p> The type of the address. </p>
+    #[doc(hidden)]
     pub address_type: std::option::Option<crate::model::AddressType>,
     /// <p> Information about an address. </p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressOutput {
@@ -132,6 +135,7 @@ impl UpdateSiteAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteOutput {
     /// <p>Information about a site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl UpdateSiteOutput {
@@ -184,6 +188,7 @@ impl UpdateSiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOutpostOutput {
     /// <p>Information about an Outpost.</p>
+    #[doc(hidden)]
     pub outpost: std::option::Option<crate::model::Outpost>,
 }
 impl UpdateOutpostOutput {
@@ -298,8 +303,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConnectionOutput {
     /// <p> The ID of the connection. </p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p> The underlay IP address. </p>
+    #[doc(hidden)]
     pub underlay_ip_address: std::option::Option<std::string::String>,
 }
 impl StartConnectionOutput {
@@ -377,6 +384,7 @@ impl StartConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -450,8 +458,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSitesOutput {
     /// <p>Information about the sites.</p>
+    #[doc(hidden)]
     pub sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSitesOutput {
@@ -532,8 +542,10 @@ impl ListSitesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutpostsOutput {
     /// <p>Information about the Outposts.</p>
+    #[doc(hidden)]
     pub outposts: std::option::Option<std::vec::Vec<crate::model::Outpost>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOutpostsOutput {
@@ -614,8 +626,10 @@ impl ListOutpostsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersOutput {
     /// <p> Information about the orders. </p>
+    #[doc(hidden)]
     pub orders: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrdersOutput {
@@ -696,8 +710,10 @@ impl ListOrdersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCatalogItemsOutput {
     /// <p>Information about the catalog items.</p>
+    #[doc(hidden)]
     pub catalog_items: std::option::Option<std::vec::Vec<crate::model::CatalogItem>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCatalogItemsOutput {
@@ -778,8 +794,10 @@ impl ListCatalogItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsOutput {
     /// <p> Information about hardware assets. </p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetsOutput {
@@ -860,10 +878,13 @@ impl ListAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteAddressOutput {
     /// <p> The ID of the site. </p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address you receive. </p>
+    #[doc(hidden)]
     pub address_type: std::option::Option<crate::model::AddressType>,
     /// <p> Information about the address. </p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
 }
 impl GetSiteAddressOutput {
@@ -955,6 +976,7 @@ impl GetSiteAddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteOutput {
     /// <p>Information about a site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl GetSiteOutput {
@@ -1007,14 +1029,18 @@ impl GetSiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostInstanceTypesOutput {
     /// <p>Information about the instance types.</p>
+    #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeItem>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The ID of the Outpost. </p> <note>
     /// <p>In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or an ID for Outposts and sites throughout the Outposts Query API. To address backwards compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain in use. Despite the parameter name, you can make the request with an ARN.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
 }
 impl GetOutpostInstanceTypesOutput {
@@ -1136,6 +1162,7 @@ impl GetOutpostInstanceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostOutput {
     /// <p>Information about an Outpost.</p>
+    #[doc(hidden)]
     pub outpost: std::option::Option<crate::model::Outpost>,
 }
 impl GetOutpostOutput {
@@ -1190,6 +1217,7 @@ impl GetOutpostOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrderOutput {
     /// <p>Information about an order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl GetOrderOutput {
@@ -1242,8 +1270,10 @@ impl GetOrderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionOutput {
     /// <p> The ID of the connection you receive. </p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p> Information about a connection. </p>
+    #[doc(hidden)]
     pub connection_details: std::option::Option<crate::model::ConnectionDetails>,
 }
 impl GetConnectionOutput {
@@ -1321,6 +1351,7 @@ impl GetConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCatalogItemOutput {
     /// <p>Information about this catalog item.</p>
+    #[doc(hidden)]
     pub catalog_item: std::option::Option<crate::model::CatalogItem>,
 }
 impl GetCatalogItemOutput {
@@ -1438,6 +1469,7 @@ impl DeleteOutpostOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteOutput {
     /// <p>Information about a site.</p>
+    #[doc(hidden)]
     pub site: std::option::Option<crate::model::Site>,
 }
 impl CreateSiteOutput {
@@ -1490,6 +1522,7 @@ impl CreateSiteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutpostOutput {
     /// <p>Information about an Outpost.</p>
+    #[doc(hidden)]
     pub outpost: std::option::Option<crate::model::Outpost>,
 }
 impl CreateOutpostOutput {
@@ -1544,6 +1577,7 @@ impl CreateOutpostOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrderOutput {
     /// <p>Information about this order.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl CreateOrderOutput {

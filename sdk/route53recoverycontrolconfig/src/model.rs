@@ -6,20 +6,28 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
+    #[doc(hidden)]
     pub gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The criteria that you set for gating routing controls that designates how many of the routing control states must be ON to allow you to update target routing control states.</p>
+    #[doc(hidden)]
     pub rule_config: std::option::Option<crate::model::RuleConfig>,
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated fail over, for example.</p>
+    #[doc(hidden)]
     pub target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl GatingRule {
@@ -279,10 +287,13 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleConfig {
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
+    #[doc(hidden)]
     pub inverted: bool,
     /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
+    #[doc(hidden)]
     pub threshold: i32,
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RuleType>,
 }
 impl RuleConfig {
@@ -430,18 +441,25 @@ impl AsRef<str> for RuleType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>Name of the assertion rule. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many routing control states must be ON as the result of a transaction. For example, if you have three assertion routing controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
+    #[doc(hidden)]
     pub rule_config: std::option::Option<crate::model::RuleConfig>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>The deployment status of an assertion rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl AssertionRule {
@@ -616,10 +634,13 @@ impl AssertionRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatingRuleUpdate {
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl GatingRuleUpdate {
@@ -711,10 +732,13 @@ impl GatingRuleUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl AssertionRuleUpdate {
@@ -806,12 +830,16 @@ impl AssertionRuleUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing control.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl RoutingControl {
@@ -923,16 +951,22 @@ impl RoutingControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
+    #[doc(hidden)]
     pub default_control_panel: bool,
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of routing controls in the control panel.</p>
+    #[doc(hidden)]
     pub routing_control_count: i32,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl ControlPanel {
@@ -1075,9 +1109,11 @@ impl ControlPanel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
+    #[doc(hidden)]
     pub assertion: std::option::Option<crate::model::AssertionRule>,
     /// <p>A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
+    #[doc(hidden)]
     pub gating: std::option::Option<crate::model::GatingRule>,
 }
 impl Rule {
@@ -1155,13 +1191,17 @@ impl Rule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
+    #[doc(hidden)]
     pub cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::ClusterEndpoint>>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl Cluster {
@@ -1281,8 +1321,10 @@ impl Cluster {
 pub struct ClusterEndpoint {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl ClusterEndpoint {
@@ -1357,17 +1399,23 @@ impl ClusterEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
+    #[doc(hidden)]
     pub gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the new gating rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The criteria that you set for specific gating controls (routing controls) that designates how many control states must be ON to allow you to change (set or unset) the target control states.</p>
+    #[doc(hidden)]
     pub rule_config: std::option::Option<crate::model::RuleConfig>,
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
+    #[doc(hidden)]
     pub target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl NewGatingRule {
@@ -1534,14 +1582,19 @@ impl NewGatingRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewAssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the control panel.</p>
+    #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many control states must be ON as the result of a transaction. For example, if you have three assertion controls, you might specify ATLEAST 2for your rule configuration. This means that at least two assertion controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
+    #[doc(hidden)]
     pub rule_config: std::option::Option<crate::model::RuleConfig>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    #[doc(hidden)]
     pub wait_period_ms: i32,
 }
 impl NewAssertionRule {

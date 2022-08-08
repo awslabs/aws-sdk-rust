@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The message that informs you about what was invalid about the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The message that informs you about what the exception was.</p>
+    #[doc(hidden)]
     pub exception_cause: std::option::Option<crate::model::ExceptionCause>,
 }
 impl ValidationException {
@@ -93,6 +95,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// <p>The limit on the number of requests per second was exceeded.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -157,10 +160,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The resource couldn't be found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the resource that couldn't be found.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource that couldn't be found.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ResourceNotFoundException {
@@ -264,6 +270,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     /// The message identifying the service exception that occurred.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -328,10 +335,13 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the resource with the conflict.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the resource with the conflict.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ConflictException {
@@ -435,6 +445,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>Access to the resource is denied.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -499,10 +510,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceededException {
     /// <p>The name of the quota that was exceeded.</p>
+    #[doc(hidden)]
     pub limit_name: std::option::Option<crate::model::LimitName>,
     /// <p>The maximum value for the service-specific limit.</p>
+    #[doc(hidden)]
     pub limit_value: f64,
     /// <p>The request has exceeded the quotas imposed by the service.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceLimitExceededException {

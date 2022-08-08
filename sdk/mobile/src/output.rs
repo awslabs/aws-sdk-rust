@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p> Detailed information about the updated AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
 }
 impl UpdateProjectOutput {
@@ -62,8 +63,10 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p> List of projects. </p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -144,8 +147,10 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBundlesOutput {
     /// <p> A list of bundles. </p>
+    #[doc(hidden)]
     pub bundle_list: std::option::Option<std::vec::Vec<crate::model::BundleDetails>>,
     /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBundlesOutput {
@@ -226,10 +231,13 @@ impl ListBundlesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportProjectOutput {
     /// <p> URL which can be used to download the exported project configuation file(s). </p>
+    #[doc(hidden)]
     pub download_url: std::option::Option<std::string::String>,
     /// <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>
+    #[doc(hidden)]
     pub share_url: std::option::Option<std::string::String>,
     /// <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl ExportProjectOutput {
@@ -318,6 +326,7 @@ impl ExportProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub download_url: std::option::Option<std::string::String>,
 }
 impl ExportBundleOutput {
@@ -372,6 +381,7 @@ impl ExportBundleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
 }
 impl DescribeProjectOutput {
@@ -429,6 +439,7 @@ impl DescribeProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::BundleDetails>,
 }
 impl DescribeBundleOutput {
@@ -486,8 +497,10 @@ impl DescribeBundleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
+    #[doc(hidden)]
     pub deleted_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
+    #[doc(hidden)]
     pub orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl DeleteProjectOutput {
@@ -577,6 +590,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
 }
 impl CreateProjectOutput {

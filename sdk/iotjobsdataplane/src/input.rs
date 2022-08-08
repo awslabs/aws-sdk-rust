@@ -839,23 +839,32 @@ impl UpdateJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing associated with the device.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    #[doc(hidden)]
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    #[doc(hidden)]
     pub step_timeout_in_minutes: std::option::Option<i64>,
     /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
+    #[doc(hidden)]
     pub expected_version: std::option::Option<i64>,
     /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
+    #[doc(hidden)]
     pub include_job_execution_state: std::option::Option<bool>,
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    #[doc(hidden)]
     pub include_job_document: std::option::Option<bool>,
     /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
 }
 impl UpdateJobExecutionInput {
@@ -923,11 +932,14 @@ impl std::fmt::Debug for UpdateJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNextPendingJobExecutionInput {
     /// <p>The name of the thing associated with the device.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    #[doc(hidden)]
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    #[doc(hidden)]
     pub step_timeout_in_minutes: std::option::Option<i64>,
 }
 impl StartNextPendingJobExecutionInput {
@@ -962,6 +974,7 @@ impl std::fmt::Debug for StartNextPendingJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPendingJobExecutionsInput {
     /// <p>The name of the thing that is executing the job.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl GetPendingJobExecutionsInput {
@@ -983,12 +996,16 @@ impl std::fmt::Debug for GetPendingJobExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The thing name associated with the device the job execution is running on.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    #[doc(hidden)]
     pub include_job_document: std::option::Option<bool>,
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
+    #[doc(hidden)]
     pub execution_number: std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVtlDeviceTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
+    #[doc(hidden)]
     pub vtl_device_arn: std::option::Option<std::string::String>,
 }
 impl UpdateVtlDeviceTypeOutput {
@@ -62,6 +63,7 @@ impl UpdateVtlDeviceTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSnapshotScheduleOutput {
@@ -116,6 +118,7 @@ impl UpdateSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbSecurityStrategyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSmbSecurityStrategyOutput {
@@ -170,6 +173,7 @@ impl UpdateSmbSecurityStrategyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbLocalGroupsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSmbLocalGroupsOutput {
@@ -224,6 +228,7 @@ impl UpdateSmbLocalGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSmbFileShareVisibilityOutput {
@@ -278,6 +283,7 @@ impl UpdateSmbFileShareVisibilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSmbFileShareOutput {
@@ -335,6 +341,7 @@ impl UpdateSmbFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl UpdateNfsFileShareOutput {
@@ -392,6 +399,7 @@ impl UpdateNfsFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateMaintenanceStartTimeOutput {
@@ -446,6 +454,7 @@ impl UpdateMaintenanceStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewaySoftwareNowOutput {
@@ -500,8 +509,10 @@ impl UpdateGatewaySoftwareNowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInformationOutput {
@@ -573,6 +584,7 @@ impl UpdateGatewayInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFileSystemAssociationOutput {
     /// <p>The ARN of the updated file system association.</p>
+    #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
 impl UpdateFileSystemAssociationOutput {
@@ -636,8 +648,10 @@ impl UpdateFileSystemAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the request.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
+    #[doc(hidden)]
     pub initiator_name: std::option::Option<std::string::String>,
 }
 impl UpdateChapCredentialsOutput {
@@ -712,6 +726,7 @@ impl UpdateChapCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBandwidthRateLimitScheduleOutput {
@@ -766,6 +781,7 @@ impl UpdateBandwidthRateLimitScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBandwidthRateLimitOutput {
@@ -820,6 +836,7 @@ impl UpdateBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAutomaticTapeCreationPolicyOutput {
@@ -874,6 +891,7 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl StartGatewayOutput {
@@ -928,6 +946,7 @@ impl StartGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl StartAvailabilityMonitorTestOutput {
@@ -982,6 +1001,7 @@ impl StartAvailabilityMonitorTestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShutdownGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ShutdownGatewayOutput {
@@ -1036,6 +1056,7 @@ impl ShutdownGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl SetSmbGuestPasswordOutput {
@@ -1090,6 +1111,7 @@ impl SetSmbGuestPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl SetLocalConsolePasswordOutput {
@@ -1144,6 +1166,7 @@ impl SetLocalConsolePasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveTapeRecoveryPointOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was retrieved.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl RetrieveTapeRecoveryPointOutput {
@@ -1198,6 +1221,7 @@ impl RetrieveTapeRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl RetrieveTapeArchiveOutput {
@@ -1252,6 +1276,7 @@ impl RetrieveTapeArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ResetCacheOutput {
@@ -1306,6 +1331,7 @@ impl ResetCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl RemoveTagsFromResourceOutput {
@@ -1360,8 +1386,10 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
+    #[doc(hidden)]
     pub notification_id: std::option::Option<std::string::String>,
 }
 impl RefreshCacheOutput {
@@ -1439,8 +1467,10 @@ impl RefreshCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWhenUploadedOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
+    #[doc(hidden)]
     pub notification_id: std::option::Option<std::string::String>,
 }
 impl NotifyWhenUploadedOutput {
@@ -1522,10 +1552,13 @@ impl NotifyWhenUploadedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    #[doc(hidden)]
     pub volume_infos: std::option::Option<std::vec::Vec<crate::model::VolumeInfo>>,
 }
 impl ListVolumesOutput {
@@ -1623,8 +1656,10 @@ impl ListVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
+    #[doc(hidden)]
     pub volume_recovery_point_infos:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecoveryPointInfo>>,
 }
@@ -1715,6 +1750,7 @@ impl ListVolumeRecoveryPointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
+    #[doc(hidden)]
     pub initiators: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListVolumeInitiatorsOutput {
@@ -1782,8 +1818,10 @@ impl ListVolumeInitiatorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTapesOutput {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
+    #[doc(hidden)]
     pub tape_infos: std::option::Option<std::vec::Vec<crate::model::TapeInfo>>,
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListTapesOutput {
@@ -1864,8 +1902,10 @@ impl ListTapesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTapePoolsOutput {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
+    #[doc(hidden)]
     pub pool_infos: std::option::Option<std::vec::Vec<crate::model::PoolInfo>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListTapePoolsOutput {
@@ -1946,10 +1986,13 @@ impl ListTapePoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An opaque string that indicates the position at which to stop returning the list of tags.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>An array that contains the tags for the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -2047,11 +2090,13 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocalDisksOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
     /// <li> <p> <code>ListLocalDisksOutput$Disks</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
 }
 impl ListLocalDisksOutput {
@@ -2141,8 +2186,10 @@ impl ListLocalDisksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysOutput {
     /// <p>An array of <code>GatewayInfo</code> objects.</p>
+    #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::model::GatewayInfo>>,
     /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListGatewaysOutput {
@@ -2223,10 +2270,13 @@ impl ListGatewaysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSystemAssociationsOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
+    #[doc(hidden)]
     pub file_system_association_summary_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationSummary>>,
 }
@@ -2336,10 +2386,13 @@ impl ListFileSystemAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSharesOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
+    #[doc(hidden)]
     pub file_share_info_list: std::option::Option<std::vec::Vec<crate::model::FileShareInfo>>,
 }
 impl ListFileSharesOutput {
@@ -2438,6 +2491,7 @@ impl ListFileSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
+    #[doc(hidden)]
     pub automatic_tape_creation_policy_infos:
         std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationPolicyInfo>>,
 }
@@ -2515,6 +2569,7 @@ impl ListAutomaticTapeCreationPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
     /// <ul>
@@ -2526,6 +2581,7 @@ pub struct JoinDomainOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub active_directory_status: std::option::Option<crate::model::ActiveDirectoryStatus>,
 }
 impl JoinDomainOutput {
@@ -2633,6 +2689,7 @@ impl JoinDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFileSystemOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
+    #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateFileSystemOutput {
@@ -2696,6 +2753,7 @@ impl DisassociateFileSystemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableGatewayOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisableGatewayOutput {
@@ -2750,6 +2808,7 @@ impl DisableGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DetachVolumeOutput {
@@ -2804,12 +2863,16 @@ impl DetachVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
+    #[doc(hidden)]
     pub working_storage_used_in_bytes: i64,
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
+    #[doc(hidden)]
     pub working_storage_allocated_in_bytes: i64,
 }
 impl DescribeWorkingStorageOutput {
@@ -2940,10 +3003,13 @@ impl DescribeWorkingStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVtlDevicesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
+    #[doc(hidden)]
     pub vtl_devices: std::option::Option<std::vec::Vec<crate::model::VtlDevice>>,
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeVtlDevicesOutput {
@@ -3041,12 +3107,16 @@ impl DescribeVtlDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
+    #[doc(hidden)]
     pub upload_buffer_used_in_bytes: i64,
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
+    #[doc(hidden)]
     pub upload_buffer_allocated_in_bytes: i64,
 }
 impl DescribeUploadBufferOutput {
@@ -3172,9 +3242,11 @@ impl DescribeUploadBufferOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapesOutput {
     /// <p>An array of virtual tape descriptions.</p>
+    #[doc(hidden)]
     pub tapes: std::option::Option<std::vec::Vec<crate::model::Tape>>,
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTapesOutput {
@@ -3258,12 +3330,15 @@ impl DescribeTapesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
+    #[doc(hidden)]
     pub tape_recovery_point_infos:
         std::option::Option<std::vec::Vec<crate::model::TapeRecoveryPointInfo>>,
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTapeRecoveryPointsOutput {
@@ -3370,8 +3445,10 @@ impl DescribeTapeRecoveryPointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeArchivesOutput {
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
+    #[doc(hidden)]
     pub tape_archives: std::option::Option<std::vec::Vec<crate::model::TapeArchive>>,
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTapeArchivesOutput {
@@ -3470,6 +3547,7 @@ pub struct DescribeStorediScsiVolumesOutput {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub storedi_scsi_volumes: std::option::Option<std::vec::Vec<crate::model::StorediScsiVolume>>,
 }
 impl DescribeStorediScsiVolumesOutput {
@@ -3588,16 +3666,22 @@ impl DescribeStorediScsiVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub start_at: std::option::Option<i32>,
     /// <p>The number of hours between snapshots.</p>
+    #[doc(hidden)]
     pub recurrence_in_hours: std::option::Option<i32>,
     /// <p>The snapshot description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A value that indicates the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribeSnapshotScheduleOutput {
@@ -3746,8 +3830,10 @@ impl DescribeSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain that the gateway is joined to.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
     /// <ul>
@@ -3759,9 +3845,11 @@ pub struct DescribeSmbSettingsOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub active_directory_status: std::option::Option<crate::model::ActiveDirectoryStatus>,
     /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    #[doc(hidden)]
     pub smb_guest_password_set: std::option::Option<bool>,
     /// <p>The type of security strategy that was specified for file gateway.</p>
     /// <ul>
@@ -3769,10 +3857,13 @@ pub struct DescribeSmbSettingsOutput {
     /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
     /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub smb_security_strategy: std::option::Option<crate::model::SmbSecurityStrategy>,
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
+    #[doc(hidden)]
     pub file_shares_visible: std::option::Option<bool>,
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
+    #[doc(hidden)]
     pub smb_local_groups: std::option::Option<crate::model::SmbLocalGroups>,
 }
 impl DescribeSmbSettingsOutput {
@@ -3989,6 +4080,7 @@ impl DescribeSmbSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
+    #[doc(hidden)]
     pub smb_file_share_info_list:
         std::option::Option<std::vec::Vec<crate::model::SmbFileShareInfo>>,
 }
@@ -4056,6 +4148,7 @@ impl DescribeSmbFileSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
+    #[doc(hidden)]
     pub nfs_file_share_info_list:
         std::option::Option<std::vec::Vec<crate::model::NfsFileShareInfo>>,
 }
@@ -4130,16 +4223,22 @@ impl DescribeNfsFileSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub hour_of_day: std::option::Option<i32>,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub minute_of_hour: std::option::Option<i32>,
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<i32>,
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceStartTimeOutput {
@@ -4279,49 +4378,70 @@ impl DescribeMaintenanceStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
+    #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates the time zone configured for the gateway.</p>
+    #[doc(hidden)]
     pub gateway_timezone: std::option::Option<std::string::String>,
     /// <p>A value that indicates the operating state of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_state: std::option::Option<std::string::String>,
     /// <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
+    #[doc(hidden)]
     pub gateway_network_interfaces:
         std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The type of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_type: std::option::Option<std::string::String>,
     /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
+    #[doc(hidden)]
     pub next_update_availability_date: std::option::Option<std::string::String>,
     /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
+    #[doc(hidden)]
     pub last_software_update: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
+    #[doc(hidden)]
     pub ec2_instance_region: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    #[doc(hidden)]
     pub host_environment: std::option::Option<crate::model::HostEnvironment>,
     /// <p>The type of endpoint for your gateway.</p>
     /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>Date after which this gateway will not receive software updates for new features.</p>
+    #[doc(hidden)]
     pub software_updates_end_date: std::option::Option<std::string::String>,
     /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    #[doc(hidden)]
     pub deprecation_date: std::option::Option<std::string::String>,
     /// <p>Specifies the size of the gateway's metadata cache.</p>
+    #[doc(hidden)]
     pub gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
     /// <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
+    #[doc(hidden)]
     pub supported_gateway_capacities:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapacity>>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
+    #[doc(hidden)]
     pub host_environment_id: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInformationOutput {
@@ -4806,6 +4926,7 @@ impl DescribeGatewayInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAssociationsOutput {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    #[doc(hidden)]
     pub file_system_association_info_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationInfo>>,
 }
@@ -4885,6 +5006,7 @@ pub struct DescribeChapCredentialsOutput {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub chap_credentials: std::option::Option<std::vec::Vec<crate::model::ChapInfo>>,
 }
 impl DescribeChapCredentialsOutput {
@@ -4966,6 +5088,7 @@ impl DescribeChapCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
+    #[doc(hidden)]
     pub cachedi_scsi_volumes: std::option::Option<std::vec::Vec<crate::model::CachediScsiVolume>>,
 }
 impl DescribeCachediScsiVolumesOutput {
@@ -5030,18 +5153,25 @@ impl DescribeCachediScsiVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    #[doc(hidden)]
     pub disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
+    #[doc(hidden)]
     pub cache_allocated_in_bytes: i64,
     /// <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
+    #[doc(hidden)]
     pub cache_used_percentage: f64,
     /// <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
+    #[doc(hidden)]
     pub cache_dirty_percentage: f64,
     /// <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
+    #[doc(hidden)]
     pub cache_hit_percentage: f64,
     /// <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
+    #[doc(hidden)]
     pub cache_miss_percentage: f64,
 }
 impl DescribeCacheOutput {
@@ -5207,8 +5337,10 @@ impl DescribeCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    #[doc(hidden)]
     pub bandwidth_rate_limit_intervals:
         std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
 }
@@ -5299,10 +5431,13 @@ impl DescribeBandwidthRateLimitScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
+    #[doc(hidden)]
     pub average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
     /// <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
+    #[doc(hidden)]
     pub average_download_rate_limit_in_bits_per_sec: std::option::Option<i64>,
 }
 impl DescribeBandwidthRateLimitOutput {
@@ -5405,10 +5540,13 @@ impl DescribeBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AvailabilityMonitorTestStatus>,
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAvailabilityMonitorTestOutput {
@@ -5503,6 +5641,7 @@ impl DescribeAvailabilityMonitorTestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DeleteVolumeOutput {
@@ -5557,6 +5696,7 @@ impl DeleteVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTapePoolOutput {
@@ -5611,6 +5751,7 @@ impl DeleteTapePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTapeArchiveOutput {
@@ -5665,6 +5806,7 @@ impl DeleteTapeArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTapeOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted virtual tape.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTapeOutput {
@@ -5719,6 +5861,7 @@ impl DeleteTapeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotScheduleOutput {
     /// <p>The volume which snapshot schedule was deleted.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotScheduleOutput {
@@ -5773,6 +5916,7 @@ impl DeleteSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayOutput {
@@ -5827,6 +5971,7 @@ impl DeleteGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFileShareOutput {
@@ -5884,8 +6029,10 @@ impl DeleteFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
+    #[doc(hidden)]
     pub initiator_name: std::option::Option<std::string::String>,
 }
 impl DeleteChapCredentialsOutput {
@@ -5960,6 +6107,7 @@ impl DeleteChapCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteBandwidthRateLimitOutput {
@@ -6014,6 +6162,7 @@ impl DeleteBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutomaticTapeCreationPolicyOutput {
@@ -6068,6 +6217,7 @@ impl DeleteAutomaticTapeCreationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapeWithBarcodeOutput {
     /// <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl CreateTapeWithBarcodeOutput {
@@ -6122,6 +6272,7 @@ impl CreateTapeWithBarcodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
+    #[doc(hidden)]
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateTapesOutput {
@@ -6185,6 +6336,7 @@ impl CreateTapesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTapePoolOutput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
 }
 impl CreateTapePoolOutput {
@@ -6239,10 +6391,13 @@ impl CreateTapePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The size of the volume in bytes.</p>
+    #[doc(hidden)]
     pub volume_size_in_bytes: i64,
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl CreateStorediScsiVolumeOutput {
@@ -6331,10 +6486,13 @@ impl CreateStorediScsiVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
     /// <p>The ID of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The time the volume was created from the recovery point.</p>
+    #[doc(hidden)]
     pub volume_recovery_point_time: std::option::Option<std::string::String>,
 }
 impl CreateSnapshotFromVolumeRecoveryPointOutput {
@@ -6429,8 +6587,10 @@ impl CreateSnapshotFromVolumeRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl CreateSnapshotOutput {
@@ -6502,6 +6662,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl CreateSmbFileShareOutput {
@@ -6559,6 +6720,7 @@ impl CreateSmbFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
 }
 impl CreateNfsFileShareOutput {
@@ -6616,8 +6778,10 @@ impl CreateNfsFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl CreateCachediScsiVolumeOutput {
@@ -6689,6 +6853,7 @@ impl CreateCachediScsiVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRetrievalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl CancelRetrievalOutput {
@@ -6743,6 +6908,7 @@ impl CancelRetrievalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelArchivalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was canceled.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl CancelArchivalOutput {
@@ -6797,8 +6963,10 @@ impl CancelArchivalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl AttachVolumeOutput {
@@ -6870,6 +7038,7 @@ impl AttachVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFileSystemOutput {
     /// <p>The ARN of the newly created file system association.</p>
+    #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
 }
 impl AssociateFileSystemOutput {
@@ -6933,6 +7102,7 @@ impl AssociateFileSystemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignTapePoolOutput {
     /// <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape pool.</p>
+    #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
 }
 impl AssignTapePoolOutput {
@@ -6987,6 +7157,7 @@ impl AssignTapePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AddWorkingStorageOutput {
@@ -7041,6 +7212,7 @@ impl AddWorkingStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AddUploadBufferOutput {
@@ -7095,6 +7267,7 @@ impl AddUploadBufferOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AddTagsToResourceOutput {
@@ -7149,6 +7322,7 @@ impl AddTagsToResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AddCacheOutput {
@@ -7205,6 +7379,7 @@ impl AddCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl ActivateGatewayOutput {

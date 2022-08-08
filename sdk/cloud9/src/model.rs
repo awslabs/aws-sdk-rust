@@ -10,14 +10,19 @@ pub struct EnvironmentMember {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::Permissions>,
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment for the environment member.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
+    #[doc(hidden)]
     pub last_access: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {
@@ -333,8 +338,10 @@ impl AsRef<str> for ManagedCredentialsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The <b>name</b> part of a tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The <b>value</b> part of a tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -489,24 +496,32 @@ impl AsRef<str> for EnvironmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The ID of the environment.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
     /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
     /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
+    #[doc(hidden)]
     pub owner_arn: std::option::Option<std::string::String>,
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::EnvironmentLifecycle>,
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
@@ -521,6 +536,7 @@ pub struct Environment {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub managed_credentials_status: std::option::Option<crate::model::ManagedCredentialsStatus>,
 }
 impl Environment {
@@ -906,10 +922,13 @@ pub struct EnvironmentLifecycle {
     /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentLifecycleStatus>,
     /// <p>Any informational message about the lifecycle state of the environment.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub failure_resource: std::option::Option<std::string::String>,
 }
 impl EnvironmentLifecycle {

@@ -4357,20 +4357,26 @@ impl UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+    #[doc(hidden)]
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
     /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
+    #[doc(hidden)]
     pub authorized: bool,
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+    #[doc(hidden)]
     pub recording_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -4424,8 +4430,10 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>ARN of the resource for which tags are to be removed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Array of tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4452,8 +4460,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>ARN of the resource for which tags are to be added or updated.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Array of tags to be added or updated.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4484,6 +4494,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamInput {
     /// <p>ARN of the channel for which the stream is to be stopped.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl StopStreamInput {
@@ -4505,8 +4516,10 @@ impl std::fmt::Debug for StopStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMetadataInput {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl PutMetadataInput {
@@ -4533,6 +4546,7 @@ impl std::fmt::Debug for PutMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to be retrieved.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4554,10 +4568,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListStreamSessionsInput {
@@ -4589,10 +4606,13 @@ impl std::fmt::Debug for ListStreamSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
+    #[doc(hidden)]
     pub filter_by: std::option::Option<crate::model::StreamFilters>,
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListStreamsInput {
@@ -4624,10 +4644,13 @@ impl std::fmt::Debug for ListStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListStreamKeysInput {
@@ -4659,8 +4682,10 @@ impl std::fmt::Debug for ListStreamKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListRecordingConfigurationsInput {
@@ -4687,8 +4712,10 @@ impl std::fmt::Debug for ListRecordingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackKeyPairsInput {
     /// <p>Maximum number of key pairs to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPlaybackKeyPairsInput {
@@ -4715,12 +4742,16 @@ impl std::fmt::Debug for ListPlaybackKeyPairsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
+    #[doc(hidden)]
     pub filter_by_name: std::option::Option<std::string::String>,
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
+    #[doc(hidden)]
     pub filter_by_recording_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of channels to return. Default: 50.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListChannelsInput {
@@ -4760,10 +4791,13 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportPlaybackKeyPairInput {
     /// <p>The public portion of a customer-generated key pair.</p>
+    #[doc(hidden)]
     pub public_key_material: std::option::Option<std::string::String>,
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4799,8 +4833,10 @@ impl std::fmt::Debug for ImportPlaybackKeyPairInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl GetStreamSessionInput {
@@ -4827,6 +4863,7 @@ impl std::fmt::Debug for GetStreamSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamKeyInput {
     /// <p>ARN for the stream key to be retrieved.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetStreamKeyInput {
@@ -4848,6 +4885,7 @@ impl std::fmt::Debug for GetStreamKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamInput {
     /// <p>Channel ARN for stream to be accessed.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl GetStreamInput {
@@ -4869,6 +4907,7 @@ impl std::fmt::Debug for GetStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be retrieved.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRecordingConfigurationInput {
@@ -4890,6 +4929,7 @@ impl std::fmt::Debug for GetRecordingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetPlaybackKeyPairInput {
@@ -4911,6 +4951,7 @@ impl std::fmt::Debug for GetPlaybackKeyPairInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelInput {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetChannelInput {
@@ -4932,6 +4973,7 @@ impl std::fmt::Debug for GetChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamKeyInput {
     /// <p>ARN of the stream key to be deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteStreamKeyInput {
@@ -4953,6 +4995,7 @@ impl std::fmt::Debug for DeleteStreamKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRecordingConfigurationInput {
@@ -4974,6 +5017,7 @@ impl std::fmt::Debug for DeleteRecordingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePlaybackKeyPairInput {
@@ -4995,6 +5039,7 @@ impl std::fmt::Debug for DeletePlaybackKeyPairInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// <p>ARN of the channel to be deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -5016,8 +5061,10 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamKeyInput {
     /// <p>ARN of the channel for which to create the stream key.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5048,13 +5095,17 @@ impl std::fmt::Debug for CreateStreamKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecordingConfigurationInput {
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
+    #[doc(hidden)]
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    #[doc(hidden)]
     pub thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
 }
 impl CreateRecordingConfigurationInput {
@@ -5098,20 +5149,26 @@ impl std::fmt::Debug for CreateRecordingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>Channel name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
+    #[doc(hidden)]
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
     /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+    #[doc(hidden)]
     pub authorized: bool,
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
+    #[doc(hidden)]
     pub recording_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5169,6 +5226,7 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per channel.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetStreamKeyInput {
@@ -5190,6 +5248,7 @@ impl std::fmt::Debug for BatchGetStreamKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
+    #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetChannelInput {

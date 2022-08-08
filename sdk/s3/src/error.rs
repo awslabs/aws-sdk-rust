@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectAlreadyInActiveTierError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ObjectAlreadyInActiveTierError {
@@ -69,6 +70,7 @@ impl ObjectAlreadyInActiveTierError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchKey {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchKey {
@@ -133,6 +135,7 @@ impl NoSuchKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchBucket {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchBucket {
@@ -197,6 +200,7 @@ impl NoSuchBucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFound {
@@ -261,10 +265,13 @@ impl NotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidObjectState {
@@ -371,6 +378,7 @@ impl InvalidObjectState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketAlreadyOwnedByYou {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BucketAlreadyOwnedByYou {
@@ -435,6 +443,7 @@ impl BucketAlreadyOwnedByYou {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BucketAlreadyExists {
@@ -499,6 +508,7 @@ impl BucketAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotInActiveTierError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ObjectNotInActiveTierError {
@@ -563,6 +573,7 @@ impl ObjectNotInActiveTierError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchUpload {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchUpload {

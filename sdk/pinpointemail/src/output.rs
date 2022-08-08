@@ -97,6 +97,7 @@ pub struct SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
     /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen when the message you're trying to send has an attachment doesn't pass a virus check, or when you send a templated email that contains invalid personalization content, for example.</p>
     /// </note>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendEmailOutput {
@@ -517,6 +518,7 @@ impl PutAccountDedicatedIpWarmupAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -578,8 +580,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub email_identities: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEmailIdentitiesOutput {
@@ -660,9 +664,11 @@ impl ListEmailIdentitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
+    #[doc(hidden)]
     pub domain_deliverability_campaigns:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainDeliverabilityCampaignsOutput {
@@ -752,9 +758,11 @@ impl ListDomainDeliverabilityCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
+    #[doc(hidden)]
     pub deliverability_test_reports:
         std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeliverabilityTestReportsOutput {
@@ -844,8 +852,10 @@ impl ListDeliverabilityTestReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDedicatedIpPoolsOutput {
@@ -926,8 +936,10 @@ impl ListDedicatedIpPoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
+    #[doc(hidden)]
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsOutput {
@@ -1008,18 +1020,24 @@ impl ListConfigurationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
+    #[doc(hidden)]
     pub feedback_forwarding_status: bool,
     /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
+    #[doc(hidden)]
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
+    #[doc(hidden)]
     pub mail_from_attributes: std::option::Option<crate::model::MailFromAttributes>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetEmailIdentityOutput {
@@ -1189,8 +1207,10 @@ impl GetEmailIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
+    #[doc(hidden)]
     pub overall_volume: std::option::Option<crate::model::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
+    #[doc(hidden)]
     pub daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
 }
 impl GetDomainStatisticsReportOutput {
@@ -1274,6 +1294,7 @@ impl GetDomainStatisticsReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
+    #[doc(hidden)]
     pub domain_deliverability_campaign:
         std::option::Option<crate::model::DomainDeliverabilityCampaign>,
 }
@@ -1341,14 +1362,19 @@ impl GetDomainDeliverabilityCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub deliverability_test_report: std::option::Option<crate::model::DeliverabilityTestReport>,
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
+    #[doc(hidden)]
     pub overall_placement: std::option::Option<crate::model::PlacementStatistics>,
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
+    #[doc(hidden)]
     pub isp_placements: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetDeliverabilityTestReportOutput {
@@ -1504,15 +1530,20 @@ impl GetDeliverabilityTestReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
+    #[doc(hidden)]
     pub dashboard_enabled: bool,
     /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    #[doc(hidden)]
     pub subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub account_status: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub active_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub pending_expiration_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
@@ -1687,8 +1718,10 @@ impl GetDeliverabilityDashboardOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub dedicated_ips: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpsOutput {
@@ -1769,6 +1802,7 @@ impl GetDedicatedIpsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
+    #[doc(hidden)]
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
 }
 impl GetDedicatedIpOutput {
@@ -1826,6 +1860,7 @@ impl GetDedicatedIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
+    #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
 }
 impl GetConfigurationSetEventDestinationsOutput {
@@ -1890,16 +1925,22 @@ impl GetConfigurationSetEventDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
+    #[doc(hidden)]
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub sending_options: std::option::Option<crate::model::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetConfigurationSetOutput {
@@ -2063,6 +2104,7 @@ impl GetConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
+    #[doc(hidden)]
     pub blacklist_report: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
     >,
@@ -2149,10 +2191,13 @@ impl GetBlacklistReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountOutput {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
+    #[doc(hidden)]
     pub send_quota: std::option::Option<crate::model::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
+    #[doc(hidden)]
     pub dedicated_ip_auto_warmup_enabled: bool,
     /// <p>The reputation status of your Amazon Pinpoint account. The status can be one of the following:</p>
     /// <ul>
@@ -2160,10 +2205,12 @@ pub struct GetAccountOutput {
     /// <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub enforcement_status: std::option::Option<std::string::String>,
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
+    #[doc(hidden)]
     pub production_access_enabled: bool,
 }
 impl GetAccountOutput {
@@ -2442,10 +2489,13 @@ impl DeleteConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityOutput {
     /// <p>The email identity type.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
+    #[doc(hidden)]
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
 }
 impl CreateEmailIdentityOutput {
@@ -2543,8 +2593,10 @@ impl CreateEmailIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    #[doc(hidden)]
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
 }
 impl CreateDeliverabilityTestReportOutput {

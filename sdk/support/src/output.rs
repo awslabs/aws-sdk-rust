@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
+    #[doc(hidden)]
     pub initial_case_status: std::option::Option<std::string::String>,
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
+    #[doc(hidden)]
     pub final_case_status: std::option::Option<std::string::String>,
 }
 impl ResolveCaseOutput {
@@ -84,6 +86,7 @@ impl ResolveCaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
 }
 impl RefreshTrustedAdvisorCheckOutput {
@@ -141,6 +144,7 @@ impl RefreshTrustedAdvisorCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
@@ -205,6 +209,7 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
+    #[doc(hidden)]
     pub checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
 }
 impl DescribeTrustedAdvisorChecksOutput {
@@ -269,6 +274,7 @@ impl DescribeTrustedAdvisorChecksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckResultOutput {
     /// <p>The detailed results of the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
 }
 impl DescribeTrustedAdvisorCheckResultOutput {
@@ -326,6 +332,7 @@ impl DescribeTrustedAdvisorCheckResultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
+    #[doc(hidden)]
     pub statuses:
         std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
 }
@@ -396,6 +403,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
+    #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
 }
 impl DescribeSeverityLevelsOutput {
@@ -459,6 +467,7 @@ impl DescribeSeverityLevelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
 }
 impl DescribeServicesOutput {
@@ -522,8 +531,10 @@ impl DescribeServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
+    #[doc(hidden)]
     pub communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
     /// <p>A resumption point for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCommunicationsOutput {
@@ -604,8 +615,10 @@ impl DescribeCommunicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
+    #[doc(hidden)]
     pub cases: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
     /// <p>A resumption point for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCasesOutput {
@@ -687,6 +700,7 @@ impl DescribeCasesOutput {
 pub struct DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
 impl DescribeAttachmentOutput {
@@ -747,6 +761,7 @@ impl DescribeAttachmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCaseOutput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl CreateCaseOutput {
@@ -801,6 +816,7 @@ impl CreateCaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCommunicationToCaseOutput {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
+    #[doc(hidden)]
     pub result: bool,
 }
 impl AddCommunicationToCaseOutput {
@@ -855,8 +871,10 @@ impl AddCommunicationToCaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttachmentsToSetOutput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
+    #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
     /// <p>The time and date when the attachment set expires.</p>
+    #[doc(hidden)]
     pub expiry_time: std::option::Option<std::string::String>,
 }
 impl AddAttachmentsToSetOutput {

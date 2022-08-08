@@ -5,20 +5,28 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDetails {
     /// <p> Name of the project. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p> Synchronization state for a project. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ProjectState>,
     /// <p> Date the project was created. </p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Date of the last modification of the project. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
+    #[doc(hidden)]
     pub console_url: std::option::Option<std::string::String>,
     /// <p> List of AWS resources associated with a project. </p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl ProjectDetails {
@@ -207,14 +215,19 @@ impl ProjectDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p> Key-value attribute pairs. </p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -419,8 +432,10 @@ impl AsRef<str> for ProjectState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p> Name of the project. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl ProjectSummary {
@@ -492,16 +507,22 @@ impl ProjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BundleDetails {
     /// <p> Unique bundle identifier. </p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p> Title of the download bundle. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p> Version of the download bundle. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> Description of the download bundle. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> Icon for the download bundle. </p>
+    #[doc(hidden)]
     pub icon_url: std::option::Option<std::string::String>,
     /// <p> Developer desktop or mobile app or website platforms. </p>
+    #[doc(hidden)]
     pub available_platforms: std::option::Option<std::vec::Vec<crate::model::Platform>>,
 }
 impl BundleDetails {

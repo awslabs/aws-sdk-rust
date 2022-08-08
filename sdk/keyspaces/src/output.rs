@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UpdateTableOutput {
@@ -118,6 +119,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
+    #[doc(hidden)]
     pub restored_table_arn: std::option::Option<std::string::String>,
 }
 impl RestoreTableOutput {
@@ -175,8 +177,10 @@ impl RestoreTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -257,8 +261,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of tables.</p>
+    #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<crate::model::TableSummary>>,
 }
 impl ListTablesOutput {
@@ -339,8 +345,10 @@ impl ListTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyspacesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of keyspaces.</p>
+    #[doc(hidden)]
     pub keyspaces: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>,
 }
 impl ListKeyspacesOutput {
@@ -421,30 +429,42 @@ impl ListKeyspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the specified table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The creation timestamp of the specified table.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the specified table.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TableStatus>,
     /// <p>The schema definition of the specified table.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
     /// <p>• <code>throughputMode:PROVISIONED</code> </p>
+    #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecificationSummary>,
     /// <p>The encryption settings of the specified table.</p>
+    #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
     /// <p>The point-in-time recovery status of the specified table.</p>
+    #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecoverySummary>,
     /// <p>The custom Time to Live settings of the specified table.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<crate::model::TimeToLive>,
     /// <p>The default Time to Live settings of the specified table.</p>
+    #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
     /// <p>The the description of the specified table.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl GetTableOutput {
@@ -728,8 +748,10 @@ impl GetTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyspaceOutput {
     /// <p>The name of the keyspace.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the keyspace.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetKeyspaceOutput {
@@ -864,6 +886,7 @@ impl DeleteKeyspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableOutput {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl CreateTableOutput {
@@ -918,6 +941,7 @@ impl CreateTableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyspaceOutput {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl CreateKeyspaceOutput {

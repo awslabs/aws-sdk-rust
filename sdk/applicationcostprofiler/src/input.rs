@@ -969,14 +969,19 @@ impl UpdateReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportDefinitionInput {
     /// <p>Required. ID of the report to update.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>Required. Description of the report.</p>
+    #[doc(hidden)]
     pub report_description: std::option::Option<std::string::String>,
     /// <p>Required. The cadence to generate the report.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Required. The format to use for the generated report.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    #[doc(hidden)]
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UpdateReportDefinitionInput {
@@ -1018,14 +1023,19 @@ impl std::fmt::Debug for UpdateReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionInput {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>Required. Description of the report.</p>
+    #[doc(hidden)]
     pub report_description: std::option::Option<std::string::String>,
     /// <p>Required. The cadence to generate the report.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Required. The format to use for the generated report.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    #[doc(hidden)]
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl PutReportDefinitionInput {
@@ -1067,8 +1077,10 @@ impl std::fmt::Debug for PutReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportDefinitionsInput {
     /// <p>The token value from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReportDefinitionsInput {
@@ -1095,6 +1107,7 @@ impl std::fmt::Debug for ListReportDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
+    #[doc(hidden)]
     pub source_s3_location: std::option::Option<crate::model::SourceS3Location>,
 }
 impl ImportApplicationUsageInput {
@@ -1116,6 +1129,7 @@ impl std::fmt::Debug for ImportApplicationUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReportDefinitionInput {
     /// <p>ID of the report to retrieve.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl GetReportDefinitionInput {
@@ -1137,6 +1151,7 @@ impl std::fmt::Debug for GetReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportDefinitionInput {
     /// <p>Required. ID of the report to delete.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl DeleteReportDefinitionInput {

@@ -604,6 +604,7 @@ impl SetLoadBasedAutoScalingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterVolumeOutput {
     /// <p>The volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl RegisterVolumeOutput {
@@ -688,6 +689,7 @@ impl RegisterRdsDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceOutput {
     /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl RegisterInstanceOutput {
@@ -742,6 +744,7 @@ impl RegisterInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
 }
 impl RegisterElasticIpOutput {
@@ -796,6 +799,7 @@ impl RegisterElasticIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterEcsClusterOutput {
     /// <p>The cluster's ARN.</p>
+    #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
 }
 impl RegisterEcsClusterOutput {
@@ -883,9 +887,11 @@ impl RebootInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>A set of key-value pairs that contain tag keys and tag values that are attached to a stack or layer.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -977,6 +983,7 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    #[doc(hidden)]
     pub temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
 }
 impl GrantAccessOutput {
@@ -1034,8 +1041,10 @@ impl GrantAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostnameSuggestionOutput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>The generated host name.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
 }
 impl GetHostnameSuggestionOutput {
@@ -1167,6 +1176,7 @@ impl DetachElasticLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesOutput {
     /// <p>An array of volume IDs.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
 }
 impl DescribeVolumesOutput {
@@ -1230,6 +1240,7 @@ impl DescribeVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
+    #[doc(hidden)]
     pub user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfile>>,
 }
 impl DescribeUserProfilesOutput {
@@ -1293,6 +1304,7 @@ impl DescribeUserProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeBasedAutoScalingOutput {
     /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    #[doc(hidden)]
     pub time_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::TimeBasedAutoScalingConfiguration>>,
 }
@@ -1370,6 +1382,7 @@ impl DescribeTimeBasedAutoScalingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSummaryOutput {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
+    #[doc(hidden)]
     pub stack_summary: std::option::Option<crate::model::StackSummary>,
 }
 impl DescribeStackSummaryOutput {
@@ -1427,6 +1440,7 @@ impl DescribeStackSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    #[doc(hidden)]
     pub stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
 }
 impl DescribeStacksOutput {
@@ -1490,8 +1504,10 @@ impl DescribeStacksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackProvisioningParametersOutput {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    #[doc(hidden)]
     pub agent_installer_url: std::option::Option<std::string::String>,
     /// <p>An embedded object that contains the provisioning parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1587,6 +1603,7 @@ impl DescribeStackProvisioningParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    #[doc(hidden)]
     pub service_errors: std::option::Option<std::vec::Vec<crate::model::ServiceError>>,
 }
 impl DescribeServiceErrorsOutput {
@@ -1650,6 +1667,7 @@ impl DescribeServiceErrorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    #[doc(hidden)]
     pub rds_db_instances: std::option::Option<std::vec::Vec<crate::model::RdsDbInstance>>,
 }
 impl DescribeRdsDbInstancesOutput {
@@ -1714,6 +1732,7 @@ impl DescribeRdsDbInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    #[doc(hidden)]
     pub raid_arrays: std::option::Option<std::vec::Vec<crate::model::RaidArray>>,
 }
 impl DescribeRaidArraysOutput {
@@ -1782,6 +1801,7 @@ pub struct DescribePermissionsOutput {
     /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl DescribePermissionsOutput {
@@ -1860,6 +1880,7 @@ impl DescribePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
+    #[doc(hidden)]
     pub operating_systems: std::option::Option<std::vec::Vec<crate::model::OperatingSystem>>,
 }
 impl DescribeOperatingSystemsOutput {
@@ -1924,6 +1945,7 @@ impl DescribeOperatingSystemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    #[doc(hidden)]
     pub user_profile: std::option::Option<crate::model::SelfUserProfile>,
 }
 impl DescribeMyUserProfileOutput {
@@ -1981,6 +2003,7 @@ impl DescribeMyUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBasedAutoScalingOutput {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    #[doc(hidden)]
     pub load_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoadBasedAutoScalingConfiguration>>,
 }
@@ -2058,6 +2081,7 @@ impl DescribeLoadBasedAutoScalingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLayersOutput {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
 }
 impl DescribeLayersOutput {
@@ -2121,6 +2145,7 @@ impl DescribeLayersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesOutput {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DescribeInstancesOutput {
@@ -2184,6 +2209,7 @@ impl DescribeInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticLoadBalancersOutput {
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    #[doc(hidden)]
     pub elastic_load_balancers:
         std::option::Option<std::vec::Vec<crate::model::ElasticLoadBalancer>>,
 }
@@ -2251,6 +2277,7 @@ impl DescribeElasticLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticIpsOutput {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    #[doc(hidden)]
     pub elastic_ips: std::option::Option<std::vec::Vec<crate::model::ElasticIp>>,
 }
 impl DescribeElasticIpsOutput {
@@ -2314,8 +2341,10 @@ impl DescribeElasticIpsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    #[doc(hidden)]
     pub ecs_clusters: std::option::Option<std::vec::Vec<crate::model::EcsCluster>>,
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEcsClustersOutput {
@@ -2396,6 +2425,7 @@ impl DescribeEcsClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
 }
 impl DescribeDeploymentsOutput {
@@ -2459,6 +2489,7 @@ impl DescribeDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    #[doc(hidden)]
     pub commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
 }
 impl DescribeCommandsOutput {
@@ -2522,6 +2553,7 @@ impl DescribeCommandsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppsOutput {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
+    #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::model::App>>,
 }
 impl DescribeAppsOutput {
@@ -2583,6 +2615,7 @@ impl DescribeAppsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    #[doc(hidden)]
     pub agent_versions: std::option::Option<std::vec::Vec<crate::model::AgentVersion>>,
 }
 impl DescribeAgentVersionsOutput {
@@ -2946,6 +2979,7 @@ impl DeleteAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileOutput {
     /// <p>The user's IAM ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
 }
 impl CreateUserProfileOutput {
@@ -3000,6 +3034,7 @@ impl CreateUserProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackOutput {
     /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl CreateStackOutput {
@@ -3054,6 +3089,7 @@ impl CreateStackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLayerOutput {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
 }
 impl CreateLayerOutput {
@@ -3108,6 +3144,7 @@ impl CreateLayerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceOutput {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl CreateInstanceOutput {
@@ -3162,6 +3199,7 @@ impl CreateInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -3219,6 +3257,7 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl CreateAppOutput {
@@ -3273,6 +3312,7 @@ impl CreateAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneStackOutput {
     /// <p>The cloned stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl CloneStackOutput {

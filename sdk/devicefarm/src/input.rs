@@ -12802,14 +12802,19 @@ impl UpdateVpceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
+    #[doc(hidden)]
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    #[doc(hidden)]
     pub vpce_service_name: std::option::Option<std::string::String>,
     /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
+    #[doc(hidden)]
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
 impl UpdateVpceConfigurationInput {
@@ -12854,12 +12859,16 @@ impl std::fmt::Debug for UpdateVpceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUploadInput {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
+    #[doc(hidden)]
     pub edit_content: std::option::Option<bool>,
 }
 impl UpdateUploadInput {
@@ -12896,12 +12905,16 @@ impl std::fmt::Debug for UpdateUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTestGridProjectInput {
     /// <p>ARN of the project to update.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Human-readable name for the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Human-readable description for the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
 }
 impl UpdateTestGridProjectInput {
@@ -12938,10 +12951,13 @@ impl std::fmt::Debug for UpdateTestGridProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A string that represents the new name of the project that you are updating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
+    #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
 }
 impl UpdateProjectInput {
@@ -12976,28 +12992,40 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile about which you are returning information.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the network profile about which you are returning information.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub uplink_bandwidth_bits: std::option::Option<i64>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub downlink_bandwidth_bits: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_delay_ms: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_delay_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_jitter_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_jitter_ms: std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub downlink_loss_percent: i32,
 }
 impl UpdateNetworkProfileInput {
@@ -13074,17 +13102,23 @@ impl std::fmt::Debug for UpdateNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The updated name for your instance profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description for your instance profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
+    #[doc(hidden)]
     pub package_cleanup: std::option::Option<bool>,
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub reboot_after_use: std::option::Option<bool>,
 }
 impl UpdateInstanceProfileInput {
@@ -13135,19 +13169,25 @@ impl std::fmt::Debug for UpdateInstanceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDevicePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of the device pool to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the device pool to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
+    #[doc(hidden)]
     pub max_devices: std::option::Option<i32>,
     /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
+    #[doc(hidden)]
     pub clear_max_devices: std::option::Option<bool>,
 }
 impl UpdateDevicePoolInput {
@@ -13197,10 +13237,13 @@ impl std::fmt::Debug for UpdateDevicePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that you want to associate with the device instance.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateDeviceInstanceInput {
@@ -13232,8 +13275,10 @@ impl std::fmt::Debug for UpdateDeviceInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13260,8 +13305,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -13288,6 +13335,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRunInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopRunInput {
@@ -13309,6 +13357,7 @@ impl std::fmt::Debug for StopRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopRemoteAccessSessionInput {
@@ -13330,6 +13379,7 @@ impl std::fmt::Debug for StopRemoteAccessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopJobInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopJobInput {
@@ -13351,22 +13401,30 @@ impl std::fmt::Debug for StopJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleRunInput {
     /// <p>The ARN of the project for the run to be scheduled.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
+    #[doc(hidden)]
     pub device_pool_arn: std::option::Option<std::string::String>,
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    #[doc(hidden)]
     pub device_selection_configuration:
         std::option::Option<crate::model::DeviceSelectionConfiguration>,
     /// <p>The name for the run to be scheduled.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the test for the run to be scheduled.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<crate::model::ScheduleRunTest>,
     /// <p>Information about the settings for the run to be scheduled.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ScheduleRunConfiguration>,
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
+    #[doc(hidden)]
     pub execution_configuration: std::option::Option<crate::model::ExecutionConfiguration>,
 }
 impl ScheduleRunInput {
@@ -13431,8 +13489,10 @@ impl std::fmt::Debug for ScheduleRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewOfferingInput {
     /// <p>The ID of a request to renew an offering.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// <p>The quantity requested in an offering renewal.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
 }
 impl RenewOfferingInput {
@@ -13459,10 +13519,13 @@ impl std::fmt::Debug for RenewOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseOfferingInput {
     /// <p>The ID of the offering.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// <p>The number of device slots to purchase in an offering request.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
+    #[doc(hidden)]
     pub offering_promotion_id: std::option::Option<std::string::String>,
 }
 impl PurchaseOfferingInput {
@@ -13494,8 +13557,10 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpceConfigurationsInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpceConfigurationsInput {
@@ -13522,6 +13587,7 @@ impl std::fmt::Debug for ListVpceConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUploadsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
@@ -13559,8 +13625,10 @@ pub struct ListUploadsInput {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UploadType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUploadsInput {
@@ -13627,8 +13695,10 @@ impl std::fmt::Debug for ListUploadsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUniqueProblemsInput {
     /// <p>The unique problems' ARNs.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUniqueProblemsInput {
@@ -13655,8 +13725,10 @@ impl std::fmt::Debug for ListUniqueProblemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestsInput {
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestsInput {
@@ -13683,20 +13755,28 @@ impl std::fmt::Debug for ListTestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionsInput {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Return only sessions in this state.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TestGridSessionStatus>,
     /// <p>Return only sessions created after this time.</p>
+    #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only sessions created before this time.</p>
+    #[doc(hidden)]
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only sessions that ended after this time.</p>
+    #[doc(hidden)]
     pub end_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only sessions that ended before this time.</p>
+    #[doc(hidden)]
     pub end_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only this many results at a time.</p>
+    #[doc(hidden)]
     pub max_result: std::option::Option<i32>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionsInput {
@@ -13753,12 +13833,16 @@ impl std::fmt::Debug for ListTestGridSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionArtifactsInput {
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>Limit results to a specified type of artifact.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestGridSessionArtifactCategory>,
     /// <p>The maximum number of results to be returned by a request.</p>
+    #[doc(hidden)]
     pub max_result: std::option::Option<i32>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionArtifactsInput {
@@ -13795,10 +13879,13 @@ impl std::fmt::Debug for ListTestGridSessionArtifactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionActionsInput {
     /// <p>The ARN of the session to retrieve.</p>
+    #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of sessions to return per response.</p>
+    #[doc(hidden)]
     pub max_result: std::option::Option<i32>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionActionsInput {
@@ -13830,8 +13917,10 @@ impl std::fmt::Debug for ListTestGridSessionActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridProjectsInput {
     /// <p>Return no more than this number of results.</p>
+    #[doc(hidden)]
     pub max_result: std::option::Option<i32>,
     /// <p>From a response, used to continue a paginated listing. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridProjectsInput {
@@ -13858,6 +13947,7 @@ impl std::fmt::Debug for ListTestGridProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -13879,8 +13969,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuitesInput {
     /// <p>The job's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuitesInput {
@@ -13907,8 +13999,10 @@ impl std::fmt::Debug for ListSuitesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSamplesInput {
     /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSamplesInput {
@@ -13935,8 +14029,10 @@ impl std::fmt::Debug for ListSamplesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRunsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRunsInput {
@@ -13963,8 +14059,10 @@ impl std::fmt::Debug for ListRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRemoteAccessSessionsInput {
     /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRemoteAccessSessionsInput {
@@ -13991,8 +14089,10 @@ impl std::fmt::Debug for ListRemoteAccessSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
@@ -14019,6 +14119,7 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingTransactionsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingTransactionsInput {
@@ -14040,6 +14141,7 @@ impl std::fmt::Debug for ListOfferingTransactionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsInput {
@@ -14061,6 +14163,7 @@ impl std::fmt::Debug for ListOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingPromotionsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingPromotionsInput {
@@ -14082,10 +14185,13 @@ impl std::fmt::Debug for ListOfferingPromotionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkProfilesInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkProfilesInput {
@@ -14117,8 +14223,10 @@ impl std::fmt::Debug for ListNetworkProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>The run's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -14145,8 +14253,10 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfilesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesInput {
@@ -14173,8 +14283,10 @@ impl std::fmt::Debug for ListInstanceProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
@@ -14207,6 +14319,7 @@ pub struct ListDevicesInput {
     /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
 }
 impl ListDevicesInput {
@@ -14268,6 +14381,7 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePoolsInput {
     /// <p>The project ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
@@ -14275,8 +14389,10 @@ pub struct ListDevicePoolsInput {
     /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DevicePoolType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePoolsInput {
@@ -14313,8 +14429,10 @@ impl std::fmt::Debug for ListDevicePoolsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceInstancesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceInstancesInput {
@@ -14341,6 +14459,7 @@ impl std::fmt::Debug for ListDeviceInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArtifactsInput {
     /// <p>The run, job, suite, or test ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
@@ -14349,8 +14468,10 @@ pub struct ListArtifactsInput {
     /// <li> <p>LOG</p> </li>
     /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactCategory>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsInput {
@@ -14388,8 +14509,10 @@ impl std::fmt::Debug for ListArtifactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstallToRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+    #[doc(hidden)]
     pub remote_access_session_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the app about which you are requesting information.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl InstallToRemoteAccessSessionInput {
@@ -14416,6 +14539,7 @@ impl std::fmt::Debug for InstallToRemoteAccessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetVpceConfigurationInput {
@@ -14437,6 +14561,7 @@ impl std::fmt::Debug for GetVpceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUploadInput {
     /// <p>The upload's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetUploadInput {
@@ -14458,10 +14583,13 @@ impl std::fmt::Debug for GetUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridSessionInput {
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>An ID associated with this session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
+    #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
 }
 impl GetTestGridSessionInput {
@@ -14493,6 +14621,7 @@ impl std::fmt::Debug for GetTestGridSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl GetTestGridProjectInput {
@@ -14514,6 +14643,7 @@ impl std::fmt::Debug for GetTestGridProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestInput {
     /// <p>The test's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetTestInput {
@@ -14535,6 +14665,7 @@ impl std::fmt::Debug for GetTestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteInput {
     /// <p>The suite's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetSuiteInput {
@@ -14556,6 +14687,7 @@ impl std::fmt::Debug for GetSuiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRunInput {
     /// <p>The run's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRunInput {
@@ -14577,6 +14709,7 @@ impl std::fmt::Debug for GetRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRemoteAccessSessionInput {
@@ -14598,6 +14731,7 @@ impl std::fmt::Debug for GetRemoteAccessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProjectInput {
     /// <p>The project's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetProjectInput {
@@ -14619,6 +14753,7 @@ impl std::fmt::Debug for GetProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOfferingStatusInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOfferingStatusInput {
@@ -14640,6 +14775,7 @@ impl std::fmt::Debug for GetOfferingStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkProfileInput {
     /// <p>The ARN of the network profile to return information about.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetNetworkProfileInput {
@@ -14661,6 +14797,7 @@ impl std::fmt::Debug for GetNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobInput {
     /// <p>The job's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
@@ -14682,6 +14819,7 @@ impl std::fmt::Debug for GetJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetInstanceProfileInput {
@@ -14703,8 +14841,10 @@ impl std::fmt::Debug for GetInstanceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
+    #[doc(hidden)]
     pub device_pool_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
@@ -14728,10 +14868,13 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <li> <p>XCTEST.</p> </li>
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub test_type: std::option::Option<crate::model::TestType>,
     /// <p>Information about the uploaded test to be run against the device pool.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<crate::model::ScheduleRunTest>,
     /// <p>An object that contains information about the settings for a run.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ScheduleRunConfiguration>,
 }
 impl GetDevicePoolCompatibilityInput {
@@ -14794,6 +14937,7 @@ impl std::fmt::Debug for GetDevicePoolCompatibilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePoolInput {
     /// <p>The device pool's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDevicePoolInput {
@@ -14815,6 +14959,7 @@ impl std::fmt::Debug for GetDevicePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInstanceInput {
@@ -14836,6 +14981,7 @@ impl std::fmt::Debug for GetDeviceInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInput {
     /// <p>The device type's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInput {
@@ -14868,6 +15014,7 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteVpceConfigurationInput {
@@ -14889,6 +15036,7 @@ impl std::fmt::Debug for DeleteVpceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUploadInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteUploadInput {
@@ -14910,6 +15058,7 @@ impl std::fmt::Debug for DeleteUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTestGridProjectInput {
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTestGridProjectInput {
@@ -14931,6 +15080,7 @@ impl std::fmt::Debug for DeleteTestGridProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRunInput {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRunInput {
@@ -14952,6 +15102,7 @@ impl std::fmt::Debug for DeleteRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRemoteAccessSessionInput {
@@ -14973,6 +15124,7 @@ impl std::fmt::Debug for DeleteRemoteAccessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -14994,6 +15146,7 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkProfileInput {
@@ -15015,6 +15168,7 @@ impl std::fmt::Debug for DeleteNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceProfileInput {
@@ -15036,6 +15190,7 @@ impl std::fmt::Debug for DeleteInstanceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDevicePoolInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteDevicePoolInput {
@@ -15057,12 +15212,16 @@ impl std::fmt::Debug for DeleteDevicePoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpceConfigurationInput {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
+    #[doc(hidden)]
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    #[doc(hidden)]
     pub vpce_service_name: std::option::Option<std::string::String>,
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
+    #[doc(hidden)]
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
 impl CreateVpceConfigurationInput {
@@ -15102,8 +15261,10 @@ impl std::fmt::Debug for CreateVpceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
@@ -15142,8 +15303,10 @@ pub struct CreateUploadInput {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UploadType>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl CreateUploadInput {
@@ -15216,8 +15379,10 @@ impl std::fmt::Debug for CreateUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridUrlInput {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Lifetime, in seconds, of the URL.</p>
+    #[doc(hidden)]
     pub expires_in_seconds: std::option::Option<i32>,
 }
 impl CreateTestGridUrlInput {
@@ -15244,10 +15409,13 @@ impl std::fmt::Debug for CreateTestGridUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridProjectInput {
     /// <p>Human-readable name of the Selenium testing project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Human-readable description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
 }
 impl CreateTestGridProjectInput {
@@ -15279,27 +15447,37 @@ impl std::fmt::Debug for CreateTestGridProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub remote_debug_enabled: std::option::Option<bool>,
     /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
+    #[doc(hidden)]
     pub remote_record_enabled: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
+    #[doc(hidden)]
     pub remote_record_app_arn: std::option::Option<std::string::String>,
     /// <p>The name of the remote access session to create.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The configuration information for the remote access session request.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::CreateRemoteAccessSessionConfiguration>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
@@ -15307,9 +15485,11 @@ pub struct CreateRemoteAccessSessionInput {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+    #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl CreateRemoteAccessSessionInput {
@@ -15397,8 +15577,10 @@ impl std::fmt::Debug for CreateRemoteAccessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The project's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
+    #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
 }
 impl CreateProjectInput {
@@ -15428,28 +15610,40 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name for the new network profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile to create. Valid values are listed here.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub uplink_bandwidth_bits: std::option::Option<i64>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub downlink_bandwidth_bits: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_delay_ms: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_delay_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_jitter_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_jitter_ms: std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub downlink_loss_percent: i32,
 }
 impl CreateNetworkProfileInput {
@@ -15526,15 +15720,20 @@ impl std::fmt::Debug for CreateNetworkProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceProfileInput {
     /// <p>The name of your instance profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of your instance profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
+    #[doc(hidden)]
     pub package_cleanup: std::option::Option<bool>,
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub reboot_after_use: std::option::Option<bool>,
 }
 impl CreateInstanceProfileInput {
@@ -15580,15 +15779,20 @@ impl std::fmt::Debug for CreateInstanceProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDevicePoolInput {
     /// <p>The ARN of the project for the device pool.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The device pool's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The device pool's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The device pool's rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    #[doc(hidden)]
     pub max_devices: std::option::Option<i32>,
 }
 impl CreateDevicePoolInput {

@@ -7017,10 +7017,13 @@ impl UpgradeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeDomainInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
+    #[doc(hidden)]
     pub target_version: std::option::Option<std::string::String>,
     /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
+    #[doc(hidden)]
     pub perform_check_only: std::option::Option<bool>,
     /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
     /// <ul>
@@ -7028,6 +7031,7 @@ pub struct UpgradeDomainInput {
     /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+    #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7073,12 +7077,16 @@ impl std::fmt::Debug for UpgradeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageInput {
     /// <p>The unique identifier for the package.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
+    #[doc(hidden)]
     pub package_source: std::option::Option<crate::model::PackageSource>,
     /// <p>A new description of the package.</p>
+    #[doc(hidden)]
     pub package_description: std::option::Option<std::string::String>,
     /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
+    #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
 }
 impl UpdatePackageInput {
@@ -7115,38 +7123,53 @@ impl std::fmt::Debug for UpdatePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainConfigInput {
     /// <p>The name of the domain you're updating.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The type and number of instances to instantiate for the domain cluster.</p>
+    #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::model::ClusterConfig>,
     /// <p>Specify the type and size of the EBS volume to use.</p>
+    #[doc(hidden)]
     pub ebs_options: std::option::Option<crate::model::EbsOptions>,
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
+    #[doc(hidden)]
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+    #[doc(hidden)]
     pub vpc_options: std::option::Option<crate::model::VpcOptions>,
     /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+    #[doc(hidden)]
     pub cognito_options: std::option::Option<crate::model::CognitoOptions>,
     /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
+    #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<std::string::String>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+    #[doc(hidden)]
     pub log_publishing_options: std::option::Option<
         std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
     >,
     /// <p>Specifies encryption of data at rest options.</p>
+    #[doc(hidden)]
     pub encryption_at_rest_options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptions>,
     /// <p>Specifies node-to-node encryption options.</p>
+    #[doc(hidden)]
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
     /// <p>Specifies advanced security options.</p>
+    #[doc(hidden)]
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
     /// <p>Specifies Auto-Tune options.</p>
+    #[doc(hidden)]
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+    #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
 }
 impl UpdateDomainConfigInput {
@@ -7259,6 +7282,7 @@ impl std::fmt::Debug for UpdateDomainConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl StartServiceSoftwareUpdateInput {
@@ -7280,8 +7304,10 @@ impl std::fmt::Debug for StartServiceSoftwareUpdateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The <code>TagKey</code> list you want to remove from the domain. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
@@ -7308,6 +7334,7 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInboundConnectionInput {
     /// <p>The ID of the inbound connection to reject.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl RejectInboundConnectionInput {
@@ -7329,10 +7356,13 @@ impl std::fmt::Debug for RejectInboundConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
+    #[doc(hidden)]
     pub reserved_instance_offering_id: std::option::Option<std::string::String>,
     /// <p>A customer-specified identifier to track this reservation.</p>
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
     /// <p>The number of OpenSearch instances to reserve.</p>
+    #[doc(hidden)]
     pub instance_count: i32,
 }
 impl PurchaseReservedInstanceOfferingInput {
@@ -7370,8 +7400,10 @@ impl std::fmt::Debug for PurchaseReservedInstanceOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVersionsInput {
     /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVersionsInput {
@@ -7398,6 +7430,7 @@ impl std::fmt::Debug for ListVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -7419,10 +7452,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesForDomainInput {
     /// <p>The name of the domain for which you want to list associated packages.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Limits results to a maximum number of packages.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesForDomainInput {
@@ -7454,12 +7490,16 @@ impl std::fmt::Debug for ListPackagesForDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceTypeDetailsInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Set this value to limit the number of results returned. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceTypeDetailsInput {
@@ -7496,10 +7536,13 @@ impl std::fmt::Debug for ListInstanceTypeDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsForPackageInput {
     /// <p>The package for which to list associated domains.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>Limits the results to a maximum number of domains.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsForPackageInput {
@@ -7531,6 +7574,7 @@ impl std::fmt::Debug for ListDomainsForPackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl ListDomainNamesInput {
@@ -7552,6 +7596,7 @@ impl std::fmt::Debug for ListDomainNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeStatusInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetUpgradeStatusInput {
@@ -7573,10 +7618,13 @@ impl std::fmt::Debug for GetUpgradeStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeHistoryInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Set this value to limit the number of results returned. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUpgradeHistoryInput {
@@ -7608,10 +7656,13 @@ impl std::fmt::Debug for GetUpgradeHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryInput {
     /// <p>Returns an audit history of package versions.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>Limits results to a maximum number of package versions.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionHistoryInput {
@@ -7643,6 +7694,7 @@ impl std::fmt::Debug for GetPackageVersionHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleVersionsInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetCompatibleVersionsInput {
@@ -7664,8 +7716,10 @@ impl std::fmt::Debug for GetCompatibleVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DissociatePackageInput {
     /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The name of the domain to associate the package with.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DissociatePackageInput {
@@ -7692,10 +7746,13 @@ impl std::fmt::Debug for DissociatePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesInput {
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
+    #[doc(hidden)]
     pub reserved_instance_id: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedInstancesInput {
@@ -7727,10 +7784,13 @@ impl std::fmt::Debug for DescribeReservedInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstanceOfferingsInput {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
+    #[doc(hidden)]
     pub reserved_instance_offering_id: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedInstanceOfferingsInput {
@@ -7765,10 +7825,13 @@ impl std::fmt::Debug for DescribeReservedInstanceOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
     /// <p>Limits results to a maximum number of packages.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePackagesInput {
@@ -7808,10 +7871,13 @@ pub struct DescribeOutboundConnectionsInput {
     /// <li>local-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOutboundConnectionsInput {
@@ -7851,10 +7917,13 @@ impl std::fmt::Debug for DescribeOutboundConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceTypeLimitsInput {
     /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypeLimitsInput {
@@ -7896,10 +7965,13 @@ pub struct DescribeInboundConnectionsInput {
     /// <li>remote-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInboundConnectionsInput {
@@ -7939,6 +8011,7 @@ impl std::fmt::Debug for DescribeInboundConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsInput {
     /// <p>The domains for which you want information.</p>
+    #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDomainsInput {
@@ -7960,6 +8033,7 @@ impl std::fmt::Debug for DescribeDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainConfigInput {
     /// <p>The domain you want to get information about.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainConfigInput {
@@ -7981,8 +8055,10 @@ impl std::fmt::Debug for DescribeDomainConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainChangeProgressInput {
     /// <p>The domain you want to get the progress information about.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    #[doc(hidden)]
     pub change_id: std::option::Option<std::string::String>,
 }
 impl DescribeDomainChangeProgressInput {
@@ -8009,10 +8085,13 @@ impl std::fmt::Debug for DescribeDomainChangeProgressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainAutoTunesInput {
     /// <p>The domain name for which you want Auto-Tune action details.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDomainAutoTunesInput {
@@ -8044,6 +8123,7 @@ impl std::fmt::Debug for DescribeDomainAutoTunesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p>The name of the domain for which you want information.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -8065,6 +8145,7 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageInput {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
 }
 impl DeletePackageInput {
@@ -8086,6 +8167,7 @@ impl std::fmt::Debug for DeletePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteOutboundConnectionInput {
@@ -8107,6 +8189,7 @@ impl std::fmt::Debug for DeleteOutboundConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteInboundConnectionInput {
@@ -8128,6 +8211,7 @@ impl std::fmt::Debug for DeleteInboundConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -8149,12 +8233,16 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageInput {
     /// <p>Unique identifier for the package.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    #[doc(hidden)]
     pub package_type: std::option::Option<crate::model::PackageType>,
     /// <p>Description of the package.</p>
+    #[doc(hidden)]
     pub package_description: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location from which to import the package. </p>
+    #[doc(hidden)]
     pub package_source: std::option::Option<crate::model::PackageSource>,
 }
 impl CreatePackageInput {
@@ -8191,10 +8279,13 @@ impl std::fmt::Debug for CreatePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutboundConnectionInput {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+    #[doc(hidden)]
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+    #[doc(hidden)]
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
+    #[doc(hidden)]
     pub connection_alias: std::option::Option<std::string::String>,
 }
 impl CreateOutboundConnectionInput {
@@ -8230,40 +8321,56 @@ impl std::fmt::Debug for CreateOutboundConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
+    #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::model::ClusterConfig>,
     /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
+    #[doc(hidden)]
     pub ebs_options: std::option::Option<crate::model::EbsOptions>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<std::string::String>,
     /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
+    #[doc(hidden)]
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+    #[doc(hidden)]
     pub vpc_options: std::option::Option<crate::model::VpcOptions>,
     /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+    #[doc(hidden)]
     pub cognito_options: std::option::Option<crate::model::CognitoOptions>,
     /// <p>Options for encryption of data at rest.</p>
+    #[doc(hidden)]
     pub encryption_at_rest_options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>Node-to-node encryption options.</p>
+    #[doc(hidden)]
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
     /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
+    #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+    #[doc(hidden)]
     pub log_publishing_options: std::option::Option<
         std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
     >,
     /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptions>,
     /// <p>Specifies advanced security options.</p>
+    #[doc(hidden)]
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
     /// <p>A list of <code>Tag</code> added during domain creation. </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies Auto-Tune options.</p>
+    #[doc(hidden)]
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsInput>,
 }
 impl CreateDomainInput {
@@ -8381,6 +8488,7 @@ impl std::fmt::Debug for CreateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl CancelServiceSoftwareUpdateInput {
@@ -8402,8 +8510,10 @@ impl std::fmt::Debug for CancelServiceSoftwareUpdateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePackageInput {
     /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The name of the domain to associate the package with.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl AssociatePackageInput {
@@ -8430,8 +8540,10 @@ impl std::fmt::Debug for AssociatePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>List of <code>Tag</code> to add to the domain. </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
@@ -8458,6 +8570,7 @@ impl std::fmt::Debug for AddTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInboundConnectionInput {
     /// <p>The ID of the inbound connection you want to accept.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl AcceptInboundConnectionInput {

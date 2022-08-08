@@ -125,6 +125,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeOutput {
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl SubscribeOutput {
@@ -362,8 +363,10 @@ impl RemovePermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchOutput {
     /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
     /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl PublishBatchOutput {
@@ -455,9 +458,11 @@ impl PublishBatchOutput {
 pub struct PublishOutput {
     /// <p>Unique identifier assigned to the published message.</p>
     /// <p>Length Constraint: Maximum 100 characters</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
     /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl PublishOutput {
@@ -568,8 +573,10 @@ impl OptInPhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
+    #[doc(hidden)]
     pub topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicsOutput {
@@ -650,6 +657,7 @@ impl ListTopicsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the specified topic.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -711,8 +719,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionsByTopicOutput {
@@ -793,8 +803,10 @@ impl ListSubscriptionsByTopicOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionsOutput {
     /// <p>A list of subscriptions.</p>
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
     /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionsOutput {
@@ -875,8 +887,10 @@ impl ListSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmsSandboxPhoneNumbersOutput {
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSmsSandboxPhoneNumbersOutput {
@@ -958,9 +972,11 @@ impl ListSmsSandboxPhoneNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
+    #[doc(hidden)]
     pub platform_applications:
         std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformApplicationsOutput {
@@ -1044,8 +1060,10 @@ impl ListPlatformApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersOptedOutOutput {
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersOptedOutOutput {
@@ -1126,8 +1144,10 @@ impl ListPhoneNumbersOptedOutOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginationNumbersOutput {
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the calling account's verified and pending origination numbers.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
 }
 impl ListOriginationNumbersOutput {
@@ -1209,8 +1229,10 @@ impl ListOriginationNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsByPlatformApplicationOutput {
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointsByPlatformApplicationOutput {
@@ -1315,6 +1337,7 @@ pub struct GetTopicAttributesOutput {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1482,6 +1505,7 @@ pub struct GetSubscriptionAttributesOutput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1617,6 +1641,7 @@ impl GetSubscriptionAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
+    #[doc(hidden)]
     pub is_in_sandbox: bool,
 }
 impl GetSmsSandboxAccountStatusOutput {
@@ -1671,6 +1696,7 @@ impl GetSmsSandboxAccountStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsAttributesOutput {
     /// <p>The SMS attribute names and their values.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1755,6 +1781,7 @@ pub struct GetPlatformApplicationAttributesOutput {
     /// <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.</p> </li>
     /// <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1864,6 +1891,7 @@ pub struct GetEndpointAttributesOutput {
     /// <p>The device token for the iOS platform is returned in lowercase.</p>
     /// </note> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2080,6 +2108,7 @@ impl DeleteEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTopicOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl CreateTopicOutput {
@@ -2164,6 +2193,7 @@ impl CreateSmsSandboxPhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreatePlatformEndpointOutput {
@@ -2218,6 +2248,7 @@ impl CreatePlatformEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformApplicationOutput {
     /// <p>PlatformApplicationArn is returned.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
 }
 impl CreatePlatformApplicationOutput {
@@ -2275,6 +2306,7 @@ impl CreatePlatformApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmSubscriptionOutput {
     /// <p>The ARN of the created subscription.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl ConfirmSubscriptionOutput {
@@ -2336,6 +2368,7 @@ pub struct CheckIfPhoneNumberIsOptedOutOutput {
     /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
     /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub is_opted_out: bool,
 }
 impl CheckIfPhoneNumberIsOptedOutOutput {

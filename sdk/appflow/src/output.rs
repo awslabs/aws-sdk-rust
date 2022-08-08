@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowOutput {
     /// <p>Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
 impl UpdateFlowOutput {
@@ -61,6 +62,7 @@ impl UpdateFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorProfileOutput {
@@ -208,8 +210,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
 impl StopFlowOutput {
@@ -284,10 +288,13 @@ impl StopFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
     /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl StartFlowOutput {
@@ -379,6 +386,7 @@ impl StartFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterConnectorOutput {
     /// <p>The ARN of the connector being registered.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
 }
 impl RegisterConnectorOutput {
@@ -436,6 +444,7 @@ impl RegisterConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -509,8 +518,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowsOutput {
     /// <p> The list of flows associated with your account. </p>
+    #[doc(hidden)]
     pub flows: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>,
     /// <p> The pagination token for next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsOutput {
@@ -591,8 +602,10 @@ impl ListFlowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorsOutput {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorsOutput {
@@ -673,6 +686,7 @@ impl ListConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
+    #[doc(hidden)]
     pub connector_entity_map: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -762,8 +776,10 @@ impl ListConnectorEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowExecutionRecordsOutput {
     /// <p> Returns a list of all instances when this flow was run. </p>
+    #[doc(hidden)]
     pub flow_executions: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
     /// <p> The pagination token for the next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFlowExecutionRecordsOutput {
@@ -845,37 +861,53 @@ impl DescribeFlowExecutionRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> A description of the flow. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    #[doc(hidden)]
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
     /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
+    #[doc(hidden)]
     pub flow_status_message: std::option::Option<std::string::String>,
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    #[doc(hidden)]
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    #[doc(hidden)]
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> Describes the details of the most recent flow run. </p>
+    #[doc(hidden)]
     pub last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
+    #[doc(hidden)]
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> Specifies when the flow was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies when the flow was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ARN of the user who created the flow. </p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
+    #[doc(hidden)]
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1262,6 +1294,7 @@ impl DescribeFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorsOutput {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
+    #[doc(hidden)]
     pub connector_configurations: std::option::Option<
         std::collections::HashMap<
             crate::model::ConnectorType,
@@ -1269,8 +1302,10 @@ pub struct DescribeConnectorsOutput {
         >,
     >,
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
     /// <p> The pagination token for the next page of data. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorsOutput {
@@ -1398,9 +1433,11 @@ impl DescribeConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorProfilesOutput {
     /// <p> Returns information about the connector profiles associated with the flow. </p>
+    #[doc(hidden)]
     pub connector_profile_details:
         std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
     /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesOutput {
@@ -1484,6 +1521,7 @@ impl DescribeConnectorProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
+    #[doc(hidden)]
     pub connector_entity_fields:
         std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
 }
@@ -1554,6 +1592,7 @@ impl DescribeConnectorEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorOutput {
     /// <p>Configuration info of all the connectors that the user requested.</p>
+    #[doc(hidden)]
     pub connector_configuration: std::option::Option<crate::model::ConnectorConfiguration>,
 }
 impl DescribeConnectorOutput {
@@ -1677,8 +1716,10 @@ impl DeleteConnectorProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
+    #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
 impl CreateFlowOutput {
@@ -1753,6 +1794,7 @@ impl CreateFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateConnectorProfileOutput {

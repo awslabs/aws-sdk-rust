@@ -8686,8 +8686,10 @@ impl UpdateChannelReadMarkerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelReadMarkerInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelReadMarkerInput {
@@ -8714,14 +8716,19 @@ impl std::fmt::Debug for UpdateChannelReadMarkerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string of the message being updated.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The content of the message being updated.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The metadata of the message being updated.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageInput {
@@ -8763,10 +8770,13 @@ impl std::fmt::Debug for UpdateChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>Information about the processor Lambda functions </p>
+    #[doc(hidden)]
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateChannelFlowInput {
@@ -8798,14 +8808,19 @@ impl std::fmt::Debug for UpdateChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The mode of the update request.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The metadata for the update request.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -8847,8 +8862,10 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8875,8 +8892,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8903,22 +8922,31 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    #[doc(hidden)]
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
     /// <p>The optional metadata for each message.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>Idempotency</code> token for each client request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The push notification configuration of the message.</p>
+    #[doc(hidden)]
     pub push_notification: std::option::Option<crate::model::PushNotificationConfiguration>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -8988,12 +9016,16 @@ impl std::fmt::Debug for SendChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchChannelsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::SearchField>>,
     /// <p>The maximum number of channels that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchChannelsInput {
@@ -9030,10 +9062,13 @@ impl std::fmt::Debug for SearchChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactChannelMessageInput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being redacted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl RedactChannelMessageInput {
@@ -9065,12 +9100,16 @@ impl std::fmt::Debug for RedactChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutChannelMembershipPreferencesInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
 }
 impl PutChannelMembershipPreferencesInput {
@@ -9107,6 +9146,7 @@ impl std::fmt::Debug for PutChannelMembershipPreferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -9128,12 +9168,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserInput {
     /// <p>The ARN of the user in the moderated channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserInput {
@@ -9170,10 +9214,13 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsAssociatedWithChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsAssociatedWithChannelFlowInput {
@@ -9205,14 +9252,19 @@ impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelsInput {
@@ -9254,12 +9306,16 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelModeratorsInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelModeratorsInput {
@@ -9296,18 +9352,25 @@ impl std::fmt::Debug for ListChannelModeratorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMessagesInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The initial or starting time stamp for your requested messages.</p>
+    #[doc(hidden)]
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The final or ending time stamp for your requested messages.</p>
+    #[doc(hidden)]
     pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of messages that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMessagesInput {
@@ -9359,12 +9422,16 @@ impl std::fmt::Debug for ListChannelMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of users that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserInput {
@@ -9401,14 +9468,19 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsInput {
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsInput {
@@ -9450,10 +9522,13 @@ impl std::fmt::Debug for ListChannelMembershipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelFlowsInput {
     /// <p>The ARN of the app instance.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channel flows that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelFlowsInput {
@@ -9485,12 +9560,16 @@ impl std::fmt::Debug for ListChannelFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelBansInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of bans that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelBansInput {
@@ -9538,10 +9617,13 @@ impl std::fmt::Debug for GetMessagingSessionEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageStatusInput {
     /// <p>The ARN of the channel</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl GetChannelMessageStatusInput {
@@ -9573,10 +9655,13 @@ impl std::fmt::Debug for GetChannelMessageStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl GetChannelMessageInput {
@@ -9608,10 +9693,13 @@ impl std::fmt::Debug for GetChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMembershipPreferencesInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl GetChannelMembershipPreferencesInput {
@@ -9643,10 +9731,13 @@ impl std::fmt::Debug for GetChannelMembershipPreferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateChannelFlowInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DisassociateChannelFlowInput {
@@ -9678,10 +9769,13 @@ impl std::fmt::Debug for DisassociateChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelModeratorInput {
@@ -9713,10 +9807,13 @@ impl std::fmt::Debug for DescribeChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratedByAppInstanceUserInput {
     /// <p>The ARN of the moderated channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelModeratedByAppInstanceUserInput {
@@ -9748,10 +9845,13 @@ impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipForAppInstanceUserInput {
     /// <p>The ARN of the channel to which the user belongs.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the user in a channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelMembershipForAppInstanceUserInput {
@@ -9783,10 +9883,13 @@ impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelMembershipInput {
@@ -9818,6 +9921,7 @@ impl std::fmt::Debug for DescribeChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl DescribeChannelFlowInput {
@@ -9839,10 +9943,13 @@ impl std::fmt::Debug for DescribeChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelBanInput {
     /// <p>The ARN of the channel from which the user is banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelBanInput {
@@ -9874,8 +9981,10 @@ impl std::fmt::Debug for DescribeChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
@@ -9902,10 +10011,13 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelModeratorInput {
@@ -9937,10 +10049,13 @@ impl std::fmt::Debug for DeleteChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being deleted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelMessageInput {
@@ -9972,10 +10087,13 @@ impl std::fmt::Debug for DeleteChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelMembershipInput {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelMembershipInput {
@@ -10007,6 +10125,7 @@ impl std::fmt::Debug for DeleteChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl DeleteChannelFlowInput {
@@ -10028,10 +10147,13 @@ impl std::fmt::Debug for DeleteChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelBanInput {
     /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelBanInput {
@@ -10063,8 +10185,10 @@ impl std::fmt::Debug for DeleteChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// <p>The ARN of the channel being deleted.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -10091,10 +10215,13 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelModeratorInput {
@@ -10126,12 +10253,16 @@ impl std::fmt::Debug for CreateChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelMembershipInput {
@@ -10168,14 +10299,19 @@ impl std::fmt::Debug for CreateChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelFlowInput {
     /// <p>The ARN of the channel flow request.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
+    #[doc(hidden)]
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The tags for the creation request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token for the request. An Idempotency token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateChannelFlowInput {
@@ -10217,10 +10353,13 @@ impl std::fmt::Debug for CreateChannelFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelBanInput {
     /// <p>The ARN of the ban request.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelBanInput {
@@ -10252,26 +10391,37 @@ impl std::fmt::Debug for CreateChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The ARN of the channel request.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the creation request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The ID of the channel in the request.</p>
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// <p>The ARNs of the channel members in the request.</p>
+    #[doc(hidden)]
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARNs of the channel moderators in the request.</p>
+    #[doc(hidden)]
     pub moderator_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateChannelInput {
@@ -10343,12 +10493,16 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelFlowCallbackInput {
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    #[doc(hidden)]
     pub callback_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    #[doc(hidden)]
     pub delete_resource: bool,
     /// <p>Stores information about the processed message.</p>
+    #[doc(hidden)]
     pub channel_message: std::option::Option<crate::model::ChannelMessageCallback>,
 }
 impl ChannelFlowCallbackInput {
@@ -10385,12 +10539,16 @@ impl std::fmt::Debug for ChannelFlowCallbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    #[doc(hidden)]
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl BatchCreateChannelMembershipInput {
@@ -10427,10 +10585,13 @@ impl std::fmt::Debug for BatchCreateChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateChannelFlowInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl AssociateChannelFlowInput {

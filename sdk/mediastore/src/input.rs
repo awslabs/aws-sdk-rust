@@ -3157,8 +3157,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3185,8 +3187,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container. </p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3213,6 +3217,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAccessLoggingInput {
     /// <p>The name of the container that you want to stop access logging on.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl StopAccessLoggingInput {
@@ -3234,6 +3239,7 @@ impl std::fmt::Debug for StopAccessLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAccessLoggingInput {
     /// <p>The name of the container that you want to start access logging on.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl StartAccessLoggingInput {
@@ -3255,12 +3261,14 @@ impl std::fmt::Debug for StartAccessLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMetricPolicyInput {
     /// <p>The name of the container that you want to add the metric policy to.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
     /// <ul>
     /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
     /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
 impl PutMetricPolicyInput {
@@ -3291,8 +3299,10 @@ impl std::fmt::Debug for PutMetricPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecyclePolicyInput {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The object lifecycle policy to apply to the container.</p>
+    #[doc(hidden)]
     pub lifecycle_policy: std::option::Option<std::string::String>,
 }
 impl PutLifecyclePolicyInput {
@@ -3319,8 +3329,10 @@ impl std::fmt::Debug for PutLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The CORS policy to apply to the container. </p>
+    #[doc(hidden)]
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl PutCorsPolicyInput {
@@ -3347,12 +3359,14 @@ impl std::fmt::Debug for PutCorsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutContainerPolicyInput {
     /// <p>The name of the container.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
     /// <li> <p>One <code>Version</code> tag</p> </li>
     /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutContainerPolicyInput {
@@ -3383,6 +3397,7 @@ impl std::fmt::Debug for PutContainerPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3404,8 +3419,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainersInput {
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListContainersInput {
@@ -3432,6 +3449,7 @@ impl std::fmt::Debug for ListContainersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetMetricPolicyInput {
@@ -3453,6 +3471,7 @@ impl std::fmt::Debug for GetMetricPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyInput {
@@ -3474,6 +3493,7 @@ impl std::fmt::Debug for GetLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetCorsPolicyInput {
@@ -3495,6 +3515,7 @@ impl std::fmt::Debug for GetCorsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetContainerPolicyInput {
@@ -3516,6 +3537,7 @@ impl std::fmt::Debug for GetContainerPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContainerInput {
     /// <p>The name of the container to query.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DescribeContainerInput {
@@ -3537,6 +3559,7 @@ impl std::fmt::Debug for DescribeContainerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteMetricPolicyInput {
@@ -3558,6 +3581,7 @@ impl std::fmt::Debug for DeleteMetricPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {
@@ -3579,6 +3603,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteCorsPolicyInput {
@@ -3600,6 +3625,7 @@ impl std::fmt::Debug for DeleteCorsPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContainerPolicyInput {
     /// <p>The name of the container that holds the policy.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteContainerPolicyInput {
@@ -3621,6 +3647,7 @@ impl std::fmt::Debug for DeleteContainerPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContainerInput {
     /// <p>The name of the container to delete. </p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteContainerInput {
@@ -3642,8 +3669,10 @@ impl std::fmt::Debug for DeleteContainerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerInput {
     /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
+    #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
     /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateContainerInput {

@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HomeRegionControl {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
     /// <p>The AWS Region that's been set as home region. For example, "us-west-2" or "eu-central-1" are valid home regions.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::Target>,
     /// <p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>
+    #[doc(hidden)]
     pub requested_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HomeRegionControl {
@@ -119,8 +123,10 @@ impl HomeRegionControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TargetType>,
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Target {

@@ -59,14 +59,17 @@ impl AsRef<str> for RootDeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>The repository type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceType>,
     /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
     /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
     /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
@@ -75,11 +78,14 @@ pub struct Source {
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>In requests, the repository's SSH key.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    #[doc(hidden)]
     pub ssh_key: std::option::Option<std::string::String>,
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
 }
 impl Source {
@@ -315,8 +321,10 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChefConfiguration {
     /// <p>Whether to enable Berkshelf.</p>
+    #[doc(hidden)]
     pub manage_berkshelf: std::option::Option<bool>,
     /// <p>The Berkshelf version.</p>
+    #[doc(hidden)]
     pub berkshelf_version: std::option::Option<std::string::String>,
 }
 impl ChefConfiguration {
@@ -391,8 +399,10 @@ impl ChefConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackConfigurationManager {
     /// <p>The name. This parameter must be set to "Chef".</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl StackConfigurationManager {
@@ -515,6 +525,7 @@ impl AsRef<str> for StackAttributesKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
+    #[doc(hidden)]
     pub shutdown: std::option::Option<crate::model::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfiguration {
@@ -572,8 +583,10 @@ impl LifecycleEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
+    #[doc(hidden)]
     pub execution_timeout: std::option::Option<i32>,
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    #[doc(hidden)]
     pub delay_until_elb_connections_drained: std::option::Option<bool>,
 }
 impl ShutdownEventConfiguration {
@@ -652,14 +665,19 @@ impl ShutdownEventConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recipes {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
+    #[doc(hidden)]
     pub setup: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
+    #[doc(hidden)]
     pub configure: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
+    #[doc(hidden)]
     pub deploy: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
+    #[doc(hidden)]
     pub undeploy: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
+    #[doc(hidden)]
     pub shutdown: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Recipes {
@@ -827,12 +845,16 @@ impl Recipes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    #[doc(hidden)]
     pub raid_level: std::option::Option<i32>,
     /// <p>The number of disks in the volume.</p>
+    #[doc(hidden)]
     pub number_of_disks: std::option::Option<i32>,
     /// <p>The volume size.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
@@ -842,10 +864,13 @@ pub struct VolumeConfiguration {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
 }
 impl VolumeConfiguration {
@@ -1023,8 +1048,10 @@ impl VolumeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsConfiguration {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A list of configuration options for CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_streams: std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
 }
 impl CloudWatchLogsConfiguration {
@@ -1106,28 +1133,39 @@ impl CloudWatchLogsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsLogStream {
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+    #[doc(hidden)]
     pub datetime_format: std::option::Option<std::string::String>,
     /// <p>Specifies the time zone of log event time stamps.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<crate::model::CloudWatchLogsTimeZone>,
     /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
     /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
     /// <p>Zipped files are not supported.</p>
+    #[doc(hidden)]
     pub file: std::option::Option<std::string::String>,
     /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
+    #[doc(hidden)]
     pub file_fingerprint_lines: std::option::Option<std::string::String>,
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
+    #[doc(hidden)]
     pub multi_line_start_pattern: std::option::Option<std::string::String>,
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
+    #[doc(hidden)]
     pub initial_position: std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+    #[doc(hidden)]
     pub encoding: std::option::Option<crate::model::CloudWatchLogsEncoding>,
     /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
+    #[doc(hidden)]
     pub buffer_duration: std::option::Option<i32>,
     /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
+    #[doc(hidden)]
     pub batch_count: std::option::Option<i32>,
     /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
+    #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
 }
 impl CloudWatchLogsLogStream {
@@ -2286,10 +2324,13 @@ impl AsRef<str> for AutoScalingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentVariable {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
+    #[doc(hidden)]
     pub secure: std::option::Option<bool>,
 }
 impl EnvironmentVariable {
@@ -2446,10 +2487,13 @@ impl AsRef<str> for AppAttributesKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
+    #[doc(hidden)]
     pub chain: std::option::Option<std::string::String>,
 }
 impl SslConfiguration {
@@ -2621,10 +2665,13 @@ impl AsRef<str> for AppType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
     /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The data source's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The database name.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
 }
 impl DataSource {
@@ -2723,24 +2770,31 @@ impl DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
+    #[doc(hidden)]
     pub monday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Tuesday.</p>
+    #[doc(hidden)]
     pub tuesday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Wednesday.</p>
+    #[doc(hidden)]
     pub wednesday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Thursday.</p>
+    #[doc(hidden)]
     pub thursday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Friday.</p>
+    #[doc(hidden)]
     pub friday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Saturday.</p>
+    #[doc(hidden)]
     pub saturday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Sunday.</p>
+    #[doc(hidden)]
     pub sunday:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3038,20 +3092,27 @@ impl WeeklyAutoScalingSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingThresholds {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
+    #[doc(hidden)]
     pub thresholds_wait_time: std::option::Option<i32>,
     /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+    #[doc(hidden)]
     pub ignore_metrics_time: std::option::Option<i32>,
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
+    #[doc(hidden)]
     pub cpu_threshold: std::option::Option<f64>,
     /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
+    #[doc(hidden)]
     pub memory_threshold: std::option::Option<f64>,
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
+    #[doc(hidden)]
     pub load_threshold: std::option::Option<f64>,
     /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
     /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AutoScalingThresholds {
@@ -3223,8 +3284,10 @@ impl AutoScalingThresholds {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdentity {
     /// <p>A JSON document that contains the metadata.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
 }
 impl InstanceIdentity {
@@ -3296,12 +3359,16 @@ impl InstanceIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemporaryCredential {
     /// <p>The user name.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    #[doc(hidden)]
     pub valid_for_in_minutes: std::option::Option<i32>,
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl TemporaryCredential {
@@ -3407,26 +3474,37 @@ impl TemporaryCredential {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Volume {
     /// <p>The volume ID.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 volume ID.</p>
+    #[doc(hidden)]
     pub ec2_volume_id: std::option::Option<std::string::String>,
     /// <p>The volume name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The RAID array ID.</p>
+    #[doc(hidden)]
     pub raid_array_id: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The volume size.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i32>,
     /// <p>The device name.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
@@ -3436,10 +3514,13 @@ pub struct Volume {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
 }
 impl Volume {
@@ -3745,14 +3826,19 @@ impl Volume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserProfile {
     /// <p>The user's IAM ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The user's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The user's SSH user name.</p>
+    #[doc(hidden)]
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
+    #[doc(hidden)]
     pub allow_self_management: std::option::Option<bool>,
 }
 impl UserProfile {
@@ -3878,8 +3964,10 @@ impl UserProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeBasedAutoScalingConfiguration {
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
+    #[doc(hidden)]
     pub auto_scaling_schedule: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
 }
 impl TimeBasedAutoScalingConfiguration {
@@ -3960,16 +4048,22 @@ impl TimeBasedAutoScalingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSummary {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The stack name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The stack's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of layers.</p>
+    #[doc(hidden)]
     pub layers_count: std::option::Option<i32>,
     /// <p>The number of apps.</p>
+    #[doc(hidden)]
     pub apps_count: std::option::Option<i32>,
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
+    #[doc(hidden)]
     pub instances_count: std::option::Option<crate::model::InstancesCount>,
 }
 impl StackSummary {
@@ -4112,44 +4206,64 @@ impl StackSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstancesCount {
     /// <p>The number of instances in the Assigning state.</p>
+    #[doc(hidden)]
     pub assigning: std::option::Option<i32>,
     /// <p>The number of instances with <code>booting</code> status.</p>
+    #[doc(hidden)]
     pub booting: std::option::Option<i32>,
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
+    #[doc(hidden)]
     pub connection_lost: std::option::Option<i32>,
     /// <p>The number of instances in the Deregistering state.</p>
+    #[doc(hidden)]
     pub deregistering: std::option::Option<i32>,
     /// <p>The number of instances with <code>online</code> status.</p>
+    #[doc(hidden)]
     pub online: std::option::Option<i32>,
     /// <p>The number of instances with <code>pending</code> status.</p>
+    #[doc(hidden)]
     pub pending: std::option::Option<i32>,
     /// <p>The number of instances with <code>rebooting</code> status.</p>
+    #[doc(hidden)]
     pub rebooting: std::option::Option<i32>,
     /// <p>The number of instances in the Registered state.</p>
+    #[doc(hidden)]
     pub registered: std::option::Option<i32>,
     /// <p>The number of instances in the Registering state.</p>
+    #[doc(hidden)]
     pub registering: std::option::Option<i32>,
     /// <p>The number of instances with <code>requested</code> status.</p>
+    #[doc(hidden)]
     pub requested: std::option::Option<i32>,
     /// <p>The number of instances with <code>running_setup</code> status.</p>
+    #[doc(hidden)]
     pub running_setup: std::option::Option<i32>,
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
+    #[doc(hidden)]
     pub setup_failed: std::option::Option<i32>,
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
+    #[doc(hidden)]
     pub shutting_down: std::option::Option<i32>,
     /// <p>The number of instances with <code>start_failed</code> status.</p>
+    #[doc(hidden)]
     pub start_failed: std::option::Option<i32>,
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
+    #[doc(hidden)]
     pub stop_failed: std::option::Option<i32>,
     /// <p>The number of instances with <code>stopped</code> status.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<i32>,
     /// <p>The number of instances with <code>stopping</code> status.</p>
+    #[doc(hidden)]
     pub stopping: std::option::Option<i32>,
     /// <p>The number of instances with <code>terminated</code> status.</p>
+    #[doc(hidden)]
     pub terminated: std::option::Option<i32>,
     /// <p>The number of instances with <code>terminating</code> status.</p>
+    #[doc(hidden)]
     pub terminating: std::option::Option<i32>,
     /// <p>The number of instances in the Unassigning state.</p>
+    #[doc(hidden)]
     pub unassigning: std::option::Option<i32>,
 }
 impl InstancesCount {
@@ -4527,52 +4641,74 @@ impl InstancesCount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stack {
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The stack name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The stack's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The stack's attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's default operating system.</p>
+    #[doc(hidden)]
     pub default_os: std::option::Option<std::string::String>,
     /// <p>The stack host name theme, with spaces replaced by underscores.</p>
+    #[doc(hidden)]
     pub hostname_theme: std::option::Option<std::string::String>,
     /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub default_availability_zone: std::option::Option<std::string::String>,
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
+    #[doc(hidden)]
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    #[doc(hidden)]
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
+    #[doc(hidden)]
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    #[doc(hidden)]
     pub use_opsworks_security_groups: std::option::Option<bool>,
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    #[doc(hidden)]
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
+    #[doc(hidden)]
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The date when the stack was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl Stack {
@@ -5062,16 +5198,22 @@ impl Stack {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceError {
     /// <p>The error ID.</p>
+    #[doc(hidden)]
     pub service_error_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The error type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the error occurred.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
 }
 impl ServiceError {
@@ -5214,22 +5356,31 @@ impl ServiceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsDbInstance {
     /// <p>The instance's ARN.</p>
+    #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
     /// <p>The DB instance identifier.</p>
+    #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>The master user name.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The instance's AWS region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The instance's address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The instance's database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The ID of the stack with which the instance is registered.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
+    #[doc(hidden)]
     pub missing_on_rds: std::option::Option<bool>,
 }
 impl RdsDbInstance {
@@ -5426,30 +5577,43 @@ impl RdsDbInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RaidArray {
     /// <p>The array ID.</p>
+    #[doc(hidden)]
     pub raid_array_id: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The array name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
+    #[doc(hidden)]
     pub raid_level: std::option::Option<i32>,
     /// <p>The number of disks in the array.</p>
+    #[doc(hidden)]
     pub number_of_disks: std::option::Option<i32>,
     /// <p>The array's size.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i32>,
     /// <p>The array's Linux device. For example /dev/mdadm0.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The array's mount point.</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
     /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>When the RAID array was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The volume type, standard or PIOPS.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
 }
 impl RaidArray {
@@ -5714,12 +5878,16 @@ impl RaidArray {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
     /// <p>A stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>Whether the user can use SSH.</p>
+    #[doc(hidden)]
     pub allow_ssh: std::option::Option<bool>,
     /// <p>Whether the user can use <b>sudo</b>.</p>
+    #[doc(hidden)]
     pub allow_sudo: std::option::Option<bool>,
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
@@ -5730,6 +5898,7 @@ pub struct Permission {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
+    #[doc(hidden)]
     pub level: std::option::Option<std::string::String>,
 }
 impl Permission {
@@ -5876,19 +6045,26 @@ impl Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperatingSystem {
     /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
+    #[doc(hidden)]
     pub configuration_managers:
         std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
     /// <p>A short name for the operating system manufacturer.</p>
+    #[doc(hidden)]
     pub reported_name: std::option::Option<std::string::String>,
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
+    #[doc(hidden)]
     pub reported_version: std::option::Option<std::string::String>,
     /// <p>Indicates that an operating system is not supported for new instances.</p>
+    #[doc(hidden)]
     pub supported: std::option::Option<bool>,
 }
 impl OperatingSystem {
@@ -6068,8 +6244,10 @@ impl OperatingSystem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperatingSystemConfigurationManager {
     /// <p>The name of the configuration manager, which is Chef.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl OperatingSystemConfigurationManager {
@@ -6141,12 +6319,16 @@ impl OperatingSystemConfigurationManager {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelfUserProfile {
     /// <p>The user's IAM ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The user's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The user's SSH user name.</p>
+    #[doc(hidden)]
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl SelfUserProfile {
@@ -6255,12 +6437,16 @@ impl SelfUserProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
+    #[doc(hidden)]
     pub enable: std::option::Option<bool>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+    #[doc(hidden)]
     pub up_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+    #[doc(hidden)]
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
 }
 impl LoadBasedAutoScalingConfiguration {
@@ -6372,59 +6558,82 @@ impl LoadBasedAutoScalingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The layer stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The layer ID.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>The layer type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LayerType>,
     /// <p>The layer name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The layer short name.</p>
+    #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
     >,
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
+    #[doc(hidden)]
     pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array containing the layer's security group names.</p>
+    #[doc(hidden)]
     pub default_security_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    #[doc(hidden)]
     pub packages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    #[doc(hidden)]
     pub volume_configurations:
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
+    #[doc(hidden)]
     pub enable_auto_healing: std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_elastic_ips: std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    #[doc(hidden)]
     pub auto_assign_public_ips: std::option::Option<bool>,
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+    #[doc(hidden)]
     pub default_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    #[doc(hidden)]
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>Date when the layer was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
+    #[doc(hidden)]
     pub use_ebs_optimized_instances: std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
+    #[doc(hidden)]
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
@@ -7087,80 +7296,117 @@ impl AsRef<str> for LayerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
+    #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The instance architecture: "i386" or "x86_64".</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The instance's Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>For load-based or time-based instances, the type.</p>
+    #[doc(hidden)]
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
+    #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>The time that the instance was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The ID of the associated Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
+    #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>For container instances, the instance's ARN.</p>
+    #[doc(hidden)]
     pub ecs_container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The instance host name.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
+    #[doc(hidden)]
     pub infrastructure_class: std::option::Option<std::string::String>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
+    #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    #[doc(hidden)]
     pub instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
+    #[doc(hidden)]
     pub last_service_error_id: std::option::Option<std::string::String>,
     /// <p>An array containing the instance layer IDs.</p>
+    #[doc(hidden)]
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance's operating system.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<std::string::String>,
     /// <p>The instance's platform.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The instance's private DNS name.</p>
+    #[doc(hidden)]
     pub private_dns: std::option::Option<std::string::String>,
     /// <p>The instance's private IP address.</p>
+    #[doc(hidden)]
     pub private_ip: std::option::Option<std::string::String>,
     /// <p>The instance public DNS name.</p>
+    #[doc(hidden)]
     pub public_dns: std::option::Option<std::string::String>,
     /// <p>The instance public IP address.</p>
+    #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>For registered instances, who performed the registration.</p>
+    #[doc(hidden)]
     pub registered_by: std::option::Option<std::string::String>,
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    #[doc(hidden)]
     pub reported_agent_version: std::option::Option<std::string::String>,
     /// <p>For registered instances, the reported operating system.</p>
+    #[doc(hidden)]
     pub reported_os: std::option::Option<crate::model::ReportedOs>,
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    #[doc(hidden)]
     pub root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The root device volume ID.</p>
+    #[doc(hidden)]
     pub root_device_volume_id: std::option::Option<std::string::String>,
     /// <p>An array containing the instance security group IDs.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
+    #[doc(hidden)]
     pub ssh_host_dsa_key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The SSH key's RSA fingerprint.</p>
+    #[doc(hidden)]
     pub ssh_host_rsa_key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The instance's Amazon EC2 key-pair name.</p>
+    #[doc(hidden)]
     pub ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The instance status:</p>
     /// <ul>
@@ -7180,12 +7426,16 @@ pub struct Instance {
     /// <li> <p> <code>terminated</code> </p> </li>
     /// <li> <p> <code>terminating</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<std::string::String>,
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
+    #[doc(hidden)]
     pub virtualization_type: std::option::Option<crate::model::VirtualizationType>,
 }
 impl Instance {
@@ -8134,10 +8384,13 @@ impl AsRef<str> for VirtualizationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportedOs {
     /// <p>The operating system family.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The operating system name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The operating system version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ReportedOs {
@@ -8226,12 +8479,16 @@ impl ReportedOs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockDeviceMapping {
     /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
+    #[doc(hidden)]
     pub no_device: std::option::Option<std::string::String>,
     /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
+    #[doc(hidden)]
     pub virtual_name: std::option::Option<std::string::String>,
     /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
+    #[doc(hidden)]
     pub ebs: std::option::Option<crate::model::EbsBlockDevice>,
 }
 impl BlockDeviceMapping {
@@ -8337,15 +8594,20 @@ impl BlockDeviceMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDevice {
     /// <p>The snapshot ID.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
     /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
     /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Whether the volume is deleted on instance termination.</p>
+    #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
 }
 impl EbsBlockDevice {
@@ -8533,22 +8795,31 @@ impl AsRef<str> for VolumeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticLoadBalancer {
     /// <p>The Elastic Load Balancing instance's name.</p>
+    #[doc(hidden)]
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The instance's AWS region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The instance's public DNS name.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>The ID of the stack that the instance is associated with.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The ID of the layer that the instance is attached to.</p>
+    #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of Availability Zones.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    #[doc(hidden)]
     pub ec2_instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ElasticLoadBalancer {
@@ -8772,14 +9043,19 @@ impl ElasticLoadBalancer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticIp {
     /// <p>The IP address.</p>
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The ID of the instance that the address is attached to.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl ElasticIp {
@@ -8902,12 +9178,16 @@ impl ElasticIp {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsCluster {
     /// <p>The cluster's ARN.</p>
+    #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The cluster name.</p>
+    #[doc(hidden)]
     pub ecs_cluster_name: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The time and date that the cluster was registered with the stack.</p>
+    #[doc(hidden)]
     pub registered_at: std::option::Option<std::string::String>,
 }
 impl EcsCluster {
@@ -9022,22 +9302,31 @@ impl EcsCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The deployment ID.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Date when the deployment was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>Date when the deployment completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<std::string::String>,
     /// <p>The deployment duration.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>The user's IAM ARN.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>A user-defined comment.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>Used to specify a stack or deployment command.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::DeploymentCommand>,
     /// <p>The deployment status:</p>
     /// <ul>
@@ -9045,12 +9334,15 @@ pub struct Deployment {
     /// <li> <p>successful</p> </li>
     /// <li> <p>failed</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The IDs of the target instances.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Deployment {
@@ -9346,6 +9638,7 @@ pub struct DeploymentCommand {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::DeploymentCommandName>,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
@@ -9356,6 +9649,7 @@ pub struct DeploymentCommand {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
+    #[doc(hidden)]
     pub args: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -9639,16 +9933,22 @@ impl AsRef<str> for DeploymentCommandName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Command {
     /// <p>The command ID.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The ID of the instance where the command was executed.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The command deployment ID.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>Date and time when the command was run.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>Date and time when the command was acknowledged.</p>
+    #[doc(hidden)]
     pub acknowledged_at: std::option::Option<std::string::String>,
     /// <p>Date when the command completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<std::string::String>,
     /// <p>The command status:</p>
     /// <ul>
@@ -9657,10 +9957,13 @@ pub struct Command {
     /// <li> <p>skipped</p> </li>
     /// <li> <p>pending</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The command exit code.</p>
+    #[doc(hidden)]
     pub exit_code: std::option::Option<i32>,
     /// <p>The URL of the command log.</p>
+    #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
     /// <p>The command type:</p>
     /// <ul>
@@ -9677,6 +9980,7 @@ pub struct Command {
     /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Command {
@@ -9950,36 +10254,50 @@ impl Command {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The app stack ID.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The app's short name.</p>
+    #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
     /// <p>The app name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The app's data sources.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The app type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that describes the app repository.</p>
+    #[doc(hidden)]
     pub app_source: std::option::Option<crate::model::Source>,
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
+    #[doc(hidden)]
     pub enable_ssl: std::option::Option<bool>,
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    #[doc(hidden)]
     pub ssl_configuration: std::option::Option<crate::model::SslConfiguration>,
     /// <p>The stack attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
     >,
     /// <p>When the app was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
+    #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
 impl App {
@@ -10313,8 +10631,10 @@ impl App {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentVersion {
     /// <p>The agent version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The configuration manager.</p>
+    #[doc(hidden)]
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
 }
 impl AgentVersion {

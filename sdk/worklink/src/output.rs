@@ -334,9 +334,11 @@ impl RestoreDomainAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebsiteCertificateAuthoritiesOutput {
     /// <p>Information about the certificates.</p>
+    #[doc(hidden)]
     pub website_certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesOutput {
@@ -426,9 +428,11 @@ impl ListWebsiteCertificateAuthoritiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
+    #[doc(hidden)]
     pub website_authorization_providers:
         std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteAuthorizationProvidersOutput {
@@ -520,6 +524,7 @@ impl ListWebsiteAuthorizationProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -593,8 +598,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsOutput {
     /// <p>The summary list of the fleets.</p>
+    #[doc(hidden)]
     pub fleet_summary_list: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsOutput {
@@ -676,8 +683,10 @@ impl ListFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p>Information about the domains.</p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -758,8 +767,10 @@ impl ListDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>Information about the devices.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -930,10 +941,13 @@ impl DisassociateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWebsiteCertificateAuthorityOutput {
     /// <p>The root certificate of the certificate authority.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The time that the certificate authority was added.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl DescribeWebsiteCertificateAuthorityOutput {
@@ -1025,10 +1039,13 @@ impl DescribeWebsiteCertificateAuthorityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderConfigurationOutput {
     /// <p>The type of identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
+    #[doc(hidden)]
     pub service_provider_saml_metadata: std::option::Option<std::string::String>,
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityProviderConfigurationOutput {
@@ -1140,20 +1157,28 @@ impl DescribeIdentityProviderConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetMetadataOutput {
     /// <p>The time that the fleet was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the fleet was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    #[doc(hidden)]
     pub optimize_for_end_user_location: std::option::Option<bool>,
     /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
+    #[doc(hidden)]
     pub company_code: std::option::Option<std::string::String>,
     /// <p>The current state of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_status: std::option::Option<crate::model::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1363,14 +1388,19 @@ impl DescribeFleetMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainOutput {
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The time that the domain was added.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state for the domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    #[doc(hidden)]
     pub acm_certificate_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDomainOutput {
@@ -1502,6 +1532,7 @@ impl DescribeDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDevicePolicyConfigurationOutput {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    #[doc(hidden)]
     pub device_ca_certificate: std::option::Option<std::string::String>,
 }
 impl DescribeDevicePolicyConfigurationOutput {
@@ -1559,22 +1590,31 @@ impl DescribeDevicePolicyConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceOutput {
     /// <p>The current state of the device.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>The model of the device.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The manufacturer of the device.</p>
+    #[doc(hidden)]
     pub manufacturer: std::option::Option<std::string::String>,
     /// <p>The operating system of the device.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
     /// <p>The operating system version of the device.</p>
+    #[doc(hidden)]
     pub operating_system_version: std::option::Option<std::string::String>,
     /// <p>The operating system patch level of the device.</p>
+    #[doc(hidden)]
     pub patch_level: std::option::Option<std::string::String>,
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
+    #[doc(hidden)]
     pub first_accessed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
+    #[doc(hidden)]
     pub last_accessed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user name associated with the device.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceOutput {
@@ -1780,10 +1820,13 @@ impl DescribeDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCompanyNetworkConfigurationOutput {
     /// <p>The VPC with connectivity to associated websites.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups associated with access to the provided subnets.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCompanyNetworkConfigurationOutput {
@@ -1890,6 +1933,7 @@ impl DescribeCompanyNetworkConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditStreamConfigurationOutput {
     /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
+    #[doc(hidden)]
     pub audit_stream_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAuditStreamConfigurationOutput {
@@ -1977,6 +2021,7 @@ impl DeleteFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl CreateFleetOutput {
@@ -2031,6 +2076,7 @@ impl CreateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebsiteCertificateAuthorityOutput {
     /// <p>A unique identifier for the CA.</p>
+    #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteCertificateAuthorityOutput {
@@ -2088,6 +2134,7 @@ impl AssociateWebsiteCertificateAuthorityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebsiteAuthorizationProviderOutput {
     /// <p>A unique identifier for the authorization provider.</p>
+    #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteAuthorizationProviderOutput {

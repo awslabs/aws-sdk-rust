@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportDefinitionOutput {
     /// <p>ID of the report.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl UpdateReportDefinitionOutput {
@@ -58,6 +59,7 @@ impl UpdateReportDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionOutput {
     /// <p>ID of the report.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl PutReportDefinitionOutput {
@@ -112,8 +114,10 @@ impl PutReportDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportDefinitionsOutput {
     /// <p>The retrieved reports.</p>
+    #[doc(hidden)]
     pub report_definitions: std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReportDefinitionsOutput {
@@ -195,6 +199,7 @@ impl ListReportDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApplicationUsageOutput {
     /// <p>ID of the import request.</p>
+    #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
 }
 impl ImportApplicationUsageOutput {
@@ -249,18 +254,25 @@ impl ImportApplicationUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>Description of the report.</p>
+    #[doc(hidden)]
     pub report_description: std::option::Option<std::string::String>,
     /// <p>Cadence used to generate the report.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Format of the generated report.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
+    #[doc(hidden)]
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetReportDefinitionOutput {
@@ -432,6 +444,7 @@ impl GetReportDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportDefinitionOutput {
     /// <p>ID of the report that was deleted.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl DeleteReportDefinitionOutput {

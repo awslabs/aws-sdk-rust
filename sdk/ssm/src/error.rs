@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyUpdates {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyUpdates {
@@ -69,6 +70,7 @@ impl TooManyUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSettingNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceSettingNotFound {
@@ -133,6 +135,7 @@ impl ServiceSettingNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -197,10 +200,13 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub sync_type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncNotFoundException {
@@ -301,6 +307,7 @@ impl ResourceDataSyncNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncInvalidConfigurationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceDataSyncInvalidConfigurationException {
@@ -365,6 +372,7 @@ impl ResourceDataSyncInvalidConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceDataSyncConflictException {
@@ -430,6 +438,7 @@ impl ResourceDataSyncConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DoesNotExistException {
@@ -494,6 +503,7 @@ impl DoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataTooManyUpdatesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataTooManyUpdatesException {
@@ -558,6 +568,7 @@ impl OpsMetadataTooManyUpdatesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataNotFoundException {
@@ -622,6 +633,7 @@ impl OpsMetadataNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataKeyLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataKeyLimitExceededException {
@@ -686,6 +698,7 @@ impl OpsMetadataKeyLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataInvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataInvalidArgumentException {
@@ -750,6 +763,7 @@ impl OpsMetadataInvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsItemNotFoundException {
@@ -814,12 +828,16 @@ impl OpsItemNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub limit_type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OpsItemLimitExceededException {
@@ -945,8 +963,10 @@ impl OpsItemLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OpsItemInvalidParameterException {
@@ -1038,8 +1058,10 @@ impl OpsItemInvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl OpsItemAlreadyExistsException {
@@ -1129,6 +1151,7 @@ impl OpsItemAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInstanceId {
@@ -1193,6 +1216,7 @@ impl InvalidInstanceId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocumentVersion {
@@ -1257,6 +1281,7 @@ impl InvalidDocumentVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentOperation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocumentOperation {
@@ -1321,6 +1346,7 @@ impl InvalidDocumentOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocument {
     /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocument {
@@ -1385,6 +1411,7 @@ impl InvalidDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentSchemaVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocumentSchemaVersion {
@@ -1449,6 +1476,7 @@ impl InvalidDocumentSchemaVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxDocumentSizeExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxDocumentSizeExceeded {
@@ -1513,6 +1541,7 @@ impl MaxDocumentSizeExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentContent {
     /// <p>A description of the validation error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocumentContent {
@@ -1577,6 +1606,7 @@ impl InvalidDocumentContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateDocumentVersionName {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateDocumentVersionName {
@@ -1641,6 +1671,7 @@ impl DuplicateDocumentVersionName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateDocumentContent {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateDocumentContent {
@@ -1705,6 +1736,7 @@ impl DuplicateDocumentContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DocumentVersionLimitExceeded {
@@ -1769,6 +1801,7 @@ impl DocumentVersionLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusUnchanged {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StatusUnchanged {
@@ -1833,6 +1866,7 @@ impl StatusUnchanged {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociationDoesNotExist {
@@ -1897,6 +1931,7 @@ impl AssociationDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUpdate {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUpdate {
@@ -1961,6 +1996,7 @@ impl InvalidUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetMaps {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetMaps {
@@ -2025,6 +2061,7 @@ impl InvalidTargetMaps {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTarget {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTarget {
@@ -2089,6 +2126,7 @@ impl InvalidTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSchedule {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSchedule {
@@ -2153,6 +2191,7 @@ impl InvalidSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameters {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameters {
@@ -2217,6 +2256,7 @@ impl InvalidParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOutputLocation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOutputLocation {
@@ -2281,6 +2321,7 @@ impl InvalidOutputLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAssociationVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAssociationVersion {
@@ -2345,6 +2386,7 @@ impl InvalidAssociationVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociationVersionLimitExceeded {
@@ -2409,6 +2451,7 @@ impl AssociationVersionLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterVersionNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterVersionNotFound {
@@ -2473,6 +2516,7 @@ impl ParameterVersionNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterNotFound {
@@ -2537,6 +2581,7 @@ impl ParameterNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationStatusUpdateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAutomationStatusUpdateException {
@@ -2601,6 +2646,7 @@ impl InvalidAutomationStatusUpdateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationExecutionNotFoundException {
@@ -2665,6 +2711,7 @@ impl AutomationExecutionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotConnected {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetNotConnected {
@@ -2729,6 +2776,7 @@ impl TargetNotConnected {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationExecutionParametersException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAutomationExecutionParametersException {
@@ -2793,6 +2841,7 @@ impl InvalidAutomationExecutionParametersException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatch {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotentParameterMismatch {
@@ -2857,6 +2906,7 @@ impl IdempotentParameterMismatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationExecutionLimitExceededException {
@@ -2921,6 +2971,7 @@ impl AutomationExecutionLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionVersionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationDefinitionVersionNotFoundException {
@@ -2985,6 +3036,7 @@ impl AutomationDefinitionVersionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationDefinitionNotFoundException {
@@ -3049,6 +3101,7 @@ impl AutomationDefinitionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionNotApprovedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationDefinitionNotApprovedException {
@@ -3113,6 +3166,7 @@ impl AutomationDefinitionNotApprovedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAssociation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAssociation {
@@ -3177,6 +3231,7 @@ impl InvalidAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlatformType {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedPlatformType {
@@ -3241,6 +3296,7 @@ impl UnsupportedPlatformType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRole {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRole {
@@ -3305,6 +3361,7 @@ impl InvalidRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOutputFolder {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOutputFolder {
@@ -3369,6 +3426,7 @@ impl InvalidOutputFolder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNotificationConfig {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNotificationConfig {
@@ -3433,6 +3491,7 @@ impl InvalidNotificationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateInstanceId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateInstanceId {
@@ -3497,6 +3556,7 @@ impl DuplicateInstanceId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationSignalException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAutomationSignalException {
@@ -3561,6 +3621,7 @@ impl InvalidAutomationSignalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationStepNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomationStepNotFoundException {
@@ -3625,6 +3686,7 @@ impl AutomationStepNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceType {
@@ -3689,6 +3751,7 @@ impl InvalidResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResourceId {
@@ -3754,6 +3817,7 @@ impl InvalidResourceId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceededException {
@@ -3818,6 +3882,7 @@ impl ResourceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureNotAvailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FeatureNotAvailableException {
@@ -3882,6 +3947,7 @@ impl FeatureNotAvailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -3946,6 +4012,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedParameterType {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedParameterType {
@@ -4010,6 +4077,7 @@ impl UnsupportedParameterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PoliciesLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PoliciesLimitExceededException {
@@ -4074,6 +4142,7 @@ impl PoliciesLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterPatternMismatchException {
     /// <p>The parameter name isn't valid.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterPatternMismatchException {
@@ -4140,6 +4209,7 @@ impl ParameterPatternMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterMaxVersionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterMaxVersionLimitExceeded {
@@ -4204,6 +4274,7 @@ impl ParameterMaxVersionLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterLimitExceeded {
@@ -4268,6 +4339,7 @@ impl ParameterLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterAlreadyExists {
@@ -4332,6 +4404,7 @@ impl ParameterAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPolicyTypeException {
@@ -4396,6 +4469,7 @@ impl InvalidPolicyTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyAttributeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPolicyAttributeException {
@@ -4460,6 +4534,7 @@ impl InvalidPolicyAttributeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKeyId {
@@ -4524,6 +4599,7 @@ impl InvalidKeyId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAllowedPatternException {
     /// <p>The request doesn't meet the regular expression requirement.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAllowedPatternException {
@@ -4588,6 +4664,7 @@ impl InvalidAllowedPatternException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatiblePolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatiblePolicyException {
@@ -4652,6 +4729,7 @@ impl IncompatiblePolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyTypeMismatchException {
     /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HierarchyTypeMismatchException {
@@ -4716,6 +4794,7 @@ impl HierarchyTypeMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyLevelLimitExceededException {
     /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HierarchyLevelLimitExceededException {
@@ -4780,6 +4859,7 @@ impl HierarchyLevelLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedInventorySchemaVersionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedInventorySchemaVersionException {
@@ -4844,8 +4924,10 @@ impl UnsupportedInventorySchemaVersionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedInventoryItemContextException {
@@ -4929,6 +5011,7 @@ impl UnsupportedInventoryItemContextException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TotalSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TotalSizeLimitExceededException {
@@ -4993,6 +5076,7 @@ impl TotalSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubTypeCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubTypeCountLimitExceededException {
@@ -5057,8 +5141,10 @@ impl SubTypeCountLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemSizeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ItemSizeLimitExceededException {
@@ -5142,8 +5228,10 @@ impl ItemSizeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemContentMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ItemContentMismatchException {
@@ -5227,6 +5315,7 @@ impl ItemContentMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTypeNameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTypeNameException {
@@ -5291,8 +5380,10 @@ impl InvalidTypeNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidItemContentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidItemContentException {
@@ -5376,6 +5467,7 @@ impl InvalidItemContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryItemContextException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInventoryItemContextException {
@@ -5440,6 +5532,7 @@ impl InvalidInventoryItemContextException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomSchemaCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomSchemaCountLimitExceededException {
@@ -5504,6 +5597,7 @@ impl CustomSchemaCountLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceTypeCountLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ComplianceTypeCountLimitExceededException {
@@ -5568,6 +5662,7 @@ impl ComplianceTypeCountLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPermissionType {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPermissionType {
@@ -5632,6 +5727,7 @@ impl InvalidPermissionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentPermissionLimit {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DocumentPermissionLimit {
@@ -5696,6 +5792,7 @@ impl DocumentPermissionLimit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DocumentLimitExceeded {
@@ -5760,6 +5857,7 @@ impl DocumentLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextToken {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextToken {
@@ -5824,6 +5922,7 @@ impl InvalidNextToken {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilter {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilter {
@@ -5888,6 +5987,7 @@ impl InvalidFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterKey {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilterKey {
@@ -5952,6 +6052,7 @@ impl InvalidFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCommandId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCommandId {
@@ -6016,6 +6117,7 @@ impl InvalidCommandId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterVersionLabelLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ParameterVersionLabelLimitExceeded {
@@ -6080,6 +6182,7 @@ impl ParameterVersionLabelLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterValue {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilterValue {
@@ -6144,6 +6247,7 @@ impl InvalidFilterValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterOption {
     /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilterOption {
@@ -6208,6 +6312,7 @@ impl InvalidFilterOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAggregatorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAggregatorException {
@@ -6272,6 +6377,7 @@ impl InvalidAggregatorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResultAttributeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResultAttributeException {
@@ -6336,6 +6442,7 @@ impl InvalidResultAttributeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryGroupException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInventoryGroupException {
@@ -6400,6 +6507,7 @@ impl InvalidInventoryGroupException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperatingSystem {
@@ -6464,6 +6572,7 @@ impl UnsupportedOperatingSystem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureRequiredException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedFeatureRequiredException {
@@ -6528,6 +6637,7 @@ impl UnsupportedFeatureRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvocationDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvocationDoesNotExist {
@@ -6592,6 +6702,7 @@ impl InvocationDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPluginName {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPluginName {
@@ -6656,6 +6767,7 @@ impl InvalidPluginName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedCalendarException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedCalendarException {
@@ -6720,6 +6832,7 @@ impl UnsupportedCalendarException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentType {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocumentType {
@@ -6784,6 +6897,7 @@ impl InvalidDocumentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemRelatedItemAssociationNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsItemRelatedItemAssociationNotFoundException {
@@ -6849,6 +6963,7 @@ impl OpsItemRelatedItemAssociationNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeletionIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeletionIdException {
@@ -6913,6 +7028,7 @@ impl InvalidDeletionIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceInformationFilterValue {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInstanceInformationFilterValue {
@@ -6977,6 +7093,7 @@ impl InvalidInstanceInformationFilterValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationExecutionDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociationExecutionDoesNotExist {
@@ -7041,6 +7158,7 @@ impl AssociationExecutionDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetInUseException {
@@ -7105,6 +7223,7 @@ impl TargetInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -7169,6 +7288,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOptionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOptionException {
@@ -7233,6 +7353,7 @@ impl InvalidOptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInventoryRequestException {
@@ -7297,6 +7418,7 @@ impl InvalidInventoryRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeleteInventoryParametersException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeleteInventoryParametersException {
@@ -7361,6 +7483,7 @@ impl InvalidDeleteInventoryParametersException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedInstances {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociatedInstances {
@@ -7425,6 +7548,7 @@ impl AssociatedInstances {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActivationId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidActivationId {
@@ -7489,6 +7613,7 @@ impl InvalidActivationId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActivation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidActivation {
@@ -7553,6 +7678,7 @@ impl InvalidActivation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncCountExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceDataSyncCountExceededException {
@@ -7617,8 +7743,10 @@ impl ResourceDataSyncCountExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncAlreadyExistsException {
@@ -7702,6 +7830,7 @@ impl ResourceDataSyncAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataLimitExceededException {
@@ -7766,6 +7895,7 @@ impl OpsMetadataLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsMetadataAlreadyExistsException {
@@ -7830,6 +7960,7 @@ impl OpsMetadataAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DocumentAlreadyExists {
@@ -7894,6 +8025,7 @@ impl DocumentAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociationLimitExceeded {
@@ -7958,6 +8090,7 @@ impl AssociationLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociationAlreadyExists {
@@ -8022,10 +8155,13 @@ impl AssociationAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemRelatedItemAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_uri: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl OpsItemRelatedItemAlreadyExistsException {
@@ -8126,6 +8262,7 @@ impl OpsItemRelatedItemAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsError {

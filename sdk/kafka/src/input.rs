@@ -6143,12 +6143,16 @@ impl UpdateSecurityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityInput {
     /// <p>Includes all client authentication related information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
 }
 impl UpdateSecurityInput {
@@ -6187,14 +6191,19 @@ impl std::fmt::Debug for UpdateSecurityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMonitoringInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
 }
 impl UpdateMonitoringInput {
@@ -6236,10 +6245,13 @@ impl std::fmt::Debug for UpdateMonitoringInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>Information about the broker access configuration.</p>
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl UpdateConnectivityInput {
@@ -6271,14 +6283,17 @@ impl std::fmt::Debug for UpdateConnectivityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the configuration revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Contents of the <filename>
     /// server.properties
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
+    #[doc(hidden)]
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateConfigurationInput {
@@ -6314,12 +6329,16 @@ impl std::fmt::Debug for UpdateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterKafkaVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
+    #[doc(hidden)]
     pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
     /// <p>Current cluster version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Target Kafka version.</p>
+    #[doc(hidden)]
     pub target_kafka_version: std::option::Option<std::string::String>,
 }
 impl UpdateClusterKafkaVersionInput {
@@ -6356,10 +6375,13 @@ impl std::fmt::Debug for UpdateClusterKafkaVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    #[doc(hidden)]
     pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
     /// <p>The version of the cluster that needs to be updated.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl UpdateClusterConfigurationInput {
@@ -6391,10 +6413,13 @@ impl std::fmt::Debug for UpdateClusterConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    #[doc(hidden)]
     pub target_instance_type: std::option::Option<std::string::String>,
 }
 impl UpdateBrokerTypeInput {
@@ -6426,10 +6451,13 @@ impl std::fmt::Debug for UpdateBrokerTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerStorageInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+    #[doc(hidden)]
     pub target_broker_ebs_volume_info:
         std::option::Option<std::vec::Vec<crate::model::BrokerEbsVolumeInfo>>,
 }
@@ -6467,10 +6495,13 @@ impl std::fmt::Debug for UpdateBrokerStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerCountInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    #[doc(hidden)]
     pub target_number_of_broker_nodes: i32,
 }
 impl UpdateBrokerCountInput {
@@ -6505,6 +6536,7 @@ impl std::fmt::Debug for UpdateBrokerCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
     /// <ul>
@@ -6513,6 +6545,7 @@ pub struct UntagResourceInput {
     /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
     /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6545,8 +6578,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair for the resource tag.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6577,8 +6612,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootBrokerInput {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
+    #[doc(hidden)]
     pub broker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl RebootBrokerInput {
@@ -6605,6 +6642,7 @@ impl std::fmt::Debug for RebootBrokerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6626,10 +6664,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScramSecretsInput {
     /// <p>The arn of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maxResults of the query.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken of the query.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScramSecretsInput {
@@ -6661,10 +6702,13 @@ impl std::fmt::Debug for ListScramSecretsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodesInput {
@@ -6696,8 +6740,10 @@ impl std::fmt::Debug for ListNodesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKafkaVersionsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKafkaVersionsInput {
@@ -6724,8 +6770,10 @@ impl std::fmt::Debug for ListKafkaVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsInput {
@@ -6752,10 +6800,13 @@ impl std::fmt::Debug for ListConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationRevisionsInput {
@@ -6787,12 +6838,16 @@ impl std::fmt::Debug for ListConfigurationRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersV2Input {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    #[doc(hidden)]
     pub cluster_name_filter: std::option::Option<std::string::String>,
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
+    #[doc(hidden)]
     pub cluster_type_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersV2Input {
@@ -6829,10 +6884,13 @@ impl std::fmt::Debug for ListClustersV2Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    #[doc(hidden)]
     pub cluster_name_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersInput {
@@ -6864,10 +6922,13 @@ impl std::fmt::Debug for ListClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterOperationsInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterOperationsInput {
@@ -6899,6 +6960,7 @@ impl std::fmt::Debug for ListClusterOperationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleKafkaVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl GetCompatibleKafkaVersionsInput {
@@ -6920,6 +6982,7 @@ impl std::fmt::Debug for GetCompatibleKafkaVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBootstrapBrokersInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl GetBootstrapBrokersInput {
@@ -6941,8 +7004,10 @@ impl std::fmt::Debug for GetBootstrapBrokersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl DescribeConfigurationRevisionInput {
@@ -6969,6 +7034,7 @@ impl std::fmt::Debug for DescribeConfigurationRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationInput {
@@ -6990,6 +7056,7 @@ impl std::fmt::Debug for DescribeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterV2Input {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterV2Input {
@@ -7011,6 +7078,7 @@ impl std::fmt::Debug for DescribeClusterV2Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOperationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterOperationInput {
@@ -7032,6 +7100,7 @@ impl std::fmt::Debug for DescribeClusterOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
@@ -7053,6 +7122,7 @@ impl std::fmt::Debug for DescribeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationInput {
@@ -7074,8 +7144,10 @@ impl std::fmt::Debug for DeleteConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the MSK cluster.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
@@ -7102,16 +7174,20 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationInput {
     /// <p>The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    #[doc(hidden)]
     pub kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Contents of the <filename>
     /// server.properties
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
+    #[doc(hidden)]
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CreateConfigurationInput {
@@ -7152,13 +7228,17 @@ impl std::fmt::Debug for CreateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterV2Input {
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>A map of tags that you want the cluster to have.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
+    #[doc(hidden)]
     pub provisioned: std::option::Option<crate::model::ProvisionedRequest>,
     /// <p>Information about the serverless cluster.</p>
+    #[doc(hidden)]
     pub serverless: std::option::Option<crate::model::ServerlessRequest>,
 }
 impl CreateClusterV2Input {
@@ -7198,26 +7278,37 @@ impl std::fmt::Debug for CreateClusterV2Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>Information about the broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
     /// <p>Includes all client authentication related information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    #[doc(hidden)]
     pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
     /// <p>The version of Apache Kafka.</p>
+    #[doc(hidden)]
     pub kafka_version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub number_of_broker_nodes: i32,
     /// <p>Create tags when creating the cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7297,8 +7388,10 @@ impl std::fmt::Debug for CreateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateScramSecretInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    #[doc(hidden)]
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDisassociateScramSecretInput {
@@ -7325,8 +7418,10 @@ impl std::fmt::Debug for BatchDisassociateScramSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateScramSecretInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    #[doc(hidden)]
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchAssociateScramSecretInput {

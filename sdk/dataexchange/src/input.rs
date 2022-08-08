@@ -4968,12 +4968,16 @@ impl UpdateRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl UpdateRevisionInput {
@@ -5010,8 +5014,10 @@ impl std::fmt::Debug for UpdateRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventActionInput {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub event_action_id: std::option::Option<std::string::String>,
 }
 impl UpdateEventActionInput {
@@ -5038,10 +5044,13 @@ impl std::fmt::Debug for UpdateEventActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The description for the data set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateDataSetInput {
@@ -5073,12 +5082,16 @@ impl std::fmt::Debug for UpdateDataSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetInput {
     /// <p>The unique identifier for an asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl UpdateAssetInput {
@@ -5115,8 +5128,10 @@ impl std::fmt::Debug for UpdateAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// The key tags.
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5143,8 +5158,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// A label that consists of a customer-defined key and an optional value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5175,6 +5192,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobInput {
     /// <p>The unique identifier for a job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartJobInput {
@@ -5196,22 +5214,30 @@ impl std::fmt::Debug for StartJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendApiAssetInput {
     /// <p>The request body.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+    #[doc(hidden)]
     pub query_string_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Asset ID value for the API request.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>Data set ID value for the API request.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+    #[doc(hidden)]
     pub request_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+    #[doc(hidden)]
     pub method: std::option::Option<std::string::String>,
     /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Revision ID value for the API request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl SendApiAssetInput {
@@ -5274,10 +5300,13 @@ impl std::fmt::Debug for SendApiAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeRevisionInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
 }
 impl RevokeRevisionInput {
@@ -5309,6 +5338,7 @@ impl std::fmt::Debug for RevokeRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5330,12 +5360,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRevisionAssetsInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ListRevisionAssetsInput {
@@ -5372,12 +5406,16 @@ impl std::fmt::Debug for ListRevisionAssetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -5414,10 +5452,13 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventActionsInput {
     /// <p>The unique identifier for the event source.</p>
+    #[doc(hidden)]
     pub event_source_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventActionsInput {
@@ -5449,10 +5490,13 @@ impl std::fmt::Debug for ListEventActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsInput {
     /// <p>The maximum number of results returned by a single call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<std::string::String>,
 }
 impl ListDataSetsInput {
@@ -5484,10 +5528,13 @@ impl std::fmt::Debug for ListDataSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetRevisionsInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSetRevisionsInput {
@@ -5519,8 +5566,10 @@ impl std::fmt::Debug for ListDataSetRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetRevisionInput {
@@ -5547,6 +5596,7 @@ impl std::fmt::Debug for GetRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobInput {
     /// <p>The unique identifier for a job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
@@ -5568,6 +5618,7 @@ impl std::fmt::Debug for GetJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub event_action_id: std::option::Option<std::string::String>,
 }
 impl GetEventActionInput {
@@ -5589,6 +5640,7 @@ impl std::fmt::Debug for GetEventActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl GetDataSetInput {
@@ -5610,10 +5662,13 @@ impl std::fmt::Debug for GetDataSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetInput {
     /// <p>The unique identifier for an asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetAssetInput {
@@ -5645,8 +5700,10 @@ impl std::fmt::Debug for GetAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRevisionInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl DeleteRevisionInput {
@@ -5673,6 +5730,7 @@ impl std::fmt::Debug for DeleteRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventActionInput {
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub event_action_id: std::option::Option<std::string::String>,
 }
 impl DeleteEventActionInput {
@@ -5694,6 +5752,7 @@ impl std::fmt::Debug for DeleteEventActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSetInput {
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSetInput {
@@ -5715,10 +5774,13 @@ impl std::fmt::Debug for DeleteDataSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetInput {
     /// <p>The unique identifier for an asset.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssetInput {
@@ -5750,10 +5812,13 @@ impl std::fmt::Debug for DeleteAssetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRevisionInput {
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5789,8 +5854,10 @@ impl std::fmt::Debug for CreateRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::RequestDetails>,
     /// <p>The type of job to be created.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl CreateJobInput {
@@ -5817,8 +5884,10 @@ impl std::fmt::Debug for CreateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventActionInput {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>What occurs to start an action.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
 }
 impl CreateEventActionInput {
@@ -5845,12 +5914,16 @@ impl std::fmt::Debug for CreateEventActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetInput {
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5891,6 +5964,7 @@ impl std::fmt::Debug for CreateDataSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobInput {
     /// <p>The unique identifier for a job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {

@@ -63,6 +63,7 @@ impl AsRef<str> for StreamProcessorParameterToDelete {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorDataSharingPreference {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
+    #[doc(hidden)]
     pub opt_in: bool,
 }
 impl StreamProcessorDataSharingPreference {
@@ -118,8 +119,10 @@ impl StreamProcessorDataSharingPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
+    #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
 }
 impl RegionOfInterest {
@@ -204,8 +207,10 @@ impl RegionOfInterest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Point {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+    #[doc(hidden)]
     pub x: std::option::Option<f32>,
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+    #[doc(hidden)]
     pub y: std::option::Option<f32>,
 }
 impl Point {
@@ -281,12 +286,16 @@ impl Point {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BoundingBox {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
+    #[doc(hidden)]
     pub width: std::option::Option<f32>,
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
+    #[doc(hidden)]
     pub height: std::option::Option<f32>,
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
+    #[doc(hidden)]
     pub left: std::option::Option<f32>,
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
+    #[doc(hidden)]
     pub top: std::option::Option<f32>,
 }
 impl BoundingBox {
@@ -392,6 +401,7 @@ impl BoundingBox {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
+    #[doc(hidden)]
     pub connected_home_for_update:
         std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
 }
@@ -456,8 +466,10 @@ impl StreamProcessorSettingsForUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The minimum confidence required to label an object in the video. </p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
 }
 impl ConnectedHomeSettingsForUpdate {
@@ -539,6 +551,7 @@ impl ConnectedHomeSettingsForUpdate {
 pub struct DatasetChanges {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub ground_truth: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DatasetChanges {
@@ -692,8 +705,10 @@ impl AsRef<str> for ProjectVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionFilters {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
+    #[doc(hidden)]
     pub word_filter: std::option::Option<crate::model::DetectionFilter>,
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
+    #[doc(hidden)]
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
 }
 impl StartTextDetectionFilters {
@@ -778,10 +793,13 @@ impl StartTextDetectionFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectionFilter {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
+    #[doc(hidden)]
     pub min_bounding_box_height: std::option::Option<f32>,
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
+    #[doc(hidden)]
     pub min_bounding_box_width: std::option::Option<f32>,
 }
 impl DetectionFilter {
@@ -870,8 +888,10 @@ impl DetectionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationChannel {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl NotificationChannel {
@@ -946,6 +966,7 @@ impl NotificationChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Video {
@@ -1002,10 +1023,13 @@ impl Video {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Object {
     /// <p>Name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>S3 object key name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl S3Object {
@@ -1094,6 +1118,7 @@ impl S3Object {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
+    #[doc(hidden)]
     pub max_duration_in_seconds: std::option::Option<i64>,
 }
 impl StreamProcessingStopSelector {
@@ -1148,6 +1173,7 @@ impl StreamProcessingStopSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessingStartSelector {
     /// <p> Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment number in a Kinesis stream. </p>
+    #[doc(hidden)]
     pub kvs_stream_start_selector:
         std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
 }
@@ -1212,8 +1238,10 @@ impl StreamProcessingStartSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisVideoStreamStartSelector {
     /// <p> The timestamp from the producer corresponding to the fragment. </p>
+    #[doc(hidden)]
     pub producer_timestamp: std::option::Option<i64>,
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
+    #[doc(hidden)]
     pub fragment_number: std::option::Option<std::string::String>,
 }
 impl KinesisVideoStreamStartSelector {
@@ -1343,8 +1371,10 @@ impl AsRef<str> for SegmentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
+    #[doc(hidden)]
     pub technical_cue_filter: std::option::Option<crate::model::StartTechnicalCueDetectionFilter>,
     /// <p>Filters that are specific to shot detections.</p>
+    #[doc(hidden)]
     pub shot_filter: std::option::Option<crate::model::StartShotDetectionFilter>,
 }
 impl StartSegmentDetectionFilters {
@@ -1429,6 +1459,7 @@ impl StartSegmentDetectionFilters {
 pub struct StartShotDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub min_segment_confidence: std::option::Option<f32>,
 }
 impl StartShotDetectionFilter {
@@ -1487,8 +1518,10 @@ impl StartShotDetectionFilter {
 pub struct StartTechnicalCueDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub min_segment_confidence: std::option::Option<f32>,
     /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    #[doc(hidden)]
     pub black_frame: std::option::Option<crate::model::BlackFrame>,
 }
 impl StartTechnicalCueDetectionFilter {
@@ -1568,9 +1601,11 @@ pub struct BlackFrame {
     /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
+    #[doc(hidden)]
     pub max_pixel_threshold: std::option::Option<f32>,
     /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p>
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
+    #[doc(hidden)]
     pub min_coverage_percentage: std::option::Option<f32>,
 }
 impl BlackFrame {
@@ -1706,8 +1741,10 @@ impl AsRef<str> for FaceAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaceMatch {
     /// <p>Confidence in the match of this face with the input face.</p>
+    #[doc(hidden)]
     pub similarity: std::option::Option<f32>,
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::Face>,
 }
 impl FaceMatch {
@@ -1779,16 +1816,22 @@ impl FaceMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
+    #[doc(hidden)]
     pub face_id: std::option::Option<std::string::String>,
     /// <p>Bounding box of the face.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>Identifier that you assign to all the faces in the input image.</p>
+    #[doc(hidden)]
     pub external_image_id: std::option::Option<std::string::String>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
+    #[doc(hidden)]
     pub index_faces_model_version: std::option::Option<std::string::String>,
 }
 impl Face {
@@ -2010,8 +2053,10 @@ impl AsRef<str> for QualityFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>Blob of image bytes up to 5 MBs.</p>
+    #[doc(hidden)]
     pub bytes: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the image source.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Image {
@@ -2146,18 +2191,25 @@ impl AsRef<str> for OrientationCorrection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComparedFace {
     /// <p>Bounding box of the face.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>An array of facial landmarks.</p>
+    #[doc(hidden)]
     pub landmarks: std::option::Option<std::vec::Vec<crate::model::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+    #[doc(hidden)]
     pub pose: std::option::Option<crate::model::Pose>,
     /// <p>Identifies face image brightness and sharpness. </p>
+    #[doc(hidden)]
     pub quality: std::option::Option<crate::model::ImageQuality>,
     /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+    #[doc(hidden)]
     pub emotions: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
     /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
+    #[doc(hidden)]
     pub smile: std::option::Option<crate::model::Smile>,
 }
 impl ComparedFace {
@@ -2338,8 +2390,10 @@ impl ComparedFace {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Smile {
     /// <p>Boolean value that indicates whether the face is smiling or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Smile {
@@ -2411,8 +2465,10 @@ impl Smile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Emotion {
     /// <p>Type of emotion detected.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EmotionName>,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Emotion {
@@ -2577,8 +2633,10 @@ impl AsRef<str> for EmotionName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageQuality {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
+    #[doc(hidden)]
     pub brightness: std::option::Option<f32>,
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
+    #[doc(hidden)]
     pub sharpness: std::option::Option<f32>,
 }
 impl ImageQuality {
@@ -2650,10 +2708,13 @@ impl ImageQuality {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
+    #[doc(hidden)]
     pub roll: std::option::Option<f32>,
     /// <p>Value representing the face rotation on the yaw axis.</p>
+    #[doc(hidden)]
     pub yaw: std::option::Option<f32>,
     /// <p>Value representing the face rotation on the pitch axis.</p>
+    #[doc(hidden)]
     pub pitch: std::option::Option<f32>,
 }
 impl Pose {
@@ -2742,10 +2803,13 @@ impl Pose {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Landmark {
     /// <p>Type of landmark.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LandmarkType>,
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+    #[doc(hidden)]
     pub x: std::option::Option<f32>,
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
+    #[doc(hidden)]
     pub y: std::option::Option<f32>,
 }
 impl Landmark {
@@ -3032,16 +3096,22 @@ impl AsRef<str> for LandmarkType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
+    #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the celebrity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the celebrity. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::ComparedFace>,
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
+    #[doc(hidden)]
     pub match_confidence: std::option::Option<f32>,
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
+    #[doc(hidden)]
     pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
 impl Celebrity {
@@ -3193,6 +3263,7 @@ impl Celebrity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::KnownGenderType>,
 }
 impl KnownGender {
@@ -3313,8 +3384,10 @@ impl AsRef<str> for KnownGenderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StreamProcessorStatus>,
 }
 impl StreamProcessor {
@@ -3462,8 +3535,10 @@ impl AsRef<str> for StreamProcessorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetLabelDescription {
     /// <p> The name of the label. </p>
+    #[doc(hidden)]
     pub label_name: std::option::Option<std::string::String>,
     /// <p> Statistics about the label. </p>
+    #[doc(hidden)]
     pub label_stats: std::option::Option<crate::model::DatasetLabelStats>,
 }
 impl DatasetLabelDescription {
@@ -3538,8 +3613,10 @@ impl DatasetLabelDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetLabelStats {
     /// <p> The total number of images that use the label. </p>
+    #[doc(hidden)]
     pub entry_count: std::option::Option<i32>,
     /// <p> The total number of images that have the label assigned to a bounding box. </p>
+    #[doc(hidden)]
     pub bounding_box_count: std::option::Option<i32>,
 }
 impl DatasetLabelStats {
@@ -3619,8 +3696,10 @@ pub struct UnindexedFace {
     /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::model::Reason>>,
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
+    #[doc(hidden)]
     pub face_detail: std::option::Option<crate::model::FaceDetail>,
 }
 impl UnindexedFace {
@@ -3736,34 +3815,49 @@ impl UnindexedFace {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
+    #[doc(hidden)]
     pub age_range: std::option::Option<crate::model::AgeRange>,
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub smile: std::option::Option<crate::model::Smile>,
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub eyeglasses: std::option::Option<crate::model::Eyeglasses>,
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub sunglasses: std::option::Option<crate::model::Sunglasses>,
     /// <p>The predicted gender of a detected face. </p>
+    #[doc(hidden)]
     pub gender: std::option::Option<crate::model::Gender>,
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub beard: std::option::Option<crate::model::Beard>,
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub mustache: std::option::Option<crate::model::Mustache>,
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub eyes_open: std::option::Option<crate::model::EyeOpen>,
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
+    #[doc(hidden)]
     pub mouth_open: std::option::Option<crate::model::MouthOpen>,
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
+    #[doc(hidden)]
     pub emotions: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
+    #[doc(hidden)]
     pub landmarks: std::option::Option<std::vec::Vec<crate::model::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
+    #[doc(hidden)]
     pub pose: std::option::Option<crate::model::Pose>,
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<crate::model::ImageQuality>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl FaceDetail {
@@ -4089,8 +4183,10 @@ impl FaceDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MouthOpen {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl MouthOpen {
@@ -4162,8 +4258,10 @@ impl MouthOpen {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EyeOpen {
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl EyeOpen {
@@ -4235,8 +4333,10 @@ impl EyeOpen {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mustache {
     /// <p>Boolean value that indicates whether the face has mustache or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Mustache {
@@ -4308,8 +4408,10 @@ impl Mustache {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Beard {
     /// <p>Boolean value that indicates whether the face has beard or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Beard {
@@ -4384,8 +4486,10 @@ impl Beard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Gender {
     /// <p>The predicted gender of the face.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::GenderType>,
     /// <p>Level of confidence in the prediction.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Gender {
@@ -4512,8 +4616,10 @@ impl AsRef<str> for GenderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sunglasses {
     /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Sunglasses {
@@ -4585,8 +4691,10 @@ impl Sunglasses {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Eyeglasses {
     /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
+    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Eyeglasses {
@@ -4659,8 +4767,10 @@ impl Eyeglasses {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgeRange {
     /// <p>The lowest estimated age.</p>
+    #[doc(hidden)]
     pub low: std::option::Option<i32>,
     /// <p>The highest estimated age.</p>
+    #[doc(hidden)]
     pub high: std::option::Option<i32>,
 }
 impl AgeRange {
@@ -4815,8 +4925,10 @@ impl AsRef<str> for Reason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaceRecord {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::Face>,
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
+    #[doc(hidden)]
     pub face_detail: std::option::Option<crate::model::FaceDetail>,
 }
 impl FaceRecord {
@@ -4946,8 +5058,10 @@ impl AsRef<str> for Attribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextDetectionResult {
     /// <p>The time, in milliseconds from the start of the video, that the text was detected.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about text detected in a video.</p>
+    #[doc(hidden)]
     pub text_detection: std::option::Option<crate::model::TextDetection>,
 }
 impl TextDetectionResult {
@@ -5025,16 +5139,22 @@ impl TextDetectionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextDetection {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
+    #[doc(hidden)]
     pub detected_text: std::option::Option<std::string::String>,
     /// <p>The type of text that was detected.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TextTypes>,
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
     /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<i32>,
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::Geometry>,
 }
 impl TextDetection {
@@ -5177,8 +5297,10 @@ impl TextDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
+    #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
 }
 impl Geometry {
@@ -5317,18 +5439,25 @@ impl AsRef<str> for TextTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
+    #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
     /// <p>Length of the video in milliseconds.</p>
+    #[doc(hidden)]
     pub duration_millis: std::option::Option<i64>,
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
     /// <p>Number of frames per second in the video.</p>
+    #[doc(hidden)]
     pub frame_rate: std::option::Option<f32>,
     /// <p>Vertical pixel dimension of the video.</p>
+    #[doc(hidden)]
     pub frame_height: std::option::Option<i64>,
     /// <p>Horizontal pixel dimension of the video.</p>
+    #[doc(hidden)]
     pub frame_width: std::option::Option<i64>,
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
+    #[doc(hidden)]
     pub color_range: std::option::Option<crate::model::VideoColorRange>,
 }
 impl VideoMetadata {
@@ -5602,8 +5731,10 @@ impl AsRef<str> for VideoJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SegmentTypeInfo {
     /// <p>The type of a segment (technical cue or shot detection).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SegmentType>,
     /// <p>The version of the model used to detect segments.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
 }
 impl SegmentTypeInfo {
@@ -5678,28 +5809,40 @@ impl SegmentTypeInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SegmentType>,
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
+    #[doc(hidden)]
     pub start_timestamp_millis: i64,
     /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
+    #[doc(hidden)]
     pub end_timestamp_millis: i64,
     /// <p>The duration of the detected segment in milliseconds. </p>
+    #[doc(hidden)]
     pub duration_millis: std::option::Option<i64>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
+    #[doc(hidden)]
     pub start_timecode_smpte: std::option::Option<std::string::String>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
+    #[doc(hidden)]
     pub end_timecode_smpte: std::option::Option<std::string::String>,
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
+    #[doc(hidden)]
     pub duration_smpte: std::option::Option<std::string::String>,
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
+    #[doc(hidden)]
     pub technical_cue_segment: std::option::Option<crate::model::TechnicalCueSegment>,
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
+    #[doc(hidden)]
     pub shot_segment: std::option::Option<crate::model::ShotSegment>,
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
+    #[doc(hidden)]
     pub start_frame_number: std::option::Option<i64>,
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
+    #[doc(hidden)]
     pub end_frame_number: std::option::Option<i64>,
     /// <p> The duration of a video segment, expressed in frames. </p>
+    #[doc(hidden)]
     pub duration_frames: std::option::Option<i64>,
 }
 impl SegmentDetection {
@@ -5956,8 +6099,10 @@ impl SegmentDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
+    #[doc(hidden)]
     pub index: std::option::Option<i64>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl ShotSegment {
@@ -6029,8 +6174,10 @@ impl ShotSegment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TechnicalCueType>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl TechnicalCueSegment {
@@ -6188,12 +6335,16 @@ impl AsRef<str> for TechnicalCueType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioMetadata {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
+    #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
     /// <p>The duration of the audio stream in milliseconds.</p>
+    #[doc(hidden)]
     pub duration_millis: std::option::Option<i64>,
     /// <p>The sample rate for the audio stream.</p>
+    #[doc(hidden)]
     pub sample_rate: std::option::Option<i64>,
     /// <p>The number of audio channels in the segment.</p>
+    #[doc(hidden)]
     pub number_of_channels: std::option::Option<i64>,
 }
 impl AudioMetadata {
@@ -6300,8 +6451,10 @@ impl AudioMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PersonDetection {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about a person whose path was tracked in a video.</p>
+    #[doc(hidden)]
     pub person: std::option::Option<crate::model::PersonDetail>,
 }
 impl PersonDetection {
@@ -6376,10 +6529,13 @@ impl PersonDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PersonDetail {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
+    #[doc(hidden)]
     pub index: i64,
     /// <p>Bounding box around the detected person.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Face details for the detected person.</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::FaceDetail>,
 }
 impl PersonDetail {
@@ -6526,8 +6682,10 @@ impl AsRef<str> for PersonTrackingSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelDetection {
     /// <p>Time, in milliseconds from the start of the video, that the label was detected.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about the detected label.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<crate::model::Label>,
 }
 impl LabelDetection {
@@ -6600,12 +6758,16 @@ impl LabelDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Label {
     /// <p>The name (label) of the object or scene.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Level of confidence.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
+    #[doc(hidden)]
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
 }
 impl Label {
@@ -6729,6 +6891,7 @@ impl Label {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parent {
     /// <p>The name of the parent label.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Parent {
@@ -6781,8 +6944,10 @@ impl Parent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The position of the label instance on the image.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl Instance {
@@ -6912,10 +7077,13 @@ impl AsRef<str> for LabelDetectionSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PersonMatch {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about the matched person.</p>
+    #[doc(hidden)]
     pub person: std::option::Option<crate::model::PersonDetail>,
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
+    #[doc(hidden)]
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
 }
 impl PersonMatch {
@@ -7071,8 +7239,10 @@ impl AsRef<str> for FaceSearchSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaceDetection {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The face properties for the detected face.</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::FaceDetail>,
 }
 impl FaceDetection {
@@ -7144,8 +7314,10 @@ impl FaceDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentModerationDetection {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The content moderation label detected by in the stored video.</p>
+    #[doc(hidden)]
     pub moderation_label: std::option::Option<crate::model::ModerationLabel>,
 }
 impl ContentModerationDetection {
@@ -7221,10 +7393,13 @@ impl ContentModerationDetection {
 pub struct ModerationLabel {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The label name for the type of unsafe content detected in the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
+    #[doc(hidden)]
     pub parent_name: std::option::Option<std::string::String>,
 }
 impl ModerationLabel {
@@ -7371,8 +7546,10 @@ impl AsRef<str> for ContentModerationSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CelebrityRecognition {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized.</p>
+    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about a recognized celebrity.</p>
+    #[doc(hidden)]
     pub celebrity: std::option::Option<crate::model::CelebrityDetail>,
 }
 impl CelebrityRecognition {
@@ -7447,18 +7624,25 @@ impl CelebrityRecognition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
+    #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the celebrity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the celebrity. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>Bounding box around the body of a celebrity.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Face details for the recognized celebrity.</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::FaceDetail>,
     /// <p>Retrieves the known gender for the celebrity.</p>
+    #[doc(hidden)]
     pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
 impl CelebrityDetail {
@@ -7685,6 +7869,7 @@ impl AsRef<str> for CelebrityRecognitionSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributeDataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DistributeDataset {
@@ -7737,8 +7922,10 @@ impl DistributeDataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextFilters {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
+    #[doc(hidden)]
     pub word_filter: std::option::Option<crate::model::DetectionFilter>,
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
+    #[doc(hidden)]
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
 }
 impl DetectTextFilters {
@@ -7824,10 +8011,13 @@ impl DetectTextFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
+    #[doc(hidden)]
     pub persons_with_required_equipment: std::option::Option<std::vec::Vec<i32>>,
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
+    #[doc(hidden)]
     pub persons_without_required_equipment: std::option::Option<std::vec::Vec<i32>>,
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
+    #[doc(hidden)]
     pub persons_indeterminate: std::option::Option<std::vec::Vec<i32>>,
 }
 impl ProtectiveEquipmentSummary {
@@ -7949,12 +8139,16 @@ impl ProtectiveEquipmentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
+    #[doc(hidden)]
     pub body_parts: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>,
     /// <p>A bounding box around the detected person.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<i32>,
 }
 impl ProtectiveEquipmentPerson {
@@ -8073,10 +8267,13 @@ impl ProtectiveEquipmentPerson {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtectiveEquipmentBodyPart {
     /// <p>The detected body part.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::BodyPart>,
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
+    #[doc(hidden)]
     pub equipment_detections: std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>,
 }
 impl ProtectiveEquipmentBodyPart {
@@ -8175,12 +8372,16 @@ impl ProtectiveEquipmentBodyPart {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The type of detected PPE.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProtectiveEquipmentType>,
     /// <p>Information about the body part covered by the detected PPE.</p>
+    #[doc(hidden)]
     pub covers_body_part: std::option::Option<crate::model::CoversBodyPart>,
 }
 impl EquipmentDetection {
@@ -8295,8 +8496,10 @@ impl EquipmentDetection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoversBodyPart {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
+    #[doc(hidden)]
     pub value: bool,
 }
 impl CoversBodyPart {
@@ -8492,8 +8695,10 @@ pub struct ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p> </p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
+    #[doc(hidden)]
     pub required_equipment_types:
         std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
 }
@@ -8587,10 +8792,13 @@ impl ProtectiveEquipmentSummarizationAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopActivationOutput {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
+    #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
     /// <p>Shows if and why human review was needed.</p>
+    #[doc(hidden)]
     pub human_loop_activation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
+    #[doc(hidden)]
     pub human_loop_activation_conditions_evaluation_results:
         std::option::Option<std::string::String>,
 }
@@ -8711,10 +8919,13 @@ impl HumanLoopActivationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>Sets attributes of the input data.</p>
+    #[doc(hidden)]
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {
@@ -8812,6 +9023,7 @@ impl HumanLoopConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
+    #[doc(hidden)]
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {
@@ -8938,10 +9150,13 @@ impl AsRef<str> for ContentClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomLabel {
     /// <p>The name of the custom label.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::Geometry>,
 }
 impl CustomLabel {
@@ -9032,6 +9247,7 @@ impl CustomLabel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
 }
 impl StreamProcessorNotificationChannel {
@@ -9089,8 +9305,10 @@ impl StreamProcessorNotificationChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
+    #[doc(hidden)]
     pub face_search: std::option::Option<crate::model::FaceSearchSettings>,
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
+    #[doc(hidden)]
     pub connected_home: std::option::Option<crate::model::ConnectedHomeSettings>,
 }
 impl StreamProcessorSettings {
@@ -9168,8 +9386,10 @@ impl StreamProcessorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The minimum confidence required to label an object in the video. </p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
 }
 impl ConnectedHomeSettings {
@@ -9250,8 +9470,10 @@ impl ConnectedHomeSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaceSearchSettings {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
+    #[doc(hidden)]
     pub face_match_threshold: std::option::Option<f32>,
 }
 impl FaceSearchSettings {
@@ -9326,8 +9548,10 @@ impl FaceSearchSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
+    #[doc(hidden)]
     pub kinesis_data_stream: std::option::Option<crate::model::KinesisDataStream>,
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl StreamProcessorOutput {
@@ -9405,8 +9629,10 @@ impl StreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -9478,6 +9704,7 @@ impl S3Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl KinesisDataStream {
@@ -9530,6 +9757,7 @@ impl KinesisDataStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
+    #[doc(hidden)]
     pub kinesis_video_stream: std::option::Option<crate::model::KinesisVideoStream>,
 }
 impl StreamProcessorInput {
@@ -9587,6 +9815,7 @@ impl StreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl KinesisVideoStream {
@@ -9639,32 +9868,46 @@ impl KinesisVideoStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
     /// <p>The Unix datetime for the date and time that training started.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartProjectVersion</code>.</p>
+    #[doc(hidden)]
     pub min_inference_units: std::option::Option<i32>,
     /// <p>The current status of the model version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectVersionStatus>,
     /// <p>A descriptive message for an error or warning that occurred.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
+    #[doc(hidden)]
     pub billable_training_time_in_seconds: std::option::Option<i64>,
     /// <p>The Unix date and time that training of the model ended.</p>
+    #[doc(hidden)]
     pub training_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The location where training results are saved.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>Contains information about the training results.</p>
+    #[doc(hidden)]
     pub training_data_result: std::option::Option<crate::model::TrainingDataResult>,
     /// <p>Contains information about the testing results.</p>
+    #[doc(hidden)]
     pub testing_data_result: std::option::Option<crate::model::TestingDataResult>,
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
+    #[doc(hidden)]
     pub evaluation_result: std::option::Option<crate::model::EvaluationResult>,
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
+    #[doc(hidden)]
     pub manifest_summary: std::option::Option<crate::model::GroundTruthManifest>,
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
+    #[doc(hidden)]
     pub max_inference_units: std::option::Option<i32>,
 }
 impl ProjectVersionDescription {
@@ -9978,6 +10221,7 @@ pub struct GroundTruthManifest {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl GroundTruthManifest {
@@ -10038,8 +10282,10 @@ impl GroundTruthManifest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
+    #[doc(hidden)]
     pub f1_score: std::option::Option<f32>,
     /// <p>The S3 bucket that contains the training summary.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::Summary>,
 }
 impl EvaluationResult {
@@ -10114,6 +10360,7 @@ pub struct Summary {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Summary {
@@ -10174,10 +10421,13 @@ impl Summary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::TestingData>,
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::TestingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::ValidationData>,
 }
 impl TestingDataResult {
@@ -10272,6 +10522,7 @@ impl TestingDataResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationData {
     /// <p>The assets that comprise the validation data. </p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
 impl ValidationData {
@@ -10335,6 +10586,7 @@ impl ValidationData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
+    #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
 }
 impl Asset {
@@ -10392,8 +10644,10 @@ impl Asset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestingData {
     /// <p>The assets used for testing.</p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
+    #[doc(hidden)]
     pub auto_create: bool,
 }
 impl TestingData {
@@ -10474,10 +10728,13 @@ impl TestingData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::TrainingData>,
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::TrainingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::ValidationData>,
 }
 impl TrainingDataResult {
@@ -10572,6 +10829,7 @@ impl TrainingDataResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
 impl TrainingData {
@@ -10635,8 +10893,10 @@ impl TrainingData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputConfig {
     /// <p>The S3 bucket where training output is placed.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the training output files. </p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl OutputConfig {
@@ -10711,12 +10971,16 @@ impl OutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the project.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
     /// <p> Information about the training and test datasets in the project. </p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
 }
 impl ProjectDescription {
@@ -10837,16 +11101,22 @@ impl ProjectDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetMetadata {
     /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The type of the dataset. </p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p> The Amazon Resource Name (ARN) for the dataset. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p> The status for the dataset. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p> The status message for the dataset. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
+    #[doc(hidden)]
     pub status_message_code: std::option::Option<crate::model::DatasetStatusMessageCode>,
 }
 impl DatasetMetadata {
@@ -11263,16 +11533,22 @@ impl AsRef<str> for ProjectStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetDescription {
     /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Unix timestamp for the date and time that the dataset was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the dataset. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p> The status message for the dataset. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
+    #[doc(hidden)]
     pub status_message_code: std::option::Option<crate::model::DatasetStatusMessageCode>,
     /// <p> The status message code for the dataset. </p>
+    #[doc(hidden)]
     pub dataset_stats: std::option::Option<crate::model::DatasetStats>,
 }
 impl DatasetDescription {
@@ -11435,12 +11711,16 @@ impl DatasetDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetStats {
     /// <p> The total number of images in the dataset that have labels. </p>
+    #[doc(hidden)]
     pub labeled_entries: std::option::Option<i32>,
     /// <p> The total number of images in the dataset. </p>
+    #[doc(hidden)]
     pub total_entries: std::option::Option<i32>,
     /// <p> The total number of labels declared in the dataset. </p>
+    #[doc(hidden)]
     pub total_labels: std::option::Option<i32>,
     /// <p> The total number of entries that contain at least one error. </p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<i32>,
 }
 impl DatasetStats {
@@ -11548,8 +11828,10 @@ impl DatasetStats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSource {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
+    #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DatasetSource {
@@ -11624,8 +11906,10 @@ impl DatasetSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompareFacesMatch {
     /// <p>Level of confidence that the faces match.</p>
+    #[doc(hidden)]
     pub similarity: std::option::Option<f32>,
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
+    #[doc(hidden)]
     pub face: std::option::Option<crate::model::ComparedFace>,
 }
 impl CompareFacesMatch {
@@ -11697,8 +11981,10 @@ impl CompareFacesMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComparedSourceImageFace {
     /// <p>Bounding box of the face.</p>
+    #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Confidence level that the selected bounding box contains a face.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
 }
 impl ComparedSourceImageFace {

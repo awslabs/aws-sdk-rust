@@ -1227,10 +1227,13 @@ impl RollbackTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the transaction to roll back.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl RollbackTransactionInput {
@@ -1262,35 +1265,46 @@ impl std::fmt::Debug for RollbackTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The SQL statement to run.</p>
+    #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
+    #[doc(hidden)]
     pub include_result_metadata: bool,
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </important>
+    #[doc(hidden)]
     pub continue_after_timeout: bool,
     /// <p>Options that control how the result set is returned.</p>
+    #[doc(hidden)]
     pub result_set_options: std::option::Option<crate::model::ResultSetOptions>,
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    #[doc(hidden)]
     pub format_records_as: std::option::Option<crate::model::RecordsFormatType>,
 }
 impl ExecuteStatementInput {
@@ -1371,16 +1385,21 @@ impl std::fmt::Debug for ExecuteStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_or_instance_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    #[doc(hidden)]
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+    #[doc(hidden)]
     pub sql_statements: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the database schema.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl ExecuteSqlInput {
@@ -1427,10 +1446,13 @@ impl std::fmt::Debug for ExecuteSqlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the transaction to end and commit.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CommitTransactionInput {
@@ -1462,12 +1484,16 @@ impl std::fmt::Debug for CommitTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the database schema.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl BeginTransactionInput {
@@ -1504,15 +1530,20 @@ impl std::fmt::Debug for BeginTransactionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
+    #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the database schema.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
@@ -1522,10 +1553,12 @@ pub struct BatchExecuteStatementInput {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameter_sets:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementInput {

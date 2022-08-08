@@ -10,9 +10,11 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscriber {
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
+    #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
 }
 impl Subscriber {
@@ -153,14 +155,19 @@ impl AsRef<str> for SubscriptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<crate::model::NotificationType>,
     /// <p>The comparison that's used for this notification.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
+    #[doc(hidden)]
     pub threshold: f64,
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
+    #[doc(hidden)]
     pub threshold_type: std::option::Option<crate::model::ThresholdType>,
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
+    #[doc(hidden)]
     pub notification_state: std::option::Option<crate::model::NotificationState>,
 }
 impl Notification {
@@ -523,24 +530,34 @@ impl AsRef<str> for NotificationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<crate::model::NotificationType>,
     /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The trigger threshold of the action. </p>
+    #[doc(hidden)]
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
     /// <p>Where you specify all of the type-specific parameters. </p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>This specifies if the action needs manual or automatic approval. </p>
+    #[doc(hidden)]
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p>The status of the action. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p> A list of subscribers.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl Action {
@@ -931,10 +948,13 @@ impl AsRef<str> for ApprovalModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Definition {
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
+    #[doc(hidden)]
     pub iam_action_definition: std::option::Option<crate::model::IamActionDefinition>,
     /// <p>The service control policies (SCPs) action definition details. </p>
+    #[doc(hidden)]
     pub scp_action_definition: std::option::Option<crate::model::ScpActionDefinition>,
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
+    #[doc(hidden)]
     pub ssm_action_definition: std::option::Option<crate::model::SsmActionDefinition>,
 }
 impl Definition {
@@ -1032,10 +1052,13 @@ impl Definition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmActionDefinition {
     /// <p>The action subType. </p>
+    #[doc(hidden)]
     pub action_sub_type: std::option::Option<crate::model::ActionSubType>,
     /// <p>The Region to run the SSM document. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The EC2 and RDS instance IDs. </p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SsmActionDefinition {
@@ -1191,8 +1214,10 @@ impl AsRef<str> for ActionSubType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScpActionDefinition {
     /// <p>The policy ID attached. </p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>A list of target IDs. </p>
+    #[doc(hidden)]
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ScpActionDefinition {
@@ -1273,12 +1298,16 @@ impl ScpActionDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>A list of roles to be attached. There must be at least one role. </p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of groups to be attached. There must be at least one group. </p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of users to be attached. There must be at least one user. </p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IamActionDefinition {
@@ -1411,8 +1440,10 @@ impl IamActionDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionThreshold {
     /// <p> The threshold of a notification.</p>
+    #[doc(hidden)]
     pub action_threshold_value: f64,
     /// <p> The type of threshold for a notification.</p>
+    #[doc(hidden)]
     pub action_threshold_type: std::option::Option<crate::model::ThresholdType>,
 }
 impl ActionThreshold {
@@ -1548,9 +1579,11 @@ impl AsRef<str> for ActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
     /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>. This is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+    #[doc(hidden)]
     pub budget_limit: std::option::Option<crate::model::Spend>,
     /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
     /// <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports both monthly and quarterly <code>TimeUnit</code>. </p>
@@ -1560,6 +1593,7 @@ pub struct Budget {
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
+    #[doc(hidden)]
     pub planned_budget_limits:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Spend>>,
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
@@ -1571,26 +1605,34 @@ pub struct Budget {
     /// <li> <p>Amazon ElastiCache</p> </li>
     /// <li> <p>Amazon OpenSearch Service</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cost_filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[doc(hidden)]
     pub cost_types: std::option::Option<crate::model::CostTypes>,
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
+    #[doc(hidden)]
     pub time_unit: std::option::Option<crate::model::TimeUnit>,
     /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API. </p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::TimePeriod>,
     /// <p>The actual and forecasted cost or usage that the budget tracks.</p>
+    #[doc(hidden)]
     pub calculated_spend: std::option::Option<crate::model::CalculatedSpend>,
     /// <p>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
+    #[doc(hidden)]
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The last time that you updated this budget.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
+    #[doc(hidden)]
     pub auto_adjust_data: std::option::Option<crate::model::AutoAdjustData>,
 }
 impl Budget {
@@ -1934,10 +1976,13 @@ impl Budget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoAdjustData {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
+    #[doc(hidden)]
     pub auto_adjust_type: std::option::Option<crate::model::AutoAdjustType>,
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
+    #[doc(hidden)]
     pub historical_options: std::option::Option<crate::model::HistoricalOptions>,
     /// <p>The last time that your budget was auto-adjusted.</p>
+    #[doc(hidden)]
     pub last_auto_adjust_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutoAdjustData {
@@ -2041,10 +2086,12 @@ pub struct HistoricalOptions {
     /// <li> <p>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</p> </li>
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub budget_adjustment_period: std::option::Option<i32>,
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit. </p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
+    #[doc(hidden)]
     pub look_back_available_periods: std::option::Option<i32>,
 }
 impl HistoricalOptions {
@@ -2279,8 +2326,10 @@ impl AsRef<str> for BudgetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculatedSpend {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
+    #[doc(hidden)]
     pub actual_spend: std::option::Option<crate::model::Spend>,
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
+    #[doc(hidden)]
     pub forecasted_spend: std::option::Option<crate::model::Spend>,
 }
 impl CalculatedSpend {
@@ -2360,8 +2409,10 @@ impl CalculatedSpend {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl Spend {
@@ -2434,9 +2485,11 @@ impl Spend {
 pub struct TimePeriod {
     /// <p>The start date for a budget. If you created your budget and didn't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date for a budget. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimePeriod {
@@ -2579,36 +2632,47 @@ impl AsRef<str> for TimeUnit {
 pub struct CostTypes {
     /// <p>Specifies whether a budget includes taxes.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_tax: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes subscriptions.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_subscription: std::option::Option<bool>,
     /// <p>Specifies whether a budget uses a blended rate.</p>
     /// <p>The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub use_blended: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes refunds.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_refund: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes credits.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_credit: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes upfront RI costs.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_upfront: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_recurring: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_other_subscription: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes support subscription fees.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_support: std::option::Option<bool>,
     /// <p>Specifies whether a budget includes discounts.</p>
     /// <p>The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_discount: std::option::Option<bool>,
     /// <p>Specifies whether a budget uses the amortized rate.</p>
     /// <p>The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub use_amortized: std::option::Option<bool>,
 }
 impl CostTypes {
@@ -2937,19 +3001,25 @@ impl AsRef<str> for ExecutionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BudgetPerformanceHistory {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a budget. It must be one of the following types: </p>
     /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    #[doc(hidden)]
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
+    #[doc(hidden)]
     pub cost_filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The history of the cost types for a budget during the specified time period.</p>
+    #[doc(hidden)]
     pub cost_types: std::option::Option<crate::model::CostTypes>,
     /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+    #[doc(hidden)]
     pub time_unit: std::option::Option<crate::model::TimeUnit>,
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
+    #[doc(hidden)]
     pub budgeted_and_actual_amounts_list:
         std::option::Option<std::vec::Vec<crate::model::BudgetedAndActualAmounts>>,
 }
@@ -3138,10 +3208,13 @@ impl BudgetPerformanceHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BudgetedAndActualAmounts {
     /// <p>The amount of cost or usage that you created the budget for.</p>
+    #[doc(hidden)]
     pub budgeted_amount: std::option::Option<crate::model::Spend>,
     /// <p>Your actual costs or usage for a budget period.</p>
+    #[doc(hidden)]
     pub actual_amount: std::option::Option<crate::model::Spend>,
     /// <p>The time period that's covered by this budget comparison.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::TimePeriod>,
 }
 impl BudgetedAndActualAmounts {
@@ -3239,8 +3312,10 @@ impl BudgetedAndActualAmounts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
 }
 impl BudgetNotificationsForAccount {
@@ -3321,12 +3396,16 @@ impl BudgetNotificationsForAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistory {
     /// <p> A generic time stamp. In Java, it's transformed to a <code>Date</code> object.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of action at the time of the event. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p>This distinguishes between whether the events are triggered by the user or are generated by the system. </p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>The description of the details for the event. </p>
+    #[doc(hidden)]
     pub action_history_details: std::option::Option<crate::model::ActionHistoryDetails>,
 }
 impl ActionHistory {
@@ -3446,8 +3525,10 @@ impl ActionHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The budget action resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
 }
 impl ActionHistoryDetails {
@@ -3592,8 +3673,10 @@ impl AsRef<str> for EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationWithSubscribers {
     /// <p>The notification that's associated with a budget.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A list of subscribers who are subscribed to this notification.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl NotificationWithSubscribers {

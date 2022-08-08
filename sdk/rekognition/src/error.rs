@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -109,10 +112,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -213,10 +219,13 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ProvisionedThroughputExceededException {
@@ -317,10 +326,13 @@ impl ProvisionedThroughputExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
@@ -421,10 +433,13 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl InternalServerError {
@@ -525,10 +540,13 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -629,10 +647,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
@@ -733,10 +754,13 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -838,10 +862,13 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {
@@ -942,10 +969,13 @@ impl ServiceQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl VideoTooLargeException {
@@ -1046,10 +1076,13 @@ impl VideoTooLargeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3ObjectException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl InvalidS3ObjectException {
@@ -1150,10 +1183,13 @@ impl InvalidS3ObjectException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl IdempotentParameterMismatchException {
@@ -1254,10 +1290,13 @@ impl IdempotentParameterMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidImageFormatException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl InvalidImageFormatException {
@@ -1358,10 +1397,13 @@ impl InvalidImageFormatException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ImageTooLargeException {
@@ -1462,10 +1504,13 @@ impl ImageTooLargeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPaginationTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl InvalidPaginationTokenException {
@@ -1566,10 +1611,13 @@ impl InvalidPaginationTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ResourceNotReadyException {
@@ -1670,16 +1718,22 @@ impl ResourceNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopQuotaExceededException {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The quota code.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The service code.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl HumanLoopQuotaExceededException {
@@ -1834,10 +1888,13 @@ impl HumanLoopQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
     pub logref: std::option::Option<std::string::String>,
 }
 impl ResourceAlreadyExistsException {

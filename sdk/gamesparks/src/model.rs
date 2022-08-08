@@ -5,26 +5,36 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageDetails {
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
+    #[doc(hidden)]
     pub game_key: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stage.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the stage was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the stage was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the stage.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StageState>,
     /// <p>The tags associated with the stage.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl StageDetails {
@@ -316,15 +326,20 @@ impl AsRef<str> for StageState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotDetails {
     /// <p>The identifier of the snapshot.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The sections in the snapshot.</p>
+    #[doc(hidden)]
     pub sections:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
     /// <p>The timestamp of when the snapshot was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the snapshot was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {
@@ -473,10 +488,13 @@ impl SnapshotDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Section {
     /// <p>The name of the section.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the section contents.</p>
+    #[doc(hidden)]
     pub size: i32,
     /// <p>The content of a configuration section.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<aws_smithy_types::Document>,
 }
 impl Section {
@@ -569,11 +587,14 @@ impl Section {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
+    #[doc(hidden)]
     pub sections:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
     /// <p>The date when the game was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the game was last modified.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GameConfigurationDetails {
@@ -688,14 +709,18 @@ impl GameConfigurationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SectionModification {
     /// <p>The name of the section to be modified.</p>
+    #[doc(hidden)]
     pub section: std::option::Option<std::string::String>,
     /// <p>The path within the section content to be modified.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<aws_smithy_types::Document>,
 }
 impl SectionModification {
@@ -869,20 +894,28 @@ impl AsRef<str> for Operation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameDetails {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the game.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the game was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the game was last modified.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the game.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GameState>,
     /// <p>Determines if the game can be deleted.</p>
+    #[doc(hidden)]
     pub enable_termination_protection: bool,
     /// <p>The tags associated with the game.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1146,18 +1179,25 @@ impl AsRef<str> for GameState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageDeploymentDetails {
     /// <p>The identifier of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The type of action of the stage deployment.</p>
+    #[doc(hidden)]
     pub deployment_action: std::option::Option<crate::model::DeploymentAction>,
     /// <p>The state of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_state: std::option::Option<crate::model::DeploymentState>,
     /// <p>The timestamp of when the stage deployment was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_result: std::option::Option<crate::model::DeploymentResult>,
 }
 impl StageDeploymentDetails {
@@ -1332,8 +1372,10 @@ impl StageDeploymentDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentResult {
     /// <p>The type of deployment result.</p>
+    #[doc(hidden)]
     pub result_code: std::option::Option<crate::model::ResultCode>,
     /// <p>Details about the deployment result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentResult {
@@ -1585,11 +1627,14 @@ impl AsRef<str> for DeploymentAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Generator {
     /// <p>The platform that will be used to run the generated code.</p>
+    #[doc(hidden)]
     pub target_platform: std::option::Option<std::string::String>,
     /// <p>The programming language for the generated code.</p>
     /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The target version of the GameSparks Game SDK.</p>
+    #[doc(hidden)]
     pub game_sdk_version: std::option::Option<std::string::String>,
 }
 impl Generator {
@@ -1687,15 +1732,20 @@ impl Generator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageSummary {
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
+    #[doc(hidden)]
     pub game_key: std::option::Option<std::string::String>,
     /// <p>The description of the stage.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the stage.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StageState>,
     /// <p>The tags associated with the stage.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1842,16 +1892,22 @@ impl StageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The type of action of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_action: std::option::Option<crate::model::DeploymentAction>,
     /// <p>The state of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_state: std::option::Option<crate::model::DeploymentState>,
     /// <p>The timestamp of when the deployment was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_result: std::option::Option<crate::model::DeploymentResult>,
 }
 impl StageDeploymentSummary {
@@ -2006,12 +2062,16 @@ impl StageDeploymentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the snapshot was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Then timestamp of when the snapshot was last updated.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SnapshotSummary {
@@ -2123,15 +2183,20 @@ impl SnapshotSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedCodeJobDetails {
     /// <p>A presigned URL that can be used to download the generated code.</p>
+    #[doc(hidden)]
     pub s3_url: std::option::Option<std::string::String>,
     /// <p>The status of the generated code job</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GeneratedCodeJobState>,
     /// <p>The description of the generated code job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier for the generated code job.</p>
+    #[doc(hidden)]
     pub generated_code_job_id: std::option::Option<std::string::String>,
 }
 impl GeneratedCodeJobDetails {
@@ -2329,12 +2394,16 @@ impl AsRef<str> for GeneratedCodeJobState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameSummary {
     /// <p>The name of the game.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the game.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the game.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GameState>,
     /// <p>The tags associated with the game.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2461,12 +2530,16 @@ impl GameSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtensionVersionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The model that defines the interface for this extension version.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The version of the extension.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ExtensionVersionDetails {
@@ -2572,10 +2645,13 @@ impl ExtensionVersionDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtensionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the extension.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ExtensionDetails {
@@ -2664,6 +2740,7 @@ impl ExtensionDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
+    #[doc(hidden)]
     pub file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSource {
@@ -2716,8 +2793,10 @@ impl ImportGameConfigurationSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The identifier used to indicate a specific WebSocket connection.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the connection was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Connection {

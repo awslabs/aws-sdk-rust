@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
+    #[doc(hidden)]
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    #[doc(hidden)]
     pub vpce_service_name: std::option::Option<std::string::String>,
     /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
+    #[doc(hidden)]
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
 impl VpceConfiguration {
@@ -153,10 +158,13 @@ impl VpceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Upload {
     /// <p>The upload's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The upload's file name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>When the upload was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -194,6 +202,7 @@ pub struct Upload {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UploadType>,
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
@@ -203,20 +212,26 @@ pub struct Upload {
     /// <li> <p>PROCESSING</p> </li>
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UploadStatus>,
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A message about the upload's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
     /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::UploadCategory>,
 }
 impl Upload {
@@ -897,14 +912,19 @@ impl AsRef<str> for UploadType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridProject {
     /// <p>The ARN for the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A human-readable name for the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A human-readable description for the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
     /// <p>When the project was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TestGridProject {
@@ -1033,10 +1053,13 @@ impl TestGridProject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridVpcConfig {
     /// <p>A list of VPC security group IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of VPC subnet IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl TestGridVpcConfig {
@@ -1143,12 +1166,16 @@ impl TestGridVpcConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Project {
     /// <p>The project's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The project's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
+    #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When the project was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Project {
@@ -1260,28 +1287,40 @@ impl Project {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkProfile {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the network profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the network profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile. Valid values are listed here.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub uplink_bandwidth_bits: std::option::Option<i64>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    #[doc(hidden)]
     pub downlink_bandwidth_bits: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_delay_ms: std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_delay_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub uplink_jitter_ms: std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    #[doc(hidden)]
     pub downlink_jitter_ms: std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub downlink_loss_percent: i32,
 }
 impl NetworkProfile {
@@ -1581,17 +1620,23 @@ impl AsRef<str> for NetworkProfileType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceProfile {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
+    #[doc(hidden)]
     pub package_cleanup: std::option::Option<bool>,
     /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
+    #[doc(hidden)]
     pub reboot_after_use: std::option::Option<bool>,
     /// <p>The name of the instance profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the instance profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl InstanceProfile {
@@ -1750,10 +1795,13 @@ impl InstanceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevicePool {
     /// <p>The device pool's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The device pool's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The device pool's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The device pool's type.</p>
     /// <p>Allowed values include:</p>
@@ -1761,11 +1809,14 @@ pub struct DevicePool {
     /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DevicePoolType>,
     /// <p>Information about the device pool's rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    #[doc(hidden)]
     pub max_devices: std::option::Option<i32>,
 }
 impl DevicePool {
@@ -2030,10 +2081,13 @@ pub struct Rule {
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::DeviceAttribute>,
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::RuleOperator>,
     /// <p>The rule's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Rule {
@@ -2669,16 +2723,22 @@ impl AsRef<str> for DevicePoolType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceInstance {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that describe the device instance.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the device instance. Valid values are listed here.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>Unique device identifier for the device instance.</p>
+    #[doc(hidden)]
     pub udid: std::option::Option<std::string::String>,
     /// <p>A object that contains information about the instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
 impl DeviceInstance {
@@ -2896,8 +2956,10 @@ impl AsRef<str> for InstanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2969,8 +3031,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Run {
     /// <p>The run's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The run's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -2996,6 +3060,7 @@ pub struct Run {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
@@ -3003,8 +3068,10 @@ pub struct Run {
     /// <li> <p>ANDROID</p> </li>
     /// <li> <p>IOS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>When the run was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
@@ -3019,6 +3086,7 @@ pub struct Run {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
@@ -3031,57 +3099,82 @@ pub struct Run {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The run's start time.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's stop time.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The run's result counters.</p>
+    #[doc(hidden)]
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the run's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The total number of jobs for the run.</p>
+    #[doc(hidden)]
     pub total_jobs: std::option::Option<i32>,
     /// <p>The total number of completed jobs.</p>
+    #[doc(hidden)]
     pub completed_jobs: std::option::Option<i32>,
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
+    #[doc(hidden)]
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
+    #[doc(hidden)]
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
     /// <p>The network profile being used for a test run.</p>
+    #[doc(hidden)]
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
+    #[doc(hidden)]
     pub parsing_result_url: std::option::Option<std::string::String>,
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
+    #[doc(hidden)]
     pub result_code: std::option::Option<crate::model::ExecutionResultCode>,
     /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
+    #[doc(hidden)]
     pub seed: std::option::Option<i32>,
     /// <p>An app to upload or that has been uploaded.</p>
+    #[doc(hidden)]
     pub app_upload: std::option::Option<std::string::String>,
     /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
+    #[doc(hidden)]
     pub event_count: std::option::Option<i32>,
     /// <p>The number of minutes the job executes before it times out.</p>
+    #[doc(hidden)]
     pub job_timeout_minutes: std::option::Option<i32>,
     /// <p>The ARN of the device pool for the run.</p>
+    #[doc(hidden)]
     pub device_pool_arn: std::option::Option<std::string::String>,
     /// <p>Information about the locale that is used for the run.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>Information about the radio states for the run.</p>
+    #[doc(hidden)]
     pub radios: std::option::Option<crate::model::Radios>,
     /// <p>Information about the location that is used for the run.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+    #[doc(hidden)]
     pub customer_artifact_paths: std::option::Option<crate::model::CustomerArtifactPaths>,
     /// <p>The Device Farm console URL for the recording of the run.</p>
+    #[doc(hidden)]
     pub web_url: std::option::Option<std::string::String>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
+    #[doc(hidden)]
     pub test_spec_arn: std::option::Option<std::string::String>,
     /// <p>The results of a device filter used to select the devices for a test run.</p>
+    #[doc(hidden)]
     pub device_selection_result: std::option::Option<crate::model::DeviceSelectionResult>,
 }
 impl Run {
@@ -3862,10 +3955,13 @@ impl Run {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
     /// <p>The number of devices that matched the device filter selection criteria.</p>
+    #[doc(hidden)]
     pub matched_devices_count: std::option::Option<i32>,
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
+    #[doc(hidden)]
     pub max_devices: std::option::Option<i32>,
 }
 impl DeviceSelectionResult {
@@ -4052,8 +4148,10 @@ pub struct DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::DeviceFilterAttribute>,
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::RuleOperator>,
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"> <b>Operator Values</b> </p>
@@ -4068,6 +4166,7 @@ pub struct DeviceFilter {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeviceFilter {
@@ -4581,10 +4680,13 @@ impl AsRef<str> for DeviceFilterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerArtifactPaths {
     /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
+    #[doc(hidden)]
     pub ios_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's tests are pulled from.</p>
+    #[doc(hidden)]
     pub android_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
+    #[doc(hidden)]
     pub device_host_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CustomerArtifactPaths {
@@ -4701,8 +4803,10 @@ impl CustomerArtifactPaths {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The latitude.</p>
+    #[doc(hidden)]
     pub latitude: std::option::Option<f64>,
     /// <p>The longitude.</p>
+    #[doc(hidden)]
     pub longitude: std::option::Option<f64>,
 }
 impl Location {
@@ -4774,12 +4878,16 @@ impl Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Radios {
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub wifi: std::option::Option<bool>,
     /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub bluetooth: std::option::Option<bool>,
     /// <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub nfc: std::option::Option<bool>,
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub gps: std::option::Option<bool>,
 }
 impl Radios {
@@ -4940,10 +5048,13 @@ impl AsRef<str> for ExecutionResultCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<f64>,
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
+    #[doc(hidden)]
     pub metered: std::option::Option<f64>,
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
+    #[doc(hidden)]
     pub unmetered: std::option::Option<f64>,
 }
 impl DeviceMinutes {
@@ -5087,18 +5198,25 @@ impl AsRef<str> for BillingMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Counters {
     /// <p>The total number of entities.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<i32>,
     /// <p>The number of passed entities.</p>
+    #[doc(hidden)]
     pub passed: std::option::Option<i32>,
     /// <p>The number of failed entities.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<i32>,
     /// <p>The number of warned entities.</p>
+    #[doc(hidden)]
     pub warned: std::option::Option<i32>,
     /// <p>The number of errored entities.</p>
+    #[doc(hidden)]
     pub errored: std::option::Option<i32>,
     /// <p>The number of stopped entities.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<i32>,
     /// <p>The number of skipped entities.</p>
+    #[doc(hidden)]
     pub skipped: std::option::Option<i32>,
 }
 impl Counters {
@@ -5633,10 +5751,13 @@ impl AsRef<str> for TestType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the remote access session.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
@@ -5650,6 +5771,7 @@ pub struct RemoteAccessSession {
     /// <li> <p>COMPLETED.</p> </li>
     /// <li> <p>STOPPING.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
@@ -5661,38 +5783,53 @@ pub struct RemoteAccessSession {
     /// <li> <p>ERRORED.</p> </li>
     /// <li> <p>STOPPED.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>A message about the remote access session.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was started.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the remote access session was stopped.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device (phone or tablet) used in the remote access session.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub remote_debug_enabled: std::option::Option<bool>,
     /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
+    #[doc(hidden)]
     pub remote_record_enabled: std::option::Option<bool>,
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
+    #[doc(hidden)]
     pub remote_record_app_arn: std::option::Option<std::string::String>,
     /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub host_address: std::option::Option<std::string::String>,
     /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
+    #[doc(hidden)]
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
+    #[doc(hidden)]
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
     /// <p>The endpoint for the remote access sesssion.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub device_udid: std::option::Option<std::string::String>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
@@ -5700,9 +5837,11 @@ pub struct RemoteAccessSession {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl RemoteAccessSession {
@@ -6273,14 +6412,19 @@ impl AsRef<str> for InteractionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The device's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The device's display name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The device's manufacturer name.</p>
+    #[doc(hidden)]
     pub manufacturer: std::option::Option<std::string::String>,
     /// <p>The device's model name.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The device's model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
@@ -6288,6 +6432,7 @@ pub struct Device {
     /// <li> <p>PHONE</p> </li>
     /// <li> <p>TABLET</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub form_factor: std::option::Option<crate::model::DeviceFormFactor>,
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
@@ -6295,35 +6440,50 @@ pub struct Device {
     /// <li> <p>ANDROID</p> </li>
     /// <li> <p>IOS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>The device's operating system type.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<std::string::String>,
     /// <p>Information about the device's CPU.</p>
+    #[doc(hidden)]
     pub cpu: std::option::Option<crate::model::Cpu>,
     /// <p>The resolution of the device.</p>
+    #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::Resolution>,
     /// <p>The device's heap size, expressed in bytes.</p>
+    #[doc(hidden)]
     pub heap_size: std::option::Option<i64>,
     /// <p>The device's total memory size, expressed in bytes.</p>
+    #[doc(hidden)]
     pub memory: std::option::Option<i64>,
     /// <p>The device's image name.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The device's carrier.</p>
+    #[doc(hidden)]
     pub carrier: std::option::Option<std::string::String>,
     /// <p>The device's radio.</p>
+    #[doc(hidden)]
     pub radio: std::option::Option<std::string::String>,
     /// <p>Specifies whether remote access has been enabled for the specified device.</p>
+    #[doc(hidden)]
     pub remote_access_enabled: std::option::Option<bool>,
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[doc(hidden)]
     pub remote_debug_enabled: std::option::Option<bool>,
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
+    #[doc(hidden)]
     pub fleet_type: std::option::Option<std::string::String>,
     /// <p>The name of the fleet to which this device belongs.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The instances that belong to this device.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::DeviceInstance>>,
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
+    #[doc(hidden)]
     pub availability: std::option::Option<crate::model::DeviceAvailability>,
 }
 impl Device {
@@ -6840,8 +7000,10 @@ impl AsRef<str> for DeviceAvailability {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
+    #[doc(hidden)]
     pub width: std::option::Option<i32>,
     /// <p>The screen resolution's height, expressed in pixels.</p>
+    #[doc(hidden)]
     pub height: std::option::Option<i32>,
 }
 impl Resolution {
@@ -6913,10 +7075,13 @@ impl Resolution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cpu {
     /// <p>The CPU's frequency.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<std::string::String>,
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
+    #[doc(hidden)]
     pub clock: std::option::Option<f64>,
 }
 impl Cpu {
@@ -7060,8 +7225,10 @@ impl AsRef<str> for DeviceFormFactor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The job's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The job's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
@@ -7085,8 +7252,10 @@ pub struct Job {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
@@ -7101,6 +7270,7 @@ pub struct Job {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
@@ -7113,24 +7283,34 @@ pub struct Job {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The job's start time.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's stop time.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's result counters.</p>
+    #[doc(hidden)]
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the job's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The device (phone or tablet).</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
+    #[doc(hidden)]
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
     /// <p>The endpoint for streaming device video.</p>
+    #[doc(hidden)]
     pub video_endpoint: std::option::Option<std::string::String>,
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
+    #[doc(hidden)]
     pub video_capture: std::option::Option<bool>,
 }
 impl Job {
@@ -7573,15 +7753,20 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionConfiguration {
     /// <p>The number of minutes a test run executes before it times out.</p>
+    #[doc(hidden)]
     pub job_timeout_minutes: std::option::Option<i32>,
     /// <p>True if account cleanup is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub accounts_cleanup: std::option::Option<bool>,
     /// <p>True if app package cleanup is enabled at the beginning of the test. Otherwise, false.</p>
+    #[doc(hidden)]
     pub app_packages_cleanup: std::option::Option<bool>,
     /// <p>Set to true to enable video capture. Otherwise, set to false. The default is true.</p>
+    #[doc(hidden)]
     pub video_capture: std::option::Option<bool>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl ExecutionConfiguration {
@@ -7707,24 +7892,33 @@ impl ExecutionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
+    #[doc(hidden)]
     pub extra_data_package_arn: std::option::Option<std::string::String>,
     /// <p>Reserved for internal use.</p>
+    #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
     /// <p>Information about the locale that is used for the run.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
     /// <p>Information about the location that is used for the run.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
+    #[doc(hidden)]
     pub vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
+    #[doc(hidden)]
     pub customer_artifact_paths: std::option::Option<crate::model::CustomerArtifactPaths>,
     /// <p>Information about the radio states for the run.</p>
+    #[doc(hidden)]
     pub radios: std::option::Option<crate::model::Radios>,
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
+    #[doc(hidden)]
     pub auxiliary_apps: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
+    #[doc(hidden)]
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
 }
 impl ScheduleRunConfiguration {
@@ -7978,12 +8172,16 @@ pub struct ScheduleRunTest {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>The ARN of the uploaded test to be run.</p>
+    #[doc(hidden)]
     pub test_package_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the YAML-formatted test specification.</p>
+    #[doc(hidden)]
     pub test_spec_arn: std::option::Option<std::string::String>,
     /// <p>The test's filter.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
@@ -8043,6 +8241,7 @@ pub struct ScheduleRunTest {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8461,8 +8660,10 @@ pub struct DeviceSelectionConfiguration {
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
     /// <p>The maximum number of devices to be included in a test run.</p>
+    #[doc(hidden)]
     pub max_devices: std::option::Option<i32>,
 }
 impl DeviceSelectionConfiguration {
@@ -8648,14 +8849,19 @@ impl DeviceSelectionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfferingTransaction {
     /// <p>The status of an offering transaction.</p>
+    #[doc(hidden)]
     pub offering_status: std::option::Option<crate::model::OfferingStatus>,
     /// <p>The transaction ID of the offering transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The ID that corresponds to a device offering promotion.</p>
+    #[doc(hidden)]
     pub offering_promotion_id: std::option::Option<std::string::String>,
     /// <p>The date on which an offering transaction was created.</p>
+    #[doc(hidden)]
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cost of an offering transaction.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::MonetaryAmount>,
 }
 impl OfferingTransaction {
@@ -8793,8 +8999,10 @@ impl OfferingTransaction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonetaryAmount {
     /// <p>The numerical amount of an offering or transaction.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<f64>,
     /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<crate::model::CurrencyCode>,
 }
 impl MonetaryAmount {
@@ -8920,12 +9128,16 @@ impl AsRef<str> for CurrencyCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfferingStatus {
     /// <p>The type specified for the offering status.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OfferingTransactionType>,
     /// <p>Represents the metadata of an offering status.</p>
+    #[doc(hidden)]
     pub offering: std::option::Option<crate::model::Offering>,
     /// <p>The number of available devices in the offering.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The date on which the offering is effective.</p>
+    #[doc(hidden)]
     pub effective_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OfferingStatus {
@@ -9037,14 +9249,19 @@ impl OfferingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Offering {
     /// <p>The ID that corresponds to a device offering.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A string that describes the offering.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OfferingType>,
     /// <p>The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>Specifies whether there are recurring charges for the offering.</p>
+    #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
 }
 impl Offering {
@@ -9180,8 +9397,10 @@ impl Offering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecurringCharge {
     /// <p>The cost of the recurring charge.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::MonetaryAmount>,
     /// <p>The frequency in which charges recur.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::RecurringChargeFrequency>,
 }
 impl RecurringCharge {
@@ -9420,8 +9639,10 @@ impl AsRef<str> for OfferingTransactionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UniqueProblem {
     /// <p>A message about the unique problems' result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Information about the problems.</p>
+    #[doc(hidden)]
     pub problems: std::option::Option<std::vec::Vec<crate::model::Problem>>,
 }
 impl UniqueProblem {
@@ -9502,14 +9723,19 @@ impl UniqueProblem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Problem {
     /// <p>Information about the associated run.</p>
+    #[doc(hidden)]
     pub run: std::option::Option<crate::model::ProblemDetail>,
     /// <p>Information about the associated job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::ProblemDetail>,
     /// <p>Information about the associated suite.</p>
+    #[doc(hidden)]
     pub suite: std::option::Option<crate::model::ProblemDetail>,
     /// <p>Information about the associated test.</p>
+    #[doc(hidden)]
     pub test: std::option::Option<crate::model::ProblemDetail>,
     /// <p>Information about the associated device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
@@ -9522,8 +9748,10 @@ pub struct Problem {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>A message about the problem's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Problem {
@@ -9716,8 +9944,10 @@ impl Problem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProblemDetail {
     /// <p>The problem detail's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The problem detail's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ProblemDetail {
@@ -9789,8 +10019,10 @@ impl ProblemDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Test {
     /// <p>The test's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The test's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -9816,8 +10048,10 @@ pub struct Test {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the test was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
@@ -9832,6 +10066,7 @@ pub struct Test {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The test's result.</p>
     /// <p>Allowed values include:</p>
@@ -9844,16 +10079,22 @@ pub struct Test {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The test's start time.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's stop time.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The test's result counters.</p>
+    #[doc(hidden)]
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the test's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
+    #[doc(hidden)]
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
 }
 impl Test {
@@ -10231,16 +10472,22 @@ impl Test {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridSession {
     /// <p>The ARN of the session.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The state of the session.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TestGridSessionStatus>,
     /// <p>The time that the session was started.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the session ended.</p>
+    #[doc(hidden)]
     pub ended: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of billed minutes that were used for this session. </p>
+    #[doc(hidden)]
     pub billing_minutes: std::option::Option<f64>,
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
+    #[doc(hidden)]
     pub selenium_properties: std::option::Option<std::string::String>,
 }
 impl TestGridSession {
@@ -10450,10 +10697,13 @@ impl AsRef<str> for TestGridSessionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridSessionArtifact {
     /// <p>The file name of the artifact.</p>
+    #[doc(hidden)]
     pub filename: std::option::Option<std::string::String>,
     /// <p>The kind of artifact.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestGridSessionArtifactType>,
     /// <p>A semi-stable URL to the content of the object.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl TestGridSessionArtifact {
@@ -10659,14 +10909,19 @@ impl AsRef<str> for TestGridSessionArtifactCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
     /// <p>The time that the session invoked the action.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i64>,
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>HTTP method that the browser used to make the request.</p>
+    #[doc(hidden)]
     pub request_method: std::option::Option<std::string::String>,
 }
 impl TestGridSessionAction {
@@ -10795,8 +11050,10 @@ impl TestGridSessionAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Suite {
     /// <p>The suite's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The suite's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The suite's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -10822,8 +11079,10 @@ pub struct Suite {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the suite was created.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
@@ -10838,6 +11097,7 @@ pub struct Suite {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The suite's result.</p>
     /// <p>Allowed values include:</p>
@@ -10850,16 +11110,22 @@ pub struct Suite {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The suite's start time.</p>
+    #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's stop time.</p>
+    #[doc(hidden)]
     pub stopped: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The suite's result counters.</p>
+    #[doc(hidden)]
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the suite's result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
+    #[doc(hidden)]
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
 }
 impl Suite {
@@ -11237,6 +11503,7 @@ impl Suite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sample {
     /// <p>The sample's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The sample's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -11259,8 +11526,10 @@ pub struct Sample {
     /// <li> <p>TX</p> </li>
     /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SampleType>,
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl Sample {
@@ -11542,8 +11811,10 @@ impl AsRef<str> for SampleType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfferingPromotion {
     /// <p>The ID of the offering promotion.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A string that describes the offering promotion.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl OfferingPromotion {
@@ -11615,8 +11886,10 @@ impl OfferingPromotion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Artifact {
     /// <p>The artifact's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The artifact's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
@@ -11650,10 +11923,13 @@ pub struct Artifact {
     /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactType>,
     /// <p>The artifact's file extension.</p>
+    #[doc(hidden)]
     pub extension: std::option::Option<std::string::String>,
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl Artifact {
@@ -12116,10 +12392,13 @@ impl AsRef<str> for ArtifactCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevicePoolCompatibilityResult {
     /// <p>The device (phone or tablet) to return information about.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
     /// <p>Whether the result was compatible with the device pool.</p>
+    #[doc(hidden)]
     pub compatible: std::option::Option<bool>,
     /// <p>Information about the compatibility.</p>
+    #[doc(hidden)]
     pub incompatibility_messages:
         std::option::Option<std::vec::Vec<crate::model::IncompatibilityMessage>>,
 }
@@ -12224,6 +12503,7 @@ impl DevicePoolCompatibilityResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibilityMessage {
     /// <p>A message about the incompatibility.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
@@ -12235,6 +12515,7 @@ pub struct IncompatibilityMessage {
     /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeviceAttribute>,
 }
 impl IncompatibilityMessage {
@@ -12336,23 +12617,31 @@ impl IncompatibilityMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
+    #[doc(hidden)]
     pub aws_account_number: std::option::Option<std::string::String>,
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
+    #[doc(hidden)]
     pub unmetered_devices:
         std::option::Option<std::collections::HashMap<crate::model::DevicePlatform, i32>>,
     /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
+    #[doc(hidden)]
     pub unmetered_remote_access_devices:
         std::option::Option<std::collections::HashMap<crate::model::DevicePlatform, i32>>,
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
+    #[doc(hidden)]
     pub max_job_timeout_minutes: std::option::Option<i32>,
     /// <p>Information about an AWS account's usage of free trial device minutes.</p>
+    #[doc(hidden)]
     pub trial_minutes: std::option::Option<crate::model::TrialMinutes>,
     /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
+    #[doc(hidden)]
     pub max_slots: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
+    #[doc(hidden)]
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl AccountSettings {
@@ -12585,8 +12874,10 @@ impl AccountSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<f64>,
     /// <p>The number of free trial minutes remaining in the account.</p>
+    #[doc(hidden)]
     pub remaining: std::option::Option<f64>,
 }
 impl TrialMinutes {
@@ -12658,8 +12949,10 @@ impl TrialMinutes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
+    #[doc(hidden)]
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
+    #[doc(hidden)]
     pub vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfiguration {

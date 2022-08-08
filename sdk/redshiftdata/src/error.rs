@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -69,6 +70,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -133,6 +135,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseConnectionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DatabaseConnectionException {
@@ -197,8 +200,10 @@ impl DatabaseConnectionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Resource identifier associated with the exception.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -282,8 +287,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementException {
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Statement identifier of the exception.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementException {
@@ -367,6 +374,7 @@ impl ExecuteStatementException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveStatementsExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActiveStatementsExceededException {
@@ -431,8 +439,10 @@ impl ActiveStatementsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Statement identifier of the exception.</p>
+    #[doc(hidden)]
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementException {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateResourcePolicyOutput {
     /// <p>True if your policy passes validation, otherwise false.</p>
+    #[doc(hidden)]
     pub policy_validation_passed: bool,
     /// <p>Validation errors if your policy didn't pass validation.</p>
+    #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
 }
 impl ValidateResourcePolicyOutput {
@@ -87,8 +89,10 @@ impl ValidateResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretVersionStageOutput {
     /// <p>The ARN of the secret that was updated.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateSecretVersionStageOutput {
@@ -160,10 +164,13 @@ impl UpdateSecretVersionStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret that was updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl UpdateSecretOutput {
@@ -312,6 +319,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopReplicationToReplicaOutput {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopReplicationToReplicaOutput {
@@ -364,10 +372,13 @@ impl StopReplicationToReplicaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateSecretOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the new version of the secret.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl RotateSecretOutput {
@@ -456,8 +467,10 @@ impl RotateSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSecretOutput {
     /// <p>The ARN of the secret that was restored.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret that was restored.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl RestoreSecretOutput {
@@ -529,8 +542,10 @@ impl RestoreSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateSecretToRegionsOutput {
     /// <p>The ARN of the primary secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of replication.</p>
+    #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl ReplicateSecretToRegionsOutput {
@@ -614,8 +629,10 @@ impl ReplicateSecretToRegionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRegionsFromReplicationOutput {
     /// <p>The ARN of the primary secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of replicas for this secret after you remove Regions.</p>
+    #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl RemoveRegionsFromReplicationOutput {
@@ -699,12 +716,16 @@ impl RemoveRegionsFromReplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSecretValueOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the version of the secret.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
+    #[doc(hidden)]
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutSecretValueOutput {
@@ -819,8 +840,10 @@ impl PutSecretValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -892,12 +915,16 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsOutput {
     /// <p>A list of the versions of the secret.</p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ListSecretVersionIdsOutput {
@@ -1013,8 +1040,10 @@ impl ListSecretVersionIdsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretsOutput {
     /// <p>A list of the secrets in the account.</p>
+    #[doc(hidden)]
     pub secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecretsOutput {
@@ -1095,20 +1124,27 @@ impl ListSecretsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecretValueOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of this version of the secret.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    #[doc(hidden)]
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    #[doc(hidden)]
     pub secret_string: std::option::Option<std::string::String>,
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
+    #[doc(hidden)]
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetSecretValueOutput {
@@ -1289,10 +1325,13 @@ impl GetSecretValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -1384,6 +1423,7 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRandomPasswordOutput {
     /// <p>A string with the password.</p>
+    #[doc(hidden)]
     pub random_password: std::option::Option<std::string::String>,
 }
 impl GetRandomPasswordOutput {
@@ -1441,30 +1481,42 @@ impl GetRandomPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecretOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the secret.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
+    #[doc(hidden)]
     pub rotation_enabled: std::option::Option<bool>,
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    #[doc(hidden)]
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
+    #[doc(hidden)]
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    #[doc(hidden)]
     pub last_rotated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
+    #[doc(hidden)]
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+    #[doc(hidden)]
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
+    #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
     /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
@@ -1474,14 +1526,18 @@ pub struct DescribeSecretOutput {
     /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
+    #[doc(hidden)]
     pub version_ids_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The name of the service that created this secret.</p>
+    #[doc(hidden)]
     pub owning_service: std::option::Option<std::string::String>,
     /// <p>The date the secret was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
     /// <p>A list of the replicas of this secret and their status: </p>
     /// <ul>
@@ -1489,6 +1545,7 @@ pub struct DescribeSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl DescribeSecretOutput {
@@ -1926,10 +1983,13 @@ impl DescribeSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecretOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteSecretOutput {
@@ -2021,8 +2081,10 @@ impl DeleteSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyOutput {
@@ -2094,10 +2156,13 @@ impl DeleteResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecretOutput {
     /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier associated with the version of the new secret.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
@@ -2105,6 +2170,7 @@ pub struct CreateSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl CreateSecretOutput {
@@ -2237,10 +2303,13 @@ impl CreateSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRotateSecretOutput {
     /// <p>The ARN of the secret.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the secret.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl CancelRotateSecretOutput {

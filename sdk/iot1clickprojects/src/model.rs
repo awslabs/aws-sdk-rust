@@ -5,9 +5,11 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
+    #[doc(hidden)]
     pub default_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
+    #[doc(hidden)]
     pub device_templates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>,
     >,
@@ -122,8 +124,10 @@ impl PlacementTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceTemplate {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
+    #[doc(hidden)]
     pub callback_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -216,14 +220,19 @@ impl DeviceTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p>The ARN of the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the project being summarized.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    #[doc(hidden)]
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -373,12 +382,16 @@ impl ProjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement being summarized.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    #[doc(hidden)]
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementSummary {
@@ -493,18 +506,25 @@ impl PlacementSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
     /// <p>The ARN of the project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the project for which to obtain information from.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    #[doc(hidden)]
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object describing the project's placement specifications.</p>
+    #[doc(hidden)]
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -691,15 +711,20 @@ impl ProjectDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementDescription {
     /// <p>The name of the project containing the placement.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement.</p>
+    #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The user-defined attributes associated with the placement.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    #[doc(hidden)]
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementDescription {

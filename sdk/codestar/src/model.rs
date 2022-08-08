@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserProfileSummary {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address associated with the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UserProfileSummary {
@@ -122,10 +126,13 @@ impl UserProfileSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+    #[doc(hidden)]
     pub project_role: std::option::Option<std::string::String>,
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
+    #[doc(hidden)]
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl TeamMember {
@@ -214,6 +221,7 @@ impl TeamMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Resource {
@@ -266,8 +274,10 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p>The ID of the project.</p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl ProjectSummary {
@@ -339,8 +349,10 @@ impl ProjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ProjectStatus {
@@ -412,10 +424,13 @@ impl ProjectStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Toolchain {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ToolchainSource>,
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
+    #[doc(hidden)]
     pub stack_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -528,6 +543,7 @@ impl Toolchain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ToolchainSource {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl ToolchainSource {
@@ -580,8 +596,10 @@ impl ToolchainSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
+    #[doc(hidden)]
     pub bucket_key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -653,8 +671,10 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Code {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::CodeSource>,
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::CodeDestination>,
 }
 impl Code {
@@ -729,8 +749,10 @@ impl Code {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeDestination {
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+    #[doc(hidden)]
     pub code_commit: std::option::Option<crate::model::CodeCommitCodeDestination>,
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+    #[doc(hidden)]
     pub git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
 }
 impl CodeDestination {
@@ -808,18 +830,25 @@ impl CodeDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubCodeDestination {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>Whether the GitHub repository is to be a private repository.</p>
+    #[doc(hidden)]
     pub private_repository: bool,
     /// <p>Whether to enable issues for the GitHub repository.</p>
+    #[doc(hidden)]
     pub issues_enabled: bool,
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GitHubCodeDestination {
@@ -976,6 +1005,7 @@ impl GitHubCodeDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CodeCommitCodeDestination {
@@ -1028,6 +1058,7 @@ impl CodeCommitCodeDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSource {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl CodeSource {

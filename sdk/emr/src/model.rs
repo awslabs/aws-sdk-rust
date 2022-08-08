@@ -59,8 +59,10 @@ impl AsRef<str> for IdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -132,10 +134,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionEngineConfig {
     /// <p>The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExecutionEngineType>,
     /// <p>An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub master_instance_security_group_id: std::option::Option<std::string::String>,
 }
 impl ExecutionEngineConfig {
@@ -287,6 +292,7 @@ impl AsRef<str> for ExecutionEngineType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
+    #[doc(hidden)]
     pub idle_timeout: i64,
 }
 impl AutoTerminationPolicy {
@@ -343,9 +349,11 @@ impl AutoTerminationPolicy {
 pub struct PlacementGroupConfig {
     /// <p>Role of the instance in the cluster.</p>
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
+    #[doc(hidden)]
     pub instance_role: std::option::Option<crate::model::InstanceRoleType>,
     /// <p>EC2 Placement Group strategy associated with instance role.</p>
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
+    #[doc(hidden)]
     pub placement_strategy: std::option::Option<crate::model::PlacementGroupStrategy>,
 }
 impl PlacementGroupConfig {
@@ -551,6 +559,7 @@ impl AsRef<str> for InstanceRoleType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedScalingPolicy {
     /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
+    #[doc(hidden)]
     pub compute_limits: std::option::Option<crate::model::ComputeLimits>,
 }
 impl ManagedScalingPolicy {
@@ -608,14 +617,19 @@ impl ManagedScalingPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
+    #[doc(hidden)]
     pub unit_type: std::option::Option<crate::model::ComputeLimitsUnitType>,
     /// <p> The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+    #[doc(hidden)]
     pub minimum_capacity_units: std::option::Option<i32>,
     /// <p> The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+    #[doc(hidden)]
     pub maximum_capacity_units: std::option::Option<i32>,
     /// <p> The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
+    #[doc(hidden)]
     pub maximum_on_demand_capacity_units: std::option::Option<i32>,
     /// <p> The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
+    #[doc(hidden)]
     pub maximum_core_capacity_units: std::option::Option<i32>,
 }
 impl ComputeLimits {
@@ -809,14 +823,19 @@ impl AsRef<str> for ComputeLimitsUnitType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KerberosAttributes {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
+    #[doc(hidden)]
     pub realm: std::option::Option<std::string::String>,
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
+    #[doc(hidden)]
     pub kdc_admin_password: std::option::Option<std::string::String>,
     /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
+    #[doc(hidden)]
     pub cross_realm_trust_principal_password: std::option::Option<std::string::String>,
     /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
+    #[doc(hidden)]
     pub ad_domain_join_user: std::option::Option<std::string::String>,
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
+    #[doc(hidden)]
     pub ad_domain_join_password: std::option::Option<std::string::String>,
 }
 impl KerberosAttributes {
@@ -1070,10 +1089,13 @@ impl AsRef<str> for ScaleDownBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1196,12 +1218,16 @@ impl Configuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
+    #[doc(hidden)]
     pub additional_info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1337,8 +1363,10 @@ impl Application {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of user-supplied arguments.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SupportedProductConfig {
@@ -1419,8 +1447,10 @@ impl SupportedProductConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BootstrapActionConfig {
     /// <p>The name of the bootstrap action.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The script run by the bootstrap action.</p>
+    #[doc(hidden)]
     pub script_bootstrap_action: std::option::Option<crate::model::ScriptBootstrapActionConfig>,
 }
 impl BootstrapActionConfig {
@@ -1501,8 +1531,10 @@ impl BootstrapActionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ScriptBootstrapActionConfig {
@@ -1583,6 +1615,7 @@ impl ScriptBootstrapActionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepConfig {
     /// <p>The name of the step.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The action to take when the step fails. Use one of the following values:</p>
     /// <ul>
@@ -1593,8 +1626,10 @@ pub struct StepConfig {
     /// </ul>
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
+    #[doc(hidden)]
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The JAR file used for the step.</p>
+    #[doc(hidden)]
     pub hadoop_jar_step: std::option::Option<crate::model::HadoopJarStepConfig>,
 }
 impl StepConfig {
@@ -1713,12 +1748,16 @@ impl StepConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::KeyValue>>,
     /// <p>A path to a JAR file run during the step.</p>
+    #[doc(hidden)]
     pub jar: std::option::Option<std::string::String>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
+    #[doc(hidden)]
     pub main_class: std::option::Option<std::string::String>,
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HadoopJarStepConfig {
@@ -1842,8 +1881,10 @@ impl HadoopJarStepConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyValue {
     /// <p>The unique identifier of a key-value pair.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value part of the identified key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl KeyValue {
@@ -1983,43 +2024,60 @@ impl AsRef<str> for ActionOnFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFlowInstancesConfig {
     /// <p>The EC2 instance type of the master node.</p>
+    #[doc(hidden)]
     pub master_instance_type: std::option::Option<std::string::String>,
     /// <p>The EC2 instance type of the core and task nodes.</p>
+    #[doc(hidden)]
     pub slave_instance_type: std::option::Option<std::string::String>,
     /// <p>The number of EC2 instances in the cluster.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>Configuration for the instance groups in a cluster.</p>
+    #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
     /// <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
+    #[doc(hidden)]
     pub instance_fleets: std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>,
     /// <p>The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
+    #[doc(hidden)]
     pub ec2_key_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the cluster runs.</p>
+    #[doc(hidden)]
     pub placement: std::option::Option<crate::model::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub keep_job_flow_alive_when_no_steps: bool,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
+    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
+    #[doc(hidden)]
     pub hadoop_version: std::option::Option<std::string::String>,
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
+    #[doc(hidden)]
     pub ec2_subnet_id: std::option::Option<std::string::String>,
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
+    #[doc(hidden)]
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
+    #[doc(hidden)]
     pub emr_managed_master_security_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
+    #[doc(hidden)]
     pub emr_managed_slave_security_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
+    #[doc(hidden)]
     pub service_access_security_group: std::option::Option<std::string::String>,
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    #[doc(hidden)]
     pub additional_master_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
+    #[doc(hidden)]
     pub additional_slave_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JobFlowInstancesConfig {
@@ -2472,10 +2530,12 @@ impl JobFlowInstancesConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementType {
     /// <p>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlacementType {
@@ -2567,20 +2627,26 @@ impl PlacementType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetConfig {
     /// <p>The friendly name of the instance fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
+    #[doc(hidden)]
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_on_demand_capacity: std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_spot_capacity: std::option::Option<i32>,
     /// <p>The instance type configurations that define the EC2 instances in the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_type_configs: std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>,
     /// <p>The launch specification for the instance fleet.</p>
+    #[doc(hidden)]
     pub launch_specifications:
         std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
 }
@@ -2759,10 +2825,12 @@ impl InstanceFleetConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetProvisioningSpecifications {
     /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
+    #[doc(hidden)]
     pub spot_specification: std::option::Option<crate::model::SpotProvisioningSpecification>,
     /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
     /// </note>
+    #[doc(hidden)]
     pub on_demand_specification:
         std::option::Option<crate::model::OnDemandProvisioningSpecification>,
 }
@@ -2861,9 +2929,11 @@ impl InstanceFleetProvisioningSpecifications {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    #[doc(hidden)]
     pub allocation_strategy:
         std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
+    #[doc(hidden)]
     pub capacity_reservation_options:
         std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
 }
@@ -2959,15 +3029,18 @@ pub struct OnDemandCapacityReservationOptions {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
+    #[doc(hidden)]
     pub usage_strategy: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
     /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub capacity_reservation_preference:
         std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
+    #[doc(hidden)]
     pub capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
 }
 impl OnDemandCapacityReservationOptions {
@@ -3271,14 +3344,18 @@ impl AsRef<str> for OnDemandProvisioningAllocationStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpotProvisioningSpecification {
     /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
+    #[doc(hidden)]
     pub timeout_duration_minutes: std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+    #[doc(hidden)]
     pub timeout_action: std::option::Option<crate::model::SpotProvisioningTimeoutAction>,
     /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
     /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
     /// </note>
+    #[doc(hidden)]
     pub block_duration_minutes: std::option::Option<i32>,
     /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
+    #[doc(hidden)]
     pub allocation_strategy: std::option::Option<crate::model::SpotProvisioningAllocationStrategy>,
 }
 impl SpotProvisioningSpecification {
@@ -3515,18 +3592,25 @@ impl AsRef<str> for SpotProvisioningTimeoutAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTypeConfig {
     /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
+    #[doc(hidden)]
     pub weighted_capacity: std::option::Option<i32>,
     /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
+    #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+    #[doc(hidden)]
     pub bid_price_as_percentage_of_on_demand_price: std::option::Option<f64>,
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
+    #[doc(hidden)]
     pub ebs_configuration: std::option::Option<crate::model::EbsConfiguration>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The custom AMI ID to use for the instance type.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl InstanceTypeConfig {
@@ -3708,9 +3792,11 @@ impl InstanceTypeConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
+    #[doc(hidden)]
     pub ebs_block_device_configs:
         std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
 }
 impl EbsConfiguration {
@@ -3797,8 +3883,10 @@ impl EbsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    #[doc(hidden)]
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
+    #[doc(hidden)]
     pub volumes_per_instance: std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfig {
@@ -3873,12 +3961,16 @@ impl EbsBlockDeviceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeSpecification {
     /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
+    #[doc(hidden)]
     pub iops: std::option::Option<i32>,
     /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
+    #[doc(hidden)]
     pub size_in_gb: std::option::Option<i32>,
     /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+    #[doc(hidden)]
     pub throughput: std::option::Option<i32>,
 }
 impl VolumeSpecification {
@@ -4043,27 +4135,37 @@ impl AsRef<str> for InstanceFleetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The role of the instance group in the cluster.</p>
+    #[doc(hidden)]
     pub instance_role: std::option::Option<crate::model::InstanceRoleType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
     /// <p>The EC2 instance type for all instances in the instance group.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Target number of instances for the instance group.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>EBS configurations that will be attached to each EC2 instance in the instance group.</p>
+    #[doc(hidden)]
     pub ebs_configuration: std::option::Option<crate::model::EbsConfiguration>,
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
+    #[doc(hidden)]
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl InstanceGroupConfig {
@@ -4304,8 +4406,10 @@ impl InstanceGroupConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicy {
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::ScalingConstraints>,
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>,
 }
 impl AutoScalingPolicy {
@@ -4389,12 +4493,16 @@ impl AutoScalingPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The conditions that trigger an automatic scaling activity.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ScalingAction>,
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<crate::model::ScalingTrigger>,
 }
 impl ScalingRule {
@@ -4506,6 +4614,7 @@ impl ScalingRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
+    #[doc(hidden)]
     pub cloud_watch_alarm_definition: std::option::Option<crate::model::CloudWatchAlarmDefinition>,
 }
 impl ScalingTrigger {
@@ -4572,22 +4681,31 @@ impl ScalingTrigger {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchAlarmDefinition {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
+    #[doc(hidden)]
     pub evaluation_periods: std::option::Option<i32>,
     /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::Statistic>,
     /// <p>The value against which the specified statistic is compared.</p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
     /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p>A CloudWatch metric dimension.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
 }
 impl CloudWatchAlarmDefinition {
@@ -4793,8 +4911,10 @@ impl CloudWatchAlarmDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDimension {
     /// <p>The dimension name.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The dimension value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MetricDimension {
@@ -5184,8 +5304,10 @@ impl AsRef<str> for ComparisonOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingAction {
     /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
+    #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
+    #[doc(hidden)]
     pub simple_scaling_policy_configuration:
         std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
 }
@@ -5270,10 +5392,13 @@ impl ScalingAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimpleScalingPolicyConfiguration {
     /// <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
+    #[doc(hidden)]
     pub adjustment_type: std::option::Option<crate::model::AdjustmentType>,
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
+    #[doc(hidden)]
     pub scaling_adjustment: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
+    #[doc(hidden)]
     pub cool_down: std::option::Option<i32>,
 }
 impl SimpleScalingPolicyConfiguration {
@@ -5483,8 +5608,10 @@ impl AsRef<str> for MarketType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingConstraints {
     /// <p>The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</p>
+    #[doc(hidden)]
     pub min_capacity: std::option::Option<i32>,
     /// <p>The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<i32>,
 }
 impl ScalingConstraints {
@@ -5556,16 +5683,21 @@ impl ScalingConstraints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
+    #[doc(hidden)]
     pub block_public_security_group_rules: bool,
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
     /// <p>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+    #[doc(hidden)]
     pub permitted_public_security_group_rule_ranges:
         std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The classification within a configuration.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5753,8 +5885,10 @@ impl BlockPublicAccessConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
+    #[doc(hidden)]
     pub min_range: std::option::Option<i32>,
     /// <p>The smallest port number in a specified range of port numbers.</p>
+    #[doc(hidden)]
     pub max_range: std::option::Option<i32>,
 }
 impl PortRange {
@@ -5826,10 +5960,13 @@ impl PortRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicyDescription {
     /// <p>The status of an automatic scaling policy. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AutoScalingPolicyStatus>,
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::ScalingConstraints>,
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>,
 }
 impl AutoScalingPolicyDescription {
@@ -5933,8 +6070,10 @@ impl AutoScalingPolicyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicyStatus {
     /// <p>Indicates the status of the automatic scaling policy.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AutoScalingPolicyState>,
     /// <p>The reason for a change in status.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::AutoScalingPolicyStateChangeReason>,
 }
 impl AutoScalingPolicyStatus {
@@ -6018,8 +6157,10 @@ impl AutoScalingPolicyStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingPolicyStateChangeReason {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::AutoScalingPolicyStateChangeReasonCode>,
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AutoScalingPolicyStateChangeReason {
@@ -6233,16 +6374,22 @@ impl AsRef<str> for AutoScalingPolicyState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupModifyConfig {
     /// <p>Unique ID of the instance group to modify.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>Target size for the instance group.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    #[doc(hidden)]
     pub ec2_instance_ids_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Policy for customizing shrink operations.</p>
+    #[doc(hidden)]
     pub shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+    #[doc(hidden)]
     pub reconfiguration_type: std::option::Option<crate::model::ReconfigurationType>,
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
 }
 impl InstanceGroupModifyConfig {
@@ -6471,8 +6618,10 @@ impl AsRef<str> for ReconfigurationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShrinkPolicy {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
+    #[doc(hidden)]
     pub decommission_timeout: std::option::Option<i32>,
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
+    #[doc(hidden)]
     pub instance_resize_policy: std::option::Option<crate::model::InstanceResizePolicy>,
 }
 impl ShrinkPolicy {
@@ -6549,10 +6698,13 @@ impl ShrinkPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
+    #[doc(hidden)]
     pub instances_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
+    #[doc(hidden)]
     pub instances_to_protect: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
+    #[doc(hidden)]
     pub instance_termination_timeout: std::option::Option<i32>,
 }
 impl InstanceResizePolicy {
@@ -6664,10 +6816,13 @@ impl InstanceResizePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
+    #[doc(hidden)]
     pub target_on_demand_capacity: std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
+    #[doc(hidden)]
     pub target_spot_capacity: std::option::Option<i32>,
 }
 impl InstanceFleetModifyConfig {
@@ -6759,16 +6914,22 @@ impl InstanceFleetModifyConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
+    #[doc(hidden)]
     pub session_policy_arn: std::option::Option<std::string::String>,
     /// <p>The time the session mapping was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SessionMappingSummary {
@@ -6920,18 +7081,25 @@ impl SessionMappingSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StudioSummary {
@@ -7146,14 +7314,19 @@ impl AsRef<str> for AuthMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepSummary {
     /// <p>The identifier of the cluster step.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the cluster step.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Hadoop job configuration of the cluster step.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<crate::model::HadoopStepConfig>,
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
+    #[doc(hidden)]
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StepStatus>,
 }
 impl StepSummary {
@@ -7282,12 +7455,16 @@ impl StepSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepStatus {
     /// <p>The execution state of the cluster step.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StepState>,
     /// <p>The reason for the step execution status change.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::StepStateChangeReason>,
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>The timeline of the cluster step status over time.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::StepTimeline>,
 }
 impl StepStatus {
@@ -7402,10 +7579,13 @@ impl StepStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution started.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution completed or failed.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StepTimeline {
@@ -7503,10 +7683,13 @@ impl StepTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureDetails {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
+    #[doc(hidden)]
     pub log_file: std::option::Option<std::string::String>,
 }
 impl FailureDetails {
@@ -7595,8 +7778,10 @@ impl FailureDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepStateChangeReason {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::StepStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl StepStateChangeReason {
@@ -7805,13 +7990,17 @@ impl AsRef<str> for StepState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
+    #[doc(hidden)]
     pub jar: std::option::Option<std::string::String>,
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
+    #[doc(hidden)]
     pub main_class: std::option::Option<std::string::String>,
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HadoopStepConfig {
@@ -7946,8 +8135,10 @@ impl HadoopStepConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the security configuration was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SecurityConfigurationSummary {
@@ -8022,8 +8213,10 @@ impl SecurityConfigurationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseLabelFilter {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
 }
 impl ReleaseLabelFilter {
@@ -8095,10 +8288,13 @@ impl ReleaseLabelFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the editor associated with the notebook execution.</p>
+    #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
     /// <p>The name of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_name: std::option::Option<std::string::String>,
     /// <p>The status of the notebook execution.</p>
     /// <ul>
@@ -8113,10 +8309,13 @@ pub struct NotebookExecutionSummary {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution started.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NotebookExecutionSummary {
@@ -8405,28 +8604,40 @@ impl AsRef<str> for NotebookExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the instance.</p>
+    #[doc(hidden)]
     pub public_dns_name: std::option::Option<std::string::String>,
     /// <p>The public IP address of the instance.</p>
+    #[doc(hidden)]
     pub public_ip_address: std::option::Option<std::string::String>,
     /// <p>The private DNS name of the instance.</p>
+    #[doc(hidden)]
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The private IP address of the instance.</p>
+    #[doc(hidden)]
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The current status of the instance.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>The identifier of the instance group to which this instance belongs.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
+    #[doc(hidden)]
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
+    #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
+    #[doc(hidden)]
     pub ebs_volumes: std::option::Option<std::vec::Vec<crate::model::EbsVolume>>,
 }
 impl Instance {
@@ -8704,8 +8915,10 @@ impl Instance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsVolume {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
     /// <p>The volume identifier of the EBS volume.</p>
+    #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
 }
 impl EbsVolume {
@@ -8777,10 +8990,13 @@ impl EbsVolume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStatus {
     /// <p>The current state of the instance.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceState>,
     /// <p>The details of the status change reason for the instance.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::InstanceStateChangeReason>,
     /// <p>The timeline of the instance status over time.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::InstanceTimeline>,
 }
 impl InstanceStatus {
@@ -8884,10 +9100,13 @@ impl InstanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was ready to perform tasks.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was terminated.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceTimeline {
@@ -8985,8 +9204,10 @@ impl InstanceTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceStateChangeReasonCode>,
     /// <p>The status change reason description.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceStateChangeReason {
@@ -9266,44 +9487,62 @@ impl AsRef<str> for InstanceGroupType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroup {
     /// <p>The identifier of the instance group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the instance group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.</p>
+    #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
+    #[doc(hidden)]
     pub instance_group_type: std::option::Option<crate::model::InstanceGroupType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
     /// <p>The EC2 instance type for all instances in the instance group.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The target number of instances for the instance group.</p>
+    #[doc(hidden)]
     pub requested_instance_count: std::option::Option<i32>,
     /// <p>The number of instances currently running in this instance group.</p>
+    #[doc(hidden)]
     pub running_instance_count: std::option::Option<i32>,
     /// <p>The current status of the instance group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceGroupStatus>,
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The version number of the requested configuration specification for this instance group.</p>
+    #[doc(hidden)]
     pub configurations_version: i64,
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
+    #[doc(hidden)]
     pub last_successfully_applied_configurations:
         std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
+    #[doc(hidden)]
     pub last_successfully_applied_configurations_version: i64,
     /// <p>The EBS block devices that are mapped to this instance group.</p>
+    #[doc(hidden)]
     pub ebs_block_devices: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
     /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>Policy for customizing shrink operations.</p>
+    #[doc(hidden)]
     pub shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
+    #[doc(hidden)]
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicyDescription>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl InstanceGroup {
@@ -9728,8 +9967,10 @@ impl InstanceGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDevice {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    #[doc(hidden)]
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
 }
 impl EbsBlockDevice {
@@ -9804,10 +10045,13 @@ impl EbsBlockDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceGroupState>,
     /// <p>The status change reason details for the instance group.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::InstanceGroupStateChangeReason>,
     /// <p>The timeline of the instance group status over time.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::InstanceGroupTimeline>,
 }
 impl InstanceGroupStatus {
@@ -9911,10 +10155,13 @@ impl InstanceGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance group terminated.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceGroupTimeline {
@@ -10012,8 +10259,10 @@ impl InstanceGroupTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceGroupStateChangeReasonCode>,
     /// <p>The status change reason description.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceGroupStateChangeReason {
@@ -10261,29 +10510,39 @@ impl AsRef<str> for InstanceGroupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleet {
     /// <p>The unique identifier of the instance fleet.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A friendly name for the instance fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the instance fleet. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceFleetStatus>,
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
+    #[doc(hidden)]
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_on_demand_capacity: std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
+    #[doc(hidden)]
     pub target_spot_capacity: std::option::Option<i32>,
     /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
+    #[doc(hidden)]
     pub provisioned_on_demand_capacity: std::option::Option<i32>,
     /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
+    #[doc(hidden)]
     pub provisioned_spot_capacity: std::option::Option<i32>,
     /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
+    #[doc(hidden)]
     pub instance_type_specifications:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
     /// <p>Describes the launch specification for an instance fleet. </p>
+    #[doc(hidden)]
     pub launch_specifications:
         std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
 }
@@ -10545,20 +10804,28 @@ impl InstanceFleet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTypeSpecification {
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
+    #[doc(hidden)]
     pub weighted_capacity: std::option::Option<i32>,
     /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
+    #[doc(hidden)]
     pub bid_price_as_percentage_of_on_demand_price: std::option::Option<f64>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
+    #[doc(hidden)]
     pub ebs_block_devices: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
+    #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The custom AMI ID to use for the instance type.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl InstanceTypeSpecification {
@@ -10775,10 +11042,13 @@ pub struct InstanceFleetStatus {
     /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li>
     /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceFleetState>,
     /// <p>Provides status change reason details for the instance fleet.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::InstanceFleetStateChangeReason>,
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::InstanceFleetTimeline>,
 }
 impl InstanceFleetStatus {
@@ -10911,10 +11181,13 @@ impl InstanceFleetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time and date the instance fleet terminated.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InstanceFleetTimeline {
@@ -11014,8 +11287,10 @@ impl InstanceFleetTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceFleetStateChangeReason {
     /// <p>A code corresponding to the reason the state change occurred.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceFleetStateChangeReasonCode>,
     /// <p>An explanatory message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceFleetStateChangeReason {
@@ -11241,16 +11516,22 @@ impl AsRef<str> for InstanceFleetState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The details about the current status of the cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClusterStatus>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    #[doc(hidden)]
     pub normalized_instance_hours: std::option::Option<i32>,
     /// <p>The Amazon Resource Name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
 }
 impl ClusterSummary {
@@ -11393,10 +11674,13 @@ impl ClusterSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterStatus {
     /// <p>The current state of the cluster.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     /// <p>The reason for the cluster status change.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::ClusterStateChangeReason>,
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
+    #[doc(hidden)]
     pub timeline: std::option::Option<crate::model::ClusterTimeline>,
 }
 impl ClusterStatus {
@@ -11496,10 +11780,13 @@ impl ClusterStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was ready to run steps.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was terminated.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClusterTimeline {
@@ -11597,8 +11884,10 @@ impl ClusterTimeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterStateChangeReason {
     /// <p>The programmatic code for the state change reason.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ClusterStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterStateChangeReason {
@@ -11844,10 +12133,13 @@ impl AsRef<str> for ClusterState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Command {
     /// <p>The name of the command.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of the command script.</p>
+    #[doc(hidden)]
     pub script_path: std::option::Option<std::string::String>,
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
+    #[doc(hidden)]
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Command {
@@ -11945,18 +12237,25 @@ impl Command {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionMappingDetail {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
+    #[doc(hidden)]
     pub session_policy_arn: std::option::Option<std::string::String>,
     /// <p>The time the session mapping was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the session mapping was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SessionMappingDetail {
@@ -12128,8 +12427,10 @@ impl SessionMappingDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
+    #[doc(hidden)]
     pub created_by_arn: std::option::Option<std::string::String>,
 }
 impl BlockPublicAccessConfigurationMetadata {
@@ -12207,38 +12508,55 @@ impl BlockPublicAccessConfigurationMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
+    #[doc(hidden)]
     pub user_role: std::option::Option<std::string::String>,
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
+    #[doc(hidden)]
     pub workspace_security_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
+    #[doc(hidden)]
     pub engine_security_group_id: std::option::Option<std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The time the Amazon EMR Studio was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
+    #[doc(hidden)]
     pub default_s3_location: std::option::Option<std::string::String>,
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
+    #[doc(hidden)]
     pub idp_auth_url: std::option::Option<std::string::String>,
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+    #[doc(hidden)]
     pub idp_relay_state_parameter_name: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Studio {
@@ -12610,19 +12928,25 @@ impl Studio {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Step {
     /// <p>The identifier of the cluster step.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the cluster step.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Hadoop job configuration of the cluster step.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<crate::model::HadoopStepConfig>,
     /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
+    #[doc(hidden)]
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StepStatus>,
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl Step {
@@ -12780,6 +13104,7 @@ impl Step {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OsRelease {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl OsRelease {
@@ -12832,8 +13157,10 @@ impl OsRelease {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimplifiedApplication {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl SimplifiedApplication {
@@ -12905,14 +13232,19 @@ impl SimplifiedApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
+    #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
     /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
+    #[doc(hidden)]
     pub execution_engine: std::option::Option<crate::model::ExecutionEngineConfig>,
     /// <p>A name for the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_name: std::option::Option<std::string::String>,
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
+    #[doc(hidden)]
     pub notebook_params: std::option::Option<std::string::String>,
     /// <p>The status of the notebook execution.</p>
     /// <ul>
@@ -12927,20 +13259,28 @@ pub struct NotebookExecution {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
+    #[doc(hidden)]
     pub output_notebook_uri: std::option::Option<std::string::String>,
     /// <p>The reason for the latest status change of the notebook execution.</p>
+    #[doc(hidden)]
     pub last_state_change_reason: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub notebook_instance_security_group_id: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl NotebookExecution {
@@ -13280,35 +13620,50 @@ impl NotebookExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFlowDetail {
     /// <p>The job flow identifier.</p>
+    #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p>The name of the job flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 where log files for the job are stored.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+    #[doc(hidden)]
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    #[doc(hidden)]
     pub ami_version: std::option::Option<std::string::String>,
     /// <p>Describes the execution status of the job flow.</p>
+    #[doc(hidden)]
     pub execution_status_detail: std::option::Option<crate::model::JobFlowExecutionStatusDetail>,
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<crate::model::JobFlowInstancesDetail>,
     /// <p>A list of steps run by the job flow.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepDetail>>,
     /// <p>A list of the bootstrap actions run by the job flow.</p>
+    #[doc(hidden)]
     pub bootstrap_actions: std::option::Option<std::vec::Vec<crate::model::BootstrapActionDetail>>,
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
+    #[doc(hidden)]
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
+    #[doc(hidden)]
     pub visible_to_all_users: bool,
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
+    #[doc(hidden)]
     pub job_flow_role: std::option::Option<std::string::String>,
     /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate EC2 instances in an instance group.</p>
+    #[doc(hidden)]
     pub auto_scaling_role: std::option::Option<std::string::String>,
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    #[doc(hidden)]
     pub scale_down_behavior: std::option::Option<crate::model::ScaleDownBehavior>,
 }
 impl JobFlowDetail {
@@ -13656,6 +14011,7 @@ impl JobFlowDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BootstrapActionDetail {
     /// <p>A description of the bootstrap action.</p>
+    #[doc(hidden)]
     pub bootstrap_action_config: std::option::Option<crate::model::BootstrapActionConfig>,
 }
 impl BootstrapActionDetail {
@@ -13719,8 +14075,10 @@ impl BootstrapActionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepDetail {
     /// <p>The step configuration.</p>
+    #[doc(hidden)]
     pub step_config: std::option::Option<crate::model::StepConfig>,
     /// <p>The description of the step status.</p>
+    #[doc(hidden)]
     pub execution_status_detail: std::option::Option<crate::model::StepExecutionStatusDetail>,
 }
 impl StepDetail {
@@ -13804,14 +14162,19 @@ impl StepDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::StepExecutionState>,
     /// <p>The creation date and time of the step.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date and time of the step.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion date and time of the step.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the step's current state.</p>
+    #[doc(hidden)]
     pub last_state_change_reason: std::option::Option<std::string::String>,
 }
 impl StepExecutionStatusDetail {
@@ -14032,30 +14395,43 @@ impl AsRef<str> for StepExecutionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFlowInstancesDetail {
     /// <p>The Amazon EC2 master node instance type.</p>
+    #[doc(hidden)]
     pub master_instance_type: std::option::Option<std::string::String>,
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
+    #[doc(hidden)]
     pub master_public_dns_name: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 instance identifier of the master node.</p>
+    #[doc(hidden)]
     pub master_instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 core and task node instance type.</p>
+    #[doc(hidden)]
     pub slave_instance_type: std::option::Option<std::string::String>,
     /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>Details about the instance groups in a cluster.</p>
+    #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupDetail>>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
+    #[doc(hidden)]
     pub normalized_instance_hours: std::option::Option<i32>,
     /// <p>The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.</p>
+    #[doc(hidden)]
     pub ec2_key_name: std::option::Option<std::string::String>,
     /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
+    #[doc(hidden)]
     pub ec2_subnet_id: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
+    #[doc(hidden)]
     pub placement: std::option::Option<crate::model::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
+    #[doc(hidden)]
     pub keep_job_flow_alive_when_no_steps: bool,
     /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
+    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>The Hadoop version for the cluster.</p>
+    #[doc(hidden)]
     pub hadoop_version: std::option::Option<std::string::String>,
 }
 impl JobFlowInstancesDetail {
@@ -14353,34 +14729,49 @@ impl JobFlowInstancesDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceGroupDetail {
     /// <p>Unique identifier for the instance group.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>Friendly name for the instance group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>Instance group role in the cluster</p>
+    #[doc(hidden)]
     pub instance_role: std::option::Option<crate::model::InstanceRoleType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
     /// <p>EC2 instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Target number of instances to run in the instance group.</p>
+    #[doc(hidden)]
     pub instance_request_count: std::option::Option<i32>,
     /// <p>Actual count of running instances.</p>
+    #[doc(hidden)]
     pub instance_running_count: std::option::Option<i32>,
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceGroupState>,
     /// <p>Details regarding the state of the instance group.</p>
+    #[doc(hidden)]
     pub last_state_change_reason: std::option::Option<std::string::String>,
     /// <p>The date/time the instance group was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was started.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was available to the cluster.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date/time the instance group was terminated.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl InstanceGroupDetail {
@@ -14703,16 +15094,22 @@ impl InstanceGroupDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFlowExecutionStatusDetail {
     /// <p>The state of the job flow.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobFlowExecutionState>,
     /// <p>The creation date and time of the job flow.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The start date and time of the job flow.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
+    #[doc(hidden)]
     pub ready_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion date and time of the job flow.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Description of the job flow last changed state.</p>
+    #[doc(hidden)]
     pub last_state_change_reason: std::option::Option<std::string::String>,
 }
 impl JobFlowExecutionStatusDetail {
@@ -14958,70 +15355,101 @@ impl AsRef<str> for JobFlowExecutionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The unique identifier for the cluster.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status details about the cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClusterStatus>,
     /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+    #[doc(hidden)]
     pub ec2_instance_attributes: std::option::Option<crate::model::Ec2InstanceAttributes>,
     /// <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+    #[doc(hidden)]
     pub instance_collection_type: std::option::Option<crate::model::InstanceCollectionType>,
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p> The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
+    #[doc(hidden)]
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The AMI version requested for this cluster.</p>
+    #[doc(hidden)]
     pub requested_ami_version: std::option::Option<std::string::String>,
     /// <p>The AMI version running on this cluster.</p>
+    #[doc(hidden)]
     pub running_ami_version: std::option::Option<std::string::String>,
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
+    #[doc(hidden)]
     pub auto_terminate: bool,
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
+    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
+    #[doc(hidden)]
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>A list of tags associated with a cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    #[doc(hidden)]
     pub normalized_instance_hours: std::option::Option<i32>,
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
+    #[doc(hidden)]
     pub master_public_dns_name: std::option::Option<std::string::String>,
     /// <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The name of the security configuration applied to the cluster.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
+    #[doc(hidden)]
     pub auto_scaling_role: std::option::Option<std::string::String>,
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    #[doc(hidden)]
     pub scale_down_behavior: std::option::Option<crate::model::ScaleDownBehavior>,
     /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+    #[doc(hidden)]
     pub ebs_root_volume_size: std::option::Option<i32>,
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the Amazon Linux AMI package repositories when an instance boots using the AMI.</p>
+    #[doc(hidden)]
     pub repo_upgrade_on_boot: std::option::Option<crate::model::RepoUpgradeOnBoot>,
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub kerberos_attributes: std::option::Option<crate::model::KerberosAttributes>,
     /// <p>The Amazon Resource Name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the number of steps that can be executed concurrently.</p>
+    #[doc(hidden)]
     pub step_concurrency_level: std::option::Option<i32>,
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
+    #[doc(hidden)]
     pub placement_groups: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
+    #[doc(hidden)]
     pub os_release_label: std::option::Option<std::string::String>,
 }
 impl Cluster {
@@ -15747,26 +16175,37 @@ impl AsRef<str> for InstanceCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceAttributes {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
+    #[doc(hidden)]
     pub ec2_key_name: std::option::Option<std::string::String>,
     /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
+    #[doc(hidden)]
     pub ec2_subnet_id: std::option::Option<std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
+    #[doc(hidden)]
     pub requested_ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Availability Zone in which the cluster will run. </p>
+    #[doc(hidden)]
     pub ec2_availability_zone: std::option::Option<std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
+    #[doc(hidden)]
     pub requested_ec2_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.</p>
+    #[doc(hidden)]
     pub iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
+    #[doc(hidden)]
     pub emr_managed_master_security_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
+    #[doc(hidden)]
     pub emr_managed_slave_security_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
+    #[doc(hidden)]
     pub service_access_security_group: std::option::Option<std::string::String>,
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    #[doc(hidden)]
     pub additional_master_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
+    #[doc(hidden)]
     pub additional_slave_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Ec2InstanceAttributes {
@@ -16085,10 +16524,13 @@ impl Ec2InstanceAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStepsInfo {
     /// <p>The encrypted StepId of a step.</p>
+    #[doc(hidden)]
     pub step_id: std::option::Option<std::string::String>,
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CancelStepsRequestStatus>,
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CancelStepsInfo {

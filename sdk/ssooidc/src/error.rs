@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnauthorizedClientException {
@@ -112,10 +115,13 @@ impl UnauthorizedClientException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlowDownException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SlowDownException {
@@ -219,10 +225,13 @@ impl SlowDownException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
@@ -326,10 +335,13 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidClientException {
@@ -433,10 +445,13 @@ impl InvalidClientException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
@@ -540,10 +555,13 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidScopeException {
@@ -647,10 +665,13 @@ impl InvalidScopeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientMetadataException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidClientMetadataException {
@@ -754,10 +775,13 @@ impl InvalidClientMetadataException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedGrantTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedGrantTypeException {
@@ -861,10 +885,13 @@ impl UnsupportedGrantTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGrantException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGrantException {
@@ -968,10 +995,13 @@ impl InvalidGrantException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredTokenException {
@@ -1075,10 +1105,13 @@ impl ExpiredTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationPendingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuthorizationPendingException {
@@ -1182,10 +1215,13 @@ impl AuthorizationPendingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {

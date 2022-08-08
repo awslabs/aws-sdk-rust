@@ -19,10 +19,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
     /// <p>The state of the address pool.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ByoipCidrState>,
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::ByoipCidrEvent>>,
 }
 impl ByoipCidr {
@@ -123,8 +126,10 @@ impl ByoipCidr {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ByoipCidrEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ByoipCidrEvent {
@@ -302,15 +307,19 @@ impl AsRef<str> for ByoipCidrState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
+    #[doc(hidden)]
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The protocol for the connections from clients to the accelerator.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
     /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
     /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
+    #[doc(hidden)]
     pub client_affinity: std::option::Option<crate::model::ClientAffinity>,
 }
 impl Listener {
@@ -547,8 +556,10 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortRange {
     /// <p>The first port in the range of ports, inclusive.</p>
+    #[doc(hidden)]
     pub from_port: std::option::Option<i32>,
     /// <p>The last port in the range of ports, inclusive.</p>
+    #[doc(hidden)]
     pub to_port: std::option::Option<i32>,
 }
 impl PortRange {
@@ -620,28 +631,38 @@ impl PortRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
+    #[doc(hidden)]
     pub endpoint_group_region: std::option::Option<std::string::String>,
     /// <p>The list of endpoint objects.</p>
+    #[doc(hidden)]
     pub endpoint_descriptions:
         std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
+    #[doc(hidden)]
     pub traffic_dial_percentage: std::option::Option<f32>,
     /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
     /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>
+    #[doc(hidden)]
     pub health_check_port: std::option::Option<i32>,
     /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>
+    #[doc(hidden)]
     pub health_check_protocol: std::option::Option<crate::model::HealthCheckProtocol>,
     /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>
+    #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
+    #[doc(hidden)]
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+    #[doc(hidden)]
     pub threshold_count: std::option::Option<i32>,
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on. </p>
+    #[doc(hidden)]
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
 }
 impl EndpointGroup {
@@ -898,8 +919,10 @@ impl EndpointGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
+    #[doc(hidden)]
     pub listener_port: std::option::Option<i32>,
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub endpoint_port: std::option::Option<i32>,
 }
 impl PortOverride {
@@ -1031,17 +1054,22 @@ impl AsRef<str> for HealthCheckProtocol {
 pub struct EndpointDescription {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint weights</a> in the <i>Global Accelerator Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub weight: std::option::Option<i32>,
     /// <p>The health status of the endpoint.</p>
+    #[doc(hidden)]
     pub health_state: std::option::Option<crate::model::HealthState>,
     /// <p>Returns a null result.</p>
+    #[doc(hidden)]
     pub health_reason: std::option::Option<std::string::String>,
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub client_ip_preservation_enabled: std::option::Option<bool>,
 }
 impl EndpointDescription {
@@ -1248,13 +1276,16 @@ impl AsRef<str> for HealthState {
 pub struct EndpointConfiguration {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active when you add it as an endpoint.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub weight: std::option::Option<i32>,
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub client_ip_preservation_enabled: std::option::Option<bool>,
 }
 impl EndpointConfiguration {
@@ -1361,9 +1392,11 @@ impl EndpointConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingListener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    #[doc(hidden)]
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
 }
 impl CustomRoutingListener {
@@ -1448,12 +1481,15 @@ impl CustomRoutingListener {
 pub struct CustomRoutingAcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub flow_logs_enabled: std::option::Option<bool>,
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
+    #[doc(hidden)]
     pub flow_logs_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
+    #[doc(hidden)]
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
 impl CustomRoutingAcceleratorAttributes {
@@ -1557,26 +1593,35 @@ impl CustomRoutingAcceleratorAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingAccelerator {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
+    #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses. </p>
     /// <p>The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
     /// <p>If you have a dual-stack accelerator, you also have a second DNS name, DualStackDnsName, that points to both the A record and the AAAA record for all four static addresses for the accelerator (two IPv4 addresses and two IPv6 addresses).</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>Describes the deployment status of the accelerator.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the accelerator was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CustomRoutingAccelerator {
@@ -1859,10 +1904,13 @@ impl AsRef<str> for CustomRoutingAcceleratorStatus {
 pub struct IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
+    #[doc(hidden)]
     pub ip_family: std::option::Option<std::string::String>,
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
+    #[doc(hidden)]
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of IP addresses included in this IP set. </p>
+    #[doc(hidden)]
     pub ip_address_family: std::option::Option<crate::model::IpAddressFamily>,
 }
 impl IpSet {
@@ -2077,12 +2125,15 @@ impl AsRef<str> for IpAddressType {
 pub struct AcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub flow_logs_enabled: std::option::Option<bool>,
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
+    #[doc(hidden)]
     pub flow_logs_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
+    #[doc(hidden)]
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
 impl AcceleratorAttributes {
@@ -2186,33 +2237,44 @@ impl AcceleratorAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
+    #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
     /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
     /// <p>If you have a dual-stack accelerator, you also have a second DNS name, DualStackDnsName, that points to both the A record and the AAAA record for all four static addresses for the accelerator (two IPv4 addresses and two IPv6 addresses).</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>Describes the deployment status of the accelerator.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the accelerator was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
     /// <p>Note: Global Accelerator also assigns a default DNS name, DnsName, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub dual_stack_dns_name: std::option::Option<std::string::String>,
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::AcceleratorEvent>>,
 }
 impl Accelerator {
@@ -2494,8 +2556,10 @@ impl Accelerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes or errors when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A timestamp for when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AcceleratorEvent {
@@ -2625,8 +2689,10 @@ impl AsRef<str> for AcceleratorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A string that contains a <code>Tag</code> key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A string that contains a <code>Tag</code> value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2699,8 +2765,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
 }
 impl CidrAuthorizationContext {
@@ -2772,21 +2840,29 @@ impl CidrAuthorizationContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
+    #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
+    #[doc(hidden)]
     pub accelerator_socket_addresses:
         std::option::Option<std::vec::Vec<crate::model::SocketAddress>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group_region: std::option::Option<std::string::String>,
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
+    #[doc(hidden)]
     pub destination_socket_address: std::option::Option<crate::model::SocketAddress>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
+    #[doc(hidden)]
     pub destination_traffic_state:
         std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
 }
@@ -3058,8 +3134,10 @@ impl AsRef<str> for CustomRoutingDestinationTrafficState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SocketAddress {
     /// <p>The IP address for the socket address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The port for the socket address.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
 }
 impl SocketAddress {
@@ -3131,16 +3209,22 @@ impl SocketAddress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortMapping {
     /// <p>The accelerator port.</p>
+    #[doc(hidden)]
     pub accelerator_port: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
+    #[doc(hidden)]
     pub destination_socket_address: std::option::Option<crate::model::SocketAddress>,
     /// <p>The protocols supported by the endpoint group.</p>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::CustomRoutingProtocol>>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
+    #[doc(hidden)]
     pub destination_traffic_state:
         std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
 }
@@ -3364,13 +3448,17 @@ impl AsRef<str> for CustomRoutingProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingEndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
+    #[doc(hidden)]
     pub endpoint_group_region: std::option::Option<std::string::String>,
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
+    #[doc(hidden)]
     pub destination_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingDestinationDescription>>,
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
+    #[doc(hidden)]
     pub endpoint_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
 }
@@ -3517,6 +3605,7 @@ impl CustomRoutingEndpointGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingEndpointDescription {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl CustomRoutingEndpointDescription {
@@ -3571,10 +3660,13 @@ impl CustomRoutingEndpointDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingDestinationDescription {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub from_port: std::option::Option<i32>,
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub to_port: std::option::Option<i32>,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
 }
 impl CustomRoutingDestinationDescription {
@@ -3672,10 +3764,13 @@ impl CustomRoutingDestinationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingDestinationConfiguration {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub from_port: std::option::Option<i32>,
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub to_port: std::option::Option<i32>,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::CustomRoutingProtocol>>,
 }
 impl CustomRoutingDestinationConfiguration {
@@ -3774,6 +3869,7 @@ impl CustomRoutingDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl CustomRoutingEndpointConfiguration {

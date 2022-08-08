@@ -1402,19 +1402,25 @@ impl RecognizeUtteranceInput {
 #[non_exhaustive]
 pub struct RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session in use.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<std::string::String>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
@@ -1433,6 +1439,7 @@ pub struct RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub request_content_type: std::option::Option<std::string::String>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
@@ -1448,6 +1455,7 @@ pub struct RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub response_content_type: std::option::Option<std::string::String>,
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
     pub input_stream: aws_smithy_http::byte_stream::ByteStream,
@@ -1543,19 +1551,26 @@ impl std::fmt::Debug for RecognizeUtteranceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeTextInput {
     /// <p>The identifier of the bot that processes the request.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier in use for the bot that processes the request.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user session that is having the conversation.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The current state of the dialog between the user and the bot.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<crate::model::SessionState>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    #[doc(hidden)]
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1612,25 +1627,33 @@ impl std::fmt::Debug for RecognizeTextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSessionInput {
     /// <p>The identifier of the bot that receives the session data.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier of the bot that receives the session data.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session that receives the session data.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+    #[doc(hidden)]
     pub session_state: std::option::Option<crate::model::SessionState>,
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    #[doc(hidden)]
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub response_content_type: std::option::Option<std::string::String>,
 }
 impl PutSessionInput {
@@ -1694,12 +1717,16 @@ impl std::fmt::Debug for PutSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier in use for the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session to return.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl GetSessionInput {
@@ -1736,12 +1763,16 @@ impl std::fmt::Debug for GetSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The alias identifier in use for the bot that contains the session data.</p>
+    #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
+    #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session to delete.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl DeleteSessionInput {

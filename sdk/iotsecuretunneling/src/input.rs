@@ -1336,8 +1336,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -1364,8 +1366,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -1392,10 +1396,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateTunnelAccessTokenInput {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    #[doc(hidden)]
     pub client_mode: std::option::Option<crate::model::ClientMode>,
     /// <p>The destination configuration.</p>
+    #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl RotateTunnelAccessTokenInput {
@@ -1427,12 +1434,16 @@ impl std::fmt::Debug for RotateTunnelAccessTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenTunnelInput {
     /// <p>A short text description of the tunnel. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of tag metadata.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The destination configuration for the OpenTunnel request.</p>
+    #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>Timeout configuration for a tunnel.</p>
+    #[doc(hidden)]
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
 }
 impl OpenTunnelInput {
@@ -1469,10 +1480,13 @@ impl std::fmt::Debug for OpenTunnelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTunnelsInput {
     /// <p>The name of the IoT thing associated with the destination device.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTunnelsInput {
@@ -1504,6 +1518,7 @@ impl std::fmt::Debug for ListTunnelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -1525,6 +1540,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTunnelInput {
     /// <p>The tunnel to describe.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
 }
 impl DescribeTunnelInput {
@@ -1546,8 +1562,10 @@ impl std::fmt::Debug for DescribeTunnelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    #[doc(hidden)]
     pub delete: std::option::Option<bool>,
 }
 impl CloseTunnelInput {

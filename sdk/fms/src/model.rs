@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,18 +80,25 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>The name of the Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub list_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    #[doc(hidden)]
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
+    #[doc(hidden)]
     pub previous_protocols_list: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -287,27 +296,37 @@ impl ProtocolsListData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policy {
     /// <p>The ID of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The name of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>
+    #[doc(hidden)]
     pub policy_update_token: std::option::Option<std::string::String>,
     /// <p>Details about the security service that is being used to protect the resources.</p>
+    #[doc(hidden)]
     pub security_service_policy_data: std::option::Option<crate::model::SecurityServicePolicyData>,
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
+    #[doc(hidden)]
     pub resource_type_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of <code>ResourceTag</code> objects.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
+    #[doc(hidden)]
     pub exclude_resource_tags: bool,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
+    #[doc(hidden)]
     pub remediation_enabled: bool,
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
+    #[doc(hidden)]
     pub delete_unused_fm_managed_resources: bool,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
@@ -317,6 +336,7 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub include_map: std::option::Option<
         std::collections::HashMap<
             crate::model::CustomerPolicyScopeIdType,
@@ -331,6 +351,7 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub exclude_map: std::option::Option<
         std::collections::HashMap<
             crate::model::CustomerPolicyScopeIdType,
@@ -787,8 +808,10 @@ impl AsRef<str> for CustomerPolicyScopeIdType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
     /// <p>The resource tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The resource tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceTag {
@@ -860,6 +883,7 @@ impl ResourceTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SecurityServiceType>,
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
     /// <ul>
@@ -882,8 +906,10 @@ pub struct SecurityServicePolicyData {
     /// <li> <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code> </p> <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p> </li>
     /// <li> <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub managed_service_data: std::option::Option<std::string::String>,
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    #[doc(hidden)]
     pub policy_option: std::option::Option<crate::model::PolicyOption>,
 }
 impl SecurityServicePolicyData {
@@ -1041,8 +1067,10 @@ impl SecurityServicePolicyData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
+    #[doc(hidden)]
     pub network_firewall_policy: std::option::Option<crate::model::NetworkFirewallPolicy>,
     /// <p>Defines the policy options for a third-party firewall policy.</p>
+    #[doc(hidden)]
     pub third_party_firewall_policy: std::option::Option<crate::model::ThirdPartyFirewallPolicy>,
 }
 impl PolicyOption {
@@ -1135,6 +1163,7 @@ impl PolicyOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
+    #[doc(hidden)]
     pub firewall_deployment_model: std::option::Option<crate::model::FirewallDeploymentModel>,
 }
 impl ThirdPartyFirewallPolicy {
@@ -1253,6 +1282,7 @@ impl AsRef<str> for FirewallDeploymentModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallPolicy {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
+    #[doc(hidden)]
     pub firewall_deployment_model: std::option::Option<crate::model::FirewallDeploymentModel>,
 }
 impl NetworkFirewallPolicy {
@@ -1409,18 +1439,25 @@ impl AsRef<str> for SecurityServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppsListData {
     /// <p>The ID of the Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>The name of the Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub list_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    #[doc(hidden)]
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager applications list was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of applications in the Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
+    #[doc(hidden)]
     pub previous_apps_list: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::App>>,
     >,
@@ -1618,10 +1655,13 @@ impl AppsListData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
     /// <p>The application's name.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The application's port number, for example <code>80</code>.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i64>,
 }
 impl App {
@@ -1710,8 +1750,10 @@ impl App {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
+    #[doc(hidden)]
     pub firewall_policy_id: std::option::Option<std::string::String>,
     /// <p>The name of the specified firewall policy.</p>
+    #[doc(hidden)]
     pub firewall_policy_name: std::option::Option<std::string::String>,
 }
 impl ThirdPartyFirewallFirewallPolicy {
@@ -1840,12 +1882,16 @@ impl AsRef<str> for ThirdPartyFirewall {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
+    #[doc(hidden)]
     pub list_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the specified protocols list.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>The name of the specified protocols list.</p>
+    #[doc(hidden)]
     pub list_name: std::option::Option<std::string::String>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
+    #[doc(hidden)]
     pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ProtocolsListDataSummary {
@@ -1960,20 +2006,27 @@ impl ProtocolsListDataSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicySummary {
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the specified policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The name of the specified policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy.</p>
+    #[doc(hidden)]
     pub security_service_type: std::option::Option<crate::model::SecurityServiceType>,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
+    #[doc(hidden)]
     pub remediation_enabled: bool,
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
+    #[doc(hidden)]
     pub delete_unused_fm_managed_resources: bool,
 }
 impl PolicySummary {
@@ -2150,18 +2203,25 @@ impl PolicySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyComplianceStatus {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_owner: std::option::Option<std::string::String>,
     /// <p>The ID of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The name of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The member account ID.</p>
+    #[doc(hidden)]
     pub member_account: std::option::Option<std::string::String>,
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
+    #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
+    #[doc(hidden)]
     pub issue_info_map: std::option::Option<
         std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
     >,
@@ -2420,10 +2480,13 @@ impl AsRef<str> for DependentServiceName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::PolicyComplianceStatusType>,
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
+    #[doc(hidden)]
     pub violator_count: i64,
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub evaluation_limit_exceeded: bool,
 }
 impl EvaluationResult {
@@ -2575,12 +2638,16 @@ impl AsRef<str> for PolicyComplianceStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    #[doc(hidden)]
     pub list_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the applications list.</p>
+    #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>The name of the applications list.</p>
+    #[doc(hidden)]
     pub list_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
+    #[doc(hidden)]
     pub apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
 }
 impl AppsListDataSummary {
@@ -2695,18 +2762,25 @@ impl AppsListDataSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
+    #[doc(hidden)]
     pub member_account: std::option::Option<std::string::String>,
     /// <p>The resource ID that the violation details were requested for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The resource type that the violation details were requested for.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>List of violations for the requested resource.</p>
+    #[doc(hidden)]
     pub resource_violations: std::option::Option<std::vec::Vec<crate::model::ResourceViolation>>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Brief description for the requested resource.</p>
+    #[doc(hidden)]
     pub resource_description: std::option::Option<std::string::String>,
 }
 impl ViolationDetail {
@@ -2891,70 +2965,93 @@ impl ViolationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceViolation {
     /// <p>Violation detail for security groups.</p>
+    #[doc(hidden)]
     pub aws_vpc_security_group_violation:
         std::option::Option<crate::model::AwsVpcSecurityGroupViolation>,
     /// <p>Violation detail for a network interface.</p>
+    #[doc(hidden)]
     pub aws_ec2_network_interface_violation:
         std::option::Option<crate::model::AwsEc2NetworkInterfaceViolation>,
     /// <p>Violation detail for an EC2 instance.</p>
+    #[doc(hidden)]
     pub aws_ec2_instance_violation: std::option::Option<crate::model::AwsEc2InstanceViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
+    #[doc(hidden)]
     pub network_firewall_missing_firewall_violation:
         std::option::Option<crate::model::NetworkFirewallMissingFirewallViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected Firewall Manager managed subnet.</p>
+    #[doc(hidden)]
     pub network_firewall_missing_subnet_violation:
         std::option::Option<crate::model::NetworkFirewallMissingSubnetViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
+    #[doc(hidden)]
     pub network_firewall_missing_expected_rt_violation:
         std::option::Option<crate::model::NetworkFirewallMissingExpectedRtViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account has been modified in a way that makes it noncompliant. For example, the individual account owner might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.</p>
+    #[doc(hidden)]
     pub network_firewall_policy_modified_violation:
         std::option::Option<crate::model::NetworkFirewallPolicyModifiedViolation>,
     /// <p>Violation detail for the subnet for which internet traffic hasn't been inspected.</p>
+    #[doc(hidden)]
     pub network_firewall_internet_traffic_not_inspected_violation:
         std::option::Option<crate::model::NetworkFirewallInternetTrafficNotInspectedViolation>,
     /// <p>The route configuration is invalid.</p>
+    #[doc(hidden)]
     pub network_firewall_invalid_route_configuration_violation:
         std::option::Option<crate::model::NetworkFirewallInvalidRouteConfigurationViolation>,
     /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
+    #[doc(hidden)]
     pub network_firewall_black_hole_route_detected_violation:
         std::option::Option<crate::model::NetworkFirewallBlackHoleRouteDetectedViolation>,
     /// <p>There's an unexpected firewall route.</p>
+    #[doc(hidden)]
     pub network_firewall_unexpected_firewall_routes_violation:
         std::option::Option<crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation>,
     /// <p>There's an unexpected gateway route.</p>
+    #[doc(hidden)]
     pub network_firewall_unexpected_gateway_routes_violation:
         std::option::Option<crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation>,
     /// <p>Expected routes are missing from Network Firewall.</p>
+    #[doc(hidden)]
     pub network_firewall_missing_expected_routes_violation:
         std::option::Option<crate::model::NetworkFirewallMissingExpectedRoutesViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
+    #[doc(hidden)]
     pub dns_rule_group_priority_conflict_violation:
         std::option::Option<crate::model::DnsRuleGroupPriorityConflictViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
+    #[doc(hidden)]
     pub dns_duplicate_rule_group_violation:
         std::option::Option<crate::model::DnsDuplicateRuleGroupViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
+    #[doc(hidden)]
     pub dns_rule_group_limit_exceeded_violation:
         std::option::Option<crate::model::DnsRuleGroupLimitExceededViolation>,
     /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    #[doc(hidden)]
     pub possible_remediation_actions: std::option::Option<crate::model::PossibleRemediationActions>,
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub firewall_subnet_is_out_of_scope_violation:
         std::option::Option<crate::model::FirewallSubnetIsOutOfScopeViolation>,
     /// <p>Contains details about the route endpoint that violates the policy scope.</p>
+    #[doc(hidden)]
     pub route_has_out_of_scope_endpoint_violation:
         std::option::Option<crate::model::RouteHasOutOfScopeEndpointViolation>,
     /// <p>The violation details for a third-party firewall that's been deleted.</p>
+    #[doc(hidden)]
     pub third_party_firewall_missing_firewall_violation:
         std::option::Option<crate::model::ThirdPartyFirewallMissingFirewallViolation>,
     /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+    #[doc(hidden)]
     pub third_party_firewall_missing_subnet_violation:
         std::option::Option<crate::model::ThirdPartyFirewallMissingSubnetViolation>,
     /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+    #[doc(hidden)]
     pub third_party_firewall_missing_expected_route_table_violation:
         std::option::Option<crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
     /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+    #[doc(hidden)]
     pub firewall_subnet_missing_vpc_endpoint_violation:
         std::option::Option<crate::model::FirewallSubnetMissingVpcEndpointViolation>,
 }
@@ -3700,12 +3797,16 @@ impl ResourceViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+    #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone_id: std::option::Option<std::string::String>,
 }
 impl FirewallSubnetMissingVpcEndpointViolation {
@@ -3826,14 +3927,19 @@ impl FirewallSubnetMissingVpcEndpointViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyFirewallMissingExpectedRouteTableViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+    #[doc(hidden)]
     pub current_route_table: std::option::Option<std::string::String>,
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+    #[doc(hidden)]
     pub expected_route_table: std::option::Option<std::string::String>,
 }
 impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
@@ -3970,12 +4076,16 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyFirewallMissingSubnetViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a subnet that's causing the violation.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of a subnet that's causing the violation.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The reason the resource is causing the violation, if a reason is available.</p>
+    #[doc(hidden)]
     pub target_violation_reason: std::option::Option<std::string::String>,
 }
 impl ThirdPartyFirewallMissingSubnetViolation {
@@ -4090,12 +4200,16 @@ impl ThirdPartyFirewallMissingSubnetViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+    #[doc(hidden)]
     pub target_violation_reason: std::option::Option<std::string::String>,
 }
 impl ThirdPartyFirewallMissingFirewallViolation {
@@ -4210,28 +4324,40 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the route that violates the policy scope.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The ID of the route table.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>The list of routes that violate the route table.</p>
+    #[doc(hidden)]
     pub violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The subnet's Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet's Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The route table associated with the current firewall subnet.</p>
+    #[doc(hidden)]
     pub current_firewall_subnet_route_table: std::option::Option<std::string::String>,
     /// <p>The ID of the firewall subnet.</p>
+    #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The list of firewall subnet routes.</p>
+    #[doc(hidden)]
     pub firewall_subnet_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The ID of the Internet Gateway.</p>
+    #[doc(hidden)]
     pub internet_gateway_id: std::option::Option<std::string::String>,
     /// <p>The current route table associated with the Internet Gateway.</p>
+    #[doc(hidden)]
     pub current_internet_gateway_route_table: std::option::Option<std::string::String>,
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
+    #[doc(hidden)]
     pub internet_gateway_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
 }
 impl RouteHasOutOfScopeEndpointViolation {
@@ -4539,12 +4665,16 @@ impl RouteHasOutOfScopeEndpointViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Route {
     /// <p>The type of destination for the route.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>The type of target for the route.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetType>,
     /// <p>The destination of the route.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
     /// <p>The route's target.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl Route {
@@ -4813,14 +4943,19 @@ impl AsRef<str> for DestinationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<std::string::String>,
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
 }
 impl FirewallSubnetIsOutOfScopeViolation {
@@ -4961,8 +5096,10 @@ impl FirewallSubnetIsOutOfScopeViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PossibleRemediationActions {
     /// <p>A description of the possible remediation actions list.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the actions.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::PossibleRemediationAction>>,
 }
 impl PossibleRemediationActions {
@@ -5044,11 +5181,14 @@ impl PossibleRemediationActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
+    #[doc(hidden)]
     pub ordered_remediation_actions:
         std::option::Option<std::vec::Vec<crate::model::RemediationActionWithOrder>>,
     /// <p>Information about whether an action is taken by default.</p>
+    #[doc(hidden)]
     pub is_default_action: bool,
 }
 impl PossibleRemediationAction {
@@ -5155,8 +5295,10 @@ impl PossibleRemediationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
+    #[doc(hidden)]
     pub remediation_action: std::option::Option<crate::model::RemediationAction>,
     /// <p>The order of the remediation actions in the list.</p>
+    #[doc(hidden)]
     pub order: i32,
 }
 impl RemediationActionWithOrder {
@@ -5231,24 +5373,33 @@ impl RemediationActionWithOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationAction {
     /// <p>A description of a remediation action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_create_route_action: std::option::Option<crate::model::Ec2CreateRouteAction>,
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_replace_route_action: std::option::Option<crate::model::Ec2ReplaceRouteAction>,
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_delete_route_action: std::option::Option<crate::model::Ec2DeleteRouteAction>,
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_copy_route_table_action: std::option::Option<crate::model::Ec2CopyRouteTableAction>,
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_replace_route_table_association_action:
         std::option::Option<crate::model::Ec2ReplaceRouteTableAssociationAction>,
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_associate_route_table_action:
         std::option::Option<crate::model::Ec2AssociateRouteTableAction>,
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
+    #[doc(hidden)]
     pub ec2_create_route_table_action: std::option::Option<crate::model::Ec2CreateRouteTableAction>,
     /// <p>The remedial action to take when updating a firewall configuration.</p>
+    #[doc(hidden)]
     pub fms_policy_update_firewall_creation_config_action:
         std::option::Option<crate::model::FmsPolicyUpdateFirewallCreationConfigAction>,
 }
@@ -5528,8 +5679,10 @@ impl RemediationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FmsPolicyUpdateFirewallCreationConfigAction {
     /// <p>Describes the remedial action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
+    #[doc(hidden)]
     pub firewall_creation_config: std::option::Option<std::string::String>,
 }
 impl FmsPolicyUpdateFirewallCreationConfigAction {
@@ -5604,8 +5757,10 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2CreateRouteTableAction {
     /// <p>A description of the CreateRouteTable action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the ID of a VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2CreateRouteTableAction {
@@ -5680,8 +5835,10 @@ impl Ec2CreateRouteTableAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTarget {
     /// <p>The ID of the remediation target.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A description of the remediation action target.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ActionTarget {
@@ -5753,12 +5910,16 @@ impl ActionTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2AssociateRouteTableAction {
     /// <p>A description of the EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>The ID of the subnet for the EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>The ID of the gateway to be used with the EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2AssociateRouteTableAction {
@@ -5873,10 +6034,13 @@ impl Ec2AssociateRouteTableAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2ReplaceRouteTableAssociationAction {
@@ -5971,10 +6135,13 @@ impl Ec2ReplaceRouteTableAssociationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2CopyRouteTableAction {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2CopyRouteTableAction {
@@ -6069,14 +6236,19 @@ impl Ec2CopyRouteTableAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2DeleteRouteAction {
     /// <p>A description of the DeleteRoute action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
+    #[doc(hidden)]
     pub destination_prefix_list_id: std::option::Option<std::string::String>,
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    #[doc(hidden)]
     pub destination_ipv6_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of the route table.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2DeleteRouteAction {
@@ -6220,16 +6392,22 @@ impl Ec2DeleteRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ReplaceRouteAction {
     /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
+    #[doc(hidden)]
     pub destination_prefix_list_id: std::option::Option<std::string::String>,
     /// <p>Information about the IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    #[doc(hidden)]
     pub destination_ipv6_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of an internet gateway or virtual private gateway.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>Information about the ID of the route table.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2ReplaceRouteAction {
@@ -6393,18 +6571,25 @@ impl Ec2ReplaceRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2CreateRouteAction {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
+    #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
+    #[doc(hidden)]
     pub destination_prefix_list_id: std::option::Option<std::string::String>,
     /// <p>Information about the IPv6 CIDR block destination.</p>
+    #[doc(hidden)]
     pub destination_ipv6_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<crate::model::ActionTarget>,
     /// <p>Information about the ID of the route table for the route.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<crate::model::ActionTarget>,
 }
 impl Ec2CreateRouteAction {
@@ -6588,10 +6773,13 @@ impl Ec2CreateRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
+    #[doc(hidden)]
     pub violation_target_description: std::option::Option<std::string::String>,
     /// <p>The number of rule groups currently associated with the VPC. </p>
+    #[doc(hidden)]
     pub number_of_rule_groups_already_associated: i32,
 }
 impl DnsRuleGroupLimitExceededViolation {
@@ -6700,8 +6888,10 @@ impl DnsRuleGroupLimitExceededViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
+    #[doc(hidden)]
     pub violation_target_description: std::option::Option<std::string::String>,
 }
 impl DnsDuplicateRuleGroupViolation {
@@ -6785,14 +6975,19 @@ impl DnsDuplicateRuleGroupViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsRuleGroupPriorityConflictViolation {
     /// <p>Information about the VPC ID. </p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>A description of the violation that specifies the VPC and the rule group that's already associated with it.</p>
+    #[doc(hidden)]
     pub violation_target_description: std::option::Option<std::string::String>,
     /// <p>The priority setting of the two conflicting rule groups.</p>
+    #[doc(hidden)]
     pub conflicting_priority: i32,
     /// <p>The ID of the Firewall Manager DNS Firewall policy that was already applied to the VPC. This policy contains the rule group that's already associated with the VPC. </p>
+    #[doc(hidden)]
     pub conflicting_policy_id: std::option::Option<std::string::String>,
     /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation, choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
+    #[doc(hidden)]
     pub unavailable_priorities: std::option::Option<std::vec::Vec<i32>>,
 }
 impl DnsRuleGroupPriorityConflictViolation {
@@ -6939,10 +7134,13 @@ impl DnsRuleGroupPriorityConflictViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>The target of the violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The expected routes.</p>
+    #[doc(hidden)]
     pub expected_routes: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {
@@ -7043,16 +7241,22 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
+    #[doc(hidden)]
     pub ip_v4_cidr: std::option::Option<std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
+    #[doc(hidden)]
     pub prefix_list_id: std::option::Option<std::string::String>,
     /// <p>Information about the IPv6 CIDR block.</p>
+    #[doc(hidden)]
     pub ip_v6_cidr: std::option::Option<std::string::String>,
     /// <p>Information about the contributing subnets.</p>
+    #[doc(hidden)]
     pub contributing_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the allowed targets.</p>
+    #[doc(hidden)]
     pub allowed_targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the route table ID.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
 }
 impl ExpectedRoute {
@@ -7216,12 +7420,16 @@ impl ExpectedRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the gateway ID.</p>
+    #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The routes that are in violation.</p>
+    #[doc(hidden)]
     pub violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>Information about the route table.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {
@@ -7340,14 +7548,19 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>The subnet ID for the firewall.</p>
+    #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The routes that are in violation.</p>
+    #[doc(hidden)]
     pub violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The ID of the route table.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>The endpoint of the firewall.</p>
+    #[doc(hidden)]
     pub firewall_endpoint: std::option::Option<std::string::String>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {
@@ -7489,12 +7702,16 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>Information about the route table ID.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Information about the route or routes that are in violation.</p>
+    #[doc(hidden)]
     pub violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
 }
 impl NetworkFirewallBlackHoleRouteDetectedViolation {
@@ -7616,38 +7833,54 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallInvalidRouteConfigurationViolation {
     /// <p>The subnets that are affected.</p>
+    #[doc(hidden)]
     pub affected_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The route table ID.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>Information about whether the route table is used in another Availability Zone.</p>
+    #[doc(hidden)]
     pub is_route_table_used_in_different_az: bool,
     /// <p>The route that's in violation.</p>
+    #[doc(hidden)]
     pub violating_route: std::option::Option<crate::model::Route>,
     /// <p>The subnet route table for the current firewall.</p>
+    #[doc(hidden)]
     pub current_firewall_subnet_route_table: std::option::Option<std::string::String>,
     /// <p>The firewall endpoint that's expected.</p>
+    #[doc(hidden)]
     pub expected_firewall_endpoint: std::option::Option<std::string::String>,
     /// <p>The actual firewall endpoint.</p>
+    #[doc(hidden)]
     pub actual_firewall_endpoint: std::option::Option<std::string::String>,
     /// <p>The expected subnet ID for the firewall.</p>
+    #[doc(hidden)]
     pub expected_firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The actual subnet ID for the firewall.</p>
+    #[doc(hidden)]
     pub actual_firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The firewall subnet routes that are expected.</p>
+    #[doc(hidden)]
     pub expected_firewall_subnet_routes:
         std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
     /// <p>The actual firewall subnet routes that are expected.</p>
+    #[doc(hidden)]
     pub actual_firewall_subnet_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The internet gateway ID.</p>
+    #[doc(hidden)]
     pub internet_gateway_id: std::option::Option<std::string::String>,
     /// <p>The route table for the current internet gateway.</p>
+    #[doc(hidden)]
     pub current_internet_gateway_route_table: std::option::Option<std::string::String>,
     /// <p>The expected routes for the internet gateway.</p>
+    #[doc(hidden)]
     pub expected_internet_gateway_routes:
         std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
     /// <p>The actual internet gateway routes.</p>
+    #[doc(hidden)]
     pub actual_internet_gateway_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallInvalidRouteConfigurationViolation {
@@ -8085,36 +8318,51 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallInternetTrafficNotInspectedViolation {
     /// <p>The subnet ID.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The subnet Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<std::string::String>,
     /// <p>Information about the route table ID.</p>
+    #[doc(hidden)]
     pub route_table_id: std::option::Option<std::string::String>,
     /// <p>The route or routes that are in violation.</p>
+    #[doc(hidden)]
     pub violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>Information about whether the route table is used in another Availability Zone.</p>
+    #[doc(hidden)]
     pub is_route_table_used_in_different_az: bool,
     /// <p>Information about the subnet route table for the current firewall.</p>
+    #[doc(hidden)]
     pub current_firewall_subnet_route_table: std::option::Option<std::string::String>,
     /// <p>The expected endpoint for the current firewall.</p>
+    #[doc(hidden)]
     pub expected_firewall_endpoint: std::option::Option<std::string::String>,
     /// <p>The firewall subnet ID.</p>
+    #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
     /// <p>The firewall subnet routes that are expected.</p>
+    #[doc(hidden)]
     pub expected_firewall_subnet_routes:
         std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
     /// <p>The actual firewall subnet routes.</p>
+    #[doc(hidden)]
     pub actual_firewall_subnet_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>The internet gateway ID.</p>
+    #[doc(hidden)]
     pub internet_gateway_id: std::option::Option<std::string::String>,
     /// <p>The current route table for the internet gateway.</p>
+    #[doc(hidden)]
     pub current_internet_gateway_route_table: std::option::Option<std::string::String>,
     /// <p>The internet gateway routes that are expected.</p>
+    #[doc(hidden)]
     pub expected_internet_gateway_routes:
         std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
     /// <p>The actual internet gateway routes.</p>
+    #[doc(hidden)]
     pub actual_internet_gateway_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
     /// <p>Information about the VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallInternetTrafficNotInspectedViolation {
@@ -8523,11 +8771,14 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallPolicyModifiedViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The policy that's currently in use in the individual account. </p>
+    #[doc(hidden)]
     pub current_policy_description:
         std::option::Option<crate::model::NetworkFirewallPolicyDescription>,
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
+    #[doc(hidden)]
     pub expected_policy_description:
         std::option::Option<crate::model::NetworkFirewallPolicyDescription>,
 }
@@ -8644,14 +8895,19 @@ impl NetworkFirewallPolicyModifiedViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallPolicyDescription {
     /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
+    #[doc(hidden)]
     pub stateless_rule_groups: std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroup>>,
     /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
+    #[doc(hidden)]
     pub stateless_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
+    #[doc(hidden)]
     pub stateless_fragment_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
+    #[doc(hidden)]
     pub stateless_custom_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
+    #[doc(hidden)]
     pub stateful_rule_groups: std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroup>>,
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p> Valid values of the stateful default action: </p>
@@ -8661,8 +8917,10 @@ pub struct NetworkFirewallPolicyDescription {
     /// <li> <p>aws:alert_strict</p> </li>
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stateful_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
+    #[doc(hidden)]
     pub stateful_engine_options: std::option::Option<crate::model::StatefulEngineOptions>,
 }
 impl NetworkFirewallPolicyDescription {
@@ -8919,6 +9177,7 @@ impl NetworkFirewallPolicyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
 }
 impl StatefulEngineOptions {
@@ -9031,12 +9290,15 @@ impl AsRef<str> for RuleOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatefulRuleGroup {
     /// <p>The name of the rule group.</p>
+    #[doc(hidden)]
     pub rule_group_name: std::option::Option<std::string::String>,
     /// <p>The resource ID of the rule group.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p> Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy. For information about </p>
     /// <p> You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
 }
 impl StatefulRuleGroup {
@@ -9134,10 +9396,13 @@ impl StatefulRuleGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatelessRuleGroup {
     /// <p>The name of the rule group.</p>
+    #[doc(hidden)]
     pub rule_group_name: std::option::Option<std::string::String>,
     /// <p>The resource ID of the rule group.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
+    #[doc(hidden)]
     pub priority: i32,
 }
 impl StatelessRuleGroup {
@@ -9229,14 +9494,19 @@ impl StatelessRuleGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallMissingExpectedRtViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of a violating subnet. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+    #[doc(hidden)]
     pub current_route_table: std::option::Option<std::string::String>,
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+    #[doc(hidden)]
     pub expected_route_table: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallMissingExpectedRtViolation {
@@ -9371,12 +9641,16 @@ impl NetworkFirewallMissingExpectedRtViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallMissingSubnetViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of a violating subnet. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The reason the resource has this violation, if one is available. </p>
+    #[doc(hidden)]
     pub target_violation_reason: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallMissingSubnetViolation {
@@ -9491,12 +9765,16 @@ impl NetworkFirewallMissingSubnetViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFirewallMissingFirewallViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of a violating subnet. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The reason the resource has this violation, if one is available. </p>
+    #[doc(hidden)]
     pub target_violation_reason: std::option::Option<std::string::String>,
 }
 impl NetworkFirewallMissingFirewallViolation {
@@ -9611,8 +9889,10 @@ impl NetworkFirewallMissingFirewallViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEc2InstanceViolation {
     /// <p>The resource ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
+    #[doc(hidden)]
     pub aws_ec2_network_interface_violations:
         std::option::Option<std::vec::Vec<crate::model::AwsEc2NetworkInterfaceViolation>>,
 }
@@ -9710,8 +9990,10 @@ impl AwsEc2InstanceViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEc2NetworkInterfaceViolation {
     /// <p>The resource ID of the network interface.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub violating_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AwsEc2NetworkInterfaceViolation {
@@ -9796,12 +10078,16 @@ impl AwsEc2NetworkInterfaceViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsVpcSecurityGroupViolation {
     /// <p>The security group rule that is being evaluated.</p>
+    #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
     /// <p>A description of the security group that violates the policy.</p>
+    #[doc(hidden)]
     pub violation_target_description: std::option::Option<std::string::String>,
     /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
+    #[doc(hidden)]
     pub partial_matches: std::option::Option<std::vec::Vec<crate::model::PartialMatch>>,
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
+    #[doc(hidden)]
     pub possible_security_group_remediation_actions:
         std::option::Option<std::vec::Vec<crate::model::SecurityGroupRemediationAction>>,
 }
@@ -9950,12 +10236,16 @@ impl AwsVpcSecurityGroupViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupRemediationAction {
     /// <p>The remediation action that will be performed.</p>
+    #[doc(hidden)]
     pub remediation_action_type: std::option::Option<crate::model::RemediationActionType>,
     /// <p>Brief description of the action that will be performed.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
+    #[doc(hidden)]
     pub remediation_result: std::option::Option<crate::model::SecurityGroupRuleDescription>,
     /// <p>Indicates if the current action is the default action.</p>
+    #[doc(hidden)]
     pub is_default_action: bool,
 }
 impl SecurityGroupRemediationAction {
@@ -10079,16 +10369,22 @@ impl SecurityGroupRemediationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupRuleDescription {
     /// <p>The IPv4 ranges for the security group rule.</p>
+    #[doc(hidden)]
     pub ipv4_range: std::option::Option<std::string::String>,
     /// <p>The IPv6 ranges for the security group rule.</p>
+    #[doc(hidden)]
     pub ipv6_range: std::option::Option<std::string::String>,
     /// <p>The ID of the prefix list for the security group rule.</p>
+    #[doc(hidden)]
     pub prefix_list_id: std::option::Option<std::string::String>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+    #[doc(hidden)]
     pub from_port: std::option::Option<i64>,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
+    #[doc(hidden)]
     pub to_port: std::option::Option<i64>,
 }
 impl SecurityGroupRuleDescription {
@@ -10286,8 +10582,10 @@ impl AsRef<str> for RemediationActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub reference: std::option::Option<std::string::String>,
     /// <p>The violation reason.</p>
+    #[doc(hidden)]
     pub target_violation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PartialMatch {
@@ -10501,18 +10799,25 @@ impl AsRef<str> for ThirdPartyFirewallAssociationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyComplianceDetail {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_owner: std::option::Option<std::string::String>,
     /// <p>The ID of the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub member_account: std::option::Option<std::string::String>,
     /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
+    #[doc(hidden)]
     pub violators: std::option::Option<std::vec::Vec<crate::model::ComplianceViolator>>,
     /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
+    #[doc(hidden)]
     pub evaluation_limit_exceeded: bool,
     /// <p>A timestamp that indicates when the returned information should be considered out of date.</p>
+    #[doc(hidden)]
     pub expired_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
+    #[doc(hidden)]
     pub issue_info_map: std::option::Option<
         std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
     >,
@@ -10707,12 +11012,16 @@ impl PolicyComplianceDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceViolator {
     /// <p>The resource ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The reason that the resource is not protected by the policy.</p>
+    #[doc(hidden)]
     pub violation_reason: std::option::Option<crate::model::ViolationReason>,
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

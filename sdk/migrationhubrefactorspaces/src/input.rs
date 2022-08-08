@@ -4544,12 +4544,16 @@ impl UpdateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteInput {
     /// <p> The ID of the environment in which the route is being updated. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p> The ID of the application within which the route is being updated. </p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the route to update. </p>
+    #[doc(hidden)]
     pub route_identifier: std::option::Option<std::string::String>,
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    #[doc(hidden)]
     pub activation_state: std::option::Option<crate::model::RouteActivationState>,
 }
 impl UpdateRouteInput {
@@ -4586,8 +4590,10 @@ impl std::fmt::Debug for UpdateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of keys of the tags to be removed from the resource. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4614,8 +4620,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modified tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4646,8 +4654,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -4674,6 +4684,7 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4695,12 +4706,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application. </p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -4737,12 +4752,16 @@ impl std::fmt::Debug for ListServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutesInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application. </p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRoutesInput {
@@ -4779,10 +4798,13 @@ impl std::fmt::Debug for ListRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentVpcsInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentVpcsInput {
@@ -4814,8 +4836,10 @@ impl std::fmt::Debug for ListEnvironmentVpcsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentsInput {
@@ -4842,10 +4866,13 @@ impl std::fmt::Debug for ListEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationsInput {
@@ -4877,10 +4904,13 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInput {
     /// <p>The ID of the environment.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the service.</p>
+    #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
 }
 impl GetServiceInput {
@@ -4912,10 +4942,13 @@ impl std::fmt::Debug for GetServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteInput {
     /// <p>The ID of the environment.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application. </p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the route.</p>
+    #[doc(hidden)]
     pub route_identifier: std::option::Option<std::string::String>,
 }
 impl GetRouteInput {
@@ -4947,6 +4980,7 @@ impl std::fmt::Debug for GetRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -4968,6 +5002,7 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentInput {
     /// <p>The ID of the environment.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
@@ -4989,8 +5024,10 @@ impl std::fmt::Debug for GetEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -5017,12 +5054,15 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the service to delete.</p>
+    #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteServiceInput {
@@ -5056,10 +5096,13 @@ impl std::fmt::Debug for DeleteServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application to delete the route from.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the route to delete.</p>
+    #[doc(hidden)]
     pub route_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteRouteInput {
@@ -5091,6 +5134,7 @@ impl std::fmt::Debug for DeleteRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -5112,6 +5156,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
@@ -5133,8 +5178,10 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the environment. </p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -5161,25 +5208,35 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the environment in which the service is created.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application which the service is created.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type.</p>
+    #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
+    #[doc(hidden)]
     pub lambda_endpoint: std::option::Option<crate::model::LambdaEndpointInput>,
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceInput {
@@ -5249,21 +5306,29 @@ impl std::fmt::Debug for CreateServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteInput {
     /// <p>The ID of the environment in which the route is created.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+    #[doc(hidden)]
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p> Configuration for the default route type. </p>
+    #[doc(hidden)]
     pub default_route: std::option::Option<crate::model::DefaultRouteInput>,
     /// <p>The configuration for the URI path route type. </p>
+    #[doc(hidden)]
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateRouteInput {
@@ -5323,15 +5388,20 @@ impl std::fmt::Debug for CreateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The network fabric type of the environment.</p>
+    #[doc(hidden)]
     pub network_fabric_type: std::option::Option<crate::model::NetworkFabricType>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -5376,19 +5446,26 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name to use for the application. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC).</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
+    #[doc(hidden)]
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {

@@ -7680,11 +7680,14 @@ impl UpdateVodSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the VOD source you are working on.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl UpdateVodSourceInput {
@@ -7721,16 +7724,21 @@ impl std::fmt::Debug for UpdateVodSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The optional configuration for the host server that serves segments.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl UpdateSourceLocationInput {
@@ -7782,11 +7790,14 @@ impl std::fmt::Debug for UpdateSourceLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the live source you are working on.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl UpdateLiveSourceInput {
@@ -7823,10 +7834,13 @@ impl std::fmt::Debug for UpdateLiveSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
 }
 impl UpdateChannelInput {
@@ -7858,8 +7872,10 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -7886,8 +7902,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of tag key:value pairs.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7918,6 +7936,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl StopChannelInput {
@@ -7939,6 +7958,7 @@ impl std::fmt::Debug for StopChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl StartChannelInput {
@@ -7960,14 +7980,19 @@ impl std::fmt::Debug for StartChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPlaybackConfigurationInput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    #[doc(hidden)]
     pub avail_suppression: std::option::Option<crate::model::AvailSuppression>,
     /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    #[doc(hidden)]
     pub bumper: std::option::Option<crate::model::Bumper>,
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    #[doc(hidden)]
     pub cdn_configuration: std::option::Option<crate::model::CdnConfiguration>,
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    #[doc(hidden)]
     pub configuration_aliases: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -7975,23 +8000,32 @@ pub struct PutPlaybackConfigurationInput {
         >,
     >,
     /// <p>The configuration for DASH content.</p>
+    #[doc(hidden)]
     pub dash_configuration: std::option::Option<crate::model::DashConfigurationForPut>,
     /// <p>The configuration for pre-roll ad insertion.</p>
+    #[doc(hidden)]
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    #[doc(hidden)]
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
     pub personalization_threshold_seconds: i32,
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the playback configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    #[doc(hidden)]
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
 impl PutPlaybackConfigurationInput {
@@ -8100,8 +8134,10 @@ impl std::fmt::Debug for PutPlaybackConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutChannelPolicyInput {
@@ -8128,10 +8164,13 @@ impl std::fmt::Debug for PutChannelPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVodSourcesInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl ListVodSourcesInput {
@@ -8163,6 +8202,7 @@ impl std::fmt::Debug for ListVodSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8184,8 +8224,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSourceLocationsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSourceLocationsInput {
@@ -8212,15 +8254,19 @@ impl std::fmt::Debug for ListSourceLocationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
     /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
     /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl ListPrefetchSchedulesInput {
@@ -8263,8 +8309,10 @@ impl std::fmt::Debug for ListPrefetchSchedulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackConfigurationsInput {
     /// <p>Maximum number of records to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaybackConfigurationsInput {
@@ -8291,10 +8339,13 @@ impl std::fmt::Debug for ListPlaybackConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLiveSourcesInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl ListLiveSourcesInput {
@@ -8326,8 +8377,10 @@ impl std::fmt::Debug for ListLiveSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsInput {
@@ -8354,10 +8407,13 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlertsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListAlertsInput {
@@ -8389,8 +8445,10 @@ impl std::fmt::Debug for ListAlertsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPrefetchScheduleInput {
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl GetPrefetchScheduleInput {
@@ -8420,6 +8478,7 @@ impl std::fmt::Debug for GetPrefetchScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetPlaybackConfigurationInput {
@@ -8441,12 +8500,16 @@ impl std::fmt::Debug for GetPlaybackConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelScheduleInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+    #[doc(hidden)]
     pub duration_minutes: std::option::Option<std::string::String>,
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChannelScheduleInput {
@@ -8483,6 +8546,7 @@ impl std::fmt::Debug for GetChannelScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl GetChannelPolicyInput {
@@ -8504,8 +8568,10 @@ impl std::fmt::Debug for GetChannelPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVodSourceInput {
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the VOD source you are working on.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl DescribeVodSourceInput {
@@ -8532,6 +8598,7 @@ impl std::fmt::Debug for DescribeVodSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DescribeSourceLocationInput {
@@ -8553,8 +8620,10 @@ impl std::fmt::Debug for DescribeSourceLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProgramInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the program you are working on.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DescribeProgramInput {
@@ -8581,8 +8650,10 @@ impl std::fmt::Debug for DescribeProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLiveSourceInput {
     /// <p>The identifier for the live source you are working on.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DescribeLiveSourceInput {
@@ -8609,6 +8680,7 @@ impl std::fmt::Debug for DescribeLiveSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
@@ -8630,8 +8702,10 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVodSourceInput {
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the VOD source you are working on.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl DeleteVodSourceInput {
@@ -8658,6 +8732,7 @@ impl std::fmt::Debug for DeleteVodSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DeleteSourceLocationInput {
@@ -8679,8 +8754,10 @@ impl std::fmt::Debug for DeleteSourceLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProgramInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the program you are working on.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DeleteProgramInput {
@@ -8707,8 +8784,10 @@ impl std::fmt::Debug for DeleteProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePrefetchScheduleInput {
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl DeletePrefetchScheduleInput {
@@ -8738,6 +8817,7 @@ impl std::fmt::Debug for DeletePrefetchScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeletePlaybackConfigurationInput {
@@ -8759,8 +8839,10 @@ impl std::fmt::Debug for DeletePlaybackConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLiveSourceInput {
     /// <p>The identifier for the live source you are working on.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DeleteLiveSourceInput {
@@ -8787,6 +8869,7 @@ impl std::fmt::Debug for DeleteLiveSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DeleteChannelPolicyInput {
@@ -8808,6 +8891,7 @@ impl std::fmt::Debug for DeleteChannelPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -8829,14 +8913,18 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVodSourceInput {
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the VOD source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier for the VOD source you are working on.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl CreateVodSourceInput {
@@ -8881,18 +8969,24 @@ impl std::fmt::Debug for CreateVodSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The optional configuration for the server that serves segments.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The source's HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the source location.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8953,18 +9047,25 @@ impl std::fmt::Debug for CreateSourceLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
+    #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The name of the LiveSource for this Program.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the program you are working on.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule configuration settings.</p>
+    #[doc(hidden)]
     pub schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl CreateProgramInput {
@@ -9018,14 +9119,19 @@ impl std::fmt::Debug for CreateProgramInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrefetchScheduleInput {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    #[doc(hidden)]
     pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    #[doc(hidden)]
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl CreatePrefetchScheduleInput {
@@ -9070,13 +9176,17 @@ impl std::fmt::Debug for CreatePrefetchScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLiveSourceInput {
     /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the live source you are working on.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the source location you are working on.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the live source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9122,19 +9232,25 @@ impl std::fmt::Debug for CreateLiveSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<crate::model::PlaybackMode>,
     /// <p>The tags to assign to the channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tier of the channel.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
 }
 impl CreateChannelInput {
@@ -9187,8 +9303,10 @@ impl std::fmt::Debug for CreateChannelInput {
 pub struct ConfigureLogsForPlaybackConfigurationInput {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: 0 - 100</p>
+    #[doc(hidden)]
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl ConfigureLogsForPlaybackConfigurationInput {

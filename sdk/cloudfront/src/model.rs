@@ -5,20 +5,27 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistribution {
     /// <p>The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time that the distribution was last modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p>
     /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
     /// <p>The current configuration information for the RTMP distribution.</p>
+    #[doc(hidden)]
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
 }
@@ -204,20 +211,28 @@ pub struct StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution. </p>
+    #[doc(hidden)]
     pub s3_origin: std::option::Option<crate::model::S3Origin>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution. </p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<crate::model::Aliases>,
     /// <p>Any comments you want to include about the streaming distribution. </p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the streaming distribution. </p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::StreamingLoggingConfig>,
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
     /// <p>A complex type that contains information about price class for this streaming distribution. </p>
+    #[doc(hidden)]
     pub price_class: std::option::Option<crate::model::PriceClass>,
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl StreamingDistributionConfig {
@@ -468,10 +483,13 @@ impl AsRef<str> for PriceClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The number of Amazon Web Services accounts in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of Amazon Web Services account identifiers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedSigners {
@@ -569,10 +587,13 @@ impl TrustedSigners {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl StreamingLoggingConfig {
@@ -661,8 +682,10 @@ impl StreamingLoggingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Aliases {
@@ -743,12 +766,14 @@ impl Aliases {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Origin {
     /// <p>The DNS name of the Amazon S3 origin. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
     /// <p>If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_access_identity: std::option::Option<std::string::String>,
 }
 impl S3Origin {
@@ -835,10 +860,13 @@ impl S3Origin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveTrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The number of Amazon Web Services accounts in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Signer>>,
 }
 impl ActiveTrustedSigners {
@@ -936,8 +964,10 @@ impl ActiveTrustedSigners {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Signer {
     /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
+    #[doc(hidden)]
     pub aws_account_number: std::option::Option<std::string::String>,
     /// <p>A list of CloudFront key pair identifiers.</p>
+    #[doc(hidden)]
     pub key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
 }
 impl Signer {
@@ -1015,8 +1045,10 @@ impl Signer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of CloudFront key pair identifiers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl KeyPairIds {
@@ -1100,11 +1132,14 @@ impl KeyPairIds {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicy {
     /// <p>The identifier for the response headers policy.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the response headers policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A response headers policy configuration.</p>
     /// <p>A response headers policy contains information about a set of HTTP response headers and their values. CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s associated with the policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
 }
@@ -1214,19 +1249,25 @@ impl ResponseHeadersPolicy {
 pub struct ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
     /// <p>The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
+    #[doc(hidden)]
     pub cors_config: std::option::Option<crate::model::ResponseHeadersPolicyCorsConfig>,
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
+    #[doc(hidden)]
     pub security_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
     /// <p>A configuration for a set of custom HTTP response headers.</p>
+    #[doc(hidden)]
     pub custom_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
+    #[doc(hidden)]
     pub server_timing_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicyServerTimingHeadersConfig>,
 }
@@ -1411,8 +1452,10 @@ impl ResponseHeadersPolicyConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<f64>,
 }
 impl ResponseHeadersPolicyServerTimingHeadersConfig {
@@ -1485,8 +1528,10 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyCustomHeadersConfig {
     /// <p>The number of HTTP response headers in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The list of HTTP response headers and their values.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicyCustomHeader>>,
 }
 impl ResponseHeadersPolicyCustomHeadersConfig {
@@ -1570,10 +1615,13 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
+    #[doc(hidden)]
     pub header: std::option::Option<std::string::String>,
     /// <p>The value for the HTTP response header.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCustomHeader {
@@ -1663,23 +1711,29 @@ impl ResponseHeadersPolicyCustomHeader {
 pub struct ResponseHeadersPolicySecurityHeadersConfig {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub xss_protection: std::option::Option<crate::model::ResponseHeadersPolicyXssProtection>,
     /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub frame_options: std::option::Option<crate::model::ResponseHeadersPolicyFrameOptions>,
     /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub referrer_policy: std::option::Option<crate::model::ResponseHeadersPolicyReferrerPolicy>,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub content_security_policy:
         std::option::Option<crate::model::ResponseHeadersPolicyContentSecurityPolicy>,
     /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
     /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub content_type_options:
         std::option::Option<crate::model::ResponseHeadersPolicyContentTypeOptions>,
     /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub strict_transport_security:
         std::option::Option<crate::model::ResponseHeadersPolicyStrictTransportSecurity>,
 }
@@ -1893,12 +1947,16 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    #[doc(hidden)]
     pub include_subdomains: std::option::Option<bool>,
     /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    #[doc(hidden)]
     pub preload: std::option::Option<bool>,
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    #[doc(hidden)]
     pub access_control_max_age_sec: std::option::Option<i32>,
 }
 impl ResponseHeadersPolicyStrictTransportSecurity {
@@ -2008,6 +2066,7 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyContentTypeOptions {
@@ -2063,8 +2122,10 @@ impl ResponseHeadersPolicyContentTypeOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
+    #[doc(hidden)]
     pub content_security_policy: std::option::Option<std::string::String>,
 }
 impl ResponseHeadersPolicyContentSecurityPolicy {
@@ -2140,6 +2201,7 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
@@ -2153,6 +2215,7 @@ pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub referrer_policy: std::option::Option<crate::model::ReferrerPolicyList>,
 }
 impl ResponseHeadersPolicyReferrerPolicy {
@@ -2349,9 +2412,11 @@ impl AsRef<str> for ReferrerPolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub frame_option: std::option::Option<crate::model::FrameOptionsList>,
 }
 impl ResponseHeadersPolicyFrameOptions {
@@ -2485,16 +2550,20 @@ impl AsRef<str> for FrameOptionsList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyXssProtection {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub r#override: std::option::Option<bool>,
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub protection: std::option::Option<bool>,
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub mode_block: std::option::Option<bool>,
     /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
     /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub report_uri: std::option::Option<std::string::String>,
 }
 impl ResponseHeadersPolicyXssProtection {
@@ -2614,27 +2683,34 @@ impl ResponseHeadersPolicyXssProtection {
 pub struct ResponseHeadersPolicyCorsConfig {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_allow_origins:
         std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowOrigins>,
     /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_allow_headers:
         std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowHeaders>,
     /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_allow_methods:
         std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowMethods>,
     /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_allow_credentials: std::option::Option<bool>,
     /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_expose_headers:
         std::option::Option<crate::model::ResponseHeadersPolicyAccessControlExposeHeaders>,
     /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
+    #[doc(hidden)]
     pub access_control_max_age_sec: std::option::Option<i32>,
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
+    #[doc(hidden)]
     pub origin_override: std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCorsConfig {
@@ -2875,8 +2951,10 @@ impl ResponseHeadersPolicyCorsConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyAccessControlExposeHeaders {
     /// <p>The number of HTTP headers in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlExposeHeaders {
@@ -2959,6 +3037,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
@@ -2972,6 +3051,7 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<
         std::vec::Vec<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
     >,
@@ -3184,8 +3264,10 @@ impl AsRef<str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {
@@ -3268,8 +3350,10 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowOrigins {
@@ -3351,15 +3435,20 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique name of this real-time log configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<i64>,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
+    #[doc(hidden)]
     pub end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RealtimeLogConfig {
@@ -3503,8 +3592,10 @@ impl RealtimeLogConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
+    #[doc(hidden)]
     pub stream_type: std::option::Option<std::string::String>,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+    #[doc(hidden)]
     pub kinesis_stream_config: std::option::Option<crate::model::KinesisStreamConfig>,
 }
 impl EndPoint {
@@ -3580,8 +3671,10 @@ impl EndPoint {
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamConfig {
@@ -3656,10 +3749,13 @@ impl KinesisStreamConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
+    #[doc(hidden)]
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
 impl PublicKey {
@@ -3754,12 +3850,16 @@ impl PublicKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKeyConfig {
     /// <p>A string included in the request to help make sure that the request can’t be replayed.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>A name to help identify the public key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
+    #[doc(hidden)]
     pub encoded_key: std::option::Option<std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl PublicKeyConfig {
@@ -3875,10 +3975,13 @@ impl PublicKeyConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the origin request policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The origin request policy configuration.</p>
+    #[doc(hidden)]
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicy {
@@ -3989,14 +4092,19 @@ impl OriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A unique name to identify the origin request policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
+    #[doc(hidden)]
     pub headers_config: std::option::Option<crate::model::OriginRequestPolicyHeadersConfig>,
     /// <p>The cookies from viewer requests to include in origin requests.</p>
+    #[doc(hidden)]
     pub cookies_config: std::option::Option<crate::model::OriginRequestPolicyCookiesConfig>,
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
+    #[doc(hidden)]
     pub query_strings_config:
         std::option::Option<crate::model::OriginRequestPolicyQueryStringsConfig>,
 }
@@ -4152,9 +4260,11 @@ pub struct OriginRequestPolicyQueryStringsConfig {
     /// <li> <p> <code>whitelist</code> – The query strings in viewer requests that are listed in the <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub query_string_behavior:
         std::option::Option<crate::model::OriginRequestPolicyQueryStringBehavior>,
     /// <p>Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to the origin.</p>
+    #[doc(hidden)]
     pub query_strings: std::option::Option<crate::model::QueryStringNames>,
 }
 impl OriginRequestPolicyQueryStringsConfig {
@@ -4253,8 +4363,10 @@ impl OriginRequestPolicyQueryStringsConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStringNames {
     /// <p>The number of query string names in the <code>Items</code> list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of query string names.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryStringNames {
@@ -4399,8 +4511,10 @@ pub struct OriginRequestPolicyCookiesConfig {
     /// <li> <p> <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cookie_behavior: std::option::Option<crate::model::OriginRequestPolicyCookieBehavior>,
     /// <p>Contains a list of cookie names.</p>
+    #[doc(hidden)]
     pub cookies: std::option::Option<crate::model::CookieNames>,
 }
 impl OriginRequestPolicyCookiesConfig {
@@ -4499,8 +4613,10 @@ impl OriginRequestPolicyCookiesConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CookieNames {
     /// <p>The number of cookie names in the <code>Items</code> list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of cookie names.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CookieNames {
@@ -4646,8 +4762,10 @@ pub struct OriginRequestPolicyHeadersConfig {
     /// <li> <p> <code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub header_behavior: std::option::Option<crate::model::OriginRequestPolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<crate::model::Headers>,
 }
 impl OriginRequestPolicyHeadersConfig {
@@ -4746,8 +4864,10 @@ impl OriginRequestPolicyHeadersConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Headers {
     /// <p>The number of header names in the <code>Items</code> list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of HTTP header names.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Headers {
@@ -4901,10 +5021,13 @@ impl AsRef<str> for OriginRequestPolicyHeaderBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyGroup {
     /// <p>The identifier for the key group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the key group was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The key group configuration.</p>
+    #[doc(hidden)]
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
 }
 impl KeyGroup {
@@ -5000,10 +5123,13 @@ impl KeyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyGroupConfig {
     /// <p>A name to identify the key group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the identifiers of the public keys in the key group.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl KeyGroupConfig {
@@ -5101,12 +5227,16 @@ impl KeyGroupConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the CloudFront function.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Contains configuration information about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
     /// <p>Contains metadata about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_metadata: std::option::Option<crate::model::FunctionMetadata>,
 }
 impl FunctionSummary {
@@ -5218,14 +5348,18 @@ impl FunctionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache behavior, using the function’s ARN.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
     /// <p>The date and time when the function was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the function was most recently updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FunctionMetadata {
@@ -5401,8 +5535,10 @@ impl AsRef<str> for FunctionStage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    #[doc(hidden)]
     pub runtime: std::option::Option<crate::model::FunctionRuntime>,
 }
 impl FunctionConfig {
@@ -5528,10 +5664,13 @@ impl AsRef<str> for FunctionRuntime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfile {
     /// <p>The ID for a field-level encryption profile configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption profile was updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
 }
@@ -5636,12 +5775,16 @@ impl FieldLevelEncryptionProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique number that ensures that the request can't be replayed.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    #[doc(hidden)]
     pub encryption_entities: std::option::Option<crate::model::EncryptionEntities>,
 }
 impl FieldLevelEncryptionProfileConfig {
@@ -5753,8 +5896,10 @@ impl FieldLevelEncryptionProfileConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::EncryptionEntity>>,
 }
 impl EncryptionEntities {
@@ -5835,10 +5980,13 @@ impl EncryptionEntities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionEntity {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns. </p>
+    #[doc(hidden)]
     pub public_key_id: std::option::Option<std::string::String>,
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
+    #[doc(hidden)]
     pub provider_id: std::option::Option<std::string::String>,
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive. </p>
+    #[doc(hidden)]
     pub field_patterns: std::option::Option<crate::model::FieldPatterns>,
 }
 impl EncryptionEntity {
@@ -5933,8 +6081,10 @@ impl EncryptionEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldPatterns {
     /// <p>The number of field-level encryption field patterns.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>An array of the field-level encryption field patterns.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FieldPatterns {
@@ -6015,10 +6165,13 @@ impl FieldPatterns {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryption {
     /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption configuration was changed. </p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
+    #[doc(hidden)]
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
 }
@@ -6123,12 +6276,16 @@ impl FieldLevelEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
+    #[doc(hidden)]
     pub query_arg_profile_config: std::option::Option<crate::model::QueryArgProfileConfig>,
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
+    #[doc(hidden)]
     pub content_type_profile_config: std::option::Option<crate::model::ContentTypeProfileConfig>,
 }
 impl FieldLevelEncryptionConfig {
@@ -6258,8 +6415,10 @@ impl FieldLevelEncryptionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown. </p>
+    #[doc(hidden)]
     pub forward_when_content_type_is_unknown: std::option::Option<bool>,
     /// <p>The configuration for a field-level encryption content type-profile. </p>
+    #[doc(hidden)]
     pub content_type_profiles: std::option::Option<crate::model::ContentTypeProfiles>,
 }
 impl ContentTypeProfileConfig {
@@ -6340,8 +6499,10 @@ impl ContentTypeProfileConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Items in a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ContentTypeProfile>>,
 }
 impl ContentTypeProfiles {
@@ -6422,10 +6583,13 @@ impl ContentTypeProfiles {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The profile ID for a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The content type for a field-level encryption content type-profile mapping. </p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl ContentTypeProfile {
@@ -6565,8 +6729,10 @@ impl AsRef<str> for Format {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
+    #[doc(hidden)]
     pub forward_when_query_arg_profile_is_unknown: std::option::Option<bool>,
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
+    #[doc(hidden)]
     pub query_arg_profiles: std::option::Option<crate::model::QueryArgProfiles>,
 }
 impl QueryArgProfileConfig {
@@ -6648,8 +6814,10 @@ impl QueryArgProfileConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::QueryArgProfile>>,
 }
 impl QueryArgProfiles {
@@ -6730,8 +6898,10 @@ impl QueryArgProfiles {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
+    #[doc(hidden)]
     pub query_arg: std::option::Option<std::string::String>,
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl QueryArgProfile {
@@ -6803,28 +6973,38 @@ impl QueryArgProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Distribution {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>This response element indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified. </p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of invalidation batches currently in progress. </p>
+    #[doc(hidden)]
     pub in_progress_invalidation_batches: std::option::Option<i32>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this distribution to serve private content using trusted signers. This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
+    #[doc(hidden)]
     pub active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this distribution to serve private content using key groups. This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
+    #[doc(hidden)]
     pub active_trusted_key_groups: std::option::Option<crate::model::ActiveTrustedKeyGroups>,
     /// <p>The current configuration information for the distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.</p>
+    #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
+    #[doc(hidden)]
     pub alias_icp_recordals: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
 }
 impl Distribution {
@@ -7081,6 +7261,7 @@ impl Distribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasIcpRecordal {
     /// <p>A domain name associated with a distribution. </p>
+    #[doc(hidden)]
     pub cname: std::option::Option<std::string::String>,
     /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China. </p>
     /// <p>The status values returned are the following:</p>
@@ -7089,6 +7270,7 @@ pub struct AliasIcpRecordal {
     /// <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p> </li>
     /// <li> <p> <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the distribution because there was an error in trying to determine the status. You can try again to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub icp_recordal_status: std::option::Option<crate::model::IcpRecordalStatus>,
 }
 impl AliasIcpRecordal {
@@ -7242,8 +7424,10 @@ pub struct DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<crate::model::Aliases>,
     /// <p>The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of an object in your distribution (<code>http://www.example.com/product-description.html</code>). Specifying a default root object avoids exposing the contents of your distribution.</p>
     /// <p>Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -7251,14 +7435,19 @@ pub struct DistributionConfig {
     /// <p>To delete the default root object from an existing distribution, update the distribution configuration and include an empty <code>DefaultRootObject</code> element.</p>
     /// <p>To replace the default root object, update the distribution configuration and specify the new object.</p>
     /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_root_object: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about origins for this distribution. </p>
+    #[doc(hidden)]
     pub origins: std::option::Option<crate::model::Origins>,
     /// <p> A complex type that contains information about origin groups for this distribution.</p>
+    #[doc(hidden)]
     pub origin_groups: std::option::Option<crate::model::OriginGroups>,
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    #[doc(hidden)]
     pub default_cache_behavior: std::option::Option<crate::model::DefaultCacheBehavior>,
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements. </p>
+    #[doc(hidden)]
     pub cache_behaviors: std::option::Option<crate::model::CacheBehaviors>,
     /// <p>A complex type that controls the following:</p>
     /// <ul>
@@ -7266,28 +7455,37 @@ pub struct DistributionConfig {
     /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub custom_error_responses: std::option::Option<crate::model::CustomErrorResponses>,
     /// <p>An optional comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your objects from all CloudFront edge locations.</p>
     /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your objects from the CloudFront edge location that has the lowest latency among the edge locations in your price class. Viewers who are in or near regions that are excluded from your specified price class may encounter slower performance.</p>
     /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.</p>
+    #[doc(hidden)]
     pub price_class: std::option::Option<crate::model::PriceClass>,
     /// <p>From this field, you can enable or disable the selected distribution.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p>
+    #[doc(hidden)]
     pub viewer_certificate: std::option::Option<crate::model::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+    #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::Restrictions>,
     /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
     /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>. </p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
     /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must support Server Name Identification (SNI).</p>
     /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. You can improve performance by optimizing for HTTP/2. For more information, do an Internet search for "http/2 optimization." </p>
+    #[doc(hidden)]
     pub http_version: std::option::Option<crate::model::HttpVersion>,
     /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second request, for an IPv4 address for your distribution. </p>
     /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access to other content (or restrict access but not by IP address), you can create two distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -7298,6 +7496,7 @@ pub struct DistributionConfig {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route&nbsp;53 Amazon Web Services Integration Developer Guide</i>.</p>
     /// <p>If you created a CNAME resource record set, either with Route&nbsp;53 Amazon Web Services Integration or with another DNS service, you don't need to make any changes. A CNAME record will route traffic to your distribution regardless of the IP address format of the viewer request.</p>
+    #[doc(hidden)]
     pub is_ipv6_enabled: std::option::Option<bool>,
 }
 impl DistributionConfig {
@@ -7794,6 +7993,7 @@ impl AsRef<str> for HttpVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
+    #[doc(hidden)]
     pub geo_restriction: std::option::Option<crate::model::GeoRestriction>,
 }
 impl Restrictions {
@@ -7856,12 +8056,15 @@ pub struct GeoRestriction {
     /// <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content.</p> </li>
     /// <li> <p> <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub restriction_type: std::option::Option<crate::model::GeoRestrictionType>,
     /// <p>When geo restriction is <code>enabled</code>, this is the number of countries in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled, <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p> A complex type that contains a <code>Location</code> element for each country in which you want CloudFront either to distribute your content (<code>whitelist</code>) or not distribute your content (<code>blacklist</code>).</p>
     /// <p>The <code>Location</code> element is a two-letter, uppercase country code for a country that you want to include in your <code>blacklist</code> or <code>whitelist</code>. Include one <code>Location</code> element for each country.</p>
     /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console, which includes both country names and codes.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GeoRestriction {
@@ -8065,12 +8268,15 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>MinimumProtocolVersion</code> </p> </li>
     /// <li> <p> <code>SSLSupportMethod</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cloud_front_default_certificate: std::option::Option<bool>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
     /// <p>If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
+    #[doc(hidden)]
     pub iam_certificate_id: std::option::Option<std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
     /// <p>If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
+    #[doc(hidden)]
     pub acm_certificate_arn: std::option::Option<std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
@@ -8079,6 +8285,7 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p> </li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this field.</p>
+    #[doc(hidden)]
     pub ssl_support_method: std::option::Option<crate::model::SslSupportMethod>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
@@ -8090,6 +8297,7 @@ pub struct ViewerCertificate {
     /// </note>
     /// <p>When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront automatically sets the security policy to <code>TLSv1</code> regardless of the value that you set here.</p>
+    #[doc(hidden)]
     pub minimum_protocol_version: std::option::Option<crate::model::MinimumProtocolVersion>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
@@ -8098,6 +8306,7 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>CloudFrontDefaultCertificate</code> </p> </li>
     /// </ul>
     #[deprecated]
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
@@ -8106,6 +8315,7 @@ pub struct ViewerCertificate {
     /// <li> <p> <code>CloudFrontDefaultCertificate</code> </p> </li>
     /// </ul>
     #[deprecated]
+    #[doc(hidden)]
     pub certificate_source: std::option::Option<crate::model::CertificateSource>,
 }
 impl ViewerCertificate {
@@ -8595,12 +8805,16 @@ impl AsRef<str> for SslSupportMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a distribution or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache behaviors for this distribution. If you don't want to include cookies when you create a distribution or if you want to disable include cookies for an existing distribution, specify <code>false</code> for <code>IncludeCookies</code>.</p>
+    #[doc(hidden)]
     pub include_cookies: std::option::Option<bool>,
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl LoggingConfig {
@@ -8711,8 +8925,10 @@ impl LoggingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomErrorResponses {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::CustomErrorResponse>>,
 }
 impl CustomErrorResponses {
@@ -8798,6 +9014,7 @@ impl CustomErrorResponses {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomErrorResponse {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<i32>,
     /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your origin returns the HTTP status code specified by <code>ErrorCode</code>, for example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your custom error pages in different locations, your distribution must include a cache behavior for which the following is true:</p>
     /// <ul>
@@ -8806,6 +9023,7 @@ pub struct CustomErrorResponse {
     /// </ul>
     /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for <code>ResponseCode</code>.</p>
     /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.</p>
+    #[doc(hidden)]
     pub response_page_path: std::option::Option<std::string::String>,
     /// <p>The HTTP status code that you want CloudFront to return to the viewer along with the custom error page. There are a variety of reasons that you might want CloudFront to return a status code different from the status code that your origin returned to CloudFront, for example:</p>
     /// <ul>
@@ -8814,9 +9032,11 @@ pub struct CustomErrorResponse {
     /// <li> <p>You might want to return a <code>200</code> status code (OK) and static website so your customers don't know that your website is down.</p> </li>
     /// </ul>
     /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for <code>ResponsePagePath</code>.</p>
+    #[doc(hidden)]
     pub response_code: std::option::Option<std::string::String>,
     /// <p>The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see whether the problem that caused the error has been resolved and the requested object is now available.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub error_caching_min_ttl: std::option::Option<i64>,
 }
 impl CustomErrorResponse {
@@ -8967,8 +9187,10 @@ impl CustomErrorResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheBehaviors {
     /// <p>The number of cache behaviors for this distribution. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::CacheBehavior>>,
 }
 impl CacheBehaviors {
@@ -9059,17 +9281,21 @@ pub struct CacheBehavior {
     /// </note>
     /// <p>The path pattern for the default cache behavior is <code>*</code> and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub path_pattern: std::option::Option<std::string::String>,
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they match this cache behavior.</p>
+    #[doc(hidden)]
     pub target_origin_id: std::option::Option<std::string::String>,
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
     /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub trusted_key_groups: std::option::Option<crate::model::TrustedKeyGroups>,
     /// <p>The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code> when a request matches the path pattern in <code>PathPattern</code>. You can specify the following options:</p>
     /// <ul>
@@ -9080,6 +9306,7 @@ pub struct CacheBehavior {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub viewer_protocol_policy: std::option::Option<crate::model::ViewerProtocolPolicy>,
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
     /// <ul>
@@ -9088,25 +9315,35 @@ pub struct CacheBehavior {
     /// <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li>
     /// </ul>
     /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
+    #[doc(hidden)]
     pub allowed_methods: std::option::Option<crate::model::AllowedMethods>,
     /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for <code>SmoothStreaming</code>, you can still distribute other content using this cache behavior if the content matches the value of <code>PathPattern</code>. </p>
+    #[doc(hidden)]
     pub smooth_streaming: std::option::Option<bool>,
     /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify true; if not, specify false. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub compress: std::option::Option<bool>,
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
+    #[doc(hidden)]
     pub lambda_function_associations: std::option::Option<crate::model::LambdaFunctionAssociations>,
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    #[doc(hidden)]
     pub function_associations: std::option::Option<crate::model::FunctionAssociations>,
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for this cache behavior.</p>
+    #[doc(hidden)]
     pub field_level_encryption_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
+    #[doc(hidden)]
     pub cache_policy_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the origin request policy that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_request_policy_id: std::option::Option<std::string::String>,
     /// <p>The identifier for a response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy_id: std::option::Option<std::string::String>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -9114,19 +9351,23 @@ pub struct CacheBehavior {
     /// <p>A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
     /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub forwarded_values: std::option::Option<crate::model::ForwardedValues>,
     /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
     #[deprecated]
+    #[doc(hidden)]
     pub min_ttl: std::option::Option<i64>,
     /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub default_ttl: std::option::Option<i64>,
     /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub max_ttl: std::option::Option<i64>,
 }
 impl CacheBehavior {
@@ -9660,22 +9901,26 @@ pub struct ForwardedValues {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<bool>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub cookies: std::option::Option<crate::model::CookiePreference>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include headers in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send headers to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<crate::model::Headers>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include query strings in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send query strings to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for this cache behavior.</p>
+    #[doc(hidden)]
     pub query_string_cache_keys: std::option::Option<crate::model::QueryStringCacheKeys>,
 }
 impl ForwardedValues {
@@ -9846,8 +10091,10 @@ impl ForwardedValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStringCacheKeys {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>. </p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryStringCacheKeys {
@@ -9935,6 +10182,7 @@ pub struct CookiePreference {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
+    #[doc(hidden)]
     pub forward: std::option::Option<crate::model::ItemSelection>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -9942,6 +10190,7 @@ pub struct CookiePreference {
     /// <p>Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.</p>
     /// <p>If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.</p>
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub whitelisted_names: std::option::Option<crate::model::CookieNames>,
 }
 impl CookiePreference {
@@ -10105,8 +10354,10 @@ impl AsRef<str> for ItemSelection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::FunctionAssociation>>,
 }
 impl FunctionAssociations {
@@ -10187,8 +10438,10 @@ impl FunctionAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
 }
 impl FunctionAssociation {
@@ -10333,8 +10586,10 @@ impl AsRef<str> for EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociations {
@@ -10416,6 +10671,7 @@ impl LambdaFunctionAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
     /// <ul>
@@ -10424,8 +10680,10 @@ pub struct LambdaFunctionAssociation {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
+    #[doc(hidden)]
     pub include_body: std::option::Option<bool>,
 }
 impl LambdaFunctionAssociation {
@@ -10544,8 +10802,10 @@ impl LambdaFunctionAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllowedMethods {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Method>>,
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
@@ -10553,6 +10813,7 @@ pub struct AllowedMethods {
     /// <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li>
     /// </ul>
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p>
+    #[doc(hidden)]
     pub cached_methods: std::option::Option<crate::model::CachedMethods>,
 }
 impl AllowedMethods {
@@ -10673,8 +10934,10 @@ impl AllowedMethods {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Method>>,
 }
 impl CachedMethods {
@@ -10889,10 +11152,13 @@ impl AsRef<str> for ViewerProtocolPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The number of key groups in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of key groups identifiers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedKeyGroups {
@@ -10990,15 +11256,18 @@ impl TrustedKeyGroups {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultCacheBehavior {
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
+    #[doc(hidden)]
     pub target_origin_id: std::option::Option<std::string::String>,
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
     /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub trusted_key_groups: std::option::Option<crate::model::TrustedKeyGroups>,
     /// <p>The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code> when a request matches the path pattern in <code>PathPattern</code>. You can specify the following options:</p>
     /// <ul>
@@ -11009,6 +11278,7 @@ pub struct DefaultCacheBehavior {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub viewer_protocol_policy: std::option::Option<crate::model::ViewerProtocolPolicy>,
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
     /// <ul>
@@ -11017,25 +11287,35 @@ pub struct DefaultCacheBehavior {
     /// <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li>
     /// </ul>
     /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
+    #[doc(hidden)]
     pub allowed_methods: std::option::Option<crate::model::AllowedMethods>,
     /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for <code>SmoothStreaming</code>, you can still distribute other content using this cache behavior if the content matches the value of <code>PathPattern</code>. </p>
+    #[doc(hidden)]
     pub smooth_streaming: std::option::Option<bool>,
     /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub compress: std::option::Option<bool>,
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
+    #[doc(hidden)]
     pub lambda_function_associations: std::option::Option<crate::model::LambdaFunctionAssociations>,
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    #[doc(hidden)]
     pub function_associations: std::option::Option<crate::model::FunctionAssociations>,
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
+    #[doc(hidden)]
     pub field_level_encryption_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cache policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
+    #[doc(hidden)]
     pub cache_policy_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the origin request policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_request_policy_id: std::option::Option<std::string::String>,
     /// <p>The identifier for a response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy_id: std::option::Option<std::string::String>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -11043,19 +11323,23 @@ pub struct DefaultCacheBehavior {
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
     /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub forwarded_values: std::option::Option<crate::model::ForwardedValues>,
     /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
     #[deprecated]
+    #[doc(hidden)]
     pub min_ttl: std::option::Option<i64>,
     /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub default_ttl: std::option::Option<i64>,
     /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub max_ttl: std::option::Option<i64>,
 }
 impl DefaultCacheBehavior {
@@ -11550,8 +11834,10 @@ impl DefaultCacheBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginGroups {
     /// <p>The number of origin groups.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The items (origin groups) in a distribution.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::OriginGroup>>,
 }
 impl OriginGroups {
@@ -11632,10 +11918,13 @@ impl OriginGroups {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginGroup {
     /// <p>The origin group's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
+    #[doc(hidden)]
     pub failover_criteria: std::option::Option<crate::model::OriginGroupFailoverCriteria>,
     /// <p>A complex type that contains information about the origins in an origin group.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<crate::model::OriginGroupMembers>,
 }
 impl OriginGroup {
@@ -11736,8 +12025,10 @@ impl OriginGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Items (origins) in an origin group.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::OriginGroupMember>>,
 }
 impl OriginGroupMembers {
@@ -11818,6 +12109,7 @@ impl OriginGroupMembers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
+    #[doc(hidden)]
     pub origin_id: std::option::Option<std::string::String>,
 }
 impl OriginGroupMember {
@@ -11872,6 +12164,7 @@ impl OriginGroupMember {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginGroupFailoverCriteria {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
+    #[doc(hidden)]
     pub status_codes: std::option::Option<crate::model::StatusCodes>,
 }
 impl OriginGroupFailoverCriteria {
@@ -11929,8 +12222,10 @@ impl OriginGroupFailoverCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The items (status codes) for an origin group.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<i32>>,
 }
 impl StatusCodes {
@@ -12008,8 +12303,10 @@ impl StatusCodes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Origins {
     /// <p>The number of origins for this distribution.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of origins.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Origin>>,
 }
 impl Origins {
@@ -12104,29 +12401,38 @@ impl Origins {
 pub struct Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_path: std::option::Option<std::string::String>,
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub custom_headers: std::option::Option<crate::model::CustomHeaders>,
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
+    #[doc(hidden)]
     pub s3_origin_config: std::option::Option<crate::model::S3OriginConfig>,
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
+    #[doc(hidden)]
     pub custom_origin_config: std::option::Option<crate::model::CustomOriginConfig>,
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_attempts: std::option::Option<i32>,
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_timeout: std::option::Option<i32>,
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_shield: std::option::Option<crate::model::OriginShield>,
 }
 impl Origin {
@@ -12355,10 +12661,12 @@ impl Origin {
 pub struct OriginShield {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Amazon Web Services Region for Origin Shield.</p>
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_shield_region: std::option::Option<std::string::String>,
 }
 impl OriginShield {
@@ -12442,8 +12750,10 @@ impl OriginShield {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
+    #[doc(hidden)]
     pub http_port: std::option::Option<i32>,
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
+    #[doc(hidden)]
     pub https_port: std::option::Option<i32>,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
@@ -12451,15 +12761,19 @@ pub struct CustomOriginConfig {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub origin_protocol_policy: std::option::Option<crate::model::OriginProtocolPolicy>,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_ssl_protocols: std::option::Option<crate::model::OriginSslProtocols>,
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_read_timeout: std::option::Option<i32>,
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_keepalive_timeout: std::option::Option<i32>,
 }
 impl CustomOriginConfig {
@@ -12631,8 +12945,10 @@ impl CustomOriginConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginSslProtocols {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SslProtocol>>,
 }
 impl OriginSslProtocols {
@@ -12841,6 +13157,7 @@ pub struct S3OriginConfig {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub origin_access_identity: std::option::Option<std::string::String>,
 }
 impl S3OriginConfig {
@@ -12916,8 +13233,10 @@ impl S3OriginConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomHeaders {
     /// <p>The number of custom headers, if any, for this distribution.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::OriginCustomHeader>>,
 }
 impl CustomHeaders {
@@ -12998,8 +13317,10 @@ impl CustomHeaders {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginCustomHeader {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub header_name: std::option::Option<std::string::String>,
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
+    #[doc(hidden)]
     pub header_value: std::option::Option<std::string::String>,
 }
 impl OriginCustomHeader {
@@ -13071,10 +13392,13 @@ impl OriginCustomHeader {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveTrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The number of key groups in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of key groups, including the identifiers of the public keys in each key group that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::KgKeyPairIds>>,
 }
 impl ActiveTrustedKeyGroups {
@@ -13172,8 +13496,10 @@ impl ActiveTrustedKeyGroups {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
+    #[doc(hidden)]
     pub key_group_id: std::option::Option<std::string::String>,
     /// <p>A list of CloudFront key pair identifiers.</p>
+    #[doc(hidden)]
     pub key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
 }
 impl KgKeyPairIds {
@@ -13248,10 +13574,13 @@ impl KgKeyPairIds {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3. </p>
+    #[doc(hidden)]
     pub s3_canonical_user_id: std::option::Option<std::string::String>,
     /// <p>The current configuration information for the identity. </p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
 }
@@ -13360,8 +13689,10 @@ pub struct CloudFrontOriginAccessIdentityConfig {
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
     /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request. </p>
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl CloudFrontOriginAccessIdentityConfig {
@@ -13451,10 +13782,13 @@ impl CloudFrontOriginAccessIdentityConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cache policy configuration.</p>
+    #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
 impl CachePolicy {
@@ -13555,18 +13889,24 @@ impl CachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicyConfig {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A unique name to identify the cache policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The default amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. CloudFront uses this value as the object’s time to live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code> or <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default value for this field is 86400 seconds (one day). If the value of <code>MinTTL</code> is more than 86400 seconds, then the default value for this field is the same as the value of <code>MinTTL</code>.</p>
+    #[doc(hidden)]
     pub default_ttl: std::option::Option<i64>,
     /// <p>The maximum amount of time, in seconds, that objects stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. CloudFront uses this value only when the origin sends <code>Cache-Control</code> or <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default value for this field is 31536000 seconds (one year). If the value of <code>MinTTL</code> or <code>DefaultTTL</code> is more than 31536000 seconds, then the default value for this field is the same as the value of <code>DefaultTTL</code>.</p>
+    #[doc(hidden)]
     pub max_ttl: std::option::Option<i64>,
     /// <p>The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub min_ttl: std::option::Option<i64>,
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are automatically included in requests that CloudFront sends to the origin.</p>
+    #[doc(hidden)]
     pub parameters_in_cache_key_and_forwarded_to_origin:
         std::option::Option<crate::model::ParametersInCacheKeyAndForwardedToOrigin>,
 }
@@ -13737,6 +14077,7 @@ pub struct ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so including this header in an origin request policy has no effect.</p>
     /// <p>If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.</p>
+    #[doc(hidden)]
     pub enable_accept_encoding_gzip: std::option::Option<bool>,
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
     /// <p>This field is related to the <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is <code>true</code> <i>and</i> the viewer request includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
@@ -13748,12 +14089,16 @@ pub struct ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so including this header in an origin request policy has no effect.</p>
     /// <p>If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.</p>
+    #[doc(hidden)]
     pub enable_accept_encoding_brotli: std::option::Option<bool>,
     /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
+    #[doc(hidden)]
     pub headers_config: std::option::Option<crate::model::CachePolicyHeadersConfig>,
     /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
+    #[doc(hidden)]
     pub cookies_config: std::option::Option<crate::model::CachePolicyCookiesConfig>,
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
+    #[doc(hidden)]
     pub query_strings_config: std::option::Option<crate::model::CachePolicyQueryStringsConfig>,
 }
 impl ParametersInCacheKeyAndForwardedToOrigin {
@@ -13960,8 +14305,10 @@ pub struct CachePolicyQueryStringsConfig {
     /// <li> <p> <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically included in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub query_string_behavior: std::option::Option<crate::model::CachePolicyQueryStringBehavior>,
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in the cache key and automatically included in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
+    #[doc(hidden)]
     pub query_strings: std::option::Option<crate::model::QueryStringNames>,
 }
 impl CachePolicyQueryStringsConfig {
@@ -14132,8 +14479,10 @@ pub struct CachePolicyCookiesConfig {
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the <code>CookieNames</code> type are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cookie_behavior: std::option::Option<crate::model::CachePolicyCookieBehavior>,
     /// <p>Contains a list of cookie names.</p>
+    #[doc(hidden)]
     pub cookies: std::option::Option<crate::model::CookieNames>,
 }
 impl CachePolicyCookiesConfig {
@@ -14296,8 +14645,10 @@ pub struct CachePolicyHeadersConfig {
     /// <li> <p> <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p> </li>
     /// <li> <p> <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and are automatically included in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub header_behavior: std::option::Option<crate::model::CachePolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<crate::model::Headers>,
 }
 impl CachePolicyHeadersConfig {
@@ -14439,6 +14790,7 @@ impl AsRef<str> for CachePolicyHeaderBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagKeys {
     /// <p> A complex type that contains <code>Tag</code> key elements.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagKeys {
@@ -14500,14 +14852,19 @@ impl TagKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestResult {
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
+    #[doc(hidden)]
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
+    #[doc(hidden)]
     pub compute_utilization: std::option::Option<std::string::String>,
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
+    #[doc(hidden)]
     pub function_execution_logs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
+    #[doc(hidden)]
     pub function_error_message: std::option::Option<std::string::String>,
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub function_output: std::option::Option<std::string::String>,
 }
 impl TestResult {
@@ -14654,6 +15011,7 @@ impl TestResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tags {
     /// <p> A complex type that contains <code>Tag</code> elements.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Tags {
@@ -14716,9 +15074,11 @@ impl Tags {
 pub struct Tag {
     /// <p> A string that contains <code>Tag</code> key.</p>
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p> A string that contains an optional <code>Tag</code> value.</p>
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -14796,16 +15156,22 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off. </p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value you provided for the <code>MaxItems</code> request parameter. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>The number of streaming distributions that were created by the current Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::StreamingDistributionSummary>>,
 }
 impl StreamingDistributionList {
@@ -14955,27 +15321,38 @@ impl StreamingDistributionList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistributionSummary {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+    #[doc(hidden)]
     pub s3_origin: std::option::Option<crate::model::S3Origin>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<crate::model::Aliases>,
     /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
     /// <p>The comment originally specified when this distribution was created.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about price class for this streaming distribution. </p>
+    #[doc(hidden)]
     pub price_class: std::option::Option<crate::model::PriceClass>,
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl StreamingDistributionSummary {
@@ -15212,12 +15589,16 @@ impl StreamingDistributionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response headers policies requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of response headers policies returned.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The response headers policies in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicySummary>>,
 }
 impl ResponseHeadersPolicyList {
@@ -15333,8 +15714,10 @@ impl ResponseHeadersPolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
     /// <p>The response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
 }
 impl ResponseHeadersPolicySummary {
@@ -15473,14 +15856,19 @@ impl AsRef<str> for ResponseHeadersPolicyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfigs {
     /// <p>The maximum number of real-time log configurations requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>Contains the list of real-time log configurations.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RealtimeLogConfig>>,
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off. </p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl RealtimeLogConfigs {
@@ -15612,12 +16000,16 @@ impl RealtimeLogConfigs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKeyList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of public keys you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of public keys in the list.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of public keys.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::PublicKeySummary>>,
 }
 impl PublicKeyList {
@@ -15732,14 +16124,19 @@ impl PublicKeyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKeySummary {
     /// <p>The identifier of the public key.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A name to help identify the public key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The public key.</p>
+    #[doc(hidden)]
     pub encoded_key: std::option::Option<std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl PublicKeySummary {
@@ -15865,12 +16262,16 @@ impl PublicKeySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin request policies requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The total number of origin request policies returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Contains the origin request policies in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::OriginRequestPolicySummary>>,
 }
 impl OriginRequestPolicyList {
@@ -15986,8 +16387,10 @@ impl OriginRequestPolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
     /// <p>The origin request policy.</p>
+    #[doc(hidden)]
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
 }
 impl OriginRequestPolicySummary {
@@ -16120,12 +16523,16 @@ impl AsRef<str> for OriginRequestPolicyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyGroupList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing key groups.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of key groups requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of key groups returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A list of key groups.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::KeyGroupSummary>>,
 }
 impl KeyGroupList {
@@ -16240,6 +16647,7 @@ impl KeyGroupList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyGroupSummary {
     /// <p>A key group.</p>
+    #[doc(hidden)]
     pub key_group: std::option::Option<crate::model::KeyGroup>,
 }
 impl KeyGroupSummary {
@@ -16294,16 +16702,22 @@ impl KeyGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidationList {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your invalidation batches where they left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>A flag that indicates whether more invalidation batch requests remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more invalidation batches in the list.</p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>The number of invalidation batches that were created by the current Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each invalidation batch created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::InvalidationSummary>>,
 }
 impl InvalidationList {
@@ -16452,10 +16866,13 @@ impl InvalidationList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time that an invalidation request was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of an invalidation request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl InvalidationSummary {
@@ -16547,12 +16964,16 @@ impl InvalidationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing functions where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of functions requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of functions returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Contains the functions in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::FunctionSummary>>,
 }
 impl FunctionList {
@@ -16667,12 +17088,16 @@ impl FunctionList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of field-level encryption profiles.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>The field-level encryption profile items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::FieldLevelEncryptionProfileSummary>>,
 }
 impl FieldLevelEncryptionProfileList {
@@ -16792,14 +17217,19 @@ impl FieldLevelEncryptionProfileList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name for the field-level encryption profile summary.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    #[doc(hidden)]
     pub encryption_entities: std::option::Option<crate::model::EncryptionEntities>,
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl FieldLevelEncryptionProfileSummary {
@@ -16928,12 +17358,16 @@ impl FieldLevelEncryptionProfileSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your configurations where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of elements you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of field-level encryption items.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>An array of field-level encryption items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::FieldLevelEncryptionSummary>>,
 }
 impl FieldLevelEncryptionList {
@@ -17049,14 +17483,19 @@ impl FieldLevelEncryptionList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p> A summary of a query argument-profile mapping. </p>
+    #[doc(hidden)]
     pub query_arg_profile_config: std::option::Option<crate::model::QueryArgProfileConfig>,
     /// <p> A summary of a content type-profile mapping. </p>
+    #[doc(hidden)]
     pub content_type_profile_config: std::option::Option<crate::model::ContentTypeProfileConfig>,
 }
 impl FieldLevelEncryptionSummary {
@@ -17203,16 +17642,22 @@ impl FieldLevelEncryptionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off. </p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DistributionSummary>>,
 }
 impl DistributionList {
@@ -17361,45 +17806,65 @@ impl DistributionList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<crate::model::Aliases>,
     /// <p>A complex type that contains information about origins for this distribution.</p>
+    #[doc(hidden)]
     pub origins: std::option::Option<crate::model::Origins>,
     /// <p> A complex type that contains information about origin groups for this distribution.</p>
+    #[doc(hidden)]
     pub origin_groups: std::option::Option<crate::model::OriginGroups>,
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    #[doc(hidden)]
     pub default_cache_behavior: std::option::Option<crate::model::DefaultCacheBehavior>,
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
+    #[doc(hidden)]
     pub cache_behaviors: std::option::Option<crate::model::CacheBehaviors>,
     /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
+    #[doc(hidden)]
     pub custom_error_responses: std::option::Option<crate::model::CustomErrorResponses>,
     /// <p>The comment originally specified when this distribution was created.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about price class for this streaming distribution. </p>
+    #[doc(hidden)]
     pub price_class: std::option::Option<crate::model::PriceClass>,
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p>
+    #[doc(hidden)]
     pub viewer_certificate: std::option::Option<crate::model::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+    #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::Restrictions>,
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p> Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
+    #[doc(hidden)]
     pub http_version: std::option::Option<crate::model::HttpVersion>,
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
+    #[doc(hidden)]
     pub is_ipv6_enabled: std::option::Option<bool>,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
+    #[doc(hidden)]
     pub alias_icp_recordals: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
 }
 impl DistributionSummary {
@@ -17821,16 +18286,22 @@ impl DistributionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionIdList {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>The total number of distribution IDs returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Contains the distribution IDs in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DistributionIdList {
@@ -17979,12 +18450,16 @@ impl DistributionIdList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingAliasesList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing conflicting aliases where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of conflicting aliases requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The number of conflicting aliases returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Contains the conflicting aliases in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ConflictingAlias>>,
 }
 impl ConflictingAliasesList {
@@ -18099,10 +18574,13 @@ impl ConflictingAliasesList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingAlias {
     /// <p>An alias (also called a CNAME).</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with the alias.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ConflictingAlias {
@@ -18194,16 +18672,22 @@ impl ConflictingAlias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFrontOriginAccessIdentityList {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page). </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your origin access identities where they left off. </p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin access identities you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more items in the list.</p>
+    #[doc(hidden)]
     pub is_truncated: std::option::Option<bool>,
     /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub items:
         std::option::Option<std::vec::Vec<crate::model::CloudFrontOriginAccessIdentitySummary>>,
 }
@@ -18358,10 +18842,13 @@ impl CloudFrontOriginAccessIdentityList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFrontOriginAccessIdentitySummary {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_canonical_user_id: std::option::Option<std::string::String>,
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl CloudFrontOriginAccessIdentitySummary {
@@ -18453,12 +18940,16 @@ impl CloudFrontOriginAccessIdentitySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of cache policies requested.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The total number of cache policies returned in the response.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>Contains the cache policies in the list.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::CachePolicySummary>>,
 }
 impl CachePolicyList {
@@ -18573,8 +19064,10 @@ impl CachePolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
     /// <p>The cache policy.</p>
+    #[doc(hidden)]
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
 }
 impl CachePolicySummary {
@@ -18707,6 +19200,7 @@ impl AsRef<str> for CachePolicyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
+    #[doc(hidden)]
     pub realtime_metrics_subscription_config:
         std::option::Option<crate::model::RealtimeMetricsSubscriptionConfig>,
 }
@@ -18774,6 +19268,7 @@ impl MonitoringSubscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    #[doc(hidden)]
     pub realtime_metrics_subscription_status:
         std::option::Option<crate::model::RealtimeMetricsSubscriptionStatus>,
 }
@@ -18896,12 +19391,16 @@ impl AsRef<str> for RealtimeMetricsSubscriptionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invalidation {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the invalidation request was first made. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current invalidation information for the batch request. </p>
+    #[doc(hidden)]
     pub invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
 }
 impl Invalidation {
@@ -19013,10 +19512,12 @@ impl Invalidation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidationBatch {
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
+    #[doc(hidden)]
     pub paths: std::option::Option<crate::model::Paths>,
     /// <p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>.</p>
     /// <p>If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>.</p>
     /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
 }
 impl InvalidationBatch {
@@ -19097,8 +19598,10 @@ impl InvalidationBatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Paths {
     /// <p>The number of invalidation paths specified for the objects that you want to invalidate.</p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains a list of the paths that you want to invalidate.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Paths {
@@ -19179,9 +19682,11 @@ impl Paths {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistributionConfigWithTags {
     /// <p>A streaming distribution Configuration.</p>
+    #[doc(hidden)]
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl StreamingDistributionConfigWithTags {
@@ -19265,8 +19770,10 @@ impl StreamingDistributionConfigWithTags {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionConfigWithTags {
     /// <p>A distribution configuration.</p>
+    #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl DistributionConfigWithTags {

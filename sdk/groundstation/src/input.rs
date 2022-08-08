@@ -4275,8 +4275,10 @@ impl UpdateMissionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSatellitesInput {
     /// <p>Maximum number of satellites returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSatellitesInput {
@@ -4303,6 +4305,7 @@ impl std::fmt::Debug for ListSatellitesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
 }
 impl GetSatelliteInput {
@@ -4324,8 +4327,10 @@ impl std::fmt::Debug for GetSatelliteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMissionProfilesInput {
     /// <p>Maximum number of mission profiles returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMissionProfilesInput {
@@ -4352,18 +4357,25 @@ impl std::fmt::Debug for ListMissionProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub contact_post_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    #[doc(hidden)]
     pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    #[doc(hidden)]
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
+    #[doc(hidden)]
     pub tracking_config_arn: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4428,6 +4440,7 @@ impl std::fmt::Debug for CreateMissionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteMissionProfileInput {
@@ -4449,18 +4462,25 @@ impl std::fmt::Debug for DeleteMissionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
     /// <p>Name of a mission profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    #[doc(hidden)]
     pub contact_post_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    #[doc(hidden)]
     pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    #[doc(hidden)]
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
+    #[doc(hidden)]
     pub tracking_config_arn: std::option::Option<std::string::String>,
 }
 impl UpdateMissionProfileInput {
@@ -4521,6 +4541,7 @@ impl std::fmt::Debug for UpdateMissionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl GetMissionProfileInput {
@@ -4542,10 +4563,13 @@ impl std::fmt::Debug for GetMissionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroundStationsInput {
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
+    #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of ground stations returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroundStationsInput {
@@ -4577,8 +4601,10 @@ impl std::fmt::Debug for ListGroundStationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataflowEndpointGroupsInput {
     /// <p>Maximum number of dataflow endpoint groups returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataflowEndpointGroupsInput {
@@ -4605,8 +4631,10 @@ impl std::fmt::Debug for ListDataflowEndpointGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_details: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
     /// <p>Tags of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4637,6 +4665,7 @@ impl std::fmt::Debug for CreateDataflowEndpointGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataflowEndpointGroupInput {
@@ -4661,6 +4690,7 @@ impl std::fmt::Debug for DeleteDataflowEndpointGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
+    #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl GetDataflowEndpointGroupInput {
@@ -4685,20 +4715,28 @@ impl std::fmt::Debug for GetDataflowEndpointGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsInput {
     /// <p>Maximum number of contacts returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Status of a contact reservation.</p>
+    #[doc(hidden)]
     pub status_list: std::option::Option<std::vec::Vec<crate::model::ContactStatus>>,
     /// <p>Start time of a contact.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
+    #[doc(hidden)]
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite.</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
 }
 impl ListContactsInput {
@@ -4755,16 +4793,22 @@ impl std::fmt::Debug for ListContactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
+    #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
     /// <p>ARN of a satellite</p>
+    #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of a contact.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
+    #[doc(hidden)]
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a contact.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4815,6 +4859,7 @@ impl std::fmt::Debug for ReserveContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelContactInput {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl CancelContactInput {
@@ -4836,6 +4881,7 @@ impl std::fmt::Debug for CancelContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl DescribeContactInput {
@@ -4857,8 +4903,10 @@ impl std::fmt::Debug for DescribeContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigsInput {
     /// <p>Maximum number of <code>Configs</code> returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigsInput {
@@ -4885,10 +4933,13 @@ impl std::fmt::Debug for ListConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Parameters of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_data: std::option::Option<crate::model::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4924,8 +4975,10 @@ impl std::fmt::Debug for CreateConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
 }
 impl DeleteConfigInput {
@@ -4952,12 +5005,16 @@ impl std::fmt::Debug for DeleteConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
     /// <p>Parameters of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_data: std::option::Option<crate::model::ConfigTypeData>,
 }
 impl UpdateConfigInput {
@@ -4994,8 +5051,10 @@ impl std::fmt::Debug for UpdateConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<crate::model::ConfigCapabilityType>,
 }
 impl GetConfigInput {
@@ -5022,8 +5081,10 @@ impl std::fmt::Debug for GetConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>ARN of a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of a resource tag.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5050,8 +5111,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>ARN of a resource tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5082,6 +5145,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>ARN of a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5103,8 +5167,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMinuteUsageInput {
     /// <p>The month being requested, with a value of 1-12.</p>
+    #[doc(hidden)]
     pub month: std::option::Option<i32>,
     /// <p>The year being requested, in the format of YYYY.</p>
+    #[doc(hidden)]
     pub year: std::option::Option<i32>,
 }
 impl GetMinuteUsageInput {

@@ -3819,14 +3819,19 @@ impl UpdateStateMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
 impl UpdateStateMachineInput {
@@ -3872,8 +3877,10 @@ impl std::fmt::Debug for UpdateStateMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3900,9 +3907,11 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to add to a resource.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3930,10 +3939,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl StopExecutionInput {
@@ -3965,16 +3977,20 @@ impl std::fmt::Debug for StopExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSyncExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the execution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
 }
 impl StartSyncExecutionInput {
@@ -4015,6 +4031,7 @@ impl std::fmt::Debug for StartSyncExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -4026,14 +4043,17 @@ pub struct StartExecutionInput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
 }
 impl StartExecutionInput {
@@ -4083,8 +4103,10 @@ impl std::fmt::Debug for StartExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskSuccessInput {
     /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
 }
 impl SendTaskSuccessInput {
@@ -4111,6 +4133,7 @@ impl std::fmt::Debug for SendTaskSuccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskHeartbeatInput {
     /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
 }
 impl SendTaskHeartbeatInput {
@@ -4132,10 +4155,13 @@ impl std::fmt::Debug for SendTaskHeartbeatInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskFailureInput {
     /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl SendTaskFailureInput {
@@ -4167,6 +4193,7 @@ impl std::fmt::Debug for SendTaskFailureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4189,8 +4216,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListStateMachinesInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStateMachinesInput {
@@ -4218,13 +4247,17 @@ impl std::fmt::Debug for ListStateMachinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInput {
@@ -4263,8 +4296,10 @@ impl std::fmt::Debug for ListExecutionsInput {
 pub struct ListActivitiesInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActivitiesInput {
@@ -4292,15 +4327,20 @@ impl std::fmt::Debug for ListActivitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExecutionHistoryInput {
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
+    #[doc(hidden)]
     pub reverse_order: bool,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
+    #[doc(hidden)]
     pub include_execution_data: std::option::Option<bool>,
 }
 impl GetExecutionHistoryInput {
@@ -4343,8 +4383,10 @@ impl std::fmt::Debug for GetExecutionHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActivityTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+    #[doc(hidden)]
     pub worker_name: std::option::Option<std::string::String>,
 }
 impl GetActivityTaskInput {
@@ -4371,6 +4413,7 @@ impl std::fmt::Debug for GetActivityTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeStateMachineForExecutionInput {
@@ -4392,6 +4435,7 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
 }
 impl DescribeStateMachineInput {
@@ -4413,6 +4457,7 @@ impl std::fmt::Debug for DescribeStateMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeExecutionInput {
@@ -4434,6 +4479,7 @@ impl std::fmt::Debug for DescribeExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
 }
 impl DescribeActivityInput {
@@ -4455,6 +4501,7 @@ impl std::fmt::Debug for DescribeActivityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
 }
 impl DeleteStateMachineInput {
@@ -4476,6 +4523,7 @@ impl std::fmt::Debug for DeleteStateMachineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
 }
 impl DeleteActivityInput {
@@ -4506,22 +4554,29 @@ pub struct CreateStateMachineInput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    #[doc(hidden)]
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
 }
 impl CreateStateMachineInput {
@@ -4599,10 +4654,12 @@ pub struct CreateActivityInput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of tags to add to a resource.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateActivityInput {

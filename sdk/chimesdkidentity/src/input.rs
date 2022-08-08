@@ -4174,12 +4174,16 @@ impl UpdateAppInstanceUserEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    #[doc(hidden)]
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl UpdateAppInstanceUserEndpointInput {
@@ -4216,10 +4220,13 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceUserInput {
@@ -4251,10 +4258,13 @@ impl std::fmt::Debug for UpdateAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name that you want to change.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata that you want to change.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceInput {
@@ -4286,8 +4296,10 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4314,8 +4326,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4342,8 +4356,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
@@ -4352,14 +4368,19 @@ pub struct RegisterAppInstanceUserEndpointInput {
     /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The attributes of an <code>Endpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
     /// <p>The idempotency token for each client request. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
+    #[doc(hidden)]
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl RegisterAppInstanceUserEndpointInput {
@@ -4417,8 +4438,10 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time in days to retain data. Data type: number.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
 }
@@ -4451,6 +4474,7 @@ impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4472,10 +4496,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of requests that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUsersInput {
@@ -4507,10 +4534,13 @@ impl std::fmt::Debug for ListAppInstanceUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUserEndpointsInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUserEndpointsInput {
@@ -4542,8 +4572,10 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstancesInput {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesInput {
@@ -4570,10 +4602,13 @@ impl std::fmt::Debug for ListAppInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of administrators that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsInput {
@@ -4605,6 +4640,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl GetAppInstanceRetentionSettingsInput {
@@ -4626,8 +4662,10 @@ impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceUserEndpointInput {
@@ -4654,6 +4692,7 @@ impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceUserInput {
@@ -4675,8 +4714,10 @@ impl std::fmt::Debug for DescribeAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceAdminInput {
@@ -4703,6 +4744,7 @@ impl std::fmt::Debug for DescribeAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceInput {
@@ -4724,8 +4766,10 @@ impl std::fmt::Debug for DescribeAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl DeregisterAppInstanceUserEndpointInput {
@@ -4752,6 +4796,7 @@ impl std::fmt::Debug for DeregisterAppInstanceUserEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceUserInput {
@@ -4773,8 +4818,10 @@ impl std::fmt::Debug for DeleteAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceAdminInput {
@@ -4801,6 +4848,7 @@ impl std::fmt::Debug for DeleteAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceInput {
@@ -4822,16 +4870,22 @@ impl std::fmt::Debug for DeleteAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The user ID of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_id: std::option::Option<std::string::String>,
     /// <p>The user's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInstanceUserInput {
@@ -4878,8 +4932,10 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceAdminInput {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceAdminInput {
@@ -4906,12 +4962,16 @@ impl std::fmt::Debug for CreateAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceInput {
     /// <p>The name of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInstanceInput {

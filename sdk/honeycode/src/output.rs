@@ -64,8 +64,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTableDataImportJobOutput {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p> The status of the import job immediately after submitting the request. </p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
 }
 impl StartTableDataImportJobOutput {
@@ -140,12 +142,16 @@ impl StartTableDataImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
+    #[doc(hidden)]
     pub column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of rows in the table that match the query filter. </p>
+    #[doc(hidden)]
     pub rows: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
 }
 impl QueryTableRowsOutput {
@@ -269,6 +275,7 @@ impl QueryTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -342,10 +349,13 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesOutput {
     /// <p> The list of tables in the workbook. </p>
+    #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<crate::model::Table>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
 }
 impl ListTablesOutput {
@@ -443,14 +453,19 @@ impl ListTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
+    #[doc(hidden)]
     pub column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
+    #[doc(hidden)]
     pub rows: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
     /// <p> The list of row ids included in the request that were not found in the table. </p>
+    #[doc(hidden)]
     pub row_ids_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
 }
 impl ListTableRowsOutput {
@@ -600,10 +615,13 @@ impl ListTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTableColumnsOutput {
     /// <p> The list of columns in the table. </p>
+    #[doc(hidden)]
     pub table_columns: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
 }
 impl ListTableColumnsOutput {
@@ -701,6 +719,7 @@ impl ListTableColumnsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeScreenAutomationOutput {
     /// <p>The updated workbook cursor after performing the automation action.</p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
 }
 impl InvokeScreenAutomationOutput {
@@ -755,12 +774,15 @@ impl InvokeScreenAutomationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ResultSet>,
     >,
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetScreenDataOutput {
@@ -869,12 +891,16 @@ impl GetScreenDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
     /// <p> A message providing more details about the current status of the import job. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The metadata about the job that was submitted for import. </p>
+    #[doc(hidden)]
     pub job_metadata: std::option::Option<crate::model::TableDataImportJobMetadata>,
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
 }
 impl DescribeTableDataImportJobOutput {
@@ -989,12 +1015,15 @@ impl DescribeTableDataImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
+    #[doc(hidden)]
     pub rows: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
     >,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
+    #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
 }
 impl BatchUpsertTableRowsOutput {
@@ -1114,8 +1143,10 @@ impl BatchUpsertTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
+    #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
 }
 impl BatchUpdateTableRowsOutput {
@@ -1197,8 +1228,10 @@ impl BatchUpdateTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableRowsOutput {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
+    #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
 }
 impl BatchDeleteTableRowsOutput {
@@ -1280,11 +1313,14 @@ impl BatchDeleteTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
+    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
+    #[doc(hidden)]
     pub created_rows:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
+    #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
 }
 impl BatchCreateTableRowsOutput {

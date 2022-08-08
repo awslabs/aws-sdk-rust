@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::DefinitionLanguage>,
     /// <p>The GraphQL text that defines the entity.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl DefinitionDocument {
@@ -132,12 +134,16 @@ impl AsRef<str> for DefinitionLanguage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemTemplateSummary {
     /// <p>The ID of the system.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the system.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the system.</p>
+    #[doc(hidden)]
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the system was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SystemTemplateSummary {
@@ -246,12 +252,16 @@ impl SystemTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowTemplateSummary {
     /// <p>The ID of the workflow.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the workflow.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the workflow.</p>
+    #[doc(hidden)]
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the workflow was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FlowTemplateSummary {
@@ -360,22 +370,31 @@ impl FlowTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemInstanceSummary {
     /// <p>The ID of the system instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the system instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the system instance.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SystemInstanceDeploymentStatus>,
     /// <p>The target of the system instance.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::DeploymentTarget>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
+    #[doc(hidden)]
     pub greengrass_group_name: std::option::Option<std::string::String>,
     /// <p>The date when the system instance was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time when the system instance was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
+    #[doc(hidden)]
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
+    #[doc(hidden)]
     pub greengrass_group_version_id: std::option::Option<std::string::String>,
 }
 impl SystemInstanceSummary {
@@ -736,8 +755,10 @@ impl AsRef<str> for SystemInstanceDeploymentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -809,8 +830,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Thing {
     /// <p>The ARN of the thing.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl Thing {
@@ -882,8 +905,10 @@ impl Thing {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SystemTemplateFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SystemTemplateFilter {
@@ -1018,8 +1043,10 @@ impl AsRef<str> for SystemTemplateFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemInstanceFilter {
     /// <p>The name of the search filter field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SystemInstanceFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SystemInstanceFilter {
@@ -1162,8 +1189,10 @@ impl AsRef<str> for SystemInstanceFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::FlowTemplateFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FlowTemplateFilter {
@@ -1298,16 +1327,22 @@ impl AsRef<str> for FlowTemplateFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowExecutionSummary {
     /// <p>The ID of the flow execution.</p>
+    #[doc(hidden)]
     pub flow_execution_id: std::option::Option<std::string::String>,
     /// <p>The current status of the flow execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FlowExecutionStatus>,
     /// <p>The ID of the system instance that contains the flow.</p>
+    #[doc(hidden)]
     pub system_instance_id: std::option::Option<std::string::String>,
     /// <p>The ID of the flow.</p>
+    #[doc(hidden)]
     pub flow_template_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the flow execution summary was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the flow execution summary was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FlowExecutionSummary {
@@ -1528,14 +1563,19 @@ impl AsRef<str> for FlowExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityDescription {
     /// <p>The entity ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The entity ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The entity type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p>The time at which the entity was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The definition document of the entity.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
 }
 impl EntityDescription {
@@ -1762,8 +1802,10 @@ impl AsRef<str> for EntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityFilter {
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::EntityFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EntityFilter {
@@ -1915,12 +1957,16 @@ impl AsRef<str> for EntityFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowExecutionMessage {
     /// <p>The unique identifier of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The type of flow event .</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::FlowExecutionEventType>,
     /// <p>The date and time when the message was last updated.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A string containing information about the flow event.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<std::string::String>,
 }
 impl FlowExecutionMessage {
@@ -2224,10 +2270,13 @@ impl AsRef<str> for UploadStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemTemplateDescription {
     /// <p>An object that contains summary information about a system.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
     /// <p>The definition document of a system.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
+    #[doc(hidden)]
     pub validated_namespace_version: std::option::Option<i64>,
 }
 impl SystemTemplateDescription {
@@ -2325,19 +2374,26 @@ impl SystemTemplateDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
     /// <p>A document that defines an entity. </p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    #[doc(hidden)]
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
+    #[doc(hidden)]
     pub validated_namespace_version: std::option::Option<i64>,
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
+    #[doc(hidden)]
     pub validated_dependency_revisions:
         std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
+    #[doc(hidden)]
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl SystemInstanceDescription {
@@ -2532,8 +2588,10 @@ impl SystemInstanceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyRevision {
     /// <p>The ID of the workflow or system.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision number of the workflow or system.</p>
+    #[doc(hidden)]
     pub revision_number: std::option::Option<i64>,
 }
 impl DependencyRevision {
@@ -2605,8 +2663,10 @@ impl DependencyRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsConfiguration {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
+    #[doc(hidden)]
     pub cloud_metric_enabled: bool,
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
+    #[doc(hidden)]
     pub metric_rule_role_arn: std::option::Option<std::string::String>,
 }
 impl MetricsConfiguration {
@@ -2791,10 +2851,13 @@ impl AsRef<str> for NamespaceDeletionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
     /// <p>A workflow's definition document.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
+    #[doc(hidden)]
     pub validated_namespace_version: std::option::Option<i64>,
 }
 impl FlowTemplateDescription {

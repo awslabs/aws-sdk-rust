@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafUnavailableEntityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafUnavailableEntityException {
@@ -72,6 +73,7 @@ impl WafUnavailableEntityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafSubscriptionNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafSubscriptionNotFoundException {
@@ -139,6 +141,7 @@ impl WafSubscriptionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafOptimisticLockException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafOptimisticLockException {
@@ -203,6 +206,7 @@ impl WafOptimisticLockException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafNonexistentItemException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafNonexistentItemException {
@@ -270,6 +274,7 @@ impl WafNonexistentItemException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafLimitsExceededException {
@@ -334,6 +339,7 @@ impl WafLimitsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafInvalidResourceException {
@@ -407,12 +413,16 @@ impl WafInvalidResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The settings where the invalid parameter was found. </p>
+    #[doc(hidden)]
     pub field: std::option::Option<crate::model::ParameterExceptionField>,
     /// <p>The invalid parameter that resulted in the exception. </p>
+    #[doc(hidden)]
     pub parameter: std::option::Option<std::string::String>,
     /// <p>Additional information about the exception.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl WafInvalidParameterException {
@@ -536,6 +546,7 @@ impl WafInvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafInvalidOperationException {
@@ -603,6 +614,7 @@ impl WafInvalidOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafInternalErrorException {
@@ -667,6 +679,7 @@ impl WafInternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafExpiredManagedRuleGroupVersionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafExpiredManagedRuleGroupVersionException {
@@ -731,6 +744,7 @@ impl WafExpiredManagedRuleGroupVersionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafDuplicateItemException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafDuplicateItemException {
@@ -797,6 +811,7 @@ impl WafDuplicateItemException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafConfigurationWarningException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafConfigurationWarningException {
@@ -864,6 +879,7 @@ impl WafConfigurationWarningException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationInternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafTagOperationInternalErrorException {
@@ -931,6 +947,7 @@ impl WafTagOperationInternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafTagOperationException {
@@ -1004,6 +1021,7 @@ impl WafTagOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidPermissionPolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafInvalidPermissionPolicyException {
@@ -1071,6 +1089,7 @@ impl WafInvalidPermissionPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafServiceLinkedRoleErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafServiceLinkedRoleErrorException {
@@ -1138,6 +1157,7 @@ impl WafServiceLinkedRoleErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLogDestinationPermissionIssueException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafLogDestinationPermissionIssueException {
@@ -1205,6 +1225,7 @@ impl WafLogDestinationPermissionIssueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAssociatedItemException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafAssociatedItemException {

@@ -5349,11 +5349,14 @@ impl UpdateMlModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub ml_model_name: std::option::Option<std::string::String>,
     /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
+    #[doc(hidden)]
     pub score_threshold: std::option::Option<f32>,
 }
 impl UpdateMlModelInput {
@@ -5386,8 +5389,10 @@ impl std::fmt::Debug for UpdateMlModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    #[doc(hidden)]
     pub evaluation_name: std::option::Option<std::string::String>,
 }
 impl UpdateEvaluationInput {
@@ -5414,8 +5419,10 @@ impl std::fmt::Debug for UpdateEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
 }
 impl UpdateDataSourceInput {
@@ -5442,8 +5449,10 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBatchPredictionInput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub batch_prediction_name: std::option::Option<std::string::String>,
 }
 impl UpdateBatchPredictionInput {
@@ -5470,11 +5479,14 @@ impl std::fmt::Debug for UpdateBatchPredictionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictInput {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A map of variable name-value pairs that represent an observation.</p>
+    #[doc(hidden)]
     pub record:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub predict_endpoint: std::option::Option<std::string::String>,
 }
 impl PredictInput {
@@ -5509,10 +5521,12 @@ impl std::fmt::Debug for PredictInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
+    #[doc(hidden)]
     pub verbose: bool,
 }
 impl GetMlModelInput {
@@ -5541,6 +5555,7 @@ impl std::fmt::Debug for GetMlModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvaluationInput {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl GetEvaluationInput {
@@ -5562,10 +5577,12 @@ impl std::fmt::Debug for GetEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
     /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
+    #[doc(hidden)]
     pub verbose: bool,
 }
 impl GetDataSourceInput {
@@ -5594,6 +5611,7 @@ impl std::fmt::Debug for GetDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl GetBatchPredictionInput {
@@ -5615,8 +5633,10 @@ impl std::fmt::Debug for GetBatchPredictionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl DescribeTagsInput {
@@ -5654,18 +5674,25 @@ pub struct DescribeMlModelsInput {
     /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
     /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    #[doc(hidden)]
     pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    #[doc(hidden)]
     pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    #[doc(hidden)]
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    #[doc(hidden)]
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    #[doc(hidden)]
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -5674,6 +5701,7 @@ pub struct DescribeMlModelsInput {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
     /// <ul>
@@ -5681,10 +5709,13 @@ pub struct DescribeMlModelsInput {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeMlModelsInput {
@@ -5787,18 +5818,25 @@ pub struct DescribeEvaluationsInput {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    #[doc(hidden)]
     pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    #[doc(hidden)]
     pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    #[doc(hidden)]
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    #[doc(hidden)]
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    #[doc(hidden)]
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -5807,6 +5845,7 @@ pub struct DescribeEvaluationsInput {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
@@ -5814,10 +5853,13 @@ pub struct DescribeEvaluationsInput {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeEvaluationsInput {
@@ -5916,18 +5958,25 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    #[doc(hidden)]
     pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    #[doc(hidden)]
     pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    #[doc(hidden)]
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    #[doc(hidden)]
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    #[doc(hidden)]
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -5936,6 +5985,7 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
@@ -5943,10 +5993,13 @@ pub struct DescribeDataSourcesInput {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The ID of the page in the paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeDataSourcesInput {
@@ -6045,18 +6098,25 @@ pub struct DescribeBatchPredictionsInput {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::string::String>,
     /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    #[doc(hidden)]
     pub gt: std::option::Option<std::string::String>,
     /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    #[doc(hidden)]
     pub lt: std::option::Option<std::string::String>,
     /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    #[doc(hidden)]
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    #[doc(hidden)]
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    #[doc(hidden)]
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
@@ -6065,6 +6125,7 @@ pub struct DescribeBatchPredictionsInput {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
     /// <ul>
@@ -6072,10 +6133,13 @@ pub struct DescribeBatchPredictionsInput {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>An ID of the page in the paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeBatchPredictionsInput {
@@ -6169,10 +6233,13 @@ impl std::fmt::Debug for DescribeBatchPredictionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the tagged ML object.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl DeleteTagsInput {
@@ -6204,6 +6271,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteRealtimeEndpointInput {
@@ -6225,6 +6293,7 @@ impl std::fmt::Debug for DeleteRealtimeEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlModelInput {
@@ -6246,6 +6315,7 @@ impl std::fmt::Debug for DeleteMlModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationInput {
@@ -6267,6 +6337,7 @@ impl std::fmt::Debug for DeleteEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
@@ -6288,6 +6359,7 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchPredictionInput {
@@ -6309,6 +6381,7 @@ impl std::fmt::Debug for DeleteBatchPredictionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl CreateRealtimeEndpointInput {
@@ -6330,8 +6403,10 @@ impl std::fmt::Debug for CreateRealtimeEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub ml_model_name: std::option::Option<std::string::String>,
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
     /// <ul>
@@ -6340,6 +6415,7 @@ pub struct CreateMlModelInput {
     /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
     /// </ul>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub ml_model_type: std::option::Option<crate::model::MlModelType>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -6350,13 +6426,17 @@ pub struct CreateMlModelInput {
     /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <code>DataSource</code> that points to the training data.</p>
+    #[doc(hidden)]
     pub training_data_source_id: std::option::Option<std::string::String>,
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    #[doc(hidden)]
     pub recipe: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    #[doc(hidden)]
     pub recipe_uri: std::option::Option<std::string::String>,
 }
 impl CreateMlModelInput {
@@ -6425,13 +6505,17 @@ impl std::fmt::Debug for CreateMlModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+    #[doc(hidden)]
     pub evaluation_name: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+    #[doc(hidden)]
     pub evaluation_data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateEvaluationInput {
@@ -6469,8 +6553,10 @@ impl std::fmt::Debug for CreateEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromS3Input {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
@@ -6479,8 +6565,10 @@ pub struct CreateDataSourceFromS3Input {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub data_spec: std::option::Option<crate::model::S3DataSpec>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+    #[doc(hidden)]
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromS3Input {
@@ -6523,8 +6611,10 @@ impl std::fmt::Debug for CreateDataSourceFromS3Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromRedshiftInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
@@ -6540,14 +6630,17 @@ pub struct CreateDataSourceFromRedshiftInput {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub data_spec: std::option::Option<crate::model::RedshiftDataSpec>,
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
     /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
     /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
+    #[doc(hidden)]
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRedshiftInput {
@@ -6606,8 +6699,10 @@ impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromRdsInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
@@ -6626,11 +6721,14 @@ pub struct CreateDataSourceFromRdsInput {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub rds_data: std::option::Option<crate::model::RdsDataSpec>,
     /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+    #[doc(hidden)]
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRdsInput {
@@ -6689,15 +6787,20 @@ impl std::fmt::Debug for CreateDataSourceFromRdsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
+    #[doc(hidden)]
     pub batch_prediction_name: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    #[doc(hidden)]
     pub batch_prediction_data_source_id: std::option::Option<std::string::String>,
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub output_uri: std::option::Option<std::string::String>,
 }
 impl CreateBatchPredictionInput {
@@ -6743,10 +6846,13 @@ impl std::fmt::Debug for CreateBatchPredictionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object to tag.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
 impl AddTagsInput {

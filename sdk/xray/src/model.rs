@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
+    #[doc(hidden)]
     pub sampling_rule: std::option::Option<crate::model::SamplingRule>,
     /// <p>When the rule was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the rule was last modified.</p>
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SamplingRuleRecord {
@@ -106,30 +109,43 @@ impl SamplingRuleRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingRule {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the sampling rule.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    #[doc(hidden)]
     pub fixed_rate: f64,
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    #[doc(hidden)]
     pub reservoir_size: i32,
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<std::string::String>,
     /// <p>Matches the hostname from a request URL.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Matches the HTTP method of a request.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Matches the path from a request URL.</p>
+    #[doc(hidden)]
     pub url_path: std::option::Option<std::string::String>,
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
+    #[doc(hidden)]
     pub version: i32,
     /// <p>Matches attributes derived from the request.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -409,28 +425,40 @@ impl SamplingRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingRuleUpdate {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the sampling rule.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    #[doc(hidden)]
     pub fixed_rate: std::option::Option<f64>,
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    #[doc(hidden)]
     pub reservoir_size: std::option::Option<i32>,
     /// <p>Matches the hostname from a request URL.</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<std::string::String>,
     /// <p>Matches the HTTP method of a request.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Matches the path from a request URL.</p>
+    #[doc(hidden)]
     pub url_path: std::option::Option<std::string::String>,
     /// <p>Matches attributes derived from the request.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -693,16 +721,20 @@ impl SamplingRuleUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The unique case-sensitive name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The filter expression defining the parameters to include traces.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
 impl Group {
@@ -831,8 +863,10 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightsConfiguration {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
+    #[doc(hidden)]
     pub insights_enabled: std::option::Option<bool>,
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
+    #[doc(hidden)]
     pub notifications_enabled: std::option::Option<bool>,
 }
 impl InsightsConfiguration {
@@ -910,8 +944,10 @@ impl InsightsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -983,10 +1019,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedTraceSegment {
     /// <p>The segment's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The error that caused processing to fail.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnprocessedTraceSegment {
@@ -1075,16 +1114,22 @@ impl UnprocessedTraceSegment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelemetryRecord {
     /// <p></p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
+    #[doc(hidden)]
     pub segments_received_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub segments_sent_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub segments_spillover_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub segments_rejected_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub backend_connection_errors: std::option::Option<crate::model::BackendConnectionErrors>,
 }
 impl TelemetryRecord {
@@ -1236,16 +1281,22 @@ impl TelemetryRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendConnectionErrors {
     /// <p></p>
+    #[doc(hidden)]
     pub timeout_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub connection_refused_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub http_code4_xx_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub http_code5_xx_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub unknown_host_count: std::option::Option<i32>,
     /// <p></p>
+    #[doc(hidden)]
     pub other_count: std::option::Option<i32>,
 }
 impl BackendConnectionErrors {
@@ -1385,10 +1436,13 @@ impl BackendConnectionErrors {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EncryptionStatus>,
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionType>,
 }
 impl EncryptionConfig {
@@ -1593,22 +1647,31 @@ impl AsRef<str> for EncryptionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<f64>,
     /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
+    #[doc(hidden)]
     pub response_time: std::option::Option<f64>,
     /// <p>The root segment document has a 500 series error.</p>
+    #[doc(hidden)]
     pub has_fault: std::option::Option<bool>,
     /// <p>The root segment document has a 400 series error.</p>
+    #[doc(hidden)]
     pub has_error: std::option::Option<bool>,
     /// <p>One or more of the segment documents has a 429 throttling error.</p>
+    #[doc(hidden)]
     pub has_throttle: std::option::Option<bool>,
     /// <p>One or more of the segment documents is in progress.</p>
+    #[doc(hidden)]
     pub is_partial: std::option::Option<bool>,
     /// <p>Information about the HTTP request served by the trace.</p>
+    #[doc(hidden)]
     pub http: std::option::Option<crate::model::Http>,
     /// <p>Annotations from the trace's segment documents.</p>
+    #[doc(hidden)]
     pub annotations: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1616,28 +1679,39 @@ pub struct TraceSummary {
         >,
     >,
     /// <p>Users from the trace's segment documents.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::TraceUser>>,
     /// <p>Service IDs from the trace's segment documents.</p>
+    #[doc(hidden)]
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub resource_ar_ns: std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub availability_zones:
         std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
     /// <p>The root of a trace.</p>
+    #[doc(hidden)]
     pub entry_point: std::option::Option<crate::model::ServiceId>,
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub fault_root_causes: std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>,
     /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub error_root_causes: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
+    #[doc(hidden)]
     pub response_time_root_causes:
         std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
     /// <p>The revision number of a trace.</p>
+    #[doc(hidden)]
     pub revision: i32,
     /// <p>The matched time stamp of a defined event.</p>
+    #[doc(hidden)]
     pub matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TraceSummary {
@@ -2135,8 +2209,10 @@ impl TraceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    #[doc(hidden)]
     pub client_impacting: std::option::Option<bool>,
 }
 impl ResponseTimeRootCause {
@@ -2218,16 +2294,22 @@ impl ResponseTimeRootCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseTimeRootCauseService {
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A collection of associated service names.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type associated to the service.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The account ID associated to the service.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
+    #[doc(hidden)]
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    #[doc(hidden)]
     pub inferred: std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseService {
@@ -2386,10 +2468,13 @@ impl ResponseTimeRootCauseService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseTimeRootCauseEntity {
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type and messages of the exceptions.</p>
+    #[doc(hidden)]
     pub coverage: std::option::Option<f64>,
     /// <p>A flag that denotes a remote subsegment.</p>
+    #[doc(hidden)]
     pub remote: std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseEntity {
@@ -2478,8 +2563,10 @@ impl ResponseTimeRootCauseEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    #[doc(hidden)]
     pub client_impacting: std::option::Option<bool>,
 }
 impl ErrorRootCause {
@@ -2561,16 +2648,22 @@ impl ErrorRootCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorRootCauseService {
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A collection of associated service names.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type associated to the service.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The account ID associated to the service.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
+    #[doc(hidden)]
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    #[doc(hidden)]
     pub inferred: std::option::Option<bool>,
 }
 impl ErrorRootCauseService {
@@ -2729,10 +2822,13 @@ impl ErrorRootCauseService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorRootCauseEntity {
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The types and messages of the exceptions.</p>
+    #[doc(hidden)]
     pub exceptions: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
     /// <p>A flag that denotes a remote subsegment.</p>
+    #[doc(hidden)]
     pub remote: std::option::Option<bool>,
 }
 impl ErrorRootCauseEntity {
@@ -2830,8 +2926,10 @@ impl ErrorRootCauseEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootCauseException {
     /// <p>The name of the exception.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message of the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RootCauseException {
@@ -2903,8 +3001,10 @@ impl RootCauseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    #[doc(hidden)]
     pub client_impacting: std::option::Option<bool>,
 }
 impl FaultRootCause {
@@ -2986,16 +3086,22 @@ impl FaultRootCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultRootCauseService {
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A collection of associated service names.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type associated to the service.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The account ID associated to the service.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
+    #[doc(hidden)]
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    #[doc(hidden)]
     pub inferred: std::option::Option<bool>,
 }
 impl FaultRootCauseService {
@@ -3154,10 +3260,13 @@ impl FaultRootCauseService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultRootCauseEntity {
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The types and messages of the exceptions.</p>
+    #[doc(hidden)]
     pub exceptions: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
     /// <p>A flag that denotes a remote subsegment.</p>
+    #[doc(hidden)]
     pub remote: std::option::Option<bool>,
 }
 impl FaultRootCauseEntity {
@@ -3255,12 +3364,16 @@ impl FaultRootCauseEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceId {
     /// <p></p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p></p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ServiceId {
@@ -3375,6 +3488,7 @@ impl ServiceId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZoneDetail {
@@ -3427,6 +3541,7 @@ impl AvailabilityZoneDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InstanceIdDetail {
@@ -3479,6 +3594,7 @@ impl InstanceIdDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ResourceArnDetail {
@@ -3531,8 +3647,10 @@ impl ResourceArnDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TraceUser {
     /// <p>The user's name.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Services that the user's request hit.</p>
+    #[doc(hidden)]
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
 }
 impl TraceUser {
@@ -3613,8 +3731,10 @@ impl TraceUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
+    #[doc(hidden)]
     pub annotation_value: std::option::Option<crate::model::AnnotationValue>,
     /// <p>Services to which the annotation applies.</p>
+    #[doc(hidden)]
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
 }
 impl ValueWithServiceIds {
@@ -3764,14 +3884,19 @@ impl AnnotationValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Http {
     /// <p>The request URL.</p>
+    #[doc(hidden)]
     pub http_url: std::option::Option<std::string::String>,
     /// <p>The response status.</p>
+    #[doc(hidden)]
     pub http_status: std::option::Option<i32>,
     /// <p>The request method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The request's user agent string.</p>
+    #[doc(hidden)]
     pub user_agent: std::option::Option<std::string::String>,
     /// <p>The IP address of the requestor.</p>
+    #[doc(hidden)]
     pub client_ip: std::option::Option<std::string::String>,
 }
 impl Http {
@@ -3894,8 +4019,10 @@ impl Http {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SamplingStrategyName>,
     /// <p>The value of a sampling rule.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl SamplingStrategy {
@@ -4080,14 +4207,19 @@ impl AsRef<str> for TimeRangeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>Identifier for the service. Unique within the service map.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
     /// <p>The canonical name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of names for the service, including the canonical name.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates that the service was the first service to process a request.</p>
+    #[doc(hidden)]
     pub root: std::option::Option<bool>,
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The type of service.</p>
     /// <ul>
@@ -4096,20 +4228,28 @@ pub struct Service {
     /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
     /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The service's state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The start time of the first segment that the service generated.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment that the service generated.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Connections to downstream services.</p>
+    #[doc(hidden)]
     pub edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
     /// <p>Aggregated statistics for the service.</p>
+    #[doc(hidden)]
     pub summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
     /// <p>A histogram that maps the spread of service durations.</p>
+    #[doc(hidden)]
     pub duration_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     /// <p>A histogram that maps the spread of service response times.</p>
+    #[doc(hidden)]
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
 }
 impl Service {
@@ -4433,8 +4573,10 @@ impl Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistogramEntry {
     /// <p>The value of the entry.</p>
+    #[doc(hidden)]
     pub value: f64,
     /// <p>The prevalence of the entry.</p>
+    #[doc(hidden)]
     pub count: i32,
 }
 impl HistogramEntry {
@@ -4506,14 +4648,19 @@ impl HistogramEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
+    #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
+    #[doc(hidden)]
     pub error_statistics: std::option::Option<crate::model::ErrorStatistics>,
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
+    #[doc(hidden)]
     pub fault_statistics: std::option::Option<crate::model::FaultStatistics>,
     /// <p>The total number of completed requests.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
+    #[doc(hidden)]
     pub total_response_time: std::option::Option<f64>,
 }
 impl ServiceStatistics {
@@ -4642,8 +4789,10 @@ impl ServiceStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
+    #[doc(hidden)]
     pub other_count: std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i64>,
 }
 impl FaultStatistics {
@@ -4715,10 +4864,13 @@ impl FaultStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorStatistics {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    #[doc(hidden)]
     pub throttle_count: std::option::Option<i64>,
     /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
+    #[doc(hidden)]
     pub other_count: std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i64>,
 }
 impl ErrorStatistics {
@@ -4807,16 +4959,22 @@ impl ErrorStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
     /// <p>The start time of the first segment on the edge.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment on the edge.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Response statistics for segments on the edge.</p>
+    #[doc(hidden)]
     pub summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
     /// <p>A histogram that maps the spread of client response times on an edge.</p>
+    #[doc(hidden)]
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     /// <p>Aliases for the edge.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
 impl Edge {
@@ -4984,10 +5142,13 @@ impl Edge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alias {
     /// <p>The canonical name of the alias.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of names for the alias, including the canonical name.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of the alias.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Alias {
@@ -5085,14 +5246,19 @@ impl Alias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdgeStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
+    #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
+    #[doc(hidden)]
     pub error_statistics: std::option::Option<crate::model::ErrorStatistics>,
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
+    #[doc(hidden)]
     pub fault_statistics: std::option::Option<crate::model::FaultStatistics>,
     /// <p>The total number of completed requests.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
+    #[doc(hidden)]
     pub total_response_time: std::option::Option<f64>,
 }
 impl EdgeStatistics {
@@ -5221,14 +5387,19 @@ impl EdgeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Response statistics for an edge.</p>
+    #[doc(hidden)]
     pub edge_summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
     /// <p>Response statistics for a service.</p>
+    #[doc(hidden)]
     pub service_summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
     /// <p>The forecasted high and low fault count values.</p>
+    #[doc(hidden)]
     pub service_forecast_statistics: std::option::Option<crate::model::ForecastStatistics>,
     /// <p>The response time histogram for the selected entities.</p>
+    #[doc(hidden)]
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
 }
 impl TimeSeriesServiceStatistics {
@@ -5390,8 +5561,10 @@ impl TimeSeriesServiceStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastStatistics {
     /// <p>The upper limit of fault counts for a service.</p>
+    #[doc(hidden)]
     pub fault_count_high: std::option::Option<i64>,
     /// <p>The lower limit of fault counts for a service.</p>
+    #[doc(hidden)]
     pub fault_count_low: std::option::Option<i64>,
 }
 impl ForecastStatistics {
@@ -5463,10 +5636,13 @@ impl ForecastStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedStatistics {
     /// <p>The name of the sampling rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnprocessedStatistics {
@@ -5555,14 +5731,19 @@ impl UnprocessedStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    #[doc(hidden)]
     pub fixed_rate: f64,
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
+    #[doc(hidden)]
     pub reservoir_quota: std::option::Option<i32>,
     /// <p>When the reservoir quota expires.</p>
+    #[doc(hidden)]
     pub reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
+    #[doc(hidden)]
     pub interval: std::option::Option<i32>,
 }
 impl SamplingTargetDocument {
@@ -5688,16 +5869,22 @@ impl SamplingTargetDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the service in hexadecimal.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The current time.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
+    #[doc(hidden)]
     pub request_count: i32,
     /// <p>The number of requests recorded.</p>
+    #[doc(hidden)]
     pub sampled_count: i32,
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    #[doc(hidden)]
     pub borrow_count: i32,
 }
 impl SamplingStatisticsDocument {
@@ -5840,14 +6027,19 @@ impl SamplingStatisticsDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The start time of the reporting window.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
+    #[doc(hidden)]
     pub request_count: i32,
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    #[doc(hidden)]
     pub borrow_count: i32,
     /// <p>The number of requests recorded.</p>
+    #[doc(hidden)]
     pub sampled_count: i32,
 }
 impl SamplingStatisticSummary {
@@ -5973,32 +6165,45 @@ impl SamplingStatisticSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightSummary {
     /// <p>The insights unique identifier. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the group that the insight belongs to.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub root_cause_service_id: std::option::Option<crate::model::ServiceId>,
     /// <p> Categories The categories that label and describe the type of insight.</p>
+    #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
     /// <p>The current state of the insight.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    #[doc(hidden)]
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    #[doc(hidden)]
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
+    #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InsightSummary {
@@ -6313,6 +6518,7 @@ impl InsightSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalousService {
     /// <p></p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<crate::model::ServiceId>,
 }
 impl AnomalousService {
@@ -6370,10 +6576,13 @@ impl AnomalousService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestImpactStatistics {
     /// <p>The number of requests that have resulted in a fault,</p>
+    #[doc(hidden)]
     pub fault_count: std::option::Option<i64>,
     /// <p>The number of successful requests.</p>
+    #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
     /// <p>The total number of requests to the service.</p>
+    #[doc(hidden)]
     pub total_count: std::option::Option<i64>,
 }
 impl RequestImpactStatistics {
@@ -6568,6 +6777,7 @@ impl AsRef<str> for InsightCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightImpactGraphService {
     /// <p>Identifier for the service. Unique within the service map.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
@@ -6576,14 +6786,19 @@ pub struct InsightImpactGraphService {
     /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
     /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The canonical name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of names for the service, including the canonical name.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Connections to downstream services.</p>
+    #[doc(hidden)]
     pub edges: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphEdge>>,
 }
 impl InsightImpactGraphService {
@@ -6759,6 +6974,7 @@ impl InsightImpactGraphService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
 }
 impl InsightImpactGraphEdge {
@@ -6813,16 +7029,21 @@ impl InsightImpactGraphEdge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
+    #[doc(hidden)]
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
+    #[doc(hidden)]
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
+    #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
 }
 impl InsightEvent {
@@ -6983,30 +7204,42 @@ impl InsightEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Insight {
     /// <p>The insights unique identifier. </p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the group that the insight belongs to.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub root_cause_service_id: std::option::Option<crate::model::ServiceId>,
     /// <p>The categories that label and describe the type of insight.</p>
+    #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
     /// <p>The current state of the insight.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
+    #[doc(hidden)]
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
+    #[doc(hidden)]
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
+    #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
 }
 impl Insight {
@@ -7301,16 +7534,20 @@ impl Insight {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupSummary {
     /// <p>The unique case-sensitive name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the group generated based on the GroupName.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The filter expression defining the parameters to include traces.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
 impl GroupSummary {
@@ -7439,12 +7676,16 @@ impl GroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<f64>,
     /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    #[doc(hidden)]
     pub limit_exceeded: std::option::Option<bool>,
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
+    #[doc(hidden)]
     pub segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
 }
 impl Trace {
@@ -7560,8 +7801,10 @@ impl Trace {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Segment {
     /// <p>The segment's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The segment document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl Segment {

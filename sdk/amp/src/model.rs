@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// The field name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Message describing why the field failed validation.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,16 +148,22 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// Unique string identifying this workspace.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// Alias of this workspace.
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// The AmazonResourceName of this workspace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The status of this workspace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The time when the workspace was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -322,6 +330,7 @@ impl WorkspaceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::WorkspaceStatusCode>,
 }
 impl WorkspaceStatus {
@@ -452,18 +461,25 @@ impl AsRef<str> for WorkspaceStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceDescription {
     /// Unique string identifying this workspace.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// Alias of this workspace.
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of this workspace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The status of this workspace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// Prometheus endpoint URI.
+    #[doc(hidden)]
     pub prometheus_endpoint: std::option::Option<std::string::String>,
     /// The time when the workspace was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -650,16 +666,22 @@ impl WorkspaceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupsNamespaceSummary {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The status of rule groups namespace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The time when the rule groups namespace was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -829,8 +851,10 @@ impl RuleGroupsNamespaceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
     /// The reason for failure if any.
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl RuleGroupsNamespaceStatus {
@@ -986,18 +1010,25 @@ impl AsRef<str> for RuleGroupsNamespaceStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The status of rule groups namespace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The rule groups namespace data.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the rule groups namespace was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1184,8 +1215,10 @@ impl RuleGroupsNamespaceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlertManagerDefinitionStatus {
     /// Status code of this definition.
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
     /// The reason for failure if any.
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl AlertManagerDefinitionStatus {
@@ -1346,12 +1379,16 @@ impl AsRef<str> for AlertManagerDefinitionStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
     /// The alert manager definition.
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the alert manager definition was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The time when the alert manager definition was modified.
+    #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AlertManagerDefinitionDescription {

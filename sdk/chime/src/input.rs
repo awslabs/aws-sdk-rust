@@ -33806,18 +33806,25 @@ impl ValidateE911AddressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateE911AddressInput {
     /// <p>The AWS account ID.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    #[doc(hidden)]
     pub street_number: std::option::Option<std::string::String>,
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    #[doc(hidden)]
     pub street_info: std::option::Option<std::string::String>,
     /// <p>The address city, such as <code>Portland</code>.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The address state, such as <code>ME</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The address country, such as <code>US</code>. </p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The address postal code, such as <code>04352</code>.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
 }
 impl ValidateE911AddressInput {
@@ -33869,10 +33876,13 @@ impl std::fmt::Debug for ValidateE911AddressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+    #[doc(hidden)]
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInput {
@@ -33906,10 +33916,13 @@ impl std::fmt::Debug for UpdateVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
 }
 impl UpdateVoiceConnectorInput {
@@ -33941,10 +33954,13 @@ impl std::fmt::Debug for UpdateVoiceConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The user settings to update.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl UpdateUserSettingsInput {
@@ -33976,14 +33992,19 @@ impl std::fmt::Debug for UpdateUserSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::License>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The Alexa for Business metadata.</p>
+    #[doc(hidden)]
     pub alexa_for_business_metadata: std::option::Option<crate::model::AlexaForBusinessMetadata>,
 }
 impl UpdateUserInput {
@@ -34030,12 +34051,16 @@ impl std::fmt::Debug for UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipRuleInput {
     /// <p>The SIP rule ID.</p>
+    #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
     /// <p>The new name for the specified SIP rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The new value of the list of target applications.</p>
+    #[doc(hidden)]
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
 }
@@ -34075,10 +34100,13 @@ impl std::fmt::Debug for UpdateSipRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipMediaApplicationCallInput {
     /// <p>The ID of the SIP media application handling the call.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the call transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -34114,10 +34142,13 @@ impl std::fmt::Debug for UpdateSipMediaApplicationCallInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The new name for the specified SIP media application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new set of endpoints for the specified SIP media application.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
 }
 impl UpdateSipMediaApplicationInput {
@@ -34149,12 +34180,16 @@ impl std::fmt::Debug for UpdateSipMediaApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The member ID.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The role of the member.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
 impl UpdateRoomMembershipInput {
@@ -34191,10 +34226,13 @@ impl std::fmt::Debug for UpdateRoomMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The room name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateRoomInput {
@@ -34226,12 +34264,16 @@ impl std::fmt::Debug for UpdateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session ID.</p>
+    #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
     /// <p>The proxy session capabilities.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The number of minutes allowed for the proxy session.</p>
+    #[doc(hidden)]
     pub expiry_minutes: std::option::Option<i32>,
 }
 impl UpdateProxySessionInput {
@@ -34268,6 +34310,7 @@ impl std::fmt::Debug for UpdateProxySessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberSettingsInput {
     /// <p>The default outbound calling name for the account.</p>
+    #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberSettingsInput {
@@ -34289,10 +34332,13 @@ impl std::fmt::Debug for UpdatePhoneNumberSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberInput {
     /// <p>The phone number ID.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The outbound calling name associated with the phone number.</p>
+    #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberInput {
@@ -34324,8 +34370,10 @@ impl std::fmt::Debug for UpdatePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Business Calling settings.</p>
+    #[doc(hidden)]
     pub business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
     /// <p>The Amazon Chime Voice Connector settings.</p>
+    #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInput {
@@ -34352,8 +34400,10 @@ impl std::fmt::Debug for UpdateGlobalSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelReadMarkerInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelReadMarkerInput {
@@ -34380,14 +34430,19 @@ impl std::fmt::Debug for UpdateChannelReadMarkerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string of the message being updated.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The content of the message being updated.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The metadata of the message being updated.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageInput {
@@ -34429,14 +34484,19 @@ impl std::fmt::Debug for UpdateChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The mode of the update request.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The metadata for the update request.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -34478,10 +34538,13 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>When true, stops the specified bot from running in your account.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
 }
 impl UpdateBotInput {
@@ -34513,10 +34576,13 @@ impl std::fmt::Debug for UpdateBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceUserInput {
@@ -34548,10 +34614,13 @@ impl std::fmt::Debug for UpdateAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name that you want to change.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata that you want to change.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceInput {
@@ -34583,8 +34652,10 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account settings to update.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
 impl UpdateAccountSettingsInput {
@@ -34611,10 +34682,13 @@ impl std::fmt::Debug for UpdateAccountSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The new name for the specified Amazon Chime account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
+    #[doc(hidden)]
     pub default_license: std::option::Option<crate::model::License>,
 }
 impl UpdateAccountInput {
@@ -34646,8 +34720,10 @@ impl std::fmt::Debug for UpdateAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -34674,8 +34750,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagMeetingInput {
@@ -34702,10 +34780,13 @@ impl std::fmt::Debug for UntagMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagAttendeeInput {
@@ -34737,8 +34818,10 @@ impl std::fmt::Debug for UntagAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -34765,8 +34848,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagMeetingInput {
@@ -34793,10 +34878,13 @@ impl std::fmt::Debug for TagMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagAttendeeInput {
@@ -34828,6 +34916,7 @@ impl std::fmt::Debug for TagAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl StopMeetingTranscriptionInput {
@@ -34849,8 +34938,10 @@ impl std::fmt::Debug for StopMeetingTranscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    #[doc(hidden)]
     pub transcription_configuration: std::option::Option<crate::model::TranscriptionConfiguration>,
 }
 impl StartMeetingTranscriptionInput {
@@ -34882,18 +34973,25 @@ impl std::fmt::Debug for StartMeetingTranscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    #[doc(hidden)]
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
     /// <p>The optional metadata for each message.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>Idempotency</code> token for each client request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl SendChannelMessageInput {
@@ -34945,20 +35043,28 @@ impl std::fmt::Debug for SendChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersInput {
     /// <p>The area code used to filter results. Only applies to the US.</p>
+    #[doc(hidden)]
     pub area_code: std::option::Option<std::string::String>,
     /// <p>The city used to filter results. Only applies to the US.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
+    #[doc(hidden)]
     pub toll_free_prefix: std::option::Option<std::string::String>,
     /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token used to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchAvailablePhoneNumbersInput {
@@ -35015,6 +35121,7 @@ impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestorePhoneNumberInput {
     /// <p>The phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl RestorePhoneNumberInput {
@@ -35036,8 +35143,10 @@ impl std::fmt::Debug for RestorePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetPersonalPinInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl ResetPersonalPinInput {
@@ -35064,8 +35173,10 @@ impl std::fmt::Debug for ResetPersonalPinInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegenerateSecurityTokenInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
 }
 impl RegenerateSecurityTokenInput {
@@ -35092,10 +35203,13 @@ impl std::fmt::Debug for RegenerateSecurityTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactRoomMessageInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The message ID.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl RedactRoomMessageInput {
@@ -35127,10 +35241,13 @@ impl std::fmt::Debug for RedactRoomMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactConversationMessageInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The conversation ID.</p>
+    #[doc(hidden)]
     pub conversation_id: std::option::Option<std::string::String>,
     /// <p>The message ID.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl RedactConversationMessageInput {
@@ -35162,10 +35279,13 @@ impl std::fmt::Debug for RedactConversationMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactChannelMessageInput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being redacted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl RedactChannelMessageInput {
@@ -35197,8 +35317,10 @@ impl std::fmt::Debug for RedactChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The termination SIP credentials.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::vec::Vec<crate::model::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInput {
@@ -35225,8 +35347,10 @@ impl std::fmt::Debug for PutVoiceConnectorTerminationCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The termination setting details to add.</p>
+    #[doc(hidden)]
     pub termination: std::option::Option<crate::model::Termination>,
 }
 impl PutVoiceConnectorTerminationInput {
@@ -35253,8 +35377,10 @@ impl std::fmt::Debug for PutVoiceConnectorTerminationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The streaming configuration details to add.</p>
+    #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
 }
 impl PutVoiceConnectorStreamingConfigurationInput {
@@ -35283,14 +35409,19 @@ impl std::fmt::Debug for PutVoiceConnectorStreamingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorProxyInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The default number of minutes allowed for proxy sessions.</p>
+    #[doc(hidden)]
     pub default_session_expiry_minutes: std::option::Option<i32>,
     /// <p>The countries for proxy phone numbers to be selected from.</p>
+    #[doc(hidden)]
     pub phone_number_pool_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The phone number to route calls to after a proxy session expires.</p>
+    #[doc(hidden)]
     pub fall_back_phone_number: std::option::Option<std::string::String>,
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
 }
 impl PutVoiceConnectorProxyInput {
@@ -35338,8 +35469,10 @@ impl std::fmt::Debug for PutVoiceConnectorProxyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The origination setting details to add.</p>
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
 }
 impl PutVoiceConnectorOriginationInput {
@@ -35366,8 +35499,10 @@ impl std::fmt::Debug for PutVoiceConnectorOriginationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorLoggingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration details to add.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutVoiceConnectorLoggingConfigurationInput {
@@ -35396,8 +35531,10 @@ impl std::fmt::Debug for PutVoiceConnectorLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The emergency calling configuration details.</p>
+    #[doc(hidden)]
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
 }
@@ -35430,8 +35567,10 @@ impl std::fmt::Debug for PutVoiceConnectorEmergencyCallingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The actual logging configuration.</p>
+    #[doc(hidden)]
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
 }
@@ -35464,8 +35603,10 @@ impl std::fmt::Debug for PutSipMediaApplicationLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The retention settings.</p>
+    #[doc(hidden)]
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
 }
 impl PutRetentionSettingsInput {
@@ -35492,12 +35633,16 @@ impl std::fmt::Debug for PutRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
+    #[doc(hidden)]
     pub outbound_events_https_endpoint: std::option::Option<std::string::String>,
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl PutEventsConfigurationInput {
@@ -35537,8 +35682,10 @@ impl std::fmt::Debug for PutEventsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
 }
@@ -35571,8 +35718,10 @@ impl std::fmt::Debug for PutAppInstanceStreamingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time in days to retain data. Data type: number.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
 }
@@ -35605,8 +35754,10 @@ impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogoutUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl LogoutUserInput {
@@ -35633,6 +35784,7 @@ impl std::fmt::Debug for LogoutUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl ListVoiceConnectorTerminationCredentialsInput {
@@ -35654,8 +35806,10 @@ impl std::fmt::Debug for ListVoiceConnectorTerminationCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListVoiceConnectorsInput {
@@ -35682,8 +35836,10 @@ impl std::fmt::Debug for ListVoiceConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorGroupsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListVoiceConnectorGroupsInput {
@@ -35710,14 +35866,19 @@ impl std::fmt::Debug for ListVoiceConnectorGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
+    #[doc(hidden)]
     pub user_email: std::option::Option<std::string::String>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersInput {
@@ -35759,6 +35920,7 @@ impl std::fmt::Debug for ListUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -35780,6 +35942,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSupportedPhoneNumberCountriesInput {
     /// <p>The phone number product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
 }
 impl ListSupportedPhoneNumberCountriesInput {
@@ -35801,10 +35964,13 @@ impl std::fmt::Debug for ListSupportedPhoneNumberCountriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSipRulesInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSipRulesInput {
@@ -35836,8 +36002,10 @@ impl std::fmt::Debug for ListSipRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSipMediaApplicationsInput {
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSipMediaApplicationsInput {
@@ -35864,12 +36032,16 @@ impl std::fmt::Debug for ListSipMediaApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoomsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The member ID (user ID or bot ID).</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoomsInput {
@@ -35906,12 +36078,16 @@ impl std::fmt::Debug for ListRoomsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoomMembershipsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoomMembershipsInput {
@@ -35948,12 +36124,16 @@ impl std::fmt::Debug for ListRoomMembershipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProxySessionsInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProxySessionStatus>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProxySessionsInput {
@@ -35990,16 +36170,22 @@ impl std::fmt::Debug for ListProxySessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersInput {
     /// <p>The phone number status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PhoneNumberStatus>,
     /// <p>The phone number product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The filter to use to limit the number of results.</p>
+    #[doc(hidden)]
     pub filter_name: std::option::Option<crate::model::PhoneNumberAssociationName>,
     /// <p>The value to use for the filter.</p>
+    #[doc(hidden)]
     pub filter_value: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersInput {
@@ -36046,8 +36232,10 @@ impl std::fmt::Debug for ListPhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumberOrdersInput {
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPhoneNumberOrdersInput {
@@ -36074,6 +36262,7 @@ impl std::fmt::Debug for ListPhoneNumberOrdersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeetingTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl ListMeetingTagsInput {
@@ -36095,8 +36284,10 @@ impl std::fmt::Debug for ListMeetingTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeetingsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMeetingsInput {
@@ -36123,8 +36314,10 @@ impl std::fmt::Debug for ListMeetingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMediaCapturePipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMediaCapturePipelinesInput {
@@ -36151,12 +36344,16 @@ impl std::fmt::Debug for ListMediaCapturePipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserInput {
     /// <p>The ARN of the user in the moderated channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserInput {
@@ -36193,14 +36390,19 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelsInput {
@@ -36242,12 +36444,16 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelModeratorsInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelModeratorsInput {
@@ -36284,18 +36490,25 @@ impl std::fmt::Debug for ListChannelModeratorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMessagesInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The initial or starting time stamp for your requested messages.</p>
+    #[doc(hidden)]
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The final or ending time stamp for your requested messages.</p>
+    #[doc(hidden)]
     pub not_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of messages that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMessagesInput {
@@ -36347,12 +36560,16 @@ impl std::fmt::Debug for ListChannelMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of users that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserInput {
@@ -36389,14 +36606,19 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsInput {
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsInput {
@@ -36438,12 +36660,16 @@ impl std::fmt::Debug for ListChannelMembershipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelBansInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of bans that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl ListChannelBansInput {
@@ -36480,10 +36706,13 @@ impl std::fmt::Debug for ListChannelBansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default is 10.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsInput {
@@ -36515,8 +36744,10 @@ impl std::fmt::Debug for ListBotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeeTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl ListAttendeeTagsInput {
@@ -36543,10 +36774,13 @@ impl std::fmt::Debug for ListAttendeeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttendeesInput {
@@ -36578,10 +36812,13 @@ impl std::fmt::Debug for ListAttendeesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of requests that you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUsersInput {
@@ -36613,8 +36850,10 @@ impl std::fmt::Debug for ListAppInstanceUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstancesInput {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesInput {
@@ -36641,10 +36880,13 @@ impl std::fmt::Debug for ListAppInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of administrators that you want to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsInput {
@@ -36676,12 +36918,16 @@ impl std::fmt::Debug for ListAppInstanceAdminsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsInput {
     /// <p>Amazon Chime account name prefix with which to filter results.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>User email address with which to filter results.</p>
+    #[doc(hidden)]
     pub user_email: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccountsInput {
@@ -36718,10 +36964,13 @@ impl std::fmt::Debug for ListAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteUsersInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user email addresses to which to send the email invitation.</p>
+    #[doc(hidden)]
     pub user_email_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
 }
 impl InviteUsersInput {
@@ -36753,6 +37002,7 @@ impl std::fmt::Debug for InviteUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorTerminationHealthInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorTerminationHealthInput {
@@ -36774,6 +37024,7 @@ impl std::fmt::Debug for GetVoiceConnectorTerminationHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorTerminationInput {
@@ -36795,6 +37046,7 @@ impl std::fmt::Debug for GetVoiceConnectorTerminationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorStreamingConfigurationInput {
@@ -36816,6 +37068,7 @@ impl std::fmt::Debug for GetVoiceConnectorStreamingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorProxyInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorProxyInput {
@@ -36837,6 +37090,7 @@ impl std::fmt::Debug for GetVoiceConnectorProxyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorOriginationInput {
@@ -36858,6 +37112,7 @@ impl std::fmt::Debug for GetVoiceConnectorOriginationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorLoggingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorLoggingConfigurationInput {
@@ -36879,6 +37134,7 @@ impl std::fmt::Debug for GetVoiceConnectorLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorGroupInput {
@@ -36900,6 +37156,7 @@ impl std::fmt::Debug for GetVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationInput {
@@ -36921,6 +37178,7 @@ impl std::fmt::Debug for GetVoiceConnectorEmergencyCallingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorInput {
@@ -36942,8 +37200,10 @@ impl std::fmt::Debug for GetVoiceConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetUserSettingsInput {
@@ -36970,8 +37230,10 @@ impl std::fmt::Debug for GetUserSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetUserInput {
@@ -36998,6 +37260,7 @@ impl std::fmt::Debug for GetUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipRuleInput {
     /// <p>The SIP rule ID.</p>
+    #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
 }
 impl GetSipRuleInput {
@@ -37019,6 +37282,7 @@ impl std::fmt::Debug for GetSipRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationInput {
@@ -37040,6 +37304,7 @@ impl std::fmt::Debug for GetSipMediaApplicationLoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
 impl GetSipMediaApplicationInput {
@@ -37061,8 +37326,10 @@ impl std::fmt::Debug for GetSipMediaApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
 }
 impl GetRoomInput {
@@ -37089,6 +37356,7 @@ impl std::fmt::Debug for GetRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetRetentionSettingsInput {
@@ -37110,8 +37378,10 @@ impl std::fmt::Debug for GetRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session ID.</p>
+    #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
 }
 impl GetProxySessionInput {
@@ -37149,6 +37419,7 @@ impl std::fmt::Debug for GetPhoneNumberSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberOrderInput {
     /// <p>The ID for the phone number order.</p>
+    #[doc(hidden)]
     pub phone_number_order_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberOrderInput {
@@ -37170,6 +37441,7 @@ impl std::fmt::Debug for GetPhoneNumberOrderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberInput {
     /// <p>The phone number ID.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberInput {
@@ -37202,6 +37474,7 @@ impl std::fmt::Debug for GetMessagingSessionEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl GetMeetingInput {
@@ -37223,6 +37496,7 @@ impl std::fmt::Debug for GetMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
+    #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
 }
 impl GetMediaCapturePipelineInput {
@@ -37255,8 +37529,10 @@ impl std::fmt::Debug for GetGlobalSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
 }
 impl GetEventsConfigurationInput {
@@ -37283,10 +37559,13 @@ impl std::fmt::Debug for GetEventsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl GetChannelMessageInput {
@@ -37318,8 +37597,10 @@ impl std::fmt::Debug for GetChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
 }
 impl GetBotInput {
@@ -37346,8 +37627,10 @@ impl std::fmt::Debug for GetBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl GetAttendeeInput {
@@ -37374,6 +37657,7 @@ impl std::fmt::Debug for GetAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl GetAppInstanceStreamingConfigurationsInput {
@@ -37395,6 +37679,7 @@ impl std::fmt::Debug for GetAppInstanceStreamingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl GetAppInstanceRetentionSettingsInput {
@@ -37416,6 +37701,7 @@ impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetAccountSettingsInput {
@@ -37437,6 +37723,7 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetAccountInput {
@@ -37458,8 +37745,10 @@ impl std::fmt::Debug for GetAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSigninDelegateGroupsFromAccountInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The sign-in delegate group names.</p>
+    #[doc(hidden)]
     pub group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateSigninDelegateGroupsFromAccountInput {
@@ -37486,8 +37775,10 @@ impl std::fmt::Debug for DisassociateSigninDelegateGroupsFromAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
@@ -37514,8 +37805,10 @@ impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorInput {
@@ -37542,8 +37835,10 @@ impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumberFromUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DisassociatePhoneNumberFromUserInput {
@@ -37570,10 +37865,13 @@ impl std::fmt::Debug for DisassociatePhoneNumberFromUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelModeratorInput {
@@ -37605,10 +37903,13 @@ impl std::fmt::Debug for DescribeChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratedByAppInstanceUserInput {
     /// <p>The ARN of the moderated channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelModeratedByAppInstanceUserInput {
@@ -37640,10 +37941,13 @@ impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipForAppInstanceUserInput {
     /// <p>The ARN of the channel to which the user belongs.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the user in a channel.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelMembershipForAppInstanceUserInput {
@@ -37675,10 +37979,13 @@ impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelMembershipInput {
@@ -37710,10 +38017,13 @@ impl std::fmt::Debug for DescribeChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelBanInput {
     /// <p>The ARN of the channel from which the user is banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member being banned.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelBanInput {
@@ -37745,8 +38055,10 @@ impl std::fmt::Debug for DescribeChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
@@ -37773,6 +38085,7 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceUserInput {
@@ -37794,8 +38107,10 @@ impl std::fmt::Debug for DescribeAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceAdminInput {
@@ -37822,6 +38137,7 @@ impl std::fmt::Debug for DescribeAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceInput {
@@ -37843,8 +38159,10 @@ impl std::fmt::Debug for DescribeAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
+    #[doc(hidden)]
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
@@ -37871,6 +38189,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorTerminationCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorTerminationInput {
@@ -37892,6 +38211,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorTerminationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorStreamingConfigurationInput {
@@ -37913,6 +38233,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorStreamingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorProxyInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorProxyInput {
@@ -37934,6 +38255,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorProxyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorOriginationInput {
@@ -37955,6 +38277,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorOriginationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorGroupInput {
@@ -37976,6 +38299,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
@@ -37998,6 +38322,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorEmergencyCallingConfigurationInput 
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorInput {
@@ -38019,6 +38344,7 @@ impl std::fmt::Debug for DeleteVoiceConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSipRuleInput {
     /// <p>The SIP rule ID.</p>
+    #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
 }
 impl DeleteSipRuleInput {
@@ -38040,6 +38366,7 @@ impl std::fmt::Debug for DeleteSipRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
 impl DeleteSipMediaApplicationInput {
@@ -38061,10 +38388,13 @@ impl std::fmt::Debug for DeleteSipMediaApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The member ID (user ID or bot ID).</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl DeleteRoomMembershipInput {
@@ -38096,8 +38426,10 @@ impl std::fmt::Debug for DeleteRoomMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoomInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The chat room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
 }
 impl DeleteRoomInput {
@@ -38124,8 +38456,10 @@ impl std::fmt::Debug for DeleteRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The proxy session ID.</p>
+    #[doc(hidden)]
     pub proxy_session_id: std::option::Option<std::string::String>,
 }
 impl DeleteProxySessionInput {
@@ -38152,6 +38486,7 @@ impl std::fmt::Debug for DeleteProxySessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePhoneNumberInput {
     /// <p>The phone number ID.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl DeletePhoneNumberInput {
@@ -38173,6 +38508,7 @@ impl std::fmt::Debug for DeletePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl DeleteMeetingInput {
@@ -38194,6 +38530,7 @@ impl std::fmt::Debug for DeleteMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media capture pipeline being deleted. </p>
+    #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeleteMediaCapturePipelineInput {
@@ -38215,8 +38552,10 @@ impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot ID.</p>
+    #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
 }
 impl DeleteEventsConfigurationInput {
@@ -38243,10 +38582,13 @@ impl std::fmt::Debug for DeleteEventsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the moderator being deleted.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelModeratorInput {
@@ -38278,10 +38620,13 @@ impl std::fmt::Debug for DeleteChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being deleted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelMessageInput {
@@ -38313,10 +38658,13 @@ impl std::fmt::Debug for DeleteChannelMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelMembershipInput {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member that you're removing from the channel.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelMembershipInput {
@@ -38348,10 +38696,13 @@ impl std::fmt::Debug for DeleteChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelBanInput {
     /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelBanInput {
@@ -38383,8 +38734,10 @@ impl std::fmt::Debug for DeleteChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// <p>The ARN of the channel being deleted.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -38411,8 +38764,10 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl DeleteAttendeeInput {
@@ -38439,6 +38794,7 @@ impl std::fmt::Debug for DeleteAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceUserInput {
@@ -38460,6 +38816,7 @@ impl std::fmt::Debug for DeleteAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the streaming configurations being deleted.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceStreamingConfigurationsInput {
@@ -38481,8 +38838,10 @@ impl std::fmt::Debug for DeleteAppInstanceStreamingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceAdminInput {
@@ -38509,6 +38868,7 @@ impl std::fmt::Debug for DeleteAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceInput {
@@ -38530,6 +38890,7 @@ impl std::fmt::Debug for DeleteAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccountInput {
@@ -38551,8 +38912,10 @@ impl std::fmt::Debug for DeleteAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceConnectorGroupInput {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
+    #[doc(hidden)]
     pub voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
 }
 impl CreateVoiceConnectorGroupInput {
@@ -38581,10 +38944,13 @@ impl std::fmt::Debug for CreateVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceConnectorInput {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
 }
 impl CreateVoiceConnectorInput {
@@ -38616,12 +38982,16 @@ impl std::fmt::Debug for CreateVoiceConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user name.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The user's email address.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The user type.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
 }
 impl CreateUserInput {
@@ -38658,14 +39028,19 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipRuleInput {
     /// <p>The name of the SIP rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
+    #[doc(hidden)]
     pub trigger_value: std::option::Option<std::string::String>,
     /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
+    #[doc(hidden)]
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
 }
@@ -38710,12 +39085,16 @@ impl std::fmt::Debug for CreateSipRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationCallInput {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
+    #[doc(hidden)]
     pub from_phone_number: std::option::Option<std::string::String>,
     /// <p>The phone number that the service should call.</p>
+    #[doc(hidden)]
     pub to_phone_number: std::option::Option<std::string::String>,
     /// <p>The ID of the SIP media application.</p>
+    #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The SIP headers added to an outbound call leg.</p>
+    #[doc(hidden)]
     pub sip_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -38756,10 +39135,13 @@ impl std::fmt::Debug for CreateSipMediaApplicationCallInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationInput {
     /// <p>The AWS Region assigned to the SIP media application.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The SIP media application name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInput {
@@ -38791,12 +39173,16 @@ impl std::fmt::Debug for CreateSipMediaApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The role of the member.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoomMembershipRole>,
 }
 impl CreateRoomMembershipInput {
@@ -38833,10 +39219,13 @@ impl std::fmt::Debug for CreateRoomMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The idempotency token for the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateRoomInput {
@@ -38868,20 +39257,28 @@ impl std::fmt::Debug for CreateRoomInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>The participant phone numbers.</p>
+    #[doc(hidden)]
     pub participant_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the proxy session.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of minutes allowed for the proxy session.</p>
+    #[doc(hidden)]
     pub expiry_minutes: std::option::Option<i32>,
     /// <p>The proxy session capabilities.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    #[doc(hidden)]
     pub number_selection_behavior: std::option::Option<crate::model::NumberSelectionBehavior>,
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    #[doc(hidden)]
     pub geo_match_level: std::option::Option<crate::model::GeoMatchLevel>,
     /// <p>The country and area code for the proxy phone number.</p>
+    #[doc(hidden)]
     pub geo_match_params: std::option::Option<crate::model::GeoMatchParams>,
 }
 impl CreateProxySessionInput {
@@ -38940,8 +39337,10 @@ impl std::fmt::Debug for CreateProxySessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePhoneNumberOrderInput {
     /// <p>The phone number product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreatePhoneNumberOrderInput {
@@ -38968,20 +39367,27 @@ impl std::fmt::Debug for CreatePhoneNumberOrderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
+    #[doc(hidden)]
     pub notifications_configuration:
         std::option::Option<crate::model::MeetingNotificationConfiguration>,
     /// <p>The request containing the attendees to create.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
 impl CreateMeetingWithAttendeesInput {
@@ -39039,12 +39445,16 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingDialOutInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
+    #[doc(hidden)]
     pub from_phone_number: std::option::Option<std::string::String>,
     /// <p>Phone number called when inviting someone to a meeting.</p>
+    #[doc(hidden)]
     pub to_phone_number: std::option::Option<std::string::String>,
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
+    #[doc(hidden)]
     pub join_token: std::option::Option<std::string::String>,
 }
 impl CreateMeetingDialOutInput {
@@ -39081,17 +39491,23 @@ impl std::fmt::Debug for CreateMeetingDialOutInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    #[doc(hidden)]
     pub notifications_configuration:
         std::option::Option<crate::model::MeetingNotificationConfiguration>,
 }
@@ -39145,16 +39561,22 @@ impl std::fmt::Debug for CreateMeetingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineInput {
     /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are captured.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    #[doc(hidden)]
     pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
     /// <p>The ARN of the sink type.</p>
+    #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The token assigned to the client making the pipeline request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    #[doc(hidden)]
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
@@ -39207,10 +39629,13 @@ impl std::fmt::Debug for CreateMediaCapturePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelModeratorInput {
@@ -39242,12 +39667,16 @@ impl std::fmt::Debug for CreateChannelModeratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member you want to add to the channel.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelMembershipInput {
@@ -39284,10 +39713,13 @@ impl std::fmt::Debug for CreateChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelBanInput {
     /// <p>The ARN of the ban request.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member being banned.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelBanInput {
@@ -39319,20 +39751,28 @@ impl std::fmt::Debug for CreateChannelBanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The ARN of the channel request.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the creation request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl CreateChannelInput {
@@ -39389,10 +39829,13 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bot display name.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl CreateBotInput {
@@ -39424,10 +39867,13 @@ impl std::fmt::Debug for CreateBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAttendeeInput {
@@ -39459,16 +39905,22 @@ impl std::fmt::Debug for CreateAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The user ID of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_id: std::option::Option<std::string::String>,
     /// <p>The user's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInstanceUserInput {
@@ -39515,8 +39967,10 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceAdminInput {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceAdminInput {
@@ -39543,12 +39997,16 @@ impl std::fmt::Debug for CreateAppInstanceAdminInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceInput {
     /// <p>The name of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInstanceInput {
@@ -39585,6 +40043,7 @@ impl std::fmt::Debug for CreateAppInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountInput {
     /// <p>The name of the Amazon Chime account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateAccountInput {
@@ -39606,8 +40065,10 @@ impl std::fmt::Debug for CreateAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The request containing the user IDs and details to update.</p>
+    #[doc(hidden)]
     pub update_user_request_items:
         std::option::Option<std::vec::Vec<crate::model::UpdateUserRequestItem>>,
 }
@@ -39637,6 +40098,7 @@ impl std::fmt::Debug for BatchUpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePhoneNumberInput {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
+    #[doc(hidden)]
     pub update_phone_number_request_items:
         std::option::Option<std::vec::Vec<crate::model::UpdatePhoneNumberRequestItem>>,
 }
@@ -39664,8 +40126,10 @@ impl std::fmt::Debug for BatchUpdatePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUnsuspendUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The request containing the user IDs to unsuspend.</p>
+    #[doc(hidden)]
     pub user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchUnsuspendUserInput {
@@ -39692,8 +40156,10 @@ impl std::fmt::Debug for BatchUnsuspendUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSuspendUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The request containing the user IDs to suspend.</p>
+    #[doc(hidden)]
     pub user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchSuspendUserInput {
@@ -39720,6 +40186,7 @@ impl std::fmt::Debug for BatchSuspendUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
+    #[doc(hidden)]
     pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeletePhoneNumberInput {
@@ -39741,10 +40208,13 @@ impl std::fmt::Debug for BatchDeletePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The room ID.</p>
+    #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
     /// <p>The list of membership items.</p>
+    #[doc(hidden)]
     pub membership_item_list: std::option::Option<std::vec::Vec<crate::model::MembershipItem>>,
 }
 impl BatchCreateRoomMembershipInput {
@@ -39776,12 +40246,16 @@ impl std::fmt::Debug for BatchCreateRoomMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The ARNs of the members you want to add to the channel.</p>
+    #[doc(hidden)]
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
 }
 impl BatchCreateChannelMembershipInput {
@@ -39818,8 +40292,10 @@ impl std::fmt::Debug for BatchCreateChannelMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The request containing the attendees to create.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
 }
 impl BatchCreateAttendeeInput {
@@ -39846,8 +40322,10 @@ impl std::fmt::Debug for BatchCreateAttendeeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The sign-in delegate groups.</p>
+    #[doc(hidden)]
     pub signin_delegate_groups:
         std::option::Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
 }
@@ -39877,10 +40355,13 @@ impl std::fmt::Debug for AssociateSigninDelegateGroupsWithAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumberWithUserInput {
     /// <p>The Amazon Chime account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The phone number, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_number: std::option::Option<std::string::String>,
 }
 impl AssociatePhoneNumberWithUserInput {
@@ -39912,10 +40393,13 @@ impl std::fmt::Debug for AssociatePhoneNumberWithUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    #[doc(hidden)]
     pub force_associate: std::option::Option<bool>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
@@ -39947,10 +40431,13 @@ impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
+    #[doc(hidden)]
     pub force_associate: std::option::Option<bool>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorInput {

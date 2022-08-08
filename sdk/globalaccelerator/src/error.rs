@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgumentException {
@@ -69,6 +70,7 @@ impl InvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceErrorException {
@@ -133,6 +135,7 @@ impl InternalServiceErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectCidrStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncorrectCidrStateException {
@@ -197,6 +200,7 @@ impl IncorrectCidrStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ByoipCidrNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ByoipCidrNotFoundException {
@@ -261,6 +265,7 @@ impl ByoipCidrNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -325,6 +330,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListenerNotFoundException {
@@ -389,6 +395,7 @@ impl ListenerNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -453,6 +460,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPortRangeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPortRangeException {
@@ -517,6 +525,7 @@ impl InvalidPortRangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointGroupNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointGroupNotFoundException {
@@ -581,6 +590,7 @@ impl EndpointGroupNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AcceleratorNotFoundException {
@@ -645,6 +655,7 @@ impl AcceleratorNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointNotFoundException {
@@ -709,6 +720,7 @@ impl EndpointNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -773,6 +785,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -837,6 +850,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedEndpointGroupFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociatedEndpointGroupFoundException {
@@ -901,6 +915,7 @@ impl AssociatedEndpointGroupFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedListenerFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociatedListenerFoundException {
@@ -965,6 +980,7 @@ impl AssociatedListenerFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorNotDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AcceleratorNotDisabledException {
@@ -1029,6 +1045,7 @@ impl AcceleratorNotDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointGroupAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointGroupAlreadyExistsException {
@@ -1093,6 +1110,7 @@ impl EndpointGroupAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointAlreadyExistsException {

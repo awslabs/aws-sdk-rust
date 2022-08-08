@@ -8509,48 +8509,66 @@ impl UpdateDeploymentGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentGroupInput {
     /// <p>The application name that corresponds to the deployment group to update.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current name of the deployment group.</p>
+    #[doc(hidden)]
     pub current_deployment_group_name: std::option::Option<std::string::String>,
     /// <p>The new name of the deployment group, if you want to change it.</p>
+    #[doc(hidden)]
     pub new_deployment_group_name: std::option::Option<std::string::String>,
     /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+    #[doc(hidden)]
     pub ec2_tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+    #[doc(hidden)]
     pub on_premises_instance_tag_filters:
         std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    #[doc(hidden)]
     pub trigger_configurations: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
+    #[doc(hidden)]
     pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
+    #[doc(hidden)]
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
     /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    #[doc(hidden)]
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+    #[doc(hidden)]
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
+    #[doc(hidden)]
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in a deployment.</p>
+    #[doc(hidden)]
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
     /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+    #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
     /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
+    #[doc(hidden)]
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
+    #[doc(hidden)]
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
 }
 impl UpdateDeploymentGroupInput {
@@ -8686,8 +8704,10 @@ impl std::fmt::Debug for UpdateDeploymentGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The current name of the application you want to change.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The new name to give the application.</p>
+    #[doc(hidden)]
     pub new_application_name: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -8714,8 +8734,10 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8742,8 +8764,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -8770,8 +8794,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDeploymentInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    #[doc(hidden)]
     pub auto_rollback_enabled: std::option::Option<bool>,
 }
 impl StopDeploymentInput {
@@ -8798,6 +8824,7 @@ impl std::fmt::Debug for StopDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInput {
@@ -8819,8 +8846,10 @@ impl std::fmt::Debug for SkipWaitTimeForInstanceTerminationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The names of the on-premises instances from which to remove tags.</p>
+    #[doc(hidden)]
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromOnPremisesInstancesInput {
@@ -8847,10 +8876,13 @@ impl std::fmt::Debug for RemoveTagsFromOnPremisesInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to register.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+    #[doc(hidden)]
     pub iam_session_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
 }
 impl RegisterOnPremisesInstanceInput {
@@ -8882,10 +8914,13 @@ impl std::fmt::Debug for RegisterOnPremisesInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterApplicationRevisionInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A comment about the revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the application revision to register, including type and location.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::RevisionLocation>,
 }
 impl RegisterApplicationRevisionInput {
@@ -8917,10 +8952,13 @@ impl std::fmt::Debug for RegisterApplicationRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleEventHookExecutionStatusInput {
     /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
+    #[doc(hidden)]
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LifecycleEventStatus>,
 }
 impl PutLifecycleEventHookExecutionStatusInput {
@@ -8955,8 +8993,10 @@ impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8987,10 +9027,13 @@ pub struct ListOnPremisesInstancesInput {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
+    #[doc(hidden)]
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOnPremisesInstancesInput {
@@ -9026,6 +9069,7 @@ impl std::fmt::Debug for ListOnPremisesInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGitHubAccountTokenNamesInput {
     /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGitHubAccountTokenNamesInput {
@@ -9047,14 +9091,17 @@ impl std::fmt::Debug for ListGitHubAccountTokenNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
     /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
     /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_filters: std::option::Option<
         std::collections::HashMap<
             crate::model::TargetFilterName,
@@ -9104,12 +9151,15 @@ pub struct ListDeploymentsInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
@@ -9120,10 +9170,13 @@ pub struct ListDeploymentsInput {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub include_only_statuses: std::option::Option<std::vec::Vec<crate::model::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
+    #[doc(hidden)]
     pub create_time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
@@ -9182,8 +9235,10 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
@@ -9194,8 +9249,10 @@ pub struct ListDeploymentInstancesInput {
     /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
     /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_status_filter: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
+    #[doc(hidden)]
     pub instance_type_filter: std::option::Option<std::vec::Vec<crate::model::InstanceType>>,
 }
 impl ListDeploymentInstancesInput {
@@ -9240,8 +9297,10 @@ impl std::fmt::Debug for ListDeploymentInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentGroupsInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentGroupsInput {
@@ -9268,6 +9327,7 @@ impl std::fmt::Debug for ListDeploymentGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentConfigsInput {
     /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentConfigsInput {
@@ -9289,6 +9349,7 @@ impl std::fmt::Debug for ListDeploymentConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -9310,6 +9371,7 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationRevisionsInput {
     /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
@@ -9318,6 +9380,7 @@ pub struct ListApplicationRevisionsInput {
     /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ApplicationRevisionSortBy>,
     /// <p> The order in which to sort the list results: </p>
     /// <ul>
@@ -9326,11 +9389,14 @@ pub struct ListApplicationRevisionsInput {
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
     /// <p> If set to null, all of the user's buckets are searched. </p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
@@ -9338,8 +9404,10 @@ pub struct ListApplicationRevisionsInput {
     /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
     /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub deployed: std::option::Option<crate::model::ListStateFilterAction>,
     /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationRevisionsInput {
@@ -9409,6 +9477,7 @@ impl std::fmt::Debug for ListApplicationRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOnPremisesInstanceInput {
     /// <p> The name of the on-premises instance about which to get information. </p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
 }
 impl GetOnPremisesInstanceInput {
@@ -9430,8 +9499,10 @@ impl std::fmt::Debug for GetOnPremisesInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentTargetInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentTargetInput {
@@ -9458,8 +9529,10 @@ impl std::fmt::Debug for GetDeploymentTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInstanceInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of an instance in the deployment group. </p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentInstanceInput {
@@ -9486,8 +9559,10 @@ impl std::fmt::Debug for GetDeploymentInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentGroupInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
 impl GetDeploymentGroupInput {
@@ -9514,6 +9589,7 @@ impl std::fmt::Debug for GetDeploymentGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
 impl GetDeploymentConfigInput {
@@ -9535,6 +9611,7 @@ impl std::fmt::Debug for GetDeploymentConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
     /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentInput {
@@ -9556,8 +9633,10 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationRevisionInput {
     /// <p>The name of the application that corresponds to the revision.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Information about the application revision to get, including type and location.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::RevisionLocation>,
 }
 impl GetApplicationRevisionInput {
@@ -9584,6 +9663,7 @@ impl std::fmt::Debug for GetApplicationRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -9605,6 +9685,7 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterOnPremisesInstanceInput {
     /// <p>The name of the on-premises instance to deregister.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
 }
 impl DeregisterOnPremisesInstanceInput {
@@ -9626,6 +9707,7 @@ impl std::fmt::Debug for DeregisterOnPremisesInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcesByExternalIdInput {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcesByExternalIdInput {
@@ -9647,6 +9729,7 @@ impl std::fmt::Debug for DeleteResourcesByExternalIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGitHubAccountTokenInput {
     /// <p>The name of the GitHub account connection to delete.</p>
+    #[doc(hidden)]
     pub token_name: std::option::Option<std::string::String>,
 }
 impl DeleteGitHubAccountTokenInput {
@@ -9668,8 +9751,10 @@ impl std::fmt::Debug for DeleteGitHubAccountTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentGroupInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentGroupInput {
@@ -9696,6 +9781,7 @@ impl std::fmt::Debug for DeleteDeploymentGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentConfigInput {
@@ -9717,6 +9803,7 @@ impl std::fmt::Debug for DeleteDeploymentConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -9738,50 +9825,68 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentGroupInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a new deployment group for the specified application.</p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
     /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
     /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    #[doc(hidden)]
     pub ec2_tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
     /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
+    #[doc(hidden)]
     pub on_premises_instance_tag_filters:
         std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    #[doc(hidden)]
     pub trigger_configurations: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
     /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
+    #[doc(hidden)]
     pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
+    #[doc(hidden)]
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
     /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    #[doc(hidden)]
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
     /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
+    #[doc(hidden)]
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
+    #[doc(hidden)]
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in a deployment.</p>
+    #[doc(hidden)]
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
     /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+    #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
     /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
+    #[doc(hidden)]
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
     /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+    #[doc(hidden)]
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
     /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeploymentGroupInput {
@@ -9916,6 +10021,7 @@ impl std::fmt::Debug for CreateDeploymentGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
@@ -9925,10 +10031,13 @@ pub struct CreateDeploymentConfigInput {
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
+    #[doc(hidden)]
     pub minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
+    #[doc(hidden)]
     pub traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
 }
 impl CreateDeploymentConfigInput {
@@ -9974,26 +10083,35 @@ impl std::fmt::Debug for CreateDeploymentConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the deployment group.</p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p> The type and location of the revision to deploy. </p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>A comment about the deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    #[doc(hidden)]
     pub ignore_application_stop_failures: bool,
     /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
+    #[doc(hidden)]
     pub target_instances: std::option::Option<crate::model::TargetInstances>,
     /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
+    #[doc(hidden)]
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
     /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
+    #[doc(hidden)]
     pub update_outdated_instances_only: bool,
     /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
@@ -10002,6 +10120,7 @@ pub struct CreateDeploymentInput {
     /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
     /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub file_exists_behavior: std::option::Option<crate::model::FileExistsBehavior>,
 }
 impl CreateDeploymentInput {
@@ -10089,10 +10208,13 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateApplicationInput {
@@ -10124,8 +10246,10 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinueDeploymentInput {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
+    #[doc(hidden)]
     pub deployment_wait_type: std::option::Option<crate::model::DeploymentWaitType>,
 }
 impl ContinueDeploymentInput {
@@ -10152,6 +10276,7 @@ impl std::fmt::Debug for ContinueDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
+    #[doc(hidden)]
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetOnPremisesInstancesInput {
@@ -10173,6 +10298,7 @@ impl std::fmt::Debug for BatchGetOnPremisesInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
@@ -10185,6 +10311,7 @@ pub struct BatchGetDeploymentTargetsInput {
     /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
     /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInput {
@@ -10221,6 +10348,7 @@ impl std::fmt::Debug for BatchGetDeploymentTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentsInput {
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    #[doc(hidden)]
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentsInput {
@@ -10242,8 +10370,10 @@ impl std::fmt::Debug for BatchGetDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentInstancesInput {
@@ -10270,8 +10400,10 @@ impl std::fmt::Debug for BatchGetDeploymentInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentGroupsInput {
     /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The names of the deployment groups.</p>
+    #[doc(hidden)]
     pub deployment_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInput {
@@ -10298,6 +10430,7 @@ impl std::fmt::Debug for BatchGetDeploymentGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
+    #[doc(hidden)]
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetApplicationsInput {
@@ -10319,8 +10452,10 @@ impl std::fmt::Debug for BatchGetApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationRevisionsInput {
     /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
+    #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInput {
@@ -10348,8 +10483,10 @@ impl std::fmt::Debug for BatchGetApplicationRevisionsInput {
 pub struct AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The names of the on-premises instances to which to add tags.</p>
+    #[doc(hidden)]
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddTagsToOnPremisesInstancesInput {

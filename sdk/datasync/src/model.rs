@@ -10,9 +10,11 @@ pub struct Options {
     /// <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification only on files that were transferred. </p>
     /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
     /// <p> <code>NONE</code>: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
+    #[doc(hidden)]
     pub verify_mode: std::option::Option<crate::model::VerifyMode>,
     /// <p>A value that determines whether files at the destination should be overwritten or preserved when copying files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination file differs from the source file. If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
     /// <p>Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
+    #[doc(hidden)]
     pub overwrite_mode: std::option::Option<crate::model::OverwriteMode>,
     /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
     /// <p>Default value: <code>BEST_EFFORT</code> </p>
@@ -21,6 +23,7 @@ pub struct Options {
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>. </p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub atime: std::option::Option<crate::model::Atime>,
     /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the <code>PREPARING</code> phase. This option is required for cases when you need to run the same task more than one time. </p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
@@ -29,23 +32,27 @@ pub struct Options {
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub mtime: std::option::Option<crate::model::Mtime>,
     /// <p>The POSIX user ID (UID) of the file's owner.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
     /// <p> <code>INT_VALUE</code>: Preserve the integer value of UID and group ID (GID) (recommended).</p>
     /// <p> <code>NONE</code>: Ignore UID and GID. </p>
+    #[doc(hidden)]
     pub uid: std::option::Option<crate::model::Uid>,
     /// <p>The POSIX group ID (GID) of the file's owners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
     /// <p> <code>INT_VALUE</code>: Preserve the integer value of user ID (UID) and GID (recommended).</p>
     /// <p> <code>NONE</code>: Ignore UID and GID.</p>
+    #[doc(hidden)]
     pub gid: std::option::Option<crate::model::Gid>,
     /// <p>A value that specifies whether files in the destination that don't exist in the source file system should be preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
     /// <p>Default value: <code>PRESERVE</code> </p>
     /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
     /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
+    #[doc(hidden)]
     pub preserve_deleted_files: std::option::Option<crate::model::PreserveDeletedFiles>,
     /// <p>A value that determines whether DataSync should preserve the metadata of block and character devices in the source file system, and re-create the files with that device name and metadata on the destination. DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
     /// <p>DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p>
@@ -53,6 +60,7 @@ pub struct Options {
     /// <p>Default value: <code>NONE</code> </p>
     /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
     /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
+    #[doc(hidden)]
     pub preserve_devices: std::option::Option<crate::model::PreserveDevices>,
     /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
@@ -61,17 +69,22 @@ pub struct Options {
     /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
+    #[doc(hidden)]
     pub posix_permissions: std::option::Option<crate::model::PosixPermissions>,
     /// <p>A value that limits the bandwidth used by DataSync. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
+    #[doc(hidden)]
     pub bytes_per_second: std::option::Option<i64>,
     /// <p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
     /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
+    #[doc(hidden)]
     pub task_queueing: std::option::Option<crate::model::TaskQueueing>,
     /// <p>A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log group that you provide. For more information about providing a log group for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object that is transferred and integrity checked.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source and the destination location, or whether DataSync transfers all the content from the source, without comparing to the destination location. </p>
     /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
     /// <p> <code>ALL</code>: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
+    #[doc(hidden)]
     pub transfer_mode: std::option::Option<crate::model::TransferMode>,
     /// <p>A value that determines which components of the SMB security descriptor are copied from source to destination objects. </p>
     /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>. </p>
@@ -90,10 +103,12 @@ pub struct Options {
     /// </ul>
     /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
+    #[doc(hidden)]
     pub security_descriptor_copy_flags:
         std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
     /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
+    #[doc(hidden)]
     pub object_tags: std::option::Option<crate::model::ObjectTags>,
 }
 impl Options {
@@ -1399,9 +1414,11 @@ impl AsRef<str> for VerifyMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterRule {
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
+    #[doc(hidden)]
     pub filter_type: std::option::Option<crate::model::FilterType>,
     /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FilterRule {
@@ -1530,6 +1547,7 @@ impl AsRef<str> for FilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl TaskSchedule {
@@ -1587,6 +1605,7 @@ impl TaskSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmbMountOptions {
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::SmbVersion>,
 }
 impl SmbMountOptions {
@@ -1764,6 +1783,7 @@ pub struct NfsMountOptions {
     /// </ul> <note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::NfsVersion>,
 }
 impl NfsMountOptions {
@@ -1908,6 +1928,7 @@ impl AsRef<str> for NfsVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnPremConfig {
     /// <p>ARNs of the agents to use for an NFS location.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OnPremConfig {
@@ -2026,8 +2047,10 @@ impl AsRef<str> for HdfsAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QopConfiguration {
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
+    #[doc(hidden)]
     pub rpc_protection: std::option::Option<crate::model::HdfsRpcProtection>,
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
+    #[doc(hidden)]
     pub data_transfer_protection: std::option::Option<crate::model::HdfsDataTransferProtection>,
 }
 impl QopConfiguration {
@@ -2237,8 +2260,10 @@ impl AsRef<str> for HdfsRpcProtection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The port that the NameNode uses to listen to client requests.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
 }
 impl HdfsNameNode {
@@ -2310,8 +2335,10 @@ impl HdfsNameNode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagListEntry {
     /// <p>The key for an Amazon Web Services resource tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for an Amazon Web Services resource tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TagListEntry {
@@ -2383,10 +2410,13 @@ impl TagListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatus>,
     /// <p>The name of the task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TaskListEntry {
@@ -2543,10 +2573,13 @@ impl AsRef<str> for TaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::TaskFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl TaskFilter {
@@ -2800,8 +2833,10 @@ impl AsRef<str> for TaskFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskExecutionListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The status of a task execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskExecutionStatus>,
 }
 impl TaskExecutionListEntry {
@@ -2962,6 +2997,7 @@ impl AsRef<str> for TaskExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocationListEntry {
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
     /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -2969,6 +3005,7 @@ pub struct LocationListEntry {
     /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
+    #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
 }
 impl LocationListEntry {
@@ -3056,10 +3093,13 @@ impl LocationListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::LocationFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl LocationFilter {
@@ -3219,10 +3259,13 @@ impl AsRef<str> for LocationFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentListEntry {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
     /// <p>The name of the agent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the agent.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgentStatus>,
 }
 impl AgentListEntry {
@@ -3366,22 +3409,31 @@ impl AsRef<str> for AgentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskExecutionResultDetail {
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
+    #[doc(hidden)]
     pub prepare_duration: std::option::Option<i64>,
     /// <p>The status of the PREPARING phase.</p>
+    #[doc(hidden)]
     pub prepare_status: std::option::Option<crate::model::PhaseStatus>,
     /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
+    #[doc(hidden)]
     pub total_duration: std::option::Option<i64>,
     /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING phase.</p>
+    #[doc(hidden)]
     pub transfer_duration: std::option::Option<i64>,
     /// <p>The status of the TRANSFERRING phase.</p>
+    #[doc(hidden)]
     pub transfer_status: std::option::Option<crate::model::PhaseStatus>,
     /// <p>The total time in milliseconds that DataSync spent in the VERIFYING phase.</p>
+    #[doc(hidden)]
     pub verify_duration: std::option::Option<i64>,
     /// <p>The status of the VERIFYING phase.</p>
+    #[doc(hidden)]
     pub verify_status: std::option::Option<crate::model::PhaseStatus>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
+    #[doc(hidden)]
     pub error_detail: std::option::Option<std::string::String>,
 }
 impl TaskExecutionResultDetail {
@@ -3641,6 +3693,7 @@ impl AsRef<str> for PhaseStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    #[doc(hidden)]
     pub bucket_access_role_arn: std::option::Option<std::string::String>,
 }
 impl S3Config {
@@ -3781,8 +3834,10 @@ impl AsRef<str> for S3StorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxProtocol {
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
+    #[doc(hidden)]
     pub nfs: std::option::Option<crate::model::FsxProtocolNfs>,
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+    #[doc(hidden)]
     pub smb: std::option::Option<crate::model::FsxProtocolSmb>,
 }
 impl FsxProtocol {
@@ -3854,10 +3909,13 @@ impl FsxProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
     /// <p>If you provide a user in your Active Directory, note the following:</p>
@@ -3870,6 +3928,7 @@ pub struct FsxProtocolSmb {
     /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
     /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
 }
 impl FsxProtocolSmb {
@@ -4008,6 +4067,7 @@ impl FsxProtocolSmb {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
 }
 impl FsxProtocolNfs {
@@ -4127,8 +4187,10 @@ pub struct Ec2Config {
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
+    #[doc(hidden)]
     pub subnet_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Ec2Config {
@@ -4230,12 +4292,16 @@ impl Ec2Config {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateLinkConfig {
     /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will not be accessible over the public internet.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The private endpoint that is configured for an agent that has access to IP addresses in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is configured with this endpoint will not be accessible over the public internet.</p>
+    #[doc(hidden)]
     pub private_link_endpoint: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
+    #[doc(hidden)]
     pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PrivateLinkConfig {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateSecurityProfileBehaviorsOutput {
     /// <p>True if the behaviors were valid.</p>
+    #[doc(hidden)]
     pub valid: bool,
     /// <p>The list of any errors found in the behaviors.</p>
+    #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
 }
 impl ValidateSecurityProfileBehaviorsOutput {
@@ -147,6 +149,7 @@ impl UpdateThingGroupsForThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingGroupOutput {
     /// <p>The version of the updated thing group.</p>
+    #[doc(hidden)]
     pub version: i64,
 }
 impl UpdateThingGroupOutput {
@@ -231,12 +234,16 @@ impl UpdateThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamOutput {
     /// <p>The stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The stream ARN.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>A description of the stream.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The stream version.</p>
+    #[doc(hidden)]
     pub stream_version: std::option::Option<i32>,
 }
 impl UpdateStreamOutput {
@@ -342,29 +349,39 @@ impl UpdateStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityProfileOutput {
     /// <p>The name of the security profile that was updated.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the security profile that was updated.</p>
+    #[doc(hidden)]
     pub security_profile_arn: std::option::Option<std::string::String>,
     /// <p>The description of the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_description: std::option::Option<std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    #[doc(hidden)]
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    #[doc(hidden)]
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
     /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
+    #[doc(hidden)]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[doc(hidden)]
     pub additional_metrics_to_retain_v2:
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
     /// <p>The updated version of the security profile.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The time the security profile was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSecurityProfileOutput {
@@ -663,6 +680,7 @@ impl UpdateSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScheduledAuditOutput {
     /// <p>The ARN of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
 }
 impl UpdateScheduledAuditOutput {
@@ -720,8 +738,10 @@ impl UpdateScheduledAuditOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoleAliasOutput {
     /// <p>The role alias.</p>
+    #[doc(hidden)]
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The role alias ARN.</p>
+    #[doc(hidden)]
     pub role_alias_arn: std::option::Option<std::string::String>,
 }
 impl UpdateRoleAliasOutput {
@@ -826,8 +846,10 @@ impl UpdateProvisioningTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMitigationActionOutput {
     /// <p>The ARN for the new mitigation action.</p>
+    #[doc(hidden)]
     pub action_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the mitigation action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl UpdateMitigationActionOutput {
@@ -1019,6 +1041,7 @@ impl UpdateEventConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDynamicThingGroupOutput {
     /// <p>The dynamic thing group version.</p>
+    #[doc(hidden)]
     pub version: i64,
 }
 impl UpdateDynamicThingGroupOutput {
@@ -1073,8 +1096,10 @@ impl UpdateDynamicThingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainConfigurationOutput {
     /// <p>The name of the domain configuration that was updated.</p>
+    #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the domain configuration that was updated.</p>
+    #[doc(hidden)]
     pub domain_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateDomainConfigurationOutput {
@@ -1152,16 +1177,22 @@ impl UpdateDomainConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDimensionOutput {
     /// <p>A unique identifier for the dimension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN)of the created dimension.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the dimension.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DimensionType>,
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
+    #[doc(hidden)]
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateDimensionOutput {
@@ -1316,18 +1347,24 @@ impl UpdateDimensionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomMetricOutput {
     /// <p> The name of the custom metric. </p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
+    #[doc(hidden)]
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
     /// <p> A friendly name in the console for the custom metric </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateCustomMetricOutput {
@@ -1542,6 +1579,7 @@ impl UpdateCaCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBillingGroupOutput {
     /// <p>The latest version of the billing group.</p>
+    #[doc(hidden)]
     pub version: i64,
 }
 impl UpdateBillingGroupOutput {
@@ -1596,8 +1634,10 @@ impl UpdateBillingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthorizerOutput {
     /// <p>The authorizer name.</p>
+    #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The authorizer ARN.</p>
+    #[doc(hidden)]
     pub authorizer_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAuthorizerOutput {
@@ -1765,6 +1805,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferCertificateOutput {
     /// <p>The ARN of the certificate.</p>
+    #[doc(hidden)]
     pub transferred_certificate_arn: std::option::Option<std::string::String>,
 }
 impl TransferCertificateOutput {
@@ -1828,14 +1869,19 @@ impl TransferCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeAuthorizerOutput {
     /// <p>True if the token is authenticated, otherwise false.</p>
+    #[doc(hidden)]
     pub is_authenticated: std::option::Option<bool>,
     /// <p>The principal ID.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>IAM policy documents.</p>
+    #[doc(hidden)]
     pub policy_documents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
+    #[doc(hidden)]
     pub refresh_after_in_seconds: std::option::Option<i32>,
     /// <p>The number of seconds after which the connection is terminated.</p>
+    #[doc(hidden)]
     pub disconnect_after_in_seconds: std::option::Option<i32>,
 }
 impl TestInvokeAuthorizerOutput {
@@ -1970,6 +2016,7 @@ impl TestInvokeAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAuthorizationOutput {
     /// <p>The authentication results.</p>
+    #[doc(hidden)]
     pub auth_results: std::option::Option<std::vec::Vec<crate::model::AuthResult>>,
 }
 impl TestAuthorizationOutput {
@@ -2093,6 +2140,7 @@ impl StopThingRegistrationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartThingRegistrationTaskOutput {
     /// <p>The bulk thing provisioning task ID.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl StartThingRegistrationTaskOutput {
@@ -2147,6 +2195,7 @@ impl StartThingRegistrationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandAuditTaskOutput {
     /// <p>The ID of the on-demand audit you started.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl StartOnDemandAuditTaskOutput {
@@ -2201,6 +2250,7 @@ impl StartOnDemandAuditTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectMitigationActionsTaskOutput {
     /// <p> The unique identifier of the task. </p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl StartDetectMitigationActionsTaskOutput {
@@ -2255,6 +2305,7 @@ impl StartDetectMitigationActionsTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAuditMitigationActionsTaskOutput {
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl StartAuditMitigationActionsTaskOutput {
@@ -2429,8 +2480,10 @@ impl SetDefaultPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultAuthorizerOutput {
     /// <p>The authorizer name.</p>
+    #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The authorizer ARN.</p>
+    #[doc(hidden)]
     pub authorizer_arn: std::option::Option<std::string::String>,
 }
 impl SetDefaultAuthorizerOutput {
@@ -2508,10 +2561,13 @@ impl SetDefaultAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchIndexOutput {
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The things that match the search query.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<crate::model::ThingDocument>>,
     /// <p>The thing groups that match the search query.</p>
+    #[doc(hidden)]
     pub thing_groups: std::option::Option<std::vec::Vec<crate::model::ThingGroupDocument>>,
 }
 impl SearchIndexOutput {
@@ -2739,8 +2795,10 @@ impl RejectCertificateTransferOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterThingOutput {
     /// <p>The certificate data, in PEM format.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>ARNs for the generated resources.</p>
+    #[doc(hidden)]
     pub resource_arns:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2836,8 +2894,10 @@ impl RegisterThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCertificateWithoutCaOutput {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl RegisterCertificateWithoutCaOutput {
@@ -2915,8 +2975,10 @@ impl RegisterCertificateWithoutCaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCertificateOutput {
     /// <p>The certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate identifier.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl RegisterCertificateOutput {
@@ -2994,8 +3056,10 @@ impl RegisterCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCaCertificateOutput {
     /// <p>The CA certificate ARN.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The CA certificate identifier.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl RegisterCaCertificateOutput {
@@ -3103,8 +3167,10 @@ impl PutVerificationStateOnViolationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListViolationEventsOutput {
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
+    #[doc(hidden)]
     pub violation_events: std::option::Option<std::vec::Vec<crate::model::ViolationEvent>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListViolationEventsOutput {
@@ -3186,9 +3252,11 @@ impl ListViolationEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
+    #[doc(hidden)]
     pub log_target_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogTargetConfiguration>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListV2LoggingLevelsOutput {
@@ -3275,8 +3343,10 @@ impl ListV2LoggingLevelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicRulesOutput {
     /// <p>The rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::TopicRuleListItem>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicRulesOutput {
@@ -3357,9 +3427,11 @@ impl ListTopicRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicRuleDestinationsOutput {
     /// <p>Information about a topic rule destination.</p>
+    #[doc(hidden)]
     pub destination_summaries:
         std::option::Option<std::vec::Vec<crate::model::TopicRuleDestinationSummary>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicRuleDestinationsOutput {
@@ -3446,8 +3518,10 @@ impl ListTopicRuleDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingTypesOutput {
     /// <p>The thing types.</p>
+    #[doc(hidden)]
     pub thing_types: std::option::Option<std::vec::Vec<crate::model::ThingTypeDefinition>>,
     /// <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingTypesOutput {
@@ -3529,8 +3603,10 @@ impl ListThingTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingsInThingGroupOutput {
     /// <p>The things in the specified thing group.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingsInThingGroupOutput {
@@ -3611,8 +3687,10 @@ impl ListThingsInThingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingsInBillingGroupOutput {
     /// <p>A list of things in the billing group.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingsInBillingGroupOutput {
@@ -3693,8 +3771,10 @@ impl ListThingsInBillingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingsOutput {
     /// <p>The things.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<crate::model::ThingAttribute>>,
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingsOutput {
@@ -3775,8 +3855,10 @@ impl ListThingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingRegistrationTasksOutput {
     /// <p>A list of bulk thing provisioning task IDs.</p>
+    #[doc(hidden)]
     pub task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingRegistrationTasksOutput {
@@ -3857,10 +3939,13 @@ impl ListThingRegistrationTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingRegistrationTaskReportsOutput {
     /// <p>Links to the task resources.</p>
+    #[doc(hidden)]
     pub resource_links: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of task report.</p>
+    #[doc(hidden)]
     pub report_type: std::option::Option<crate::model::ReportType>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingRegistrationTaskReportsOutput {
@@ -3961,8 +4046,10 @@ impl ListThingRegistrationTaskReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingPrincipalsOutput {
     /// <p>The principals associated with the thing.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingPrincipalsOutput {
@@ -4043,8 +4130,10 @@ impl ListThingPrincipalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingGroupsForThingOutput {
     /// <p>The thing groups.</p>
+    #[doc(hidden)]
     pub thing_groups: std::option::Option<std::vec::Vec<crate::model::GroupNameAndArn>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingGroupsForThingOutput {
@@ -4125,8 +4214,10 @@ impl ListThingGroupsForThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingGroupsOutput {
     /// <p>The thing groups.</p>
+    #[doc(hidden)]
     pub thing_groups: std::option::Option<std::vec::Vec<crate::model::GroupNameAndArn>>,
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThingGroupsOutput {
@@ -4207,9 +4298,11 @@ impl ListThingGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsForSecurityProfileOutput {
     /// <p>The thing groups to which the security profile is attached.</p>
+    #[doc(hidden)]
     pub security_profile_targets:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileTarget>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsForSecurityProfileOutput {
@@ -4296,8 +4389,10 @@ impl ListTargetsForSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsForPolicyOutput {
     /// <p>The policy targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A marker used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListTargetsForPolicyOutput {
@@ -4378,8 +4473,10 @@ impl ListTargetsForPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -4460,8 +4557,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
     /// <p>A list of streams.</p>
+    #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
     /// <p>A token used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -4542,9 +4641,11 @@ impl ListStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilesForTargetOutput {
     /// <p>A list of security profiles and their associated targets.</p>
+    #[doc(hidden)]
     pub security_profile_target_mappings:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileTargetMapping>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesForTargetOutput {
@@ -4634,9 +4735,11 @@ impl ListSecurityProfilesForTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilesOutput {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
+    #[doc(hidden)]
     pub security_profile_identifiers:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileIdentifier>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesOutput {
@@ -4726,8 +4829,10 @@ impl ListSecurityProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScheduledAuditsOutput {
     /// <p>The list of scheduled audits.</p>
+    #[doc(hidden)]
     pub scheduled_audits: std::option::Option<std::vec::Vec<crate::model::ScheduledAuditMetadata>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScheduledAuditsOutput {
@@ -4809,8 +4914,10 @@ impl ListScheduledAuditsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoleAliasesOutput {
     /// <p>The role aliases.</p>
+    #[doc(hidden)]
     pub role_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A marker used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListRoleAliasesOutput {
@@ -4891,9 +4998,11 @@ impl ListRoleAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningTemplateVersionsOutput {
     /// <p>The list of provisioning template versions.</p>
+    #[doc(hidden)]
     pub versions:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningTemplateVersionSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningTemplateVersionsOutput {
@@ -4979,8 +5088,10 @@ impl ListProvisioningTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningTemplatesOutput {
     /// <p>A list of provisioning templates</p>
+    #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::model::ProvisioningTemplateSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningTemplatesOutput {
@@ -5062,8 +5173,10 @@ impl ListProvisioningTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalThingsOutput {
     /// <p>The things.</p>
+    #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalThingsOutput {
@@ -5144,8 +5257,10 @@ impl ListPrincipalThingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalPoliciesOutput {
     /// <p>The policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPrincipalPoliciesOutput {
@@ -5226,6 +5341,7 @@ impl ListPrincipalPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyVersionsOutput {
     /// <p>The policy versions.</p>
+    #[doc(hidden)]
     pub policy_versions: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
 }
 impl ListPolicyVersionsOutput {
@@ -5289,8 +5405,10 @@ impl ListPolicyVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPolicyPrincipalsOutput {
@@ -5371,8 +5489,10 @@ impl ListPolicyPrincipalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesOutput {
     /// <p>The descriptions of the policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -5453,9 +5573,11 @@ impl ListPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
+    #[doc(hidden)]
     pub outgoing_certificates:
         std::option::Option<std::vec::Vec<crate::model::OutgoingCertificate>>,
     /// <p>The marker for the next set of results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListOutgoingCertificatesOutput {
@@ -5539,8 +5661,10 @@ impl ListOutgoingCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOtaUpdatesOutput {
     /// <p>A list of OTA update jobs.</p>
+    #[doc(hidden)]
     pub ota_updates: std::option::Option<std::vec::Vec<crate::model::OtaUpdateSummary>>,
     /// <p>A token to use to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOtaUpdatesOutput {
@@ -5621,9 +5745,11 @@ impl ListOtaUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMitigationActionsOutput {
     /// <p>A set of actions that matched the specified filter criteria.</p>
+    #[doc(hidden)]
     pub action_identifiers:
         std::option::Option<std::vec::Vec<crate::model::MitigationActionIdentifier>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMitigationActionsOutput {
@@ -5710,8 +5836,10 @@ impl ListMitigationActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricValuesOutput {
     /// <p>The data the thing reports for the metric during the specified time period.</p>
+    #[doc(hidden)]
     pub metric_datum_list: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricValuesOutput {
@@ -5792,9 +5920,11 @@ impl ListMetricValuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedJobTemplatesOutput {
     /// <p>A list of managed job templates that are returned.</p>
+    #[doc(hidden)]
     pub managed_job_templates:
         std::option::Option<std::vec::Vec<crate::model::ManagedJobTemplateSummary>>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedJobTemplatesOutput {
@@ -5881,8 +6011,10 @@ impl ListManagedJobTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobTemplatesOutput {
     /// <p>A list of objects that contain information about the job templates.</p>
+    #[doc(hidden)]
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplateSummary>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobTemplatesOutput {
@@ -5964,8 +6096,10 @@ impl ListJobTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>A list of jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -6046,9 +6180,11 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobExecutionsForThingOutput {
     /// <p>A list of job execution summaries.</p>
+    #[doc(hidden)]
     pub execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::JobExecutionSummaryForThing>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobExecutionsForThingOutput {
@@ -6135,9 +6271,11 @@ impl ListJobExecutionsForThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobExecutionsForJobOutput {
     /// <p>A list of job execution summaries.</p>
+    #[doc(hidden)]
     pub execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::JobExecutionSummaryForJob>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobExecutionsForJobOutput {
@@ -6224,8 +6362,10 @@ impl ListJobExecutionsForJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesOutput {
     /// <p>The index names.</p>
+    #[doc(hidden)]
     pub index_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIndicesOutput {
@@ -6306,8 +6446,10 @@ impl ListIndicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetMetricsOutput {
     /// <p>The list of fleet metrics objects.</p>
+    #[doc(hidden)]
     pub fleet_metrics: std::option::Option<std::vec::Vec<crate::model::FleetMetricNameAndArn>>,
     /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetMetricsOutput {
@@ -6389,9 +6531,11 @@ impl ListFleetMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
+    #[doc(hidden)]
     pub domain_configurations:
         std::option::Option<std::vec::Vec<crate::model::DomainConfigurationSummary>>,
     /// <p>The marker for the next set of results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListDomainConfigurationsOutput {
@@ -6478,8 +6622,10 @@ impl ListDomainConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDimensionsOutput {
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
+    #[doc(hidden)]
     pub dimension_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDimensionsOutput {
@@ -6560,8 +6706,10 @@ impl ListDimensionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsTasksOutput {
     /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::DetectMitigationActionsTaskSummary>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsTasksOutput {
@@ -6647,9 +6795,11 @@ impl ListDetectMitigationActionsTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsExecutionsOutput {
     /// <p> List of actions executions. </p>
+    #[doc(hidden)]
     pub actions_executions:
         std::option::Option<std::vec::Vec<crate::model::DetectMitigationActionExecution>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsOutput {
@@ -6738,8 +6888,10 @@ impl ListDetectMitigationActionsExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomMetricsOutput {
     /// <p> The name of the custom metric. </p>
+    #[doc(hidden)]
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomMetricsOutput {
@@ -6820,8 +6972,10 @@ impl ListCustomMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesByCaOutput {
     /// <p>The device certificates signed by the specified CA certificate.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListCertificatesByCaOutput {
@@ -6902,8 +7056,10 @@ impl ListCertificatesByCaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
     /// <p>The descriptions of the certificates.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListCertificatesOutput {
@@ -6984,8 +7140,10 @@ impl ListCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCaCertificatesOutput {
     /// <p>The CA certificates registered in your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::CaCertificate>>,
     /// <p>The current position within the list of CA certificates.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListCaCertificatesOutput {
@@ -7066,8 +7224,10 @@ impl ListCaCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupsOutput {
     /// <p>The list of billing groups.</p>
+    #[doc(hidden)]
     pub billing_groups: std::option::Option<std::vec::Vec<crate::model::GroupNameAndArn>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBillingGroupsOutput {
@@ -7149,8 +7309,10 @@ impl ListBillingGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuthorizersOutput {
     /// <p>The authorizers.</p>
+    #[doc(hidden)]
     pub authorizers: std::option::Option<std::vec::Vec<crate::model::AuthorizerSummary>>,
     /// <p>A marker used to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListAuthorizersOutput {
@@ -7231,8 +7393,10 @@ impl ListAuthorizersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditTasksOutput {
     /// <p>The audits that were performed during the specified time period.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::AuditTaskMetadata>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditTasksOutput {
@@ -7313,8 +7477,10 @@ impl ListAuditTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditSuppressionsOutput {
     /// <p> List of audit suppressions. </p>
+    #[doc(hidden)]
     pub suppressions: std::option::Option<std::vec::Vec<crate::model::AuditSuppression>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditSuppressionsOutput {
@@ -7395,8 +7561,10 @@ impl ListAuditSuppressionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditMitigationActionsTasksOutput {
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::AuditMitigationActionsTaskMetadata>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditMitigationActionsTasksOutput {
@@ -7482,9 +7650,11 @@ impl ListAuditMitigationActionsTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditMitigationActionsExecutionsOutput {
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
+    #[doc(hidden)]
     pub actions_executions:
         std::option::Option<std::vec::Vec<crate::model::AuditMitigationActionExecutionMetadata>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditMitigationActionsExecutionsOutput {
@@ -7574,8 +7744,10 @@ impl ListAuditMitigationActionsExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditFindingsOutput {
     /// <p>The findings (results) of the audit.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::AuditFinding>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditFindingsOutput {
@@ -7656,8 +7828,10 @@ impl ListAuditFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedPoliciesOutput {
     /// <p>The policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
     /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListAttachedPoliciesOutput {
@@ -7738,8 +7912,10 @@ impl ListAttachedPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActiveViolationsOutput {
     /// <p>The list of active violations.</p>
+    #[doc(hidden)]
     pub active_violations: std::option::Option<std::vec::Vec<crate::model::ActiveViolation>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActiveViolationsOutput {
@@ -7821,10 +7997,13 @@ impl ListActiveViolationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetV2LoggingOptionsOutput {
     /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The default log level.</p>
+    #[doc(hidden)]
     pub default_log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>Disables all logs.</p>
+    #[doc(hidden)]
     pub disable_all_logs: bool,
 }
 impl GetV2LoggingOptionsOutput {
@@ -7916,6 +8095,7 @@ impl GetV2LoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTopicRuleDestinationOutput {
     /// <p>The topic rule destination.</p>
+    #[doc(hidden)]
     pub topic_rule_destination: std::option::Option<crate::model::TopicRuleDestination>,
 }
 impl GetTopicRuleDestinationOutput {
@@ -7975,8 +8155,10 @@ impl GetTopicRuleDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTopicRuleOutput {
     /// <p>The rule ARN.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::TopicRule>,
 }
 impl GetTopicRuleOutput {
@@ -8048,6 +8230,7 @@ impl GetTopicRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStatisticsOutput {
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::Statistics>,
 }
 impl GetStatisticsOutput {
@@ -8105,6 +8288,7 @@ impl GetStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistrationCodeOutput {
     /// <p>The CA certificate registration code.</p>
+    #[doc(hidden)]
     pub registration_code: std::option::Option<std::string::String>,
 }
 impl GetRegistrationCodeOutput {
@@ -8162,20 +8346,28 @@ impl GetRegistrationCodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyVersionOutput {
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The policy version ID.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date the policy was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The generation ID of the policy version.</p>
+    #[doc(hidden)]
     pub generation_id: std::option::Option<std::string::String>,
 }
 impl GetPolicyVersionOutput {
@@ -8364,18 +8556,25 @@ impl GetPolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The default policy version ID.</p>
+    #[doc(hidden)]
     pub default_version_id: std::option::Option<std::string::String>,
     /// <p>The date the policy was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The generation ID of the policy.</p>
+    #[doc(hidden)]
     pub generation_id: std::option::Option<std::string::String>,
 }
 impl GetPolicyOutput {
@@ -8547,6 +8746,7 @@ impl GetPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPercentilesOutput {
     /// <p>The percentile values of the aggregated fields.</p>
+    #[doc(hidden)]
     pub percentiles: std::option::Option<std::vec::Vec<crate::model::PercentPair>>,
 }
 impl GetPercentilesOutput {
@@ -8610,6 +8810,7 @@ impl GetPercentilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOtaUpdateOutput {
     /// <p>The OTA update info.</p>
+    #[doc(hidden)]
     pub ota_update_info: std::option::Option<crate::model::OtaUpdateInfo>,
 }
 impl GetOtaUpdateOutput {
@@ -8667,8 +8868,10 @@ impl GetOtaUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingOptionsOutput {
     /// <p>The ARN of the IAM role that grants access.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The logging level.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl GetLoggingOptionsOutput {
@@ -8740,6 +8943,7 @@ impl GetLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobDocumentOutput {
     /// <p>The job document content.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl GetJobDocumentOutput {
@@ -8794,8 +8998,10 @@ impl GetJobDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIndexingConfigurationOutput {
     /// <p>Thing indexing configuration.</p>
+    #[doc(hidden)]
     pub thing_indexing_configuration: std::option::Option<crate::model::ThingIndexingConfiguration>,
     /// <p>The index configuration.</p>
+    #[doc(hidden)]
     pub thing_group_indexing_configuration:
         std::option::Option<crate::model::ThingGroupIndexingConfiguration>,
 }
@@ -8892,6 +9098,7 @@ impl GetIndexingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEffectivePoliciesOutput {
     /// <p>The effective policies.</p>
+    #[doc(hidden)]
     pub effective_policies: std::option::Option<std::vec::Vec<crate::model::EffectivePolicy>>,
 }
 impl GetEffectivePoliciesOutput {
@@ -8956,6 +9163,7 @@ impl GetEffectivePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCardinalityOutput {
     /// <p>The approximate count of unique values that match the query.</p>
+    #[doc(hidden)]
     pub cardinality: i32,
 }
 impl GetCardinalityOutput {
@@ -9010,10 +9218,12 @@ impl GetCardinalityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketsAggregationOutput {
     /// <p>The total number of things that fit the query string criteria.</p>
+    #[doc(hidden)]
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p> <code>count</code>: The number of documents that have that value.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
 impl GetBucketsAggregationOutput {
@@ -9100,8 +9310,10 @@ impl GetBucketsAggregationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBehaviorModelTrainingSummariesOutput {
     /// <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::BehaviorModelTrainingSummary>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBehaviorModelTrainingSummariesOutput {
@@ -9363,14 +9575,19 @@ impl DetachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThingTypeOutput {
     /// <p>The name of the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>The thing type ID.</p>
+    #[doc(hidden)]
     pub thing_type_id: std::option::Option<std::string::String>,
     /// <p>The thing type ARN.</p>
+    #[doc(hidden)]
     pub thing_type_arn: std::option::Option<std::string::String>,
     /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
+    #[doc(hidden)]
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
+    #[doc(hidden)]
     pub thing_type_metadata: std::option::Option<crate::model::ThingTypeMetadata>,
 }
 impl DescribeThingTypeOutput {
@@ -9508,28 +9725,40 @@ impl DescribeThingTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThingRegistrationTaskOutput {
     /// <p>The task ID.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The task creation date.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the task was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The task's template.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
+    #[doc(hidden)]
     pub input_file_bucket: std::option::Option<std::string::String>,
     /// <p>The input file key.</p>
+    #[doc(hidden)]
     pub input_file_key: std::option::Option<std::string::String>,
     /// <p>The role ARN that grants access to the input file bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the bulk thing provisioning task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The number of things successfully provisioned.</p>
+    #[doc(hidden)]
     pub success_count: i32,
     /// <p>The number of things that failed to be provisioned.</p>
+    #[doc(hidden)]
     pub failure_count: i32,
     /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
+    #[doc(hidden)]
     pub percentage_progress: i32,
 }
 impl DescribeThingRegistrationTaskOutput {
@@ -9786,24 +10015,34 @@ impl DescribeThingRegistrationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThingGroupOutput {
     /// <p>The name of the thing group.</p>
+    #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The thing group ID.</p>
+    #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The thing group ARN.</p>
+    #[doc(hidden)]
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The version of the thing group.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The thing group properties.</p>
+    #[doc(hidden)]
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
     /// <p>Thing group metadata.</p>
+    #[doc(hidden)]
     pub thing_group_metadata: std::option::Option<crate::model::ThingGroupMetadata>,
     /// <p>The dynamic thing group index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group query version.</p>
+    #[doc(hidden)]
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DynamicGroupStatus>,
 }
 impl DescribeThingGroupOutput {
@@ -10035,23 +10274,31 @@ impl DescribeThingGroupOutput {
 pub struct DescribeThingOutput {
     /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
     /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
+    #[doc(hidden)]
     pub default_client_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ID of the thing to describe.</p>
+    #[doc(hidden)]
     pub thing_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to describe.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>The thing type name.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>The thing attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current version of the thing record in the registry.</p> <note>
     /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The name of the billing group the thing belongs to.</p>
+    #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeThingOutput {
@@ -10263,6 +10510,7 @@ impl DescribeThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamOutput {
     /// <p>Information about the stream.</p>
+    #[doc(hidden)]
     pub stream_info: std::option::Option<crate::model::StreamInfo>,
 }
 impl DescribeStreamOutput {
@@ -10320,29 +10568,39 @@ impl DescribeStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityProfileOutput {
     /// <p>The name of the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_arn: std::option::Option<std::string::String>,
     /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
+    #[doc(hidden)]
     pub security_profile_description: std::option::Option<std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    #[doc(hidden)]
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    #[doc(hidden)]
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
     /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
+    #[doc(hidden)]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
+    #[doc(hidden)]
     pub additional_metrics_to_retain_v2:
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
     /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The time the security profile was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSecurityProfileOutput {
@@ -10641,16 +10899,22 @@ impl DescribeSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledAuditOutput {
     /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
     /// <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<std::string::String>,
     /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    #[doc(hidden)]
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledAuditOutput {
@@ -10811,6 +11075,7 @@ impl DescribeScheduledAuditOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoleAliasOutput {
     /// <p>The role alias description.</p>
+    #[doc(hidden)]
     pub role_alias_description: std::option::Option<crate::model::RoleAliasDescription>,
 }
 impl DescribeRoleAliasOutput {
@@ -10870,12 +11135,16 @@ impl DescribeRoleAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningTemplateVersionOutput {
     /// <p>The provisioning template version ID.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<i32>,
     /// <p>The date when the provisioning template version was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The JSON formatted contents of the provisioning template version.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True if the provisioning template version is the default version.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
 }
 impl DescribeProvisioningTemplateVersionOutput {
@@ -10987,26 +11256,37 @@ impl DescribeProvisioningTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningTemplateOutput {
     /// <p>The ARN of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the provisioning template was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the provisioning template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default fleet template version ID.</p>
+    #[doc(hidden)]
     pub default_version_id: std::option::Option<i32>,
     /// <p>The JSON formatted contents of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True if the provisioning template is enabled, otherwise false.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
+    #[doc(hidden)]
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
+    #[doc(hidden)]
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TemplateType>,
 }
 impl DescribeProvisioningTemplateOutput {
@@ -11249,20 +11529,28 @@ impl DescribeProvisioningTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMitigationActionOutput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The type of mitigation action.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::MitigationActionType>,
     /// <p>The ARN that identifies this migration action.</p>
+    #[doc(hidden)]
     pub action_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role used to apply this action.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
+    #[doc(hidden)]
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the mitigation action was last changed.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMitigationActionOutput {
@@ -11448,20 +11736,27 @@ impl DescribeMitigationActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedJobTemplateOutput {
     /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The unique description of a managed template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version for a managed template.</p>
+    #[doc(hidden)]
     pub template_version: std::option::Option<std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
+    #[doc(hidden)]
     pub document_parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
     /// <p>The document schema for a managed job template.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl DescribeManagedJobTemplateOutput {
@@ -11649,27 +11944,38 @@ impl DescribeManagedJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
+    #[doc(hidden)]
     pub job_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the job template.</p>
+    #[doc(hidden)]
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>A description of the job template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An S3 link to the job document.</p>
+    #[doc(hidden)]
     pub document_source: std::option::Option<std::string::String>,
     /// <p>The job document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration for pre-signed S3 URLs.</p>
+    #[doc(hidden)]
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
+    #[doc(hidden)]
     pub job_executions_rollout_config:
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
+    #[doc(hidden)]
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    #[doc(hidden)]
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
+    #[doc(hidden)]
     pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
 }
 impl DescribeJobTemplateOutput {
@@ -11939,6 +12245,7 @@ impl DescribeJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobExecutionOutput {
     /// <p>Information about the job execution.</p>
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::JobExecution>,
 }
 impl DescribeJobExecutionOutput {
@@ -11996,8 +12303,10 @@ impl DescribeJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>An S3 link to the job document.</p>
+    #[doc(hidden)]
     pub document_source: std::option::Option<std::string::String>,
     /// <p>Information about the job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl DescribeJobOutput {
@@ -12072,8 +12381,10 @@ impl DescribeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexOutput {
     /// <p>The index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The index status.</p>
+    #[doc(hidden)]
     pub index_status: std::option::Option<crate::model::IndexStatus>,
     /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
     /// <ul>
@@ -12083,6 +12394,7 @@ pub struct DescribeIndexOutput {
     /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
     /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
 }
 impl DescribeIndexOutput {
@@ -12195,30 +12507,43 @@ impl DescribeIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetMetricOutput {
     /// <p>The name of the fleet metric to describe.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The search query string.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The type of the aggregation query.</p>
+    #[doc(hidden)]
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The field to aggregate.</p>
+    #[doc(hidden)]
     pub aggregation_field: std::option::Option<std::string::String>,
     /// <p>The fleet metric description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The query version.</p>
+    #[doc(hidden)]
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The name of the index to search.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The date when the fleet metric is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the fleet metric is last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>The version of the fleet metric.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The ARN of the fleet metric to describe.</p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFleetMetricOutput {
@@ -12495,12 +12820,15 @@ impl DescribeFleetMetricOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventConfigurationsOutput {
     /// <p>The event configurations.</p>
+    #[doc(hidden)]
     pub event_configurations: std::option::Option<
         std::collections::HashMap<crate::model::EventType, crate::model::Configuration>,
     >,
     /// <p>The creation date of the event configuration.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the event configurations were last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeEventConfigurationsOutput {
@@ -12616,6 +12944,7 @@ impl DescribeEventConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+    #[doc(hidden)]
     pub endpoint_address: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointOutput {
@@ -12673,23 +13002,32 @@ impl DescribeEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainConfigurationOutput {
     /// <p>The name of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
+    #[doc(hidden)]
     pub server_certificates:
         std::option::Option<std::vec::Vec<crate::model::ServerCertificateSummary>>,
     /// <p>An object that specifies the authorization service for a domain.</p>
+    #[doc(hidden)]
     pub authorizer_config: std::option::Option<crate::model::AuthorizerConfig>,
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_status: std::option::Option<crate::model::DomainConfigurationStatus>,
     /// <p>The type of service delivered by the endpoint.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::ServiceType>,
     /// <p>The type of the domain.</p>
+    #[doc(hidden)]
     pub domain_type: std::option::Option<crate::model::DomainType>,
     /// <p>The date and time the domain configuration's status was last changed.</p>
+    #[doc(hidden)]
     pub last_status_change_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDomainConfigurationOutput {
@@ -12925,16 +13263,22 @@ impl DescribeDomainConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDimensionOutput {
     /// <p>The unique identifier for the dimension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the dimension.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DimensionType>,
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
+    #[doc(hidden)]
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date the dimension was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the dimension was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDimensionOutput {
@@ -13089,6 +13433,7 @@ impl DescribeDimensionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectMitigationActionsTaskOutput {
     /// <p> The description of a task. </p>
+    #[doc(hidden)]
     pub task_summary: std::option::Option<crate::model::DetectMitigationActionsTaskSummary>,
 }
 impl DescribeDetectMitigationActionsTaskOutput {
@@ -13152,6 +13497,7 @@ impl DescribeDetectMitigationActionsTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultAuthorizerOutput {
     /// <p>The default authorizer's description.</p>
+    #[doc(hidden)]
     pub authorizer_description: std::option::Option<crate::model::AuthorizerDescription>,
 }
 impl DescribeDefaultAuthorizerOutput {
@@ -13214,18 +13560,24 @@ impl DescribeDefaultAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomMetricOutput {
     /// <p> The name of the custom metric. </p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
+    #[doc(hidden)]
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
     /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCustomMetricOutput {
@@ -13380,6 +13732,7 @@ impl DescribeCustomMetricOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
     /// <p>The description of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_description: std::option::Option<crate::model::CertificateDescription>,
 }
 impl DescribeCertificateOutput {
@@ -13443,8 +13796,10 @@ impl DescribeCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCaCertificateOutput {
     /// <p>The CA certificate description.</p>
+    #[doc(hidden)]
     pub certificate_description: std::option::Option<crate::model::CaCertificateDescription>,
     /// <p>Information about the registration configuration.</p>
+    #[doc(hidden)]
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
 }
 impl DescribeCaCertificateOutput {
@@ -13528,16 +13883,22 @@ impl DescribeCaCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBillingGroupOutput {
     /// <p>The name of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
     /// <p>The ID of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_arn: std::option::Option<std::string::String>,
     /// <p>The version of the billing group.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The properties of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_properties: std::option::Option<crate::model::BillingGroupProperties>,
     /// <p>Additional information about the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_metadata: std::option::Option<crate::model::BillingGroupMetadata>,
 }
 impl DescribeBillingGroupOutput {
@@ -13700,6 +14061,7 @@ impl DescribeBillingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuthorizerOutput {
     /// <p>The authorizer description.</p>
+    #[doc(hidden)]
     pub authorizer_description: std::option::Option<crate::model::AuthorizerDescription>,
 }
 impl DescribeAuthorizerOutput {
@@ -13762,16 +14124,22 @@ impl DescribeAuthorizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditTaskOutput {
     /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
     /// <p>The time the audit started.</p>
+    #[doc(hidden)]
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Statistical information about the audit.</p>
+    #[doc(hidden)]
     pub task_statistics: std::option::Option<crate::model::TaskStatistics>,
     /// <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
+    #[doc(hidden)]
     pub scheduled_audit_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about each check performed during this audit.</p>
+    #[doc(hidden)]
     pub audit_details: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AuditCheckDetails>,
     >,
@@ -13949,14 +14317,19 @@ impl DescribeAuditTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditSuppressionOutput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    #[doc(hidden)]
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    #[doc(hidden)]
     pub suppress_indefinitely: std::option::Option<bool>,
     /// <p> The description of the audit suppression. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl DescribeAuditSuppressionOutput {
@@ -14085,22 +14458,29 @@ impl DescribeAuditSuppressionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditMitigationActionsTaskOutput {
     /// <p>The current status of the task.</p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::AuditMitigationActionsTaskStatus>,
     /// <p>The date and time when the task was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the task was completed or canceled.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
+    #[doc(hidden)]
     pub task_statistics: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TaskStatisticsForAuditCheck>,
     >,
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
+    #[doc(hidden)]
     pub audit_check_to_actions_mapping: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
+    #[doc(hidden)]
     pub actions_definition: std::option::Option<std::vec::Vec<crate::model::MitigationAction>>,
 }
 impl DescribeAuditMitigationActionsTaskOutput {
@@ -14335,6 +14715,7 @@ impl DescribeAuditMitigationActionsTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditFindingOutput {
     /// <p>The findings (results) of the audit.</p>
+    #[doc(hidden)]
     pub finding: std::option::Option<crate::model::AuditFinding>,
 }
 impl DescribeAuditFindingOutput {
@@ -14393,8 +14774,10 @@ impl DescribeAuditFindingOutput {
 pub struct DescribeAccountAuditConfigurationOutput {
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
+    #[doc(hidden)]
     pub audit_notification_target_configurations: std::option::Option<
         std::collections::HashMap<
             crate::model::AuditNotificationType,
@@ -14402,6 +14785,7 @@ pub struct DescribeAccountAuditConfigurationOutput {
         >,
     >,
     /// <p>Which audit checks are enabled and disabled for this account.</p>
+    #[doc(hidden)]
     pub audit_check_configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AuditCheckConfiguration>,
     >,
@@ -15518,6 +15902,7 @@ impl DeleteAccountAuditConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTopicRuleDestinationOutput {
     /// <p>The topic rule destination.</p>
+    #[doc(hidden)]
     pub topic_rule_destination: std::option::Option<crate::model::TopicRuleDestination>,
 }
 impl CreateTopicRuleDestinationOutput {
@@ -15607,10 +15992,13 @@ impl CreateTopicRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThingTypeOutput {
     /// <p>The name of the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
+    #[doc(hidden)]
     pub thing_type_arn: std::option::Option<std::string::String>,
     /// <p>The thing type ID.</p>
+    #[doc(hidden)]
     pub thing_type_id: std::option::Option<std::string::String>,
 }
 impl CreateThingTypeOutput {
@@ -15708,10 +16096,13 @@ impl CreateThingTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThingGroupOutput {
     /// <p>The thing group name.</p>
+    #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The thing group ARN.</p>
+    #[doc(hidden)]
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The thing group ID.</p>
+    #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
 }
 impl CreateThingGroupOutput {
@@ -15809,10 +16200,13 @@ impl CreateThingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThingOutput {
     /// <p>The name of the new thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the new thing.</p>
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
     /// <p>The thing ID.</p>
+    #[doc(hidden)]
     pub thing_id: std::option::Option<std::string::String>,
 }
 impl CreateThingOutput {
@@ -15901,12 +16295,16 @@ impl CreateThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamOutput {
     /// <p>The stream ID.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The stream ARN.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>A description of the stream.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the stream.</p>
+    #[doc(hidden)]
     pub stream_version: std::option::Option<i32>,
 }
 impl CreateStreamOutput {
@@ -16012,8 +16410,10 @@ impl CreateStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityProfileOutput {
     /// <p>The name you gave to the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateSecurityProfileOutput {
@@ -16091,6 +16491,7 @@ impl CreateSecurityProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledAuditOutput {
     /// <p>The ARN of the scheduled audit.</p>
+    #[doc(hidden)]
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
 }
 impl CreateScheduledAuditOutput {
@@ -16148,8 +16549,10 @@ impl CreateScheduledAuditOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoleAliasOutput {
     /// <p>The role alias.</p>
+    #[doc(hidden)]
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The role alias ARN.</p>
+    #[doc(hidden)]
     pub role_alias_arn: std::option::Option<std::string::String>,
 }
 impl CreateRoleAliasOutput {
@@ -16224,12 +16627,16 @@ impl CreateRoleAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningTemplateVersionOutput {
     /// <p>The ARN that identifies the provisioning template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The version of the provisioning template.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<i32>,
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
 }
 impl CreateProvisioningTemplateVersionOutput {
@@ -16338,10 +16745,13 @@ impl CreateProvisioningTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningTemplateOutput {
     /// <p>The ARN that identifies the provisioning template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The default version of the provisioning template.</p>
+    #[doc(hidden)]
     pub default_version_id: std::option::Option<i32>,
 }
 impl CreateProvisioningTemplateOutput {
@@ -16433,12 +16843,16 @@ impl CreateProvisioningTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningClaimOutput {
     /// <p>The ID of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The provisioning claim certificate.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The provisioning claim key pair.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
     /// <p>The provisioning claim expiration time.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateProvisioningClaimOutput {
@@ -16553,12 +16967,16 @@ impl CreateProvisioningClaimOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyVersionOutput {
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The policy version ID.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
 }
 impl CreatePolicyVersionOutput {
@@ -16670,12 +17088,16 @@ impl CreatePolicyVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyOutput {
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy ARN.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The policy version ID.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<std::string::String>,
 }
 impl CreatePolicyOutput {
@@ -16787,14 +17209,19 @@ impl CreatePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOtaUpdateOutput {
     /// <p>The OTA update ID.</p>
+    #[doc(hidden)]
     pub ota_update_id: std::option::Option<std::string::String>,
     /// <p>The IoT job ID associated with the OTA update.</p>
+    #[doc(hidden)]
     pub aws_iot_job_id: std::option::Option<std::string::String>,
     /// <p>The OTA update ARN.</p>
+    #[doc(hidden)]
     pub ota_update_arn: std::option::Option<std::string::String>,
     /// <p>The IoT job ARN associated with the OTA update.</p>
+    #[doc(hidden)]
     pub aws_iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The OTA update status.</p>
+    #[doc(hidden)]
     pub ota_update_status: std::option::Option<crate::model::OtaUpdateStatus>,
 }
 impl CreateOtaUpdateOutput {
@@ -16932,8 +17359,10 @@ impl CreateOtaUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMitigationActionOutput {
     /// <p>The ARN for the new mitigation action.</p>
+    #[doc(hidden)]
     pub action_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the new mitigation action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl CreateMitigationActionOutput {
@@ -17005,12 +17434,16 @@ impl CreateMitigationActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeysAndCertificateOutput {
     /// <p>The ARN of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The generated key pair.</p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::KeyPair>,
 }
 impl CreateKeysAndCertificateOutput {
@@ -17125,8 +17558,10 @@ impl CreateKeysAndCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
+    #[doc(hidden)]
     pub job_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the job template.</p>
+    #[doc(hidden)]
     pub job_template_id: std::option::Option<std::string::String>,
 }
 impl CreateJobTemplateOutput {
@@ -17204,10 +17639,13 @@ impl CreateJobTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>The job ARN.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
@@ -17296,8 +17734,10 @@ impl CreateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetMetricOutput {
     /// <p>The name of the fleet metric to create.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl CreateFleetMetricOutput {
@@ -17369,16 +17809,22 @@ impl CreateFleetMetricOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDynamicThingGroupOutput {
     /// <p>The dynamic thing group name.</p>
+    #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group ARN.</p>
+    #[doc(hidden)]
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group ID.</p>
+    #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group index name.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group query version.</p>
+    #[doc(hidden)]
     pub query_version: std::option::Option<std::string::String>,
 }
 impl CreateDynamicThingGroupOutput {
@@ -17530,8 +17976,10 @@ impl CreateDynamicThingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainConfigurationOutput {
     /// <p>The name of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
+    #[doc(hidden)]
     pub domain_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateDomainConfigurationOutput {
@@ -17609,8 +18057,10 @@ impl CreateDomainConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDimensionOutput {
     /// <p>A unique identifier for the dimension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the created dimension.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateDimensionOutput {
@@ -17682,8 +18132,10 @@ impl CreateDimensionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomMetricOutput {
     /// <p> The name of the custom metric to be used in the metric report. </p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+    #[doc(hidden)]
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl CreateCustomMetricOutput {
@@ -17755,10 +18207,13 @@ impl CreateCustomMetricOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateFromCsrOutput {
     /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
+    #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
 }
 impl CreateCertificateFromCsrOutput {
@@ -17856,10 +18311,13 @@ impl CreateCertificateFromCsrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBillingGroupOutput {
     /// <p>The name you gave to the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the billing group.</p>
+    #[doc(hidden)]
     pub billing_group_id: std::option::Option<std::string::String>,
 }
 impl CreateBillingGroupOutput {
@@ -17957,8 +18415,10 @@ impl CreateBillingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthorizerOutput {
     /// <p>The authorizer's name.</p>
+    #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The authorizer ARN.</p>
+    #[doc(hidden)]
     pub authorizer_arn: std::option::Option<std::string::String>,
 }
 impl CreateAuthorizerOutput {
@@ -18156,10 +18616,13 @@ impl CancelJobExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobOutput {
     /// <p>The job ARN.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A short text description of the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CancelJobOutput {
@@ -18488,10 +18951,13 @@ impl AttachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTargetsWithJobOutput {
     /// <p>An ARN identifying the job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A short text description of the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AssociateTargetsWithJobOutput {

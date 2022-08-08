@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message for the field.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,10 +148,13 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcAttachment {
     /// <p>Provides details about the VPC attachment.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
     /// <p>The subnet ARNs.</p>
+    #[doc(hidden)]
     pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Provides details about the VPC attachment.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::VpcOptions>,
 }
 impl VpcAttachment {
@@ -250,6 +255,7 @@ impl VpcAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
+    #[doc(hidden)]
     pub ipv6_support: bool,
 }
 impl VpcOptions {
@@ -304,32 +310,46 @@ impl VpcOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a core network.</p>
+    #[doc(hidden)]
     pub core_network_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment account owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The type of attachment.</p>
+    #[doc(hidden)]
     pub attachment_type: std::option::Option<crate::model::AttachmentType>,
     /// <p>The state of the attachment.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AttachmentState>,
     /// <p>The Region where the edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The attachment resource ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy rule number associated with the attachment.</p>
+    #[doc(hidden)]
     pub attachment_policy_rule_number: std::option::Option<i32>,
     /// <p>The name of the segment attachment.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
     /// <p>The tags associated with the attachment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The attachment to move from one segment to another.</p>
+    #[doc(hidden)]
     pub proposed_segment_change: std::option::Option<crate::model::ProposedSegmentChange>,
     /// <p>The timestamp when the attachment was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the attachment was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Attachment {
@@ -656,10 +676,13 @@ impl Attachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposedSegmentChange {
     /// <p>The list of key-value tags that changed for the segment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The rule number in the policy document that applies to this change.</p>
+    #[doc(hidden)]
     pub attachment_policy_rule_number: std::option::Option<i32>,
     /// <p>The name of the segment to change.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
 }
 impl ProposedSegmentChange {
@@ -764,9 +787,11 @@ impl ProposedSegmentChange {
 pub struct Tag {
     /// <p>The tag key.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1005,20 +1030,28 @@ impl AsRef<str> for AttachmentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Site {
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    #[doc(hidden)]
     pub site_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The location of the site.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The date and time that the site was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the site.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SiteState>,
     /// <p>The tags for the site.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Site {
@@ -1270,10 +1303,13 @@ impl AsRef<str> for SiteState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The physical address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The latitude.</p>
+    #[doc(hidden)]
     pub latitude: std::option::Option<std::string::String>,
     /// <p>The longitude.</p>
+    #[doc(hidden)]
     pub longitude: std::option::Option<std::string::String>,
 }
 impl Location {
@@ -1362,26 +1398,37 @@ impl Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Link {
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the link.</p>
+    #[doc(hidden)]
     pub link_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The description of the link.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the link.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The bandwidth for the link.</p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<crate::model::Bandwidth>,
     /// <p>The provider of the link.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The date and time that the link was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the link.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::LinkState>,
     /// <p>The tags for the link.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Link {
@@ -1687,8 +1734,10 @@ impl AsRef<str> for LinkState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bandwidth {
     /// <p>Upload speed in Mbps.</p>
+    #[doc(hidden)]
     pub upload_speed: std::option::Option<i32>,
     /// <p>Download speed in Mbps.</p>
+    #[doc(hidden)]
     pub download_speed: std::option::Option<i32>,
 }
 impl Bandwidth {
@@ -1760,16 +1809,22 @@ impl Bandwidth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalNetwork {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
+    #[doc(hidden)]
     pub global_network_arn: std::option::Option<std::string::String>,
     /// <p>The description of the global network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the global network was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the global network.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GlobalNetworkState>,
     /// <p>The tags for the global network.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GlobalNetwork {
@@ -1993,32 +2048,46 @@ impl AsRef<str> for GlobalNetworkState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services location of the device.</p>
+    #[doc(hidden)]
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>The description of the device.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The device type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The device vendor.</p>
+    #[doc(hidden)]
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The device model.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The device serial number.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The site location.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The site ID.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the site was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DeviceState>,
     /// <p>The tags for the device.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Device {
@@ -2378,8 +2447,10 @@ impl AsRef<str> for DeviceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLocation {
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
+    #[doc(hidden)]
     pub zone: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
+    #[doc(hidden)]
     pub subnet_arn: std::option::Option<std::string::String>,
 }
 impl AwsLocation {
@@ -2451,22 +2522,31 @@ impl AwsLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetwork {
     /// <p>The ID of the global network that your core network is a part of. </p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a core network.</p>
+    #[doc(hidden)]
     pub core_network_arn: std::option::Option<std::string::String>,
     /// <p>The description of a core network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when a core network was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of a core network.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CoreNetworkState>,
     /// <p>The segments within a core network.</p>
+    #[doc(hidden)]
     pub segments: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSegment>>,
     /// <p>The edges within a core network.</p>
+    #[doc(hidden)]
     pub edges: std::option::Option<std::vec::Vec<crate::model::CoreNetworkEdge>>,
     /// <p>The list of key-value tags associated with a core network.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CoreNetwork {
@@ -2699,10 +2779,13 @@ impl CoreNetwork {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkEdge {
     /// <p>The Region where a core network edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The ASN of a core network edge.</p>
+    #[doc(hidden)]
     pub asn: std::option::Option<i64>,
     /// <p>The inside IP addresses used for core network edges.</p>
+    #[doc(hidden)]
     pub inside_cidr_blocks: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CoreNetworkEdge {
@@ -2803,10 +2886,13 @@ impl CoreNetworkEdge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkSegment {
     /// <p>The name of a core network segment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Regions where the edges are located.</p>
+    #[doc(hidden)]
     pub edge_locations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The shared segments of a core network.</p>
+    #[doc(hidden)]
     pub shared_segments: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CoreNetworkSegment {
@@ -2976,26 +3062,37 @@ impl AsRef<str> for CoreNetworkState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the first device in the connection.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the second device in the connection.</p>
+    #[doc(hidden)]
     pub connected_device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the first device in the connection.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the second device in the connection.</p>
+    #[doc(hidden)]
     pub connected_link_id: std::option::Option<std::string::String>,
     /// <p>The description of the connection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the connection was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the connection.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The tags for the connection.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Connection {
@@ -3313,26 +3410,37 @@ impl AsRef<str> for ConnectionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysis {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS account that created the route analysis.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the route analysis.</p>
+    #[doc(hidden)]
     pub route_analysis_id: std::option::Option<std::string::String>,
     /// <p>The time that the analysis started.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the route analysis.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RouteAnalysisStatus>,
     /// <p>The source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
     /// <p>The destination.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
     /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
+    #[doc(hidden)]
     pub include_return_path: bool,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+    #[doc(hidden)]
     pub use_middleboxes: bool,
     /// <p>The forward path.</p>
+    #[doc(hidden)]
     pub forward_path: std::option::Option<crate::model::RouteAnalysisPath>,
     /// <p>The return path.</p>
+    #[doc(hidden)]
     pub return_path: std::option::Option<crate::model::RouteAnalysisPath>,
 }
 impl RouteAnalysis {
@@ -3584,8 +3692,10 @@ impl RouteAnalysis {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysisPath {
     /// <p>The status of the analysis at completion.</p>
+    #[doc(hidden)]
     pub completion_status: std::option::Option<crate::model::RouteAnalysisCompletion>,
     /// <p>The route analysis path.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
 }
 impl RouteAnalysisPath {
@@ -3669,10 +3779,13 @@ impl RouteAnalysisPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathComponent {
     /// <p>The sequence number in the path. The destination is 0.</p>
+    #[doc(hidden)]
     pub sequence: std::option::Option<i32>,
     /// <p>The resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::NetworkResourceSummary>,
     /// <p>The destination CIDR block in the route table.</p>
+    #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
 }
 impl PathComponent {
@@ -3767,16 +3880,22 @@ impl PathComponent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkResourceSummary {
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The value for the Name tag.</p>
+    #[doc(hidden)]
     pub name_tag: std::option::Option<std::string::String>,
     /// <p>Indicates whether this is a middlebox appliance.</p>
+    #[doc(hidden)]
     pub is_middlebox: bool,
 }
 impl NetworkResourceSummary {
@@ -3922,6 +4041,7 @@ impl NetworkResourceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysisCompletion {
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
+    #[doc(hidden)]
     pub result_code: std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
@@ -3935,8 +4055,10 @@ pub struct RouteAnalysisCompletion {
     /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
     /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub reason_code: std::option::Option<crate::model::RouteAnalysisCompletionReasonCode>,
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
+    #[doc(hidden)]
     pub reason_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4283,10 +4405,13 @@ impl AsRef<str> for RouteAnalysisCompletionResultCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysisEndpointOptions {
     /// <p>The ARN of the transit gateway attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_attachment_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The IP address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl RouteAnalysisEndpointOptions {
@@ -4446,8 +4571,10 @@ impl AsRef<str> for RouteAnalysisStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysisEndpointOptionsSpecification {
     /// <p>The ARN of the transit gateway attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_attachment_arn: std::option::Option<std::string::String>,
     /// <p>The IP address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl RouteAnalysisEndpointOptionsSpecification {
@@ -4528,12 +4655,16 @@ impl RouteAnalysisEndpointOptionsSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationStatus {
     /// <p>The ID of an Amazon Web Services Organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    #[doc(hidden)]
     pub organization_aws_service_access_status: std::option::Option<std::string::String>,
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
     pub slr_deployment_status: std::option::Option<std::string::String>,
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
+    #[doc(hidden)]
     pub account_status_list: std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
 }
 impl OrganizationStatus {
@@ -4664,8 +4795,10 @@ impl OrganizationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountStatus {
     /// <p>The ID of an account within the Amazon Web Services Organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of SLR deployment for the account.</p>
+    #[doc(hidden)]
     pub slr_deployment_status: std::option::Option<std::string::String>,
 }
 impl AccountStatus {
@@ -4740,20 +4873,28 @@ impl AccountStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkPolicy {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
     /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::CoreNetworkPolicyAlias>,
     /// <p>The description of a core network policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when a core network policy was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of a core network policy.</p>
+    #[doc(hidden)]
     pub change_set_state: std::option::Option<crate::model::ChangeSetState>,
     /// <p>Describes any errors in a core network policy.</p>
+    #[doc(hidden)]
     pub policy_errors: std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyError>>,
     /// <p>Describes a core network policy.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl CoreNetworkPolicy {
@@ -4952,10 +5093,13 @@ impl CoreNetworkPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkPolicyError {
     /// <p>The error code associated with a core network policy error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message associated with a core network policy error code.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The JSON path where the error was discovered in the policy document.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl CoreNetworkPolicyError {
@@ -5177,10 +5321,13 @@ impl AsRef<str> for CoreNetworkPolicyAlias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitGatewayRegistration {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The state of the transit gateway registration.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TransitGatewayRegistrationStateReason>,
 }
 impl TransitGatewayRegistration {
@@ -5280,8 +5427,10 @@ impl TransitGatewayRegistration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitGatewayRegistrationStateReason {
     /// <p>The code for the state reason.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::TransitGatewayRegistrationState>,
     /// <p>The message for the state reason.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TransitGatewayRegistrationStateReason {
@@ -5423,24 +5572,34 @@ impl AsRef<str> for TransitGatewayRegistrationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Peering {
     /// <p>The ID of the core network for the peering request.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a core network.</p>
+    #[doc(hidden)]
     pub core_network_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the peering attachment. </p>
+    #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
     /// <p>The ID of the account owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+    #[doc(hidden)]
     pub peering_type: std::option::Option<crate::model::PeeringType>,
     /// <p>The current state of the peering connection. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::PeeringState>,
     /// <p>The edge location for the peer.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The resource ARN of the peer.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value tags associated with the peering.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The timestamp when the attachment peer was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Peering {
@@ -5789,18 +5948,25 @@ impl AsRef<str> for PeeringType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkSummary {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>a core network ARN.</p>
+    #[doc(hidden)]
     pub core_network_arn: std::option::Option<std::string::String>,
     /// <p>The global network ID.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the account owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The state of a core network.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CoreNetworkState>,
     /// <p>The description of a core network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The key-value tags associated with a core network summary.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CoreNetworkSummary {
@@ -5981,16 +6147,22 @@ impl CoreNetworkSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkPolicyVersion {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::CoreNetworkPolicyAlias>,
     /// <p>The description of a core network policy version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when a core network policy version was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the policy version change set.</p>
+    #[doc(hidden)]
     pub change_set_state: std::option::Option<crate::model::ChangeSetState>,
 }
 impl CoreNetworkPolicyVersion {
@@ -6142,18 +6314,25 @@ impl CoreNetworkPolicyVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectPeerSummary {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a Connect peer attachment.</p>
+    #[doc(hidden)]
     pub connect_attachment_id: std::option::Option<std::string::String>,
     /// <p>The ID of a Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
     /// <p>The Region where the edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The state of a Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_state: std::option::Option<crate::model::ConnectPeerState>,
     /// <p>The timestamp when a Connect peer was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of key-value tags associated with the Connect peer summary.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectPeerSummary {
@@ -6400,10 +6579,13 @@ impl AsRef<str> for ConnectPeerState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitGatewayRouteTableAttachment {
     /// <p>Describes a core network attachment.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
     /// <p>The ID of the peering attachment.</p>
+    #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the transit gateway attachment route table.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
 }
 impl TransitGatewayRouteTableAttachment {
@@ -6504,8 +6686,10 @@ impl TransitGatewayRouteTableAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitGatewayPeering {
     /// <p>Describes a transit gateway peer connection.</p>
+    #[doc(hidden)]
     pub peering: std::option::Option<crate::model::Peering>,
     /// <p>The ARN of the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
 impl TransitGatewayPeering {
@@ -6580,14 +6764,19 @@ impl TransitGatewayPeering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitGatewayConnectPeerAssociation {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TransitGatewayConnectPeerAssociationState>,
 }
 impl TransitGatewayConnectPeerAssociation {
@@ -6794,8 +6983,10 @@ impl AsRef<str> for TransitGatewayConnectPeerAssociationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SiteToSiteVpnAttachment {
     /// <p>Provides details about a site-to-site VPN attachment.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
     /// <p>The ARN of the site-to-site VPN attachment. </p>
+    #[doc(hidden)]
     pub vpn_connection_arn: std::option::Option<std::string::String>,
 }
 impl SiteToSiteVpnAttachment {
@@ -6873,22 +7064,31 @@ impl SiteToSiteVpnAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkTelemetry {
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The connection health.</p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::ConnectionHealth>,
 }
 impl NetworkTelemetry {
@@ -7091,10 +7291,13 @@ impl NetworkTelemetry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionHealth {
     /// <p>The connection type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The connection status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time the status was last updated.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConnectionHealth {
@@ -7302,14 +7505,19 @@ impl AsRef<str> for ConnectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkRoute {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
+    #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
     /// <p>The destinations.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::NetworkRouteDestination>>,
     /// <p>The ID of the prefix list.</p>
+    #[doc(hidden)]
     pub prefix_list_id: std::option::Option<std::string::String>,
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RouteType>,
 }
 impl NetworkRoute {
@@ -7558,16 +7766,22 @@ impl AsRef<str> for RouteState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkRouteDestination {
     /// <p>The ID of a core network attachment.</p>
+    #[doc(hidden)]
     pub core_network_attachment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
+    #[doc(hidden)]
     pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
     /// <p>The name of the segment.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
     /// <p>The edge location for the network destination.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl NetworkRouteDestination {
@@ -7783,10 +7997,13 @@ impl AsRef<str> for RouteTableType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkSegmentEdgeIdentifier {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The name of the segment edge.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
     /// <p>The Region where the segment edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
 }
 impl CoreNetworkSegmentEdgeIdentifier {
@@ -7881,8 +8098,10 @@ impl CoreNetworkSegmentEdgeIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteTableIdentifier {
     /// <p>The ARN of the transit gateway route table.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
     /// <p>The segment edge in a core network.</p>
+    #[doc(hidden)]
     pub core_network_segment_edge:
         std::option::Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
 }
@@ -7973,12 +8192,16 @@ impl RouteTableIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkResource {
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -8003,18 +8226,25 @@ pub struct NetworkResource {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
     /// <p>The time that the resource definition was retrieved.</p>
+    #[doc(hidden)]
     pub definition_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The resource metadata.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8347,8 +8577,10 @@ impl NetworkResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Relationship {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub to: std::option::Option<std::string::String>,
 }
 impl Relationship {
@@ -8420,8 +8652,10 @@ impl Relationship {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkResourceCount {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The resource count.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl NetworkResourceCount {
@@ -8496,12 +8730,16 @@ impl NetworkResourceCount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkAssociation {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The device ID for the link association.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
+    #[doc(hidden)]
     pub link_association_state: std::option::Option<crate::model::LinkAssociationState>,
 }
 impl LinkAssociation {
@@ -8678,14 +8916,19 @@ impl AsRef<str> for LinkAssociationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerGatewayAssociation {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    #[doc(hidden)]
     pub customer_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The association state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CustomerGatewayAssociationState>,
 }
 impl CustomerGatewayAssociation {
@@ -8880,16 +9123,22 @@ impl AsRef<str> for CustomerGatewayAssociationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkChange {
     /// <p>The type of change.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChangeType>,
     /// <p>The action to take for a core network.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
     /// <p>The resource identifier.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The previous values for a core network.</p>
+    #[doc(hidden)]
     pub previous_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
     /// <p>The new value for a core network</p>
+    #[doc(hidden)]
     pub new_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    #[doc(hidden)]
     pub identifier_path: std::option::Option<std::string::String>,
 }
 impl CoreNetworkChange {
@@ -9041,18 +9290,25 @@ impl CoreNetworkChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
     /// <p>The Regions where edges are located in a core network. </p>
+    #[doc(hidden)]
     pub edge_locations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ASN of a core network.</p>
+    #[doc(hidden)]
     pub asn: std::option::Option<i64>,
     /// <p>The IP addresses used for a core network.</p>
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
     /// <p>The ID of the destination.</p>
+    #[doc(hidden)]
     pub destination_identifier: std::option::Option<std::string::String>,
     /// <p>The inside IP addresses used for core network change values.</p>
+    #[doc(hidden)]
     pub inside_cidr_blocks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The shared segments for a core network change value. </p>
+    #[doc(hidden)]
     pub shared_segments: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CoreNetworkChangeValues {
@@ -9391,16 +9647,22 @@ impl AsRef<str> for ChangeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkChangeEvent {
     /// <p>Describes the type of change event. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChangeType>,
     /// <p>The action taken for the change event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    #[doc(hidden)]
     pub identifier_path: std::option::Option<std::string::String>,
     /// <p>The timestamp for an event change in status.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the core network change event.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChangeStatus>,
     /// <p>Details of the change event.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<crate::model::CoreNetworkChangeEventValues>,
 }
 impl CoreNetworkChangeEvent {
@@ -9555,12 +9817,16 @@ impl CoreNetworkChangeEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The segment name if the change event is associated with a segment.</p>
+    #[doc(hidden)]
     pub segment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl CoreNetworkChangeEventValues {
@@ -9735,14 +10001,19 @@ impl AsRef<str> for ChangeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectPeerAssociation {
     /// <p>The ID of the Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device to connect to.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The state of the Connect peer association.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConnectPeerAssociationState>,
 }
 impl ConnectPeerAssociation {
@@ -9937,20 +10208,28 @@ impl AsRef<str> for ConnectPeerAssociationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectPeer {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment to connect.</p>
+    #[doc(hidden)]
     pub connect_attachment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
     /// <p>The Connect peer Regions where edges are located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The state of the Connect peer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConnectPeerState>,
     /// <p>The timestamp when the Connect peer was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration of the Connect peer.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ConnectPeerConfiguration>,
     /// <p>The list of key-value tags associated with the Connect peer.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectPeer {
@@ -10154,14 +10433,19 @@ impl ConnectPeer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectPeerConfiguration {
     /// <p>The IP address of a core network.</p>
+    #[doc(hidden)]
     pub core_network_address: std::option::Option<std::string::String>,
     /// <p>The IP address of the Connect peer.</p>
+    #[doc(hidden)]
     pub peer_address: std::option::Option<std::string::String>,
     /// <p>The inside IP addresses used for a Connect peer configuration.</p>
+    #[doc(hidden)]
     pub inside_cidr_blocks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The protocol used for a Connect peer configuration.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::TunnelProtocol>,
     /// <p>The Connect peer BGP configurations.</p>
+    #[doc(hidden)]
     pub bgp_configurations:
         std::option::Option<std::vec::Vec<crate::model::ConnectPeerBgpConfiguration>>,
 }
@@ -10315,12 +10599,16 @@ impl ConnectPeerConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectPeerBgpConfiguration {
     /// <p>The ASN of the Coret Network.</p>
+    #[doc(hidden)]
     pub core_network_asn: std::option::Option<i64>,
     /// <p>The ASN of the Connect peer.</p>
+    #[doc(hidden)]
     pub peer_asn: std::option::Option<i64>,
     /// <p>The address of a core network.</p>
+    #[doc(hidden)]
     pub core_network_address: std::option::Option<std::string::String>,
     /// <p>The address of a core network Connect peer.</p>
+    #[doc(hidden)]
     pub peer_address: std::option::Option<std::string::String>,
 }
 impl ConnectPeerBgpConfiguration {
@@ -10480,10 +10768,13 @@ impl AsRef<str> for TunnelProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectAttachment {
     /// <p>The attachment details.</p>
+    #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
     /// <p>The ID of the transport attachment.</p>
+    #[doc(hidden)]
     pub transport_attachment_id: std::option::Option<std::string::String>,
     /// <p>Options for connecting an attachment.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::ConnectAttachmentOptions>,
 }
 impl ConnectAttachment {
@@ -10581,6 +10872,7 @@ impl ConnectAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectAttachmentOptions {
     /// <p>The protocol used for the attachment connection.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::TunnelProtocol>,
 }
 impl ConnectAttachmentOptions {
@@ -10638,6 +10930,7 @@ impl ConnectAttachmentOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BgpOptions {
     /// <p>The Peer ASN of the BGP.</p>
+    #[doc(hidden)]
     pub peer_asn: std::option::Option<i64>,
 }
 impl BgpOptions {

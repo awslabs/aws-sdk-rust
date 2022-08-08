@@ -34,8 +34,10 @@ impl UpgradeLensReviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A workload share return object.</p>
+    #[doc(hidden)]
     pub workload_share: std::option::Option<crate::model::WorkloadShare>,
 }
 impl UpdateWorkloadShareOutput {
@@ -110,6 +112,7 @@ impl UpdateWorkloadShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkloadOutput {
     /// <p>A workload return object.</p>
+    #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
 }
 impl UpdateWorkloadOutput {
@@ -164,6 +167,7 @@ impl UpdateWorkloadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShareInvitationOutput {
     /// <p>The updated workload share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation: std::option::Option<crate::model::ShareInvitation>,
 }
 impl UpdateShareInvitationOutput {
@@ -221,8 +225,10 @@ impl UpdateShareInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A lens review of a question.</p>
+    #[doc(hidden)]
     pub lens_review: std::option::Option<crate::model::LensReview>,
 }
 impl UpdateLensReviewOutput {
@@ -327,15 +333,19 @@ impl UpdateGlobalSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
+    #[doc(hidden)]
     pub answer: std::option::Option<crate::model::Answer>,
 }
 impl UpdateAnswerOutput {
@@ -510,11 +520,14 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadSharesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A list of workload share summaries.</p>
+    #[doc(hidden)]
     pub workload_share_summaries:
         std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkloadSharesOutput {
@@ -618,8 +631,10 @@ impl ListWorkloadSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadsOutput {
     /// <p>A list of workload summaries.</p>
+    #[doc(hidden)]
     pub workload_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkloadsOutput {
@@ -701,6 +716,7 @@ impl ListWorkloadsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -774,9 +790,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
+    #[doc(hidden)]
     pub share_invitation_summaries:
         std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListShareInvitationsOutput {
@@ -866,9 +884,11 @@ impl ListShareInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationsOutput {
     /// <p>List of lens notification summaries in a workload.</p>
+    #[doc(hidden)]
     pub notification_summaries:
         std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationsOutput {
@@ -952,10 +972,13 @@ impl ListNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMilestonesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A list of milestone summaries.</p>
+    #[doc(hidden)]
     pub milestone_summaries: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMilestonesOutput {
@@ -1054,8 +1077,10 @@ impl ListMilestonesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensSharesOutput {
     /// <p>A list of lens share summaries.</p>
+    #[doc(hidden)]
     pub lens_share_summaries: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensSharesOutput {
@@ -1137,13 +1162,17 @@ impl ListLensSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>List of lens summaries of lens reviews of a workload.</p>
+    #[doc(hidden)]
     pub lens_review_summaries: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensReviewsOutput {
@@ -1262,20 +1291,26 @@ impl ListLensReviewsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewImprovementsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>List of improvement summaries of lens review in a workload.</p>
+    #[doc(hidden)]
     pub improvement_summaries: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensReviewImprovementsOutput {
@@ -1439,8 +1474,10 @@ impl ListLensReviewImprovementsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensesOutput {
     /// <p>List of lens summaries of available lenses.</p>
+    #[doc(hidden)]
     pub lens_summaries: std::option::Option<std::vec::Vec<crate::model::LensSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensesOutput {
@@ -1521,20 +1558,26 @@ impl ListLensesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnswersOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>List of answer summaries of lens review in a workload.</p>
+    #[doc(hidden)]
     pub answer_summaries: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnswersOutput {
@@ -1696,8 +1739,10 @@ impl ListAnswersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportLensOutput {
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The status of the imported lens.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImportLensStatus>,
 }
 impl ImportLensOutput {
@@ -1772,6 +1817,7 @@ impl ImportLensOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkloadOutput {
     /// <p>A workload return object.</p>
+    #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
 }
 impl GetWorkloadOutput {
@@ -1826,8 +1872,10 @@ impl GetWorkloadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A milestone return object.</p>
+    #[doc(hidden)]
     pub milestone: std::option::Option<crate::model::Milestone>,
 }
 impl GetMilestoneOutput {
@@ -1905,16 +1953,22 @@ pub struct GetLensVersionDifferenceOutput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The base version of the lens.</p>
+    #[doc(hidden)]
     pub base_lens_version: std::option::Option<std::string::String>,
     /// <p>The target lens version for the lens.</p>
+    #[doc(hidden)]
     pub target_lens_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the lens.</p>
+    #[doc(hidden)]
     pub latest_lens_version: std::option::Option<std::string::String>,
     /// <p>The differences between the base and latest versions of the lens.</p>
+    #[doc(hidden)]
     pub version_differences: std::option::Option<crate::model::VersionDifferences>,
 }
 impl GetLensVersionDifferenceOutput {
@@ -2075,11 +2129,14 @@ impl GetLensVersionDifferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewReportOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>A report of a lens review.</p>
+    #[doc(hidden)]
     pub lens_review_report: std::option::Option<crate::model::LensReviewReport>,
 }
 impl GetLensReviewReportOutput {
@@ -2174,11 +2231,14 @@ impl GetLensReviewReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>A lens review of a question.</p>
+    #[doc(hidden)]
     pub lens_review: std::option::Option<crate::model::LensReview>,
 }
 impl GetLensReviewOutput {
@@ -2273,6 +2333,7 @@ impl GetLensReviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensOutput {
     /// <p>A lens return object.</p>
+    #[doc(hidden)]
     pub lens: std::option::Option<crate::model::Lens>,
 }
 impl GetLensOutput {
@@ -2325,18 +2386,23 @@ impl GetLensOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
+    #[doc(hidden)]
     pub answer: std::option::Option<crate::model::Answer>,
 }
 impl GetAnswerOutput {
@@ -2471,6 +2537,7 @@ impl GetAnswerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLensOutput {
     /// <p>The JSON for the lens.</p>
+    #[doc(hidden)]
     pub lens_json: std::option::Option<std::string::String>,
 }
 impl ExportLensOutput {
@@ -2675,8 +2742,10 @@ impl DeleteLensOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkloadShareOutput {
@@ -2748,8 +2817,10 @@ impl CreateWorkloadShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
 }
 impl CreateWorkloadOutput {
@@ -2821,9 +2892,11 @@ impl CreateWorkloadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl CreateMilestoneOutput {
@@ -2898,8 +2971,10 @@ impl CreateMilestoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of the lens.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
 }
 impl CreateLensVersionOutput {
@@ -2971,6 +3046,7 @@ impl CreateLensVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLensShareOutput {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
 }
 impl CreateLensShareOutput {

@@ -5,34 +5,49 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The login name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The given name of the user.</p>
+    #[doc(hidden)]
     pub given_name: std::option::Option<std::string::String>,
     /// <p>The surname of the user.</p>
+    #[doc(hidden)]
     pub surname: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The ID of the root folder.</p>
+    #[doc(hidden)]
     pub root_folder_id: std::option::Option<std::string::String>,
     /// <p>The ID of the recycle bin folder.</p>
+    #[doc(hidden)]
     pub recycle_bin_folder_id: std::option::Option<std::string::String>,
     /// <p>The status of the user.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UserStatusType>,
     /// <p>The type of user.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The time when the user was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the user was modified.</p>
+    #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time zone ID of the user.</p>
+    #[doc(hidden)]
     pub time_zone_id: std::option::Option<std::string::String>,
     /// <p>The locale of the user.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::LocaleType>,
     /// <p>The storage for the user.</p>
+    #[doc(hidden)]
     pub storage: std::option::Option<crate::model::UserStorageMetadata>,
 }
 impl User {
@@ -349,8 +364,10 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserStorageMetadata {
     /// <p>The amount of storage used, in bytes.</p>
+    #[doc(hidden)]
     pub storage_utilized_in_bytes: std::option::Option<i64>,
     /// <p>The storage for a user.</p>
+    #[doc(hidden)]
     pub storage_rule: std::option::Option<crate::model::StorageRuleType>,
 }
 impl UserStorageMetadata {
@@ -425,8 +442,10 @@ impl UserStorageMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageRuleType {
     /// <p>The amount of storage allocated, in bytes.</p>
+    #[doc(hidden)]
     pub storage_allocated_in_bytes: std::option::Option<i64>,
     /// <p>The type of storage.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
 }
 impl StorageRuleType {
@@ -1020,8 +1039,10 @@ impl AsRef<str> for PrincipalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadMetadata {
     /// <p>The URL of the upload.</p>
+    #[doc(hidden)]
     pub upload_url: std::option::Option<std::string::String>,
     /// <p>The signed headers.</p>
+    #[doc(hidden)]
     pub signed_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1114,20 +1135,28 @@ impl UploadMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentMetadata {
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the creator.</p>
+    #[doc(hidden)]
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the document was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the document was updated.</p>
+    #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the document.</p>
+    #[doc(hidden)]
     pub latest_version_metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
     /// <p>The resource state.</p>
+    #[doc(hidden)]
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
     /// <p>List of labels on the document.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DocumentMetadata {
@@ -1331,32 +1360,45 @@ impl DocumentMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the version.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The content type of the document.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The size of the document, in bytes.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i64>,
     /// <p>The signature of the document.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
     /// <p>The status of the document.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DocumentStatusType>,
     /// <p>The timestamp when the document was first uploaded.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the document was last uploaded.</p>
+    #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was originally created.</p>
+    #[doc(hidden)]
     pub content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
+    #[doc(hidden)]
     pub content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the creator.</p>
+    #[doc(hidden)]
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The thumbnail of the document.</p>
+    #[doc(hidden)]
     pub thumbnail: std::option::Option<
         std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
     >,
     /// <p>The source of the document.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<
         std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
     >,
@@ -1846,26 +1888,37 @@ impl AsRef<str> for DocumentStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderMetadata {
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the folder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the creator.</p>
+    #[doc(hidden)]
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the folder was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the folder was updated.</p>
+    #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The resource state of the folder.</p>
+    #[doc(hidden)]
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
     /// <p>List of labels on the folder.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The size of the folder metadata.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<i64>,
     /// <p>The size of the latest version of the folder metadata.</p>
+    #[doc(hidden)]
     pub latest_version_size: std::option::Option<i64>,
 }
 impl FolderMetadata {
@@ -2162,6 +2215,7 @@ impl AsRef<str> for ResourceCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePath {
     /// <p>The components of the resource path.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
 }
 impl ResourcePath {
@@ -2226,8 +2280,10 @@ impl ResourcePath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePathComponent {
     /// <p>The ID of the resource path.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the resource path.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ResourcePathComponent {
@@ -2482,10 +2538,13 @@ impl AsRef<str> for UserFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The permission information for the resource.</p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::PermissionInfo>>,
 }
 impl Principal {
@@ -2583,8 +2642,10 @@ impl Principal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionInfo {
     /// <p>The role of the user.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoleType>,
     /// <p>The type of permissions.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RolePermissionType>,
 }
 impl PermissionInfo {
@@ -2777,10 +2838,13 @@ impl AsRef<str> for RoleType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
     /// <p>The ID of the subscription.</p>
+    #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
     /// <p>The endpoint of the subscription.</p>
+    #[doc(hidden)]
     pub end_point: std::option::Option<std::string::String>,
     /// <p>The protocol of the subscription.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
 }
 impl Subscription {
@@ -2926,8 +2990,10 @@ impl AsRef<str> for SubscriptionProtocolType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupMetadata {
     /// <p>The ID of the user group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GroupMetadata {
@@ -3113,22 +3179,31 @@ impl AsRef<str> for ResourceSortType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Comment {
     /// <p>The ID of the comment.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the parent comment.</p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The ID of the root comment in the thread.</p>
+    #[doc(hidden)]
     pub thread_id: std::option::Option<std::string::String>,
     /// <p>The text of the comment.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The details of the user who made the comment.</p>
+    #[doc(hidden)]
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The time that the comment was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
+    #[doc(hidden)]
     pub visibility: std::option::Option<crate::model::CommentVisibilityType>,
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
+    #[doc(hidden)]
     pub recipient_id: std::option::Option<std::string::String>,
 }
 impl Comment {
@@ -3442,22 +3517,31 @@ impl AsRef<str> for CommentStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Activity {
     /// <p>The activity type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ActivityType>,
     /// <p>The timestamp when the action was performed.</p>
+    #[doc(hidden)]
     pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    #[doc(hidden)]
     pub is_indirect_activity: bool,
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The user who performed the action.</p>
+    #[doc(hidden)]
     pub initiator: std::option::Option<crate::model::UserMetadata>,
     /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+    #[doc(hidden)]
     pub participants: std::option::Option<crate::model::Participants>,
     /// <p>The metadata of the resource involved in the user action.</p>
+    #[doc(hidden)]
     pub resource_metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
+    #[doc(hidden)]
     pub original_parent: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
+    #[doc(hidden)]
     pub comment_metadata: std::option::Option<crate::model::CommentMetadata>,
 }
 impl Activity {
@@ -3669,14 +3753,19 @@ impl Activity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentMetadata {
     /// <p>The ID of the comment.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>The user who made the comment.</p>
+    #[doc(hidden)]
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The timestamp that the comment was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
+    #[doc(hidden)]
     pub comment_status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The ID of the user being replied to.</p>
+    #[doc(hidden)]
     pub recipient_id: std::option::Option<std::string::String>,
 }
 impl CommentMetadata {
@@ -3805,18 +3894,25 @@ impl CommentMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The original name of the resource before a rename operation.</p>
+    #[doc(hidden)]
     pub original_name: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The owner of the resource.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::UserMetadata>,
     /// <p>The parent ID of the resource before a rename operation.</p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<std::string::String>,
 }
 impl ResourceMetadata {
@@ -3976,14 +4072,19 @@ impl ResourceMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserMetadata {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The given name of the user before a rename operation.</p>
+    #[doc(hidden)]
     pub given_name: std::option::Option<std::string::String>,
     /// <p>The surname of the user.</p>
+    #[doc(hidden)]
     pub surname: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl UserMetadata {
@@ -4164,8 +4265,10 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Participants {
     /// <p>The list of users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
     /// <p>The list of user groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
 }
 impl Participants {
@@ -4527,16 +4630,22 @@ impl AsRef<str> for SubscriptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareResult {
     /// <p>The ID of the principal.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the invited user.</p>
+    #[doc(hidden)]
     pub invitee_principal_id: std::option::Option<std::string::String>,
     /// <p>The role.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoleType>,
     /// <p>The status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatusType>,
     /// <p>The ID of the resource that was shared.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl ShareResult {
@@ -4740,8 +4849,10 @@ impl AsRef<str> for ShareStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationOptions {
     /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
+    #[doc(hidden)]
     pub send_email: bool,
     /// <p>Text value to be included in the email body.</p>
+    #[doc(hidden)]
     pub email_message: std::option::Option<std::string::String>,
 }
 impl NotificationOptions {
@@ -4816,10 +4927,13 @@ impl NotificationOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharePrincipal {
     /// <p>The ID of the recipient.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the recipient.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The role of the recipient.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoleType>,
 }
 impl SharePrincipal {

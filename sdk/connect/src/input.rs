@@ -30342,10 +30342,13 @@ impl UpdateUserSecurityProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserSecurityProfilesInput {
     /// <p>The identifiers of the security profiles for the user.</p>
+    #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserSecurityProfilesInput {
@@ -30377,10 +30380,13 @@ impl std::fmt::Debug for UpdateUserSecurityProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserRoutingProfileInput {
     /// <p>The identifier of the routing profile for the user.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserRoutingProfileInput {
@@ -30412,10 +30418,13 @@ impl std::fmt::Debug for UpdateUserRoutingProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPhoneConfigInput {
     /// <p>Information about phone configuration settings for the user.</p>
+    #[doc(hidden)]
     pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserPhoneConfigInput {
@@ -30447,10 +30456,13 @@ impl std::fmt::Debug for UpdateUserPhoneConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserIdentityInfoInput {
     /// <p>The identity information for the user.</p>
+    #[doc(hidden)]
     pub identity_info: std::option::Option<crate::model::UserIdentityInfo>,
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserIdentityInfoInput {
@@ -30482,8 +30494,10 @@ impl std::fmt::Debug for UpdateUserIdentityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserHierarchyStructureInput {
     /// <p>The hierarchy levels to update.</p>
+    #[doc(hidden)]
     pub hierarchy_structure: std::option::Option<crate::model::HierarchyStructureUpdate>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserHierarchyStructureInput {
@@ -30512,10 +30526,13 @@ impl std::fmt::Debug for UpdateUserHierarchyStructureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserHierarchyGroupNameInput {
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserHierarchyGroupNameInput {
@@ -30547,10 +30564,13 @@ impl std::fmt::Debug for UpdateUserHierarchyGroupNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserHierarchyInput {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserHierarchyInput {
@@ -30582,22 +30602,31 @@ impl std::fmt::Debug for UpdateUserHierarchyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskTemplateInput {
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub task_template_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the task template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>Fields that are part of the template.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
 }
 impl UpdateTaskTemplateInput {
@@ -30659,12 +30688,16 @@ impl std::fmt::Debug for UpdateTaskTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The permissions granted to a security profile.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier for the security profle.</p>
+    #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl UpdateSecurityProfileInput {
@@ -30701,10 +30734,13 @@ impl std::fmt::Debug for UpdateSecurityProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
+    #[doc(hidden)]
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
 }
 impl UpdateRoutingProfileQueuesInput {
@@ -30736,12 +30772,16 @@ impl std::fmt::Debug for UpdateRoutingProfileQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingProfileNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateRoutingProfileNameInput {
@@ -30778,10 +30818,13 @@ impl std::fmt::Debug for UpdateRoutingProfileNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingProfileDefaultOutboundQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the default outbound queue.</p>
+    #[doc(hidden)]
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
 }
 impl UpdateRoutingProfileDefaultOutboundQueueInput {
@@ -30813,10 +30856,13 @@ impl std::fmt::Debug for UpdateRoutingProfileDefaultOutboundQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingProfileConcurrencyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
 }
 impl UpdateRoutingProfileConcurrencyInput {
@@ -30848,12 +30894,16 @@ impl std::fmt::Debug for UpdateRoutingProfileConcurrencyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuickConnectNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
     /// <p>The name of the quick connect.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the quick connect.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateQuickConnectNameInput {
@@ -30890,10 +30940,13 @@ impl std::fmt::Debug for UpdateQuickConnectNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuickConnectConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
     /// <p>Information about the configuration settings for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
 }
 impl UpdateQuickConnectConfigInput {
@@ -30925,10 +30978,13 @@ impl std::fmt::Debug for UpdateQuickConnectConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The status of the queue.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueueStatus>,
 }
 impl UpdateQueueStatusInput {
@@ -30960,10 +31016,13 @@ impl std::fmt::Debug for UpdateQueueStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueOutboundCallerConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    #[doc(hidden)]
     pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
 }
 impl UpdateQueueOutboundCallerConfigInput {
@@ -30997,12 +31056,16 @@ impl std::fmt::Debug for UpdateQueueOutboundCallerConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueNameInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the queue.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateQueueNameInput {
@@ -31039,10 +31102,13 @@ impl std::fmt::Debug for UpdateQueueNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueMaxContactsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    #[doc(hidden)]
     pub max_contacts: std::option::Option<i32>,
 }
 impl UpdateQueueMaxContactsInput {
@@ -31074,10 +31140,13 @@ impl std::fmt::Debug for UpdateQueueMaxContactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQueueHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateQueueHoursOfOperationInput {
@@ -31109,10 +31178,13 @@ impl std::fmt::Debug for UpdateQueueHoursOfOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberInput {
@@ -31144,12 +31216,16 @@ impl std::fmt::Debug for UpdatePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
     /// <p>The storage configuration for the instance.</p>
+    #[doc(hidden)]
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
 }
 impl UpdateInstanceStorageConfigInput {
@@ -31186,12 +31262,15 @@ impl std::fmt::Debug for UpdateInstanceStorageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl UpdateInstanceAttributeInput {
@@ -31225,16 +31304,22 @@ impl std::fmt::Debug for UpdateInstanceAttributeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The name of the hours of operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the hours of operation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time zone of the hours of operation.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Configuration information of the hours of operation.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
 }
 impl UpdateHoursOfOperationInput {
@@ -31281,10 +31366,13 @@ impl std::fmt::Debug for UpdateHoursOfOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactScheduleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateContactScheduleInput {
@@ -31316,12 +31404,16 @@ impl std::fmt::Debug for UpdateContactScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowNameInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateContactFlowNameInput {
@@ -31358,14 +31450,19 @@ impl std::fmt::Debug for UpdateContactFlowNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowModuleMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow module.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow module.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of contact flow module.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
 impl UpdateContactFlowModuleMetadataInput {
@@ -31407,10 +31504,13 @@ impl std::fmt::Debug for UpdateContactFlowModuleMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow module.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl UpdateContactFlowModuleContentInput {
@@ -31442,14 +31542,19 @@ impl std::fmt::Debug for UpdateContactFlowModuleContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>TThe name of the contact flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
 }
 impl UpdateContactFlowMetadataInput {
@@ -31491,10 +31596,13 @@ impl std::fmt::Debug for UpdateContactFlowMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowContentInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl UpdateContactFlowContentInput {
@@ -31526,11 +31634,14 @@ impl std::fmt::Debug for UpdateContactFlowContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactAttributesInput {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -31567,14 +31678,19 @@ impl std::fmt::Debug for UpdateContactAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub references: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Reference>,
     >,
@@ -31621,18 +31737,25 @@ impl std::fmt::Debug for UpdateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_id: std::option::Option<std::string::String>,
     /// <p>The name of the agent status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the agent status.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the agent status.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AgentStatusState>,
     /// <p>The display order of the agent status.</p>
+    #[doc(hidden)]
     pub display_order: std::option::Option<i32>,
     /// <p>A number indicating the reset order of the agent status.</p>
+    #[doc(hidden)]
     pub reset_order_number: bool,
 }
 impl UpdateAgentStatusInput {
@@ -31684,8 +31807,10 @@ impl std::fmt::Debug for UpdateAgentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -31712,16 +31837,22 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl TransferContactInput {
@@ -31768,8 +31899,10 @@ impl std::fmt::Debug for TransferContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -31800,10 +31933,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl SuspendContactRecordingInput {
@@ -31835,10 +31971,13 @@ impl std::fmt::Debug for SuspendContactRecordingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the streaming configuration enabled. </p>
+    #[doc(hidden)]
     pub streaming_id: std::option::Option<std::string::String>,
 }
 impl StopContactStreamingInput {
@@ -31870,10 +32009,13 @@ impl std::fmt::Debug for StopContactStreamingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl StopContactRecordingInput {
@@ -31905,8 +32047,10 @@ impl std::fmt::Debug for StopContactRecordingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContactInput {
     /// <p>The ID of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl StopContactInput {
@@ -31933,31 +32077,42 @@ impl std::fmt::Debug for StopContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    #[doc(hidden)]
     pub previous_contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub references: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Reference>,
     >,
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub task_template_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl StartTaskContactInput {
@@ -32037,28 +32192,38 @@ impl std::fmt::Debug for StartTaskContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOutboundVoiceContactInput {
     /// <p>The phone number of the customer, in E.164 format.</p>
+    #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    #[doc(hidden)]
     pub source_phone_number: std::option::Option<std::string::String>,
     /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
+    #[doc(hidden)]
     pub answer_machine_detection_config:
         std::option::Option<crate::model::AnswerMachineDetectionConfig>,
     /// <p>The campaign identifier of the outbound communication.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+    #[doc(hidden)]
     pub traffic_type: std::option::Option<crate::model::TrafficType>,
 }
 impl StartOutboundVoiceContactInput {
@@ -32135,12 +32300,16 @@ impl std::fmt::Debug for StartOutboundVoiceContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+    #[doc(hidden)]
     pub chat_streaming_configuration: std::option::Option<crate::model::ChatStreamingConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartContactStreamingInput {
@@ -32182,12 +32351,16 @@ impl std::fmt::Debug for StartContactStreamingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The person being recorded.</p>
+    #[doc(hidden)]
     pub voice_recording_configuration:
         std::option::Option<crate::model::VoiceRecordingConfiguration>,
 }
@@ -32230,23 +32403,31 @@ impl std::fmt::Debug for StartContactRecordingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information identifying the participant.</p>
+    #[doc(hidden)]
     pub participant_details: std::option::Option<crate::model::ParticipantDetails>,
     /// <p>The initial message to be sent to the newly created chat.</p>
+    #[doc(hidden)]
     pub initial_message: std::option::Option<crate::model::ChatMessage>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    #[doc(hidden)]
     pub chat_duration_in_minutes: std::option::Option<i32>,
     /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+    #[doc(hidden)]
     pub supported_messaging_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartChatContactInput {
@@ -32311,16 +32492,22 @@ impl std::fmt::Debug for StartChatContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The current state of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The starting pattern of the name of the vocabulary.</p>
+    #[doc(hidden)]
     pub name_starts_with: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
 }
 impl SearchVocabulariesInput {
@@ -32367,14 +32554,19 @@ impl std::fmt::Debug for SearchVocabulariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filters to be applied to search results.</p>
+    #[doc(hidden)]
     pub search_filter: std::option::Option<crate::model::UserSearchFilter>,
     /// <p>The search criteria to be used to return users.</p>
+    #[doc(hidden)]
     pub search_criteria: std::option::Option<crate::model::UserSearchCriteria>,
 }
 impl SearchUsersInput {
@@ -32416,16 +32608,22 @@ impl std::fmt::Debug for SearchUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersInput {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    #[doc(hidden)]
     pub phone_number_prefix: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchAvailablePhoneNumbersInput {
@@ -32474,10 +32672,13 @@ impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl ResumeContactRecordingInput {
@@ -32509,8 +32710,10 @@ impl std::fmt::Debug for ResumeContactRecordingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleasePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ReleasePhoneNumberInput {
@@ -32537,10 +32740,13 @@ impl std::fmt::Debug for ReleasePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutUserStatusInput {
     /// <p>The identifier of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_id: std::option::Option<std::string::String>,
 }
 impl PutUserStatusInput {
@@ -32572,10 +32778,13 @@ impl std::fmt::Debug for PutUserStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUsersInput {
@@ -32607,10 +32816,13 @@ impl std::fmt::Debug for ListUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserHierarchyGroupsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUserHierarchyGroupsInput {
@@ -32642,12 +32854,16 @@ impl std::fmt::Debug for ListUserHierarchyGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUseCasesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListUseCasesInput {
@@ -32687,18 +32903,23 @@ impl std::fmt::Debug for ListUseCasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskTemplatesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>It is not expected that you set this because the value returned in the previous response is always null.</p>
     /// </important>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p> <important>
     /// <p>It is not expected that you set this.</p>
     /// </important>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ListTaskTemplatesInput {
@@ -32744,6 +32965,7 @@ impl std::fmt::Debug for ListTaskTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -32765,10 +32987,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSecurityProfilesInput {
@@ -32800,12 +33025,16 @@ impl std::fmt::Debug for ListSecurityProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityProfilePermissionsInput {
     /// <p>The identifier for the security profle.</p>
+    #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSecurityProfilePermissionsInput {
@@ -32842,10 +33071,13 @@ impl std::fmt::Debug for ListSecurityProfilePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityKeysInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSecurityKeysInput {
@@ -32877,10 +33109,13 @@ impl std::fmt::Debug for ListSecurityKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRoutingProfilesInput {
@@ -32912,12 +33147,16 @@ impl std::fmt::Debug for ListRoutingProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRoutingProfileQueuesInput {
@@ -32954,12 +33193,16 @@ impl std::fmt::Debug for ListRoutingProfileQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    #[doc(hidden)]
     pub quick_connect_types: std::option::Option<std::vec::Vec<crate::model::QuickConnectType>>,
 }
 impl ListQuickConnectsInput {
@@ -32996,12 +33239,16 @@ impl std::fmt::Debug for ListQuickConnectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of queue.</p>
+    #[doc(hidden)]
     pub queue_types: std::option::Option<std::vec::Vec<crate::model::QueueType>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListQueuesInput {
@@ -33038,12 +33285,16 @@ impl std::fmt::Debug for ListQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQueueQuickConnectsInput {
@@ -33080,10 +33331,13 @@ impl std::fmt::Debug for ListQueueQuickConnectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPromptsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPromptsInput {
@@ -33115,17 +33369,23 @@ impl std::fmt::Debug for ListPromptsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersV2Input {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_codes:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_types: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    #[doc(hidden)]
     pub phone_number_prefix: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersV2Input {
@@ -33177,15 +33437,20 @@ impl std::fmt::Debug for ListPhoneNumbersV2Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_types: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_codes:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPhoneNumbersInput {
@@ -33232,10 +33497,13 @@ impl std::fmt::Debug for ListPhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLexBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLexBotsInput {
@@ -33267,10 +33535,13 @@ impl std::fmt::Debug for ListLexBotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLambdaFunctionsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLambdaFunctionsInput {
@@ -33302,12 +33573,16 @@ impl std::fmt::Debug for ListLambdaFunctionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationAssociationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The integration type.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListIntegrationAssociationsInput {
@@ -33344,12 +33619,16 @@ impl std::fmt::Debug for ListIntegrationAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceStorageConfigsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInstanceStorageConfigsInput {
@@ -33386,8 +33665,10 @@ impl std::fmt::Debug for ListInstanceStorageConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInstancesInput {
@@ -33414,10 +33695,13 @@ impl std::fmt::Debug for ListInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceAttributesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInstanceAttributesInput {
@@ -33449,10 +33733,13 @@ impl std::fmt::Debug for ListInstanceAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHoursOfOperationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListHoursOfOperationsInput {
@@ -33484,12 +33771,16 @@ impl std::fmt::Debug for ListHoursOfOperationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDefaultVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDefaultVocabulariesInput {
@@ -33526,14 +33817,18 @@ impl std::fmt::Debug for ListDefaultVocabulariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactReferencesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the initial contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The type of reference.</p>
+    #[doc(hidden)]
     pub reference_types: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactReferencesInput {
@@ -33572,12 +33867,16 @@ impl std::fmt::Debug for ListContactReferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_types: std::option::Option<std::vec::Vec<crate::model::ContactFlowType>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListContactFlowsInput {
@@ -33614,12 +33913,16 @@ impl std::fmt::Debug for ListContactFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowModulesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The state of the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module_state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
 impl ListContactFlowModulesInput {
@@ -33658,12 +33961,16 @@ impl std::fmt::Debug for ListContactFlowModulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
+    #[doc(hidden)]
     pub lex_version: std::option::Option<crate::model::LexVersion>,
 }
 impl ListBotsInput {
@@ -33700,10 +34007,13 @@ impl std::fmt::Debug for ListBotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApprovedOriginsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApprovedOriginsInput {
@@ -33735,12 +34045,16 @@ impl std::fmt::Debug for ListApprovedOriginsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAgentStatusesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Available agent status types.</p>
+    #[doc(hidden)]
     pub agent_status_types: std::option::Option<std::vec::Vec<crate::model::AgentStatusType>>,
 }
 impl ListAgentStatusesInput {
@@ -33777,10 +34091,13 @@ impl std::fmt::Debug for ListAgentStatusesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub task_template_id: std::option::Option<std::string::String>,
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
+    #[doc(hidden)]
     pub snapshot_version: std::option::Option<std::string::String>,
 }
 impl GetTaskTemplateInput {
@@ -33812,19 +34129,24 @@ impl std::fmt::Debug for GetTaskTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::Filters>,
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
+    #[doc(hidden)]
     pub groupings: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
     /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
@@ -34008,10 +34330,13 @@ pub struct GetMetricDataInput {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub historical_metrics: std::option::Option<std::vec::Vec<crate::model::HistoricalMetric>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetMetricDataInput {
@@ -34254,6 +34579,7 @@ impl std::fmt::Debug for GetMetricDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFederationTokenInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl GetFederationTokenInput {
@@ -34275,12 +34601,16 @@ impl std::fmt::Debug for GetFederationTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentUserDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for those users who are associated with the queues and have contacts that are in the specified <code>ContactState</code>. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::UserDataFilters>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCurrentUserDataInput {
@@ -34317,11 +34647,14 @@ impl std::fmt::Debug for GetCurrentUserDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::Filters>,
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
     /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+    #[doc(hidden)]
     pub groupings: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
@@ -34421,11 +34754,14 @@ pub struct GetCurrentMetricDataInput {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub current_metrics: std::option::Option<std::vec::Vec<crate::model::CurrentMetric>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCurrentMetricDataInput {
@@ -34571,8 +34907,10 @@ impl std::fmt::Debug for GetCurrentMetricDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactAttributesInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the initial contact.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl GetContactAttributesInput {
@@ -34599,8 +34937,10 @@ impl std::fmt::Debug for GetContactAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl DisassociateSecurityKeyInput {
@@ -34627,10 +34967,13 @@ impl std::fmt::Debug for DisassociateSecurityKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The queues to disassociate from this routing profile.</p>
+    #[doc(hidden)]
     pub queue_references:
         std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueReference>>,
 }
@@ -34665,10 +35008,13 @@ impl std::fmt::Debug for DisassociateRoutingProfileQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The quick connects to disassociate from the queue.</p>
+    #[doc(hidden)]
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateQueueQuickConnectsInput {
@@ -34700,8 +35046,10 @@ impl std::fmt::Debug for DisassociateQueueQuickConnectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DisassociatePhoneNumberContactFlowInput {
@@ -34728,10 +35076,13 @@ impl std::fmt::Debug for DisassociatePhoneNumberContactFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLexBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The Region in which the Amazon Lex bot has been created.</p>
+    #[doc(hidden)]
     pub lex_region: std::option::Option<std::string::String>,
 }
 impl DisassociateLexBotInput {
@@ -34763,8 +35114,10 @@ impl std::fmt::Debug for DisassociateLexBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateLambdaFunctionInput {
@@ -34791,10 +35144,13 @@ impl std::fmt::Debug for DisassociateLambdaFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
 }
 impl DisassociateInstanceStorageConfigInput {
@@ -34826,10 +35182,13 @@ impl std::fmt::Debug for DisassociateInstanceStorageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Configuration information of an Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub lex_bot: std::option::Option<crate::model::LexBot>,
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
+    #[doc(hidden)]
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
 impl DisassociateBotInput {
@@ -34861,8 +35220,10 @@ impl std::fmt::Debug for DisassociateBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The domain URL of the integrated application.</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<std::string::String>,
 }
 impl DisassociateApprovedOriginInput {
@@ -34889,8 +35250,10 @@ impl std::fmt::Debug for DisassociateApprovedOriginInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
 }
 impl DescribeVocabularyInput {
@@ -34917,6 +35280,7 @@ impl std::fmt::Debug for DescribeVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserHierarchyStructureInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeUserHierarchyStructureInput {
@@ -34938,8 +35302,10 @@ impl std::fmt::Debug for DescribeUserHierarchyStructureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeUserHierarchyGroupInput {
@@ -34966,8 +35332,10 @@ impl std::fmt::Debug for DescribeUserHierarchyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
@@ -34994,8 +35362,10 @@ impl std::fmt::Debug for DescribeUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityProfileInput {
     /// <p>The identifier for the security profle.</p>
+    #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityProfileInput {
@@ -35022,8 +35392,10 @@ impl std::fmt::Debug for DescribeSecurityProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
 }
 impl DescribeRoutingProfileInput {
@@ -35050,8 +35422,10 @@ impl std::fmt::Debug for DescribeRoutingProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl DescribeQuickConnectInput {
@@ -35078,8 +35452,10 @@ impl std::fmt::Debug for DescribeQuickConnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
 }
 impl DescribeQueueInput {
@@ -35106,6 +35482,7 @@ impl std::fmt::Debug for DescribeQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl DescribePhoneNumberInput {
@@ -35127,10 +35504,13 @@ impl std::fmt::Debug for DescribePhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
 }
 impl DescribeInstanceStorageConfigInput {
@@ -35162,8 +35542,10 @@ impl std::fmt::Debug for DescribeInstanceStorageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of attribute.</p>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
 }
 impl DescribeInstanceAttributeInput {
@@ -35190,6 +35572,7 @@ impl std::fmt::Debug for DescribeInstanceAttributeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInput {
@@ -35211,8 +35594,10 @@ impl std::fmt::Debug for DescribeInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
 }
 impl DescribeHoursOfOperationInput {
@@ -35239,8 +35624,10 @@ impl std::fmt::Debug for DescribeHoursOfOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
 }
 impl DescribeContactFlowModuleInput {
@@ -35267,8 +35654,10 @@ impl std::fmt::Debug for DescribeContactFlowModuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
 impl DescribeContactFlowInput {
@@ -35295,8 +35684,10 @@ impl std::fmt::Debug for DescribeContactFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl DescribeContactInput {
@@ -35323,8 +35714,10 @@ impl std::fmt::Debug for DescribeContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_id: std::option::Option<std::string::String>,
 }
 impl DescribeAgentStatusInput {
@@ -35351,8 +35744,10 @@ impl std::fmt::Debug for DescribeAgentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
 }
 impl DeleteVocabularyInput {
@@ -35379,8 +35774,10 @@ impl std::fmt::Debug for DeleteVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserHierarchyGroupInput {
@@ -35407,8 +35804,10 @@ impl std::fmt::Debug for DeleteUserHierarchyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -35435,10 +35834,13 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUseCaseInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the use case.</p>
+    #[doc(hidden)]
     pub use_case_id: std::option::Option<std::string::String>,
 }
 impl DeleteUseCaseInput {
@@ -35473,8 +35875,10 @@ impl std::fmt::Debug for DeleteUseCaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub task_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteTaskTemplateInput {
@@ -35501,8 +35905,10 @@ impl std::fmt::Debug for DeleteTaskTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the security profle.</p>
+    #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteSecurityProfileInput {
@@ -35529,8 +35935,10 @@ impl std::fmt::Debug for DeleteSecurityProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl DeleteQuickConnectInput {
@@ -35557,8 +35965,10 @@ impl std::fmt::Debug for DeleteQuickConnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationAssociationInput {
@@ -35588,6 +35998,7 @@ impl std::fmt::Debug for DeleteIntegrationAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceInput {
@@ -35609,8 +36020,10 @@ impl std::fmt::Debug for DeleteInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteHoursOfOperationInput {
@@ -35637,8 +36050,10 @@ impl std::fmt::Debug for DeleteHoursOfOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
 }
 impl DeleteContactFlowModuleInput {
@@ -35665,8 +36080,10 @@ impl std::fmt::Debug for DeleteContactFlowModuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
 impl DeleteContactFlowInput {
@@ -35693,16 +36110,22 @@ impl std::fmt::Debug for DeleteContactFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A unique name of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35753,12 +36176,16 @@ impl std::fmt::Debug for CreateVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserHierarchyGroupInput {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
+    #[doc(hidden)]
     pub parent_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35799,25 +36226,35 @@ impl std::fmt::Debug for CreateUserHierarchyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The information about the identity of the user.</p>
+    #[doc(hidden)]
     pub identity_info: std::option::Option<crate::model::UserIdentityInfo>,
     /// <p>The phone settings for the user.</p>
+    #[doc(hidden)]
     pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+    #[doc(hidden)]
     pub directory_user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the security profile for the user.</p>
+    #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the routing profile for the user.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35889,12 +36326,16 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUseCaseInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    #[doc(hidden)]
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35938,22 +36379,31 @@ impl std::fmt::Debug for CreateUseCaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the task template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
+    #[doc(hidden)]
     pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>Fields that are part of the template.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTaskTemplateInput {
@@ -36015,14 +36465,19 @@ impl std::fmt::Debug for CreateTaskTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityProfileInput {
     /// <p>The name of the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The description of the security profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Permissions assigned to the security profile.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36068,18 +36523,25 @@ impl std::fmt::Debug for CreateSecurityProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The default outbound queue for the routing profile.</p>
+    #[doc(hidden)]
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
+    #[doc(hidden)]
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    #[doc(hidden)]
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36135,14 +36597,19 @@ impl std::fmt::Debug for CreateRoutingProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the quick connect.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the quick connect.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration settings for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36188,20 +36655,28 @@ impl std::fmt::Debug for CreateQuickConnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the queue.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    #[doc(hidden)]
     pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    #[doc(hidden)]
     pub max_contacts: std::option::Option<i32>,
     /// <p>The quick connects available to agents who are working the queue.</p>
+    #[doc(hidden)]
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36264,18 +36739,25 @@ impl std::fmt::Debug for CreateQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of information to be ingested.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    #[doc(hidden)]
     pub integration_arn: std::option::Option<std::string::String>,
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
+    #[doc(hidden)]
     pub source_application_url: std::option::Option<std::string::String>,
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
+    #[doc(hidden)]
     pub source_application_name: std::option::Option<std::string::String>,
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36331,16 +36813,22 @@ impl std::fmt::Debug for CreateIntegrationAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceInput {
     /// <p>The idempotency token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The type of identity management for your Amazon Connect users.</p>
+    #[doc(hidden)]
     pub identity_management_type: std::option::Option<crate::model::DirectoryType>,
     /// <p>The name for your instance.</p>
+    #[doc(hidden)]
     pub instance_alias: std::option::Option<std::string::String>,
     /// <p>The identifier for the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>Your contact center handles incoming contacts.</p>
+    #[doc(hidden)]
     pub inbound_calls_enabled: std::option::Option<bool>,
     /// <p>Your contact center allows outbound calls.</p>
+    #[doc(hidden)]
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
 impl CreateInstanceInput {
@@ -36387,16 +36875,22 @@ impl std::fmt::Debug for CreateInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the hours of operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the hours of operation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time zone of the hours of operation.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36447,17 +36941,23 @@ impl std::fmt::Debug for CreateHoursOfOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow module.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow module. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow module.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowModuleInput {
@@ -36507,16 +37007,22 @@ impl std::fmt::Debug for CreateContactFlowModuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
     /// <p>The description of the contact flow. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow. </p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36567,16 +37073,22 @@ impl std::fmt::Debug for CreateContactFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the status.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The state of the status.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AgentStatusState>,
     /// <p>The display order of the status.</p>
+    #[doc(hidden)]
     pub display_order: std::option::Option<i32>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36627,15 +37139,20 @@ impl std::fmt::Debug for CreateAgentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimPhoneNumberInput {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The description of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ClaimPhoneNumberInput {
@@ -36680,8 +37197,10 @@ impl std::fmt::Debug for ClaimPhoneNumberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A valid security key in PEM format.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl AssociateSecurityKeyInput {
@@ -36708,10 +37227,13 @@ impl std::fmt::Debug for AssociateSecurityKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The queues to associate with this routing profile.</p>
+    #[doc(hidden)]
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
 }
 impl AssociateRoutingProfileQueuesInput {
@@ -36743,10 +37265,13 @@ impl std::fmt::Debug for AssociateRoutingProfileQueuesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateQueueQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The quick connects to associate with this queue.</p>
+    #[doc(hidden)]
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateQueueQuickConnectsInput {
@@ -36778,10 +37303,13 @@ impl std::fmt::Debug for AssociateQueueQuickConnectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
 impl AssociatePhoneNumberContactFlowInput {
@@ -36813,8 +37341,10 @@ impl std::fmt::Debug for AssociatePhoneNumberContactFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLexBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Lex bot to associate with the instance.</p>
+    #[doc(hidden)]
     pub lex_bot: std::option::Option<crate::model::LexBot>,
 }
 impl AssociateLexBotInput {
@@ -36841,8 +37371,10 @@ impl std::fmt::Debug for AssociateLexBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl AssociateLambdaFunctionInput {
@@ -36869,10 +37401,13 @@ impl std::fmt::Debug for AssociateLambdaFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
     /// <p>A valid storage type.</p>
+    #[doc(hidden)]
     pub storage_config: std::option::Option<crate::model::InstanceStorageConfig>,
 }
 impl AssociateInstanceStorageConfigInput {
@@ -36904,10 +37439,13 @@ impl std::fmt::Debug for AssociateInstanceStorageConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDefaultVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
 }
 impl AssociateDefaultVocabularyInput {
@@ -36939,10 +37477,13 @@ impl std::fmt::Debug for AssociateDefaultVocabularyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>Configuration information of an Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub lex_bot: std::option::Option<crate::model::LexBot>,
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
+    #[doc(hidden)]
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
 impl AssociateBotInput {
@@ -36974,8 +37515,10 @@ impl std::fmt::Debug for AssociateBotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The domain to add to your allow list.</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<std::string::String>,
 }
 impl AssociateApprovedOriginInput {

@@ -6545,6 +6545,7 @@ impl UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to be updated.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
 }
 impl UpdatePipelineInput {
@@ -6566,6 +6567,7 @@ impl std::fmt::Debug for UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateActionTypeInput {
     /// <p>The action type definition for the action type to be updated.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
 }
 impl UpdateActionTypeInput {
@@ -6587,8 +6589,10 @@ impl std::fmt::Debug for UpdateActionTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of keys for the tags to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6615,8 +6619,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you want to modify or add to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6643,14 +6649,18 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPipelineExecutionInput {
     /// <p>The name of the pipeline to stop.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
+    #[doc(hidden)]
     pub abandon: bool,
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopPipelineExecutionInput {
@@ -6689,8 +6699,10 @@ impl std::fmt::Debug for StopPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineExecutionInput {
     /// <p>The name of the pipeline to start.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartPipelineExecutionInput {
@@ -6717,12 +6729,16 @@ impl std::fmt::Debug for StartPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryStageExecutionInput {
     /// <p>The name of the pipeline that contains the failed stage.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the failed stage to be retried.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    #[doc(hidden)]
     pub retry_mode: std::option::Option<crate::model::StageRetryMode>,
 }
 impl RetryStageExecutionInput {
@@ -6759,6 +6775,7 @@ impl std::fmt::Debug for RetryStageExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWebhookWithThirdPartyInput {
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    #[doc(hidden)]
     pub webhook_name: std::option::Option<std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInput {
@@ -6780,8 +6797,10 @@ impl std::fmt::Debug for RegisterWebhookWithThirdPartyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWebhookInput {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::WebhookDefinition>,
     /// <p>The tags for the webhook.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutWebhookInput {
@@ -6808,14 +6827,19 @@ impl std::fmt::Debug for PutWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobSuccessResultInput {
     /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents information about a current revision.</p>
+    #[doc(hidden)]
     pub current_revision: std::option::Option<crate::model::CurrentRevision>,
     /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
+    #[doc(hidden)]
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
+    #[doc(hidden)]
     pub execution_details: std::option::Option<crate::model::ExecutionDetails>,
 }
 impl PutThirdPartyJobSuccessResultInput {
@@ -6857,10 +6881,13 @@ impl std::fmt::Debug for PutThirdPartyJobSuccessResultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobFailureResultInput {
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents information about failure details.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
 }
 impl PutThirdPartyJobFailureResultInput {
@@ -6892,14 +6919,19 @@ impl std::fmt::Debug for PutThirdPartyJobFailureResultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobSuccessResultInput {
     /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
+    #[doc(hidden)]
     pub current_revision: std::option::Option<crate::model::CurrentRevision>,
     /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
+    #[doc(hidden)]
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
+    #[doc(hidden)]
     pub execution_details: std::option::Option<crate::model::ExecutionDetails>,
     /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
+    #[doc(hidden)]
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6945,8 +6977,10 @@ impl std::fmt::Debug for PutJobSuccessResultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobFailureResultInput {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The details about the failure of a job.</p>
+    #[doc(hidden)]
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
 }
 impl PutJobFailureResultInput {
@@ -6973,14 +7007,19 @@ impl std::fmt::Debug for PutJobFailureResultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApprovalResultInput {
     /// <p>The name of the pipeline that contains the action. </p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage that contains the action.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The name of the action for which approval is requested.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>Represents information about the result of the approval request.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ApprovalResult>,
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl PutApprovalResultInput {
@@ -7022,12 +7061,16 @@ impl std::fmt::Debug for PutApprovalResultInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutActionRevisionInput {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The name of the action that processes the revision.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>Represents information about the version (or revision) of an action.</p>
+    #[doc(hidden)]
     pub action_revision: std::option::Option<crate::model::ActionRevision>,
 }
 impl PutActionRevisionInput {
@@ -7064,8 +7107,10 @@ impl std::fmt::Debug for PutActionRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    #[doc(hidden)]
     pub max_batch_size: std::option::Option<i32>,
 }
 impl PollForThirdPartyJobsInput {
@@ -7092,10 +7137,13 @@ impl std::fmt::Debug for PollForThirdPartyJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForJobsInput {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    #[doc(hidden)]
     pub max_batch_size: std::option::Option<i32>,
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
+    #[doc(hidden)]
     pub query_param:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7131,8 +7179,10 @@ impl std::fmt::Debug for PollForJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksInput {
     /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWebhooksInput {
@@ -7159,10 +7209,13 @@ impl std::fmt::Debug for ListWebhooksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -7194,8 +7247,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
     /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelinesInput {
@@ -7222,10 +7277,13 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineExecutionsInput {
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelineExecutionsInput {
@@ -7257,10 +7315,13 @@ impl std::fmt::Debug for ListPipelineExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionTypesInput {
     /// <p>Filters the list of action types to those created by a specified entity.</p>
+    #[doc(hidden)]
     pub action_owner_filter: std::option::Option<crate::model::ActionOwner>,
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Region to filter on for the list of action types.</p>
+    #[doc(hidden)]
     pub region_filter: std::option::Option<std::string::String>,
 }
 impl ListActionTypesInput {
@@ -7292,14 +7353,18 @@ impl std::fmt::Debug for ListActionTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionExecutionsInput {
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>Input information used to filter action execution history.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::ActionExecutionFilter>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
     /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionExecutionsInput {
@@ -7338,8 +7403,10 @@ impl std::fmt::Debug for ListActionExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThirdPartyJobDetailsInput {
     /// <p>The unique system-generated ID used for identifying the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl GetThirdPartyJobDetailsInput {
@@ -7366,6 +7433,7 @@ impl std::fmt::Debug for GetThirdPartyJobDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetPipelineStateInput {
@@ -7387,8 +7455,10 @@ impl std::fmt::Debug for GetPipelineStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineExecutionInput {
     /// <p>The name of the pipeline about which you want to get execution details.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl GetPipelineExecutionInput {
@@ -7415,8 +7485,10 @@ impl std::fmt::Debug for GetPipelineExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineInput {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl GetPipelineInput {
@@ -7443,6 +7515,7 @@ impl std::fmt::Debug for GetPipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobDetailsInput {
     /// <p>The unique system-generated ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobDetailsInput {
@@ -7472,12 +7545,16 @@ pub struct GetActionTypeInput {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action type version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetActionTypeInput {
@@ -7522,10 +7599,13 @@ impl std::fmt::Debug for GetActionTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+    #[doc(hidden)]
     pub transition_type: std::option::Option<crate::model::StageTransitionType>,
 }
 impl EnableStageTransitionInput {
@@ -7557,12 +7637,16 @@ impl std::fmt::Debug for EnableStageTransitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
+    #[doc(hidden)]
     pub transition_type: std::option::Option<crate::model::StageTransitionType>,
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DisableStageTransitionInput {
@@ -7599,6 +7683,7 @@ impl std::fmt::Debug for DisableStageTransitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterWebhookWithThirdPartyInput {
     /// <p>The name of the webhook you want to deregister.</p>
+    #[doc(hidden)]
     pub webhook_name: std::option::Option<std::string::String>,
 }
 impl DeregisterWebhookWithThirdPartyInput {
@@ -7620,6 +7705,7 @@ impl std::fmt::Debug for DeregisterWebhookWithThirdPartyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebhookInput {
     /// <p>The name of the webhook you want to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteWebhookInput {
@@ -7641,6 +7727,7 @@ impl std::fmt::Debug for DeleteWebhookInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
@@ -7662,10 +7749,13 @@ impl std::fmt::Debug for DeletePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomActionTypeInput {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
     /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The version of the custom action to delete.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteCustomActionTypeInput {
@@ -7697,8 +7787,10 @@ impl std::fmt::Debug for DeleteCustomActionTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>The tags for the pipeline.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
@@ -7725,23 +7817,31 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomActionTypeInput {
     /// <p>The category of the custom action, such as a build action or a test action.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
     /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The version identifier of the custom action.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>URLs that provide users information about this custom action.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::ActionTypeSettings>,
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
+    #[doc(hidden)]
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    #[doc(hidden)]
     pub input_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    #[doc(hidden)]
     pub output_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
     /// <p>The tags for the custom action.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCustomActionTypeInput {
@@ -7802,10 +7902,13 @@ impl std::fmt::Debug for CreateCustomActionTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    #[doc(hidden)]
     pub nonce: std::option::Option<std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AcknowledgeThirdPartyJobInput {
@@ -7837,8 +7940,10 @@ impl std::fmt::Debug for AcknowledgeThirdPartyJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeJobInput {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    #[doc(hidden)]
     pub nonce: std::option::Option<std::string::String>,
 }
 impl AcknowledgeJobInput {

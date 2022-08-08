@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
+    #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkspacesOutput {
@@ -87,12 +89,16 @@ impl ListWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// The ARN of the workspace that was just created.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The status of the workspace that was just created (usually CREATING).
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The tags of this workspace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -282,6 +288,7 @@ impl UpdateWorkspaceAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
+    #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DescribeWorkspaceOutput {
@@ -339,9 +346,11 @@ impl DescribeWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
+    #[doc(hidden)]
     pub rule_groups_namespaces:
         std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRuleGroupsNamespacesOutput {
@@ -428,12 +437,16 @@ impl ListRuleGroupsNamespacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The status of rule groups namespace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -593,12 +606,16 @@ impl DeleteRuleGroupsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The status of rule groups namespace.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -728,6 +745,7 @@ impl PutRuleGroupsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
+    #[doc(hidden)]
     pub rule_groups_namespace: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
 }
 impl DescribeRuleGroupsNamespaceOutput {
@@ -791,6 +809,7 @@ impl DescribeRuleGroupsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
 }
 impl CreateAlertManagerDefinitionOutput {
@@ -878,6 +897,7 @@ impl DeleteAlertManagerDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
 }
 impl PutAlertManagerDefinitionOutput {
@@ -935,6 +955,7 @@ impl PutAlertManagerDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
+    #[doc(hidden)]
     pub alert_manager_definition:
         std::option::Option<crate::model::AlertManagerDefinitionDescription>,
 }
@@ -1059,6 +1080,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// The list of tags assigned to the resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

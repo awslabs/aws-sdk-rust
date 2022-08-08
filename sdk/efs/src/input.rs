@@ -5237,10 +5237,13 @@ impl UpdateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you want to update.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+    #[doc(hidden)]
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
     /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
+    #[doc(hidden)]
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
 }
 impl UpdateFileSystemInput {
@@ -5275,8 +5278,10 @@ impl std::fmt::Debug for UpdateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Specifies the EFS resource that you want to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5303,8 +5308,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5331,6 +5338,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleConfigurationInput {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
     /// <ul>
@@ -5339,6 +5347,7 @@ pub struct PutLifecycleConfigurationInput {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
+    #[doc(hidden)]
     pub lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationInput {
@@ -5371,10 +5380,13 @@ impl std::fmt::Debug for PutLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileSystemPolicyInput {
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
+    #[doc(hidden)]
     pub bypass_policy_lockout_safety_check: bool,
 }
 impl PutFileSystemPolicyInput {
@@ -5409,8 +5421,10 @@ impl std::fmt::Debug for PutFileSystemPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupPolicyInput {
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
+    #[doc(hidden)]
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
 }
 impl PutBackupPolicyInput {
@@ -5439,6 +5453,7 @@ pub struct PutAccountPreferencesInput {
     /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
     /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
 }
 impl PutAccountPreferencesInput {
@@ -5462,8 +5477,10 @@ impl std::fmt::Debug for PutAccountPreferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
+    #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
     /// <p>An array of up to five VPC security group IDs.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyMountTargetSecurityGroupsInput {
@@ -5490,10 +5507,13 @@ impl std::fmt::Debug for ModifyMountTargetSecurityGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5525,10 +5545,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
@@ -5560,10 +5583,13 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationConfigurationsInput {
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeReplicationConfigurationsInput {
@@ -5595,6 +5621,7 @@ impl std::fmt::Debug for DescribeReplicationConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
+    #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
 }
 impl DescribeMountTargetSecurityGroupsInput {
@@ -5616,14 +5643,19 @@ impl std::fmt::Debug for DescribeMountTargetSecurityGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMountTargetsInput {
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+    #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+    #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
 }
 impl DescribeMountTargetsInput {
@@ -5665,6 +5697,7 @@ impl std::fmt::Debug for DescribeMountTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleConfigurationInput {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeLifecycleConfigurationInput {
@@ -5686,12 +5719,16 @@ impl std::fmt::Debug for DescribeLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemsInput {
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub creation_token: std::option::Option<std::string::String>,
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemsInput {
@@ -5728,6 +5765,7 @@ impl std::fmt::Debug for DescribeFileSystemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemPolicyInput {
@@ -5749,6 +5787,7 @@ impl std::fmt::Debug for DescribeFileSystemPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeBackupPolicyInput {
@@ -5770,8 +5809,10 @@ impl std::fmt::Debug for DescribeBackupPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountPreferencesInput {
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountPreferencesInput {
@@ -5798,12 +5839,16 @@ impl std::fmt::Debug for DescribeAccountPreferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessPointsInput {
     /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
+    #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessPointsInput {
@@ -5840,8 +5885,10 @@ impl std::fmt::Debug for DescribeAccessPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>The ID of the file system whose tags you want to delete (String).</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to delete.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -5868,6 +5915,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationConfigurationInput {
     /// <p>The ID of the source file system in the replication configuration.</p>
+    #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationConfigurationInput {
@@ -5889,6 +5937,7 @@ impl std::fmt::Debug for DeleteReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMountTargetInput {
     /// <p>The ID of the mount target to delete (String).</p>
+    #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
 }
 impl DeleteMountTargetInput {
@@ -5910,6 +5959,7 @@ impl std::fmt::Debug for DeleteMountTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemPolicyInput {
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DeleteFileSystemPolicyInput {
@@ -5931,6 +5981,7 @@ impl std::fmt::Debug for DeleteFileSystemPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system you want to delete.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DeleteFileSystemInput {
@@ -5952,6 +6003,7 @@ impl std::fmt::Debug for DeleteFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointInput {
     /// <p>The ID of the access point that you want to delete.</p>
+    #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointInput {
@@ -5973,8 +6025,10 @@ impl std::fmt::Debug for DeleteAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
@@ -6001,8 +6055,10 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationInput {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::DestinationToCreate>>,
 }
 impl CreateReplicationConfigurationInput {
@@ -6029,12 +6085,16 @@ impl std::fmt::Debug for CreateReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMountTargetInput {
@@ -6071,12 +6131,15 @@ impl std::fmt::Debug for CreateMountTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
+    #[doc(hidden)]
     pub creation_token: std::option::Option<std::string::String>,
     /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
+    #[doc(hidden)]
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
     /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is required only if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
     /// <ul>
@@ -6088,22 +6151,28 @@ pub struct CreateFileSystemInput {
     /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
     /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
     /// </important>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
     /// <p>Default is <code>bursting</code>.</p>
+    #[doc(hidden)]
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
     /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
+    #[doc(hidden)]
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
     /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
     /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
+    #[doc(hidden)]
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
     /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
     /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
+    #[doc(hidden)]
     pub backup: std::option::Option<bool>,
     /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFileSystemInput {
@@ -6185,15 +6254,20 @@ impl std::fmt::Debug for CreateFileSystemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointInput {
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
+    #[doc(hidden)]
     pub posix_user: std::option::Option<crate::model::PosixUser>,
     /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
+    #[doc(hidden)]
     pub root_directory: std::option::Option<crate::model::RootDirectory>,
 }
 impl CreateAccessPointInput {

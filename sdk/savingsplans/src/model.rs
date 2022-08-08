@@ -5,26 +5,37 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOffering {
     /// <p>The ID of the offering.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// <p>The product type.</p>
+    #[doc(hidden)]
     pub product_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_type: std::option::Option<crate::model::SavingsPlanType>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The payment option.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
     /// <p>The duration, in seconds.</p>
+    #[doc(hidden)]
     pub duration_seconds: i64,
     /// <p>The currency.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::CurrencyCode>,
     /// <p>The service.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The usage details of the line item in the billing report.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The properties.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
 }
 impl SavingsPlanOffering {
@@ -278,8 +289,10 @@ impl SavingsPlanOffering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOfferingProperty {
     /// <p>The property name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
     /// <p>The property value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SavingsPlanOfferingProperty {
@@ -645,8 +658,10 @@ impl AsRef<str> for SavingsPlanProductType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOfferingFilterElement {
     /// <p>The filter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SavingsPlanOfferingFilterElement {
@@ -785,20 +800,28 @@ impl AsRef<str> for SavingsPlanOfferingFilterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOfferingRate {
     /// <p>The Savings Plan offering.</p>
+    #[doc(hidden)]
     pub savings_plan_offering: std::option::Option<crate::model::ParentSavingsPlanOffering>,
     /// <p>The Savings Plan rate.</p>
+    #[doc(hidden)]
     pub rate: std::option::Option<std::string::String>,
     /// <p>The unit.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::SavingsPlanRateUnit>,
     /// <p>The product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::SavingsPlanProductType>,
     /// <p>The service.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
     /// <p>The usage details of the line item in the billing report.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The properties.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
 }
@@ -1005,8 +1028,10 @@ impl SavingsPlanOfferingRate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOfferingRateProperty {
     /// <p>The property name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The property value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SavingsPlanOfferingRateProperty {
@@ -1210,16 +1235,22 @@ impl AsRef<str> for SavingsPlanRateUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// <p>The payment option.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_type: std::option::Option<crate::model::SavingsPlanType>,
     /// <p>The duration, in seconds.</p>
+    #[doc(hidden)]
     pub duration_seconds: i64,
     /// <p>The currency.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::CurrencyCode>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub plan_description: std::option::Option<std::string::String>,
 }
 impl ParentSavingsPlanOffering {
@@ -1371,8 +1402,10 @@ impl ParentSavingsPlanOffering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanOfferingRateFilterElement {
     /// <p>The filter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SavingsPlanOfferingRateFilterElement {
@@ -1534,40 +1567,58 @@ impl AsRef<str> for SavingsPlanRateFilterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlan {
     /// <p>The ID of the offering.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_arn: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The start time.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// <p>The end time.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// <p>The state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SavingsPlanState>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The EC2 instance family.</p>
+    #[doc(hidden)]
     pub ec2_instance_family: std::option::Option<std::string::String>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub savings_plan_type: std::option::Option<crate::model::SavingsPlanType>,
     /// <p>The payment option.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
     /// <p>The product types.</p>
+    #[doc(hidden)]
     pub product_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
     /// <p>The currency.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::CurrencyCode>,
     /// <p>The hourly commitment, in USD.</p>
+    #[doc(hidden)]
     pub commitment: std::option::Option<std::string::String>,
     /// <p>The up-front payment amount.</p>
+    #[doc(hidden)]
     pub upfront_payment_amount: std::option::Option<std::string::String>,
     /// <p>The recurring payment amount.</p>
+    #[doc(hidden)]
     pub recurring_payment_amount: std::option::Option<std::string::String>,
     /// <p>The duration of the term, in seconds.</p>
+    #[doc(hidden)]
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2047,8 +2098,10 @@ impl AsRef<str> for SavingsPlanState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanFilter {
     /// <p>The filter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlansFilterName>,
     /// <p>The filter value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SavingsPlanFilter {
@@ -2225,20 +2278,28 @@ impl AsRef<str> for SavingsPlansFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanRate {
     /// <p>The rate.</p>
+    #[doc(hidden)]
     pub rate: std::option::Option<std::string::String>,
     /// <p>The currency.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::CurrencyCode>,
     /// <p>The unit.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::SavingsPlanRateUnit>,
     /// <p>The product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::SavingsPlanProductType>,
     /// <p>The service.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
     /// <p>The usage details of the line item in the billing report.</p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The properties.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
 }
 impl SavingsPlanRate {
@@ -2434,8 +2495,10 @@ impl SavingsPlanRate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanRateProperty {
     /// <p>The property name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
     /// <p>The property value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SavingsPlanRateProperty {
@@ -2583,8 +2646,10 @@ impl AsRef<str> for SavingsPlanRatePropertyKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlanRateFilter {
     /// <p>The filter name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterName>,
     /// <p>The filter values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SavingsPlanRateFilter {

@@ -1038,12 +1038,16 @@ impl StartChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Array of <code>change</code> object.</p>
+    #[doc(hidden)]
     pub change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>A unique token to identify the request to ensure idempotency.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartChangeSetInput {
@@ -1080,16 +1084,22 @@ impl std::fmt::Debug for StartChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>The type of entities to retrieve.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
+    #[doc(hidden)]
     pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::Sort>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesInput {
@@ -1136,14 +1146,19 @@ impl std::fmt::Debug for ListEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>An array of filter objects.</p>
+    #[doc(hidden)]
     pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::Sort>,
     /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangeSetsInput {
@@ -1185,8 +1200,10 @@ impl std::fmt::Debug for ListChangeSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique ID of the entity to describe.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntityInput {
@@ -1213,8 +1230,10 @@ impl std::fmt::Debug for DescribeEntityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
 }
 impl DescribeChangeSetInput {
@@ -1241,8 +1260,10 @@ impl std::fmt::Debug for DescribeChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
 }
 impl CancelChangeSetInput {

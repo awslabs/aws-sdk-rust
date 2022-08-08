@@ -5,43 +5,62 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Reservation {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Number of reserved resources
+    #[doc(hidden)]
     pub count: i32,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: i32,
     /// Units for duration, e.g. 'MONTHS'
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::OfferingDurationUnits>,
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// User specified reservation name
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
+    #[doc(hidden)]
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// Renewal settings for the reservation
+    #[doc(hidden)]
     pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
+    #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// Current state of reservation, e.g. 'ACTIVE'
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReservationState>,
     /// A collection of key-value pairs
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    #[doc(hidden)]
     pub usage_price: f64,
 }
 impl Reservation {
@@ -515,20 +534,28 @@ impl AsRef<str> for ReservationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationResourceSpecification {
     /// Channel class, e.g. 'STANDARD'
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// Codec, e.g. 'AVC'
+    #[doc(hidden)]
     pub codec: std::option::Option<crate::model::ReservationCodec>,
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
+    #[doc(hidden)]
     pub maximum_bitrate: std::option::Option<crate::model::ReservationMaximumBitrate>,
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
+    #[doc(hidden)]
     pub maximum_framerate: std::option::Option<crate::model::ReservationMaximumFramerate>,
     /// Resolution, e.g. 'HD'
+    #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::ReservationResolution>,
     /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ReservationResourceType>,
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
+    #[doc(hidden)]
     pub special_feature: std::option::Option<crate::model::ReservationSpecialFeature>,
     /// Video quality, e.g. 'STANDARD' (Outputs only)
+    #[doc(hidden)]
     pub video_quality: std::option::Option<crate::model::ReservationVideoQuality>,
 }
 impl ReservationResourceSpecification {
@@ -1216,8 +1243,10 @@ impl AsRef<str> for ChannelClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewalSettings {
     /// Automatic renewal status for the reservation
+    #[doc(hidden)]
     pub automatic_renewal: std::option::Option<crate::model::ReservationAutomaticRenewal>,
     /// Count for the reservation renewal
+    #[doc(hidden)]
     pub renewal_count: i32,
 }
 impl RenewalSettings {
@@ -1459,8 +1488,10 @@ impl AsRef<str> for OfferingDurationUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
     /// Path to the source of the error.
+    #[doc(hidden)]
     pub element_path: std::option::Option<std::string::String>,
     /// The error message.
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ValidationError {
@@ -1535,16 +1566,21 @@ impl ValidationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgram {
     /// The MediaLive channel associated with the program.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The settings for this multiplex program.
+    #[doc(hidden)]
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
+    #[doc(hidden)]
     pub packet_identifiers_map:
         std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    #[doc(hidden)]
     pub pipeline_details:
         std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl MultiplexProgram {
@@ -1703,8 +1739,10 @@ impl MultiplexProgram {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramPipelineDetail {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
+    #[doc(hidden)]
     pub active_channel_pipeline: std::option::Option<std::string::String>,
     /// Identifies a specific pipeline in the multiplex.
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl MultiplexProgramPipelineDetail {
@@ -1779,30 +1817,43 @@ impl MultiplexProgramPipelineDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
+    #[doc(hidden)]
     pub audio_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __listOf__integer
+    #[doc(hidden)]
     pub dvb_sub_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub dvb_teletext_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub etv_platform_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub etv_signal_pid: i32,
     /// Placeholder documentation for __listOf__integer
+    #[doc(hidden)]
     pub klv_data_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub pcr_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub pmt_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub private_metadata_pid: i32,
     /// Placeholder documentation for __listOf__integer
+    #[doc(hidden)]
     pub scte27_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub scte35_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub timed_metadata_pid: i32,
     /// Placeholder documentation for __integer
+    #[doc(hidden)]
     pub video_pid: i32,
 }
 impl MultiplexProgramPacketIdentifiersMap {
@@ -2085,12 +2136,16 @@ impl MultiplexProgramPacketIdentifiersMap {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
+    #[doc(hidden)]
     pub preferred_channel_pipeline: std::option::Option<crate::model::PreferredChannelPipeline>,
     /// Unique program number.
+    #[doc(hidden)]
     pub program_number: i32,
     /// Transport stream service descriptor configuration for the Multiplex program.
+    #[doc(hidden)]
     pub service_descriptor: std::option::Option<crate::model::MultiplexProgramServiceDescriptor>,
     /// Program video settings configuration.
+    #[doc(hidden)]
     pub video_settings: std::option::Option<crate::model::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettings {
@@ -2220,8 +2275,10 @@ impl MultiplexProgramSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexVideoSettings {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
+    #[doc(hidden)]
     pub constant_bitrate: i32,
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
+    #[doc(hidden)]
     pub statmux_settings: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
 }
 impl MultiplexVideoSettings {
@@ -2302,10 +2359,13 @@ impl MultiplexVideoSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexStatmuxVideoSettings {
     /// Maximum statmux bitrate.
+    #[doc(hidden)]
     pub maximum_bitrate: i32,
     /// Minimum statmux bitrate.
+    #[doc(hidden)]
     pub minimum_bitrate: i32,
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+    #[doc(hidden)]
     pub priority: i32,
 }
 impl MultiplexStatmuxVideoSettings {
@@ -2394,8 +2454,10 @@ impl MultiplexStatmuxVideoSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramServiceDescriptor {
     /// Name of the provider.
+    #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
     /// Name of the service.
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl MultiplexProgramServiceDescriptor {
@@ -2533,24 +2595,34 @@ impl AsRef<str> for PreferredChannelPipeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Multiplex {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the multiplex output destinations.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2897,12 +2969,16 @@ impl AsRef<str> for MultiplexState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
+    #[doc(hidden)]
     pub maximum_video_buffer_delay_milliseconds: i32,
     /// Transport stream bit rate.
+    #[doc(hidden)]
     pub transport_stream_bitrate: i32,
     /// Transport stream ID.
+    #[doc(hidden)]
     pub transport_stream_id: i32,
     /// Transport stream reserved bit rate.
+    #[doc(hidden)]
     pub transport_stream_reserved_bitrate: i32,
 }
 impl MultiplexSettings {
@@ -3024,6 +3100,7 @@ impl MultiplexSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexOutputDestination {
     /// Multiplex MediaConnect output destination settings.
+    #[doc(hidden)]
     pub media_connect_settings:
         std::option::Option<crate::model::MultiplexMediaConnectOutputDestinationSettings>,
 }
@@ -3090,6 +3167,7 @@ impl MultiplexOutputDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
+    #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
@@ -3147,17 +3225,23 @@ impl MultiplexMediaConnectOutputDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSecurityGroup {
     /// Unique ARN of Input Security Group
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The Id of the Input Security Group
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The list of inputs currently using this Input Security Group.
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The current state of the Input Security Group.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InputSecurityGroupState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Whitelist rules and their sync status
+    #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
 }
 impl InputSecurityGroup {
@@ -3339,6 +3423,7 @@ impl InputSecurityGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputWhitelistRule {
     /// The IPv4 CIDR that's whitelisted.
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl InputWhitelistRule {
@@ -3454,6 +3539,7 @@ impl AsRef<str> for InputSecurityGroupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputWhitelistRuleCidr {
     /// The IPv4 CIDR to whitelist.
+    #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl InputWhitelistRuleCidr {
@@ -3506,20 +3592,28 @@ impl InputWhitelistRuleCidr {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
+    #[doc(hidden)]
     pub active_input: std::option::Option<crate::model::InputDeviceActiveInput>,
     /// The source at the input device that is currently active. You can specify this source.
+    #[doc(hidden)]
     pub configured_input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
     /// The state of the input device.
+    #[doc(hidden)]
     pub device_state: std::option::Option<crate::model::InputDeviceState>,
     /// The frame rate of the video source.
+    #[doc(hidden)]
     pub framerate: f64,
     /// The height of the video source, in pixels.
+    #[doc(hidden)]
     pub height: i32,
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// The scan type of the video source.
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::InputDeviceScanType>,
     /// The width of the video source, in pixels.
+    #[doc(hidden)]
     pub width: i32,
 }
 impl InputDeviceUhdSettings {
@@ -3982,14 +4076,19 @@ impl AsRef<str> for InputDeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
+    #[doc(hidden)]
     pub dns_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The network gateway IP address.
+    #[doc(hidden)]
     pub gateway: std::option::Option<std::string::String>,
     /// The IP address of the input device.
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
+    #[doc(hidden)]
     pub ip_scheme: std::option::Option<crate::model::InputDeviceIpScheme>,
     /// The subnet mask of the input device.
+    #[doc(hidden)]
     pub subnet_mask: std::option::Option<std::string::String>,
 }
 impl InputDeviceNetworkSettings {
@@ -4179,20 +4278,28 @@ impl AsRef<str> for InputDeviceIpScheme {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceHdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
+    #[doc(hidden)]
     pub active_input: std::option::Option<crate::model::InputDeviceActiveInput>,
     /// The source at the input device that is currently active. You can specify this source.
+    #[doc(hidden)]
     pub configured_input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
     /// The state of the input device.
+    #[doc(hidden)]
     pub device_state: std::option::Option<crate::model::InputDeviceState>,
     /// The frame rate of the video source.
+    #[doc(hidden)]
     pub framerate: f64,
     /// The height of the video source, in pixels.
+    #[doc(hidden)]
     pub height: i32,
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// The scan type of the video source.
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::InputDeviceScanType>,
     /// The width of the video source, in pixels.
+    #[doc(hidden)]
     pub width: i32,
 }
 impl InputDeviceHdSettings {
@@ -4549,8 +4656,10 @@ impl AsRef<str> for InputDeviceConnectionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
+    #[doc(hidden)]
     pub configured_input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
+    #[doc(hidden)]
     pub max_bitrate: i32,
 }
 impl InputDeviceConfigurableSettings {
@@ -4627,37 +4736,53 @@ impl InputDeviceConfigurableSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Input {
     /// The Unique ARN of the input (generated, immutable).
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
+    #[doc(hidden)]
     pub attached_channels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the destinations of the input (PUSH-type).
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
     /// The generated ID of the input (unique for user account, immutable).
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    #[doc(hidden)]
     pub input_class: std::option::Option<crate::model::InputClass>,
     /// Settings for the input devices.
+    #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of IDs for all Inputs which are partners of this one.
+    #[doc(hidden)]
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    #[doc(hidden)]
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
+    #[doc(hidden)]
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
     /// The user-assigned name (This is a mutable value).
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// A list of IDs for all the Input Security Groups attached to the input.
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of the sources of the input (PULL-type).
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
     /// Placeholder documentation for InputState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::InputState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputType>,
 }
 impl Input {
@@ -5223,10 +5348,13 @@ impl AsRef<str> for InputState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
+    #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
     /// This represents the customer's source URL where stream is pulled from.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// The username for the input source.
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl InputSource {
@@ -5318,6 +5446,7 @@ impl InputSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl MediaConnectFlow {
@@ -5429,6 +5558,7 @@ impl AsRef<str> for InputSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceSettings {
     /// The unique ID for the device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InputDeviceSettings {
@@ -5536,12 +5666,16 @@ impl AsRef<str> for InputClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDestination {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// The port number for the input.
+    #[doc(hidden)]
     pub port: std::option::Option<std::string::String>,
     /// This represents the endpoint that the customer stream will be pushed to.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// The properties for a VPC type input destination.
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::InputDestinationVpc>,
 }
 impl InputDestination {
@@ -5650,8 +5784,10 @@ impl InputDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDestinationVpc {
     /// The availability zone of the Input destination.
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// The network interface ID of the Input destination in the VPC.
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl InputDestinationVpc {
@@ -5729,10 +5865,13 @@ impl InputDestinationVpc {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSourceRequest {
     /// The key used to extract the password from EC2 Parameter store.
+    #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
     /// This represents the customer's source URL where stream is pulled from.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// The username for the input source.
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl InputSourceRequest {
@@ -5824,6 +5963,7 @@ impl InputSourceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaConnectFlowRequest {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
+    #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl MediaConnectFlowRequest {
@@ -5878,6 +6018,7 @@ impl MediaConnectFlowRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceRequest {
     /// The unique ID for the device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InputDeviceRequest {
@@ -5930,6 +6071,7 @@ impl InputDeviceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl InputDestinationRequest {
@@ -5984,41 +6126,59 @@ impl InputDestinationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// Encoder Settings
+    #[doc(hidden)]
     pub encoder_settings: std::option::Option<crate::model::EncoderSettings>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
+    #[doc(hidden)]
     pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl Channel {
@@ -6446,12 +6606,16 @@ impl Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOutputSettingsDescription {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
+    #[doc(hidden)]
     pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcOutputSettingsDescription {
@@ -6696,14 +6860,19 @@ impl AsRef<str> for ChannelState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
+    #[doc(hidden)]
     pub active_input_attachment_name: std::option::Option<std::string::String>,
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
+    #[doc(hidden)]
     pub active_input_switch_action_name: std::option::Option<std::string::String>,
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
+    #[doc(hidden)]
     pub active_motion_graphics_action_name: std::option::Option<std::string::String>,
     /// The current URI being used for HTML5 motion graphics for this pipeline.
+    #[doc(hidden)]
     pub active_motion_graphics_uri: std::option::Option<std::string::String>,
     /// Pipeline ID
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl PipelineDetail {
@@ -6859,12 +7028,16 @@ impl PipelineDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceStatus {
     /// The currently selected maintenance day.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
+    #[doc(hidden)]
     pub maintenance_deadline: std::option::Option<std::string::String>,
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
+    #[doc(hidden)]
     pub maintenance_scheduled_date: std::option::Option<std::string::String>,
     /// The currently selected maintenance start time. Time is in UTC.
+    #[doc(hidden)]
     pub maintenance_start_time: std::option::Option<std::string::String>,
 }
 impl MaintenanceStatus {
@@ -7135,10 +7308,13 @@ impl AsRef<str> for LogLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSpecification {
     /// Input codec
+    #[doc(hidden)]
     pub codec: std::option::Option<crate::model::InputCodec>,
     /// Maximum input bitrate, categorized coarsely
+    #[doc(hidden)]
     pub maximum_bitrate: std::option::Option<crate::model::InputMaximumBitrate>,
     /// Input resolution, categorized coarsely
+    #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::InputResolution>,
 }
 impl InputSpecification {
@@ -7410,13 +7586,17 @@ impl AsRef<str> for InputCodec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
+    #[doc(hidden)]
     pub automatic_input_failover_settings:
         std::option::Option<crate::model::AutomaticInputFailoverSettings>,
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
+    #[doc(hidden)]
     pub input_attachment_name: std::option::Option<std::string::String>,
     /// The ID of the input
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// Settings of an input (caption selector, etc.)
+    #[doc(hidden)]
     pub input_settings: std::option::Option<crate::model::InputSettings>,
 }
 impl InputAttachment {
@@ -7540,26 +7720,37 @@ impl InputAttachment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSettings {
     /// Used to select the audio stream to decode for inputs that have multiple available.
+    #[doc(hidden)]
     pub audio_selectors: std::option::Option<std::vec::Vec<crate::model::AudioSelector>>,
     /// Used to select the caption input to use for inputs that have multiple available.
+    #[doc(hidden)]
     pub caption_selectors: std::option::Option<std::vec::Vec<crate::model::CaptionSelector>>,
     /// Enable or disable the deblock filter when filtering.
+    #[doc(hidden)]
     pub deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
     /// Enable or disable the denoise filter when filtering.
+    #[doc(hidden)]
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
+    #[doc(hidden)]
     pub filter_strength: i32,
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
+    #[doc(hidden)]
     pub input_filter: std::option::Option<crate::model::InputFilter>,
     /// Input settings.
+    #[doc(hidden)]
     pub network_input_settings: std::option::Option<crate::model::NetworkInputSettings>,
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
+    #[doc(hidden)]
     pub scte35_pid: i32,
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
+    #[doc(hidden)]
     pub smpte2038_data_preference: std::option::Option<crate::model::Smpte2038DataPreference>,
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
+    #[doc(hidden)]
     pub source_end_behavior: std::option::Option<crate::model::InputSourceEndBehavior>,
     /// Informs which video elementary stream to decode for input types that have multiple available.
+    #[doc(hidden)]
     pub video_selector: std::option::Option<crate::model::VideoSelector>,
 }
 impl InputSettings {
@@ -7834,12 +8025,16 @@ impl InputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoSelector {
     /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    #[doc(hidden)]
     pub color_space: std::option::Option<crate::model::VideoSelectorColorSpace>,
     /// Color space settings
+    #[doc(hidden)]
     pub color_space_settings: std::option::Option<crate::model::VideoSelectorColorSpaceSettings>,
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
+    #[doc(hidden)]
     pub color_space_usage: std::option::Option<crate::model::VideoSelectorColorSpaceUsage>,
     /// The video selector settings.
+    #[doc(hidden)]
     pub selector_settings: std::option::Option<crate::model::VideoSelectorSettings>,
 }
 impl VideoSelector {
@@ -7969,8 +8164,10 @@ impl VideoSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoSelectorSettings {
     /// Video Selector Pid
+    #[doc(hidden)]
     pub video_selector_pid: std::option::Option<crate::model::VideoSelectorPid>,
     /// Video Selector Program Id
+    #[doc(hidden)]
     pub video_selector_program_id: std::option::Option<crate::model::VideoSelectorProgramId>,
 }
 impl VideoSelectorSettings {
@@ -8054,6 +8251,7 @@ impl VideoSelectorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
+    #[doc(hidden)]
     pub program_id: i32,
 }
 impl VideoSelectorProgramId {
@@ -8108,6 +8306,7 @@ impl VideoSelectorProgramId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoSelectorPid {
     /// Selects a specific PID from within a video source.
+    #[doc(hidden)]
     pub pid: i32,
 }
 impl VideoSelectorPid {
@@ -8217,6 +8416,7 @@ impl AsRef<str> for VideoSelectorColorSpaceUsage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
+    #[doc(hidden)]
     pub hdr10_settings: std::option::Option<crate::model::Hdr10Settings>,
 }
 impl VideoSelectorColorSpaceSettings {
@@ -8274,8 +8474,10 @@ impl VideoSelectorColorSpaceSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hdr10Settings {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
+    #[doc(hidden)]
     pub max_cll: i32,
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
+    #[doc(hidden)]
     pub max_fall: i32,
 }
 impl Hdr10Settings {
@@ -8524,8 +8726,10 @@ impl AsRef<str> for Smpte2038DataPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInputSettings {
     /// Specifies HLS input settings when the uri is for a HLS manifest.
+    #[doc(hidden)]
     pub hls_input_settings: std::option::Option<crate::model::HlsInputSettings>,
     /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
+    #[doc(hidden)]
     pub server_validation: std::option::Option<crate::model::NetworkInputServerValidation>,
 }
 impl NetworkInputSettings {
@@ -8671,14 +8875,19 @@ impl AsRef<str> for NetworkInputServerValidation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsInputSettings {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
+    #[doc(hidden)]
     pub bandwidth: i32,
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
+    #[doc(hidden)]
     pub buffer_segments: i32,
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
+    #[doc(hidden)]
     pub retries: i32,
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
+    #[doc(hidden)]
     pub retry_interval: i32,
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
+    #[doc(hidden)]
     pub scte35_source: std::option::Option<crate::model::HlsScte35SourceType>,
 }
 impl HlsInputSettings {
@@ -9028,10 +9237,13 @@ impl AsRef<str> for InputDeblockFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Caption selector settings.
+    #[doc(hidden)]
     pub selector_settings: std::option::Option<crate::model::CaptionSelectorSettings>,
 }
 impl CaptionSelector {
@@ -9126,18 +9338,25 @@ impl CaptionSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionSelectorSettings {
     /// Ancillary Source Settings
+    #[doc(hidden)]
     pub ancillary_source_settings: std::option::Option<crate::model::AncillarySourceSettings>,
     /// Arib Source Settings
+    #[doc(hidden)]
     pub arib_source_settings: std::option::Option<crate::model::AribSourceSettings>,
     /// Dvb Sub Source Settings
+    #[doc(hidden)]
     pub dvb_sub_source_settings: std::option::Option<crate::model::DvbSubSourceSettings>,
     /// Embedded Source Settings
+    #[doc(hidden)]
     pub embedded_source_settings: std::option::Option<crate::model::EmbeddedSourceSettings>,
     /// Scte20 Source Settings
+    #[doc(hidden)]
     pub scte20_source_settings: std::option::Option<crate::model::Scte20SourceSettings>,
     /// Scte27 Source Settings
+    #[doc(hidden)]
     pub scte27_source_settings: std::option::Option<crate::model::Scte27SourceSettings>,
     /// Teletext Source Settings
+    #[doc(hidden)]
     pub teletext_source_settings: std::option::Option<crate::model::TeletextSourceSettings>,
 }
 impl CaptionSelectorSettings {
@@ -9342,8 +9561,10 @@ impl CaptionSelectorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TeletextSourceSettings {
     /// Optionally defines a region where TTML style captions will be displayed
+    #[doc(hidden)]
     pub output_rectangle: std::option::Option<crate::model::CaptionRectangle>,
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
+    #[doc(hidden)]
     pub page_number: std::option::Option<std::string::String>,
 }
 impl TeletextSourceSettings {
@@ -9418,12 +9639,16 @@ impl TeletextSourceSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionRectangle {
     /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
+    #[doc(hidden)]
     pub height: f64,
     /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages. If you specify a value for one of these fields, you must specify a value for all of them. For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame. This field corresponds to tts:origin - X in the TTML standard.
+    #[doc(hidden)]
     pub left_offset: f64,
     /// See the description in leftOffset. For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame. This field corresponds to tts:origin - Y in the TTML standard.
+    #[doc(hidden)]
     pub top_offset: f64,
     /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
+    #[doc(hidden)]
     pub width: f64,
 }
 impl CaptionRectangle {
@@ -9529,8 +9754,10 @@ impl CaptionRectangle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte27SourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
+    #[doc(hidden)]
     pub ocr_language: std::option::Option<crate::model::Scte27OcrLanguage>,
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+    #[doc(hidden)]
     pub pid: i32,
 }
 impl Scte27SourceSettings {
@@ -9676,8 +9903,10 @@ impl AsRef<str> for Scte27OcrLanguage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte20SourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    #[doc(hidden)]
     pub convert608_to708: std::option::Option<crate::model::Scte20Convert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    #[doc(hidden)]
     pub source608_channel_number: i32,
 }
 impl Scte20SourceSettings {
@@ -9807,12 +10036,16 @@ impl AsRef<str> for Scte20Convert608To708 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmbeddedSourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    #[doc(hidden)]
     pub convert608_to708: std::option::Option<crate::model::EmbeddedConvert608To708>,
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
+    #[doc(hidden)]
     pub scte20_detection: std::option::Option<crate::model::EmbeddedScte20Detection>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    #[doc(hidden)]
     pub source608_channel_number: i32,
     /// This field is unused and deprecated.
+    #[doc(hidden)]
     pub source608_track_number: i32,
 }
 impl EmbeddedSourceSettings {
@@ -10034,8 +10267,10 @@ impl AsRef<str> for EmbeddedConvert608To708 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
+    #[doc(hidden)]
     pub ocr_language: std::option::Option<crate::model::DvbSubOcrLanguage>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
+    #[doc(hidden)]
     pub pid: i32,
 }
 impl DvbSubSourceSettings {
@@ -10211,6 +10446,7 @@ impl AribSourceSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AncillarySourceSettings {
     /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
+    #[doc(hidden)]
     pub source_ancillary_channel_number: i32,
 }
 impl AncillarySourceSettings {
@@ -10273,8 +10509,10 @@ impl AncillarySourceSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelector {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The audio selector settings.
+    #[doc(hidden)]
     pub selector_settings: std::option::Option<crate::model::AudioSelectorSettings>,
 }
 impl AudioSelector {
@@ -10349,13 +10587,17 @@ impl AudioSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelectorSettings {
     /// Audio Hls Rendition Selection
+    #[doc(hidden)]
     pub audio_hls_rendition_selection:
         std::option::Option<crate::model::AudioHlsRenditionSelection>,
     /// Audio Language Selection
+    #[doc(hidden)]
     pub audio_language_selection: std::option::Option<crate::model::AudioLanguageSelection>,
     /// Audio Pid Selection
+    #[doc(hidden)]
     pub audio_pid_selection: std::option::Option<crate::model::AudioPidSelection>,
     /// Audio Track Selection
+    #[doc(hidden)]
     pub audio_track_selection: std::option::Option<crate::model::AudioTrackSelection>,
 }
 impl AudioSelectorSettings {
@@ -10488,6 +10730,7 @@ impl AudioSelectorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
+    #[doc(hidden)]
     pub tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
 }
 impl AudioTrackSelection {
@@ -10551,6 +10794,7 @@ impl AudioTrackSelection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioTrack {
     /// 1-based integer value that maps to a specific audio track
+    #[doc(hidden)]
     pub track: i32,
 }
 impl AudioTrack {
@@ -10605,6 +10849,7 @@ impl AudioTrack {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioPidSelection {
     /// Selects a specific PID from within a source.
+    #[doc(hidden)]
     pub pid: i32,
 }
 impl AudioPidSelection {
@@ -10659,8 +10904,10 @@ impl AudioPidSelection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioLanguageSelection {
     /// Selects a specific three-letter language code from within an audio source.
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
+    #[doc(hidden)]
     pub language_selection_policy: std::option::Option<crate::model::AudioLanguageSelectionPolicy>,
 }
 impl AudioLanguageSelection {
@@ -10799,8 +11046,10 @@ impl AsRef<str> for AudioLanguageSelectionPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioHlsRenditionSelection {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AudioHlsRenditionSelection {
@@ -10872,12 +11121,16 @@ impl AudioHlsRenditionSelection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomaticInputFailoverSettings {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
+    #[doc(hidden)]
     pub error_clear_time_msec: i32,
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
+    #[doc(hidden)]
     pub failover_conditions: std::option::Option<std::vec::Vec<crate::model::FailoverCondition>>,
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
+    #[doc(hidden)]
     pub input_preference: std::option::Option<crate::model::InputPreference>,
     /// The input ID of the secondary input in the automatic input failover pair.
+    #[doc(hidden)]
     pub secondary_input_id: std::option::Option<std::string::String>,
 }
 impl AutomaticInputFailoverSettings {
@@ -11056,6 +11309,7 @@ impl AsRef<str> for InputPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverCondition {
     /// Failover condition type-specific settings.
+    #[doc(hidden)]
     pub failover_condition_settings: std::option::Option<crate::model::FailoverConditionSettings>,
 }
 impl FailoverCondition {
@@ -11122,10 +11376,13 @@ impl FailoverCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverConditionSettings {
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
+    #[doc(hidden)]
     pub audio_silence_settings: std::option::Option<crate::model::AudioSilenceFailoverSettings>,
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
+    #[doc(hidden)]
     pub input_loss_settings: std::option::Option<crate::model::InputLossFailoverSettings>,
     /// MediaLive will perform a failover if content is considered black for the specified period.
+    #[doc(hidden)]
     pub video_black_settings: std::option::Option<crate::model::VideoBlackFailoverSettings>,
 }
 impl FailoverConditionSettings {
@@ -11241,8 +11498,10 @@ impl FailoverConditionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoBlackFailoverSettings {
     /// A value used in calculating the threshold below which MediaLive considers a pixel to be 'black'. For the input to be considered black, every pixel in a frame must be below this threshold. The threshold is calculated as a percentage (expressed as a decimal) of white. Therefore .1 means 10% white (or 90% black). Note how the formula works for any color depth. For example, if you set this field to 0.1 in 10-bit color depth: (1023*0.1=102.3), which means a pixel value of 102 or less is 'black'. If you set this field to .1 in an 8-bit color depth: (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with any number of decimal places.
+    #[doc(hidden)]
     pub black_detect_threshold: f64,
     /// The amount of time (in milliseconds) that the active input must be black before automatic input failover occurs.
+    #[doc(hidden)]
     pub video_black_threshold_msec: i32,
 }
 impl VideoBlackFailoverSettings {
@@ -11317,6 +11576,7 @@ impl VideoBlackFailoverSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLossFailoverSettings {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
+    #[doc(hidden)]
     pub input_loss_threshold_msec: i32,
 }
 impl InputLossFailoverSettings {
@@ -11371,8 +11631,10 @@ impl InputLossFailoverSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSilenceFailoverSettings {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
+    #[doc(hidden)]
     pub audio_selector_name: std::option::Option<std::string::String>,
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
+    #[doc(hidden)]
     pub audio_silence_threshold_msec: i32,
 }
 impl AudioSilenceFailoverSettings {
@@ -11450,29 +11712,41 @@ impl AudioSilenceFailoverSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncoderSettings {
     /// Placeholder documentation for __listOfAudioDescription
+    #[doc(hidden)]
     pub audio_descriptions: std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
     /// Settings for ad avail blanking.
+    #[doc(hidden)]
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Event-wide configuration settings for ad avail insertion.
+    #[doc(hidden)]
     pub avail_configuration: std::option::Option<crate::model::AvailConfiguration>,
     /// Settings for blackout slate.
+    #[doc(hidden)]
     pub blackout_slate: std::option::Option<crate::model::BlackoutSlate>,
     /// Settings for caption decriptions
+    #[doc(hidden)]
     pub caption_descriptions: std::option::Option<std::vec::Vec<crate::model::CaptionDescription>>,
     /// Feature Activations
+    #[doc(hidden)]
     pub feature_activations: std::option::Option<crate::model::FeatureActivations>,
     /// Configuration settings that apply to the event as a whole.
+    #[doc(hidden)]
     pub global_configuration: std::option::Option<crate::model::GlobalConfiguration>,
     /// Settings for motion graphics.
+    #[doc(hidden)]
     pub motion_graphics_configuration:
         std::option::Option<crate::model::MotionGraphicsConfiguration>,
     /// Nielsen configuration settings.
+    #[doc(hidden)]
     pub nielsen_configuration: std::option::Option<crate::model::NielsenConfiguration>,
     /// Placeholder documentation for __listOfOutputGroup
+    #[doc(hidden)]
     pub output_groups: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
     /// Contains settings used to acquire and adjust timecode information from inputs.
+    #[doc(hidden)]
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
     /// Placeholder documentation for __listOfVideoDescription
+    #[doc(hidden)]
     pub video_descriptions: std::option::Option<std::vec::Vec<crate::model::VideoDescription>>,
 }
 impl EncoderSettings {
@@ -11788,18 +12062,25 @@ impl EncoderSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoDescription {
     /// Video codec settings.
+    #[doc(hidden)]
     pub codec_settings: std::option::Option<crate::model::VideoCodecSettings>,
     /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
+    #[doc(hidden)]
     pub height: i32,
     /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+    #[doc(hidden)]
     pub respond_to_afd: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    #[doc(hidden)]
     pub scaling_behavior: std::option::Option<crate::model::VideoDescriptionScalingBehavior>,
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
+    #[doc(hidden)]
     pub sharpness: i32,
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
+    #[doc(hidden)]
     pub width: i32,
 }
 impl VideoDescription {
@@ -12087,12 +12368,16 @@ impl AsRef<str> for VideoDescriptionRespondToAfd {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoCodecSettings {
     /// Frame Capture Settings
+    #[doc(hidden)]
     pub frame_capture_settings: std::option::Option<crate::model::FrameCaptureSettings>,
     /// H264 Settings
+    #[doc(hidden)]
     pub h264_settings: std::option::Option<crate::model::H264Settings>,
     /// H265 Settings
+    #[doc(hidden)]
     pub h265_settings: std::option::Option<crate::model::H265Settings>,
     /// Mpeg2 Settings
+    #[doc(hidden)]
     pub mpeg2_settings: std::option::Option<crate::model::Mpeg2Settings>,
 }
 impl VideoCodecSettings {
@@ -12212,36 +12497,52 @@ impl VideoCodecSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
+    #[doc(hidden)]
     pub adaptive_quantization: std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
     /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
+    #[doc(hidden)]
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
+    #[doc(hidden)]
     pub color_metadata: std::option::Option<crate::model::Mpeg2ColorMetadata>,
     /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
+    #[doc(hidden)]
     pub color_space: std::option::Option<crate::model::Mpeg2ColorSpace>,
     /// Sets the pixel aspect ratio for the encode.
+    #[doc(hidden)]
     pub display_aspect_ratio: std::option::Option<crate::model::Mpeg2DisplayRatio>,
     /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
+    #[doc(hidden)]
     pub filter_settings: std::option::Option<crate::model::Mpeg2FilterSettings>,
     /// Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode.
+    #[doc(hidden)]
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
     /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
+    #[doc(hidden)]
     pub framerate_denominator: i32,
     /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
+    #[doc(hidden)]
     pub framerate_numerator: i32,
     /// MPEG2: default is open GOP.
+    #[doc(hidden)]
     pub gop_closed_cadence: i32,
     /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
+    #[doc(hidden)]
     pub gop_num_b_frames: i32,
     /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
+    #[doc(hidden)]
     pub gop_size: f64,
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
+    #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
     /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::Mpeg2ScanType>,
     /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
+    #[doc(hidden)]
     pub subgop_length: std::option::Option<crate::model::Mpeg2SubGopLength>,
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
+    #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
 }
 impl Mpeg2Settings {
@@ -12907,6 +13208,7 @@ impl AsRef<str> for FixedAfd {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mpeg2FilterSettings {
     /// Temporal Filter Settings
+    #[doc(hidden)]
     pub temporal_filter_settings: std::option::Option<crate::model::TemporalFilterSettings>,
 }
 impl Mpeg2FilterSettings {
@@ -12970,9 +13272,11 @@ impl Mpeg2FilterSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemporalFilterSettings {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+    #[doc(hidden)]
     pub post_filter_sharpening:
         std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
+    #[doc(hidden)]
     pub strength: std::option::Option<crate::model::TemporalFilterStrength>,
 }
 impl TemporalFilterSettings {
@@ -13539,63 +13843,92 @@ impl AsRef<str> for Mpeg2AdaptiveQuantization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    #[doc(hidden)]
     pub adaptive_quantization: std::option::Option<crate::model::H265AdaptiveQuantization>,
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    #[doc(hidden)]
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
+    #[doc(hidden)]
     pub alternative_transfer_function:
         std::option::Option<crate::model::H265AlternativeTransferFunction>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
+    #[doc(hidden)]
     pub bitrate: i32,
     /// Size of buffer (HRD buffer model) in bits.
+    #[doc(hidden)]
     pub buf_size: i32,
     /// Includes colorspace metadata in the output.
+    #[doc(hidden)]
     pub color_metadata: std::option::Option<crate::model::H265ColorMetadata>,
     /// Color Space settings
+    #[doc(hidden)]
     pub color_space_settings: std::option::Option<crate::model::H265ColorSpaceSettings>,
     /// Optional filters that you can apply to an encode.
+    #[doc(hidden)]
     pub filter_settings: std::option::Option<crate::model::H265FilterSettings>,
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
+    #[doc(hidden)]
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
     /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    #[doc(hidden)]
     pub flicker_aq: std::option::Option<crate::model::H265FlickerAq>,
     /// Framerate denominator.
+    #[doc(hidden)]
     pub framerate_denominator: i32,
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+    #[doc(hidden)]
     pub framerate_numerator: i32,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    #[doc(hidden)]
     pub gop_closed_cadence: i32,
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    #[doc(hidden)]
     pub gop_size: f64,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
+    #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::model::H265GopSizeUnits>,
     /// H.265 Level.
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::H265Level>,
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
+    #[doc(hidden)]
     pub look_ahead_rate_control: std::option::Option<crate::model::H265LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    #[doc(hidden)]
     pub min_i_interval: i32,
     /// Pixel Aspect Ratio denominator.
+    #[doc(hidden)]
     pub par_denominator: i32,
     /// Pixel Aspect Ratio numerator.
+    #[doc(hidden)]
     pub par_numerator: i32,
     /// H.265 Profile.
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::H265Profile>,
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+    #[doc(hidden)]
     pub qvbr_quality_level: i32,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
+    #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::model::H265RateControlMode>,
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::H265ScanType>,
     /// Scene change detection.
+    #[doc(hidden)]
     pub scene_change_detect: std::option::Option<crate::model::H265SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    #[doc(hidden)]
     pub slices: i32,
     /// H.265 Tier.
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::H265Tier>,
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
 }
 impl H265Settings {
@@ -14818,6 +15151,7 @@ impl AsRef<str> for H265FlickerAq {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H265FilterSettings {
     /// Temporal Filter Settings
+    #[doc(hidden)]
     pub temporal_filter_settings: std::option::Option<crate::model::TemporalFilterSettings>,
 }
 impl H265FilterSettings {
@@ -14881,13 +15215,17 @@ impl H265FilterSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H265ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
+    #[doc(hidden)]
     pub color_space_passthrough_settings:
         std::option::Option<crate::model::ColorSpacePassthroughSettings>,
     /// Hdr10 Settings
+    #[doc(hidden)]
     pub hdr10_settings: std::option::Option<crate::model::Hdr10Settings>,
     /// Rec601 Settings
+    #[doc(hidden)]
     pub rec601_settings: std::option::Option<crate::model::Rec601Settings>,
     /// Rec709 Settings
+    #[doc(hidden)]
     pub rec709_settings: std::option::Option<crate::model::Rec709Settings>,
 }
 impl H265ColorSpaceSettings {
@@ -15289,86 +15627,127 @@ impl AsRef<str> for H265AdaptiveQuantization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
+    #[doc(hidden)]
     pub adaptive_quantization: std::option::Option<crate::model::H264AdaptiveQuantization>,
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    #[doc(hidden)]
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
+    #[doc(hidden)]
     pub bitrate: i32,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
+    #[doc(hidden)]
     pub buf_fill_pct: i32,
     /// Size of buffer (HRD buffer model) in bits.
+    #[doc(hidden)]
     pub buf_size: i32,
     /// Includes colorspace metadata in the output.
+    #[doc(hidden)]
     pub color_metadata: std::option::Option<crate::model::H264ColorMetadata>,
     /// Color Space settings
+    #[doc(hidden)]
     pub color_space_settings: std::option::Option<crate::model::H264ColorSpaceSettings>,
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
+    #[doc(hidden)]
     pub entropy_encoding: std::option::Option<crate::model::H264EntropyEncoding>,
     /// Optional filters that you can apply to an encode.
+    #[doc(hidden)]
     pub filter_settings: std::option::Option<crate::model::H264FilterSettings>,
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
+    #[doc(hidden)]
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
     /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
+    #[doc(hidden)]
     pub flicker_aq: std::option::Option<crate::model::H264FlickerAq>,
     /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
+    #[doc(hidden)]
     pub force_field_pictures: std::option::Option<crate::model::H264ForceFieldPictures>,
     /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
+    #[doc(hidden)]
     pub framerate_control: std::option::Option<crate::model::H264FramerateControl>,
     /// Framerate denominator.
+    #[doc(hidden)]
     pub framerate_denominator: i32,
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+    #[doc(hidden)]
     pub framerate_numerator: i32,
     /// Documentation update needed
+    #[doc(hidden)]
     pub gop_b_reference: std::option::Option<crate::model::H264GopBReference>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
+    #[doc(hidden)]
     pub gop_closed_cadence: i32,
     /// Number of B-frames between reference frames.
+    #[doc(hidden)]
     pub gop_num_b_frames: i32,
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    #[doc(hidden)]
     pub gop_size: f64,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
+    #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::model::H264GopSizeUnits>,
     /// H.264 Level.
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::H264Level>,
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
+    #[doc(hidden)]
     pub look_ahead_rate_control: std::option::Option<crate::model::H264LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
+    #[doc(hidden)]
     pub max_bitrate: i32,
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    #[doc(hidden)]
     pub min_i_interval: i32,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
+    #[doc(hidden)]
     pub num_ref_frames: i32,
     /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
+    #[doc(hidden)]
     pub par_control: std::option::Option<crate::model::H264ParControl>,
     /// Pixel Aspect Ratio denominator.
+    #[doc(hidden)]
     pub par_denominator: i32,
     /// Pixel Aspect Ratio numerator.
+    #[doc(hidden)]
     pub par_numerator: i32,
     /// H.264 Profile.
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::H264Profile>,
     /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
+    #[doc(hidden)]
     pub quality_level: std::option::Option<crate::model::H264QualityLevel>,
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
+    #[doc(hidden)]
     pub qvbr_quality_level: i32,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
+    #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::model::H264RateControlMode>,
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::H264ScanType>,
     /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
+    #[doc(hidden)]
     pub scene_change_detect: std::option::Option<crate::model::H264SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    #[doc(hidden)]
     pub slices: i32,
     /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
+    #[doc(hidden)]
     pub softness: i32,
     /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
+    #[doc(hidden)]
     pub spatial_aq: std::option::Option<crate::model::H264SpatialAq>,
     /// If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP to improve visual quality.
+    #[doc(hidden)]
     pub subgop_length: std::option::Option<crate::model::H264SubGopLength>,
     /// Produces a bitstream compliant with SMPTE RP-2027.
+    #[doc(hidden)]
     pub syntax: std::option::Option<crate::model::H264Syntax>,
     /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
+    #[doc(hidden)]
     pub temporal_aq: std::option::Option<crate::model::H264TemporalAq>,
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
 }
 impl H264Settings {
@@ -17294,6 +17673,7 @@ impl AsRef<str> for H264FlickerAq {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264FilterSettings {
     /// Temporal Filter Settings
+    #[doc(hidden)]
     pub temporal_filter_settings: std::option::Option<crate::model::TemporalFilterSettings>,
 }
 impl H264FilterSettings {
@@ -17412,11 +17792,14 @@ impl AsRef<str> for H264EntropyEncoding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
+    #[doc(hidden)]
     pub color_space_passthrough_settings:
         std::option::Option<crate::model::ColorSpacePassthroughSettings>,
     /// Rec601 Settings
+    #[doc(hidden)]
     pub rec601_settings: std::option::Option<crate::model::Rec601Settings>,
     /// Rec709 Settings
+    #[doc(hidden)]
     pub rec709_settings: std::option::Option<crate::model::Rec709Settings>,
 }
 impl H264ColorSpaceSettings {
@@ -17653,8 +18036,10 @@ impl AsRef<str> for H264AdaptiveQuantization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
+    #[doc(hidden)]
     pub capture_interval: i32,
     /// Unit for the frame capture interval.
+    #[doc(hidden)]
     pub capture_interval_units: std::option::Option<crate::model::FrameCaptureIntervalUnit>,
 }
 impl FrameCaptureSettings {
@@ -17790,8 +18175,10 @@ impl AsRef<str> for FrameCaptureIntervalUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimecodeConfig {
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::TimecodeConfigSource>,
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
+    #[doc(hidden)]
     pub sync_threshold: i32,
 }
 impl TimecodeConfig {
@@ -17925,10 +18312,13 @@ impl AsRef<str> for TimecodeConfigSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputGroup {
     /// Custom output group name optionally defined by the user.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Settings associated with the output group.
+    #[doc(hidden)]
     pub output_group_settings: std::option::Option<crate::model::OutputGroupSettings>,
     /// Placeholder documentation for __listOfOutput
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl OutputGroup {
@@ -18029,14 +18419,19 @@ impl OutputGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Output {
     /// The names of the AudioDescriptions used as audio sources for this output.
+    #[doc(hidden)]
     pub audio_description_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The names of the CaptionDescriptions used as caption sources for this output.
+    #[doc(hidden)]
     pub caption_description_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The name used to identify an output.
+    #[doc(hidden)]
     pub output_name: std::option::Option<std::string::String>,
     /// Output type-specific settings.
+    #[doc(hidden)]
     pub output_settings: std::option::Option<crate::model::OutputSettings>,
     /// The name of the VideoDescription used as the source for this output.
+    #[doc(hidden)]
     pub video_description_name: std::option::Option<std::string::String>,
 }
 impl Output {
@@ -18184,22 +18579,30 @@ impl Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputSettings {
     /// Archive Output Settings
+    #[doc(hidden)]
     pub archive_output_settings: std::option::Option<crate::model::ArchiveOutputSettings>,
     /// Frame Capture Output Settings
+    #[doc(hidden)]
     pub frame_capture_output_settings:
         std::option::Option<crate::model::FrameCaptureOutputSettings>,
     /// Hls Output Settings
+    #[doc(hidden)]
     pub hls_output_settings: std::option::Option<crate::model::HlsOutputSettings>,
     /// Media Package Output Settings
+    #[doc(hidden)]
     pub media_package_output_settings:
         std::option::Option<crate::model::MediaPackageOutputSettings>,
     /// Ms Smooth Output Settings
+    #[doc(hidden)]
     pub ms_smooth_output_settings: std::option::Option<crate::model::MsSmoothOutputSettings>,
     /// Multiplex Output Settings
+    #[doc(hidden)]
     pub multiplex_output_settings: std::option::Option<crate::model::MultiplexOutputSettings>,
     /// Rtmp Output Settings
+    #[doc(hidden)]
     pub rtmp_output_settings: std::option::Option<crate::model::RtmpOutputSettings>,
     /// Udp Output Settings
+    #[doc(hidden)]
     pub udp_output_settings: std::option::Option<crate::model::UdpOutputSettings>,
 }
 impl OutputSettings {
@@ -18433,12 +18836,16 @@ impl OutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UdpOutputSettings {
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
+    #[doc(hidden)]
     pub buffer_msec: i32,
     /// Udp Container Settings
+    #[doc(hidden)]
     pub container_settings: std::option::Option<crate::model::UdpContainerSettings>,
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
+    #[doc(hidden)]
     pub fec_output_settings: std::option::Option<crate::model::FecOutputSettings>,
 }
 impl UdpOutputSettings {
@@ -18553,10 +18960,13 @@ impl UdpOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FecOutputSettings {
     /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+    #[doc(hidden)]
     pub column_depth: i32,
     /// Enables column only or column and row based FEC
+    #[doc(hidden)]
     pub include_fec: std::option::Option<crate::model::FecOutputIncludeFec>,
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+    #[doc(hidden)]
     pub row_length: i32,
 }
 impl FecOutputSettings {
@@ -18703,6 +19113,7 @@ impl AsRef<str> for FecOutputIncludeFec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputLocationRef {
     /// Placeholder documentation for __string
+    #[doc(hidden)]
     pub destination_ref_id: std::option::Option<std::string::String>,
 }
 impl OutputLocationRef {
@@ -18760,6 +19171,7 @@ impl OutputLocationRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UdpContainerSettings {
     /// M2ts Settings
+    #[doc(hidden)]
     pub m2ts_settings: std::option::Option<crate::model::M2tsSettings>,
 }
 impl UdpContainerSettings {
@@ -18817,99 +19229,146 @@ impl UdpContainerSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct M2tsSettings {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
+    #[doc(hidden)]
     pub absent_input_audio_behavior:
         std::option::Option<crate::model::M2tsAbsentInputAudioBehavior>,
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
+    #[doc(hidden)]
     pub arib: std::option::Option<crate::model::M2tsArib>,
     /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub arib_captions_pid: std::option::Option<std::string::String>,
     /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
+    #[doc(hidden)]
     pub arib_captions_pid_control: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
     /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
+    #[doc(hidden)]
     pub audio_buffer_model: std::option::Option<crate::model::M2tsAudioBufferModel>,
     /// The number of audio frames to insert for each PES packet.
+    #[doc(hidden)]
     pub audio_frames_per_pes: i32,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub audio_pids: std::option::Option<std::string::String>,
     /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
+    #[doc(hidden)]
     pub audio_stream_type: std::option::Option<crate::model::M2tsAudioStreamType>,
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
+    #[doc(hidden)]
     pub bitrate: i32,
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
+    #[doc(hidden)]
     pub buffer_model: std::option::Option<crate::model::M2tsBufferModel>,
     /// When set to enabled, generates captionServiceDescriptor in PMT.
+    #[doc(hidden)]
     pub cc_descriptor: std::option::Option<crate::model::M2tsCcDescriptor>,
     /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+    #[doc(hidden)]
     pub dvb_nit_settings: std::option::Option<crate::model::DvbNitSettings>,
     /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
+    #[doc(hidden)]
     pub dvb_sdt_settings: std::option::Option<crate::model::DvbSdtSettings>,
     /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub dvb_sub_pids: std::option::Option<std::string::String>,
     /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+    #[doc(hidden)]
     pub dvb_tdt_settings: std::option::Option<crate::model::DvbTdtSettings>,
     /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub dvb_teletext_pid: std::option::Option<std::string::String>,
     /// If set to passthrough, passes any EBIF data from the input source to this output.
+    #[doc(hidden)]
     pub ebif: std::option::Option<crate::model::M2tsEbifControl>,
     /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
+    #[doc(hidden)]
     pub ebp_audio_interval: std::option::Option<crate::model::M2tsAudioInterval>,
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+    #[doc(hidden)]
     pub ebp_lookahead_ms: i32,
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
+    #[doc(hidden)]
     pub ebp_placement: std::option::Option<crate::model::M2tsEbpPlacement>,
     /// This field is unused and deprecated.
+    #[doc(hidden)]
     pub ecm_pid: std::option::Option<std::string::String>,
     /// Include or exclude the ES Rate field in the PES header.
+    #[doc(hidden)]
     pub es_rate_in_pes: std::option::Option<crate::model::M2tsEsRateInPes>,
     /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub etv_platform_pid: std::option::Option<std::string::String>,
     /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub etv_signal_pid: std::option::Option<std::string::String>,
     /// The length in seconds of each fragment. Only used with EBP markers.
+    #[doc(hidden)]
     pub fragment_time: f64,
     /// If set to passthrough, passes any KLV data from the input source to this output.
+    #[doc(hidden)]
     pub klv: std::option::Option<crate::model::M2tsKlv>,
     /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub klv_data_pids: std::option::Option<std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    #[doc(hidden)]
     pub nielsen_id3_behavior: std::option::Option<crate::model::M2tsNielsenId3Behavior>,
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
+    #[doc(hidden)]
     pub null_packet_bitrate: f64,
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
+    #[doc(hidden)]
     pub pat_interval: i32,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
+    #[doc(hidden)]
     pub pcr_control: std::option::Option<crate::model::M2tsPcrControl>,
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
+    #[doc(hidden)]
     pub pcr_period: i32,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub pcr_pid: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
+    #[doc(hidden)]
     pub pmt_interval: i32,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub pmt_pid: std::option::Option<std::string::String>,
     /// The value of the program number field in the Program Map Table.
+    #[doc(hidden)]
     pub program_num: i32,
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
+    #[doc(hidden)]
     pub rate_mode: std::option::Option<crate::model::M2tsRateMode>,
     /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub scte27_pids: std::option::Option<std::string::String>,
     /// Optionally pass SCTE-35 signals from the input source to this output.
+    #[doc(hidden)]
     pub scte35_control: std::option::Option<crate::model::M2tsScte35Control>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub scte35_pid: std::option::Option<std::string::String>,
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
+    #[doc(hidden)]
     pub segmentation_markers: std::option::Option<crate::model::M2tsSegmentationMarkers>,
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
+    #[doc(hidden)]
     pub segmentation_style: std::option::Option<crate::model::M2tsSegmentationStyle>,
     /// The length in seconds of each segment. Required unless markers is set to _none_.
+    #[doc(hidden)]
     pub segmentation_time: f64,
     /// When set to passthrough, timed metadata will be passed through from input to output.
+    #[doc(hidden)]
     pub timed_metadata_behavior: std::option::Option<crate::model::M2tsTimedMetadataBehavior>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
+    #[doc(hidden)]
     pub transport_stream_id: i32,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub video_pid: std::option::Option<std::string::String>,
 }
 impl M2tsSettings {
@@ -20535,6 +20994,7 @@ impl AsRef<str> for M2tsEbifControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
+    #[doc(hidden)]
     pub rep_interval: i32,
 }
 impl DvbTdtSettings {
@@ -20589,12 +21049,16 @@ impl DvbTdtSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSdtSettings {
     /// Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.
+    #[doc(hidden)]
     pub output_sdt: std::option::Option<crate::model::DvbSdtOutputSdt>,
     /// The number of milliseconds between instances of this table in the output transport stream.
+    #[doc(hidden)]
     pub rep_interval: i32,
     /// The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
+    #[doc(hidden)]
     pub service_provider_name: std::option::Option<std::string::String>,
 }
 impl DvbSdtSettings {
@@ -20774,10 +21238,13 @@ impl AsRef<str> for DvbSdtOutputSdt {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
+    #[doc(hidden)]
     pub network_id: i32,
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
+    #[doc(hidden)]
     pub network_name: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream.
+    #[doc(hidden)]
     pub rep_interval: i32,
 }
 impl DvbNitSettings {
@@ -21251,12 +21718,16 @@ impl AsRef<str> for M2tsAbsentInputAudioBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RtmpOutputSettings {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
+    #[doc(hidden)]
     pub certificate_mode: std::option::Option<crate::model::RtmpOutputCertificateMode>,
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Number of retry attempts.
+    #[doc(hidden)]
     pub num_retries: i32,
 }
 impl RtmpOutputSettings {
@@ -21425,6 +21896,7 @@ impl AsRef<str> for RtmpOutputCertificateMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexOutputSettings {
     /// Destination is a Multiplex.
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
 }
 impl MultiplexOutputSettings {
@@ -21482,8 +21954,10 @@ impl MultiplexOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MsSmoothOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    #[doc(hidden)]
     pub h265_packaging_type: std::option::Option<crate::model::MsSmoothH265PackagingType>,
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
+    #[doc(hidden)]
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl MsSmoothOutputSettings {
@@ -21652,12 +22126,16 @@ impl MediaPackageOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    #[doc(hidden)]
     pub h265_packaging_type: std::option::Option<crate::model::HlsH265PackagingType>,
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
+    #[doc(hidden)]
     pub hls_settings: std::option::Option<crate::model::HlsSettings>,
     /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
+    #[doc(hidden)]
     pub name_modifier: std::option::Option<std::string::String>,
     /// String concatenated to end of segment filenames.
+    #[doc(hidden)]
     pub segment_modifier: std::option::Option<std::string::String>,
 }
 impl HlsOutputSettings {
@@ -21775,12 +22253,16 @@ impl HlsOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsSettings {
     /// Audio Only Hls Settings
+    #[doc(hidden)]
     pub audio_only_hls_settings: std::option::Option<crate::model::AudioOnlyHlsSettings>,
     /// Fmp4 Hls Settings
+    #[doc(hidden)]
     pub fmp4_hls_settings: std::option::Option<crate::model::Fmp4HlsSettings>,
     /// Frame Capture Hls Settings
+    #[doc(hidden)]
     pub frame_capture_hls_settings: std::option::Option<crate::model::FrameCaptureHlsSettings>,
     /// Standard Hls Settings
+    #[doc(hidden)]
     pub standard_hls_settings: std::option::Option<crate::model::StandardHlsSettings>,
 }
 impl HlsSettings {
@@ -21912,8 +22394,10 @@ impl HlsSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StandardHlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
+    #[doc(hidden)]
     pub audio_rendition_sets: std::option::Option<std::string::String>,
     /// Settings information for the .m3u8 container
+    #[doc(hidden)]
     pub m3u8_settings: std::option::Option<crate::model::M3u8Settings>,
 }
 impl StandardHlsSettings {
@@ -21991,38 +22475,55 @@ impl StandardHlsSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
+    #[doc(hidden)]
     pub audio_frames_per_pes: i32,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
+    #[doc(hidden)]
     pub audio_pids: std::option::Option<std::string::String>,
     /// This parameter is unused and deprecated.
+    #[doc(hidden)]
     pub ecm_pid: std::option::Option<std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    #[doc(hidden)]
     pub nielsen_id3_behavior: std::option::Option<crate::model::M3u8NielsenId3Behavior>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
+    #[doc(hidden)]
     pub pat_interval: i32,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
+    #[doc(hidden)]
     pub pcr_control: std::option::Option<crate::model::M3u8PcrControl>,
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+    #[doc(hidden)]
     pub pcr_period: i32,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
+    #[doc(hidden)]
     pub pcr_pid: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
+    #[doc(hidden)]
     pub pmt_interval: i32,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
+    #[doc(hidden)]
     pub pmt_pid: std::option::Option<std::string::String>,
     /// The value of the program number field in the Program Map Table.
+    #[doc(hidden)]
     pub program_num: i32,
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
+    #[doc(hidden)]
     pub scte35_behavior: std::option::Option<crate::model::M3u8Scte35Behavior>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
+    #[doc(hidden)]
     pub scte35_pid: std::option::Option<std::string::String>,
     /// When set to passthrough, timed metadata is passed through from input to output.
+    #[doc(hidden)]
     pub timed_metadata_behavior: std::option::Option<crate::model::M3u8TimedMetadataBehavior>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    #[doc(hidden)]
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
+    #[doc(hidden)]
     pub transport_stream_id: i32,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
+    #[doc(hidden)]
     pub video_pid: std::option::Option<std::string::String>,
 }
 impl M3u8Settings {
@@ -22622,10 +23123,13 @@ impl FrameCaptureHlsSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Fmp4HlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
+    #[doc(hidden)]
     pub audio_rendition_sets: std::option::Option<std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    #[doc(hidden)]
     pub nielsen_id3_behavior: std::option::Option<crate::model::Fmp4NielsenId3Behavior>,
     /// When set to passthrough, timed metadata is passed through from input to output.
+    #[doc(hidden)]
     pub timed_metadata_behavior: std::option::Option<crate::model::Fmp4TimedMetadataBehavior>,
 }
 impl Fmp4HlsSettings {
@@ -22841,12 +23345,16 @@ impl AsRef<str> for Fmp4NielsenId3Behavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
+    #[doc(hidden)]
     pub audio_group_id: std::option::Option<std::string::String>,
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
+    #[doc(hidden)]
     pub audio_only_image: std::option::Option<crate::model::InputLocation>,
     /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+    #[doc(hidden)]
     pub audio_track_type: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
     /// Specifies the segment type.
+    #[doc(hidden)]
     pub segment_type: std::option::Option<crate::model::AudioOnlyHlsSegmentType>,
 }
 impl AudioOnlyHlsSettings {
@@ -23091,10 +23599,13 @@ impl AsRef<str> for AudioOnlyHlsTrackType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLocation {
     /// key used to extract the password from EC2 Parameter store
+    #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// Documentation update needed
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl InputLocation {
@@ -23241,6 +23752,7 @@ impl AsRef<str> for HlsH265PackagingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureOutputSettings {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
+    #[doc(hidden)]
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl FrameCaptureOutputSettings {
@@ -23298,10 +23810,13 @@ impl FrameCaptureOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveOutputSettings {
     /// Settings specific to the container type of the file.
+    #[doc(hidden)]
     pub container_settings: std::option::Option<crate::model::ArchiveContainerSettings>,
     /// Output file extension. If excluded, this will be auto-selected from the container type.
+    #[doc(hidden)]
     pub extension: std::option::Option<std::string::String>,
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
+    #[doc(hidden)]
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl ArchiveOutputSettings {
@@ -23398,8 +23913,10 @@ impl ArchiveOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveContainerSettings {
     /// M2ts Settings
+    #[doc(hidden)]
     pub m2ts_settings: std::option::Option<crate::model::M2tsSettings>,
     /// Raw Settings
+    #[doc(hidden)]
     pub raw_settings: std::option::Option<crate::model::RawSettings>,
 }
 impl ArchiveContainerSettings {
@@ -23507,20 +24024,28 @@ impl RawSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputGroupSettings {
     /// Archive Group Settings
+    #[doc(hidden)]
     pub archive_group_settings: std::option::Option<crate::model::ArchiveGroupSettings>,
     /// Frame Capture Group Settings
+    #[doc(hidden)]
     pub frame_capture_group_settings: std::option::Option<crate::model::FrameCaptureGroupSettings>,
     /// Hls Group Settings
+    #[doc(hidden)]
     pub hls_group_settings: std::option::Option<crate::model::HlsGroupSettings>,
     /// Media Package Group Settings
+    #[doc(hidden)]
     pub media_package_group_settings: std::option::Option<crate::model::MediaPackageGroupSettings>,
     /// Ms Smooth Group Settings
+    #[doc(hidden)]
     pub ms_smooth_group_settings: std::option::Option<crate::model::MsSmoothGroupSettings>,
     /// Multiplex Group Settings
+    #[doc(hidden)]
     pub multiplex_group_settings: std::option::Option<crate::model::MultiplexGroupSettings>,
     /// Rtmp Group Settings
+    #[doc(hidden)]
     pub rtmp_group_settings: std::option::Option<crate::model::RtmpGroupSettings>,
     /// Udp Group Settings
+    #[doc(hidden)]
     pub udp_group_settings: std::option::Option<crate::model::UdpGroupSettings>,
 }
 impl OutputGroupSettings {
@@ -23750,10 +24275,13 @@ impl OutputGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UdpGroupSettings {
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
+    #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForUdpOut>,
     /// Indicates ID3 frame that has the timecode.
+    #[doc(hidden)]
     pub timed_metadata_id3_frame: std::option::Option<crate::model::UdpTimedMetadataId3Frame>,
     /// Timed Metadata interval in seconds.
+    #[doc(hidden)]
     pub timed_metadata_id3_period: i32,
 }
 impl UdpGroupSettings {
@@ -23974,18 +24502,25 @@ impl AsRef<str> for InputLossActionForUdpOut {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+    #[doc(hidden)]
     pub ad_markers: std::option::Option<std::vec::Vec<crate::model::RtmpAdMarkers>>,
     /// Authentication scheme to use when connecting with CDN
+    #[doc(hidden)]
     pub authentication_scheme: std::option::Option<crate::model::AuthenticationScheme>,
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
+    #[doc(hidden)]
     pub cache_full_behavior: std::option::Option<crate::model::RtmpCacheFullBehavior>,
     /// Cache length, in seconds, is used to calculate buffer size.
+    #[doc(hidden)]
     pub cache_length: i32,
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
+    #[doc(hidden)]
     pub caption_data: std::option::Option<crate::model::RtmpCaptionData>,
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
+    #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    #[doc(hidden)]
     pub restart_delay: i32,
 }
 impl RtmpGroupSettings {
@@ -24472,44 +25007,63 @@ impl MultiplexGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MsSmoothGroupSettings {
     /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
+    #[doc(hidden)]
     pub acquisition_point_id: std::option::Option<std::string::String>,
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
+    #[doc(hidden)]
     pub audio_only_timecode_control:
         std::option::Option<crate::model::SmoothGroupAudioOnlyTimecodeControl>,
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
+    #[doc(hidden)]
     pub certificate_mode: std::option::Option<crate::model::SmoothGroupCertificateMode>,
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
+    #[doc(hidden)]
     pub event_id_mode: std::option::Option<crate::model::SmoothGroupEventIdMode>,
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
+    #[doc(hidden)]
     pub event_stop_behavior: std::option::Option<crate::model::SmoothGroupEventStopBehavior>,
     /// Size in seconds of file cache for streaming outputs.
+    #[doc(hidden)]
     pub filecache_duration: i32,
     /// Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.
+    #[doc(hidden)]
     pub fragment_length: i32,
     /// Parameter that control output group behavior on input loss.
+    #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForMsSmoothOut>,
     /// Number of retry attempts.
+    #[doc(hidden)]
     pub num_retries: i32,
     /// Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.
+    #[doc(hidden)]
     pub restart_delay: i32,
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
+    #[doc(hidden)]
     pub segmentation_mode: std::option::Option<crate::model::SmoothGroupSegmentationMode>,
     /// Number of milliseconds to delay the output from the second pipeline.
+    #[doc(hidden)]
     pub send_delay_ms: i32,
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
+    #[doc(hidden)]
     pub sparse_track_type: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
+    #[doc(hidden)]
     pub stream_manifest_behavior:
         std::option::Option<crate::model::SmoothGroupStreamManifestBehavior>,
     /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
+    #[doc(hidden)]
     pub timestamp_offset: std::option::Option<std::string::String>,
     /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
+    #[doc(hidden)]
     pub timestamp_offset_mode: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
 }
 impl MsSmoothGroupSettings {
@@ -25455,6 +26009,7 @@ impl AsRef<str> for SmoothGroupAudioOnlyTimecodeControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaPackageGroupSettings {
     /// MediaPackage channel destination.
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
 }
 impl MediaPackageGroupSettings {
@@ -25512,92 +26067,135 @@ impl MediaPackageGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsGroupSettings {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+    #[doc(hidden)]
     pub ad_markers: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
+    #[doc(hidden)]
     pub base_url_content: std::option::Option<std::string::String>,
     /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
+    #[doc(hidden)]
     pub base_url_content1: std::option::Option<std::string::String>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
+    #[doc(hidden)]
     pub base_url_manifest: std::option::Option<std::string::String>,
     /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
+    #[doc(hidden)]
     pub base_url_manifest1: std::option::Option<std::string::String>,
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
+    #[doc(hidden)]
     pub caption_language_mappings:
         std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
+    #[doc(hidden)]
     pub caption_language_setting: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
+    #[doc(hidden)]
     pub client_cache: std::option::Option<crate::model::HlsClientCache>,
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+    #[doc(hidden)]
     pub codec_specification: std::option::Option<crate::model::HlsCodecSpecification>,
     /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
+    #[doc(hidden)]
     pub constant_iv: std::option::Option<std::string::String>,
     /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Place segments in subdirectories.
+    #[doc(hidden)]
     pub directory_structure: std::option::Option<crate::model::HlsDirectoryStructure>,
     /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+    #[doc(hidden)]
     pub discontinuity_tags: std::option::Option<crate::model::HlsDiscontinuityTags>,
     /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::HlsEncryptionType>,
     /// Parameters that control interactions with the CDN.
+    #[doc(hidden)]
     pub hls_cdn_settings: std::option::Option<crate::model::HlsCdnSettings>,
     /// State of HLS ID3 Segment Tagging
+    #[doc(hidden)]
     pub hls_id3_segment_tagging: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
     /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
+    #[doc(hidden)]
     pub i_frame_only_playlists: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
     /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
+    #[doc(hidden)]
     pub incomplete_segment_behavior:
         std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+    #[doc(hidden)]
     pub index_n_segments: i32,
     /// Parameter that control output group behavior on input loss.
+    #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForHlsOut>,
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
+    #[doc(hidden)]
     pub iv_in_manifest: std::option::Option<crate::model::HlsIvInManifest>,
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
+    #[doc(hidden)]
     pub iv_source: std::option::Option<crate::model::HlsIvSource>,
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+    #[doc(hidden)]
     pub keep_segments: i32,
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
+    #[doc(hidden)]
     pub key_format: std::option::Option<std::string::String>,
     /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
+    #[doc(hidden)]
     pub key_format_versions: std::option::Option<std::string::String>,
     /// The key provider settings.
+    #[doc(hidden)]
     pub key_provider_settings: std::option::Option<crate::model::KeyProviderSettings>,
     /// When set to gzip, compresses HLS playlist.
+    #[doc(hidden)]
     pub manifest_compression: std::option::Option<crate::model::HlsManifestCompression>,
     /// Indicates whether the output manifest should use floating point or integer values for segment duration.
+    #[doc(hidden)]
     pub manifest_duration_format: std::option::Option<crate::model::HlsManifestDurationFormat>,
     /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
+    #[doc(hidden)]
     pub min_segment_length: i32,
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::HlsMode>,
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
+    #[doc(hidden)]
     pub output_selection: std::option::Option<crate::model::HlsOutputSelection>,
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
+    #[doc(hidden)]
     pub program_date_time: std::option::Option<crate::model::HlsProgramDateTime>,
     /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
+    #[doc(hidden)]
     pub program_date_time_clock: std::option::Option<crate::model::HlsProgramDateTimeClock>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
+    #[doc(hidden)]
     pub program_date_time_period: i32,
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
+    #[doc(hidden)]
     pub redundant_manifest: std::option::Option<crate::model::HlsRedundantManifest>,
     /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+    #[doc(hidden)]
     pub segment_length: i32,
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
+    #[doc(hidden)]
     pub segmentation_mode: std::option::Option<crate::model::HlsSegmentationMode>,
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
+    #[doc(hidden)]
     pub segments_per_subdirectory: i32,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+    #[doc(hidden)]
     pub stream_inf_resolution: std::option::Option<crate::model::HlsStreamInfResolution>,
     /// Indicates ID3 frame that has the timecode.
+    #[doc(hidden)]
     pub timed_metadata_id3_frame: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
     /// Timed Metadata interval in seconds.
+    #[doc(hidden)]
     pub timed_metadata_id3_period: i32,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
+    #[doc(hidden)]
     pub timestamp_delta_milliseconds: i32,
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
+    #[doc(hidden)]
     pub ts_file_mode: std::option::Option<crate::model::HlsTsFileMode>,
 }
 impl HlsGroupSettings {
@@ -27158,6 +27756,7 @@ impl AsRef<str> for HlsManifestCompression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyProviderSettings {
     /// Static Key Settings
+    #[doc(hidden)]
     pub static_key_settings: std::option::Option<crate::model::StaticKeySettings>,
 }
 impl KeyProviderSettings {
@@ -27215,8 +27814,10 @@ impl KeyProviderSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticKeySettings {
     /// The URL of the license server used for protecting content.
+    #[doc(hidden)]
     pub key_provider_server: std::option::Option<crate::model::InputLocation>,
     /// Static key value as a 32 character hexadecimal string.
+    #[doc(hidden)]
     pub static_key_value: std::option::Option<std::string::String>,
 }
 impl StaticKeySettings {
@@ -27624,14 +28225,19 @@ impl AsRef<str> for HlsId3SegmentTaggingState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsCdnSettings {
     /// Hls Akamai Settings
+    #[doc(hidden)]
     pub hls_akamai_settings: std::option::Option<crate::model::HlsAkamaiSettings>,
     /// Hls Basic Put Settings
+    #[doc(hidden)]
     pub hls_basic_put_settings: std::option::Option<crate::model::HlsBasicPutSettings>,
     /// Hls Media Store Settings
+    #[doc(hidden)]
     pub hls_media_store_settings: std::option::Option<crate::model::HlsMediaStoreSettings>,
     /// Hls S3 Settings
+    #[doc(hidden)]
     pub hls_s3_settings: std::option::Option<crate::model::HlsS3Settings>,
     /// Hls Webdav Settings
+    #[doc(hidden)]
     pub hls_webdav_settings: std::option::Option<crate::model::HlsWebdavSettings>,
 }
 impl HlsCdnSettings {
@@ -27777,14 +28383,19 @@ impl HlsCdnSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsWebdavSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// Size in seconds of file cache for streaming outputs.
+    #[doc(hidden)]
     pub filecache_duration: i32,
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
+    #[doc(hidden)]
     pub http_transfer_mode: std::option::Option<crate::model::HlsWebdavHttpTransferMode>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    #[doc(hidden)]
     pub restart_delay: i32,
 }
 impl HlsWebdavSettings {
@@ -27970,6 +28581,7 @@ impl AsRef<str> for HlsWebdavHttpTransferMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
+    #[doc(hidden)]
     pub canned_acl: std::option::Option<crate::model::S3CannedAcl>,
 }
 impl HlsS3Settings {
@@ -28095,14 +28707,19 @@ impl AsRef<str> for S3CannedAcl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsMediaStoreSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// Size in seconds of file cache for streaming outputs.
+    #[doc(hidden)]
     pub filecache_duration: i32,
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
+    #[doc(hidden)]
     pub media_store_storage_class: std::option::Option<crate::model::HlsMediaStoreStorageClass>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    #[doc(hidden)]
     pub restart_delay: i32,
 }
 impl HlsMediaStoreSettings {
@@ -28285,12 +28902,16 @@ impl AsRef<str> for HlsMediaStoreStorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsBasicPutSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// Size in seconds of file cache for streaming outputs.
+    #[doc(hidden)]
     pub filecache_duration: i32,
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    #[doc(hidden)]
     pub restart_delay: i32,
 }
 impl HlsBasicPutSettings {
@@ -28396,18 +29017,25 @@ impl HlsBasicPutSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsAkamaiSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    #[doc(hidden)]
     pub connection_retry_interval: i32,
     /// Size in seconds of file cache for streaming outputs.
+    #[doc(hidden)]
     pub filecache_duration: i32,
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
+    #[doc(hidden)]
     pub http_transfer_mode: std::option::Option<crate::model::HlsAkamaiHttpTransferMode>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
+    #[doc(hidden)]
     pub num_retries: i32,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    #[doc(hidden)]
     pub restart_delay: i32,
     /// Salt for authenticated Akamai.
+    #[doc(hidden)]
     pub salt: std::option::Option<std::string::String>,
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl HlsAkamaiSettings {
@@ -28961,10 +29589,13 @@ impl AsRef<str> for HlsCaptionLanguageSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionLanguageMapping {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
+    #[doc(hidden)]
     pub caption_channel: i32,
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// Textual description of language
+    #[doc(hidden)]
     pub language_description: std::option::Option<std::string::String>,
 }
 impl CaptionLanguageMapping {
@@ -29118,8 +29749,10 @@ impl AsRef<str> for HlsAdMarkers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureGroupSettings {
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Parameters that control interactions with the CDN.
+    #[doc(hidden)]
     pub frame_capture_cdn_settings: std::option::Option<crate::model::FrameCaptureCdnSettings>,
 }
 impl FrameCaptureGroupSettings {
@@ -29206,6 +29839,7 @@ impl FrameCaptureGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureCdnSettings {
     /// Frame Capture S3 Settings
+    #[doc(hidden)]
     pub frame_capture_s3_settings: std::option::Option<crate::model::FrameCaptureS3Settings>,
 }
 impl FrameCaptureCdnSettings {
@@ -29269,6 +29903,7 @@ impl FrameCaptureCdnSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
+    #[doc(hidden)]
     pub canned_acl: std::option::Option<crate::model::S3CannedAcl>,
 }
 impl FrameCaptureS3Settings {
@@ -29326,10 +29961,13 @@ impl FrameCaptureS3Settings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
+    #[doc(hidden)]
     pub archive_cdn_settings: std::option::Option<crate::model::ArchiveCdnSettings>,
     /// A directory and base filename where archive files should be written.
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Number of seconds to write to archive file before closing and starting a new one.
+    #[doc(hidden)]
     pub rollover_interval: i32,
 }
 impl ArchiveGroupSettings {
@@ -29424,6 +30062,7 @@ impl ArchiveGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveCdnSettings {
     /// Archive S3 Settings
+    #[doc(hidden)]
     pub archive_s3_settings: std::option::Option<crate::model::ArchiveS3Settings>,
 }
 impl ArchiveCdnSettings {
@@ -29481,6 +30120,7 @@ impl ArchiveCdnSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveS3Settings {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
+    #[doc(hidden)]
     pub canned_acl: std::option::Option<crate::model::S3CannedAcl>,
 }
 impl ArchiveS3Settings {
@@ -29538,8 +30178,10 @@ impl ArchiveS3Settings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NielsenConfiguration {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
+    #[doc(hidden)]
     pub distributor_id: std::option::Option<std::string::String>,
     /// Enables Nielsen PCM to ID3 tagging
+    #[doc(hidden)]
     pub nielsen_pcm_to_id3_tagging: std::option::Option<crate::model::NielsenPcmToId3TaggingState>,
 }
 impl NielsenConfiguration {
@@ -29681,8 +30323,10 @@ impl AsRef<str> for NielsenPcmToId3TaggingState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MotionGraphicsConfiguration {
     /// Motion Graphics Insertion
+    #[doc(hidden)]
     pub motion_graphics_insertion: std::option::Option<crate::model::MotionGraphicsInsertion>,
     /// Motion Graphics Settings
+    #[doc(hidden)]
     pub motion_graphics_settings: std::option::Option<crate::model::MotionGraphicsSettings>,
 }
 impl MotionGraphicsConfiguration {
@@ -29772,6 +30416,7 @@ impl MotionGraphicsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MotionGraphicsSettings {
     /// Html Motion Graphics Settings
+    #[doc(hidden)]
     pub html_motion_graphics_settings:
         std::option::Option<crate::model::HtmlMotionGraphicsSettings>,
 }
@@ -29924,18 +30569,24 @@ impl AsRef<str> for MotionGraphicsInsertion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
+    #[doc(hidden)]
     pub initial_audio_gain: i32,
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+    #[doc(hidden)]
     pub input_end_action: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
     /// Settings for system actions when input is lost.
+    #[doc(hidden)]
     pub input_loss_behavior: std::option::Option<crate::model::InputLossBehavior>,
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    #[doc(hidden)]
     pub output_locking_mode:
         std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
+    #[doc(hidden)]
     pub output_timing_source:
         std::option::Option<crate::model::GlobalConfigurationOutputTimingSource>,
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
+    #[doc(hidden)]
     pub support_low_framerate_inputs:
         std::option::Option<crate::model::GlobalConfigurationLowFramerateInputs>,
 }
@@ -30283,14 +30934,19 @@ impl AsRef<str> for GlobalConfigurationOutputLockingMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLossBehavior {
     /// Documentation update needed
+    #[doc(hidden)]
     pub black_frame_msec: i32,
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
+    #[doc(hidden)]
     pub input_loss_image_color: std::option::Option<std::string::String>,
     /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
+    #[doc(hidden)]
     pub input_loss_image_slate: std::option::Option<crate::model::InputLocation>,
     /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
+    #[doc(hidden)]
     pub input_loss_image_type: std::option::Option<crate::model::InputLossImageType>,
     /// Documentation update needed
+    #[doc(hidden)]
     pub repeat_frame_msec: i32,
 }
 impl InputLossBehavior {
@@ -30532,6 +31188,7 @@ impl AsRef<str> for GlobalConfigurationInputEndAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureActivations {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
+    #[doc(hidden)]
     pub input_prepare_schedule_actions:
         std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
 }
@@ -30654,16 +31311,22 @@ impl AsRef<str> for FeatureActivationsInputPrepareScheduleActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    #[doc(hidden)]
     pub accessibility: std::option::Option<crate::model::AccessibilityType>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
+    #[doc(hidden)]
     pub caption_selector_name: std::option::Option<std::string::String>,
     /// Additional settings for captions destination that depend on the destination type.
+    #[doc(hidden)]
     pub destination_settings: std::option::Option<crate::model::CaptionDestinationSettings>,
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
+    #[doc(hidden)]
     pub language_description: std::option::Option<std::string::String>,
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CaptionDescription {
@@ -30824,36 +31487,49 @@ impl CaptionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionDestinationSettings {
     /// Arib Destination Settings
+    #[doc(hidden)]
     pub arib_destination_settings: std::option::Option<crate::model::AribDestinationSettings>,
     /// Burn In Destination Settings
+    #[doc(hidden)]
     pub burn_in_destination_settings: std::option::Option<crate::model::BurnInDestinationSettings>,
     /// Dvb Sub Destination Settings
+    #[doc(hidden)]
     pub dvb_sub_destination_settings: std::option::Option<crate::model::DvbSubDestinationSettings>,
     /// Ebu Tt DDestination Settings
+    #[doc(hidden)]
     pub ebu_tt_d_destination_settings: std::option::Option<crate::model::EbuTtDDestinationSettings>,
     /// Embedded Destination Settings
+    #[doc(hidden)]
     pub embedded_destination_settings:
         std::option::Option<crate::model::EmbeddedDestinationSettings>,
     /// Embedded Plus Scte20 Destination Settings
+    #[doc(hidden)]
     pub embedded_plus_scte20_destination_settings:
         std::option::Option<crate::model::EmbeddedPlusScte20DestinationSettings>,
     /// Rtmp Caption Info Destination Settings
+    #[doc(hidden)]
     pub rtmp_caption_info_destination_settings:
         std::option::Option<crate::model::RtmpCaptionInfoDestinationSettings>,
     /// Scte20 Plus Embedded Destination Settings
+    #[doc(hidden)]
     pub scte20_plus_embedded_destination_settings:
         std::option::Option<crate::model::Scte20PlusEmbeddedDestinationSettings>,
     /// Scte27 Destination Settings
+    #[doc(hidden)]
     pub scte27_destination_settings: std::option::Option<crate::model::Scte27DestinationSettings>,
     /// Smpte Tt Destination Settings
+    #[doc(hidden)]
     pub smpte_tt_destination_settings:
         std::option::Option<crate::model::SmpteTtDestinationSettings>,
     /// Teletext Destination Settings
+    #[doc(hidden)]
     pub teletext_destination_settings:
         std::option::Option<crate::model::TeletextDestinationSettings>,
     /// Ttml Destination Settings
+    #[doc(hidden)]
     pub ttml_destination_settings: std::option::Option<crate::model::TtmlDestinationSettings>,
     /// Webvtt Destination Settings
+    #[doc(hidden)]
     pub webvtt_destination_settings: std::option::Option<crate::model::WebvttDestinationSettings>,
 }
 impl CaptionDestinationSettings {
@@ -31264,6 +31940,7 @@ impl CaptionDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebvttDestinationSettings {
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+    #[doc(hidden)]
     pub style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
 }
 impl WebvttDestinationSettings {
@@ -31378,6 +32055,7 @@ impl AsRef<str> for WebvttDestinationStyleControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TtmlDestinationSettings {
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
+    #[doc(hidden)]
     pub style_control: std::option::Option<crate::model::TtmlDestinationStyleControl>,
 }
 impl TtmlDestinationSettings {
@@ -31700,12 +32378,16 @@ impl EmbeddedDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbuTtDDestinationSettings {
     /// Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata.
+    #[doc(hidden)]
     pub copyright_holder: std::option::Option<std::string::String>,
     /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    #[doc(hidden)]
     pub fill_line_gap: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
     /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    #[doc(hidden)]
     pub font_family: std::option::Option<std::string::String>,
     /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    #[doc(hidden)]
     pub style_control: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
 }
 impl EbuTtDDestinationSettings {
@@ -31932,39 +32614,56 @@ impl AsRef<str> for EbuTtDFillLineGapControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSubDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub alignment: std::option::Option<crate::model::DvbSubDestinationAlignment>,
     /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub background_color: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub background_opacity: i32,
     /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font: std::option::Option<crate::model::InputLocation>,
     /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_color: std::option::Option<crate::model::DvbSubDestinationFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_opacity: i32,
     /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_resolution: i32,
     /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_size: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub outline_color: std::option::Option<crate::model::DvbSubDestinationOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub outline_size: i32,
     /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_color: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
     /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_opacity: i32,
     /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_x_offset: i32,
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_y_offset: i32,
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
+    #[doc(hidden)]
     pub teletext_grid_control:
         std::option::Option<crate::model::DvbSubDestinationTeletextGridControl>,
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub x_position: i32,
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub y_position: i32,
 }
 impl DvbSubDestinationSettings {
@@ -32697,38 +33396,55 @@ impl AsRef<str> for DvbSubDestinationAlignment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BurnInDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub alignment: std::option::Option<crate::model::BurnInAlignment>,
     /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub background_color: std::option::Option<crate::model::BurnInBackgroundColor>,
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub background_opacity: i32,
     /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font: std::option::Option<crate::model::InputLocation>,
     /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_color: std::option::Option<crate::model::BurnInFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_opacity: i32,
     /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_resolution: i32,
     /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub font_size: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub outline_color: std::option::Option<crate::model::BurnInOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub outline_size: i32,
     /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_color: std::option::Option<crate::model::BurnInShadowColor>,
     /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_opacity: i32,
     /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_x_offset: i32,
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub shadow_y_offset: i32,
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
+    #[doc(hidden)]
     pub teletext_grid_control: std::option::Option<crate::model::BurnInTeletextGridControl>,
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub x_position: i32,
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
+    #[doc(hidden)]
     pub y_position: i32,
 }
 impl BurnInDestinationSettings {
@@ -33549,14 +34265,19 @@ impl AsRef<str> for AccessibilityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlackoutSlate {
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
+    #[doc(hidden)]
     pub blackout_slate_image: std::option::Option<crate::model::InputLocation>,
     /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
+    #[doc(hidden)]
     pub network_end_blackout: std::option::Option<crate::model::BlackoutSlateNetworkEndBlackout>,
     /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
+    #[doc(hidden)]
     pub network_end_blackout_image: std::option::Option<crate::model::InputLocation>,
     /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::BlackoutSlateState>,
 }
 impl BlackoutSlate {
@@ -33810,6 +34531,7 @@ impl AsRef<str> for BlackoutSlateNetworkEndBlackout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailConfiguration {
     /// Ad avail settings.
+    #[doc(hidden)]
     pub avail_settings: std::option::Option<crate::model::AvailSettings>,
 }
 impl AvailConfiguration {
@@ -33867,8 +34589,10 @@ impl AvailConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailSettings {
     /// Scte35 Splice Insert
+    #[doc(hidden)]
     pub scte35_splice_insert: std::option::Option<crate::model::Scte35SpliceInsert>,
     /// Scte35 Time Signal Apos
+    #[doc(hidden)]
     pub scte35_time_signal_apos: std::option::Option<crate::model::Scte35TimeSignalApos>,
 }
 impl AvailSettings {
@@ -33951,11 +34675,14 @@ impl AvailSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35TimeSignalApos {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    #[doc(hidden)]
     pub ad_avail_offset: i32,
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    #[doc(hidden)]
     pub no_regional_blackout_flag:
         std::option::Option<crate::model::Scte35AposNoRegionalBlackoutBehavior>,
     /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    #[doc(hidden)]
     pub web_delivery_allowed_flag:
         std::option::Option<crate::model::Scte35AposWebDeliveryAllowedBehavior>,
 }
@@ -34173,11 +34900,14 @@ impl AsRef<str> for Scte35AposNoRegionalBlackoutBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35SpliceInsert {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
+    #[doc(hidden)]
     pub ad_avail_offset: i32,
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    #[doc(hidden)]
     pub no_regional_blackout_flag:
         std::option::Option<crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior>,
     /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
+    #[doc(hidden)]
     pub web_delivery_allowed_flag:
         std::option::Option<crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior>,
 }
@@ -34395,8 +35125,10 @@ impl AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
+    #[doc(hidden)]
     pub avail_blanking_image: std::option::Option<crate::model::InputLocation>,
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AvailBlankingState>,
 }
 impl AvailBlanking {
@@ -34529,27 +35261,38 @@ impl AsRef<str> for AvailBlankingState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioDescription {
     /// Advanced audio normalization settings.
+    #[doc(hidden)]
     pub audio_normalization_settings: std::option::Option<crate::model::AudioNormalizationSettings>,
     /// The name of the AudioSelector used as the source for this AudioDescription.
+    #[doc(hidden)]
     pub audio_selector_name: std::option::Option<std::string::String>,
     /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
+    #[doc(hidden)]
     pub audio_type: std::option::Option<crate::model::AudioType>,
     /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+    #[doc(hidden)]
     pub audio_type_control: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
     /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
+    #[doc(hidden)]
     pub audio_watermarking_settings: std::option::Option<crate::model::AudioWatermarkSettings>,
     /// Audio codec settings.
+    #[doc(hidden)]
     pub codec_settings: std::option::Option<crate::model::AudioCodecSettings>,
     /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
+    #[doc(hidden)]
     pub language_code_control:
         std::option::Option<crate::model::AudioDescriptionLanguageCodeControl>,
     /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Settings that control how input audio channels are remixed into the output audio channels.
+    #[doc(hidden)]
     pub remix_settings: std::option::Option<crate::model::RemixSettings>,
     /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl AudioDescription {
@@ -34831,10 +35574,13 @@ impl AudioDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemixSettings {
     /// Mapping of input channels to output channels, with appropriate gain adjustments.
+    #[doc(hidden)]
     pub channel_mappings: std::option::Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
     /// Number of input channels to be used.
+    #[doc(hidden)]
     pub channels_in: i32,
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
+    #[doc(hidden)]
     pub channels_out: i32,
 }
 impl RemixSettings {
@@ -34933,8 +35679,10 @@ impl RemixSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
+    #[doc(hidden)]
     pub input_channel_levels: std::option::Option<std::vec::Vec<crate::model::InputChannelLevel>>,
     /// The index of the output channel being produced.
+    #[doc(hidden)]
     pub output_channel: i32,
 }
 impl AudioChannelMapping {
@@ -35016,8 +35764,10 @@ impl AudioChannelMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputChannelLevel {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
+    #[doc(hidden)]
     pub gain: i32,
     /// The index of the input channel used as a source.
+    #[doc(hidden)]
     pub input_channel: i32,
 }
 impl InputChannelLevel {
@@ -35144,16 +35894,22 @@ impl AsRef<str> for AudioDescriptionLanguageCodeControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioCodecSettings {
     /// Aac Settings
+    #[doc(hidden)]
     pub aac_settings: std::option::Option<crate::model::AacSettings>,
     /// Ac3 Settings
+    #[doc(hidden)]
     pub ac3_settings: std::option::Option<crate::model::Ac3Settings>,
     /// Eac3 Settings
+    #[doc(hidden)]
     pub eac3_settings: std::option::Option<crate::model::Eac3Settings>,
     /// Mp2 Settings
+    #[doc(hidden)]
     pub mp2_settings: std::option::Option<crate::model::Mp2Settings>,
     /// Pass Through Settings
+    #[doc(hidden)]
     pub pass_through_settings: std::option::Option<crate::model::PassThroughSettings>,
     /// Wav Settings
+    #[doc(hidden)]
     pub wav_settings: std::option::Option<crate::model::WavSettings>,
 }
 impl AudioCodecSettings {
@@ -35311,10 +36067,13 @@ impl AudioCodecSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WavSettings {
     /// Bits per sample.
+    #[doc(hidden)]
     pub bit_depth: f64,
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
+    #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::model::WavCodingMode>,
     /// Sample rate in Hz.
+    #[doc(hidden)]
     pub sample_rate: f64,
 }
 impl WavSettings {
@@ -35504,10 +36263,13 @@ impl PassThroughSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mp2Settings {
     /// Average bitrate in bits/second.
+    #[doc(hidden)]
     pub bitrate: f64,
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+    #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::model::Mp2CodingMode>,
     /// Sample rate in Hz.
+    #[doc(hidden)]
     pub sample_rate: f64,
 }
 impl Mp2Settings {
@@ -35654,44 +36416,64 @@ impl AsRef<str> for Mp2CodingMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub attenuation_control: std::option::Option<crate::model::Eac3AttenuationControl>,
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+    #[doc(hidden)]
     pub bitrate: f64,
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
+    #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::model::Eac3BitstreamMode>,
     /// Dolby Digital Plus coding mode. Determines number of channels.
+    #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::model::Eac3CodingMode>,
     /// When set to enabled, activates a DC highpass filter for all input channels.
+    #[doc(hidden)]
     pub dc_filter: std::option::Option<crate::model::Eac3DcFilter>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
+    #[doc(hidden)]
     pub dialnorm: i32,
     /// Sets the Dolby dynamic range compression profile.
+    #[doc(hidden)]
     pub drc_line: std::option::Option<crate::model::Eac3DrcLine>,
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+    #[doc(hidden)]
     pub drc_rf: std::option::Option<crate::model::Eac3DrcRf>,
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
+    #[doc(hidden)]
     pub lfe_control: std::option::Option<crate::model::Eac3LfeControl>,
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
+    #[doc(hidden)]
     pub lfe_filter: std::option::Option<crate::model::Eac3LfeFilter>,
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub lo_ro_center_mix_level: f64,
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub lo_ro_surround_mix_level: f64,
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub lt_rt_center_mix_level: f64,
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub lt_rt_surround_mix_level: f64,
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    #[doc(hidden)]
     pub metadata_control: std::option::Option<crate::model::Eac3MetadataControl>,
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
+    #[doc(hidden)]
     pub passthrough_control: std::option::Option<crate::model::Eac3PassthroughControl>,
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub phase_control: std::option::Option<crate::model::Eac3PhaseControl>,
     /// Stereo downmix preference. Only used for 3/2 coding mode.
+    #[doc(hidden)]
     pub stereo_downmix: std::option::Option<crate::model::Eac3StereoDownmix>,
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
+    #[doc(hidden)]
     pub surround_ex_mode: std::option::Option<crate::model::Eac3SurroundExMode>,
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+    #[doc(hidden)]
     pub surround_mode: std::option::Option<crate::model::Eac3SurroundMode>,
 }
 impl Eac3Settings {
@@ -36966,18 +37748,25 @@ impl AsRef<str> for Eac3AttenuationControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ac3Settings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+    #[doc(hidden)]
     pub bitrate: f64,
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
+    #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::model::Ac3BitstreamMode>,
     /// Dolby Digital coding mode. Determines number of channels.
+    #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::model::Ac3CodingMode>,
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
+    #[doc(hidden)]
     pub dialnorm: i32,
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
+    #[doc(hidden)]
     pub drc_profile: std::option::Option<crate::model::Ac3DrcProfile>,
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
+    #[doc(hidden)]
     pub lfe_filter: std::option::Option<crate::model::Ac3LfeFilter>,
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+    #[doc(hidden)]
     pub metadata_control: std::option::Option<crate::model::Ac3MetadataControl>,
 }
 impl Ac3Settings {
@@ -37470,22 +38259,31 @@ impl AsRef<str> for Ac3BitstreamMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AacSettings {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+    #[doc(hidden)]
     pub bitrate: f64,
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
+    #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::model::AacCodingMode>,
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
+    #[doc(hidden)]
     pub input_type: std::option::Option<crate::model::AacInputType>,
     /// AAC Profile.
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::AacProfile>,
     /// Rate Control Mode.
+    #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::model::AacRateControlMode>,
     /// Sets LATM / LOAS AAC output for raw containers.
+    #[doc(hidden)]
     pub raw_format: std::option::Option<crate::model::AacRawFormat>,
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
+    #[doc(hidden)]
     pub sample_rate: f64,
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::AacSpec>,
     /// VBR Quality Level - Only used if rateControlMode is VBR.
+    #[doc(hidden)]
     pub vbr_quality: std::option::Option<crate::model::AacVbrQuality>,
 }
 impl AacSettings {
@@ -38106,6 +38904,7 @@ impl AsRef<str> for AacCodingMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioWatermarkSettings {
     /// Settings to configure Nielsen Watermarks in the audio encode
+    #[doc(hidden)]
     pub nielsen_watermarks_settings: std::option::Option<crate::model::NielsenWatermarksSettings>,
 }
 impl AudioWatermarkSettings {
@@ -38172,11 +38971,14 @@ impl AudioWatermarkSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
+    #[doc(hidden)]
     pub nielsen_cbet_settings: std::option::Option<crate::model::NielsenCbet>,
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
+    #[doc(hidden)]
     pub nielsen_distribution_type:
         std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
+    #[doc(hidden)]
     pub nielsen_naes_ii_nw_settings: std::option::Option<crate::model::NielsenNaesIiNw>,
 }
 impl NielsenWatermarksSettings {
@@ -38285,8 +39087,10 @@ impl NielsenWatermarksSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
+    #[doc(hidden)]
     pub check_digit_string: std::option::Option<std::string::String>,
     /// Enter the Nielsen Source ID (SID) to include in the watermark
+    #[doc(hidden)]
     pub sid: f64,
 }
 impl NielsenNaesIiNw {
@@ -38416,10 +39220,13 @@ impl AsRef<str> for NielsenWatermarksDistributionTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NielsenCbet {
     /// Enter the CBET check digits to use in the watermark.
+    #[doc(hidden)]
     pub cbet_check_digit_string: std::option::Option<std::string::String>,
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
+    #[doc(hidden)]
     pub cbet_stepaside: std::option::Option<crate::model::NielsenWatermarksCbetStepaside>,
     /// Enter the CBET Source ID (CSID) to use in the watermark
+    #[doc(hidden)]
     pub csid: std::option::Option<std::string::String>,
 }
 impl NielsenCbet {
@@ -38698,10 +39505,13 @@ impl AsRef<str> for AudioType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioNormalizationSettings {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
+    #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
+    #[doc(hidden)]
     pub algorithm_control: std::option::Option<crate::model::AudioNormalizationAlgorithmControl>,
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+    #[doc(hidden)]
     pub target_lkfs: f64,
 }
 impl AudioNormalizationSettings {
@@ -38908,6 +39718,7 @@ impl AsRef<str> for AudioNormalizationAlgorithm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
+    #[doc(hidden)]
     pub source_ip: std::option::Option<std::string::String>,
 }
 impl ChannelEgressEndpoint {
@@ -38962,14 +39773,18 @@ impl ChannelEgressEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDestination {
     /// User-specified id. This is used in an output group or an output.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Destination settings for a MediaPackage output; one destination for both encoders.
+    #[doc(hidden)]
     pub media_package_settings:
         std::option::Option<std::vec::Vec<crate::model::MediaPackageOutputDestinationSettings>>,
     /// Destination settings for a Multiplex output; one destination for both encoders.
+    #[doc(hidden)]
     pub multiplex_settings:
         std::option::Option<crate::model::MultiplexProgramChannelDestinationSettings>,
     /// Destination settings for a standard output; one destination for each redundant encoder.
+    #[doc(hidden)]
     pub settings: std::option::Option<std::vec::Vec<crate::model::OutputDestinationSettings>>,
 }
 impl OutputDestination {
@@ -39111,12 +39926,16 @@ impl OutputDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDestinationSettings {
     /// key used to extract the password from EC2 Parameter store
+    #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
     /// Stream name for RTMP destinations (URLs of type rtmp://)
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// A URL specifying a destination
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// username for destination
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl OutputDestinationSettings {
@@ -39225,8 +40044,10 @@ impl OutputDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramChannelDestinationSettings {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
+    #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The program name of the Multiplex program that the encoder is providing output to.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl MultiplexProgramChannelDestinationSettings {
@@ -39298,6 +40119,7 @@ impl MultiplexProgramChannelDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl MediaPackageOutputDestinationSettings {
@@ -39352,6 +40174,7 @@ impl MediaPackageOutputDestinationSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CdiInputSpecification {
     /// Maximum CDI input resolution
+    #[doc(hidden)]
     pub resolution: std::option::Option<crate::model::CdiInputResolution>,
 }
 impl CdiInputSpecification {
@@ -39472,10 +40295,13 @@ impl AsRef<str> for CdiInputResolution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceUpdateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only.
+    #[doc(hidden)]
     pub maintenance_scheduled_date: std::option::Option<std::string::String>,
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
+    #[doc(hidden)]
     pub maintenance_start_time: std::option::Option<std::string::String>,
 }
 impl MaintenanceUpdateSettings {
@@ -39631,26 +40457,37 @@ impl AsRef<str> for RebootInputDeviceForce {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Offering {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
+    #[doc(hidden)]
     pub duration: i32,
     /// Units for duration, e.g. 'MONTHS'
+    #[doc(hidden)]
     pub duration_units: std::option::Option<crate::model::OfferingDurationUnits>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    #[doc(hidden)]
     pub fixed_price: f64,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
     /// Unique offering ID, e.g. '87654321'
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
+    #[doc(hidden)]
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// Resource configuration details
+    #[doc(hidden)]
     pub resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
+    #[doc(hidden)]
     pub usage_price: f64,
 }
 impl Offering {
@@ -39896,8 +40733,10 @@ impl Offering {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramSummary {
     /// The MediaLive Channel associated with the program.
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The name of the multiplex program.
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl MultiplexProgramSummary {
@@ -39969,22 +40808,31 @@ impl MultiplexProgramSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexSummary {
     /// The unique arn of the multiplex.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A list of availability zones for the multiplex.
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The unique id of the multiplex.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Configuration for a multiplex event.
+    #[doc(hidden)]
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettingsSummary>,
     /// The name of the multiplex.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The number of programs in the multiplex.
+    #[doc(hidden)]
     pub program_count: i32,
     /// The current state of the multiplex.
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40213,6 +41061,7 @@ impl MultiplexSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexSettingsSummary {
     /// Transport stream bit rate.
+    #[doc(hidden)]
     pub transport_stream_bitrate: i32,
 }
 impl MultiplexSettingsSummary {
@@ -40267,12 +41116,16 @@ impl MultiplexSettingsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferringInputDeviceSummary {
     /// The unique ID of the input device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The optional message that the sender has attached to the transfer.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The AWS account ID for the recipient of the input device transfer.
+    #[doc(hidden)]
     pub target_customer_id: std::option::Option<std::string::String>,
     /// The type (direction) of the input device transfer.
+    #[doc(hidden)]
     pub transfer_type: std::option::Option<crate::model::InputDeviceTransferType>,
 }
 impl TransferringInputDeviceSummary {
@@ -40439,28 +41292,40 @@ impl AsRef<str> for InputDeviceTransferType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDeviceSummary {
     /// The unique ARN of the input device.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The state of the connection between the input device and AWS.
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::InputDeviceConnectionState>,
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    #[doc(hidden)]
     pub device_settings_sync_state: std::option::Option<crate::model::DeviceSettingsSyncState>,
     /// The status of software on the input device.
+    #[doc(hidden)]
     pub device_update_status: std::option::Option<crate::model::DeviceUpdateStatus>,
     /// Settings that describe an input device that is type HD.
+    #[doc(hidden)]
     pub hd_device_settings: std::option::Option<crate::model::InputDeviceHdSettings>,
     /// The unique ID of the input device.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The network MAC address of the input device.
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// A name that you specify for the input device.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Network settings for the input device.
+    #[doc(hidden)]
     pub network_settings: std::option::Option<crate::model::InputDeviceNetworkSettings>,
     /// The unique serial number of the input device.
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// The type of the input device.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputDeviceType>,
     /// Settings that describe an input device that is type UHD.
+    #[doc(hidden)]
     pub uhd_device_settings: std::option::Option<crate::model::InputDeviceUhdSettings>,
 }
 impl InputDeviceSummary {
@@ -40741,37 +41606,53 @@ impl InputDeviceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelSummary {
     /// The unique arn of the channel.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Specification of CDI inputs for this channel
+    #[doc(hidden)]
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    #[doc(hidden)]
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
     /// The unique id of the channel.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// List of input attachments for channel.
+    #[doc(hidden)]
     pub input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
     /// Specification of network and file inputs for this channel
+    #[doc(hidden)]
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Maintenance settings for this channel.
+    #[doc(hidden)]
     pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
+    #[doc(hidden)]
     pub pipelines_running_count: i32,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// Placeholder documentation for ChannelState
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for any VPC outputs.
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl ChannelSummary {
@@ -41152,10 +42033,13 @@ impl ChannelSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleAction {
     /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// Settings for this schedule action.
+    #[doc(hidden)]
     pub schedule_action_settings: std::option::Option<crate::model::ScheduleActionSettings>,
     /// The time for the action to start in the channel.
+    #[doc(hidden)]
     pub schedule_action_start_settings:
         std::option::Option<crate::model::ScheduleActionStartSettings>,
 }
@@ -41266,12 +42150,15 @@ impl ScheduleAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleActionStartSettings {
     /// Option for specifying the start time for an action.
+    #[doc(hidden)]
     pub fixed_mode_schedule_action_start_settings:
         std::option::Option<crate::model::FixedModeScheduleActionStartSettings>,
     /// Option for specifying an action as relative to another action.
+    #[doc(hidden)]
     pub follow_mode_schedule_action_start_settings:
         std::option::Option<crate::model::FollowModeScheduleActionStartSettings>,
     /// Option for specifying an action that should be applied immediately.
+    #[doc(hidden)]
     pub immediate_mode_schedule_action_start_settings:
         std::option::Option<crate::model::ImmediateModeScheduleActionStartSettings>,
 }
@@ -41430,8 +42317,10 @@ impl ImmediateModeScheduleActionStartSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FollowModeScheduleActionStartSettings {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
+    #[doc(hidden)]
     pub follow_point: std::option::Option<crate::model::FollowPoint>,
     /// The action name of another action that this one refers to.
+    #[doc(hidden)]
     pub reference_action_name: std::option::Option<std::string::String>,
 }
 impl FollowModeScheduleActionStartSettings {
@@ -41564,6 +42453,7 @@ impl AsRef<str> for FollowPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FixedModeScheduleActionStartSettings {
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
+    #[doc(hidden)]
     pub time: std::option::Option<std::string::String>,
 }
 impl FixedModeScheduleActionStartSettings {
@@ -41616,37 +42506,49 @@ impl FixedModeScheduleActionStartSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleActionSettings {
     /// Action to insert HLS ID3 segment tagging
+    #[doc(hidden)]
     pub hls_id3_segment_tagging_settings:
         std::option::Option<crate::model::HlsId3SegmentTaggingScheduleActionSettings>,
     /// Action to insert HLS metadata
+    #[doc(hidden)]
     pub hls_timed_metadata_settings:
         std::option::Option<crate::model::HlsTimedMetadataScheduleActionSettings>,
     /// Action to prepare an input for a future immediate input switch
+    #[doc(hidden)]
     pub input_prepare_settings:
         std::option::Option<crate::model::InputPrepareScheduleActionSettings>,
     /// Action to switch the input
+    #[doc(hidden)]
     pub input_switch_settings: std::option::Option<crate::model::InputSwitchScheduleActionSettings>,
     /// Action to activate a motion graphics image overlay
+    #[doc(hidden)]
     pub motion_graphics_image_activate_settings:
         std::option::Option<crate::model::MotionGraphicsActivateScheduleActionSettings>,
     /// Action to deactivate a motion graphics image overlay
+    #[doc(hidden)]
     pub motion_graphics_image_deactivate_settings:
         std::option::Option<crate::model::MotionGraphicsDeactivateScheduleActionSettings>,
     /// Action to pause or unpause one or both channel pipelines
+    #[doc(hidden)]
     pub pause_state_settings: std::option::Option<crate::model::PauseStateScheduleActionSettings>,
     /// Action to insert SCTE-35 return_to_network message
+    #[doc(hidden)]
     pub scte35_return_to_network_settings:
         std::option::Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
     /// Action to insert SCTE-35 splice_insert message
+    #[doc(hidden)]
     pub scte35_splice_insert_settings:
         std::option::Option<crate::model::Scte35SpliceInsertScheduleActionSettings>,
     /// Action to insert SCTE-35 time_signal message
+    #[doc(hidden)]
     pub scte35_time_signal_settings:
         std::option::Option<crate::model::Scte35TimeSignalScheduleActionSettings>,
     /// Action to activate a static image overlay
+    #[doc(hidden)]
     pub static_image_activate_settings:
         std::option::Option<crate::model::StaticImageActivateScheduleActionSettings>,
     /// Action to deactivate a static image overlay
+    #[doc(hidden)]
     pub static_image_deactivate_settings:
         std::option::Option<crate::model::StaticImageDeactivateScheduleActionSettings>,
 }
@@ -42028,8 +42930,10 @@ impl ScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticImageDeactivateScheduleActionSettings {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
+    #[doc(hidden)]
     pub fade_out: i32,
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
+    #[doc(hidden)]
     pub layer: i32,
 }
 impl StaticImageDeactivateScheduleActionSettings {
@@ -42101,24 +43005,34 @@ impl StaticImageDeactivateScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
+    #[doc(hidden)]
     pub duration: i32,
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
+    #[doc(hidden)]
     pub fade_in: i32,
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
+    #[doc(hidden)]
     pub fade_out: i32,
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
+    #[doc(hidden)]
     pub height: i32,
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::InputLocation>,
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
+    #[doc(hidden)]
     pub image_x: i32,
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
+    #[doc(hidden)]
     pub image_y: i32,
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
+    #[doc(hidden)]
     pub layer: i32,
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
+    #[doc(hidden)]
     pub opacity: i32,
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
+    #[doc(hidden)]
     pub width: i32,
 }
 impl StaticImageActivateScheduleActionSettings {
@@ -42329,6 +43243,7 @@ impl StaticImageActivateScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
+    #[doc(hidden)]
     pub scte35_descriptors: std::option::Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
 }
 impl Scte35TimeSignalScheduleActionSettings {
@@ -42393,6 +43308,7 @@ impl Scte35TimeSignalScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35Descriptor {
     /// SCTE-35 Descriptor Settings.
+    #[doc(hidden)]
     pub scte35_descriptor_settings: std::option::Option<crate::model::Scte35DescriptorSettings>,
 }
 impl Scte35Descriptor {
@@ -42459,6 +43375,7 @@ impl Scte35Descriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35DescriptorSettings {
     /// SCTE-35 Segmentation Descriptor.
+    #[doc(hidden)]
     pub segmentation_descriptor_scte35_descriptor_settings:
         std::option::Option<crate::model::Scte35SegmentationDescriptor>,
 }
@@ -42528,27 +43445,38 @@ impl Scte35DescriptorSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35SegmentationDescriptor {
     /// Holds the four SCTE-35 delivery restriction parameters.
+    #[doc(hidden)]
     pub delivery_restrictions: std::option::Option<crate::model::Scte35DeliveryRestrictions>,
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
+    #[doc(hidden)]
     pub segment_num: i32,
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
+    #[doc(hidden)]
     pub segmentation_cancel_indicator:
         std::option::Option<crate::model::Scte35SegmentationCancelIndicator>,
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
+    #[doc(hidden)]
     pub segmentation_duration: i64,
     /// Corresponds to SCTE-35 segmentation_event_id.
+    #[doc(hidden)]
     pub segmentation_event_id: i64,
     /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
+    #[doc(hidden)]
     pub segmentation_type_id: i32,
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
+    #[doc(hidden)]
     pub segmentation_upid: std::option::Option<std::string::String>,
     /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
+    #[doc(hidden)]
     pub segmentation_upid_type: i32,
     /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
+    #[doc(hidden)]
     pub segments_expected: i32,
     /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
+    #[doc(hidden)]
     pub sub_segment_num: i32,
     /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
+    #[doc(hidden)]
     pub sub_segments_expected: i32,
 }
 impl Scte35SegmentationDescriptor {
@@ -42863,12 +43791,16 @@ impl AsRef<str> for Scte35SegmentationCancelIndicator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35DeliveryRestrictions {
     /// Corresponds to SCTE-35 archive_allowed_flag.
+    #[doc(hidden)]
     pub archive_allowed_flag: std::option::Option<crate::model::Scte35ArchiveAllowedFlag>,
     /// Corresponds to SCTE-35 device_restrictions parameter.
+    #[doc(hidden)]
     pub device_restrictions: std::option::Option<crate::model::Scte35DeviceRestrictions>,
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
+    #[doc(hidden)]
     pub no_regional_blackout_flag: std::option::Option<crate::model::Scte35NoRegionalBlackoutFlag>,
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
+    #[doc(hidden)]
     pub web_delivery_allowed_flag: std::option::Option<crate::model::Scte35WebDeliveryAllowedFlag>,
 }
 impl Scte35DeliveryRestrictions {
@@ -43242,8 +44174,10 @@ impl AsRef<str> for Scte35ArchiveAllowedFlag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
+    #[doc(hidden)]
     pub duration: i64,
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+    #[doc(hidden)]
     pub splice_event_id: i64,
 }
 impl Scte35SpliceInsertScheduleActionSettings {
@@ -43315,6 +44249,7 @@ impl Scte35SpliceInsertScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte35ReturnToNetworkScheduleActionSettings {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+    #[doc(hidden)]
     pub splice_event_id: i64,
 }
 impl Scte35ReturnToNetworkScheduleActionSettings {
@@ -43369,6 +44304,7 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseStateScheduleActionSettings {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
+    #[doc(hidden)]
     pub pipelines: std::option::Option<std::vec::Vec<crate::model::PipelinePauseStateSettings>>,
 }
 impl PauseStateScheduleActionSettings {
@@ -43433,6 +44369,7 @@ impl PauseStateScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<crate::model::PipelineId>,
 }
 impl PipelinePauseStateSettings {
@@ -43575,12 +44512,16 @@ impl MotionGraphicsDeactivateScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MotionGraphicsActivateScheduleActionSettings {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
+    #[doc(hidden)]
     pub duration: i64,
     /// Key used to extract the password from EC2 Parameter store
+    #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
     /// URI of the HTML5 content to be rendered into the live stream.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// Documentation update needed
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl MotionGraphicsActivateScheduleActionSettings {
@@ -43689,10 +44630,13 @@ impl MotionGraphicsActivateScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSwitchScheduleActionSettings {
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
+    #[doc(hidden)]
     pub input_attachment_name_reference: std::option::Option<std::string::String>,
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+    #[doc(hidden)]
     pub input_clipping_settings: std::option::Option<crate::model::InputClippingSettings>,
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
+    #[doc(hidden)]
     pub url_path: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InputSwitchScheduleActionSettings {
@@ -43808,10 +44752,13 @@ impl InputSwitchScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputClippingSettings {
     /// The source of the timecodes in the source being clipped.
+    #[doc(hidden)]
     pub input_timecode_source: std::option::Option<crate::model::InputTimecodeSource>,
     /// Settings to identify the start of the clip.
+    #[doc(hidden)]
     pub start_timecode: std::option::Option<crate::model::StartTimecode>,
     /// Settings to identify the end of the clip.
+    #[doc(hidden)]
     pub stop_timecode: std::option::Option<crate::model::StopTimecode>,
 }
 impl InputClippingSettings {
@@ -43909,8 +44856,10 @@ impl InputClippingSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTimecode {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
+    #[doc(hidden)]
     pub last_frame_clipping_behavior: std::option::Option<crate::model::LastFrameClippingBehavior>,
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
+    #[doc(hidden)]
     pub timecode: std::option::Option<std::string::String>,
 }
 impl StopTimecode {
@@ -44049,6 +44998,7 @@ impl AsRef<str> for LastFrameClippingBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTimecode {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
+    #[doc(hidden)]
     pub timecode: std::option::Option<std::string::String>,
 }
 impl StartTimecode {
@@ -44158,10 +45108,13 @@ impl AsRef<str> for InputTimecodeSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputPrepareScheduleActionSettings {
     /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
+    #[doc(hidden)]
     pub input_attachment_name_reference: std::option::Option<std::string::String>,
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+    #[doc(hidden)]
     pub input_clipping_settings: std::option::Option<crate::model::InputClippingSettings>,
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
+    #[doc(hidden)]
     pub url_path: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InputPrepareScheduleActionSettings {
@@ -44277,6 +45230,7 @@ impl InputPrepareScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+    #[doc(hidden)]
     pub id3: std::option::Option<std::string::String>,
 }
 impl HlsTimedMetadataScheduleActionSettings {
@@ -44329,6 +45283,7 @@ impl HlsTimedMetadataScheduleActionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsId3SegmentTaggingScheduleActionSettings {
     /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
+    #[doc(hidden)]
     pub tag: std::option::Option<std::string::String>,
 }
 impl HlsId3SegmentTaggingScheduleActionSettings {
@@ -44483,8 +45438,10 @@ impl AsRef<str> for AcceptHeader {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputVpcRequest {
     /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InputVpcRequest {
@@ -44574,10 +45531,13 @@ impl InputVpcRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOutputSettings {
     /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+    #[doc(hidden)]
     pub public_address_allocation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcOutputSettings {
@@ -44700,8 +45660,10 @@ impl VpcOutputSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceCreateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
+    #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
+    #[doc(hidden)]
     pub maintenance_start_time: std::option::Option<std::string::String>,
 }
 impl MaintenanceCreateSettings {
@@ -44779,6 +45741,7 @@ impl MaintenanceCreateSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
+    #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResult {
@@ -44843,6 +45806,7 @@ impl BatchScheduleActionDeleteResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchScheduleActionCreateResult {
     /// List of actions that have been created in the schedule.
+    #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateResult {
@@ -44907,6 +45871,7 @@ impl BatchScheduleActionCreateResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
+    #[doc(hidden)]
     pub action_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchScheduleActionDeleteRequest {
@@ -44970,6 +45935,7 @@ impl BatchScheduleActionDeleteRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchScheduleActionCreateRequest {
     /// A list of schedule actions to create.
+    #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateRequest {
@@ -45034,10 +46000,13 @@ impl BatchScheduleActionCreateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSuccessfulResultModel {
     /// ARN of the resource
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// ID of the resource
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Current state of the resource
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
 impl BatchSuccessfulResultModel {
@@ -45126,12 +46095,16 @@ impl BatchSuccessfulResultModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchFailedResultModel {
     /// ARN of the resource
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Error code for the failed operation
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// ID of the resource
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Error message for the failed operation
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchFailedResultModel {

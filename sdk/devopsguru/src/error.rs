@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p> A message that describes the validation exception. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The reason the validation exception was thrown. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// <p> An array of fields that are associated with the validation exception. </p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl ValidationException {
@@ -122,12 +125,16 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The code of the quota that was exceeded, causing the throttling exception. </p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p> The code of the service that caused the throttling exception. </p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p> The number of seconds after which the action that caused the throttling exception can be retried. </p>
+    #[doc(hidden)]
     pub retry_after_seconds: i32,
 }
 impl ThrottlingException {
@@ -245,8 +252,10 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
+    #[doc(hidden)]
     pub retry_after_seconds: i32,
 }
 impl InternalServerException {
@@ -330,10 +339,13 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -437,6 +449,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -501,10 +514,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The ID of the Amazon Web Services resource that could not be found. </p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p> The type of the Amazon Web Services resource that could not be found. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -608,6 +624,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {

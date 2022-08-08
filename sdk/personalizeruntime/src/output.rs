@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsOutput {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
+    #[doc(hidden)]
     pub item_list: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsOutput {
@@ -89,8 +91,10 @@ impl GetRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonalizedRankingOutput {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
+    #[doc(hidden)]
     pub personalized_ranking: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
 }
 impl GetPersonalizedRankingOutput {

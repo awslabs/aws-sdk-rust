@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeElasticsearchDomainOutput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    #[doc(hidden)]
     pub target_version: std::option::Option<std::string::String>,
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
+    #[doc(hidden)]
     pub perform_check_only: std::option::Option<bool>,
     /// <p>Specifies change details of the domain configuration change.</p>
+    #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl UpgradeElasticsearchDomainOutput {
@@ -128,6 +132,7 @@ impl UpgradeElasticsearchDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl UpdatePackageOutput {
@@ -185,8 +190,10 @@ impl UpdatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
+    #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
     /// <p>Contains result of DryRun. </p>
+    #[doc(hidden)]
     pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
 }
 impl UpdateElasticsearchDomainConfigOutput {
@@ -264,6 +271,7 @@ impl UpdateElasticsearchDomainConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
+    #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl StartElasticsearchServiceSoftwareUpdateOutput {
@@ -357,6 +365,7 @@ impl RemoveTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of rejected inbound connection. </p>
+    #[doc(hidden)]
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
 }
@@ -425,8 +434,10 @@ impl RejectInboundCrossClusterSearchConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
+    #[doc(hidden)]
     pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutput {
@@ -511,6 +522,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsOutput {
@@ -574,9 +586,11 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
+    #[doc(hidden)]
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesForDomainOutput {
@@ -666,8 +680,10 @@ impl ListPackagesForDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
+    #[doc(hidden)]
     pub elasticsearch_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListElasticsearchVersionsOutput {
@@ -748,9 +764,11 @@ impl ListElasticsearchVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
+    #[doc(hidden)]
     pub elasticsearch_instance_types:
         std::option::Option<std::vec::Vec<crate::model::EsPartitionInstanceType>>,
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListElasticsearchInstanceTypesOutput {
@@ -840,9 +858,11 @@ impl ListElasticsearchInstanceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
+    #[doc(hidden)]
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsForPackageOutput {
@@ -932,6 +952,7 @@ impl ListDomainsForPackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
+    #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
 }
 impl ListDomainNamesOutput {
@@ -1001,6 +1022,7 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Upgrade</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
     /// <p> One of 4 statuses that a step can go through returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p>
     /// <ul>
@@ -1010,8 +1032,10 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A string that describes the update briefly</p>
+    #[doc(hidden)]
     pub upgrade_name: std::option::Option<std::string::String>,
 }
 impl GetUpgradeStatusOutput {
@@ -1145,8 +1169,10 @@ impl GetUpgradeStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
+    #[doc(hidden)]
     pub upgrade_histories: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUpgradeHistoryOutput {
@@ -1228,11 +1254,14 @@ impl GetUpgradeHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
+    #[doc(hidden)]
     pub package_version_history_list:
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionHistoryOutput {
@@ -1339,6 +1368,7 @@ impl GetPackageVersionHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
+    #[doc(hidden)]
     pub compatible_elasticsearch_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
 }
@@ -1412,6 +1442,7 @@ impl GetCompatibleElasticsearchVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DissociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
+    #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl DissociatePackageOutput {
@@ -1471,8 +1502,10 @@ impl DissociatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedElasticsearchInstancesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of reserved Elasticsearch instances.</p>
+    #[doc(hidden)]
     pub reserved_elasticsearch_instances:
         std::option::Option<std::vec::Vec<crate::model::ReservedElasticsearchInstance>>,
 }
@@ -1563,8 +1596,10 @@ impl DescribeReservedElasticsearchInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of reserved Elasticsearch instance offerings</p>
+    #[doc(hidden)]
     pub reserved_elasticsearch_instance_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedElasticsearchInstanceOffering>>,
 }
@@ -1661,8 +1696,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects.</p>
+    #[doc(hidden)]
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePackagesOutput {
@@ -1744,9 +1781,11 @@ impl DescribePackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
+    #[doc(hidden)]
     pub cross_cluster_search_connections:
         std::option::Option<std::vec::Vec<crate::model::OutboundCrossClusterSearchConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOutboundCrossClusterSearchConnectionsOutput {
@@ -1839,9 +1878,11 @@ impl DescribeOutboundCrossClusterSearchConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
+    #[doc(hidden)]
     pub cross_cluster_search_connections:
         std::option::Option<std::vec::Vec<crate::model::InboundCrossClusterSearchConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInboundCrossClusterSearchConnectionsOutput {
@@ -1940,6 +1981,7 @@ pub struct DescribeElasticsearchInstanceTypeLimitsOutput {
     /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub limits_by_role:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
 }
@@ -2033,6 +2075,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
+    #[doc(hidden)]
     pub domain_status_list:
         std::option::Option<std::vec::Vec<crate::model::ElasticsearchDomainStatus>>,
 }
@@ -2103,6 +2146,7 @@ impl DescribeElasticsearchDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
+    #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
 }
 impl DescribeElasticsearchDomainConfigOutput {
@@ -2160,6 +2204,7 @@ impl DescribeElasticsearchDomainConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchDomainOutput {
     /// <p>The current status of the Elasticsearch domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
 }
 impl DescribeElasticsearchDomainOutput {
@@ -2217,6 +2262,7 @@ impl DescribeElasticsearchDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    #[doc(hidden)]
     pub change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
 }
 impl DescribeDomainChangeProgressOutput {
@@ -2280,8 +2326,10 @@ impl DescribeDomainChangeProgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainAutoTunesOutput {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    #[doc(hidden)]
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDomainAutoTunesOutput {
@@ -2362,6 +2410,7 @@ impl DescribeDomainAutoTunesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageOutput {
     /// <p><code>PackageDetails</code></p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl DeletePackageOutput {
@@ -2419,6 +2468,7 @@ impl DeletePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
+    #[doc(hidden)]
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::OutboundCrossClusterSearchConnection>,
 }
@@ -2487,6 +2537,7 @@ impl DeleteOutboundCrossClusterSearchConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of deleted inbound connection. </p>
+    #[doc(hidden)]
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
 }
@@ -2585,6 +2636,7 @@ impl DeleteElasticsearchServiceRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
 }
 impl DeleteElasticsearchDomainOutput {
@@ -2642,6 +2694,7 @@ impl DeleteElasticsearchDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl CreatePackageOutput {
@@ -2699,15 +2752,20 @@ impl CreatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    #[doc(hidden)]
     pub source_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    #[doc(hidden)]
     pub destination_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the connection alias provided during the create connection request.</p>
+    #[doc(hidden)]
     pub connection_alias: std::option::Option<std::string::String>,
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
+    #[doc(hidden)]
     pub connection_status:
         std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
+    #[doc(hidden)]
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
 }
 impl CreateOutboundCrossClusterSearchConnectionOutput {
@@ -2858,6 +2916,7 @@ impl CreateOutboundCrossClusterSearchConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateElasticsearchDomainOutput {
     /// <p>The status of the newly created Elasticsearch domain. </p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
 }
 impl CreateElasticsearchDomainOutput {
@@ -2915,6 +2974,7 @@ impl CreateElasticsearchDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
+    #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl CancelElasticsearchServiceSoftwareUpdateOutput {
@@ -2979,6 +3039,7 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
+    #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl AssociatePackageOutput {
@@ -3068,6 +3129,7 @@ impl AddTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
+    #[doc(hidden)]
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
 }

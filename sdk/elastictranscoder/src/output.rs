@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
 impl UpdatePipelineStatusOutput {
@@ -59,6 +60,7 @@ impl UpdatePipelineStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
 impl UpdatePipelineNotificationsOutput {
@@ -113,9 +115,11 @@ impl UpdatePipelineNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineOutput {
     /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl UpdatePipelineOutput {
@@ -200,8 +204,10 @@ impl UpdatePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub success: std::option::Option<std::string::String>,
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestRoleOutput {
@@ -282,6 +288,7 @@ impl TestRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
+    #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl ReadPresetOutput {
@@ -336,9 +343,11 @@ impl ReadPresetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl ReadPipelineOutput {
@@ -422,6 +431,7 @@ impl ReadPipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl ReadJobOutput {
@@ -474,8 +484,10 @@ impl ReadJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
+    #[doc(hidden)]
     pub presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPresetsOutput {
@@ -559,8 +571,10 @@ impl ListPresetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
+    #[doc(hidden)]
     pub pipelines: std::option::Option<std::vec::Vec<crate::model::Pipeline>>,
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesOutput {
@@ -644,8 +658,10 @@ impl ListPipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListJobsByStatusOutput {
@@ -729,8 +745,10 @@ impl ListJobsByStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsByPipelineOutput {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListJobsByPipelineOutput {
@@ -874,8 +892,10 @@ impl DeletePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
+    #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
+    #[doc(hidden)]
     pub warning: std::option::Option<std::string::String>,
 }
 impl CreatePresetOutput {
@@ -947,9 +967,11 @@ impl CreatePresetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline that is created.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl CreatePipelineOutput {
@@ -1033,6 +1055,7 @@ impl CreatePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl CreateJobOutput {

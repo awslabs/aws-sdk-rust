@@ -5,28 +5,40 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportDefinition {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The length of time covered by the report. </p>
+    #[doc(hidden)]
     pub time_unit: std::option::Option<crate::model::TimeUnit>,
     /// <p>The format that AWS saves the report in.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ReportFormat>,
     /// <p>The compression format that AWS uses for the report.</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<crate::model::CompressionFormat>,
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
+    #[doc(hidden)]
     pub additional_schema_elements: std::option::Option<std::vec::Vec<crate::model::SchemaElement>>,
     /// <p>The S3 bucket where AWS delivers the report.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
+    #[doc(hidden)]
     pub s3_region: std::option::Option<crate::model::AwsRegion>,
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
+    #[doc(hidden)]
     pub additional_artifacts: std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>,
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
+    #[doc(hidden)]
     pub refresh_closed_reports: std::option::Option<bool>,
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
+    #[doc(hidden)]
     pub report_versioning: std::option::Option<crate::model::ReportVersioning>,
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
+    #[doc(hidden)]
     pub billing_view_arn: std::option::Option<std::string::String>,
 }
 impl ReportDefinition {

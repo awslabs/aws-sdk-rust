@@ -5,22 +5,28 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub artifact_store: std::option::Option<crate::model::ArtifactStore>,
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub artifact_stores: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
     >,
     /// <p>The stage in which to perform the action.</p>
+    #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::StageDeclaration>>,
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl PipelineDeclaration {
@@ -205,10 +211,13 @@ impl PipelineDeclaration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageDeclaration {
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub blockers: std::option::Option<std::vec::Vec<crate::model::BlockerDeclaration>>,
     /// <p>The actions included in a stage.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionDeclaration>>,
 }
 impl StageDeclaration {
@@ -315,26 +324,35 @@ impl StageDeclaration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionDeclaration {
     /// <p>The action declaration's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the action type and the provider of the action.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The order in which actions are run.</p>
+    #[doc(hidden)]
     pub run_order: std::option::Option<i32>,
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
     /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    #[doc(hidden)]
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>,
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<std::vec::Vec<crate::model::InputArtifact>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The action declaration's AWS Region, such as us-east-1.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl ActionDeclaration {
@@ -577,6 +595,7 @@ impl ActionDeclaration {
 pub struct InputArtifact {
     /// <p>The name of the artifact to be worked on (for example, "My App").</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputArtifact {
@@ -634,6 +653,7 @@ pub struct OutputArtifact {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl OutputArtifact {
@@ -700,12 +720,16 @@ pub struct ActionTypeId {
     /// <li> <p>Invoke</p> </li>
     /// <li> <p>Approval</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::ActionOwner>,
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ActionTypeId {
@@ -968,8 +992,10 @@ impl AsRef<str> for ActionCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockerDeclaration {
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BlockerType>,
 }
 impl BlockerDeclaration {
@@ -1094,10 +1120,13 @@ impl AsRef<str> for BlockerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactStore {
     /// <p>The type of the artifact store, such as S3.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactStoreType>,
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl ArtifactStore {
@@ -1194,8 +1223,10 @@ pub struct EncryptionKey {
     /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
     /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
 }
 impl EncryptionKey {
@@ -1378,20 +1409,28 @@ impl AsRef<str> for ArtifactStoreType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeDeclaration {
     /// <p>The description for the action type to be updated.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
+    #[doc(hidden)]
     pub executor: std::option::Option<crate::model::ActionTypeExecutor>,
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::ActionTypeIdentifier>,
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
+    #[doc(hidden)]
     pub input_artifact_details: std::option::Option<crate::model::ActionTypeArtifactDetails>,
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
+    #[doc(hidden)]
     pub output_artifact_details: std::option::Option<crate::model::ActionTypeArtifactDetails>,
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::ActionTypePermissions>,
     /// <p>The properties of the action type to be updated.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::ActionTypeProperty>>,
     /// <p>The links associated with the action type to be updated.</p>
+    #[doc(hidden)]
     pub urls: std::option::Option<crate::model::ActionTypeUrls>,
 }
 impl ActionTypeDeclaration {
@@ -1604,12 +1643,16 @@ impl ActionTypeDeclaration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeUrls {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
+    #[doc(hidden)]
     pub configuration_url: std::option::Option<std::string::String>,
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
+    #[doc(hidden)]
     pub entity_url_template: std::option::Option<std::string::String>,
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
+    #[doc(hidden)]
     pub execution_url_template: std::option::Option<std::string::String>,
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    #[doc(hidden)]
     pub revision_url_template: std::option::Option<std::string::String>,
 }
 impl ActionTypeUrls {
@@ -1727,16 +1770,22 @@ impl ActionTypeUrls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Whether the configuration property is an optional value.</p>
+    #[doc(hidden)]
     pub optional: bool,
     /// <p>Whether the configuration property is a key.</p>
+    #[doc(hidden)]
     pub key: bool,
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
+    #[doc(hidden)]
     pub no_echo: bool,
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+    #[doc(hidden)]
     pub queryable: bool,
     /// <p>The description of the property that is displayed to users.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ActionTypeProperty {
@@ -1876,6 +1925,7 @@ impl ActionTypeProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypePermissions {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
+    #[doc(hidden)]
     pub allowed_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ActionTypePermissions {
@@ -1939,8 +1989,10 @@ impl ActionTypePermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeArtifactDetails {
     /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    #[doc(hidden)]
     pub minimum_count: i32,
     /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    #[doc(hidden)]
     pub maximum_count: i32,
 }
 impl ActionTypeArtifactDetails {
@@ -2020,12 +2072,16 @@ pub struct ActionTypeIdentifier {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action type version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ActionTypeIdentifier {
@@ -2158,15 +2214,19 @@ impl ActionTypeIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeExecutor {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ExecutorConfiguration>,
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExecutorType>,
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
+    #[doc(hidden)]
     pub policy_statements_template: std::option::Option<std::string::String>,
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
+    #[doc(hidden)]
     pub job_timeout: std::option::Option<i32>,
 }
 impl ActionTypeExecutor {
@@ -2345,9 +2405,11 @@ impl AsRef<str> for ExecutorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutorConfiguration {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
+    #[doc(hidden)]
     pub lambda_executor_configuration:
         std::option::Option<crate::model::LambdaExecutorConfiguration>,
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
+    #[doc(hidden)]
     pub job_worker_executor_configuration:
         std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
 }
@@ -2444,8 +2506,10 @@ impl ExecutorConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobWorkerExecutorConfiguration {
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
+    #[doc(hidden)]
     pub polling_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
+    #[doc(hidden)]
     pub polling_service_principals: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JobWorkerExecutorConfiguration {
@@ -2539,6 +2603,7 @@ impl JobWorkerExecutorConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaExecutorConfiguration {
@@ -2596,8 +2661,10 @@ impl LambdaExecutorConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2720,18 +2787,25 @@ impl AsRef<str> for StageRetryMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhookItem {
     /// <p>The detail returned for each webhook, such as the webhook authentication type and filter rules.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::WebhookDefinition>,
     /// <p>A unique URL generated by CodePipeline. When a POST request is made to this URL, the defined pipeline is started as long as the body of the post request satisfies the defined authentication and filtering conditions. Deleting and re-creating a webhook makes the old URL invalid and generates a new one.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The text of the error message about the webhook.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The number code of the error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The date and time a webhook was last successfully triggered, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_triggered: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the tags applied to the webhook.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListWebhookItem {
@@ -2906,12 +2980,16 @@ impl ListWebhookItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebhookDefinition {
     /// <p>The name of the webhook.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
+    #[doc(hidden)]
     pub target_pipeline: std::option::Option<std::string::String>,
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
+    #[doc(hidden)]
     pub target_action: std::option::Option<std::string::String>,
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::WebhookFilterRule>>,
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
@@ -2919,8 +2997,10 @@ pub struct WebhookDefinition {
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::WebhookAuthenticationType>,
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
+    #[doc(hidden)]
     pub authentication_configuration: std::option::Option<crate::model::WebhookAuthConfiguration>,
 }
 impl WebhookDefinition {
@@ -3105,8 +3185,10 @@ impl WebhookDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
+    #[doc(hidden)]
     pub allowed_ip_range: std::option::Option<std::string::String>,
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    #[doc(hidden)]
     pub secret_token: std::option::Option<std::string::String>,
 }
 impl WebhookAuthConfiguration {
@@ -3240,8 +3322,10 @@ impl AsRef<str> for WebhookAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebhookFilterRule {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
     /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value is evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
+    #[doc(hidden)]
     pub match_equals: std::option::Option<std::string::String>,
 }
 impl WebhookFilterRule {
@@ -3313,10 +3397,13 @@ impl WebhookFilterRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionDetails {
     /// <p>The summary of the current status of the actions.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub external_execution_id: std::option::Option<std::string::String>,
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
+    #[doc(hidden)]
     pub percent_complete: std::option::Option<i32>,
 }
 impl ExecutionDetails {
@@ -3408,12 +3495,16 @@ impl ExecutionDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentRevision {
     /// <p>The revision ID of the current version of an artifact.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p>The change identifier for the current revision.</p>
+    #[doc(hidden)]
     pub change_identifier: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The summary of the most recent revision of the artifact.</p>
+    #[doc(hidden)]
     pub revision_summary: std::option::Option<std::string::String>,
 }
 impl CurrentRevision {
@@ -3528,10 +3619,13 @@ impl CurrentRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureDetails {
     /// <p>The type of the failure.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FailureType>,
     /// <p>The message about the failure.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The external ID of the run of the action that failed.</p>
+    #[doc(hidden)]
     pub external_execution_id: std::option::Option<std::string::String>,
 }
 impl FailureDetails {
@@ -3701,8 +3795,10 @@ impl AsRef<str> for FailureType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApprovalStatus>,
 }
 impl ApprovalResult {
@@ -3832,10 +3928,13 @@ impl AsRef<str> for ApprovalStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionRevision {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
+    #[doc(hidden)]
     pub revision_change_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActionRevision {
@@ -3930,8 +4029,10 @@ impl ActionRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyJob {
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl ThirdPartyJob {
@@ -4003,12 +4104,16 @@ impl ThirdPartyJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The unique system-generated ID of the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Other data about a job.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<crate::model::JobData>,
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    #[doc(hidden)]
     pub nonce: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS account to use when performing the job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl Job {
@@ -4114,22 +4219,30 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobData {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
+    #[doc(hidden)]
     pub action_configuration: std::option::Option<crate::model::ActionConfiguration>,
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
     /// </note>
+    #[doc(hidden)]
     pub pipeline_context: std::option::Option<crate::model::PipelineContext>,
     /// <p>The artifact supplied to the job.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p>The output of the job.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in AWS CodePipeline.</p>
+    #[doc(hidden)]
     pub artifact_credentials: std::option::Option<crate::model::AwsSessionCredentials>,
     /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job asynchronously.</p>
+    #[doc(hidden)]
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl JobData {
@@ -4347,10 +4460,13 @@ impl JobData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSessionCredentials {
     /// <p>The access key for the session.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The secret access key for the session.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The token for the session.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
 }
 impl AwsSessionCredentials {
@@ -4448,10 +4564,13 @@ impl AwsSessionCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Artifact {
     /// <p>The artifact's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
     /// <p>The location of an artifact.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::ArtifactLocation>,
 }
 impl Artifact {
@@ -4543,8 +4662,10 @@ impl Artifact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactLocation {
     /// <p>The type of artifact in the location.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactLocationType>,
     /// <p>The S3 bucket that contains the artifact.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3ArtifactLocation>,
 }
 impl ArtifactLocation {
@@ -4622,8 +4743,10 @@ impl ArtifactLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ArtifactLocation {
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
+    #[doc(hidden)]
     pub object_key: std::option::Option<std::string::String>,
 }
 impl S3ArtifactLocation {
@@ -4748,14 +4871,19 @@ impl AsRef<str> for ArtifactLocationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineContext {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The stage of the pipeline.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::StageContext>,
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ActionContext>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The execution ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl PipelineContext {
@@ -4887,8 +5015,10 @@ impl PipelineContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionContext {
     /// <p>The name of the action in the context of a job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
+    #[doc(hidden)]
     pub action_execution_id: std::option::Option<std::string::String>,
 }
 impl ActionContext {
@@ -4963,6 +5093,7 @@ impl ActionContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageContext {
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StageContext {
@@ -5015,6 +5146,7 @@ impl StageContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionConfiguration {
     /// <p>The configuration data for the action.</p>
+    #[doc(hidden)]
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5090,12 +5222,16 @@ impl ActionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version number of the pipeline.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
+    #[doc(hidden)]
     pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
@@ -5207,6 +5343,7 @@ impl PipelineSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
@@ -5217,16 +5354,22 @@ pub struct PipelineExecutionSummary {
     /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineExecutionStatus>,
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
+    #[doc(hidden)]
     pub source_revisions: std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<crate::model::ExecutionTrigger>,
     /// <p>The interaction that stopped a pipeline execution.</p>
+    #[doc(hidden)]
     pub stop_trigger: std::option::Option<crate::model::StopExecutionTrigger>,
 }
 impl PipelineExecutionSummary {
@@ -5435,6 +5578,7 @@ impl PipelineExecutionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExecutionTrigger {
     /// <p>The user-specified reason the pipeline was stopped.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopExecutionTrigger {
@@ -5489,8 +5633,10 @@ impl StopExecutionTrigger {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionTrigger {
     /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
+    #[doc(hidden)]
     pub trigger_detail: std::option::Option<std::string::String>,
 }
 impl ExecutionTrigger {
@@ -5646,12 +5792,16 @@ impl AsRef<str> for TriggerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
+    #[doc(hidden)]
     pub revision_summary: std::option::Option<std::string::String>,
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
+    #[doc(hidden)]
     pub revision_url: std::option::Option<std::string::String>,
 }
 impl SourceRevision {
@@ -5843,15 +5993,20 @@ impl AsRef<str> for PipelineExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionType {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The settings for the action type.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::ActionTypeSettings>,
     /// <p>The configuration properties for the action type.</p>
+    #[doc(hidden)]
     pub action_configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    #[doc(hidden)]
     pub input_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    #[doc(hidden)]
     pub output_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
 }
 impl ActionType {
@@ -6001,8 +6156,10 @@ impl ActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactDetails {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
+    #[doc(hidden)]
     pub minimum_count: i32,
     /// <p>The maximum number of artifacts allowed for the action type.</p>
+    #[doc(hidden)]
     pub maximum_count: i32,
 }
 impl ArtifactDetails {
@@ -6074,20 +6231,27 @@ impl ArtifactDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionConfigurationProperty {
     /// <p>The name of the action configuration property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Whether the configuration property is a required value.</p>
+    #[doc(hidden)]
     pub required: bool,
     /// <p>Whether the configuration property is a key.</p>
+    #[doc(hidden)]
     pub key: bool,
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
+    #[doc(hidden)]
     pub secret: bool,
     /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
+    #[doc(hidden)]
     pub queryable: bool,
     /// <p>The description of the action configuration property that is displayed to users.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the configuration property.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ActionConfigurationPropertyType>,
 }
 impl ActionConfigurationProperty {
@@ -6312,12 +6476,16 @@ impl AsRef<str> for ActionConfigurationPropertyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeSettings {
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
+    #[doc(hidden)]
     pub third_party_configuration_url: std::option::Option<std::string::String>,
     /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
+    #[doc(hidden)]
     pub entity_url_template: std::option::Option<std::string::String>,
     /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
+    #[doc(hidden)]
     pub execution_url_template: std::option::Option<std::string::String>,
     /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    #[doc(hidden)]
     pub revision_url_template: std::option::Option<std::string::String>,
 }
 impl ActionTypeSettings {
@@ -6441,24 +6609,34 @@ impl ActionTypeSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>The action execution ID.</p>
+    #[doc(hidden)]
     pub action_execution_id: std::option::Option<std::string::String>,
     /// <p>The version of the pipeline where the action was run.</p>
+    #[doc(hidden)]
     pub pipeline_version: std::option::Option<i32>,
     /// <p>The name of the stage that contains the action.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The name of the action.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The start time of the action execution.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update time of the action execution.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionExecutionStatus>,
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::ActionExecutionInput>,
     /// <p>Output details for the action execution, such as the action execution result.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::ActionExecutionOutput>,
 }
 impl ActionExecutionDetail {
@@ -6687,10 +6865,13 @@ impl ActionExecutionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionExecutionOutput {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
     /// <p>Execution result information listed in the output details for an action execution.</p>
+    #[doc(hidden)]
     pub execution_result: std::option::Option<crate::model::ActionExecutionResult>,
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
+    #[doc(hidden)]
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6813,10 +6994,13 @@ impl ActionExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
+    #[doc(hidden)]
     pub external_execution_id: std::option::Option<std::string::String>,
     /// <p>The action provider's summary for the action execution.</p>
+    #[doc(hidden)]
     pub external_execution_summary: std::option::Option<std::string::String>,
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
+    #[doc(hidden)]
     pub external_execution_url: std::option::Option<std::string::String>,
 }
 impl ActionExecutionResult {
@@ -6917,8 +7101,10 @@ impl ActionExecutionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactDetail {
     /// <p>The artifact object name for the action execution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 artifact location for the action execution.</p>
+    #[doc(hidden)]
     pub s3location: std::option::Option<crate::model::S3Location>,
 }
 impl ArtifactDetail {
@@ -6993,8 +7179,10 @@ impl ArtifactDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The artifact name.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -7066,20 +7254,27 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionExecutionInput {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Configuration data for an action execution.</p>
+    #[doc(hidden)]
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
+    #[doc(hidden)]
     pub resolved_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The AWS Region for the action, such as us-east-1.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl ActionExecutionInput {
@@ -7352,6 +7547,7 @@ impl AsRef<str> for ActionExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl ActionExecutionFilter {
@@ -7409,10 +7605,13 @@ impl ActionExecutionFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyJobDetails {
     /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The data to be returned by the third party job worker.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<crate::model::ThirdPartyJobData>,
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    #[doc(hidden)]
     pub nonce: std::option::Option<std::string::String>,
 }
 impl ThirdPartyJobDetails {
@@ -7504,22 +7703,30 @@ impl ThirdPartyJobDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartyJobData {
     /// <p>Represents information about an action type.</p>
+    #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
+    #[doc(hidden)]
     pub action_configuration: std::option::Option<crate::model::ActionConfiguration>,
     /// <p>Represents information about a pipeline to a job worker.</p> <note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
+    #[doc(hidden)]
     pub pipeline_context: std::option::Option<crate::model::PipelineContext>,
     /// <p>The name of the artifact that is worked on by the action, if any. This name might be system-generated, such as "MyApp", or it might be defined by the user when the action is created. The input artifact name must match the name of an output artifact generated by an action in an earlier action or stage of the pipeline.</p>
+    #[doc(hidden)]
     pub input_artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
+    #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
+    #[doc(hidden)]
     pub artifact_credentials: std::option::Option<crate::model::AwsSessionCredentials>,
     /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
+    #[doc(hidden)]
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl ThirdPartyJobData {
@@ -7737,14 +7944,19 @@ impl ThirdPartyJobData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageState {
     /// <p>The name of the stage.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>Represents information about the run of a stage.</p>
+    #[doc(hidden)]
     pub inbound_execution: std::option::Option<crate::model::StageExecution>,
     /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
+    #[doc(hidden)]
     pub inbound_transition_state: std::option::Option<crate::model::TransitionState>,
     /// <p>The state of the stage.</p>
+    #[doc(hidden)]
     pub action_states: std::option::Option<std::vec::Vec<crate::model::ActionState>>,
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
+    #[doc(hidden)]
     pub latest_execution: std::option::Option<crate::model::StageExecution>,
 }
 impl StageState {
@@ -7885,10 +8097,12 @@ impl StageState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StageExecutionStatus>,
 }
 impl StageExecution {
@@ -8050,14 +8264,19 @@ impl AsRef<str> for StageExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionState {
     /// <p>The name of the action.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>Represents information about the version (or revision) of an action.</p>
+    #[doc(hidden)]
     pub current_revision: std::option::Option<crate::model::ActionRevision>,
     /// <p>Represents information about the run of an action.</p>
+    #[doc(hidden)]
     pub latest_execution: std::option::Option<crate::model::ActionExecution>,
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
+    #[doc(hidden)]
     pub entity_url: std::option::Option<std::string::String>,
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
+    #[doc(hidden)]
     pub revision_url: std::option::Option<std::string::String>,
 }
 impl ActionState {
@@ -8188,24 +8407,34 @@ pub struct ActionExecution {
     /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
     /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
     /// </note>
+    #[doc(hidden)]
     pub action_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the action, or for a completed action, the last status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActionExecutionStatus>,
     /// <p>A summary of the run of the action.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>The last status change of the action.</p>
+    #[doc(hidden)]
     pub last_status_change: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> command. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>The ARN of the user who last changed the pipeline.</p>
+    #[doc(hidden)]
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p>The external ID of the run of the action.</p>
+    #[doc(hidden)]
     pub external_execution_id: std::option::Option<std::string::String>,
     /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
+    #[doc(hidden)]
     pub external_execution_url: std::option::Option<std::string::String>,
     /// <p>A percentage of completeness of the action as it runs.</p>
+    #[doc(hidden)]
     pub percent_complete: std::option::Option<i32>,
     /// <p>The details of an error returned by a URL external to AWS.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl ActionExecution {
@@ -8440,8 +8669,10 @@ impl ActionExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>The system ID or number code of the error.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The text of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -8513,12 +8744,16 @@ impl ErrorDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitionState {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The ID of the user who last changed the transition state.</p>
+    #[doc(hidden)]
     pub last_changed_by: std::option::Option<std::string::String>,
     /// <p>The timestamp when the transition state was last changed.</p>
+    #[doc(hidden)]
     pub last_changed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
+    #[doc(hidden)]
     pub disabled_reason: std::option::Option<std::string::String>,
 }
 impl TransitionState {
@@ -8633,10 +8868,13 @@ impl TransitionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_version: std::option::Option<i32>,
     /// <p>The ID of the pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
@@ -8648,10 +8886,13 @@ pub struct PipelineExecution {
     /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineExecutionStatus>,
     /// <p>A summary that contains a description of the pipeline execution status.</p>
+    #[doc(hidden)]
     pub status_summary: std::option::Option<std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
+    #[doc(hidden)]
     pub artifact_revisions: std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>,
 }
 impl PipelineExecution {
@@ -8840,16 +9081,22 @@ impl PipelineExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArtifactRevision {
     /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an action is created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The revision ID of the artifact.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
+    #[doc(hidden)]
     pub revision_change_identifier: std::option::Option<std::string::String>,
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
+    #[doc(hidden)]
     pub revision_summary: std::option::Option<std::string::String>,
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
+    #[doc(hidden)]
     pub revision_url: std::option::Option<std::string::String>,
 }
 impl ArtifactRevision {
@@ -9001,10 +9248,13 @@ impl ArtifactRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    #[doc(hidden)]
     pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineMetadata {
@@ -9099,10 +9349,13 @@ impl PipelineMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetails {
     /// <p>The unique system-generated ID of the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Represents other information about a job required for a job worker to complete the job. </p>
+    #[doc(hidden)]
     pub data: std::option::Option<crate::model::JobData>,
     /// <p>The AWS account ID associated with the job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl JobDetails {

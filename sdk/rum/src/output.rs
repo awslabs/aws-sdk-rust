@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAppMonitorDataOutput {
@@ -86,6 +88,7 @@ impl GetAppMonitorDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppMonitorOutput {
     /// <p>The unique ID of the new app monitor.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateAppMonitorOutput {
@@ -138,8 +141,10 @@ impl CreateAppMonitorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppMonitorsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of structures that contain information about the returned app monitors.</p>
+    #[doc(hidden)]
     pub app_monitor_summaries: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
 }
 impl ListAppMonitorsOutput {
@@ -281,6 +286,7 @@ impl UpdateAppMonitorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppMonitorOutput {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
+    #[doc(hidden)]
     pub app_monitor: std::option::Option<crate::model::AppMonitor>,
 }
 impl GetAppMonitorOutput {
@@ -428,8 +434,10 @@ impl PutRumEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The ARN of the resource that you are viewing.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

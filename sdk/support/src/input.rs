@@ -2405,6 +2405,7 @@ impl ResolveCaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl ResolveCaseInput {
@@ -2428,6 +2429,7 @@ pub struct RefreshTrustedAdvisorCheckInput {
     /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
+    #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInput {
@@ -2451,6 +2453,7 @@ impl std::fmt::Debug for RefreshTrustedAdvisorCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
+    #[doc(hidden)]
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
@@ -2472,6 +2475,7 @@ impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorChecksInput {
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorChecksInput {
@@ -2493,8 +2497,10 @@ impl std::fmt::Debug for DescribeTrustedAdvisorChecksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {
@@ -2523,6 +2529,7 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
+    #[doc(hidden)]
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
@@ -2546,6 +2553,7 @@ impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSeverityLevelsInput {
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeSeverityLevelsInput {
@@ -2567,8 +2575,10 @@ impl std::fmt::Debug for DescribeSeverityLevelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeServicesInput {
@@ -2595,14 +2605,19 @@ impl std::fmt::Debug for DescribeServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    #[doc(hidden)]
     pub before_time: std::option::Option<std::string::String>,
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    #[doc(hidden)]
     pub after_time: std::option::Option<std::string::String>,
     /// <p>A resumption point for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeCommunicationsInput {
@@ -2644,22 +2659,31 @@ impl std::fmt::Debug for DescribeCommunicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
+    #[doc(hidden)]
     pub case_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
+    #[doc(hidden)]
     pub display_id: std::option::Option<std::string::String>,
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    #[doc(hidden)]
     pub after_time: std::option::Option<std::string::String>,
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    #[doc(hidden)]
     pub before_time: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
+    #[doc(hidden)]
     pub include_resolved_cases: bool,
     /// <p>A resumption point for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
+    #[doc(hidden)]
     pub include_communications: std::option::Option<bool>,
 }
 impl DescribeCasesInput {
@@ -2721,6 +2745,7 @@ impl std::fmt::Debug for DescribeCasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttachmentInput {
@@ -2742,25 +2767,34 @@ impl std::fmt::Debug for DescribeAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCaseInput {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
     /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
     /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
+    #[doc(hidden)]
     pub severity_code: std::option::Option<std::string::String>,
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    #[doc(hidden)]
     pub category_code: std::option::Option<std::string::String>,
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    #[doc(hidden)]
     pub communication_body: std::option::Option<std::string::String>,
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
+    #[doc(hidden)]
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
+    #[doc(hidden)]
     pub issue_type: std::option::Option<std::string::String>,
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
 impl CreateCaseInput {
@@ -2825,12 +2859,16 @@ impl std::fmt::Debug for CreateCaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCommunicationToCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The body of an email communication to add to the support case.</p>
+    #[doc(hidden)]
     pub communication_body: std::option::Option<std::string::String>,
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
+    #[doc(hidden)]
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
+    #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
 impl AddCommunicationToCaseInput {
@@ -2867,9 +2905,11 @@ impl std::fmt::Debug for AddCommunicationToCaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttachmentsToSetInput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
+    #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
 }
 impl AddAttachmentsToSetInput {

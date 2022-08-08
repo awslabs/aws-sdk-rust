@@ -34,6 +34,7 @@ impl PutContactInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub contact_information: std::option::Option<crate::model::ContactInformation>,
 }
 impl GetContactInformationOutput {
@@ -151,6 +152,7 @@ impl DeleteAlternateContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
+    #[doc(hidden)]
     pub alternate_contact: std::option::Option<crate::model::AlternateContact>,
 }
 impl GetAlternateContactOutput {

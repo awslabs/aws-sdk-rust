@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TracingConfiguration {
     /// <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl TracingConfiguration {
@@ -59,10 +60,13 @@ impl TracingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::LogLevel>,
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
+    #[doc(hidden)]
     pub include_execution_data: bool,
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
 }
 impl LoggingConfiguration {
@@ -160,6 +164,7 @@ impl LoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogDestination {
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_log_group: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
 }
 impl LogDestination {
@@ -226,6 +231,7 @@ impl LogDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsLogGroup {
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code> </p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsLogGroup {
@@ -348,8 +354,10 @@ impl AsRef<str> for LogLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of a tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of a tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -421,8 +429,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingDetails {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
+    #[doc(hidden)]
     pub billed_memory_used_in_mb: i64,
     /// <p>Billed duration of your workflow, in milliseconds.</p>
+    #[doc(hidden)]
     pub billed_duration_in_milliseconds: i64,
 }
 impl BillingDetails {
@@ -502,6 +512,7 @@ impl BillingDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchEventsExecutionDataDetails {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
+    #[doc(hidden)]
     pub included: bool,
 }
 impl CloudWatchEventsExecutionDataDetails {
@@ -615,6 +626,7 @@ impl AsRef<str> for SyncExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -626,10 +638,13 @@ pub struct StateMachineListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StateMachineListItem {
@@ -826,8 +841,10 @@ impl AsRef<str> for StateMachineType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -839,12 +856,16 @@ pub struct ExecutionListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The date the execution started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the execution already ended, the date the execution stopped.</p>
+    #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionListItem {
@@ -1093,6 +1114,7 @@ impl AsRef<str> for ExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
+    #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -1104,8 +1126,10 @@ pub struct ActivityListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivityListItem {
@@ -1224,100 +1248,136 @@ impl ActivityListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the event.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HistoryEventType>,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
+    #[doc(hidden)]
     pub id: i64,
     /// <p>The id of the previous event.</p>
+    #[doc(hidden)]
     pub previous_event_id: i64,
     /// <p>Contains details about an activity that failed during an execution.</p>
+    #[doc(hidden)]
     pub activity_failed_event_details:
         std::option::Option<crate::model::ActivityFailedEventDetails>,
     /// <p>Contains details about an activity schedule event that failed during an execution.</p>
+    #[doc(hidden)]
     pub activity_schedule_failed_event_details:
         std::option::Option<crate::model::ActivityScheduleFailedEventDetails>,
     /// <p>Contains details about an activity scheduled during an execution.</p>
+    #[doc(hidden)]
     pub activity_scheduled_event_details:
         std::option::Option<crate::model::ActivityScheduledEventDetails>,
     /// <p>Contains details about the start of an activity during an execution.</p>
+    #[doc(hidden)]
     pub activity_started_event_details:
         std::option::Option<crate::model::ActivityStartedEventDetails>,
     /// <p>Contains details about an activity that successfully terminated during an execution.</p>
+    #[doc(hidden)]
     pub activity_succeeded_event_details:
         std::option::Option<crate::model::ActivitySucceededEventDetails>,
     /// <p>Contains details about an activity timeout that occurred during an execution.</p>
+    #[doc(hidden)]
     pub activity_timed_out_event_details:
         std::option::Option<crate::model::ActivityTimedOutEventDetails>,
     /// <p>Contains details about the failure of a task.</p>
+    #[doc(hidden)]
     pub task_failed_event_details: std::option::Option<crate::model::TaskFailedEventDetails>,
     /// <p>Contains details about a task that was scheduled.</p>
+    #[doc(hidden)]
     pub task_scheduled_event_details: std::option::Option<crate::model::TaskScheduledEventDetails>,
     /// <p>Contains details about a task that failed to start.</p>
+    #[doc(hidden)]
     pub task_start_failed_event_details:
         std::option::Option<crate::model::TaskStartFailedEventDetails>,
     /// <p>Contains details about a task that was started.</p>
+    #[doc(hidden)]
     pub task_started_event_details: std::option::Option<crate::model::TaskStartedEventDetails>,
     /// <p>Contains details about a task that where the submit failed.</p>
+    #[doc(hidden)]
     pub task_submit_failed_event_details:
         std::option::Option<crate::model::TaskSubmitFailedEventDetails>,
     /// <p>Contains details about a submitted task.</p>
+    #[doc(hidden)]
     pub task_submitted_event_details: std::option::Option<crate::model::TaskSubmittedEventDetails>,
     /// <p>Contains details about a task that succeeded.</p>
+    #[doc(hidden)]
     pub task_succeeded_event_details: std::option::Option<crate::model::TaskSucceededEventDetails>,
     /// <p>Contains details about a task that timed out.</p>
+    #[doc(hidden)]
     pub task_timed_out_event_details: std::option::Option<crate::model::TaskTimedOutEventDetails>,
     /// <p>Contains details about an execution failure event.</p>
+    #[doc(hidden)]
     pub execution_failed_event_details:
         std::option::Option<crate::model::ExecutionFailedEventDetails>,
     /// <p>Contains details about the start of the execution.</p>
+    #[doc(hidden)]
     pub execution_started_event_details:
         std::option::Option<crate::model::ExecutionStartedEventDetails>,
     /// <p>Contains details about the successful termination of the execution.</p>
+    #[doc(hidden)]
     pub execution_succeeded_event_details:
         std::option::Option<crate::model::ExecutionSucceededEventDetails>,
     /// <p>Contains details about an abort of an execution.</p>
+    #[doc(hidden)]
     pub execution_aborted_event_details:
         std::option::Option<crate::model::ExecutionAbortedEventDetails>,
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
+    #[doc(hidden)]
     pub execution_timed_out_event_details:
         std::option::Option<crate::model::ExecutionTimedOutEventDetails>,
     /// <p>Contains details about Map state that was started.</p>
+    #[doc(hidden)]
     pub map_state_started_event_details:
         std::option::Option<crate::model::MapStateStartedEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was started.</p>
+    #[doc(hidden)]
     pub map_iteration_started_event_details:
         std::option::Option<crate::model::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that succeeded.</p>
+    #[doc(hidden)]
     pub map_iteration_succeeded_event_details:
         std::option::Option<crate::model::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that failed.</p>
+    #[doc(hidden)]
     pub map_iteration_failed_event_details:
         std::option::Option<crate::model::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was aborted.</p>
+    #[doc(hidden)]
     pub map_iteration_aborted_event_details:
         std::option::Option<crate::model::MapIterationEventDetails>,
     /// <p>Contains details about a lambda function that failed during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_failed_event_details:
         std::option::Option<crate::model::LambdaFunctionFailedEventDetails>,
     /// <p>Contains details about a failed lambda function schedule event that occurred during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_schedule_failed_event_details:
         std::option::Option<crate::model::LambdaFunctionScheduleFailedEventDetails>,
     /// <p>Contains details about a lambda function scheduled during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_scheduled_event_details:
         std::option::Option<crate::model::LambdaFunctionScheduledEventDetails>,
     /// <p>Contains details about a lambda function that failed to start during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_start_failed_event_details:
         std::option::Option<crate::model::LambdaFunctionStartFailedEventDetails>,
     /// <p>Contains details about a lambda function that terminated successfully during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_succeeded_event_details:
         std::option::Option<crate::model::LambdaFunctionSucceededEventDetails>,
     /// <p>Contains details about a lambda function timeout that occurred during an execution.</p>
+    #[doc(hidden)]
     pub lambda_function_timed_out_event_details:
         std::option::Option<crate::model::LambdaFunctionTimedOutEventDetails>,
     /// <p>Contains details about a state entered during an execution.</p>
+    #[doc(hidden)]
     pub state_entered_event_details: std::option::Option<crate::model::StateEnteredEventDetails>,
     /// <p>Contains details about an exit from a state during an execution.</p>
+    #[doc(hidden)]
     pub state_exited_event_details: std::option::Option<crate::model::StateExitedEventDetails>,
 }
 impl HistoryEvent {
@@ -2368,10 +2428,13 @@ pub struct StateExitedEventDetails {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl StateExitedEventDetails {
@@ -2496,6 +2559,7 @@ impl StateExitedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEventExecutionDataDetails {
     /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    #[doc(hidden)]
     pub truncated: bool,
 }
 impl HistoryEventExecutionDataDetails {
@@ -2550,10 +2614,13 @@ impl HistoryEventExecutionDataDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateEnteredEventDetails {
     /// <p>The name of the state.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl StateEnteredEventDetails {
@@ -2651,8 +2718,10 @@ impl StateEnteredEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionTimedOutEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionTimedOutEventDetails {
@@ -2724,8 +2793,10 @@ impl LambdaFunctionTimedOutEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionSucceededEventDetails {
     /// <p>The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl LambdaFunctionSucceededEventDetails {
@@ -2806,8 +2877,10 @@ impl LambdaFunctionSucceededEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionStartFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionStartFailedEventDetails {
@@ -2879,12 +2952,16 @@ impl LambdaFunctionStartFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Contains details about input for an execution history event.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the lambda function.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i64>,
 }
 impl LambdaFunctionScheduledEventDetails {
@@ -2999,8 +3076,10 @@ impl LambdaFunctionScheduledEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduleFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionScheduleFailedEventDetails {
@@ -3072,8 +3151,10 @@ impl LambdaFunctionScheduleFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionFailedEventDetails {
@@ -3145,8 +3226,10 @@ impl LambdaFunctionFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The index of the array belonging to the Map state iteration.</p>
+    #[doc(hidden)]
     pub index: i32,
 }
 impl MapIterationEventDetails {
@@ -3218,6 +3301,7 @@ impl MapIterationEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MapStateStartedEventDetails {
     /// <p>The size of the array for Map state iterations.</p>
+    #[doc(hidden)]
     pub length: i32,
 }
 impl MapStateStartedEventDetails {
@@ -3272,8 +3356,10 @@ impl MapStateStartedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionTimedOutEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ExecutionTimedOutEventDetails {
@@ -3345,8 +3431,10 @@ impl ExecutionTimedOutEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionAbortedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ExecutionAbortedEventDetails {
@@ -3418,8 +3506,10 @@ impl ExecutionAbortedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionSucceededEventDetails {
     /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl ExecutionSucceededEventDetails {
@@ -3500,10 +3590,13 @@ impl ExecutionSucceededEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl ExecutionStartedEventDetails {
@@ -3601,8 +3694,10 @@ impl ExecutionStartedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ExecutionFailedEventDetails {
@@ -3674,12 +3769,16 @@ impl ExecutionFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTimedOutEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl TaskTimedOutEventDetails {
@@ -3788,12 +3887,16 @@ impl TaskTimedOutEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSucceededEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl TaskSucceededEventDetails {
@@ -3911,12 +4014,16 @@ impl TaskSucceededEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSubmittedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl TaskSubmittedEventDetails {
@@ -4034,12 +4141,16 @@ impl TaskSubmittedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSubmitFailedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl TaskSubmitFailedEventDetails {
@@ -4148,8 +4259,10 @@ impl TaskSubmitFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskStartedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl TaskStartedEventDetails {
@@ -4224,12 +4337,16 @@ impl TaskStartedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskStartFailedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl TaskStartFailedEventDetails {
@@ -4338,16 +4455,22 @@ impl TaskStartFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskScheduledEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The region of the scheduled task</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The maximum allowed duration of the task.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
+    #[doc(hidden)]
     pub heartbeat_in_seconds: std::option::Option<i64>,
 }
 impl TaskScheduledEventDetails {
@@ -4490,12 +4613,16 @@ impl TaskScheduledEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskFailedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The service name of the resource in a task state.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl TaskFailedEventDetails {
@@ -4604,8 +4731,10 @@ impl TaskFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityTimedOutEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ActivityTimedOutEventDetails {
@@ -4677,8 +4806,10 @@ impl ActivityTimedOutEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivitySucceededEventDetails {
     /// <p>The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
+    #[doc(hidden)]
     pub output_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
 }
 impl ActivitySucceededEventDetails {
@@ -4759,6 +4890,7 @@ impl ActivitySucceededEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityStartedEventDetails {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
+    #[doc(hidden)]
     pub worker_name: std::option::Option<std::string::String>,
 }
 impl ActivityStartedEventDetails {
@@ -4813,14 +4945,19 @@ impl ActivityStartedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
+    #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the activity task.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
+    #[doc(hidden)]
     pub heartbeat_in_seconds: std::option::Option<i64>,
 }
 impl ActivityScheduledEventDetails {
@@ -4952,8 +5089,10 @@ impl ActivityScheduledEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityScheduleFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ActivityScheduleFailedEventDetails {
@@ -5025,8 +5164,10 @@ impl ActivityScheduleFailedEventDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityFailedEventDetails {
     /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
+    #[doc(hidden)]
     pub cause: std::option::Option<std::string::String>,
 }
 impl ActivityFailedEventDetails {

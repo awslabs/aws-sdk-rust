@@ -64,8 +64,10 @@ impl UpdateRoutingControlStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingControlsOutput {
     /// <p>The list of routing controls.</p>
+    #[doc(hidden)]
     pub routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutingControlsOutput {
@@ -147,10 +149,13 @@ impl ListRoutingControlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoutingControlStateOutput {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
+    #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The state of the routing control.</p>
+    #[doc(hidden)]
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
     /// <p>The routing control name.</p>
+    #[doc(hidden)]
     pub routing_control_name: std::option::Option<std::string::String>,
 }
 impl GetRoutingControlStateOutput {

@@ -5348,12 +5348,16 @@ impl UpdatePricingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    #[doc(hidden)]
     pub pricing_plan_arn: std::option::Option<std::string::String>,
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The optional pagination token returned by a previous call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {
@@ -5390,12 +5394,16 @@ impl std::fmt::Debug for ListPricingRulesAssociatedToPricingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListPricingRulesFilter>,
     /// <p> The maximum number of pricing rules to retrieve. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token used on subsequent call to get pricing rules. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPricingRulesInput {
@@ -5432,20 +5440,28 @@ impl std::fmt::Debug for ListPricingRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePricingRuleInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The pricing rule description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The scope of pricing rule that indicates if it is globally applicable, or is service-specific. </p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::PricingRuleScope>,
     /// <p> The type of pricing rule. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PricingRuleType>,
     /// <p> A percentage modifier applied on the public pricing rates. </p>
+    #[doc(hidden)]
     pub modifier_percentage: std::option::Option<f64>,
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5506,6 +5522,7 @@ impl std::fmt::Debug for CreatePricingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingRuleInput {
@@ -5527,14 +5544,19 @@ impl std::fmt::Debug for DeletePricingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The new description for the pricing rule. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The new pricing rule type. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PricingRuleType>,
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
+    #[doc(hidden)]
     pub modifier_percentage: std::option::Option<f64>,
 }
 impl UpdatePricingRuleInput {
@@ -5576,8 +5598,10 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
+    #[doc(hidden)]
     pub pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociatePricingRulesInput {
@@ -5604,8 +5628,10 @@ impl std::fmt::Debug for DisassociatePricingRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePricingRulesInput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
+    #[doc(hidden)]
     pub pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociatePricingRulesInput {
@@ -5632,12 +5658,16 @@ impl std::fmt::Debug for AssociatePricingRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingPlansAssociatedWithPricingRuleInput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
+    #[doc(hidden)]
     pub pricing_rule_arn: std::option::Option<std::string::String>,
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The optional pagination token returned by a previous call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
@@ -5674,12 +5704,16 @@ impl std::fmt::Debug for ListPricingPlansAssociatedWithPricingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPricingPlansInput {
     /// <p>The preferred billing period to get pricing plan. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListPricingPlansFilter>,
     /// <p>The maximum number of pricing plans to retrieve.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token used on subsequent call to get pricing plans. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPricingPlansInput {
@@ -5716,14 +5750,19 @@ impl std::fmt::Debug for ListPricingPlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pricing plan description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
+    #[doc(hidden)]
     pub pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5769,6 +5808,7 @@ impl std::fmt::Debug for CreatePricingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingPlanInput {
@@ -5790,10 +5830,13 @@ impl std::fmt::Debug for DeletePricingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pricing plan description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdatePricingPlanInput {
@@ -5825,14 +5868,19 @@ impl std::fmt::Debug for UpdatePricingPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> (Optional) The pagination token returned by a previous request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListResourcesAssociatedToCustomLineItemFilter>,
 }
 impl ListResourcesAssociatedToCustomLineItemInput {
@@ -5876,10 +5924,13 @@ impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The billing period range in which the custom line item request will be applied. </p>
+    #[doc(hidden)]
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
@@ -5913,10 +5964,13 @@ impl std::fmt::Debug for BatchDisassociateResourcesFromCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> A list containing the ARNs of the resources to be associated. </p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The billing period range in which the custom line item request will be applied. </p>
+    #[doc(hidden)]
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
 }
 impl BatchAssociateResourcesToCustomLineItemInput {
@@ -5950,12 +6004,16 @@ impl std::fmt::Debug for BatchAssociateResourcesToCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p> The maximum number of billing groups to retrieve. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token used on subsequent calls to get custom line items (FFLIs). </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListCustomLineItemsFilter>,
 }
 impl ListCustomLineItemsInput {
@@ -5992,19 +6050,26 @@ impl std::fmt::Debug for ListCustomLineItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomLineItemInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The name of the custom line item. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
+    #[doc(hidden)]
     pub billing_group_arn: std::option::Option<std::string::String>,
     /// <p> A time range for which the custom line item is effective. </p>
+    #[doc(hidden)]
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
+    #[doc(hidden)]
     pub charge_details: std::option::Option<crate::model::CustomLineItemChargeDetails>,
 }
 impl CreateCustomLineItemInput {
@@ -6063,8 +6128,10 @@ impl std::fmt::Debug for CreateCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The billing period range in which the custom line item request will be applied. </p>
+    #[doc(hidden)]
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
 }
 impl DeleteCustomLineItemInput {
@@ -6093,14 +6160,19 @@ impl std::fmt::Debug for DeleteCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemInput {
     /// <p> The ARN of the custom line item to be updated. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The new name for the custom line item. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The new line item description of the custom line item. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
+    #[doc(hidden)]
     pub charge_details: std::option::Option<crate::model::UpdateCustomLineItemChargeDetails>,
     /// <p> The billing period range in which the custom line item request will be applied. </p>
+    #[doc(hidden)]
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
 }
 impl UpdateCustomLineItemInput {
@@ -6146,8 +6218,10 @@ impl std::fmt::Debug for UpdateCustomLineItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The array of account IDs to disassociate. </p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateAccountsInput {
@@ -6174,8 +6248,10 @@ impl std::fmt::Debug for DisassociateAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The associating array of account IDs. </p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateAccountsInput {
@@ -6202,12 +6278,16 @@ impl std::fmt::Debug for AssociateAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupsInput {
     /// <p>The preferred billing period to get billing groups. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p>The maximum number of billing groups to retrieve. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token used on subsequent calls to get billing groups. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListBillingGroupsFilter>,
 }
 impl ListBillingGroupsInput {
@@ -6244,18 +6324,25 @@ impl std::fmt::Debug for ListBillingGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBillingGroupInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The billing group name. The names must be unique. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    #[doc(hidden)]
     pub account_grouping: std::option::Option<crate::model::AccountGrouping>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    #[doc(hidden)]
     pub computation_preference: std::option::Option<crate::model::ComputationPreference>,
     /// <p> The account ID that serves as the main account in a billing group. </p>
+    #[doc(hidden)]
     pub primary_account_id: std::option::Option<std::string::String>,
     /// <p>The billing group description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6313,6 +6400,7 @@ impl std::fmt::Debug for CreateBillingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteBillingGroupInput {
@@ -6334,14 +6422,19 @@ impl std::fmt::Debug for DeleteBillingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BillingGroupStatus>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    #[doc(hidden)]
     pub computation_preference: std::option::Option<crate::model::ComputationPreference>,
     /// <p>A description of the billing group. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateBillingGroupInput {
@@ -6385,8 +6478,10 @@ impl std::fmt::Debug for UpdateBillingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags to delete from the resource as a list of key-value pairs. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6413,8 +6508,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags to add to the resource as a list of key-value pairs. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6445,6 +6542,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6466,12 +6564,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupCostReportsInput {
     /// <p>The preferred billing period for your report. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p>The maximum number of reports to retrieve. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token used on subsequent calls to get reports. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListBillingGroupCostReportsFilter>,
 }
 impl ListBillingGroupCostReportsInput {
@@ -6508,13 +6610,16 @@ impl std::fmt::Debug for ListBillingGroupCostReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssociationsInput {
     /// <p> The preferred billing period to get account associations. </p>
+    #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListAccountAssociationsFilter>,
     /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssociationsInput {

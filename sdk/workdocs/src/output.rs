@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>The user information.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl UpdateUserOutput {
@@ -206,8 +207,10 @@ impl RemoveAllResourcePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateDocumentVersionUploadOutput {
     /// <p>The document metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The upload metadata.</p>
+    #[doc(hidden)]
     pub upload_metadata: std::option::Option<crate::model::UploadMetadata>,
 }
 impl InitiateDocumentVersionUploadOutput {
@@ -285,10 +288,13 @@ impl InitiateDocumentVersionUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesOutput {
     /// <p>The folders in the specified folder.</p>
+    #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
     /// <p>The documents in the specified collection.</p>
+    #[doc(hidden)]
     pub documents: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetResourcesOutput {
@@ -395,6 +401,7 @@ impl GetResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderPathOutput {
     /// <p>The path information.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
 impl GetFolderPathOutput {
@@ -447,8 +454,10 @@ impl GetFolderPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderOutput {
     /// <p>The metadata of the folder.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::FolderMetadata>,
     /// <p>The custom metadata on the folder.</p>
+    #[doc(hidden)]
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -544,8 +553,10 @@ impl GetFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentVersionOutput {
     /// <p>The version metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
     /// <p>The custom metadata on the document version.</p>
+    #[doc(hidden)]
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -641,6 +652,7 @@ impl GetDocumentVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentPathOutput {
     /// <p>The path information.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
 impl GetDocumentPathOutput {
@@ -693,8 +705,10 @@ impl GetDocumentPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentOutput {
     /// <p>The metadata details of the document.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The custom metadata on the document.</p>
+    #[doc(hidden)]
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -790,6 +804,7 @@ impl GetDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentUserOutput {
     /// <p>Metadata of the user.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl GetCurrentUserOutput {
@@ -842,11 +857,14 @@ impl GetCurrentUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersOutput {
     /// <p>The users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The total number of users included in the results.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub total_number_of_users: std::option::Option<i64>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -947,8 +965,10 @@ impl DescribeUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRootFoldersOutput {
     /// <p>The user's special folders.</p>
+    #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
     /// <p>The marker for the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeRootFoldersOutput {
@@ -1029,8 +1049,10 @@ impl DescribeRootFoldersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePermissionsOutput {
     /// <p>The principals.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsOutput {
@@ -1111,8 +1133,10 @@ impl DescribeResourcePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationSubscriptionsOutput {
     /// <p>The subscriptions.</p>
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationSubscriptionsOutput {
@@ -1193,8 +1217,10 @@ impl DescribeNotificationSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupsOutput {
     /// <p>The list of groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeGroupsOutput {
@@ -1275,10 +1301,13 @@ impl DescribeGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderContentsOutput {
     /// <p>The subfolders in the specified folder.</p>
+    #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
     /// <p>The documents in the specified folder.</p>
+    #[doc(hidden)]
     pub documents: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsOutput {
@@ -1385,9 +1414,11 @@ impl DescribeFolderContentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
+    #[doc(hidden)]
     pub document_versions:
         std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsOutput {
@@ -1471,8 +1502,10 @@ impl DescribeDocumentVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommentsOutput {
     /// <p>The list of comments for the specified document version.</p>
+    #[doc(hidden)]
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsOutput {
@@ -1553,8 +1586,10 @@ impl DescribeCommentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivitiesOutput {
     /// <p>The list of activities for the specified user and time period.</p>
+    #[doc(hidden)]
     pub user_activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
     /// <p>The marker for the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeActivitiesOutput {
@@ -1905,6 +1940,7 @@ impl DeactivateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The user information.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
@@ -1957,6 +1993,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotificationSubscriptionOutput {
     /// <p>The subscription.</p>
+    #[doc(hidden)]
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
 impl CreateNotificationSubscriptionOutput {
@@ -2044,6 +2081,7 @@ impl CreateLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderOutput {
     /// <p>The metadata of the folder.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::FolderMetadata>,
 }
 impl CreateFolderOutput {
@@ -2131,6 +2169,7 @@ impl CreateCustomMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCommentOutput {
     /// <p>The comment that has been created.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl CreateCommentOutput {
@@ -2185,6 +2224,7 @@ impl CreateCommentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddResourcePermissionsOutput {
     /// <p>The share results.</p>
+    #[doc(hidden)]
     pub share_results: std::option::Option<std::vec::Vec<crate::model::ShareResult>>,
 }
 impl AddResourcePermissionsOutput {
@@ -2248,6 +2288,7 @@ impl AddResourcePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateUserOutput {
     /// <p>The user information.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl ActivateUserOutput {

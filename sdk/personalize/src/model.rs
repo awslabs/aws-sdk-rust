@@ -5,9 +5,11 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
+    #[doc(hidden)]
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
+    #[doc(hidden)]
     pub min_recommendation_requests_per_second: std::option::Option<i32>,
 }
 impl RecommenderConfig {
@@ -105,6 +107,7 @@ impl RecommenderConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
+    #[doc(hidden)]
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -180,8 +183,10 @@ impl CampaignConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
+    #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -253,18 +258,23 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a solution version fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl SolutionVersionSummary {
@@ -411,8 +421,10 @@ impl SolutionVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionSummary {
     /// <p>The name of the solution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -420,10 +432,13 @@ pub struct SolutionSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the solution was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SolutionSummary {
@@ -567,14 +582,19 @@ impl SolutionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the schema was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DatasetSchemaSummary {
@@ -758,14 +778,19 @@ impl AsRef<str> for Domain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommenderSummary {
     /// <p>The name of the recommender.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
     /// <ul>
@@ -773,10 +798,13 @@ pub struct RecommenderSummary {
     /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecommenderSummary {
@@ -980,16 +1008,22 @@ impl RecommenderSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecipeSummary {
     /// <p>The name of the recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The status of the recipe.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the recipe was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl RecipeSummary {
@@ -1186,18 +1220,25 @@ impl AsRef<str> for RecipeProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterSummary {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the filter was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the filter was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>If the filter failed, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The status of the filter.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl FilterSummary {
@@ -1366,8 +1407,10 @@ impl FilterSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTrackerSummary {
     /// <p>The name of the event tracker.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
+    #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
     /// <p>The status of the event tracker.</p>
     /// <p>An event tracker can be in one of the following states:</p>
@@ -1375,10 +1418,13 @@ pub struct EventTrackerSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the event tracker was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventTrackerSummary {
@@ -1525,8 +1571,10 @@ impl EventTrackerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
@@ -1535,6 +1583,7 @@ pub struct DatasetSummary {
     /// <li> <p>Users</p> </li>
     /// <li> <p>Event-Interactions</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -1542,10 +1591,13 @@ pub struct DatasetSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
@@ -1724,22 +1776,29 @@ impl DatasetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset import job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+    #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl DatasetImportJobSummary {
@@ -1978,8 +2037,10 @@ impl AsRef<str> for ImportMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroupSummary {
     /// <p>The name of the dataset group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
@@ -1987,14 +2048,19 @@ pub struct DatasetGroupSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset group was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The domain of a Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DatasetGroupSummary {
@@ -2178,20 +2244,26 @@ impl DatasetGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset export job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl DatasetExportJobSummary {
@@ -2355,8 +2427,10 @@ impl DatasetExportJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignSummary {
     /// <p>The name of the campaign.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -2364,12 +2438,16 @@ pub struct CampaignSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl CampaignSummary {
@@ -2533,8 +2611,10 @@ impl CampaignSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
+    #[doc(hidden)]
     pub batch_segment_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the batch segment job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
@@ -2543,14 +2623,19 @@ pub struct BatchSegmentJobSummary {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch segment job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch segment job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the batch segment job failed, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl BatchSegmentJobSummary {
@@ -2740,8 +2825,10 @@ impl BatchSegmentJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the batch inference job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
@@ -2750,14 +2837,19 @@ pub struct BatchInferenceJobSummary {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch inference job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch inference job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the batch inference job failed, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution version used by the batch inference job.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl BatchInferenceJobSummary {
@@ -2947,28 +3039,39 @@ impl BatchInferenceJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionVersion {
     /// <p>The ARN of the solution version.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub perform_hpo: bool,
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
+    #[doc(hidden)]
     pub perform_auto_ml: bool,
     /// <p>The ARN of the recipe used in the solution.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>Describes the configuration properties for the solution.</p>
+    #[doc(hidden)]
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
+    #[doc(hidden)]
     pub training_hours: std::option::Option<f64>,
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
+    #[doc(hidden)]
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
+    #[doc(hidden)]
     pub tuned_hpo_params: std::option::Option<crate::model::TunedHpoParams>,
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
@@ -2980,12 +3083,16 @@ pub struct SolutionVersion {
     /// <li> <p>CREATE STOPPING</p> </li>
     /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If training a solution version fails, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SolutionVersion {
@@ -3335,6 +3442,7 @@ impl SolutionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
+    #[doc(hidden)]
     pub algorithm_hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3468,18 +3576,24 @@ impl AsRef<str> for TrainingMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
+    #[doc(hidden)]
     pub event_value_threshold: std::option::Option<std::string::String>,
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
+    #[doc(hidden)]
     pub hpo_config: std::option::Option<crate::model::HpoConfig>,
     /// <p>Lists the hyperparameter names and ranges.</p>
+    #[doc(hidden)]
     pub algorithm_hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Lists the feature transformation parameters.</p>
+    #[doc(hidden)]
     pub feature_transformation_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
+    #[doc(hidden)]
     pub auto_ml_config: std::option::Option<crate::model::AutoMlConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
+    #[doc(hidden)]
     pub optimization_objective: std::option::Option<crate::model::OptimizationObjective>,
 }
 impl SolutionConfig {
@@ -3682,8 +3796,10 @@ impl SolutionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
+    #[doc(hidden)]
     pub item_attribute: std::option::Option<std::string::String>,
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
+    #[doc(hidden)]
     pub objective_sensitivity: std::option::Option<crate::model::ObjectiveSensitivity>,
 }
 impl OptimizationObjective {
@@ -3826,8 +3942,10 @@ impl AsRef<str> for ObjectiveSensitivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlConfig {
     /// <p>The metric to optimize.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The list of candidate recipes.</p>
+    #[doc(hidden)]
     pub recipe_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AutoMlConfig {
@@ -3910,10 +4028,13 @@ pub struct HpoConfig {
     /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
+    #[doc(hidden)]
     pub hpo_objective: std::option::Option<crate::model::HpoObjective>,
     /// <p>Describes the resource configuration for HPO.</p>
+    #[doc(hidden)]
     pub hpo_resource_config: std::option::Option<crate::model::HpoResourceConfig>,
     /// <p>The hyperparameters and their allowable ranges.</p>
+    #[doc(hidden)]
     pub algorithm_hyper_parameter_ranges: std::option::Option<crate::model::HyperParameterRanges>,
 }
 impl HpoConfig {
@@ -4026,12 +4147,15 @@ impl HpoConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
+    #[doc(hidden)]
     pub integer_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their ranges.</p>
+    #[doc(hidden)]
     pub continuous_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their ranges.</p>
+    #[doc(hidden)]
     pub categorical_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
 }
@@ -4175,8 +4299,10 @@ impl HyperParameterRanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the categories for the hyperparameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CategoricalHyperParameterRange {
@@ -4257,10 +4383,13 @@ impl CategoricalHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: f64,
     /// <p>The maximum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: f64,
 }
 impl ContinuousHyperParameterRange {
@@ -4349,10 +4478,13 @@ impl ContinuousHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The maximum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: i32,
 }
 impl IntegerHyperParameterRange {
@@ -4441,8 +4573,10 @@ impl IntegerHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
+    #[doc(hidden)]
     pub max_number_of_training_jobs: std::option::Option<std::string::String>,
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
+    #[doc(hidden)]
     pub max_parallel_training_jobs: std::option::Option<std::string::String>,
 }
 impl HpoResourceConfig {
@@ -4531,10 +4665,13 @@ impl HpoResourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>A regular expression for finding the metric in the training job logs.</p>
+    #[doc(hidden)]
     pub metric_regex: std::option::Option<std::string::String>,
 }
 impl HpoObjective {
@@ -4623,22 +4760,31 @@ impl HpoObjective {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Solution {
     /// <p>The name of the solution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub perform_hpo: bool,
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
+    #[doc(hidden)]
     pub perform_auto_ml: bool,
     /// <p>The ARN of the recipe used to create the solution.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>Describes the configuration properties for the solution.</p>
+    #[doc(hidden)]
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
+    #[doc(hidden)]
     pub auto_ml_result: std::option::Option<crate::model::AutoMlResult>,
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -4646,12 +4792,16 @@ pub struct Solution {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the solution.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
+    #[doc(hidden)]
     pub latest_solution_version: std::option::Option<crate::model::SolutionVersionSummary>,
 }
 impl Solution {
@@ -4949,6 +5099,7 @@ impl Solution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
+    #[doc(hidden)]
     pub best_recipe_arn: std::option::Option<std::string::String>,
 }
 impl AutoMlResult {
@@ -5006,16 +5157,22 @@ impl AutoMlResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSchema {
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The schema.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the schema was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DatasetSchema {
@@ -5161,18 +5318,25 @@ impl DatasetSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the recommender.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for. </p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the recommender.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -5181,12 +5345,16 @@ pub struct Recommender {
     /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If a recommender fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Provides a summary of the latest updates to the recommender. </p>
+    #[doc(hidden)]
     pub latest_recommender_update: std::option::Option<crate::model::RecommenderUpdateSummary>,
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
+    #[doc(hidden)]
     pub model_metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
 impl Recommender {
@@ -5468,10 +5636,13 @@ impl Recommender {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommenderUpdateSummary {
     /// <p>The configuration details of the recommender update.</p>
+    #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the recommender update.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -5480,8 +5651,10 @@ pub struct RecommenderUpdateSummary {
     /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If a recommender update fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl RecommenderUpdateSummary {
@@ -5634,18 +5807,25 @@ impl RecommenderUpdateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recipe {
     /// <p>The name of the recipe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the FeatureTransformation object.</p>
+    #[doc(hidden)]
     pub feature_transformation_arn: std::option::Option<std::string::String>,
     /// <p>The status of the recipe.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The description of the recipe.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>One of the following values:</p>
     /// <ul>
@@ -5653,8 +5833,10 @@ pub struct Recipe {
     /// <li> <p>RELATED_ITEMS</p> </li>
     /// <li> <p>USER_PERSONALIZATION</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub recipe_type: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Recipe {
@@ -5875,20 +6057,28 @@ impl Recipe {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the filter was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the filter was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>If the filter failed, the reason for its failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The status of the filter.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -6077,21 +6267,27 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureTransformation {
     /// <p>The name of the feature transformation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
+    #[doc(hidden)]
     pub feature_transformation_arn: std::option::Option<std::string::String>,
     /// <p>Provides the default parameters for feature transformation.</p>
+    #[doc(hidden)]
     pub default_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the feature transformation.</p>
     /// <p>A feature transformation can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl FeatureTransformation {
@@ -6275,14 +6471,19 @@ impl FeatureTransformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTracker {
     /// <p>The name of the event tracker.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event tracker.</p>
+    #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    #[doc(hidden)]
     pub tracking_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The status of the event tracker.</p>
     /// <p>An event tracker can be in one of the following states:</p>
@@ -6290,10 +6491,13 @@ pub struct EventTracker {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EventTracker {
@@ -6498,28 +6702,38 @@ impl EventTracker {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJob {
     /// <p>The name of the import job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, provides the reason why.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The import mode used by the dataset import job to import new records.</p>
+    #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl DatasetImportJob {
@@ -6758,6 +6972,7 @@ impl DatasetImportJob {
 pub struct DataSource {
     /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    #[doc(hidden)]
     pub data_location: std::option::Option<std::string::String>,
 }
 impl DataSource {
@@ -6819,8 +7034,10 @@ impl DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroup {
     /// <p>The name of the dataset group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
@@ -6828,18 +7045,25 @@ pub struct DatasetGroup {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If creating a dataset group fails, provides the reason why.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The domain of a Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DatasetGroup {
@@ -7061,29 +7285,39 @@ impl DatasetGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetExportJob {
     /// <p>The name of the export job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    #[doc(hidden)]
     pub ingestion_mode: std::option::Option<crate::model::IngestionMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, provides the reason why.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl DatasetExportJob {
@@ -7324,6 +7558,7 @@ impl DatasetExportJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl DatasetExportJobOutput {
@@ -7381,8 +7616,10 @@ impl DatasetExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3DataConfig {
@@ -7513,10 +7750,13 @@ impl AsRef<str> for IngestionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>One of the following values:</p>
     /// <ul>
@@ -7524,8 +7764,10 @@ pub struct Dataset {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the associated schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -7533,10 +7775,13 @@ pub struct Dataset {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp that shows when the dataset was updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Dataset {
@@ -7749,14 +7994,19 @@ impl Dataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Campaign {
     /// <p>The name of the campaign.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    #[doc(hidden)]
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
+    #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -7764,14 +8014,19 @@ pub struct Campaign {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
+    #[doc(hidden)]
     pub latest_campaign_update: std::option::Option<crate::model::CampaignUpdateSummary>,
 }
 impl Campaign {
@@ -8017,10 +8272,13 @@ impl Campaign {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
+    #[doc(hidden)]
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
+    #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
     /// <p>The status of the campaign update.</p>
     /// <p>A campaign update can be in one of the following states:</p>
@@ -8028,12 +8286,16 @@ pub struct CampaignUpdateSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If a campaign update fails, the reason behind the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign update was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CampaignUpdateSummary {
@@ -8220,22 +8482,31 @@ impl CampaignUpdateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSegmentJob {
     /// <p>The name of the batch segment job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
+    #[doc(hidden)]
     pub batch_segment_job_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter used on the batch segment job.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>If the batch segment job failed, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>The Amazon S3 path that leads to the input data used to generate the batch segment job.</p>
+    #[doc(hidden)]
     pub job_input: std::option::Option<crate::model::BatchSegmentJobInput>,
     /// <p>The Amazon S3 bucket that contains the output data generated by the batch segment job.</p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::BatchSegmentJobOutput>,
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch segment job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
@@ -8244,10 +8515,13 @@ pub struct BatchSegmentJob {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch segment job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch segment job last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchSegmentJob {
@@ -8528,6 +8802,7 @@ impl BatchSegmentJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchSegmentJobOutput {
@@ -8585,6 +8860,7 @@ impl BatchSegmentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchSegmentJobInput {
@@ -8642,24 +8918,34 @@ impl BatchSegmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJob {
     /// <p>The name of the batch inference job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter used on the batch inference job.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>If the batch inference job failed, the reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The number of recommendations generated by the batch inference job. This number includes the error messages generated for failed input records.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference job.</p>
+    #[doc(hidden)]
     pub job_input: std::option::Option<crate::model::BatchInferenceJobInput>,
     /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::BatchInferenceJobOutput>,
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
@@ -8668,10 +8954,13 @@ pub struct BatchInferenceJob {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the batch inference job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the batch inference job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchInferenceJob {
@@ -8981,6 +9270,7 @@ impl BatchInferenceJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
+    #[doc(hidden)]
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9056,6 +9346,7 @@ impl BatchInferenceJobConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
+    #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchInferenceJobOutput {
@@ -9113,6 +9404,7 @@ impl BatchInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
+    #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchInferenceJobInput {
@@ -9170,27 +9462,37 @@ impl BatchInferenceJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Algorithm {
     /// <p>The name of the algorithm.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
+    #[doc(hidden)]
     pub algorithm_image: std::option::Option<crate::model::AlgorithmImage>,
     /// <p>Specifies the default hyperparameters.</p>
+    #[doc(hidden)]
     pub default_hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
+    #[doc(hidden)]
     pub default_hyper_parameter_ranges:
         std::option::Option<crate::model::DefaultHyperParameterRanges>,
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
+    #[doc(hidden)]
     pub default_resource_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The training input mode.</p>
+    #[doc(hidden)]
     pub training_input_mode: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Algorithm {
@@ -9465,12 +9767,15 @@ impl Algorithm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
+    #[doc(hidden)]
     pub integer_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their default ranges.</p>
+    #[doc(hidden)]
     pub continuous_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their default ranges.</p>
+    #[doc(hidden)]
     pub categorical_hyper_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
 }
@@ -9620,10 +9925,13 @@ impl DefaultHyperParameterRanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultCategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the categories for the hyperparameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether the hyperparameter is tunable.</p>
+    #[doc(hidden)]
     pub is_tunable: bool,
 }
 impl DefaultCategoricalHyperParameterRange {
@@ -9721,12 +10029,16 @@ impl DefaultCategoricalHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: f64,
     /// <p>The maximum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: f64,
     /// <p>Whether the hyperparameter is tunable.</p>
+    #[doc(hidden)]
     pub is_tunable: bool,
 }
 impl DefaultContinuousHyperParameterRange {
@@ -9832,12 +10144,16 @@ impl DefaultContinuousHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultIntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The maximum allowable value for the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: i32,
     /// <p>Indicates whether the hyperparameter is tunable.</p>
+    #[doc(hidden)]
     pub is_tunable: bool,
 }
 impl DefaultIntegerHyperParameterRange {
@@ -9943,8 +10259,10 @@ impl DefaultIntegerHyperParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
+    #[doc(hidden)]
     pub docker_uri: std::option::Option<std::string::String>,
 }
 impl AlgorithmImage {

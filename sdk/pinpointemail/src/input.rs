@@ -6890,10 +6890,13 @@ impl UpdateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to modify.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
@@ -6927,9 +6930,11 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
     /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6957,8 +6962,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6985,18 +6992,25 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEmailInput {
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>An object that contains the recipients of the email message.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+    #[doc(hidden)]
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
+    #[doc(hidden)]
     pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::EmailContent>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
+    #[doc(hidden)]
     pub email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl SendEmailInput {
@@ -7051,6 +7065,7 @@ impl std::fmt::Debug for SendEmailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityMailFromAttributesInput {
     /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
     /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
@@ -7058,9 +7073,11 @@ pub struct PutEmailIdentityMailFromAttributesInput {
     /// <li> <p>It can't be used to receive email.</p> </li>
     /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mail_from_domain: std::option::Option<std::string::String>,
     /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl PutEmailIdentityMailFromAttributesInput {
@@ -7100,10 +7117,12 @@ impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
+    #[doc(hidden)]
     pub email_forwarding_enabled: bool,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
@@ -7132,9 +7151,11 @@ impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+    #[doc(hidden)]
     pub signing_enabled: bool,
 }
 impl PutEmailIdentityDkimAttributesInput {
@@ -7163,8 +7184,10 @@ impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
+    #[doc(hidden)]
     pub dashboard_enabled: bool,
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
+    #[doc(hidden)]
     pub subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
@@ -7194,8 +7217,10 @@ impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    #[doc(hidden)]
     pub warmup_percentage: std::option::Option<i32>,
 }
 impl PutDedicatedIpWarmupAttributesInput {
@@ -7222,8 +7247,10 @@ impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+    #[doc(hidden)]
     pub destination_pool_name: std::option::Option<std::string::String>,
 }
 impl PutDedicatedIpInPoolInput {
@@ -7250,8 +7277,10 @@ impl std::fmt::Debug for PutDedicatedIpInPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The domain that you want to use to track open and click events.</p>
+    #[doc(hidden)]
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl PutConfigurationSetTrackingOptionsInput {
@@ -7278,8 +7307,10 @@ impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl PutConfigurationSetSendingOptionsInput {
@@ -7306,8 +7337,10 @@ impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+    #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
 }
 impl PutConfigurationSetReputationOptionsInput {
@@ -7337,10 +7370,13 @@ impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
+    #[doc(hidden)]
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
 impl PutConfigurationSetDeliveryOptionsInput {
@@ -7374,6 +7410,7 @@ pub struct PutAccountSendingAttributesInput {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
+    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl PutAccountSendingAttributesInput {
@@ -7397,6 +7434,7 @@ impl std::fmt::Debug for PutAccountSendingAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountDedicatedIpWarmupAttributesInput {
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+    #[doc(hidden)]
     pub auto_warmup_enabled: bool,
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
@@ -7418,6 +7456,7 @@ impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -7439,9 +7478,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailIdentitiesInput {
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListEmailIdentitiesInput {
@@ -7469,14 +7510,19 @@ impl std::fmt::Debug for ListEmailIdentitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainDeliverabilityCampaignsInput {
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain to obtain deliverability data for.</p>
+    #[doc(hidden)]
     pub subscribed_domain: std::option::Option<std::string::String>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListDomainDeliverabilityCampaignsInput {
@@ -7518,9 +7564,11 @@ impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliverabilityTestReportsInput {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListDeliverabilityTestReportsInput {
@@ -7548,8 +7596,10 @@ impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDedicatedIpPoolsInput {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListDedicatedIpPoolsInput {
@@ -7576,8 +7626,10 @@ impl std::fmt::Debug for ListDedicatedIpPoolsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsInput {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListConfigurationSetsInput {
@@ -7604,6 +7656,7 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityInput {
     /// <p>The email identity that you want to retrieve details for.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
 }
 impl GetEmailIdentityInput {
@@ -7625,10 +7678,13 @@ impl std::fmt::Debug for GetEmailIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainStatisticsReportInput {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDomainStatisticsReportInput {
@@ -7660,6 +7716,7 @@ impl std::fmt::Debug for GetDomainStatisticsReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInput {
@@ -7681,6 +7738,7 @@ impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
 }
 impl GetDeliverabilityTestReportInput {
@@ -7714,10 +7772,13 @@ impl std::fmt::Debug for GetDeliverabilityDashboardOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpsInput {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
+    #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl GetDedicatedIpsInput {
@@ -7749,6 +7810,7 @@ impl std::fmt::Debug for GetDedicatedIpsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpInput {
@@ -7770,6 +7832,7 @@ impl std::fmt::Debug for GetDedicatedIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {
@@ -7791,6 +7854,7 @@ impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetInput {
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetInput {
@@ -7812,6 +7876,7 @@ impl std::fmt::Debug for GetConfigurationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
+    #[doc(hidden)]
     pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetBlacklistReportsInput {
@@ -7844,6 +7909,7 @@ impl std::fmt::Debug for GetAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailIdentityInput {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
 }
 impl DeleteEmailIdentityInput {
@@ -7865,6 +7931,7 @@ impl std::fmt::Debug for DeleteEmailIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
+    #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
 }
 impl DeleteDedicatedIpPoolInput {
@@ -7886,8 +7953,10 @@ impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to delete.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
@@ -7914,6 +7983,7 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set that you want to delete.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
@@ -7935,8 +8005,10 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityInput {
     /// <p>The email address or domain that you want to verify.</p>
+    #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEmailIdentityInput {
@@ -7963,12 +8035,16 @@ impl std::fmt::Debug for CreateEmailIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::EmailContent>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeliverabilityTestReportInput {
@@ -8005,8 +8081,10 @@ impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
+    #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDedicatedIpPoolInput {
@@ -8033,10 +8111,13 @@ impl std::fmt::Debug for CreateDedicatedIpPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that you want to add an event destination to.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>A name that identifies the event destination within the configuration set.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
 impl CreateConfigurationSetEventDestinationInput {
@@ -8070,16 +8151,22 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
+    #[doc(hidden)]
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub sending_options: std::option::Option<crate::model::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConfigurationSetInput {

@@ -98,6 +98,7 @@ pub struct ListTagsForResourceOutput {
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -183,9 +184,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub repository_association_summaries:
         std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoryAssociationsOutput {
@@ -275,9 +278,11 @@ impl ListRepositoryAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsOutput {
     /// <p> List of recommendations for the requested code review. </p>
+    #[doc(hidden)]
     pub recommendation_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
     /// <p> Pagination token. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsOutput {
@@ -364,9 +369,11 @@ impl ListRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationFeedbackOutput {
     /// <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
+    #[doc(hidden)]
     pub recommendation_feedback_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
     /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationFeedbackOutput {
@@ -456,8 +463,10 @@ impl ListRecommendationFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCodeReviewsOutput {
     /// <p> A list of code reviews that meet the criteria of the request. </p>
+    #[doc(hidden)]
     pub code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
     /// <p> Pagination token. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCodeReviewsOutput {
@@ -539,12 +548,14 @@ impl ListCodeReviewsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRepositoryOutput {
     /// <p>Information about the disassociated repository.</p>
+    #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
     /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -657,12 +668,14 @@ impl DisassociateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryAssociationOutput {
     /// <p>Information about the repository association.</p>
+    #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
     /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -775,6 +788,7 @@ impl DescribeRepositoryAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationFeedbackOutput {
     /// <p> The recommendation feedback given by the user. </p>
+    #[doc(hidden)]
     pub recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
 }
 impl DescribeRecommendationFeedbackOutput {
@@ -838,6 +852,7 @@ impl DescribeRecommendationFeedbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeReviewOutput {
     /// <p> Information about the code review. </p>
+    #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl DescribeCodeReviewOutput {
@@ -895,6 +910,7 @@ impl DescribeCodeReviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeReviewOutput {
     /// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
+    #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl CreateCodeReviewOutput {
@@ -952,12 +968,14 @@ impl CreateCodeReviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRepositoryOutput {
     /// <p>Information about the repository association.</p>
+    #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
     /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

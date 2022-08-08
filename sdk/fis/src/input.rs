@@ -2698,14 +2698,18 @@ impl UpdateExperimentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A description for the template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The stop conditions for the experiment.</p>
+    #[doc(hidden)]
     pub stop_conditions: std::option::Option<
         std::vec::Vec<crate::model::UpdateExperimentTemplateStopConditionInput>,
     >,
     /// <p>The targets for the experiment.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2713,6 +2717,7 @@ pub struct UpdateExperimentTemplateInput {
         >,
     >,
     /// <p>The actions for the experiment.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2720,8 +2725,10 @@ pub struct UpdateExperimentTemplateInput {
         >,
     >,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration for experiment logging.</p>
+    #[doc(hidden)]
     pub log_configuration:
         std::option::Option<crate::model::UpdateExperimentTemplateLogConfigurationInput>,
 }
@@ -2792,8 +2799,10 @@ impl std::fmt::Debug for UpdateExperimentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2820,8 +2829,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2852,6 +2863,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExperimentInput {
     /// <p>The ID of the experiment.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopExperimentInput {
@@ -2873,10 +2885,13 @@ impl std::fmt::Debug for StopExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExperimentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the experiment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2912,8 +2927,10 @@ impl std::fmt::Debug for StartExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetResourceTypesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetResourceTypesInput {
@@ -2940,6 +2957,7 @@ impl std::fmt::Debug for ListTargetResourceTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2961,8 +2979,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentTemplatesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentTemplatesInput {
@@ -2989,8 +3009,10 @@ impl std::fmt::Debug for ListExperimentTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentsInput {
@@ -3017,8 +3039,10 @@ impl std::fmt::Debug for ListExperimentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionsInput {
@@ -3045,6 +3069,7 @@ impl std::fmt::Debug for ListActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTargetResourceTypeInput {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetTargetResourceTypeInput {
@@ -3066,6 +3091,7 @@ impl std::fmt::Debug for GetTargetResourceTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetExperimentTemplateInput {
@@ -3087,6 +3113,7 @@ impl std::fmt::Debug for GetExperimentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentInput {
     /// <p>The ID of the experiment.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetExperimentInput {
@@ -3108,6 +3135,7 @@ impl std::fmt::Debug for GetExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionInput {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetActionInput {
@@ -3129,6 +3157,7 @@ impl std::fmt::Debug for GetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteExperimentTemplateInput {
@@ -3150,14 +3179,18 @@ impl std::fmt::Debug for DeleteExperimentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A description for the experiment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The stop conditions.</p>
+    #[doc(hidden)]
     pub stop_conditions: std::option::Option<
         std::vec::Vec<crate::model::CreateExperimentTemplateStopConditionInput>,
     >,
     /// <p>The targets for the experiment.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -3165,6 +3198,7 @@ pub struct CreateExperimentTemplateInput {
         >,
     >,
     /// <p>The actions for the experiment.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -3172,11 +3206,14 @@ pub struct CreateExperimentTemplateInput {
         >,
     >,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the experiment template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
+    #[doc(hidden)]
     pub log_configuration:
         std::option::Option<crate::model::CreateExperimentTemplateLogConfigurationInput>,
 }

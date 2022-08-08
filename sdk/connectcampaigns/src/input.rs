@@ -3403,12 +3403,16 @@ impl UpdateCampaignOutboundCallConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The identifier of the contact flow for the outbound call.
+    #[doc(hidden)]
     pub connect_contact_flow_id: std::option::Option<std::string::String>,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+    #[doc(hidden)]
     pub connect_source_phone_number: std::option::Option<std::string::String>,
     /// Answering Machine Detection config
+    #[doc(hidden)]
     pub answer_machine_detection_config:
         std::option::Option<crate::model::AnswerMachineDetectionConfig>,
 }
@@ -3454,8 +3458,10 @@ impl std::fmt::Debug for UpdateCampaignOutboundCallConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignNameInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The name of an Amazon Connect Campaign name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateCampaignNameInput {
@@ -3482,8 +3488,10 @@ impl std::fmt::Debug for UpdateCampaignNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The possible types of dialer config parameters
+    #[doc(hidden)]
     pub dialer_config: std::option::Option<crate::model::DialerConfig>,
 }
 impl UpdateCampaignDialerConfigInput {
@@ -3510,8 +3518,10 @@ impl std::fmt::Debug for UpdateCampaignDialerConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// Arn
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// List of tag keys.
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3538,8 +3548,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// Arn
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Tag map with key and value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3570,6 +3582,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopCampaignInput {
@@ -3591,8 +3604,10 @@ impl std::fmt::Debug for StopCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl StartInstanceOnboardingJobInput {
@@ -3619,6 +3634,7 @@ impl std::fmt::Debug for StartInstanceOnboardingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartCampaignInput {
@@ -3640,6 +3656,7 @@ impl std::fmt::Debug for StartCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ResumeCampaignInput {
@@ -3661,8 +3678,10 @@ impl std::fmt::Debug for ResumeCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDialRequestBatchInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A list of dial requests.
+    #[doc(hidden)]
     pub dial_requests: std::option::Option<std::vec::Vec<crate::model::DialRequest>>,
 }
 impl PutDialRequestBatchInput {
@@ -3689,6 +3708,7 @@ impl std::fmt::Debug for PutDialRequestBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl PauseCampaignInput {
@@ -3710,6 +3730,7 @@ impl std::fmt::Debug for PauseCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// Arn
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3731,10 +3752,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsInput {
     /// The maximum number of results to return per page.
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// The token for the next set of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Filter model by type
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::CampaignFilters>,
 }
 impl ListCampaignsInput {
@@ -3766,6 +3790,7 @@ impl std::fmt::Debug for ListCampaignsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceOnboardingJobStatusInput {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl GetInstanceOnboardingJobStatusInput {
@@ -3787,6 +3812,7 @@ impl std::fmt::Debug for GetInstanceOnboardingJobStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl GetConnectInstanceConfigInput {
@@ -3808,6 +3834,7 @@ impl std::fmt::Debug for GetConnectInstanceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignStateBatchInput {
     /// List of CampaignId
+    #[doc(hidden)]
     pub campaign_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetCampaignStateBatchInput {
@@ -3829,6 +3856,7 @@ impl std::fmt::Debug for GetCampaignStateBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignStateInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCampaignStateInput {
@@ -3850,6 +3878,7 @@ impl std::fmt::Debug for GetCampaignStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeCampaignInput {
@@ -3871,6 +3900,7 @@ impl std::fmt::Debug for DescribeCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceOnboardingJobInput {
@@ -3892,6 +3922,7 @@ impl std::fmt::Debug for DeleteInstanceOnboardingJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectInstanceConfigInput {
@@ -3913,6 +3944,7 @@ impl std::fmt::Debug for DeleteConnectInstanceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCampaignInput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCampaignInput {
@@ -3934,14 +3966,19 @@ impl std::fmt::Debug for DeleteCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignInput {
     /// The name of an Amazon Connect Campaign name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
     /// The possible types of dialer config parameters
+    #[doc(hidden)]
     pub dialer_config: std::option::Option<crate::model::DialerConfig>,
     /// The configuration used for outbound calls.
+    #[doc(hidden)]
     pub outbound_call_config: std::option::Option<crate::model::OutboundCallConfig>,
     /// Tag map with key and value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

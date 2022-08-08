@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Prefix for the location to write to.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -192,18 +194,25 @@ impl AsRef<str> for ReportFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportDefinition {
     /// <p>The ID of the report.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>Description of the report</p>
+    #[doc(hidden)]
     pub report_description: std::option::Option<std::string::String>,
     /// <p>The cadence at which the report is generated.</p>
+    #[doc(hidden)]
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>The format used for the generated reports.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
+    #[doc(hidden)]
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReportDefinition {
@@ -375,10 +384,13 @@ impl ReportDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Key of the object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<crate::model::S3BucketRegion>,
 }
 impl SourceS3Location {

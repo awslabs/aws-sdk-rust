@@ -6,8 +6,10 @@
 pub struct DestinationProperties {
     /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key to use for encryption.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl DestinationProperties {
@@ -85,10 +87,13 @@ impl DestinationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationDataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfiguration>,
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
+    #[doc(hidden)]
     pub kubernetes: std::option::Option<crate::model::OrganizationKubernetesConfiguration>,
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
+    #[doc(hidden)]
     pub malware_protection:
         std::option::Option<crate::model::OrganizationMalwareProtectionConfiguration>,
 }
@@ -199,6 +204,7 @@ impl OrganizationDataSourceConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationMalwareProtectionConfiguration {
     /// <p>Whether Malware Protection for EC2 instances with findings should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub scan_ec2_instance_with_findings:
         std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindings>,
 }
@@ -266,6 +272,7 @@ impl OrganizationMalwareProtectionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationScanEc2InstanceWithFindings {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumes>,
 }
 impl OrganizationScanEc2InstanceWithFindings {
@@ -323,6 +330,7 @@ impl OrganizationScanEc2InstanceWithFindings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationEbsVolumes {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationEbsVolumes {
@@ -377,6 +385,7 @@ impl OrganizationEbsVolumes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationKubernetesConfiguration {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub audit_logs: std::option::Option<crate::model::OrganizationKubernetesAuditLogsConfiguration>,
 }
 impl OrganizationKubernetesConfiguration {
@@ -440,6 +449,7 @@ impl OrganizationKubernetesConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationKubernetesAuditLogsConfiguration {
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationKubernetesAuditLogsConfiguration {
@@ -494,6 +504,7 @@ impl OrganizationKubernetesAuditLogsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationS3LogsConfiguration {
     /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationS3LogsConfiguration {
@@ -548,8 +559,10 @@ impl OrganizationS3LogsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A reason why the account hasn't been processed.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl UnprocessedAccount {
@@ -621,10 +634,13 @@ impl UnprocessedAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3LogsConfiguration>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub kubernetes: std::option::Option<crate::model::KubernetesConfiguration>,
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    #[doc(hidden)]
     pub malware_protection: std::option::Option<crate::model::MalwareProtectionConfiguration>,
 }
 impl DataSourceConfigurations {
@@ -728,6 +744,7 @@ impl DataSourceConfigurations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalwareProtectionConfiguration {
     /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    #[doc(hidden)]
     pub scan_ec2_instance_with_findings:
         std::option::Option<crate::model::ScanEc2InstanceWithFindings>,
 }
@@ -795,6 +812,7 @@ impl MalwareProtectionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanEc2InstanceWithFindings {
     /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
+    #[doc(hidden)]
     pub ebs_volumes: bool,
 }
 impl ScanEc2InstanceWithFindings {
@@ -849,6 +867,7 @@ impl ScanEc2InstanceWithFindings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
+    #[doc(hidden)]
     pub audit_logs: std::option::Option<crate::model::KubernetesAuditLogsConfiguration>,
 }
 impl KubernetesConfiguration {
@@ -908,6 +927,7 @@ impl KubernetesConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesAuditLogsConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
+    #[doc(hidden)]
     pub enable: bool,
 }
 impl KubernetesAuditLogsConfiguration {
@@ -962,6 +982,7 @@ impl KubernetesAuditLogsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LogsConfiguration {
     /// <p> The status of S3 data event logs as a data source.</p>
+    #[doc(hidden)]
     pub enable: bool,
 }
 impl S3LogsConfiguration {
@@ -1071,10 +1092,12 @@ impl AsRef<str> for EbsSnapshotPreservation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+    #[doc(hidden)]
     pub include: std::option::Option<
         std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
     >,
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+    #[doc(hidden)]
     pub exclude: std::option::Option<
         std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
     >,
@@ -1196,6 +1219,7 @@ impl ScanResourceCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanCondition {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+    #[doc(hidden)]
     pub map_equals: std::option::Option<std::vec::Vec<crate::model::ScanConditionPair>>,
 }
 impl ScanCondition {
@@ -1259,8 +1283,10 @@ impl ScanCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanConditionPair {
     /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ScanConditionPair {
@@ -1438,6 +1464,7 @@ impl AsRef<str> for Feedback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingCriteria {
     /// <p>Represents a map of finding properties that match specified conditions and values when querying findings.</p>
+    #[doc(hidden)]
     pub criterion: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
@@ -1515,33 +1542,45 @@ impl FindingCriteria {
 pub struct Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub gt: i32,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub gte: i32,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub lt: i32,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub lte: i32,
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub equals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub greater_than: i64,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub greater_than_or_equal: i64,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub less_than: i64,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
+    #[doc(hidden)]
     pub less_than_or_equal: i64,
 }
 impl Condition {
@@ -1951,10 +1990,13 @@ impl AsRef<str> for FindingPublishingFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>The unique ID of the publishing destination.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    #[doc(hidden)]
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>The status of the publishing destination.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PublishingStatus>,
 }
 impl Destination {
@@ -2175,8 +2217,10 @@ impl AsRef<str> for DestinationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
+    #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
+    #[doc(hidden)]
     pub admin_status: std::option::Option<crate::model::AdminStatus>,
 }
 impl AdminAccount {
@@ -2309,20 +2353,28 @@ impl AsRef<str> for AdminStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The ID of the member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The detector ID of the member account.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The administrator account ID.</p>
+    #[doc(hidden)]
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The email address of the member account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The status of the relationship between the member and the administrator.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<std::string::String>,
     /// <p>The last-updated timestamp of the member.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
     /// <p>The administrator account ID.</p>
+    #[doc(hidden)]
     pub administrator_id: std::option::Option<std::string::String>,
 }
 impl Member {
@@ -2502,12 +2554,16 @@ impl Member {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invitation {
     /// <p>The ID of the account that the invitation was sent from.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<std::string::String>,
 }
 impl Invitation {
@@ -2619,8 +2675,10 @@ impl Invitation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortCriteria {
     /// <p>Represents the finding attribute (for example, accountId) to sort findings by.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The order by which the sorted findings are to be displayed.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl SortCriteria {
@@ -2750,12 +2808,16 @@ impl AsRef<str> for OrderBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageStatistics {
     /// <p>The usage statistic sum organized by account ID.</p>
+    #[doc(hidden)]
     pub sum_by_account: std::option::Option<std::vec::Vec<crate::model::UsageAccountResult>>,
     /// <p>The usage statistic sum organized by on data source.</p>
+    #[doc(hidden)]
     pub sum_by_data_source: std::option::Option<std::vec::Vec<crate::model::UsageDataSourceResult>>,
     /// <p>The usage statistic sum organized by resource.</p>
+    #[doc(hidden)]
     pub sum_by_resource: std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
     /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from most to least expensive.</p>
+    #[doc(hidden)]
     pub top_resources: std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
 }
 impl UsageStatistics {
@@ -2903,8 +2965,10 @@ impl UsageStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageResourceResult {
     /// <p>The Amazon Web Services resource that generated usage.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>Represents the sum total of usage for the specified resource type.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::Total>,
 }
 impl UsageResourceResult {
@@ -2976,8 +3040,10 @@ impl UsageResourceResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Total {
     /// <p>The total usage.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
     /// <p>The currency unit that the amount is given in.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl Total {
@@ -3049,8 +3115,10 @@ impl Total {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageDataSourceResult {
     /// <p>The data source type that generated usage.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>Represents the total of usage for the specified data source.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::Total>,
 }
 impl UsageDataSourceResult {
@@ -3203,8 +3271,10 @@ impl AsRef<str> for DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageAccountResult {
     /// <p>The Account ID that generated usage.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Represents the total of usage for the Account ID.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::Total>,
 }
 impl UsageAccountResult {
@@ -3276,10 +3346,13 @@ impl UsageAccountResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The data sources to aggregate usage statistics from.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UsageCriteria {
@@ -3624,8 +3697,10 @@ impl AsRef<str> for ThreatIntelSetFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountFreeTrialInfo {
     /// <p>The account identifier of the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourcesFreeTrial>,
 }
 impl AccountFreeTrialInfo {
@@ -3700,16 +3775,22 @@ impl AccountFreeTrialInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourcesFreeTrial {
     /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub cloud_trail: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub dns_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub flow_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    #[doc(hidden)]
     pub kubernetes: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    #[doc(hidden)]
     pub malware_protection: std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {
@@ -3873,6 +3954,7 @@ impl DataSourcesFreeTrial {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalwareProtectionDataSourceFreeTrial {
     /// <p>Describes whether Malware Protection for EC2 instances with findings is enabled as a data source.</p>
+    #[doc(hidden)]
     pub scan_ec2_instance_with_findings: std::option::Option<crate::model::DataSourceFreeTrial>,
 }
 impl MalwareProtectionDataSourceFreeTrial {
@@ -3939,6 +4021,7 @@ impl MalwareProtectionDataSourceFreeTrial {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceFreeTrial {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    #[doc(hidden)]
     pub free_trial_days_remaining: i32,
 }
 impl DataSourceFreeTrial {
@@ -3993,6 +4076,7 @@ impl DataSourceFreeTrial {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesDataSourceFreeTrial {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    #[doc(hidden)]
     pub audit_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
 }
 impl KubernetesDataSourceFreeTrial {
@@ -4050,8 +4134,10 @@ impl KubernetesDataSourceFreeTrial {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberDataSourceConfiguration {
     /// <p>The account ID for the member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Contains information on the status of data sources for the account.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurationsResult>,
 }
 impl MemberDataSourceConfiguration {
@@ -4128,16 +4214,22 @@ impl MemberDataSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceConfigurationsResult {
     /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
+    #[doc(hidden)]
     pub cloud_trail: std::option::Option<crate::model::CloudTrailConfigurationResult>,
     /// <p>An object that contains information on the status of DNS logs as a data source.</p>
+    #[doc(hidden)]
     pub dns_logs: std::option::Option<crate::model::DnsLogsConfigurationResult>,
     /// <p>An object that contains information on the status of VPC flow logs as a data source.</p>
+    #[doc(hidden)]
     pub flow_logs: std::option::Option<crate::model::FlowLogsConfigurationResult>,
     /// <p>An object that contains information on the status of S3 Data event logs as a data source.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3LogsConfigurationResult>,
     /// <p>An object that contains information on the status of all Kubernetes data sources.</p>
+    #[doc(hidden)]
     pub kubernetes: std::option::Option<crate::model::KubernetesConfigurationResult>,
     /// <p>Describes the configuration of Malware Protection data sources.</p>
+    #[doc(hidden)]
     pub malware_protection: std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
 }
 impl DataSourceConfigurationsResult {
@@ -4301,9 +4393,11 @@ impl DataSourceConfigurationsResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalwareProtectionConfigurationResult {
     /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    #[doc(hidden)]
     pub scan_ec2_instance_with_findings:
         std::option::Option<crate::model::ScanEc2InstanceWithFindingsResult>,
     /// <p>The GuardDuty Malware Protection service role.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
 }
 impl MalwareProtectionConfigurationResult {
@@ -4387,6 +4481,7 @@ impl MalwareProtectionConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+    #[doc(hidden)]
     pub ebs_volumes: std::option::Option<crate::model::EbsVolumesResult>,
 }
 impl ScanEc2InstanceWithFindingsResult {
@@ -4444,6 +4539,7 @@ impl ScanEc2InstanceWithFindingsResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl EbsVolumesResult {
@@ -4556,6 +4652,7 @@ impl AsRef<str> for DataSourceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesConfigurationResult {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    #[doc(hidden)]
     pub audit_logs: std::option::Option<crate::model::KubernetesAuditLogsConfigurationResult>,
 }
 impl KubernetesConfigurationResult {
@@ -4619,6 +4716,7 @@ impl KubernetesConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesAuditLogsConfigurationResult {
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl KubernetesAuditLogsConfigurationResult {
@@ -4676,6 +4774,7 @@ impl KubernetesAuditLogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl S3LogsConfigurationResult {
@@ -4733,6 +4832,7 @@ impl S3LogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowLogsConfigurationResult {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl FlowLogsConfigurationResult {
@@ -4790,6 +4890,7 @@ impl FlowLogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsLogsConfigurationResult {
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl DnsLogsConfigurationResult {
@@ -4847,6 +4948,7 @@ impl DnsLogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailConfigurationResult {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
 impl CloudTrailConfigurationResult {
@@ -4904,12 +5006,16 @@ impl CloudTrailConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Master {
     /// <p>The ID of the account used as the administrator account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The value used to validate the administrator account to the member account.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The status of the relationship between the administrator and member accounts.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<std::string::String>,
 }
 impl Master {
@@ -5182,6 +5288,7 @@ impl AsRef<str> for IpSetFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingStatistics {
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    #[doc(hidden)]
     pub count_by_severity: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
 impl FindingStatistics {
@@ -5299,34 +5406,49 @@ impl AsRef<str> for FindingStatisticType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Finding {
     /// <p>The ID of the account in which the finding was generated.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the finding.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The confidence score for the finding.</p>
+    #[doc(hidden)]
     pub confidence: f64,
     /// <p>The time and date when the finding was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// <p>The description of the finding.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the finding.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The partition associated with the finding.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<std::string::String>,
     /// <p>The Region where the finding was generated.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The version of the schema used for the finding.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The severity of the finding.</p>
+    #[doc(hidden)]
     pub severity: f64,
     /// <p>The title of the finding.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The type of finding.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The time and date when the finding was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
 }
 impl Finding {
@@ -5622,30 +5744,43 @@ impl Finding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>Information about the activity that is described in a finding.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>An evidence object associated with the service.</p>
+    #[doc(hidden)]
     pub evidence: std::option::Option<crate::model::Evidence>,
     /// <p>Indicates whether this finding is archived.</p>
+    #[doc(hidden)]
     pub archived: bool,
     /// <p>The total count of the occurrences of this finding type.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The detector ID for the GuardDuty service.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
+    #[doc(hidden)]
     pub event_first_seen: std::option::Option<std::string::String>,
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
+    #[doc(hidden)]
     pub event_last_seen: std::option::Option<std::string::String>,
     /// <p>The resource role information for this finding.</p>
+    #[doc(hidden)]
     pub resource_role: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Feedback that was submitted about the finding.</p>
+    #[doc(hidden)]
     pub user_feedback: std::option::Option<std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
+    #[doc(hidden)]
     pub additional_info: std::option::Option<crate::model::ServiceAdditionalInfo>,
     /// <p>The name of the feature that generated a finding.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>Returns details from the malware scan that created a finding.</p>
+    #[doc(hidden)]
     pub ebs_volume_scan_details: std::option::Option<crate::model::EbsVolumeScanDetails>,
 }
 impl Service {
@@ -5927,16 +6062,22 @@ impl Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsVolumeScanDetails {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
+    #[doc(hidden)]
     pub scan_id: std::option::Option<std::string::String>,
     /// <p>Returns the start date and time of the malware scan.</p>
+    #[doc(hidden)]
     pub scan_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns the completion date and time of the malware scan.</p>
+    #[doc(hidden)]
     pub scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
+    #[doc(hidden)]
     pub trigger_finding_id: std::option::Option<std::string::String>,
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains a complete view providing malware scan result details.</p>
+    #[doc(hidden)]
     pub scan_detections: std::option::Option<crate::model::ScanDetections>,
 }
 impl EbsVolumeScanDetails {
@@ -6097,13 +6238,17 @@ impl EbsVolumeScanDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanDetections {
     /// <p>Total number of scanned files.</p>
+    #[doc(hidden)]
     pub scanned_item_count: std::option::Option<crate::model::ScannedItemCount>,
     /// <p>Total number of infected files.</p>
+    #[doc(hidden)]
     pub threats_detected_item_count: std::option::Option<crate::model::ThreatsDetectedItemCount>,
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+    #[doc(hidden)]
     pub highest_severity_threat_details:
         std::option::Option<crate::model::HighestSeverityThreatDetails>,
     /// <p>Contains details about identified threats organized by threat name.</p>
+    #[doc(hidden)]
     pub threat_detected_by_name: std::option::Option<crate::model::ThreatDetectedByName>,
 }
 impl ScanDetections {
@@ -6244,12 +6389,16 @@ impl ScanDetections {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThreatDetectedByName {
     /// <p>Total number of infected files identified.</p>
+    #[doc(hidden)]
     pub item_count: i32,
     /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+    #[doc(hidden)]
     pub unique_threat_name_count: i32,
     /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+    #[doc(hidden)]
     pub shortened: bool,
     /// <p>List of identified threats with details, organized by threat name.</p>
+    #[doc(hidden)]
     pub threat_names: std::option::Option<std::vec::Vec<crate::model::ScanThreatName>>,
 }
 impl ThreatDetectedByName {
@@ -6364,12 +6513,16 @@ impl ThreatDetectedByName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanThreatName {
     /// <p>The name of the identified threat.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Severity of threat identified as part of the malware scan.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>Total number of files infected with given threat.</p>
+    #[doc(hidden)]
     pub item_count: i32,
     /// <p>List of infected files in EBS volume with details.</p>
+    #[doc(hidden)]
     pub file_paths: std::option::Option<std::vec::Vec<crate::model::ScanFilePath>>,
 }
 impl ScanThreatName {
@@ -6484,12 +6637,16 @@ impl ScanThreatName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanFilePath {
     /// <p>The file path of the infected file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>EBS volume Arn details of the infected file.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The hash value of the infected file.</p>
+    #[doc(hidden)]
     pub hash: std::option::Option<std::string::String>,
     /// <p>File name of the infected file.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
 }
 impl ScanFilePath {
@@ -6595,10 +6752,13 @@ impl ScanFilePath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HighestSeverityThreatDetails {
     /// <p>Severity level of the highest severity threat detected.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+    #[doc(hidden)]
     pub threat_name: std::option::Option<std::string::String>,
     /// <p>Total number of infected files with the highest severity threat detected.</p>
+    #[doc(hidden)]
     pub count: i32,
 }
 impl HighestSeverityThreatDetails {
@@ -6687,6 +6847,7 @@ impl HighestSeverityThreatDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThreatsDetectedItemCount {
     /// <p>Total number of infected files.</p>
+    #[doc(hidden)]
     pub files: i32,
 }
 impl ThreatsDetectedItemCount {
@@ -6741,10 +6902,13 @@ impl ThreatsDetectedItemCount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScannedItemCount {
     /// <p>Total GB of files scanned for malware.</p>
+    #[doc(hidden)]
     pub total_gb: i32,
     /// <p>Number of files scanned.</p>
+    #[doc(hidden)]
     pub files: i32,
     /// <p>Total number of scanned volumes.</p>
+    #[doc(hidden)]
     pub volumes: i32,
 }
 impl ScannedItemCount {
@@ -6833,8 +6997,10 @@ impl ScannedItemCount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceAdditionalInfo {
     /// <p>This field specifies the value of the additional information.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Describes the type of the additional information.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ServiceAdditionalInfo {
@@ -6906,6 +7072,7 @@ impl ServiceAdditionalInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Evidence {
     /// <p>A list of threat intelligence details related to the evidence.</p>
+    #[doc(hidden)]
     pub threat_intelligence_details:
         std::option::Option<std::vec::Vec<crate::model::ThreatIntelligenceDetail>>,
 }
@@ -6979,8 +7146,10 @@ impl Evidence {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThreatIntelligenceDetail {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
+    #[doc(hidden)]
     pub threat_list_name: std::option::Option<std::string::String>,
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
+    #[doc(hidden)]
     pub threat_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ThreatIntelligenceDetail {
@@ -7064,16 +7233,22 @@ impl ThreatIntelligenceDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The GuardDuty finding activity type.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<std::string::String>,
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
+    #[doc(hidden)]
     pub aws_api_call_action: std::option::Option<crate::model::AwsApiCallAction>,
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
+    #[doc(hidden)]
     pub dns_request_action: std::option::Option<crate::model::DnsRequestAction>,
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
+    #[doc(hidden)]
     pub network_connection_action: std::option::Option<crate::model::NetworkConnectionAction>,
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
+    #[doc(hidden)]
     pub port_probe_action: std::option::Option<crate::model::PortProbeAction>,
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
+    #[doc(hidden)]
     pub kubernetes_api_call_action: std::option::Option<crate::model::KubernetesApiCallAction>,
 }
 impl Action {
@@ -7243,18 +7418,25 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesApiCallAction {
     /// <p>The Kubernetes API request URI.</p>
+    #[doc(hidden)]
     pub request_uri: std::option::Option<std::string::String>,
     /// <p>The Kubernetes API request HTTP verb.</p>
+    #[doc(hidden)]
     pub verb: std::option::Option<std::string::String>,
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
+    #[doc(hidden)]
     pub source_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user agent of the caller of the Kubernetes API.</p>
+    #[doc(hidden)]
     pub user_agent: std::option::Option<std::string::String>,
     /// <p>Contains information about the remote IP address of the connection.</p>
+    #[doc(hidden)]
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
+    #[doc(hidden)]
     pub status_code: i32,
     /// <p>Parameters related to the Kubernetes API call action.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
 }
 impl KubernetesApiCallAction {
@@ -7423,14 +7605,19 @@ impl KubernetesApiCallAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoteIpDetails {
     /// <p>The city information of the remote IP address.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<crate::model::City>,
     /// <p>The country code of the remote IP address.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<crate::model::Country>,
     /// <p>The location information of the remote IP address.</p>
+    #[doc(hidden)]
     pub geo_location: std::option::Option<crate::model::GeoLocation>,
     /// <p>The IPv4 remote address of the connection.</p>
+    #[doc(hidden)]
     pub ip_address_v4: std::option::Option<std::string::String>,
     /// <p>The ISP organization information of the remote IP address.</p>
+    #[doc(hidden)]
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl RemoteIpDetails {
@@ -7562,12 +7749,16 @@ impl RemoteIpDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Organization {
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
+    #[doc(hidden)]
     pub asn: std::option::Option<std::string::String>,
     /// <p>The organization that registered this ASN.</p>
+    #[doc(hidden)]
     pub asn_org: std::option::Option<std::string::String>,
     /// <p>The ISP information for the internet provider.</p>
+    #[doc(hidden)]
     pub isp: std::option::Option<std::string::String>,
     /// <p>The name of the internet provider.</p>
+    #[doc(hidden)]
     pub org: std::option::Option<std::string::String>,
 }
 impl Organization {
@@ -7673,8 +7864,10 @@ impl Organization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeoLocation {
     /// <p>The latitude information of the remote IP address.</p>
+    #[doc(hidden)]
     pub lat: f64,
     /// <p>The longitude information of the remote IP address.</p>
+    #[doc(hidden)]
     pub lon: f64,
 }
 impl GeoLocation {
@@ -7746,8 +7939,10 @@ impl GeoLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Country {
     /// <p>The country code of the remote IP address.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The country name of the remote IP address.</p>
+    #[doc(hidden)]
     pub country_name: std::option::Option<std::string::String>,
 }
 impl Country {
@@ -7819,6 +8014,7 @@ impl Country {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct City {
     /// <p>The city name of the remote IP address.</p>
+    #[doc(hidden)]
     pub city_name: std::option::Option<std::string::String>,
 }
 impl City {
@@ -7873,8 +8069,10 @@ impl City {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
+    #[doc(hidden)]
     pub blocked: bool,
     /// <p>A list of objects related to port probe details.</p>
+    #[doc(hidden)]
     pub port_probe_details: std::option::Option<std::vec::Vec<crate::model::PortProbeDetail>>,
 }
 impl PortProbeAction {
@@ -7956,10 +8154,13 @@ impl PortProbeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortProbeDetail {
     /// <p>The local port information of the connection.</p>
+    #[doc(hidden)]
     pub local_port_details: std::option::Option<crate::model::LocalPortDetails>,
     /// <p>The local IP information of the connection.</p>
+    #[doc(hidden)]
     pub local_ip_details: std::option::Option<crate::model::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
+    #[doc(hidden)]
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
 }
 impl PortProbeDetail {
@@ -8057,6 +8258,7 @@ impl PortProbeDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
+    #[doc(hidden)]
     pub ip_address_v4: std::option::Option<std::string::String>,
 }
 impl LocalIpDetails {
@@ -8114,8 +8316,10 @@ impl LocalIpDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalPortDetails {
     /// <p>The port number of the local connection.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The port name of the local connection.</p>
+    #[doc(hidden)]
     pub port_name: std::option::Option<std::string::String>,
 }
 impl LocalPortDetails {
@@ -8187,18 +8391,25 @@ impl LocalPortDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConnectionAction {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
+    #[doc(hidden)]
     pub blocked: bool,
     /// <p>The network connection direction.</p>
+    #[doc(hidden)]
     pub connection_direction: std::option::Option<std::string::String>,
     /// <p>The local port information of the connection.</p>
+    #[doc(hidden)]
     pub local_port_details: std::option::Option<crate::model::LocalPortDetails>,
     /// <p>The network connection protocol.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The local IP information of the connection.</p>
+    #[doc(hidden)]
     pub local_ip_details: std::option::Option<crate::model::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
+    #[doc(hidden)]
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
     /// <p>The remote port information of the connection.</p>
+    #[doc(hidden)]
     pub remote_port_details: std::option::Option<crate::model::RemotePortDetails>,
 }
 impl NetworkConnectionAction {
@@ -8370,8 +8581,10 @@ impl NetworkConnectionAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemotePortDetails {
     /// <p>The port number of the remote connection.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The port name of the remote connection.</p>
+    #[doc(hidden)]
     pub port_name: std::option::Option<std::string::String>,
 }
 impl RemotePortDetails {
@@ -8443,10 +8656,13 @@ impl RemotePortDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsRequestAction {
     /// <p>The domain information for the API request.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the targeted port is blocked.</p>
+    #[doc(hidden)]
     pub blocked: bool,
 }
 impl DnsRequestAction {
@@ -8535,22 +8751,31 @@ impl DnsRequestAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsApiCallAction {
     /// <p>The Amazon Web Services API name.</p>
+    #[doc(hidden)]
     pub api: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services API caller type.</p>
+    #[doc(hidden)]
     pub caller_type: std::option::Option<std::string::String>,
     /// <p>The domain information for the Amazon Web Services API call.</p>
+    #[doc(hidden)]
     pub domain_details: std::option::Option<crate::model::DomainDetails>,
     /// <p>The error code of the failed Amazon Web Services API action.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The agent through which the API request was made.</p>
+    #[doc(hidden)]
     pub user_agent: std::option::Option<std::string::String>,
     /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
+    #[doc(hidden)]
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
     /// <p>The Amazon Web Services service name whose API was invoked.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
+    #[doc(hidden)]
     pub remote_account_details: std::option::Option<crate::model::RemoteAccountDetails>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+    #[doc(hidden)]
     pub affected_resources:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8773,8 +8998,10 @@ impl AwsApiCallAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoteAccountDetails {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
+    #[doc(hidden)]
     pub affiliated: bool,
 }
 impl RemoteAccountDetails {
@@ -8846,6 +9073,7 @@ impl RemoteAccountDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDetails {
     /// <p>The domain information for the Amazon Web Services API call.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl DomainDetails {
@@ -8900,22 +9128,31 @@ impl DomainDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
+    #[doc(hidden)]
     pub access_key_details: std::option::Option<crate::model::AccessKeyDetails>,
     /// <p>Contains information on the S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_details: std::option::Option<std::vec::Vec<crate::model::S3BucketDetail>>,
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
+    #[doc(hidden)]
     pub instance_details: std::option::Option<crate::model::InstanceDetails>,
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
+    #[doc(hidden)]
     pub eks_cluster_details: std::option::Option<crate::model::EksClusterDetails>,
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
+    #[doc(hidden)]
     pub kubernetes_details: std::option::Option<crate::model::KubernetesDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+    #[doc(hidden)]
     pub ebs_volume_details: std::option::Option<crate::model::EbsVolumeDetails>,
     /// <p>Contains information about the details of the ECS Cluster.</p>
+    #[doc(hidden)]
     pub ecs_cluster_details: std::option::Option<crate::model::EcsClusterDetails>,
     /// <p>Details of a container.</p>
+    #[doc(hidden)]
     pub container_details: std::option::Option<crate::model::Container>,
 }
 impl Resource {
@@ -9140,18 +9377,25 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Container {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
+    #[doc(hidden)]
     pub container_runtime: std::option::Option<std::string::String>,
     /// <p>Container ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Container name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Container image.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
+    #[doc(hidden)]
     pub image_prefix: std::option::Option<std::string::String>,
     /// <p>Container volume mounts.</p>
+    #[doc(hidden)]
     pub volume_mounts: std::option::Option<std::vec::Vec<crate::model::VolumeMount>>,
     /// <p>Container security context.</p>
+    #[doc(hidden)]
     pub security_context: std::option::Option<crate::model::SecurityContext>,
 }
 impl Container {
@@ -9323,6 +9567,7 @@ impl Container {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityContext {
     /// <p>Whether the container is privileged.</p>
+    #[doc(hidden)]
     pub privileged: bool,
 }
 impl SecurityContext {
@@ -9377,8 +9622,10 @@ impl SecurityContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeMount {
     /// <p>Volume mount name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Volume mount path.</p>
+    #[doc(hidden)]
     pub mount_path: std::option::Option<std::string::String>,
 }
 impl VolumeMount {
@@ -9450,20 +9697,28 @@ impl VolumeMount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsClusterDetails {
     /// <p>The name of the ECS Cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the ECS cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+    #[doc(hidden)]
     pub active_services_count: i32,
     /// <p>The number of container instances registered into the cluster.</p>
+    #[doc(hidden)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+    #[doc(hidden)]
     pub running_tasks_count: i32,
     /// <p>The tags of the ECS Cluster.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Contains information about the details of the ECS Task.</p>
+    #[doc(hidden)]
     pub task_details: std::option::Option<crate::model::EcsTaskDetails>,
 }
 impl EcsClusterDetails {
@@ -9657,24 +9912,34 @@ impl EcsClusterDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the task definition that creates the task.</p>
+    #[doc(hidden)]
     pub definition_arn: std::option::Option<std::string::String>,
     /// <p>The version counter for the task.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created.</p>
+    #[doc(hidden)]
     pub task_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task started.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains the tag specified when a task is started.</p>
+    #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The tags of the ECS Task.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The list of data volume definitions for the task.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     /// <p>The containers that's associated with the task.</p>
+    #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
     /// <p>The name of the task group that's associated with the task.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl EcsTaskDetails {
@@ -9918,8 +10183,10 @@ impl EcsTaskDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Volume {
     /// <p>Volume name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+    #[doc(hidden)]
     pub host_path: std::option::Option<crate::model::HostPath>,
 }
 impl Volume {
@@ -9991,6 +10258,7 @@ impl Volume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostPath {
     /// <p>Path of the file or directory on the host that the volume maps to.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl HostPath {
@@ -10043,8 +10311,10 @@ impl HostPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The EC2 instance tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The EC2 instance tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -10116,8 +10386,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsVolumeDetails {
     /// <p>List of EBS volumes that were scanned.</p>
+    #[doc(hidden)]
     pub scanned_volume_details: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+    #[doc(hidden)]
     pub skipped_volume_details: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
 }
 impl EbsVolumeDetails {
@@ -10209,18 +10481,25 @@ impl EbsVolumeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeDetail {
     /// <p>EBS volume Arn information.</p>
+    #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The EBS volume type.</p>
+    #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>The device name for the EBS volume.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>EBS volume size in GB.</p>
+    #[doc(hidden)]
     pub volume_size_in_gb: i32,
     /// <p>EBS volume encryption type.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<std::string::String>,
     /// <p>Snapshot Arn of the EBS volume.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl VolumeDetail {
@@ -10380,8 +10659,10 @@ impl VolumeDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesDetails {
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+    #[doc(hidden)]
     pub kubernetes_user_details: std::option::Option<crate::model::KubernetesUserDetails>,
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+    #[doc(hidden)]
     pub kubernetes_workload_details: std::option::Option<crate::model::KubernetesWorkloadDetails>,
 }
 impl KubernetesDetails {
@@ -10474,18 +10755,25 @@ impl KubernetesDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesWorkloadDetails {
     /// <p>Kubernetes workload name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Kubernetes workload ID.</p>
+    #[doc(hidden)]
     pub uid: std::option::Option<std::string::String>,
     /// <p>Kubernetes namespace that the workload is part of.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
+    #[doc(hidden)]
     pub host_network: bool,
     /// <p>Containers running as part of the Kubernetes workload.</p>
+    #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
+    #[doc(hidden)]
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
 }
 impl KubernetesWorkloadDetails {
@@ -10660,10 +10948,13 @@ impl KubernetesWorkloadDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The user ID of the user who called the Kubernetes API.</p>
+    #[doc(hidden)]
     pub uid: std::option::Option<std::string::String>,
     /// <p>The groups that include the user who called the Kubernetes API.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl KubernetesUserDetails {
@@ -10761,16 +11052,22 @@ impl KubernetesUserDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EksClusterDetails {
     /// <p>EKS cluster name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>EKS cluster ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The VPC ID to which the EKS cluster is attached.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The EKS cluster status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The EKS cluster tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The timestamp when the EKS cluster was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EksClusterDetails {
@@ -10922,30 +11219,43 @@ impl EksClusterDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDetails {
     /// <p>The Availability Zone of the EC2 instance.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The profile information of the EC2 instance.</p>
+    #[doc(hidden)]
     pub iam_instance_profile: std::option::Option<crate::model::IamInstanceProfile>,
     /// <p>The image description of the EC2 instance.</p>
+    #[doc(hidden)]
     pub image_description: std::option::Option<std::string::String>,
     /// <p>The image ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The state of the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_state: std::option::Option<std::string::String>,
     /// <p>The type of the EC2 instance.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>The launch time of the EC2 instance.</p>
+    #[doc(hidden)]
     pub launch_time: std::option::Option<std::string::String>,
     /// <p>The elastic network interface information of the EC2 instance.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The platform of the EC2 instance.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The product code of the EC2 instance.</p>
+    #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The tags of the EC2 instance.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl InstanceDetails {
@@ -11247,8 +11557,10 @@ impl InstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductCode {
     /// <p>The product code information.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The product code type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<std::string::String>,
 }
 impl ProductCode {
@@ -11320,25 +11632,35 @@ impl ProductCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
+    #[doc(hidden)]
     pub ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The private DNS name of the EC2 instance.</p>
+    #[doc(hidden)]
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
+    #[doc(hidden)]
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>Other private IP address information of the EC2 instance.</p>
+    #[doc(hidden)]
     pub private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::PrivateIpAddressDetails>>,
     /// <p>The public DNS name of the EC2 instance.</p>
+    #[doc(hidden)]
     pub public_dns_name: std::option::Option<std::string::String>,
     /// <p>The public IP address of the EC2 instance.</p>
+    #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
     /// <p>The security groups associated with the EC2 instance.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
     /// <p>The subnet ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl NetworkInterface {
@@ -11591,8 +11913,10 @@ impl NetworkInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroup {
     /// <p>The security group ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The security group name of the EC2 instance.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl SecurityGroup {
@@ -11664,8 +11988,10 @@ impl SecurityGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateIpAddressDetails {
     /// <p>The private DNS name of the EC2 instance.</p>
+    #[doc(hidden)]
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
+    #[doc(hidden)]
     pub private_ip_address: std::option::Option<std::string::String>,
 }
 impl PrivateIpAddressDetails {
@@ -11743,8 +12069,10 @@ impl PrivateIpAddressDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamInstanceProfile {
     /// <p>The profile ARN of the EC2 instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The profile ID of the EC2 instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl IamInstanceProfile {
@@ -11816,21 +12144,29 @@ impl IamInstanceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketDetail {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date and time the bucket was created at.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The owner of the S3 bucket.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>All tags attached to the S3 bucket</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
+    #[doc(hidden)]
     pub default_server_side_encryption:
         std::option::Option<crate::model::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
+    #[doc(hidden)]
     pub public_access: std::option::Option<crate::model::PublicAccess>,
 }
 impl S3BucketDetail {
@@ -12031,8 +12367,10 @@ impl S3BucketDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicAccess {
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
+    #[doc(hidden)]
     pub permission_configuration: std::option::Option<crate::model::PermissionConfiguration>,
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
+    #[doc(hidden)]
     pub effective_permission: std::option::Option<std::string::String>,
 }
 impl PublicAccess {
@@ -12116,8 +12454,10 @@ impl PublicAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionConfiguration {
     /// <p>Contains information about the bucket level permissions for the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_level_permissions: std::option::Option<crate::model::BucketLevelPermissions>,
     /// <p>Contains information about the account level permissions on the S3 bucket.</p>
+    #[doc(hidden)]
     pub account_level_permissions: std::option::Option<crate::model::AccountLevelPermissions>,
 }
 impl PermissionConfiguration {
@@ -12207,6 +12547,7 @@ impl PermissionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLevelPermissions {
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
+    #[doc(hidden)]
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {
@@ -12264,12 +12605,16 @@ impl AccountLevelPermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockPublicAccess {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
+    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
+    #[doc(hidden)]
     pub restrict_public_buckets: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
+    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
+    #[doc(hidden)]
     pub block_public_policy: bool,
 }
 impl BlockPublicAccess {
@@ -12375,10 +12720,13 @@ impl BlockPublicAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLevelPermissions {
     /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<crate::model::AccessControlList>,
     /// <p>Contains information on the bucket policies for the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_policy: std::option::Option<crate::model::BucketPolicy>,
     /// <p>Contains information on which account level S3 Block Public Access settings are applied to the S3 bucket.</p>
+    #[doc(hidden)]
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
 impl BucketLevelPermissions {
@@ -12476,8 +12824,10 @@ impl BucketLevelPermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketPolicy {
     /// <p>A value that indicates whether public read access for the bucket is enabled through a bucket policy.</p>
+    #[doc(hidden)]
     pub allows_public_read_access: bool,
     /// <p>A value that indicates whether public write access for the bucket is enabled through a bucket policy.</p>
+    #[doc(hidden)]
     pub allows_public_write_access: bool,
 }
 impl BucketPolicy {
@@ -12552,8 +12902,10 @@ impl BucketPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlList {
     /// <p>A value that indicates whether public read access for the bucket is enabled through an Access Control List (ACL).</p>
+    #[doc(hidden)]
     pub allows_public_read_access: bool,
     /// <p>A value that indicates whether public write access for the bucket is enabled through an Access Control List (ACL).</p>
+    #[doc(hidden)]
     pub allows_public_write_access: bool,
 }
 impl AccessControlList {
@@ -12628,8 +12980,10 @@ impl AccessControlList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultServerSideEncryption {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
+    #[doc(hidden)]
     pub kms_master_key_arn: std::option::Option<std::string::String>,
 }
 impl DefaultServerSideEncryption {
@@ -12707,6 +13061,7 @@ impl DefaultServerSideEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Owner {
     /// <p>The canonical user ID of the bucket owner. For information about locating your canonical user ID see <a href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding Your Account Canonical User ID.</a> </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Owner {
@@ -12759,12 +13114,16 @@ impl Owner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessKeyDetails {
     /// <p>The access key ID of the user.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The principal ID of the user.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The type of the user.</p>
+    #[doc(hidden)]
     pub user_type: std::option::Option<std::string::String>,
 }
 impl AccessKeyDetails {
@@ -12928,12 +13287,16 @@ impl AsRef<str> for DetectorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Administrator {
     /// <p>The ID of the account used as the administrator account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The status of the relationship between the administrator and member accounts.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<std::string::String>,
 }
 impl Administrator {
@@ -13045,10 +13408,13 @@ impl Administrator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationDataSourceConfigurationsResult {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfigurationResult>,
     /// <p>Describes the configuration of Kubernetes data sources.</p>
+    #[doc(hidden)]
     pub kubernetes: std::option::Option<crate::model::OrganizationKubernetesConfigurationResult>,
     /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+    #[doc(hidden)]
     pub malware_protection:
         std::option::Option<crate::model::OrganizationMalwareProtectionConfigurationResult>,
 }
@@ -13167,6 +13533,7 @@ impl OrganizationDataSourceConfigurationsResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationMalwareProtectionConfigurationResult {
     /// <p>Describes the configuration for scanning EC2 instances with findings for an organization.</p>
+    #[doc(hidden)]
     pub scan_ec2_instance_with_findings:
         std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindingsResult>,
 }
@@ -13235,6 +13602,7 @@ impl OrganizationMalwareProtectionConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
+    #[doc(hidden)]
     pub ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumesResult>,
 }
 impl OrganizationScanEc2InstanceWithFindingsResult {
@@ -13292,6 +13660,7 @@ impl OrganizationScanEc2InstanceWithFindingsResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationEbsVolumesResult {
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationEbsVolumesResult {
@@ -13346,6 +13715,7 @@ impl OrganizationEbsVolumesResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationKubernetesConfigurationResult {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
+    #[doc(hidden)]
     pub audit_logs:
         std::option::Option<crate::model::OrganizationKubernetesAuditLogsConfigurationResult>,
 }
@@ -13413,6 +13783,7 @@ impl OrganizationKubernetesConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationKubernetesAuditLogsConfigurationResult {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationKubernetesAuditLogsConfigurationResult {
@@ -13468,6 +13839,7 @@ impl OrganizationKubernetesAuditLogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationS3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl OrganizationS3LogsConfigurationResult {
@@ -13522,32 +13894,46 @@ impl OrganizationS3LogsConfigurationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    #[doc(hidden)]
     pub admin_detector_id: std::option::Option<std::string::String>,
     /// <p>The unique scan ID associated with a scan entry.</p>
+    #[doc(hidden)]
     pub scan_id: std::option::Option<std::string::String>,
     /// <p>An enum value representing possible scan statuses.</p>
+    #[doc(hidden)]
     pub scan_status: std::option::Option<crate::model::ScanStatus>,
     /// <p>Represents the reason for FAILED scan status.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the scan was triggered.</p>
+    #[doc(hidden)]
     pub scan_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the scan was finished.</p>
+    #[doc(hidden)]
     pub scan_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Represents the reason the scan was triggered.</p>
+    #[doc(hidden)]
     pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
     /// <p>Represents the resources that were scanned in the scan entry.</p>
+    #[doc(hidden)]
     pub resource_details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>Represents the result of the scan.</p>
+    #[doc(hidden)]
     pub scan_result_details: std::option::Option<crate::model::ScanResultDetails>,
     /// <p>The ID for the account that belongs to the scan.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Represents total bytes that were scanned.</p>
+    #[doc(hidden)]
     pub total_bytes: i64,
     /// <p>Represents the number of files that were scanned.</p>
+    #[doc(hidden)]
     pub file_count: i64,
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
+    #[doc(hidden)]
     pub attached_volumes: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
 }
 impl Scan {
@@ -13856,6 +14242,7 @@ impl Scan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanResultDetails {
     /// <p>An enum value representing possible scan results.</p>
+    #[doc(hidden)]
     pub scan_result: std::option::Option<crate::model::ScanResult>,
 }
 impl ScanResultDetails {
@@ -13968,6 +14355,7 @@ impl AsRef<str> for ScanResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetails {
     /// <p>InstanceArn that was scanned in the scan entry.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
 }
 impl ResourceDetails {
@@ -14022,8 +14410,10 @@ impl ResourceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerDetails {
     /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    #[doc(hidden)]
     pub guard_duty_finding_id: std::option::Option<std::string::String>,
     /// <p>The description of the scan trigger.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl TriggerDetails {
@@ -14157,6 +14547,7 @@ impl AsRef<str> for ScanStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCriteria {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+    #[doc(hidden)]
     pub filter_criterion: std::option::Option<std::vec::Vec<crate::model::FilterCriterion>>,
 }
 impl FilterCriteria {
@@ -14221,8 +14612,10 @@ impl FilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCriterion {
     /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    #[doc(hidden)]
     pub criterion_key: std::option::Option<crate::model::CriterionKey>,
     /// <p>Contains information about the condition.</p>
+    #[doc(hidden)]
     pub filter_condition: std::option::Option<crate::model::FilterCondition>,
 }
 impl FilterCriterion {
@@ -14300,10 +14693,13 @@ impl FilterCriterion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+    #[doc(hidden)]
     pub equals_value: std::option::Option<std::string::String>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+    #[doc(hidden)]
     pub greater_than: i64,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+    #[doc(hidden)]
     pub less_than: i64,
 }
 impl FilterCondition {
@@ -14470,8 +14866,10 @@ impl AsRef<str> for CriterionKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountDetail {
     /// <p>The member account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address of the member account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl AccountDetail {

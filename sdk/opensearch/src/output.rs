@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeDomainOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub upgrade_id: std::option::Option<std::string::String>,
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The version of OpenSearch that you intend to upgrade the domain to.</p>
+    #[doc(hidden)]
     pub target_version: std::option::Option<std::string::String>,
     /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
+    #[doc(hidden)]
     pub perform_check_only: std::option::Option<bool>,
     /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
     /// <ul>
@@ -18,9 +22,11 @@ pub struct UpgradeDomainOutput {
     /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+    #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies change details of the domain configuration change.</p>
+    #[doc(hidden)]
     pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl UpgradeDomainOutput {
@@ -207,6 +213,7 @@ impl UpgradeDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageOutput {
     /// <p>Information about the package. </p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl UpdatePackageOutput {
@@ -264,8 +271,10 @@ impl UpdatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
+    #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
     /// <p>Contains result of DryRun. </p>
+    #[doc(hidden)]
     pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
 }
 impl UpdateDomainConfigOutput {
@@ -343,6 +352,7 @@ impl UpdateDomainConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
+    #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl StartServiceSoftwareUpdateOutput {
@@ -436,6 +446,7 @@ impl RemoveTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the rejected inbound connection. </p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl RejectInboundConnectionOutput {
@@ -493,8 +504,10 @@ impl RejectInboundConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstanceOfferingOutput {
     /// <p>Details of the reserved OpenSearch instance which was purchased.</p>
+    #[doc(hidden)]
     pub reserved_instance_id: std::option::Option<std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
+    #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
 }
 impl PurchaseReservedInstanceOfferingOutput {
@@ -572,8 +585,10 @@ impl PurchaseReservedInstanceOfferingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVersionsOutput {
     /// <p>List of supported OpenSearch versions. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVersionsOutput {
@@ -654,6 +669,7 @@ impl ListVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>List of <code>Tag</code> for the requested domain. </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsOutput {
@@ -717,9 +733,11 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects. </p>
+    #[doc(hidden)]
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>Pagination token to supply to the next call to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesForDomainOutput {
@@ -809,9 +827,11 @@ impl ListPackagesForDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceTypeDetailsOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub instance_type_details:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceTypeDetailsOutput {
@@ -894,9 +914,11 @@ impl ListInstanceTypeDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects. </p>
+    #[doc(hidden)]
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsForPackageOutput {
@@ -986,6 +1008,7 @@ impl ListDomainsForPackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
+    #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
 }
 impl ListDomainNamesOutput {
@@ -1055,6 +1078,7 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Upgrade</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
     /// <p> One of four statuses an upgrade have, returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p>
     /// <ul>
@@ -1064,8 +1088,10 @@ pub struct GetUpgradeStatusOutput {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A string that briefly describes the update.</p>
+    #[doc(hidden)]
     pub upgrade_name: std::option::Option<std::string::String>,
 }
 impl GetUpgradeStatusOutput {
@@ -1199,8 +1225,10 @@ impl GetUpgradeStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
+    #[doc(hidden)]
     pub upgrade_histories: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUpgradeHistoryOutput {
@@ -1282,11 +1310,14 @@ impl GetUpgradeHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects. </p>
+    #[doc(hidden)]
     pub package_version_history_list:
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionHistoryOutput {
@@ -1393,6 +1424,7 @@ impl GetPackageVersionHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleVersionsOutput {
     /// <p> A map of compatible OpenSearch versions returned as part of the <code> <code>GetCompatibleVersions</code> </code> operation. </p>
+    #[doc(hidden)]
     pub compatible_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
 }
@@ -1460,6 +1492,7 @@ impl GetCompatibleVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DissociatePackageOutput {
     /// <p> <code>DomainPackageDetails</code> </p>
+    #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl DissociatePackageOutput {
@@ -1519,8 +1552,10 @@ impl DissociatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of reserved OpenSearch instances.</p>
+    #[doc(hidden)]
     pub reserved_instances: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
 }
 impl DescribeReservedInstancesOutput {
@@ -1602,8 +1637,10 @@ impl DescribeReservedInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of reserved OpenSearch instance offerings</p>
+    #[doc(hidden)]
     pub reserved_instance_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
 }
@@ -1694,8 +1731,10 @@ impl DescribeReservedInstanceOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects. </p>
+    #[doc(hidden)]
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePackagesOutput {
@@ -1777,8 +1816,10 @@ impl DescribePackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOutboundConnectionsOutput {
     /// <p>A list of <code> <code>OutboundConnection</code> </code> matching the specified filter criteria. </p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOutboundConnectionsOutput {
@@ -1866,6 +1907,7 @@ pub struct DescribeInstanceTypeLimitsOutput {
     /// <li>ultra_warm: If the given InstanceType is used as a warm node</li>
     /// </ul>
     /// <p></p>
+    #[doc(hidden)]
     pub limits_by_role:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
 }
@@ -1959,8 +2001,10 @@ impl DescribeInstanceTypeLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInboundConnectionsOutput {
     /// <p>A list of <code> <code>InboundConnection</code> </code> matching the specified filter criteria. </p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInboundConnectionsOutput {
@@ -2041,6 +2085,7 @@ impl DescribeInboundConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeDomains</code> request. </p>
+    #[doc(hidden)]
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
 }
 impl DescribeDomainsOutput {
@@ -2105,6 +2150,7 @@ impl DescribeDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request. </p>
+    #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
 }
 impl DescribeDomainConfigOutput {
@@ -2162,6 +2208,7 @@ impl DescribeDomainConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    #[doc(hidden)]
     pub change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
 }
 impl DescribeDomainChangeProgressOutput {
@@ -2225,8 +2272,10 @@ impl DescribeDomainChangeProgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainAutoTunesOutput {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
+    #[doc(hidden)]
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
     /// <p>An identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDomainAutoTunesOutput {
@@ -2307,6 +2356,7 @@ impl DescribeDomainAutoTunesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainOutput {
     /// <p>The current status of the domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DescribeDomainOutput {
@@ -2364,6 +2414,7 @@ impl DescribeDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageOutput {
     /// <p> <code>PackageDetails</code> </p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl DeletePackageOutput {
@@ -2421,6 +2472,7 @@ impl DeletePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutboundConnectionOutput {
     /// <p>The <code> <code>OutboundConnection</code> </code> of the deleted outbound connection. </p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::OutboundConnection>,
 }
 impl DeleteOutboundConnectionOutput {
@@ -2478,6 +2530,7 @@ impl DeleteOutboundConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the deleted inbound connection. </p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl DeleteInboundConnectionOutput {
@@ -2535,6 +2588,7 @@ impl DeleteInboundConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p>The status of the domain being deleted.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl DeleteDomainOutput {
@@ -2592,6 +2646,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageOutput {
     /// <p>Information about the package. </p>
+    #[doc(hidden)]
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
 impl CreatePackageOutput {
@@ -2649,14 +2704,19 @@ impl CreatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutboundConnectionOutput {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+    #[doc(hidden)]
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+    #[doc(hidden)]
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection alias provided during the create connection request.</p>
+    #[doc(hidden)]
     pub connection_alias: std::option::Option<std::string::String>,
     /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the newly created connection. </p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
     /// <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl CreateOutboundConnectionOutput {
@@ -2807,6 +2867,7 @@ impl CreateOutboundConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p>The status of the newly created domain.</p>
+    #[doc(hidden)]
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
 impl CreateDomainOutput {
@@ -2864,6 +2925,7 @@ impl CreateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
+    #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
 }
 impl CancelServiceSoftwareUpdateOutput {
@@ -2927,6 +2989,7 @@ impl CancelServiceSoftwareUpdateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePackageOutput {
     /// <p> <code>DomainPackageDetails</code> </p>
+    #[doc(hidden)]
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
 impl AssociatePackageOutput {
@@ -3016,6 +3079,7 @@ impl AddTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the accepted inbound connection. </p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
 impl AcceptInboundConnectionOutput {

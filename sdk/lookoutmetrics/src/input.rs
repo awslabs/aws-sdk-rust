@@ -5004,20 +5004,28 @@ impl UpdateMetricSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
     /// <p>The dataset's description.</p>
+    #[doc(hidden)]
     pub metric_set_description: std::option::Option<std::string::String>,
     /// <p>The metric list.</p>
+    #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>The timestamp column.</p>
+    #[doc(hidden)]
     pub timestamp_column: std::option::Option<crate::model::TimestampColumn>,
     /// <p>The dimension list.</p>
+    #[doc(hidden)]
     pub dimension_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The dataset's interval.</p>
+    #[doc(hidden)]
     pub metric_set_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Contains information about source data used to generate metrics.</p>
+    #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::MetricSource>,
 }
 impl UpdateMetricSetInput {
@@ -5074,12 +5082,16 @@ impl std::fmt::Debug for UpdateMetricSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyDetectorInput {
     /// <p>The ARN of the detector to update.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The updated detector description.</p>
+    #[doc(hidden)]
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
+    #[doc(hidden)]
     pub anomaly_detector_config: std::option::Option<crate::model::AnomalyDetectorConfig>,
 }
 impl UpdateAnomalyDetectorInput {
@@ -5121,14 +5133,19 @@ impl std::fmt::Debug for UpdateAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAlertInput {
     /// <p>The ARN of the alert to update.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
     /// <p>A description of the alert.</p>
+    #[doc(hidden)]
     pub alert_description: std::option::Option<std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>Action that will be triggered when there is an alert.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    #[doc(hidden)]
     pub alert_filters: std::option::Option<crate::model::AlertFilters>,
 }
 impl UpdateAlertInput {
@@ -5173,8 +5190,10 @@ impl std::fmt::Debug for UpdateAlertInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys to remove from the resource's tags.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5201,8 +5220,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5233,8 +5254,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>Feedback for an anomalous metric.</p>
+    #[doc(hidden)]
     pub anomaly_group_time_series_feedback:
         std::option::Option<crate::model::AnomalyGroupTimeSeriesFeedback>,
 }
@@ -5267,6 +5290,7 @@ impl std::fmt::Debug for PutFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5288,10 +5312,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricSetsInput {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricSetsInput {
@@ -5323,14 +5350,19 @@ impl std::fmt::Debug for ListMetricSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupTimeSeriesInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the measure field.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyGroupTimeSeriesInput {
@@ -5372,12 +5404,16 @@ impl std::fmt::Debug for ListAnomalyGroupTimeSeriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupSummariesInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The minimum severity score for inclusion in the output.</p>
+    #[doc(hidden)]
     pub sensitivity_threshold: i32,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyGroupSummariesInput {
@@ -5414,14 +5450,19 @@ impl std::fmt::Debug for ListAnomalyGroupSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyGroupRelatedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+    #[doc(hidden)]
     pub relationship_type_filter: std::option::Option<crate::model::RelationshipType>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyGroupRelatedMetricsInput {
@@ -5463,8 +5504,10 @@ impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyDetectorsInput {
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyDetectorsInput {
@@ -5491,10 +5534,13 @@ impl std::fmt::Debug for ListAnomalyDetectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlertsInput {
     /// <p>The ARN of the alert's detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that will be displayed by the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlertsInput {
@@ -5526,6 +5572,7 @@ impl std::fmt::Debug for ListAlertsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampleDataInput {
     /// <p>A datasource bucket in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_source_config: std::option::Option<crate::model::SampleDataS3SourceConfig>,
 }
 impl GetSampleDataInput {
@@ -5547,13 +5594,17 @@ impl std::fmt::Debug for GetSampleDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The anomalous metric and group ID.</p>
+    #[doc(hidden)]
     pub anomaly_group_time_series_feedback:
         std::option::Option<crate::model::AnomalyGroupTimeSeries>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFeedbackInput {
@@ -5595,8 +5646,10 @@ impl std::fmt::Debug for GetFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyGroupInput {
     /// <p>The ID of the anomaly group.</p>
+    #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl GetAnomalyGroupInput {
@@ -5623,8 +5676,10 @@ impl std::fmt::Debug for GetAnomalyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMetricSetConfigInput {
     /// <p>An anomaly detector ARN.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>A data source.</p>
+    #[doc(hidden)]
     pub auto_detection_metric_source: std::option::Option<crate::model::AutoDetectionMetricSource>,
 }
 impl DetectMetricSetConfigInput {
@@ -5656,6 +5711,7 @@ impl std::fmt::Debug for DetectMetricSetConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricSetInput {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMetricSetInput {
@@ -5677,6 +5733,7 @@ impl std::fmt::Debug for DescribeMetricSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyDetectorInput {
     /// <p>The ARN of the detector to describe.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyDetectorInput {
@@ -5698,12 +5755,16 @@ impl std::fmt::Debug for DescribeAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnomalyDetectionExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp of the anomaly detection job.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyDetectionExecutionsInput {
@@ -5740,6 +5801,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlertInput {
     /// <p>The ARN of the alert to describe.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAlertInput {
@@ -5761,6 +5823,7 @@ impl std::fmt::Debug for DescribeAlertInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalyDetectorInput {
     /// <p>The ARN of the detector to delete.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAnomalyDetectorInput {
@@ -5782,6 +5845,7 @@ impl std::fmt::Debug for DeleteAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlertInput {
     /// <p>The ARN of the alert to delete.</p>
+    #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAlertInput {
@@ -5803,6 +5867,7 @@ impl std::fmt::Debug for DeleteAlertInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl DeactivateAnomalyDetectorInput {
@@ -5824,26 +5889,37 @@ impl std::fmt::Debug for DeactivateAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMetricSetInput {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub metric_set_name: std::option::Option<std::string::String>,
     /// <p>A description of the dataset you are creating.</p>
+    #[doc(hidden)]
     pub metric_set_description: std::option::Option<std::string::String>,
     /// <p>A list of metrics that the dataset will contain.</p>
+    #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>Contains information about the column used for tracking time in your source data.</p>
+    #[doc(hidden)]
     pub timestamp_column: std::option::Option<crate::model::TimestampColumn>,
     /// <p>A list of the fields you want to treat as dimensions.</p>
+    #[doc(hidden)]
     pub dimension_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    #[doc(hidden)]
     pub metric_set_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Contains information about how the source data should be interpreted.</p>
+    #[doc(hidden)]
     pub metric_source: std::option::Option<crate::model::MetricSource>,
     /// <p>The time zone in which your source data was recorded.</p>
+    #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5919,14 +5995,19 @@ impl std::fmt::Debug for CreateMetricSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyDetectorInput {
     /// <p>The name of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_name: std::option::Option<std::string::String>,
     /// <p>A description of the detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>Contains information about the configuration of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_config: std::option::Option<crate::model::AnomalyDetectorConfig>,
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5977,19 +6058,26 @@ impl std::fmt::Debug for CreateAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlertInput {
     /// <p>The name of the alert.</p>
+    #[doc(hidden)]
     pub alert_name: std::option::Option<std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>A description of the alert.</p>
+    #[doc(hidden)]
     pub alert_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>Action that will be triggered when there is an alert.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    #[doc(hidden)]
     pub alert_filters: std::option::Option<crate::model::AlertFilters>,
 }
 impl CreateAlertInput {
@@ -6047,6 +6135,7 @@ impl std::fmt::Debug for CreateAlertInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackTestAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl BackTestAnomalyDetectorInput {
@@ -6068,6 +6157,7 @@ impl std::fmt::Debug for BackTestAnomalyDetectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateAnomalyDetectorInput {
     /// <p>The ARN of the anomaly detector.</p>
+    #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl ActivateAnomalyDetectorInput {

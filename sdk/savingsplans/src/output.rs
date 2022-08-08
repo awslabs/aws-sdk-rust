@@ -64,6 +64,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -137,8 +138,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingsOutput {
     /// <p>Information about the Savings Plans offerings.</p>
+    #[doc(hidden)]
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOffering>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOfferingsOutput {
@@ -220,8 +223,10 @@ impl DescribeSavingsPlansOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingRatesOutput {
     /// <p>Information about the Savings Plans offering rates.</p>
+    #[doc(hidden)]
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOfferingRatesOutput {
@@ -303,8 +308,10 @@ impl DescribeSavingsPlansOfferingRatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOutput {
     /// <p>Information about the Savings Plans.</p>
+    #[doc(hidden)]
     pub savings_plans: std::option::Option<std::vec::Vec<crate::model::SavingsPlan>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOutput {
@@ -385,10 +392,13 @@ impl DescribeSavingsPlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlanRatesOutput {
     /// <p>The ID of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
     /// <p>Information about the Savings Plans rates.</p>
+    #[doc(hidden)]
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlanRatesOutput {
@@ -520,6 +530,7 @@ impl DeleteQueuedSavingsPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSavingsPlanOutput {
     /// <p>The ID of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
 }
 impl CreateSavingsPlanOutput {

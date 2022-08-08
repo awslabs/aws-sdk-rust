@@ -34,8 +34,10 @@ impl SendHeartbeatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceRegistrationOutput {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
+    #[doc(hidden)]
     pub device_registration: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
+    #[doc(hidden)]
     pub cache_ttl: std::option::Option<std::string::String>,
 }
 impl GetDeviceRegistrationOutput {
@@ -110,6 +112,7 @@ impl GetDeviceRegistrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
 }
 impl GetDeploymentsOutput {

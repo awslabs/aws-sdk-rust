@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>Validate exception field name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Validate exception field message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,14 +148,19 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PitPolicyRule {
     /// <p>The ID of the rule.</p>
+    #[doc(hidden)]
     pub rule_id: i64,
     /// <p>The units used to measure the interval and retentionDuration.</p>
+    #[doc(hidden)]
     pub units: std::option::Option<crate::model::PitPolicyRuleUnits>,
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
+    #[doc(hidden)]
     pub retention_duration: i32,
     /// <p>Whether this rule is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl PitPolicyRule {
@@ -448,17 +455,23 @@ impl AsRef<str> for ReplicationConfigurationEbsEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>The name of the device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Whether to boot from this disk or not.</p>
+    #[doc(hidden)]
     pub is_boot_disk: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>The requested number of I/O operations per second (IOPS).</p>
+    #[doc(hidden)]
     pub iops: i64,
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
+    #[doc(hidden)]
     pub throughput: i64,
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    #[doc(hidden)]
     pub optimized_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
 }
@@ -770,6 +783,7 @@ impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Licensing {
     /// <p>Whether to enable "Bring your own license" or not.</p>
+    #[doc(hidden)]
     pub os_byol: std::option::Option<bool>,
 }
 impl Licensing {
@@ -934,12 +948,16 @@ impl AsRef<str> for LaunchDisposition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StagingArea {
     /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExtensionStatus>,
     /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+    #[doc(hidden)]
     pub staging_account_id: std::option::Option<std::string::String>,
     /// <p>Arn of the staging source server if this source server is extended</p>
+    #[doc(hidden)]
     pub staging_source_server_arn: std::option::Option<std::string::String>,
     /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl StagingArea {
@@ -1116,20 +1134,28 @@ impl AsRef<str> for ExtensionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<std::string::String>,
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
+    #[doc(hidden)]
     pub recommended_instance_type: std::option::Option<std::string::String>,
     /// <p>Hints used to uniquely identify a machine.</p>
+    #[doc(hidden)]
     pub identification_hints: std::option::Option<crate::model::IdentificationHints>,
     /// <p>An array of network interfaces.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>An array of disks.</p>
+    #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
     /// <p>An array of CPUs.</p>
+    #[doc(hidden)]
     pub cpus: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
     /// <p>The amount of RAM in bytes.</p>
+    #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Operating system.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<crate::model::Os>,
 }
 impl SourceProperties {
@@ -1340,6 +1366,7 @@ impl SourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Os {
     /// <p>The long name of the Operating System.</p>
+    #[doc(hidden)]
     pub full_string: std::option::Option<std::string::String>,
 }
 impl Os {
@@ -1394,8 +1421,10 @@ impl Os {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cpu {
     /// <p>The number of CPU cores.</p>
+    #[doc(hidden)]
     pub cores: i64,
     /// <p>The model name of the CPU.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl Cpu {
@@ -1467,8 +1496,10 @@ impl Cpu {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Disk {
     /// <p>The disk or device name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
+    #[doc(hidden)]
     pub bytes: i64,
 }
 impl Disk {
@@ -1540,10 +1571,13 @@ impl Disk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The MAC address of the network interface.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>Network interface IPs.</p>
+    #[doc(hidden)]
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether this is the primary network interface.</p>
+    #[doc(hidden)]
     pub is_primary: std::option::Option<bool>,
 }
 impl NetworkInterface {
@@ -1641,12 +1675,16 @@ impl NetworkInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentificationHints {
     /// <p>Fully Qualified Domain Name identification hint.</p>
+    #[doc(hidden)]
     pub fqdn: std::option::Option<std::string::String>,
     /// <p>Hostname identification hint.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>vCenter VM path identification hint.</p>
+    #[doc(hidden)]
     pub vm_ware_uuid: std::option::Option<std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
+    #[doc(hidden)]
     pub aws_instance_id: std::option::Option<std::string::String>,
 }
 impl IdentificationHints {
@@ -1755,14 +1793,19 @@ impl IdentificationHints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycle {
     /// <p>The date and time of when the Source Server was added to the service.</p>
+    #[doc(hidden)]
     pub added_to_service_date_time: std::option::Option<std::string::String>,
     /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
+    #[doc(hidden)]
     pub first_byte_date_time: std::option::Option<std::string::String>,
     /// <p>The amount of time that the Source Server has been replicating for.</p>
+    #[doc(hidden)]
     pub elapsed_replication_duration: std::option::Option<std::string::String>,
     /// <p>The date and time this Source Server was last seen by the service.</p>
+    #[doc(hidden)]
     pub last_seen_by_service_date_time: std::option::Option<std::string::String>,
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
+    #[doc(hidden)]
     pub last_launch: std::option::Option<crate::model::LifeCycleLastLaunch>,
 }
 impl LifeCycle {
@@ -1915,6 +1958,7 @@ impl LifeCycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastLaunch {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
+    #[doc(hidden)]
     pub initiated: std::option::Option<crate::model::LifeCycleLastLaunchInitiated>,
 }
 impl LifeCycleLastLaunch {
@@ -1972,10 +2016,13 @@ impl LifeCycleLastLaunch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
+    #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Job type that was used to last launch the Source Server.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LastLaunchType>,
 }
 impl LifeCycleLastLaunchInitiated {
@@ -2125,17 +2172,23 @@ impl AsRef<str> for LastLaunchType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInfo {
     /// <p>Data replication lag duration.</p>
+    #[doc(hidden)]
     pub lag_duration: std::option::Option<std::string::String>,
     /// <p>An estimate of when the data replication will be completed.</p>
+    #[doc(hidden)]
     pub eta_date_time: std::option::Option<std::string::String>,
     /// <p>The disks that should be replicated.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
     /// <p>The state of the data replication.</p>
+    #[doc(hidden)]
     pub data_replication_state: std::option::Option<crate::model::DataReplicationState>,
     /// <p>Information about whether the data replication has been initiated.</p>
+    #[doc(hidden)]
     pub data_replication_initiation: std::option::Option<crate::model::DataReplicationInitiation>,
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub data_replication_error: std::option::Option<crate::model::DataReplicationError>,
 }
 impl DataReplicationInfo {
@@ -2317,8 +2370,10 @@ impl DataReplicationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationError {
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::DataReplicationErrorString>,
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
 }
 impl DataReplicationError {
@@ -2551,10 +2606,13 @@ impl AsRef<str> for DataReplicationErrorString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>The date and time of the next attempt to initiate data replication.</p>
+    #[doc(hidden)]
     pub next_attempt_date_time: std::option::Option<std::string::String>,
     /// <p>The steps of the current attempt to initiate data replication.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiation {
@@ -2659,8 +2717,10 @@ impl DataReplicationInitiation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInitiationStep {
     /// <p>The name of the step.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::DataReplicationInitiationStepName>,
     /// <p>The status of the step.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataReplicationInitiationStepStatus>,
 }
 impl DataReplicationInitiationStep {
@@ -3034,14 +3094,19 @@ impl AsRef<str> for DataReplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The total amount of data to be replicated in bytes.</p>
+    #[doc(hidden)]
     pub total_storage_bytes: i64,
     /// <p>The amount of data replicated so far in bytes.</p>
+    #[doc(hidden)]
     pub replicated_storage_bytes: i64,
     /// <p>The amount of data to be rescanned in bytes.</p>
+    #[doc(hidden)]
     pub rescanned_storage_bytes: i64,
     /// <p>The size of the replication backlog in bytes.</p>
+    #[doc(hidden)]
     pub backlogged_storage_bytes: i64,
 }
 impl DataReplicationInfoReplicatedDisk {
@@ -3227,14 +3292,19 @@ impl AsRef<str> for LastLaunchResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
+    #[doc(hidden)]
     pub expected_timestamp: std::option::Option<std::string::String>,
     /// <p>The actual timestamp that the snapshot was taken.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>A list of EBS snapshots.</p>
+    #[doc(hidden)]
     pub ebs_snapshots: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RecoverySnapshot {
@@ -3427,8 +3497,10 @@ impl AsRef<str> for RecoverySnapshotsOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoverySnapshotsRequestFilters {
     /// <p>The start date in a date range query.</p>
+    #[doc(hidden)]
     pub from_date_time: std::option::Option<std::string::String>,
     /// <p>The end date in a date range query.</p>
+    #[doc(hidden)]
     pub to_date_time: std::option::Option<std::string::String>,
 }
 impl DescribeRecoverySnapshotsRequestFilters {
@@ -3503,23 +3575,32 @@ impl DescribeRecoverySnapshotsRequestFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The ID of the Job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a Job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the Job.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JobType>,
     /// <p>A string representing who initiated the Job.</p>
+    #[doc(hidden)]
     pub initiated_by: std::option::Option<crate::model::InitiatedBy>,
     /// <p>The date and time of when the Job was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
     /// <p>The date and time of when the Job ended.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<std::string::String>,
     /// <p>The status of the Job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A list of servers that the Job is acting upon.</p>
+    #[doc(hidden)]
     pub participating_servers:
         std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
     /// <p>A list of tags associated with the Job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3752,10 +3833,13 @@ impl Job {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParticipatingServer {
     /// <p>The Source Server ID of a participating server.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The Recovery Instance ID of a participating server.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The launch status of a participating server.</p>
+    #[doc(hidden)]
     pub launch_status: std::option::Option<crate::model::LaunchStatus>,
 }
 impl ParticipatingServer {
@@ -4116,8 +4200,10 @@ impl AsRef<str> for JobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
+    #[doc(hidden)]
     pub recovery_snapshot_id: std::option::Option<std::string::String>,
 }
 impl StartRecoveryRequestSourceServer {
@@ -4195,23 +4281,32 @@ impl StartRecoveryRequestSourceServer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceServer {
     /// <p>The ID of the Source Server.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Source Server.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the Source Server.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The status of the last recovery launch of this Source Server.</p>
+    #[doc(hidden)]
     pub last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
     /// <p>The Data Replication Info of the Source Server.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>The lifecycle information of this Source Server.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>The staging area of the source server.</p>
+    #[doc(hidden)]
     pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl SourceServer {
@@ -4443,10 +4538,13 @@ impl SourceServer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
+    #[doc(hidden)]
     pub hardware_id: std::option::Option<std::string::String>,
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+    #[doc(hidden)]
     pub staging_account_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {
@@ -4553,41 +4651,57 @@ impl DescribeSourceServersRequestFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfigurationTemplate {
     /// <p>The Replication Configuration Template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>The Replication Configuration Template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The type of EBS encryption to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>,
 }
 impl ReplicationConfigurationTemplate {
@@ -5036,30 +5150,42 @@ impl ReplicationConfigurationTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstance {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
+    #[doc(hidden)]
     pub ec2_instance_state: std::option::Option<crate::model::Ec2InstanceState>,
     /// <p>The ID of the Job that created the Recovery Instance.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An object representing failback related information of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub failback: std::option::Option<crate::model::RecoveryInstanceFailback>,
     /// <p>The Data Replication Info of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub data_replication_info:
         std::option::Option<crate::model::RecoveryInstanceDataReplicationInfo>,
     /// <p>Properties of the Recovery Instance machine.</p>
+    #[doc(hidden)]
     pub recovery_instance_properties: std::option::Option<crate::model::RecoveryInstanceProperties>,
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
+    #[doc(hidden)]
     pub point_in_time_snapshot_date_time: std::option::Option<std::string::String>,
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
+    #[doc(hidden)]
     pub is_drill: std::option::Option<bool>,
 }
 impl RecoveryInstance {
@@ -5366,18 +5492,25 @@ impl RecoveryInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceProperties {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<std::string::String>,
     /// <p>Hints used to uniquely identify a machine.</p>
+    #[doc(hidden)]
     pub identification_hints: std::option::Option<crate::model::IdentificationHints>,
     /// <p>An array of network interfaces.</p>
+    #[doc(hidden)]
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>An array of disks.</p>
+    #[doc(hidden)]
     pub disks: std::option::Option<std::vec::Vec<crate::model::RecoveryInstanceDisk>>,
     /// <p>An array of CPUs.</p>
+    #[doc(hidden)]
     pub cpus: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
     /// <p>The amount of RAM in bytes.</p>
+    #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Operating system.</p>
+    #[doc(hidden)]
     pub os: std::option::Option<crate::model::Os>,
 }
 impl RecoveryInstanceProperties {
@@ -5568,10 +5701,13 @@ impl RecoveryInstanceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDisk {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
+    #[doc(hidden)]
     pub internal_device_name: std::option::Option<std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
+    #[doc(hidden)]
     pub bytes: i64,
     /// <p>The EBS Volume ID of this disk.</p>
+    #[doc(hidden)]
     pub ebs_volume_id: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceDisk {
@@ -5666,20 +5802,26 @@ impl RecoveryInstanceDisk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
+    #[doc(hidden)]
     pub lag_duration: std::option::Option<std::string::String>,
     /// <p>An estimate of when the data replication will be completed.</p>
+    #[doc(hidden)]
     pub eta_date_time: std::option::Option<std::string::String>,
     /// <p>The disks that should be replicated.</p>
+    #[doc(hidden)]
     pub replicated_disks: std::option::Option<
         std::vec::Vec<crate::model::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
     >,
     /// <p>The state of the data replication.</p>
+    #[doc(hidden)]
     pub data_replication_state:
         std::option::Option<crate::model::RecoveryInstanceDataReplicationState>,
     /// <p>Information about whether the data replication has been initiated.</p>
+    #[doc(hidden)]
     pub data_replication_initiation:
         std::option::Option<crate::model::RecoveryInstanceDataReplicationInitiation>,
     /// <p>Information about Data Replication</p>
+    #[doc(hidden)]
     pub data_replication_error:
         std::option::Option<crate::model::RecoveryInstanceDataReplicationError>,
 }
@@ -5872,8 +6014,10 @@ impl RecoveryInstanceDataReplicationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::FailbackReplicationError>,
     /// <p>Error in data replication.</p>
+    #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceDataReplicationError {
@@ -6061,8 +6205,10 @@ impl AsRef<str> for FailbackReplicationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>The steps of the current attempt to initiate data replication.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<
         std::vec::Vec<crate::model::RecoveryInstanceDataReplicationInitiationStep>,
     >,
@@ -6157,8 +6303,10 @@ impl RecoveryInstanceDataReplicationInitiation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDataReplicationInitiationStep {
     /// <p>The name of the step.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::RecoveryInstanceDataReplicationInitiationStepName>,
     /// <p>The status of the step.</p>
+    #[doc(hidden)]
     pub status:
         std::option::Option<crate::model::RecoveryInstanceDataReplicationInitiationStepStatus>,
 }
@@ -6508,14 +6656,19 @@ impl AsRef<str> for RecoveryInstanceDataReplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceDataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The total amount of data to be replicated in bytes.</p>
+    #[doc(hidden)]
     pub total_storage_bytes: i64,
     /// <p>The amount of data replicated so far in bytes.</p>
+    #[doc(hidden)]
     pub replicated_storage_bytes: i64,
     /// <p>The amount of data to be rescanned in bytes.</p>
+    #[doc(hidden)]
     pub rescanned_storage_bytes: i64,
     /// <p>The size of the replication backlog in bytes.</p>
+    #[doc(hidden)]
     pub backlogged_storage_bytes: i64,
 }
 impl RecoveryInstanceDataReplicationInfoReplicatedDisk {
@@ -6639,22 +6792,31 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDisk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecoveryInstanceFailback {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
+    #[doc(hidden)]
     pub failback_client_id: std::option::Option<std::string::String>,
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
+    #[doc(hidden)]
     pub failback_job_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the failback initiation started.</p>
+    #[doc(hidden)]
     pub failback_initiation_time: std::option::Option<std::string::String>,
     /// <p>The state of the failback process that this Recovery Instance is in.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::FailbackState>,
     /// <p>The date and time the agent on the Recovery Instance was last seen by the service.</p>
+    #[doc(hidden)]
     pub agent_last_seen_by_service_date_time: std::option::Option<std::string::String>,
     /// <p>The date and time that the failback client was last seen by the service.</p>
+    #[doc(hidden)]
     pub failback_client_last_seen_by_service_date_time: std::option::Option<std::string::String>,
     /// <p>Whether we are failing back to the original Source Server for this Recovery Instance.</p>
+    #[doc(hidden)]
     pub failback_to_original_server: std::option::Option<bool>,
     /// <p>The date and time of the first byte that was replicated from the Recovery Instance.</p>
+    #[doc(hidden)]
     pub first_byte_date_time: std::option::Option<std::string::String>,
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
+    #[doc(hidden)]
     pub elapsed_replication_duration: std::option::Option<std::string::String>,
 }
 impl RecoveryInstanceFailback {
@@ -7049,8 +7211,10 @@ impl AsRef<str> for Ec2InstanceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
+    #[doc(hidden)]
     pub recovery_instance_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
+    #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRecoveryInstancesRequestFilters {
@@ -7140,10 +7304,13 @@ impl DescribeRecoveryInstancesRequestFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobLog {
     /// <p>The date and time the log was taken.</p>
+    #[doc(hidden)]
     pub log_date_time: std::option::Option<std::string::String>,
     /// <p>The event represents the type of a log.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::JobLogEvent>,
     /// <p>Metadata associated with a Job log.</p>
+    #[doc(hidden)]
     pub event_data: std::option::Option<crate::model::JobLogEventData>,
 }
 impl JobLog {
@@ -7238,14 +7405,19 @@ impl JobLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobLogEventData {
     /// <p>The ID of a Source Server.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ID of a conversion server.</p>
+    #[doc(hidden)]
     pub conversion_server_id: std::option::Option<std::string::String>,
     /// <p>The ID of a Recovery Instance.</p>
+    #[doc(hidden)]
     pub target_instance_id: std::option::Option<std::string::String>,
     /// <p>A string representing a job error.</p>
+    #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
     /// <p>Properties of a conversion job</p>
+    #[doc(hidden)]
     pub conversion_properties: std::option::Option<crate::model::ConversionProperties>,
 }
 impl JobLogEventData {
@@ -7382,6 +7554,7 @@ impl JobLogEventData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+    #[doc(hidden)]
     pub volume_to_conversion_map: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -7389,12 +7562,16 @@ pub struct ConversionProperties {
         >,
     >,
     /// <p>The root volume name of a conversion job</p>
+    #[doc(hidden)]
     pub root_volume_name: std::option::Option<std::string::String>,
     /// <p>Whether the volume being converted uses UEFI or not</p>
+    #[doc(hidden)]
     pub force_uefi: std::option::Option<bool>,
     /// <p>The timestamp of when the snapshot being converted was taken</p>
+    #[doc(hidden)]
     pub data_timestamp: std::option::Option<std::string::String>,
     /// <p>A mapping between the volumes and their sizes</p>
+    #[doc(hidden)]
     pub volume_to_volume_size:
         std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
@@ -7699,10 +7876,13 @@ impl AsRef<str> for JobLogEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsRequestFilters {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
+    #[doc(hidden)]
     pub job_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The start date in a date range query.</p>
+    #[doc(hidden)]
     pub from_date: std::option::Option<std::string::String>,
     /// <p>The end date in a date range query.</p>
+    #[doc(hidden)]
     pub to_date: std::option::Option<std::string::String>,
 }
 impl DescribeJobsRequestFilters {
@@ -7800,6 +7980,7 @@ impl DescribeJobsRequestFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Account {
     /// <p>Account ID of AWS account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl Account {
@@ -7854,10 +8035,13 @@ impl Account {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StagingSourceServer {
     /// <p>Hostname of staging source server.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The ARN of the source server.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the staging source server.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

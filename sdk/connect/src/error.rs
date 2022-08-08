@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -69,6 +70,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The message about the resource.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -133,6 +135,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>The message about the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -197,6 +200,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>The message about the parameters.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -261,6 +265,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
     /// <p>The message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceException {
@@ -325,10 +330,13 @@ impl InternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The identifier for the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
@@ -432,6 +440,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateResourceException {
@@ -496,6 +505,7 @@ impl DuplicateResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
@@ -560,8 +570,10 @@ impl ServiceQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub property_list:
         std::option::Option<std::vec::Vec<crate::model::PropertyValidationExceptionProperty>>,
 }
@@ -662,6 +674,7 @@ impl PropertyValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotencyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdempotencyException {
@@ -726,6 +739,7 @@ impl IdempotencyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -790,6 +804,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The message about the limit.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -854,8 +869,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidContactFlowModuleException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidContactFlowModuleException {
@@ -947,8 +964,10 @@ impl InvalidContactFlowModuleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidContactFlowException {
     /// <p>The problems with the contact flow. Please fix before trying again.</p>
+    #[doc(hidden)]
     pub problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidContactFlowException {
@@ -1041,6 +1060,7 @@ impl InvalidContactFlowException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactNotFoundException {
     /// <p>The message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContactNotFoundException {
@@ -1105,6 +1125,7 @@ impl ContactNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundContactNotPermittedException {
     /// <p>The message about the contact.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OutboundContactNotPermittedException {
@@ -1169,6 +1190,7 @@ impl OutboundContactNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationNotAllowedException {
     /// <p>The message about the outbound calls.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DestinationNotAllowedException {
@@ -1233,6 +1255,7 @@ impl DestinationNotAllowedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserNotFoundException {
@@ -1297,6 +1320,7 @@ impl UserNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowNotPublishedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ContactFlowNotPublishedException {
@@ -1361,6 +1385,7 @@ impl ContactFlowNotPublishedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConflictException {

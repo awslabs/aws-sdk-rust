@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceAuthorizationOutput {
     /// <p>The short-lived code that is used by the device when polling for a session token.</p>
+    #[doc(hidden)]
     pub device_code: std::option::Option<std::string::String>,
     /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
+    #[doc(hidden)]
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
+    #[doc(hidden)]
     pub verification_uri: std::option::Option<std::string::String>,
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
+    #[doc(hidden)]
     pub verification_uri_complete: std::option::Option<std::string::String>,
     /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
+    #[doc(hidden)]
     pub expires_in: i32,
     /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
+    #[doc(hidden)]
     pub interval: i32,
 }
 impl StartDeviceAuthorizationOutput {
@@ -159,16 +165,22 @@ impl StartDeviceAuthorizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterClientOutput {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
+    #[doc(hidden)]
     pub client_id_issued_at: i64,
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
+    #[doc(hidden)]
     pub client_secret_expires_at: i64,
     /// <p>The endpoint where the client can request authorization.</p>
+    #[doc(hidden)]
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The endpoint where the client can get an access token.</p>
+    #[doc(hidden)]
     pub token_endpoint: std::option::Option<std::string::String>,
 }
 impl RegisterClientOutput {
@@ -317,16 +329,21 @@ impl RegisterClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenOutput {
     /// <p>An opaque token to access Amazon Web Services SSO resources assigned to a user.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
+    #[doc(hidden)]
     pub token_type: std::option::Option<std::string::String>,
     /// <p>Indicates the time in seconds when an access token will expire.</p>
+    #[doc(hidden)]
     pub expires_in: i32,
     /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
     /// <p>The identifier of the user that associated with the access token, if present.</p>
+    #[doc(hidden)]
     pub id_token: std::option::Option<std::string::String>,
 }
 impl CreateTokenOutput {

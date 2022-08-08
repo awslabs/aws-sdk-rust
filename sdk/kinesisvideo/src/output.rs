@@ -274,8 +274,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamOutput {
     /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified stream.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -368,8 +370,10 @@ impl ListTagsForStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -462,8 +466,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
     /// <p>An array of <code>StreamInfo</code> objects.</p>
+    #[doc(hidden)]
     pub stream_info_list: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>,
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -544,8 +550,10 @@ impl ListStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSignalingChannelsOutput {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
+    #[doc(hidden)]
     pub channel_info_list: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>,
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSignalingChannelsOutput {
@@ -626,6 +634,7 @@ impl ListSignalingChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSignalingChannelEndpointOutput {
     /// <p>A list of endpoints for the specified signaling channel.</p>
+    #[doc(hidden)]
     pub resource_endpoint_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
 }
@@ -696,6 +705,7 @@ impl GetSignalingChannelEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataEndpointOutput {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
+    #[doc(hidden)]
     pub data_endpoint: std::option::Option<std::string::String>,
 }
 impl GetDataEndpointOutput {
@@ -753,6 +763,7 @@ impl GetDataEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamOutput {
     /// <p>An object that describes the stream.</p>
+    #[doc(hidden)]
     pub stream_info: std::option::Option<crate::model::StreamInfo>,
 }
 impl DescribeStreamOutput {
@@ -810,6 +821,7 @@ impl DescribeStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSignalingChannelOutput {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
+    #[doc(hidden)]
     pub channel_info: std::option::Option<crate::model::ChannelInfo>,
 }
 impl DescribeSignalingChannelOutput {
@@ -867,6 +879,7 @@ impl DescribeSignalingChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationConfigurationOutput {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
 impl DescribeNotificationConfigurationOutput {
@@ -933,6 +946,7 @@ impl DescribeNotificationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageGenerationConfigurationOutput {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+    #[doc(hidden)]
     pub image_generation_configuration:
         std::option::Option<crate::model::ImageGenerationConfiguration>,
 }
@@ -1060,6 +1074,7 @@ impl DeleteSignalingChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamOutput {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl CreateStreamOutput {
@@ -1114,6 +1129,7 @@ impl CreateStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSignalingChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateSignalingChannelOutput {

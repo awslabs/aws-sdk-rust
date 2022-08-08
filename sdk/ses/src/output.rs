@@ -66,6 +66,7 @@ impl VerifyEmailAddressOutput {
 pub struct VerifyDomainIdentityOutput {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
+    #[doc(hidden)]
     pub verification_token: std::option::Option<std::string::String>,
 }
 impl VerifyDomainIdentityOutput {
@@ -128,6 +129,7 @@ pub struct VerifyDomainDkimOutput {
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VerifyDomainDkimOutput {
@@ -439,6 +441,7 @@ impl UpdateAccountSendingEnabledOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
+    #[doc(hidden)]
     pub rendered_template: std::option::Option<std::string::String>,
 }
 impl TestRenderTemplateOutput {
@@ -707,6 +710,7 @@ impl SetActiveReceiptRuleSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendTemplatedEmailOutput {
@@ -761,6 +765,7 @@ impl SendTemplatedEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendRawEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendRawEmailOutput {
@@ -815,6 +820,7 @@ impl SendRawEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendEmail</code> action. </p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendEmailOutput {
@@ -869,6 +875,7 @@ impl SendEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendCustomVerificationEmailOutput {
@@ -923,6 +930,7 @@ impl SendCustomVerificationEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestinationStatus>>,
 }
 impl SendBulkTemplatedEmailOutput {
@@ -987,6 +995,7 @@ impl SendBulkTemplatedEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendBounceOutput {
@@ -1131,6 +1140,7 @@ impl PutConfigurationSetDeliveryOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
+    #[doc(hidden)]
     pub verified_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListVerifiedEmailAddressesOutput {
@@ -1195,8 +1205,10 @@ impl ListVerifiedEmailAddressesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
+    #[doc(hidden)]
     pub templates_metadata: std::option::Option<std::vec::Vec<crate::model::TemplateMetadata>>,
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTemplatesOutput {
@@ -1278,8 +1290,10 @@ impl ListTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
+    #[doc(hidden)]
     pub rule_sets: std::option::Option<std::vec::Vec<crate::model::ReceiptRuleSetMetadata>>,
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReceiptRuleSetsOutput {
@@ -1361,6 +1375,7 @@ impl ListReceiptRuleSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ReceiptFilter>>,
 }
 impl ListReceiptFiltersOutput {
@@ -1424,6 +1439,7 @@ impl ListReceiptFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoliciesOutput {
     /// <p>A list of names of policies that apply to the specified identity.</p>
+    #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListIdentityPoliciesOutput {
@@ -1487,8 +1503,10 @@ impl ListIdentityPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentitiesOutput {
     /// <p>A list of identities.</p>
+    #[doc(hidden)]
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentitiesOutput {
@@ -1569,9 +1587,11 @@ impl ListIdentitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
+    #[doc(hidden)]
     pub custom_verification_email_templates:
         std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplate>>,
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVerificationEmailTemplatesOutput {
@@ -1663,8 +1683,10 @@ impl ListCustomVerificationEmailTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
+    #[doc(hidden)]
     pub configuration_sets: std::option::Option<std::vec::Vec<crate::model::ConfigurationSet>>,
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsOutput {
@@ -1746,6 +1768,7 @@ impl ListConfigurationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateOutput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<crate::model::Template>,
 }
 impl GetTemplateOutput {
@@ -1800,6 +1823,7 @@ impl GetTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
+    #[doc(hidden)]
     pub send_data_points: std::option::Option<std::vec::Vec<crate::model::SendDataPoint>>,
 }
 impl GetSendStatisticsOutput {
@@ -1864,12 +1888,15 @@ impl GetSendStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendQuotaOutput {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
+    #[doc(hidden)]
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_send_rate: f64,
     /// <p>The number of emails sent during the previous 24 hours.</p>
+    #[doc(hidden)]
     pub sent_last24_hours: f64,
 }
 impl GetSendQuotaOutput {
@@ -1964,6 +1991,7 @@ impl GetSendQuotaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    #[doc(hidden)]
     pub verification_attributes: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2053,6 +2081,7 @@ impl GetIdentityVerificationAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
+    #[doc(hidden)]
     pub policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2128,6 +2157,7 @@ impl GetIdentityPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
+    #[doc(hidden)]
     pub notification_attributes: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2217,6 +2247,7 @@ impl GetIdentityNotificationAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
+    #[doc(hidden)]
     pub mail_from_domain_attributes: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2309,6 +2340,7 @@ impl GetIdentityMailFromDomainAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
+    #[doc(hidden)]
     pub dkim_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
     >,
@@ -2389,16 +2421,22 @@ impl GetIdentityDkimAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomVerificationEmailTemplateOutput {
     /// <p>The name of the custom verification email template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
+    #[doc(hidden)]
     pub template_subject: std::option::Option<std::string::String>,
     /// <p>The content of the custom verification email.</p>
+    #[doc(hidden)]
     pub template_content: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    #[doc(hidden)]
     pub success_redirection_url: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    #[doc(hidden)]
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl GetCustomVerificationEmailTemplateOutput {
@@ -2556,6 +2594,7 @@ impl GetCustomVerificationEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSendingEnabledOutput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl GetAccountSendingEnabledOutput {
@@ -2610,8 +2649,10 @@ impl GetAccountSendingEnabledOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleSetOutput {
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
 }
 impl DescribeReceiptRuleSetOutput {
@@ -2695,6 +2736,7 @@ impl DescribeReceiptRuleSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::ReceiptRule>,
 }
 impl DescribeReceiptRuleOutput {
@@ -2747,14 +2789,19 @@ impl DescribeReceiptRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set: std::option::Option<crate::model::ConfigurationSet>,
     /// <p>A list of event destinations associated with the configuration set. </p>
+    #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
+    #[doc(hidden)]
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
+    #[doc(hidden)]
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that represents the reputation settings for the configuration set. </p>
+    #[doc(hidden)]
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
 }
 impl DescribeConfigurationSetOutput {
@@ -2899,8 +2946,10 @@ impl DescribeConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActiveReceiptRuleSetOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>The receipt rules that belong to the active rule set.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
 }
 impl DescribeActiveReceiptRuleSetOutput {

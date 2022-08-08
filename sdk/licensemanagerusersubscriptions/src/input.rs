@@ -1741,12 +1741,16 @@ impl StopProductSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl StopProductSubscriptionInput {
@@ -1783,12 +1787,16 @@ impl std::fmt::Debug for StopProductSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProductSubscriptionInput {
     /// <p>The user name from the identity provider of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl StartProductSubscriptionInput {
@@ -1825,8 +1833,10 @@ impl std::fmt::Debug for StartProductSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
 }
 impl RegisterIdentityProviderInput {
@@ -1853,14 +1863,19 @@ impl std::fmt::Debug for RegisterIdentityProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserAssociationsInput {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserAssociationsInput {
@@ -1902,14 +1917,19 @@ impl std::fmt::Debug for ListUserAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProductSubscriptionsInput {
@@ -1951,10 +1971,13 @@ impl std::fmt::Debug for ListProductSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesInput {
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListInstancesInput {
@@ -1986,8 +2009,10 @@ impl std::fmt::Debug for ListInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersInput {
     /// <p>Maximum number of results to return in a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProvidersInput {
@@ -2014,12 +2039,16 @@ impl std::fmt::Debug for ListIdentityProvidersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl DisassociateUserInput {
@@ -2056,8 +2085,10 @@ impl std::fmt::Debug for DisassociateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
 }
 impl DeregisterIdentityProviderInput {
@@ -2084,12 +2115,16 @@ impl std::fmt::Debug for DeregisterIdentityProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identity provider of the user.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
     /// <p>The domain name of the user.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl AssociateUserInput {

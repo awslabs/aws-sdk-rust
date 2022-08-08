@@ -65,12 +65,16 @@ impl UpdateNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The previous action resource information. </p>
+    #[doc(hidden)]
     pub old_action: std::option::Option<crate::model::Action>,
     /// <p> The updated action resource information. </p>
+    #[doc(hidden)]
     pub new_action: std::option::Option<crate::model::Action>,
 }
 impl UpdateBudgetActionOutput {
@@ -206,12 +210,16 @@ impl UpdateBudgetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of execution. </p>
+    #[doc(hidden)]
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionOutput {
@@ -320,8 +328,10 @@ impl ExecuteBudgetActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubscribersForNotificationOutput {
@@ -402,8 +412,10 @@ impl DescribeSubscribersForNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
+    #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationsForBudgetOutput {
@@ -484,8 +496,10 @@ impl DescribeNotificationsForBudgetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
+    #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::Budget>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetsOutput {
@@ -567,8 +581,10 @@ impl DescribeBudgetsOutput {
 pub struct DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
     /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
+    #[doc(hidden)]
     pub budget_performance_history: std::option::Option<crate::model::BudgetPerformanceHistory>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryOutput {
@@ -655,9 +671,11 @@ impl DescribeBudgetPerformanceHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
+    #[doc(hidden)]
     pub budget_notifications_for_account:
         std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetNotificationsForAccountOutput {
@@ -747,8 +765,10 @@ impl DescribeBudgetNotificationsForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetOutput {
     /// <p> A list of the budget action resources information. </p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForBudgetOutput {
@@ -829,8 +849,10 @@ impl DescribeBudgetActionsForBudgetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountOutput {
     /// <p> A list of the budget action resources information. </p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForAccountOutput {
@@ -911,8 +933,10 @@ impl DescribeBudgetActionsForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
+    #[doc(hidden)]
     pub action_histories: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionHistoriesOutput {
@@ -994,10 +1018,13 @@ impl DescribeBudgetActionHistoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A budget action resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DescribeBudgetActionOutput {
@@ -1086,6 +1113,7 @@ impl DescribeBudgetActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
+    #[doc(hidden)]
     pub budget: std::option::Option<crate::model::Budget>,
 }
 impl DescribeBudgetOutput {
@@ -1200,10 +1228,13 @@ impl DeleteNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>A budget action resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DeleteBudgetActionOutput {
@@ -1382,10 +1413,13 @@ impl CreateNotificationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl CreateBudgetActionOutput {

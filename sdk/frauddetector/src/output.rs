@@ -34,6 +34,7 @@ impl UpdateVariableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleVersionOutput {
     /// <p>The new rule version that was created.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl UpdateRuleVersionOutput {
@@ -146,12 +147,16 @@ impl UpdateModelVersionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelVersionOutput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number of the model version updated.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The status of the updated model version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdateModelVersionOutput {
@@ -713,8 +718,10 @@ impl PutDetectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The next token for subsequent requests. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -795,9 +802,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
+    #[doc(hidden)]
     pub event_prediction_summaries:
         std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventPredictionsOutput {
@@ -887,8 +896,10 @@ impl ListEventPredictionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVariablesOutput {
     /// <p>The names of the variables returned. </p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
     /// <p>The next page token to be used in subsequent requests. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetVariablesOutput {
@@ -969,8 +980,10 @@ impl GetVariablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRulesOutput {
     /// <p>The details of the requested rule.</p>
+    #[doc(hidden)]
     pub rule_details: std::option::Option<std::vec::Vec<crate::model::RuleDetail>>,
     /// <p>The next page token to be used in subsequent requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetRulesOutput {
@@ -1051,8 +1064,10 @@ impl GetRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutcomesOutput {
     /// <p>The outcomes. </p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<crate::model::Outcome>>,
     /// <p>The next page token for subsequent requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOutcomesOutput {
@@ -1133,18 +1148,25 @@ impl GetOutcomesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelVersionOutput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The training data source.</p>
+    #[doc(hidden)]
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
+    #[doc(hidden)]
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
     /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    #[doc(hidden)]
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
     /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
@@ -1159,8 +1181,10 @@ pub struct GetModelVersionOutput {
     /// <li> <p> <code>INACTIVE</code> </p> </li>
     /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetModelVersionOutput {
@@ -1411,8 +1435,10 @@ impl GetModelVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsOutput {
     /// <p>The next page token to be used in subsequent requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The array of models.</p>
+    #[doc(hidden)]
     pub models: std::option::Option<std::vec::Vec<crate::model::Model>>,
 }
 impl GetModelsOutput {
@@ -1493,8 +1519,10 @@ impl GetModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelsOutput {
     /// <p>An array of labels.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
     /// <p>The next page token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLabelsOutput {
@@ -1575,6 +1603,7 @@ impl GetLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKmsEncryptionKeyOutput {
     /// <p>The KMS encryption key.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<crate::model::KmsKey>,
 }
 impl GetKmsEncryptionKeyOutput {
@@ -1629,8 +1658,10 @@ impl GetKmsEncryptionKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExternalModelsOutput {
     /// <p>Gets the Amazon SageMaker models.</p>
+    #[doc(hidden)]
     pub external_models: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>,
     /// <p>The next page token to be used in subsequent requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExternalModelsOutput {
@@ -1711,8 +1742,10 @@ impl GetExternalModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventTypesOutput {
     /// <p>An array of event types.</p>
+    #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>The next page token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEventTypesOutput {
@@ -1793,36 +1826,51 @@ impl GetEventTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventPredictionMetadataOutput {
     /// <p> The event ID. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p> The event type associated with the detector specified for this prediction. </p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p> The entity ID. </p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p> The entity type. </p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
     /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p> The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p> The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p> The status of the detector version. </p>
+    #[doc(hidden)]
     pub detector_version_status: std::option::Option<std::string::String>,
     /// <p> A list of event variables that influenced the prediction scores. </p>
+    #[doc(hidden)]
     pub event_variables: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
     /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
     /// <p> The execution mode of the rule used for evaluating variable values. </p>
+    #[doc(hidden)]
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Model versions that were evaluated for generating predictions. </p>
+    #[doc(hidden)]
     pub evaluated_model_versions:
         std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
     /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+    #[doc(hidden)]
     pub evaluated_external_models:
         std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
     /// <p>The timestamp that defines when the prediction was generated. </p>
+    #[doc(hidden)]
     pub prediction_timestamp: std::option::Option<std::string::String>,
 }
 impl GetEventPredictionMetadataOutput {
@@ -2191,10 +2239,13 @@ impl GetEventPredictionMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventPredictionOutput {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
+    #[doc(hidden)]
     pub model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
     /// <p>The results from the rules.</p>
+    #[doc(hidden)]
     pub rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
     /// <p>The model scores for Amazon SageMaker models.</p>
+    #[doc(hidden)]
     pub external_model_outputs:
         std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
 }
@@ -2314,6 +2365,7 @@ impl GetEventPredictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventOutput {
     /// <p>The details of the event.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
 }
 impl GetEventOutput {
@@ -2366,8 +2418,10 @@ impl GetEventOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
+    #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
     /// <p>The next page token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEntityTypesOutput {
@@ -2448,28 +2502,39 @@ impl GetEntityTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorVersionOutput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID.</p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The detector version description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
+    #[doc(hidden)]
     pub external_model_endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The model versions included in the detector version. </p>
+    #[doc(hidden)]
     pub model_versions: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>,
     /// <p>The rules included in the detector version.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The status of the detector version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
     /// <p>The timestamp when the detector version was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp when the detector version was created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The execution mode of the rule in the dectector</p>
     /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    #[doc(hidden)]
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDetectorVersionOutput {
@@ -2740,8 +2805,10 @@ impl GetDetectorVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorsOutput {
     /// <p>The detectors.</p>
+    #[doc(hidden)]
     pub detectors: std::option::Option<std::vec::Vec<crate::model::Detector>>,
     /// <p>The next page token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDetectorsOutput {
@@ -2822,8 +2889,10 @@ impl GetDetectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeleteEventsByEventTypeStatusOutput {
     /// <p>The event type name.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The deletion status.</p>
+    #[doc(hidden)]
     pub events_deletion_status: std::option::Option<crate::model::AsyncJobStatus>,
 }
 impl GetDeleteEventsByEventTypeStatusOutput {
@@ -2901,8 +2970,10 @@ impl GetDeleteEventsByEventTypeStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionJobsOutput {
     /// <p>An array containing the details of each batch prediction job.</p>
+    #[doc(hidden)]
     pub batch_predictions: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
     /// <p>The next token for the subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBatchPredictionJobsOutput {
@@ -2984,8 +3055,10 @@ impl GetBatchPredictionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchImportJobsOutput {
     /// <p>An array containing the details of each batch import job.</p>
+    #[doc(hidden)]
     pub batch_imports: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
     /// <p>The next token for the subsequent resquest.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBatchImportJobsOutput {
@@ -3066,8 +3139,10 @@ impl GetBatchImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
+    #[doc(hidden)]
     pub model_version_details: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
     /// <p>The next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeModelVersionsOutput {
@@ -3151,13 +3226,17 @@ impl DescribeModelVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorOutput {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The status and description for each detector version.</p>
+    #[doc(hidden)]
     pub detector_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
     /// <p>The next token to be used for subsequent requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The detector ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorOutput {
@@ -3521,8 +3600,10 @@ impl DeleteEventTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventsByEventTypeOutput {
     /// <p>Name of event type for which to delete the events.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The status of the delete request.</p>
+    #[doc(hidden)]
     pub events_deletion_status: std::option::Option<std::string::String>,
 }
 impl DeleteEventsByEventTypeOutput {
@@ -3810,6 +3891,7 @@ impl CreateVariableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
     /// <p>The created rule.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl CreateRuleOutput {
@@ -3862,12 +3944,16 @@ impl CreateRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelVersionOutput {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number of the model version created.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model version status. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateModelVersionOutput {
@@ -4009,10 +4095,13 @@ impl CreateModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorVersionOutput {
     /// <p>The ID for the created version's parent detector.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID for the created detector. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The status of the detector version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
 }
 impl CreateDetectorVersionOutput {
@@ -4227,8 +4316,10 @@ impl CancelBatchImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetVariableOutput {
     /// <p>The returned variables.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
     /// <p>The errors from the request.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetVariableError>>,
 }
 impl BatchGetVariableOutput {
@@ -4318,6 +4409,7 @@ impl BatchGetVariableOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateVariableOutput {
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
 }
 impl BatchCreateVariableOutput {

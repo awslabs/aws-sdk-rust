@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpPackageConfiguration {
     /// <p>The relative path to the URL for this VOD source. This is combined with SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.</p>
+    #[doc(hidden)]
     pub source_group: std::option::Option<std::string::String>,
     /// <p>The streaming protocol for this package configuration. Supported values are HLS and DASH.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl HttpPackageConfiguration {
@@ -152,8 +155,10 @@ impl AsRef<str> for Type {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SegmentDeliveryConfiguration {
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
+    #[doc(hidden)]
     pub base_url: std::option::Option<std::string::String>,
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl SegmentDeliveryConfiguration {
@@ -225,6 +230,7 @@ impl SegmentDeliveryConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
+    #[doc(hidden)]
     pub base_url: std::option::Option<std::string::String>,
 }
 impl HttpConfiguration {
@@ -279,6 +285,7 @@ impl HttpConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
+    #[doc(hidden)]
     pub base_url: std::option::Option<std::string::String>,
 }
 impl DefaultSegmentDeliveryConfiguration {
@@ -338,8 +345,10 @@ pub struct AccessConfiguration {
     /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
+    #[doc(hidden)]
     pub access_type: std::option::Option<crate::model::AccessType>,
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
+    #[doc(hidden)]
     pub secrets_manager_access_token_configuration:
         std::option::Option<crate::model::SecretsManagerAccessTokenConfiguration>,
 }
@@ -443,10 +452,13 @@ impl AccessConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerAccessTokenConfiguration {
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
+    #[doc(hidden)]
     pub header_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
+    #[doc(hidden)]
     pub secret_string_key: std::option::Option<std::string::String>,
 }
 impl SecretsManagerAccessTokenConfiguration {
@@ -593,14 +605,19 @@ impl AsRef<str> for AccessType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
+    #[doc(hidden)]
     pub dash_playlist_settings: std::option::Option<crate::model::DashPlaylistSettings>,
     /// <p>HLS manifest configuration settings.</p>
+    #[doc(hidden)]
     pub hls_playlist_settings: std::option::Option<crate::model::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// <p>The URL used for playback by content players.</p>
+    #[doc(hidden)]
     pub playback_url: std::option::Option<std::string::String>,
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
+    #[doc(hidden)]
     pub source_group: std::option::Option<std::string::String>,
 }
 impl ResponseOutputItem {
@@ -734,6 +751,7 @@ impl ResponseOutputItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
+    #[doc(hidden)]
     pub manifest_window_seconds: i32,
 }
 impl HlsPlaylistSettings {
@@ -788,12 +806,16 @@ impl HlsPlaylistSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
+    #[doc(hidden)]
     pub manifest_window_seconds: i32,
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
+    #[doc(hidden)]
     pub min_buffer_time_seconds: i32,
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
+    #[doc(hidden)]
     pub min_update_period_seconds: i32,
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
+    #[doc(hidden)]
     pub suggested_presentation_delay_seconds: i32,
 }
 impl DashPlaylistSettings {
@@ -907,8 +929,10 @@ impl DashPlaylistSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlateSource {
     /// <p>The name of the source location where the slate VOD source is stored.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl SlateSource {
@@ -1041,12 +1065,16 @@ impl AsRef<str> for ChannelState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestOutputItem {
     /// <p>DASH manifest configuration parameters.</p>
+    #[doc(hidden)]
     pub dash_playlist_settings: std::option::Option<crate::model::DashPlaylistSettings>,
     /// <p>HLS playlist configuration parameters.</p>
+    #[doc(hidden)]
     pub hls_playlist_settings: std::option::Option<crate::model::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel. The name appears in the PlaybackUrl.</p>
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// <p>A string used to match which HttpPackageConfiguration is used for each VodSource.</p>
+    #[doc(hidden)]
     pub source_group: std::option::Option<std::string::String>,
 }
 impl RequestOutputItem {
@@ -1164,6 +1192,7 @@ impl RequestOutputItem {
 pub struct ManifestProcessingRules {
     /// <p>For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for that ad break, MediaTailor will not set the value to 0.</p>
+    #[doc(hidden)]
     pub ad_marker_passthrough: std::option::Option<crate::model::AdMarkerPassthrough>,
 }
 impl ManifestProcessingRules {
@@ -1225,6 +1254,7 @@ impl ManifestProcessingRules {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdMarkerPassthrough {
     /// <p>Enables ad marker passthrough for your configuration.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AdMarkerPassthrough {
@@ -1280,6 +1310,7 @@ impl AdMarkerPassthrough {
 pub struct LogConfiguration {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: 0 - 100</p>
+    #[doc(hidden)]
     pub percent_enabled: i32,
 }
 impl LogConfiguration {
@@ -1337,8 +1368,10 @@ impl LogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.
+    #[doc(hidden)]
     pub max_duration_seconds: i32,
 }
 impl LivePreRollConfiguration {
@@ -1413,6 +1446,7 @@ impl LivePreRollConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsConfiguration {
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    #[doc(hidden)]
     pub manifest_endpoint_prefix: std::option::Option<std::string::String>,
 }
 impl HlsConfiguration {
@@ -1470,10 +1504,13 @@ impl HlsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashConfiguration {
     /// <p>The URL generated by MediaTailor to initiate a playback session. The session uses server-side reporting. This setting is ignored in PUT operations.</p>
+    #[doc(hidden)]
     pub manifest_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>
+    #[doc(hidden)]
     pub mpd_location: std::option::Option<std::string::String>,
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
+    #[doc(hidden)]
     pub origin_manifest_type: std::option::Option<crate::model::OriginManifestType>,
 }
 impl DashConfiguration {
@@ -1623,8 +1660,10 @@ impl AsRef<str> for OriginManifestType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CdnConfiguration {
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
+    #[doc(hidden)]
     pub ad_segment_url_prefix: std::option::Option<std::string::String>,
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
+    #[doc(hidden)]
     pub content_segment_url_prefix: std::option::Option<std::string::String>,
 }
 impl CdnConfiguration {
@@ -1705,8 +1744,10 @@ impl CdnConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bumper {
     /// <p>The URL for the end bumper asset.</p>
+    #[doc(hidden)]
     pub end_url: std::option::Option<std::string::String>,
     /// <p>The URL for the start bumper asset.</p>
+    #[doc(hidden)]
     pub start_url: std::option::Option<std::string::String>,
 }
 impl Bumper {
@@ -1778,8 +1819,10 @@ impl Bumper {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailSuppression {
     /// <p>Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the live edge.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AvailSuppression {
@@ -1906,8 +1949,10 @@ impl AsRef<str> for Mode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashConfigurationForPut {
     /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>
+    #[doc(hidden)]
     pub mpd_location: std::option::Option<std::string::String>,
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
+    #[doc(hidden)]
     pub origin_manifest_type: std::option::Option<crate::model::OriginManifestType>,
 }
 impl DashConfigurationForPut {
@@ -1982,20 +2027,27 @@ impl DashConfigurationForPut {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VodSource {
     /// <p>The ARN for the VOD source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the VOD source.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location that the VOD source is associated with.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl VodSource {
@@ -2202,24 +2254,33 @@ impl VodSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceLocation {
     /// <p>The access configuration for the source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The ARN of the SourceLocation.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The segment delivery configurations for the source location.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2476,16 +2537,22 @@ impl SourceLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    #[doc(hidden)]
     pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    #[doc(hidden)]
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl PrefetchSchedule {
@@ -2641,11 +2708,14 @@ impl PrefetchSchedule {
 pub struct PrefetchRetrieval {
     /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
+    #[doc(hidden)]
     pub dynamic_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PrefetchRetrieval {
@@ -2763,11 +2833,14 @@ impl PrefetchRetrieval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
+    #[doc(hidden)]
     pub avail_matching_criteria:
         std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PrefetchConsumption {
@@ -2880,8 +2953,10 @@ impl PrefetchConsumption {
 pub struct AvailMatchingCriteria {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
+    #[doc(hidden)]
     pub dynamic_variable: std::option::Option<std::string::String>,
     /// <p>For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl AvailMatchingCriteria {
@@ -3010,14 +3085,19 @@ impl AsRef<str> for Operator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    #[doc(hidden)]
     pub avail_suppression: std::option::Option<crate::model::AvailSuppression>,
     /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    #[doc(hidden)]
     pub bumper: std::option::Option<crate::model::Bumper>,
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    #[doc(hidden)]
     pub cdn_configuration: std::option::Option<crate::model::CdnConfiguration>,
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    #[doc(hidden)]
     pub configuration_aliases: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -3025,33 +3105,47 @@ pub struct PlaybackConfiguration {
         >,
     >,
     /// <p>The configuration for a DASH source.</p>
+    #[doc(hidden)]
     pub dash_configuration: std::option::Option<crate::model::DashConfiguration>,
     /// <p>The configuration for HLS content.</p>
+    #[doc(hidden)]
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
+    #[doc(hidden)]
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    #[doc(hidden)]
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
     pub personalization_threshold_seconds: i32,
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
+    #[doc(hidden)]
     pub playback_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    #[doc(hidden)]
     pub session_initialization_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the playback configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    #[doc(hidden)]
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
 impl PlaybackConfiguration {
@@ -3533,19 +3627,26 @@ impl PlaybackConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LiveSource {
     /// <p>The ARN for the live source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the live source.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name that's used to refer to a live source.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the live source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3753,27 +3854,37 @@ impl LiveSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Returns the state whether the channel is running or not.</p>
+    #[doc(hidden)]
     pub channel_state: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The type of playback mode for this channel.</p>
     /// <p>LINEAR - Programs play back-to-back only once.</p>
     /// <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
 }
 impl Channel {
@@ -4031,14 +4142,19 @@ impl Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alert {
     /// <p>The code for the alert. For example, NOT_PROCESSED.</p>
+    #[doc(hidden)]
     pub alert_code: std::option::Option<std::string::String>,
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
+    #[doc(hidden)]
     pub alert_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the alert was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
+    #[doc(hidden)]
     pub related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl Alert {
@@ -4176,25 +4292,35 @@ impl Alert {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
+    #[doc(hidden)]
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the program will start playing.</p>
+    #[doc(hidden)]
     pub approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The name of the live source used for the program.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule's ad break properties.</p>
+    #[doc(hidden)]
     pub schedule_ad_breaks: std::option::Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
     /// <p>The type of schedule entry.</p>
     /// <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+    #[doc(hidden)]
     pub schedule_entry_type: std::option::Option<crate::model::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl ScheduleEntry {
@@ -4488,12 +4614,16 @@ impl AsRef<str> for ScheduleEntryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
+    #[doc(hidden)]
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the ad will start playing.</p>
+    #[doc(hidden)]
     pub approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name of the VOD source used for the ad break.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl ScheduleAdBreak {
@@ -4611,12 +4741,16 @@ impl ScheduleAdBreak {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdBreak {
     /// <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+    #[doc(hidden)]
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
+    #[doc(hidden)]
     pub offset_millis: i64,
     /// <p>Ad break slate configuration.</p>
+    #[doc(hidden)]
     pub slate: std::option::Option<crate::model::SlateSource>,
     /// <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
+    #[doc(hidden)]
     pub splice_insert_message: std::option::Option<crate::model::SpliceInsertMessage>,
 }
 impl AdBreak {
@@ -4728,12 +4862,16 @@ impl AdBreak {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpliceInsertMessage {
     /// <p>This is written to splice_insert.avail_num, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
+    #[doc(hidden)]
     pub avail_num: i32,
     /// <p>This is written to splice_insert.avails_expected, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
+    #[doc(hidden)]
     pub avails_expected: i32,
     /// <p>This is written to splice_insert.splice_event_id, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 1.</p>
+    #[doc(hidden)]
     pub splice_event_id: i32,
     /// <p>This is written to splice_insert.unique_program_id, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
+    #[doc(hidden)]
     pub unique_program_id: i32,
 }
 impl SpliceInsertMessage {
@@ -4890,6 +5028,7 @@ impl AsRef<str> for MessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
+    #[doc(hidden)]
     pub transition: std::option::Option<crate::model::Transition>,
 }
 impl ScheduleConfiguration {
@@ -4947,12 +5086,16 @@ impl ScheduleConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
     /// <p>The duration of the live program in seconds.</p>
+    #[doc(hidden)]
     pub duration_millis: i64,
     /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
+    #[doc(hidden)]
     pub relative_position: std::option::Option<crate::model::RelativePosition>,
     /// <p>The name of the program that this program will be inserted next to, as defined by RelativePosition.</p>
+    #[doc(hidden)]
     pub relative_program: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
+    #[doc(hidden)]
     pub scheduled_start_time_millis: i64,
     /// <p>Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p>
     /// <p>ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the LINEAR PlaybackMode.</p>
@@ -4960,6 +5103,7 @@ pub struct Transition {
     /// <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p>
     /// <p>If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.</p>
     /// <p>RELATIVE - The program is inserted into the schedule either before or after a program that you specify via RelativePosition.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Transition {

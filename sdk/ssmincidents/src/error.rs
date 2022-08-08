@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -69,10 +70,13 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Originating service code
+    #[doc(hidden)]
     pub service_code: std::option::Option<crate::model::ServiceCode>,
     /// Originating quota code
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -176,10 +180,13 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The identifier for the requested resource
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// The resource type
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ResourceNotFoundException {
@@ -286,6 +293,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -350,12 +358,16 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The identifier of the requested resource
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// The resource type
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// If present in the output, the operation can be retried after this time
+    #[doc(hidden)]
     pub retry_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConflictException {
@@ -482,6 +494,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -546,14 +559,19 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The identifier for the requested resource
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// The resource type
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// Originating service code
+    #[doc(hidden)]
     pub service_code: std::option::Option<crate::model::ServiceCode>,
     /// Originating quota code
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {

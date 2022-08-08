@@ -309,8 +309,10 @@ impl PutRawMessageContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRawMessageContentInput {
     /// <p>The identifier of the email message being updated.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>Describes the raw message content of the updated email message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::RawMessageContent>,
 }
 impl PutRawMessageContentInput {
@@ -337,6 +339,7 @@ impl std::fmt::Debug for PutRawMessageContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl GetRawMessageContentInput {

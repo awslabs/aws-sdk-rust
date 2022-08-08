@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A message about the validation exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,23 +148,32 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the analyzer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>A timestamp for the time at which the analyzer was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The resource that was most recently analyzed by the analyzer.</p>
+    #[doc(hidden)]
     pub last_resource_analyzed: std::option::Option<std::string::String>,
     /// <p>The time at which the most recently analyzed resource was analyzed.</p>
+    #[doc(hidden)]
     pub last_resource_analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags added to the analyzer.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnalyzerStatus>,
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::StatusReason>,
 }
 impl AnalyzerSummary {
@@ -388,6 +399,7 @@ impl AnalyzerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ReasonCode>,
 }
 impl StatusReason {
@@ -630,8 +642,10 @@ impl AsRef<str> for Type {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InlineArchiveRule {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The condition and values for a criterion.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
@@ -725,12 +739,16 @@ impl InlineArchiveRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
+    #[doc(hidden)]
     pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
+    #[doc(hidden)]
     pub contains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    #[doc(hidden)]
     pub exists: std::option::Option<bool>,
 }
 impl Criterion {
@@ -863,14 +881,18 @@ impl Criterion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A filter used to define the archive rule.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
     /// <p>The time at which the archive rule was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the archive rule was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ArchiveRuleSummary {
@@ -1002,18 +1024,23 @@ impl ArchiveRuleSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyFinding {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
+    #[doc(hidden)]
     pub finding_details: std::option::Option<std::string::String>,
     /// <p>The impact of the finding.</p>
     /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
     /// <p>Errors report when a part of the policy is not functional.</p>
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
+    #[doc(hidden)]
     pub finding_type: std::option::Option<crate::model::ValidatePolicyFindingType>,
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
+    #[doc(hidden)]
     pub issue_code: std::option::Option<std::string::String>,
     /// <p>A link to additional documentation about the type of finding.</p>
+    #[doc(hidden)]
     pub learn_more_link: std::option::Option<std::string::String>,
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
+    #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
 }
 impl ValidatePolicyFinding {
@@ -1166,8 +1193,10 @@ impl ValidatePolicyFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::vec::Vec<crate::model::PathElement>>,
     /// <p>A span in a policy.</p>
+    #[doc(hidden)]
     pub span: std::option::Option<crate::model::Span>,
 }
 impl Location {
@@ -1248,8 +1277,10 @@ impl Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Span {
     /// <p>The start position of the span (inclusive).</p>
+    #[doc(hidden)]
     pub start: std::option::Option<crate::model::Position>,
     /// <p>The end position of the span (exclusive).</p>
+    #[doc(hidden)]
     pub end: std::option::Option<crate::model::Position>,
 }
 impl Span {
@@ -1321,10 +1352,13 @@ impl Span {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Position {
     /// <p>The line of the position, starting from 1.</p>
+    #[doc(hidden)]
     pub line: std::option::Option<i32>,
     /// <p>The column of the position, starting from 0.</p>
+    #[doc(hidden)]
     pub column: std::option::Option<i32>,
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<i32>,
 }
 impl Position {
@@ -1494,8 +1528,10 @@ impl PathElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Substring {
     /// <p>The start index of the substring, starting from 0.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<i32>,
     /// <p>The length of the substring.</p>
+    #[doc(hidden)]
     pub length: std::option::Option<i32>,
 }
 impl Substring {
@@ -1913,12 +1949,16 @@ impl AsRef<str> for FindingStatusUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailDetails {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
+    #[doc(hidden)]
     pub trails: std::option::Option<std::vec::Vec<crate::model::Trail>>,
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
+    #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CloudTrailDetails {
@@ -2039,10 +2079,13 @@ impl CloudTrailDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trail {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    #[doc(hidden)]
     pub cloud_trail_arn: std::option::Option<std::string::String>,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
+    #[doc(hidden)]
     pub all_regions: std::option::Option<bool>,
 }
 impl Trail {
@@ -2143,6 +2186,7 @@ impl Trail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl PolicyGenerationDetails {
@@ -2200,14 +2244,19 @@ impl PolicyGenerationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGeneration {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The status of the policy generation request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A timestamp of when the policy generation started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the policy generation was completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PolicyGeneration {
@@ -2402,34 +2451,48 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSummary {
     /// <p>The ID of the finding.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    #[doc(hidden)]
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource that the external principal has access to.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
+    #[doc(hidden)]
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource that the external principal has access to.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    #[doc(hidden)]
     pub condition:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the finding was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
+    #[doc(hidden)]
     pub analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was most recently updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>The error that resulted in an Error finding.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl FindingSummary {
@@ -2781,8 +2844,10 @@ impl FindingSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FindingSourceType>,
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<crate::model::FindingSourceDetail>,
 }
 impl FindingSource {
@@ -2860,6 +2925,7 @@ impl FindingSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl FindingSourceDetail {
@@ -3118,8 +3184,10 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortCriteria {
     /// <p>The name of the attribute to sort on.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The sort order, ascending or descending.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl SortCriteria {
@@ -3249,10 +3317,13 @@ impl AsRef<str> for OrderBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>The type of resource that was analyzed.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl AnalyzedResourceSummary {
@@ -3347,10 +3418,13 @@ impl AnalyzedResourceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the access preview was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
@@ -3358,8 +3432,10 @@ pub struct AccessPreviewSummary {
     /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
 impl AccessPreviewSummary {
@@ -3506,6 +3582,7 @@ impl AccessPreviewSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::AccessPreviewStatusReasonCode>,
 }
 impl AccessPreviewStatusReason {
@@ -3675,26 +3752,36 @@ impl AsRef<str> for AccessPreviewStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
+    #[doc(hidden)]
     pub existing_finding_id: std::option::Option<std::string::String>,
     /// <p>The existing status of the finding, provided only for existing findings.</p>
+    #[doc(hidden)]
     pub existing_finding_status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    #[doc(hidden)]
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    #[doc(hidden)]
     pub condition:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
+    #[doc(hidden)]
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource that can be accessed in the finding.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The time at which the access preview finding was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
@@ -3703,14 +3790,19 @@ pub struct AccessPreviewFinding {
     /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::FindingChangeType>,
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+    #[doc(hidden)]
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl AccessPreviewFinding {
@@ -4159,8 +4251,10 @@ impl AsRef<str> for FindingChangeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::GeneratedPolicyProperties>,
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    #[doc(hidden)]
     pub generated_policies: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResult {
@@ -4245,6 +4339,7 @@ impl GeneratedPolicyResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicy {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GeneratedPolicy {
@@ -4299,10 +4394,13 @@ impl GeneratedPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicyProperties {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
+    #[doc(hidden)]
     pub is_complete: std::option::Option<bool>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+    #[doc(hidden)]
     pub cloud_trail_properties: std::option::Option<crate::model::CloudTrailProperties>,
 }
 impl GeneratedPolicyProperties {
@@ -4399,10 +4497,13 @@ impl GeneratedPolicyProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailProperties {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
+    #[doc(hidden)]
     pub trail_properties: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CloudTrailProperties {
@@ -4507,10 +4608,13 @@ impl CloudTrailProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrailProperties {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    #[doc(hidden)]
     pub cloud_trail_arn: std::option::Option<std::string::String>,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
+    #[doc(hidden)]
     pub all_regions: std::option::Option<bool>,
 }
 impl TrailProperties {
@@ -4611,14 +4715,19 @@ impl TrailProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetails {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the job request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A timestamp of when the job was started.</p>
+    #[doc(hidden)]
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the job was completed.</p>
+    #[doc(hidden)]
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job error for the policy generation request.</p>
+    #[doc(hidden)]
     pub job_error: std::option::Option<crate::model::JobError>,
 }
 impl JobDetails {
@@ -4747,8 +4856,10 @@ impl JobDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobError {
     /// <p>The job error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::JobErrorCode>,
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl JobError {
@@ -4888,34 +4999,48 @@ impl AsRef<str> for JobErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Finding {
     /// <p>The ID of the finding.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The external principal that access to a resource within the zone of trust.</p>
+    #[doc(hidden)]
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource that an external principal has access to.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
+    #[doc(hidden)]
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource identified in the finding.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    #[doc(hidden)]
     pub condition:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the finding was generated.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the resource was analyzed.</p>
+    #[doc(hidden)]
     pub analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl Finding {
@@ -5267,26 +5392,37 @@ impl Finding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The type of the resource that was analyzed.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The time at which the finding was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the resource was analyzed.</p>
+    #[doc(hidden)]
     pub analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
+    #[doc(hidden)]
     pub is_public: std::option::Option<bool>,
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
+    #[doc(hidden)]
     pub shared_via: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current status of the finding generated from the analyzed resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    #[doc(hidden)]
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error message.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
 }
 impl AnalyzedResource {
@@ -5547,14 +5683,18 @@ impl AnalyzedResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreview {
     /// <p>The unique ID for the access preview.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
+    #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Configuration>,
     >,
     /// <p>The time at which the access preview was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
@@ -5562,9 +5702,11 @@ pub struct AccessPreview {
     /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
 impl AccessPreview {
@@ -5850,6 +5992,7 @@ impl Configuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    #[doc(hidden)]
     pub queue_policy: std::option::Option<std::string::String>,
 }
 impl SqsQueueConfiguration {
@@ -5904,14 +6047,18 @@ impl SqsQueueConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketConfiguration {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_policy: std::option::Option<std::string::String>,
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+    #[doc(hidden)]
     pub bucket_acl_grants:
         std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_public_access_block:
         std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
+    #[doc(hidden)]
     pub access_points: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
     >,
@@ -6076,10 +6223,13 @@ impl S3BucketConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessPointConfiguration {
     /// <p>The access point or multi-region access point policy.</p>
+    #[doc(hidden)]
     pub access_point_policy: std::option::Option<std::string::String>,
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
+    #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
+    #[doc(hidden)]
     pub network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
 }
 impl S3AccessPointConfiguration {
@@ -6268,6 +6418,7 @@ impl InternetConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
     /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
@@ -6322,8 +6473,10 @@ impl VpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3PublicAccessBlockConfiguration {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
+    #[doc(hidden)]
     pub ignore_public_acls: std::option::Option<bool>,
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
+    #[doc(hidden)]
     pub restrict_public_buckets: std::option::Option<bool>,
 }
 impl S3PublicAccessBlockConfiguration {
@@ -6395,8 +6548,10 @@ impl S3PublicAccessBlockConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::AclPermission>,
     /// <p>The grantee to whom you’re assigning access rights.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::AclGrantee>,
 }
 impl S3BucketAclGrantConfiguration {
@@ -6590,8 +6745,10 @@ impl AsRef<str> for AclPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerSecretConfiguration {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
+    #[doc(hidden)]
     pub secret_policy: std::option::Option<std::string::String>,
 }
 impl SecretsManagerSecretConfiguration {
@@ -6667,9 +6824,11 @@ impl SecretsManagerSecretConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyConfiguration {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
+    #[doc(hidden)]
     pub key_policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
 }
 impl KmsKeyConfiguration {
@@ -6770,14 +6929,19 @@ impl KmsKeyConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::KmsGrantOperation>>,
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
+    #[doc(hidden)]
     pub grantee_principal: std::option::Option<std::string::String>,
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
+    #[doc(hidden)]
     pub retiring_principal: std::option::Option<std::string::String>,
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
+    #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::KmsGrantConstraints>,
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    #[doc(hidden)]
     pub issuing_account: std::option::Option<std::string::String>,
 }
 impl KmsGrantConfiguration {
@@ -6921,9 +7085,11 @@ impl KmsGrantConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsGrantConstraints {
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
+    #[doc(hidden)]
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
+    #[doc(hidden)]
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7158,6 +7324,7 @@ impl AsRef<str> for KmsGrantOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
+    #[doc(hidden)]
     pub trust_policy: std::option::Option<std::string::String>,
 }
 impl IamRoleConfiguration {

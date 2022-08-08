@@ -4339,16 +4339,22 @@ impl UpdateInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be updated. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    #[doc(hidden)]
     pub data_delay_offset_in_minutes: std::option::Option<i64>,
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    #[doc(hidden)]
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    #[doc(hidden)]
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
+    #[doc(hidden)]
     pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateInferenceSchedulerInput {
@@ -4402,8 +4408,10 @@ impl std::fmt::Debug for UpdateInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4430,8 +4438,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4458,6 +4468,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be stopped. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StopInferenceSchedulerInput {
@@ -4479,6 +4490,7 @@ impl std::fmt::Debug for StopInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StartInferenceSchedulerInput {
@@ -4500,13 +4512,17 @@ impl std::fmt::Debug for StartInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataIngestionJobInput {
     /// <p>The name of the dataset being used by the data ingestion job. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
+    #[doc(hidden)]
     pub ingestion_input_configuration:
         std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartDataIngestionJobInput {
@@ -4548,6 +4564,7 @@ impl std::fmt::Debug for StartDataIngestionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4569,12 +4586,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSensorStatisticsInput {
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+    #[doc(hidden)]
     pub ingestion_job_id: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSensorStatisticsInput {
@@ -4611,14 +4632,19 @@ impl std::fmt::Debug for ListSensorStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of ML models to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The status of the ML model. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The beginning of the name of the ML models being listed. </p>
+    #[doc(hidden)]
     pub model_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
+    #[doc(hidden)]
     pub dataset_name_begins_with: std::option::Option<std::string::String>,
 }
 impl ListModelsInput {
@@ -4660,12 +4686,16 @@ impl std::fmt::Debug for ListModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl ListInferenceSchedulersInput {
@@ -4705,16 +4735,22 @@ impl std::fmt::Debug for ListInferenceSchedulersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceExecutionsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of inference executions to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
+    #[doc(hidden)]
     pub data_start_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
+    #[doc(hidden)]
     pub data_end_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the inference execution. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
 }
 impl ListInferenceExecutionsInput {
@@ -4761,14 +4797,19 @@ impl std::fmt::Debug for ListInferenceExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInferenceEventsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of inference events to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference events listed. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    #[doc(hidden)]
     pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    #[doc(hidden)]
     pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListInferenceEventsInput {
@@ -4810,10 +4851,13 @@ impl std::fmt::Debug for ListInferenceEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of datasets to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The beginning of the name of the datasets to be listed. </p>
+    #[doc(hidden)]
     pub dataset_name_begins_with: std::option::Option<std::string::String>,
 }
 impl ListDatasetsInput {
@@ -4845,12 +4889,16 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Indicates the status of the data ingestion job. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
 impl ListDataIngestionJobsInput {
@@ -4887,6 +4935,7 @@ impl std::fmt::Debug for ListDataIngestionJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeModelInput {
     /// <p>The name of the ML model to be described. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelInput {
@@ -4908,6 +4957,7 @@ impl std::fmt::Debug for DescribeModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being described. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl DescribeInferenceSchedulerInput {
@@ -4929,6 +4979,7 @@ impl std::fmt::Debug for DescribeInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -4950,6 +5001,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataIngestionJobInput {
     /// <p>The job ID of the data ingestion job. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDataIngestionJobInput {
@@ -4971,6 +5023,7 @@ impl std::fmt::Debug for DescribeDataIngestionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
     /// <p>The name of the ML model to be deleted. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelInput {
@@ -4992,6 +5045,7 @@ impl std::fmt::Debug for DeleteModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl DeleteInferenceSchedulerInput {
@@ -5013,6 +5067,7 @@ impl std::fmt::Debug for DeleteInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -5034,34 +5089,48 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
     /// <p>The name for the ML model to be created.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the dataset for the ML model being created. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The data schema for the ML model being created. </p>
+    #[doc(hidden)]
     pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    #[doc(hidden)]
     pub labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    #[doc(hidden)]
     pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    #[doc(hidden)]
     pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    #[doc(hidden)]
     pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    #[doc(hidden)]
     pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    #[doc(hidden)]
     pub data_pre_processing_configuration:
         std::option::Option<crate::model::DataPreProcessingConfiguration>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> Any tags associated with the ML model being created. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    #[doc(hidden)]
     pub off_condition: std::option::Option<std::string::String>,
 }
 impl CreateModelInput {
@@ -5162,24 +5231,34 @@ impl std::fmt::Debug for CreateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInferenceSchedulerInput {
     /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the inference scheduler being created. </p>
+    #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    #[doc(hidden)]
     pub data_delay_offset_in_minutes: std::option::Option<i64>,
     /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    #[doc(hidden)]
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    #[doc(hidden)]
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    #[doc(hidden)]
     pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Any tags associated with the inference scheduler. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateInferenceSchedulerInput {
@@ -5253,14 +5332,19 @@ impl std::fmt::Debug for CreateInferenceSchedulerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    #[doc(hidden)]
     pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    #[doc(hidden)]
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetInput {

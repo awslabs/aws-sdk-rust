@@ -172,8 +172,10 @@ impl AsRef<str> for RequestedJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLensTag {
     /// <p></p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl StorageLensTag {
@@ -245,20 +247,28 @@ impl StorageLensTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub account_level: std::option::Option<crate::model::AccountLevel>,
     /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    #[doc(hidden)]
     pub include: std::option::Option<crate::model::Include>,
     /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    #[doc(hidden)]
     pub exclude: std::option::Option<crate::model::Exclude>,
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
+    #[doc(hidden)]
     pub data_export: std::option::Option<crate::model::StorageLensDataExport>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub aws_org: std::option::Option<crate::model::StorageLensAwsOrg>,
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
+    #[doc(hidden)]
     pub storage_lens_arn: std::option::Option<std::string::String>,
 }
 impl StorageLensConfiguration {
@@ -444,6 +454,7 @@ impl StorageLensConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StorageLensAwsOrg {
@@ -498,8 +509,10 @@ pub struct StorageLensDataExport {
     /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
     /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
+    #[doc(hidden)]
     pub s3_bucket_destination: std::option::Option<crate::model::S3BucketDestination>,
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
+    #[doc(hidden)]
     pub cloud_watch_metrics: std::option::Option<crate::model::CloudWatchMetrics>,
 }
 impl StorageLensDataExport {
@@ -584,6 +597,7 @@ impl StorageLensDataExport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMetrics {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl CloudWatchMetrics {
@@ -638,16 +652,22 @@ impl CloudWatchMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketDestination {
     /// <p></p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The schema version of the export file.</p>
+    #[doc(hidden)]
     pub output_schema_version: std::option::Option<crate::model::OutputSchemaVersion>,
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::StorageLensDataExportEncryption>,
 }
 impl S3BucketDestination {
@@ -795,8 +815,10 @@ impl S3BucketDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLensDataExportEncryption {
     /// <p></p>
+    #[doc(hidden)]
     pub sses3: std::option::Option<crate::model::Sses3>,
     /// <p></p>
+    #[doc(hidden)]
     pub ssekms: std::option::Option<crate::model::Ssekms>,
 }
 impl StorageLensDataExportEncryption {
@@ -868,6 +890,7 @@ impl StorageLensDataExportEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssekms {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl Ssekms {
@@ -1058,8 +1081,10 @@ impl AsRef<str> for Format {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Exclude {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Exclude {
@@ -1149,8 +1174,10 @@ impl Exclude {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region includes.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Include {
@@ -1240,8 +1267,10 @@ impl Include {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLevel {
     /// <p>A container for the S3 Storage Lens activity metrics.</p>
+    #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
+    #[doc(hidden)]
     pub bucket_level: std::option::Option<crate::model::BucketLevel>,
 }
 impl AccountLevel {
@@ -1319,8 +1348,10 @@ impl AccountLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLevel {
     /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+    #[doc(hidden)]
     pub activity_metrics: std::option::Option<crate::model::ActivityMetrics>,
     /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+    #[doc(hidden)]
     pub prefix_level: std::option::Option<crate::model::PrefixLevel>,
 }
 impl BucketLevel {
@@ -1398,6 +1429,7 @@ impl BucketLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefixLevel {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
+    #[doc(hidden)]
     pub storage_metrics: std::option::Option<crate::model::PrefixLevelStorageMetrics>,
 }
 impl PrefixLevel {
@@ -1455,8 +1487,10 @@ impl PrefixLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefixLevelStorageMetrics {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p></p>
+    #[doc(hidden)]
     pub selection_criteria: std::option::Option<crate::model::SelectionCriteria>,
 }
 impl PrefixLevelStorageMetrics {
@@ -1531,12 +1565,15 @@ impl PrefixLevelStorageMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The max depth of the selection criteria</p>
+    #[doc(hidden)]
     pub max_depth: i32,
     /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub min_storage_bytes_percentage: f64,
 }
 impl SelectionCriteria {
@@ -1634,6 +1671,7 @@ impl SelectionCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityMetrics {
     /// <p>A container for whether the activity metrics are enabled.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl ActivityMetrics {
@@ -1696,18 +1734,22 @@ pub struct PublicAccessBlockConfiguration {
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {
@@ -1852,8 +1894,10 @@ impl PublicAccessBlockConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutMultiRegionAccessPointPolicyInput {
@@ -1925,8 +1969,10 @@ impl PutMultiRegionAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Tag {
     /// <p></p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl S3Tag {
@@ -1998,6 +2044,7 @@ impl S3Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tagging {
     /// <p>A collection for a set of tags.</p>
+    #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl Tagging {
@@ -2061,6 +2108,7 @@ impl Tagging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
 impl LifecycleConfiguration {
@@ -2122,28 +2170,36 @@ impl LifecycleConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<crate::model::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The container for the filter of lifecycle rule.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExpirationStatus>,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub transitions: std::option::Option<std::vec::Vec<crate::model::Transition>>,
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub noncurrent_version_transitions:
         std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
     /// <p>The noncurrent version expiration of the lifecycle rule.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub noncurrent_version_expiration:
         std::option::Option<crate::model::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub abort_incomplete_multipart_upload:
         std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
 }
@@ -2396,6 +2452,7 @@ impl LifecycleRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortIncompleteMultipartUpload {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to the Outposts bucket.</p>
+    #[doc(hidden)]
     pub days_after_initiation: i32,
 }
 impl AbortIncompleteMultipartUpload {
@@ -2450,6 +2507,7 @@ impl AbortIncompleteMultipartUpload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionExpiration {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub noncurrent_days: i32,
 }
 impl NoncurrentVersionExpiration {
@@ -2504,8 +2562,10 @@ impl NoncurrentVersionExpiration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"> How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
 impl NoncurrentVersionTransition {
@@ -2653,10 +2713,13 @@ impl AsRef<str> for TransitionStorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>The storage class to which you want the object to transition.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
 impl Transition {
@@ -2805,10 +2868,13 @@ pub struct LifecycleRuleFilter {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tag: std::option::Option<crate::model::S3Tag>,
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<crate::model::LifecycleRuleAndOperator>,
 }
 impl LifecycleRuleFilter {
@@ -2906,8 +2972,10 @@ impl LifecycleRuleFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl LifecycleRuleAndOperator {
@@ -2988,10 +3056,13 @@ impl LifecycleRuleAndOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
+    #[doc(hidden)]
     pub days: i32,
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    #[doc(hidden)]
     pub expired_object_delete_marker: bool,
 }
 impl LifecycleExpiration {
@@ -3086,13 +3157,17 @@ impl LifecycleExpiration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub supporting_access_point: std::option::Option<std::string::String>,
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
+    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+    #[doc(hidden)]
     pub allowed_features:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>>,
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub transformation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>,
 }
@@ -3238,10 +3313,12 @@ impl ObjectLambdaConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<
         std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
     >,
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
+    #[doc(hidden)]
     pub content_transformation:
         std::option::Option<crate::model::ObjectLambdaContentTransformation>,
 }
@@ -3380,8 +3457,10 @@ impl ObjectLambdaContentTransformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaTransformation {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
+    #[doc(hidden)]
     pub function_payload: std::option::Option<std::string::String>,
 }
 impl AwsLambdaTransformation {
@@ -3562,12 +3641,16 @@ impl AsRef<str> for ObjectLambdaAllowedFeature {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
+    #[doc(hidden)]
     pub storage_lens_arn: std::option::Option<std::string::String>,
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
+    #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
+    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl ListStorageLensConfigurationEntry {
@@ -3676,14 +3759,19 @@ impl ListStorageLensConfigurationEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionalBucket {
     /// <p></p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Outposts ID of the regional bucket.</p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl RegionalBucket {
@@ -3812,18 +3900,24 @@ impl RegionalBucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionAccessPointReport {
     /// <p>The name of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>When the Multi-Region Access Point create request was received.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propogating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
 }
 impl MultiRegionAccessPointReport {
@@ -3993,8 +4087,10 @@ impl MultiRegionAccessPointReport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionReport {
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl RegionReport {
@@ -4148,20 +4244,28 @@ impl AsRef<str> for MultiRegionAccessPointStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobListDescriptor {
     /// <p>The ID for the specified job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::OperationName>,
     /// <p>The current priority for the specified job.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The specified job's current status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A timestamp indicating when the specified job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    #[doc(hidden)]
     pub termination_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
+    #[doc(hidden)]
     pub progress_summary: std::option::Option<crate::model::JobProgressSummary>,
 }
 impl JobListDescriptor {
@@ -4347,12 +4451,16 @@ impl JobListDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobProgressSummary {
     /// <p></p>
+    #[doc(hidden)]
     pub total_number_of_tasks: std::option::Option<i64>,
     /// <p></p>
+    #[doc(hidden)]
     pub number_of_tasks_succeeded: std::option::Option<i64>,
     /// <p></p>
+    #[doc(hidden)]
     pub number_of_tasks_failed: std::option::Option<i64>,
     /// <p>The JobTimers attribute of a job's progress summary.</p>
+    #[doc(hidden)]
     pub timers: std::option::Option<crate::model::JobTimers>,
 }
 impl JobProgressSummary {
@@ -4458,6 +4566,7 @@ impl JobProgressSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobTimers {
     /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+    #[doc(hidden)]
     pub elapsed_time_in_active_seconds: std::option::Option<i64>,
 }
 impl JobTimers {
@@ -4611,8 +4720,10 @@ impl AsRef<str> for OperationName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
 }
 impl ObjectLambdaAccessPoint {
@@ -4693,18 +4804,24 @@ impl ObjectLambdaAccessPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPoint {
     /// <p>The name of this access point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
+    #[doc(hidden)]
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
     /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>The name of the bucket associated with this access point.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ARN for the access point.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The name or alias of the access point.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl AccessPoint {
@@ -4859,6 +4976,7 @@ impl AccessPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
@@ -4968,6 +5086,7 @@ impl AsRef<str> for NetworkOrigin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyStatus {
     /// <p></p>
+    #[doc(hidden)]
     pub is_public: bool,
 }
 impl PolicyStatus {
@@ -5023,8 +5142,10 @@ impl PolicyStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionAccessPointPolicyDocument {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub established: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub proposed: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
 }
 impl MultiRegionAccessPointPolicyDocument {
@@ -5115,6 +5236,7 @@ impl MultiRegionAccessPointPolicyDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposedMultiRegionAccessPointPolicy {
     /// <p>The details of the proposed policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl ProposedMultiRegionAccessPointPolicy {
@@ -5170,6 +5292,7 @@ impl ProposedMultiRegionAccessPointPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EstablishedMultiRegionAccessPointPolicy {
     /// <p>The details of the last established policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl EstablishedMultiRegionAccessPointPolicy {
@@ -5224,16 +5347,22 @@ impl EstablishedMultiRegionAccessPointPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncOperation {
     /// <p>The time that the request was sent to the service.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The specific operation for the asynchronous request.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::AsyncOperationName>,
     /// <p>The request token associated with the request.</p>
+    #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
     /// <p>The parameters associated with the request.</p>
+    #[doc(hidden)]
     pub request_parameters: std::option::Option<crate::model::AsyncRequestParameters>,
     /// <p>The current status of the request.</p>
+    #[doc(hidden)]
     pub request_status: std::option::Option<std::string::String>,
     /// <p>The details of the response.</p>
+    #[doc(hidden)]
     pub response_details: std::option::Option<crate::model::AsyncResponseDetails>,
 }
 impl AsyncOperation {
@@ -5391,9 +5520,11 @@ impl AsyncOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub multi_region_access_point_details:
         std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
     /// <p>Error details for an asynchronous request.</p>
+    #[doc(hidden)]
     pub error_details: std::option::Option<crate::model::AsyncErrorDetails>,
 }
 impl AsyncResponseDetails {
@@ -5480,12 +5611,16 @@ impl AsyncResponseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncErrorDetails {
     /// <p>A string that uniquely identifies the error condition.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A generic descritpion of the error condition in English.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource associated with the error.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p>The ID of the request associated with the error.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl AsyncErrorDetails {
@@ -5591,6 +5726,7 @@ impl AsyncErrorDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionAccessPointsAsyncResponse {
     /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
+    #[doc(hidden)]
     pub regions:
         std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
 }
@@ -5664,8 +5800,10 @@ impl MultiRegionAccessPointsAsyncResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionAccessPointRegionalResponse {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
+    #[doc(hidden)]
     pub request_status: std::option::Option<std::string::String>,
 }
 impl MultiRegionAccessPointRegionalResponse {
@@ -5740,12 +5878,15 @@ impl MultiRegionAccessPointRegionalResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AsyncRequestParameters {
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request.</p>
+    #[doc(hidden)]
     pub create_multi_region_access_point_request:
         std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
+    #[doc(hidden)]
     pub delete_multi_region_access_point_request:
         std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
     /// <p>A container of the parameters for a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
+    #[doc(hidden)]
     pub put_multi_region_access_point_policy_request:
         std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
 }
@@ -5874,6 +6015,7 @@ impl AsyncRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointInput {
@@ -5926,11 +6068,14 @@ impl DeleteMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
 }
 impl CreateMultiRegionAccessPointInput {
@@ -6040,6 +6185,7 @@ impl CreateMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl Region {
@@ -6161,42 +6307,61 @@ impl AsRef<str> for AsyncOperationName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDescriptor {
     /// <p>The ID for the specified job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
+    #[doc(hidden)]
     pub confirmation_required: std::option::Option<bool>,
     /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for this job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the specified job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>The configuration information for the specified job's manifest object.</p>
+    #[doc(hidden)]
     pub manifest: std::option::Option<crate::model::JobManifest>,
     /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::JobOperation>,
     /// <p>The priority of the specified job.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
+    #[doc(hidden)]
     pub progress_summary: std::option::Option<crate::model::JobProgressSummary>,
     /// <p>The reason for updating the job.</p>
+    #[doc(hidden)]
     pub status_update_reason: std::option::Option<std::string::String>,
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
+    #[doc(hidden)]
     pub failure_reasons: std::option::Option<std::vec::Vec<crate::model::JobFailure>>,
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
+    #[doc(hidden)]
     pub report: std::option::Option<crate::model::JobReport>,
     /// <p>A timestamp indicating when this job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    #[doc(hidden)]
     pub termination_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
+    #[doc(hidden)]
     pub suspended_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
+    #[doc(hidden)]
     pub suspended_cause: std::option::Option<std::string::String>,
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+    #[doc(hidden)]
     pub manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+    #[doc(hidden)]
     pub generated_manifest_descriptor:
         std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
 }
@@ -6606,8 +6771,10 @@ impl JobDescriptor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3GeneratedManifestDescriptor {
     /// <p>The format of the generated manifest.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::GeneratedManifestFormat>,
     /// <p>Contains the information required to locate a manifest object.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::JobManifestLocation>,
 }
 impl S3GeneratedManifestDescriptor {
@@ -6687,10 +6854,13 @@ pub struct JobManifestLocation {
     /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub object_arn: std::option::Option<std::string::String>,
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+    #[doc(hidden)]
     pub object_version_id: std::option::Option<std::string::String>,
     /// <p>The ETag for the specified manifest object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl JobManifestLocation {
@@ -6882,14 +7052,19 @@ impl JobManifestGenerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3JobManifestGenerator {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+    #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The source bucket used by the ManifestGenerator.</p>
+    #[doc(hidden)]
     pub source_bucket: std::option::Option<std::string::String>,
     /// <p>Specifies the location the generated manifest will be written to.</p>
+    #[doc(hidden)]
     pub manifest_output_location: std::option::Option<crate::model::S3ManifestOutputLocation>,
     /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::JobManifestGeneratorFilter>,
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+    #[doc(hidden)]
     pub enable_manifest_output: bool,
 }
 impl S3JobManifestGenerator {
@@ -7030,12 +7205,16 @@ impl S3JobManifestGenerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+    #[doc(hidden)]
     pub eligible_for_replication: std::option::Option<bool>,
     /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    #[doc(hidden)]
     pub object_replication_statuses:
         std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
 }
@@ -7229,14 +7408,19 @@ impl AsRef<str> for ReplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ManifestOutputLocation {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
+    #[doc(hidden)]
     pub expected_manifest_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The bucket ARN the generated manifest should be written to.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
+    #[doc(hidden)]
     pub manifest_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
+    #[doc(hidden)]
     pub manifest_encryption: std::option::Option<crate::model::GeneratedManifestEncryption>,
     /// <p>The format of the generated manifest.</p>
+    #[doc(hidden)]
     pub manifest_format: std::option::Option<crate::model::GeneratedManifestFormat>,
 }
 impl S3ManifestOutputLocation {
@@ -7383,8 +7567,10 @@ impl S3ManifestOutputLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedManifestEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
+    #[doc(hidden)]
     pub sses3: std::option::Option<crate::model::Sses3Encryption>,
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
+    #[doc(hidden)]
     pub ssekms: std::option::Option<crate::model::SsekmsEncryption>,
 }
 impl GeneratedManifestEncryption {
@@ -7462,6 +7648,7 @@ impl GeneratedManifestEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl SsekmsEncryption {
@@ -7546,10 +7733,13 @@ impl Sses3Encryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobReport {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The format of the specified job-completion report.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::JobReportFormat>,
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
     /// <prefix>
@@ -7558,8 +7748,10 @@ pub struct JobReport {
     /// /report.json
     /// </job-id>
     /// </prefix></code>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
+    #[doc(hidden)]
     pub report_scope: std::option::Option<crate::model::JobReportScope>,
 }
 impl JobReport {
@@ -7812,8 +8004,10 @@ impl AsRef<str> for JobReportFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobFailure {
     /// <p>The failure code, if any, for the specified job.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>The failure reason, if any, for the specified job.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl JobFailure {
@@ -7888,23 +8082,32 @@ impl JobFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobOperation {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
+    #[doc(hidden)]
     pub lambda_invoke: std::option::Option<crate::model::LambdaInvokeOperation>,
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
+    #[doc(hidden)]
     pub s3_put_object_copy: std::option::Option<crate::model::S3CopyObjectOperation>,
     /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+    #[doc(hidden)]
     pub s3_put_object_acl: std::option::Option<crate::model::S3SetObjectAclOperation>,
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
+    #[doc(hidden)]
     pub s3_put_object_tagging: std::option::Option<crate::model::S3SetObjectTaggingOperation>,
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
+    #[doc(hidden)]
     pub s3_delete_object_tagging: std::option::Option<crate::model::S3DeleteObjectTaggingOperation>,
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
+    #[doc(hidden)]
     pub s3_initiate_restore_object:
         std::option::Option<crate::model::S3InitiateRestoreObjectOperation>,
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_put_object_legal_hold: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_put_object_retention: std::option::Option<crate::model::S3SetObjectRetentionOperation>,
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+    #[doc(hidden)]
     pub s3_replicate_object: std::option::Option<crate::model::S3ReplicateObjectOperation>,
 }
 impl JobOperation {
@@ -8191,8 +8394,10 @@ impl S3ReplicateObjectOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SetObjectRetentionOperation {
     /// <p>Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
+    #[doc(hidden)]
     pub bypass_governance_retention: std::option::Option<bool>,
     /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub retention: std::option::Option<crate::model::S3Retention>,
 }
 impl S3SetObjectRetentionOperation {
@@ -8270,8 +8475,10 @@ impl S3SetObjectRetentionOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
+    #[doc(hidden)]
     pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::S3ObjectLockRetentionMode>,
 }
 impl S3Retention {
@@ -8404,6 +8611,7 @@ impl AsRef<str> for S3ObjectLockRetentionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub legal_hold: std::option::Option<crate::model::S3ObjectLockLegalHold>,
 }
 impl S3SetObjectLegalHoldOperation {
@@ -8461,6 +8669,7 @@ impl S3SetObjectLegalHoldOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
 }
 impl S3ObjectLockLegalHold {
@@ -8575,8 +8784,10 @@ pub struct S3InitiateRestoreObjectOperation {
     /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+    #[doc(hidden)]
     pub expiration_in_days: std::option::Option<i32>,
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
+    #[doc(hidden)]
     pub glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
 }
 impl S3InitiateRestoreObjectOperation {
@@ -8742,6 +8953,7 @@ impl S3DeleteObjectTaggingOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SetObjectTaggingOperation {
     /// <p></p>
+    #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl S3SetObjectTaggingOperation {
@@ -8805,6 +9017,7 @@ impl S3SetObjectTaggingOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SetObjectAclOperation {
     /// <p></p>
+    #[doc(hidden)]
     pub access_control_policy: std::option::Option<crate::model::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperation {
@@ -8864,8 +9077,10 @@ impl S3SetObjectAclOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessControlPolicy {
     /// <p></p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<crate::model::S3AccessControlList>,
     /// <p></p>
+    #[doc(hidden)]
     pub canned_access_control_list: std::option::Option<crate::model::S3CannedAccessControlList>,
 }
 impl S3AccessControlPolicy {
@@ -9035,8 +9250,10 @@ impl AsRef<str> for S3CannedAccessControlList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessControlList {
     /// <p></p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::S3ObjectOwner>,
     /// <p></p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
 }
 impl S3AccessControlList {
@@ -9120,8 +9337,10 @@ impl S3AccessControlList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Grant {
     /// <p></p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::S3Grantee>,
     /// <p></p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::S3Permission>,
 }
 impl S3Grant {
@@ -9263,10 +9482,13 @@ impl AsRef<str> for S3Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Grantee {
     /// <p></p>
+    #[doc(hidden)]
     pub type_identifier: std::option::Option<crate::model::S3GranteeTypeIdentifier>,
     /// <p></p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl S3Grantee {
@@ -9417,8 +9639,10 @@ impl AsRef<str> for S3GranteeTypeIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ObjectOwner {
     /// <p></p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl S3ObjectOwner {
@@ -9490,42 +9714,60 @@ impl S3ObjectOwner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3CopyObjectOperation {
     /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+    #[doc(hidden)]
     pub target_resource: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub canned_access_control_list: std::option::Option<crate::model::S3CannedAccessControlList>,
     /// <p></p>
+    #[doc(hidden)]
     pub access_control_grants: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
     /// <p></p>
+    #[doc(hidden)]
     pub metadata_directive: std::option::Option<crate::model::S3MetadataDirective>,
     /// <p></p>
+    #[doc(hidden)]
     pub modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
+    #[doc(hidden)]
     pub new_object_metadata: std::option::Option<crate::model::S3ObjectMetadata>,
     /// <p></p>
+    #[doc(hidden)]
     pub new_object_tagging: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
     /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
+    #[doc(hidden)]
     pub redirect_location: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub requester_pays: bool,
     /// <p></p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::S3StorageClass>,
     /// <p></p>
+    #[doc(hidden)]
     pub un_modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
+    #[doc(hidden)]
     pub sse_aws_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+    #[doc(hidden)]
     pub target_key_prefix: std::option::Option<std::string::String>,
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub object_lock_legal_hold_status:
         std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
     /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
     /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
+    #[doc(hidden)]
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+    #[doc(hidden)]
     pub bucket_key_enabled: bool,
     /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::S3ChecksumAlgorithm>,
 }
 impl S3CopyObjectOperation {
@@ -10159,27 +10401,38 @@ impl AsRef<str> for S3StorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ObjectMetadata {
     /// <p></p>
+    #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_disposition: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_language: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_md5: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub http_expires_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
+    #[doc(hidden)]
     pub requester_charged: bool,
     /// <p></p>
+    #[doc(hidden)]
     pub sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
 }
 impl S3ObjectMetadata {
@@ -10552,6 +10805,7 @@ impl AsRef<str> for S3MetadataDirective {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaInvokeOperation {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaInvokeOperation {
@@ -10606,8 +10860,10 @@ impl LambdaInvokeOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobManifest {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::JobManifestSpec>,
     /// <p>Contains the information required to locate the specified job's manifest.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::JobManifestLocation>,
 }
 impl JobManifest {
@@ -10685,8 +10941,10 @@ impl JobManifest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobManifestSpec {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::JobManifestFormat>,
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::JobManifestFieldName>>,
 }
 impl JobManifestSpec {
@@ -10895,6 +11153,7 @@ pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {

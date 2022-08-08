@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsOutput {
     /// <p>The output lists information about the specified job runs.</p>
+    #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRunSummary>>,
     /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsOutput {
@@ -86,10 +88,13 @@ impl ListJobRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunOutput {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The output contains the ID of the started job run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>The output lists the execution role ARN of the job run.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StartJobRunOutput {
@@ -181,8 +186,10 @@ impl StartJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobRunOutput {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The output contains the ID of the cancelled job run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl CancelJobRunOutput {
@@ -257,6 +264,7 @@ impl CancelJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunOutput {
     /// <p>The output displays information about the job run.</p>
+    #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
 impl GetJobRunOutput {
@@ -371,8 +379,10 @@ impl StartApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>The output lists the specified applications.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -454,10 +464,13 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The output contains the application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The output contains the name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The output contains the ARN of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateApplicationOutput {
@@ -579,6 +592,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>Information about the updated application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl UpdateApplicationOutput {
@@ -636,6 +650,7 @@ impl UpdateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The output displays information about the specified application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl GetApplicationOutput {
@@ -753,6 +768,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

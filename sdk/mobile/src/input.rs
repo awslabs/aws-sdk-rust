@@ -1385,8 +1385,10 @@ impl UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    #[doc(hidden)]
     pub contents: std::option::Option<aws_smithy_types::Blob>,
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
@@ -1413,8 +1415,10 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p> Maximum number of records to list in a single response. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
@@ -1441,8 +1445,10 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBundlesInput {
     /// <p> Maximum number of records to list in a single response. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBundlesInput {
@@ -1469,6 +1475,7 @@ impl std::fmt::Debug for ListBundlesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportProjectInput {
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl ExportProjectInput {
@@ -1490,10 +1497,13 @@ impl std::fmt::Debug for ExportProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportBundleInput {
     /// <p> Unique bundle identifier. </p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p> Developer desktop or target application platform. </p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
 }
 impl ExportBundleInput {
@@ -1525,8 +1535,10 @@ impl std::fmt::Debug for ExportBundleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
+    #[doc(hidden)]
     pub sync_from_resources: bool,
 }
 impl DescribeProjectInput {
@@ -1553,6 +1565,7 @@ impl std::fmt::Debug for DescribeProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBundleInput {
     /// <p> Unique bundle identifier. </p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl DescribeBundleInput {
@@ -1574,6 +1587,7 @@ impl std::fmt::Debug for DescribeBundleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p> Unique project identifier. </p>
+    #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -1595,12 +1609,16 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p> Name of the project. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Default region where project resources should be created. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    #[doc(hidden)]
     pub contents: std::option::Option<aws_smithy_types::Blob>,
     /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl CreateProjectInput {

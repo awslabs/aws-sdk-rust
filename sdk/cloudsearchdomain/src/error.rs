@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentServiceException {
     /// <p>The return status of a document upload request, <code>error</code> or <code>success</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The description of the errors returned by the document service.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DocumentServiceException {
@@ -90,6 +92,7 @@ impl DocumentServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchException {
     /// <p>A description of the error returned by the search service.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SearchException {

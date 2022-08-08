@@ -3889,8 +3889,10 @@ impl UpdateServiceAccessPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceAccessPoliciesInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    #[doc(hidden)]
     pub access_policies: std::option::Option<std::string::String>,
 }
 impl UpdateServiceAccessPoliciesInput {
@@ -3917,8 +3919,10 @@ impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    #[doc(hidden)]
     pub scaling_parameters: std::option::Option<crate::model::ScalingParameters>,
 }
 impl UpdateScalingParametersInput {
@@ -3945,8 +3949,10 @@ impl std::fmt::Debug for UpdateScalingParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptions>,
 }
 impl UpdateDomainEndpointOptionsInput {
@@ -3975,8 +3981,10 @@ impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityOptionsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    #[doc(hidden)]
     pub multi_az: std::option::Option<bool>,
 }
 impl UpdateAvailabilityOptionsInput {
@@ -4014,6 +4022,7 @@ impl std::fmt::Debug for ListDomainNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexDocumentsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl IndexDocumentsInput {
@@ -4035,10 +4044,13 @@ impl std::fmt::Debug for IndexDocumentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSuggestersInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The suggesters you want to describe.</p>
+    #[doc(hidden)]
     pub suggester_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeSuggestersInput {
@@ -4070,8 +4082,10 @@ impl std::fmt::Debug for DescribeSuggestersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceAccessPoliciesInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeServiceAccessPoliciesInput {
@@ -4098,6 +4112,7 @@ impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DescribeScalingParametersInput {
@@ -4119,10 +4134,13 @@ impl std::fmt::Debug for DescribeScalingParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexFieldsInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
+    #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeIndexFieldsInput {
@@ -4154,10 +4172,13 @@ impl std::fmt::Debug for DescribeIndexFieldsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    #[doc(hidden)]
     pub expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeExpressionsInput {
@@ -4189,6 +4210,7 @@ impl std::fmt::Debug for DescribeExpressionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
+    #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDomainsInput {
@@ -4210,8 +4232,10 @@ impl std::fmt::Debug for DescribeDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeDomainEndpointOptionsInput {
@@ -4238,8 +4262,10 @@ impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityOptionsInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeAvailabilityOptionsInput {
@@ -4266,10 +4292,13 @@ impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisSchemesInput {
     /// <p>The name of the domain you want to describe.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The analysis schemes you want to describe.</p>
+    #[doc(hidden)]
     pub analysis_scheme_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deployed: std::option::Option<bool>,
 }
 impl DescribeAnalysisSchemesInput {
@@ -4301,8 +4330,10 @@ impl std::fmt::Debug for DescribeAnalysisSchemesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the suggester you want to delete.</p>
+    #[doc(hidden)]
     pub suggester_name: std::option::Option<std::string::String>,
 }
 impl DeleteSuggesterInput {
@@ -4329,8 +4360,10 @@ impl std::fmt::Debug for DeleteSuggesterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl DeleteIndexFieldInput {
@@ -4357,8 +4390,10 @@ impl std::fmt::Debug for DeleteIndexFieldInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
+    #[doc(hidden)]
     pub expression_name: std::option::Option<std::string::String>,
 }
 impl DeleteExpressionInput {
@@ -4385,6 +4420,7 @@ impl std::fmt::Debug for DeleteExpressionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -4406,8 +4442,10 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the analysis scheme you want to delete.</p>
+    #[doc(hidden)]
     pub analysis_scheme_name: std::option::Option<std::string::String>,
 }
 impl DeleteAnalysisSchemeInput {
@@ -4434,8 +4472,10 @@ impl std::fmt::Debug for DeleteAnalysisSchemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    #[doc(hidden)]
     pub suggester: std::option::Option<crate::model::Suggester>,
 }
 impl DefineSuggesterInput {
@@ -4462,8 +4502,10 @@ impl std::fmt::Debug for DefineSuggesterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The index field and field options you want to configure. </p>
+    #[doc(hidden)]
     pub index_field: std::option::Option<crate::model::IndexField>,
 }
 impl DefineIndexFieldInput {
@@ -4490,8 +4532,10 @@ impl std::fmt::Debug for DefineIndexFieldInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    #[doc(hidden)]
     pub expression: std::option::Option<crate::model::Expression>,
 }
 impl DefineExpressionInput {
@@ -4518,8 +4562,10 @@ impl std::fmt::Debug for DefineExpressionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::model::AnalysisScheme>,
 }
 impl DefineAnalysisSchemeInput {
@@ -4546,6 +4592,7 @@ impl std::fmt::Debug for DefineAnalysisSchemeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl CreateDomainInput {
@@ -4567,6 +4614,7 @@ impl std::fmt::Debug for CreateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl BuildSuggestersInput {

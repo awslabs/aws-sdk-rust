@@ -64,6 +64,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
+    #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
 }
 impl RequestServiceQuotaIncreaseOutput {
@@ -123,6 +124,7 @@ impl RequestServiceQuotaIncreaseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
+    #[doc(hidden)]
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
 }
@@ -192,6 +194,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -253,8 +256,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the services.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
 }
 impl ListServicesOutput {
@@ -335,8 +340,10 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quotas.</p>
+    #[doc(hidden)]
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
 impl ListServiceQuotasOutput {
@@ -417,9 +424,11 @@ impl ListServiceQuotasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
+    #[doc(hidden)]
     pub service_quota_increase_request_in_template_list:
         std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
@@ -516,8 +525,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
+    #[doc(hidden)]
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
@@ -607,8 +618,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
+    #[doc(hidden)]
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
@@ -696,8 +709,10 @@ impl ListRequestedServiceQuotaChangeHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsDefaultServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quotas.</p>
+    #[doc(hidden)]
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
 impl ListAwsDefaultServiceQuotasOutput {
@@ -778,6 +793,7 @@ impl ListAwsDefaultServiceQuotasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// <p>Information about the quota increase request.</p>
+    #[doc(hidden)]
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
 }
@@ -847,6 +863,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceQuotaOutput {
     /// <p>Information about the quota.</p>
+    #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
 impl GetServiceQuotaOutput {
@@ -899,6 +916,7 @@ impl GetServiceQuotaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestedServiceQuotaChangeOutput {
     /// <p>Information about the quota increase request.</p>
+    #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
 }
 impl GetRequestedServiceQuotaChangeOutput {
@@ -958,6 +976,7 @@ impl GetRequestedServiceQuotaChangeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
+    #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
 }
 impl GetAwsDefaultServiceQuotaOutput {
@@ -1010,6 +1029,7 @@ impl GetAwsDefaultServiceQuotaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    #[doc(hidden)]
     pub service_quota_template_association_status:
         std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
 }

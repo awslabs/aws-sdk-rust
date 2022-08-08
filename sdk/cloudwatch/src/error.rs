@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -112,6 +115,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -176,6 +180,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceFault {
@@ -240,6 +245,7 @@ impl InternalServiceFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -304,6 +310,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRequiredParameterException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingRequiredParameterException {
@@ -368,6 +375,7 @@ impl MissingRequiredParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFound {
@@ -432,6 +440,7 @@ impl ResourceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFormatFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFormatFault {
@@ -496,6 +505,7 @@ impl InvalidFormatFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterCombinationException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterCombinationException {
@@ -560,6 +570,7 @@ impl InvalidParameterCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededFault {
@@ -624,6 +635,7 @@ impl LimitExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -688,8 +700,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardInvalidInputError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub dashboard_validation_messages:
         std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
 }
@@ -791,6 +805,7 @@ impl DashboardInvalidInputError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextToken {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextToken {
@@ -855,6 +870,7 @@ impl InvalidNextToken {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardNotFoundError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DashboardNotFoundError {

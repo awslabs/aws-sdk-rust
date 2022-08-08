@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>The unique identifier of the updated user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserOutput {
@@ -58,6 +59,7 @@ impl UpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionGroupOutput {
     /// <p>The unique identifier for the updated permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl UpdatePermissionGroupOutput {
@@ -115,6 +117,7 @@ impl UpdatePermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetOutput {
     /// <p>The unique identifier for updated Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl UpdateDatasetOutput {
@@ -169,8 +172,10 @@ impl UpdateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChangesetOutput {
     /// <p>The unique identifier for the Changeset to update.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl UpdateChangesetOutput {
@@ -242,8 +247,10 @@ impl UpdateChangesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetUserPasswordOutput {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    #[doc(hidden)]
     pub temporary_password: std::option::Option<std::string::String>,
 }
 impl ResetUserPasswordOutput {
@@ -318,8 +325,10 @@ impl ResetUserPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersByPermissionGroupOutput {
     /// <p>Lists details of all users in a specific permission group.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersByPermissionGroupOutput {
@@ -400,8 +409,10 @@ impl ListUsersByPermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>A list of all the user accounts.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -482,8 +493,10 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionGroupsByUserOutput {
     /// <p>A list of returned permission groups.</p>
+    #[doc(hidden)]
     pub permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionGroupsByUserOutput {
@@ -565,8 +578,10 @@ impl ListPermissionGroupsByUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionGroupsOutput {
     /// <p>A list of all the permission groups.</p>
+    #[doc(hidden)]
     pub permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionGroupsOutput {
@@ -648,8 +663,10 @@ impl ListPermissionGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataViewsOutput {
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of Dataviews.</p>
+    #[doc(hidden)]
     pub data_views: std::option::Option<std::vec::Vec<crate::model::DataViewSummary>>,
 }
 impl ListDataViewsOutput {
@@ -730,8 +747,10 @@ impl ListDataViewsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p>List of Datasets.</p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -812,8 +831,10 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangesetsOutput {
     /// <p>List of Changesets found.</p>
+    #[doc(hidden)]
     pub changesets: std::option::Option<std::vec::Vec<crate::model::ChangesetSummary>>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangesetsOutput {
@@ -894,10 +915,13 @@ impl ListChangesetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>Returns the Amazon S3 Path for the working location.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<std::string::String>,
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
 }
 impl GetWorkingLocationOutput {
@@ -986,6 +1010,7 @@ impl GetWorkingLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserOutput {
     /// <p>The unique identifier for the user account that is retrieved.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
@@ -993,12 +1018,16 @@ pub struct GetUserOutput {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UserStatus>,
     /// <p>The first name of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address that is associated with the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>Indicates the type of user. </p>
     /// <ul>
@@ -1007,24 +1036,32 @@ pub struct GetUserOutput {
     /// <ul>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    #[doc(hidden)]
     pub api_access_principal_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    #[doc(hidden)]
     pub last_enabled_time: i64,
     /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    #[doc(hidden)]
     pub last_disabled_time: i64,
     /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds.</p>
+    #[doc(hidden)]
     pub last_login_time: i64,
 }
 impl GetUserOutput {
@@ -1337,8 +1374,10 @@ impl GetUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
     /// <p>Returns the duration in which the credentials will remain valid.</p>
+    #[doc(hidden)]
     pub duration_in_minutes: i64,
 }
 impl GetProgrammaticAccessCredentialsOutput {
@@ -1413,6 +1452,7 @@ impl GetProgrammaticAccessCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionGroupOutput {
     /// <p>The structure for a permission group.</p>
+    #[doc(hidden)]
     pub permission_group: std::option::Option<crate::model::PermissionGroup>,
 }
 impl GetPermissionGroupOutput {
@@ -1470,8 +1510,10 @@ impl GetPermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExternalDataViewAccessDetailsOutput {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>The location where the external Dataview is stored.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl GetExternalDataViewAccessDetailsOutput {
@@ -1549,26 +1591,37 @@ impl GetExternalDataViewAccessDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataViewOutput {
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
+    #[doc(hidden)]
     pub auto_update: bool,
     /// <p>Ordered set of column names used to partition data.</p>
+    #[doc(hidden)]
     pub partition_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub as_of_timestamp: std::option::Option<i64>,
     /// <p>Information about an error that occurred for the Dataview.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::DataViewErrorInfo>,
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>Columns to be used for sorting the data.</p>
+    #[doc(hidden)]
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique identifier for the Dataview.</p>
+    #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Dataview.</p>
+    #[doc(hidden)]
     pub data_view_arn: std::option::Option<std::string::String>,
     /// <p>Options that define the destination type for the Dataview.</p>
+    #[doc(hidden)]
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
@@ -1581,6 +1634,7 @@ pub struct GetDataViewOutput {
     /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
     /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataViewStatus>,
 }
 impl GetDataViewOutput {
@@ -1888,26 +1942,35 @@ impl GetDataViewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatasetOutput {
     /// <p>The unique identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Display title for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description of the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>Definition for a schema on a tabular Dataset.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
     /// <p>The unique resource identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
@@ -1916,6 +1979,7 @@ pub struct GetDatasetOutput {
     /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
     /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
 impl GetDatasetOutput {
@@ -2165,10 +2229,13 @@ impl GetDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangesetOutput {
     /// <p>The unique identifier for a Changeset.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifier of the Changeset.</p>
+    #[doc(hidden)]
     pub changeset_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
@@ -2176,26 +2243,36 @@ pub struct GetChangesetOutput {
     /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
+    #[doc(hidden)]
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Structure of the source file(s).</p>
+    #[doc(hidden)]
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The status of Changeset creation operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionStatus>,
     /// <p>The structure with error messages.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub active_until_timestamp: std::option::Option<i64>,
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub active_from_timestamp: std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is being updated.</p>
+    #[doc(hidden)]
     pub updates_changeset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the updated Changeset.</p>
+    #[doc(hidden)]
     pub updated_by_changeset_id: std::option::Option<std::string::String>,
 }
 impl GetChangesetOutput {
@@ -2527,6 +2604,7 @@ impl GetChangesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableUserOutput {
     /// <p>The unique identifier for the enabled user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl EnableUserOutput {
@@ -2581,6 +2659,7 @@ impl EnableUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateUserFromPermissionGroupOutput {
     /// <p>The returned status code of the response.</p>
+    #[doc(hidden)]
     pub status_code: i32,
 }
 impl DisassociateUserFromPermissionGroupOutput {
@@ -2635,6 +2714,7 @@ impl DisassociateUserFromPermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableUserOutput {
     /// <p>The unique identifier for the disabled user account.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DisableUserOutput {
@@ -2689,6 +2769,7 @@ impl DisableUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionGroupOutput {
     /// <p>The unique identifier for the deleted permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl DeletePermissionGroupOutput {
@@ -2746,6 +2827,7 @@ impl DeletePermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetOutput {
     /// <p>The unique identifier for the deleted Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetOutput {
@@ -2800,6 +2882,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
@@ -2854,6 +2937,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionGroupOutput {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl CreatePermissionGroupOutput {
@@ -2911,8 +2995,10 @@ impl CreatePermissionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataViewOutput {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the created Dataview.</p>
+    #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
 }
 impl CreateDataViewOutput {
@@ -2984,6 +3070,7 @@ impl CreateDataViewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The unique identifier for the created Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
@@ -3038,8 +3125,10 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangesetOutput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Changeset that is created.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
 }
 impl CreateChangesetOutput {
@@ -3111,6 +3200,7 @@ impl CreateChangesetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateUserToPermissionGroupOutput {
     /// <p>The returned status code of the response.</p>
+    #[doc(hidden)]
     pub status_code: i32,
 }
 impl AssociateUserToPermissionGroupOutput {

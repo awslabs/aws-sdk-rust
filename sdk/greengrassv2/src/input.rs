@@ -4819,8 +4819,10 @@ impl UpdateConnectivityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityInfoInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The connectivity information for the core device.</p>
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
 }
 impl UpdateConnectivityInfoInput {
@@ -4847,8 +4849,10 @@ impl std::fmt::Debug for UpdateConnectivityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys for tags to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4875,8 +4879,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4907,8 +4913,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveComponentCandidatesInput {
     /// <p>The platform to use to resolve compatible components.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::ComponentPlatform>,
     /// <p>The list of components to resolve.</p>
+    #[doc(hidden)]
     pub component_candidates: std::option::Option<std::vec::Vec<crate::model::ComponentCandidate>>,
 }
 impl ResolveComponentCandidatesInput {
@@ -4935,6 +4943,7 @@ impl std::fmt::Debug for ResolveComponentCandidatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4956,10 +4965,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstalledComponentsInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstalledComponentsInput {
@@ -4991,10 +5003,13 @@ impl std::fmt::Debug for ListInstalledComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEffectiveDeploymentsInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEffectiveDeploymentsInput {
@@ -5026,6 +5041,7 @@ impl std::fmt::Debug for ListEffectiveDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
@@ -5033,10 +5049,13 @@ pub struct ListDeploymentsInput {
     /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code> </p>
+    #[doc(hidden)]
     pub history_filter: std::option::Option<crate::model::DeploymentHistoryFilter>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
@@ -5078,16 +5097,20 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDevicesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
+    #[doc(hidden)]
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
     /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDevicesInput {
@@ -5128,10 +5151,13 @@ impl std::fmt::Debug for ListCoreDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentVersionsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentVersionsInput {
@@ -5164,10 +5190,13 @@ impl std::fmt::Debug for ListComponentVersionsInput {
 pub struct ListComponentsInput {
     /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::ComponentVisibilityScope>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
@@ -5200,10 +5229,13 @@ impl std::fmt::Debug for ListComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClientDevicesAssociatedWithCoreDeviceInput {
@@ -5246,6 +5278,7 @@ impl std::fmt::Debug for GetServiceRoleForAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentInput {
@@ -5267,6 +5300,7 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl GetCoreDeviceInput {
@@ -5288,6 +5322,7 @@ impl std::fmt::Debug for GetCoreDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectivityInfoInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl GetConnectivityInfoInput {
@@ -5309,9 +5344,11 @@ impl std::fmt::Debug for GetConnectivityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentVersionArtifactInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
+    #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
 }
 impl GetComponentVersionArtifactInput {
@@ -5339,8 +5376,10 @@ impl std::fmt::Debug for GetComponentVersionArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentInput {
     /// <p>The format of the recipe.</p>
+    #[doc(hidden)]
     pub recipe_output_format: std::option::Option<crate::model::RecipeOutputFormat>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
@@ -5378,6 +5417,7 @@ impl std::fmt::Debug for DisassociateServiceRoleFromAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DescribeComponentInput {
@@ -5399,6 +5439,7 @@ impl std::fmt::Debug for DescribeComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentInput {
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentInput {
@@ -5420,6 +5461,7 @@ impl std::fmt::Debug for DeleteDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl DeleteCoreDeviceInput {
@@ -5441,6 +5483,7 @@ impl std::fmt::Debug for DeleteCoreDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
@@ -5462,10 +5505,13 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -5473,13 +5519,17 @@ pub struct CreateDeploymentInput {
         >,
     >,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    #[doc(hidden)]
     pub iot_job_configuration: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    #[doc(hidden)]
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -5544,14 +5594,18 @@ impl std::fmt::Debug for CreateDeploymentInput {
 pub struct CreateComponentVersionInput {
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    #[doc(hidden)]
     pub inline_recipe: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    #[doc(hidden)]
     pub lambda_function: std::option::Option<crate::model::LambdaFunctionRecipeSource>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentVersionInput {
@@ -5595,6 +5649,7 @@ impl std::fmt::Debug for CreateComponentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDeploymentInput {
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CancelDeploymentInput {
@@ -5616,10 +5671,12 @@ impl std::fmt::Debug for CancelDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceInput {
     /// <p>The list of client devices to disassociate.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<
         std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceEntry>,
     >,
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl BatchDisassociateClientDeviceFromCoreDeviceInput {
@@ -5648,9 +5705,11 @@ impl std::fmt::Debug for BatchDisassociateClientDeviceFromCoreDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceInput {
     /// <p>The list of client devices to associate.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceEntry>>,
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl BatchAssociateClientDeviceWithCoreDeviceInput {
@@ -5679,6 +5738,7 @@ impl std::fmt::Debug for BatchAssociateClientDeviceWithCoreDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceRoleToAccountInput {
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountInput {

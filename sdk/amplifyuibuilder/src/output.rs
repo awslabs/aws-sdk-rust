@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportThemesOutput {
@@ -86,8 +88,10 @@ impl ExportThemesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
     /// <p>The pagination token that's returned if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThemesOutput {
@@ -168,6 +172,7 @@ impl ListThemesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeOutput {
     /// <p>Describes the configuration of the new theme.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
 }
 impl CreateThemeOutput {
@@ -252,6 +257,7 @@ impl DeleteThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeOutput {
     /// <p>Describes the configuration of the updated theme.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
 }
 impl UpdateThemeOutput {
@@ -306,6 +312,7 @@ impl UpdateThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThemeOutput {
     /// <p>Represents the configuration settings for the theme.</p>
+    #[doc(hidden)]
     pub theme: std::option::Option<crate::model::Theme>,
 }
 impl GetThemeOutput {
@@ -358,8 +365,10 @@ impl GetThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportComponentsOutput {
@@ -440,8 +449,10 @@ impl ExportComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsOutput {
     /// <p>The list of components for the Amplify app.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
     /// <p>The pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
@@ -522,6 +533,7 @@ impl ListComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentOutput {
     /// <p>Describes the configuration of the new component.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
 }
 impl CreateComponentOutput {
@@ -606,6 +618,7 @@ impl DeleteComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentOutput {
     /// <p>Describes the configuration of the updated component.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
 }
 impl UpdateComponentOutput {
@@ -660,6 +673,7 @@ impl UpdateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentOutput {
     /// <p>Represents the configuration settings for the component.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
@@ -717,8 +731,10 @@ impl GetComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshTokenOutput {
     /// <p>The access token.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The date and time when the new access token expires.</p>
+    #[doc(hidden)]
     pub expires_in: std::option::Option<i32>,
 }
 impl RefreshTokenOutput {
@@ -790,10 +806,13 @@ impl RefreshTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExchangeCodeForTokenOutput {
     /// <p>The access token.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The date and time when the new access token expires.</p>
+    #[doc(hidden)]
     pub expires_in: std::option::Option<i32>,
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
 }
 impl ExchangeCodeForTokenOutput {

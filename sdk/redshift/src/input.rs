@@ -23464,16 +23464,22 @@ impl UpdatePartnerStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerStatusInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database whose partner integration status is being updated.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner whose integration status is being updated.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The value of the updated status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PartnerIntegrationStatus>,
     /// <p>The status message provided by the partner.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl UpdatePartnerStatusInput {
@@ -23521,6 +23527,7 @@ impl std::fmt::Debug for UpdatePartnerStatusInput {
 pub struct RotateEncryptionKeyInput {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RotateEncryptionKeyInput {
@@ -23543,12 +23550,16 @@ impl std::fmt::Debug for RotateEncryptionKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    #[doc(hidden)]
     pub account_with_restore_access: std::option::Option<std::string::String>,
 }
 impl RevokeSnapshotAccessInput {
@@ -23591,12 +23602,16 @@ impl std::fmt::Debug for RevokeSnapshotAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
+    #[doc(hidden)]
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl RevokeEndpointAccessInput {
@@ -23633,13 +23648,17 @@ impl std::fmt::Debug for RevokeEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeClusterSecurityGroupIngressInput {
     /// <p>The name of the security Group from which to revoke the ingress rule.</p>
+    #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
     /// <p>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
+    #[doc(hidden)]
     pub cidrip: std::option::Option<std::string::String>,
     /// <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
+    #[doc(hidden)]
     pub ec2_security_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>
     /// <p>Example: <code>111122223333</code> </p>
+    #[doc(hidden)]
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl RevokeClusterSecurityGroupIngressInput {
@@ -23683,6 +23702,7 @@ impl std::fmt::Debug for RevokeClusterSecurityGroupIngressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeClusterInput {
     /// <p>The identifier of the cluster to be resumed.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl ResumeClusterInput {
@@ -23704,22 +23724,31 @@ impl std::fmt::Debug for ResumeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromClusterSnapshotInput {
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the source database that contains the table to restore from.</p>
+    #[doc(hidden)]
     pub source_database_name: std::option::Option<std::string::String>,
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
+    #[doc(hidden)]
     pub source_schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the source table to restore from.</p>
+    #[doc(hidden)]
     pub source_table_name: std::option::Option<std::string::String>,
     /// <p>The name of the database to restore the table to.</p>
+    #[doc(hidden)]
     pub target_database_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema to restore the table to.</p>
+    #[doc(hidden)]
     pub target_schema_name: std::option::Option<std::string::String>,
     /// <p>The name of the table to create as a result of the current request.</p>
+    #[doc(hidden)]
     pub new_table_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
+    #[doc(hidden)]
     pub enable_case_sensitive_identifier: std::option::Option<bool>,
 }
 impl RestoreTableFromClusterSnapshotInput {
@@ -23792,37 +23821,50 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
     /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Example: <code>us-east-2a</code> </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub allow_version_upgrade: std::option::Option<bool>,
     /// <p>The name of the subnet group where you want to cluster restored.</p>
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
@@ -23832,50 +23874,65 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    #[doc(hidden)]
     pub cluster_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
+    #[doc(hidden)]
     pub automated_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The node type that the restored cluster will be provisioned with.</p>
     /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub additional_info: std::option::Option<std::string::String>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
+    #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the snapshot schedule.</p>
+    #[doc(hidden)]
     pub snapshot_schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The number of nodes specified when provisioning the restored cluster.</p>
+    #[doc(hidden)]
     pub number_of_nodes: std::option::Option<i32>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
+    #[doc(hidden)]
     pub availability_zone_relocation: std::option::Option<bool>,
     /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
     /// <ul>
@@ -23883,14 +23940,19 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <li> <p>disabled - Don't use AQUA. </p> </li>
     /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
+    #[doc(hidden)]
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
     /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInput {
@@ -24147,18 +24209,25 @@ impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResizeClusterInput {
     /// <p>The unique identifier for the cluster to resize.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The new cluster type for the specified cluster.</p>
+    #[doc(hidden)]
     pub cluster_type: std::option::Option<std::string::String>,
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    #[doc(hidden)]
     pub number_of_nodes: std::option::Option<i32>,
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
+    #[doc(hidden)]
     pub classic: std::option::Option<bool>,
     /// <p>The identifier of the reserved node.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
+    #[doc(hidden)]
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
 }
 impl ResizeClusterInput {
@@ -24213,12 +24282,15 @@ impl std::fmt::Debug for ResizeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group to be reset.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ResetClusterParameterGroupInput {
@@ -24252,6 +24324,7 @@ impl std::fmt::Debug for ResetClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
 }
 impl RejectDataShareInput {
@@ -24273,6 +24346,7 @@ impl std::fmt::Debug for RejectDataShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootClusterInput {
     /// <p>The cluster identifier.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RebootClusterInput {
@@ -24294,9 +24368,11 @@ impl std::fmt::Debug for RebootClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedNodeOfferingInput {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    #[doc(hidden)]
     pub reserved_node_offering_id: std::option::Option<std::string::String>,
     /// <p>The number of reserved nodes that you want to purchase.</p>
     /// <p>Default: <code>1</code> </p>
+    #[doc(hidden)]
     pub node_count: std::option::Option<i32>,
 }
 impl PurchaseReservedNodeOfferingInput {
@@ -24324,6 +24400,7 @@ impl std::fmt::Debug for PurchaseReservedNodeOfferingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseClusterInput {
     /// <p>The identifier of the cluster to be paused.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl PauseClusterInput {
@@ -24345,10 +24422,13 @@ impl std::fmt::Debug for PauseClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUsageLimitInput {
     /// <p>The identifier of the usage limit to modify.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    #[doc(hidden)]
     pub amount: std::option::Option<i64>,
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
 }
 impl ModifyUsageLimitInput {
@@ -24380,8 +24460,10 @@ impl std::fmt::Debug for ModifyUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotScheduleInput {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+    #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifySnapshotScheduleInput {
@@ -24409,6 +24491,7 @@ impl std::fmt::Debug for ModifySnapshotScheduleInput {
 pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
     /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
@@ -24417,8 +24500,10 @@ pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
+    #[doc(hidden)]
     pub retention_period: i32,
     /// <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
+    #[doc(hidden)]
     pub manual: bool,
 }
 impl ModifySnapshotCopyRetentionPeriodInput {
@@ -24457,20 +24542,28 @@ impl std::fmt::Debug for ModifySnapshotCopyRetentionPeriodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyScheduledActionInput {
     /// <p>The name of the scheduled action to modify. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
     /// <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>A different IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A modified description of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_description: std::option::Option<std::string::String>,
     /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    #[doc(hidden)]
     pub enable: std::option::Option<bool>,
 }
 impl ModifyScheduledActionInput {
@@ -24530,23 +24623,30 @@ impl std::fmt::Debug for ModifyScheduledActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
     /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>
     /// <p>Example: my-cluster-1, my-cluster-2</p>
     /// <p>Example: my-snapshot-20131010</p>
+    #[doc(hidden)]
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>
     /// <p>Values: ERROR, INFO</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -24603,8 +24703,10 @@ impl std::fmt::Debug for ModifyEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEndpointAccessInput {
     /// <p>The endpoint to be modified.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyEndpointAccessInput {
@@ -24631,10 +24733,13 @@ impl std::fmt::Debug for ModifyEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterSubnetGroupInput {
     /// <p>The name of the subnet group to be modified.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A text description of the subnet group to be modified.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyClusterSubnetGroupInput {
@@ -24666,10 +24771,13 @@ impl std::fmt::Debug for ModifyClusterSubnetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterSnapshotScheduleInput {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
+    #[doc(hidden)]
     pub disassociate_schedule: std::option::Option<bool>,
 }
 impl ModifyClusterSnapshotScheduleInput {
@@ -24701,12 +24809,15 @@ impl std::fmt::Debug for ModifyClusterSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterSnapshotInput {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl ModifyClusterSnapshotInput {
@@ -24743,10 +24854,12 @@ impl std::fmt::Debug for ModifyClusterSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterParameterGroupInput {
     /// <p>The name of the parameter group to be modified.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl ModifyClusterParameterGroupInput {
@@ -24775,16 +24888,22 @@ impl std::fmt::Debug for ModifyClusterParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterMaintenanceInput {
     /// <p>A unique identifier for the cluster.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
+    #[doc(hidden)]
     pub defer_maintenance: std::option::Option<bool>,
     /// <p>A unique identifier for the deferred maintenance window.</p>
+    #[doc(hidden)]
     pub defer_maintenance_identifier: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
+    #[doc(hidden)]
     pub defer_maintenance_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
+    #[doc(hidden)]
     pub defer_maintenance_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    #[doc(hidden)]
     pub defer_maintenance_duration: std::option::Option<i32>,
 }
 impl ModifyClusterMaintenanceInput {
@@ -24843,12 +24962,16 @@ impl std::fmt::Debug for ModifyClusterMaintenanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterIamRolesInput {
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    #[doc(hidden)]
     pub add_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    #[doc(hidden)]
     pub remove_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
 }
 impl ModifyClusterIamRolesInput {
@@ -24886,8 +25009,10 @@ impl std::fmt::Debug for ModifyClusterIamRolesInput {
 pub struct ModifyClusterDbRevisionInput {
     /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
+    #[doc(hidden)]
     pub revision_target: std::option::Option<std::string::String>,
 }
 impl ModifyClusterDbRevisionInput {
@@ -24916,18 +25041,22 @@ impl std::fmt::Debug for ModifyClusterDbRevisionInput {
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The new cluster type.</p>
     /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>
     /// <p>Valid Values: <code> multi-node | single-node </code> </p>
+    #[doc(hidden)]
     pub cluster_type: std::option::Option<std::string::String>,
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
     /// <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
+    #[doc(hidden)]
     pub number_of_nodes: std::option::Option<i32>,
     /// <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
@@ -24937,8 +25066,10 @@ pub struct ModifyClusterInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
@@ -24952,20 +25083,24 @@ pub struct ModifyClusterInput {
     /// <li> <p>Must contain one number.</p> </li>
     /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
+    #[doc(hidden)]
     pub cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
+    #[doc(hidden)]
     pub automated_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is necessary during the window, it may result in an outage.</p>
     /// <p>This maintenance window change is made immediately. If the new maintenance window indicates the current time, there must be at least 120 minutes between the current time and end of the window in order to ensure that pending changes are applied.</p>
@@ -24973,17 +25108,22 @@ pub struct ModifyClusterInput {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Example: <code>1.0</code> </p>
+    #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub allow_version_upgrade: std::option::Option<bool>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
@@ -24995,28 +25135,38 @@ pub struct ModifyClusterInput {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub new_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
+    #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
     /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
+    #[doc(hidden)]
     pub availability_zone_relocation: std::option::Option<bool>,
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
 }
 impl ModifyClusterInput {
@@ -25233,8 +25383,10 @@ impl std::fmt::Debug for ModifyClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAuthenticationProfileInput {
     /// <p>The name of the authentication profile to replace.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    #[doc(hidden)]
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
 impl ModifyAuthenticationProfileInput {
@@ -25267,6 +25419,7 @@ impl std::fmt::Debug for ModifyAuthenticationProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAquaConfigurationInput {
     /// <p>The identifier of the cluster to be modified.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
     /// <ul>
@@ -25274,6 +25427,7 @@ pub struct ModifyAquaConfigurationInput {
     /// <li> <p>disabled - Don't use AQUA. </p> </li>
     /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
 }
 impl ModifyAquaConfigurationInput {
@@ -25307,10 +25461,13 @@ impl std::fmt::Debug for ModifyAquaConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedNodeExchangeOfferingsInput {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetReservedNodeExchangeOfferingsInput {
@@ -25342,14 +25499,19 @@ impl std::fmt::Debug for GetReservedNodeExchangeOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedNodeExchangeConfigurationOptionsInput {
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ReservedNodeExchangeActionType>,
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetReservedNodeExchangeConfigurationOptionsInput {
@@ -25393,11 +25555,14 @@ impl std::fmt::Debug for GetReservedNodeExchangeConfigurationOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClusterCredentialsWithIamInput {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl GetClusterCredentialsWithIamInput {
@@ -25439,6 +25604,7 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
@@ -25449,14 +25615,18 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
+    #[doc(hidden)]
     pub auto_create: std::option::Option<bool>,
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
@@ -25467,6 +25637,7 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetClusterCredentialsInput {
@@ -25541,18 +25712,23 @@ impl std::fmt::Debug for GetClusterCredentialsInput {
 pub struct EnableSnapshotCopyInput {
     /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
+    #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
     /// <p>The number of days to retain automated snapshots in the destination region after they are copied from the source region.</p>
     /// <p>Default: 7.</p>
     /// <p>Constraints: Must be at least 1 and no more than 35.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.</p>
+    #[doc(hidden)]
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
     /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
 }
 impl EnableSnapshotCopyInput {
@@ -25603,6 +25779,7 @@ impl std::fmt::Debug for EnableSnapshotCopyInput {
 pub struct EnableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
@@ -25610,6 +25787,7 @@ pub struct EnableLoggingInput {
     /// <li> <p>Must be in the same region as the cluster</p> </li>
     /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
@@ -25624,10 +25802,13 @@ pub struct EnableLoggingInput {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    #[doc(hidden)]
     pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
     /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    #[doc(hidden)]
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingInput {
@@ -25687,12 +25868,16 @@ impl std::fmt::Debug for EnableLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
+    #[doc(hidden)]
     pub disassociate_entire_account: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub consumer_region: std::option::Option<std::string::String>,
 }
 impl DisassociateDataShareConsumerInput {
@@ -25733,6 +25918,7 @@ impl std::fmt::Debug for DisassociateDataShareConsumerInput {
 pub struct DisableSnapshotCopyInput {
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DisableSnapshotCopyInput {
@@ -25756,6 +25942,7 @@ impl std::fmt::Debug for DisableSnapshotCopyInput {
 pub struct DisableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DisableLoggingInput {
@@ -25778,20 +25965,27 @@ impl std::fmt::Debug for DisableLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsageLimitsInput {
     /// <p>The identifier of the usage limit to describe.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The feature type for which you want to describe usage limits.</p>
+    #[doc(hidden)]
     pub feature_type: std::option::Option<crate::model::UsageLimitFeatureType>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeUsageLimits</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeUsageLimitsInput {
@@ -25845,6 +26039,7 @@ impl std::fmt::Debug for DescribeUsageLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
     /// <ul>
@@ -25860,14 +26055,19 @@ pub struct DescribeTagsInput {
     /// <li> <p>Snapshot copy grant</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
@@ -25927,12 +26127,16 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableRestoreStatusInput {
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
+    #[doc(hidden)]
     pub table_restore_request_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTableRestoreStatusInput {
@@ -25980,16 +26184,22 @@ impl std::fmt::Debug for DescribeStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotSchedulesInput {
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique identifier for a snapshot schedule.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The key value for a snapshot schedule tag.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
 }
 impl DescribeSnapshotSchedulesInput {
@@ -26036,17 +26246,22 @@ impl std::fmt::Debug for DescribeSnapshotSchedulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotCopyGrantsInput {
     /// <p>The name of the snapshot copy grant.</p>
+    #[doc(hidden)]
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSnapshotCopyGrantsInput {
@@ -26091,22 +26306,30 @@ impl std::fmt::Debug for DescribeSnapshotCopyGrantsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsInput {
     /// <p>The name of the scheduled action to retrieve. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The type of the scheduled actions to retrieve. </p>
+    #[doc(hidden)]
     pub target_action_type: std::option::Option<crate::model::ScheduledActionTypeValues>,
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
+    #[doc(hidden)]
     pub active: std::option::Option<bool>,
     /// <p>List of scheduled action filters. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ScheduledActionFilter>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
 }
 impl DescribeScheduledActionsInput {
@@ -26168,6 +26391,7 @@ impl std::fmt::Debug for DescribeScheduledActionsInput {
 pub struct DescribeResizeInput {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeResizeInput {
@@ -26190,12 +26414,15 @@ impl std::fmt::Debug for DescribeResizeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodesInput {
     /// <p>Identifier for the node reservation.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeReservedNodes</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReservedNodesInput {
@@ -26229,12 +26456,15 @@ impl std::fmt::Debug for DescribeReservedNodesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeOfferingsInput {
     /// <p>The unique identifier for the offering.</p>
+    #[doc(hidden)]
     pub reserved_node_offering_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeReservedNodeOfferings</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReservedNodeOfferingsInput {
@@ -26268,12 +26498,16 @@ impl std::fmt::Debug for DescribeReservedNodeOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeExchangeStatusInput {
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the reserved-node exchange request.</p>
+    #[doc(hidden)]
     pub reserved_node_exchange_request_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReservedNodeExchangeStatusInput {
@@ -26313,12 +26547,16 @@ impl std::fmt::Debug for DescribeReservedNodeExchangeStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnersInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl DescribePartnersInput {
@@ -26357,14 +26595,18 @@ pub struct DescribeOrderableClusterOptionsInput {
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
+    #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableClusterOptionsInput {
@@ -26405,22 +26647,30 @@ impl std::fmt::Debug for DescribeOrderableClusterOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeConfigurationOptionsInput {
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A set of name, operator, and value items to filter the results.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::NodeConfigurationOptionsFilter>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>500</code> </p>
     /// <p>Constraints: minimum 100, maximum 500.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
 }
 impl DescribeNodeConfigurationOptionsInput {
@@ -26480,6 +26730,7 @@ impl std::fmt::Debug for DescribeNodeConfigurationOptionsInput {
 pub struct DescribeLoggingStatusInput {
     /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingStatusInput {
@@ -26502,16 +26753,21 @@ impl std::fmt::Debug for DescribeLoggingStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmConfigurationsInput {
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmConfigurations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeHsmConfigurationsInput {
@@ -26558,16 +26814,21 @@ impl std::fmt::Debug for DescribeHsmConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmClientCertificatesInput {
     /// <p>The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmClientCertificates</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching HSM client certificates that are associated with the specified key or keys. For example, suppose that you have HSM client certificates that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeHsmClientCertificatesInput {
@@ -26614,16 +26875,21 @@ impl std::fmt::Debug for DescribeHsmClientCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the Amazon Redshift event notification subscription to be described.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching event notification subscriptions that are associated with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching event notification subscriptions that are associated with the specified tag value or values. For example, suppose that you have subscriptions that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEventSubscriptionsInput {
@@ -26675,6 +26941,7 @@ pub struct DescribeEventsInput {
     /// <li> <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p> </li>
     /// <li> <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     /// <p>Constraints:</p>
@@ -26685,21 +26952,27 @@ pub struct DescribeEventsInput {
     /// <li> <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p> </li>
     /// <li> <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2009-07-08T18:00Z</code> </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2009-07-08T18:00Z</code> </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p>
     /// <p>Default: <code>60</code> </p>
+    #[doc(hidden)]
     pub duration: std::option::Option<i32>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -26773,6 +27046,7 @@ impl std::fmt::Debug for DescribeEventsInput {
 pub struct DescribeEventCategoriesInput {
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
 }
 impl DescribeEventCategoriesInput {
@@ -26795,14 +27069,19 @@ impl std::fmt::Debug for DescribeEventCategoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointAuthorizationInput {
     /// <p>The cluster identifier of the cluster to access.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
+    #[doc(hidden)]
     pub grantee: std::option::Option<bool>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAuthorizationInput {
@@ -26844,16 +27123,22 @@ impl std::fmt::Debug for DescribeEndpointAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointAccessInput {
     /// <p>The cluster identifier associated with the described endpoint.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The name of the endpoint to be described.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAccessInput {
@@ -26900,12 +27185,15 @@ impl std::fmt::Debug for DescribeEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultClusterParametersInput {
     /// <p>The name of the cluster parameter group family.</p>
+    #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDefaultClusterParametersInput {
@@ -26939,12 +27227,16 @@ impl std::fmt::Debug for DescribeDefaultClusterParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesForProducerInput {
     /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataShareStatusForProducer>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForProducerInput {
@@ -26981,12 +27273,16 @@ impl std::fmt::Debug for DescribeDataSharesForProducerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesForConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
     /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataShareStatusForConsumer>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForConsumerInput {
@@ -27023,10 +27319,13 @@ impl std::fmt::Debug for DescribeDataSharesForConsumerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSharesInput {
     /// <p>The identifier of the datashare to describe details of.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesInput {
@@ -27059,6 +27358,7 @@ impl std::fmt::Debug for DescribeDataSharesInput {
 pub struct DescribeClusterVersionsInput {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
+    #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
@@ -27067,12 +27367,15 @@ pub struct DescribeClusterVersionsInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterVersionsInput {
@@ -27121,10 +27424,13 @@ impl std::fmt::Debug for DescribeClusterVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterTracksInput {
     /// <p>The name of the maintenance track. </p>
+    #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
     /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterTracksInput {
@@ -27156,16 +27462,21 @@ impl std::fmt::Debug for DescribeClusterTracksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSubnetGroupsInput {
     /// <p>The name of the cluster subnet group for which information is requested.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSubnetGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClusterSubnetGroupsInput {
@@ -27209,31 +27520,42 @@ impl std::fmt::Debug for DescribeClusterSubnetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSnapshotsInput {
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
+    #[doc(hidden)]
     pub snapshot_type: std::option::Option<std::string::String>,
     /// <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSnapshots</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>
     /// <ul>
@@ -27242,8 +27564,10 @@ pub struct DescribeClusterSnapshotsInput {
     /// <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li>
     /// <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_exists: std::option::Option<bool>,
     /// <p></p>
+    #[doc(hidden)]
     pub sorting_entities: std::option::Option<std::vec::Vec<crate::model::SnapshotSortingEntity>>,
 }
 impl DescribeClusterSnapshotsInput {
@@ -27337,17 +27661,22 @@ impl std::fmt::Debug for DescribeClusterSnapshotsInput {
 pub struct DescribeClusterSecurityGroupsInput {
     /// <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
     /// <p> Example: <code>securitygroup1</code> </p>
+    #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClusterSecurityGroupsInput {
@@ -27397,17 +27726,22 @@ impl std::fmt::Debug for DescribeClusterSecurityGroupsInput {
 pub struct DescribeClustersInput {
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>
     /// <p>The default is that all clusters defined for an account are returned.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClustersInput {
@@ -27453,16 +27787,20 @@ impl std::fmt::Debug for DescribeClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParametersInput {
     /// <p>The name of a cluster parameter group for which to return details.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p>
     /// <p>Default: All parameter types returned.</p>
     /// <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterParametersInput {
@@ -27503,16 +27841,21 @@ impl std::fmt::Debug for DescribeClusterParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParameterGroupsInput {
     /// <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterParameterGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClusterParameterGroupsInput {
@@ -27556,13 +27899,16 @@ impl std::fmt::Debug for DescribeClusterParameterGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterDbRevisionsInput {
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
+    #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterDbRevisionsInput {
@@ -27597,6 +27943,7 @@ impl std::fmt::Debug for DescribeClusterDbRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuthenticationProfilesInput {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeAuthenticationProfilesInput {
@@ -27621,6 +27968,7 @@ impl std::fmt::Debug for DescribeAuthenticationProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesInput {
     /// <p>A list of attribute names.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAccountAttributesInput {
@@ -27642,6 +27990,7 @@ impl std::fmt::Debug for DescribeAccountAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsageLimitInput {
     /// <p>The identifier of the usage limit to delete.</p>
+    #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsageLimitInput {
@@ -27663,8 +28012,10 @@ impl std::fmt::Debug for DeleteUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The tag key that you want to delete.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -27691,6 +28042,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotScheduleInput {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotScheduleInput {
@@ -27712,6 +28064,7 @@ impl std::fmt::Debug for DeleteSnapshotScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant to delete.</p>
+    #[doc(hidden)]
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotCopyGrantInput {
@@ -27733,6 +28086,7 @@ impl std::fmt::Debug for DeleteSnapshotCopyGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduledActionInput {
     /// <p>The name of the scheduled action to delete. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
 }
 impl DeleteScheduledActionInput {
@@ -27754,12 +28108,16 @@ impl std::fmt::Debug for DeleteScheduledActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartnerInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database that receives data from the partner.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl DeletePartnerInput {
@@ -27796,6 +28154,7 @@ impl std::fmt::Debug for DeletePartnerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteHsmConfigurationInput {
@@ -27820,6 +28179,7 @@ impl std::fmt::Debug for DeleteHsmConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmClientCertificateInput {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteHsmClientCertificateInput {
@@ -27844,6 +28204,7 @@ impl std::fmt::Debug for DeleteHsmClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventSubscriptionInput {
@@ -27865,6 +28226,7 @@ impl std::fmt::Debug for DeleteEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointAccessInput {
     /// <p>The Redshift-managed VPC endpoint to delete.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointAccessInput {
@@ -27886,6 +28248,7 @@ impl std::fmt::Debug for DeleteEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterSubnetGroupInput {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSubnetGroupInput {
@@ -27908,9 +28271,11 @@ impl std::fmt::Debug for DeleteClusterSubnetGroupInput {
 pub struct DeleteClusterSnapshotInput {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
+    #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSnapshotInput {
@@ -27942,6 +28307,7 @@ impl std::fmt::Debug for DeleteClusterSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterSecurityGroupInput {
     /// <p>The name of the cluster security group to be deleted.</p>
+    #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSecurityGroupInput {
@@ -27971,6 +28337,7 @@ pub struct DeleteClusterParameterGroupInput {
     /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
     /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteClusterParameterGroupInput {
@@ -28004,11 +28371,13 @@ pub struct DeleteClusterInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
+    #[doc(hidden)]
     pub skip_final_cluster_snapshot: bool,
     /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
@@ -28017,10 +28386,12 @@ pub struct DeleteClusterInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub final_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
+    #[doc(hidden)]
     pub final_cluster_snapshot_retention_period: std::option::Option<i32>,
 }
 impl DeleteClusterInput {
@@ -28084,6 +28455,7 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthenticationProfileInput {
     /// <p>The name of the authentication profile to delete.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
 impl DeleteAuthenticationProfileInput {
@@ -28108,8 +28480,10 @@ impl std::fmt::Debug for DeleteAuthenticationProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeauthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    #[doc(hidden)]
     pub consumer_identifier: std::option::Option<std::string::String>,
 }
 impl DeauthorizeDataShareInput {
@@ -28136,18 +28510,25 @@ impl std::fmt::Debug for DeauthorizeDataShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageLimitInput {
     /// <p>The identifier of the cluster that you want to limit usage.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift feature that you want to limit.</p>
+    #[doc(hidden)]
     pub feature_type: std::option::Option<crate::model::UsageLimitFeatureType>,
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
+    #[doc(hidden)]
     pub limit_type: std::option::Option<crate::model::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
+    #[doc(hidden)]
     pub amount: i64,
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateUsageLimitInput {
@@ -28199,8 +28580,10 @@ impl std::fmt::Debug for CreateUsageLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>Key</code> and the corresponding value is passed in with the parameter <code>Value</code>. The <code>Key</code> and <code>Value</code> parameters are separated by a comma (,). Separate multiple tags with a space. For example, <code>--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
@@ -28227,16 +28610,22 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotScheduleInput {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
+    #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The description of the snapshot schedule.</p>
+    #[doc(hidden)]
     pub schedule_description: std::option::Option<std::string::String>,
     /// <p>An optional set of tags you can use to search for the schedule.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p></p>
+    #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p></p>
+    #[doc(hidden)]
     pub next_invocations: std::option::Option<i32>,
 }
 impl CreateSnapshotScheduleInput {
@@ -28291,10 +28680,13 @@ pub struct CreateSnapshotCopyGrantInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSnapshotCopyGrantInput {
@@ -28334,20 +28726,28 @@ impl std::fmt::Debug for CreateSnapshotCopyGrantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledActionInput {
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
     /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The description of the scheduled action. </p>
+    #[doc(hidden)]
     pub scheduled_action_description: std::option::Option<std::string::String>,
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
+    #[doc(hidden)]
     pub enable: std::option::Option<bool>,
 }
 impl CreateScheduledActionInput {
@@ -28407,18 +28807,25 @@ impl std::fmt::Debug for CreateScheduledActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmConfigurationInput {
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>A text description of the HSM configuration to be created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    #[doc(hidden)]
     pub hsm_ip_address: std::option::Option<std::string::String>,
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    #[doc(hidden)]
     pub hsm_partition_name: std::option::Option<std::string::String>,
     /// <p>The password required to access the HSM partition.</p>
+    #[doc(hidden)]
     pub hsm_partition_password: std::option::Option<std::string::String>,
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
+    #[doc(hidden)]
     pub hsm_server_public_certificate: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHsmConfigurationInput {
@@ -28476,8 +28883,10 @@ impl std::fmt::Debug for CreateHsmConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmClientCertificateInput {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHsmClientCertificateInput {
@@ -28514,25 +28923,33 @@ pub struct CreateEventSubscriptionInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
     /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>
     /// <p>Example: my-cluster-1, my-cluster-2</p>
     /// <p>Example: my-snapshot-20131010</p>
+    #[doc(hidden)]
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
+    #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>
     /// <p>Values: ERROR, INFO</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create the subscription but not activate it. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventSubscriptionInput {
@@ -28601,15 +29018,20 @@ impl std::fmt::Debug for CreateEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointAccessInput {
     /// <p>The cluster identifier of the cluster to access.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The Redshift-managed VPC endpoint name.</p>
     /// <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateEndpointAccessInput {
@@ -28659,12 +29081,16 @@ pub struct CreateClusterSubnetGroupInput {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A description for the subnet group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateClusterSubnetGroupInput {
@@ -28716,14 +29142,18 @@ pub struct CreateClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The cluster identifier for which you want a snapshot.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateClusterSnapshotInput {
@@ -28780,10 +29210,13 @@ pub struct CreateClusterSecurityGroupInput {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
+    #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
     /// <p>A description for the security group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateClusterSecurityGroupInput {
@@ -28834,13 +29267,17 @@ pub struct CreateClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateClusterParameterGroupInput {
@@ -28895,6 +29332,7 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain only lowercase letters.</p> </li>
     /// <li> <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
@@ -28906,6 +29344,7 @@ pub struct CreateClusterInput {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code> </p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
@@ -28914,9 +29353,11 @@ pub struct CreateClusterInput {
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     /// <p>Default: <code>multi-node</code> </p>
+    #[doc(hidden)]
     pub cluster_type: std::option::Option<std::string::String>,
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -28925,6 +29366,7 @@ pub struct CreateClusterInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -28935,26 +29377,32 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain one number.</p> </li>
     /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
+    #[doc(hidden)]
     pub cluster_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
+    #[doc(hidden)]
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
+    #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p>
     /// <p>Example: <code>us-east-2d</code> </p>
     /// <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p> Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a> </p>
@@ -28964,65 +29412,85 @@ pub struct CreateClusterInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code> </p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
+    #[doc(hidden)]
     pub automated_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
     /// <p>Default: <code>5439</code> </p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p>
     /// <p>The version selected runs on all the nodes in the cluster.</p>
     /// <p>Constraints: Only version 1.0 is currently available.</p>
     /// <p>Example: <code>1.0</code> </p>
+    #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
     /// <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub allow_version_upgrade: std::option::Option<bool>,
     /// <p>The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
     /// <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// <p>If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.</p>
     /// <p>Default: <code>1</code> </p>
     /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
+    #[doc(hidden)]
     pub number_of_nodes: std::option::Option<i32>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
     /// <p>Default: false</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
     /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
+    #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub additional_info: std::option::Option<std::string::String>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
+    #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the snapshot schedule.</p>
+    #[doc(hidden)]
     pub snapshot_schedule_identifier: std::option::Option<std::string::String>,
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
+    #[doc(hidden)]
     pub availability_zone_relocation: std::option::Option<bool>,
     /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
     /// <ul>
@@ -29030,10 +29498,13 @@ pub struct CreateClusterInput {
     /// <li> <p>disabled - Don't use AQUA. </p> </li>
     /// <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+    #[doc(hidden)]
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
+    #[doc(hidden)]
     pub load_sample_data: std::option::Option<std::string::String>,
 }
 impl CreateClusterInput {
@@ -29327,8 +29798,10 @@ impl std::fmt::Debug for CreateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthenticationProfileInput {
     /// <p>The name of the authentication profile to be created.</p>
+    #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    #[doc(hidden)]
     pub authentication_profile_content: std::option::Option<std::string::String>,
 }
 impl CreateAuthenticationProfileInput {
@@ -29365,12 +29838,14 @@ pub struct CopyClusterSnapshotInput {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
@@ -29381,10 +29856,12 @@ pub struct CopyClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
 }
 impl CopyClusterSnapshotInput {
@@ -29451,6 +29928,7 @@ impl std::fmt::Debug for CopyClusterSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelResizeInput {
     /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl CancelResizeInput {
@@ -29472,12 +29950,15 @@ impl std::fmt::Debug for CancelResizeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
+    #[doc(hidden)]
     pub snapshot_identifier_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    #[doc(hidden)]
     pub force: bool,
 }
 impl BatchModifyClusterSnapshotsInput {
@@ -29514,6 +29995,7 @@ impl std::fmt::Debug for BatchModifyClusterSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteClusterSnapshotsInput {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
+    #[doc(hidden)]
     pub identifiers: std::option::Option<std::vec::Vec<crate::model::DeleteClusterSnapshotMessage>>,
 }
 impl BatchDeleteClusterSnapshotsInput {
@@ -29537,13 +30019,17 @@ impl std::fmt::Debug for BatchDeleteClusterSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeSnapshotAccessInput {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
+    #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+    #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    #[doc(hidden)]
     pub account_with_restore_access: std::option::Option<std::string::String>,
 }
 impl AuthorizeSnapshotAccessInput {
@@ -29587,10 +30073,13 @@ impl std::fmt::Debug for AuthorizeSnapshotAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeEndpointAccessInput {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID to grant access to.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
+    #[doc(hidden)]
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthorizeEndpointAccessInput {
@@ -29622,8 +30111,10 @@ impl std::fmt::Debug for AuthorizeEndpointAccessInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    #[doc(hidden)]
     pub consumer_identifier: std::option::Option<std::string::String>,
 }
 impl AuthorizeDataShareInput {
@@ -29650,13 +30141,17 @@ impl std::fmt::Debug for AuthorizeDataShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeClusterSecurityGroupIngressInput {
     /// <p>The name of the security group to which the ingress rule is added.</p>
+    #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
     /// <p>The IP range to be added the Amazon Redshift security group.</p>
+    #[doc(hidden)]
     pub cidrip: std::option::Option<std::string::String>,
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+    #[doc(hidden)]
     pub ec2_security_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
+    #[doc(hidden)]
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl AuthorizeClusterSecurityGroupIngressInput {
@@ -29700,12 +30195,16 @@ impl std::fmt::Debug for AuthorizeClusterSecurityGroupIngressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
+    #[doc(hidden)]
     pub associate_entire_account: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub consumer_region: std::option::Option<std::string::String>,
 }
 impl AssociateDataShareConsumerInput {
@@ -29742,12 +30241,16 @@ impl std::fmt::Debug for AssociateDataShareConsumerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPartnerInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database that receives data from the partner.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
+    #[doc(hidden)]
     pub partner_name: std::option::Option<std::string::String>,
 }
 impl AddPartnerInput {
@@ -29784,8 +30287,10 @@ impl std::fmt::Debug for AddPartnerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptReservedNodeExchangeInput {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
+    #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    #[doc(hidden)]
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
 }
 impl AcceptReservedNodeExchangeInput {

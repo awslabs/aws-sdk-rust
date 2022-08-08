@@ -2507,39 +2507,47 @@ impl UpdateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>For each column to be added to the specified table:</p>
     /// <p>• <code>name</code> - The name of the column.</p>
     /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub add_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
     /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
     /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
     /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
     /// <p>• <code>ENABLED</code> </p>
     /// <p>• <code>DISABLED</code> </p>
     /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
     /// <p>• <code>status:enabled</code> </p>
     /// <p>• <code>status:disabled</code> </p>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<crate::model::TimeToLive>,
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
 }
 impl UpdateTableInput {
@@ -2621,8 +2629,10 @@ impl std::fmt::Debug for UpdateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of existing tags to be removed from the Amazon Keyspaces resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UntagResourceInput {
@@ -2649,8 +2659,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the Amazon Keyspaces resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -2677,26 +2689,33 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
+    #[doc(hidden)]
     pub source_keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the source table.</p>
+    #[doc(hidden)]
     pub source_table_name: std::option::Option<std::string::String>,
     /// <p>The name of the target keyspace.</p>
+    #[doc(hidden)]
     pub target_keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the target table.</p>
+    #[doc(hidden)]
     pub target_table_name: std::option::Option<std::string::String>,
     /// <p>The restore timestamp in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub restore_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
     /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub capacity_specification_override: std::option::Option<crate::model::CapacitySpecification>,
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
     /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub encryption_specification_override:
         std::option::Option<crate::model::EncryptionSpecification>,
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
@@ -2704,9 +2723,11 @@ pub struct RestoreTableInput {
     /// <p>• <code>DISABLED</code> </p>
     /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub point_in_time_recovery_override: std::option::Option<crate::model::PointInTimeRecovery>,
     /// <p>A list of key-value pair tags to be attached to the restored table. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags_override: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RestoreTableInput {
@@ -2796,10 +2817,13 @@ impl std::fmt::Debug for RestoreTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of tags to return in the output. If the total number of tags available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -2831,10 +2855,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the keyspace.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
 }
 impl ListTablesInput {
@@ -2866,8 +2893,10 @@ impl std::fmt::Debug for ListTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyspacesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListKeyspacesInput {
@@ -2894,8 +2923,10 @@ impl std::fmt::Debug for ListKeyspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl GetTableInput {
@@ -2922,6 +2953,7 @@ impl std::fmt::Debug for GetTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyspaceInput {
     /// <p>The name of the keyspace.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
 }
 impl GetKeyspaceInput {
@@ -2943,8 +2975,10 @@ impl std::fmt::Debug for GetKeyspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableInput {
     /// <p>The name of the keyspace of the to be deleted table.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table to be deleted.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DeleteTableInput {
@@ -2971,6 +3005,7 @@ impl std::fmt::Debug for DeleteTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
 }
 impl DeleteKeyspaceInput {
@@ -2992,8 +3027,10 @@ impl std::fmt::Debug for DeleteKeyspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
@@ -3008,38 +3045,46 @@ pub struct CreateTableInput {
     /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>
     /// <p>• <code>name</code> - The name of the column.</p>
     /// <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
     /// <p>This parameter allows to enter a description of the table.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
     /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
     /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <p>• <code>ENABLED</code> </p>
     /// <p>• <code>DISABLED</code> </p>
     /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <p>• <code>status:enabled</code> </p>
     /// <p>• <code>status:disabled</code> </p>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<crate::model::TimeToLive>,
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
     /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTableInput {
@@ -3142,9 +3187,11 @@ impl std::fmt::Debug for CreateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
+    #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateKeyspaceInput {

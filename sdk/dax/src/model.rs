@@ -9,12 +9,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetGroup {
     /// <p>The name of the subnet group.</p>
+    #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description of the subnet group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnets associated with the subnet group. </p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
 }
 impl SubnetGroup {
@@ -132,8 +136,10 @@ impl SubnetGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subnet {
     /// <p>The system-assigned identifier for the subnet.</p>
+    #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
     /// <p>The Availability Zone (AZ) for the subnet.</p>
+    #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<std::string::String>,
 }
 impl Subnet {
@@ -211,8 +217,10 @@ impl Subnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterGroup {
     /// <p>The name of the parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ParameterGroup {
@@ -287,8 +295,10 @@ impl ParameterGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl ParameterNameValue {
@@ -366,43 +376,61 @@ impl ParameterNameValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The name of the DAX cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The description of the cluster.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The total number of nodes in the cluster.</p>
+    #[doc(hidden)]
     pub total_nodes: std::option::Option<i32>,
     /// <p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>
+    #[doc(hidden)]
     pub active_nodes: std::option::Option<i32>,
     /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The current status of the cluster.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use the URL to configure the DAX client to find their cluster.</p>
+    #[doc(hidden)]
     pub cluster_discovery_endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>A list of nodes to be removed from the cluster.</p>
+    #[doc(hidden)]
     pub node_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of nodes that are currently in the cluster.</p>
+    #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
+    #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     /// <p>The subnet group where the DAX cluster is running.</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<std::string::String>,
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The parameter group being used by nodes in the cluster.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroupStatus>,
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
+    #[doc(hidden)]
     pub sse_description: std::option::Option<crate::model::SseDescription>,
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub cluster_endpoint_encryption_type:
         std::option::Option<crate::model::ClusterEndpointEncryptionType>,
 }
@@ -890,6 +918,7 @@ pub struct SseDescription {
     /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SseStatus>,
 }
 impl SseDescription {
@@ -1025,10 +1054,13 @@ impl AsRef<str> for SseStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterGroupStatus {
     /// <p>The name of the parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of parameter updates. </p>
+    #[doc(hidden)]
     pub parameter_apply_status: std::option::Option<std::string::String>,
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
+    #[doc(hidden)]
     pub node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ParameterGroupStatus {
@@ -1132,8 +1164,10 @@ impl ParameterGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupMembership {
     /// <p>The unique ID for this security group.</p>
+    #[doc(hidden)]
     pub security_group_identifier: std::option::Option<std::string::String>,
     /// <p>The status of this security group.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl SecurityGroupMembership {
@@ -1208,8 +1242,10 @@ impl SecurityGroupMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
+    #[doc(hidden)]
     pub topic_status: std::option::Option<std::string::String>,
 }
 impl NotificationConfiguration {
@@ -1281,16 +1317,22 @@ impl NotificationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
     /// <p>A system-generated identifier for the node.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
+    #[doc(hidden)]
     pub node_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The current status of the node. For example: <code>available</code>.</p>
+    #[doc(hidden)]
     pub node_status: std::option::Option<std::string::String>,
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
+    #[doc(hidden)]
     pub parameter_group_status: std::option::Option<std::string::String>,
 }
 impl Node {
@@ -1439,10 +1481,13 @@ impl Node {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The DNS hostname of the endpoint.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The port number that applications should use to connect to the endpoint.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl Endpoint {
@@ -1533,8 +1578,10 @@ impl Endpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1606,25 +1653,35 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
+    #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>
+    #[doc(hidden)]
     pub parameter_type: std::option::Option<crate::model::ParameterType>,
     /// <p>The value for the parameter.</p>
+    #[doc(hidden)]
     pub parameter_value: std::option::Option<std::string::String>,
     /// <p>A list of node types, and specific parameter values for each node.</p>
+    #[doc(hidden)]
     pub node_type_specific_values:
         std::option::Option<std::vec::Vec<crate::model::NodeTypeSpecificValue>>,
     /// <p>A description of the parameter</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>A range of values within which the parameter can be set.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p>Whether the customer is allowed to modify the parameter.</p>
+    #[doc(hidden)]
     pub is_modifiable: std::option::Option<crate::model::IsModifiable>,
     /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
 }
 impl Parameter {
@@ -1979,8 +2036,10 @@ impl AsRef<str> for IsModifiable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The parameter value for this node type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl NodeTypeSpecificValue {
@@ -2107,12 +2166,16 @@ impl AsRef<str> for ParameterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>A user-defined message associated with the event.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Event {
@@ -2280,6 +2343,7 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl SseSpecification {

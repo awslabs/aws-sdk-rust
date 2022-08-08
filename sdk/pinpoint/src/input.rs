@@ -20969,8 +20969,10 @@ impl VerifyOtpMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Verify OTP message request.</p>
+    #[doc(hidden)]
     pub verify_otp_message_request_parameters:
         std::option::Option<crate::model::VerifyOtpMessageRequestParameters>,
 }
@@ -21004,8 +21006,10 @@ impl std::fmt::Debug for VerifyOtpMessageInput {
 pub struct UpdateVoiceTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    #[doc(hidden)]
     pub create_new_version: bool,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -21016,8 +21020,10 @@ pub struct UpdateVoiceTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    #[doc(hidden)]
     pub voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
 }
 impl UpdateVoiceTemplateInput {
@@ -21065,8 +21071,10 @@ impl std::fmt::Debug for UpdateVoiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
+    #[doc(hidden)]
     pub voice_channel_request: std::option::Option<crate::model::VoiceChannelRequest>,
 }
 impl UpdateVoiceChannelInput {
@@ -21093,11 +21101,14 @@ impl std::fmt::Debug for UpdateVoiceChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateActiveVersionInput {
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
+    #[doc(hidden)]
     pub template_active_version_request:
         std::option::Option<crate::model::TemplateActiveVersionRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<std::string::String>,
 }
 impl UpdateTemplateActiveVersionInput {
@@ -21135,10 +21146,13 @@ impl std::fmt::Debug for UpdateTemplateActiveVersionInput {
 pub struct UpdateSmsTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    #[doc(hidden)]
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    #[doc(hidden)]
     pub sms_template_request: std::option::Option<crate::model::SmsTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -21149,6 +21163,7 @@ pub struct UpdateSmsTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateSmsTemplateInput {
@@ -21194,8 +21209,10 @@ impl std::fmt::Debug for UpdateSmsTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
+    #[doc(hidden)]
     pub sms_channel_request: std::option::Option<crate::model::SmsChannelRequest>,
 }
 impl UpdateSmsChannelInput {
@@ -21222,10 +21239,13 @@ impl std::fmt::Debug for UpdateSmsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    #[doc(hidden)]
     pub write_segment_request: std::option::Option<crate::model::WriteSegmentRequest>,
 }
 impl UpdateSegmentInput {
@@ -21257,8 +21277,10 @@ impl std::fmt::Debug for UpdateSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub recommender_id: std::option::Option<std::string::String>,
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    #[doc(hidden)]
     pub update_recommender_configuration:
         std::option::Option<crate::model::UpdateRecommenderConfigurationShape>,
 }
@@ -21292,11 +21314,14 @@ impl std::fmt::Debug for UpdateRecommenderConfigurationInput {
 pub struct UpdatePushTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    #[doc(hidden)]
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    #[doc(hidden)]
     pub push_notification_template_request:
         std::option::Option<crate::model::PushNotificationTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -21307,6 +21332,7 @@ pub struct UpdatePushTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdatePushTemplateInput {
@@ -21357,10 +21383,13 @@ impl std::fmt::Debug for UpdatePushTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJourneyStateInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>Changes the status of a journey.</p>
+    #[doc(hidden)]
     pub journey_state_request: std::option::Option<crate::model::JourneyStateRequest>,
 }
 impl UpdateJourneyStateInput {
@@ -21392,10 +21421,13 @@ impl std::fmt::Debug for UpdateJourneyStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a journey.</p>
+    #[doc(hidden)]
     pub write_journey_request: std::option::Option<crate::model::WriteJourneyRequest>,
 }
 impl UpdateJourneyInput {
@@ -21428,10 +21460,13 @@ impl std::fmt::Debug for UpdateJourneyInput {
 pub struct UpdateInAppTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    #[doc(hidden)]
     pub create_new_version: bool,
     /// <p>InApp Template Request.</p>
+    #[doc(hidden)]
     pub in_app_template_request: std::option::Option<crate::model::InAppTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -21442,6 +21477,7 @@ pub struct UpdateInAppTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateInAppTemplateInput {
@@ -21489,8 +21525,10 @@ impl std::fmt::Debug for UpdateInAppTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    #[doc(hidden)]
     pub gcm_channel_request: std::option::Option<crate::model::GcmChannelRequest>,
 }
 impl UpdateGcmChannelInput {
@@ -21517,8 +21555,10 @@ impl std::fmt::Debug for UpdateGcmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointsBatchInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_batch_request: std::option::Option<crate::model::EndpointBatchRequest>,
 }
 impl UpdateEndpointsBatchInput {
@@ -21547,10 +21587,13 @@ impl std::fmt::Debug for UpdateEndpointsBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>Specifies the channel type and other settings for an endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_request: std::option::Option<crate::model::EndpointRequest>,
 }
 impl UpdateEndpointInput {
@@ -21583,10 +21626,13 @@ impl std::fmt::Debug for UpdateEndpointInput {
 pub struct UpdateEmailTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    #[doc(hidden)]
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    #[doc(hidden)]
     pub email_template_request: std::option::Option<crate::model::EmailTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -21597,6 +21643,7 @@ pub struct UpdateEmailTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateEmailTemplateInput {
@@ -21644,8 +21691,10 @@ impl std::fmt::Debug for UpdateEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the email channel for an application.</p>
+    #[doc(hidden)]
     pub email_channel_request: std::option::Option<crate::model::EmailChannelRequest>,
 }
 impl UpdateEmailChannelInput {
@@ -21672,10 +21721,13 @@ impl std::fmt::Debug for UpdateEmailChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub write_campaign_request: std::option::Option<crate::model::WriteCampaignRequest>,
 }
 impl UpdateCampaignInput {
@@ -21709,8 +21761,10 @@ impl std::fmt::Debug for UpdateCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    #[doc(hidden)]
     pub baidu_channel_request: std::option::Option<crate::model::BaiduChannelRequest>,
 }
 impl UpdateBaiduChannelInput {
@@ -21737,8 +21791,10 @@ impl std::fmt::Debug for UpdateBaiduChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the default settings for an application.</p>
+    #[doc(hidden)]
     pub write_application_settings_request:
         std::option::Option<crate::model::WriteApplicationSettingsRequest>,
 }
@@ -21771,9 +21827,11 @@ impl std::fmt::Debug for UpdateApplicationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsVoipSandboxChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_sandbox_channel_request:
         std::option::Option<crate::model::ApnsVoipSandboxChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl UpdateApnsVoipSandboxChannelInput {
@@ -21805,8 +21863,10 @@ impl std::fmt::Debug for UpdateApnsVoipSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsVoipChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    #[doc(hidden)]
     pub apns_voip_channel_request: std::option::Option<crate::model::ApnsVoipChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl UpdateApnsVoipChannelInput {
@@ -21835,8 +21895,10 @@ impl std::fmt::Debug for UpdateApnsVoipChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsSandboxChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    #[doc(hidden)]
     pub apns_sandbox_channel_request: std::option::Option<crate::model::ApnsSandboxChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl UpdateApnsSandboxChannelInput {
@@ -21868,8 +21930,10 @@ impl std::fmt::Debug for UpdateApnsSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApnsChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    #[doc(hidden)]
     pub apns_channel_request: std::option::Option<crate::model::ApnsChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl UpdateApnsChannelInput {
@@ -21896,8 +21960,10 @@ impl std::fmt::Debug for UpdateApnsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAdmChannelInput {
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    #[doc(hidden)]
     pub adm_channel_request: std::option::Option<crate::model::AdmChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl UpdateAdmChannelInput {
@@ -21924,8 +21990,10 @@ impl std::fmt::Debug for UpdateAdmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -21952,8 +22020,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    #[doc(hidden)]
     pub tags_model: std::option::Option<crate::model::TagsModel>,
 }
 impl TagResourceInput {
@@ -21980,8 +22050,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendUsersMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    #[doc(hidden)]
     pub send_users_message_request: std::option::Option<crate::model::SendUsersMessageRequest>,
 }
 impl SendUsersMessagesInput {
@@ -22013,8 +22085,10 @@ impl std::fmt::Debug for SendUsersMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Send OTP message request parameters.</p>
+    #[doc(hidden)]
     pub send_otp_message_request_parameters:
         std::option::Option<crate::model::SendOtpMessageRequestParameters>,
 }
@@ -22047,8 +22121,10 @@ impl std::fmt::Debug for SendOtpMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a message.</p>
+    #[doc(hidden)]
     pub message_request: std::option::Option<crate::model::MessageRequest>,
 }
 impl SendMessagesInput {
@@ -22075,6 +22151,7 @@ impl std::fmt::Debug for SendMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The type of attribute or attributes to remove. Valid values are:</p>
     /// <ul>
@@ -22082,8 +22159,10 @@ pub struct RemoveAttributesInput {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<std::string::String>,
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
+    #[doc(hidden)]
     pub update_attributes_request: std::option::Option<crate::model::UpdateAttributesRequest>,
 }
 impl RemoveAttributesInput {
@@ -22122,8 +22201,10 @@ impl std::fmt::Debug for RemoveAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
+    #[doc(hidden)]
     pub write_event_stream: std::option::Option<crate::model::WriteEventStream>,
 }
 impl PutEventStreamInput {
@@ -22150,8 +22231,10 @@ impl std::fmt::Debug for PutEventStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies a batch of events to process.</p>
+    #[doc(hidden)]
     pub events_request: std::option::Option<crate::model::EventsRequest>,
 }
 impl PutEventsInput {
@@ -22178,6 +22261,7 @@ impl std::fmt::Debug for PutEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    #[doc(hidden)]
     pub number_validate_request: std::option::Option<crate::model::NumberValidateRequest>,
 }
 impl PhoneNumberValidateInput {
@@ -22201,12 +22285,16 @@ impl std::fmt::Debug for PhoneNumberValidateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsInput {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<std::string::String>,
 }
 impl ListTemplateVersionsInput {
@@ -22243,12 +22331,16 @@ impl std::fmt::Debug for ListTemplateVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<std::string::String>,
 }
 impl ListTemplatesInput {
@@ -22285,6 +22377,7 @@ impl std::fmt::Debug for ListTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -22306,10 +22399,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJourneysInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl ListJourneysInput {
@@ -22341,6 +22437,7 @@ impl std::fmt::Debug for ListJourneysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -22351,6 +22448,7 @@ pub struct GetVoiceTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetVoiceTemplateInput {
@@ -22385,6 +22483,7 @@ impl std::fmt::Debug for GetVoiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceChannelInput {
@@ -22406,8 +22505,10 @@ impl std::fmt::Debug for GetVoiceChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserEndpointsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetUserEndpointsInput {
@@ -22434,6 +22535,7 @@ impl std::fmt::Debug for GetUserEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -22444,6 +22546,7 @@ pub struct GetSmsTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetSmsTemplateInput {
@@ -22478,6 +22581,7 @@ impl std::fmt::Debug for GetSmsTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetSmsChannelInput {
@@ -22499,12 +22603,16 @@ impl std::fmt::Debug for GetSmsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentVersionsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetSegmentVersionsInput {
@@ -22541,10 +22649,13 @@ impl std::fmt::Debug for GetSegmentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The unique version number (Version property) for the campaign version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetSegmentVersionInput {
@@ -22576,10 +22687,13 @@ impl std::fmt::Debug for GetSegmentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetSegmentsInput {
@@ -22611,12 +22725,16 @@ impl std::fmt::Debug for GetSegmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentImportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetSegmentImportJobsInput {
@@ -22653,12 +22771,16 @@ impl std::fmt::Debug for GetSegmentImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentExportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetSegmentExportJobsInput {
@@ -22695,8 +22817,10 @@ impl std::fmt::Debug for GetSegmentExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
 }
 impl GetSegmentInput {
@@ -22723,8 +22847,10 @@ impl std::fmt::Debug for GetSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommenderConfigurationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetRecommenderConfigurationsInput {
@@ -22751,6 +22877,7 @@ impl std::fmt::Debug for GetRecommenderConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub recommender_id: std::option::Option<std::string::String>,
 }
 impl GetRecommenderConfigurationInput {
@@ -22772,6 +22899,7 @@ impl std::fmt::Debug for GetRecommenderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -22782,6 +22910,7 @@ pub struct GetPushTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetPushTemplateInput {
@@ -22816,12 +22945,16 @@ impl std::fmt::Debug for GetPushTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyExecutionMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
 }
 impl GetJourneyExecutionMetricsInput {
@@ -22858,14 +22991,19 @@ impl std::fmt::Debug for GetJourneyExecutionMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyExecutionActivityMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey activity.</p>
+    #[doc(hidden)]
     pub journey_activity_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
 }
 impl GetJourneyExecutionActivityMetricsInput {
@@ -22907,18 +23045,25 @@ impl std::fmt::Debug for GetJourneyExecutionActivityMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub kpi_name: std::option::Option<std::string::String>,
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetJourneyDateRangeKpiInput {
@@ -22970,8 +23115,10 @@ impl std::fmt::Debug for GetJourneyDateRangeKpiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
 }
 impl GetJourneyInput {
@@ -22998,6 +23145,7 @@ impl std::fmt::Debug for GetJourneyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -23008,6 +23156,7 @@ pub struct GetInAppTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetInAppTemplateInput {
@@ -23042,8 +23191,10 @@ impl std::fmt::Debug for GetInAppTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInAppMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl GetInAppMessagesInput {
@@ -23070,10 +23221,13 @@ impl std::fmt::Debug for GetInAppMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetImportJobsInput {
@@ -23105,8 +23259,10 @@ impl std::fmt::Debug for GetImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetImportJobInput {
@@ -23133,6 +23289,7 @@ impl std::fmt::Debug for GetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetGcmChannelInput {
@@ -23154,10 +23311,13 @@ impl std::fmt::Debug for GetGcmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportJobsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetExportJobsInput {
@@ -23189,8 +23349,10 @@ impl std::fmt::Debug for GetExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetExportJobInput {
@@ -23217,6 +23379,7 @@ impl std::fmt::Debug for GetExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetEventStreamInput {
@@ -23238,8 +23401,10 @@ impl std::fmt::Debug for GetEventStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl GetEndpointInput {
@@ -23266,6 +23431,7 @@ impl std::fmt::Debug for GetEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -23276,6 +23442,7 @@ pub struct GetEmailTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetEmailTemplateInput {
@@ -23310,6 +23477,7 @@ impl std::fmt::Debug for GetEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetEmailChannelInput {
@@ -23331,6 +23499,7 @@ impl std::fmt::Debug for GetEmailChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetChannelsInput {
@@ -23352,12 +23521,16 @@ impl std::fmt::Debug for GetChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignVersionsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetCampaignVersionsInput {
@@ -23394,10 +23567,13 @@ impl std::fmt::Debug for GetCampaignVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The unique version number (Version property) for the campaign version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetCampaignVersionInput {
@@ -23429,10 +23605,13 @@ impl std::fmt::Debug for GetCampaignVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetCampaignsInput {
@@ -23464,18 +23643,25 @@ impl std::fmt::Debug for GetCampaignsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub kpi_name: std::option::Option<std::string::String>,
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCampaignDateRangeKpiInput {
@@ -23527,12 +23713,16 @@ impl std::fmt::Debug for GetCampaignDateRangeKpiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignActivitiesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetCampaignActivitiesInput {
@@ -23569,8 +23759,10 @@ impl std::fmt::Debug for GetCampaignActivitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
 }
 impl GetCampaignInput {
@@ -23597,6 +23789,7 @@ impl std::fmt::Debug for GetCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetBaiduChannelInput {
@@ -23618,8 +23811,10 @@ impl std::fmt::Debug for GetBaiduChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl GetAppsInput {
@@ -23646,6 +23841,7 @@ impl std::fmt::Debug for GetAppsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationSettingsInput {
@@ -23667,16 +23863,22 @@ impl std::fmt::Debug for GetApplicationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationDateRangeKpiInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub kpi_name: std::option::Option<std::string::String>,
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetApplicationDateRangeKpiInput {
@@ -23723,6 +23925,7 @@ impl std::fmt::Debug for GetApplicationDateRangeKpiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetAppInput {
@@ -23744,6 +23947,7 @@ impl std::fmt::Debug for GetAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApnsVoipSandboxChannelInput {
@@ -23765,6 +23969,7 @@ impl std::fmt::Debug for GetApnsVoipSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApnsVoipChannelInput {
@@ -23786,6 +23991,7 @@ impl std::fmt::Debug for GetApnsVoipChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApnsSandboxChannelInput {
@@ -23807,6 +24013,7 @@ impl std::fmt::Debug for GetApnsSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApnsChannelInput {
@@ -23828,6 +24035,7 @@ impl std::fmt::Debug for GetApnsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetAdmChannelInput {
@@ -23849,6 +24057,7 @@ impl std::fmt::Debug for GetAdmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -23859,6 +24068,7 @@ pub struct DeleteVoiceTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceTemplateInput {
@@ -23893,6 +24103,7 @@ impl std::fmt::Debug for DeleteVoiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceChannelInput {
@@ -23914,8 +24125,10 @@ impl std::fmt::Debug for DeleteVoiceChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserEndpointsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserEndpointsInput {
@@ -23942,6 +24155,7 @@ impl std::fmt::Debug for DeleteUserEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -23952,6 +24166,7 @@ pub struct DeleteSmsTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteSmsTemplateInput {
@@ -23986,6 +24201,7 @@ impl std::fmt::Debug for DeleteSmsTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteSmsChannelInput {
@@ -24007,8 +24223,10 @@ impl std::fmt::Debug for DeleteSmsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the segment.</p>
+    #[doc(hidden)]
     pub segment_id: std::option::Option<std::string::String>,
 }
 impl DeleteSegmentInput {
@@ -24035,6 +24253,7 @@ impl std::fmt::Debug for DeleteSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub recommender_id: std::option::Option<std::string::String>,
 }
 impl DeleteRecommenderConfigurationInput {
@@ -24056,6 +24275,7 @@ impl std::fmt::Debug for DeleteRecommenderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -24066,6 +24286,7 @@ pub struct DeletePushTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeletePushTemplateInput {
@@ -24100,8 +24321,10 @@ impl std::fmt::Debug for DeletePushTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
+    #[doc(hidden)]
     pub journey_id: std::option::Option<std::string::String>,
 }
 impl DeleteJourneyInput {
@@ -24128,6 +24351,7 @@ impl std::fmt::Debug for DeleteJourneyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -24138,6 +24362,7 @@ pub struct DeleteInAppTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteInAppTemplateInput {
@@ -24172,6 +24397,7 @@ impl std::fmt::Debug for DeleteInAppTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGcmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteGcmChannelInput {
@@ -24193,6 +24419,7 @@ impl std::fmt::Debug for DeleteGcmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteEventStreamInput {
@@ -24214,8 +24441,10 @@ impl std::fmt::Debug for DeleteEventStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
@@ -24242,6 +24471,7 @@ impl std::fmt::Debug for DeleteEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -24252,6 +24482,7 @@ pub struct DeleteEmailTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteEmailTemplateInput {
@@ -24286,6 +24517,7 @@ impl std::fmt::Debug for DeleteEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteEmailChannelInput {
@@ -24307,8 +24539,10 @@ impl std::fmt::Debug for DeleteEmailChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
 }
 impl DeleteCampaignInput {
@@ -24335,6 +24569,7 @@ impl std::fmt::Debug for DeleteCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBaiduChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteBaiduChannelInput {
@@ -24356,6 +24591,7 @@ impl std::fmt::Debug for DeleteBaiduChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
@@ -24377,6 +24613,7 @@ impl std::fmt::Debug for DeleteAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApnsVoipSandboxChannelInput {
@@ -24398,6 +24635,7 @@ impl std::fmt::Debug for DeleteApnsVoipSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsVoipChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApnsVoipChannelInput {
@@ -24419,6 +24657,7 @@ impl std::fmt::Debug for DeleteApnsVoipChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApnsSandboxChannelInput {
@@ -24440,6 +24679,7 @@ impl std::fmt::Debug for DeleteApnsSandboxChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApnsChannelInput {
@@ -24461,6 +24701,7 @@ impl std::fmt::Debug for DeleteApnsChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAdmChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteAdmChannelInput {
@@ -24482,8 +24723,10 @@ impl std::fmt::Debug for DeleteAdmChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    #[doc(hidden)]
     pub voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
 }
 impl CreateVoiceTemplateInput {
@@ -24512,8 +24755,10 @@ impl std::fmt::Debug for CreateVoiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmsTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    #[doc(hidden)]
     pub sms_template_request: std::option::Option<crate::model::SmsTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl CreateSmsTemplateInput {
@@ -24540,8 +24785,10 @@ impl std::fmt::Debug for CreateSmsTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    #[doc(hidden)]
     pub write_segment_request: std::option::Option<crate::model::WriteSegmentRequest>,
 }
 impl CreateSegmentInput {
@@ -24568,6 +24815,7 @@ impl std::fmt::Debug for CreateSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommenderConfigurationInput {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    #[doc(hidden)]
     pub create_recommender_configuration:
         std::option::Option<crate::model::CreateRecommenderConfigurationShape>,
 }
@@ -24595,9 +24843,11 @@ impl std::fmt::Debug for CreateRecommenderConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePushTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    #[doc(hidden)]
     pub push_notification_template_request:
         std::option::Option<crate::model::PushNotificationTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl CreatePushTemplateInput {
@@ -24629,8 +24879,10 @@ impl std::fmt::Debug for CreatePushTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJourneyInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a journey.</p>
+    #[doc(hidden)]
     pub write_journey_request: std::option::Option<crate::model::WriteJourneyRequest>,
 }
 impl CreateJourneyInput {
@@ -24657,8 +24909,10 @@ impl std::fmt::Debug for CreateJourneyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInAppTemplateInput {
     /// <p>InApp Template Request.</p>
+    #[doc(hidden)]
     pub in_app_template_request: std::option::Option<crate::model::InAppTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl CreateInAppTemplateInput {
@@ -24687,8 +24941,10 @@ impl std::fmt::Debug for CreateInAppTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    #[doc(hidden)]
     pub import_job_request: std::option::Option<crate::model::ImportJobRequest>,
 }
 impl CreateImportJobInput {
@@ -24715,8 +24971,10 @@ impl std::fmt::Debug for CreateImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    #[doc(hidden)]
     pub export_job_request: std::option::Option<crate::model::ExportJobRequest>,
 }
 impl CreateExportJobInput {
@@ -24743,8 +25001,10 @@ impl std::fmt::Debug for CreateExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    #[doc(hidden)]
     pub email_template_request: std::option::Option<crate::model::EmailTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl CreateEmailTemplateInput {
@@ -24773,8 +25033,10 @@ impl std::fmt::Debug for CreateEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration and other settings for a campaign.</p>
+    #[doc(hidden)]
     pub write_campaign_request: std::option::Option<crate::model::WriteCampaignRequest>,
 }
 impl CreateCampaignInput {
@@ -24803,6 +25065,7 @@ impl std::fmt::Debug for CreateCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    #[doc(hidden)]
     pub create_application_request: std::option::Option<crate::model::CreateApplicationRequest>,
 }
 impl CreateAppInput {

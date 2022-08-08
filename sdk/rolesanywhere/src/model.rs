@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the trust anchor.</p>
+    #[doc(hidden)]
     pub trust_anchor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the trust anchor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>Indicates whether the trust anchor is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TrustAnchorDetail {
@@ -185,8 +192,10 @@ impl TrustAnchorDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>The type of the trust anchor. </p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::TrustAnchorType>,
     /// <p>The data field of the trust anchor depending on its type. </p>
+    #[doc(hidden)]
     pub source_data: std::option::Option<crate::model::SourceData>,
 }
 impl Source {
@@ -378,8 +387,10 @@ impl AsRef<str> for TrustAnchorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -451,18 +462,25 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectSummary {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub subject_arn: std::option::Option<std::string::String>,
     /// <p>The id of the resource.</p>
+    #[doc(hidden)]
     pub subject_id: std::option::Option<std::string::String>,
     /// <p>The enabled status of the Subject. </p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
+    #[doc(hidden)]
     pub x509_subject: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub last_seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SubjectSummary {
@@ -628,22 +646,31 @@ impl SubjectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectDetail {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub subject_arn: std::option::Option<std::string::String>,
     /// <p>The id of the resource</p>
+    #[doc(hidden)]
     pub subject_id: std::option::Option<std::string::String>,
     /// <p>The enabled status of the subject.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
+    #[doc(hidden)]
     pub x509_subject: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
+    #[doc(hidden)]
     pub last_seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::vec::Vec<crate::model::CredentialSummary>>,
     /// <p>The specified instance properties associated with the request.</p>
+    #[doc(hidden)]
     pub instance_properties: std::option::Option<std::vec::Vec<crate::model::InstanceProperty>>,
 }
 impl SubjectDetail {
@@ -862,11 +889,14 @@ impl SubjectDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceProperty {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of instanceProperty objects. </p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    #[doc(hidden)]
     pub failed: std::option::Option<bool>,
 }
 impl InstanceProperty {
@@ -978,16 +1008,22 @@ impl InstanceProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The serial number of the certificate.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>Indicates whether the credential is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The PEM-encoded data of the certificate.</p>
+    #[doc(hidden)]
     pub x509_certificate_data: std::option::Option<std::string::String>,
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    #[doc(hidden)]
     pub failed: std::option::Option<bool>,
 }
 impl CredentialSummary {
@@ -1136,28 +1172,40 @@ impl CredentialSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the profile.</p>
+    #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The name of the profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
+    #[doc(hidden)]
     pub require_instance_properties: std::option::Option<bool>,
     /// <p>Indicates whether the profile is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Amazon Web Services account that created the profile.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    #[doc(hidden)]
     pub session_policy: std::option::Option<std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    #[doc(hidden)]
     pub managed_policy_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ISO-8601 timestamp when the profile was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The number of seconds the vended session credentials are valid for. </p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl ProfileDetail {
@@ -1429,20 +1477,28 @@ impl ProfileDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub crl_arn: std::option::Option<std::string::String>,
     /// <p>The name of the certificate revocation list (CRL).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    #[doc(hidden)]
     pub crl_data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
+    #[doc(hidden)]
     pub trust_anchor_arn: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CrlDetail {

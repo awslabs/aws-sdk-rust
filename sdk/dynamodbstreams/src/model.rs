@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stream {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -15,6 +17,7 @@ pub struct Stream {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_label: std::option::Option<std::string::String>,
 }
 impl Stream {
@@ -189,6 +192,7 @@ impl AsRef<str> for ShardIteratorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
@@ -196,21 +200,27 @@ pub struct Record {
     /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
     /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_name: std::option::Option<crate::model::OperationType>,
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
+    #[doc(hidden)]
     pub event_version: std::option::Option<std::string::String>,
     /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    #[doc(hidden)]
     pub event_source: std::option::Option<std::string::String>,
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
+    #[doc(hidden)]
     pub dynamodb: std::option::Option<crate::model::StreamRecord>,
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
     /// <ul>
     /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
     /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_identity: std::option::Option<crate::model::Identity>,
 }
 impl Record {
@@ -409,8 +419,10 @@ impl Record {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Identity {
@@ -482,22 +494,28 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamRecord {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    #[doc(hidden)]
     pub approximate_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
+    #[doc(hidden)]
     pub new_image: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
+    #[doc(hidden)]
     pub old_image: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>The sequence number of the stream record.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
     /// <p>The size of the stream record, in bytes.</p>
+    #[doc(hidden)]
     pub size_bytes: std::option::Option<i64>,
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
@@ -506,6 +524,7 @@ pub struct StreamRecord {
     /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
 }
 impl StreamRecord {
@@ -1069,6 +1088,7 @@ impl AsRef<str> for OperationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamDescription {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -1077,6 +1097,7 @@ pub struct StreamDescription {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_label: std::option::Option<std::string::String>,
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
@@ -1085,6 +1106,7 @@ pub struct StreamDescription {
     /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
     /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
@@ -1093,18 +1115,24 @@ pub struct StreamDescription {
     /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
     /// <p>The date and time when the request to create this stream was issued.</p>
+    #[doc(hidden)]
     pub creation_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
+    #[doc(hidden)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The shards that comprise the stream.</p>
+    #[doc(hidden)]
     pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
+    #[doc(hidden)]
     pub last_evaluated_shard_id: std::option::Option<std::string::String>,
 }
 impl StreamDescription {
@@ -1388,10 +1416,13 @@ impl StreamDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Shard {
     /// <p>The system-generated identifier for this shard.</p>
+    #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
     /// <p>The range of possible sequence numbers for the shard.</p>
+    #[doc(hidden)]
     pub sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
     /// <p>The shard ID of the current shard's parent.</p>
+    #[doc(hidden)]
     pub parent_shard_id: std::option::Option<std::string::String>,
 }
 impl Shard {
@@ -1486,8 +1517,10 @@ impl Shard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SequenceNumberRange {
     /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+    #[doc(hidden)]
     pub starting_sequence_number: std::option::Option<std::string::String>,
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
+    #[doc(hidden)]
     pub ending_sequence_number: std::option::Option<std::string::String>,
 }
 impl SequenceNumberRange {
@@ -1567,6 +1600,7 @@ impl SequenceNumberRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
@@ -1576,6 +1610,7 @@ pub struct KeySchemaElement {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
+    #[doc(hidden)]
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
 impl KeySchemaElement {

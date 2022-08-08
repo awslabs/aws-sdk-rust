@@ -5901,10 +5901,12 @@ impl UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    #[doc(hidden)]
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
 }
 impl UpdatePipelineInput {
@@ -5933,14 +5935,18 @@ impl std::fmt::Debug for UpdatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatastoreInput {
     /// <p>The name of the data store to be updated.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    #[doc(hidden)]
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
+    #[doc(hidden)]
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
 }
 impl UpdateDatastoreInput {
@@ -5981,19 +5987,26 @@ impl std::fmt::Debug for UpdateDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetInput {
     /// <p>The name of the dataset to update.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>DatasetAction</code> objects.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
     /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
+    #[doc(hidden)]
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    #[doc(hidden)]
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    #[doc(hidden)]
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl UpdateDatasetInput {
@@ -6049,10 +6062,13 @@ impl std::fmt::Debug for UpdateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelInput {
     /// <p>The name of the channel to be updated.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    #[doc(hidden)]
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl UpdateChannelInput {
@@ -6084,8 +6100,10 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource whose tags you want to remove.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of those tags which you want to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6112,8 +6130,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource whose tags you want to modify.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The new or modified tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6140,15 +6160,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineReprocessingInput {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+    #[doc(hidden)]
     pub channel_messages: std::option::Option<crate::model::ChannelMessages>,
 }
 impl StartPipelineReprocessingInput {
@@ -6188,12 +6212,16 @@ impl std::fmt::Debug for StartPipelineReprocessingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleChannelDataInput {
     /// <p>The name of the channel whose message samples are retrieved.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
+    #[doc(hidden)]
     pub max_messages: std::option::Option<i32>,
     /// <p>The start of the time window from which sample messages are retrieved.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time window from which sample messages are retrieved.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SampleChannelDataInput {
@@ -6230,8 +6258,10 @@ impl std::fmt::Debug for SampleChannelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunPipelineActivityInput {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+    #[doc(hidden)]
     pub pipeline_activity: std::option::Option<crate::model::PipelineActivity>,
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
+    #[doc(hidden)]
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
 }
 impl RunPipelineActivityInput {
@@ -6258,6 +6288,7 @@ impl std::fmt::Debug for RunPipelineActivityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingOptionsInput {
     /// <p>The new values of the IoT Analytics logging options.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl PutLoggingOptionsInput {
@@ -6279,6 +6310,7 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource whose tags you want to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6300,9 +6332,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelinesInput {
@@ -6330,9 +6364,11 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatastoresInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatastoresInput {
@@ -6360,9 +6396,11 @@ impl std::fmt::Debug for ListDatastoresInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
@@ -6390,14 +6428,19 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetContentsInput {
     /// <p>The name of the dataset whose contents information you want to list.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+    #[doc(hidden)]
     pub scheduled_on_or_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+    #[doc(hidden)]
     pub scheduled_before: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDatasetContentsInput {
@@ -6439,9 +6482,11 @@ impl std::fmt::Debug for ListDatasetContentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     /// <p>The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListChannelsInput {
@@ -6469,8 +6514,10 @@ impl std::fmt::Debug for ListChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatasetContentInput {
     /// <p>The name of the dataset whose contents are retrieved.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl GetDatasetContentInput {
@@ -6497,6 +6544,7 @@ impl std::fmt::Debug for GetDatasetContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelineInput {
     /// <p>The name of the pipeline whose information is retrieved.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
 }
 impl DescribePipelineInput {
@@ -6529,8 +6577,10 @@ impl std::fmt::Debug for DescribeLoggingOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
+    #[doc(hidden)]
     pub include_statistics: bool,
 }
 impl DescribeDatastoreInput {
@@ -6557,6 +6607,7 @@ impl std::fmt::Debug for DescribeDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the dataset whose information is retrieved.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -6578,8 +6629,10 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    #[doc(hidden)]
     pub include_statistics: bool,
 }
 impl DescribeChannelInput {
@@ -6606,6 +6659,7 @@ impl std::fmt::Debug for DescribeChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
@@ -6627,6 +6681,7 @@ impl std::fmt::Debug for DeletePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatastoreInput {
     /// <p>The name of the data store to delete.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatastoreInput {
@@ -6648,8 +6703,10 @@ impl std::fmt::Debug for DeleteDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetContentInput {
     /// <p>The name of the dataset whose content is deleted.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetContentInput {
@@ -6676,6 +6733,7 @@ impl std::fmt::Debug for DeleteDatasetContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to delete.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -6697,6 +6755,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelInput {
     /// <p>The name of the channel to delete.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
@@ -6718,12 +6777,15 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    #[doc(hidden)]
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
     /// <p>Metadata which can be used to manage the pipeline.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
@@ -6757,18 +6819,24 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatastoreInput {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    #[doc(hidden)]
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the data store.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
+    #[doc(hidden)]
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
+    #[doc(hidden)]
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl CreateDatastoreInput {
@@ -6819,8 +6887,10 @@ impl std::fmt::Debug for CreateDatastoreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetContentInput {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl CreateDatasetContentInput {
@@ -6847,21 +6917,29 @@ impl std::fmt::Debug for CreateDatasetContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A list of actions that create the dataset contents.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
+    #[doc(hidden)]
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    #[doc(hidden)]
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>Metadata which can be used to manage the dataset.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    #[doc(hidden)]
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl CreateDatasetInput {
@@ -6922,12 +7000,16 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    #[doc(hidden)]
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the channel.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateChannelInput {
@@ -6964,8 +7046,10 @@ impl std::fmt::Debug for CreateChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelPipelineReprocessingInput {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+    #[doc(hidden)]
     pub reprocessing_id: std::option::Option<std::string::String>,
 }
 impl CancelPipelineReprocessingInput {
@@ -6992,6 +7076,7 @@ impl std::fmt::Debug for CancelPipelineReprocessingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageInput {
     /// <p>The name of the channel where the messages are sent.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
@@ -7004,6 +7089,7 @@ pub struct BatchPutMessageInput {
     /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {

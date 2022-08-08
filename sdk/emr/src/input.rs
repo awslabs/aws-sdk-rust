@@ -9239,14 +9239,19 @@ impl UpdateStudioSessionMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to update is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
+    #[doc(hidden)]
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioSessionMappingInput {
@@ -9288,14 +9293,19 @@ impl std::fmt::Debug for UpdateStudioSessionMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioInput {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub default_s3_location: std::option::Option<std::string::String>,
 }
 impl UpdateStudioInput {
@@ -9337,6 +9347,7 @@ impl std::fmt::Debug for UpdateStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
+    #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TerminateJobFlowsInput {
@@ -9358,6 +9369,7 @@ impl std::fmt::Debug for TerminateJobFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
 }
 impl StopNotebookExecutionInput {
@@ -9379,20 +9391,28 @@ impl std::fmt::Debug for StopNotebookExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNotebookExecutionInput {
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
+    #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
     /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
     /// <p>An optional name for the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_name: std::option::Option<std::string::String>,
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
+    #[doc(hidden)]
     pub notebook_params: std::option::Option<std::string::String>,
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
+    #[doc(hidden)]
     pub execution_engine: std::option::Option<crate::model::ExecutionEngineConfig>,
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_instance_security_group_id: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartNotebookExecutionInput {
@@ -9452,8 +9472,10 @@ impl std::fmt::Debug for StartNotebookExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
+    #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    #[doc(hidden)]
     pub visible_to_all_users: bool,
 }
 impl SetVisibleToAllUsersInput {
@@ -9480,8 +9502,10 @@ impl std::fmt::Debug for SetVisibleToAllUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
+    #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
+    #[doc(hidden)]
     pub termination_protected: bool,
 }
 impl SetTerminationProtectionInput {
@@ -9508,22 +9532,31 @@ impl std::fmt::Debug for SetTerminationProtectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunJobFlowInput {
     /// <p>The name of the job flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+    #[doc(hidden)]
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>A JSON string for selecting additional features.</p>
+    #[doc(hidden)]
     pub additional_info: std::option::Option<std::string::String>,
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    #[doc(hidden)]
     pub ami_version: std::option::Option<std::string::String>,
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>A specification of the number and type of Amazon EC2 instances.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<crate::model::JobFlowInstancesConfig>,
     /// <p>A list of steps to run.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
+    #[doc(hidden)]
     pub bootstrap_actions: std::option::Option<std::vec::Vec<crate::model::BootstrapActionConfig>>,
     /// <note>
     /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
@@ -9533,6 +9566,7 @@ pub struct RunJobFlowInput {
     /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
     /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <note>
     /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
@@ -9548,49 +9582,68 @@ pub struct RunJobFlowInput {
     /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
     /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub new_supported_products:
         std::option::Option<std::vec::Vec<crate::model::SupportedProductConfig>>,
     /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <important>
     /// <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>
     /// </important>
     /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
     /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    #[doc(hidden)]
     pub visible_to_all_users: bool,
     /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
+    #[doc(hidden)]
     pub job_flow_role: std::option::Option<std::string::String>,
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of a security configuration to apply to the cluster.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
+    #[doc(hidden)]
     pub auto_scaling_role: std::option::Option<std::string::String>,
     /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    #[doc(hidden)]
     pub scale_down_behavior: std::option::Option<crate::model::ScaleDownBehavior>,
     /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
     /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
+    #[doc(hidden)]
     pub custom_ami_id: std::option::Option<std::string::String>,
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+    #[doc(hidden)]
     pub ebs_root_volume_size: std::option::Option<i32>,
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
+    #[doc(hidden)]
     pub repo_upgrade_on_boot: std::option::Option<crate::model::RepoUpgradeOnBoot>,
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub kerberos_attributes: std::option::Option<crate::model::KerberosAttributes>,
     /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
+    #[doc(hidden)]
     pub step_concurrency_level: std::option::Option<i32>,
     /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+    #[doc(hidden)]
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
     /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+    #[doc(hidden)]
     pub placement_group_configs:
         std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+    #[doc(hidden)]
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
     /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+    #[doc(hidden)]
     pub os_release_label: std::option::Option<std::string::String>,
 }
 impl RunJobFlowInput {
@@ -9785,8 +9838,10 @@ impl std::fmt::Debug for RunJobFlowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
@@ -9813,6 +9868,7 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveManagedScalingPolicyInput {
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RemoveManagedScalingPolicyInput {
@@ -9834,6 +9890,7 @@ impl std::fmt::Debug for RemoveManagedScalingPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RemoveAutoTerminationPolicyInput {
@@ -9855,8 +9912,10 @@ impl std::fmt::Debug for RemoveAutoTerminationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
 }
 impl RemoveAutoScalingPolicyInput {
@@ -9883,8 +9942,10 @@ impl std::fmt::Debug for RemoveAutoScalingPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutManagedScalingPolicyInput {
     /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the constraints for the managed scaling policy. </p>
+    #[doc(hidden)]
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
 }
 impl PutManagedScalingPolicyInput {
@@ -9915,6 +9976,7 @@ pub struct PutBlockPublicAccessConfigurationInput {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
+    #[doc(hidden)]
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
 }
@@ -9944,8 +10006,10 @@ impl std::fmt::Debug for PutBlockPublicAccessConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
+    #[doc(hidden)]
     pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
 }
 impl PutAutoTerminationPolicyInput {
@@ -9974,10 +10038,13 @@ impl std::fmt::Debug for PutAutoTerminationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies the definition of the automatic scaling policy.</p>
+    #[doc(hidden)]
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
 }
 impl PutAutoScalingPolicyInput {
@@ -10009,8 +10076,10 @@ impl std::fmt::Debug for PutAutoScalingPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Instance groups to change.</p>
+    #[doc(hidden)]
     pub instance_groups:
         std::option::Option<std::vec::Vec<crate::model::InstanceGroupModifyConfig>>,
 }
@@ -10040,8 +10109,10 @@ impl std::fmt::Debug for ModifyInstanceGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceFleetInput {
     /// <p>The unique identifier of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The configuration parameters of the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_fleet: std::option::Option<crate::model::InstanceFleetModifyConfig>,
 }
 impl ModifyInstanceFleetInput {
@@ -10068,8 +10139,10 @@ impl std::fmt::Debug for ModifyInstanceFleetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
+    #[doc(hidden)]
     pub step_concurrency_level: std::option::Option<i32>,
 }
 impl ModifyClusterInput {
@@ -10096,10 +10169,13 @@ impl std::fmt::Debug for ModifyClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioSessionMappingsInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStudioSessionMappingsInput {
@@ -10131,6 +10207,7 @@ impl std::fmt::Debug for ListStudioSessionMappingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudiosInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStudiosInput {
@@ -10152,12 +10229,16 @@ impl std::fmt::Debug for ListStudiosInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStepsInput {
     /// <p>The identifier of the cluster for which to list the steps.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The filter to limit the step list based on certain states.</p>
+    #[doc(hidden)]
     pub step_states: std::option::Option<std::vec::Vec<crate::model::StepState>>,
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
+    #[doc(hidden)]
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStepsInput {
@@ -10194,6 +10275,7 @@ impl std::fmt::Debug for ListStepsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityConfigurationsInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSecurityConfigurationsInput {
@@ -10215,10 +10297,13 @@ impl std::fmt::Debug for ListSecurityConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReleaseLabelsInput {
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ReleaseLabelFilter>,
     /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListReleaseLabelsInput {
@@ -10250,6 +10335,7 @@ impl std::fmt::Debug for ListReleaseLabelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
+    #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
@@ -10264,12 +10350,16 @@ pub struct ListNotebookExecutionsInput {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
+    #[doc(hidden)]
     pub from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
+    #[doc(hidden)]
     pub to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsInput {
@@ -10323,18 +10413,25 @@ impl std::fmt::Debug for ListNotebookExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesInput {
     /// <p>The identifier of the cluster for which to list the instances.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the instance group for which to list the instances.</p>
+    #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>The type of instance group for which to list the instances.</p>
+    #[doc(hidden)]
     pub instance_group_types: std::option::Option<std::vec::Vec<crate::model::InstanceGroupType>>,
     /// <p>The unique identifier of the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+    #[doc(hidden)]
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
+    #[doc(hidden)]
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstancesInput {
@@ -10386,8 +10483,10 @@ impl std::fmt::Debug for ListInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceGroupsInput {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceGroupsInput {
@@ -10414,8 +10513,10 @@ impl std::fmt::Debug for ListInstanceGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceFleetsInput {
     /// <p>The unique identifier of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListInstanceFleetsInput {
@@ -10442,12 +10543,16 @@ impl std::fmt::Debug for ListInstanceFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The creation date and time end value filter for listing clusters.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
+    #[doc(hidden)]
     pub cluster_states: std::option::Option<std::vec::Vec<crate::model::ClusterState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListClustersInput {
@@ -10484,8 +10589,10 @@ impl std::fmt::Debug for ListClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListBootstrapActionsInput {
@@ -10512,12 +10619,16 @@ impl std::fmt::Debug for ListBootstrapActionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
 }
 impl GetStudioSessionMappingInput {
@@ -10554,6 +10665,7 @@ impl std::fmt::Debug for GetStudioSessionMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedScalingPolicyInput {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl GetManagedScalingPolicyInput {
@@ -10586,6 +10698,7 @@ impl std::fmt::Debug for GetBlockPublicAccessConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl GetAutoTerminationPolicyInput {
@@ -10607,6 +10720,7 @@ impl std::fmt::Debug for GetAutoTerminationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStudioInput {
     /// <p>The Amazon EMR Studio ID.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DescribeStudioInput {
@@ -10628,8 +10742,10 @@ impl std::fmt::Debug for DescribeStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStepInput {
     /// <p>The identifier of the cluster with steps to describe.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the step to describe.</p>
+    #[doc(hidden)]
     pub step_id: std::option::Option<std::string::String>,
 }
 impl DescribeStepInput {
@@ -10656,6 +10772,7 @@ impl std::fmt::Debug for DescribeStepInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityConfigurationInput {
@@ -10677,10 +10794,13 @@ impl std::fmt::Debug for DescribeSecurityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReleaseLabelInput {
     /// <p>The target release label to be described.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use. Currently set to null.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeReleaseLabelInput {
@@ -10712,6 +10832,7 @@ impl std::fmt::Debug for DescribeReleaseLabelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
+    #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
 }
 impl DescribeNotebookExecutionInput {
@@ -10733,12 +10854,16 @@ impl std::fmt::Debug for DescribeNotebookExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobFlowsInput {
     /// <p>Return only job flows created after this date and time.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only job flows created before this date and time.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
+    #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Return only job flows whose state is contained in this list.</p>
+    #[doc(hidden)]
     pub job_flow_states: std::option::Option<std::vec::Vec<crate::model::JobFlowExecutionState>>,
 }
 impl DescribeJobFlowsInput {
@@ -10775,6 +10900,7 @@ impl std::fmt::Debug for DescribeJobFlowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterInput {
     /// <p>The identifier of the cluster to describe.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
@@ -10796,12 +10922,16 @@ impl std::fmt::Debug for DescribeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
 }
 impl DeleteStudioSessionMappingInput {
@@ -10838,6 +10968,7 @@ impl std::fmt::Debug for DeleteStudioSessionMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
@@ -10859,6 +10990,7 @@ impl std::fmt::Debug for DeleteStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteSecurityConfigurationInput {
@@ -10880,14 +11012,19 @@ impl std::fmt::Debug for DeleteSecurityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
+    #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    #[doc(hidden)]
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioSessionMappingInput {
@@ -10929,30 +11066,43 @@ impl std::fmt::Debug for CreateStudioSessionMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A detailed description of the Amazon EMR Studio.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
+    #[doc(hidden)]
     pub user_role: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
+    #[doc(hidden)]
     pub workspace_security_group_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
+    #[doc(hidden)]
     pub engine_security_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
+    #[doc(hidden)]
     pub default_s3_location: std::option::Option<std::string::String>,
     /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
+    #[doc(hidden)]
     pub idp_auth_url: std::option::Option<std::string::String>,
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
+    #[doc(hidden)]
     pub idp_relay_state_parameter_name: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateStudioInput {
@@ -11040,8 +11190,10 @@ impl std::fmt::Debug for CreateStudioInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
 }
 impl CreateSecurityConfigurationInput {
@@ -11068,10 +11220,13 @@ impl std::fmt::Debug for CreateSecurityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStepsInput {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
+    #[doc(hidden)]
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
+    #[doc(hidden)]
     pub step_cancellation_option: std::option::Option<crate::model::StepCancellationOption>,
 }
 impl CancelStepsInput {
@@ -11105,8 +11260,10 @@ impl std::fmt::Debug for CancelStepsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
@@ -11133,11 +11290,14 @@ impl std::fmt::Debug for AddTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddJobFlowStepsInput {
     /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl AddJobFlowStepsInput {
@@ -11170,8 +11330,10 @@ impl std::fmt::Debug for AddJobFlowStepsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
+    #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
     /// <p>Job flow in which to add the instance groups.</p>
+    #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
 }
 impl AddInstanceGroupsInput {
@@ -11198,8 +11360,10 @@ impl std::fmt::Debug for AddInstanceGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddInstanceFleetInput {
     /// <p>The unique identifier of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration of the instance fleet.</p>
+    #[doc(hidden)]
     pub instance_fleet: std::option::Option<crate::model::InstanceFleetConfig>,
 }
 impl AddInstanceFleetInput {

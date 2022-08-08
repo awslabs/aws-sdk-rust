@@ -2513,8 +2513,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
+    #[doc(hidden)]
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2541,8 +2543,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of one or more tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -2569,6 +2573,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl RestoreBackupInput {
@@ -2590,8 +2595,10 @@ impl std::fmt::Debug for RestoreBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
+    #[doc(hidden)]
     pub backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl ModifyClusterInput {
@@ -2620,8 +2627,10 @@ impl std::fmt::Debug for ModifyClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyBackupAttributesInput {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    #[doc(hidden)]
     pub never_expires: std::option::Option<bool>,
 }
 impl ModifyBackupAttributesInput {
@@ -2648,10 +2657,13 @@ impl std::fmt::Debug for ModifyBackupAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
@@ -2683,10 +2695,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitializeClusterInput {
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    #[doc(hidden)]
     pub signed_cert: std::option::Option<std::string::String>,
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    #[doc(hidden)]
     pub trust_anchor: std::option::Option<std::string::String>,
 }
 impl InitializeClusterInput {
@@ -2721,12 +2736,15 @@ pub struct DescribeClustersInput {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeClustersInput {
@@ -2765,8 +2783,10 @@ impl std::fmt::Debug for DescribeClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsInput {
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>One or more filters to limit the items returned in the response.</p>
     /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
@@ -2774,10 +2794,12 @@ pub struct DescribeBackupsInput {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
+    #[doc(hidden)]
     pub sort_ascending: std::option::Option<bool>,
 }
 impl DescribeBackupsInput {
@@ -2823,12 +2845,16 @@ impl std::fmt::Debug for DescribeBackupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmInput {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
+    #[doc(hidden)]
     pub hsm_id: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    #[doc(hidden)]
     pub eni_id: std::option::Option<std::string::String>,
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
 }
 impl DeleteHsmInput {
@@ -2865,6 +2891,7 @@ impl std::fmt::Debug for DeleteHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
     /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
@@ -2886,6 +2913,7 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
@@ -2907,10 +2935,13 @@ impl std::fmt::Debug for DeleteBackupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmInput {
     /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl CreateHsmInput {
@@ -2942,18 +2973,23 @@ impl std::fmt::Debug for CreateHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
+    #[doc(hidden)]
     pub backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    #[doc(hidden)]
     pub hsm_type: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    #[doc(hidden)]
     pub source_backup_id: std::option::Option<std::string::String>,
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
     /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
     /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateClusterInput {
@@ -3001,10 +3037,13 @@ impl std::fmt::Debug for CreateClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupToRegionInput {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+    #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
     /// <p>The ID of the backup that will be copied to the destination region. </p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyBackupToRegionInput {

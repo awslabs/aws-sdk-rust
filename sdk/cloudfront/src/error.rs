@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedSignerDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrustedSignerDoesNotExist {
@@ -69,6 +70,7 @@ impl TrustedSignerDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrustedSigners {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTrustedSigners {
@@ -133,6 +135,7 @@ impl TooManyTrustedSigners {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyStreamingDistributionCnamEs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyStreamingDistributionCnamEs {
@@ -200,6 +203,7 @@ impl TooManyStreamingDistributionCnamEs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailed {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PreconditionFailed {
@@ -264,6 +268,7 @@ impl PreconditionFailed {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchStreamingDistribution {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchStreamingDistribution {
@@ -328,6 +333,7 @@ impl NoSuchStreamingDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingBody {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingBody {
@@ -392,6 +398,7 @@ impl MissingBody {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOriginAccessIdentity {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOriginAccessIdentity {
@@ -456,6 +463,7 @@ impl InvalidOriginAccessIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIfMatchVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIfMatchVersion {
@@ -520,6 +528,7 @@ impl InvalidIfMatchVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgument {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgument {
@@ -584,6 +593,7 @@ impl InvalidArgument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InconsistentQuantities {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InconsistentQuantities {
@@ -648,6 +658,7 @@ impl InconsistentQuantities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalUpdate {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalUpdate {
@@ -712,6 +723,7 @@ impl IllegalUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CnameAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CnameAlreadyExists {
@@ -776,6 +788,7 @@ impl CnameAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDenied {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDenied {
@@ -841,6 +854,7 @@ impl AccessDenied {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCustomHeadersInResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCustomHeadersInResponseHeadersPolicy {
@@ -906,6 +920,7 @@ impl TooManyCustomHeadersInResponseHeadersPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooLongCspInResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooLongCspInResponseHeadersPolicy {
@@ -973,6 +988,7 @@ impl TooLongCspInResponseHeadersPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResponseHeadersPolicyAlreadyExists {
@@ -1037,6 +1053,7 @@ impl ResponseHeadersPolicyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchResponseHeadersPolicy {
@@ -1101,6 +1118,7 @@ impl NoSuchResponseHeadersPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchRealtimeLogConfig {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchRealtimeLogConfig {
@@ -1165,6 +1183,7 @@ impl NoSuchRealtimeLogConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchPublicKey {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchPublicKey {
@@ -1229,6 +1248,7 @@ impl NoSuchPublicKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotChangeImmutablePublicKeyFields {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CannotChangeImmutablePublicKeyFields {
@@ -1293,6 +1313,7 @@ impl CannotChangeImmutablePublicKeyFields {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyQueryStringsInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyQueryStringsInOriginRequestPolicy {
@@ -1357,6 +1378,7 @@ impl TooManyQueryStringsInOriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHeadersInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyHeadersInOriginRequestPolicy {
@@ -1421,6 +1443,7 @@ impl TooManyHeadersInOriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCookiesInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCookiesInOriginRequestPolicy {
@@ -1485,6 +1508,7 @@ impl TooManyCookiesInOriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OriginRequestPolicyAlreadyExists {
@@ -1549,6 +1573,7 @@ impl OriginRequestPolicyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchOriginRequestPolicy {
@@ -1613,6 +1638,7 @@ impl NoSuchOriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyPublicKeysInKeyGroup {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyPublicKeysInKeyGroup {
@@ -1677,6 +1703,7 @@ impl TooManyPublicKeysInKeyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchResource {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchResource {
@@ -1741,6 +1768,7 @@ impl NoSuchResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyGroupAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeyGroupAlreadyExists {
@@ -1805,6 +1833,7 @@ impl KeyGroupAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperation {
@@ -1869,6 +1898,7 @@ impl UnsupportedOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchFunctionExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchFunctionExists {
@@ -1933,6 +1963,7 @@ impl NoSuchFunctionExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionSizeLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionSizeLimitExceeded {
@@ -1997,6 +2028,7 @@ impl FunctionSizeLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionFieldPatterns {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionFieldPatterns {
@@ -2061,6 +2093,7 @@ impl TooManyFieldLevelEncryptionFieldPatterns {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionEncryptionEntities {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionEncryptionEntities {
@@ -2125,6 +2158,7 @@ impl TooManyFieldLevelEncryptionEncryptionEntities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchFieldLevelEncryptionProfile {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchFieldLevelEncryptionProfile {
@@ -2189,6 +2223,7 @@ impl NoSuchFieldLevelEncryptionProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileSizeExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FieldLevelEncryptionProfileSizeExceeded {
@@ -2253,6 +2288,7 @@ impl FieldLevelEncryptionProfileSizeExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FieldLevelEncryptionProfileAlreadyExists {
@@ -2317,6 +2353,7 @@ impl FieldLevelEncryptionProfileAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionQueryArgProfiles {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionQueryArgProfiles {
@@ -2381,6 +2418,7 @@ impl TooManyFieldLevelEncryptionQueryArgProfiles {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionContentTypeProfiles {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionContentTypeProfiles {
@@ -2446,6 +2484,7 @@ impl TooManyFieldLevelEncryptionContentTypeProfiles {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryArgProfileEmpty {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueryArgProfileEmpty {
@@ -2510,6 +2549,7 @@ impl QueryArgProfileEmpty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchFieldLevelEncryptionConfig {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchFieldLevelEncryptionConfig {
@@ -2574,6 +2614,7 @@ impl NoSuchFieldLevelEncryptionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedKeyGroupDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrustedKeyGroupDoesNotExist {
@@ -2638,6 +2679,7 @@ impl TrustedKeyGroupDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyQueryStringParameters {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyQueryStringParameters {
@@ -2702,6 +2744,7 @@ impl TooManyQueryStringParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyOrigins {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyOrigins {
@@ -2766,6 +2809,7 @@ impl TooManyOrigins {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyOriginGroupsPerDistribution {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyOriginGroupsPerDistribution {
@@ -2830,6 +2874,7 @@ impl TooManyOriginGroupsPerDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyOriginCustomHeaders {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyOriginCustomHeaders {
@@ -2894,6 +2939,7 @@ impl TooManyOriginCustomHeaders {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyLambdaFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyLambdaFunctionAssociations {
@@ -2958,6 +3004,7 @@ impl TooManyLambdaFunctionAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyKeyGroupsAssociatedToDistribution {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyKeyGroupsAssociatedToDistribution {
@@ -3022,6 +3069,7 @@ impl TooManyKeyGroupsAssociatedToDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHeadersInForwardedValues {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyHeadersInForwardedValues {
@@ -3086,6 +3134,7 @@ impl TooManyHeadersInForwardedValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFunctionAssociations {
@@ -3150,6 +3199,7 @@ impl TooManyFunctionAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsWithSingleFunctionArn {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsWithSingleFunctionArn {
@@ -3217,6 +3267,7 @@ impl TooManyDistributionsWithSingleFunctionArn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsWithLambdaAssociations {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsWithLambdaAssociations {
@@ -3281,6 +3332,7 @@ impl TooManyDistributionsWithLambdaAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsWithFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsWithFunctionAssociations {
@@ -3346,6 +3398,7 @@ impl TooManyDistributionsWithFunctionAssociations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsAssociatedToResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsAssociatedToResponseHeadersPolicy {
@@ -3412,6 +3465,7 @@ impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsAssociatedToOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsAssociatedToOriginRequestPolicy {
@@ -3477,6 +3531,7 @@ impl TooManyDistributionsAssociatedToOriginRequestPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsAssociatedToKeyGroup {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsAssociatedToKeyGroup {
@@ -3541,6 +3596,7 @@ impl TooManyDistributionsAssociatedToKeyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
@@ -3613,6 +3669,7 @@ impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionsAssociatedToCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionsAssociatedToCachePolicy {
@@ -3677,6 +3734,7 @@ impl TooManyDistributionsAssociatedToCachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributionCnamEs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributionCnamEs {
@@ -3741,6 +3799,7 @@ impl TooManyDistributionCnamEs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCookieNamesInWhiteList {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCookieNamesInWhiteList {
@@ -3805,6 +3864,7 @@ impl TooManyCookieNamesInWhiteList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCertificates {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCertificates {
@@ -3869,6 +3929,7 @@ impl TooManyCertificates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCacheBehaviors {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCacheBehaviors {
@@ -3933,6 +3994,7 @@ impl TooManyCacheBehaviors {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfigOwnerMismatch {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RealtimeLogConfigOwnerMismatch {
@@ -3997,6 +4059,7 @@ impl RealtimeLogConfigOwnerMismatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchOrigin {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchOrigin {
@@ -4061,6 +4124,7 @@ impl NoSuchOrigin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchDistribution {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchDistribution {
@@ -4125,6 +4189,7 @@ impl NoSuchDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchCachePolicy {
@@ -4189,6 +4254,7 @@ impl NoSuchCachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidWebAclId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidWebAclId {
@@ -4253,6 +4319,7 @@ impl InvalidWebAclId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidViewerCertificate {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidViewerCertificate {
@@ -4317,6 +4384,7 @@ impl InvalidViewerCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTtlOrder {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTtlOrder {
@@ -4381,6 +4449,7 @@ impl InvalidTtlOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResponseCode {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResponseCode {
@@ -4445,6 +4514,7 @@ impl InvalidResponseCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequiredProtocol {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequiredProtocol {
@@ -4509,6 +4579,7 @@ impl InvalidRequiredProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRelativePath {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRelativePath {
@@ -4573,6 +4644,7 @@ impl InvalidRelativePath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidQueryStringParameters {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidQueryStringParameters {
@@ -4637,6 +4709,7 @@ impl InvalidQueryStringParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOriginReadTimeout {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOriginReadTimeout {
@@ -4701,6 +4774,7 @@ impl InvalidOriginReadTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOriginKeepaliveTimeout {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOriginKeepaliveTimeout {
@@ -4765,6 +4839,7 @@ impl InvalidOriginKeepaliveTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMinimumProtocolVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMinimumProtocolVersion {
@@ -4829,6 +4904,7 @@ impl InvalidMinimumProtocolVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLocationCode {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLocationCode {
@@ -4893,6 +4969,7 @@ impl InvalidLocationCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaFunctionAssociation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLambdaFunctionAssociation {
@@ -4957,6 +5034,7 @@ impl InvalidLambdaFunctionAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidHeadersForS3Origin {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidHeadersForS3Origin {
@@ -5021,6 +5099,7 @@ impl InvalidHeadersForS3Origin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGeoRestrictionParameter {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGeoRestrictionParameter {
@@ -5085,6 +5164,7 @@ impl InvalidGeoRestrictionParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFunctionAssociation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFunctionAssociation {
@@ -5149,6 +5229,7 @@ impl InvalidFunctionAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidForwardCookies {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidForwardCookies {
@@ -5213,6 +5294,7 @@ impl InvalidForwardCookies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidErrorCode {
@@ -5277,6 +5359,7 @@ impl InvalidErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDefaultRootObject {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDefaultRootObject {
@@ -5341,6 +5424,7 @@ impl InvalidDefaultRootObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
@@ -5413,6 +5497,7 @@ impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchCloudFrontOriginAccessIdentity {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchCloudFrontOriginAccessIdentity {
@@ -5477,6 +5562,7 @@ impl NoSuchCloudFrontOriginAccessIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyQueryStringsInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyQueryStringsInCachePolicy {
@@ -5541,6 +5627,7 @@ impl TooManyQueryStringsInCachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHeadersInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyHeadersInCachePolicy {
@@ -5605,6 +5692,7 @@ impl TooManyHeadersInCachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCookiesInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCookiesInCachePolicy {
@@ -5669,6 +5757,7 @@ impl TooManyCookiesInCachePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CachePolicyAlreadyExists {
@@ -5733,6 +5822,7 @@ impl CachePolicyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagging {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagging {
@@ -5797,6 +5887,7 @@ impl InvalidTagging {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFunctionFailed {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TestFunctionFailed {
@@ -5861,6 +5952,7 @@ impl TestFunctionFailed {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchInvalidation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchInvalidation {
@@ -5925,6 +6017,7 @@ impl NoSuchInvalidation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistributionNotDisabled {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StreamingDistributionNotDisabled {
@@ -5989,6 +6082,7 @@ impl StreamingDistributionNotDisabled {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseHeadersPolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResponseHeadersPolicyInUse {
@@ -6053,6 +6147,7 @@ impl ResponseHeadersPolicyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalDelete {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalDelete {
@@ -6117,6 +6212,7 @@ impl IllegalDelete {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfigInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RealtimeLogConfigInUse {
@@ -6181,6 +6277,7 @@ impl RealtimeLogConfigInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKeyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PublicKeyInUse {
@@ -6245,6 +6342,7 @@ impl PublicKeyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OriginRequestPolicyInUse {
@@ -6309,6 +6407,7 @@ impl OriginRequestPolicyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUse {
@@ -6373,6 +6472,7 @@ impl ResourceInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionInUse {
@@ -6437,6 +6537,7 @@ impl FunctionInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionProfileInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FieldLevelEncryptionProfileInUse {
@@ -6501,6 +6602,7 @@ impl FieldLevelEncryptionProfileInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionConfigInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FieldLevelEncryptionConfigInUse {
@@ -6565,6 +6667,7 @@ impl FieldLevelEncryptionConfigInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionNotDisabled {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DistributionNotDisabled {
@@ -6629,6 +6732,7 @@ impl DistributionNotDisabled {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFrontOriginAccessIdentityInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudFrontOriginAccessIdentityInUse {
@@ -6693,6 +6797,7 @@ impl CloudFrontOriginAccessIdentityInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CachePolicyInUse {
@@ -6757,6 +6862,7 @@ impl CachePolicyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyStreamingDistributions {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyStreamingDistributions {
@@ -6821,6 +6927,7 @@ impl TooManyStreamingDistributions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingDistributionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StreamingDistributionAlreadyExists {
@@ -6885,6 +6992,7 @@ impl StreamingDistributionAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOrigin {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOrigin {
@@ -6950,6 +7058,7 @@ impl InvalidOrigin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyResponseHeadersPolicies {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyResponseHeadersPolicies {
@@ -7014,6 +7123,7 @@ impl TooManyResponseHeadersPolicies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRealtimeLogConfigs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRealtimeLogConfigs {
@@ -7078,6 +7188,7 @@ impl TooManyRealtimeLogConfigs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RealtimeLogConfigAlreadyExists {
@@ -7142,6 +7253,7 @@ impl RealtimeLogConfigAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyPublicKeys {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyPublicKeys {
@@ -7206,6 +7318,7 @@ impl TooManyPublicKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKeyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PublicKeyAlreadyExists {
@@ -7270,6 +7383,7 @@ impl PublicKeyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyOriginRequestPolicies {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyOriginRequestPolicies {
@@ -7334,6 +7448,7 @@ impl TooManyOriginRequestPolicies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyKeyGroups {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyKeyGroups {
@@ -7398,6 +7513,7 @@ impl TooManyKeyGroups {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyInvalidationsInProgress {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyInvalidationsInProgress {
@@ -7462,6 +7578,7 @@ impl TooManyInvalidationsInProgress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchTooLarge {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchTooLarge {
@@ -7526,6 +7643,7 @@ impl BatchTooLarge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFunctions {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFunctions {
@@ -7590,6 +7708,7 @@ impl TooManyFunctions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionAlreadyExists {
@@ -7654,6 +7773,7 @@ impl FunctionAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionProfiles {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionProfiles {
@@ -7718,6 +7838,7 @@ impl TooManyFieldLevelEncryptionProfiles {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFieldLevelEncryptionConfigs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFieldLevelEncryptionConfigs {
@@ -7782,6 +7903,7 @@ impl TooManyFieldLevelEncryptionConfigs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldLevelEncryptionConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FieldLevelEncryptionConfigAlreadyExists {
@@ -7846,6 +7968,7 @@ impl FieldLevelEncryptionConfigAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyDistributions {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyDistributions {
@@ -7910,6 +8033,7 @@ impl TooManyDistributions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidProtocolSettings {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidProtocolSettings {
@@ -7974,6 +8098,7 @@ impl InvalidProtocolSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DistributionAlreadyExists {
@@ -8038,6 +8163,7 @@ impl DistributionAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCloudFrontOriginAccessIdentities {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCloudFrontOriginAccessIdentities {
@@ -8102,6 +8228,7 @@ impl TooManyCloudFrontOriginAccessIdentities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFrontOriginAccessIdentityAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudFrontOriginAccessIdentityAlreadyExists {
@@ -8166,6 +8293,7 @@ impl CloudFrontOriginAccessIdentityAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyCachePolicies {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyCachePolicies {

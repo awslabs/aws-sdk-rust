@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl UpdateWebhookOutput {
@@ -59,6 +60,7 @@ impl UpdateWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
+    #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl UpdateDomainAssociationOutput {
@@ -116,6 +118,7 @@ impl UpdateDomainAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
 }
 impl UpdateBranchOutput {
@@ -170,6 +173,7 @@ impl UpdateBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl UpdateAppOutput {
@@ -282,6 +286,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopJobOutput {
     /// <p> The summary for the job. </p>
+    #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
 impl StopJobOutput {
@@ -339,6 +344,7 @@ impl StopJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobOutput {
     /// <p> The summary for the job. </p>
+    #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
 impl StartJobOutput {
@@ -396,6 +402,7 @@ impl StartJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeploymentOutput {
     /// <p> The summary for the job. </p>
+    #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
 impl StartDeploymentOutput {
@@ -453,8 +460,10 @@ impl StartDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
+    #[doc(hidden)]
     pub webhooks: std::option::Option<std::vec::Vec<crate::model::Webhook>>,
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebhooksOutput {
@@ -535,6 +544,7 @@ impl ListWebhooksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -608,8 +618,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
+    #[doc(hidden)]
     pub job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -690,8 +702,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
+    #[doc(hidden)]
     pub domain_associations: std::option::Option<std::vec::Vec<crate::model::DomainAssociation>>,
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainAssociationsOutput {
@@ -773,8 +787,10 @@ impl ListDomainAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
+    #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<crate::model::Branch>>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBranchesOutput {
@@ -855,8 +871,10 @@ impl ListBranchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackendEnvironmentsOutput {
     /// <p> The list of backend environments for an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environments: std::option::Option<std::vec::Vec<crate::model::BackendEnvironment>>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBackendEnvironmentsOutput {
@@ -938,8 +956,10 @@ impl ListBackendEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsOutput {
@@ -1020,8 +1040,10 @@ impl ListArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
+    #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::model::App>>,
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsOutput {
@@ -1102,6 +1124,7 @@ impl ListAppsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl GetWebhookOutput {
@@ -1156,6 +1179,7 @@ impl GetWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl GetJobOutput {
@@ -1208,6 +1232,7 @@ impl GetJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
+    #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl GetDomainAssociationOutput {
@@ -1265,6 +1290,7 @@ impl GetDomainAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
 }
 impl GetBranchOutput {
@@ -1319,6 +1345,7 @@ impl GetBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
 }
 impl GetBackendEnvironmentOutput {
@@ -1376,8 +1403,10 @@ impl GetBackendEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
+    #[doc(hidden)]
     pub artifact_id: std::option::Option<std::string::String>,
     /// <p> The presigned URL for the artifact. </p>
+    #[doc(hidden)]
     pub artifact_url: std::option::Option<std::string::String>,
 }
 impl GetArtifactUrlOutput {
@@ -1449,6 +1478,7 @@ impl GetArtifactUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl GetAppOutput {
@@ -1501,6 +1531,7 @@ impl GetAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
+    #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
 }
 impl GenerateAccessLogsOutput {
@@ -1555,6 +1586,7 @@ impl GenerateAccessLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl DeleteWebhookOutput {
@@ -1609,6 +1641,7 @@ impl DeleteWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
 }
 impl DeleteJobOutput {
@@ -1666,6 +1699,7 @@ impl DeleteJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
+    #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl DeleteDomainAssociationOutput {
@@ -1723,6 +1757,7 @@ impl DeleteDomainAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
 }
 impl DeleteBranchOutput {
@@ -1777,6 +1812,7 @@ impl DeleteBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
 }
 impl DeleteBackendEnvironmentOutput {
@@ -1834,6 +1870,7 @@ impl DeleteBackendEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl DeleteAppOutput {
@@ -1886,6 +1923,7 @@ impl DeleteAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl CreateWebhookOutput {
@@ -1940,6 +1978,7 @@ impl CreateWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
+    #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl CreateDomainAssociationOutput {
@@ -1997,11 +2036,14 @@ impl CreateDomainAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p> The job ID for this deployment. will supply to start deployment api. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    #[doc(hidden)]
     pub file_upload_urls:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
+    #[doc(hidden)]
     pub zip_upload_url: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -2113,6 +2155,7 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
+    #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
 }
 impl CreateBranchOutput {
@@ -2167,6 +2210,7 @@ impl CreateBranchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
+    #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
 }
 impl CreateBackendEnvironmentOutput {
@@ -2224,6 +2268,7 @@ impl CreateBackendEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl CreateAppOutput {

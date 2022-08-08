@@ -3,22 +3,28 @@
 #[non_exhaustive]
 pub struct PutSessionOutput {
     /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The name of the current intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p>Map of key/value pairs representing session-specific context information.</p>
+    #[doc(hidden)]
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
     #[deprecated(
         note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+    #[doc(hidden)]
     pub encoded_message: std::option::Option<std::string::String>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -27,6 +33,7 @@ pub struct PutSessionOutput {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
     /// <p></p>
     /// <ul>
@@ -37,14 +44,18 @@ pub struct PutSessionOutput {
     /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dialog_state: std::option::Option<crate::model::DialogState>,
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The audio version of the message to convey to the user.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
     /// <p>A unique identifier for the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A list of active contexts for the session.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::string::String>,
 }
 impl PutSessionOutput {
@@ -367,27 +378,34 @@ impl PutSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostTextOutput {
     /// <p>The current user intent that Amazon Lex is aware of.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
     /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
+    #[doc(hidden)]
     pub nlu_intent_confidence: std::option::Option<crate::model::IntentConfidence>,
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
+    #[doc(hidden)]
     pub alternative_intents: std::option::Option<std::vec::Vec<crate::model::PredictedIntent>>,
     /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
+    #[doc(hidden)]
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of key-value pairs representing the session-specific context information.</p>
+    #[doc(hidden)]
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The sentiment expressed in and utterance.</p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
+    #[doc(hidden)]
     pub sentiment_response: std::option::Option<crate::model::SentimentResponse>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -396,6 +414,7 @@ pub struct PostTextOutput {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
     /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
@@ -406,17 +425,23 @@ pub struct PostTextOutput {
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
     /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dialog_state: std::option::Option<crate::model::DialogState>,
     /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    #[doc(hidden)]
     pub response_card: std::option::Option<crate::model::ResponseCard>,
     /// <p>A unique identifier for the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl PostTextOutput {
@@ -834,22 +859,29 @@ impl PostTextOutput {
 #[non_exhaustive]
 pub struct PostContentOutput {
     /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Current user intent that Amazon Lex is aware of.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
     /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
+    #[doc(hidden)]
     pub nlu_intent_confidence: std::option::Option<std::string::String>,
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
+    #[doc(hidden)]
     pub alternative_intents: std::option::Option<std::string::String>,
     /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
+    #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
     /// <p> Map of key/value pairs representing the session-specific context information. </p>
+    #[doc(hidden)]
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>The sentiment expressed in an utterance.</p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
+    #[doc(hidden)]
     pub sentiment_response: std::option::Option<std::string::String>,
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
     /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
@@ -859,12 +891,14 @@ pub struct PostContentOutput {
     #[deprecated(
         note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+    #[doc(hidden)]
     pub encoded_message: std::option::Option<std::string::String>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -873,6 +907,7 @@ pub struct PostContentOutput {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
     /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
@@ -883,8 +918,10 @@ pub struct PostContentOutput {
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
     /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dialog_state: std::option::Option<crate::model::DialogState>,
     /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
     /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
@@ -892,19 +929,24 @@ pub struct PostContentOutput {
     #[deprecated(
         note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
+    #[doc(hidden)]
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
     /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
+    #[doc(hidden)]
     pub encoded_input_transcript: std::option::Option<std::string::String>,
     /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::string::String>,
 }
 impl PostContentOutput {
@@ -1399,16 +1441,21 @@ impl PostContentOutput {
 pub struct GetSessionOutput {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
+    #[doc(hidden)]
     pub recent_intent_summary_view: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    #[doc(hidden)]
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier for the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Describes the current state of the bot.</p>
+    #[doc(hidden)]
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl GetSessionOutput {
@@ -1584,12 +1631,16 @@ impl GetSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionOutput {
     /// <p>The name of the bot associated with the session data.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The alias in use for the bot associated with the session data.</p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the client application user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl DeleteSessionOutput {

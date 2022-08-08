@@ -12,8 +12,10 @@ pub struct SynthesizeSpeechOutput {
     /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
     /// <p> </p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Number of characters synthesized.</p>
+    #[doc(hidden)]
     pub request_characters: i32,
 }
 impl SynthesizeSpeechOutput {
@@ -126,6 +128,7 @@ impl SynthesizeSpeechOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
+    #[doc(hidden)]
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
 }
 impl StartSpeechSynthesisTaskOutput {
@@ -213,8 +216,10 @@ impl PutLexiconOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeechSynthesisTasksOutput {
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
+    #[doc(hidden)]
     pub synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
 }
 impl ListSpeechSynthesisTasksOutput {
@@ -295,8 +300,10 @@ impl ListSpeechSynthesisTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLexiconsOutput {
     /// <p>A list of lexicon names and attributes.</p>
+    #[doc(hidden)]
     pub lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
     /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLexiconsOutput {
@@ -377,6 +384,7 @@ impl ListLexiconsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
+    #[doc(hidden)]
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
 }
 impl GetSpeechSynthesisTaskOutput {
@@ -434,8 +442,10 @@ impl GetSpeechSynthesisTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLexiconOutput {
     /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
+    #[doc(hidden)]
     pub lexicon: std::option::Option<crate::model::Lexicon>,
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
+    #[doc(hidden)]
     pub lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
 }
 impl GetLexiconOutput {
@@ -510,8 +520,10 @@ impl GetLexiconOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVoicesOutput {
     /// <p>A list of voices with their properties.</p>
+    #[doc(hidden)]
     pub voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVoicesOutput {

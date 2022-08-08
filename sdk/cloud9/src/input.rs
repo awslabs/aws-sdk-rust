@@ -2304,14 +2304,17 @@ impl UpdateEnvironmentMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentMembershipInput {
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::MemberPermissions>,
 }
 impl UpdateEnvironmentMembershipInput {
@@ -2347,10 +2350,13 @@ impl std::fmt::Debug for UpdateEnvironmentMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The ID of the environment to change settings.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>A replacement name for the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Any new or replacement description for the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
     /// <ul>
@@ -2359,6 +2365,7 @@ pub struct UpdateEnvironmentInput {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
+    #[doc(hidden)]
     pub managed_credentials_action: std::option::Option<crate::model::ManagedCredentialsAction>,
 }
 impl UpdateEnvironmentInput {
@@ -2406,8 +2413,10 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag names of the tags to remove from the given Cloud9 development environment.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2434,8 +2443,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to add to the given Cloud9 development environment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -2462,6 +2473,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2483,8 +2495,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environments to get identifiers for.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentsInput {
@@ -2511,6 +2525,7 @@ impl std::fmt::Debug for ListEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentStatusInput {
     /// <p>The ID of the environment to get status information about.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentStatusInput {
@@ -2532,6 +2547,7 @@ impl std::fmt::Debug for DescribeEnvironmentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentsInput {
     /// <p>The IDs of individual environments to get information about.</p>
+    #[doc(hidden)]
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEnvironmentsInput {
@@ -2553,8 +2569,10 @@ impl std::fmt::Debug for DescribeEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentMembershipsInput {
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment to get environment member information about.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The type of environment member permissions to get information about. Available values include:</p>
     /// <ul>
@@ -2563,10 +2581,13 @@ pub struct DescribeEnvironmentMembershipsInput {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permissions>>,
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment members to get information about.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEnvironmentMembershipsInput {
@@ -2614,8 +2635,10 @@ impl std::fmt::Debug for DescribeEnvironmentMembershipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentMembershipInput {
     /// <p>The ID of the environment to delete the environment member from.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentMembershipInput {
@@ -2642,6 +2665,7 @@ impl std::fmt::Debug for DeleteEnvironmentMembershipInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment to delete.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
@@ -2663,14 +2687,17 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentMembershipInput {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::MemberPermissions>,
 }
 impl CreateEnvironmentMembershipInput {
@@ -2707,15 +2734,20 @@ impl std::fmt::Debug for CreateEnvironmentMembershipInput {
 pub struct CreateEnvironmentEc2Input {
     /// <p>The name of the environment to create.</p>
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment to create.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
     /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes long term support through 2023.</p>
@@ -2731,17 +2763,23 @@ pub struct CreateEnvironmentEc2Input {
     /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
     /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
+    #[doc(hidden)]
     pub automatic_stop_time_minutes: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
+    #[doc(hidden)]
     pub owner_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
 }
 impl CreateEnvironmentEc2Input {

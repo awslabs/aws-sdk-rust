@@ -184,10 +184,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectGrantOutput {
     /// <p>Grant ARN.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl RejectGrantOutput {
@@ -276,9 +279,11 @@ impl RejectGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageForLicenseConfigurationOutput {
     /// <p>Information about the license configurations.</p>
+    #[doc(hidden)]
     pub license_configuration_usage_list:
         std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsageForLicenseConfigurationOutput {
@@ -368,8 +373,10 @@ impl ListUsageForLicenseConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTokensOutput {
     /// <p>Received token details.</p>
+    #[doc(hidden)]
     pub tokens: std::option::Option<std::vec::Vec<crate::model::TokenData>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTokensOutput {
@@ -450,6 +457,7 @@ impl ListTokensOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -511,9 +519,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
+    #[doc(hidden)]
     pub resource_inventory_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceInventoryOutput {
@@ -597,8 +607,10 @@ impl ListResourceInventoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedLicensesOutput {
     /// <p>Received license details.</p>
+    #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReceivedLicensesOutput {
@@ -679,8 +691,10 @@ impl ListReceivedLicensesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedGrantsOutput {
     /// <p>Received grant details.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReceivedGrantsOutput {
@@ -761,8 +775,10 @@ impl ListReceivedGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseVersionsOutput {
     /// <p>License details.</p>
+    #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseVersionsOutput {
@@ -843,9 +859,11 @@ impl ListLicenseVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
+    #[doc(hidden)]
     pub license_specifications:
         std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseSpecificationsForResourceOutput {
@@ -929,8 +947,10 @@ impl ListLicenseSpecificationsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicensesOutput {
     /// <p>License details.</p>
+    #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicensesOutput {
@@ -1011,8 +1031,10 @@ impl ListLicensesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseManagerReportGeneratorsOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
+    #[doc(hidden)]
     pub report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseManagerReportGeneratorsOutput {
@@ -1094,9 +1116,11 @@ impl ListLicenseManagerReportGeneratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
+    #[doc(hidden)]
     pub license_conversion_tasks:
         std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseConversionTasksOutput {
@@ -1183,9 +1207,11 @@ impl ListLicenseConversionTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConfigurationsOutput {
     /// <p>Information about the license configurations.</p>
+    #[doc(hidden)]
     pub license_configurations:
         std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseConfigurationsOutput {
@@ -1269,9 +1295,11 @@ impl ListLicenseConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
+    #[doc(hidden)]
     pub license_operation_failure_list:
         std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
@@ -1362,8 +1390,10 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributedGrantsOutput {
     /// <p>Distributed grant details.</p>
+    #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDistributedGrantsOutput {
@@ -1444,9 +1474,11 @@ impl ListDistributedGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationsForLicenseConfigurationOutput {
     /// <p>Information about the associations for the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_associations:
         std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsForLicenseConfigurationOutput {
@@ -1538,14 +1570,19 @@ impl ListAssociationsForLicenseConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingsOutput {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
+    #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
+    #[doc(hidden)]
     pub organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
     /// <p>Indicates whether cross-account discovery is enabled.</p>
+    #[doc(hidden)]
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
+    #[doc(hidden)]
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingsOutput {
@@ -1701,6 +1738,7 @@ impl GetServiceSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseUsageOutput {
     /// <p>License usage details.</p>
+    #[doc(hidden)]
     pub license_usage: std::option::Option<crate::model::LicenseUsage>,
 }
 impl GetLicenseUsageOutput {
@@ -1758,6 +1796,7 @@ impl GetLicenseUsageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseManagerReportGeneratorOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
+    #[doc(hidden)]
     pub report_generator: std::option::Option<crate::model::ReportGenerator>,
 }
 impl GetLicenseManagerReportGeneratorOutput {
@@ -1815,22 +1854,31 @@ impl GetLicenseManagerReportGeneratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConversionTaskOutput {
     /// <p>ID of the license type conversion task.</p>
+    #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information about the license type converted from.</p>
+    #[doc(hidden)]
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>Information about the license type converted to.</p>
+    #[doc(hidden)]
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>The status message for the conversion task.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Status of the license type conversion task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
     /// <p>Time at which the license type conversion task was started .</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time to complete the license type conversion.</p>
+    #[doc(hidden)]
     pub license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time at which the license type conversion task was completed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetLicenseConversionTaskOutput {
@@ -2063,42 +2111,59 @@ impl GetLicenseConversionTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConfigurationOutput {
     /// <p>Unique ID for the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_id: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Name of the license configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the license configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Dimension for which the licenses are counted.</p>
+    #[doc(hidden)]
     pub license_counting_type: std::option::Option<crate::model::LicenseCountingType>,
     /// <p>License rules.</p>
+    #[doc(hidden)]
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Number of available licenses.</p>
+    #[doc(hidden)]
     pub license_count: std::option::Option<i64>,
     /// <p>Sets the number of available licenses as a hard limit.</p>
+    #[doc(hidden)]
     pub license_count_hard_limit: std::option::Option<bool>,
     /// <p>Number of licenses assigned to resources.</p>
+    #[doc(hidden)]
     pub consumed_licenses: std::option::Option<i64>,
     /// <p>License configuration status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Account ID of the owner of the license configuration.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Summaries of the licenses consumed by resources.</p>
+    #[doc(hidden)]
     pub consumed_license_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
     /// <p>Summaries of the managed resources.</p>
+    #[doc(hidden)]
     pub managed_resource_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
     /// <p>Tags for the license configuration.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Product information.</p>
+    #[doc(hidden)]
     pub product_information_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>Automated discovery information.</p>
+    #[doc(hidden)]
     pub automated_discovery_information:
         std::option::Option<crate::model::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
 impl GetLicenseConfigurationOutput {
@@ -2518,6 +2583,7 @@ impl GetLicenseConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseOutput {
     /// <p>License details.</p>
+    #[doc(hidden)]
     pub license: std::option::Option<crate::model::License>,
 }
 impl GetLicenseOutput {
@@ -2572,6 +2638,7 @@ impl GetLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGrantOutput {
     /// <p>Grant details.</p>
+    #[doc(hidden)]
     pub grant: std::option::Option<crate::model::Grant>,
 }
 impl GetGrantOutput {
@@ -2624,6 +2691,7 @@ impl GetGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetAccessTokenOutput {
@@ -2678,8 +2746,10 @@ impl GetAccessTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendLicenseConsumptionOutput {
     /// <p>License consumption token.</p>
+    #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license consumption expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<std::string::String>,
 }
 impl ExtendLicenseConsumptionOutput {
@@ -2844,8 +2914,10 @@ impl DeleteLicenseConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseOutput {
     /// <p>License status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseDeletionStatus>,
     /// <p>Date when the license is deleted.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseOutput {
@@ -2923,10 +2995,13 @@ impl DeleteLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGrantOutput {
     /// <p>Grant ARN.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteGrantOutput {
@@ -3015,10 +3090,13 @@ impl DeleteGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenOutput {
     /// <p>Token ID.</p>
+    #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
     /// <p>Token type.</p>
+    #[doc(hidden)]
     pub token_type: std::option::Option<crate::model::TokenType>,
     /// <p>Refresh token, encoded as a JWT token.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl CreateTokenOutput {
@@ -3110,10 +3188,13 @@ impl CreateTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseVersionOutput {
     /// <p>License ARN.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>New version of the license.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>License status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
 }
 impl CreateLicenseVersionOutput {
@@ -3205,6 +3286,7 @@ impl CreateLicenseVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseManagerReportGeneratorOutput {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
+    #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl CreateLicenseManagerReportGeneratorOutput {
@@ -3268,6 +3350,7 @@ impl CreateLicenseManagerReportGeneratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConversionTaskForResourceOutput {
     /// <p>The ID of the created license type conversion task.</p>
+    #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
 impl CreateLicenseConversionTaskForResourceOutput {
@@ -3328,6 +3411,7 @@ impl CreateLicenseConversionTaskForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConfigurationOutput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateLicenseConfigurationOutput {
@@ -3385,10 +3469,13 @@ impl CreateLicenseConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
     /// <p>License version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateLicenseOutput {
@@ -3480,10 +3567,13 @@ impl CreateLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantVersionOutput {
     /// <p>Grant ARN.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>New version of the grant.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateGrantVersionOutput {
@@ -3572,10 +3662,13 @@ impl CreateGrantVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantOutput {
     /// <p>Grant ARN.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateGrantOutput {
@@ -3664,20 +3757,28 @@ impl CreateGrantOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutLicenseOutput {
     /// <p>Checkout type.</p>
+    #[doc(hidden)]
     pub checkout_type: std::option::Option<crate::model::CheckoutType>,
     /// <p>License consumption token.</p>
+    #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Allowed license entitlements.</p>
+    #[doc(hidden)]
     pub entitlements_allowed: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
     /// <p>Signed token.</p>
+    #[doc(hidden)]
     pub signed_token: std::option::Option<std::string::String>,
     /// <p>Node ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license checkout is issued.</p>
+    #[doc(hidden)]
     pub issued_at: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license checkout expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
 }
 impl CheckoutLicenseOutput {
@@ -3867,20 +3968,28 @@ impl CheckoutLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutBorrowLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License consumption token.</p>
+    #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Allowed license entitlements.</p>
+    #[doc(hidden)]
     pub entitlements_allowed: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
     /// <p>Node ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>Signed token.</p>
+    #[doc(hidden)]
     pub signed_token: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license checkout is issued.</p>
+    #[doc(hidden)]
     pub issued_at: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license checkout expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Information about constraints.</p>
+    #[doc(hidden)]
     pub checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
 }
 impl CheckoutBorrowLicenseOutput {
@@ -4106,10 +4215,13 @@ impl CheckInLicenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptGrantOutput {
     /// <p>Grant ARN.</p>
+    #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
     /// <p>Grant status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl AcceptGrantOutput {

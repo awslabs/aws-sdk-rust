@@ -7436,12 +7436,16 @@ impl UpdateProjectDataDeliveryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSegmentReferencesInput {
     /// <p>The ARN of the segment that you want to view information for.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SegmentReferenceResourceType>,
 }
 impl ListSegmentReferencesInput {
@@ -7478,8 +7482,10 @@ impl std::fmt::Debug for ListSegmentReferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSegmentsInput {
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSegmentsInput {
@@ -7506,16 +7512,20 @@ impl std::fmt::Debug for ListSegmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSegmentInput {
     /// <p>A name for the segment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>An optional description for this segment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7560,6 +7570,7 @@ impl std::fmt::Debug for CreateSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSegmentInput {
     /// <p>Specifies the segment to delete.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
 }
 impl DeleteSegmentInput {
@@ -7581,6 +7592,7 @@ impl std::fmt::Debug for DeleteSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
 }
 impl GetSegmentInput {
@@ -7602,10 +7614,13 @@ impl std::fmt::Debug for GetSegmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectDataDeliveryInput {
     /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
 }
 impl UpdateProjectDataDeliveryInput {
@@ -7639,8 +7654,10 @@ impl std::fmt::Debug for UpdateProjectDataDeliveryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
     /// <p>The name or ARN of the project to update.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>An optional description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
@@ -7667,8 +7684,10 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProjectEventsInput {
     /// <p>The name or ARN of the project to write the events to.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl PutProjectEventsInput {
@@ -7695,13 +7714,17 @@ impl std::fmt::Debug for PutProjectEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains this feature.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
+    #[doc(hidden)]
     pub evaluation_context: std::option::Option<std::string::String>,
 }
 impl EvaluateFeatureInput {
@@ -7739,8 +7762,10 @@ impl std::fmt::Debug for EvaluateFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
+    #[doc(hidden)]
     pub requests: std::option::Option<std::vec::Vec<crate::model::EvaluationRequest>>,
 }
 impl BatchEvaluateFeatureInput {
@@ -7767,8 +7792,10 @@ impl std::fmt::Debug for BatchEvaluateFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
     /// <p>The maximum number of results to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
@@ -7795,16 +7822,20 @@ impl std::fmt::Debug for ListProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name for the project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the project.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
+    #[doc(hidden)]
     pub data_delivery: std::option::Option<crate::model::ProjectDataDeliveryConfig>,
     /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a project.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7849,6 +7880,7 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The name or ARN of the project to delete.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -7870,6 +7902,7 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProjectInput {
     /// <p>The name or ARN of the project that you want to see the details of.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
 }
 impl GetProjectInput {
@@ -7891,12 +7924,16 @@ impl std::fmt::Debug for GetProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch to stop.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<std::string::String>,
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::LaunchStopDesiredState>,
     /// <p>A string that describes why you are stopping the launch.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopLaunchInput {
@@ -7933,8 +7970,10 @@ impl std::fmt::Debug for StopLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLaunchInput {
     /// <p>The name or ARN of the project that contains the launch to start.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch to start.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<std::string::String>,
 }
 impl StartLaunchInput {
@@ -7961,12 +8000,16 @@ impl std::fmt::Debug for StartLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LaunchStatus>,
 }
 impl ListLaunchesInput {
@@ -8003,24 +8046,32 @@ impl std::fmt::Debug for ListLaunchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchInput {
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name for the new launch.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the launch.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    #[doc(hidden)]
     pub scheduled_splits_config: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    #[doc(hidden)]
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8087,8 +8138,10 @@ impl std::fmt::Debug for CreateLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchInput {
     /// <p>The name or ARN of the project that contains the launch to delete.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch to delete.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchInput {
@@ -8115,18 +8168,25 @@ impl std::fmt::Debug for DeleteLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch that is to be updated.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<std::string::String>,
     /// <p>An optional description for the launch.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    #[doc(hidden)]
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    #[doc(hidden)]
     pub scheduled_splits_config: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
 }
 impl UpdateLaunchInput {
@@ -8180,8 +8240,10 @@ impl std::fmt::Debug for UpdateLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchInput {
     /// <p>The name or ARN of the project that contains the launch.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch that you want to see the details of.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<std::string::String>,
 }
 impl GetLaunchInput {
@@ -8208,10 +8270,13 @@ impl std::fmt::Debug for GetLaunchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFeaturesInput {
     /// <p>The name or ARN of the project to return the feature list from.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFeaturesInput {
@@ -8243,27 +8308,35 @@ impl std::fmt::Debug for ListFeaturesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFeatureInput {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name for the new feature.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+    #[doc(hidden)]
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
+    #[doc(hidden)]
     pub variations: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
+    #[doc(hidden)]
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    #[doc(hidden)]
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8335,8 +8408,10 @@ impl std::fmt::Debug for CreateFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to delete.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature to delete.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
 }
 impl DeleteFeatureInput {
@@ -8363,21 +8438,29 @@ impl std::fmt::Debug for DeleteFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature to be updated.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+    #[doc(hidden)]
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
+    #[doc(hidden)]
     pub add_or_update_variations: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
     /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
+    #[doc(hidden)]
     pub remove_variations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    #[doc(hidden)]
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    #[doc(hidden)]
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8443,8 +8526,10 @@ impl std::fmt::Debug for UpdateFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature that you want to retrieve information for.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<std::string::String>,
 }
 impl GetFeatureInput {
@@ -8471,12 +8556,16 @@ impl std::fmt::Debug for GetFeatureInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to stop.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::ExperimentStopDesiredState>,
     /// <p>A string that describes why you are stopping the experiment.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopExperimentInput {
@@ -8513,10 +8602,13 @@ impl std::fmt::Debug for StopExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to start.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
+    #[doc(hidden)]
     pub analysis_complete_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExperimentInput {
@@ -8548,18 +8640,25 @@ impl std::fmt::Debug for StartExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentResultsInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to retrieve the results of.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
     /// <p>The date and time that the experiment started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
+    #[doc(hidden)]
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
+    #[doc(hidden)]
     pub treatment_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
+    #[doc(hidden)]
     pub base_stat: std::option::Option<crate::model::ExperimentBaseStat>,
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
@@ -8568,10 +8667,13 @@ pub struct GetExperimentResultsInput {
     /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
     /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub result_stats: std::option::Option<std::vec::Vec<crate::model::ExperimentResultRequestType>>,
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
+    #[doc(hidden)]
     pub report_names: std::option::Option<std::vec::Vec<crate::model::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together. </p>
+    #[doc(hidden)]
     pub period: i64,
 }
 impl GetExperimentResultsInput {
@@ -8646,12 +8748,16 @@ impl std::fmt::Debug for GetExperimentResultsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsInput {
     /// <p>The name or ARN of the project to return the experiment list from.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentStatus>,
 }
 impl ListExperimentsInput {
@@ -8688,29 +8794,39 @@ impl std::fmt::Debug for ListExperimentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentInput {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>A name for the new experiment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the experiment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    #[doc(hidden)]
     pub treatments: std::option::Option<std::vec::Vec<crate::model::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    #[doc(hidden)]
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<i64>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    #[doc(hidden)]
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8786,8 +8902,10 @@ impl std::fmt::Debug for CreateExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to delete.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
 }
 impl DeleteExperimentInput {
@@ -8814,25 +8932,35 @@ impl std::fmt::Debug for DeleteExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to update.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
     /// <p>An optional description of the experiment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
+    #[doc(hidden)]
     pub treatments: std::option::Option<std::vec::Vec<crate::model::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    #[doc(hidden)]
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<i64>,
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+    #[doc(hidden)]
     pub remove_segment: bool,
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    #[doc(hidden)]
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
 }
 impl UpdateExperimentInput {
@@ -8900,8 +9028,10 @@ impl std::fmt::Debug for UpdateExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment that you want to see the details of.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<std::string::String>,
 }
 impl GetExperimentInput {
@@ -8928,8 +9058,10 @@ impl std::fmt::Debug for GetExperimentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8956,8 +9088,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestSegmentPatternInput {
     /// <p>The pattern to test.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<std::string::String>,
 }
 impl TestSegmentPatternInput {
@@ -8984,8 +9118,10 @@ impl std::fmt::Debug for TestSegmentPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9016,6 +9152,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource that you want to see the tags of.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

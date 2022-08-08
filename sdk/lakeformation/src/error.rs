@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInputException {
@@ -69,6 +70,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceException {
@@ -133,6 +135,7 @@ impl InternalServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityNotFoundException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityNotFoundException {
@@ -197,6 +200,7 @@ impl EntityNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -261,6 +265,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionCommittedException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransactionCommittedException {
@@ -325,6 +330,7 @@ impl TransactionCommittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionCommitInProgressException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransactionCommitInProgressException {
@@ -389,6 +395,7 @@ impl TransactionCommitInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionCanceledException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TransactionCanceledException {
@@ -453,6 +460,7 @@ impl TransactionCanceledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotReadyException {
@@ -517,6 +525,7 @@ impl ResourceNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationTimeoutException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationTimeoutException {
@@ -581,6 +590,7 @@ impl OperationTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -645,6 +655,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottledException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottledException {
@@ -713,6 +724,7 @@ impl ThrottledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueEncryptionException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlueEncryptionException {
@@ -777,6 +789,7 @@ impl GlueEncryptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNumberLimitExceededException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNumberLimitExceededException {
@@ -841,6 +854,7 @@ impl ResourceNumberLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsException {
@@ -905,6 +919,7 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkUnitsNotReadyYetException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WorkUnitsNotReadyYetException {
@@ -969,6 +984,7 @@ impl WorkUnitsNotReadyYetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredException {
@@ -1033,6 +1049,7 @@ impl ExpiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionTypeMismatchException {
     /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PermissionTypeMismatchException {
@@ -1097,6 +1114,7 @@ impl PermissionTypeMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticsNotReadyYetException {
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StatisticsNotReadyYetException {

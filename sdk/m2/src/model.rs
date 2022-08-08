@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the exception field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The message of the exception field.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,20 +148,28 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
+    #[doc(hidden)]
     pub environment_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a particular runtime environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The instance type of the environment.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The status of the environment</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentLifecycle>,
     /// <p>The target platform for the environment.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The version of the runtime engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The timestamp when the environment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentSummary {
@@ -472,6 +482,7 @@ impl AsRef<str> for EnvironmentLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
+    #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
 }
 impl HighAvailabilityConfig {
@@ -577,8 +588,10 @@ impl StorageConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The mount point for the file system.</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
 }
 impl FsxStorageConfiguration {
@@ -653,8 +666,10 @@ impl FsxStorageConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsStorageConfiguration {
     /// <p>The file system identifier.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The mount point for the file system.</p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
 }
 impl EfsStorageConfiguration {
@@ -729,8 +744,10 @@ impl EfsStorageConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingMaintenance {
     /// <p>The maintenance schedule for the engine version.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::MaintenanceSchedule>,
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
 }
 impl PendingMaintenance {
@@ -808,8 +825,10 @@ impl PendingMaintenance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceSchedule {
     /// <p>The time the scheduled maintenance is to start.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the scheduled maintenance is to end.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MaintenanceSchedule {
@@ -942,6 +961,7 @@ impl BatchJobIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
+    #[doc(hidden)]
     pub script_name: std::option::Option<std::string::String>,
 }
 impl ScriptBatchJobIdentifier {
@@ -996,8 +1016,10 @@ impl ScriptBatchJobIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileBatchJobIdentifier {
     /// <p>The file name for the batch job identifier.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
     /// <p>The relative path to the file name for the batch job identifier.</p>
+    #[doc(hidden)]
     pub folder_path: std::option::Option<std::string::String>,
 }
 impl FileBatchJobIdentifier {
@@ -1069,18 +1091,25 @@ impl FileBatchJobIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentSummary {
     /// <p>The unique identifier of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The current status of the deployment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentLifecycle>,
     /// <p>The timestamp when the deployment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl DeploymentSummary {
@@ -1314,16 +1343,22 @@ impl AsRef<str> for DeploymentLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
     /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    #[doc(hidden)]
     pub data_set_org: std::option::Option<std::string::String>,
     /// <p>The format of the data set. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
     /// <p>The timestamp when the data set was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data set was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
+    #[doc(hidden)]
     pub last_referenced_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DataSetSummary {
@@ -1475,10 +1510,13 @@ impl DataSetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The status of the data set import task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSetTaskLifecycle>,
     /// <p>A summary of the data set import task.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::DataSetImportSummary>,
 }
 impl DataSetImportTask {
@@ -1573,14 +1611,19 @@ impl DataSetImportTask {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetImportSummary {
     /// <p>The total number of data set imports.</p>
+    #[doc(hidden)]
     pub total: i32,
     /// <p>The number of data set imports that have succeeded.</p>
+    #[doc(hidden)]
     pub succeeded: i32,
     /// <p>The number of data set imports that have failed.</p>
+    #[doc(hidden)]
     pub failed: i32,
     /// <p>The number of data set imports that are pending.</p>
+    #[doc(hidden)]
     pub pending: i32,
     /// <p>The number of data set imports that are in progress.</p>
+    #[doc(hidden)]
     pub in_progress: i32,
 }
 impl DataSetImportSummary {
@@ -1762,20 +1805,28 @@ impl AsRef<str> for DataSetTaskLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchJobExecutionSummary {
     /// <p>The unique identifier of this execution of the batch job.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application that hosts this batch job.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a particular batch job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of a particular batch job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The type of a particular batch job execution.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::BatchJobType>,
     /// <p>The status of a particular batch job execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BatchJobExecutionStatus>,
     /// <p>The timestamp when a particular batch job execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when this batch job execution ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchJobExecutionSummary {
@@ -2171,6 +2222,7 @@ impl BatchJobDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
+    #[doc(hidden)]
     pub script_name: std::option::Option<std::string::String>,
 }
 impl ScriptBatchJobDefinition {
@@ -2225,8 +2277,10 @@ impl ScriptBatchJobDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
     /// <p>The path to the file containing the batch job definition.</p>
+    #[doc(hidden)]
     pub folder_path: std::option::Option<std::string::String>,
 }
 impl FileBatchJobDefinition {
@@ -2298,12 +2352,16 @@ impl FileBatchJobDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationVersionSummary {
     /// <p>The application version.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationVersionLifecycle>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The timestamp when the application version was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationVersionSummary {
@@ -2528,8 +2586,10 @@ impl DatasetDetailOrgAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GdgDetailAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The disposition of the data set in the catalog.</p>
+    #[doc(hidden)]
     pub roll_disposition: std::option::Option<std::string::String>,
 }
 impl GdgDetailAttributes {
@@ -2604,16 +2664,22 @@ impl GdgDetailAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VsamDetailAttributes {
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
+    #[doc(hidden)]
     pub encoding: std::option::Option<std::string::String>,
     /// <p>The record format of the data set.</p>
+    #[doc(hidden)]
     pub record_format: std::option::Option<std::string::String>,
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
+    #[doc(hidden)]
     pub compressed: std::option::Option<bool>,
     /// <p>If set to True, enforces loading the data set into cache before it’s used by the application.</p>
+    #[doc(hidden)]
     pub cache_at_startup: std::option::Option<bool>,
     /// <p>The primary key of the data set.</p>
+    #[doc(hidden)]
     pub primary_key: std::option::Option<crate::model::PrimaryKey>,
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
+    #[doc(hidden)]
     pub alternate_keys: std::option::Option<std::vec::Vec<crate::model::AlternateKey>>,
 }
 impl VsamDetailAttributes {
@@ -2768,12 +2834,16 @@ impl VsamDetailAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlternateKey {
     /// <p>The name of the alternate key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
+    #[doc(hidden)]
     pub offset: i32,
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
+    #[doc(hidden)]
     pub length: i32,
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
+    #[doc(hidden)]
     pub allow_duplicates: bool,
 }
 impl AlternateKey {
@@ -2879,10 +2949,13 @@ impl AlternateKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrimaryKey {
     /// <p>A name for the Primary Key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
+    #[doc(hidden)]
     pub offset: i32,
     /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    #[doc(hidden)]
     pub length: i32,
 }
 impl PrimaryKey {
@@ -3024,8 +3097,10 @@ impl DataSetImportConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSetImportItem {
     /// <p>The data set.</p>
+    #[doc(hidden)]
     pub data_set: std::option::Option<crate::model::DataSet>,
     /// <p>The location of the data set.</p>
+    #[doc(hidden)]
     pub external_location: std::option::Option<crate::model::ExternalLocation>,
 }
 impl DataSetImportItem {
@@ -3137,14 +3212,19 @@ impl ExternalLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSet {
     /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.</p>
+    #[doc(hidden)]
     pub dataset_org: std::option::Option<crate::model::DatasetOrgAttributes>,
     /// <p>The relative location of the data set in the database or file system. </p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
     /// <p>The length of a record.</p>
+    #[doc(hidden)]
     pub record_length: std::option::Option<crate::model::RecordLength>,
 }
 impl DataSet {
@@ -3276,8 +3356,10 @@ impl DataSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordLength {
     /// <p>The minimum record length of a record.</p>
+    #[doc(hidden)]
     pub min: i32,
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
+    #[doc(hidden)]
     pub max: i32,
 }
 impl RecordLength {
@@ -3400,8 +3482,10 @@ impl DatasetOrgAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GdgAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The disposition of the data set in the catalog.</p>
+    #[doc(hidden)]
     pub roll_disposition: std::option::Option<std::string::String>,
 }
 impl GdgAttributes {
@@ -3476,14 +3560,19 @@ impl GdgAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VsamAttributes {
     /// <p>The record format of the data set.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
+    #[doc(hidden)]
     pub encoding: std::option::Option<std::string::String>,
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
+    #[doc(hidden)]
     pub compressed: bool,
     /// <p>The primary key of the data set.</p>
+    #[doc(hidden)]
     pub primary_key: std::option::Option<crate::model::PrimaryKey>,
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
+    #[doc(hidden)]
     pub alternate_keys: std::option::Option<std::vec::Vec<crate::model::AlternateKey>>,
 }
 impl VsamAttributes {
@@ -3618,28 +3707,40 @@ impl VsamAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationLifecycle>,
     /// <p>The type of the target platform for this application.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The timestamp when the application was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    #[doc(hidden)]
     pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the latest version of the application.</p>
+    #[doc(hidden)]
     pub version_status: std::option::Option<crate::model::ApplicationVersionLifecycle>,
     /// <p>Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::ApplicationDeploymentLifecycle>,
 }
 impl ApplicationSummary {
@@ -4120,8 +4221,10 @@ impl Definition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogGroupSummary {
     /// <p>The type of log.</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<std::string::String>,
     /// <p>The name of the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl LogGroupSummary {
@@ -4196,10 +4299,13 @@ impl LogGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
+    #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
     /// <p>The status of the deployment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentLifecycle>,
     /// <p>The reason for the reported status.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl DeployedVersionSummary {
@@ -4294,8 +4400,10 @@ impl DeployedVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<std::string::String>,
     /// <p>The version of the engine type used by the application.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
 }
 impl EngineVersionsSummary {

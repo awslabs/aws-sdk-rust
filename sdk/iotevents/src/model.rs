@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputConfiguration {
     /// <p>The name of the input.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>A brief description of the input.</p>
+    #[doc(hidden)]
     pub input_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the input.</p>
+    #[doc(hidden)]
     pub input_arn: std::option::Option<std::string::String>,
     /// <p>The time the input was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the input was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the input.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InputStatus>,
 }
 impl InputConfiguration {
@@ -226,6 +232,7 @@ impl AsRef<str> for InputStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDefinition {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl InputDefinition {
@@ -296,6 +303,7 @@ pub struct Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
 }
 impl Attribute {
@@ -371,25 +379,35 @@ impl Attribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorModelConfiguration {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_version: std::option::Option<std::string::String>,
     /// <p>A brief description of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the detector model was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the detector model was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the detector model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorModelVersionStatus>,
     /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    #[doc(hidden)]
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl DetectorModelConfiguration {
@@ -765,8 +783,10 @@ impl AsRef<str> for DetectorModelVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorModelDefinition {
     /// <p>Information about the states of the detector.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::State>>,
     /// <p>The state that is entered at the creation of each detector (instance).</p>
+    #[doc(hidden)]
     pub initial_state_name: std::option::Option<std::string::String>,
 }
 impl DetectorModelDefinition {
@@ -850,12 +870,16 @@ impl DetectorModelDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct State {
     /// <p>The name of the state.</p>
+    #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
+    #[doc(hidden)]
     pub on_input: std::option::Option<crate::model::OnInputLifecycle>,
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
+    #[doc(hidden)]
     pub on_enter: std::option::Option<crate::model::OnEnterLifecycle>,
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
+    #[doc(hidden)]
     pub on_exit: std::option::Option<crate::model::OnExitLifecycle>,
 }
 impl State {
@@ -970,6 +994,7 @@ impl State {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnExitLifecycle {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl OnExitLifecycle {
@@ -1033,10 +1058,13 @@ impl OnExitLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The name of the event.</p>
+    #[doc(hidden)]
     pub event_name: std::option::Option<std::string::String>,
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
     /// <p>The actions to be performed.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl Event {
@@ -1134,30 +1162,43 @@ impl Event {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>Sets a variable to a specified value.</p>
+    #[doc(hidden)]
     pub set_variable: std::option::Option<crate::model::SetVariableAction>,
     /// <p>Sends an Amazon SNS message.</p>
+    #[doc(hidden)]
     pub sns: std::option::Option<crate::model::SnsTopicPublishAction>,
     /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
+    #[doc(hidden)]
     pub iot_topic_publish: std::option::Option<crate::model::IotTopicPublishAction>,
     /// <p>Information needed to set the timer.</p>
+    #[doc(hidden)]
     pub set_timer: std::option::Option<crate::model::SetTimerAction>,
     /// <p>Information needed to clear the timer.</p>
+    #[doc(hidden)]
     pub clear_timer: std::option::Option<crate::model::ClearTimerAction>,
     /// <p>Information needed to reset the timer.</p>
+    #[doc(hidden)]
     pub reset_timer: std::option::Option<crate::model::ResetTimerAction>,
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaAction>,
     /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the event that triggered the action.</p>
+    #[doc(hidden)]
     pub iot_events: std::option::Option<crate::model::IotEventsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub sqs: std::option::Option<crate::model::SqsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::FirehoseAction>,
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub dynamo_db: std::option::Option<crate::model::DynamoDbAction>,
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub dynamo_d_bv2: std::option::Option<crate::model::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
+    #[doc(hidden)]
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
 }
 impl Action {
@@ -1461,14 +1502,19 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseAction {
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
+    #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset that has the specified property.</p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
     /// <p>The alias of the asset property.</p>
+    #[doc(hidden)]
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
+    #[doc(hidden)]
     pub property_value: std::option::Option<crate::model::AssetPropertyValue>,
 }
 impl IotSiteWiseAction {
@@ -1604,10 +1650,13 @@ impl IotSiteWiseAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyValue {
     /// <p>The value to send to an asset property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::AssetPropertyVariant>,
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::AssetPropertyTimestamp>,
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
+    #[doc(hidden)]
     pub quality: std::option::Option<std::string::String>,
 }
 impl AssetPropertyValue {
@@ -1710,8 +1759,10 @@ impl AssetPropertyValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyTimestamp {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
+    #[doc(hidden)]
     pub time_in_seconds: std::option::Option<std::string::String>,
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
+    #[doc(hidden)]
     pub offset_in_nanos: std::option::Option<std::string::String>,
 }
 impl AssetPropertyTimestamp {
@@ -1798,12 +1849,16 @@ impl AssetPropertyTimestamp {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyVariant {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<std::string::String>,
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
+    #[doc(hidden)]
     pub double_value: std::option::Option<std::string::String>,
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
+    #[doc(hidden)]
     pub boolean_value: std::option::Option<std::string::String>,
 }
 impl AssetPropertyVariant {
@@ -1925,9 +1980,11 @@ impl AssetPropertyVariant {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDBv2Action {
     /// <p>The name of the DynamoDB table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl DynamoDBv2Action {
@@ -2011,8 +2068,10 @@ pub struct Payload {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
+    #[doc(hidden)]
     pub content_expression: std::option::Option<std::string::String>,
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PayloadType>,
 }
 impl Payload {
@@ -2184,10 +2243,13 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The hash key is a number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
+    #[doc(hidden)]
     pub hash_key_type: std::option::Option<std::string::String>,
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
+    #[doc(hidden)]
     pub hash_key_field: std::option::Option<std::string::String>,
     /// <p>The value of the hash key (also called the partition key).</p>
+    #[doc(hidden)]
     pub hash_key_value: std::option::Option<std::string::String>,
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
@@ -2195,10 +2257,13 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The range key is number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
+    #[doc(hidden)]
     pub range_key_type: std::option::Option<std::string::String>,
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
+    #[doc(hidden)]
     pub range_key_field: std::option::Option<std::string::String>,
     /// <p>The value of the range key (also called the sort key).</p>
+    #[doc(hidden)]
     pub range_key_value: std::option::Option<std::string::String>,
     /// <p>The type of operation to perform. You can specify the following values: </p>
     /// <ul>
@@ -2207,14 +2272,18 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
+    #[doc(hidden)]
     pub payload_field: std::option::Option<std::string::String>,
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl DynamoDbAction {
@@ -2497,10 +2566,13 @@ impl DynamoDbAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirehoseAction {
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
+    #[doc(hidden)]
     pub separator: std::option::Option<std::string::String>,
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl FirehoseAction {
@@ -2592,10 +2664,13 @@ impl FirehoseAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsAction {
     /// <p>The URL of the SQS queue where the data is written.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
+    #[doc(hidden)]
     pub use_base64: std::option::Option<bool>,
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl SqsAction {
@@ -2684,8 +2759,10 @@ impl SqsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl IotEventsAction {
@@ -2757,8 +2834,10 @@ impl IotEventsAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function that is executed.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl LambdaAction {
@@ -2830,6 +2909,7 @@ impl LambdaAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
+    #[doc(hidden)]
     pub timer_name: std::option::Option<std::string::String>,
 }
 impl ResetTimerAction {
@@ -2884,6 +2964,7 @@ impl ResetTimerAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
+    #[doc(hidden)]
     pub timer_name: std::option::Option<std::string::String>,
 }
 impl ClearTimerAction {
@@ -2938,11 +3019,13 @@ impl ClearTimerAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
+    #[doc(hidden)]
     pub timer_name: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
+    #[doc(hidden)]
     pub seconds: std::option::Option<i32>,
     /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
     /// <variable-name></variable-name></code>), and input values (<code>$input.
@@ -2950,6 +3033,7 @@ pub struct SetTimerAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    #[doc(hidden)]
     pub duration_expression: std::option::Option<std::string::String>,
 }
 impl SetTimerAction {
@@ -3070,8 +3154,10 @@ pub struct IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
+    #[doc(hidden)]
     pub mqtt_topic: std::option::Option<std::string::String>,
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl IotTopicPublishAction {
@@ -3158,8 +3244,10 @@ impl IotTopicPublishAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<crate::model::Payload>,
 }
 impl SnsTopicPublishAction {
@@ -3231,8 +3319,10 @@ impl SnsTopicPublishAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetVariableAction {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub variable_name: std::option::Option<std::string::String>,
     /// <p>The new value of the variable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SetVariableAction {
@@ -3307,6 +3397,7 @@ impl SetVariableAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl OnEnterLifecycle {
@@ -3370,8 +3461,10 @@ impl OnEnterLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
+    #[doc(hidden)]
     pub transition_events: std::option::Option<std::vec::Vec<crate::model::TransitionEvent>>,
 }
 impl OnInputLifecycle {
@@ -3462,12 +3555,16 @@ impl OnInputLifecycle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransitionEvent {
     /// <p>The name of the transition event.</p>
+    #[doc(hidden)]
     pub event_name: std::option::Option<std::string::String>,
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
     /// <p>The actions to be performed.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The next state to enter.</p>
+    #[doc(hidden)]
     pub next_state: std::option::Option<std::string::String>,
 }
 impl TransitionEvent {
@@ -3645,9 +3742,11 @@ impl AsRef<str> for AlarmModelVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmCapabilities {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
+    #[doc(hidden)]
     pub initialization_configuration:
         std::option::Option<crate::model::InitializationConfiguration>,
     /// <p>Specifies whether to get notified for alarm state changes.</p>
+    #[doc(hidden)]
     pub acknowledge_flow: std::option::Option<crate::model::AcknowledgeFlow>,
 }
 impl AlarmCapabilities {
@@ -3734,6 +3833,7 @@ impl AlarmCapabilities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeFlow {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl AcknowledgeFlow {
@@ -3788,6 +3888,7 @@ impl AcknowledgeFlow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
+    #[doc(hidden)]
     pub disabled_on_initialization: std::option::Option<bool>,
 }
 impl InitializationConfiguration {
@@ -3845,6 +3946,7 @@ impl InitializationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
+    #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<crate::model::AlarmAction>>,
 }
 impl AlarmEventActions {
@@ -3908,16 +4010,22 @@ impl AlarmEventActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmAction {
     /// <p>Information required to publish the Amazon SNS message.</p>
+    #[doc(hidden)]
     pub sns: std::option::Option<crate::model::SnsTopicPublishAction>,
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
+    #[doc(hidden)]
     pub iot_topic_publish: std::option::Option<crate::model::IotTopicPublishAction>,
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaAction>,
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
+    #[doc(hidden)]
     pub iot_events: std::option::Option<crate::model::IotEventsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
+    #[doc(hidden)]
     pub sqs: std::option::Option<crate::model::SqsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::FirehoseAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
@@ -3933,6 +4041,7 @@ pub struct AlarmAction {
     /// <payload-field>
     /// _raw
     /// </payload-field></code>.</p>
+    #[doc(hidden)]
     pub dynamo_db: std::option::Option<crate::model::DynamoDbAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
@@ -3945,6 +4054,7 @@ pub struct AlarmAction {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
+    #[doc(hidden)]
     pub dynamo_d_bv2: std::option::Option<crate::model::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
     /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p>
@@ -3956,6 +4066,7 @@ pub struct AlarmAction {
     /// </ul>
     /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
 }
 impl AlarmAction {
@@ -4266,6 +4377,7 @@ impl AlarmAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
+    #[doc(hidden)]
     pub notification_actions: std::option::Option<std::vec::Vec<crate::model::NotificationAction>>,
 }
 impl AlarmNotification {
@@ -4330,10 +4442,13 @@ impl AlarmNotification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationAction {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::NotificationTargetActions>,
     /// <p>Contains the configuration information of SMS notifications.</p>
+    #[doc(hidden)]
     pub sms_configurations: std::option::Option<std::vec::Vec<crate::model::SmsConfiguration>>,
     /// <p>Contains the configuration information of email notifications.</p>
+    #[doc(hidden)]
     pub email_configurations: std::option::Option<std::vec::Vec<crate::model::EmailConfiguration>>,
 }
 impl NotificationAction {
@@ -4447,12 +4562,15 @@ pub struct EmailConfiguration {
     /// <p>The email address that sends emails.</p> <important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
     /// <p>Contains the subject and message of an email.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::EmailContent>,
     /// <p>Contains the information of one or more recipients who receive the emails.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub recipients: std::option::Option<crate::model::EmailRecipients>,
 }
 impl EmailConfiguration {
@@ -4561,6 +4679,7 @@ impl EmailConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
+    #[doc(hidden)]
     pub to: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
 }
 impl EmailRecipients {
@@ -4622,6 +4741,7 @@ impl EmailRecipients {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
+    #[doc(hidden)]
     pub sso_identity: std::option::Option<crate::model::SsoIdentity>,
 }
 impl RecipientDetail {
@@ -4679,8 +4799,10 @@ impl RecipientDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
+    #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl SsoIdentity {
@@ -4755,8 +4877,10 @@ impl SsoIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailContent {
     /// <p>The subject of the email.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    #[doc(hidden)]
     pub additional_message: std::option::Option<std::string::String>,
 }
 impl EmailContent {
@@ -4831,12 +4955,15 @@ impl EmailContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmsConfiguration {
     /// <p>The sender ID.</p>
+    #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    #[doc(hidden)]
     pub additional_message: std::option::Option<std::string::String>,
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub recipients: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
 }
 impl SmsConfiguration {
@@ -4943,6 +5070,7 @@ impl SmsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    #[doc(hidden)]
     pub lambda_action: std::option::Option<crate::model::LambdaAction>,
 }
 impl NotificationTargetActions {
@@ -5000,6 +5128,7 @@ impl NotificationTargetActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
+    #[doc(hidden)]
     pub simple_rule: std::option::Option<crate::model::SimpleRule>,
 }
 impl AlarmRule {
@@ -5057,10 +5186,13 @@ impl AlarmRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimpleRule {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
+    #[doc(hidden)]
     pub input_property: std::option::Option<std::string::String>,
     /// <p>The comparison operator.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<std::string::String>,
 }
 impl SimpleRule {
@@ -5233,8 +5365,10 @@ impl AsRef<str> for ComparisonOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -5306,12 +5440,16 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The logging level.</p>
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::LoggingLevel>,
     /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
+    #[doc(hidden)]
     pub detector_debug_options:
         std::option::Option<std::vec::Vec<crate::model::DetectorDebugOption>>,
 }
@@ -5430,8 +5568,10 @@ impl LoggingOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorDebugOption {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DetectorDebugOption {
@@ -5565,16 +5705,22 @@ impl AsRef<str> for LoggingLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSummary {
     /// <p>The name of the input.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>A brief description of the input.</p>
+    #[doc(hidden)]
     pub input_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the input.</p>
+    #[doc(hidden)]
     pub input_arn: std::option::Option<std::string::String>,
     /// <p>The time the input was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the input was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the input.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InputStatus>,
 }
 impl InputSummary {
@@ -5723,8 +5869,10 @@ impl InputSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutedResource {
     /// <p> The name of the routed resource. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RoutedResource {
@@ -5796,8 +5944,10 @@ impl RoutedResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputIdentifier {
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
+    #[doc(hidden)]
     pub iot_events_input_identifier: std::option::Option<crate::model::IotEventsInputIdentifier>,
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
+    #[doc(hidden)]
     pub iot_site_wise_input_identifier:
         std::option::Option<crate::model::IotSiteWiseInputIdentifier>,
 }
@@ -5894,6 +6044,7 @@ impl InputIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseInputIdentifier {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
+    #[doc(hidden)]
     pub iot_site_wise_asset_model_property_identifier:
         std::option::Option<crate::model::IotSiteWiseAssetModelPropertyIdentifier>,
 }
@@ -5962,8 +6113,10 @@ impl IotSiteWiseInputIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseAssetModelPropertyIdentifier {
     /// <p> The ID of the AWS IoT SiteWise asset model. </p>
+    #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
+    #[doc(hidden)]
     pub property_id: std::option::Option<std::string::String>,
 }
 impl IotSiteWiseAssetModelPropertyIdentifier {
@@ -6038,6 +6191,7 @@ impl IotSiteWiseAssetModelPropertyIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
 }
 impl IotEventsInputIdentifier {
@@ -6092,20 +6246,28 @@ impl IotEventsInputIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorModelVersionSummary {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The ID of the detector model version.</p>
+    #[doc(hidden)]
     pub detector_model_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the detector model version.</p>
+    #[doc(hidden)]
     pub detector_model_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the detector model version was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the detector model version was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the detector model version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorModelVersionStatus>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    #[doc(hidden)]
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl DetectorModelVersionSummary {
@@ -6300,10 +6462,13 @@ impl DetectorModelVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorModelSummary {
     /// <p>The name of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>A brief description of the detector model.</p>
+    #[doc(hidden)]
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The time the detector model was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DetectorModelSummary {
@@ -6404,16 +6569,22 @@ impl DetectorModelSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmModelVersionSummary {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -6422,8 +6593,10 @@ pub struct AlarmModelVersionSummary {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
     /// <p> Contains information about the status of the alarm model version. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl AlarmModelVersionSummary {
@@ -6636,10 +6809,13 @@ impl AlarmModelVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmModelSummary {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
 }
 impl AlarmModelSummary {
@@ -6747,6 +6923,7 @@ pub struct AnalysisResult {
     /// <li> <p> <code>referenced-resource</code> - Resources that the detector model uses must be available.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The severity level of the analysis result. Based on the severity level, analysis results fall into three general categories:</p>
     /// <ul>
@@ -6754,10 +6931,13 @@ pub struct AnalysisResult {
     /// <li> <p> <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model. We recommend that you review warnings and take necessary actions before you use your detector model in production environments. Otherwise, the detector model might not work as expected.</p> </li>
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::AnalysisResultLevel>,
     /// <p>Contains additional information about the analysis result.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
+    #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::AnalysisResultLocation>>,
 }
 impl AnalysisResult {
@@ -6921,6 +7101,7 @@ impl AnalysisResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisResultLocation {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl AnalysisResultLocation {
@@ -7032,8 +7213,10 @@ impl AsRef<str> for AnalysisResultLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Input {
     /// <p>Information about the configuration of an input.</p>
+    #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
     /// <p>The definition of the input.</p>
+    #[doc(hidden)]
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
 }
 impl Input {
@@ -7170,8 +7353,10 @@ impl AsRef<str> for AnalysisStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorModel {
     /// <p>Information that defines how a detector operates.</p>
+    #[doc(hidden)]
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
     /// <p>Information about how the detector is configured.</p>
+    #[doc(hidden)]
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
 }
 impl DetectorModel {

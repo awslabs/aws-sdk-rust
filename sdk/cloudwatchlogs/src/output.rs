@@ -34,6 +34,7 @@ impl UntagLogGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestMetricFilterOutput {
     /// <p>The matched events.</p>
+    #[doc(hidden)]
     pub matches: std::option::Option<std::vec::Vec<crate::model::MetricFilterMatchRecord>>,
 }
 impl TestMetricFilterOutput {
@@ -128,6 +129,7 @@ impl TagLogGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopQueryOutput {
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
+    #[doc(hidden)]
     pub success: bool,
 }
 impl StopQueryOutput {
@@ -182,6 +184,7 @@ impl StopQueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryOutput {
     /// <p>The unique ID of the query. </p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl StartQueryOutput {
@@ -296,6 +299,7 @@ impl PutRetentionPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The new policy.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutResourcePolicyOutput {
@@ -353,6 +357,7 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutQueryDefinitionOutput {
     /// <p>The ID of the query definition.</p>
+    #[doc(hidden)]
     pub query_definition_id: std::option::Option<std::string::String>,
 }
 impl PutQueryDefinitionOutput {
@@ -440,8 +445,10 @@ impl PutMetricFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLogEventsOutput {
     /// <p>The next sequence token.</p>
+    #[doc(hidden)]
     pub next_sequence_token: std::option::Option<std::string::String>,
     /// <p>The rejected events.</p>
+    #[doc(hidden)]
     pub rejected_log_events_info: std::option::Option<crate::model::RejectedLogEventsInfo>,
 }
 impl PutLogEventsOutput {
@@ -555,6 +562,7 @@ impl PutDestinationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDestinationOutput {
     /// <p>The destination.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
 }
 impl PutDestinationOutput {
@@ -612,6 +620,7 @@ impl PutDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsLogGroupOutput {
     /// <p>The tags for the log group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -686,11 +695,14 @@ impl ListTagsLogGroupOutput {
 pub struct GetQueryResultsOutput {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::ResultField>>>,
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::QueryStatistics>,
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueryStatus>,
 }
 impl GetQueryResultsOutput {
@@ -798,6 +810,7 @@ impl GetQueryResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogRecordOutput {
     /// <p>The requested log event, as a JSON string.</p>
+    #[doc(hidden)]
     pub log_record:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -873,6 +886,7 @@ impl GetLogRecordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogGroupFieldsOutput {
     /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
+    #[doc(hidden)]
     pub log_group_fields: std::option::Option<std::vec::Vec<crate::model::LogGroupField>>,
 }
 impl GetLogGroupFieldsOutput {
@@ -937,10 +951,13 @@ impl GetLogGroupFieldsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogEventsOutput {
     /// <p>The events.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::OutputLogEvent>>,
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
+    #[doc(hidden)]
     pub next_forward_token: std::option::Option<std::string::String>,
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
+    #[doc(hidden)]
     pub next_backward_token: std::option::Option<std::string::String>,
 }
 impl GetLogEventsOutput {
@@ -1044,11 +1061,14 @@ impl GetLogEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterLogEventsOutput {
     /// <p>The matched events.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::FilteredLogEvent>>,
     /// <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
+    #[doc(hidden)]
     pub searched_log_streams: std::option::Option<std::vec::Vec<crate::model::SearchedLogStream>>,
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl FilterLogEventsOutput {
@@ -1189,8 +1209,10 @@ impl DisassociateKmsKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscriptionFiltersOutput {
     /// <p>The subscription filters.</p>
+    #[doc(hidden)]
     pub subscription_filters: std::option::Option<std::vec::Vec<crate::model::SubscriptionFilter>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubscriptionFiltersOutput {
@@ -1272,8 +1294,10 @@ impl DescribeSubscriptionFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePoliciesOutput {
     /// <p>The resource policies that exist in this account.</p>
+    #[doc(hidden)]
     pub resource_policies: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePoliciesOutput {
@@ -1355,8 +1379,10 @@ impl DescribeResourcePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQueryDefinitionsOutput {
     /// <p>The list of query definitions that match your request.</p>
+    #[doc(hidden)]
     pub query_definitions: std::option::Option<std::vec::Vec<crate::model::QueryDefinition>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeQueryDefinitionsOutput {
@@ -1438,8 +1464,10 @@ impl DescribeQueryDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQueriesOutput {
     /// <p>The list of queries that match the request.</p>
+    #[doc(hidden)]
     pub queries: std::option::Option<std::vec::Vec<crate::model::QueryInfo>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeQueriesOutput {
@@ -1520,8 +1548,10 @@ impl DescribeQueriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricFiltersOutput {
     /// <p>The metric filters.</p>
+    #[doc(hidden)]
     pub metric_filters: std::option::Option<std::vec::Vec<crate::model::MetricFilter>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMetricFiltersOutput {
@@ -1602,8 +1632,10 @@ impl DescribeMetricFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLogStreamsOutput {
     /// <p>The log streams.</p>
+    #[doc(hidden)]
     pub log_streams: std::option::Option<std::vec::Vec<crate::model::LogStream>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLogStreamsOutput {
@@ -1685,8 +1717,10 @@ impl DescribeLogStreamsOutput {
 pub struct DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
+    #[doc(hidden)]
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLogGroupsOutput {
@@ -1770,8 +1804,10 @@ impl DescribeLogGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportTasksOutput {
     /// <p>The export tasks.</p>
+    #[doc(hidden)]
     pub export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportTasksOutput {
@@ -1852,8 +1888,10 @@ impl DescribeExportTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDestinationsOutput {
     /// <p>The destinations.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDestinationsOutput {
@@ -2024,6 +2062,7 @@ impl DeleteResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryDefinitionOutput {
     /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
+    #[doc(hidden)]
     pub success: bool,
 }
 impl DeleteQueryDefinitionOutput {
@@ -2258,6 +2297,7 @@ impl CreateLogGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExportTaskOutput {
     /// <p>The ID of the export task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CreateExportTaskOutput {

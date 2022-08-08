@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
+    #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
     /// <p>Any validation warnings that were found.</p>
+    #[doc(hidden)]
     pub validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors.</p>
+    #[doc(hidden)]
     pub errored: bool,
 }
 impl ValidatePipelineDefinitionOutput {
@@ -177,6 +180,7 @@ impl SetStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
+    #[doc(hidden)]
     pub terminate: bool,
 }
 impl ReportTaskRunnerHeartbeatOutput {
@@ -231,6 +235,7 @@ impl ReportTaskRunnerHeartbeatOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
+    #[doc(hidden)]
     pub canceled: bool,
 }
 impl ReportTaskProgressOutput {
@@ -315,10 +320,13 @@ impl RemoveTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
+    #[doc(hidden)]
     pub has_more_results: bool,
 }
 impl QueryObjectsOutput {
@@ -416,10 +424,13 @@ impl QueryObjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    #[doc(hidden)]
     pub validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    #[doc(hidden)]
     pub errored: bool,
 }
 impl PutPipelineDefinitionOutput {
@@ -528,6 +539,7 @@ impl PutPipelineDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
+    #[doc(hidden)]
     pub task_object: std::option::Option<crate::model::TaskObject>,
 }
 impl PollForTaskOutput {
@@ -585,10 +597,13 @@ impl PollForTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
+    #[doc(hidden)]
     pub pipeline_id_list: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
+    #[doc(hidden)]
     pub has_more_results: bool,
 }
 impl ListPipelinesOutput {
@@ -687,10 +702,13 @@ impl ListPipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The parameter objects used in the pipeline definition.</p>
+    #[doc(hidden)]
     pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used in the pipeline definition.</p>
+    #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
 impl GetPipelineDefinitionOutput {
@@ -809,6 +827,7 @@ impl GetPipelineDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
+    #[doc(hidden)]
     pub evaluated_expression: std::option::Option<std::string::String>,
 }
 impl EvaluateExpressionOutput {
@@ -866,6 +885,7 @@ impl EvaluateExpressionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
+    #[doc(hidden)]
     pub pipeline_description_list:
         std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
 }
@@ -936,10 +956,13 @@ impl DescribePipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
+    #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
+    #[doc(hidden)]
     pub has_more_results: bool,
 }
 impl DescribeObjectsOutput {
@@ -1098,6 +1121,7 @@ impl DeactivatePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl CreatePipelineOutput {

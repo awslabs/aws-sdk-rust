@@ -71,8 +71,10 @@ impl AsRef<str> for ConnectorState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityUpdate {
     /// <p>The target auto scaling setting.</p>
+    #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScalingUpdate>,
     /// <p>The target settings for provisioned capacity.</p>
+    #[doc(hidden)]
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityUpdate>,
 }
 impl CapacityUpdate {
@@ -156,8 +158,10 @@ impl CapacityUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedCapacityUpdate {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
+    #[doc(hidden)]
     pub worker_count: i32,
 }
 impl ProvisionedCapacityUpdate {
@@ -229,14 +233,19 @@ impl ProvisionedCapacityUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingUpdate {
     /// <p>The target maximum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub max_worker_count: i32,
     /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The target minimum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub min_worker_count: i32,
     /// <p>The target sacle-in policy for the connector.</p>
+    #[doc(hidden)]
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicyUpdate>,
     /// <p>The target sacle-out policy for the connector.</p>
+    #[doc(hidden)]
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicyUpdate>,
 }
 impl AutoScalingUpdate {
@@ -365,6 +374,7 @@ impl AutoScalingUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleOutPolicyUpdate {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleOutPolicyUpdate {
@@ -422,6 +432,7 @@ impl ScaleOutPolicyUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleInPolicyUpdate {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleInPolicyUpdate {
@@ -479,14 +490,19 @@ impl ScaleInPolicyUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerConfigurationSummary {
     /// <p>The time that a worker configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of a worker configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The latest revision of a worker configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
     /// <p>The name of the worker configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl WorkerConfigurationSummary {
@@ -624,10 +640,13 @@ impl WorkerConfigurationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerConfigurationRevisionSummary {
     /// <p>The time that a worker configuration revision was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of a worker configuration revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision of a worker configuration.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl WorkerConfigurationRevisionSummary {
@@ -719,16 +738,22 @@ impl WorkerConfigurationRevisionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginSummary {
     /// <p>The time that the custom plugin was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The state of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
     /// <p>A description of the custom plugin.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The latest revision of the custom plugin.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
     /// <p>The name of the custom plugin.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CustomPluginSummary {
@@ -882,16 +907,22 @@ impl CustomPluginSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginRevisionSummary {
     /// <p>The format of the plugin file.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::CustomPluginContentType>,
     /// <p>The time that the custom plugin was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the custom plugin.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Details about the custom plugin file.</p>
+    #[doc(hidden)]
     pub file_description: std::option::Option<crate::model::CustomPluginFileDescription>,
     /// <p>Information about the location of the custom plugin.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::CustomPluginLocationDescription>,
     /// <p>The revision of the custom plugin.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPluginRevisionSummary {
@@ -1048,6 +1079,7 @@ impl CustomPluginRevisionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3LocationDescription>,
 }
 impl CustomPluginLocationDescription {
@@ -1105,10 +1137,13 @@ impl CustomPluginLocationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LocationDescription {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The file key for an object in an S3 bucket.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of an object in an S3 bucket.</p>
+    #[doc(hidden)]
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3LocationDescription {
@@ -1200,8 +1235,10 @@ impl S3LocationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginFileDescription {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
+    #[doc(hidden)]
     pub file_md5: std::option::Option<std::string::String>,
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
+    #[doc(hidden)]
     pub file_size: i64,
 }
 impl CustomPluginFileDescription {
@@ -1406,36 +1443,51 @@ impl AsRef<str> for CustomPluginState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorSummary {
     /// <p>The connector's compute capacity settings.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<crate::model::CapacityDescription>,
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The description of the connector.</p>
+    #[doc(hidden)]
     pub connector_description: std::option::Option<std::string::String>,
     /// <p>The name of the connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>The state of the connector.</p>
+    #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
     /// <p>The time that the connector was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current version of the connector.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
+    #[doc(hidden)]
     pub kafka_cluster: std::option::Option<crate::model::KafkaClusterDescription>,
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
+    #[doc(hidden)]
     pub kafka_cluster_client_authentication:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit:
         std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    #[doc(hidden)]
     pub kafka_connect_version: std::option::Option<std::string::String>,
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_delivery: std::option::Option<crate::model::LogDeliveryDescription>,
     /// <p>Specifies which plugins were used for this connector.</p>
+    #[doc(hidden)]
     pub plugins: std::option::Option<std::vec::Vec<crate::model::PluginDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
+    #[doc(hidden)]
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The worker configurations that are in use with the connector.</p>
+    #[doc(hidden)]
     pub worker_configuration: std::option::Option<crate::model::WorkerConfigurationDescription>,
 }
 impl ConnectorSummary {
@@ -1806,8 +1858,10 @@ impl ConnectorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerConfigurationDescription {
     /// <p>The revision of the worker configuration.</p>
+    #[doc(hidden)]
     pub revision: i64,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl WorkerConfigurationDescription {
@@ -1882,6 +1936,7 @@ impl WorkerConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PluginDescription {
     /// <p>Details about a custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin: std::option::Option<crate::model::CustomPluginDescription>,
 }
 impl PluginDescription {
@@ -1939,8 +1994,10 @@ impl PluginDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginDescription {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the custom plugin.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPluginDescription {
@@ -2015,6 +2072,7 @@ impl CustomPluginDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogDeliveryDescription {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
+    #[doc(hidden)]
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDeliveryDescription>,
 }
 impl LogDeliveryDescription {
@@ -2078,10 +2136,13 @@ impl LogDeliveryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerLogDeliveryDescription {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>,
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::FirehoseLogDeliveryDescription>,
     /// <p>Details about delivering logs to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3LogDeliveryDescription>,
 }
 impl WorkerLogDeliveryDescription {
@@ -2185,10 +2246,13 @@ impl WorkerLogDeliveryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LogDeliveryDescription {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The S3 prefix that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3LogDeliveryDescription {
@@ -2277,8 +2341,10 @@ impl S3LogDeliveryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirehoseLogDeliveryDescription {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl FirehoseLogDeliveryDescription {
@@ -2353,8 +2419,10 @@ impl FirehoseLogDeliveryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsLogDeliveryDescription {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsLogDeliveryDescription {
@@ -2426,6 +2494,7 @@ impl CloudWatchLogsLogDeliveryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitDescription {
@@ -2544,6 +2613,7 @@ impl AsRef<str> for KafkaClusterEncryptionInTransitType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaClusterClientAuthenticationDescription {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
+    #[doc(hidden)]
     pub authentication_type:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
@@ -2663,6 +2733,7 @@ impl AsRef<str> for KafkaClusterClientAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescription {
@@ -2726,8 +2797,10 @@ impl KafkaClusterDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApacheKafkaClusterDescription {
     /// <p>The bootstrap servers of the cluster.</p>
+    #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcDescription>,
 }
 impl ApacheKafkaClusterDescription {
@@ -2802,8 +2875,10 @@ impl ApacheKafkaClusterDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDescription {
     /// <p>The security groups for the connector.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnets for the connector.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcDescription {
@@ -2893,8 +2968,10 @@ impl VpcDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityDescription {
     /// <p>Describes the connector's auto scaling capacity.</p>
+    #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScalingDescription>,
     /// <p>Describes a connector's provisioned capacity.</p>
+    #[doc(hidden)]
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityDescription>,
 }
 impl CapacityDescription {
@@ -2978,8 +3055,10 @@ impl CapacityDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedCapacityDescription {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
+    #[doc(hidden)]
     pub worker_count: i32,
 }
 impl ProvisionedCapacityDescription {
@@ -3051,14 +3130,19 @@ impl ProvisionedCapacityDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingDescription {
     /// <p>The maximum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub max_worker_count: i32,
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The minimum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub min_worker_count: i32,
     /// <p>The sacle-in policy for the connector.</p>
+    #[doc(hidden)]
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicyDescription>,
     /// <p>The sacle-out policy for the connector.&gt;</p>
+    #[doc(hidden)]
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicyDescription>,
 }
 impl AutoScalingDescription {
@@ -3189,6 +3273,7 @@ impl AutoScalingDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleOutPolicyDescription {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleOutPolicyDescription {
@@ -3246,6 +3331,7 @@ impl ScaleOutPolicyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleInPolicyDescription {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleInPolicyDescription {
@@ -3303,12 +3389,16 @@ impl ScaleInPolicyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerConfigurationRevisionDescription {
     /// <p>The time that the worker configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
+    #[doc(hidden)]
     pub properties_file_content: std::option::Option<std::string::String>,
     /// <p>The description of a revision of the worker configuration.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl WorkerConfigurationRevisionDescription {
@@ -3423,8 +3513,10 @@ impl WorkerConfigurationRevisionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateDescription {
     /// <p>A code that describes the state of a resource.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message that describes the state of a resource.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl StateDescription {
@@ -3496,6 +3588,7 @@ impl StateDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPluginLocation {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl CustomPluginLocation {
@@ -3553,10 +3646,13 @@ impl CustomPluginLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The file key for an object in an S3 bucket.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of an object in an S3 bucket.</p>
+    #[doc(hidden)]
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -3648,8 +3744,10 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerConfiguration {
     /// <p>The revision of the worker configuration.</p>
+    #[doc(hidden)]
     pub revision: i64,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl WorkerConfiguration {
@@ -3724,6 +3822,7 @@ impl WorkerConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Plugin {
     /// <p>Details about a custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin: std::option::Option<crate::model::CustomPlugin>,
 }
 impl Plugin {
@@ -3781,8 +3880,10 @@ impl Plugin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomPlugin {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the custom plugin.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPlugin {
@@ -3857,6 +3958,7 @@ impl CustomPlugin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogDelivery {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
+    #[doc(hidden)]
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDelivery>,
 }
 impl LogDelivery {
@@ -3914,10 +4016,13 @@ impl LogDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerLogDelivery {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDelivery>,
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::FirehoseLogDelivery>,
     /// <p>Details about delivering logs to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3LogDelivery>,
 }
 impl WorkerLogDelivery {
@@ -4014,10 +4119,13 @@ impl WorkerLogDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LogDelivery {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The S3 prefix that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3LogDelivery {
@@ -4106,8 +4214,10 @@ impl S3LogDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirehoseLogDelivery {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl FirehoseLogDelivery {
@@ -4182,8 +4292,10 @@ impl FirehoseLogDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsLogDelivery {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsLogDelivery {
@@ -4255,6 +4367,7 @@ impl CloudWatchLogsLogDelivery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransit {
@@ -4318,6 +4431,7 @@ impl KafkaClusterEncryptionInTransit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaClusterClientAuthentication {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
+    #[doc(hidden)]
     pub authentication_type:
         std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
@@ -4382,6 +4496,7 @@ impl KafkaClusterClientAuthentication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaCluster {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaCluster>,
 }
 impl KafkaCluster {
@@ -4439,8 +4554,10 @@ impl KafkaCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
+    #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl ApacheKafkaCluster {
@@ -4515,8 +4632,10 @@ impl ApacheKafkaCluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Vpc {
     /// <p>The security groups for the connector.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnets for the connector.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Vpc {
@@ -4606,8 +4725,10 @@ impl Vpc {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Capacity {
     /// <p>Information about the auto scaling parameters for the connector.</p>
+    #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScaling>,
     /// <p>Details about a fixed capacity allocated to a connector.</p>
+    #[doc(hidden)]
     pub provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacity>,
 }
 impl Capacity {
@@ -4685,8 +4806,10 @@ impl Capacity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedCapacity {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
+    #[doc(hidden)]
     pub worker_count: i32,
 }
 impl ProvisionedCapacity {
@@ -4758,14 +4881,19 @@ impl ProvisionedCapacity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScaling {
     /// <p>The maximum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub max_worker_count: i32,
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The minimum number of workers allocated to the connector.</p>
+    #[doc(hidden)]
     pub min_worker_count: i32,
     /// <p>The sacle-in policy for the connector.</p>
+    #[doc(hidden)]
     pub scale_in_policy: std::option::Option<crate::model::ScaleInPolicy>,
     /// <p>The sacle-out policy for the connector.</p>
+    #[doc(hidden)]
     pub scale_out_policy: std::option::Option<crate::model::ScaleOutPolicy>,
 }
 impl AutoScaling {
@@ -4894,6 +5022,7 @@ impl AutoScaling {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleOutPolicy {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleOutPolicy {
@@ -4951,6 +5080,7 @@ impl ScaleOutPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScaleInPolicy {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleInPolicy {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSafetyRuleOutput {
     /// <p>The assertion rule updated.</p>
+    #[doc(hidden)]
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
     /// <p>The gating rule updated.</p>
+    #[doc(hidden)]
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl UpdateSafetyRuleOutput {
@@ -83,6 +85,7 @@ impl UpdateSafetyRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingControlOutput {
     /// <p>The routing control that was updated.</p>
+    #[doc(hidden)]
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
 impl UpdateRoutingControlOutput {
@@ -140,6 +143,7 @@ impl UpdateRoutingControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateControlPanelOutput {
     /// <p>The control panel to update.</p>
+    #[doc(hidden)]
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
 }
 impl UpdateControlPanelOutput {
@@ -257,6 +261,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -330,8 +335,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSafetyRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of safety rules in a control panel.</p>
+    #[doc(hidden)]
     pub safety_rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl ListSafetyRulesOutput {
@@ -412,8 +419,10 @@ impl ListSafetyRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingControlsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of routing controls.</p>
+    #[doc(hidden)]
     pub routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
 }
 impl ListRoutingControlsOutput {
@@ -495,8 +504,10 @@ impl ListRoutingControlsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlPanelsOutput {
     /// <p>The result of a successful ListControlPanel request.</p>
+    #[doc(hidden)]
     pub control_panels: std::option::Option<std::vec::Vec<crate::model::ControlPanel>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlPanelsOutput {
@@ -577,8 +588,10 @@ impl ListControlPanelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>An array of the clusters in an account.</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -659,8 +672,10 @@ impl ListClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedRoute53HealthChecksOutput {
     /// <p>Identifiers for the health checks.</p>
+    #[doc(hidden)]
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Next token for listing health checks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedRoute53HealthChecksOutput {
@@ -741,8 +756,10 @@ impl ListAssociatedRoute53HealthChecksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSafetyRuleOutput {
     /// <p>The assertion rule in the response.</p>
+    #[doc(hidden)]
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
     /// <p>The gating rule in the response.</p>
+    #[doc(hidden)]
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl DescribeSafetyRuleOutput {
@@ -820,6 +837,7 @@ impl DescribeSafetyRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingControlOutput {
     /// <p>Information about the routing control.</p>
+    #[doc(hidden)]
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
 impl DescribeRoutingControlOutput {
@@ -877,6 +895,7 @@ impl DescribeRoutingControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeControlPanelOutput {
     /// <p>Information about the control panel.</p>
+    #[doc(hidden)]
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
 }
 impl DescribeControlPanelOutput {
@@ -934,6 +953,7 @@ impl DescribeControlPanelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
     /// <p>The cluster for the DescribeCluster request.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DescribeClusterOutput {
@@ -1108,8 +1128,10 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSafetyRuleOutput {
     /// <p>The assertion rule created.</p>
+    #[doc(hidden)]
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
     /// <p>The gating rule created.</p>
+    #[doc(hidden)]
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl CreateSafetyRuleOutput {
@@ -1187,6 +1209,7 @@ impl CreateSafetyRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoutingControlOutput {
     /// <p>The routing control that is created.</p>
+    #[doc(hidden)]
     pub routing_control: std::option::Option<crate::model::RoutingControl>,
 }
 impl CreateRoutingControlOutput {
@@ -1244,6 +1267,7 @@ impl CreateRoutingControlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlPanelOutput {
     /// <p>Information about a control panel.</p>
+    #[doc(hidden)]
     pub control_panel: std::option::Option<crate::model::ControlPanel>,
 }
 impl CreateControlPanelOutput {
@@ -1301,6 +1325,7 @@ impl CreateControlPanelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The cluster that was created.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {

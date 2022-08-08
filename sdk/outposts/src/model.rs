@@ -59,27 +59,38 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Site {
     /// <p> The ID of the site. </p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the site.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The site tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    #[doc(hidden)]
     pub site_arn: std::option::Option<std::string::String>,
     /// <p> Notes about a site. </p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
+    #[doc(hidden)]
     pub operating_address_country_code: std::option::Option<std::string::String>,
     /// <p> State or region where the hardware is installed and powered on. </p>
+    #[doc(hidden)]
     pub operating_address_state_or_region: std::option::Option<std::string::String>,
     /// <p> City where the hardware is installed and powered on. </p>
+    #[doc(hidden)]
     pub operating_address_city: std::option::Option<std::string::String>,
     /// <p> Information about the physical and logistical details for a rack at the site. </p>
+    #[doc(hidden)]
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl Site {
@@ -354,22 +365,31 @@ impl Site {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RackPhysicalProperties {
     /// <p>The power draw available at the hardware placement position for the rack. </p>
+    #[doc(hidden)]
     pub power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
     /// <p>The power option that you can provide for hardware.</p>
+    #[doc(hidden)]
     pub power_phase: std::option::Option<crate::model::PowerPhase>,
     /// <p>The power connector for the hardware. </p>
+    #[doc(hidden)]
     pub power_connector: std::option::Option<crate::model::PowerConnector>,
     /// <p>The position of the power feed.</p>
+    #[doc(hidden)]
     pub power_feed_drop: std::option::Option<crate::model::PowerFeedDrop>,
     /// <p>The uplink speed the rack supports for the connection to the Region. </p>
+    #[doc(hidden)]
     pub uplink_gbps: std::option::Option<crate::model::UplinkGbps>,
     /// <p>The number of uplinks each Outpost network device.</p>
+    #[doc(hidden)]
     pub uplink_count: std::option::Option<crate::model::UplinkCount>,
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
+    #[doc(hidden)]
     pub fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
+    #[doc(hidden)]
     pub optical_standard: std::option::Option<crate::model::OpticalStandard>,
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
+    #[doc(hidden)]
     pub maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
 }
 impl RackPhysicalProperties {
@@ -1232,26 +1252,37 @@ impl AsRef<str> for PowerDrawKva {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The name of the contact.</p>
+    #[doc(hidden)]
     pub contact_name: std::option::Option<std::string::String>,
     /// <p>The phone number of the contact.</p>
+    #[doc(hidden)]
     pub contact_phone_number: std::option::Option<std::string::String>,
     /// <p>The first line of the address.</p>
+    #[doc(hidden)]
     pub address_line1: std::option::Option<std::string::String>,
     /// <p>The second line of the address.</p>
+    #[doc(hidden)]
     pub address_line2: std::option::Option<std::string::String>,
     /// <p>The third line of the address.</p>
+    #[doc(hidden)]
     pub address_line3: std::option::Option<std::string::String>,
     /// <p>The city for the address.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The state for the address.</p>
+    #[doc(hidden)]
     pub state_or_region: std::option::Option<std::string::String>,
     /// <p>The district or county for the address.</p>
+    #[doc(hidden)]
     pub district_or_county: std::option::Option<std::string::String>,
     /// <p>The postal code for the address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The ISO-3166 two-letter country code for the address.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The municipality for the address.</p>
+    #[doc(hidden)]
     pub municipality: std::option::Option<std::string::String>,
 }
 impl Address {
@@ -1549,29 +1580,41 @@ impl AsRef<str> for AddressType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Outpost {
     /// <p> The ID of the Outpost. </p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the Outpost owner.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    #[doc(hidden)]
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p> The ID of the site. </p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The name of the Outpost.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Outpost.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The life cycle status.</p>
+    #[doc(hidden)]
     pub life_cycle_status: std::option::Option<std::string::String>,
     /// <p>The Availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone.</p>
+    #[doc(hidden)]
     pub availability_zone_id: std::option::Option<std::string::String>,
     /// <p>The Outpost tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    #[doc(hidden)]
     pub site_arn: std::option::Option<std::string::String>,
     /// <p> The hardware type. </p>
+    #[doc(hidden)]
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl Outpost {
@@ -1906,10 +1949,13 @@ impl AsRef<str> for SupportedHardwareType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderSummary {
     /// <p> The ID of the Outpost. </p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p> The ID of the order. </p>
+    #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
     /// <p> The type of order. </p>
+    #[doc(hidden)]
     pub order_type: std::option::Option<crate::model::OrderType>,
     /// <p>The status of the order.</p>
     /// <ul>
@@ -1921,13 +1967,17 @@ pub struct OrderSummary {
     /// </ul> <note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OrderStatus>,
     /// <p> The status of all line items in the order. </p>
+    #[doc(hidden)]
     pub line_item_counts_by_status:
         std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
     /// <p> Submission date for the order. </p>
+    #[doc(hidden)]
     pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Fulfilment date for the order. </p>
+    #[doc(hidden)]
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrderSummary {
@@ -2382,18 +2432,25 @@ impl AsRef<str> for OrderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogItem {
     /// <p> The ID of the catalog item. </p>
+    #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
     /// <p> The status of a catalog item. </p>
+    #[doc(hidden)]
     pub item_status: std::option::Option<crate::model::CatalogItemStatus>,
     /// <p> Information about the EC2 capacity of an item. </p>
+    #[doc(hidden)]
     pub ec2_capacities: std::option::Option<std::vec::Vec<crate::model::Ec2Capacity>>,
     /// <p> Information about the power draw of an item. </p>
+    #[doc(hidden)]
     pub power_kva: std::option::Option<f32>,
     /// <p> The weight of the item in pounds. </p>
+    #[doc(hidden)]
     pub weight_lbs: std::option::Option<i32>,
     /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
+    #[doc(hidden)]
     pub supported_uplink_gbps: std::option::Option<std::vec::Vec<i32>>,
     /// <p> The supported storage options for the catalog item. </p>
+    #[doc(hidden)]
     pub supported_storage: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
 }
 impl CatalogItem {
@@ -2639,10 +2696,13 @@ impl AsRef<str> for SupportedStorageEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p> The maximum size of the EC2 capacity. </p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<std::string::String>,
     /// <p> The quantity of the EC2 capacity. </p>
+    #[doc(hidden)]
     pub quantity: std::option::Option<std::string::String>,
 }
 impl Ec2Capacity {
@@ -2841,14 +2901,19 @@ impl AsRef<str> for CatalogItemClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetInfo {
     /// <p> The ID of the asset. </p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p> The rack ID of the asset. </p>
+    #[doc(hidden)]
     pub rack_id: std::option::Option<std::string::String>,
     /// <p> The type of the asset. </p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p> Information about compute hardware assets. </p>
+    #[doc(hidden)]
     pub compute_attributes: std::option::Option<crate::model::ComputeAttributes>,
     /// <p> The position of an asset in a rack. </p>
+    #[doc(hidden)]
     pub asset_location: std::option::Option<crate::model::AssetLocation>,
 }
 impl AssetInfo {
@@ -2980,6 +3045,7 @@ impl AssetInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
+    #[doc(hidden)]
     pub rack_elevation: std::option::Option<f32>,
 }
 impl AssetLocation {
@@ -3034,6 +3100,7 @@ impl AssetLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeAttributes {
     /// <p> The host ID of any Dedicated Hosts on the asset. </p>
+    #[doc(hidden)]
     pub host_id: std::option::Option<std::string::String>,
 }
 impl ComputeAttributes {
@@ -3139,6 +3206,7 @@ impl AsRef<str> for AssetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTypeItem {
     /// <p>The instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
 }
 impl InstanceTypeItem {
@@ -3196,8 +3264,10 @@ impl InstanceTypeItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Order {
     /// <p> The ID of the Outpost in the order. </p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The ID of the order.</p>
+    #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
     /// <p>The status of the order.</p>
     /// <ul>
@@ -3209,14 +3279,19 @@ pub struct Order {
     /// </ul> <note>
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OrderStatus>,
     /// <p>The line items for the order</p>
+    #[doc(hidden)]
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
     /// <p>The payment option for the order.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The submission date for the order.</p>
+    #[doc(hidden)]
     pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fulfillment date of the order.</p>
+    #[doc(hidden)]
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Order {
@@ -3477,16 +3552,22 @@ impl AsRef<str> for PaymentOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItem {
     /// <p> The ID of the catalog item. </p>
+    #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of the line item.</p>
+    #[doc(hidden)]
     pub line_item_id: std::option::Option<std::string::String>,
     /// <p>The quantity of the line item.</p>
+    #[doc(hidden)]
     pub quantity: i32,
     /// <p>The status of the line item.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LineItemStatus>,
     /// <p> Information about a line item shipment. </p>
+    #[doc(hidden)]
     pub shipment_information: std::option::Option<crate::model::ShipmentInformation>,
     /// <p> Information about assets. </p>
+    #[doc(hidden)]
     pub asset_information_list:
         std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
 }
@@ -3651,8 +3732,10 @@ impl LineItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
+    #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
     /// <p> MAC addresses of the asset. </p>
+    #[doc(hidden)]
     pub mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LineItemAssetInformation {
@@ -3733,8 +3816,10 @@ impl LineItemAssetInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShipmentInformation {
     /// <p> The tracking number of the shipment. </p>
+    #[doc(hidden)]
     pub shipment_tracking_number: std::option::Option<std::string::String>,
     /// <p> The carrier of the shipment. </p>
+    #[doc(hidden)]
     pub shipment_carrier: std::option::Option<crate::model::ShipmentCarrier>,
 }
 impl ShipmentInformation {
@@ -3875,16 +3960,22 @@ impl AsRef<str> for ShipmentCarrier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionDetails {
     /// <p> The public key of the client. </p>
+    #[doc(hidden)]
     pub client_public_key: std::option::Option<std::string::String>,
     /// <p> The public key of the server. </p>
+    #[doc(hidden)]
     pub server_public_key: std::option::Option<std::string::String>,
     /// <p> The endpoint for the server. </p>
+    #[doc(hidden)]
     pub server_endpoint: std::option::Option<std::string::String>,
     /// <p> The client tunnel address. </p>
+    #[doc(hidden)]
     pub client_tunnel_address: std::option::Option<std::string::String>,
     /// <p> The server tunnel address. </p>
+    #[doc(hidden)]
     pub server_tunnel_address: std::option::Option<std::string::String>,
     /// <p> The allowed IP addresses. </p>
+    #[doc(hidden)]
     pub allowed_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConnectionDetails {
@@ -4099,8 +4190,10 @@ impl AsRef<str> for PaymentTerm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItemRequest {
     /// <p>The ID of the catalog item.</p>
+    #[doc(hidden)]
     pub catalog_item_id: std::option::Option<std::string::String>,
     /// <p>The quantity of a line item request.</p>
+    #[doc(hidden)]
     pub quantity: i32,
 }
 impl LineItemRequest {

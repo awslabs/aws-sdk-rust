@@ -124,10 +124,13 @@ impl UpdateLoggerDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupCertificateConfigurationOutput {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
+    #[doc(hidden)]
     pub certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The amount of time remaining before the certificate expires, in milliseconds.
+    #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The ID of the group certificate configuration.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl UpdateGroupCertificateConfigurationOutput {
@@ -386,8 +389,10 @@ impl UpdateConnectorDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityInfoOutput {
     /// A message about the connectivity info update request.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// The new version of the connectivity info.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateConnectivityInfoOutput {
@@ -549,8 +554,10 @@ impl StopBulkDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBulkDeploymentOutput {
     /// The ARN of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_id: std::option::Option<std::string::String>,
 }
 impl StartBulkDeploymentOutput {
@@ -628,8 +635,10 @@ impl StartBulkDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDeploymentsOutput {
     /// The ARN of the deployment.
+    #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl ResetDeploymentsOutput {
@@ -707,6 +716,7 @@ impl ResetDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// The key-value pair for the resource tag.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -780,8 +790,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListSubscriptionDefinitionVersionsOutput {
@@ -862,8 +874,10 @@ impl ListSubscriptionDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionDefinitionsOutput {
@@ -945,8 +959,10 @@ impl ListSubscriptionDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListResourceDefinitionVersionsOutput {
@@ -1027,8 +1043,10 @@ impl ListResourceDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDefinitionsOutput {
@@ -1110,8 +1128,10 @@ impl ListResourceDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggerDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListLoggerDefinitionVersionsOutput {
@@ -1192,8 +1212,10 @@ impl ListLoggerDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggerDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLoggerDefinitionsOutput {
@@ -1275,8 +1297,10 @@ impl ListLoggerDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListGroupVersionsOutput {
@@ -1357,8 +1381,10 @@ impl ListGroupVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// Information about a group.
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -1439,6 +1465,7 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupCertificateAuthoritiesOutput {
     /// A list of certificate authorities associated with the group.
+    #[doc(hidden)]
     pub group_certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
 }
@@ -1514,8 +1541,10 @@ impl ListGroupCertificateAuthoritiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListFunctionDefinitionVersionsOutput {
@@ -1596,8 +1625,10 @@ impl ListFunctionDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionDefinitionsOutput {
@@ -1679,8 +1710,10 @@ impl ListFunctionDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListDeviceDefinitionVersionsOutput {
@@ -1761,8 +1794,10 @@ impl ListDeviceDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceDefinitionsOutput {
@@ -1844,8 +1879,10 @@ impl ListDeviceDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsOutput {
     /// A list of deployments for the requested groups.
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -1926,8 +1963,10 @@ impl ListDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListCoreDefinitionVersionsOutput {
@@ -2008,8 +2047,10 @@ impl ListCoreDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDefinitionsOutput {
@@ -2091,8 +2132,10 @@ impl ListCoreDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
 impl ListConnectorDefinitionVersionsOutput {
@@ -2173,8 +2216,10 @@ impl ListConnectorDefinitionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorDefinitionsOutput {
     /// Information about a definition.
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorDefinitionsOutput {
@@ -2256,8 +2301,10 @@ impl ListConnectorDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkDeploymentsOutput {
     /// A list of bulk deployments.
+    #[doc(hidden)]
     pub bulk_deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBulkDeploymentsOutput {
@@ -2339,8 +2386,10 @@ impl ListBulkDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkDeploymentDetailedReportsOutput {
     /// A list of the individual group deployments in the bulk deployment operation.
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBulkDeploymentDetailedReportsOutput {
@@ -2422,6 +2471,7 @@ impl ListBulkDeploymentDetailedReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThingRuntimeConfigurationOutput {
     /// Runtime configuration for a thing.
+    #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl GetThingRuntimeConfigurationOutput {
@@ -2481,16 +2531,22 @@ impl GetThingRuntimeConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionDefinitionVersionOutput {
     /// The ARN of the subscription definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the subscription definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the subscription definition version.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::SubscriptionDefinitionVersion>,
     /// The ID of the subscription definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the subscription definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetSubscriptionDefinitionVersionOutput {
@@ -2636,20 +2692,28 @@ impl GetSubscriptionDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2856,8 +2920,10 @@ impl GetSubscriptionDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceRoleForAccountOutput {
     /// The time when the service role was associated with the account.
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
     /// The ARN of the role which is associated with the account.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl GetServiceRoleForAccountOutput {
@@ -2932,14 +2998,19 @@ impl GetServiceRoleForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceDefinitionVersionOutput {
     /// Arn of the resource definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the definition.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::ResourceDefinitionVersion>,
     /// The ID of the resource definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The version of the resource definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetResourceDefinitionVersionOutput {
@@ -3068,20 +3139,28 @@ impl GetResourceDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3288,14 +3367,19 @@ impl GetResourceDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggerDefinitionVersionOutput {
     /// The ARN of the logger definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the logger definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the logger definition version.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::LoggerDefinitionVersion>,
     /// The ID of the logger definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The version of the logger definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetLoggerDefinitionVersionOutput {
@@ -3424,20 +3508,28 @@ impl GetLoggerDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggerDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3644,14 +3736,19 @@ impl GetLoggerDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupVersionOutput {
     /// The ARN of the group version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the group version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the group version definition.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::GroupVersion>,
     /// The ID of the group that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the group version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetGroupVersionOutput {
@@ -3780,10 +3877,13 @@ impl GetGroupVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupCertificateConfigurationOutput {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
+    #[doc(hidden)]
     pub certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The amount of time remaining before the certificate expires, in milliseconds.
+    #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The ID of the group certificate configuration.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupCertificateConfigurationOutput {
@@ -3892,10 +3992,13 @@ impl GetGroupCertificateConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupCertificateAuthorityOutput {
     /// The ARN of the certificate authority for the group.
+    #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
     /// The ID of the certificate authority for the group.
+    #[doc(hidden)]
     pub group_certificate_authority_id: std::option::Option<std::string::String>,
     /// The PEM encoded certificate for the group.
+    #[doc(hidden)]
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
 }
 impl GetGroupCertificateAuthorityOutput {
@@ -4005,20 +4108,28 @@ impl GetGroupCertificateAuthorityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4225,16 +4336,22 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionDefinitionVersionOutput {
     /// The ARN of the function definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the function definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information on the definition.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::FunctionDefinitionVersion>,
     /// The ID of the function definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the function definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetFunctionDefinitionVersionOutput {
@@ -4380,20 +4497,28 @@ impl GetFunctionDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4600,16 +4725,22 @@ impl GetFunctionDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceDefinitionVersionOutput {
     /// The ARN of the device definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the device definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the device definition version.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DeviceDefinitionVersion>,
     /// The ID of the device definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the device definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetDeviceDefinitionVersionOutput {
@@ -4755,20 +4886,28 @@ impl GetDeviceDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4975,14 +5114,19 @@ impl GetDeviceDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentStatusOutput {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
     /// The type of the deployment.
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// Error details
+    #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// Error message
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
+    #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
 }
 impl GetDeploymentStatusOutput {
@@ -5123,16 +5267,22 @@ impl GetDeploymentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDefinitionVersionOutput {
     /// The ARN of the core definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the core definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the core definition version.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::CoreDefinitionVersion>,
     /// The ID of the core definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the core definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetCoreDefinitionVersionOutput {
@@ -5278,20 +5428,28 @@ impl GetCoreDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5498,16 +5656,22 @@ impl GetCoreDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorDefinitionVersionOutput {
     /// The ARN of the connector definition version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the connector definition version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// Information about the connector definition version.
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::ConnectorDefinitionVersion>,
     /// The ID of the connector definition version.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the connector definition version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetConnectorDefinitionVersionOutput {
@@ -5653,20 +5817,28 @@ impl GetConnectorDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5873,8 +6045,10 @@ impl GetConnectorDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectivityInfoOutput {
     /// Connectivity info list.
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
     /// A message about the connectivity info request.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GetConnectivityInfoOutput {
@@ -5956,16 +6130,22 @@ impl GetConnectivityInfoOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBulkDeploymentStatusOutput {
     /// Relevant metrics on input records processed during bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_metrics: std::option::Option<crate::model::BulkDeploymentMetrics>,
     /// The status of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_status: std::option::Option<crate::model::BulkDeploymentStatus>,
     /// The time, in ISO format, when the deployment was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// Error details
+    #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// Error message
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6152,8 +6332,10 @@ impl GetBulkDeploymentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedRoleOutput {
     /// The time when the role was associated with the group.
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
     /// The ARN of the role that is associated with the group.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl GetAssociatedRoleOutput {
@@ -6228,6 +6410,7 @@ impl GetAssociatedRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateServiceRoleFromAccountOutput {
     /// The time when the service role was disassociated from the account.
+    #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
 }
 impl DisassociateServiceRoleFromAccountOutput {
@@ -6285,6 +6468,7 @@ impl DisassociateServiceRoleFromAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRoleFromGroupOutput {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
+    #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
 }
 impl DisassociateRoleFromGroupOutput {
@@ -6582,12 +6766,16 @@ impl DeleteConnectorDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubscriptionDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateSubscriptionDefinitionVersionOutput {
@@ -6696,18 +6884,25 @@ impl CreateSubscriptionDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubscriptionDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateSubscriptionDefinitionOutput {
@@ -6876,10 +7071,13 @@ impl CreateSubscriptionDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSoftwareUpdateJobOutput {
     /// The IoT Job ARN corresponding to this update.
+    #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
     /// The IoT Job Id corresponding to this update.
+    #[doc(hidden)]
     pub iot_job_id: std::option::Option<std::string::String>,
     /// The software version installed on the device or devices after the update.
+    #[doc(hidden)]
     pub platform_software_version: std::option::Option<std::string::String>,
 }
 impl CreateSoftwareUpdateJobOutput {
@@ -6971,12 +7169,16 @@ impl CreateSoftwareUpdateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateResourceDefinitionVersionOutput {
@@ -7085,18 +7287,25 @@ impl CreateResourceDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateResourceDefinitionOutput {
@@ -7265,12 +7474,16 @@ impl CreateResourceDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoggerDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateLoggerDefinitionVersionOutput {
@@ -7379,18 +7592,25 @@ impl CreateLoggerDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoggerDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateLoggerDefinitionOutput {
@@ -7559,12 +7779,16 @@ impl CreateLoggerDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateGroupVersionOutput {
@@ -7673,6 +7897,7 @@ impl CreateGroupVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupCertificateAuthorityOutput {
     /// The ARN of the group certificate authority.
+    #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl CreateGroupCertificateAuthorityOutput {
@@ -7736,18 +7961,25 @@ impl CreateGroupCertificateAuthorityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateGroupOutput {
@@ -7916,12 +8148,16 @@ impl CreateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateFunctionDefinitionVersionOutput {
@@ -8030,18 +8266,25 @@ impl CreateFunctionDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateFunctionDefinitionOutput {
@@ -8210,12 +8453,16 @@ impl CreateFunctionDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateDeviceDefinitionVersionOutput {
@@ -8324,18 +8571,25 @@ impl CreateDeviceDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateDeviceDefinitionOutput {
@@ -8504,8 +8758,10 @@ impl CreateDeviceDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// The ARN of the deployment.
+    #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -8583,12 +8839,16 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateCoreDefinitionVersionOutput {
@@ -8697,18 +8957,25 @@ impl CreateCoreDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateCoreDefinitionOutput {
@@ -8877,12 +9144,16 @@ impl CreateCoreDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorDefinitionVersionOutput {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CreateConnectorDefinitionVersionOutput {
@@ -8991,18 +9262,25 @@ impl CreateConnectorDefinitionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorDefinitionOutput {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateConnectorDefinitionOutput {
@@ -9171,6 +9449,7 @@ impl CreateConnectorDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceRoleToAccountOutput {
     /// The time when the service role was associated with the account.
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountOutput {
@@ -9228,6 +9507,7 @@ impl AssociateServiceRoleToAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
 }
 impl AssociateRoleToGroupOutput {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl UpdateResiliencyPolicyOutput {
@@ -61,6 +62,7 @@ impl UpdateResiliencyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl UpdateAppOutput {
@@ -173,6 +175,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAppAssessmentOutput {
     /// <p>The assessment created.</p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
 }
 impl StartAppAssessmentOutput {
@@ -230,12 +233,16 @@ impl StartAppAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveAppVersionResourcesOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceResolutionStatusType>,
 }
 impl ResolveAppVersionResourcesOutput {
@@ -347,8 +354,10 @@ impl ResolveAppVersionResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveDraftAppVersionResourceMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl RemoveDraftAppVersionResourceMappingsOutput {
@@ -420,8 +429,10 @@ impl RemoveDraftAppVersionResourceMappingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDraftAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl PutDraftAppVersionTemplateOutput {
@@ -493,8 +504,10 @@ impl PutDraftAppVersionTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl PublishAppVersionOutput {
@@ -566,11 +579,14 @@ impl PublishAppVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
+    #[doc(hidden)]
     pub unsupported_resources:
         std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUnsupportedAppVersionResourcesOutput {
@@ -674,8 +690,10 @@ impl ListUnsupportedAppVersionResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The test recommendations for the Resilience Hub application.</p>
+    #[doc(hidden)]
     pub test_recommendations: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
 }
 impl ListTestRecommendationsOutput {
@@ -757,6 +775,7 @@ impl ListTestRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -830,8 +849,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuggestedResiliencyPoliciesOutput {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
+    #[doc(hidden)]
     pub resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuggestedResiliencyPoliciesOutput {
@@ -913,8 +934,10 @@ impl ListSuggestedResiliencyPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSopRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
+    #[doc(hidden)]
     pub sop_recommendations: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
 }
 impl ListSopRecommendationsOutput {
@@ -996,8 +1019,10 @@ impl ListSopRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResiliencyPoliciesOutput {
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
+    #[doc(hidden)]
     pub resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResiliencyPoliciesOutput {
@@ -1079,8 +1104,10 @@ impl ListResiliencyPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationTemplatesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
+    #[doc(hidden)]
     pub recommendation_templates:
         std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
 }
@@ -1168,8 +1195,10 @@ impl ListRecommendationTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionsOutput {
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_versions: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppVersionsOutput {
@@ -1251,10 +1280,13 @@ impl ListAppVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
+    #[doc(hidden)]
     pub physical_resources: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppVersionResourcesOutput {
@@ -1356,8 +1388,10 @@ impl ListAppVersionResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourceMappingsOutput {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+    #[doc(hidden)]
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppVersionResourceMappingsOutput {
@@ -1439,8 +1473,10 @@ impl ListAppVersionResourceMappingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsOutput {
     /// <p>Summaries for the Resilience Hub application.</p>
+    #[doc(hidden)]
     pub app_summaries: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsOutput {
@@ -1521,9 +1557,11 @@ impl ListAppsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
+    #[doc(hidden)]
     pub component_recommendations:
         std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppComponentRecommendationsOutput {
@@ -1610,9 +1648,11 @@ impl ListAppComponentRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppComponentCompliancesOutput {
     /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
+    #[doc(hidden)]
     pub component_compliances:
         std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppComponentCompliancesOutput {
@@ -1699,8 +1739,10 @@ impl ListAppComponentCompliancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppAssessmentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
+    #[doc(hidden)]
     pub assessment_summaries:
         std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
 }
@@ -1785,9 +1827,11 @@ impl ListAppAssessmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
+    #[doc(hidden)]
     pub alarm_recommendations:
         std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmRecommendationsOutput {
@@ -1871,14 +1915,19 @@ impl ListAlarmRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportResourcesToDraftAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+    #[doc(hidden)]
     pub source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceImportStatusType>,
     /// <p> A list of terraform file s3 URLs you need to import. </p>
+    #[doc(hidden)]
     pub terraform_sources: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
 }
 impl ImportResourcesToDraftAppVersionOutput {
@@ -2023,6 +2072,7 @@ impl ImportResourcesToDraftAppVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResiliencyPolicyOutput {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl DescribeResiliencyPolicyOutput {
@@ -2080,14 +2130,19 @@ impl DescribeResiliencyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceImportStatusType>,
     /// <p>The timestamp for when the status last changed.</p>
+    #[doc(hidden)]
     pub status_change_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The returned error message for the request.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
@@ -2220,10 +2275,13 @@ impl DescribeDraftAppVersionResourcesImportStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The body of the template.</p>
+    #[doc(hidden)]
     pub app_template_body: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionTemplateOutput {
@@ -2315,14 +2373,19 @@ impl DescribeAppVersionTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionResourcesResolutionStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
+    #[doc(hidden)]
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceResolutionStatusType>,
     /// <p>The returned error message for the request.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
@@ -2455,6 +2518,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppAssessmentOutput {
     /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
 }
 impl DescribeAppAssessmentOutput {
@@ -2512,6 +2576,7 @@ impl DescribeAppAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl DescribeAppOutput {
@@ -2564,6 +2629,7 @@ impl DescribeAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResiliencyPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResiliencyPolicyOutput {
@@ -2618,8 +2684,10 @@ impl DeleteResiliencyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecommendationTemplateStatus>,
 }
 impl DeleteRecommendationTemplateOutput {
@@ -2703,8 +2771,10 @@ impl DeleteRecommendationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppAssessmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
+    #[doc(hidden)]
     pub assessment_status: std::option::Option<crate::model::AssessmentStatus>,
 }
 impl DeleteAppAssessmentOutput {
@@ -2782,6 +2852,7 @@ impl DeleteAppAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppOutput {
@@ -2836,6 +2907,7 @@ impl DeleteAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
 }
 impl CreateResiliencyPolicyOutput {
@@ -2893,6 +2965,7 @@ impl CreateResiliencyPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommendationTemplateOutput {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
+    #[doc(hidden)]
     pub recommendation_template: std::option::Option<crate::model::RecommendationTemplate>,
 }
 impl CreateRecommendationTemplateOutput {
@@ -2956,6 +3029,7 @@ impl CreateRecommendationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
+    #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
 }
 impl CreateAppOutput {
@@ -3008,10 +3082,13 @@ impl CreateAppOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddDraftAppVersionResourceMappingsOutput {
     /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+    #[doc(hidden)]
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
 }
 impl AddDraftAppVersionResourceMappingsOutput {

@@ -11200,16 +11200,22 @@ impl UpdateThesaurusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThesaurusInput {
     /// <p>The identifier of the thesaurus you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A new name for the thesaurus.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A new description for the thesaurus.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl UpdateThesaurusInput {
@@ -11256,27 +11262,33 @@ impl std::fmt::Debug for UpdateThesaurusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuerySuggestionsConfigInput {
     /// <p> The identifier of the index with query suggestions you want to update.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
     /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>How recent your queries are in your query log time window.</p>
     /// <p>The time window is the number of days from current day to past days.</p>
     /// <p>By default, Amazon Kendra sets this to 180.</p>
+    #[doc(hidden)]
     pub query_log_look_back_window_in_days: std::option::Option<i32>,
     /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
+    #[doc(hidden)]
     pub include_queries_without_user_information: std::option::Option<bool>,
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
+    #[doc(hidden)]
     pub minimum_number_of_querying_users: std::option::Option<i32>,
     /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
     /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
+    #[doc(hidden)]
     pub minimum_query_count: std::option::Option<i32>,
 }
 impl UpdateQuerySuggestionsConfigInput {
@@ -11343,18 +11355,24 @@ impl std::fmt::Debug for UpdateQuerySuggestionsConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the block list you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A new name for the block list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A new description for the block list.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 path where your block list text file sits in S3.</p>
     /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateQuerySuggestionsBlockListInput {
@@ -11403,25 +11421,34 @@ impl std::fmt::Debug for UpdateQuerySuggestionsBlockListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIndexInput {
     /// <p>The identifier of the index you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the index you want to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A new description for the index.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
+    #[doc(hidden)]
     pub document_metadata_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
+    #[doc(hidden)]
     pub capacity_units: std::option::Option<crate::model::CapacityUnitsConfiguration>,
     /// <p>The user token configuration.</p>
+    #[doc(hidden)]
     pub user_token_configurations:
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
+    #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
     /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -11497,16 +11524,22 @@ impl std::fmt::Debug for UpdateIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A new name for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>A new description for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateExperienceInput {
@@ -11553,23 +11586,32 @@ impl std::fmt::Debug for UpdateExperienceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
     /// <p>The identifier of the data source you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index used with the data source connector.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Configuration information you want to update for the data source connector.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>A new description for the data source connector.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The sync schedule you want to update for the data source connector.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    #[doc(hidden)]
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
@@ -11638,16 +11680,22 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the access control configuration you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A new name for the access control configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A new description for the access control configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    #[doc(hidden)]
     pub hierarchical_access_control_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
 }
@@ -11700,8 +11748,10 @@ impl std::fmt::Debug for UpdateAccessControlConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -11728,8 +11778,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -11756,12 +11808,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    #[doc(hidden)]
     pub click_feedback_items: std::option::Option<std::vec::Vec<crate::model::ClickFeedback>>,
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
+    #[doc(hidden)]
     pub relevance_feedback_items:
         std::option::Option<std::vec::Vec<crate::model::RelevanceFeedback>>,
 }
@@ -11801,8 +11857,10 @@ impl std::fmt::Debug for SubmitFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDataSourceSyncJobInput {
     /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl StopDataSourceSyncJobInput {
@@ -11829,8 +11887,10 @@ impl std::fmt::Debug for StopDataSourceSyncJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataSourceSyncJobInput {
     /// <p>The identifier of the data source to synchronize.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl StartDataSourceSyncJobInput {
@@ -11857,36 +11917,49 @@ impl std::fmt::Debug for StartDataSourceSyncJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryInput {
     /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The text to search for.</p>
+    #[doc(hidden)]
     pub query_text: std::option::Option<std::string::String>,
     /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    #[doc(hidden)]
     pub attribute_filter: std::option::Option<crate::model::AttributeFilter>,
     /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
+    #[doc(hidden)]
     pub facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
+    #[doc(hidden)]
     pub requested_document_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
+    #[doc(hidden)]
     pub query_result_type_filter: std::option::Option<crate::model::QueryResultType>,
     /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    #[doc(hidden)]
     pub document_relevance_override_configurations:
         std::option::Option<std::vec::Vec<crate::model::DocumentRelevanceConfiguration>>,
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
+    #[doc(hidden)]
     pub page_number: std::option::Option<i32>,
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
     /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
+    #[doc(hidden)]
     pub sorting_configuration: std::option::Option<crate::model::SortingConfiguration>,
     /// <p>The user context token or user and group information.</p>
+    #[doc(hidden)]
     pub user_context: std::option::Option<crate::model::UserContext>,
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
+    #[doc(hidden)]
     pub visitor_id: std::option::Option<std::string::String>,
     /// <p>Enables suggested spell corrections for queries.</p>
+    #[doc(hidden)]
     pub spell_correction_configuration:
         std::option::Option<crate::model::SpellCorrectionConfiguration>,
 }
@@ -11989,22 +12062,28 @@ impl std::fmt::Debug for QueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPrincipalMappingInput {
     /// <p>The identifier of the index you want to map users to their groups.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source you want to map users to their groups.</p>
     /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group you want to map its users to.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The list that contains your users or sub groups that belong the same group.</p>
     /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
+    #[doc(hidden)]
     pub group_members: std::option::Option<crate::model::GroupMembers>,
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>
     /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
+    #[doc(hidden)]
     pub ordering_id: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl PutPrincipalMappingInput {
@@ -12057,10 +12136,13 @@ impl std::fmt::Debug for PutPrincipalMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThesauriInput {
     /// <p>The identifier of the index with one or more thesauri.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of thesauri to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListThesauriInput {
@@ -12092,6 +12174,7 @@ impl std::fmt::Debug for ListThesauriInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -12114,10 +12197,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListQuerySuggestionsBlockListsInput {
     /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of block lists to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQuerySuggestionsBlockListsInput {
@@ -12150,8 +12236,10 @@ impl std::fmt::Debug for ListQuerySuggestionsBlockListsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesInput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListIndicesInput {
@@ -12178,14 +12266,19 @@ impl std::fmt::Debug for ListIndicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOlderThanOrderingIdInput {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub ordering_id: std::option::Option<i64>,
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGroupsOlderThanOrderingIdInput {
@@ -12227,10 +12320,13 @@ impl std::fmt::Debug for ListGroupsOlderThanOrderingIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFaqsInput {
     /// <p>The index that contains the FAQ lists.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFaqsInput {
@@ -12262,10 +12358,13 @@ impl std::fmt::Debug for ListFaqsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperiencesInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned Amazon Kendra experiences.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExperiencesInput {
@@ -12297,10 +12396,13 @@ impl std::fmt::Debug for ListExperiencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperienceEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperienceEntitiesInput {
@@ -12332,12 +12434,16 @@ impl std::fmt::Debug for ListExperienceEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityPersonasInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned users or groups.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntityPersonasInput {
@@ -12374,16 +12480,22 @@ impl std::fmt::Debug for ListEntityPersonasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourceSyncJobsInput {
     /// <p>The identifier of the data source.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index used with the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+    #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::TimeRange>,
     /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInput {
@@ -12430,10 +12542,13 @@ impl std::fmt::Debug for ListDataSourceSyncJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
     /// <p>The identifier of the index used with one or more data sources.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataSourcesInput {
@@ -12465,10 +12580,13 @@ impl std::fmt::Debug for ListDataSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessControlConfigurationsInput {
     /// <p>The identifier of the index for the access control configuration.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access control configurations to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessControlConfigurationsInput {
@@ -12500,6 +12618,7 @@ impl std::fmt::Debug for ListAccessControlConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotsInput {
     /// <p>The identifier of the index to get search metrics data.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
@@ -12510,13 +12629,17 @@ pub struct GetSnapshotsInput {
     /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
     /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub interval: std::option::Option<crate::model::Interval>,
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
+    #[doc(hidden)]
     pub metric_type: std::option::Option<crate::model::MetricType>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned data for the metric.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetSnapshotsInput {
@@ -12567,12 +12690,15 @@ impl std::fmt::Debug for GetSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
+    #[doc(hidden)]
     pub query_text: std::option::Option<std::string::String>,
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
+    #[doc(hidden)]
     pub max_suggestions_count: std::option::Option<i32>,
 }
 impl GetQuerySuggestionsInput {
@@ -12606,10 +12732,13 @@ impl std::fmt::Debug for GetQuerySuggestionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePersonasFromEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
+    #[doc(hidden)]
     pub entity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociatePersonasFromEntitiesInput {
@@ -12641,10 +12770,13 @@ impl std::fmt::Debug for DisassociatePersonasFromEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEntitiesFromExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    #[doc(hidden)]
     pub entity_list: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
 }
 impl DisassociateEntitiesFromExperienceInput {
@@ -12676,8 +12808,10 @@ impl std::fmt::Debug for DisassociateEntitiesFromExperienceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThesaurusInput {
     /// <p>The identifier of the thesaurus you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeThesaurusInput {
@@ -12704,6 +12838,7 @@ impl std::fmt::Debug for DescribeThesaurusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsConfigInput {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsConfigInput {
@@ -12725,8 +12860,10 @@ impl std::fmt::Debug for DescribeQuerySuggestionsConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the block list you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsBlockListInput {
@@ -12753,10 +12890,13 @@ impl std::fmt::Debug for DescribeQuerySuggestionsBlockListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePrincipalMappingInput {
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DescribePrincipalMappingInput {
@@ -12788,6 +12928,7 @@ impl std::fmt::Debug for DescribePrincipalMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexInput {
     /// <p>The identifier of the index you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeIndexInput {
@@ -12809,8 +12950,10 @@ impl std::fmt::Debug for DescribeIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFaqInput {
     /// <p>The identifier of the FAQ you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the FAQ.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeFaqInput {
@@ -12837,8 +12980,10 @@ impl std::fmt::Debug for DescribeFaqInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeExperienceInput {
@@ -12865,8 +13010,10 @@ impl std::fmt::Debug for DescribeExperienceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceInput {
     /// <p>The identifier of the data source.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index used with the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeDataSourceInput {
@@ -12893,8 +13040,10 @@ impl std::fmt::Debug for DescribeDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the access control configuration you want to get information on.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessControlConfigurationInput {
@@ -12921,8 +13070,10 @@ impl std::fmt::Debug for DescribeAccessControlConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThesaurusInput {
     /// <p>The identifier of the thesaurus you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteThesaurusInput {
@@ -12949,8 +13100,10 @@ impl std::fmt::Debug for DeleteThesaurusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the block list you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteQuerySuggestionsBlockListInput {
@@ -12977,15 +13130,19 @@ impl std::fmt::Debug for DeleteQuerySuggestionsBlockListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePrincipalMappingInput {
     /// <p>The identifier of the index you want to delete a group from.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group you want to delete.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
     /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
+    #[doc(hidden)]
     pub ordering_id: std::option::Option<i64>,
 }
 impl DeletePrincipalMappingInput {
@@ -13025,6 +13182,7 @@ impl std::fmt::Debug for DeletePrincipalMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexInput {
     /// <p>The identifier of the index you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteIndexInput {
@@ -13046,8 +13204,10 @@ impl std::fmt::Debug for DeleteIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFaqInput {
     /// <p>The identifier of the FAQ you want to remove.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for the FAQ.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteFaqInput {
@@ -13074,8 +13234,10 @@ impl std::fmt::Debug for DeleteFaqInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteExperienceInput {
@@ -13102,8 +13264,10 @@ impl std::fmt::Debug for DeleteExperienceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
     /// <p>The identifier of the data source you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index used with the data source.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
@@ -13130,8 +13294,10 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the access control configuration you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessControlConfigurationInput {
@@ -13158,18 +13324,25 @@ impl std::fmt::Debug for DeleteAccessControlConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThesaurusInput {
     /// <p>The identifier of the index for the thesaurus.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A name for the thesaurus.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the thesaurus.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The path to the thesaurus file in S3.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusInput {
@@ -13221,23 +13394,30 @@ impl std::fmt::Debug for CreateThesaurusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A user friendly name for the block list.</p>
     /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A user-friendly description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
     /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateQuerySuggestionsBlockListInput {
@@ -13294,23 +13474,31 @@ impl std::fmt::Debug for CreateQuerySuggestionsBlockListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIndexInput {
     /// <p>A name for the index.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
     /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The user token configuration.</p>
+    #[doc(hidden)]
     pub user_token_configurations:
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
@@ -13328,8 +13516,10 @@ pub struct CreateIndexInput {
     /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
     /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    #[doc(hidden)]
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -13425,24 +13615,33 @@ impl std::fmt::Debug for CreateIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFaqInput {
     /// <p>The identifier of the index for the FAQ.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A name for the FAQ.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the FAQ.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The path to the FAQ file in S3.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
     /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
     /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
 }
 impl CreateFaqInput {
@@ -13506,16 +13705,22 @@ impl std::fmt::Debug for CreateFaqInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperienceInput {
     /// <p>A name for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>A description for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateExperienceInput {
@@ -13562,32 +13767,43 @@ impl std::fmt::Debug for CreateExperienceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
     /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index you want to use with the data source connector.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>A description for the data source connector.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
     /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    #[doc(hidden)]
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
@@ -13671,17 +13887,23 @@ impl std::fmt::Debug for CreateDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessControlConfigurationInput {
     /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A name for the access control configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the access control configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    #[doc(hidden)]
     pub hierarchical_access_control_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAccessControlConfigurationInput {
@@ -13733,6 +13955,7 @@ impl std::fmt::Debug for CreateAccessControlConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl ClearQuerySuggestionsInput {
@@ -13754,8 +13977,10 @@ impl std::fmt::Debug for ClearQuerySuggestionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutDocumentInput {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
@@ -13765,9 +13990,11 @@ pub struct BatchPutDocumentInput {
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
     /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    #[doc(hidden)]
     pub documents: std::option::Option<std::vec::Vec<crate::model::Document>>,
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    #[doc(hidden)]
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
@@ -13818,8 +14045,10 @@ impl std::fmt::Debug for BatchPutDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDocumentStatusInput {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
+    #[doc(hidden)]
     pub document_info_list: std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
 }
 impl BatchGetDocumentStatusInput {
@@ -13846,10 +14075,13 @@ impl std::fmt::Debug for BatchGetDocumentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDocumentInput {
     /// <p>The identifier of the index that contains the documents to delete.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>One or more identifiers for documents to delete from the index.</p>
+    #[doc(hidden)]
     pub document_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maps a particular data source sync job to a particular data source.</p>
+    #[doc(hidden)]
     pub data_source_sync_job_metric_target:
         std::option::Option<crate::model::DataSourceSyncJobMetricTarget>,
 }
@@ -13887,10 +14119,13 @@ impl std::fmt::Debug for BatchDeleteDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePersonasToEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    #[doc(hidden)]
     pub personas: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
 }
 impl AssociatePersonasToEntitiesInput {
@@ -13922,10 +14157,13 @@ impl std::fmt::Debug for AssociatePersonasToEntitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEntitiesToExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+    #[doc(hidden)]
     pub entity_list: std::option::Option<std::vec::Vec<crate::model::EntityConfiguration>>,
 }
 impl AssociateEntitiesToExperienceInput {

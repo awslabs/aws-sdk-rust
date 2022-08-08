@@ -154,8 +154,10 @@ impl StopTrainingDocumentClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTargetedSentimentDetectionJobOutput {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopTargetedSentimentDetectionJobOutput {
@@ -230,8 +232,10 @@ impl StopTargetedSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopSentimentDetectionJobOutput {
@@ -306,8 +310,10 @@ impl StopSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPiiEntitiesDetectionJobOutput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the PII entities detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopPiiEntitiesDetectionJobOutput {
@@ -382,8 +388,10 @@ impl StopPiiEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopKeyPhrasesDetectionJobOutput {
     /// <p>The identifier of the key phrases detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopKeyPhrasesDetectionJobOutput {
@@ -458,8 +466,10 @@ impl StopKeyPhrasesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEventsDetectionJobOutput {
     /// <p>The identifier of the events detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the events detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopEventsDetectionJobOutput {
@@ -534,8 +544,10 @@ impl StopEventsDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopEntitiesDetectionJobOutput {
     /// <p>The identifier of the entities detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopEntitiesDetectionJobOutput {
@@ -610,8 +622,10 @@ impl StopEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDominantLanguageDetectionJobOutput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StopDominantLanguageDetectionJobOutput {
@@ -686,6 +700,7 @@ impl StopDominantLanguageDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTopicsDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -701,6 +716,7 @@ pub struct StartTopicsDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job: </p>
     /// <ul>
@@ -709,6 +725,7 @@ pub struct StartTopicsDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTopicsDetectionJobOutput {
@@ -857,6 +874,7 @@ impl StartTopicsDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTargetedSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -872,6 +890,7 @@ pub struct StartTargetedSentimentDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -880,6 +899,7 @@ pub struct StartTargetedSentimentDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTargetedSentimentDetectionJobOutput {
@@ -1028,6 +1048,7 @@ impl StartTargetedSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1043,6 +1064,7 @@ pub struct StartSentimentDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -1051,6 +1073,7 @@ pub struct StartSentimentDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartSentimentDetectionJobOutput {
@@ -1199,6 +1222,7 @@ impl StartSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPiiEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1214,8 +1238,10 @@ pub struct StartPiiEntitiesDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartPiiEntitiesDetectionJobOutput {
@@ -1346,6 +1372,7 @@ impl StartPiiEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartKeyPhrasesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1361,6 +1388,7 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -1369,6 +1397,7 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartKeyPhrasesDetectionJobOutput {
@@ -1517,6 +1546,7 @@ impl StartKeyPhrasesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEventsDetectionJobOutput {
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1532,8 +1562,10 @@ pub struct StartEventsDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the events detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartEventsDetectionJobOutput {
@@ -1664,6 +1696,7 @@ impl StartEventsDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1679,6 +1712,7 @@ pub struct StartEntitiesDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -1689,6 +1723,7 @@ pub struct StartEntitiesDetectionJobOutput {
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartEntitiesDetectionJobOutput {
@@ -1843,6 +1878,7 @@ impl StartEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDominantLanguageDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -1858,6 +1894,7 @@ pub struct StartDominantLanguageDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -1866,6 +1903,7 @@ pub struct StartDominantLanguageDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartDominantLanguageDetectionJobOutput {
@@ -2014,6 +2052,7 @@ impl StartDominantLanguageDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentClassificationJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -2029,6 +2068,7 @@ pub struct StartDocumentClassificationJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The status of the job:</p>
     /// <ul>
@@ -2039,6 +2079,7 @@ pub struct StartDocumentClassificationJobOutput {
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartDocumentClassificationJobOutput {
@@ -2193,6 +2234,7 @@ impl StartDocumentClassificationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    #[doc(hidden)]
     pub policy_revision_id: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -2250,9 +2292,11 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub topics_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicsDetectionJobsOutput {
@@ -2344,9 +2388,11 @@ impl ListTopicsDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetedSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub targeted_sentiment_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetedSentimentDetectionJobsOutput {
@@ -2443,8 +2489,10 @@ impl ListTargetedSentimentDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -2525,9 +2573,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub sentiment_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSentimentDetectionJobsOutput {
@@ -2622,9 +2672,11 @@ impl ListSentimentDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPiiEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub pii_entities_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPiiEntitiesDetectionJobsOutput {
@@ -2719,9 +2771,11 @@ impl ListPiiEntitiesDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyPhrasesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub key_phrases_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKeyPhrasesDetectionJobsOutput {
@@ -2816,9 +2870,11 @@ impl ListKeyPhrasesDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub events_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventsDetectionJobsOutput {
@@ -2910,9 +2966,11 @@ impl ListEventsDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
+    #[doc(hidden)]
     pub entity_recognizer_summaries_list:
         std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
     /// <p>The list entity recognizer summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntityRecognizerSummariesOutput {
@@ -3002,9 +3060,11 @@ impl ListEntityRecognizerSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
+    #[doc(hidden)]
     pub entity_recognizer_properties_list:
         std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntityRecognizersOutput {
@@ -3094,9 +3154,11 @@ impl ListEntityRecognizersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub entities_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesDetectionJobsOutput {
@@ -3188,9 +3250,11 @@ impl ListEntitiesDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
+    #[doc(hidden)]
     pub endpoint_properties_list:
         std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointsOutput {
@@ -3274,9 +3338,11 @@ impl ListEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
+    #[doc(hidden)]
     pub dominant_language_detection_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDominantLanguageDetectionJobsOutput {
@@ -3373,9 +3439,11 @@ impl ListDominantLanguageDetectionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
+    #[doc(hidden)]
     pub document_classifier_summaries_list:
         std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassifierSummariesOutput {
@@ -3465,9 +3533,11 @@ impl ListDocumentClassifierSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentClassifiersOutput {
     /// <p>A list containing the properties of each job returned.</p>
+    #[doc(hidden)]
     pub document_classifier_properties_list:
         std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassifiersOutput {
@@ -3557,9 +3627,11 @@ impl ListDocumentClassifiersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentClassificationJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
+    #[doc(hidden)]
     pub document_classification_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassificationJobsOutput {
@@ -3654,6 +3726,7 @@ impl ListDocumentClassificationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
 }
 impl ImportModelOutput {
@@ -3708,6 +3781,7 @@ impl ImportModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+    #[doc(hidden)]
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
 }
 impl DetectSyntaxOutput {
@@ -3771,8 +3845,10 @@ impl DetectSyntaxOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSentimentOutput {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
+    #[doc(hidden)]
     pub sentiment: std::option::Option<crate::model::SentimentType>,
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
+    #[doc(hidden)]
     pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
 }
 impl DetectSentimentOutput {
@@ -3850,6 +3926,7 @@ impl DetectSentimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPiiEntitiesOutput {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
 }
 impl DetectPiiEntitiesOutput {
@@ -3913,6 +3990,7 @@ impl DetectPiiEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectKeyPhrasesOutput {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    #[doc(hidden)]
     pub key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
 }
 impl DetectKeyPhrasesOutput {
@@ -3977,6 +4055,7 @@ impl DetectKeyPhrasesOutput {
 pub struct DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl DetectEntitiesOutput {
@@ -4043,6 +4122,7 @@ impl DetectEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectDominantLanguageOutput {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
+    #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
 }
 impl DetectDominantLanguageOutput {
@@ -4106,6 +4186,7 @@ impl DetectDominantLanguageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
+    #[doc(hidden)]
     pub topics_detection_job_properties:
         std::option::Option<crate::model::TopicsDetectionJobProperties>,
 }
@@ -4173,6 +4254,7 @@ impl DescribeTopicsDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetedSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+    #[doc(hidden)]
     pub targeted_sentiment_detection_job_properties:
         std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
 }
@@ -4241,6 +4323,7 @@ impl DescribeTargetedSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
+    #[doc(hidden)]
     pub sentiment_detection_job_properties:
         std::option::Option<crate::model::SentimentDetectionJobProperties>,
 }
@@ -4308,12 +4391,16 @@ impl DescribeSentimentDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePolicyOutput {
     /// <p>The JSON body of the resource-based policy.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
     /// <p>The time at which the policy was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the policy was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    #[doc(hidden)]
     pub policy_revision_id: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePolicyOutput {
@@ -4431,6 +4518,7 @@ impl DescribeResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
+    #[doc(hidden)]
     pub pii_entities_detection_job_properties:
         std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
 }
@@ -4498,6 +4586,7 @@ impl DescribePiiEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
+    #[doc(hidden)]
     pub key_phrases_detection_job_properties:
         std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
 }
@@ -4565,6 +4654,7 @@ impl DescribeKeyPhrasesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
+    #[doc(hidden)]
     pub events_detection_job_properties:
         std::option::Option<crate::model::EventsDetectionJobProperties>,
 }
@@ -4632,6 +4722,7 @@ impl DescribeEventsDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
+    #[doc(hidden)]
     pub entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
 }
 impl DescribeEntityRecognizerOutput {
@@ -4698,6 +4789,7 @@ impl DescribeEntityRecognizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
+    #[doc(hidden)]
     pub entities_detection_job_properties:
         std::option::Option<crate::model::EntitiesDetectionJobProperties>,
 }
@@ -4765,6 +4857,7 @@ impl DescribeEntitiesDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_properties: std::option::Option<crate::model::EndpointProperties>,
 }
 impl DescribeEndpointOutput {
@@ -4822,6 +4915,7 @@ impl DescribeEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
+    #[doc(hidden)]
     pub dominant_language_detection_job_properties:
         std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
 }
@@ -4890,6 +4984,7 @@ impl DescribeDominantLanguageDetectionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentClassifierOutput {
     /// <p>An object that contains the properties associated with a document classifier.</p>
+    #[doc(hidden)]
     pub document_classifier_properties:
         std::option::Option<crate::model::DocumentClassifierProperties>,
 }
@@ -4957,6 +5052,7 @@ impl DescribeDocumentClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
+    #[doc(hidden)]
     pub document_classification_job_properties:
         std::option::Option<crate::model::DocumentClassificationJobProperties>,
 }
@@ -5144,6 +5240,7 @@ impl DeleteDocumentClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    #[doc(hidden)]
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
 impl CreateEntityRecognizerOutput {
@@ -5201,6 +5298,7 @@ impl CreateEntityRecognizerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreateEndpointOutput {
@@ -5255,6 +5353,7 @@ impl CreateEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentClassifierOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl CreateDocumentClassifierOutput {
@@ -5312,6 +5411,7 @@ impl CreateDocumentClassifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
 }
 impl ContainsPiiEntitiesOutput {
@@ -5375,8 +5475,10 @@ impl ContainsPiiEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    #[doc(hidden)]
     pub classes: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>,
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
 }
 impl ClassifyDocumentOutput {
@@ -5466,8 +5568,10 @@ impl ClassifyDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSyntaxOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
     pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectSyntaxOutput {
@@ -5558,9 +5662,11 @@ impl BatchDetectSyntaxOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
     pub result_list:
         std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectSentimentOutput {
@@ -5653,9 +5759,11 @@ impl BatchDetectSentimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectKeyPhrasesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
     pub result_list:
         std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectKeyPhrasesOutput {
@@ -5750,9 +5858,11 @@ impl BatchDetectKeyPhrasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectEntitiesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
     pub result_list:
         std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectEntitiesOutput {
@@ -5845,9 +5955,11 @@ impl BatchDetectEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectDominantLanguageOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    #[doc(hidden)]
     pub result_list:
         std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectDominantLanguageOutput {

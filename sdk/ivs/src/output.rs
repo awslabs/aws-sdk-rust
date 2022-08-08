@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// <p>Object specifying a channel.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelOutput {
@@ -178,6 +179,7 @@ impl PutMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -251,8 +253,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamSessionsOutput {
     /// <p>List of stream sessions.</p>
+    #[doc(hidden)]
     pub stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamSessionsOutput {
@@ -334,8 +338,10 @@ impl ListStreamSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
     /// <p>List of streams.</p>
+    #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -416,8 +422,10 @@ impl ListStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamKeysOutput {
     /// <p>List of stream keys.</p>
+    #[doc(hidden)]
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>,
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamKeysOutput {
@@ -498,9 +506,11 @@ impl ListStreamKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
+    #[doc(hidden)]
     pub recording_configurations:
         std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecordingConfigurationsOutput {
@@ -587,8 +597,10 @@ impl ListRecordingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
+    #[doc(hidden)]
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaybackKeyPairsOutput {
@@ -670,8 +682,10 @@ impl ListPlaybackKeyPairsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// <p>List of the matching channels.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -752,6 +766,7 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportPlaybackKeyPairOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
 impl ImportPlaybackKeyPairOutput {
@@ -809,6 +824,7 @@ impl ImportPlaybackKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamSessionOutput {
     /// <p>List of stream details.</p>
+    #[doc(hidden)]
     pub stream_session: std::option::Option<crate::model::StreamSession>,
 }
 impl GetStreamSessionOutput {
@@ -866,6 +882,7 @@ impl GetStreamSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamKeyOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl GetStreamKeyOutput {
@@ -923,6 +940,7 @@ impl GetStreamKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub stream: std::option::Option<crate::model::Stream>,
 }
 impl GetStreamOutput {
@@ -977,6 +995,7 @@ impl GetStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
 }
 impl GetRecordingConfigurationOutput {
@@ -1040,6 +1059,7 @@ impl GetRecordingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlaybackKeyPairOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
 impl GetPlaybackKeyPairOutput {
@@ -1097,6 +1117,7 @@ impl GetPlaybackKeyPairOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl GetChannelOutput {
@@ -1271,6 +1292,7 @@ impl DeleteChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamKeyOutput {
     /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
+    #[doc(hidden)]
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl CreateStreamKeyOutput {
@@ -1328,6 +1350,7 @@ impl CreateStreamKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
 }
 impl CreateRecordingConfigurationOutput {
@@ -1391,8 +1414,10 @@ impl CreateRecordingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p></p>
+    #[doc(hidden)]
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl CreateChannelOutput {
@@ -1467,8 +1492,10 @@ impl CreateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetStreamKeyOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
     /// <p></p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
 }
 impl BatchGetStreamKeyOutput {
@@ -1558,8 +1585,10 @@ impl BatchGetStreamKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetChannelOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Each error object is related to a specific ARN in the request.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
 }
 impl BatchGetChannelOutput {

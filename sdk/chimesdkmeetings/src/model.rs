@@ -6,10 +6,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
+    #[doc(hidden)]
     pub join_token: std::option::Option<std::string::String>,
     /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -20,6 +23,7 @@ pub struct Attendee {
     /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl Attendee {
@@ -163,10 +167,13 @@ impl Attendee {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
+    #[doc(hidden)]
     pub audio: std::option::Option<crate::model::MediaCapabilities>,
     /// <p>The video capability assigned to an attendee.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::MediaCapabilities>,
     /// <p>The content capability assigned to an attendee.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::MediaCapabilities>,
 }
 impl AttendeeCapabilities {
@@ -327,8 +334,10 @@ impl AsRef<str> for MediaCapabilities {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -400,8 +409,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub engine_transcribe_settings: std::option::Option<crate::model::EngineTranscribeSettings>,
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub engine_transcribe_medical_settings:
         std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
 }
@@ -498,16 +509,22 @@ impl TranscriptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
+    #[doc(hidden)]
     pub specialty: std::option::Option<crate::model::TranscribeMedicalSpecialty>,
     /// <p>The type of transcription.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TranscribeMedicalType>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeMedicalContentIdentificationType>,
 }
@@ -995,38 +1012,52 @@ impl AsRef<str> for TranscribeMedicalLanguageCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
     /// <p>The filtering method passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_method:
         std::option::Option<crate::model::TranscribeVocabularyFilterMethod>,
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<crate::model::TranscribeRegion>,
     /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
+    #[doc(hidden)]
     pub enable_partial_results_stabilization: bool,
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
+    #[doc(hidden)]
     pub partial_results_stability:
         std::option::Option<crate::model::TranscribePartialResultsStability>,
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeContentIdentificationType>,
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    #[doc(hidden)]
     pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model used during transcription.</p>
+    #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
     /// <p>Automatically identifies the language spoken in media files.</p>
+    #[doc(hidden)]
     pub identify_language: bool,
     /// <p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>
+    #[doc(hidden)]
     pub language_options: std::option::Option<std::string::String>,
     /// <p>Language code for the preferred language.</p>
+    #[doc(hidden)]
     pub preferred_language: std::option::Option<crate::model::TranscribeLanguageCode>,
 }
 impl EngineTranscribeSettings {
@@ -1813,23 +1844,32 @@ impl AsRef<str> for TranscribeVocabularyFilterMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
+    #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
+    #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The media placement for the meeting.</p>
+    #[doc(hidden)]
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
     /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+    #[doc(hidden)]
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+    #[doc(hidden)]
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>Array of strings.</p>
+    #[doc(hidden)]
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the meeting.</p>
+    #[doc(hidden)]
     pub meeting_arn: std::option::Option<std::string::String>,
 }
 impl Meeting {
@@ -2053,6 +2093,7 @@ impl Meeting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting. </p>
+    #[doc(hidden)]
     pub audio: std::option::Option<crate::model::AudioFeatures>,
 }
 impl MeetingFeaturesConfiguration {
@@ -2108,6 +2149,7 @@ impl MeetingFeaturesConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
+    #[doc(hidden)]
     pub echo_reduction: std::option::Option<crate::model::MeetingFeatureStatus>,
 }
 impl AudioFeatures {
@@ -2220,20 +2262,28 @@ impl AsRef<str> for MeetingFeatureStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
+    #[doc(hidden)]
     pub audio_host_url: std::option::Option<std::string::String>,
     /// <p>The audio fallback URL.</p>
+    #[doc(hidden)]
     pub audio_fallback_url: std::option::Option<std::string::String>,
     /// <p>The signaling URL.</p>
+    #[doc(hidden)]
     pub signaling_url: std::option::Option<std::string::String>,
     /// <p>The turn control URL.</p>
+    #[doc(hidden)]
     pub turn_control_url: std::option::Option<std::string::String>,
     /// <p>The screen data URL.</p>
+    #[doc(hidden)]
     pub screen_data_url: std::option::Option<std::string::String>,
     /// <p>The screen viewing URL.</p>
+    #[doc(hidden)]
     pub screen_viewing_url: std::option::Option<std::string::String>,
     /// <p>The screen sharing URL.</p>
+    #[doc(hidden)]
     pub screen_sharing_url: std::option::Option<std::string::String>,
     /// <p>The event ingestion URL.</p>
+    #[doc(hidden)]
     pub event_ingestion_url: std::option::Option<std::string::String>,
 }
 impl MediaPlacement {
@@ -2431,10 +2481,13 @@ impl MediaPlacement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeError {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl CreateAttendeeError {
@@ -2529,8 +2582,10 @@ impl CreateAttendeeError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeRequestItem {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
     /// <p>A list of one or more capabilities.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl CreateAttendeeRequestItem {
@@ -2608,10 +2663,13 @@ impl CreateAttendeeRequestItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationsConfiguration {
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the SNS topic.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the SQS queue.</p>
+    #[doc(hidden)]
     pub sqs_queue_arn: std::option::Option<std::string::String>,
 }
 impl NotificationsConfiguration {
@@ -2709,6 +2767,7 @@ impl NotificationsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
+    #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl AttendeeIdItem {

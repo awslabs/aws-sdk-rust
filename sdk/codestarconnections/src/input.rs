@@ -1931,10 +1931,13 @@ impl UpdateHostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    #[doc(hidden)]
     pub host_arn: std::option::Option<std::string::String>,
     /// <p>The URL or endpoint of the host to be updated.</p>
+    #[doc(hidden)]
     pub provider_endpoint: std::option::Option<std::string::String>,
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl UpdateHostInput {
@@ -1966,8 +1969,10 @@ impl std::fmt::Debug for UpdateHostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of keys for the tags to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -1994,8 +1999,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you want to modify or add to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -2022,6 +2029,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2043,8 +2051,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostsInput {
@@ -2071,12 +2081,16 @@ impl std::fmt::Debug for ListHostsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    #[doc(hidden)]
     pub provider_type_filter: std::option::Option<crate::model::ProviderType>,
     /// <p>Filters the list of connections to those associated with a specified host.</p>
+    #[doc(hidden)]
     pub host_arn_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsInput {
@@ -2113,6 +2127,7 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostInput {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    #[doc(hidden)]
     pub host_arn: std::option::Option<std::string::String>,
 }
 impl GetHostInput {
@@ -2134,6 +2149,7 @@ impl std::fmt::Debug for GetHostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
 }
 impl GetConnectionInput {
@@ -2155,6 +2171,7 @@ impl std::fmt::Debug for GetConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    #[doc(hidden)]
     pub host_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHostInput {
@@ -2178,6 +2195,7 @@ pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -2201,14 +2219,19 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHostInput {
     /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
+    #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
+    #[doc(hidden)]
     pub provider_endpoint: std::option::Option<std::string::String>,
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHostInput {
@@ -2250,12 +2273,16 @@ impl std::fmt::Debug for CreateHostInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
+    #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The key-value pair to use when tagging the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
+    #[doc(hidden)]
     pub host_arn: std::option::Option<std::string::String>,
 }
 impl CreateConnectionInput {

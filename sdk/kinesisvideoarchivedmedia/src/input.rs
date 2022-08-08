@@ -1425,14 +1425,19 @@ impl ListFragmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFragmentsInput {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i64>,
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    #[doc(hidden)]
     pub fragment_selector: std::option::Option<crate::model::FragmentSelector>,
 }
 impl ListFragmentsInput {
@@ -1474,10 +1479,13 @@ impl std::fmt::Debug for ListFragmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaForFragmentListInput {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
+    #[doc(hidden)]
     pub fragments: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMediaForFragmentListInput {
@@ -1509,34 +1517,46 @@ impl std::fmt::Debug for GetMediaForFragmentListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagesInput {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    #[doc(hidden)]
     pub image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end timestamp for the range of images to be generated.</p>
+    #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
     /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
     /// </note>
+    #[doc(hidden)]
     pub sampling_interval: std::option::Option<i32>,
     /// <p>The format that will be used to encode the image.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+    #[doc(hidden)]
     pub format_config: std::option::Option<
         std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
     >,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
+    #[doc(hidden)]
     pub width_pixels: std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    #[doc(hidden)]
     pub height_pixels: std::option::Option<i32>,
     /// <p>The maximum number of images to be returned by the API. </p> <note>
     /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
     /// </note>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i64>,
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetImagesInput {
@@ -1622,9 +1642,11 @@ impl std::fmt::Debug for GetImagesInput {
 pub struct GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
@@ -1637,12 +1659,15 @@ pub struct GetHlsStreamingSessionUrlInput {
     /// </ul>
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<crate::model::HlsPlaybackMode>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
+    #[doc(hidden)]
     pub hls_fragment_selector: std::option::Option<crate::model::HlsFragmentSelector>,
     /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
     /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
+    #[doc(hidden)]
     pub container_format: std::option::Option<crate::model::ContainerFormat>,
     /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
     /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
@@ -1653,19 +1678,23 @@ pub struct GetHlsStreamingSessionUrlInput {
     /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
     /// </ul>
     /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub discontinuity_mode: std::option::Option<crate::model::HlsDiscontinuityMode>,
     /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
     /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
+    #[doc(hidden)]
     pub display_fragment_timestamp: std::option::Option<crate::model::HlsDisplayFragmentTimestamp>,
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
+    #[doc(hidden)]
     pub expires: std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
     /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
     /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
     /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
     /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
+    #[doc(hidden)]
     pub max_media_playlist_fragment_results: std::option::Option<i64>,
 }
 impl GetHlsStreamingSessionUrlInput {
@@ -1765,9 +1794,11 @@ impl std::fmt::Debug for GetHlsStreamingSessionUrlInput {
 pub struct GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
@@ -1780,25 +1811,31 @@ pub struct GetDashStreamingSessionUrlInput {
     /// </ul>
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<crate::model::DashPlaybackMode>,
     /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
+    #[doc(hidden)]
     pub display_fragment_timestamp: std::option::Option<crate::model::DashDisplayFragmentTimestamp>,
     /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
+    #[doc(hidden)]
     pub display_fragment_number: std::option::Option<crate::model::DashDisplayFragmentNumber>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
+    #[doc(hidden)]
     pub dash_fragment_selector: std::option::Option<crate::model::DashFragmentSelector>,
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
+    #[doc(hidden)]
     pub expires: std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
     /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
     /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
     /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
     /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
+    #[doc(hidden)]
     pub max_manifest_fragment_results: std::option::Option<i64>,
 }
 impl GetDashStreamingSessionUrlInput {
@@ -1889,11 +1926,14 @@ impl std::fmt::Debug for GetDashStreamingSessionUrlInput {
 pub struct GetClipInput {
     /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
+    #[doc(hidden)]
     pub clip_fragment_selector: std::option::Option<crate::model::ClipFragmentSelector>,
 }
 impl GetClipInput {

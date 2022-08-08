@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub accelerator_type_name: std::option::Option<std::string::String>,
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub memory_info: std::option::Option<crate::model::MemoryInfo>,
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub throughput_info: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
 impl AcceleratorType {
@@ -112,8 +115,10 @@ impl AcceleratorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyValuePair {
     /// <p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p> The throughput value of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub value: i32,
 }
 impl KeyValuePair {
@@ -185,6 +190,7 @@ impl KeyValuePair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub size_in_mi_b: i32,
 }
 impl MemoryInfo {
@@ -239,14 +245,19 @@ impl MemoryInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticInferenceAccelerator {
     /// <p> The health of the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub accelerator_health: std::option::Option<crate::model::ElasticInferenceAcceleratorHealth>,
     /// <p> The type of the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub accelerator_type: std::option::Option<std::string::String>,
     /// <p> The ID of the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub accelerator_id: std::option::Option<std::string::String>,
     /// <p> The availability zone where the Elastic Inference Accelerator is present. </p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>
+    #[doc(hidden)]
     pub attached_resource: std::option::Option<std::string::String>,
 }
 impl ElasticInferenceAccelerator {
@@ -390,6 +401,7 @@ impl ElasticInferenceAccelerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticInferenceAcceleratorHealth {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ElasticInferenceAcceleratorHealth {
@@ -444,8 +456,10 @@ impl ElasticInferenceAcceleratorHealth {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p> The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The values for the filter of the Elastic Inference Accelerator list. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -526,10 +540,13 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceleratorTypeOffering {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
+    #[doc(hidden)]
     pub accelerator_type: std::option::Option<std::string::String>,
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
+    #[doc(hidden)]
     pub location_type: std::option::Option<crate::model::LocationType>,
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl AcceleratorTypeOffering {

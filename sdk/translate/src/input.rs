@@ -2614,12 +2614,16 @@ impl UpdateParallelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParallelDataInput {
     /// <p>The name of the parallel data resource being updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    #[doc(hidden)]
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateParallelDataInput {
@@ -2656,17 +2660,22 @@ impl std::fmt::Debug for UpdateParallelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslateTextInput {
     /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
+    #[doc(hidden)]
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
     /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
     /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
+    #[doc(hidden)]
     pub target_language_code: std::option::Option<std::string::String>,
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextInput {
@@ -2711,6 +2720,7 @@ impl std::fmt::Debug for TranslateTextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTextTranslationJobInput {
     /// <p>The job ID of the job to be stopped.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopTextTranslationJobInput {
@@ -2732,22 +2742,29 @@ impl std::fmt::Debug for StopTextTranslationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Specifies the format and location of the input documents for the translation job.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies the S3 folder to which your job output will be saved. </p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
     /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
+    #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code of the output language.</p>
+    #[doc(hidden)]
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
     /// <p>This parameter accepts only one custom terminology resource.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <code>how-custom-terminology</code>.</p>
+    #[doc(hidden)]
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
     /// <p>This parameter accepts only one parallel data resource.</p> <note>
@@ -2755,10 +2772,13 @@ pub struct StartTextTranslationJobInput {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
+    #[doc(hidden)]
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {
@@ -2834,10 +2854,13 @@ impl std::fmt::Debug for StartTextTranslationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTextTranslationJobsInput {
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::TextTranslationJobFilter>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTextTranslationJobsInput {
@@ -2869,8 +2892,10 @@ impl std::fmt::Debug for ListTextTranslationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTerminologiesInput {
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom terminologies returned per list request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTerminologiesInput {
@@ -2897,8 +2922,10 @@ impl std::fmt::Debug for ListTerminologiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListParallelDataInput {
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of parallel data resources returned for each request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListParallelDataInput {
@@ -2925,10 +2952,13 @@ impl std::fmt::Debug for ListParallelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguagesInput {
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    #[doc(hidden)]
     pub display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
     /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in each response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListLanguagesInput {
@@ -2960,14 +2990,19 @@ impl std::fmt::Debug for ListLanguagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTerminologyInput {
     /// <p>The name of the custom terminology being imported.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
+    #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The description of the custom terminology being imported.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The terminology data for the custom terminology being imported.</p>
+    #[doc(hidden)]
     pub terminology_data: std::option::Option<crate::model::TerminologyData>,
     /// <p>The encryption key for the custom terminology being imported.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl ImportTerminologyInput {
@@ -3009,10 +3044,12 @@ impl std::fmt::Debug for ImportTerminologyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data format of the custom terminology being retrieved.</p>
     /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    #[doc(hidden)]
     pub terminology_data_format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
 impl GetTerminologyInput {
@@ -3043,6 +3080,7 @@ impl std::fmt::Debug for GetTerminologyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParallelDataInput {
     /// <p>The name of the parallel data resource that is being retrieved.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetParallelDataInput {
@@ -3064,6 +3102,7 @@ impl std::fmt::Debug for GetParallelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTextTranslationJobInput {
     /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeTextTranslationJobInput {
@@ -3085,6 +3124,7 @@ impl std::fmt::Debug for DescribeTextTranslationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTerminologyInput {
     /// <p>The name of the custom terminology being deleted. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTerminologyInput {
@@ -3106,6 +3146,7 @@ impl std::fmt::Debug for DeleteTerminologyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParallelDataInput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteParallelDataInput {
@@ -3127,14 +3168,19 @@ impl std::fmt::Debug for DeleteParallelDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParallelDataInput {
     /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    #[doc(hidden)]
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
     /// <p>The encryption key used to encrypt this object.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateParallelDataInput {

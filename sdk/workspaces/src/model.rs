@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
+    #[doc(hidden)]
     pub ip_rule: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub rule_desc: std::option::Option<std::string::String>,
 }
 impl IpRuleItem {
@@ -78,8 +80,10 @@ impl IpRuleItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
+    #[doc(hidden)]
     pub allow_association: std::option::Option<bool>,
 }
 impl ConnectionAliasPermission {
@@ -154,10 +158,13 @@ impl ConnectionAliasPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedWorkspaceChangeRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedWorkspaceChangeRequest {
@@ -249,6 +256,7 @@ impl FailedWorkspaceChangeRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl TerminateRequest {
@@ -303,6 +311,7 @@ impl TerminateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl StopRequest {
@@ -357,6 +366,7 @@ impl StopRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl StartRequest {
@@ -411,8 +421,10 @@ impl StartRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -539,6 +551,7 @@ impl AsRef<str> for Tenancy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebuildRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl RebuildRequest {
@@ -593,6 +606,7 @@ impl RebuildRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootRequest {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl RebootRequest {
@@ -702,14 +716,19 @@ impl AsRef<str> for TargetWorkspaceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
+    #[doc(hidden)]
     pub running_mode: std::option::Option<crate::model::RunningMode>,
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
+    #[doc(hidden)]
     pub running_mode_auto_stop_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    #[doc(hidden)]
     pub root_volume_size_gib: std::option::Option<i32>,
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    #[doc(hidden)]
     pub user_volume_size_gib: std::option::Option<i32>,
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    #[doc(hidden)]
     pub compute_type_name: std::option::Option<crate::model::Compute>,
 }
 impl WorkspaceProperties {
@@ -996,8 +1015,10 @@ pub struct WorkspaceCreationProperties {
     /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
     /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
     /// </note>
+    #[doc(hidden)]
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
+    #[doc(hidden)]
     pub enable_internet_access: std::option::Option<bool>,
     /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
     /// <ul>
@@ -1005,12 +1026,16 @@ pub struct WorkspaceCreationProperties {
     /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
     /// </ul>
     /// </important>
+    #[doc(hidden)]
     pub default_ou: std::option::Option<std::string::String>,
     /// <p>The identifier of your custom security group.</p>
+    #[doc(hidden)]
     pub custom_security_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
+    #[doc(hidden)]
     pub user_enabled_as_local_administrator: std::option::Option<bool>,
     /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
+    #[doc(hidden)]
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
 impl WorkspaceCreationProperties {
@@ -1183,20 +1208,28 @@ impl WorkspaceCreationProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_windows: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_osx: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
+    #[doc(hidden)]
     pub device_type_web: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_ios: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_android: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_chrome_os: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_zero_client: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+    #[doc(hidden)]
     pub device_type_linux: std::option::Option<crate::model::AccessPropertyValue>,
 }
 impl WorkspaceAccessProperties {
@@ -1451,14 +1484,19 @@ impl AsRef<str> for AccessPropertyValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelfservicePermissions {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
+    #[doc(hidden)]
     pub restart_workspace: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
+    #[doc(hidden)]
     pub increase_volume_size: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
+    #[doc(hidden)]
     pub change_compute_type: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
+    #[doc(hidden)]
     pub switch_running_mode: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
+    #[doc(hidden)]
     pub rebuild_workspace: std::option::Option<crate::model::ReconnectEnum>,
 }
 impl SelfservicePermissions {
@@ -1718,11 +1756,14 @@ pub struct SamlProperties {
     /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
     /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SamlStatusEnum>,
     /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
+    #[doc(hidden)]
     pub user_access_url: std::option::Option<std::string::String>,
     /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
+    #[doc(hidden)]
     pub relay_state_parameter_name: std::option::Option<std::string::String>,
 }
 impl SamlProperties {
@@ -1908,6 +1949,7 @@ impl AsRef<str> for SamlStatusEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
+    #[doc(hidden)]
     pub reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
 }
 impl ClientProperties {
@@ -2146,6 +2188,7 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultClientBrandingAttributes {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    #[doc(hidden)]
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -2153,6 +2196,7 @@ pub struct DefaultClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
@@ -2160,10 +2204,13 @@ pub struct DefaultClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    #[doc(hidden)]
     pub forgot_password_link: std::option::Option<std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
+    #[doc(hidden)]
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2345,14 +2392,17 @@ impl DefaultClientBrandingAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IosClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    #[doc(hidden)]
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logo2x_url: std::option::Option<std::string::String>,
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logo3x_url: std::option::Option<std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -2360,6 +2410,7 @@ pub struct IosClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
@@ -2367,10 +2418,13 @@ pub struct IosClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    #[doc(hidden)]
     pub forgot_password_link: std::option::Option<std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
+    #[doc(hidden)]
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2598,6 +2652,7 @@ impl IosClientBrandingAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultImportClientBrandingAttributes {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    #[doc(hidden)]
     pub logo: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -2605,6 +2660,7 @@ pub struct DefaultImportClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
@@ -2612,10 +2668,13 @@ pub struct DefaultImportClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    #[doc(hidden)]
     pub forgot_password_link: std::option::Option<std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
+    #[doc(hidden)]
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2797,14 +2856,17 @@ impl DefaultImportClientBrandingAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IosImportClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    #[doc(hidden)]
     pub logo: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logo2x: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logo3x: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -2812,6 +2874,7 @@ pub struct IosImportClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
@@ -2819,10 +2882,13 @@ pub struct IosImportClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    #[doc(hidden)]
     pub forgot_password_link: std::option::Option<std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
+    #[doc(hidden)]
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3048,6 +3114,7 @@ impl IosImportClientBrandingAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
+    #[doc(hidden)]
     pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
@@ -3105,12 +3172,16 @@ impl Snapshot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceConnectionStatus {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The timestamp of the connection status check.</p>
+    #[doc(hidden)]
     pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last known user connection.</p>
+    #[doc(hidden)]
     pub last_known_user_connection_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkspaceConnectionStatus {
@@ -3302,36 +3373,51 @@ impl AsRef<str> for ConnectionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workspace {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The user for the WorkSpace.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The operational state of the WorkSpace.</p> <note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkspaceState>,
     /// <p>The identifier of the bundle used to create the WorkSpace.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the subnet for the WorkSpace.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
+    #[doc(hidden)]
     pub computer_name: std::option::Option<std::string::String>,
     /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    #[doc(hidden)]
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
+    #[doc(hidden)]
     pub user_volume_encryption_enabled: std::option::Option<bool>,
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
+    #[doc(hidden)]
     pub root_volume_encryption_enabled: std::option::Option<bool>,
     /// <p>The properties of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
     /// <p>The modification states of the WorkSpace.</p>
+    #[doc(hidden)]
     pub modification_states: std::option::Option<std::vec::Vec<crate::model::ModificationState>>,
 }
 impl Workspace {
@@ -3667,8 +3753,10 @@ impl Workspace {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModificationState {
     /// <p>The resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::ModificationResourceEnum>,
     /// <p>The modification state.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ModificationStateEnum>,
 }
 impl ModificationState {
@@ -3993,26 +4081,37 @@ impl AsRef<str> for WorkspaceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceImage {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The operating system that the image is running. </p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The status of the image.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkspaceImageState>,
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    #[doc(hidden)]
     pub required_tenancy: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
     /// <p>The error code that is returned for the image.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned for the image.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<crate::model::UpdateResult>,
 }
 impl WorkspaceImage {
@@ -4266,8 +4365,10 @@ impl WorkspaceImage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResult {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
+    #[doc(hidden)]
     pub update_available: std::option::Option<bool>,
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateResult {
@@ -4453,6 +4554,7 @@ impl AsRef<str> for WorkspaceImageState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperatingSystem {
     /// <p>The operating system.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OperatingSystemType>,
 }
 impl OperatingSystem {
@@ -4620,6 +4722,7 @@ impl AsRef<str> for ImageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
 }
 impl ImagePermission {
@@ -4677,39 +4780,56 @@ impl ImagePermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceDirectory {
     /// <p>The directory identifier.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The directory alias.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The name of the directory.</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
+    #[doc(hidden)]
     pub registration_code: std::option::Option<std::string::String>,
     /// <p>The identifiers of the subnets used with the directory.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP addresses of the DNS servers for the directory.</p>
+    #[doc(hidden)]
     pub dns_ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user name for the service account.</p>
+    #[doc(hidden)]
     pub customer_user_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role_id: std::option::Option<std::string::String>,
     /// <p>The directory type.</p>
+    #[doc(hidden)]
     pub directory_type: std::option::Option<crate::model::WorkspaceDirectoryType>,
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
+    #[doc(hidden)]
     pub workspace_security_group_id: std::option::Option<std::string::String>,
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::WorkspaceDirectoryState>,
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
+    #[doc(hidden)]
     pub workspace_creation_properties:
         std::option::Option<crate::model::DefaultWorkspaceCreationProperties>,
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
+    #[doc(hidden)]
     pub ip_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
+    #[doc(hidden)]
     pub workspace_access_properties: std::option::Option<crate::model::WorkspaceAccessProperties>,
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
+    #[doc(hidden)]
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+    #[doc(hidden)]
     pub saml_properties: std::option::Option<crate::model::SamlProperties>,
 }
 impl WorkspaceDirectory {
@@ -5123,16 +5243,22 @@ impl WorkspaceDirectory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
+    #[doc(hidden)]
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
+    #[doc(hidden)]
     pub enable_internet_access: std::option::Option<bool>,
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
+    #[doc(hidden)]
     pub default_ou: std::option::Option<std::string::String>,
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
+    #[doc(hidden)]
     pub custom_security_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
+    #[doc(hidden)]
     pub user_enabled_as_local_administrator: std::option::Option<bool>,
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
+    #[doc(hidden)]
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
 impl DefaultWorkspaceCreationProperties {
@@ -5409,24 +5535,34 @@ impl AsRef<str> for WorkspaceDirectoryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceBundle {
     /// <p>The identifier of the bundle.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The name of the bundle.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The description of the bundle.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the image that was used to create the bundle.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The size of the root volume.</p>
+    #[doc(hidden)]
     pub root_storage: std::option::Option<crate::model::RootStorage>,
     /// <p>The size of the user volume.</p>
+    #[doc(hidden)]
     pub user_storage: std::option::Option<crate::model::UserStorage>,
     /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    #[doc(hidden)]
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The last time that the bundle was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the bundle was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkspaceBundle {
@@ -5649,6 +5785,7 @@ impl WorkspaceBundle {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeType {
     /// <p>The compute type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::Compute>,
 }
 impl ComputeType {
@@ -5701,6 +5838,7 @@ impl ComputeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserStorage {
     /// <p>The size of the user volume.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<std::string::String>,
 }
 impl UserStorage {
@@ -5755,6 +5893,7 @@ impl UserStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootStorage {
     /// <p>The size of the root volume.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<std::string::String>,
 }
 impl RootStorage {
@@ -5809,12 +5948,16 @@ impl RootStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspacesIpGroup {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The description of the group.</p>
+    #[doc(hidden)]
     pub group_desc: std::option::Option<std::string::String>,
     /// <p>The rules.</p>
+    #[doc(hidden)]
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
 }
 impl WorkspacesIpGroup {
@@ -5929,14 +6072,19 @@ impl WorkspacesIpGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAlias {
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    #[doc(hidden)]
     pub connection_string: std::option::Option<std::string::String>,
     /// <p>The identifier of the connection alias.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The current state of the connection alias.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConnectionAliasState>,
     /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The association status of the connection alias.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
 }
 impl ConnectionAlias {
@@ -6078,12 +6226,16 @@ impl ConnectionAlias {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
+    #[doc(hidden)]
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
+    #[doc(hidden)]
     pub associated_account_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the directory associated with a connection alias.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
+    #[doc(hidden)]
     pub connection_identifier: std::option::Option<std::string::String>,
 }
 impl ConnectionAliasAssociation {
@@ -6330,12 +6482,16 @@ impl AsRef<str> for ConnectionAliasState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectClientAddIn {
     /// <p>The client add-in identifier.</p>
+    #[doc(hidden)]
     pub add_in_id: std::option::Option<std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The name of the client add in.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The endpoint URL of the client add-in.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl ConnectClientAddIn {
@@ -6441,8 +6597,10 @@ impl ConnectClientAddIn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientPropertiesResult {
     /// <p>The resource identifier, in the form of a directory ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
+    #[doc(hidden)]
     pub client_properties: std::option::Option<crate::model::ClientProperties>,
 }
 impl ClientPropertiesResult {
@@ -6517,18 +6675,24 @@ impl ClientPropertiesResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountModification {
     /// <p>The state of the modification to the configuration of BYOL.</p>
+    #[doc(hidden)]
     pub modification_state:
         std::option::Option<crate::model::DedicatedTenancyModificationStateEnum>,
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_support:
         std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl AccountModification {
@@ -6895,10 +7059,13 @@ impl AsRef<str> for ClientDeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedCreateWorkspaceRequest {
     /// <p>Information about the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_request: std::option::Option<crate::model::WorkspaceRequest>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedCreateWorkspaceRequest {
@@ -6993,20 +7160,28 @@ impl FailedCreateWorkspaceRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    #[doc(hidden)]
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
+    #[doc(hidden)]
     pub user_volume_encryption_enabled: std::option::Option<bool>,
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
+    #[doc(hidden)]
     pub root_volume_encryption_enabled: std::option::Option<bool>,
     /// <p>The WorkSpace properties.</p>
+    #[doc(hidden)]
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl WorkspaceRequest {

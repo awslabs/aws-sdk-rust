@@ -5,30 +5,40 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description for the experiment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets for the experiment.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>,
     >,
     /// <p>The actions for the experiment.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>,
     >,
     /// <p>The stop conditions for the experiment.</p>
+    #[doc(hidden)]
     pub stop_conditions:
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
     /// <p>The time the experiment template was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the experiment template was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the experiment template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
+    #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
 }
 impl ExperimentTemplate {
@@ -336,11 +346,14 @@ impl ExperimentTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl ExperimentTemplateLogConfiguration {
@@ -452,8 +465,10 @@ impl ExperimentTemplateLogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The bucket prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateS3LogConfiguration {
@@ -525,6 +540,7 @@ impl ExperimentTemplateS3LogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfiguration {
@@ -583,8 +599,10 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateStopCondition {
@@ -656,16 +674,21 @@ impl ExperimentTemplateStopCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>A description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
+    #[doc(hidden)]
     pub targets:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts.</p>
+    #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExperimentTemplateAction {
@@ -837,17 +860,23 @@ impl ExperimentTemplateAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateTarget {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1053,8 +1082,10 @@ impl ExperimentTemplateTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateTargetFilter {
     /// <p>The attribute path for the filter.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The attribute values for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExperimentTemplateTargetFilter {
@@ -1135,12 +1166,15 @@ impl ExperimentTemplateTargetFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration:
         std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl UpdateExperimentTemplateLogConfigurationInput {
@@ -1254,8 +1288,10 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The bucket prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateS3LogConfigurationInput {
@@ -1327,6 +1363,7 @@ impl ExperimentTemplateS3LogConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
@@ -1386,16 +1423,21 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateActionInputItem {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>A description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action, if applicable.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
+    #[doc(hidden)]
     pub targets:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
+    #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateExperimentTemplateActionInputItem {
@@ -1567,18 +1609,24 @@ impl UpdateExperimentTemplateActionInputItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1789,8 +1837,10 @@ impl UpdateExperimentTemplateTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateTargetInputFilter {
     /// <p>The attribute path for the filter.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The attribute values for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExperimentTemplateTargetInputFilter {
@@ -1871,8 +1921,10 @@ impl ExperimentTemplateTargetInputFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl UpdateExperimentTemplateStopConditionInput {
@@ -1944,33 +1996,45 @@ impl UpdateExperimentTemplateStopConditionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Experiment {
     /// <p>The ID of the experiment.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the experiment.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExperimentState>,
     /// <p>The targets for the experiment.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
     >,
     /// <p>The actions for the experiment.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
     >,
     /// <p>The stop conditions for the experiment.</p>
+    #[doc(hidden)]
     pub stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
     /// <p>The time that the experiment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the experiment started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the experiment ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
+    #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::ExperimentLogConfiguration>,
 }
 impl Experiment {
@@ -2307,11 +2371,14 @@ impl Experiment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl ExperimentLogConfiguration {
@@ -2421,8 +2488,10 @@ impl ExperimentLogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The bucket prefix.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl ExperimentS3LogConfiguration {
@@ -2494,6 +2563,7 @@ impl ExperimentS3LogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentCloudWatchLogsLogConfiguration {
@@ -2551,8 +2621,10 @@ impl ExperimentCloudWatchLogsLogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentStopCondition {
     /// <p>The source for the stop condition.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ExperimentStopCondition {
@@ -2624,22 +2696,30 @@ impl ExperimentStopCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentAction {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
+    #[doc(hidden)]
     pub targets:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before this action starts.</p>
+    #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the action.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExperimentActionState>,
     /// <p>The time that the action started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the action ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExperimentAction {
@@ -2871,8 +2951,10 @@ impl ExperimentAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentActionState {
     /// <p>The state of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentActionStatus>,
     /// <p>The reason for the state.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ExperimentActionState {
@@ -3035,17 +3117,23 @@ impl AsRef<str> for ExperimentActionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTarget {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3251,8 +3339,10 @@ impl ExperimentTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTargetFilter {
     /// <p>The attribute path for the filter.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The attribute values for the filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExperimentTargetFilter {
@@ -3333,8 +3423,10 @@ impl ExperimentTargetFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentState {
     /// <p>The state of the experiment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentStatus>,
     /// <p>The reason for the state.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ExperimentState {
@@ -3492,8 +3584,10 @@ impl AsRef<str> for ExperimentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetResourceTypeSummary {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>A description of the resource type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl TargetResourceTypeSummary {
@@ -3568,14 +3662,19 @@ impl TargetResourceTypeSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateSummary {
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the experiment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time that the experiment template was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the experiment template was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3725,14 +3824,19 @@ impl ExperimentTemplateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentSummary {
     /// <p>The ID of the experiment.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the experiment template.</p>
+    #[doc(hidden)]
     pub experiment_template_id: std::option::Option<std::string::String>,
     /// <p>The state of the experiment.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExperimentState>,
     /// <p>The time that the experiment was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3885,14 +3989,18 @@ impl ExperimentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionSummary {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets for the action.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
     >,
     /// <p>The tags for the action.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4040,6 +4148,7 @@ impl ActionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTarget {
     /// <p>The resource type of the target.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ActionTarget {
@@ -4097,10 +4206,13 @@ impl ActionTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetResourceType {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>A description of the resource type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the resource type.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
     >,
@@ -4221,8 +4333,10 @@ impl TargetResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
+    #[doc(hidden)]
     pub required: std::option::Option<bool>,
 }
 impl TargetResourceTypeParameter {
@@ -4294,18 +4408,23 @@ impl TargetResourceTypeParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The ID of the action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The action parameters, if applicable.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
     >,
     /// <p>The supported targets for the action.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
     >,
     /// <p>The tags for the action.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4491,8 +4610,10 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionParameter {
     /// <p>The parameter description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
+    #[doc(hidden)]
     pub required: std::option::Option<bool>,
 }
 impl ActionParameter {
@@ -4564,12 +4685,15 @@ impl ActionParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_configuration:
         std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
+    #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl CreateExperimentTemplateLogConfigurationInput {
@@ -4684,16 +4808,21 @@ impl CreateExperimentTemplateLogConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateActionInput {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>A description for the action.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action, if applicable.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
+    #[doc(hidden)]
     pub targets:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
+    #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateExperimentTemplateActionInput {
@@ -4866,13 +4995,17 @@ impl CreateExperimentTemplateActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
+    #[doc(hidden)]
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
@@ -4881,8 +5014,10 @@ pub struct CreateExperimentTemplateTargetInput {
     /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5107,8 +5242,10 @@ impl CreateExperimentTemplateTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CreateExperimentTemplateStopConditionInput {

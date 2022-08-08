@@ -4,19 +4,26 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceDescription {
     /// <p>The ARN of the device.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
+    #[doc(hidden)]
     pub remaining_life: f64,
     /// <p>The type of the device, such as "button".</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -214,8 +221,10 @@ impl DeviceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceEvent {
     /// <p>An object representing the device associated with the event.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
     /// <p>A serialized JSON object representing the device-type specific event.</p>
+    #[doc(hidden)]
     pub std_event: std::option::Option<std::string::String>,
 }
 impl DeviceEvent {
@@ -287,10 +296,13 @@ impl DeviceEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The user specified attributes associated with the device for an event.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::Attributes>,
     /// <p>The unique identifier of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device type, such as "button".</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Device {
@@ -412,8 +424,10 @@ impl Attributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceMethod {
     /// <p>The type of the device, such as "button".</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The name of the method applicable to the deviceType.</p>
+    #[doc(hidden)]
     pub method_name: std::option::Option<std::string::String>,
 }
 impl DeviceMethod {

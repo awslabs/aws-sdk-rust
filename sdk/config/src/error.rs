@@ -7,6 +7,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -71,6 +72,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -135,6 +137,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -199,6 +202,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigurationRecorderException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchConfigurationRecorderException {
@@ -263,6 +267,7 @@ impl NoSuchConfigurationRecorderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchRemediationConfigurationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchRemediationConfigurationException {
@@ -327,6 +332,7 @@ impl NoSuchRemediationConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -401,6 +407,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientPermissionsException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientPermissionsException {
@@ -465,6 +472,7 @@ impl InsufficientPermissionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableDeliveryChannelException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAvailableDeliveryChannelException {
@@ -538,6 +546,7 @@ impl NoAvailableDeliveryChannelException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -602,6 +611,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigRuleException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchConfigRuleException {
@@ -667,6 +677,7 @@ impl NoSuchConfigRuleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -731,6 +742,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -795,6 +807,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLimitException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLimitException {
@@ -859,6 +872,7 @@ impl InvalidLimitException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExpressionException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidExpressionException {
@@ -923,6 +937,7 @@ impl InvalidExpressionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigurationAggregatorException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchConfigurationAggregatorException {
@@ -987,6 +1002,7 @@ impl NoSuchConfigurationAggregatorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConcurrentModificationException {
@@ -1051,6 +1067,7 @@ impl ResourceConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfRetentionConfigurationsExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfRetentionConfigurationsExceededException {
@@ -1116,6 +1133,7 @@ impl MaxNumberOfRetentionConfigurationsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoRunningConfigurationRecorderException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoRunningConfigurationRecorderException {
@@ -1180,6 +1198,7 @@ impl NoRunningConfigurationRecorderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxActiveResourcesExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxActiveResourcesExceededException {
@@ -1244,6 +1263,7 @@ impl MaxActiveResourcesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConformancePackTemplateValidationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationConformancePackTemplateValidationException {
@@ -1311,6 +1331,7 @@ impl OrganizationConformancePackTemplateValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAllFeaturesNotEnabledException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationAllFeaturesNotEnabledException {
@@ -1382,6 +1403,7 @@ impl OrganizationAllFeaturesNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAccessDeniedException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationAccessDeniedException {
@@ -1446,6 +1468,7 @@ impl OrganizationAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableOrganizationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAvailableOrganizationException {
@@ -1510,6 +1533,7 @@ impl NoAvailableOrganizationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfOrganizationConformancePacksExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfOrganizationConformancePacksExceededException {
@@ -1582,6 +1606,7 @@ impl MaxNumberOfOrganizationConformancePacksExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfOrganizationConfigRulesExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfOrganizationConfigRulesExceededException {
@@ -1647,6 +1672,7 @@ impl MaxNumberOfOrganizationConfigRulesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResultTokenException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidResultTokenException {
@@ -1711,6 +1737,7 @@ impl InvalidResultTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchBucketException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchBucketException {
@@ -1775,6 +1802,7 @@ impl NoSuchBucketException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableConfigurationRecorderException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAvailableConfigurationRecorderException {
@@ -1839,6 +1867,7 @@ impl NoAvailableConfigurationRecorderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfDeliveryChannelsExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfDeliveryChannelsExceededException {
@@ -1903,6 +1932,7 @@ impl MaxNumberOfDeliveryChannelsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicArnException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSnsTopicArnException {
@@ -1970,6 +2000,7 @@ impl InvalidSnsTopicArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KmsKeyArnException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3KmsKeyArnException {
@@ -2034,6 +2065,7 @@ impl InvalidS3KmsKeyArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyPrefixException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3KeyPrefixException {
@@ -2098,6 +2130,7 @@ impl InvalidS3KeyPrefixException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeliveryChannelNameException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeliveryChannelNameException {
@@ -2162,6 +2195,7 @@ impl InvalidDeliveryChannelNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDeliveryPolicyException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDeliveryPolicyException {
@@ -2226,6 +2260,7 @@ impl InsufficientDeliveryPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfConformancePacksExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfConformancePacksExceededException {
@@ -2290,6 +2325,7 @@ impl MaxNumberOfConformancePacksExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackTemplateValidationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConformancePackTemplateValidationException {
@@ -2354,6 +2390,7 @@ impl ConformancePackTemplateValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfConfigurationRecordersExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfConfigurationRecordersExceededException {
@@ -2419,6 +2456,7 @@ impl MaxNumberOfConfigurationRecordersExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRoleException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRoleException {
@@ -2483,6 +2521,7 @@ impl InvalidRoleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRecordingGroupException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRecordingGroupException {
@@ -2547,6 +2586,7 @@ impl InvalidRecordingGroupException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationRecorderNameException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationRecorderNameException {
@@ -2611,6 +2651,7 @@ impl InvalidConfigurationRecorderNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfConfigRulesExceededException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxNumberOfConfigRulesExceededException {
@@ -2675,6 +2716,7 @@ impl MaxNumberOfConfigRulesExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotDiscoveredException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotDiscoveredException {
@@ -2739,6 +2781,7 @@ impl ResourceNotDiscoveredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTimeRangeException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTimeRangeException {
@@ -2803,6 +2846,7 @@ impl InvalidTimeRangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchOrganizationConfigRuleException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchOrganizationConfigRuleException {
@@ -2868,6 +2912,7 @@ impl NoSuchOrganizationConfigRuleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchOrganizationConformancePackException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchOrganizationConformancePackException {
@@ -2932,6 +2977,7 @@ impl NoSuchOrganizationConformancePackException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConformancePackException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchConformancePackException {
@@ -2996,6 +3042,7 @@ impl NoSuchConformancePackException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigRuleInConformancePackException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchConfigRuleInConformancePackException {
@@ -3060,6 +3107,7 @@ impl NoSuchConfigRuleInConformancePackException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OversizedConfigurationItemException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OversizedConfigurationItemException {
@@ -3124,6 +3172,7 @@ impl OversizedConfigurationItemException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchRetentionConfigurationException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchRetentionConfigurationException {
@@ -3188,6 +3237,7 @@ impl NoSuchRetentionConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchDeliveryChannelException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchDeliveryChannelException {
@@ -3252,6 +3302,7 @@ impl NoSuchDeliveryChannelException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchRemediationExceptionException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchRemediationExceptionException {
@@ -3316,6 +3367,7 @@ impl NoSuchRemediationExceptionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationInProgressException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RemediationInProgressException {
@@ -3380,6 +3432,7 @@ impl RemediationInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastDeliveryChannelDeleteFailedException {
     /// <p>Error executing the command</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LastDeliveryChannelDeleteFailedException {

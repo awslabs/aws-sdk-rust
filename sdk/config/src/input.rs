@@ -15546,8 +15546,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -15574,8 +15576,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of tag object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -15602,6 +15606,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    #[doc(hidden)]
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl StopConfigurationRecorderInput {
@@ -15626,8 +15631,10 @@ impl std::fmt::Debug for StopConfigurationRecorderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRemediationExecutionInput {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    #[doc(hidden)]
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl StartRemediationExecutionInput {
@@ -15654,6 +15661,7 @@ impl std::fmt::Debug for StartRemediationExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    #[doc(hidden)]
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl StartConfigurationRecorderInput {
@@ -15678,6 +15686,7 @@ impl std::fmt::Debug for StartConfigurationRecorderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigRulesEvaluationInput {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
+    #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartConfigRulesEvaluationInput {
@@ -15699,10 +15708,13 @@ impl std::fmt::Debug for StartConfigRulesEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectResourceConfigInput {
     /// <p>The SQL query <code>SELECT</code> command.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SelectResourceConfigInput {
@@ -15734,14 +15746,19 @@ impl std::fmt::Debug for SelectResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectAggregateResourceConfigInput {
     /// <p>The SQL query SELECT command. </p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of query results returned on each page. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SelectAggregateResourceConfigInput {
@@ -15788,8 +15805,10 @@ pub struct PutStoredQueryInput {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
+    #[doc(hidden)]
     pub stored_query: std::option::Option<crate::model::StoredQuery>,
     /// <p>A list of <code>Tags</code> object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutStoredQueryInput {
@@ -15820,6 +15839,7 @@ pub struct PutRetentionConfigurationInput {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
+    #[doc(hidden)]
     pub retention_period_in_days: i32,
 }
 impl PutRetentionConfigurationInput {
@@ -15845,20 +15865,26 @@ pub struct PutResourceConfigInput {
     /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Name of the resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>Tags associated with the resource.</p> <note>
     /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15915,13 +15941,17 @@ impl std::fmt::Debug for PutResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    #[doc(hidden)]
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
     /// <p>The message contains an explanation of the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The exception is automatically deleted after the expiration date.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutRemediationExceptionsInput {
@@ -15960,6 +15990,7 @@ impl std::fmt::Debug for PutRemediationExceptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
+    #[doc(hidden)]
     pub remediation_configurations:
         std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
 }
@@ -15987,25 +16018,32 @@ impl std::fmt::Debug for PutRemediationConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
+    #[doc(hidden)]
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub template_s3_uri: std::option::Option<std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
+    #[doc(hidden)]
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+    #[doc(hidden)]
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutOrganizationConformancePackInput {
@@ -16071,16 +16109,21 @@ impl std::fmt::Debug for PutOrganizationConformancePackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConfigRuleInput {
     /// <p>The name that you assign to an organization Config rule.</p>
+    #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+    #[doc(hidden)]
     pub organization_managed_rule_metadata:
         std::option::Option<crate::model::OrganizationManagedRuleMetadata>,
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+    #[doc(hidden)]
     pub organization_custom_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
+    #[doc(hidden)]
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    #[doc(hidden)]
     pub organization_custom_policy_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
 }
@@ -16141,8 +16184,10 @@ impl std::fmt::Debug for PutOrganizationConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutExternalEvaluationInput {
     /// <p>The name of the Config rule.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    #[doc(hidden)]
     pub external_evaluation: std::option::Option<crate::model::ExternalEvaluation>,
 }
 impl PutExternalEvaluationInput {
@@ -16169,12 +16214,15 @@ impl std::fmt::Debug for PutExternalEvaluationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsInput {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+    #[doc(hidden)]
     pub evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+    #[doc(hidden)]
     pub result_token: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
+    #[doc(hidden)]
     pub test_mode: bool,
 }
 impl PutEvaluationsInput {
@@ -16208,6 +16256,7 @@ impl std::fmt::Debug for PutEvaluationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
@@ -16229,24 +16278,30 @@ impl std::fmt::Debug for PutDeliveryChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConformancePackInput {
     /// <p>Name of the conformance pack you want to create.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub template_s3_uri: std::option::Option<std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
+    #[doc(hidden)]
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
+    #[doc(hidden)]
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    #[doc(hidden)]
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
 }
@@ -16307,6 +16362,7 @@ impl std::fmt::Debug for PutConformancePackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationRecorderInput {
     /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    #[doc(hidden)]
     pub configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {
@@ -16330,14 +16386,18 @@ impl std::fmt::Debug for PutConfigurationRecorderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>A list of AccountAggregationSource object. </p>
+    #[doc(hidden)]
     pub account_aggregation_sources:
         std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
     /// <p>An OrganizationAggregationSource object.</p>
+    #[doc(hidden)]
     pub organization_aggregation_source:
         std::option::Option<crate::model::OrganizationAggregationSource>,
     /// <p>An array of tag object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutConfigurationAggregatorInput {
@@ -16387,8 +16447,10 @@ impl std::fmt::Debug for PutConfigurationAggregatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigRuleInput {
     /// <p>The rule that you want to add to your account.</p>
+    #[doc(hidden)]
     pub config_rule: std::option::Option<crate::model::ConfigRule>,
     /// <p>An array of tag object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutConfigRuleInput {
@@ -16415,10 +16477,13 @@ impl std::fmt::Debug for PutConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    #[doc(hidden)]
     pub authorized_account_id: std::option::Option<std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
+    #[doc(hidden)]
     pub authorized_aws_region: std::option::Option<std::string::String>,
     /// <p>An array of tag object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutAggregationAuthorizationInput {
@@ -16450,10 +16515,13 @@ impl std::fmt::Debug for PutAggregationAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -16485,8 +16553,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStoredQueriesInput {
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned with a single call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListStoredQueriesInput {
@@ -16513,16 +16583,22 @@ impl std::fmt::Debug for ListStoredQueriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The type of resources that you want Config to list in the response.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
+    #[doc(hidden)]
     pub include_deleted_resources: bool,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoveredResourcesInput {
@@ -16569,16 +16645,21 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConformancePackComplianceScoresInput {
     /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConformancePackComplianceScoresFilters>,
     /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
     /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
     /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::SortBy>,
     /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConformancePackComplianceScoresInput {
@@ -16624,14 +16705,19 @@ impl std::fmt::Debug for ListConformancePackComplianceScoresInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The name of the configuration aggregator. </p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>The type of resources that you want Config to list in the response.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ResourceFilters>,
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAggregateDiscoveredResourcesInput {
@@ -16676,6 +16762,7 @@ impl std::fmt::Debug for ListAggregateDiscoveredResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStoredQueryInput {
     /// <p>The name of the query.</p>
+    #[doc(hidden)]
     pub query_name: std::option::Option<std::string::String>,
 }
 impl GetStoredQueryInput {
@@ -16697,18 +16784,25 @@ impl std::fmt::Debug for GetStoredQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceConfigHistoryInput {
     /// <p>The resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    #[doc(hidden)]
     pub later_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    #[doc(hidden)]
     pub earlier_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
+    #[doc(hidden)]
     pub chronological_order: std::option::Option<crate::model::ChronologicalOrder>,
     /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceConfigHistoryInput {
@@ -16760,6 +16854,7 @@ impl std::fmt::Debug for GetResourceConfigHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationCustomRulePolicyInput {
     /// <p>The name of your organization Config Custom Policy rule. </p>
+    #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyInput {
@@ -16784,12 +16879,16 @@ impl std::fmt::Debug for GetOrganizationCustomRulePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
+    #[doc(hidden)]
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::OrganizationResourceDetailedStatusFilters>,
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOrganizationConformancePackDetailedStatusInput {
@@ -16831,12 +16930,16 @@ impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConfigRuleDetailedStatusInput {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
+    #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
     /// <p>A <code>StatusDetailFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::StatusDetailFilters>,
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOrganizationConfigRuleDetailedStatusInput {
@@ -16879,10 +16982,13 @@ pub struct GetDiscoveredResourceCountsInput {
     /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsInput {
@@ -16917,6 +17023,7 @@ impl std::fmt::Debug for GetDiscoveredResourceCountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomRulePolicyInput {
     /// <p>The name of your Config Custom Policy rule.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl GetCustomRulePolicyInput {
@@ -16938,10 +17045,13 @@ impl std::fmt::Debug for GetCustomRulePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConformancePackComplianceSummaryInput {
     /// <p>Names of conformance packs.</p>
+    #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConformancePackComplianceSummaryInput {
@@ -16973,12 +17083,16 @@ impl std::fmt::Debug for GetConformancePackComplianceSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConformancePackComplianceDetailsInput {
     /// <p>Name of the conformance pack.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConformancePackEvaluationFilters>,
     /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConformancePackComplianceDetailsInput {
@@ -17016,6 +17130,7 @@ impl std::fmt::Debug for GetConformancePackComplianceDetailsInput {
 pub struct GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInput {
@@ -17049,13 +17164,17 @@ impl std::fmt::Debug for GetComplianceSummaryByConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceInput {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceInput {
@@ -17093,13 +17212,17 @@ impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleInput {
     /// <p>The name of the Config rule for which you want compliance information.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleInput {
@@ -17137,8 +17260,10 @@ impl std::fmt::Debug for GetComplianceDetailsByConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>An object that identifies aggregate resource.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<crate::model::AggregateResourceIdentifier>,
 }
 impl GetAggregateResourceConfigInput {
@@ -17170,14 +17295,19 @@ impl std::fmt::Debug for GetAggregateResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateDiscoveredResourceCountsInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ResourceCountFilters>,
     /// <p>The key to group the resource counts.</p>
+    #[doc(hidden)]
     pub group_by_key: std::option::Option<crate::model::ResourceCountGroupKey>,
     /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateDiscoveredResourceCountsInput {
@@ -17222,16 +17352,21 @@ impl std::fmt::Debug for GetAggregateDiscoveredResourceCountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateConformancePackComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<crate::model::AggregateConformancePackComplianceSummaryFilters>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub group_by_key:
         std::option::Option<crate::model::AggregateConformancePackComplianceSummaryGroupKey>,
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConformancePackComplianceSummaryInput {
@@ -17280,14 +17415,19 @@ impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateConfigRuleComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    #[doc(hidden)]
     pub group_by_key: std::option::Option<crate::model::ConfigRuleComplianceSummaryGroupKey>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConfigRuleComplianceSummaryInput {
@@ -17336,20 +17476,27 @@ impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>The name of the Config rule for which you want compliance information.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The 12-digit account ID of the source account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The resource compliance status.</p> <note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
+    #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateComplianceDetailsByConfigRuleInput {
@@ -17408,8 +17555,10 @@ pub struct DescribeRetentionConfigurationsInput {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
+    #[doc(hidden)]
     pub retention_configuration_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRetentionConfigurationsInput {
@@ -17441,12 +17590,16 @@ impl std::fmt::Debug for DescribeRetentionConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExecutionStatusInput {
     /// <p>A list of Config rule names.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    #[doc(hidden)]
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRemediationExecutionStatusInput {
@@ -17483,13 +17636,17 @@ impl std::fmt::Debug for DescribeRemediationExecutionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationExceptionsInput {
     /// <p>The name of the Config rule.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    #[doc(hidden)]
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRemediationExceptionsInput {
@@ -17528,6 +17685,7 @@ impl std::fmt::Debug for DescribeRemediationExceptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRemediationConfigurationsInput {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
+    #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRemediationConfigurationsInput {
@@ -17549,8 +17707,10 @@ impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingAggregationRequestsInput {
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePendingAggregationRequestsInput {
@@ -17577,11 +17737,14 @@ impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    #[doc(hidden)]
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePackStatusesInput {
@@ -17618,11 +17781,14 @@ impl std::fmt::Debug for DescribeOrganizationConformancePackStatusesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
+    #[doc(hidden)]
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePacksInput {
@@ -17659,10 +17825,13 @@ impl std::fmt::Debug for DescribeOrganizationConformancePacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRuleStatusesInput {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    #[doc(hidden)]
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRuleStatusesInput {
@@ -17697,10 +17866,13 @@ impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    #[doc(hidden)]
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRulesInput {
@@ -17735,6 +17907,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelStatusInput {
     /// <p>A list of delivery channel names.</p>
+    #[doc(hidden)]
     pub delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDeliveryChannelStatusInput {
@@ -17756,6 +17929,7 @@ impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
+    #[doc(hidden)]
     pub delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDeliveryChannelsInput {
@@ -17777,10 +17951,13 @@ impl std::fmt::Debug for DescribeDeliveryChannelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePackStatusInput {
     /// <p>Comma-separated list of conformance pack names.</p>
+    #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs status returned on each page.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePackStatusInput {
@@ -17812,10 +17989,13 @@ impl std::fmt::Debug for DescribeConformancePackStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
+    #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePacksInput {
@@ -17847,12 +18027,16 @@ impl std::fmt::Debug for DescribeConformancePacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConformancePackComplianceInput {
     /// <p>Name of the conformance pack.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConformancePackComplianceFilters>,
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConformancePackComplianceInput {
@@ -17889,6 +18073,7 @@ impl std::fmt::Debug for DescribeConformancePackComplianceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecorderStatusInput {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    #[doc(hidden)]
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationRecorderStatusInput {
@@ -17913,6 +18098,7 @@ impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
+    #[doc(hidden)]
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationRecordersInput {
@@ -17937,6 +18123,7 @@ impl std::fmt::Debug for DescribeConfigurationRecordersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the status type.</p>
     /// <ul>
@@ -17944,10 +18131,13 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub update_status: std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatusType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorSourcesStatusInput {
@@ -17994,10 +18184,13 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorsInput {
@@ -18032,8 +18225,10 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesInput {
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
+    #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRulesInput {
@@ -18060,12 +18255,15 @@ impl std::fmt::Debug for DescribeConfigRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
+    #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of rule evaluation results that you want returned.</p>
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub limit: i32,
 }
 impl DescribeConfigRuleEvaluationStatusInput {
@@ -18099,15 +18297,20 @@ impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceInput {
     /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
+    #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByResourceInput {
@@ -18150,11 +18353,14 @@ impl std::fmt::Debug for DescribeComplianceByResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleInput {
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
+    #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInput {
@@ -18187,8 +18393,10 @@ impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsInput {
     /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregationAuthorizationsInput {
@@ -18215,12 +18423,16 @@ impl std::fmt::Debug for DescribeAggregationAuthorizationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateComplianceByConformancePacksInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::AggregateConformancePackComplianceFilters>,
     /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConformancePacksInput {
@@ -18262,12 +18474,16 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesInput {
@@ -18307,6 +18523,7 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverConfigSnapshotInput {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
+    #[doc(hidden)]
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
 impl DeliverConfigSnapshotInput {
@@ -18328,6 +18545,7 @@ impl std::fmt::Debug for DeliverConfigSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStoredQueryInput {
     /// <p>The name of the query that you want to delete.</p>
+    #[doc(hidden)]
     pub query_name: std::option::Option<std::string::String>,
 }
 impl DeleteStoredQueryInput {
@@ -18349,6 +18567,7 @@ impl std::fmt::Debug for DeleteStoredQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRetentionConfigurationInput {
     /// <p>The name of the retention configuration to delete.</p>
+    #[doc(hidden)]
     pub retention_configuration_name: std::option::Option<std::string::String>,
 }
 impl DeleteRetentionConfigurationInput {
@@ -18373,8 +18592,10 @@ impl std::fmt::Debug for DeleteRetentionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceConfigInput {
     /// <p>The type of the resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceConfigInput {
@@ -18401,8 +18622,10 @@ impl std::fmt::Debug for DeleteResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    #[doc(hidden)]
     pub resource_keys:
         std::option::Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
 }
@@ -18432,8 +18655,10 @@ impl std::fmt::Debug for DeleteRemediationExceptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemediationConfigurationInput {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The type of a resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl DeleteRemediationConfigurationInput {
@@ -18460,8 +18685,10 @@ impl std::fmt::Debug for DeleteRemediationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePendingAggregationRequestInput {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+    #[doc(hidden)]
     pub requester_account_id: std::option::Option<std::string::String>,
     /// <p>The region requesting to aggregate data.</p>
+    #[doc(hidden)]
     pub requester_aws_region: std::option::Option<std::string::String>,
 }
 impl DeletePendingAggregationRequestInput {
@@ -18488,6 +18715,7 @@ impl std::fmt::Debug for DeletePendingAggregationRequestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
+    #[doc(hidden)]
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationConformancePackInput {
@@ -18512,6 +18740,7 @@ impl std::fmt::Debug for DeleteOrganizationConformancePackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationConfigRuleInput {
     /// <p>The name of organization Config rule that you want to delete.</p>
+    #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationConfigRuleInput {
@@ -18536,6 +18765,7 @@ impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsInput {
     /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationResultsInput {
@@ -18557,6 +18787,7 @@ impl std::fmt::Debug for DeleteEvaluationResultsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
+    #[doc(hidden)]
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeliveryChannelInput {
@@ -18578,6 +18809,7 @@ impl std::fmt::Debug for DeleteDeliveryChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
+    #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
 }
 impl DeleteConformancePackInput {
@@ -18599,6 +18831,7 @@ impl std::fmt::Debug for DeleteConformancePackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationRecorderInput {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    #[doc(hidden)]
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationRecorderInput {
@@ -18623,6 +18856,7 @@ impl std::fmt::Debug for DeleteConfigurationRecorderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationAggregatorInput {
@@ -18647,6 +18881,7 @@ impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigRuleInput {
     /// <p>The name of the Config rule that you want to delete.</p>
+    #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigRuleInput {
@@ -18668,8 +18903,10 @@ impl std::fmt::Debug for DeleteConfigRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    #[doc(hidden)]
     pub authorized_account_id: std::option::Option<std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
+    #[doc(hidden)]
     pub authorized_aws_region: std::option::Option<std::string::String>,
 }
 impl DeleteAggregationAuthorizationInput {
@@ -18696,6 +18933,7 @@ impl std::fmt::Debug for DeleteAggregationAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetResourceConfigInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    #[doc(hidden)]
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl BatchGetResourceConfigInput {
@@ -18717,8 +18955,10 @@ impl std::fmt::Debug for BatchGetResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
+    #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
+    #[doc(hidden)]
     pub resource_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AggregateResourceIdentifier>>,
 }

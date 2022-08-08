@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegionDisabledException {
@@ -70,6 +71,7 @@ impl RegionDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackedPolicyTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PackedPolicyTooLargeException {
@@ -134,6 +136,7 @@ impl PackedPolicyTooLargeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MalformedPolicyDocumentException {
@@ -198,6 +201,7 @@ impl MalformedPolicyDocumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthorizationMessageException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAuthorizationMessageException {
@@ -262,6 +266,7 @@ impl InvalidAuthorizationMessageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIdentityTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIdentityTokenException {
@@ -327,6 +332,7 @@ impl InvalidIdentityTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdpRejectedClaimException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdpRejectedClaimException {
@@ -391,6 +397,7 @@ impl IdpRejectedClaimException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdpCommunicationErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IdpCommunicationErrorException {
@@ -458,6 +465,7 @@ impl IdpCommunicationErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExpiredTokenException {

@@ -35,8 +35,10 @@ impl VerifyUserAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenOutput {
     /// <p>The status of the verify software token.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VerifySoftwareTokenResponseType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
 }
 impl VerifySoftwareTokenOutput {
@@ -111,6 +113,7 @@ impl VerifySoftwareTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
+    #[doc(hidden)]
     pub cloud_front_domain: std::option::Option<std::string::String>,
 }
 impl UpdateUserPoolDomainOutput {
@@ -168,6 +171,7 @@ impl UpdateUserPoolDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPoolClientOutput {
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
+    #[doc(hidden)]
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
 impl UpdateUserPoolClientOutput {
@@ -255,6 +259,7 @@ impl UpdateUserPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    #[doc(hidden)]
     pub code_delivery_details_list:
         std::option::Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
 }
@@ -328,6 +333,7 @@ impl UpdateUserAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceServerOutput {
     /// <p>The resource server.</p>
+    #[doc(hidden)]
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
 }
 impl UpdateResourceServerOutput {
@@ -385,6 +391,7 @@ impl UpdateResourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderOutput {
     /// <p>The IdP object.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl UpdateIdentityProviderOutput {
@@ -442,6 +449,7 @@ impl UpdateIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
     /// <p>The group object for the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::GroupType>,
 }
 impl UpdateGroupOutput {
@@ -614,6 +622,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
+    #[doc(hidden)]
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
 impl StopUserImportJobOutput {
@@ -671,6 +680,7 @@ impl StopUserImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
+    #[doc(hidden)]
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
 impl StartUserImportJobOutput {
@@ -728,10 +738,13 @@ impl StartUserImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignUpOutput {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    #[doc(hidden)]
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    #[doc(hidden)]
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    #[doc(hidden)]
     pub user_sub: std::option::Option<std::string::String>,
 }
 impl SignUpOutput {
@@ -859,8 +872,10 @@ impl SetUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserPoolMfaConfigOutput {
     /// <p>The SMS text message MFA configuration.</p>
+    #[doc(hidden)]
     pub sms_mfa_configuration: std::option::Option<crate::model::SmsMfaConfigType>,
     /// <p>The software token MFA configuration.</p>
+    #[doc(hidden)]
     pub software_token_mfa_configuration:
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. Valid values include:</p>
@@ -869,6 +884,7 @@ pub struct SetUserPoolMfaConfigOutput {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
 impl SetUserPoolMfaConfigOutput {
@@ -1020,6 +1036,7 @@ impl SetUserMfaPreferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
+    #[doc(hidden)]
     pub ui_customization: std::option::Option<crate::model::UiCustomizationType>,
 }
 impl SetUiCustomizationOutput {
@@ -1077,6 +1094,7 @@ impl SetUiCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
+    #[doc(hidden)]
     pub risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
 }
 impl SetRiskConfigurationOutput {
@@ -1164,13 +1182,17 @@ impl RevokeTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondToAuthChallengeOutput {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    #[doc(hidden)]
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    #[doc(hidden)]
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
+    #[doc(hidden)]
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl RespondToAuthChallengeOutput {
@@ -1308,6 +1330,7 @@ impl RespondToAuthChallengeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendConfirmationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    #[doc(hidden)]
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
 }
 impl ResendConfirmationCodeOutput {
@@ -1371,8 +1394,10 @@ impl ResendConfirmationCodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInGroupOutput {
     /// <p>The users returned in the request to list users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserType>>,
     /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersInGroupOutput {
@@ -1453,8 +1478,10 @@ impl ListUsersInGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>The users returned in the request to list users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserType>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -1538,8 +1565,10 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserPoolsOutput {
     /// <p>The user pools from the response to list users.</p>
+    #[doc(hidden)]
     pub user_pools: std::option::Option<std::vec::Vec<crate::model::UserPoolDescriptionType>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserPoolsOutput {
@@ -1621,9 +1650,11 @@ impl ListUserPoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
+    #[doc(hidden)]
     pub user_pool_clients:
         std::option::Option<std::vec::Vec<crate::model::UserPoolClientDescription>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserPoolClientsOutput {
@@ -1707,8 +1738,10 @@ impl ListUserPoolClientsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
+    #[doc(hidden)]
     pub user_import_jobs: std::option::Option<std::vec::Vec<crate::model::UserImportJobType>>,
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl ListUserImportJobsOutput {
@@ -1793,6 +1826,7 @@ impl ListUserImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the user pool.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1866,8 +1900,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceServersOutput {
     /// <p>The resource servers.</p>
+    #[doc(hidden)]
     pub resource_servers: std::option::Option<std::vec::Vec<crate::model::ResourceServerType>>,
     /// <p>A pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceServersOutput {
@@ -1949,8 +1985,10 @@ impl ListResourceServersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersOutput {
     /// <p>A list of IdP objects.</p>
+    #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::model::ProviderDescription>>,
     /// <p>A pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProvidersOutput {
@@ -2031,8 +2069,10 @@ impl ListIdentityProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>The group objects for the groups.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -2113,8 +2153,10 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
     /// <p>The pagination token for the list device response.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -2212,14 +2254,18 @@ pub struct InitiateAuthOutput {
     /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
     /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    #[doc(hidden)]
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    #[doc(hidden)]
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl InitiateAuthOutput {
@@ -2432,8 +2478,10 @@ impl GlobalSignOutOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserPoolMfaConfigOutput {
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
+    #[doc(hidden)]
     pub sms_mfa_configuration: std::option::Option<crate::model::SmsMfaConfigType>,
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
+    #[doc(hidden)]
     pub software_token_mfa_configuration:
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
@@ -2442,6 +2490,7 @@ pub struct GetUserPoolMfaConfigOutput {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
 impl GetUserPoolMfaConfigOutput {
@@ -2563,6 +2612,7 @@ impl GetUserPoolMfaConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserAttributeVerificationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    #[doc(hidden)]
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
 }
 impl GetUserAttributeVerificationCodeOutput {
@@ -2626,15 +2676,20 @@ impl GetUserAttributeVerificationCodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserOutput {
     /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    #[doc(hidden)]
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    #[doc(hidden)]
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
+    #[doc(hidden)]
     pub preferred_mfa_setting: std::option::Option<std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    #[doc(hidden)]
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetUserOutput {
@@ -2790,6 +2845,7 @@ impl GetUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
+    #[doc(hidden)]
     pub ui_customization: std::option::Option<crate::model::UiCustomizationType>,
 }
 impl GetUiCustomizationOutput {
@@ -2847,6 +2903,7 @@ impl GetUiCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningCertificateOutput {
     /// <p>The signing certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
 }
 impl GetSigningCertificateOutput {
@@ -2901,6 +2958,7 @@ impl GetSigningCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityProviderByIdentifierOutput {
     /// <p>The IdP object.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl GetIdentityProviderByIdentifierOutput {
@@ -2958,6 +3016,7 @@ impl GetIdentityProviderByIdentifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// <p>The group object for the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::GroupType>,
 }
 impl GetGroupOutput {
@@ -3010,6 +3069,7 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceOutput {
     /// <p>The device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::DeviceType>,
 }
 impl GetDeviceOutput {
@@ -3064,8 +3124,10 @@ impl GetDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The header information of the CSV file for the user import job.</p>
+    #[doc(hidden)]
     pub csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetCsvHeaderOutput {
@@ -3146,6 +3208,7 @@ impl GetCsvHeaderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
+    #[doc(hidden)]
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
 }
 impl ForgotPasswordOutput {
@@ -3239,6 +3302,7 @@ impl ForgetDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserPoolDomainOutput {
     /// <p>A domain description object containing information about the domain.</p>
+    #[doc(hidden)]
     pub domain_description: std::option::Option<crate::model::DomainDescriptionType>,
 }
 impl DescribeUserPoolDomainOutput {
@@ -3296,6 +3360,7 @@ impl DescribeUserPoolDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
+    #[doc(hidden)]
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
 impl DescribeUserPoolClientOutput {
@@ -3353,6 +3418,7 @@ impl DescribeUserPoolClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserPoolOutput {
     /// <p>The container of metadata returned by the server to describe the pool.</p>
+    #[doc(hidden)]
     pub user_pool: std::option::Option<crate::model::UserPoolType>,
 }
 impl DescribeUserPoolOutput {
@@ -3410,6 +3476,7 @@ impl DescribeUserPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
+    #[doc(hidden)]
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
 impl DescribeUserImportJobOutput {
@@ -3467,6 +3534,7 @@ impl DescribeUserImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
+    #[doc(hidden)]
     pub risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
 }
 impl DescribeRiskConfigurationOutput {
@@ -3524,6 +3592,7 @@ impl DescribeRiskConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceServerOutput {
     /// <p>The resource server.</p>
+    #[doc(hidden)]
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
 }
 impl DescribeResourceServerOutput {
@@ -3581,6 +3650,7 @@ impl DescribeResourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderOutput {
     /// <p>The IdP that was deleted.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl DescribeIdentityProviderOutput {
@@ -3878,6 +3948,7 @@ impl DeleteGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
+    #[doc(hidden)]
     pub cloud_front_domain: std::option::Option<std::string::String>,
 }
 impl CreateUserPoolDomainOutput {
@@ -3935,6 +4006,7 @@ impl CreateUserPoolDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserPoolClientOutput {
     /// <p>The user pool client that was just created.</p>
+    #[doc(hidden)]
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
 impl CreateUserPoolClientOutput {
@@ -3992,6 +4064,7 @@ impl CreateUserPoolClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserPoolOutput {
     /// <p>A container for the user pool details.</p>
+    #[doc(hidden)]
     pub user_pool: std::option::Option<crate::model::UserPoolType>,
 }
 impl CreateUserPoolOutput {
@@ -4049,6 +4122,7 @@ impl CreateUserPoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
+    #[doc(hidden)]
     pub user_import_job: std::option::Option<crate::model::UserImportJobType>,
 }
 impl CreateUserImportJobOutput {
@@ -4106,6 +4180,7 @@ impl CreateUserImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceServerOutput {
     /// <p>The newly created resource server.</p>
+    #[doc(hidden)]
     pub resource_server: std::option::Option<crate::model::ResourceServerType>,
 }
 impl CreateResourceServerOutput {
@@ -4163,6 +4238,7 @@ impl CreateResourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityProviderOutput {
     /// <p>The newly created IdP object.</p>
+    #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl CreateIdentityProviderOutput {
@@ -4220,6 +4296,7 @@ impl CreateIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The group object for the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::GroupType>,
 }
 impl CreateGroupOutput {
@@ -4332,6 +4409,7 @@ impl ConfirmForgotPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmDeviceOutput {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
+    #[doc(hidden)]
     pub user_confirmation_necessary: bool,
 }
 impl ConfirmDeviceOutput {
@@ -4419,8 +4497,10 @@ impl ChangePasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
     /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    #[doc(hidden)]
     pub secret_code: std::option::Option<std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
 }
 impl AssociateSoftwareTokenOutput {
@@ -4702,13 +4782,17 @@ impl AdminSetUserMfaPreferenceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    #[doc(hidden)]
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    #[doc(hidden)]
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The result returned by the server in response to the authentication request.</p>
+    #[doc(hidden)]
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl AdminRespondToAuthChallengeOutput {
@@ -4906,8 +4990,10 @@ impl AdminRemoveUserFromGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListUserAuthEventsOutput {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
+    #[doc(hidden)]
     pub auth_events: std::option::Option<std::vec::Vec<crate::model::AuthEventType>>,
     /// <p>A pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl AdminListUserAuthEventsOutput {
@@ -4988,8 +5074,10 @@ impl AdminListUserAuthEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListGroupsForUserOutput {
     /// <p>The groups that the user belongs to.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl AdminListGroupsForUserOutput {
@@ -5070,8 +5158,10 @@ impl AdminListGroupsForUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListDevicesOutput {
     /// <p>The devices in the list of devices response.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl AdminListDevicesOutput {
@@ -5199,15 +5289,19 @@ pub struct AdminInitiateAuthOutput {
     /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    #[doc(hidden)]
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    #[doc(hidden)]
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    #[doc(hidden)]
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl AdminInitiateAuthOutput {
@@ -5393,14 +5487,19 @@ impl AdminInitiateAuthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminGetUserOutput {
     /// <p>The user name of the user about whom you're receiving information.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
+    #[doc(hidden)]
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The date the user was created.</p>
+    #[doc(hidden)]
     pub user_create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user was last modified.</p>
+    #[doc(hidden)]
     pub user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates that the status is <code>enabled</code>.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
@@ -5411,12 +5510,16 @@ pub struct AdminGetUserOutput {
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub user_status: std::option::Option<crate::model::UserStatusType>,
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    #[doc(hidden)]
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
+    #[doc(hidden)]
     pub preferred_mfa_setting: std::option::Option<std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    #[doc(hidden)]
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdminGetUserOutput {
@@ -5670,6 +5773,7 @@ impl AdminGetUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminGetDeviceOutput {
     /// <p>The device.</p>
+    #[doc(hidden)]
     pub device: std::option::Option<crate::model::DeviceType>,
 }
 impl AdminGetDeviceOutput {
@@ -5904,6 +6008,7 @@ impl AdminDeleteUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserType>,
 }
 impl AdminCreateUserOutput {

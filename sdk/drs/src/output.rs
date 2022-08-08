@@ -4,41 +4,57 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationOutput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The name of the Replication Configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>The type of EBS encryption to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>,
 }
 impl UpdateReplicationConfigurationOutput {
@@ -479,21 +495,29 @@ impl UpdateReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationOutput {
     /// <p>The ID of the Source Server for this launch configuration.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The name of the launch configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The EC2 launch template ID of this launch configuration.</p>
+    #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    #[doc(hidden)]
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>The licensing configuration to be used for this launch configuration.</p>
+    #[doc(hidden)]
     pub licensing: std::option::Option<crate::model::Licensing>,
 }
 impl UpdateLaunchConfigurationOutput {
@@ -692,23 +716,32 @@ impl UpdateLaunchConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryDataReplicationOutput {
     /// <p>The ID of the Source Server.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Source Server.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the Source Server.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The status of the last recovery launch of this Source Server.</p>
+    #[doc(hidden)]
     pub last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
     /// <p>The Data Replication Info of the Source Server.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>The lifecycle information of this Source Server.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>The staging area of the source server.</p>
+    #[doc(hidden)]
     pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl RetryDataReplicationOutput {
@@ -940,41 +973,57 @@ impl RetryDataReplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationConfigurationOutput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The name of the Replication Configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>The type of EBS encryption to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>,
 }
 impl GetReplicationConfigurationOutput {
@@ -1415,21 +1464,29 @@ impl GetReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchConfigurationOutput {
     /// <p>The ID of the Source Server for this launch configuration.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The name of the launch configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The EC2 launch template ID of this launch configuration.</p>
+    #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    #[doc(hidden)]
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>The licensing configuration to be used for this launch configuration.</p>
+    #[doc(hidden)]
     pub licensing: std::option::Option<crate::model::Licensing>,
 }
 impl GetLaunchConfigurationOutput {
@@ -1628,23 +1685,32 @@ impl GetLaunchConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectSourceServerOutput {
     /// <p>The ID of the Source Server.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Source Server.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the Source Server.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The status of the last recovery launch of this Source Server.</p>
+    #[doc(hidden)]
     pub last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
     /// <p>The Data Replication Info of the Source Server.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>The lifecycle information of this Source Server.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>The staging area of the source server.</p>
+    #[doc(hidden)]
     pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl DisconnectSourceServerOutput {
@@ -1876,8 +1942,10 @@ impl DisconnectSourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoverySnapshotsOutput {
     /// <p>An array of Recovery Snapshots.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RecoverySnapshot>>,
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRecoverySnapshotsOutput {
@@ -1958,6 +2026,7 @@ impl DescribeRecoverySnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRecoveryOutput {
     /// <p>The Recovery Job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartRecoveryOutput {
@@ -2010,8 +2079,10 @@ impl StartRecoveryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceServersOutput {
     /// <p>An array of Source Servers.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceServer>>,
     /// <p>The token of the next Source Server to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSourceServersOutput {
@@ -2122,8 +2193,10 @@ impl DeleteSourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationConfigurationTemplatesOutput {
     /// <p>An array of Replication Configuration Templates.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
@@ -2208,41 +2281,57 @@ impl DescribeReplicationConfigurationTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateOutput {
     /// <p>The Replication Configuration Template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>The Replication Configuration Template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The type of EBS encryption to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>,
 }
 impl CreateReplicationConfigurationTemplateOutput {
@@ -2721,41 +2810,57 @@ impl DeleteReplicationConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateOutput {
     /// <p>The Replication Configuration Template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>The Replication Configuration Template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The type of EBS encryption to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>,
 }
 impl UpdateReplicationConfigurationTemplateOutput {
@@ -3264,12 +3369,16 @@ impl StopFailbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFailbackReplicationConfigurationOutput {
     /// <p>The ID of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the Failback Replication Configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    #[doc(hidden)]
     pub use_private_ip: std::option::Option<bool>,
 }
 impl GetFailbackReplicationConfigurationOutput {
@@ -3438,6 +3547,7 @@ impl DeleteRecoveryInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateRecoveryInstancesOutput {
     /// <p>The Job for terminating the Recovery Instances.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl TerminateRecoveryInstancesOutput {
@@ -3490,6 +3600,7 @@ impl TerminateRecoveryInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFailbackLaunchOutput {
     /// <p>The failback launch Job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartFailbackLaunchOutput {
@@ -3542,8 +3653,10 @@ impl StartFailbackLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoveryInstancesOutput {
     /// <p>The token of the next Recovery Instance to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of Recovery Instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RecoveryInstance>>,
 }
 impl DescribeRecoveryInstancesOutput {
@@ -3624,8 +3737,10 @@ impl DescribeRecoveryInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobLogItemsOutput {
     /// <p>An array of Job log items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobLog>>,
     /// <p>The token of the next Job log items to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobLogItemsOutput {
@@ -3706,8 +3821,10 @@ impl DescribeJobLogItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsOutput {
     /// <p>An array of Jobs.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>The token of the next Job to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobsOutput {
@@ -3878,6 +3995,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags of the requested resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3951,8 +4069,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStagingAccountsOutput {
     /// <p>An array of staging AWS Accounts.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     /// <p>The token of the next staging Account to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStagingAccountsOutput {
@@ -4033,8 +4153,10 @@ impl ListStagingAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExtensibleSourceServersOutput {
     /// <p>A list of source servers on a staging Account that are extensible.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::StagingSourceServer>>,
     /// <p>The token of the next extensible source server to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExtensibleSourceServersOutput {
@@ -4145,6 +4267,7 @@ impl InitializeServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExtendedSourceServerOutput {
     /// <p>Created extended source server.</p>
+    #[doc(hidden)]
     pub source_server: std::option::Option<crate::model::SourceServer>,
 }
 impl CreateExtendedSourceServerOutput {

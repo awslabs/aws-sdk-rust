@@ -7878,50 +7878,73 @@ impl UpdateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
+    #[doc(hidden)]
     pub additional_information: std::option::Option<std::string::String>,
     /// <p>A unique account number that you have given to the customer.</p>
+    #[doc(hidden)]
     pub account_number: std::option::Option<std::string::String>,
     /// <p>The type of profile used to describe the customer.</p>
+    #[doc(hidden)]
     pub party_type: std::option::Option<crate::model::PartyType>,
     /// <p>The name of the customer’s business.</p>
+    #[doc(hidden)]
     pub business_name: std::option::Option<std::string::String>,
     /// <p>The customer’s first name.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The customer’s middle name.</p>
+    #[doc(hidden)]
     pub middle_name: std::option::Option<std::string::String>,
     /// <p>The customer’s last name.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The customer’s birth date. </p>
+    #[doc(hidden)]
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
+    #[doc(hidden)]
     pub gender: std::option::Option<crate::model::Gender>,
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
+    #[doc(hidden)]
     pub mobile_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s home phone number.</p>
+    #[doc(hidden)]
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
+    #[doc(hidden)]
     pub business_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
+    #[doc(hidden)]
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
+    #[doc(hidden)]
     pub business_email_address: std::option::Option<std::string::String>,
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>The customer’s shipping address.</p>
+    #[doc(hidden)]
     pub shipping_address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>The customer’s mailing address.</p>
+    #[doc(hidden)]
     pub mailing_address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>The customer’s billing address.</p>
+    #[doc(hidden)]
     pub billing_address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>A key value pair of attributes of a customer profile.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8057,17 +8080,23 @@ impl std::fmt::Debug for UpdateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
+    #[doc(hidden)]
     pub default_expiration_days: std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
+    #[doc(hidden)]
     pub default_encryption_key: std::option::Option<std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+    #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8119,8 +8148,10 @@ impl std::fmt::Debug for UpdateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which you are removing tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8147,8 +8178,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource that you're adding tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8179,14 +8212,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesInput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SearchProfilesInput {
@@ -8228,30 +8266,41 @@ impl std::fmt::Debug for SearchProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>Description of the profile object type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
+    #[doc(hidden)]
     pub expiration_days: std::option::Option<i32>,
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    #[doc(hidden)]
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
     >,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8338,10 +8387,13 @@ impl std::fmt::Debug for PutProfileObjectTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProfileObjectInput {
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>A string that is serialized from a JSON object.</p>
+    #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl PutProfileObjectInput {
@@ -8373,17 +8425,23 @@ impl std::fmt::Debug for PutProfileObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    #[doc(hidden)]
     pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    #[doc(hidden)]
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8437,12 +8495,16 @@ impl std::fmt::Debug for PutIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeProfilesInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the profile to be taken.</p>
+    #[doc(hidden)]
     pub main_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
+    #[doc(hidden)]
     pub profile_ids_to_be_merged: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    #[doc(hidden)]
     pub field_source_profile_ids: std::option::Option<crate::model::FieldSourceProfileIds>,
 }
 impl MergeProfilesInput {
@@ -8481,18 +8543,25 @@ impl std::fmt::Debug for MergeProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Status of workflow execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Retrieve workflows started after timestamp.</p>
+    #[doc(hidden)]
     pub query_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Retrieve workflows ended after timestamp.</p>
+    #[doc(hidden)]
     pub query_end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkflowsInput {
@@ -8544,6 +8613,7 @@ impl std::fmt::Debug for ListWorkflowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to view tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8565,8 +8635,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypeTemplatesInput {
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProfileObjectTypeTemplatesInput {
@@ -8593,10 +8665,13 @@ impl std::fmt::Debug for ListProfileObjectTypeTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypesInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProfileObjectTypesInput {
@@ -8628,16 +8703,22 @@ impl std::fmt::Debug for ListProfileObjectTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectsInput {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    #[doc(hidden)]
     pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
 impl ListProfileObjectsInput {
@@ -8684,12 +8765,16 @@ impl std::fmt::Debug for ListProfileObjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationsInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    #[doc(hidden)]
     pub include_hidden: std::option::Option<bool>,
 }
 impl ListIntegrationsInput {
@@ -8726,10 +8811,13 @@ impl std::fmt::Debug for ListIntegrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityResolutionJobsInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListIdentityResolutionJobsInput {
@@ -8761,8 +8849,10 @@ impl std::fmt::Debug for ListIdentityResolutionJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>The pagination token from the previous ListDomain API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDomainsInput {
@@ -8789,12 +8879,16 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    #[doc(hidden)]
     pub include_hidden: std::option::Option<bool>,
 }
 impl ListAccountIntegrationsInput {
@@ -8831,12 +8925,16 @@ impl std::fmt::Debug for ListAccountIntegrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowStepsInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetWorkflowStepsInput {
@@ -8873,8 +8971,10 @@ impl std::fmt::Debug for GetWorkflowStepsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowInput {
@@ -8901,6 +9001,7 @@ impl std::fmt::Debug for GetWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileObjectTypeTemplateInput {
     /// <p>A unique identifier for the object template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
 }
 impl GetProfileObjectTypeTemplateInput {
@@ -8922,8 +9023,10 @@ impl std::fmt::Debug for GetProfileObjectTypeTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
 }
 impl GetProfileObjectTypeInput {
@@ -8950,10 +9053,13 @@ impl std::fmt::Debug for GetProfileObjectTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMatchesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetMatchesInput {
@@ -8985,8 +9091,10 @@ impl std::fmt::Debug for GetMatchesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl GetIntegrationInput {
@@ -9013,8 +9121,10 @@ impl std::fmt::Debug for GetIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityResolutionJobInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityResolutionJobInput {
@@ -9041,6 +9151,7 @@ impl std::fmt::Debug for GetIdentityResolutionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainInput {
@@ -9062,12 +9173,16 @@ impl std::fmt::Debug for GetDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoMergingPreviewInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of matching attributes that represent matching criteria.</p>
+    #[doc(hidden)]
     pub consolidation: std::option::Option<crate::model::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    #[doc(hidden)]
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+    #[doc(hidden)]
     pub min_allowed_confidence_score_for_merging: std::option::Option<f64>,
 }
 impl GetAutoMergingPreviewInput {
@@ -9107,8 +9222,10 @@ impl std::fmt::Debug for GetAutoMergingPreviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowInput {
@@ -9135,8 +9252,10 @@ impl std::fmt::Debug for DeleteWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileObjectTypeInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectTypeInput {
@@ -9163,12 +9282,16 @@ impl std::fmt::Debug for DeleteProfileObjectTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileObjectInput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the profile object generated by the service.</p>
+    #[doc(hidden)]
     pub profile_object_unique_key: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectInput {
@@ -9205,12 +9328,16 @@ impl std::fmt::Debug for DeleteProfileObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>A searchable identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfileKeyInput {
@@ -9247,8 +9374,10 @@ impl std::fmt::Debug for DeleteProfileKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfileInput {
@@ -9275,8 +9404,10 @@ impl std::fmt::Debug for DeleteProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationInput {
@@ -9303,6 +9434,7 @@ impl std::fmt::Debug for DeleteIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -9324,48 +9456,70 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A unique account number that you have given to the customer.</p>
+    #[doc(hidden)]
     pub account_number: std::option::Option<std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
+    #[doc(hidden)]
     pub additional_information: std::option::Option<std::string::String>,
     /// <p>The type of profile used to describe the customer.</p>
+    #[doc(hidden)]
     pub party_type: std::option::Option<crate::model::PartyType>,
     /// <p>The name of the customer’s business.</p>
+    #[doc(hidden)]
     pub business_name: std::option::Option<std::string::String>,
     /// <p>The customer’s first name.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The customer’s middle name.</p>
+    #[doc(hidden)]
     pub middle_name: std::option::Option<std::string::String>,
     /// <p>The customer’s last name.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The customer’s birth date. </p>
+    #[doc(hidden)]
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
+    #[doc(hidden)]
     pub gender: std::option::Option<crate::model::Gender>,
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
+    #[doc(hidden)]
     pub mobile_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s home phone number.</p>
+    #[doc(hidden)]
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
+    #[doc(hidden)]
     pub business_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
+    #[doc(hidden)]
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
+    #[doc(hidden)]
     pub business_email_address: std::option::Option<std::string::String>,
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s shipping address.</p>
+    #[doc(hidden)]
     pub shipping_address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s mailing address.</p>
+    #[doc(hidden)]
     pub mailing_address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s billing address.</p>
+    #[doc(hidden)]
     pub billing_address: std::option::Option<crate::model::Address>,
     /// <p>A key value pair of attributes of a customer profile.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9496,16 +9650,22 @@ impl std::fmt::Debug for CreateProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationWorkflowInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Configuration data for integration workflow.</p>
+    #[doc(hidden)]
     pub integration_config: std::option::Option<crate::model::IntegrationConfig>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9556,17 +9716,23 @@ impl std::fmt::Debug for CreateIntegrationWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
+    #[doc(hidden)]
     pub default_expiration_days: std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    #[doc(hidden)]
     pub default_encryption_key: std::option::Option<std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+    #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9618,12 +9784,16 @@ impl std::fmt::Debug for CreateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl AddProfileKeyInput {

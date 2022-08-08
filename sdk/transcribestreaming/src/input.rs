@@ -889,15 +889,20 @@ impl StartStreamTranscriptionInput {
 #[non_exhaustive]
 pub struct StartStreamTranscriptionInput {
     /// <p>The language code of the input audio stream.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio.</p>
+    #[doc(hidden)]
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
     /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
     /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
     pub audio_stream: aws_smithy_http::event_stream::EventStreamSender<
@@ -906,48 +911,64 @@ pub struct StartStreamTranscriptionInput {
     >,
     /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
     /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
     /// <p>When <code>true</code>, enables speaker identification in your media stream.</p>
+    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
+    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>The number of channels that are in your audio stream.</p>
+    #[doc(hidden)]
     pub number_of_channels: std::option::Option<i32>,
     /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the partial results stabilized. Normally, any word or phrase from one partial result can change in a subsequent partial result. With partial results stabilization enabled, only the last few words of one partial result can change in another partial result.</p>
+    #[doc(hidden)]
     pub enable_partial_results_stabilization: bool,
     /// <p>You can use this field to set the stability level of the transcription results. A higher stability level means that the transcription results are less likely to change. Higher stability levels can come with lower overall transcription accuracy.</p>
+    #[doc(hidden)]
     pub partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
     /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
     /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    #[doc(hidden)]
     pub content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
     /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
     /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    #[doc(hidden)]
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
     /// <p> <code>PIIEntityTypes</code> must be comma-separated; the available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model you want to use.</p>
+    #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
     /// <p>Optional. Set this value to <code>true</code> to enable language identification for your media stream.</p>
+    #[doc(hidden)]
     pub identify_language: bool,
     /// <p>An object containing a list of languages that might be present in your audio.</p>
     /// <p>You must provide two or more language codes to help Amazon Transcribe identify the correct language of your media stream with the highest possible accuracy. You can only select one variant per language; for example, you can't include both <code>en-US</code> and <code>en-UK</code> in the same request.</p>
     /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+    #[doc(hidden)]
     pub language_options: std::option::Option<std::string::String>,
     /// <p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p>
     /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+    #[doc(hidden)]
     pub preferred_language: std::option::Option<crate::model::LanguageCode>,
     /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
     /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
     /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+    #[doc(hidden)]
     pub vocabulary_names: std::option::Option<std::string::String>,
     /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
     /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
     /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_names: std::option::Option<std::string::String>,
 }
 impl StartStreamTranscriptionInput {
@@ -1109,20 +1130,28 @@ impl std::fmt::Debug for StartStreamTranscriptionInput {
 #[non_exhaustive]
 pub struct StartMedicalStreamTranscriptionInput {
     /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio.</p>
+    #[doc(hidden)]
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
     /// <p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The medical specialty of the clinician or provider.</p>
+    #[doc(hidden)]
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
+    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
     pub audio_stream: aws_smithy_http::event_stream::EventStreamSender<
@@ -1132,10 +1161,13 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
     /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>The number of channels that are in your audio stream.</p>
+    #[doc(hidden)]
     pub number_of_channels: std::option::Option<i32>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
+    #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
 }

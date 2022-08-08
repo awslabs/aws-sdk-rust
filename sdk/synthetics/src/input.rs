@@ -3715,8 +3715,10 @@ impl UpdateCanaryInput {
 pub struct UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     /// <p>You cannot change the name of a canary that has already been created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::CanaryCodeInput>,
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
@@ -3728,27 +3730,37 @@ pub struct UpdateCanaryInput {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    #[doc(hidden)]
     pub runtime_version: std::option::Option<std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::CanaryScheduleInput>,
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub run_config: std::option::Option<crate::model::CanaryRunConfigInput>,
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    #[doc(hidden)]
     pub success_retention_period_in_days: std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    #[doc(hidden)]
     pub failure_retention_period_in_days: std::option::Option<i32>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigInput>,
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
     /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
+    #[doc(hidden)]
     pub visual_reference: std::option::Option<crate::model::VisualReferenceInput>,
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
+    #[doc(hidden)]
     pub artifact_s3_location: std::option::Option<std::string::String>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+    #[doc(hidden)]
     pub artifact_config: std::option::Option<crate::model::ArtifactConfigInput>,
 }
 impl UpdateCanaryInput {
@@ -3846,8 +3858,10 @@ pub struct UntagResourceInput {
     /// <p>The ARN of the canary or group that you're removing tags from.</p>
     /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
     /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3878,8 +3892,10 @@ pub struct TagResourceInput {
     /// <p>The ARN of the canary or group that you're adding tags to.</p>
     /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
     /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3912,6 +3928,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCanaryInput {
     /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopCanaryInput {
@@ -3933,6 +3950,7 @@ impl std::fmt::Debug for StopCanaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCanaryInput {
     /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartCanaryInput {
@@ -3956,6 +3974,7 @@ pub struct ListTagsForResourceInput {
     /// <p>The ARN of the canary or group that you want to view tags for.</p>
     /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
     /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3979,8 +3998,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGroupsInput {
@@ -4007,10 +4028,13 @@ impl std::fmt::Debug for ListGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupResourcesInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
 }
 impl ListGroupResourcesInput {
@@ -4042,10 +4066,13 @@ impl std::fmt::Debug for ListGroupResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedGroupsInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The ARN of the canary that you want to view groups for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListAssociatedGroupsInput {
@@ -4077,6 +4104,7 @@ impl std::fmt::Debug for ListAssociatedGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupInput {
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
@@ -4098,10 +4126,13 @@ impl std::fmt::Debug for GetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryRunsInput {
     /// <p>The name of the canary that you want to see runs for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetCanaryRunsInput {
@@ -4133,6 +4164,7 @@ impl std::fmt::Debug for GetCanaryRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryInput {
     /// <p>The name of the canary that you want details for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCanaryInput {
@@ -4154,8 +4186,10 @@ impl std::fmt::Debug for GetCanaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceInput {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceInput {
@@ -4182,8 +4216,10 @@ impl std::fmt::Debug for DisassociateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeVersionsInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRuntimeVersionsInput {
@@ -4210,12 +4246,15 @@ impl std::fmt::Debug for DescribeRuntimeVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesLastRunInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCanariesLastRunInput {
@@ -4249,12 +4288,15 @@ impl std::fmt::Debug for DescribeCanariesLastRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCanariesInput {
@@ -4288,6 +4330,7 @@ impl std::fmt::Debug for DescribeCanariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
@@ -4309,9 +4352,11 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCanaryInput {
     /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
     /// <p>Type: Boolean</p>
+    #[doc(hidden)]
     pub delete_lambda: bool,
 }
 impl DeleteCanaryInput {
@@ -4340,9 +4385,11 @@ impl std::fmt::Debug for DeleteCanaryInput {
 pub struct CreateGroupInput {
     /// <p>The name for the group. It can include any Unicode characters.</p>
     /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4376,10 +4423,13 @@ impl std::fmt::Debug for CreateGroupInput {
 pub struct CreateCanaryInput {
     /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::CanaryCodeInput>,
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
+    #[doc(hidden)]
     pub artifact_s3_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
@@ -4391,26 +4441,35 @@ pub struct CreateCanaryInput {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::CanaryScheduleInput>,
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
+    #[doc(hidden)]
     pub run_config: std::option::Option<crate::model::CanaryRunConfigInput>,
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    #[doc(hidden)]
     pub success_retention_period_in_days: std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    #[doc(hidden)]
     pub failure_retention_period_in_days: std::option::Option<i32>,
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    #[doc(hidden)]
     pub runtime_version: std::option::Option<std::string::String>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigInput>,
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+    #[doc(hidden)]
     pub artifact_config: std::option::Option<crate::model::ArtifactConfigInput>,
 }
 impl CreateCanaryInput {
@@ -4509,8 +4568,10 @@ impl std::fmt::Debug for CreateCanaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceInput {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    #[doc(hidden)]
     pub group_identifier: std::option::Option<std::string::String>,
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AssociateResourceInput {

@@ -154,6 +154,7 @@ impl StopStreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopProjectVersionOutput {
     /// <p>The current status of the stop operation. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectVersionStatus>,
 }
 impl StopProjectVersionOutput {
@@ -211,6 +212,7 @@ impl StopProjectVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionOutput {
     /// <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartTextDetectionOutput {
@@ -265,6 +267,7 @@ impl StartTextDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamProcessorOutput {
     /// <p> A unique identifier for the stream processing session. </p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl StartStreamProcessorOutput {
@@ -319,6 +322,7 @@ impl StartStreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionOutput {
     /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartSegmentDetectionOutput {
@@ -373,6 +377,7 @@ impl StartSegmentDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProjectVersionOutput {
     /// <p>The current running status of the model. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectVersionStatus>,
 }
 impl StartProjectVersionOutput {
@@ -430,6 +435,7 @@ impl StartProjectVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPersonTrackingOutput {
     /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPersonTrackingOutput {
@@ -484,6 +490,7 @@ impl StartPersonTrackingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLabelDetectionOutput {
     /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartLabelDetectionOutput {
@@ -538,6 +545,7 @@ impl StartLabelDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceSearchOutput {
     /// <p>The identifier for the search job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceSearch</code>. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartFaceSearchOutput {
@@ -592,6 +600,7 @@ impl StartFaceSearchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceDetectionOutput {
     /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartFaceDetectionOutput {
@@ -646,6 +655,7 @@ impl StartFaceDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationOutput {
     /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartContentModerationOutput {
@@ -700,6 +710,7 @@ impl StartContentModerationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCelebrityRecognitionOutput {
     /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartCelebrityRecognitionOutput {
@@ -754,12 +765,16 @@ impl StartCelebrityRecognitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesByImageOutput {
     /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
+    #[doc(hidden)]
     pub searched_face_bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
+    #[doc(hidden)]
     pub searched_face_confidence: std::option::Option<f32>,
     /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
+    #[doc(hidden)]
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl SearchFacesByImageOutput {
@@ -883,10 +898,13 @@ impl SearchFacesByImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesOutput {
     /// <p>ID of the face that was searched for matches in a collection.</p>
+    #[doc(hidden)]
     pub searched_face_id: std::option::Option<std::string::String>,
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
+    #[doc(hidden)]
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl SearchFacesOutput {
@@ -990,8 +1008,10 @@ impl SearchFacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeCelebritiesOutput {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
+    #[doc(hidden)]
     pub celebrity_faces: std::option::Option<std::vec::Vec<crate::model::Celebrity>>,
     /// <p>Details about each unrecognized face in the image.</p>
+    #[doc(hidden)]
     pub unrecognized_faces: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
@@ -999,6 +1019,7 @@ pub struct RecognizeCelebritiesOutput {
     /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
+    #[doc(hidden)]
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
 }
 impl RecognizeCelebritiesOutput {
@@ -1129,6 +1150,7 @@ impl RecognizeCelebritiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of key-value tags assigned to the resource. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1202,8 +1224,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamProcessorsOutput {
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of stream processors that you have created.</p>
+    #[doc(hidden)]
     pub stream_processors: std::option::Option<std::vec::Vec<crate::model::StreamProcessor>>,
 }
 impl ListStreamProcessorsOutput {
@@ -1285,10 +1309,13 @@ impl ListStreamProcessorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacesOutput {
     /// <p>An array of <code>Face</code> objects. </p>
+    #[doc(hidden)]
     pub faces: std::option::Option<std::vec::Vec<crate::model::Face>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl ListFacesOutput {
@@ -1389,9 +1416,11 @@ impl ListFacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetLabelsOutput {
     /// <p> A list of the labels in the dataset. </p>
+    #[doc(hidden)]
     pub dataset_label_descriptions:
         std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetLabelsOutput {
@@ -1481,8 +1510,10 @@ impl ListDatasetLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesOutput {
     /// <p> A list of entries (images) in the dataset. </p>
+    #[doc(hidden)]
     pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetEntriesOutput {
@@ -1563,10 +1594,13 @@ impl ListDatasetEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectionsOutput {
     /// <p>An array of collection IDs.</p>
+    #[doc(hidden)]
     pub collection_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
+    #[doc(hidden)]
     pub face_model_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCollectionsOutput {
@@ -1673,6 +1707,7 @@ impl ListCollectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFacesOutput {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
+    #[doc(hidden)]
     pub face_records: std::option::Option<std::vec::Vec<crate::model::FaceRecord>>,
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
@@ -1681,10 +1716,13 @@ pub struct IndexFacesOutput {
     /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
+    #[doc(hidden)]
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
+    #[doc(hidden)]
     pub unindexed_faces: std::option::Option<std::vec::Vec<crate::model::UnindexedFace>>,
 }
 impl IndexFacesOutput {
@@ -1837,16 +1875,22 @@ impl IndexFacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTextDetectionOutput {
     /// <p>Current status of the text detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
+    #[doc(hidden)]
     pub text_detections: std::option::Option<std::vec::Vec<crate::model::TextDetectionResult>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version number of the text detection model that was used to detect text.</p>
+    #[doc(hidden)]
     pub text_model_version: std::option::Option<std::string::String>,
 }
 impl GetTextDetectionOutput {
@@ -2008,18 +2052,25 @@ impl GetTextDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentDetectionOutput {
     /// <p>Current status of the segment detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<std::vec::Vec<crate::model::VideoMetadata>>,
     /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    #[doc(hidden)]
     pub audio_metadata: std::option::Option<std::vec::Vec<crate::model::AudioMetadata>>,
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
+    #[doc(hidden)]
     pub segments: std::option::Option<std::vec::Vec<crate::model::SegmentDetection>>,
     /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
+    #[doc(hidden)]
     pub selected_segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentTypeInfo>>,
 }
 impl GetSegmentDetectionOutput {
@@ -2219,14 +2270,19 @@ impl GetSegmentDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonTrackingOutput {
     /// <p>The current status of the person tracking job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
+    #[doc(hidden)]
     pub persons: std::option::Option<std::vec::Vec<crate::model::PersonDetection>>,
 }
 impl GetPersonTrackingOutput {
@@ -2367,16 +2423,22 @@ impl GetPersonTrackingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelDetectionOutput {
     /// <p>The current status of the label detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::LabelDetection>>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
+    #[doc(hidden)]
     pub label_model_version: std::option::Option<std::string::String>,
 }
 impl GetLabelDetectionOutput {
@@ -2537,14 +2599,19 @@ impl GetLabelDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceSearchOutput {
     /// <p>The current status of the face search job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
+    #[doc(hidden)]
     pub persons: std::option::Option<std::vec::Vec<crate::model::PersonMatch>>,
 }
 impl GetFaceSearchOutput {
@@ -2685,14 +2752,19 @@ impl GetFaceSearchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceDetectionOutput {
     /// <p>The current status of the face detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
+    #[doc(hidden)]
     pub faces: std::option::Option<std::vec::Vec<crate::model::FaceDetection>>,
 }
 impl GetFaceDetectionOutput {
@@ -2833,17 +2905,23 @@ impl GetFaceDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentModerationOutput {
     /// <p>The current status of the content moderation analysis job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
+    #[doc(hidden)]
     pub moderation_labels:
         std::option::Option<std::vec::Vec<crate::model::ContentModerationDetection>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
+    #[doc(hidden)]
     pub moderation_model_version: std::option::Option<std::string::String>,
 }
 impl GetContentModerationOutput {
@@ -3010,14 +3088,19 @@ impl GetContentModerationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityRecognitionOutput {
     /// <p>The current status of the celebrity recognition job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    #[doc(hidden)]
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Array of celebrities recognized in the video.</p>
+    #[doc(hidden)]
     pub celebrities: std::option::Option<std::vec::Vec<crate::model::CelebrityRecognition>>,
 }
 impl GetCelebrityRecognitionOutput {
@@ -3159,10 +3242,13 @@ impl GetCelebrityRecognitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityInfoOutput {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
+    #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the celebrity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Retrieves the known gender for the celebrity.</p>
+    #[doc(hidden)]
     pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
 impl GetCelebrityInfoOutput {
@@ -3293,8 +3379,10 @@ impl DistributeDatasetEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextOutput {
     /// <p>An array of text that was detected in the input image.</p>
+    #[doc(hidden)]
     pub text_detections: std::option::Option<std::vec::Vec<crate::model::TextDetection>>,
     /// <p>The model version used to detect text.</p>
+    #[doc(hidden)]
     pub text_model_version: std::option::Option<std::string::String>,
 }
 impl DetectTextOutput {
@@ -3378,10 +3466,13 @@ impl DetectTextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectProtectiveEquipmentOutput {
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
+    #[doc(hidden)]
     pub protective_equipment_model_version: std::option::Option<std::string::String>,
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
+    #[doc(hidden)]
     pub persons: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentPerson>>,
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<crate::model::ProtectiveEquipmentSummary>,
 }
 impl DetectProtectiveEquipmentOutput {
@@ -3492,10 +3583,13 @@ impl DetectProtectiveEquipmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectModerationLabelsOutput {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    #[doc(hidden)]
     pub moderation_labels: std::option::Option<std::vec::Vec<crate::model::ModerationLabel>>,
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    #[doc(hidden)]
     pub moderation_model_version: std::option::Option<std::string::String>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
+    #[doc(hidden)]
     pub human_loop_activation_output: std::option::Option<crate::model::HumanLoopActivationOutput>,
 }
 impl DetectModerationLabelsOutput {
@@ -3609,12 +3703,15 @@ impl DetectModerationLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectLabelsOutput {
     /// <p>An array of labels for the real-world objects detected. </p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    #[doc(hidden)]
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
+    #[doc(hidden)]
     pub label_model_version: std::option::Option<std::string::String>,
 }
 impl DetectLabelsOutput {
@@ -3729,10 +3826,12 @@ impl DetectLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectFacesOutput {
     /// <p>Details of each face found in the image. </p>
+    #[doc(hidden)]
     pub face_details: std::option::Option<std::vec::Vec<crate::model::FaceDetail>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    #[doc(hidden)]
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
 }
 impl DetectFacesOutput {
@@ -3827,6 +3926,7 @@ impl DetectFacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectCustomLabelsOutput {
     /// <p>An array of custom labels detected in the input image.</p>
+    #[doc(hidden)]
     pub custom_labels: std::option::Option<std::vec::Vec<crate::model::CustomLabel>>,
 }
 impl DetectCustomLabelsOutput {
@@ -3890,34 +3990,48 @@ impl DetectCustomLabelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamProcessorOutput {
     /// <p>Name of the stream processor. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>ARN of the stream processor.</p>
+    #[doc(hidden)]
     pub stream_processor_arn: std::option::Option<std::string::String>,
     /// <p>Current status of the stream processor.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StreamProcessorStatus>,
     /// <p>Detailed status message about the stream processor.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Date and time the stream processor was created</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+    #[doc(hidden)]
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Kinesis video stream that provides the source streaming video.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::StreamProcessorInput>,
     /// <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::StreamProcessorOutput>,
     /// <p>ARN of the IAM role that allows access to the stream processor.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::StreamProcessorSettings>,
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::StreamProcessorNotificationChannel>,
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    #[doc(hidden)]
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    #[doc(hidden)]
     pub data_sharing_preference:
         std::option::Option<crate::model::StreamProcessorDataSharingPreference>,
 }
@@ -4252,9 +4366,11 @@ impl DescribeStreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectVersionsOutput {
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    #[doc(hidden)]
     pub project_version_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ProjectVersionDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeProjectVersionsOutput {
@@ -4344,8 +4460,10 @@ impl DescribeProjectVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectsOutput {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
+    #[doc(hidden)]
     pub project_descriptions: std::option::Option<std::vec::Vec<crate::model::ProjectDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeProjectsOutput {
@@ -4427,6 +4545,7 @@ impl DescribeProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p> The description for the dataset. </p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<crate::model::DatasetDescription>,
 }
 impl DescribeDatasetOutput {
@@ -4484,13 +4603,17 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCollectionOutput {
     /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
+    #[doc(hidden)]
     pub face_count: std::option::Option<i64>,
     /// <p>The version of the face model that's used by the collection for face detection.</p>
     /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
+    #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCollectionOutput {
@@ -4638,6 +4761,7 @@ impl DeleteStreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectVersionOutput {
     /// <p>The status of the deletion operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectVersionStatus>,
 }
 impl DeleteProjectVersionOutput {
@@ -4695,6 +4819,7 @@ impl DeleteProjectVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p>The current status of the delete project operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
 }
 impl DeleteProjectOutput {
@@ -4752,6 +4877,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
+    #[doc(hidden)]
     pub deleted_faces: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFacesOutput {
@@ -4845,6 +4971,7 @@ impl DeleteDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCollectionOutput {
     /// <p>HTTP status code that indicates the result of the operation.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
 }
 impl DeleteCollectionOutput {
@@ -4899,6 +5026,7 @@ impl DeleteCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamProcessorOutput {
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
+    #[doc(hidden)]
     pub stream_processor_arn: std::option::Option<std::string::String>,
 }
 impl CreateStreamProcessorOutput {
@@ -4956,6 +5084,7 @@ impl CreateStreamProcessorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectVersionOutput {
     /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectVersionOutput {
@@ -5013,6 +5142,7 @@ impl CreateProjectVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
@@ -5067,6 +5197,7 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
@@ -5121,10 +5252,13 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCollectionOutput {
     /// <p>HTTP status code indicating the result of the operation.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+    #[doc(hidden)]
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl CreateCollectionOutput {
@@ -5219,19 +5353,24 @@ impl CreateCollectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompareFacesOutput {
     /// <p>The face in the source image that was used for comparison.</p>
+    #[doc(hidden)]
     pub source_image_face: std::option::Option<crate::model::ComparedSourceImageFace>,
     /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
+    #[doc(hidden)]
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::CompareFacesMatch>>,
     /// <p>An array of faces in the target image that did not match the source image face.</p>
+    #[doc(hidden)]
     pub unmatched_faces: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
     /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    #[doc(hidden)]
     pub source_image_orientation_correction:
         std::option::Option<crate::model::OrientationCorrection>,
     /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    #[doc(hidden)]
     pub target_image_orientation_correction:
         std::option::Option<crate::model::OrientationCorrection>,
 }

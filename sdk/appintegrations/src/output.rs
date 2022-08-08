@@ -124,6 +124,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -197,8 +198,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventIntegrationsOutput {
     /// <p>The event integrations.</p>
+    #[doc(hidden)]
     pub event_integrations: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventIntegrationsOutput {
@@ -280,9 +283,11 @@ impl ListEventIntegrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
+    #[doc(hidden)]
     pub event_integration_associations:
         std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventIntegrationAssociationsOutput {
@@ -372,8 +377,10 @@ impl ListEventIntegrationAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
+    #[doc(hidden)]
     pub data_integrations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataIntegrationsOutput {
@@ -457,9 +464,11 @@ impl ListDataIntegrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataIntegrationAssociationsOutput {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
+    #[doc(hidden)]
     pub data_integration_associations:
         std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataIntegrationAssociationsOutput {
@@ -551,16 +560,22 @@ impl ListDataIntegrationAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventIntegrationOutput {
     /// <p>The name of the event integration. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the event integration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
+    #[doc(hidden)]
     pub event_integration_arn: std::option::Option<std::string::String>,
     /// <p>The EventBridge bus.</p>
+    #[doc(hidden)]
     pub event_bridge_bus: std::option::Option<std::string::String>,
     /// <p>The event filter.</p>
+    #[doc(hidden)]
     pub event_filter: std::option::Option<crate::model::EventFilter>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -730,20 +745,28 @@ impl GetEventIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the DataIntegration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The URI of the data source.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>The name of the data and how often it should be pulled from the source.</p>
+    #[doc(hidden)]
     pub schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1006,6 +1029,7 @@ impl DeleteDataIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
+    #[doc(hidden)]
     pub event_integration_arn: std::option::Option<std::string::String>,
 }
 impl CreateEventIntegrationOutput {
@@ -1063,23 +1087,32 @@ impl CreateEventIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN)</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the DataIntegration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the DataIntegration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The URI of the data source.</p>
+    #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
     /// <p>The name of the data and how often it should be pulled from the source.</p>
+    #[doc(hidden)]
     pub schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDataIntegrationOutput {

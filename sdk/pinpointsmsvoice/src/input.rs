@@ -1346,10 +1346,13 @@ impl UpdateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that defines a single event destination.
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
     /// EventDestinationName
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
@@ -1383,14 +1386,19 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendVoiceMessageInput {
     /// The phone number that appears on recipients' devices when they receive the message.
+    #[doc(hidden)]
     pub caller_id: std::option::Option<std::string::String>,
     /// The name of the configuration set that you want to use to send the message.
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that contains a voice message and information about the recipient that you want to send it to.
+    #[doc(hidden)]
     pub content: std::option::Option<crate::model::VoiceMessageContent>,
     /// The phone number that you want to send the voice message to.
+    #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
+    #[doc(hidden)]
     pub origination_phone_number: std::option::Option<std::string::String>,
 }
 impl SendVoiceMessageInput {
@@ -1432,8 +1440,10 @@ impl std::fmt::Debug for SendVoiceMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsInput {
     /// A token returned from a previous call to the API that indicates the position in the list of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// Used to specify the number of items that should be returned in the response.
+    #[doc(hidden)]
     pub page_size: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsInput {
@@ -1460,6 +1470,7 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsInput {
     /// ConfigurationSetName
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {
@@ -1481,8 +1492,10 @@ impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// EventDestinationName
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
@@ -1509,6 +1522,7 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetInput {
     /// ConfigurationSetName
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
@@ -1530,10 +1544,13 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that defines a single event destination.
+    #[doc(hidden)]
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
     /// A name that identifies the event destination.
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetEventDestinationInput {
@@ -1567,6 +1584,7 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetInput {
     /// The name that you want to give the configuration set.
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetInput {

@@ -94,6 +94,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -167,6 +168,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>Detailed information about the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::LifecyclePolicy>,
 }
 impl GetLifecyclePolicyOutput {
@@ -224,6 +226,7 @@ impl GetLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicySummary>>,
 }
 impl GetLifecyclePoliciesOutput {
@@ -318,6 +321,7 @@ impl DeleteLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLifecyclePolicyOutput {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl CreateLifecyclePolicyOutput {

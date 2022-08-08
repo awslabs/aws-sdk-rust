@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
+    #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationOutput {
@@ -72,6 +73,7 @@ impl StopDbInstanceAutomatedBackupsReplicationOutput {
 pub struct StopDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StopDbInstanceOutput {
@@ -136,6 +138,7 @@ pub struct StopDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
@@ -206,10 +209,13 @@ impl StopDbClusterOutput {
 pub struct StopActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_name: std::option::Option<std::string::String>,
     /// <p>The status of the database activity stream.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActivityStreamStatus>,
 }
 impl StopActivityStreamOutput {
@@ -308,8 +314,10 @@ impl StopActivityStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
+    #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The data exported from the snapshot. Valid values are the following:</p>
     /// <ul>
@@ -318,30 +326,43 @@ pub struct StartExportTaskOutput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the snapshot was created.</p>
+    #[doc(hidden)]
     pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task started.</p>
+    #[doc(hidden)]
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task completed.</p>
+    #[doc(hidden)]
     pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot export task as a percentage.</p>
+    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>The total amount of data exported, in gigabytes.</p>
+    #[doc(hidden)]
     pub total_extracted_data_in_gb: i32,
     /// <p>The reason the export failed, if it failed.</p>
+    #[doc(hidden)]
     pub failure_cause: std::option::Option<std::string::String>,
     /// <p>A warning about the snapshot export task.</p>
+    #[doc(hidden)]
     pub warning_message: std::option::Option<std::string::String>,
 }
 impl StartExportTaskOutput {
@@ -682,6 +703,7 @@ impl StartExportTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
+    #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
@@ -750,6 +772,7 @@ impl StartDbInstanceAutomatedBackupsReplicationOutput {
 pub struct StartDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StartDbInstanceOutput {
@@ -814,6 +837,7 @@ pub struct StartDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
@@ -883,16 +907,22 @@ impl StartDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_name: std::option::Option<std::string::String>,
     /// <p>The status of the database activity stream.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActivityStreamStatus>,
     /// <p>The mode of the database activity stream.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ActivityStreamMode>,
     /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    #[doc(hidden)]
     pub engine_native_audit_fields_included: std::option::Option<bool>,
 }
 impl StartActivityStreamOutput {
@@ -1048,6 +1078,7 @@ impl StartActivityStreamOutput {
 pub struct RevokeDbSecurityGroupIngressOutput {
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl RevokeDbSecurityGroupIngressOutput {
@@ -1109,6 +1140,7 @@ impl RevokeDbSecurityGroupIngressOutput {
 pub struct RestoreDbInstanceToPointInTimeOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceToPointInTimeOutput {
@@ -1170,6 +1202,7 @@ impl RestoreDbInstanceToPointInTimeOutput {
 pub struct RestoreDbInstanceFromS3Output {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromS3Output {
@@ -1231,6 +1264,7 @@ impl RestoreDbInstanceFromS3Output {
 pub struct RestoreDbInstanceFromDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromDbSnapshotOutput {
@@ -1295,6 +1329,7 @@ pub struct RestoreDbClusterToPointInTimeOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
@@ -1368,6 +1403,7 @@ pub struct RestoreDbClusterFromSnapshotOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
@@ -1441,6 +1477,7 @@ pub struct RestoreDbClusterFromS3Output {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromS3Output {
@@ -1510,6 +1547,7 @@ impl RestoreDbClusterFromS3Output {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbParameterGroupOutput {
@@ -1575,6 +1613,7 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbClusterParameterGroupOutput {
@@ -1692,6 +1731,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
@@ -1809,6 +1849,7 @@ impl RemoveRoleFromDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl RemoveFromGlobalClusterOutput {
@@ -1866,6 +1907,7 @@ impl RemoveFromGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
+    #[doc(hidden)]
     pub db_proxy_targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
 }
 impl RegisterDbProxyTargetsOutput {
@@ -1931,6 +1973,7 @@ impl RegisterDbProxyTargetsOutput {
 pub struct RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
@@ -1995,6 +2038,7 @@ pub struct RebootDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RebootDbClusterOutput {
@@ -2064,6 +2108,7 @@ impl RebootDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedDbInstancesOfferingOutput {
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
+    #[doc(hidden)]
     pub reserved_db_instance: std::option::Option<crate::model::ReservedDbInstance>,
 }
 impl PurchaseReservedDbInstancesOfferingOutput {
@@ -2125,6 +2170,7 @@ pub struct PromoteReadReplicaDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl PromoteReadReplicaDbClusterOutput {
@@ -2195,6 +2241,7 @@ impl PromoteReadReplicaDbClusterOutput {
 pub struct PromoteReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl PromoteReadReplicaOutput {
@@ -2255,6 +2302,7 @@ impl PromoteReadReplicaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyOptionGroupOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl ModifyOptionGroupOutput {
@@ -2312,6 +2360,7 @@ impl ModifyOptionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl ModifyGlobalClusterOutput {
@@ -2369,6 +2418,7 @@ impl ModifyGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
@@ -2427,6 +2477,7 @@ impl ModifyEventSubscriptionOutput {
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
@@ -2488,6 +2539,7 @@ impl ModifyDbSubnetGroupOutput {
 pub struct ModifyDbSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_snapshot_attributes_result:
         std::option::Option<crate::model::DbSnapshotAttributesResult>,
 }
@@ -2559,6 +2611,7 @@ impl ModifyDbSnapshotAttributeOutput {
 pub struct ModifyDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl ModifyDbSnapshotOutput {
@@ -2619,6 +2672,7 @@ impl ModifyDbSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbProxyTargetGroupOutput {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
+    #[doc(hidden)]
     pub db_proxy_target_group: std::option::Option<crate::model::DbProxyTargetGroup>,
 }
 impl ModifyDbProxyTargetGroupOutput {
@@ -2676,6 +2730,7 @@ impl ModifyDbProxyTargetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
+    #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl ModifyDbProxyEndpointOutput {
@@ -2733,6 +2788,7 @@ impl ModifyDbProxyEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbProxyOutput {
     /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
+    #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl ModifyDbProxyOutput {
@@ -2787,6 +2843,7 @@ impl ModifyDbProxyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
+    #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbParameterGroupOutput {
@@ -2845,6 +2902,7 @@ impl ModifyDbParameterGroupOutput {
 pub struct ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
@@ -2906,6 +2964,7 @@ impl ModifyDbInstanceOutput {
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -2984,6 +3043,7 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
+    #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
@@ -3078,24 +3138,34 @@ impl ModifyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterEndpointOutput {
@@ -3357,6 +3427,7 @@ pub struct ModifyDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
@@ -3426,33 +3497,47 @@ impl ModifyDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the database engine.</p>
+    #[doc(hidden)]
     pub db_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the database engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_description: std::option::Option<std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_nchar_character_sets:
         std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
+    #[doc(hidden)]
     pub supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
+    #[doc(hidden)]
     pub supports_read_replica: bool,
     /// <p>A list of the supported DB engine modes.</p>
+    #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
@@ -3465,28 +3550,40 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_parallel_query: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_global_databases: bool,
     /// <p>The major engine version of the CEV.</p>
+    #[doc(hidden)]
     pub major_engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the custom engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    #[doc(hidden)]
     pub supports_babelfish: bool,
 }
 impl ModifyCustomDbEngineVersionOutput {
@@ -4134,14 +4231,19 @@ impl ModifyCustomDbEngineVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCurrentDbClusterCapacityOutput {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
+    #[doc(hidden)]
     pub pending_capacity: std::option::Option<i32>,
     /// <p>The current capacity of the DB cluster.</p>
+    #[doc(hidden)]
     pub current_capacity: std::option::Option<i32>,
     /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
+    #[doc(hidden)]
     pub seconds_before_timeout: std::option::Option<i32>,
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    #[doc(hidden)]
     pub timeout_action: std::option::Option<std::string::String>,
 }
 impl ModifyCurrentDbClusterCapacityOutput {
@@ -4270,6 +4372,7 @@ impl ModifyCurrentDbClusterCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCertificatesOutput {
     /// <p>A CA certificate for an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl ModifyCertificatesOutput {
@@ -4327,16 +4430,22 @@ impl ModifyCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_name: std::option::Option<std::string::String>,
     /// <p>The status of the modification to the database activity stream.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ActivityStreamStatus>,
     /// <p>The mode of the database activity stream.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ActivityStreamMode>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    #[doc(hidden)]
     pub engine_native_audit_fields_included: std::option::Option<bool>,
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
+    #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::ActivityStreamPolicyStatus>,
 }
 impl ModifyActivityStreamOutput {
@@ -4494,6 +4603,7 @@ impl ModifyActivityStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -4557,6 +4667,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl FailoverGlobalClusterOutput {
@@ -4618,6 +4729,7 @@ pub struct FailoverDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
@@ -4687,10 +4799,13 @@ impl FailoverDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
+    #[doc(hidden)]
     pub log_file_data: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    #[doc(hidden)]
     pub additional_data_pending: bool,
 }
 impl DownloadDbLogFilePortionOutput {
@@ -4782,6 +4897,7 @@ impl DownloadDbLogFilePortionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
+    #[doc(hidden)]
     pub valid_db_instance_modifications_message:
         std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
 }
@@ -4850,8 +4966,10 @@ impl DescribeValidDbInstanceModificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceRegionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
+    #[doc(hidden)]
     pub source_regions: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
 }
 impl DescribeSourceRegionsOutput {
@@ -4932,8 +5050,10 @@ impl DescribeSourceRegionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedDbInstancesOfferingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved DB instance offerings.</p>
+    #[doc(hidden)]
     pub reserved_db_instances_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
 }
@@ -5024,8 +5144,10 @@ impl DescribeReservedDbInstancesOfferingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved DB instances.</p>
+    #[doc(hidden)]
     pub reserved_db_instances: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>,
 }
 impl DescribeReservedDbInstancesOutput {
@@ -5109,9 +5231,11 @@ impl DescribeReservedDbInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
+    #[doc(hidden)]
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -5203,9 +5327,11 @@ impl DescribePendingMaintenanceActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
+    #[doc(hidden)]
     pub orderable_db_instance_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
     /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
@@ -5295,8 +5421,10 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptionGroupsOutput {
     /// <p>List of option groups.</p>
+    #[doc(hidden)]
     pub option_groups_list: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOptionGroupsOutput {
@@ -5378,8 +5506,10 @@ impl DescribeOptionGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOptionGroupOptionsOutput {
     /// <p>List of available option group options.</p>
+    #[doc(hidden)]
     pub option_group_options: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOptionGroupOptionsOutput {
@@ -5461,8 +5591,10 @@ impl DescribeOptionGroupOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalClustersOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of global clusters returned by this request.</p>
+    #[doc(hidden)]
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
 }
 impl DescribeGlobalClustersOutput {
@@ -5543,8 +5675,10 @@ impl DescribeGlobalClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportTasksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    #[doc(hidden)]
     pub export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
 }
 impl DescribeExportTasksOutput {
@@ -5625,8 +5759,10 @@ impl DescribeExportTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
+    #[doc(hidden)]
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
@@ -5711,8 +5847,10 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Event</code> instances.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -5793,6 +5931,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of <code>EventCategoriesMap</code> data types.</p>
+    #[doc(hidden)]
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
@@ -5863,6 +6002,7 @@ impl DescribeEventCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
@@ -5920,6 +6060,7 @@ impl DescribeEngineDefaultParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
@@ -5977,8 +6118,10 @@ impl DescribeEngineDefaultClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBSubnetGroup</code> instances.</p>
+    #[doc(hidden)]
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
 }
 impl DescribeDbSubnetGroupsOutput {
@@ -6060,8 +6203,10 @@ impl DescribeDbSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
+    #[doc(hidden)]
     pub db_snapshots: std::option::Option<std::vec::Vec<crate::model::DbSnapshot>>,
 }
 impl DescribeDbSnapshotsOutput {
@@ -6143,6 +6288,7 @@ impl DescribeDbSnapshotsOutput {
 pub struct DescribeDbSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_snapshot_attributes_result:
         std::option::Option<crate::model::DbSnapshotAttributesResult>,
 }
@@ -6213,8 +6359,10 @@ impl DescribeDbSnapshotAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSecurityGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
+    #[doc(hidden)]
     pub db_security_groups: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>,
 }
 impl DescribeDbSecurityGroupsOutput {
@@ -6296,8 +6444,10 @@ impl DescribeDbSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbProxyTargetsOutput {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbProxyTargetsOutput {
@@ -6378,8 +6528,10 @@ impl DescribeDbProxyTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbProxyTargetGroupsOutput {
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbProxyTargetGroupsOutput {
@@ -6461,8 +6613,10 @@ impl DescribeDbProxyTargetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbProxyEndpointsOutput {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
+    #[doc(hidden)]
     pub db_proxy_endpoints: std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbProxyEndpointsOutput {
@@ -6544,8 +6698,10 @@ impl DescribeDbProxyEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbProxiesOutput {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
+    #[doc(hidden)]
     pub db_proxies: std::option::Option<std::vec::Vec<crate::model::DbProxy>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbProxiesOutput {
@@ -6626,8 +6782,10 @@ impl DescribeDbProxiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbParametersOutput {
@@ -6708,8 +6866,10 @@ impl DescribeDbParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
+    #[doc(hidden)]
     pub db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
 }
 impl DescribeDbParameterGroupsOutput {
@@ -6791,9 +6951,11 @@ impl DescribeDbParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
+    #[doc(hidden)]
     pub describe_db_log_files:
         std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbLogFilesOutput {
@@ -6880,8 +7042,10 @@ impl DescribeDbLogFilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBInstance</code> instances.</p>
+    #[doc(hidden)]
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
 impl DescribeDbInstancesOutput {
@@ -6962,8 +7126,10 @@ impl DescribeDbInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstanceAutomatedBackupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
+    #[doc(hidden)]
     pub db_instance_automated_backups:
         std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
 }
@@ -7054,8 +7220,10 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBEngineVersion</code> elements.</p>
+    #[doc(hidden)]
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
 impl DescribeDbEngineVersionsOutput {
@@ -7137,8 +7305,10 @@ impl DescribeDbEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
 impl DescribeDbClusterSnapshotsOutput {
@@ -7221,6 +7391,7 @@ impl DescribeDbClusterSnapshotsOutput {
 pub struct DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
@@ -7291,8 +7462,10 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClustersOutput {
     /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
+    #[doc(hidden)]
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
 }
 impl DescribeDbClustersOutput {
@@ -7373,8 +7546,10 @@ impl DescribeDbClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersOutput {
@@ -7455,8 +7630,10 @@ impl DescribeDbClusterParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster parameter groups.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
@@ -7547,8 +7724,10 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterEndpointsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
 }
 impl DescribeDbClusterEndpointsOutput {
@@ -7630,8 +7809,10 @@ impl DescribeDbClusterEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of backtracks for the user.</p>
+    #[doc(hidden)]
     pub db_cluster_backtracks: std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>,
 }
 impl DescribeDbClusterBacktracksOutput {
@@ -7715,8 +7896,10 @@ impl DescribeDbClusterBacktracksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesOutput {
@@ -7797,6 +7980,7 @@ impl DescribeCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
+    #[doc(hidden)]
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
 }
 impl DescribeAccountAttributesOutput {
@@ -7920,6 +8104,7 @@ impl DeleteOptionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl DeleteGlobalClusterOutput {
@@ -7977,6 +8162,7 @@ impl DeleteGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
@@ -8065,6 +8251,7 @@ impl DeleteDbSubnetGroupOutput {
 pub struct DeleteDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl DeleteDbSnapshotOutput {
@@ -8155,6 +8342,7 @@ impl DeleteDbSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbProxyEndpointOutput {
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
+    #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl DeleteDbProxyEndpointOutput {
@@ -8212,6 +8400,7 @@ impl DeleteDbProxyEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbProxyOutput {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
+    #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl DeleteDbProxyOutput {
@@ -8296,6 +8485,7 @@ impl DeleteDbParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbInstanceAutomatedBackupOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
+    #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl DeleteDbInstanceAutomatedBackupOutput {
@@ -8363,6 +8553,7 @@ impl DeleteDbInstanceAutomatedBackupOutput {
 pub struct DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
@@ -8424,6 +8615,7 @@ impl DeleteDbInstanceOutput {
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
@@ -8521,24 +8713,34 @@ impl DeleteDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterEndpointOutput {
@@ -8800,6 +9002,7 @@ pub struct DeleteDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
@@ -8869,33 +9072,47 @@ impl DeleteDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the database engine.</p>
+    #[doc(hidden)]
     pub db_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the database engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_description: std::option::Option<std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_nchar_character_sets:
         std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
+    #[doc(hidden)]
     pub supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
+    #[doc(hidden)]
     pub supports_read_replica: bool,
     /// <p>A list of the supported DB engine modes.</p>
+    #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
@@ -8908,28 +9125,40 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_parallel_query: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_global_databases: bool,
     /// <p>The major engine version of the CEV.</p>
+    #[doc(hidden)]
     pub major_engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the custom engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    #[doc(hidden)]
     pub supports_babelfish: bool,
 }
 impl DeleteCustomDbEngineVersionOutput {
@@ -9577,6 +9806,7 @@ impl DeleteCustomDbEngineVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOptionGroupOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl CreateOptionGroupOutput {
@@ -9634,6 +9864,7 @@ impl CreateOptionGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
+    #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl CreateGlobalClusterOutput {
@@ -9691,6 +9922,7 @@ impl CreateGlobalClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
@@ -9749,6 +9981,7 @@ impl CreateEventSubscriptionOutput {
 pub struct CreateDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
@@ -9810,6 +10043,7 @@ impl CreateDbSubnetGroupOutput {
 pub struct CreateDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl CreateDbSnapshotOutput {
@@ -9871,6 +10105,7 @@ impl CreateDbSnapshotOutput {
 pub struct CreateDbSecurityGroupOutput {
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl CreateDbSecurityGroupOutput {
@@ -9931,6 +10166,7 @@ impl CreateDbSecurityGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
+    #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl CreateDbProxyEndpointOutput {
@@ -9988,6 +10224,7 @@ impl CreateDbProxyEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbProxyOutput {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
+    #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl CreateDbProxyOutput {
@@ -10043,6 +10280,7 @@ impl CreateDbProxyOutput {
 pub struct CreateDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CreateDbParameterGroupOutput {
@@ -10104,6 +10342,7 @@ impl CreateDbParameterGroupOutput {
 pub struct CreateDbInstanceReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceReadReplicaOutput {
@@ -10165,6 +10404,7 @@ impl CreateDbInstanceReadReplicaOutput {
 pub struct CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
+    #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
@@ -10226,6 +10466,7 @@ impl CreateDbInstanceOutput {
 pub struct CreateDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
@@ -10287,6 +10528,7 @@ impl CreateDbClusterSnapshotOutput {
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
@@ -10363,24 +10605,34 @@ impl CreateDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    #[doc(hidden)]
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    #[doc(hidden)]
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    #[doc(hidden)]
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterEndpointOutput {
@@ -10642,6 +10894,7 @@ pub struct CreateDbClusterOutput {
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
@@ -10711,33 +10964,47 @@ impl CreateDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
+    #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the database engine.</p>
+    #[doc(hidden)]
     pub db_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the database engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_description: std::option::Option<std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    #[doc(hidden)]
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    #[doc(hidden)]
     pub supported_nchar_character_sets:
         std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
+    #[doc(hidden)]
     pub supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
+    #[doc(hidden)]
     pub supports_read_replica: bool,
     /// <p>A list of the supported DB engine modes.</p>
+    #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
@@ -10750,28 +11017,40 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_parallel_query: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    #[doc(hidden)]
     pub supports_global_databases: bool,
     /// <p>The major engine version of the CEV.</p>
+    #[doc(hidden)]
     pub major_engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    #[doc(hidden)]
     pub database_installation_files_s3_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the custom engine version.</p>
+    #[doc(hidden)]
     pub db_engine_version_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    #[doc(hidden)]
     pub supports_babelfish: bool,
 }
 impl CreateCustomDbEngineVersionOutput {
@@ -11419,6 +11698,7 @@ impl CreateCustomDbEngineVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyOptionGroupOutput {
     /// <p></p>
+    #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl CopyOptionGroupOutput {
@@ -11477,6 +11757,7 @@ impl CopyOptionGroupOutput {
 pub struct CopyDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl CopyDbSnapshotOutput {
@@ -11538,6 +11819,7 @@ impl CopyDbSnapshotOutput {
 pub struct CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CopyDbParameterGroupOutput {
@@ -11599,6 +11881,7 @@ impl CopyDbParameterGroupOutput {
 pub struct CopyDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
@@ -11660,6 +11943,7 @@ impl CopyDbClusterSnapshotOutput {
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
@@ -11730,8 +12014,10 @@ impl CopyDbClusterParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
+    #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The data exported from the snapshot. Valid values are the following:</p>
     /// <ul>
@@ -11740,30 +12026,43 @@ pub struct CancelExportTaskOutput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the snapshot was created.</p>
+    #[doc(hidden)]
     pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task started.</p>
+    #[doc(hidden)]
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot export task completed.</p>
+    #[doc(hidden)]
     pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot export task as a percentage.</p>
+    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>The total amount of data exported, in gigabytes.</p>
+    #[doc(hidden)]
     pub total_extracted_data_in_gb: i32,
     /// <p>The reason the export failed, if it failed.</p>
+    #[doc(hidden)]
     pub failure_cause: std::option::Option<std::string::String>,
     /// <p>A warning about the snapshot export task.</p>
+    #[doc(hidden)]
     pub warning_message: std::option::Option<std::string::String>,
 }
 impl CancelExportTaskOutput {
@@ -12104,14 +12403,19 @@ impl CancelExportTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BacktrackDbClusterOutput {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
+    #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Contains the backtrack identifier.</p>
+    #[doc(hidden)]
     pub backtrack_identifier: std::option::Option<std::string::String>,
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
+    #[doc(hidden)]
     pub backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
+    #[doc(hidden)]
     pub backtracked_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
+    #[doc(hidden)]
     pub backtrack_request_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
@@ -12120,6 +12424,7 @@ pub struct BacktrackDbClusterOutput {
     /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
     /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl BacktrackDbClusterOutput {
@@ -12301,6 +12606,7 @@ impl BacktrackDbClusterOutput {
 pub struct AuthorizeDbSecurityGroupIngressOutput {
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
+    #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl AuthorizeDbSecurityGroupIngressOutput {
@@ -12361,6 +12667,7 @@ impl AuthorizeDbSecurityGroupIngressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>Describes the pending maintenance actions for a resource.</p>
+    #[doc(hidden)]
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
@@ -12458,6 +12765,7 @@ impl AddTagsToResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddSourceIdentifierToSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {

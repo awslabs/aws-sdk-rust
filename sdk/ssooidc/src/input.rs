@@ -584,10 +584,13 @@ impl StartDeviceAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceAuthorizationInput {
     /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    #[doc(hidden)]
     pub start_url: std::option::Option<std::string::String>,
 }
 impl StartDeviceAuthorizationInput {
@@ -619,10 +622,13 @@ impl std::fmt::Debug for StartDeviceAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterClientInput {
     /// <p>The friendly name of the client.</p>
+    #[doc(hidden)]
     pub client_name: std::option::Option<std::string::String>,
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    #[doc(hidden)]
     pub client_type: std::option::Option<std::string::String>,
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    #[doc(hidden)]
     pub scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegisterClientInput {
@@ -654,23 +660,31 @@ impl std::fmt::Debug for RegisterClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
     /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
     /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
+    #[doc(hidden)]
     pub grant_type: std::option::Option<std::string::String>,
     /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
+    #[doc(hidden)]
     pub device_code: std::option::Option<std::string::String>,
     /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
     /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
+    #[doc(hidden)]
     pub redirect_uri: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {

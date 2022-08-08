@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
+    #[doc(hidden)]
     pub fragments: std::option::Option<std::vec::Vec<crate::model::Fragment>>,
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFragmentsOutput {
@@ -85,6 +87,7 @@ impl ListFragmentsOutput {
 #[non_exhaustive]
 pub struct GetMediaForFragmentListOutput {
     /// <p>The content type of the requested media.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
     /// <ul>
@@ -205,8 +208,10 @@ impl GetMediaForFragmentListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagesOutput {
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     /// <p>The encrypted token that was used in the request to get more images.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetImagesOutput {
@@ -287,6 +292,7 @@ impl GetImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
+    #[doc(hidden)]
     pub hls_streaming_session_url: std::option::Option<std::string::String>,
 }
 impl GetHlsStreamingSessionUrlOutput {
@@ -344,6 +350,7 @@ impl GetHlsStreamingSessionUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
+    #[doc(hidden)]
     pub dash_streaming_session_url: std::option::Option<std::string::String>,
 }
 impl GetDashStreamingSessionUrlOutput {
@@ -403,6 +410,7 @@ impl GetDashStreamingSessionUrlOutput {
 #[non_exhaustive]
 pub struct GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,

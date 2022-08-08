@@ -170,12 +170,16 @@ impl AsRef<str> for QueueAttributeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    #[doc(hidden)]
     pub sender_fault: bool,
     /// <p>An error code representing why the action failed on this entry.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message explaining why the action failed on this entry.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchResultErrorEntry {
@@ -281,18 +285,24 @@ impl BatchResultErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageBatchResultEntry {
     /// <p>An identifier for the message in this batch.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>An identifier for the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_body: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_system_attributes: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl SendMessageBatchResultEntry {
@@ -459,14 +469,18 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The body of the message.</p>
+    #[doc(hidden)]
     pub message_body: std::option::Option<std::string::String>,
     /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
+    #[doc(hidden)]
     pub delay_seconds: i32,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -476,6 +490,7 @@ pub struct SendMessageBatchRequestEntry {
     /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
+    #[doc(hidden)]
     pub message_system_attributes: std::option::Option<
         std::collections::HashMap<
             crate::model::MessageSystemAttributeNameForSends,
@@ -501,6 +516,7 @@ pub struct SendMessageBatchRequestEntry {
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
@@ -512,6 +528,7 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
+    #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl SendMessageBatchRequestEntry {
@@ -837,15 +854,20 @@ impl SendMessageBatchRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageSystemAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.</p>
+    #[doc(hidden)]
     pub binary_value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Not implemented. Reserved for future use.</p>
+    #[doc(hidden)]
     pub string_list_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Not implemented. Reserved for future use.</p>
+    #[doc(hidden)]
     pub binary_list_values: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl MessageSystemAttributeValue {
@@ -1044,15 +1066,20 @@ impl AsRef<str> for MessageSystemAttributeNameForSends {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.</p>
+    #[doc(hidden)]
     pub binary_value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Not implemented. Reserved for future use.</p>
+    #[doc(hidden)]
     pub string_list_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Not implemented. Reserved for future use.</p>
+    #[doc(hidden)]
     pub binary_list_values: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
 }
 impl MessageAttributeValue {
@@ -1199,12 +1226,16 @@ impl MessageAttributeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</p>
+    #[doc(hidden)]
     pub receipt_handle: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message body string.</p>
+    #[doc(hidden)]
     pub md5_of_body: std::option::Option<std::string::String>,
     /// <p>The message's contents (not URL-encoded).</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
     /// <ul>
@@ -1217,12 +1248,15 @@ pub struct Message {
     /// <li> <p> <code>SequenceNumber</code> </p> </li>
     /// </ul>
     /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::MessageSystemAttributeName, std::string::String>,
     >,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    #[doc(hidden)]
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -1557,6 +1591,7 @@ impl AsRef<str> for MessageSystemAttributeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteMessageBatchResultEntry {
@@ -1612,8 +1647,10 @@ pub struct DeleteMessageBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A receipt handle.</p>
+    #[doc(hidden)]
     pub receipt_handle: std::option::Option<std::string::String>,
 }
 impl DeleteMessageBatchRequestEntry {
@@ -1697,6 +1734,7 @@ impl DeleteMessageBatchRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ChangeMessageVisibilityBatchResultEntry {
@@ -1757,10 +1795,13 @@ pub struct ChangeMessageVisibilityBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A receipt handle.</p>
+    #[doc(hidden)]
     pub receipt_handle: std::option::Option<std::string::String>,
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
+    #[doc(hidden)]
     pub visibility_timeout: i32,
 }
 impl ChangeMessageVisibilityBatchRequestEntry {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceOutput {
     /// <p>The date and time of the current update.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateWorkspaceOutput {
@@ -61,6 +62,7 @@ impl UpdateWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSceneOutput {
     /// <p>The date and time when the scene was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSceneOutput {
@@ -118,8 +120,10 @@ impl UpdateSceneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEntityOutput {
     /// <p>The date and time when the entity was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the entity update.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl UpdateEntityOutput {
@@ -194,12 +198,16 @@ impl UpdateEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the component type.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The current state of the component type.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl UpdateComponentTypeOutput {
@@ -368,8 +376,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesOutput {
     /// <p>A list of objects that contain information about the workspaces.</p>
+    #[doc(hidden)]
     pub workspace_summaries: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkspacesOutput {
@@ -451,9 +461,11 @@ impl ListWorkspacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Metadata that you can use to manage a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -545,8 +557,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScenesOutput {
     /// <p>A list of objects that contain information about the scenes.</p>
+    #[doc(hidden)]
     pub scene_summaries: std::option::Option<std::vec::Vec<crate::model::SceneSummary>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScenesOutput {
@@ -627,8 +641,10 @@ impl ListScenesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesOutput {
     /// <p>A list of objects that contain information about the entities.</p>
+    #[doc(hidden)]
     pub entity_summaries: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesOutput {
@@ -710,13 +726,17 @@ impl ListEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A list of objects that contain information about the component types.</p>
+    #[doc(hidden)]
     pub component_type_summaries:
         std::option::Option<std::vec::Vec<crate::model::ComponentTypeSummary>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComponentTypesOutput {
@@ -837,18 +857,25 @@ impl ListComponentTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkspaceOutput {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the workspace.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the workspace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The date and time when the workspace was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the workspace was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetWorkspaceOutput {
@@ -1011,20 +1038,28 @@ impl GetWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSceneOutput {
     /// <p>The ID of the workspace that contains the scene.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ID of the scene.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    #[doc(hidden)]
     pub content_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the scene.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the scene was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the scene was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the scene.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetSceneOutput {
@@ -1216,8 +1251,10 @@ impl GetSceneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_values: std::option::Option<std::vec::Vec<crate::model::PropertyValueHistory>>,
     /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryOutput {
@@ -1299,6 +1336,7 @@ impl GetPropertyValueHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueOutput {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyLatestValue>,
     >,
@@ -1376,28 +1414,39 @@ impl GetPropertyValueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntityOutput {
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the entity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the entity.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentResponse>,
     >,
     /// <p>The ID of the parent entity for this entity.</p>
+    #[doc(hidden)]
     pub parent_entity_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
+    #[doc(hidden)]
     pub has_child_entities: std::option::Option<bool>,
     /// <p>The date and time when the entity was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the entity was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEntityOutput {
@@ -1652,34 +1701,47 @@ impl GetEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    #[doc(hidden)]
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionResponse>,
     >,
     /// <p>The name of the parent component type that this component type extends.</p>
+    #[doc(hidden)]
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionResponse>,
     >,
     /// <p>The date and time when the component type was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the component was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the component type.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
+    #[doc(hidden)]
     pub is_abstract: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
+    #[doc(hidden)]
     pub is_schema_initialized: std::option::Option<bool>,
     /// <p>The current status of the component type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl GetComponentTypeOutput {
@@ -2064,6 +2126,7 @@ impl DeleteSceneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEntityOutput {
     /// <p>The current state of the deleted entity.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl DeleteEntityOutput {
@@ -2116,6 +2179,7 @@ impl DeleteEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentTypeOutput {
     /// <p>The current state of the component type to be deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl DeleteComponentTypeOutput {
@@ -2168,8 +2232,10 @@ impl DeleteComponentTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceOutput {
     /// <p>The ARN of the workspace.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the workspace was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateWorkspaceOutput {
@@ -2244,8 +2310,10 @@ impl CreateWorkspaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSceneOutput {
     /// <p>The ARN of the scene.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the scene was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSceneOutput {
@@ -2320,12 +2388,16 @@ impl CreateSceneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntityOutput {
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the entity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the entity was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the entity.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl CreateEntityOutput {
@@ -2434,10 +2506,13 @@ impl CreateEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentTypeOutput {
     /// <p>The ARN of the component type.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the entity was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the component type.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl CreateComponentTypeOutput {
@@ -2529,6 +2604,7 @@ impl CreateComponentTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyErrorEntry>>,
 }
 impl BatchPutPropertyValuesOutput {

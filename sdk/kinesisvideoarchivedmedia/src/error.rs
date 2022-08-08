@@ -6,6 +6,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -70,6 +71,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -134,6 +136,7 @@ impl NotAuthorizedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgumentException {
@@ -198,6 +201,7 @@ impl InvalidArgumentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientLimitExceededException {
@@ -262,6 +266,7 @@ impl ClientLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedStreamMediaTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedStreamMediaTypeException {
@@ -326,6 +331,7 @@ impl UnsupportedStreamMediaTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoDataRetentionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoDataRetentionException {
@@ -390,6 +396,7 @@ impl NoDataRetentionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingCodecPrivateDataException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingCodecPrivateDataException {
@@ -454,6 +461,7 @@ impl MissingCodecPrivateDataException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCodecPrivateDataException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCodecPrivateDataException {
@@ -518,6 +526,7 @@ impl InvalidCodecPrivateDataException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMediaFrameException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMediaFrameException {

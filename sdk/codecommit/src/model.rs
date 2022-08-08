@@ -5,26 +5,37 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_activity_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
+    #[doc(hidden)]
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
+    #[doc(hidden)]
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_targets: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The system-generated revision ID for the pull request.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The approval rules applied to the pull request.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<std::vec::Vec<crate::model::ApprovalRule>>,
 }
 impl PullRequest {
@@ -283,20 +294,28 @@ impl PullRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRule {
     /// <p>The system-generated ID of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
     /// <p>The content of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_content: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
+    #[doc(hidden)]
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the approval rule was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The approval rule template used to create the rule.</p>
+    #[doc(hidden)]
     pub origin_approval_rule_template:
         std::option::Option<crate::model::OriginApprovalRuleTemplate>,
 }
@@ -504,8 +523,10 @@ impl ApprovalRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
     /// <p>The name of the template that created the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
 }
 impl OriginApprovalRuleTemplate {
@@ -589,18 +610,25 @@ impl OriginApprovalRuleTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
+    #[doc(hidden)]
     pub source_reference: std::option::Option<std::string::String>,
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    #[doc(hidden)]
     pub destination_reference: std::option::Option<std::string::String>,
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
+    #[doc(hidden)]
     pub destination_commit: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
+    #[doc(hidden)]
     pub source_commit: std::option::Option<std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
+    #[doc(hidden)]
     pub merge_base: std::option::Option<std::string::String>,
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
+    #[doc(hidden)]
     pub merge_metadata: std::option::Option<crate::model::MergeMetadata>,
 }
 impl PullRequestTarget {
@@ -775,12 +803,16 @@ impl PullRequestTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeMetadata {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
+    #[doc(hidden)]
     pub is_merged: bool,
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
+    #[doc(hidden)]
     pub merged_by: std::option::Option<std::string::String>,
     /// <p>The commit ID for the merge commit, if any.</p>
+    #[doc(hidden)]
     pub merge_commit_id: std::option::Option<std::string::String>,
     /// <p>The merge strategy used in the merge.</p>
+    #[doc(hidden)]
     pub merge_option: std::option::Option<crate::model::MergeOptionTypeEnum>,
 }
 impl MergeMetadata {
@@ -1061,24 +1093,34 @@ impl AsRef<str> for ApprovalState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Comment {
     /// <p>The system-generated comment ID.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
     /// <p>The content of the comment.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
+    #[doc(hidden)]
     pub in_reply_to: std::option::Option<std::string::String>,
     /// <p>The date and time the comment was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
+    #[doc(hidden)]
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
+    #[doc(hidden)]
     pub deleted: bool,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
+    #[doc(hidden)]
     pub caller_reactions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
+    #[doc(hidden)]
     pub reaction_counts: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
 impl Comment {
@@ -1316,20 +1358,28 @@ impl Comment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplate {
     /// <p>The system-generated ID of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
     /// <p>The name of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The description of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_description: std::option::Option<std::string::String>,
     /// <p>The content of the approval rule template.</p>
+    #[doc(hidden)]
     pub approval_rule_template_content: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
+    #[doc(hidden)]
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the approval rule template was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
+    #[doc(hidden)]
     pub last_modified_user: std::option::Option<std::string::String>,
 }
 impl ApprovalRuleTemplate {
@@ -1545,8 +1595,10 @@ impl ApprovalRuleTemplate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
+    #[doc(hidden)]
     pub trigger: std::option::Option<std::string::String>,
     /// <p>Message information about the trigger that did not run.</p>
+    #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
 }
 impl RepositoryTriggerExecutionFailure {
@@ -1621,18 +1673,23 @@ impl RepositoryTriggerExecutionFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
+    #[doc(hidden)]
     pub custom_data: std::option::Option<std::string::String>,
     /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
+    #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
 }
 impl RepositoryTrigger {
@@ -1916,10 +1973,13 @@ impl AsRef<str> for FileModeTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The position of a change in a compared file, in line number format.</p>
+    #[doc(hidden)]
     pub file_position: std::option::Option<i64>,
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
+    #[doc(hidden)]
     pub relative_file_version: std::option::Option<crate::model::RelativeFileVersionEnum>,
 }
 impl Location {
@@ -2127,10 +2187,13 @@ impl AsRef<str> for OverrideStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
+    #[doc(hidden)]
     pub replace_contents: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
+    #[doc(hidden)]
     pub delete_files: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>,
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
+    #[doc(hidden)]
     pub set_file_modes: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
 }
 impl ConflictResolution {
@@ -2248,8 +2311,10 @@ impl ConflictResolution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The file mode for the file.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl SetFileModeEntry {
@@ -2324,6 +2389,7 @@ impl SetFileModeEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
 }
 impl DeleteFileEntry {
@@ -2378,12 +2444,16 @@ impl DeleteFileEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
+    #[doc(hidden)]
     pub replacement_type: std::option::Option<crate::model::ReplacementTypeEnum>,
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The file mode to apply during conflict resoltion.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl ReplaceContentEntry {
@@ -2681,8 +2751,10 @@ impl AsRef<str> for ConflictDetailLevelTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The ID associated with the repository.</p>
+    #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
 }
 impl RepositoryNameIdPair {
@@ -2870,24 +2942,34 @@ impl AsRef<str> for SortByEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the repository.</p>
+    #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
     /// <p>The repository's name.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>A comment or description about the repository.</p>
+    #[doc(hidden)]
     pub repository_description: std::option::Option<std::string::String>,
     /// <p>The repository's default branch name.</p>
+    #[doc(hidden)]
     pub default_branch: std::option::Option<std::string::String>,
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the repository was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
+    #[doc(hidden)]
     pub clone_url_http: std::option::Option<std::string::String>,
     /// <p>The URL to use for cloning the repository over SSH.</p>
+    #[doc(hidden)]
     pub clone_url_ssh: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RepositoryMetadata {
@@ -3119,8 +3201,10 @@ impl RepositoryMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Approval {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
+    #[doc(hidden)]
     pub approval_state: std::option::Option<crate::model::ApprovalState>,
 }
 impl Approval {
@@ -3195,24 +3279,34 @@ impl Approval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
+    #[doc(hidden)]
     pub file_sizes: std::option::Option<crate::model::FileSizes>,
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
+    #[doc(hidden)]
     pub file_modes: std::option::Option<crate::model::FileModes>,
     /// <p>Information about any object type conflicts in a merge operation.</p>
+    #[doc(hidden)]
     pub object_types: std::option::Option<crate::model::ObjectTypes>,
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
+    #[doc(hidden)]
     pub number_of_conflicts: i32,
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
+    #[doc(hidden)]
     pub is_binary_file: std::option::Option<crate::model::IsBinaryFile>,
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
+    #[doc(hidden)]
     pub content_conflict: bool,
     /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
+    #[doc(hidden)]
     pub file_mode_conflict: bool,
     /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
+    #[doc(hidden)]
     pub object_type_conflict: bool,
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
+    #[doc(hidden)]
     pub merge_operations: std::option::Option<crate::model::MergeOperations>,
 }
 impl ConflictMetadata {
@@ -3435,8 +3529,10 @@ impl ConflictMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ChangeTypeEnum>,
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::ChangeTypeEnum>,
 }
 impl MergeOperations {
@@ -3573,10 +3669,13 @@ impl AsRef<str> for ChangeTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IsBinaryFile {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<bool>,
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<bool>,
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
+    #[doc(hidden)]
     pub base: std::option::Option<bool>,
 }
 impl IsBinaryFile {
@@ -3665,10 +3764,13 @@ impl IsBinaryFile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ObjectTypeEnum>,
     /// <p>The type of the object in the destination branch.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::ObjectTypeEnum>,
     /// <p>The type of the object in the base commit of the merge.</p>
+    #[doc(hidden)]
     pub base: std::option::Option<crate::model::ObjectTypeEnum>,
 }
 impl ObjectTypes {
@@ -3829,10 +3931,13 @@ impl AsRef<str> for ObjectTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileModes {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
+    #[doc(hidden)]
     pub base: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl FileModes {
@@ -3930,10 +4035,13 @@ impl FileModes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSizes {
     /// <p>The size of a file in the source of a merge or pull request.</p>
+    #[doc(hidden)]
     pub source: i64,
     /// <p>The size of a file in the destination of a merge or pull request.</p>
+    #[doc(hidden)]
     pub destination: i64,
     /// <p>The size of a file in the base of a merge or pull request.</p>
+    #[doc(hidden)]
     pub base: i64,
 }
 impl FileSizes {
@@ -4022,10 +4130,13 @@ impl FileSizes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
+    #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
 }
 impl SubModule {
@@ -4120,12 +4231,16 @@ impl SubModule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SymbolicLink {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
+    #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl SymbolicLink {
@@ -4240,12 +4355,16 @@ impl SymbolicLink {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct File {
     /// <p>The blob ID that contains the file information.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path to the file in the repository.</p>
+    #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The relative path of the file from the folder where the query originated.</p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl File {
@@ -4360,10 +4479,13 @@ impl File {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Folder {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path of the folder in the repository.</p>
+    #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
+    #[doc(hidden)]
     pub relative_path: std::option::Option<std::string::String>,
 }
 impl Folder {
@@ -4458,10 +4580,13 @@ impl Folder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Difference {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
+    #[doc(hidden)]
     pub before_blob: std::option::Option<crate::model::BlobMetadata>,
     /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
+    #[doc(hidden)]
     pub after_blob: std::option::Option<crate::model::BlobMetadata>,
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeTypeEnum>,
 }
 impl Difference {
@@ -4559,8 +4684,10 @@ impl Difference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlobMetadata {
     /// <p>The full ID of the blob.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The path to the blob and associated file name, if any.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
@@ -4569,6 +4696,7 @@ pub struct BlobMetadata {
     /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mode: std::option::Option<std::string::String>,
 }
 impl BlobMetadata {
@@ -4675,19 +4803,26 @@ impl BlobMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Commit {
     /// <p>The full SHA ID of the specified commit. </p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>Tree information for the specified commit.</p>
+    #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
     /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
+    #[doc(hidden)]
     pub parents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The commit message associated with the specified commit.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<crate::model::UserInfo>,
     /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
     /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+    #[doc(hidden)]
     pub committer: std::option::Option<crate::model::UserInfo>,
     /// <p>Any other data associated with the specified commit.</p>
+    #[doc(hidden)]
     pub additional_data: std::option::Option<std::string::String>,
 }
 impl Commit {
@@ -4859,10 +4994,13 @@ impl Commit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserInfo {
     /// <p>The name of the user who made the specified commit.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The email address associated with the user who made the commit, if any.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
+    #[doc(hidden)]
     pub date: std::option::Option<std::string::String>,
 }
 impl UserInfo {
@@ -4951,20 +5089,28 @@ impl UserInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentsForPullRequest {
     /// <p>The system-generated ID of the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the pull request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
+    #[doc(hidden)]
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
+    #[doc(hidden)]
     pub after_blob_id: std::option::Option<std::string::String>,
     /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
+    #[doc(hidden)]
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
 }
 impl CommentsForPullRequest {
@@ -5165,18 +5311,25 @@ impl CommentsForPullRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
+    #[doc(hidden)]
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
+    #[doc(hidden)]
     pub after_blob_id: std::option::Option<std::string::String>,
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
+    #[doc(hidden)]
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
 }
 impl CommentsForComparedCommit {
@@ -5357,10 +5510,13 @@ impl CommentsForComparedCommit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
+    #[doc(hidden)]
     pub reaction: std::option::Option<crate::model::ReactionValueFormats>,
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
+    #[doc(hidden)]
     pub reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+    #[doc(hidden)]
     pub reactions_from_deleted_users_count: std::option::Option<i32>,
 }
 impl ReactionForComment {
@@ -5467,10 +5623,13 @@ impl ReactionForComment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
+    #[doc(hidden)]
     pub emoji: std::option::Option<std::string::String>,
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    #[doc(hidden)]
     pub short_code: std::option::Option<std::string::String>,
     /// <p>The Unicode codepoint for the reaction.</p>
+    #[doc(hidden)]
     pub unicode: std::option::Option<std::string::String>,
 }
 impl ReactionValueFormats {
@@ -5559,8 +5718,10 @@ impl ReactionValueFormats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchInfo {
     /// <p>The name of the branch.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The ID of the last commit made to the branch.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
 }
 impl BranchInfo {
@@ -5632,12 +5793,16 @@ impl BranchInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Evaluation {
     /// <p>Whether the state of the pull request is approved.</p>
+    #[doc(hidden)]
     pub approved: bool,
     /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
+    #[doc(hidden)]
     pub overridden: bool,
     /// <p>The names of the approval rules that have had their conditions met.</p>
+    #[doc(hidden)]
     pub approval_rules_satisfied: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the approval rules that have not had their conditions met.</p>
+    #[doc(hidden)]
     pub approval_rules_not_satisfied: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Evaluation {
@@ -5769,31 +5934,42 @@ impl Evaluation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The day and time of the pull request event, in timestamp format.</p>
+    #[doc(hidden)]
     pub event_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
+    #[doc(hidden)]
     pub pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+    #[doc(hidden)]
     pub actor_arn: std::option::Option<std::string::String>,
     /// <p>Information about the source and destination branches for the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_created_event_metadata:
         std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
     /// <p>Information about the change in status for the pull request event.</p>
+    #[doc(hidden)]
     pub pull_request_status_changed_event_metadata:
         std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
     /// <p>Information about the updated source branch for the pull request event. </p>
+    #[doc(hidden)]
     pub pull_request_source_reference_updated_event_metadata:
         std::option::Option<crate::model::PullRequestSourceReferenceUpdatedEventMetadata>,
     /// <p>Information about the change in mergability state for the pull request event.</p>
+    #[doc(hidden)]
     pub pull_request_merged_state_changed_event_metadata:
         std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
     /// <p>Information about a pull request event.</p>
+    #[doc(hidden)]
     pub approval_rule_event_metadata: std::option::Option<crate::model::ApprovalRuleEventMetadata>,
     /// <p>Information about an approval state change for a pull request.</p>
+    #[doc(hidden)]
     pub approval_state_changed_event_metadata:
         std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
     /// <p>Information about an approval rule override event for a pull request.</p>
+    #[doc(hidden)]
     pub approval_rule_overridden_event_metadata:
         std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
 }
@@ -6125,8 +6301,10 @@ impl PullRequestEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The status of the override event.</p>
+    #[doc(hidden)]
     pub override_status: std::option::Option<crate::model::OverrideStatus>,
 }
 impl ApprovalRuleOverriddenEventMetadata {
@@ -6201,8 +6379,10 @@ impl ApprovalRuleOverriddenEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The approval status for the pull request.</p>
+    #[doc(hidden)]
     pub approval_status: std::option::Option<crate::model::ApprovalState>,
 }
 impl ApprovalStateChangedEventMetadata {
@@ -6277,10 +6457,13 @@ impl ApprovalStateChangedEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_name: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_id: std::option::Option<std::string::String>,
     /// <p>The content of the approval rule.</p>
+    #[doc(hidden)]
     pub approval_rule_content: std::option::Option<std::string::String>,
 }
 impl ApprovalRuleEventMetadata {
@@ -6378,10 +6561,13 @@ impl ApprovalRuleEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestMergedStateChangedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch that the pull request is merged into.</p>
+    #[doc(hidden)]
     pub destination_reference: std::option::Option<std::string::String>,
     /// <p>Information about the merge state change event.</p>
+    #[doc(hidden)]
     pub merge_metadata: std::option::Option<crate::model::MergeMetadata>,
 }
 impl PullRequestMergedStateChangedEventMetadata {
@@ -6479,12 +6665,16 @@ impl PullRequestMergedStateChangedEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The name of the repository where the pull request was updated.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
+    #[doc(hidden)]
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
+    #[doc(hidden)]
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
+    #[doc(hidden)]
     pub merge_base: std::option::Option<std::string::String>,
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {
@@ -6600,6 +6790,7 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
+    #[doc(hidden)]
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
 }
 impl PullRequestStatusChangedEventMetadata {
@@ -6657,12 +6848,16 @@ impl PullRequestStatusChangedEventMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestCreatedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
+    #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
+    #[doc(hidden)]
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
+    #[doc(hidden)]
     pub merge_base: std::option::Option<std::string::String>,
 }
 impl PullRequestCreatedEventMetadata {
@@ -6898,12 +7093,16 @@ impl AsRef<str> for PullRequestEventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeHunk {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
+    #[doc(hidden)]
     pub is_conflict: bool,
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::MergeHunkDetail>,
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::MergeHunkDetail>,
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
+    #[doc(hidden)]
     pub base: std::option::Option<crate::model::MergeHunkDetail>,
 }
 impl MergeHunk {
@@ -7018,10 +7217,13 @@ impl MergeHunk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeHunkDetail {
     /// <p>The start position of the hunk in the merge result.</p>
+    #[doc(hidden)]
     pub start_line: std::option::Option<i32>,
     /// <p>The end position of the hunk in the merge result.</p>
+    #[doc(hidden)]
     pub end_line: std::option::Option<i32>,
     /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
+    #[doc(hidden)]
     pub hunk_content: std::option::Option<std::string::String>,
 }
 impl MergeHunkDetail {
@@ -7110,10 +7312,13 @@ impl MergeHunkDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
+    #[doc(hidden)]
     pub source_reference: std::option::Option<std::string::String>,
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
+    #[doc(hidden)]
     pub destination_reference: std::option::Option<std::string::String>,
 }
 impl Target {
@@ -7211,10 +7416,13 @@ impl Target {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileMetadata {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
+    #[doc(hidden)]
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The blob ID that contains the file information.</p>
+    #[doc(hidden)]
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl FileMetadata {
@@ -7309,12 +7517,16 @@ impl FileMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
+    #[doc(hidden)]
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The content of the file, if a source file is not specified.</p>
+    #[doc(hidden)]
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
+    #[doc(hidden)]
     pub source_file: std::option::Option<crate::model::SourceFileSpecifier>,
 }
 impl PutFileEntry {
@@ -7429,8 +7641,10 @@ impl PutFileEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFileSpecifier {
     /// <p>The full path to the file, including the name of the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>Whether to remove the source file from the parent commit.</p>
+    #[doc(hidden)]
     pub is_move: bool,
 }
 impl SourceFileSpecifier {
@@ -7502,10 +7716,13 @@ impl SourceFileSpecifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetCommitsError {
@@ -7597,10 +7814,13 @@ impl BatchGetCommitsError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
@@ -7700,10 +7920,13 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The name of the exception.</p>
+    #[doc(hidden)]
     pub exception_name: std::option::Option<std::string::String>,
     /// <p>The message provided by the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchDescribeMergeConflictsError {
@@ -7795,8 +8018,10 @@ impl BatchDescribeMergeConflictsError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
+    #[doc(hidden)]
     pub conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
+    #[doc(hidden)]
     pub merge_hunks: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
 }
 impl Conflict {
@@ -7880,10 +8105,13 @@ impl Conflict {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>The name of the repository where the association was not made.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {

@@ -665,10 +665,13 @@ impl ListSharedEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedEndpointsInput {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The ID of the Amazon Web Services Outpost.</p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl ListSharedEndpointsInput {
@@ -700,8 +703,10 @@ impl std::fmt::Debug for ListSharedEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsInput {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListEndpointsInput {
@@ -728,8 +733,10 @@ impl std::fmt::Debug for ListEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
     /// <p>The ID of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Outposts. </p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
@@ -756,16 +763,21 @@ impl std::fmt::Debug for DeleteEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
     /// <p>The ID of the Outposts. </p>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ID of the security group to use with the endpoint.</p>
+    #[doc(hidden)]
     pub security_group_id: std::option::Option<std::string::String>,
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
     /// </note>
+    #[doc(hidden)]
     pub access_type: std::option::Option<crate::model::EndpointAccessType>,
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
+    #[doc(hidden)]
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl CreateEndpointInput {

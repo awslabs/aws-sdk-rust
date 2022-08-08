@@ -5,15 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The method that's used to define how to split your source costs across your targets. </p>
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
+    #[doc(hidden)]
     pub method: std::option::Option<crate::model::CostCategorySplitChargeMethod>,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
 }
@@ -158,8 +162,10 @@ impl CostCategorySplitChargeRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
     /// <p>The parameter values. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CostCategorySplitChargeRuleParameter {
@@ -363,14 +369,18 @@ impl AsRef<str> for CostCategorySplitChargeMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategoryRule {
     /// <p>The default value for the cost category.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
     /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p>
     /// <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+    #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Expression>,
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
+    #[doc(hidden)]
     pub inherited_value: std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
     /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CostCategoryRuleType>,
 }
 impl CostCategoryRule {
@@ -550,8 +560,10 @@ impl AsRef<str> for CostCategoryRuleType {
 pub struct CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
     /// <p>The key to extract cost category values.</p>
+    #[doc(hidden)]
     pub dimension_key: std::option::Option<std::string::String>,
 }
 impl CostCategoryInheritedValueDimension {
@@ -702,16 +714,22 @@ impl AsRef<str> for CostCategoryInheritedValueDimensionName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
+    #[doc(hidden)]
     pub or: std::option::Option<std::vec::Vec<crate::model::Expression>>,
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<std::vec::Vec<crate::model::Expression>>,
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
+    #[doc(hidden)]
     pub not: std::option::Option<std::boxed::Box<crate::model::Expression>>,
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<crate::model::DimensionValues>,
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<crate::model::TagValues>,
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
+    #[doc(hidden)]
     pub cost_categories: std::option::Option<crate::model::CostCategoryValues>,
 }
 impl Expression {
@@ -880,10 +898,13 @@ impl Expression {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategoryValues {
     /// <p>The unique name of the Cost Category.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The specific value of the Cost Category.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
+    #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl CostCategoryValues {
@@ -1075,10 +1096,13 @@ impl AsRef<str> for MatchOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagValues {
     /// <p>The key for the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The specific value of the tag.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl TagValues {
@@ -1185,10 +1209,13 @@ impl TagValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionValues {
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
 impl DimensionValues {
@@ -1554,10 +1581,13 @@ impl AsRef<str> for CostCategoryRuleVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostAllocationTagsStatusError {
     /// <p>The key for the cost allocation tag. </p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>An error code representing why the action failed on this entry. </p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message explaining why the action failed on this entry. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UpdateCostAllocationTagsStatusError {
@@ -1646,8 +1676,10 @@ impl UpdateCostAllocationTagsStatusError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The status of a cost allocation tag. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
 }
 impl CostAllocationTagStatusEntry {
@@ -1777,10 +1809,13 @@ impl AsRef<str> for CostAllocationTagStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
+    #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The notification delivery channel. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SubscriberType>,
     /// <p>Indicates if the subscriber accepts the notifications. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SubscriberStatus>,
 }
 impl Subscriber {
@@ -2046,8 +2081,10 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
     /// <p>The key that's associated with the tag. </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value that's associated with the tag. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceTag {
@@ -2179,21 +2216,29 @@ impl AsRef<str> for AnomalyFeedbackType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategoryReference {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Cost Category's effective start date.</p>
+    #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
     /// <p>The Cost Category's effective end date.</p>
+    #[doc(hidden)]
     pub effective_end: std::option::Option<std::string::String>,
     /// <p>The number of rules that are associated with a specific Cost Category. </p>
+    #[doc(hidden)]
     pub number_of_rules: i32,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    #[doc(hidden)]
     pub processing_status:
         std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
     /// <p>A list of unique cost category values in a specific cost category. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The default value for the cost category.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl CostCategoryReference {
@@ -2403,8 +2448,10 @@ impl CostCategoryReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategoryProcessingStatus {
     /// <p>The Cost Management product name of the applied status. </p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::CostCategoryStatusComponent>,
     /// <p>The process status for a specific cost category. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CostCategoryStatus>,
 }
 impl CostCategoryProcessingStatus {
@@ -2588,10 +2635,13 @@ impl AsRef<str> for CostCategoryStatusComponent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CostAllocationTagType>,
     /// <p>The status of a cost allocation tag. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
 }
 impl CostAllocationTag {
@@ -2741,12 +2791,16 @@ impl AsRef<str> for CostAllocationTagType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The mean value of the forecast.</p>
+    #[doc(hidden)]
     pub mean_value: std::option::Option<std::string::String>,
     /// <p>The lower limit for the prediction interval. </p>
+    #[doc(hidden)]
     pub prediction_interval_lower_bound: std::option::Option<std::string::String>,
     /// <p>The upper limit for the prediction interval. </p>
+    #[doc(hidden)]
     pub prediction_interval_upper_bound: std::option::Option<std::string::String>,
 }
 impl ForecastResult {
@@ -2873,8 +2927,10 @@ impl ForecastResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateInterval {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<std::string::String>,
 }
 impl DateInterval {
@@ -2946,8 +3002,10 @@ impl DateInterval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricValue {
     /// <p>The actual number that represents the metric.</p>
+    #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
     /// <p>The unit that the metric is given in.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl MetricValue {
@@ -3161,8 +3219,10 @@ impl AsRef<str> for Metric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortDefinition {
     /// <p>The key that's used to sort the data.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The order that's used to sort the data.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl SortDefinition {
@@ -3292,10 +3352,13 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilizationAggregates {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    #[doc(hidden)]
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
+    #[doc(hidden)]
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationAggregates {
@@ -3399,10 +3462,13 @@ impl SavingsPlansUtilizationAggregates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansAmortizedCommitment {
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
+    #[doc(hidden)]
     pub amortized_recurring_commitment: std::option::Option<std::string::String>,
     /// <p>The amortized amount of your Savings Plans commitment that was purchased with an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
+    #[doc(hidden)]
     pub amortized_upfront_commitment: std::option::Option<std::string::String>,
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your Savings Plans purchase method. </p>
+    #[doc(hidden)]
     pub total_amortized_commitment: std::option::Option<std::string::String>,
 }
 impl SavingsPlansAmortizedCommitment {
@@ -3515,8 +3581,10 @@ impl SavingsPlansAmortizedCommitment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
+    #[doc(hidden)]
     pub net_savings: std::option::Option<std::string::String>,
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
+    #[doc(hidden)]
     pub on_demand_cost_equivalent: std::option::Option<std::string::String>,
 }
 impl SavingsPlansSavings {
@@ -3591,12 +3659,16 @@ impl SavingsPlansSavings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilization {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
+    #[doc(hidden)]
     pub total_commitment: std::option::Option<std::string::String>,
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
+    #[doc(hidden)]
     pub used_commitment: std::option::Option<std::string::String>,
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
+    #[doc(hidden)]
     pub unused_commitment: std::option::Option<std::string::String>,
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
+    #[doc(hidden)]
     pub utilization_percentage: std::option::Option<std::string::String>,
 }
 impl SavingsPlansUtilization {
@@ -3714,15 +3786,20 @@ impl SavingsPlansUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilizationDetail {
     /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_arn: std::option::Option<std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
     /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    #[doc(hidden)]
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
+    #[doc(hidden)]
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationDetail {
@@ -3951,12 +4028,16 @@ impl AsRef<str> for SavingsPlansDataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilizationByTime {
     /// <p>The time period of the request. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    #[doc(hidden)]
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
+    #[doc(hidden)]
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
 }
 impl SavingsPlansUtilizationByTime {
@@ -4080,19 +4161,26 @@ impl SavingsPlansUtilizationByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansPurchaseRecommendation {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
     /// <p>The requested Savings Plans recommendation type.</p>
+    #[doc(hidden)]
     pub savings_plans_type: std::option::Option<crate::model::SupportedSavingsPlansType>,
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
+    #[doc(hidden)]
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
     /// <p>The payment option that's used to generate the recommendation.</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+    #[doc(hidden)]
     pub savings_plans_purchase_recommendation_details:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>,
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    #[doc(hidden)]
     pub savings_plans_purchase_recommendation_summary:
         std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
 }
@@ -4313,26 +4401,37 @@ impl SavingsPlansPurchaseRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansPurchaseRecommendationSummary {
     /// <p>The estimated return on investment that's based on the recommended Savings Plans and estimated savings.</p>
+    #[doc(hidden)]
     pub estimated_roi: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans. This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand usage.</p>
+    #[doc(hidden)]
     pub estimated_total_cost: std::option::Option<std::string::String>,
     /// <p>The current total on demand spend of the applicable usage types over the lookback period.</p>
+    #[doc(hidden)]
     pub current_on_demand_spend: std::option::Option<std::string::String>,
     /// <p>The estimated total savings over the lookback period, based on the purchase of the recommended Savings Plans.</p>
+    #[doc(hidden)]
     pub estimated_savings_amount: std::option::Option<std::string::String>,
     /// <p>The aggregate number of Savings Plans recommendations that exist for your account.</p>
+    #[doc(hidden)]
     pub total_recommendation_count: std::option::Option<std::string::String>,
     /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
+    #[doc(hidden)]
     pub daily_commitment_to_purchase: std::option::Option<std::string::String>,
     /// <p>The recommended hourly commitment that's based on the recommendation parameters.</p>
+    #[doc(hidden)]
     pub hourly_commitment_to_purchase: std::option::Option<std::string::String>,
     /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.</p>
+    #[doc(hidden)]
     pub estimated_savings_percentage: std::option::Option<std::string::String>,
     /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings_amount: std::option::Option<std::string::String>,
     /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+    #[doc(hidden)]
     pub estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationSummary {
@@ -4626,36 +4725,52 @@ impl SavingsPlansPurchaseRecommendationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
+    #[doc(hidden)]
     pub savings_plans_details: std::option::Option<crate::model::SavingsPlansDetails>,
     /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment option.</p>
+    #[doc(hidden)]
     pub upfront_cost: std::option::Option<std::string::String>,
     /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
+    #[doc(hidden)]
     pub estimated_roi: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
+    #[doc(hidden)]
     pub estimated_sp_cost: std::option::Option<std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
+    #[doc(hidden)]
     pub estimated_on_demand_cost: std::option::Option<std::string::String>,
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    #[doc(hidden)]
     pub estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
+    #[doc(hidden)]
     pub estimated_savings_amount: std::option::Option<std::string::String>,
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
+    #[doc(hidden)]
     pub estimated_savings_percentage: std::option::Option<std::string::String>,
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
+    #[doc(hidden)]
     pub hourly_commitment_to_purchase: std::option::Option<std::string::String>,
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
+    #[doc(hidden)]
     pub estimated_average_utilization: std::option::Option<std::string::String>,
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings_amount: std::option::Option<std::string::String>,
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    #[doc(hidden)]
     pub current_minimum_hourly_on_demand_spend: std::option::Option<std::string::String>,
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    #[doc(hidden)]
     pub current_maximum_hourly_on_demand_spend: std::option::Option<std::string::String>,
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
+    #[doc(hidden)]
     pub current_average_hourly_on_demand_spend: std::option::Option<std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationDetail {
@@ -5058,10 +5173,13 @@ impl SavingsPlansPurchaseRecommendationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansDetails {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>A group of instance types that Savings Plans applies to.</p>
+    #[doc(hidden)]
     pub instance_family: std::option::Option<std::string::String>,
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
+    #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
 }
 impl SavingsPlansDetails {
@@ -5459,10 +5577,13 @@ impl AsRef<str> for AccountScope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansPurchaseRecommendationMetadata {
     /// <p>The unique identifier for the recommendation set.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The timestamp that shows when the recommendations were generated.</p>
+    #[doc(hidden)]
     pub generation_timestamp: std::option::Option<std::string::String>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    #[doc(hidden)]
     pub additional_metadata: std::option::Option<std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationMetadata {
@@ -5560,11 +5681,14 @@ impl SavingsPlansPurchaseRecommendationMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansCoverage {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
+    #[doc(hidden)]
     pub coverage: std::option::Option<crate::model::SavingsPlansCoverageData>,
     /// <p>The time period of the request. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
 }
 impl SavingsPlansCoverage {
@@ -5679,12 +5803,16 @@ impl SavingsPlansCoverage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansCoverageData {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
+    #[doc(hidden)]
     pub spend_covered_by_savings_plans: std::option::Option<std::string::String>,
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
+    #[doc(hidden)]
     pub on_demand_cost: std::option::Option<std::string::String>,
     /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
+    #[doc(hidden)]
     pub total_cost: std::option::Option<std::string::String>,
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
+    #[doc(hidden)]
     pub coverage_percentage: std::option::Option<std::string::String>,
 }
 impl SavingsPlansCoverageData {
@@ -5805,8 +5933,10 @@ impl SavingsPlansCoverageData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupDefinition {
     /// <p>The string that represents the type of group.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::GroupDefinitionType>,
     /// <p>The string that represents a key for a specified group.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl GroupDefinition {
@@ -5940,8 +6070,10 @@ impl AsRef<str> for GroupDefinitionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
+    #[doc(hidden)]
     pub recommendation_target: std::option::Option<crate::model::RecommendationTarget>,
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
+    #[doc(hidden)]
     pub benefits_considered: bool,
 }
 impl RightsizingRecommendationConfiguration {
@@ -6073,17 +6205,23 @@ impl AsRef<str> for RecommendationTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Context regarding the current instance.</p>
+    #[doc(hidden)]
     pub current_instance: std::option::Option<crate::model::CurrentInstance>,
     /// <p>A recommendation to either terminate or modify the resource.</p>
+    #[doc(hidden)]
     pub rightsizing_type: std::option::Option<crate::model::RightsizingType>,
     /// <p>The details for the modification recommendations. </p>
+    #[doc(hidden)]
     pub modify_recommendation_detail: std::option::Option<crate::model::ModifyRecommendationDetail>,
     /// <p>The details for termination recommendations.</p>
+    #[doc(hidden)]
     pub terminate_recommendation_detail:
         std::option::Option<crate::model::TerminateRecommendationDetail>,
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
+    #[doc(hidden)]
     pub finding_reason_codes: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {
@@ -6403,8 +6541,10 @@ impl AsRef<str> for FindingReasonCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
 }
 impl TerminateRecommendationDetail {
@@ -6482,6 +6622,7 @@ impl TerminateRecommendationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
+    #[doc(hidden)]
     pub target_instances: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
 }
 impl ModifyRecommendationDetail {
@@ -6546,18 +6687,25 @@ impl ModifyRecommendationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetInstance {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
+    #[doc(hidden)]
     pub estimated_monthly_cost: std::option::Option<std::string::String>,
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
+    #[doc(hidden)]
     pub default_target_instance: bool,
     /// <p>Details on the target instance type. </p>
+    #[doc(hidden)]
     pub resource_details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>The expected utilization metrics for target instance type.</p>
+    #[doc(hidden)]
     pub expected_resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+    #[doc(hidden)]
     pub platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
 }
 impl TargetInstance {
@@ -6821,6 +6969,7 @@ impl AsRef<str> for PlatformDifference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
+    #[doc(hidden)]
     pub ec2_resource_utilization: std::option::Option<crate::model::Ec2ResourceUtilization>,
 }
 impl ResourceUtilization {
@@ -6884,16 +7033,22 @@ impl ResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ResourceUtilization {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
+    #[doc(hidden)]
     pub max_cpu_utilization_percentage: std::option::Option<std::string::String>,
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
+    #[doc(hidden)]
     pub max_memory_utilization_percentage: std::option::Option<std::string::String>,
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+    #[doc(hidden)]
     pub max_storage_utilization_percentage: std::option::Option<std::string::String>,
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
+    #[doc(hidden)]
     pub ebs_resource_utilization: std::option::Option<crate::model::EbsResourceUtilization>,
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+    #[doc(hidden)]
     pub disk_resource_utilization: std::option::Option<crate::model::DiskResourceUtilization>,
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
+    #[doc(hidden)]
     pub network_resource_utilization: std::option::Option<crate::model::NetworkResourceUtilization>,
 }
 impl Ec2ResourceUtilization {
@@ -7090,12 +7245,16 @@ impl Ec2ResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkResourceUtilization {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
+    #[doc(hidden)]
     pub network_in_bytes_per_second: std::option::Option<std::string::String>,
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
+    #[doc(hidden)]
     pub network_out_bytes_per_second: std::option::Option<std::string::String>,
     /// <p>The network inbound packets that are measured in packets per second. </p>
+    #[doc(hidden)]
     pub network_packets_in_per_second: std::option::Option<std::string::String>,
     /// <p>The network outbound packets that are measured in packets per second. </p>
+    #[doc(hidden)]
     pub network_packets_out_per_second: std::option::Option<std::string::String>,
 }
 impl NetworkResourceUtilization {
@@ -7237,12 +7396,16 @@ impl NetworkResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
+    #[doc(hidden)]
     pub disk_read_ops_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum number of write operations per second. </p>
+    #[doc(hidden)]
     pub disk_write_ops_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum read throughput operations per second. </p>
+    #[doc(hidden)]
     pub disk_read_bytes_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum write throughput operations per second. </p>
+    #[doc(hidden)]
     pub disk_write_bytes_per_second: std::option::Option<std::string::String>,
 }
 impl DiskResourceUtilization {
@@ -7369,12 +7532,16 @@ impl DiskResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
+    #[doc(hidden)]
     pub ebs_read_ops_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum number of write operations per second. </p>
+    #[doc(hidden)]
     pub ebs_write_ops_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum size of read operations per second </p>
+    #[doc(hidden)]
     pub ebs_read_bytes_per_second: std::option::Option<std::string::String>,
     /// <p>The maximum size of write operations per second. </p>
+    #[doc(hidden)]
     pub ebs_write_bytes_per_second: std::option::Option<std::string::String>,
 }
 impl EbsResourceUtilization {
@@ -7495,6 +7662,7 @@ impl EbsResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
+    #[doc(hidden)]
     pub ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
 }
 impl ResourceDetails {
@@ -7552,22 +7720,31 @@ impl ResourceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ResourceDetails {
     /// <p>The hourly public On-Demand rate for the instance type.</p>
+    #[doc(hidden)]
     pub hourly_on_demand_rate: std::option::Option<std::string::String>,
     /// <p>The type of Amazon Web Services instance.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The platform of the Amazon Web Services instance. The platform is the specific combination of operating system, license model, and software on an instance.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the instance.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The SKU of the product.</p>
+    #[doc(hidden)]
     pub sku: std::option::Option<std::string::String>,
     /// <p>The memory capacity of the Amazon Web Services instance.</p>
+    #[doc(hidden)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The network performance capacity of the Amazon Web Services instance.</p>
+    #[doc(hidden)]
     pub network_performance: std::option::Option<std::string::String>,
     /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
+    #[doc(hidden)]
     pub storage: std::option::Option<std::string::String>,
     /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
+    #[doc(hidden)]
     pub vcpu: std::option::Option<std::string::String>,
 }
 impl Ec2ResourceDetails {
@@ -7822,26 +7999,37 @@ impl AsRef<str> for RightsizingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentInstance {
     /// <p>Resource ID of the current instance.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagValues>>,
     /// <p>Details about the resource and utilization.</p>
+    #[doc(hidden)]
     pub resource_details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>Utilization information of the current instance during the lookback period.</p>
+    #[doc(hidden)]
     pub resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
+    #[doc(hidden)]
     pub reservation_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
+    #[doc(hidden)]
     pub savings_plans_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
+    #[doc(hidden)]
     pub on_demand_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
+    #[doc(hidden)]
     pub total_running_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
+    #[doc(hidden)]
     pub monthly_cost: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
 }
 impl CurrentInstance {
@@ -8128,12 +8316,16 @@ impl CurrentInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
+    #[doc(hidden)]
     pub total_recommendation_count: std::option::Option<std::string::String>,
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
+    #[doc(hidden)]
     pub estimated_total_monthly_savings_amount: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
+    #[doc(hidden)]
     pub savings_currency_code: std::option::Option<std::string::String>,
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
+    #[doc(hidden)]
     pub savings_percentage: std::option::Option<std::string::String>,
 }
 impl RightsizingRecommendationSummary {
@@ -8260,12 +8452,16 @@ impl RightsizingRecommendationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    #[doc(hidden)]
     pub generation_timestamp: std::option::Option<std::string::String>,
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    #[doc(hidden)]
     pub additional_metadata: std::option::Option<std::string::String>,
 }
 impl RightsizingRecommendationMetadata {
@@ -8388,38 +8584,55 @@ impl RightsizingRecommendationMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationAggregates {
     /// <p>The percentage of reservation time that you used.</p>
+    #[doc(hidden)]
     pub utilization_percentage: std::option::Option<std::string::String>,
     /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    #[doc(hidden)]
     pub utilization_percentage_in_units: std::option::Option<std::string::String>,
     /// <p>How many reservation hours that you purchased.</p>
+    #[doc(hidden)]
     pub purchased_hours: std::option::Option<std::string::String>,
     /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    #[doc(hidden)]
     pub purchased_units: std::option::Option<std::string::String>,
     /// <p>The total number of reservation hours that you used.</p>
+    #[doc(hidden)]
     pub total_actual_hours: std::option::Option<std::string::String>,
     /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    #[doc(hidden)]
     pub total_actual_units: std::option::Option<std::string::String>,
     /// <p>The number of reservation hours that you didn't use.</p>
+    #[doc(hidden)]
     pub unused_hours: std::option::Option<std::string::String>,
     /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
+    #[doc(hidden)]
     pub unused_units: std::option::Option<std::string::String>,
     /// <p>How much your reservation costs if charged On-Demand rates.</p>
+    #[doc(hidden)]
     pub on_demand_cost_of_ri_hours_used: std::option::Option<std::string::String>,
     /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
+    #[doc(hidden)]
     pub net_ri_savings: std::option::Option<std::string::String>,
     /// <p>How much you might save if you use your entire reservation.</p>
+    #[doc(hidden)]
     pub total_potential_ri_savings: std::option::Option<std::string::String>,
     /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
+    #[doc(hidden)]
     pub amortized_upfront_fee: std::option::Option<std::string::String>,
     /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
+    #[doc(hidden)]
     pub amortized_recurring_fee: std::option::Option<std::string::String>,
     /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
+    #[doc(hidden)]
     pub total_amortized_fee: std::option::Option<std::string::String>,
     /// <p>The cost of unused hours for your reservation.</p>
+    #[doc(hidden)]
     pub ri_cost_for_unused_hours: std::option::Option<std::string::String>,
     /// <p>The realized savings because of purchasing and using a reservation.</p>
+    #[doc(hidden)]
     pub realized_savings: std::option::Option<std::string::String>,
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
+    #[doc(hidden)]
     pub unrealized_savings: std::option::Option<std::string::String>,
 }
 impl ReservationAggregates {
@@ -8806,10 +9019,13 @@ impl ReservationAggregates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UtilizationByTime {
     /// <p>The period of time that this utilization was used for.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The groups that this utilization result uses.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
     /// <p>The total number of reservation hours that were used.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::ReservationAggregates>,
 }
 impl UtilizationByTime {
@@ -8914,13 +9130,17 @@ impl UtilizationByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of a specific reservation attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The attributes for this group of reservations.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How much you used this group of reservations.</p>
+    #[doc(hidden)]
     pub utilization: std::option::Option<crate::model::ReservationAggregates>,
 }
 impl ReservationUtilizationGroup {
@@ -9049,19 +9269,26 @@ impl ReservationUtilizationGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationPurchaseRecommendation {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
+    #[doc(hidden)]
     pub account_scope: std::option::Option<crate::model::AccountScope>,
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
+    #[doc(hidden)]
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
+    #[doc(hidden)]
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
+    #[doc(hidden)]
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
+    #[doc(hidden)]
     pub service_specification: std::option::Option<crate::model::ServiceSpecification>,
     /// <p>Details about the recommended purchases.</p>
+    #[doc(hidden)]
     pub recommendation_details:
         std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendationDetail>>,
     /// <p>A summary about the recommended purchase.</p>
+    #[doc(hidden)]
     pub recommendation_summary:
         std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
 }
@@ -9268,10 +9495,13 @@ impl ReservationPurchaseRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
+    #[doc(hidden)]
     pub total_estimated_monthly_savings_amount: std::option::Option<std::string::String>,
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
+    #[doc(hidden)]
     pub total_estimated_monthly_savings_percentage: std::option::Option<std::string::String>,
     /// <p>The currency code used for this recommendation.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
 }
 impl ReservationPurchaseRecommendationSummary {
@@ -9383,42 +9613,61 @@ impl ReservationPurchaseRecommendationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationPurchaseRecommendationDetail {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub instance_details: std::option::Option<crate::model::InstanceDetails>,
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub recommended_number_of_instances_to_purchase: std::option::Option<std::string::String>,
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub recommended_normalized_units_to_purchase: std::option::Option<std::string::String>,
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub minimum_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub minimum_normalized_units_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub maximum_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub maximum_normalized_units_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub average_number_of_instances_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub average_normalized_units_used_per_hour: std::option::Option<std::string::String>,
     /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
+    #[doc(hidden)]
     pub average_utilization: std::option::Option<std::string::String>,
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
+    #[doc(hidden)]
     pub estimated_break_even_in_months: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings_amount: std::option::Option<std::string::String>,
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings_percentage: std::option::Option<std::string::String>,
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
+    #[doc(hidden)]
     pub estimated_monthly_on_demand_cost: std::option::Option<std::string::String>,
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
+    #[doc(hidden)]
     pub estimated_reservation_cost_for_lookback_period: std::option::Option<std::string::String>,
     /// <p>How much purchasing this instance costs you upfront.</p>
+    #[doc(hidden)]
     pub upfront_cost: std::option::Option<std::string::String>,
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
+    #[doc(hidden)]
     pub recurring_standard_monthly_cost: std::option::Option<std::string::String>,
 }
 impl ReservationPurchaseRecommendationDetail {
@@ -9927,15 +10176,20 @@ impl ReservationPurchaseRecommendationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDetails {
     /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub ec2_instance_details: std::option::Option<crate::model::Ec2InstanceDetails>,
     /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub rds_instance_details: std::option::Option<crate::model::RdsInstanceDetails>,
     /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub redshift_instance_details: std::option::Option<crate::model::RedshiftInstanceDetails>,
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub elasti_cache_instance_details:
         std::option::Option<crate::model::ElastiCacheInstanceDetails>,
     /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
+    #[doc(hidden)]
     pub es_instance_details: std::option::Option<crate::model::EsInstanceDetails>,
 }
 impl InstanceDetails {
@@ -10088,14 +10342,19 @@ impl InstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub instance_class: std::option::Option<std::string::String>,
     /// <p>The size of instance that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub instance_size: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
+    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl EsInstanceDetails {
@@ -10224,16 +10483,22 @@ impl EsInstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElastiCacheInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The type of node that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The description of the recommended reservation.</p>
+    #[doc(hidden)]
     pub product_description: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
+    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
+    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl ElastiCacheInstanceDetails {
@@ -10376,14 +10641,19 @@ impl ElastiCacheInstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The type of node that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
+    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl RedshiftInstanceDetails {
@@ -10506,22 +10776,31 @@ impl RedshiftInstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The type of instance that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The database engine that the recommended reservation supports.</p>
+    #[doc(hidden)]
     pub database_engine: std::option::Option<std::string::String>,
     /// <p>The database edition that the recommended reservation supports.</p>
+    #[doc(hidden)]
     pub database_edition: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
+    #[doc(hidden)]
     pub deployment_option: std::option::Option<std::string::String>,
     /// <p>The license model that the recommended reservation supports.</p>
+    #[doc(hidden)]
     pub license_model: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
+    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl RdsInstanceDetails {
@@ -10727,20 +11006,28 @@ impl RdsInstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
+    #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
     /// <p>The type of instance that Amazon Web Services recommends.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Availability Zone of the recommended reservation.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
+    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl Ec2InstanceDetails {
@@ -10920,6 +11207,7 @@ impl Ec2InstanceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
+    #[doc(hidden)]
     pub ec2_specification: std::option::Option<crate::model::Ec2Specification>,
 }
 impl ServiceSpecification {
@@ -10977,6 +11265,7 @@ impl ServiceSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
+    #[doc(hidden)]
     pub offering_class: std::option::Option<crate::model::OfferingClass>,
 }
 impl Ec2Specification {
@@ -11089,8 +11378,10 @@ impl AsRef<str> for OfferingClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    #[doc(hidden)]
     pub generation_timestamp: std::option::Option<std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadata {
@@ -11168,10 +11459,13 @@ impl ReservationPurchaseRecommendationMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Coverage {
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
+    #[doc(hidden)]
     pub coverage_hours: std::option::Option<crate::model::CoverageHours>,
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
+    #[doc(hidden)]
     pub coverage_normalized_units: std::option::Option<crate::model::CoverageNormalizedUnits>,
     /// <p>The amount of cost that the reservation covered.</p>
+    #[doc(hidden)]
     pub coverage_cost: std::option::Option<crate::model::CoverageCost>,
 }
 impl Coverage {
@@ -11275,6 +11569,7 @@ impl Coverage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
+    #[doc(hidden)]
     pub on_demand_cost: std::option::Option<std::string::String>,
 }
 impl CoverageCost {
@@ -11333,12 +11628,16 @@ impl CoverageCost {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageNormalizedUnits {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
+    #[doc(hidden)]
     pub on_demand_normalized_units: std::option::Option<std::string::String>,
     /// <p>The number of normalized units that a reservation covers.</p>
+    #[doc(hidden)]
     pub reserved_normalized_units: std::option::Option<std::string::String>,
     /// <p>The total number of normalized units that you used.</p>
+    #[doc(hidden)]
     pub total_running_normalized_units: std::option::Option<std::string::String>,
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
+    #[doc(hidden)]
     pub coverage_normalized_units_percentage: std::option::Option<std::string::String>,
 }
 impl CoverageNormalizedUnits {
@@ -11471,12 +11770,16 @@ impl CoverageNormalizedUnits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageHours {
     /// <p>The number of instance running hours that On-Demand Instances covered.</p>
+    #[doc(hidden)]
     pub on_demand_hours: std::option::Option<std::string::String>,
     /// <p>The number of instance running hours that reservations covered.</p>
+    #[doc(hidden)]
     pub reserved_hours: std::option::Option<std::string::String>,
     /// <p>The total instance usage, in hours.</p>
+    #[doc(hidden)]
     pub total_running_hours: std::option::Option<std::string::String>,
     /// <p>The percentage of instance hours that a reservation covered.</p>
+    #[doc(hidden)]
     pub coverage_hours_percentage: std::option::Option<std::string::String>,
 }
 impl CoverageHours {
@@ -11594,10 +11897,13 @@ impl CoverageHours {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The groups of instances that the reservation covered.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>,
     /// <p>The total reservation coverage, in hours.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<crate::model::Coverage>,
 }
 impl CoverageByTime {
@@ -11699,9 +12005,11 @@ impl CoverageByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How much instance usage this group of reservations covered.</p>
+    #[doc(hidden)]
     pub coverage: std::option::Option<crate::model::Coverage>,
 }
 impl ReservationCoverageGroup {
@@ -11793,8 +12101,10 @@ impl ReservationCoverageGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionValuesWithAttributes {
     /// <p>The value of a dimension with a specific attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11946,14 +12256,18 @@ impl AsRef<str> for Context {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultByTime {
     /// <p>The time period that the result covers.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The total amount of cost or usage accrued during the time period.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetricValue>,
     >,
     /// <p>The groups that this time period includes.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>Determines whether the result is estimated.</p>
+    #[doc(hidden)]
     pub estimated: bool,
 }
 impl ResultByTime {
@@ -12092,8 +12406,10 @@ impl ResultByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The keys that are included in this group.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The metrics that are included in this group.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetricValue>,
     >,
@@ -12197,18 +12513,25 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalySubscription {
     /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
     /// <p>Your unique account identifier. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A list of cost anomaly monitors. </p>
+    #[doc(hidden)]
     pub monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subscribers to notify. </p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
     /// <p>The frequency that anomaly reports are sent over email. </p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
     /// <p>The name for the subscription. </p>
+    #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl AnomalySubscription {
@@ -12392,18 +12715,25 @@ impl AnomalySubscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyMonitor {
     /// <p>The Amazon Resource Name (ARN) value. </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the monitor. </p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
     /// <p>The date when the monitor was created. </p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>The date when the monitor was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<std::string::String>,
     /// <p>The date when the monitor last evaluated for anomalies. </p>
+    #[doc(hidden)]
     pub last_evaluated_date: std::option::Option<std::string::String>,
     /// <p>The possible type values. </p>
+    #[doc(hidden)]
     pub monitor_type: std::option::Option<crate::model::MonitorType>,
     /// <p>The dimensions to evaluate. </p>
+    #[doc(hidden)]
     pub monitor_dimension: std::option::Option<crate::model::MonitorDimension>,
     /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
     /// <ul>
@@ -12415,8 +12745,10 @@ pub struct AnomalyMonitor {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub monitor_specification: std::option::Option<crate::model::Expression>,
     /// <p>The value for evaluated dimensions. </p>
+    #[doc(hidden)]
     pub dimensional_value_count: i32,
 }
 impl AnomalyMonitor {
@@ -12758,22 +13090,31 @@ impl AsRef<str> for MonitorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
     /// <p>The first day the anomaly is detected. </p>
+    #[doc(hidden)]
     pub anomaly_start_date: std::option::Option<std::string::String>,
     /// <p>The last day the anomaly is detected. </p>
+    #[doc(hidden)]
     pub anomaly_end_date: std::option::Option<std::string::String>,
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
+    #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
     /// <p>The list of identified root causes for the anomaly. </p>
+    #[doc(hidden)]
     pub root_causes: std::option::Option<std::vec::Vec<crate::model::RootCause>>,
     /// <p>The latest and maximum score for the anomaly. </p>
+    #[doc(hidden)]
     pub anomaly_score: std::option::Option<crate::model::AnomalyScore>,
     /// <p>The dollar impact for the anomaly. </p>
+    #[doc(hidden)]
     pub impact: std::option::Option<crate::model::Impact>,
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The feedback value. </p>
+    #[doc(hidden)]
     pub feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
 }
 impl Anomaly {
@@ -12988,8 +13329,10 @@ impl Anomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Impact {
     /// <p>The maximum dollar value that's observed for an anomaly. </p>
+    #[doc(hidden)]
     pub max_impact: f64,
     /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+    #[doc(hidden)]
     pub total_impact: f64,
 }
 impl Impact {
@@ -13061,8 +13404,10 @@ impl Impact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyScore {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
+    #[doc(hidden)]
     pub max_score: f64,
     /// <p>The last observed score. </p>
+    #[doc(hidden)]
     pub current_score: f64,
 }
 impl AnomalyScore {
@@ -13134,12 +13479,16 @@ impl AnomalyScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
+    #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The member account value that's associated with the cost anomaly. </p>
+    #[doc(hidden)]
     pub linked_account: std::option::Option<std::string::String>,
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
+    #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
 }
 impl RootCause {
@@ -13248,10 +13597,13 @@ impl RootCause {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
+    #[doc(hidden)]
     pub numeric_operator: std::option::Option<crate::model::NumericOperator>,
     /// <p>The lower bound dollar value that's used in the filter. </p>
+    #[doc(hidden)]
     pub start_value: f64,
     /// <p>The upper bound dollar value that's used in the filter. </p>
+    #[doc(hidden)]
     pub end_value: f64,
 }
 impl TotalImpactFilter {
@@ -13421,8 +13773,10 @@ impl AsRef<str> for NumericOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The last date an anomaly was observed. </p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
 }
 impl AnomalyDateInterval {
@@ -13494,24 +13848,33 @@ impl AnomalyDateInterval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
+    #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The effective state data of your Cost Category.</p>
+    #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
     /// <p>The effective end data of your Cost Category.</p>
+    #[doc(hidden)]
     pub effective_end: std::option::Option<std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
+    #[doc(hidden)]
     pub split_charge_rules:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
+    #[doc(hidden)]
     pub processing_status:
         std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
     /// <p>The default value for the cost category.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl CostCategory {

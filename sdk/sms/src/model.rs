@@ -59,8 +59,10 @@ impl AsRef<str> for LicenseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -132,10 +134,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroup {
     /// <p>The ID of a server group.</p>
+    #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The name of a server group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The servers that belong to a server group.</p>
+    #[doc(hidden)]
     pub server_list: std::option::Option<std::vec::Vec<crate::model::Server>>,
 }
 impl ServerGroup {
@@ -236,14 +241,19 @@ impl ServerGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Server {
     /// <p>The ID of the server.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The type of server.</p>
+    #[doc(hidden)]
     pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p>Information about the VM server.</p>
+    #[doc(hidden)]
     pub vm_server: std::option::Option<crate::model::VmServer>,
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the replication job is deleted or failed.</p>
+    #[doc(hidden)]
     pub replication_job_terminated: std::option::Option<bool>,
 }
 impl Server {
@@ -375,14 +385,19 @@ impl Server {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VmServer {
     /// <p>The VM server location.</p>
+    #[doc(hidden)]
     pub vm_server_address: std::option::Option<crate::model::VmServerAddress>,
     /// <p>The name of the VM.</p>
+    #[doc(hidden)]
     pub vm_name: std::option::Option<std::string::String>,
     /// <p>The name of the VM manager.</p>
+    #[doc(hidden)]
     pub vm_manager_name: std::option::Option<std::string::String>,
     /// <p>The type of VM management product.</p>
+    #[doc(hidden)]
     pub vm_manager_type: std::option::Option<crate::model::VmManagerType>,
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+    #[doc(hidden)]
     pub vm_path: std::option::Option<std::string::String>,
 }
 impl VmServer {
@@ -573,8 +588,10 @@ impl AsRef<str> for VmManagerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VmServerAddress {
     /// <p>The ID of the VM manager.</p>
+    #[doc(hidden)]
     pub vm_manager_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VM.</p>
+    #[doc(hidden)]
     pub vm_id: std::option::Option<std::string::String>,
 }
 impl VmServerAddress {
@@ -700,44 +717,63 @@ impl AsRef<str> for ServerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppSummary {
     /// <p>The unique ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub imported_app_id: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Status of the application.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AppStatus>,
     /// <p>A message related to the status of the application</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Status of the replication configuration.</p>
+    #[doc(hidden)]
     pub replication_configuration_status:
         std::option::Option<crate::model::AppReplicationConfigurationStatus>,
     /// <p>The replication status of the application.</p>
+    #[doc(hidden)]
     pub replication_status: std::option::Option<crate::model::AppReplicationStatus>,
     /// <p>A message related to the replication status of the application.</p>
+    #[doc(hidden)]
     pub replication_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the application's most recent successful replication.</p>
+    #[doc(hidden)]
     pub latest_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status of the launch configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_status:
         std::option::Option<crate::model::AppLaunchConfigurationStatus>,
     /// <p>The launch status of the application.</p>
+    #[doc(hidden)]
     pub launch_status: std::option::Option<crate::model::AppLaunchStatus>,
     /// <p>A message related to the launch status of the application.</p>
+    #[doc(hidden)]
     pub launch_status_message: std::option::Option<std::string::String>,
     /// <p>Details about the latest launch of the application.</p>
+    #[doc(hidden)]
     pub launch_details: std::option::Option<crate::model::LaunchDetails>,
     /// <p>The creation time of the application.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified time of the application.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The number of server groups present in the application.</p>
+    #[doc(hidden)]
     pub total_server_groups: std::option::Option<i32>,
     /// <p>The number of servers present in the application.</p>
+    #[doc(hidden)]
     pub total_servers: std::option::Option<i32>,
 }
 impl AppSummary {
@@ -1155,10 +1191,13 @@ impl AppSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
+    #[doc(hidden)]
     pub latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the latest stack launched for this application.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The ID of the latest stack launched for this application.</p>
+    #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl LaunchDetails {
@@ -1689,8 +1728,10 @@ impl AsRef<str> for AppStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroupValidationConfiguration {
     /// <p>The ID of the server group.</p>
+    #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The validation configuration.</p>
+    #[doc(hidden)]
     pub server_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
 }
@@ -1784,14 +1825,19 @@ impl ServerGroupValidationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerValidationConfiguration {
     /// <p>Represents a server.</p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
     /// <p>The ID of the validation.</p>
+    #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The validation strategy.</p>
+    #[doc(hidden)]
     pub server_validation_strategy: std::option::Option<crate::model::ServerValidationStrategy>,
     /// <p>The validation parameters.</p>
+    #[doc(hidden)]
     pub user_data_validation_parameters:
         std::option::Option<crate::model::UserDataValidationParameters>,
 }
@@ -1942,8 +1988,10 @@ impl ServerValidationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>The type of validation script.</p>
+    #[doc(hidden)]
     pub script_type: std::option::Option<crate::model::ScriptType>,
 }
 impl UserDataValidationParameters {
@@ -2073,6 +2121,7 @@ impl AsRef<str> for ScriptType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>Location of an Amazon S3 object.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl Source {
@@ -2130,8 +2179,10 @@ impl Source {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -2254,12 +2305,16 @@ impl AsRef<str> for ServerValidationStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppValidationConfiguration {
     /// <p>The ID of the validation.</p>
+    #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The validation strategy.</p>
+    #[doc(hidden)]
     pub app_validation_strategy: std::option::Option<crate::model::AppValidationStrategy>,
     /// <p>The validation parameters.</p>
+    #[doc(hidden)]
     pub ssm_validation_parameters: std::option::Option<crate::model::SsmValidationParameters>,
 }
 impl AppValidationConfiguration {
@@ -2386,16 +2441,22 @@ impl AppValidationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmValidationParameters {
     /// <p>The location of the validation script.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of validation script.</p>
+    #[doc(hidden)]
     pub script_type: std::option::Option<crate::model::ScriptType>,
     /// <p>The command to run the validation script.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<std::string::String>,
     /// <p>The timeout interval, in seconds.</p>
+    #[doc(hidden)]
     pub execution_timeout_seconds: i32,
     /// <p>The name of the S3 bucket for output.</p>
+    #[doc(hidden)]
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
 }
 impl SsmValidationParameters {
@@ -2592,8 +2653,10 @@ impl AsRef<str> for AppValidationStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
+    #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
+    #[doc(hidden)]
     pub server_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
 }
@@ -2687,8 +2750,10 @@ impl ServerGroupReplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
     /// <p>The parameters for replicating the server.</p>
+    #[doc(hidden)]
     pub server_replication_parameters:
         std::option::Option<crate::model::ServerReplicationParameters>,
 }
@@ -2773,16 +2838,22 @@ impl ServerReplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
+    #[doc(hidden)]
     pub seed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The frequency of creating replication jobs for the server.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
+    #[doc(hidden)]
     pub run_once: std::option::Option<bool>,
     /// <p>The license type for creating a replication job for the server.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
+    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -2792,6 +2863,7 @@ pub struct ServerReplicationParameters {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerReplicationParameters {
@@ -2981,10 +3053,13 @@ impl ServerReplicationParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
+    #[doc(hidden)]
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The launch order of servers in the server group.</p>
+    #[doc(hidden)]
     pub launch_order: std::option::Option<i32>,
     /// <p>The launch configuration for servers in the server group.</p>
+    #[doc(hidden)]
     pub server_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
 }
@@ -3095,28 +3170,40 @@ impl ServerGroupLaunchConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
     /// <p>The logical ID of the server in the CloudFormation template.</p>
+    #[doc(hidden)]
     pub logical_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC into which the server should be launched.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<std::string::String>,
     /// <p>The ID of the subnet the server should be launched into.</p>
+    #[doc(hidden)]
     pub subnet: std::option::Option<std::string::String>,
     /// <p>The ID of the security group that applies to the launched server.</p>
+    #[doc(hidden)]
     pub security_group: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
+    #[doc(hidden)]
     pub ec2_key_name: std::option::Option<std::string::String>,
     /// <p>Location of the user-data script to be executed when launching the server.</p>
+    #[doc(hidden)]
     pub user_data: std::option::Option<crate::model::UserData>,
     /// <p>The instance type to use when launching the server.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
+    #[doc(hidden)]
     pub associate_public_ip_address: std::option::Option<bool>,
     /// <p>The name of the IAM instance profile.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_name: std::option::Option<std::string::String>,
     /// <p>Location of an Amazon S3 object.</p>
+    #[doc(hidden)]
     pub configure_script: std::option::Option<crate::model::S3Location>,
     /// <p>The type of configuration script.</p>
+    #[doc(hidden)]
     pub configure_script_type: std::option::Option<crate::model::ScriptType>,
 }
 impl ServerLaunchConfiguration {
@@ -3376,6 +3463,7 @@ impl ServerLaunchConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UserData {
@@ -3433,10 +3521,13 @@ impl UserData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationContext {
     /// <p>The ID of the validation.</p>
+    #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
     /// <p>The status of the validation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ValidationStatus>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl NotificationContext {
@@ -3680,24 +3771,34 @@ impl AsRef<str> for ServerCatalogStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRun {
     /// <p>The ID of the replication run.</p>
+    #[doc(hidden)]
     pub replication_run_id: std::option::Option<std::string::String>,
     /// <p>The state of the replication run.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplicationRunState>,
     /// <p>The type of replication run.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReplicationRunType>,
     /// <p>Details about the current stage of the replication run.</p>
+    #[doc(hidden)]
     pub stage_details: std::option::Option<crate::model::ReplicationRunStageDetails>,
     /// <p>The description of the current status of the replication job.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The start time of the next replication run.</p>
+    #[doc(hidden)]
     pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The completion time of the last replication run.</p>
+    #[doc(hidden)]
     pub completed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the replication run.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -3707,6 +3808,7 @@ pub struct ReplicationRun {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ReplicationRun {
@@ -3973,8 +4075,10 @@ impl ReplicationRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
     /// <p>The progress of the current stage of a replication run.</p>
+    #[doc(hidden)]
     pub stage_progress: std::option::Option<std::string::String>,
 }
 impl ReplicationRunStageDetails {
@@ -4187,36 +4291,52 @@ impl AsRef<str> for ReplicationRunState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationJob {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The ID of the server.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The type of server.</p>
+    #[doc(hidden)]
     pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p>Information about the VM server.</p>
+    #[doc(hidden)]
     pub vm_server: std::option::Option<crate::model::VmServer>,
     /// <p>The seed replication time.</p>
+    #[doc(hidden)]
     pub seed_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time between consecutive replication runs, in hours.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
+    #[doc(hidden)]
     pub run_once: std::option::Option<bool>,
     /// <p>The start time of the next replication run.</p>
+    #[doc(hidden)]
     pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
+    #[doc(hidden)]
     pub latest_ami_id: std::option::Option<std::string::String>,
     /// <p>The state of the replication job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplicationJobState>,
     /// <p>The description of the current status of the replication job.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
+    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
     /// <ul>
@@ -4226,8 +4346,10 @@ pub struct ReplicationJob {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Information about the replication runs.</p>
+    #[doc(hidden)]
     pub replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
 }
 impl ReplicationJob {
@@ -4728,24 +4850,34 @@ impl AsRef<str> for ReplicationJobState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connector {
     /// <p>The ID of the connector.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
     /// <p>The connector version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The status of the connector.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConnectorStatus>,
     /// <p>The capabilities of the connector.</p>
+    #[doc(hidden)]
     pub capability_list: std::option::Option<std::vec::Vec<crate::model::ConnectorCapability>>,
     /// <p>The name of the VM manager.</p>
+    #[doc(hidden)]
     pub vm_manager_name: std::option::Option<std::string::String>,
     /// <p>The VM management product.</p>
+    #[doc(hidden)]
     pub vm_manager_type: std::option::Option<crate::model::VmManagerType>,
     /// <p>The ID of the VM manager.</p>
+    #[doc(hidden)]
     pub vm_manager_id: std::option::Option<std::string::String>,
     /// <p>The IP address of the connector.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The MAC address of the connector.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The time the connector was associated.</p>
+    #[doc(hidden)]
     pub associated_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Connector {
@@ -5106,18 +5238,25 @@ impl AsRef<str> for ConnectorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationOutput {
     /// <p>The ID of the validation.</p>
+    #[doc(hidden)]
     pub validation_id: std::option::Option<std::string::String>,
     /// <p>The name of the validation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the validation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ValidationStatus>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The latest time that the validation was performed.</p>
+    #[doc(hidden)]
     pub latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The output from validating an application.</p>
+    #[doc(hidden)]
     pub app_validation_output: std::option::Option<crate::model::AppValidationOutput>,
     /// <p>The output from validation an instance.</p>
+    #[doc(hidden)]
     pub server_validation_output: std::option::Option<crate::model::ServerValidationOutput>,
 }
 impl ValidationOutput {
@@ -5298,6 +5437,7 @@ impl ValidationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerValidationOutput {
     /// <p>Represents a server.</p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl ServerValidationOutput {
@@ -5352,6 +5492,7 @@ impl ServerValidationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
+    #[doc(hidden)]
     pub ssm_output: std::option::Option<crate::model::SsmOutput>,
 }
 impl AppValidationOutput {
@@ -5409,6 +5550,7 @@ impl AppValidationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl SsmOutput {

@@ -35,6 +35,7 @@ impl UpdateConfigurationSetEventDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendVoiceMessageOutput {
@@ -89,8 +90,10 @@ impl SendVoiceMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// An object that contains a list of configuration sets for your account in the current region.
+    #[doc(hidden)]
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsOutput {
@@ -171,6 +174,7 @@ impl ListConfigurationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
+    #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
 }
 impl GetConfigurationSetEventDestinationsOutput {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationMaintenanceConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The application maintenance configuration description after the update.</p>
+    #[doc(hidden)]
     pub application_maintenance_configuration_description:
         std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
 }
@@ -98,6 +100,7 @@ impl UpdateApplicationMaintenanceConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
+    #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl UpdateApplicationOutput {
@@ -275,6 +278,7 @@ impl StartApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackApplicationOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
+    #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl RollbackApplicationOutput {
@@ -332,6 +336,7 @@ impl RollbackApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -394,9 +399,11 @@ impl ListTagsForResourceOutput {
 pub struct ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
+    #[doc(hidden)]
     pub application_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsOutput {
@@ -489,8 +496,10 @@ impl ListApplicationVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationSnapshotsOutput {
     /// <p>A collection of objects containing information about the application snapshots.</p>
+    #[doc(hidden)]
     pub snapshot_summaries: std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>,
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationSnapshotsOutput {
@@ -572,8 +581,10 @@ impl ListApplicationSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
+    #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -657,13 +668,17 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverInputSchemaOutput {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
+    #[doc(hidden)]
     pub parsed_input_records:
         std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    #[doc(hidden)]
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The raw stream data that was sampled to infer the schema.</p>
+    #[doc(hidden)]
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DiscoverInputSchemaOutput {
@@ -802,6 +817,7 @@ impl DiscoverInputSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
+    #[doc(hidden)]
     pub application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationVersionOutput {
@@ -867,6 +883,7 @@ impl DescribeApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_details: std::option::Option<crate::model::SnapshotDetails>,
 }
 impl DescribeApplicationSnapshotOutput {
@@ -924,6 +941,7 @@ impl DescribeApplicationSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
+    #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationOutput {
@@ -981,8 +999,10 @@ impl DescribeApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationVpcConfigurationOutput {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The updated version ID of the application.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl DeleteApplicationVpcConfigurationOutput {
@@ -1087,8 +1107,10 @@ impl DeleteApplicationSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The updated version ID of the application.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl DeleteApplicationReferenceDataSourceOutput {
@@ -1163,8 +1185,10 @@ impl DeleteApplicationReferenceDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The current application version ID.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl DeleteApplicationOutputOutput {
@@ -1239,8 +1263,10 @@ impl DeleteApplicationOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The current application version ID.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
@@ -1316,10 +1342,13 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
 }
@@ -1496,6 +1525,7 @@ impl CreateApplicationSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationPresignedUrlOutput {
     /// <p>The URL of the extension.</p>
+    #[doc(hidden)]
     pub authorized_url: std::option::Option<std::string::String>,
 }
 impl CreateApplicationPresignedUrlOutput {
@@ -1553,6 +1583,7 @@ impl CreateApplicationPresignedUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl CreateApplicationOutput {
@@ -1610,10 +1641,13 @@ impl CreateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationVpcConfigurationOutput {
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
+    #[doc(hidden)]
     pub vpc_configuration_description:
         std::option::Option<crate::model::VpcConfigurationDescription>,
 }
@@ -1718,10 +1752,13 @@ impl AddApplicationVpcConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>Describes reference data sources configured for the application. </p>
+    #[doc(hidden)]
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
 }
@@ -1832,10 +1869,13 @@ impl AddApplicationReferenceDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
+    #[doc(hidden)]
     pub output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
 }
 impl AddApplicationOutputOutput {
@@ -1937,12 +1977,16 @@ impl AddApplicationOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Provides the current application version. </p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
+    #[doc(hidden)]
     pub input_processing_configuration_description:
         std::option::Option<crate::model::InputProcessingConfigurationDescription>,
 }
@@ -2066,10 +2110,13 @@ impl AddApplicationInputProcessingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Provides the current application version.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>Describes the application input configuration. </p>
+    #[doc(hidden)]
     pub input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
 }
 impl AddApplicationInputOutput {
@@ -2171,10 +2218,13 @@ impl AddApplicationInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
 }

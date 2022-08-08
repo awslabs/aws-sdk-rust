@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookOutput {
     /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl UpdateWebhookOutput {
@@ -58,6 +59,7 @@ impl UpdateWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportGroupOutput {
     /// <p> Information about the updated report group. </p>
+    #[doc(hidden)]
     pub report_group: std::option::Option<crate::model::ReportGroup>,
 }
 impl UpdateReportGroupOutput {
@@ -115,8 +117,10 @@ impl UpdateReportGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Contains the project identifier used with the public build APIs. </p>
+    #[doc(hidden)]
     pub public_project_alias: std::option::Option<std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -133,6 +137,7 @@ pub struct UpdateProjectVisibilityOutput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
 }
 impl UpdateProjectVisibilityOutput {
@@ -269,6 +274,7 @@ impl UpdateProjectVisibilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>Information about the build project that was changed.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl UpdateProjectOutput {
@@ -323,6 +329,7 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
+    #[doc(hidden)]
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
 }
 impl StopBuildBatchOutput {
@@ -382,6 +389,7 @@ pub struct StopBuildOutput {
     /// <p>Information about the build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
 }
 impl StopBuildOutput {
@@ -438,6 +446,7 @@ impl StopBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBuildBatchOutput {
     /// <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
+    #[doc(hidden)]
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
 }
 impl StartBuildBatchOutput {
@@ -497,6 +506,7 @@ pub struct StartBuildOutput {
     /// <p>Information about the build to be run.</p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
 }
 impl StartBuildOutput {
@@ -553,6 +563,7 @@ impl StartBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
+    #[doc(hidden)]
     pub build_batch: std::option::Option<crate::model::BuildBatch>,
 }
 impl RetryBuildBatchOutput {
@@ -612,6 +623,7 @@ pub struct RetryBuildOutput {
     /// <p>Information about a build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
+    #[doc(hidden)]
     pub build_value: std::option::Option<crate::model::Build>,
 }
 impl RetryBuildOutput {
@@ -668,6 +680,7 @@ impl RetryBuildOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -722,6 +735,7 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSourceCredentialsOutput {
     /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
+    #[doc(hidden)]
     pub source_credentials_infos:
         std::option::Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
 }
@@ -792,8 +806,10 @@ impl ListSourceCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedReportGroupsOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
+    #[doc(hidden)]
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSharedReportGroupsOutput {
@@ -874,8 +890,10 @@ impl ListSharedReportGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedProjectsOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSharedProjectsOutput {
@@ -956,8 +974,10 @@ impl ListSharedProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportsForReportGroupOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of report ARNs. </p>
+    #[doc(hidden)]
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportsForReportGroupOutput {
@@ -1038,8 +1058,10 @@ impl ListReportsForReportGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportsOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportsOutput {
@@ -1120,8 +1142,10 @@ impl ListReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportGroupsOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportGroupsOutput {
@@ -1202,8 +1226,10 @@ impl ListReportGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of build project names, with each build project name representing a single build project.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListProjectsOutput {
@@ -1284,6 +1310,7 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCuratedEnvironmentImagesOutput {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
 }
 impl ListCuratedEnvironmentImagesOutput {
@@ -1347,8 +1374,10 @@ impl ListCuratedEnvironmentImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsForProjectOutput {
     /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsForProjectOutput {
@@ -1429,8 +1458,10 @@ impl ListBuildsForProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsOutput {
     /// <p>A list of build IDs, with each build ID representing a single build.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsOutput {
@@ -1511,8 +1542,10 @@ impl ListBuildsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildBatchesForProjectOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesForProjectOutput {
@@ -1593,8 +1626,10 @@ impl ListBuildBatchesForProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildBatchesOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
+    #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesOutput {
@@ -1705,6 +1740,7 @@ impl InvalidateProjectCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSourceCredentialsOutput {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ImportSourceCredentialsOutput {
@@ -1757,6 +1793,7 @@ impl ImportSourceCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -1811,8 +1848,10 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReportGroupTrendOutput {
     /// <p>Contains the accumulated trend data.</p>
+    #[doc(hidden)]
     pub stats: std::option::Option<crate::model::ReportGroupTrendStats>,
     /// <p>An array that contains the raw data for each report.</p>
+    #[doc(hidden)]
     pub raw_data: std::option::Option<std::vec::Vec<crate::model::ReportWithRawData>>,
 }
 impl GetReportGroupTrendOutput {
@@ -1896,8 +1935,10 @@ impl GetReportGroupTrendOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTestCasesOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The returned list of test cases. </p>
+    #[doc(hidden)]
     pub test_cases: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
 }
 impl DescribeTestCasesOutput {
@@ -1978,8 +2019,10 @@ impl DescribeTestCasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeCoveragesOutput {
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
+    #[doc(hidden)]
     pub code_coverages: std::option::Option<std::vec::Vec<crate::model::CodeCoverage>>,
 }
 impl DescribeCodeCoveragesOutput {
@@ -2090,6 +2133,7 @@ impl DeleteWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSourceCredentialsOutput {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteSourceCredentialsOutput {
@@ -2262,10 +2306,13 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBuildBatchOutput {
     /// <p>The status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
+    #[doc(hidden)]
     pub builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
+    #[doc(hidden)]
     pub builds_not_deleted: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
 }
 impl DeleteBuildBatchOutput {
@@ -2373,6 +2420,7 @@ impl DeleteBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookOutput {
     /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl CreateWebhookOutput {
@@ -2427,6 +2475,7 @@ impl CreateWebhookOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportGroupOutput {
     /// <p> Information about the report group that was created. </p>
+    #[doc(hidden)]
     pub report_group: std::option::Option<crate::model::ReportGroup>,
 }
 impl CreateReportGroupOutput {
@@ -2484,6 +2533,7 @@ impl CreateReportGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>Information about the build project that was created.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl CreateProjectOutput {
@@ -2538,8 +2588,10 @@ impl CreateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportsOutput {
     /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
+    #[doc(hidden)]
     pub reports: std::option::Option<std::vec::Vec<crate::model::Report>>,
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
+    #[doc(hidden)]
     pub reports_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportsOutput {
@@ -2629,8 +2681,10 @@ impl BatchGetReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportGroupsOutput {
     /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    #[doc(hidden)]
     pub report_groups: std::option::Option<std::vec::Vec<crate::model::ReportGroup>>,
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    #[doc(hidden)]
     pub report_groups_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportGroupsOutput {
@@ -2720,8 +2774,10 @@ impl BatchGetReportGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetProjectsOutput {
     /// <p>Information about the requested build projects.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
     /// <p>The names of build projects for which information could not be found.</p>
+    #[doc(hidden)]
     pub projects_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetProjectsOutput {
@@ -2811,8 +2867,10 @@ impl BatchGetProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBuildsOutput {
     /// <p>Information about the requested builds.</p>
+    #[doc(hidden)]
     pub builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
     /// <p>The IDs of builds for which information could not be found.</p>
+    #[doc(hidden)]
     pub builds_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildsOutput {
@@ -2902,8 +2960,10 @@ impl BatchGetBuildsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBuildBatchesOutput {
     /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
+    #[doc(hidden)]
     pub build_batches: std::option::Option<std::vec::Vec<crate::model::BuildBatch>>,
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
+    #[doc(hidden)]
     pub build_batches_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildBatchesOutput {
@@ -2993,8 +3053,10 @@ impl BatchGetBuildBatchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteBuildsOutput {
     /// <p>The IDs of the builds that were successfully deleted.</p>
+    #[doc(hidden)]
     pub builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about any builds that could not be successfully deleted.</p>
+    #[doc(hidden)]
     pub builds_not_deleted: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
 }
 impl BatchDeleteBuildsOutput {

@@ -67,12 +67,16 @@ impl AsRef<str> for VpcLinkStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchOperation {
     /// <p>An update operation to be performed with this PATCH request. The valid value can be add, remove, replace or copy. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message..</p>
+    #[doc(hidden)]
     pub op: std::option::Option<crate::model::Op>,
     /// <p>The op operation's target, as identified by a JSON Pointer value that references a location within the targeted resource. For example, if the target resource has an updateable property of {"name":"value"}, the path for this property is /name. If the name property value is a JSON object (e.g., {"name": {"child/name": "child-value"}}), the path for the child/name property will be /name/child~1name. Any slash ("/") character appearing in path names must be escaped with "~1", as shown in the example above. Each op operation can have only one path associated with it.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The new target value of the update operation. It is applicable for the add or replace operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The copy update operation's source as identified by a JSON-Pointer value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a Stage resource with "op":"copy", "from":"/canarySettings/deploymentId" and "path":"/deploymentId".</p>
+    #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
 }
 impl PatchOperation {
@@ -249,10 +253,13 @@ impl AsRef<str> for Op {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuotaSettings {
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
+    #[doc(hidden)]
     pub limit: i32,
     /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
+    #[doc(hidden)]
     pub offset: i32,
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::QuotaPeriodType>,
 }
 impl QuotaSettings {
@@ -403,8 +410,10 @@ impl AsRef<str> for QuotaPeriodType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottleSettings {
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
+    #[doc(hidden)]
     pub burst_limit: i32,
     /// <p>The API target request rate limit.</p>
+    #[doc(hidden)]
     pub rate_limit: f64,
 }
 impl ThrottleSettings {
@@ -476,10 +485,13 @@ impl ThrottleSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiStage {
     /// <p>API Id of the associated API stage in a usage plan.</p>
+    #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>API stage name of the associated API stage in a usage plan.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
+    #[doc(hidden)]
     pub throttle: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ThrottleSettings>,
     >,
@@ -591,13 +603,17 @@ impl ApiStage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CanarySettings {
     /// <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
+    #[doc(hidden)]
     pub percent_traffic: f64,
     /// <p>The ID of the canary deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
+    #[doc(hidden)]
     pub stage_variable_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether the canary deployment uses the stage cache or not.</p>
+    #[doc(hidden)]
     pub use_stage_cache: bool,
 }
 impl CanarySettings {
@@ -726,8 +742,10 @@ impl CanarySettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessLogSettings {
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least <code>$context.requestId</code>.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with <code>amazon-apigateway-</code>.</p>
+    #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
 }
 impl AccessLogSettings {
@@ -802,24 +820,34 @@ impl AccessLogSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodSetting {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
+    #[doc(hidden)]
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
+    #[doc(hidden)]
     pub logging_level: std::option::Option<std::string::String>,
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
+    #[doc(hidden)]
     pub data_trace_enabled: bool,
     /// <p>Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.</p>
+    #[doc(hidden)]
     pub throttling_burst_limit: i32,
     /// <p>Specifies the throttling rate limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.</p>
+    #[doc(hidden)]
     pub throttling_rate_limit: f64,
     /// <p>Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.</p>
+    #[doc(hidden)]
     pub caching_enabled: bool,
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.</p>
+    #[doc(hidden)]
     pub cache_ttl_in_seconds: i32,
     /// <p>Specifies whether the cached responses are encrypted. The PATCH path for this setting is <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.</p>
+    #[doc(hidden)]
     pub cache_data_encrypted: bool,
     /// <p>Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.</p>
+    #[doc(hidden)]
     pub require_authorization_for_cache_control: bool,
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+    #[doc(hidden)]
     pub unauthorized_cache_control_header_strategy:
         std::option::Option<crate::model::UnauthorizedCacheControlHeaderStrategy>,
 }
@@ -1275,8 +1303,10 @@ impl AsRef<str> for CacheClusterSize {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointConfiguration {
     /// <p>A list of endpoint types of an API (RestApi) or its custom domain name (DomainName). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<crate::model::EndpointType>>,
     /// <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EndpointConfiguration {
@@ -1480,30 +1510,41 @@ impl AsRef<str> for ApiKeySourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Method {
     /// <p>The method's HTTP verb.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>The identifier of an Authorizer to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>A boolean flag specifying whether a valid ApiKey is required to invoke this method.</p>
+    #[doc(hidden)]
     pub api_key_required: std::option::Option<bool>,
     /// <p>The identifier of a RequestValidator for request validation.</p>
+    #[doc(hidden)]
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or templates.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>A key-value map specifying data schemas, represented by Model resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    #[doc(hidden)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Gets a method response associated with a given HTTP status code. </p>
+    #[doc(hidden)]
     pub method_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
     >,
     /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+    #[doc(hidden)]
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Method {
@@ -1806,40 +1847,55 @@ impl Method {
 pub struct Integration {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::IntegrationType>,
     /// <p>Specifies the integration's HTTP method type.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
     /// <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of GetObject, the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    #[doc(hidden)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>: rejects the method request with an HTTP 415 Unsupported Media Type response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request.</p>
+    #[doc(hidden)]
     pub passthrough_behavior: std::option::Option<std::string::String>,
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    #[doc(hidden)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    #[doc(hidden)]
     pub timeout_in_millis: i32,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    #[doc(hidden)]
     pub cache_namespace: std::option::Option<std::string::String>,
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
+    #[doc(hidden)]
     pub cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the integration's responses.</p>
+    #[doc(hidden)]
     pub integration_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
     >,
     /// <p>Specifies the TLS configuration for an integration.</p>
+    #[doc(hidden)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl Integration {
@@ -2234,6 +2290,7 @@ pub struct TlsConfig {
     /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
     /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
     /// </important>
+    #[doc(hidden)]
     pub insecure_skip_verification: bool,
 }
 impl TlsConfig {
@@ -2297,17 +2354,22 @@ impl TlsConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegrationResponse {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
+    #[doc(hidden)]
     pub selection_pattern: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
 impl IntegrationResponse {
@@ -2656,11 +2718,14 @@ impl AsRef<str> for IntegrationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodResponse {
     /// <p>The method response's status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's IntegrationResponse. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>Specifies the Model resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a Model name as the value.</p>
+    #[doc(hidden)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2935,10 +3000,13 @@ impl AsRef<str> for GatewayResponseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthentication {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
+    #[doc(hidden)]
     pub truststore_uri: std::option::Option<std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
+    #[doc(hidden)]
     pub truststore_version: std::option::Option<std::string::String>,
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
+    #[doc(hidden)]
     pub truststore_warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MutualTlsAuthentication {
@@ -3170,14 +3238,19 @@ impl AsRef<str> for DomainNameStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPartLocation {
     /// <p>The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
     /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
+    #[doc(hidden)]
     pub method: std::option::Option<std::string::String>,
     /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>The name of the targeted API entity. It is a valid and required field for the API entity types of <code>AUTHORIZER</code>, <code>MODEL</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code> and <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DocumentationPartLocation {
@@ -3411,8 +3484,10 @@ impl AsRef<str> for DocumentationPartType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
+    #[doc(hidden)]
     pub api_key_required: bool,
 }
 impl MethodSnapshot {
@@ -3652,18 +3727,25 @@ impl AsRef<str> for ApiKeysFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcLink {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name used to label and identify the VPC link.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the VPC link.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    #[doc(hidden)]
     pub target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VpcLinkStatus>,
     /// <p>A description about the VPC link status.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3856,20 +3938,28 @@ impl VpcLink {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsagePlan {
     /// <p>The identifier of a UsagePlan resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of a usage plan.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The associated API stages of a usage plan.</p>
+    #[doc(hidden)]
     pub api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
+    #[doc(hidden)]
     pub throttle: std::option::Option<crate::model::ThrottleSettings>,
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
+    #[doc(hidden)]
     pub quota: std::option::Option<crate::model::QuotaSettings>,
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4079,12 +4169,16 @@ impl UsagePlan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsagePlanKey {
     /// <p>The Id of a usage plan key.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The value of a usage plan key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UsagePlanKey {
@@ -4190,42 +4284,59 @@ impl UsagePlanKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
     /// <p>The identifier of the Deployment that the stage points to.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of a client certificate for an API stage.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The stage's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    #[doc(hidden)]
     pub cache_cluster_enabled: bool,
     /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
+    #[doc(hidden)]
     pub cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
+    #[doc(hidden)]
     pub method_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
     >,
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    #[doc(hidden)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>Settings for logging access in this stage.</p>
+    #[doc(hidden)]
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Settings for the canary deployment in this stage.</p>
+    #[doc(hidden)]
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    #[doc(hidden)]
     pub tracing_enabled: bool,
     /// <p>The ARN of the WebAcl associated with the Stage.</p>
+    #[doc(hidden)]
     pub web_acl_arn: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the stage last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Stage {
@@ -4640,12 +4751,16 @@ impl Stage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkType {
     /// <p>The identifier of an SdkType instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of an SdkType instance.</p>
+    #[doc(hidden)]
     pub friendly_name: std::option::Option<std::string::String>,
     /// <p>The description of an SdkType.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of configuration properties of an SdkType.</p>
+    #[doc(hidden)]
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
 }
@@ -4770,14 +4885,19 @@ impl SdkType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkConfigurationProperty {
     /// <p>The name of a an SdkType configuration property.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of an SdkType configuration property.</p>
+    #[doc(hidden)]
     pub friendly_name: std::option::Option<std::string::String>,
     /// <p>The description of an SdkType configuration property.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+    #[doc(hidden)]
     pub required: bool,
     /// <p>The default value of an SdkType configuration property.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl SdkConfigurationProperty {
@@ -4906,31 +5026,44 @@ impl SdkConfigurationProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestApi {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The API's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
+    #[doc(hidden)]
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    #[doc(hidden)]
     pub minimum_compression_size: std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    #[doc(hidden)]
     pub api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
 }
 impl RestApi {
@@ -5247,14 +5380,19 @@ impl RestApi {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The resource's identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The parent resource's identifier.</p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The last path segment for this resource.</p>
+    #[doc(hidden)]
     pub path_part: std::option::Option<std::string::String>,
     /// <p>The full path for this resource.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
+    #[doc(hidden)]
     pub resource_methods:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Method>>,
 }
@@ -5398,12 +5536,16 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestValidator {
     /// <p>The identifier of this RequestValidator.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of this RequestValidator</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
+    #[doc(hidden)]
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
+    #[doc(hidden)]
     pub validate_request_parameters: bool,
 }
 impl RequestValidator {
@@ -5512,14 +5654,19 @@ impl RequestValidator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Model {
     /// <p>The identifier for the model resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be an alphanumeric string.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl Model {
@@ -5642,16 +5789,21 @@ impl Model {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayResponse {
     /// <p>The response type of the associated GatewayResponse.</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code for this GatewayResponse.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether this GatewayResponse is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    #[doc(hidden)]
     pub default_response: bool,
 }
 impl GatewayResponse {
@@ -5817,39 +5969,56 @@ impl GatewayResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainName {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    #[doc(hidden)]
     pub certificate_upload_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
+    #[doc(hidden)]
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
+    #[doc(hidden)]
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
+    #[doc(hidden)]
     pub regional_certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    #[doc(hidden)]
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront documentation.</p>
+    #[doc(hidden)]
     pub distribution_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway. </p>
+    #[doc(hidden)]
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    #[doc(hidden)]
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the DomainName migration.</p>
+    #[doc(hidden)]
     pub domain_name_status_message: std::option::Option<std::string::String>,
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    #[doc(hidden)]
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    #[doc(hidden)]
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl DomainName {
@@ -6267,10 +6436,13 @@ impl DomainName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationVersion {
     /// <p>The version identifier of the API documentation snapshot.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the API documentation snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl DocumentationVersion {
@@ -6362,10 +6534,13 @@ impl DocumentationVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPart {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the properties map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
 }
 impl DocumentationPart {
@@ -6512,12 +6687,16 @@ impl AsRef<str> for LocationStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The identifier for the deployment resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description for the deployment resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
+    #[doc(hidden)]
     pub api_summary: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -6661,16 +6840,22 @@ impl Deployment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientCertificate {
     /// <p>The identifier of the client certificate.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The description of the client certificate.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
+    #[doc(hidden)]
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the client certificate will expire.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6843,10 +7028,13 @@ impl ClientCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the associated stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl BasePathMapping {
@@ -6935,24 +7123,34 @@ impl BasePathMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authorizer {
     /// <p>The identifier for the authorizer resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the authorizer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
+    #[doc(hidden)]
     pub provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    #[doc(hidden)]
     pub auth_type: std::option::Option<std::string::String>,
     /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    #[doc(hidden)]
     pub authorizer_credentials: std::option::Option<std::string::String>,
     /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth</code>, <code>method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. </p>
+    #[doc(hidden)]
     pub identity_source: std::option::Option<std::string::String>,
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
 }
 impl Authorizer {
@@ -7196,24 +7394,34 @@ impl Authorizer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiKey {
     /// <p>The identifier of the API Key.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the API Key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The name of the API Key.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    #[doc(hidden)]
     pub customer_id: std::option::Option<std::string::String>,
     /// <p>The description of the API Key.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the API Key can be used by callers.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the API Key was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
+    #[doc(hidden)]
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7457,8 +7665,10 @@ impl ApiKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthenticationInput {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
+    #[doc(hidden)]
     pub truststore_uri: std::option::Option<std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
+    #[doc(hidden)]
     pub truststore_version: std::option::Option<std::string::String>,
 }
 impl MutualTlsAuthenticationInput {
@@ -7536,11 +7746,14 @@ impl MutualTlsAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentCanarySettings {
     /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
+    #[doc(hidden)]
     pub percent_traffic: f64,
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
+    #[doc(hidden)]
     pub stage_variable_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
+    #[doc(hidden)]
     pub use_stage_cache: bool,
 }
 impl DeploymentCanarySettings {
@@ -7649,8 +7862,10 @@ impl DeploymentCanarySettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageKey {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stage name associated with the stage key.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl StageKey {

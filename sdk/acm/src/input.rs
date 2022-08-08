@@ -2570,8 +2570,10 @@ impl UpdateCertificateOptionsInput {
 pub struct UpdateCertificateOptionsInput {
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::CertificateOptions>,
 }
 impl UpdateCertificateOptionsInput {
@@ -2600,8 +2602,10 @@ impl std::fmt::Debug for UpdateCertificateOptionsInput {
 pub struct ResendValidationEmailInput {
     /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
@@ -2611,6 +2615,7 @@ pub struct ResendValidationEmailInput {
     /// <li> <p>postmaster@subdomain.example.com</p> </li>
     /// <li> <p>webmaster@subdomain.example.com</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub validation_domain: std::option::Option<std::string::String>,
 }
 impl ResendValidationEmailInput {
@@ -2651,8 +2656,10 @@ impl std::fmt::Debug for ResendValidationEmailInput {
 pub struct RequestCertificateInput {
     /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
     /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
+    #[doc(hidden)]
     pub validation_method: std::option::Option<crate::model::ValidationMethod>,
     /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
     /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p>
@@ -2661,18 +2668,24 @@ pub struct RequestCertificateInput {
     /// <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li>
     /// <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
+    #[doc(hidden)]
     pub domain_validation_options:
         std::option::Option<std::vec::Vec<crate::model::DomainValidationOption>>,
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::CertificateOptions>,
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>One or more resource tags to associate with the certificate.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RequestCertificateInput {
@@ -2741,6 +2754,7 @@ pub struct RenewCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl RenewCertificateInput {
@@ -2766,8 +2780,10 @@ pub struct RemoveTagsFromCertificateInput {
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag to remove.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsFromCertificateInput {
@@ -2796,8 +2812,10 @@ impl std::fmt::Debug for RemoveTagsFromCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountConfigurationInput {
     /// <p>Specifies expiration events associated with an account.</p>
+    #[doc(hidden)]
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl PutAccountConfigurationInput {
@@ -2826,6 +2844,7 @@ pub struct ListTagsForCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForCertificateInput {
@@ -2849,12 +2868,16 @@ impl std::fmt::Debug for ListTagsForCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
+    #[doc(hidden)]
     pub certificate_statuses: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<crate::model::Filters>,
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListCertificatesInput {
@@ -2891,15 +2914,20 @@ impl std::fmt::Debug for ListCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate to import.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The private key that matches the public key in the certificate.</p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The PEM encoded certificate chain.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<aws_smithy_types::Blob>,
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportCertificateInput {
@@ -2944,6 +2972,7 @@ pub struct GetCertificateInput {
     /// <p>String that contains a certificate ARN in the following format:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl GetCertificateInput {
@@ -2979,9 +3008,11 @@ impl std::fmt::Debug for GetAccountConfigurationInput {
 pub struct ExportCertificateInput {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    #[doc(hidden)]
     pub passphrase: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ExportCertificateInput {
@@ -3012,6 +3043,7 @@ pub struct DescribeCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateInput {
@@ -3037,6 +3069,7 @@ pub struct DeleteCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInput {
@@ -3062,8 +3095,10 @@ pub struct AddTagsToCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToCertificateInput {

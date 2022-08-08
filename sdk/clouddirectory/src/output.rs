@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradePublishedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
+    #[doc(hidden)]
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
 }
 impl UpgradePublishedSchemaOutput {
@@ -61,8 +62,10 @@ impl UpgradePublishedSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeAppliedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
+    #[doc(hidden)]
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the directory that is returned as part of the response.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl UpgradeAppliedSchemaOutput {
@@ -170,6 +173,7 @@ impl UpdateTypedLinkFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaOutput {
     /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaOutput {
@@ -224,6 +228,7 @@ impl UpdateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateObjectAttributesOutput {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl UpdateObjectAttributesOutput {
@@ -431,6 +436,7 @@ impl RemoveFacetFromObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSchemaFromJsonOutput {
     /// <p>The ARN of the schema to update.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl PutSchemaFromJsonOutput {
@@ -483,6 +489,7 @@ impl PutSchemaFromJsonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishSchemaOutput {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
 }
 impl PublishSchemaOutput {
@@ -540,8 +547,10 @@ impl PublishSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupPolicyOutput {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupPolicyOutput {
@@ -623,8 +632,10 @@ impl LookupPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetNamesOutput {
     /// <p>The names of typed link facets that exist within the schema.</p>
+    #[doc(hidden)]
     pub facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypedLinkFacetNamesOutput {
@@ -705,8 +716,10 @@ impl ListTypedLinkFacetNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetAttributesOutput {
     /// <p>An ordered set of attributes associate with the typed link.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypedLinkFacetAttributesOutput {
@@ -788,8 +801,10 @@ impl ListTypedLinkFacetAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the response.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -870,8 +885,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishedSchemaArnsOutput {
     /// <p>The ARNs of published schemas.</p>
+    #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublishedSchemaArnsOutput {
@@ -952,8 +969,10 @@ impl ListPublishedSchemaArnsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyAttachmentsOutput {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
+    #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPolicyAttachmentsOutput {
@@ -1034,8 +1053,10 @@ impl ListPolicyAttachmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutgoingTypedLinksOutput {
     /// <p>Returns a typed link specifier as output.</p>
+    #[doc(hidden)]
     pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOutgoingTypedLinksOutput {
@@ -1119,8 +1140,10 @@ impl ListOutgoingTypedLinksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectPoliciesOutput {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
+    #[doc(hidden)]
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectPoliciesOutput {
@@ -1201,11 +1224,14 @@ impl ListObjectPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentsOutput {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
+    #[doc(hidden)]
     pub parents:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    #[doc(hidden)]
     pub parent_links:
         std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
 }
@@ -1332,9 +1358,11 @@ impl ListObjectParentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentPathsOutput {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
+    #[doc(hidden)]
     pub path_to_object_identifiers_list:
         std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectParentPathsOutput {
@@ -1424,9 +1452,11 @@ impl ListObjectParentPathsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectChildrenOutput {
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
+    #[doc(hidden)]
     pub children:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectChildrenOutput {
@@ -1518,8 +1548,10 @@ impl ListObjectChildrenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectAttributesOutput {
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectAttributesOutput {
@@ -1601,8 +1633,10 @@ impl ListObjectAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedSchemaArnsOutput {
     /// <p>The ARNs for all AWS managed schemas.</p>
+    #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedSchemaArnsOutput {
@@ -1683,8 +1717,10 @@ impl ListManagedSchemaArnsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndexOutput {
     /// <p>The objects and indexed values attached to the index.</p>
+    #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIndexOutput {
@@ -1766,8 +1802,10 @@ impl ListIndexOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncomingTypedLinksOutput {
     /// <p>Returns one or more typed link specifiers as output.</p>
+    #[doc(hidden)]
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIncomingTypedLinksOutput {
@@ -1849,8 +1887,10 @@ impl ListIncomingTypedLinksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacetNamesOutput {
     /// <p>The names of facets that exist within the schema.</p>
+    #[doc(hidden)]
     pub facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFacetNamesOutput {
@@ -1931,8 +1971,10 @@ impl ListFacetNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacetAttributesOutput {
     /// <p>The attributes attached to the facet.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFacetAttributesOutput {
@@ -2013,8 +2055,10 @@ impl ListFacetAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDirectoriesOutput {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
+    #[doc(hidden)]
     pub directories: std::option::Option<std::vec::Vec<crate::model::Directory>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDirectoriesOutput {
@@ -2095,8 +2139,10 @@ impl ListDirectoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevelopmentSchemaArnsOutput {
     /// <p>The ARNs of retrieved development schemas.</p>
+    #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevelopmentSchemaArnsOutput {
@@ -2177,8 +2223,10 @@ impl ListDevelopmentSchemaArnsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachedIndicesOutput {
     /// <p>The indices attached to the specified object.</p>
+    #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttachedIndicesOutput {
@@ -2260,8 +2308,10 @@ impl ListAttachedIndicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppliedSchemaArnsOutput {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
+    #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppliedSchemaArnsOutput {
@@ -2342,6 +2392,7 @@ impl ListAppliedSchemaArnsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypedLinkFacetInformationOutput {
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[doc(hidden)]
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTypedLinkFacetInformationOutput {
@@ -2406,8 +2457,10 @@ impl GetTypedLinkFacetInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaAsJsonOutput {
     /// <p>The name of the retrieved schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The JSON representation of the schema document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
 }
 impl GetSchemaAsJsonOutput {
@@ -2479,8 +2532,10 @@ impl GetSchemaAsJsonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectInformationOutput {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
+    #[doc(hidden)]
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl GetObjectInformationOutput {
@@ -2564,6 +2619,7 @@ impl GetObjectInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectAttributesOutput {
     /// <p>The attributes that are associated with the object.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl GetObjectAttributesOutput {
@@ -2628,6 +2684,7 @@ impl GetObjectAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinkAttributesOutput {
     /// <p>The attributes that are associated with the typed link.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl GetLinkAttributesOutput {
@@ -2692,6 +2749,7 @@ impl GetLinkAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFacetOutput {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
+    #[doc(hidden)]
     pub facet: std::option::Option<crate::model::Facet>,
 }
 impl GetFacetOutput {
@@ -2744,6 +2802,7 @@ impl GetFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
+    #[doc(hidden)]
     pub directory: std::option::Option<crate::model::Directory>,
 }
 impl GetDirectoryOutput {
@@ -2801,6 +2860,7 @@ impl GetDirectoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppliedSchemaVersionOutput {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
+    #[doc(hidden)]
     pub applied_schema_arn: std::option::Option<std::string::String>,
 }
 impl GetAppliedSchemaVersionOutput {
@@ -2858,6 +2918,7 @@ impl GetAppliedSchemaVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl EnableDirectoryOutput {
@@ -2915,6 +2976,7 @@ impl EnableDirectoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DisableDirectoryOutput {
@@ -3032,6 +3094,7 @@ impl DetachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachObjectOutput {
     /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
+    #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl DetachObjectOutput {
@@ -3092,6 +3155,7 @@ impl DetachObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachFromIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl DetachFromIndexOutput {
@@ -3182,6 +3246,7 @@ impl DeleteTypedLinkFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaOutput {
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaOutput {
@@ -3296,6 +3361,7 @@ impl DeleteFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryOutput {
     /// <p>The ARN of the deleted directory.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryOutput {
@@ -3383,6 +3449,7 @@ impl CreateTypedLinkFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateSchemaOutput {
@@ -3437,6 +3504,7 @@ impl CreateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateObjectOutput {
     /// <p>The identifier that is associated with the object.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl CreateObjectOutput {
@@ -3494,6 +3562,7 @@ impl CreateObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl CreateIndexOutput {
@@ -3581,12 +3650,16 @@ impl CreateFacetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>Directory</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The root object node of the created directory.</p>
+    #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub applied_schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateDirectoryOutput {
@@ -3701,6 +3774,7 @@ impl CreateDirectoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
+    #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
 }
 impl BatchWriteOutput {
@@ -3765,6 +3839,7 @@ impl BatchWriteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadOutput {
     /// <p>A list of all the responses for each batch read.</p>
+    #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
 }
 impl BatchReadOutput {
@@ -3829,6 +3904,7 @@ impl BatchReadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachTypedLinkOutput {
     /// <p>Returns a typed link specifier as output.</p>
+    #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl AttachTypedLinkOutput {
@@ -3886,6 +3962,7 @@ impl AttachTypedLinkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachToIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
+    #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl AttachToIndexOutput {
@@ -3976,6 +4053,7 @@ impl AttachPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachObjectOutput {
     /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
+    #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl AttachObjectOutput {
@@ -4036,8 +4114,10 @@ impl AttachObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySchemaOutput {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub applied_schema_arn: std::option::Option<std::string::String>,
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl ApplySchemaOutput {

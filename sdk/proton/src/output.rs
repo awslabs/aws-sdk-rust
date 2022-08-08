@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::model::TemplateSyncConfig>,
 }
 impl CreateTemplateSyncConfigOutput {
@@ -61,6 +62,7 @@ impl CreateTemplateSyncConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::model::TemplateSyncConfig>,
 }
 impl DeleteTemplateSyncConfigOutput {
@@ -118,6 +120,7 @@ impl DeleteTemplateSyncConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::model::TemplateSyncConfig>,
 }
 impl UpdateTemplateSyncConfigOutput {
@@ -175,6 +178,7 @@ impl UpdateTemplateSyncConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::model::TemplateSyncConfig>,
 }
 impl GetTemplateSyncConfigOutput {
@@ -232,8 +236,10 @@ impl GetTemplateSyncConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplateVersionsOutput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of major or minor versions of a service template with detail data.</p>
+    #[doc(hidden)]
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::ServiceTemplateVersionSummary>>,
 }
@@ -321,6 +327,7 @@ impl ListServiceTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateVersionOutput {
     /// <p>The service template version summary of detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
 impl CreateServiceTemplateVersionOutput {
@@ -384,6 +391,7 @@ impl CreateServiceTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceTemplateVersionOutput {
     /// <p>The detailed data of the service template version being deleted.</p>
+    #[doc(hidden)]
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
 impl DeleteServiceTemplateVersionOutput {
@@ -447,6 +455,7 @@ impl DeleteServiceTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceTemplateVersionOutput {
     /// <p>The service template version detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
 impl UpdateServiceTemplateVersionOutput {
@@ -510,6 +519,7 @@ impl UpdateServiceTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateVersionOutput {
     /// <p>The detailed data of the requested service template version.</p>
+    #[doc(hidden)]
     pub service_template_version: std::option::Option<crate::model::ServiceTemplateVersion>,
 }
 impl GetServiceTemplateVersionOutput {
@@ -573,8 +583,10 @@ impl GetServiceTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplatesOutput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service templates with detail data.</p>
+    #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSummary>>,
 }
 impl ListServiceTemplatesOutput {
@@ -656,6 +668,7 @@ impl ListServiceTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateOutput {
     /// <p>The service template detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
 impl CreateServiceTemplateOutput {
@@ -713,6 +726,7 @@ impl CreateServiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceTemplateOutput {
     /// <p>The detailed data of the service template being deleted.</p>
+    #[doc(hidden)]
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
 impl DeleteServiceTemplateOutput {
@@ -770,6 +784,7 @@ impl DeleteServiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceTemplateOutput {
     /// <p>The service template detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
 impl UpdateServiceTemplateOutput {
@@ -827,6 +842,7 @@ impl UpdateServiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateOutput {
     /// <p>The detailed data of the requested service template.</p>
+    #[doc(hidden)]
     pub service_template: std::option::Option<crate::model::ServiceTemplate>,
 }
 impl GetServiceTemplateOutput {
@@ -884,8 +900,10 @@ impl GetServiceTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p>A token that indicates the location of the next service in the array of services, after the current requested list of services.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of services with summaries of detail data.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
 }
 impl ListServicesOutput {
@@ -966,6 +984,7 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>The service detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl CreateServiceOutput {
@@ -1020,6 +1039,7 @@ impl CreateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceOutput {
     /// <p>The detailed data of the service being deleted.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl DeleteServiceOutput {
@@ -1074,6 +1094,7 @@ impl DeleteServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
     /// <p>The service detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl UpdateServiceOutput {
@@ -1128,6 +1149,7 @@ impl UpdateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceOutput {
     /// <p>The detailed data of the requested service.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl GetServiceOutput {
@@ -1182,6 +1204,7 @@ impl GetServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServicePipelineOutput {
     /// <p>The pipeline details that are returned by Proton.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
 }
 impl UpdateServicePipelineOutput {
@@ -1239,8 +1262,10 @@ impl UpdateServicePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a service and pipeline.</p>
+    #[doc(hidden)]
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
@@ -1325,8 +1350,10 @@ impl ListServicePipelineProvisionedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl ListServicePipelineOutputsOutput {
@@ -1407,8 +1434,10 @@ impl ListServicePipelineOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstancesOutput {
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service instances with summary data.</p>
+    #[doc(hidden)]
     pub service_instances: std::option::Option<std::vec::Vec<crate::model::ServiceInstanceSummary>>,
 }
 impl ListServiceInstancesOutput {
@@ -1492,6 +1521,7 @@ impl ListServiceInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInstanceOutput {
     /// <p>The service instance summary data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
 }
 impl UpdateServiceInstanceOutput {
@@ -1549,6 +1579,7 @@ impl UpdateServiceInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInstanceOutput {
     /// <p>The detailed data of the requested service instance.</p>
+    #[doc(hidden)]
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
 }
 impl GetServiceInstanceOutput {
@@ -1606,8 +1637,10 @@ impl GetServiceInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a service instance.</p>
+    #[doc(hidden)]
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
@@ -1692,8 +1725,10 @@ impl ListServiceInstanceProvisionedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl ListServiceInstanceOutputsOutput {
@@ -1774,8 +1809,10 @@ impl ListServiceInstanceOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesOutput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of repositories.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
 }
 impl ListRepositoriesOutput {
@@ -1857,6 +1894,7 @@ impl ListRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
     /// <p>The repository detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl CreateRepositoryOutput {
@@ -1914,6 +1952,7 @@ impl CreateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
     /// <p>The repository detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl DeleteRepositoryOutput {
@@ -1971,6 +2010,7 @@ impl DeleteRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryOutput {
     /// <p>The repository detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl GetRepositoryOutput {
@@ -2028,8 +2068,10 @@ impl GetRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplateVersionsOutput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of major or minor versions of an environment template detail data.</p>
+    #[doc(hidden)]
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateVersionSummary>>,
 }
@@ -2119,6 +2161,7 @@ impl ListEnvironmentTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateVersionOutput {
     /// <p>The environment template detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
 impl CreateEnvironmentTemplateVersionOutput {
@@ -2185,6 +2228,7 @@ impl CreateEnvironmentTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentTemplateVersionOutput {
     /// <p>The detailed data of the environment template version being deleted.</p>
+    #[doc(hidden)]
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
 impl DeleteEnvironmentTemplateVersionOutput {
@@ -2251,6 +2295,7 @@ impl DeleteEnvironmentTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateVersionOutput {
     /// <p>The environment template version detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
 impl UpdateEnvironmentTemplateVersionOutput {
@@ -2317,6 +2362,7 @@ impl UpdateEnvironmentTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateVersionOutput {
     /// <p>The detailed data of the requested environment template version.</p>
+    #[doc(hidden)]
     pub environment_template_version: std::option::Option<crate::model::EnvironmentTemplateVersion>,
 }
 impl GetEnvironmentTemplateVersionOutput {
@@ -2383,8 +2429,10 @@ impl GetEnvironmentTemplateVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplatesOutput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment templates with detail data.</p>
+    #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateSummary>>,
 }
 impl ListEnvironmentTemplatesOutput {
@@ -2466,6 +2514,7 @@ impl ListEnvironmentTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
 impl CreateEnvironmentTemplateOutput {
@@ -2523,6 +2572,7 @@ impl CreateEnvironmentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentTemplateOutput {
     /// <p>The detailed data of the environment template being deleted.</p>
+    #[doc(hidden)]
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
 impl DeleteEnvironmentTemplateOutput {
@@ -2580,6 +2630,7 @@ impl DeleteEnvironmentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateOutput {
     /// <p>The environment template detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
 impl UpdateEnvironmentTemplateOutput {
@@ -2637,6 +2688,7 @@ impl UpdateEnvironmentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateOutput {
     /// <p>The detailed data of the requested environment template.</p>
+    #[doc(hidden)]
     pub environment_template: std::option::Option<crate::model::EnvironmentTemplate>,
 }
 impl GetEnvironmentTemplateOutput {
@@ -2694,8 +2746,10 @@ impl GetEnvironmentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
 }
 impl ListEnvironmentsOutput {
@@ -2777,6 +2831,7 @@ impl ListEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The environment detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateEnvironmentOutput {
@@ -2834,6 +2889,7 @@ impl CreateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentOutput {
     /// <p>The detailed data of the environment being deleted.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl DeleteEnvironmentOutput {
@@ -2891,6 +2947,7 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The environment detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateEnvironmentOutput {
@@ -2948,6 +3005,7 @@ impl UpdateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The detailed data of the requested environment.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl GetEnvironmentOutput {
@@ -3005,8 +3063,10 @@ impl GetEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment provisioned resources.</p>
+    #[doc(hidden)]
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
@@ -3091,8 +3151,10 @@ impl ListEnvironmentProvisionedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentOutputsOutput {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment outputs with detail data.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl ListEnvironmentOutputsOutput {
@@ -3173,6 +3235,7 @@ impl ListEnvironmentOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectEnvironmentAccountConnectionOutput {
     /// <p>The environment connection account detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3240,6 +3303,7 @@ impl RejectEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3307,9 +3371,11 @@ impl AcceptEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
+    #[doc(hidden)]
     pub environment_account_connections:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionSummary>>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentAccountConnectionsOutput {
@@ -3401,6 +3467,7 @@ impl ListEnvironmentAccountConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3468,6 +3535,7 @@ impl CreateEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the environment account connection being deleted.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3535,6 +3603,7 @@ impl DeleteEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3602,6 +3671,7 @@ impl UpdateEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the requested environment account connection.</p>
+    #[doc(hidden)]
     pub environment_account_connection:
         std::option::Option<crate::model::EnvironmentAccountConnection>,
 }
@@ -3669,8 +3739,10 @@ impl GetEnvironmentAccountConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsOutput {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of components with summary data.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
 }
 impl ListComponentsOutput {
@@ -3751,6 +3823,7 @@ impl ListComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentOutput {
     /// <p>The detailed data of the created component.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl CreateComponentOutput {
@@ -3808,6 +3881,7 @@ impl CreateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentOutput {
     /// <p>The detailed data of the component being deleted.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl DeleteComponentOutput {
@@ -3865,6 +3939,7 @@ impl DeleteComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentOutput {
     /// <p>The detailed data of the updated component.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl UpdateComponentOutput {
@@ -3922,6 +3997,7 @@ impl UpdateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentOutput {
     /// <p>The detailed data of the requested component.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
@@ -3979,8 +4055,10 @@ impl GetComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a component.</p>
+    #[doc(hidden)]
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
@@ -4065,8 +4143,10 @@ impl ListComponentProvisionedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl ListComponentOutputsOutput {
@@ -4147,6 +4227,7 @@ impl ListComponentOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsOutput {
     /// <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
 impl UpdateAccountSettingsOutput {
@@ -4204,6 +4285,7 @@ impl UpdateAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSettingsOutput {
     /// <p>The Proton pipeline service role detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
 impl GetAccountSettingsOutput {
@@ -4351,8 +4433,10 @@ impl NotifyResourceDeploymentStatusChangeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of resource tags with detail data.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A token that indicates the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -4433,8 +4517,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositorySyncDefinitionsOutput {
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of repository sync definitions.</p>
+    #[doc(hidden)]
     pub sync_definitions:
         std::option::Option<std::vec::Vec<crate::model::RepositorySyncDefinition>>,
 }
@@ -4519,10 +4605,13 @@ impl ListRepositorySyncDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateSyncStatusOutput {
     /// <p>The details of the last sync that's returned by Proton.</p>
+    #[doc(hidden)]
     pub latest_sync: std::option::Option<crate::model::ResourceSyncAttempt>,
     /// <p>The details of the last successful sync that's returned by Proton.</p>
+    #[doc(hidden)]
     pub latest_successful_sync: std::option::Option<crate::model::ResourceSyncAttempt>,
     /// <p>The template sync desired state that's returned by Proton.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::Revision>,
 }
 impl GetTemplateSyncStatusOutput {
@@ -4622,6 +4711,7 @@ impl GetTemplateSyncStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositorySyncStatusOutput {
     /// <p>The repository sync status detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub latest_sync: std::option::Option<crate::model::RepositorySyncAttempt>,
 }
 impl GetRepositorySyncStatusOutput {
@@ -4679,6 +4769,7 @@ impl GetRepositorySyncStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServicePipelineDeploymentOutput {
     /// <p>The service pipeline detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
 }
 impl CancelServicePipelineDeploymentOutput {
@@ -4736,6 +4827,7 @@ impl CancelServicePipelineDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServiceInstanceDeploymentOutput {
     /// <p>The service instance summary data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub service_instance: std::option::Option<crate::model::ServiceInstance>,
 }
 impl CancelServiceInstanceDeploymentOutput {
@@ -4793,6 +4885,7 @@ impl CancelServiceInstanceDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelEnvironmentDeploymentOutput {
     /// <p>The environment summary data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CancelEnvironmentDeploymentOutput {
@@ -4850,6 +4943,7 @@ impl CancelEnvironmentDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelComponentDeploymentOutput {
     /// <p>The detailed data of the component with the deployment that is being canceled.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl CancelComponentDeploymentOutput {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceMetadataOutput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceMetadataOutput {
@@ -178,14 +179,19 @@ impl RegisterPackageVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionDeviceOutput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The device's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>The device's configuration bundle.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The device's IoT thing name.</p>
+    #[doc(hidden)]
     pub iot_thing_name: std::option::Option<std::string::String>,
 }
 impl ProvisionDeviceOutput {
@@ -317,6 +323,7 @@ impl ProvisionDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -390,8 +397,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesOutput {
     /// <p>A list of packages.</p>
+    #[doc(hidden)]
     pub packages: std::option::Option<std::vec::Vec<crate::model::PackageListItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesOutput {
@@ -472,8 +481,10 @@ impl ListPackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageImportJobsOutput {
     /// <p>A list of package import jobs.</p>
+    #[doc(hidden)]
     pub package_import_jobs: std::option::Option<std::vec::Vec<crate::model::PackageImportJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageImportJobsOutput {
@@ -555,8 +566,10 @@ impl ListPackageImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesOutput {
     /// <p>A list of nodes.</p>
+    #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::model::Node>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodesOutput {
@@ -637,9 +650,11 @@ impl ListNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodeFromTemplateJobsOutput {
     /// <p>A list of jobs.</p>
+    #[doc(hidden)]
     pub node_from_template_jobs:
         std::option::Option<std::vec::Vec<crate::model::NodeFromTemplateJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodeFromTemplateJobsOutput {
@@ -723,8 +738,10 @@ impl ListNodeFromTemplateJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesJobsOutput {
     /// <p>A list of jobs.</p>
+    #[doc(hidden)]
     pub device_jobs: std::option::Option<std::vec::Vec<crate::model::DeviceJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesJobsOutput {
@@ -805,8 +822,10 @@ impl ListDevicesJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>A list of devices.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -887,9 +906,11 @@ impl ListDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstancesOutput {
     /// <p>A list of application instances.</p>
+    #[doc(hidden)]
     pub application_instances:
         std::option::Option<std::vec::Vec<crate::model::ApplicationInstance>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstancesOutput {
@@ -973,8 +994,10 @@ impl ListApplicationInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstanceNodeInstancesOutput {
     /// <p>A list of node instances.</p>
+    #[doc(hidden)]
     pub node_instances: std::option::Option<std::vec::Vec<crate::model::NodeInstance>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceNodeInstancesOutput {
@@ -1055,8 +1078,10 @@ impl ListApplicationInstanceNodeInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstanceDependenciesOutput {
     /// <p>A list of package objects.</p>
+    #[doc(hidden)]
     pub package_objects: std::option::Option<std::vec::Vec<crate::model::PackageObject>>,
     /// <p>A pagination token that's included if more results are available.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceDependenciesOutput {
@@ -1137,24 +1162,34 @@ impl ListApplicationInstanceDependenciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageVersionOutput {
     /// <p>The account ID of the version's owner.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The version's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the package.</p>
+    #[doc(hidden)]
     pub package_arn: std::option::Option<std::string::String>,
     /// <p>The version's name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The version's version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The version's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether the version is the latest available.</p>
+    #[doc(hidden)]
     pub is_latest_patch: bool,
     /// <p>The version's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p>The version's status description.</p>
+    #[doc(hidden)]
     pub status_description: std::option::Option<std::string::String>,
     /// <p>The version's registered time.</p>
+    #[doc(hidden)]
     pub registered_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribePackageVersionOutput {
@@ -1380,26 +1415,37 @@ impl DescribePackageVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageImportJobOutput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job's client token.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The job's type.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::PackageImportJobType>,
     /// <p>The job's input config.</p>
+    #[doc(hidden)]
     pub input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
     /// <p>The job's output config.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::PackageImportJobOutputConfig>,
     /// <p>The job's output.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::PackageImportJobOutput>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageImportJobStatus>,
     /// <p>The job's status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The job's tags.</p>
+    #[doc(hidden)]
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl DescribePackageImportJobOutput {
@@ -1659,20 +1705,28 @@ impl DescribePackageImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageOutput {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The package's name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The package's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The package's storage location.</p>
+    #[doc(hidden)]
     pub storage_location: std::option::Option<crate::model::StorageLocation>,
     /// <p>ARNs of accounts that have read access to the package.</p>
+    #[doc(hidden)]
     pub read_access_principal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>ARNs of accounts that have write access to the package.</p>
+    #[doc(hidden)]
     pub write_access_principal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When the package was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The package's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1902,29 +1956,41 @@ impl DescribePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeFromTemplateJobStatus>,
     /// <p>The job's status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The job's output package name.</p>
+    #[doc(hidden)]
     pub output_package_name: std::option::Option<std::string::String>,
     /// <p>The job's output package version.</p>
+    #[doc(hidden)]
     pub output_package_version: std::option::Option<std::string::String>,
     /// <p>The node's name.</p>
+    #[doc(hidden)]
     pub node_name: std::option::Option<std::string::String>,
     /// <p>The node's description.</p>
+    #[doc(hidden)]
     pub node_description: std::option::Option<std::string::String>,
     /// <p>The job's template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The job's template parameters.</p>
+    #[doc(hidden)]
     pub template_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job's tags.</p>
+    #[doc(hidden)]
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl DescribeNodeFromTemplateJobOutput {
@@ -2219,32 +2285,46 @@ impl DescribeNodeFromTemplateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeOutput {
     /// <p>The node's ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>The node's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node's category.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::NodeCategory>,
     /// <p>The account ID of the node's owner.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The node's package name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The node's package ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The node's ARN.</p>
+    #[doc(hidden)]
     pub package_arn: std::option::Option<std::string::String>,
     /// <p>The node's package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The node's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>The node's interface.</p>
+    #[doc(hidden)]
     pub node_interface: std::option::Option<crate::model::NodeInterface>,
     /// <p>The node's asset name.</p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The node's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>When the node was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the node was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeNodeOutput {
@@ -2541,20 +2621,28 @@ impl DescribeNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceJobOutput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device's ARN.</p>
+    #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The device's name.</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The device's type.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<crate::model::DeviceType>,
     /// <p>For an OTA job, the target version of the device software.</p>
+    #[doc(hidden)]
     pub image_version: std::option::Option<std::string::String>,
     /// <p>The job's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UpdateProgress>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDeviceJobOutput {
@@ -2740,42 +2828,60 @@ impl DescribeDeviceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceOutput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The device's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The device's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The device's type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeviceType>,
     /// <p>The device's connection status.</p>
+    #[doc(hidden)]
     pub device_connection_status: std::option::Option<crate::model::DeviceConnectionStatus>,
     /// <p>When the device was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's provisioning status.</p>
+    #[doc(hidden)]
     pub provisioning_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>The latest software version available for the device.</p>
+    #[doc(hidden)]
     pub latest_software: std::option::Option<std::string::String>,
     /// <p>The device's current software version.</p>
+    #[doc(hidden)]
     pub current_software: std::option::Option<std::string::String>,
     /// <p>The device's serial number.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The device's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The device's networking configuration.</p>
+    #[doc(hidden)]
     pub networking_configuration: std::option::Option<crate::model::NetworkPayload>,
     /// <p>The device's networking status.</p>
+    #[doc(hidden)]
     pub current_networking_status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The device's lease expiration time.</p>
+    #[doc(hidden)]
     pub lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Beta software releases available for the device.</p>
+    #[doc(hidden)]
     pub alternate_softwares:
         std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
     /// <p>The most recent beta software release.</p>
+    #[doc(hidden)]
     pub latest_alternate_software: std::option::Option<std::string::String>,
     /// <p>The device's maker.</p>
+    #[doc(hidden)]
     pub brand: std::option::Option<crate::model::DeviceBrand>,
 }
 impl DescribeDeviceOutput {
@@ -3190,20 +3296,28 @@ impl DescribeDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInstanceDetailsOutput {
     /// <p>The application instance's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The application instance's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The application instance's default runtime context device.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device: std::option::Option<std::string::String>,
     /// <p>The application instance's configuration manifest.</p>
+    #[doc(hidden)]
     pub manifest_payload: std::option::Option<crate::model::ManifestPayload>,
     /// <p>Parameter overrides for the configuration manifest.</p>
+    #[doc(hidden)]
     pub manifest_overrides_payload: std::option::Option<crate::model::ManifestOverridesPayload>,
     /// <p>The ID of the application instance that this instance replaced.</p>
+    #[doc(hidden)]
     pub application_instance_id_to_replace: std::option::Option<std::string::String>,
     /// <p>When the application instance was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceDetailsOutput {
@@ -3416,32 +3530,46 @@ impl DescribeApplicationInstanceDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInstanceOutput {
     /// <p>The application instance's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The application instance's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device: std::option::Option<std::string::String>,
     /// <p>The device's bane.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device_name: std::option::Option<std::string::String>,
     /// <p>The ID of the application instance that this instance replaced.</p>
+    #[doc(hidden)]
     pub application_instance_id_to_replace: std::option::Option<std::string::String>,
     /// <p>The application instance's runtime role ARN.</p>
+    #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
     /// <p>The application instance's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationInstanceStatus>,
     /// <p>The application instance's health status.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::ApplicationInstanceHealthStatus>,
     /// <p>The application instance's status description.</p>
+    #[doc(hidden)]
     pub status_description: std::option::Option<std::string::String>,
     /// <p>When the application instance was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The application instance's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The application instance's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3852,6 +3980,7 @@ impl DeletePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceOutput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceOutput {
@@ -3906,6 +4035,7 @@ impl DeleteDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageImportJobOutput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreatePackageImportJobOutput {
@@ -3960,10 +4090,13 @@ impl CreatePackageImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageOutput {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The package's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The package's storage location.</p>
+    #[doc(hidden)]
     pub storage_location: std::option::Option<crate::model::StorageLocation>,
 }
 impl CreatePackageOutput {
@@ -4055,6 +4188,7 @@ impl CreatePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateNodeFromTemplateJobOutput {
@@ -4109,6 +4243,7 @@ impl CreateNodeFromTemplateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobForDevicesOutput {
     /// <p>A list of jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
 }
 impl CreateJobForDevicesOutput {
@@ -4170,6 +4305,7 @@ impl CreateJobForDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInstanceOutput {
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInstanceOutput {

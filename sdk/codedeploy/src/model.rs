@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An Auto Scaling lifecycle event hook name.</p>
+    #[doc(hidden)]
     pub hook: std::option::Option<std::string::String>,
 }
 impl AutoScalingGroup {
@@ -78,6 +80,7 @@ impl AutoScalingGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnPremisesTagSet {
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    #[doc(hidden)]
     pub on_premises_tag_set_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagFilter>>>,
 }
@@ -148,8 +151,10 @@ impl OnPremisesTagSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagFilter {
     /// <p>The on-premises instance tag filter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The on-premises instance tag filter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
@@ -157,6 +162,7 @@ pub struct TagFilter {
     /// <li> <p>VALUE_ONLY: Value only.</p> </li>
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TagFilterType>,
 }
 impl TagFilter {
@@ -319,8 +325,10 @@ impl AsRef<str> for TagFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsService {
     /// <p> The name of the target Amazon ECS service. </p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
 }
 impl EcsService {
@@ -392,6 +400,7 @@ impl EcsService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2TagSet {
     /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
+    #[doc(hidden)]
     pub ec2_tag_set_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
 }
@@ -462,8 +471,10 @@ impl Ec2TagSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2TagFilter {
     /// <p>The tag filter key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag filter value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The tag filter type:</p>
     /// <ul>
@@ -471,6 +482,7 @@ pub struct Ec2TagFilter {
     /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Ec2TagFilterType>,
 }
 impl Ec2TagFilter {
@@ -638,12 +650,15 @@ pub struct LoadBalancerInfo {
     /// <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
     /// <p> Adding more than one load balancer to the array is not supported. </p>
     /// </note>
+    #[doc(hidden)]
     pub elb_info_list: std::option::Option<std::vec::Vec<crate::model::ElbInfo>>,
     /// <p>An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
     /// <p> Adding more than one target group to the array is not supported. </p>
     /// </note>
+    #[doc(hidden)]
     pub target_group_info_list: std::option::Option<std::vec::Vec<crate::model::TargetGroupInfo>>,
     /// <p> The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+    #[doc(hidden)]
     pub target_group_pair_info_list:
         std::option::Option<std::vec::Vec<crate::model::TargetGroupPairInfo>>,
 }
@@ -782,10 +797,13 @@ impl LoadBalancerInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupPairInfo {
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroupInfo>>,
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
+    #[doc(hidden)]
     pub prod_traffic_route: std::option::Option<crate::model::TrafficRoute>,
     /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
+    #[doc(hidden)]
     pub test_traffic_route: std::option::Option<crate::model::TrafficRoute>,
 }
 impl TargetGroupPairInfo {
@@ -889,6 +907,7 @@ impl TargetGroupPairInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
+    #[doc(hidden)]
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrafficRoute {
@@ -952,6 +971,7 @@ impl TrafficRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupInfo {
     /// <p>For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TargetGroupInfo {
@@ -1004,6 +1024,7 @@ impl TargetGroupInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElbInfo {
     /// <p>For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ElbInfo {
@@ -1056,11 +1077,14 @@ impl ElbInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlueGreenDeploymentConfiguration {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
+    #[doc(hidden)]
     pub terminate_blue_instances_on_deployment_success:
         std::option::Option<crate::model::BlueInstanceTerminationOption>,
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
+    #[doc(hidden)]
     pub deployment_ready_option: std::option::Option<crate::model::DeploymentReadyOption>,
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
+    #[doc(hidden)]
     pub green_fleet_provisioning_option:
         std::option::Option<crate::model::GreenFleetProvisioningOption>,
 }
@@ -1188,6 +1212,7 @@ pub struct GreenFleetProvisioningOption {
     /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
     /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::GreenFleetProvisioningAction>,
 }
 impl GreenFleetProvisioningOption {
@@ -1316,8 +1341,10 @@ pub struct DeploymentReadyOption {
     /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
     /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action_on_timeout: std::option::Option<crate::model::DeploymentReadyAction>,
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
+    #[doc(hidden)]
     pub wait_time_in_minutes: i32,
 }
 impl DeploymentReadyOption {
@@ -1463,10 +1490,12 @@ pub struct BlueInstanceTerminationOption {
     /// <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li>
     /// <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::InstanceAction>,
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
     /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p>
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
+    #[doc(hidden)]
     pub termination_wait_time_in_minutes: i32,
 }
 impl BlueInstanceTerminationOption {
@@ -1622,8 +1651,10 @@ impl AsRef<str> for InstanceAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentStyle {
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
+    #[doc(hidden)]
     pub deployment_option: std::option::Option<crate::model::DeploymentOption>,
 }
 impl DeploymentStyle {
@@ -1866,8 +1897,10 @@ impl AsRef<str> for OutdatedInstancesStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoRollbackConfiguration {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The event type or types that trigger a rollback.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::AutoRollbackEvent>>,
 }
 impl AutoRollbackConfiguration {
@@ -2011,14 +2044,17 @@ impl AsRef<str> for AutoRollbackEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmConfiguration {
     /// <p>Indicates whether the alarm configuration is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
     /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
     /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
     /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be added to a deployment group.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
 impl AlarmConfiguration {
@@ -2128,6 +2164,7 @@ impl AlarmConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarm {
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Alarm {
@@ -2180,10 +2217,13 @@ impl Alarm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerConfig {
     /// <p>The name of the notification trigger.</p>
+    #[doc(hidden)]
     pub trigger_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
+    #[doc(hidden)]
     pub trigger_target_arn: std::option::Option<std::string::String>,
     /// <p>The event type or types for which notifications are triggered.</p>
+    #[doc(hidden)]
     pub trigger_events: std::option::Option<std::vec::Vec<crate::model::TriggerEventType>>,
 }
 impl TriggerConfig {
@@ -2383,8 +2423,10 @@ impl AsRef<str> for TriggerEventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2517,14 +2559,19 @@ pub struct RevisionLocation {
     /// <li> <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
     /// <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub revision_type: std::option::Option<crate::model::RevisionLocationType>,
     /// <p>Information about the location of a revision stored in Amazon S3. </p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
+    #[doc(hidden)]
     pub git_hub_location: std::option::Option<crate::model::GitHubLocation>,
     /// <p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>
+    #[doc(hidden)]
     pub string: std::option::Option<crate::model::RawString>,
     /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>
+    #[doc(hidden)]
     pub app_spec_content: std::option::Option<crate::model::AppSpecContent>,
 }
 impl RevisionLocation {
@@ -2680,8 +2727,10 @@ pub struct AppSpecContent {
     /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p> The SHA256 hash value of the revision content. </p>
+    #[doc(hidden)]
     pub sha256: std::option::Option<std::string::String>,
 }
 impl AppSpecContent {
@@ -2765,8 +2814,10 @@ impl AppSpecContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RawString {
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The SHA256 hash value of the revision content.</p>
+    #[doc(hidden)]
     pub sha256: std::option::Option<std::string::String>,
 }
 impl RawString {
@@ -2839,8 +2890,10 @@ impl RawString {
 pub struct GitHubLocation {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
+    #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
 }
 impl GitHubLocation {
@@ -2915,8 +2968,10 @@ impl GitHubLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
@@ -2924,12 +2979,15 @@ pub struct S3Location {
     /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
     /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub bundle_type: std::option::Option<crate::model::BundleType>,
     /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the version is not specified, the system uses the most recent version by default.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -3396,10 +3454,12 @@ pub struct TimeRange {
     /// <p>The start time of the time range.</p> <note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range.</p> <note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
+    #[doc(hidden)]
     pub end: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
@@ -3883,18 +3943,25 @@ impl AsRef<str> for ApplicationRevisionSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceInfo {
     /// <p>The name of the on-premises instance.</p>
+    #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
+    #[doc(hidden)]
     pub iam_session_arn: std::option::Option<std::string::String>,
     /// <p>The IAM user ARN associated with the on-premises instance.</p>
+    #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the on-premises instance.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the on-premises instance was registered.</p>
+    #[doc(hidden)]
     pub register_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.</p>
+    #[doc(hidden)]
     pub deregister_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags currently associated with the on-premises instance.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl InstanceInfo {
@@ -4072,14 +4139,19 @@ impl InstanceInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTarget {
     /// <p>The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.</p>
+    #[doc(hidden)]
     pub deployment_target_type: std::option::Option<crate::model::DeploymentTargetType>,
     /// <p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>
+    #[doc(hidden)]
     pub instance_target: std::option::Option<crate::model::InstanceTarget>,
     /// <p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>
+    #[doc(hidden)]
     pub lambda_target: std::option::Option<crate::model::LambdaTarget>,
     /// <p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>
+    #[doc(hidden)]
     pub ecs_target: std::option::Option<crate::model::EcsTarget>,
     /// <p> Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
+    #[doc(hidden)]
     pub cloud_formation_target: std::option::Option<crate::model::CloudFormationTarget>,
 }
 impl DeploymentTarget {
@@ -4221,18 +4293,25 @@ impl DeploymentTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudFormationTarget {
     /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of&nbsp;<code>CloudFormationTarget</code>. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The date and time when the target application was updated by an AWS CloudFormation blue/green deployment. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target application. </p>
+    #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> The status of an AWS CloudFormation blue/green deployment's target application. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The percentage of production traffic that the target version of an AWS CloudFormation blue/green deployment receives.</p>
+    #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl CloudFormationTarget {
@@ -4494,12 +4573,16 @@ impl AsRef<str> for TargetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEvent {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
+    #[doc(hidden)]
     pub lifecycle_event_name: std::option::Option<std::string::String>,
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
+    #[doc(hidden)]
     pub diagnostics: std::option::Option<crate::model::Diagnostics>,
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
@@ -4510,6 +4593,7 @@ pub struct LifecycleEvent {
     /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
     /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LifecycleEventStatus>,
 }
 impl LifecycleEvent {
@@ -4679,13 +4763,17 @@ pub struct Diagnostics {
     /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::LifecycleErrorCode>,
     /// <p>The name of the script.</p>
+    #[doc(hidden)]
     pub script_name: std::option::Option<std::string::String>,
     /// <p>The message associated with the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+    #[doc(hidden)]
     pub log_tail: std::option::Option<std::string::String>,
 }
 impl Diagnostics {
@@ -4899,18 +4987,25 @@ impl AsRef<str> for LifecycleErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsTarget {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> The date and time when the target Amazon ECS application was updated by a deployment. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
+    #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
+    #[doc(hidden)]
     pub task_sets_info: std::option::Option<std::vec::Vec<crate::model::EcsTaskSet>>,
 }
 impl EcsTarget {
@@ -5095,12 +5190,16 @@ impl EcsTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsTaskSet {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
+    #[doc(hidden)]
     pub identifer: std::option::Option<std::string::String>,
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
+    #[doc(hidden)]
     pub desired_count: i64,
     /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code> state. </p>
+    #[doc(hidden)]
     pub pending_count: i64,
     /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and ready for use. </p>
+    #[doc(hidden)]
     pub running_count: i64,
     /// <p> The status of the task set. There are three valid task set statuses: </p>
     /// <ul>
@@ -5108,12 +5207,16 @@ pub struct EcsTaskSet {
     /// <li> <p> <code>ACTIVE</code>: Indicates the task set is not serving production traffic. </p> </li>
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p> The percentage of traffic served by this task set. </p>
+    #[doc(hidden)]
     pub traffic_weight: f64,
     /// <p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>
+    #[doc(hidden)]
     pub target_group: std::option::Option<crate::model::TargetGroupInfo>,
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+    #[doc(hidden)]
     pub task_set_label: std::option::Option<crate::model::TargetLabel>,
 }
 impl EcsTaskSet {
@@ -5363,18 +5466,25 @@ impl AsRef<str> for TargetLabel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaTarget {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The date and time when the target Lambda function was updated by a deployment. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
+    #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
+    #[doc(hidden)]
     pub lambda_function_info: std::option::Option<crate::model::LambdaFunctionInfo>,
 }
 impl LambdaTarget {
@@ -5553,14 +5663,19 @@ impl LambdaTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub function_alias: std::option::Option<std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to. </p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
+    #[doc(hidden)]
     pub target_version: std::option::Option<std::string::String>,
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
+    #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl LambdaFunctionInfo {
@@ -5695,18 +5810,25 @@ impl LambdaFunctionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceTarget {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of <code>instanceTarget</code>. </p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> The status an EC2/On-premises deployment's target instance. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The date and time when the target instance was updated by a deployment. </p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the deployment to this target instance. </p>
+    #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+    #[doc(hidden)]
     pub instance_label: std::option::Option<crate::model::TargetLabel>,
 }
 impl InstanceTarget {
@@ -5954,8 +6076,10 @@ impl AsRef<str> for DeploymentTargetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The deployment status for this instance:</p>
     /// <ul>
@@ -5966,16 +6090,20 @@ pub struct InstanceSummary {
     /// <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li>
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of lifecycle events for this instance.</p>
+    #[doc(hidden)]
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
     /// <li> <p>BLUE: The instance is part of the original environment.</p> </li>
     /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<crate::model::InstanceType>,
 }
 impl InstanceSummary {
@@ -6173,56 +6301,78 @@ impl InstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupInfo {
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The deployment group ID.</p>
+    #[doc(hidden)]
     pub deployment_group_id: std::option::Option<std::string::String>,
     /// <p>The deployment group name.</p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p>The deployment configuration name.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags.</p>
+    #[doc(hidden)]
     pub ec2_tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
     /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags.</p>
+    #[doc(hidden)]
     pub on_premises_instance_tag_filters:
         std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>A list of associated Auto Scaling groups.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the deployment group's target revision, including type and location.</p>
+    #[doc(hidden)]
     pub target_revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>Information about triggers associated with the deployment group.</p>
+    #[doc(hidden)]
     pub trigger_configurations: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
     /// <p>A list of alarms associated with the deployment group.</p>
+    #[doc(hidden)]
     pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     /// <p>Information about the automatic rollback configuration associated with the deployment group.</p>
+    #[doc(hidden)]
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+    #[doc(hidden)]
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    #[doc(hidden)]
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
+    #[doc(hidden)]
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer to use in a deployment.</p>
+    #[doc(hidden)]
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
     /// <p>Information about the most recent successful deployment to the deployment group.</p>
+    #[doc(hidden)]
     pub last_successful_deployment: std::option::Option<crate::model::LastDeploymentInfo>,
     /// <p>Information about the most recent attempted deployment to the deployment group.</p>
+    #[doc(hidden)]
     pub last_attempted_deployment: std::option::Option<crate::model::LastDeploymentInfo>,
     /// <p>Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.</p>
+    #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
     /// <p>Information about groups of tags applied to an on-premises instance. The deployment group includes only on-premises instances identified by all the tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+    #[doc(hidden)]
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
+    #[doc(hidden)]
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
 }
 impl DeploymentGroupInfo {
@@ -6856,12 +7006,16 @@ impl AsRef<str> for ComputePlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastDeploymentInfo {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the most recent deployment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LastDeploymentInfo {
@@ -6979,16 +7133,22 @@ impl LastDeploymentInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigInfo {
     /// <p>The deployment configuration ID.</p>
+    #[doc(hidden)]
     pub deployment_config_id: std::option::Option<std::string::String>,
     /// <p>The deployment configuration name.</p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    #[doc(hidden)]
     pub minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
     /// <p>The time at which the deployment configuration was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS compute platform only.</p>
+    #[doc(hidden)]
     pub traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
 }
 impl DeploymentConfigInfo {
@@ -7148,10 +7308,13 @@ impl DeploymentConfigInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficRoutingConfig {
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TrafficRoutingType>,
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+    #[doc(hidden)]
     pub time_based_canary: std::option::Option<crate::model::TimeBasedCanary>,
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
+    #[doc(hidden)]
     pub time_based_linear: std::option::Option<crate::model::TimeBasedLinear>,
 }
 impl TrafficRoutingConfig {
@@ -7249,8 +7412,10 @@ impl TrafficRoutingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeBasedLinear {
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
+    #[doc(hidden)]
     pub linear_percentage: i32,
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
+    #[doc(hidden)]
     pub linear_interval: i32,
 }
 impl TimeBasedLinear {
@@ -7322,8 +7487,10 @@ impl TimeBasedLinear {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeBasedCanary {
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
+    #[doc(hidden)]
     pub canary_percentage: i32,
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
+    #[doc(hidden)]
     pub canary_interval: i32,
 }
 impl TimeBasedCanary {
@@ -7462,8 +7629,10 @@ pub struct MinimumHealthyHosts {
     /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MinimumHealthyHostsType>,
     /// <p>The minimum healthy instance value.</p>
+    #[doc(hidden)]
     pub value: i32,
 }
 impl MinimumHealthyHosts {
@@ -7617,31 +7786,44 @@ impl AsRef<str> for MinimumHealthyHostsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentInfo {
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p> The deployment group name. </p>
+    #[doc(hidden)]
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p> The deployment configuration name. </p>
+    #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>Information about the application revision that was deployed to the deployment group before the most recent successful deployment.</p>
+    #[doc(hidden)]
     pub previous_revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>Information about the location of stored application artifacts and the service from which to retrieve them.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>The current state of the deployment as a whole.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Information about any error associated with this deployment.</p>
+    #[doc(hidden)]
     pub error_information: std::option::Option<crate::model::ErrorInformation>,
     /// <p>A timestamp that indicates when the deployment was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment was deployed to the deployment group.</p>
     /// <p>In some cases, the reported value of the start time might be later than the complete time. This is due to differences in the clock settings of backend servers that participate in the deployment process.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment was complete.</p>
+    #[doc(hidden)]
     pub complete_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A summary of the deployment status of the instances in the deployment.</p>
+    #[doc(hidden)]
     pub deployment_overview: std::option::Option<crate::model::DeploymentOverview>,
     /// <p>A comment about the deployment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
@@ -7650,30 +7832,41 @@ pub struct DeploymentInfo {
     /// <li> <p> <code>codeDeployRollback</code>: A rollback process created the deployment.</p> </li>
     /// <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2 instances.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub creator: std::option::Option<crate::model::DeploymentCreator>,
     /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    #[doc(hidden)]
     pub ignore_application_stop_failures: bool,
     /// <p>Information about the automatic rollback configuration associated with the deployment.</p>
+    #[doc(hidden)]
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
     /// <p>Indicates whether only instances that are not running the latest application revision are to be deployed to.</p>
+    #[doc(hidden)]
     pub update_outdated_instances_only: bool,
     /// <p>Information about a deployment rollback.</p>
+    #[doc(hidden)]
     pub rollback_info: std::option::Option<crate::model::RollbackInfo>,
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+    #[doc(hidden)]
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
+    #[doc(hidden)]
     pub target_instances: std::option::Option<crate::model::TargetInstances>,
     /// <p>Indicates whether the wait period set for the termination of instances in the original environment has started. Status is 'false' if the KEEP_ALIVE option is specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
+    #[doc(hidden)]
     pub instance_termination_wait_time_started: bool,
     /// <p>Information about blue/green deployment options for this deployment.</p>
+    #[doc(hidden)]
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in the deployment.</p>
+    #[doc(hidden)]
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
     /// <p>Provides information about the results of a deployment, such as whether instances in the original environment in a blue/green deployment were not terminated.</p>
+    #[doc(hidden)]
     pub additional_deployment_status_info: std::option::Option<std::string::String>,
     /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
@@ -7681,14 +7874,19 @@ pub struct DeploymentInfo {
     /// <li> <p> <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
     /// <li> <p> <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub file_exists_behavior: std::option::Option<crate::model::FileExistsBehavior>,
     /// <p>Messages that contain information about the status of a deployment.</p>
+    #[doc(hidden)]
     pub deployment_status_messages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p>The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this deployment.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>Information about deployments related to the specified deployment.</p>
+    #[doc(hidden)]
     pub related_deployments: std::option::Option<crate::model::RelatedDeployments>,
 }
 impl DeploymentInfo {
@@ -8394,8 +8592,10 @@ impl DeploymentInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelatedDeployments {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
+    #[doc(hidden)]
     pub auto_update_outdated_instances_root_deployment_id: std::option::Option<std::string::String>,
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
+    #[doc(hidden)]
     pub auto_update_outdated_instances_deployment_ids:
         std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -8561,10 +8761,13 @@ impl AsRef<str> for FileExistsBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetInstances {
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
+    #[doc(hidden)]
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
+    #[doc(hidden)]
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the groups of EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+    #[doc(hidden)]
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
 }
 impl TargetInstances {
@@ -8674,10 +8877,13 @@ impl TargetInstances {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackInfo {
     /// <p>The ID of the deployment rollback.</p>
+    #[doc(hidden)]
     pub rollback_deployment_id: std::option::Option<std::string::String>,
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
+    #[doc(hidden)]
     pub rollback_triggering_deployment_id: std::option::Option<std::string::String>,
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    #[doc(hidden)]
     pub rollback_message: std::option::Option<std::string::String>,
 }
 impl RollbackInfo {
@@ -8864,16 +9070,22 @@ impl AsRef<str> for DeploymentCreator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentOverview {
     /// <p>The number of instances in the deployment in a pending state.</p>
+    #[doc(hidden)]
     pub pending: i64,
     /// <p>The number of instances in which the deployment is in progress.</p>
+    #[doc(hidden)]
     pub in_progress: i64,
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
+    #[doc(hidden)]
     pub succeeded: i64,
     /// <p>The number of instances in the deployment in a failed state.</p>
+    #[doc(hidden)]
     pub failed: i64,
     /// <p>The number of instances in the deployment in a skipped state.</p>
+    #[doc(hidden)]
     pub skipped: i64,
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
+    #[doc(hidden)]
     pub ready: i64,
 }
 impl DeploymentOverview {
@@ -9029,8 +9241,10 @@ pub struct ErrorInformation {
     /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
     /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>An accompanying error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorInformation {
@@ -9372,14 +9586,19 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenericRevisionInfo {
     /// <p>A comment about the revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The deployment groups for which this is the current target revision.</p>
+    #[doc(hidden)]
     pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When the revision was first used by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub first_used_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the revision was last used by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub last_used_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the revision was registered with AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub register_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GenericRevisionInfo {
@@ -9520,16 +9739,22 @@ impl GenericRevisionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationInfo {
     /// <p>The application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The time at which the application was created.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
+    #[doc(hidden)]
     pub linked_to_git_hub: bool,
     /// <p>The name for a connection to a GitHub account.</p>
+    #[doc(hidden)]
     pub git_hub_account_name: std::option::Option<std::string::String>,
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
 }
 impl ApplicationInfo {
@@ -9739,8 +9964,10 @@ impl AsRef<str> for DeploymentWaitType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionInfo {
     /// <p>Information about the location and type of an application revision.</p>
+    #[doc(hidden)]
     pub revision_location: std::option::Option<crate::model::RevisionLocation>,
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
+    #[doc(hidden)]
     pub generic_revision_info: std::option::Option<crate::model::GenericRevisionInfo>,
 }
 impl RevisionInfo {

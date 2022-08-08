@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnsupportedOperationException {
@@ -90,8 +92,10 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ServiceException {
@@ -175,8 +179,10 @@ impl ServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
@@ -260,8 +266,10 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl EntityDoesNotExistException {
@@ -345,8 +353,10 @@ impl EntityDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ClientException {
@@ -430,8 +440,10 @@ impl ClientException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedSettingsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UnsupportedSettingsException {
@@ -515,8 +527,10 @@ impl UnsupportedSettingsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleSettingsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl IncompatibleSettingsException {
@@ -600,8 +614,10 @@ impl IncompatibleSettingsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryUnavailableException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryUnavailableException {
@@ -685,8 +701,10 @@ impl DirectoryUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryDoesNotExistException {
@@ -770,8 +788,10 @@ impl DirectoryDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainControllerLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DomainControllerLimitExceededException {
@@ -855,8 +875,10 @@ impl DomainControllerLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidTargetException {
@@ -940,8 +962,10 @@ impl InvalidTargetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNotSharedException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryNotSharedException {
@@ -1025,8 +1049,10 @@ impl DirectoryNotSharedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SnapshotLimitExceededException {
@@ -1110,8 +1136,10 @@ impl SnapshotLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ShareLimitExceededException {
@@ -1195,8 +1223,10 @@ impl ShareLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl OrganizationsException {
@@ -1280,8 +1310,10 @@ impl OrganizationsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadySharedException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryAlreadySharedException {
@@ -1365,8 +1397,10 @@ impl DirectoryAlreadySharedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -1450,8 +1484,10 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UserDoesNotExistException {
@@ -1535,8 +1571,10 @@ impl UserDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidPasswordException {
@@ -1620,8 +1658,10 @@ impl InvalidPasswordException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCertificateException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidCertificateException {
@@ -1705,8 +1745,10 @@ impl InvalidCertificateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CertificateLimitExceededException {
@@ -1790,8 +1832,10 @@ impl CertificateLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CertificateAlreadyExistsException {
@@ -1875,8 +1919,10 @@ impl CertificateAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
@@ -1960,8 +2006,10 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientPermissionsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InsufficientPermissionsException {
@@ -2045,8 +2093,10 @@ impl InsufficientPermissionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationFailedException {
     /// <p>The textual message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The identifier of the request that caused the exception.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl AuthenticationFailedException {
@@ -2130,8 +2180,10 @@ impl AuthenticationFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl EntityAlreadyExistsException {
@@ -2215,8 +2267,10 @@ impl EntityAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableCertificateException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl NoAvailableCertificateException {
@@ -2300,8 +2354,10 @@ impl NoAvailableCertificateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLdapsStatusException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidLdapsStatusException {
@@ -2388,8 +2444,10 @@ impl InvalidLdapsStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientAuthStatusException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl InvalidClientAuthStatusException {
@@ -2473,8 +2531,10 @@ impl InvalidClientAuthStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CertificateDoesNotExistException {
@@ -2558,8 +2618,10 @@ impl CertificateDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateInUseException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CertificateInUseException {
@@ -2643,8 +2705,10 @@ impl CertificateInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryLimitExceededException {
@@ -2728,8 +2792,10 @@ impl DirectoryLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl TagLimitExceededException {
@@ -2813,8 +2879,10 @@ impl TagLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl RegionLimitExceededException {
@@ -2898,8 +2966,10 @@ impl RegionLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyInRegionException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DirectoryAlreadyInRegionException {
@@ -2983,8 +3053,10 @@ impl DirectoryAlreadyInRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRouteLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request identifier.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl IpRouteLimitExceededException {

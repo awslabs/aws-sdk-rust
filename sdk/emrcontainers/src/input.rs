@@ -3039,8 +3039,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of resources.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys of the resources.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3067,8 +3069,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of resources.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3099,20 +3103,28 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunInput {
     /// <p>The name of the job run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The client idempotency token of the job run request. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon EMR release version to use for the job run.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The job driver for the job run.</p>
+    #[doc(hidden)]
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The tags assigned to job runs.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3175,18 +3187,25 @@ impl std::fmt::Debug for StartJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
+    #[doc(hidden)]
     pub container_provider_id: std::option::Option<std::string::String>,
     /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    #[doc(hidden)]
     pub container_provider_type: std::option::Option<crate::model::ContainerProviderType>,
     /// <p>The date and time after which the virtual clusters are created.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time before which the virtual clusters are created.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The states of the requested virtual clusters.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::VirtualClusterState>>,
     /// <p>The maximum number of virtual clusters that can be listed.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of virtual clusters to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualClustersInput {
@@ -3240,6 +3259,7 @@ impl std::fmt::Debug for ListVirtualClustersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of tagged resources.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3261,18 +3281,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedEndpointsInput {
     /// <p>The ID of the virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time before which the endpoints are created.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time after which the endpoints are created.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The types of the managed endpoints.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The states of the managed endpoints.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::EndpointState>>,
     /// <p>The maximum number of managed endpoints that can be listed.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of managed endpoints to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedEndpointsInput {
@@ -3324,18 +3351,25 @@ impl std::fmt::Debug for ListManagedEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time before which the job runs were submitted.</p>
+    #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time after which the job runs were submitted.</p>
+    #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the job run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The states of the job run.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::JobRunState>>,
     /// <p>The maximum number of job runs that can be listed.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of job runs to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsInput {
@@ -3387,6 +3421,7 @@ impl std::fmt::Debug for ListJobRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualClusterInput {
@@ -3408,8 +3443,10 @@ impl std::fmt::Debug for DescribeVirtualClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedEndpointInput {
     /// <p>This output displays ID of the managed endpoint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl DescribeManagedEndpointInput {
@@ -3436,8 +3473,10 @@ impl std::fmt::Debug for DescribeManagedEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobRunInput {
     /// <p>The ID of the job run request. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobRunInput {
@@ -3464,6 +3503,7 @@ impl std::fmt::Debug for DescribeJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualClusterInput {
@@ -3485,8 +3525,10 @@ impl std::fmt::Debug for DeleteVirtualClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteManagedEndpointInput {
     /// <p>The ID of the managed endpoint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl DeleteManagedEndpointInput {
@@ -3513,12 +3555,16 @@ impl std::fmt::Debug for DeleteManagedEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The container provider of the virtual cluster.</p>
+    #[doc(hidden)]
     pub container_provider: std::option::Option<crate::model::ContainerProvider>,
     /// <p>The client token of the virtual cluster.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the virtual cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3559,25 +3605,34 @@ impl std::fmt::Debug for CreateVirtualClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
     /// <p>The type of the managed endpoint.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The Amazon EMR release version.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The ARN of the execution role.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
     #[deprecated(
         note = "Customer provided certificate-arn is deprecated and would be removed in future."
     )]
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that will be used to override existing configurations.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The client idempotency token for this create call.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags of the managed endpoint. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3648,8 +3703,10 @@ impl std::fmt::Debug for CreateManagedEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobRunInput {
     /// <p>The ID of the job run to cancel.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl CancelJobRunInput {

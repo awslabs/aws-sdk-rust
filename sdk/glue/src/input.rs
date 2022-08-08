@@ -33286,13 +33286,17 @@ impl UpdateWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkflowInput {
     /// <p>Name of the workflow to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    #[doc(hidden)]
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    #[doc(hidden)]
     pub max_concurrent_runs: std::option::Option<i32>,
 }
 impl UpdateWorkflowInput {
@@ -33332,12 +33336,16 @@ impl std::fmt::Debug for UpdateWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the function to be updated is located.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the function.</p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
+    #[doc(hidden)]
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
 }
 impl UpdateUserDefinedFunctionInput {
@@ -33374,8 +33382,10 @@ impl std::fmt::Debug for UpdateUserDefinedFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTriggerInput {
     /// <p>The name of the trigger to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new values with which to update the trigger.</p>
+    #[doc(hidden)]
     pub trigger_update: std::option::Option<crate::model::TriggerUpdate>,
 }
 impl UpdateTriggerInput {
@@ -33402,16 +33412,22 @@ impl std::fmt::Debug for UpdateTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+    #[doc(hidden)]
     pub table_input: std::option::Option<crate::model::TableInput>,
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
+    #[doc(hidden)]
     pub skip_archive: std::option::Option<bool>,
     /// <p>The transaction ID at which to update the table contents. </p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The version ID at which to update the table contents. </p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl UpdateTableInput {
@@ -33462,12 +33478,16 @@ pub struct UpdateSchemaInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>The new compatibility setting for the schema.</p>
+    #[doc(hidden)]
     pub compatibility: std::option::Option<crate::model::Compatibility>,
     /// <p>The new description for the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaInput {
@@ -33508,8 +33528,10 @@ impl std::fmt::Debug for UpdateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateRegistryInput {
@@ -33536,15 +33558,20 @@ impl std::fmt::Debug for UpdateRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the table in question resides.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table in which the partition to be updated is located.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>List of partition key values that define the partition to update.</p>
+    #[doc(hidden)]
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
+    #[doc(hidden)]
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
 }
 impl UpdatePartitionInput {
@@ -33587,19 +33614,26 @@ impl std::fmt::Debug for UpdatePartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMlTransformInput {
     /// <p>A unique identifier that was generated when the transform was created.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique name that you gave the transform when you created it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the transform. The default is an empty string.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -33607,12 +33641,16 @@ pub struct UpdateMlTransformInput {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i32>,
 }
 impl UpdateMlTransformInput {
@@ -33690,8 +33728,10 @@ impl std::fmt::Debug for UpdateMlTransformInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobInput {
     /// <p>The name of the job definition to update.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
+    #[doc(hidden)]
     pub job_update: std::option::Option<crate::model::JobUpdate>,
 }
 impl UpdateJobInput {
@@ -33718,18 +33758,25 @@ impl std::fmt::Debug for UpdateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
+    #[doc(hidden)]
     pub add_public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub delete_public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub custom_libraries: std::option::Option<crate::model::DevEndpointCustomLibraries>,
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    #[doc(hidden)]
     pub update_etl_libraries: bool,
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub delete_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -33737,6 +33784,7 @@ pub struct UpdateDevEndpointInput {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    #[doc(hidden)]
     pub add_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -33804,10 +33852,13 @@ impl std::fmt::Debug for UpdateDevEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatabaseInput {
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
+    #[doc(hidden)]
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
 }
 impl UpdateDatabaseInput {
@@ -33839,8 +33890,10 @@ impl std::fmt::Debug for UpdateDatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCrawlerScheduleInput {
     /// <p>The name of the crawler whose schedule to update.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
 }
 impl UpdateCrawlerScheduleInput {
@@ -33867,32 +33920,46 @@ impl std::fmt::Debug for UpdateCrawlerScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCrawlerInput {
     /// <p>Name of the new crawler.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the new crawler.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of targets to crawl.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+    #[doc(hidden)]
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The table prefix used for catalog tables that are created.</p>
+    #[doc(hidden)]
     pub table_prefix: std::option::Option<std::string::String>,
     /// <p>The policy for the crawler's update and deletion behavior.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::SchemaChangePolicy>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    #[doc(hidden)]
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
+    #[doc(hidden)]
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
+    #[doc(hidden)]
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    #[doc(hidden)]
     pub crawler_security_configuration: std::option::Option<std::string::String>,
 }
 impl UpdateCrawlerInput {
@@ -33989,10 +34056,13 @@ impl std::fmt::Debug for UpdateCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection definition to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+    #[doc(hidden)]
     pub connection_input: std::option::Option<crate::model::ConnectionInput>,
 }
 impl UpdateConnectionInput {
@@ -34024,12 +34094,16 @@ impl std::fmt::Debug for UpdateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the column statistics.</p>
+    #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
 }
 impl UpdateColumnStatisticsForTableInput {
@@ -34066,14 +34140,19 @@ impl std::fmt::Debug for UpdateColumnStatisticsForTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of partition values identifying the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the column statistics.</p>
+    #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
 }
 impl UpdateColumnStatisticsForPartitionInput {
@@ -34115,12 +34194,16 @@ impl std::fmt::Debug for UpdateColumnStatisticsForPartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClassifierInput {
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
+    #[doc(hidden)]
     pub grok_classifier: std::option::Option<crate::model::UpdateGrokClassifierRequest>,
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
+    #[doc(hidden)]
     pub xml_classifier: std::option::Option<crate::model::UpdateXmlClassifierRequest>,
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
+    #[doc(hidden)]
     pub json_classifier: std::option::Option<crate::model::UpdateJsonClassifierRequest>,
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
+    #[doc(hidden)]
     pub csv_classifier: std::option::Option<crate::model::UpdateCsvClassifierRequest>,
 }
 impl UpdateClassifierInput {
@@ -34161,10 +34244,13 @@ impl std::fmt::Debug for UpdateClassifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBlueprintInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the blueprint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    #[doc(hidden)]
     pub blueprint_location: std::option::Option<std::string::String>,
 }
 impl UpdateBlueprintInput {
@@ -34196,8 +34282,10 @@ impl std::fmt::Debug for UpdateBlueprintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to remove from this resource.</p>
+    #[doc(hidden)]
     pub tags_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -34224,8 +34312,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to add to this resource.</p>
+    #[doc(hidden)]
     pub tags_to_add:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -34256,8 +34346,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopWorkflowRunInput {
     /// <p>The name of the workflow to stop.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run to stop.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl StopWorkflowRunInput {
@@ -34284,6 +34376,7 @@ impl std::fmt::Debug for StopWorkflowRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTriggerInput {
     /// <p>The name of the trigger to stop.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopTriggerInput {
@@ -34305,8 +34398,10 @@ impl std::fmt::Debug for StopTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSessionInput {
     /// <p>The ID of the session to be stopped.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The origin of the request.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl StopSessionInput {
@@ -34333,6 +34428,7 @@ impl std::fmt::Debug for StopSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCrawlerScheduleInput {
     /// <p>Name of the crawler whose schedule state to set.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
 }
 impl StopCrawlerScheduleInput {
@@ -34354,6 +34450,7 @@ impl std::fmt::Debug for StopCrawlerScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCrawlerInput {
     /// <p>Name of the crawler to stop.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopCrawlerInput {
@@ -34375,8 +34472,10 @@ impl std::fmt::Debug for StopCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The workflow run properties for the new workflow run.</p>
+    #[doc(hidden)]
     pub run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -34407,6 +34506,7 @@ impl std::fmt::Debug for StartWorkflowRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTriggerInput {
     /// <p>The name of the trigger to start.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartTriggerInput {
@@ -34428,8 +34528,10 @@ impl std::fmt::Debug for StartTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMlLabelingSetGenerationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+    #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl StartMlLabelingSetGenerationTaskRunInput {
@@ -34456,6 +34558,7 @@ impl std::fmt::Debug for StartMlLabelingSetGenerationTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMlEvaluationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl StartMlEvaluationTaskRunInput {
@@ -34477,22 +34580,27 @@ impl std::fmt::Debug for StartMlEvaluationTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunInput {
     /// <p>The name of the job definition to use.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
+    #[doc(hidden)]
     pub allocated_capacity: i32,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -34501,10 +34609,13 @@ pub struct StartJobRunInput {
     /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -34513,12 +34624,15 @@ pub struct StartJobRunInput {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl StartJobRunInput {
@@ -34616,10 +34730,13 @@ impl std::fmt::Debug for StartJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+    #[doc(hidden)]
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
+    #[doc(hidden)]
     pub replace_all_labels: bool,
 }
 impl StartImportLabelsTaskRunInput {
@@ -34651,8 +34768,10 @@ impl std::fmt::Debug for StartImportLabelsTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 path where you export the labels.</p>
+    #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl StartExportLabelsTaskRunInput {
@@ -34679,6 +34798,7 @@ impl std::fmt::Debug for StartExportLabelsTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCrawlerScheduleInput {
     /// <p>Name of the crawler to schedule.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
 }
 impl StartCrawlerScheduleInput {
@@ -34700,6 +34820,7 @@ impl std::fmt::Debug for StartCrawlerScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCrawlerInput {
     /// <p>Name of the crawler to start.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartCrawlerInput {
@@ -34721,10 +34842,13 @@ impl std::fmt::Debug for StartCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBlueprintRunInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>Specifies the IAM role used to create the workflow.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl StartBlueprintRunInput {
@@ -34756,24 +34880,31 @@ impl std::fmt::Debug for StartBlueprintRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesInput {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::PropertyPredicate>>,
     /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
+    #[doc(hidden)]
     pub search_text: std::option::Option<std::string::String>,
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
+    #[doc(hidden)]
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::SortCriterion>>,
     /// <p>The maximum number of tables to return in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
 impl SearchTablesInput {
@@ -34831,10 +34962,13 @@ impl std::fmt::Debug for SearchTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunStatementInput {
     /// <p>The Session Id of the statement to be run.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The statement code to be run.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The origin of the request.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl RunStatementInput {
@@ -34866,10 +35000,13 @@ impl std::fmt::Debug for RunStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeWorkflowRunInput {
     /// <p>The name of the workflow to resume.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run to resume.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
+    #[doc(hidden)]
     pub node_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResumeWorkflowRunInput {
@@ -34901,8 +35038,10 @@ impl std::fmt::Debug for ResumeWorkflowRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetJobBookmarkInput {
     /// <p>The name of the job in question.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The unique run identifier associated with this job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl ResetJobBookmarkInput {
@@ -34929,12 +35068,16 @@ impl std::fmt::Debug for ResetJobBookmarkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSchemaVersionMetadataInput {
     /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>The unique version ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
+    #[doc(hidden)]
     pub metadata_key_value: std::option::Option<crate::model::MetadataKeyValuePair>,
 }
 impl RemoveSchemaVersionMetadataInput {
@@ -34975,8 +35118,10 @@ pub struct RegisterSchemaVersionInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl RegisterSchemaVersionInput {
@@ -35007,16 +35152,22 @@ impl std::fmt::Debug for RegisterSchemaVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuerySchemaVersionMetadataInput {
     /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>The unique version ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
+    #[doc(hidden)]
     pub metadata_list: std::option::Option<std::vec::Vec<crate::model::MetadataKeyValuePair>>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl QuerySchemaVersionMetadataInput {
@@ -35063,10 +35214,13 @@ impl std::fmt::Debug for QuerySchemaVersionMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The properties to put for the specified run.</p>
+    #[doc(hidden)]
     pub run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35102,12 +35256,16 @@ impl std::fmt::Debug for PutWorkflowRunPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSchemaVersionMetadataInput {
     /// <p>The unique ID for the schema.</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>The unique version ID of the schema version.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The metadata key's corresponding value.</p>
+    #[doc(hidden)]
     pub metadata_key_value: std::option::Option<crate::model::MetadataKeyValuePair>,
 }
 impl PutSchemaVersionMetadataInput {
@@ -35144,12 +35302,16 @@ impl std::fmt::Debug for PutSchemaVersionMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>Contains the policy document to set, in JSON format.</p>
+    #[doc(hidden)]
     pub policy_in_json: std::option::Option<std::string::String>,
     /// <p>Do not use. For internal use only.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
+    #[doc(hidden)]
     pub policy_hash_condition: std::option::Option<std::string::String>,
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
+    #[doc(hidden)]
     pub policy_exists_condition: std::option::Option<crate::model::ExistCondition>,
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
@@ -35157,6 +35319,7 @@ pub struct PutResourcePolicyInput {
     /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    #[doc(hidden)]
     pub enable_hybrid: std::option::Option<crate::model::EnableHybridValues>,
 }
 impl PutResourcePolicyInput {
@@ -35203,8 +35366,10 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The security configuration to set.</p>
+    #[doc(hidden)]
     pub data_catalog_encryption_settings:
         std::option::Option<crate::model::DataCatalogEncryptionSettings>,
 }
@@ -35237,8 +35402,10 @@ impl std::fmt::Debug for PutDataCatalogEncryptionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkflowsInput {
@@ -35265,12 +35432,16 @@ impl std::fmt::Debug for ListWorkflowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTriggersInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    #[doc(hidden)]
     pub dependent_job_name: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies to return only these tagged resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35311,10 +35482,13 @@ impl std::fmt::Debug for ListTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStatementsInput {
     /// <p>The Session ID of the statements.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The origin of the request to list statements.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStatementsInput {
@@ -35346,13 +35520,17 @@ impl std::fmt::Debug for ListStatementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSessionsInput {
     /// <p>The token for the next set of results, or null if there are no more result. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Tags belonging to the session. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The origin of the request. </p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl ListSessionsInput {
@@ -35396,10 +35574,13 @@ pub struct ListSchemaVersionsInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemaVersionsInput {
@@ -35435,10 +35616,13 @@ impl std::fmt::Debug for ListSchemaVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemasInput {
@@ -35470,8 +35654,10 @@ impl std::fmt::Debug for ListSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegistriesInput {
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRegistriesInput {
@@ -35498,14 +35684,19 @@ impl std::fmt::Debug for ListRegistriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMlTransformsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::TransformFilterCriteria>,
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::TransformSortCriteria>,
     /// <p>Specifies to return only these tagged resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35551,10 +35742,13 @@ impl std::fmt::Debug for ListMlTransformsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies to return only these tagged resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35590,10 +35784,13 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevEndpointsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies to return only these tagged resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35629,8 +35826,10 @@ impl std::fmt::Debug for ListDevEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomEntityTypesInput {
     /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCustomEntityTypesInput {
@@ -35657,12 +35856,16 @@ impl std::fmt::Debug for ListCustomEntityTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlsInput {
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
+    #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::CrawlsFilter>>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrawlsInput {
@@ -35699,10 +35902,13 @@ impl std::fmt::Debug for ListCrawlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlersInput {
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies to return only these tagged resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35738,10 +35944,13 @@ impl std::fmt::Debug for ListCrawlersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBlueprintsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -35777,6 +35986,7 @@ impl std::fmt::Debug for ListBlueprintsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCatalogToGlueInput {
     /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl ImportCatalogToGlueInput {
@@ -35798,12 +36008,16 @@ impl std::fmt::Debug for ImportCatalogToGlueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunsInput {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    #[doc(hidden)]
     pub include_graph: std::option::Option<bool>,
     /// <p>The maximum size of the response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workflow runs to be included in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetWorkflowRunsInput {
@@ -35840,8 +36054,10 @@ impl std::fmt::Debug for GetWorkflowRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowRunPropertiesInput {
@@ -35868,10 +36084,13 @@ impl std::fmt::Debug for GetWorkflowRunPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowRunInput {
     /// <p>Name of the workflow being run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the workflow run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    #[doc(hidden)]
     pub include_graph: std::option::Option<bool>,
 }
 impl GetWorkflowRunInput {
@@ -35903,8 +36122,10 @@ impl std::fmt::Debug for GetWorkflowRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowInput {
     /// <p>The name of the workflow to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    #[doc(hidden)]
     pub include_graph: std::option::Option<bool>,
 }
 impl GetWorkflowInput {
@@ -35931,14 +36152,19 @@ impl std::fmt::Debug for GetWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionsInput {
     /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of functions to return in one response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetUserDefinedFunctionsInput {
@@ -35980,10 +36206,13 @@ impl std::fmt::Debug for GetUserDefinedFunctionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the function is located.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the function.</p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetUserDefinedFunctionInput {
@@ -36015,14 +36244,19 @@ impl std::fmt::Debug for GetUserDefinedFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredTableMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure containing information for audit.</p>
+    #[doc(hidden)]
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
@@ -36070,23 +36304,32 @@ impl std::fmt::Debug for GetUnfilteredTableMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredPartitionsMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A structure containing information for audit.</p>
+    #[doc(hidden)]
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<crate::model::Segment>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetUnfilteredPartitionsMetadataInput {
@@ -36153,16 +36396,22 @@ impl std::fmt::Debug for GetUnfilteredPartitionsMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUnfilteredPartitionMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A structure containing information for audit.</p>
+    #[doc(hidden)]
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub supported_permission_types:
         std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
@@ -36215,10 +36464,13 @@ impl std::fmt::Debug for GetUnfilteredPartitionMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggersInput {
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
+    #[doc(hidden)]
     pub dependent_job_name: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetTriggersInput {
@@ -36250,6 +36502,7 @@ impl std::fmt::Debug for GetTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggerInput {
     /// <p>The name of the trigger to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetTriggerInput {
@@ -36271,6 +36524,7 @@ impl std::fmt::Debug for GetTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetTagsInput {
@@ -36292,14 +36546,19 @@ impl std::fmt::Debug for GetTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionsInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is not the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of table versions to return in one response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetTableVersionsInput {
@@ -36341,12 +36600,16 @@ impl std::fmt::Debug for GetTableVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl GetTableVersionInput {
@@ -36383,18 +36646,25 @@ impl std::fmt::Debug for GetTableVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTablesInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The transaction ID at which to read the table contents.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    #[doc(hidden)]
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTablesInput {
@@ -36446,14 +36716,19 @@ impl std::fmt::Debug for GetTablesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The transaction ID at which to read the table contents. </p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    #[doc(hidden)]
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTableInput {
@@ -36495,10 +36770,13 @@ impl std::fmt::Debug for GetTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStatementInput {
     /// <p>The Session ID of the statement.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The Id of the statement.</p>
+    #[doc(hidden)]
     pub id: i32,
     /// <p>The origin of the request.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl GetStatementInput {
@@ -36530,8 +36808,10 @@ impl std::fmt::Debug for GetStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionInput {
     /// <p>The ID of the session. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The origin of the request. </p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl GetSessionInput {
@@ -36558,8 +36838,10 @@ impl std::fmt::Debug for GetSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecurityConfigurationsInput {
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationsInput {
@@ -36586,6 +36868,7 @@ impl std::fmt::Debug for GetSecurityConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecurityConfigurationInput {
     /// <p>The name of the security configuration to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationInput {
@@ -36611,12 +36894,16 @@ pub struct GetSchemaVersionsDiffInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The first of the two schema versions to be compared.</p>
+    #[doc(hidden)]
     pub first_schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>The second of the two schema versions to be compared.</p>
+    #[doc(hidden)]
     pub second_schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
+    #[doc(hidden)]
     pub schema_diff_type: std::option::Option<crate::model::SchemaDiffType>,
 }
 impl GetSchemaVersionsDiffInput {
@@ -36671,10 +36958,13 @@ pub struct GetSchemaVersionInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
+    #[doc(hidden)]
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version_number: std::option::Option<crate::model::SchemaVersionNumber>,
 }
 impl GetSchemaVersionInput {
@@ -36714,8 +37004,10 @@ pub struct GetSchemaByDefinitionInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The definition of the schema for which schema details are required.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl GetSchemaByDefinitionInput {
@@ -36750,6 +37042,7 @@ pub struct GetSchemaInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
 }
 impl GetSchemaInput {
@@ -36775,6 +37068,7 @@ impl std::fmt::Debug for GetSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -36796,8 +37090,10 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesInput {
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourcePoliciesInput {
@@ -36824,6 +37120,7 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<crate::model::RegistryId>,
 }
 impl GetRegistryInput {
@@ -36845,20 +37142,26 @@ impl std::fmt::Debug for GetRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlanInput {
     /// <p>The list of mappings from a source table to target tables.</p>
+    #[doc(hidden)]
     pub mapping: std::option::Option<std::vec::Vec<crate::model::MappingEntry>>,
     /// <p>The source table.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::CatalogEntry>,
     /// <p>The target tables.</p>
+    #[doc(hidden)]
     pub sinks: std::option::Option<std::vec::Vec<crate::model::CatalogEntry>>,
     /// <p>The parameters for the mapping.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The programming language of the code to perform the mapping.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::Language>,
     /// <p>A map to hold additional optional key-value parameters.</p>
     /// <p>Currently, these key-value pairs are supported:</p>
     /// <ul>
     /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub additional_plan_options_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -36916,10 +37219,13 @@ impl std::fmt::Debug for GetPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionsInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>An expression that filters the partitions to be returned.</p>
     /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
@@ -36990,18 +37296,25 @@ pub struct GetPartitionsInput {
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
     /// <p> <i>Sample API Call</i>: </p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The segment of the table's partitions to scan in this request.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<crate::model::Segment>,
     /// <p>The maximum number of partitions to return in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
+    #[doc(hidden)]
     pub exclude_column_schema: std::option::Option<bool>,
     /// <p>The transaction ID at which to read the partition contents.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    #[doc(hidden)]
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPartitionsInput {
@@ -37136,12 +37449,16 @@ impl std::fmt::Debug for GetPartitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionIndexesInput {
     /// <p>The catalog ID where the table resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPartitionIndexesInput {
@@ -37178,12 +37495,16 @@ impl std::fmt::Debug for GetPartitionIndexesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionInput {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partition resides.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partition's table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The values that define the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetPartitionInput {
@@ -37220,12 +37541,16 @@ impl std::fmt::Debug for GetPartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformsInput {
     /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filter transformation criteria.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::TransformFilterCriteria>,
     /// <p>The sorting criteria.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::TransformSortCriteria>,
 }
 impl GetMlTransformsInput {
@@ -37262,6 +37587,7 @@ impl std::fmt::Debug for GetMlTransformsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformInput {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl GetMlTransformInput {
@@ -37283,14 +37609,19 @@ impl std::fmt::Debug for GetMlTransformInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTaskRunsInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>A token for pagination of the results. The default is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::TaskRunFilterCriteria>,
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::TaskRunSortCriteria>,
 }
 impl GetMlTaskRunsInput {
@@ -37332,8 +37663,10 @@ impl std::fmt::Debug for GetMlTaskRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl GetMlTaskRunInput {
@@ -37360,10 +37693,13 @@ impl std::fmt::Debug for GetMlTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMappingInput {
     /// <p>Specifies the source table.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::CatalogEntry>,
     /// <p>A list of target tables.</p>
+    #[doc(hidden)]
     pub sinks: std::option::Option<std::vec::Vec<crate::model::CatalogEntry>>,
     /// <p>Parameters for the mapping.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
 }
 impl GetMappingInput {
@@ -37395,8 +37731,10 @@ impl std::fmt::Debug for GetMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetJobsInput {
@@ -37423,10 +37761,13 @@ impl std::fmt::Debug for GetJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunsInput {
     /// <p>The name of the job definition for which to retrieve all job runs.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetJobRunsInput {
@@ -37458,10 +37799,13 @@ impl std::fmt::Debug for GetJobRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunInput {
     /// <p>Name of the job definition being run.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
     /// <p>True if a list of predecessor runs should be returned.</p>
+    #[doc(hidden)]
     pub predecessors_included: bool,
 }
 impl GetJobRunInput {
@@ -37493,8 +37837,10 @@ impl std::fmt::Debug for GetJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobBookmarkInput {
     /// <p>The name of the job in question.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The unique run identifier associated with this job run.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl GetJobBookmarkInput {
@@ -37521,6 +37867,7 @@ impl std::fmt::Debug for GetJobBookmarkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobInput {
     /// <p>The name of the job definition to retrieve.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
@@ -37542,8 +37889,10 @@ impl std::fmt::Debug for GetJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevEndpointsInput {
     /// <p>The maximum size of information to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevEndpointsInput {
@@ -37570,6 +37919,7 @@ impl std::fmt::Debug for GetDevEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevEndpointInput {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl GetDevEndpointInput {
@@ -37591,6 +37941,7 @@ impl std::fmt::Debug for GetDevEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataflowGraphInput {
     /// <p>The Python script to transform.</p>
+    #[doc(hidden)]
     pub python_script: std::option::Option<std::string::String>,
 }
 impl GetDataflowGraphInput {
@@ -37612,6 +37963,7 @@ impl std::fmt::Debug for GetDataflowGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetDataCatalogEncryptionSettingsInput {
@@ -37633,16 +37985,20 @@ impl std::fmt::Debug for GetDataCatalogEncryptionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabasesInput {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of databases to return in one response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
 impl GetDatabasesInput {
@@ -37683,8 +38039,10 @@ impl std::fmt::Debug for GetDatabasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabaseInput {
     /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDatabaseInput {
@@ -37711,6 +38069,7 @@ impl std::fmt::Debug for GetDatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomEntityTypeInput {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCustomEntityTypeInput {
@@ -37732,8 +38091,10 @@ impl std::fmt::Debug for GetCustomEntityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlersInput {
     /// <p>The number of crawlers to return on each call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlersInput {
@@ -37760,10 +38121,13 @@ impl std::fmt::Debug for GetCrawlersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlerMetricsInput {
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
+    #[doc(hidden)]
     pub crawler_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlerMetricsInput {
@@ -37795,6 +38159,7 @@ impl std::fmt::Debug for GetCrawlerMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlerInput {
     /// <p>The name of the crawler to retrieve metadata for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCrawlerInput {
@@ -37816,14 +38181,19 @@ impl std::fmt::Debug for GetCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsInput {
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A filter that controls which connections are returned.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::GetConnectionsFilter>,
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    #[doc(hidden)]
     pub hide_password: bool,
     /// <p>A continuation token, if this is a continuation call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of connections to return in one response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetConnectionsInput {
@@ -37865,10 +38235,13 @@ impl std::fmt::Debug for GetConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection definition to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    #[doc(hidden)]
     pub hide_password: bool,
 }
 impl GetConnectionInput {
@@ -37900,12 +38273,16 @@ impl std::fmt::Debug for GetConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the column names.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetColumnStatisticsForTableInput {
@@ -37942,14 +38319,19 @@ impl std::fmt::Debug for GetColumnStatisticsForTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of partition values identifying the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the column names.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetColumnStatisticsForPartitionInput {
@@ -37991,8 +38373,10 @@ impl std::fmt::Debug for GetColumnStatisticsForPartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifiersInput {
     /// <p>The size of the list to return (optional).</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional continuation token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetClassifiersInput {
@@ -38019,6 +38403,7 @@ impl std::fmt::Debug for GetClassifiersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifierInput {
     /// <p>Name of the classifier to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetClassifierInput {
@@ -38040,6 +38425,7 @@ impl std::fmt::Debug for GetClassifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCatalogImportStatusInput {
     /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetCatalogImportStatusInput {
@@ -38061,10 +38447,13 @@ impl std::fmt::Debug for GetCatalogImportStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintRunsInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetBlueprintRunsInput {
@@ -38096,8 +38485,10 @@ impl std::fmt::Debug for GetBlueprintRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintRunInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
+    #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl GetBlueprintRunInput {
@@ -38124,10 +38515,13 @@ impl std::fmt::Debug for GetBlueprintRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    #[doc(hidden)]
     pub include_blueprint: std::option::Option<bool>,
     /// <p>Specifies whether or not to include the parameter specification.</p>
+    #[doc(hidden)]
     pub include_parameter_spec: std::option::Option<bool>,
 }
 impl GetBlueprintInput {
@@ -38159,6 +38553,7 @@ impl std::fmt::Debug for GetBlueprintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowInput {
     /// <p>Name of the workflow to be deleted.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowInput {
@@ -38180,10 +38575,13 @@ impl std::fmt::Debug for DeleteWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the function is located.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the function definition to be deleted.</p>
+    #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserDefinedFunctionInput {
@@ -38215,6 +38613,7 @@ impl std::fmt::Debug for DeleteUserDefinedFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTriggerInput {
     /// <p>The name of the trigger to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTriggerInput {
@@ -38236,12 +38635,16 @@ impl std::fmt::Debug for DeleteTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableVersionInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl DeleteTableVersionInput {
@@ -38278,12 +38681,16 @@ impl std::fmt::Debug for DeleteTableVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The transaction ID at which to delete the table contents.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl DeleteTableInput {
@@ -38320,8 +38727,10 @@ impl std::fmt::Debug for DeleteTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionInput {
     /// <p>The ID of the session to be deleted.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the origin of the delete session request.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl DeleteSessionInput {
@@ -38348,6 +38757,7 @@ impl std::fmt::Debug for DeleteSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteSecurityConfigurationInput {
@@ -38369,12 +38779,14 @@ impl std::fmt::Debug for DeleteSecurityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaVersionsInput {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
     /// <li> <p>a single version number, 5</p> </li>
     /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaVersionsInput {
@@ -38405,6 +38817,7 @@ impl std::fmt::Debug for DeleteSchemaVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaInput {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub schema_id: std::option::Option<crate::model::SchemaId>,
 }
 impl DeleteSchemaInput {
@@ -38426,8 +38839,10 @@ impl std::fmt::Debug for DeleteSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The hash value returned when this policy was set.</p>
+    #[doc(hidden)]
     pub policy_hash_condition: std::option::Option<std::string::String>,
     /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -38454,6 +38869,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<crate::model::RegistryId>,
 }
 impl DeleteRegistryInput {
@@ -38475,12 +38891,16 @@ impl std::fmt::Debug for DeleteRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the partition index to be deleted.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl DeletePartitionIndexInput {
@@ -38517,12 +38937,16 @@ impl std::fmt::Debug for DeletePartitionIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the table in question resides.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the partition to be deleted.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The values that define the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeletePartitionInput {
@@ -38559,6 +38983,7 @@ impl std::fmt::Debug for DeletePartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMlTransformInput {
     /// <p>The unique identifier of the transform to delete.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlTransformInput {
@@ -38580,6 +39005,7 @@ impl std::fmt::Debug for DeleteMlTransformInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobInput {
     /// <p>The name of the job definition to delete.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl DeleteJobInput {
@@ -38601,6 +39027,7 @@ impl std::fmt::Debug for DeleteJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteDevEndpointInput {
@@ -38622,8 +39049,10 @@ impl std::fmt::Debug for DeleteDevEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatabaseInput {
     /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDatabaseInput {
@@ -38650,6 +39079,7 @@ impl std::fmt::Debug for DeleteDatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomEntityTypeInput {
     /// <p>The name of the custom pattern that you want to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteCustomEntityTypeInput {
@@ -38671,6 +39101,7 @@ impl std::fmt::Debug for DeleteCustomEntityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCrawlerInput {
     /// <p>The name of the crawler to remove.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteCrawlerInput {
@@ -38692,8 +39123,10 @@ impl std::fmt::Debug for DeleteCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection to delete.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -38720,12 +39153,16 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
 }
 impl DeleteColumnStatisticsForTableInput {
@@ -38762,14 +39199,19 @@ impl std::fmt::Debug for DeleteColumnStatisticsForTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteColumnStatisticsForPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of partition values identifying the partition.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Name of the column.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
 }
 impl DeleteColumnStatisticsForPartitionInput {
@@ -38811,6 +39253,7 @@ impl std::fmt::Debug for DeleteColumnStatisticsForPartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClassifierInput {
     /// <p>Name of the classifier to remove.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteClassifierInput {
@@ -38832,6 +39275,7 @@ impl std::fmt::Debug for DeleteClassifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBlueprintInput {
     /// <p>The name of the blueprint to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteBlueprintInput {
@@ -38853,16 +39297,21 @@ impl std::fmt::Debug for DeleteBlueprintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkflowInput {
     /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    #[doc(hidden)]
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags to be used with this workflow.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    #[doc(hidden)]
     pub max_concurrent_runs: std::option::Option<i32>,
 }
 impl CreateWorkflowInput {
@@ -38910,10 +39359,13 @@ impl std::fmt::Debug for CreateWorkflowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which to create the function.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
+    #[doc(hidden)]
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
 }
 impl CreateUserDefinedFunctionInput {
@@ -38945,27 +39397,37 @@ impl std::fmt::Debug for CreateUserDefinedFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTriggerInput {
     /// <p>The name of the trigger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the workflow associated with the trigger.</p>
+    #[doc(hidden)]
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>The type of the new trigger.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TriggerType>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
+    #[doc(hidden)]
     pub predicate: std::option::Option<crate::model::Predicate>,
     /// <p>The actions initiated by this trigger when it fires.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>A description of the new trigger.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    #[doc(hidden)]
     pub start_on_creation: bool,
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    #[doc(hidden)]
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl CreateTriggerInput {
@@ -39039,14 +39501,19 @@ impl std::fmt::Debug for CreateTriggerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableInput {
     /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
+    #[doc(hidden)]
     pub table_input: std::option::Option<crate::model::TableInput>,
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
+    #[doc(hidden)]
     pub partition_indexes: std::option::Option<std::vec::Vec<crate::model::PartitionIndex>>,
     /// <p>The ID of the transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CreateTableInput {
@@ -39088,25 +39555,35 @@ impl std::fmt::Debug for CreateTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSessionInput {
     /// <p>The ID of the session request. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the session. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The IAM Role ARN </p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::SessionCommand>,
     /// <p>The number of seconds before request times out. </p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The number of seconds when idle before request times out. </p>
+    #[doc(hidden)]
     pub idle_timeout: std::option::Option<i32>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    #[doc(hidden)]
     pub default_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of connections to use for the session. </p>
+    #[doc(hidden)]
     pub connections: std::option::Option<crate::model::ConnectionsList>,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -39115,15 +39592,20 @@ pub struct CreateSessionInput {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The origin of the request. </p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl CreateSessionInput {
@@ -39227,8 +39709,10 @@ impl std::fmt::Debug for CreateSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityConfigurationInput {
     /// <p>The name for the new security configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The encryption configuration for the new security configuration.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateSecurityConfigurationInput {
@@ -39257,10 +39741,13 @@ impl std::fmt::Debug for CreateSecurityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptInput {
     /// <p>A list of the nodes in the DAG.</p>
+    #[doc(hidden)]
     pub dag_nodes: std::option::Option<std::vec::Vec<crate::model::CodeGenNode>>,
     /// <p>A list of the edges in the DAG.</p>
+    #[doc(hidden)]
     pub dag_edges: std::option::Option<std::vec::Vec<crate::model::CodeGenEdge>>,
     /// <p>The programming language of the resulting code from the DAG.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::Language>,
 }
 impl CreateScriptInput {
@@ -39295,10 +39782,13 @@ pub struct CreateSchemaInput {
     /// <customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The compatibility mode of the schema. The possible values are:</p>
     /// <ul>
@@ -39311,13 +39801,17 @@ pub struct CreateSchemaInput {
     /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
     /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub compatibility: std::option::Option<crate::model::Compatibility>,
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl CreateSchemaInput {
@@ -39385,10 +39879,13 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegistryInput {
     /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -39424,12 +39921,16 @@ impl std::fmt::Debug for CreateRegistryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    #[doc(hidden)]
     pub partition_index: std::option::Option<crate::model::PartitionIndex>,
 }
 impl CreatePartitionIndexInput {
@@ -39466,12 +39967,16 @@ impl std::fmt::Debug for CreatePartitionIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartitionInput {
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be created.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+    #[doc(hidden)]
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
 }
 impl CreatePartitionInput {
@@ -39508,20 +40013,26 @@ impl std::fmt::Debug for CreatePartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMlTransformInput {
     /// <p>The unique name that you give the transform when you create it.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of Glue table definitions used by the transform.</p>
+    #[doc(hidden)]
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
     /// <ul>
     /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
     /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
@@ -39533,6 +40044,7 @@ pub struct CreateMlTransformInput {
     /// </ul>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -39547,18 +40059,24 @@ pub struct CreateMlTransformInput {
     /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i32>,
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    #[doc(hidden)]
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl CreateMlTransformInput {
@@ -39669,36 +40187,48 @@ impl std::fmt::Debug for CreateMlTransformInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// <p>The name you assign to this job definition. It must be unique in your account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the job being defined.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>This field is reserved for future use.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
+    #[doc(hidden)]
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    #[doc(hidden)]
     pub default_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    #[doc(hidden)]
     pub non_overridable_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The connections used for this job.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<crate::model::ConnectionsList>,
     /// <p>The maximum number of times to retry this job if it fails.</p>
+    #[doc(hidden)]
     pub max_retries: i32,
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
+    #[doc(hidden)]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -39708,19 +40238,25 @@ pub struct CreateJobInput {
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies configuration properties of a job notification.</p>
+    #[doc(hidden)]
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
@@ -39729,14 +40265,17 @@ pub struct CreateJobInput {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    #[doc(hidden)]
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl CreateJobInput {
@@ -39899,20 +40438,27 @@ impl std::fmt::Debug for CreateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDevEndpointInput {
     /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
     /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
+    #[doc(hidden)]
     pub public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -39921,27 +40467,35 @@ pub struct CreateDevEndpointInput {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    #[doc(hidden)]
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    #[doc(hidden)]
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
     /// </note>
+    #[doc(hidden)]
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    #[doc(hidden)]
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40054,10 +40608,13 @@ impl std::fmt::Debug for CreateDevEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatabaseInput {
     /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The metadata for the database.</p>
+    #[doc(hidden)]
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
     /// <p>The tags you assign to the database.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40093,11 +40650,14 @@ impl std::fmt::Debug for CreateDatabaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomEntityTypeInput {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    #[doc(hidden)]
     pub regex_string: std::option::Option<std::string::String>,
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
+    #[doc(hidden)]
     pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateCustomEntityTypeInput {
@@ -40130,34 +40690,49 @@ impl std::fmt::Debug for CreateCustomEntityTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the new crawler.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of collection of targets to crawl.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+    #[doc(hidden)]
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The table prefix used for catalog tables that are created.</p>
+    #[doc(hidden)]
     pub table_prefix: std::option::Option<std::string::String>,
     /// <p>The policy for the crawler's update and deletion behavior.</p>
+    #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::model::SchemaChangePolicy>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    #[doc(hidden)]
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
+    #[doc(hidden)]
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
+    #[doc(hidden)]
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    #[doc(hidden)]
     pub crawler_security_configuration: std::option::Option<std::string::String>,
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40263,10 +40838,13 @@ impl std::fmt::Debug for CreateCrawlerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+    #[doc(hidden)]
     pub connection_input: std::option::Option<crate::model::ConnectionInput>,
     /// <p>The tags you assign to the connection.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40302,12 +40880,16 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClassifierInput {
     /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+    #[doc(hidden)]
     pub grok_classifier: std::option::Option<crate::model::CreateGrokClassifierRequest>,
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+    #[doc(hidden)]
     pub xml_classifier: std::option::Option<crate::model::CreateXmlClassifierRequest>,
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+    #[doc(hidden)]
     pub json_classifier: std::option::Option<crate::model::CreateJsonClassifierRequest>,
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+    #[doc(hidden)]
     pub csv_classifier: std::option::Option<crate::model::CreateCsvClassifierRequest>,
 }
 impl CreateClassifierInput {
@@ -40348,12 +40930,16 @@ impl std::fmt::Debug for CreateClassifierInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBlueprintInput {
     /// <p>The name of the blueprint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the blueprint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    #[doc(hidden)]
     pub blueprint_location: std::option::Option<std::string::String>,
     /// <p>The tags to be applied to this blueprint.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -40394,8 +40980,10 @@ impl std::fmt::Debug for CreateBlueprintInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckSchemaVersionValidityInput {
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    #[doc(hidden)]
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The definition of the schema that has to be validated.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl CheckSchemaVersionValidityInput {
@@ -40422,10 +41010,13 @@ impl std::fmt::Debug for CheckSchemaVersionValidityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStatementInput {
     /// <p>The Session ID of the statement to be cancelled.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The ID of the statement to be cancelled.</p>
+    #[doc(hidden)]
     pub id: i32,
     /// <p>The origin of the request to cancel the statement.</p>
+    #[doc(hidden)]
     pub request_origin: std::option::Option<std::string::String>,
 }
 impl CancelStatementInput {
@@ -40457,8 +41048,10 @@ impl std::fmt::Debug for CancelStatementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
+    #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the task run.</p>
+    #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
 }
 impl CancelMlTaskRunInput {
@@ -40485,12 +41078,16 @@ impl std::fmt::Debug for CancelMlTaskRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionRequestEntry>>,
 }
 impl BatchUpdatePartitionInput {
@@ -40529,8 +41126,10 @@ impl std::fmt::Debug for BatchUpdatePartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopJobRunInput {
     /// <p>The name of the job definition for which to stop job runs.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
+    #[doc(hidden)]
     pub job_run_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchStopJobRunInput {
@@ -40557,8 +41156,10 @@ impl std::fmt::Debug for BatchStopJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetWorkflowsInput {
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    #[doc(hidden)]
     pub include_graph: std::option::Option<bool>,
 }
 impl BatchGetWorkflowsInput {
@@ -40585,6 +41186,7 @@ impl std::fmt::Debug for BatchGetWorkflowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetTriggersInput {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
+    #[doc(hidden)]
     pub trigger_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetTriggersInput {
@@ -40606,12 +41208,16 @@ impl std::fmt::Debug for BatchGetTriggersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
+    #[doc(hidden)]
     pub partitions_to_get: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchGetPartitionInput {
@@ -40648,6 +41254,7 @@ impl std::fmt::Debug for BatchGetPartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetJobsInput {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
+    #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetJobsInput {
@@ -40669,6 +41276,7 @@ impl std::fmt::Debug for BatchGetJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevEndpointsInput {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
+    #[doc(hidden)]
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevEndpointsInput {
@@ -40690,6 +41298,7 @@ impl std::fmt::Debug for BatchGetDevEndpointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCustomEntityTypesInput {
     /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomEntityTypesInput {
@@ -40711,6 +41320,7 @@ impl std::fmt::Debug for BatchGetCustomEntityTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCrawlersInput {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
+    #[doc(hidden)]
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCrawlersInput {
@@ -40732,10 +41342,13 @@ impl std::fmt::Debug for BatchGetCrawlersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBlueprintsInput {
     /// <p>A list of blueprint names.</p>
+    #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
+    #[doc(hidden)]
     pub include_blueprint: std::option::Option<bool>,
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
+    #[doc(hidden)]
     pub include_parameter_spec: std::option::Option<bool>,
 }
 impl BatchGetBlueprintsInput {
@@ -40767,12 +41380,16 @@ impl std::fmt::Debug for BatchGetBlueprintsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableVersionInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    #[doc(hidden)]
     pub version_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteTableVersionInput {
@@ -40809,12 +41426,16 @@ impl std::fmt::Debug for BatchDeleteTableVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A list of the table to delete.</p>
+    #[doc(hidden)]
     pub tables_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The transaction ID at which to delete the table contents.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl BatchDeleteTableInput {
@@ -40851,12 +41472,16 @@ impl std::fmt::Debug for BatchDeleteTableInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeletePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which the table in question resides.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the partitions to be deleted.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
+    #[doc(hidden)]
     pub partitions_to_delete: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchDeletePartitionInput {
@@ -40893,8 +41518,10 @@ impl std::fmt::Debug for BatchDeletePartitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteConnectionInput {
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of names of the connections to delete.</p>
+    #[doc(hidden)]
     pub connection_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteConnectionInput {
@@ -40921,12 +41548,16 @@ impl std::fmt::Debug for BatchDeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be created.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
+    #[doc(hidden)]
     pub partition_input_list: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
 }
 impl BatchCreatePartitionInput {

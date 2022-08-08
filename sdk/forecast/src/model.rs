@@ -15,8 +15,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -88,14 +90,19 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorSummary {
     /// <p>The ARN of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor.</p>
+    #[doc(hidden)]
     pub predictor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>Whether AutoPredictor was used to create the predictor.</p>
+    #[doc(hidden)]
     pub is_auto_predictor: std::option::Option<bool>,
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
+    #[doc(hidden)]
     pub reference_predictor_summary: std::option::Option<crate::model::ReferencePredictorSummary>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
@@ -106,10 +113,13 @@ pub struct PredictorSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the model training task was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -119,6 +129,7 @@ pub struct PredictorSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictorSummary {
@@ -381,8 +392,10 @@ impl PredictorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferencePredictorSummary {
     /// <p>The ARN of the reference predictor.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
 }
 impl ReferencePredictorSummary {
@@ -509,10 +522,13 @@ impl AsRef<str> for State {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the parameter to filter on.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value to match.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterConditionString>,
 }
 impl Filter {
@@ -659,10 +675,13 @@ impl AsRef<str> for FilterConditionString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorBacktestExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor backtest export job.</p>
+    #[doc(hidden)]
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
@@ -671,10 +690,13 @@ pub struct PredictorBacktestExportJobSummary {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the predictor backtest export job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -684,6 +706,7 @@ pub struct PredictorBacktestExportJobSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictorBacktestExportJobSummary {
@@ -906,6 +929,7 @@ impl PredictorBacktestExportJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+    #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
 }
 impl DataDestination {
@@ -960,11 +984,14 @@ impl DataDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3Config {
@@ -1056,10 +1083,13 @@ impl S3Config {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorSummary {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
@@ -1069,8 +1099,10 @@ pub struct MonitorSummary {
     /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>When the monitor resource was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -1079,6 +1111,7 @@ pub struct MonitorSummary {
     /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MonitorSummary {
@@ -1263,26 +1296,37 @@ impl MonitorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorMonitorEvaluation {
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+    #[doc(hidden)]
     pub evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+    #[doc(hidden)]
     pub evaluation_state: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+    #[doc(hidden)]
     pub window_start_datetime: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+    #[doc(hidden)]
     pub window_end_datetime: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides details about a predictor event, such as a retraining.</p>
+    #[doc(hidden)]
     pub predictor_event: std::option::Option<crate::model::PredictorEvent>,
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
+    #[doc(hidden)]
     pub monitor_data_source: std::option::Option<crate::model::MonitorDataSource>,
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+    #[doc(hidden)]
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::MetricResult>>,
     /// <p>The number of items considered during the evaluation.</p>
+    #[doc(hidden)]
     pub num_items_evaluated: std::option::Option<i64>,
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PredictorMonitorEvaluation {
@@ -1535,8 +1579,10 @@ impl PredictorMonitorEvaluation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricResult {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The value for the metric.</p>
+    #[doc(hidden)]
     pub metric_value: std::option::Option<f64>,
 }
 impl MetricResult {
@@ -1608,10 +1654,13 @@ impl MetricResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorDataSource {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl MonitorDataSource {
@@ -1706,8 +1755,10 @@ impl MonitorDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorEvent {
     /// <p>The type of event. For example, <code>Retrain</code>. A retraining event denotes the timepoint when a predictor was retrained. Any monitor results from before the <code>Datetime</code> are from the previous predictor. Any new metrics are for the newly retrained predictor.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the event occurred.</p>
+    #[doc(hidden)]
     pub datetime: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PredictorEvent {
@@ -1782,14 +1833,19 @@ impl PredictorEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastSummary {
     /// <p>The ARN of the forecast.</p>
+    #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The name of the forecast.</p>
+    #[doc(hidden)]
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
+    #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>Whether the Forecast was created from an AutoPredictor.</p>
+    #[doc(hidden)]
     pub created_using_auto_predictor: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
@@ -1800,10 +1856,13 @@ pub struct ForecastSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the forecast creation task was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -1813,6 +1872,7 @@ pub struct ForecastSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ForecastSummary {
@@ -2069,10 +2129,13 @@ impl ForecastSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the forecast export job.</p>
+    #[doc(hidden)]
     pub forecast_export_job_name: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
@@ -2083,10 +2146,13 @@ pub struct ForecastExportJobSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the forecast export job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -2096,6 +2162,7 @@ pub struct ForecastExportJobSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ForecastExportJobSummary {
@@ -2312,10 +2379,13 @@ impl ForecastExportJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    #[doc(hidden)]
     pub explainability_export_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability export</p>
+    #[doc(hidden)]
     pub explainability_export_name: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
@@ -2324,10 +2394,13 @@ pub struct ExplainabilityExportSummary {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Information about any errors that may have occurred during the Explainability export.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the Explainability was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -2337,6 +2410,7 @@ pub struct ExplainabilityExportSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExplainabilityExportSummary {
@@ -2550,12 +2624,16 @@ impl ExplainabilityExportSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilitySummary {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
@@ -2564,10 +2642,13 @@ pub struct ExplainabilitySummary {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Information about any errors that may have occurred during the Explainability creation process.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the Explainability was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -2577,6 +2658,7 @@ pub struct ExplainabilitySummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExplainabilitySummary {
@@ -2809,9 +2891,11 @@ impl ExplainabilitySummary {
 pub struct ExplainabilityConfig {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
+    #[doc(hidden)]
     pub time_series_granularity: std::option::Option<crate::model::TimeSeriesGranularity>,
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
+    #[doc(hidden)]
     pub time_point_granularity: std::option::Option<crate::model::TimePointGranularity>,
 }
 impl ExplainabilityConfig {
@@ -3013,16 +3097,22 @@ impl AsRef<str> for TimeSeriesGranularity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The dataset type.</p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p>The domain associated with the dataset.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>When the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
@@ -3313,11 +3403,14 @@ impl AsRef<str> for DatasetType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_name: std::option::Option<std::string::String>,
     /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
@@ -3326,10 +3419,13 @@ pub struct DatasetImportJobSummary {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>When the dataset import job was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -3339,6 +3435,7 @@ pub struct DatasetImportJobSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetImportJobSummary {
@@ -3552,6 +3649,7 @@ impl DatasetImportJobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
+    #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
 }
 impl DataSource {
@@ -3606,12 +3704,16 @@ impl DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
+    #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetGroupSummary {
@@ -3857,8 +3959,10 @@ impl AsRef<str> for AutoMlOverrideStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
+    #[doc(hidden)]
     pub test_windows: std::option::Option<std::vec::Vec<crate::model::WindowSummary>>,
 }
 impl EvaluationResult {
@@ -3943,18 +4047,23 @@ impl EvaluationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
+    #[doc(hidden)]
     pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that defines the end of the window.</p>
+    #[doc(hidden)]
     pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of data points within the window.</p>
+    #[doc(hidden)]
     pub item_count: std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
     /// <ul>
     /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub evaluation_type: std::option::Option<crate::model::EvaluationType>,
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<crate::model::Metrics>,
 }
 impl WindowSummary {
@@ -4101,13 +4210,17 @@ pub struct Metrics {
     #[deprecated(
         note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
     )]
+    #[doc(hidden)]
     pub rmse: std::option::Option<f64>,
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
+    #[doc(hidden)]
     pub weighted_quantile_losses:
         std::option::Option<std::vec::Vec<crate::model::WeightedQuantileLoss>>,
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    #[doc(hidden)]
     pub error_metrics: std::option::Option<std::vec::Vec<crate::model::ErrorMetric>>,
     /// <p>The average value of all weighted quantile losses.</p>
+    #[doc(hidden)]
     pub average_weighted_quantile_loss: std::option::Option<f64>,
 }
 impl Metrics {
@@ -4252,14 +4365,19 @@ impl Metrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorMetric {
     /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
+    #[doc(hidden)]
     pub forecast_type: std::option::Option<std::string::String>,
     /// <p> The weighted absolute percentage error (WAPE). </p>
+    #[doc(hidden)]
     pub wape: std::option::Option<f64>,
     /// <p> The root-mean-square error (RMSE). </p>
+    #[doc(hidden)]
     pub rmse: std::option::Option<f64>,
     /// <p>The Mean Absolute Scaled Error (MASE)</p>
+    #[doc(hidden)]
     pub mase: std::option::Option<f64>,
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
+    #[doc(hidden)]
     pub mape: std::option::Option<f64>,
 }
 impl ErrorMetric {
@@ -4385,8 +4503,10 @@ impl ErrorMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeightedQuantileLoss {
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+    #[doc(hidden)]
     pub quantile: std::option::Option<f64>,
     /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
+    #[doc(hidden)]
     pub loss_value: std::option::Option<f64>,
 }
 impl WeightedQuantileLoss {
@@ -4513,6 +4633,7 @@ impl AsRef<str> for EvaluationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+    #[doc(hidden)]
     pub predictor_executions: std::option::Option<std::vec::Vec<crate::model::PredictorExecution>>,
 }
 impl PredictorExecutionDetails {
@@ -4577,8 +4698,10 @@ impl PredictorExecutionDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+    #[doc(hidden)]
     pub test_windows: std::option::Option<std::vec::Vec<crate::model::TestWindowSummary>>,
 }
 impl PredictorExecution {
@@ -4663,8 +4786,10 @@ impl PredictorExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestWindowSummary {
     /// <p>The time at which the test began.</p>
+    #[doc(hidden)]
     pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the test ended.</p>
+    #[doc(hidden)]
     pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
@@ -4672,8 +4797,10 @@ pub struct TestWindowSummary {
     /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If the test failed, the reason why it failed.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TestWindowSummary {
@@ -4801,8 +4928,10 @@ impl TestWindowSummary {
 pub struct EncryptionConfig {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl EncryptionConfig {
@@ -4885,12 +5014,15 @@ pub struct FeaturizationConfig {
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+    #[doc(hidden)]
     pub forecast_frequency: std::option::Option<std::string::String>,
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
+    #[doc(hidden)]
     pub forecast_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
+    #[doc(hidden)]
     pub featurizations: std::option::Option<std::vec::Vec<crate::model::Featurization>>,
 }
 impl FeaturizationConfig {
@@ -5026,8 +5158,10 @@ impl FeaturizationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
+    #[doc(hidden)]
     pub featurization_pipeline:
         std::option::Option<std::vec::Vec<crate::model::FeaturizationMethod>>,
 }
@@ -5120,6 +5254,7 @@ impl Featurization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
+    #[doc(hidden)]
     pub featurization_method_name: std::option::Option<crate::model::FeaturizationMethodName>,
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
@@ -5136,6 +5271,7 @@ pub struct FeaturizationMethod {
     /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    #[doc(hidden)]
     pub featurization_method_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5336,8 +5472,10 @@ impl AsRef<str> for FeaturizationMethodName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
+    #[doc(hidden)]
     pub supplementary_features:
         std::option::Option<std::vec::Vec<crate::model::SupplementaryFeature>>,
 }
@@ -5432,6 +5570,7 @@ impl InputDataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupplementaryFeature {
     /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
@@ -5505,6 +5644,7 @@ pub struct SupplementaryFeature {
     /// <li> <p>"UY" - URUGUAY</p> </li>
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SupplementaryFeature {
@@ -5791,6 +5931,7 @@ impl SupplementaryFeature {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HyperParameterTuningJobConfig {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
+    #[doc(hidden)]
     pub parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
 }
 impl HyperParameterTuningJobConfig {
@@ -5848,12 +5989,15 @@ impl HyperParameterTuningJobConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
+    #[doc(hidden)]
     pub categorical_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
+    #[doc(hidden)]
     pub continuous_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::ContinuousParameterRange>>,
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
+    #[doc(hidden)]
     pub integer_parameter_ranges:
         std::option::Option<std::vec::Vec<crate::model::IntegerParameterRange>>,
 }
@@ -5994,10 +6138,13 @@ impl ParameterRanges {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum tunable value of the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: std::option::Option<i32>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: std::option::Option<i32>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
@@ -6029,6 +6176,7 @@ pub struct IntegerParameterRange {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    #[doc(hidden)]
     pub scaling_type: std::option::Option<crate::model::ScalingType>,
 }
 impl IntegerParameterRange {
@@ -6287,10 +6435,13 @@ impl AsRef<str> for ScalingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum tunable value of the hyperparameter.</p>
+    #[doc(hidden)]
     pub max_value: std::option::Option<f64>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
+    #[doc(hidden)]
     pub min_value: std::option::Option<f64>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
@@ -6322,6 +6473,7 @@ pub struct ContinuousParameterRange {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
+    #[doc(hidden)]
     pub scaling_type: std::option::Option<crate::model::ScalingType>,
 }
 impl ContinuousParameterRange {
@@ -6517,8 +6669,10 @@ impl ContinuousParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CategoricalParameterRange {
     /// <p>The name of the categorical hyperparameter to tune.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the tunable categories for the hyperparameter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CategoricalParameterRange {
@@ -6599,9 +6753,11 @@ impl CategoricalParameterRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationParameters {
     /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
+    #[doc(hidden)]
     pub number_of_backtest_windows: std::option::Option<i32>,
     /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
     /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
+    #[doc(hidden)]
     pub back_test_window_offset: std::option::Option<i32>,
 }
 impl EvaluationParameters {
@@ -6679,6 +6835,7 @@ impl EvaluationParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Baseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    #[doc(hidden)]
     pub predictor_baseline: std::option::Option<crate::model::PredictorBaseline>,
 }
 impl Baseline {
@@ -6736,6 +6893,7 @@ impl Baseline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorBaseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
+    #[doc(hidden)]
     pub baseline_metrics: std::option::Option<std::vec::Vec<crate::model::BaselineMetric>>,
 }
 impl PredictorBaseline {
@@ -6800,8 +6958,10 @@ impl PredictorBaseline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BaselineMetric {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value for the metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl BaselineMetric {
@@ -6879,6 +7039,7 @@ impl BaselineMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesSelector {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    #[doc(hidden)]
     pub time_series_identifiers: std::option::Option<crate::model::TimeSeriesIdentifiers>,
 }
 impl TimeSeriesSelector {
@@ -6942,10 +7103,13 @@ impl TimeSeriesSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeriesIdentifiers {
     /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>The format of the data, either CSV or PARQUET.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
 }
 impl TimeSeriesIdentifiers {
@@ -7037,6 +7201,7 @@ impl TimeSeriesIdentifiers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
 }
 impl Schema {
@@ -7100,9 +7265,11 @@ impl Schema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAttribute {
     /// <p>The name of the dataset field.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<crate::model::AttributeType>,
 }
 impl SchemaAttribute {
@@ -7250,28 +7417,40 @@ impl AsRef<str> for AttributeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
+    #[doc(hidden)]
     pub count_distinct: std::option::Option<i32>,
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
+    #[doc(hidden)]
     pub count_null: std::option::Option<i32>,
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
+    #[doc(hidden)]
     pub count_nan: std::option::Option<i32>,
     /// <p>For a numeric field, the minimum value in the field.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<std::string::String>,
     /// <p>For a numeric field, the maximum value in the field.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
     /// <p>For a numeric field, the average value in the field.</p>
+    #[doc(hidden)]
     pub avg: std::option::Option<f64>,
     /// <p>For a numeric field, the standard deviation.</p>
+    #[doc(hidden)]
     pub stddev: std::option::Option<f64>,
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
+    #[doc(hidden)]
     pub count_long: std::option::Option<i64>,
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
+    #[doc(hidden)]
     pub count_distinct_long: std::option::Option<i64>,
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
+    #[doc(hidden)]
     pub count_null_long: std::option::Option<i64>,
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
+    #[doc(hidden)]
     pub count_nan_long: std::option::Option<i64>,
 }
 impl Statistics {
@@ -7514,12 +7693,16 @@ impl Statistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeAlignmentBoundary {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
+    #[doc(hidden)]
     pub month: std::option::Option<crate::model::Month>,
     /// <p>The day of the month to use for time alignment during aggregation.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
     /// <p>The hour of day to use for time alignment during aggregation.</p>
+    #[doc(hidden)]
     pub hour: std::option::Option<i32>,
 }
 impl TimeAlignmentBoundary {
@@ -7819,6 +8002,7 @@ impl AsRef<str> for Month {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorInfo {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
@@ -7828,6 +8012,7 @@ pub struct MonitorInfo {
     /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl MonitorInfo {
@@ -7920,6 +8105,7 @@ impl MonitorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
@@ -7928,6 +8114,7 @@ pub struct ExplainabilityInfo {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ExplainabilityInfo {
@@ -8020,10 +8207,13 @@ impl ExplainabilityInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
+    #[doc(hidden)]
     pub attribute_configs: std::option::Option<std::vec::Vec<crate::model::AttributeConfig>>,
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
+    #[doc(hidden)]
     pub additional_datasets: std::option::Option<std::vec::Vec<crate::model::AdditionalDataset>>,
 }
 impl DataConfig {
@@ -8139,6 +8329,7 @@ impl DataConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalDataset {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
@@ -8213,6 +8404,7 @@ pub struct AdditionalDataset {
     /// <li> <p>"UY" - URUGUAY</p> </li>
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub configuration: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -8528,6 +8720,7 @@ impl AdditionalDataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeConfig {
     /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
@@ -8544,6 +8737,7 @@ pub struct AttributeConfig {
     /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    #[doc(hidden)]
     pub transformations:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8681,6 +8875,7 @@ impl AttributeConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitorConfig {
     /// <p>The name of the monitor resource.</p>
+    #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
 }
 impl MonitorConfig {

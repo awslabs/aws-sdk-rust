@@ -64,8 +64,10 @@ impl PutScheduledActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
+    #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
 impl PutScalingPolicyOutput {
@@ -146,8 +148,10 @@ impl PutScalingPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
+    #[doc(hidden)]
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledActionsOutput {
@@ -229,8 +233,10 @@ impl DescribeScheduledActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPoliciesOutput {
     /// <p>Information about the scaling policies.</p>
+    #[doc(hidden)]
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPoliciesOutput {
@@ -312,8 +318,10 @@ impl DescribeScalingPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingActivitiesOutput {
     /// <p>A list of scaling activity objects.</p>
+    #[doc(hidden)]
     pub scaling_activities: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingActivitiesOutput {
@@ -395,8 +403,10 @@ impl DescribeScalingActivitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
+    #[doc(hidden)]
     pub scalable_targets: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalableTargetsOutput {

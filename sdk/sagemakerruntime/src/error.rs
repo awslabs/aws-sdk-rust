@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationError {
@@ -69,6 +70,7 @@ impl ValidationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailable {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailable {
@@ -133,6 +135,7 @@ impl ServiceUnavailable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailure {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailure {
@@ -197,6 +200,7 @@ impl InternalFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelNotReadyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ModelNotReadyException {
@@ -261,12 +265,16 @@ impl ModelNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelError {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> Original status code. </p>
+    #[doc(hidden)]
     pub original_status_code: std::option::Option<i32>,
     /// <p> Original message. </p>
+    #[doc(hidden)]
     pub original_message: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
+    #[doc(hidden)]
     pub log_stream_arn: std::option::Option<std::string::String>,
 }
 impl ModelError {
@@ -390,6 +398,7 @@ impl ModelError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalDependencyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalDependencyException {

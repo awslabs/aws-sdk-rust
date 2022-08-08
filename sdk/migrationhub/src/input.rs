@@ -3035,8 +3035,10 @@ impl PutResourceAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceAttributesInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
     /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
@@ -3046,9 +3048,11 @@ pub struct PutResourceAttributesInput {
     /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
+    #[doc(hidden)]
     pub resource_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl PutResourceAttributesInput {
@@ -3094,16 +3098,22 @@ impl std::fmt::Debug for PutResourceAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Information about the task's progress and status.</p>
+    #[doc(hidden)]
     pub task: std::option::Option<crate::model::Task>,
     /// <p>The timestamp when the task was gathered.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
+    #[doc(hidden)]
     pub next_update_seconds: i32,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl NotifyMigrationTaskStateInput {
@@ -3150,12 +3160,16 @@ impl std::fmt::Debug for NotifyMigrationTaskStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application state changed.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl NotifyApplicationStateInput {
@@ -3192,8 +3206,10 @@ impl std::fmt::Debug for NotifyApplicationStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProgressUpdateStreamsInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filter to limit the maximum number of results to list per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProgressUpdateStreamsInput {
@@ -3220,10 +3236,13 @@ impl std::fmt::Debug for ListProgressUpdateStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMigrationTasksInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Value to specify how many results are returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Filter migration tasks by discovered resource name.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ListMigrationTasksInput {
@@ -3255,12 +3274,16 @@ impl std::fmt::Debug for ListMigrationTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The name of the ProgressUpdateStream.</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDiscoveredResourcesInput {
@@ -3297,12 +3320,16 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreatedArtifactsInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCreatedArtifactsInput {
@@ -3339,10 +3366,13 @@ impl std::fmt::Debug for ListCreatedArtifactsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
+    #[doc(hidden)]
     pub application_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationStatesInput {
@@ -3374,10 +3404,13 @@ impl std::fmt::Debug for ListApplicationStatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl ImportMigrationTaskInput {
@@ -3409,12 +3442,16 @@ impl std::fmt::Debug for ImportMigrationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl DisassociateDiscoveredResourceInput {
@@ -3451,12 +3488,16 @@ impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    #[doc(hidden)]
     pub created_artifact_name: std::option::Option<std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl DisassociateCreatedArtifactInput {
@@ -3493,8 +3534,10 @@ impl std::fmt::Debug for DisassociateCreatedArtifactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
 }
 impl DescribeMigrationTaskInput {
@@ -3521,6 +3564,7 @@ impl std::fmt::Debug for DescribeMigrationTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationStateInput {
@@ -3542,8 +3586,10 @@ impl std::fmt::Debug for DescribeApplicationStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub progress_update_stream_name: std::option::Option<std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl DeleteProgressUpdateStreamInput {
@@ -3573,8 +3619,10 @@ impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub progress_update_stream_name: std::option::Option<std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl CreateProgressUpdateStreamInput {
@@ -3604,12 +3652,16 @@ impl std::fmt::Debug for CreateProgressUpdateStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Object representing a Resource.</p>
+    #[doc(hidden)]
     pub discovered_resource: std::option::Option<crate::model::DiscoveredResource>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl AssociateDiscoveredResourceInput {
@@ -3646,12 +3698,16 @@ impl std::fmt::Debug for AssociateDiscoveredResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
+    #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    #[doc(hidden)]
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
+    #[doc(hidden)]
     pub created_artifact: std::option::Option<crate::model::CreatedArtifact>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl AssociateCreatedArtifactInput {

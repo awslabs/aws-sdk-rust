@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
+    #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
 }
 impl StopProductSubscriptionOutput {
@@ -61,6 +62,7 @@ impl StopProductSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
+    #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
 }
 impl StartProductSubscriptionOutput {
@@ -118,6 +120,7 @@ impl StartProductSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
+    #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
 }
 impl RegisterIdentityProviderOutput {
@@ -181,9 +184,11 @@ impl RegisterIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
+    #[doc(hidden)]
     pub instance_user_summaries:
         std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserAssociationsOutput {
@@ -267,9 +272,11 @@ impl ListUserAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
+    #[doc(hidden)]
     pub product_user_summaries:
         std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProductSubscriptionsOutput {
@@ -353,8 +360,10 @@ impl ListProductSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
     /// <p>Metadata that describes the list instances operation.</p>
+    #[doc(hidden)]
     pub instance_summaries: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -436,9 +445,11 @@ impl ListInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
+    #[doc(hidden)]
     pub identity_provider_summaries:
         std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
     /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProvidersOutput {
@@ -528,6 +539,7 @@ impl ListIdentityProvidersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
+    #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
 }
 impl DisassociateUserOutput {
@@ -585,6 +597,7 @@ impl DisassociateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
+    #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
 }
 impl DeregisterIdentityProviderOutput {
@@ -648,6 +661,7 @@ impl DeregisterIdentityProviderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
+    #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
 }
 impl AssociateUserOutput {

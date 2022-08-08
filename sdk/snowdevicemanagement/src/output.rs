@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTaskOutput {
     /// <p>The ID of the task that you are attempting to cancel.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelTaskOutput {
@@ -58,8 +59,10 @@ impl CancelTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksOutput {
     /// <p>A list of task structures containing details about each task.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::TaskSummary>>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTasksOutput {
@@ -140,8 +143,10 @@ impl ListTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskOutput {
     /// <p>The ID of the task that you created.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task that you created.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl CreateTaskOutput {
@@ -213,22 +218,31 @@ impl CreateTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskOutput {
     /// <p>The ID of the task.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The managed devices that the task was sent to.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current state of the task.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::TaskState>,
     /// <p>When the <code>CreateTask</code> operation was called.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the state of the task was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the task was completed.</p>
+    #[doc(hidden)]
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description provided of the task and managed devices.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -458,8 +472,10 @@ impl DescribeTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
     /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
+    #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::model::ExecutionSummary>>,
     /// <p>A pagination token to continue to the next page of executions.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsOutput {
@@ -540,16 +556,22 @@ impl ListExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>The ID of the task being executed on the device.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the execution.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the managed device that the task is being executed on.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>The current state of the execution.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ExecutionState>,
     /// <p>When the execution began.</p>
+    #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the status of the execution was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeExecutionOutput {
@@ -701,8 +723,10 @@ impl DescribeExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceResourcesOutput {
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceSummary>>,
     /// <p>A pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceResourcesOutput {
@@ -783,6 +807,7 @@ impl ListDeviceResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceEc2InstancesOutput {
     /// <p>A list of structures containing information about each instance. </p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
 }
 impl DescribeDeviceEc2InstancesOutput {
@@ -846,8 +871,10 @@ impl DescribeDeviceEc2InstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesOutput {
     /// <p>A list of device structures that contain information about the device.</p>
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
     /// <p>A pagination token to continue to the next page of devices.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -928,28 +955,39 @@ impl ListDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceOutput {
     /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
+    #[doc(hidden)]
     pub last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the device that you checked the information for.</p>
+    #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    #[doc(hidden)]
     pub managed_device_arn: std::option::Option<std::string::String>,
     /// <p>The type of Amazon Web Services Snow Family device.</p>
+    #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
     /// <p>The ID of the job used when ordering the device.</p>
+    #[doc(hidden)]
     pub associated_with_job: std::option::Option<std::string::String>,
     /// <p>The current state of the device.</p>
+    #[doc(hidden)]
     pub device_state: std::option::Option<crate::model::UnlockState>,
     /// <p>The network interfaces available on the device.</p>
+    #[doc(hidden)]
     pub physical_network_interfaces:
         std::option::Option<std::vec::Vec<crate::model::PhysicalNetworkInterface>>,
     /// <p>The hardware specifications of the device. </p>
+    #[doc(hidden)]
     pub device_capacities: std::option::Option<std::vec::Vec<crate::model::Capacity>>,
     /// <p>The software installed on the device.</p>
+    #[doc(hidden)]
     pub software: std::option::Option<crate::model::SoftwareInformation>,
 }
 impl DescribeDeviceOutput {
@@ -1302,6 +1340,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags for the device or task.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

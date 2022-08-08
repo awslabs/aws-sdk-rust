@@ -5094,16 +5094,22 @@ impl UpdateTimelineEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTimelineEventInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
+    #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
 }
 impl UpdateTimelineEventInput {
@@ -5150,12 +5156,16 @@ impl std::fmt::Debug for UpdateTimelineEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
+    #[doc(hidden)]
     pub incident_template_title: std::option::Option<std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -5166,22 +5176,30 @@ pub struct UpdateResponsePlanInput {
     /// <li> <p> <code>2</code> - Low impact</p> </li>
     /// <li> <p> <code>1</code> - No impact</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub incident_template_impact: std::option::Option<i32>,
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
+    #[doc(hidden)]
     pub incident_template_summary: std::option::Option<std::string::String>,
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
+    #[doc(hidden)]
     pub incident_template_dedupe_string: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    #[doc(hidden)]
     pub incident_template_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
+    #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+    #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    #[doc(hidden)]
     pub incident_template_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5279,10 +5297,13 @@ impl std::fmt::Debug for UpdateResponsePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An action to add or delete a Region.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::UpdateReplicationSetAction>>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationSetInput {
@@ -5314,10 +5335,13 @@ impl std::fmt::Debug for UpdateReplicationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelatedItemsInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Details about the item you are adding or deleting.</p>
+    #[doc(hidden)]
     pub related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
 }
 impl UpdateRelatedItemsInput {
@@ -5349,12 +5373,16 @@ impl std::fmt::Debug for UpdateRelatedItemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIncidentRecordInput {
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A brief description of the incident.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>A longer description of what occurred during the incident.</p>
+    #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
     /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -5365,13 +5393,17 @@ pub struct UpdateIncidentRecordInput {
     /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
     /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub impact: std::option::Option<i32>,
     /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
+    #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
+    #[doc(hidden)]
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -5440,10 +5472,13 @@ impl std::fmt::Debug for UpdateIncidentRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+    #[doc(hidden)]
     pub deletion_protected: std::option::Option<bool>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateDeletionProtectionInput {
@@ -5475,8 +5510,10 @@ impl std::fmt::Debug for UpdateDeletionProtectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The name of the tag you're removing from the response plan.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5503,8 +5540,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that you are adding to the response plan.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5535,10 +5574,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    #[doc(hidden)]
     pub response_plan_arn: std::option::Option<std::string::String>,
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -5549,10 +5591,13 @@ pub struct StartIncidentInput {
     /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
     /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub impact: std::option::Option<i32>,
     /// <p>Details of what created the incident record in Incident Manager.</p>
+    #[doc(hidden)]
     pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
     /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
 }
 impl StartIncidentInput {
@@ -5607,8 +5652,10 @@ impl std::fmt::Debug for StartIncidentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Details of the resource policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -5635,6 +5682,7 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
     /// <ul>
@@ -5647,14 +5695,19 @@ pub struct ListTimelineEventsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sort by the specified key value pair.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::TimelineEventSort>,
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTimelineEventsInput {
@@ -5711,6 +5764,7 @@ impl std::fmt::Debug for ListTimelineEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5732,8 +5786,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResponsePlansInput {
     /// <p>The maximum number of response plans per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResponsePlansInput {
@@ -5760,8 +5816,10 @@ impl std::fmt::Debug for ListResponsePlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReplicationSetsInput {
     /// <p>The maximum number of results per page. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReplicationSetsInput {
@@ -5788,10 +5846,13 @@ impl std::fmt::Debug for ListReplicationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRelatedItemsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of related items per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRelatedItemsInput {
@@ -5835,10 +5896,13 @@ pub struct ListIncidentRecordsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIncidentRecordsInput {
@@ -5882,8 +5946,10 @@ impl std::fmt::Debug for ListIncidentRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
 }
 impl GetTimelineEventInput {
@@ -5910,6 +5976,7 @@ impl std::fmt::Debug for GetTimelineEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetResponsePlanInput {
@@ -5931,10 +5998,13 @@ impl std::fmt::Debug for GetResponsePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of resource policies to display per page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourcePoliciesInput {
@@ -5966,6 +6036,7 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetReplicationSetInput {
@@ -5987,6 +6058,7 @@ impl std::fmt::Debug for GetReplicationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetIncidentRecordInput {
@@ -6008,8 +6080,10 @@ impl std::fmt::Debug for GetIncidentRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
 }
 impl DeleteTimelineEventInput {
@@ -6036,6 +6110,7 @@ impl std::fmt::Debug for DeleteTimelineEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteResponsePlanInput {
@@ -6057,8 +6132,10 @@ impl std::fmt::Debug for DeleteResponsePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the resource policy you're deleting.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -6085,6 +6162,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationSetInput {
@@ -6106,6 +6184,7 @@ impl std::fmt::Debug for DeleteReplicationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteIncidentRecordInput {
@@ -6127,14 +6206,19 @@ impl std::fmt::Debug for DeleteIncidentRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTimelineEventInput {
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
+    #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
+    #[doc(hidden)]
     pub event_data: std::option::Option<std::string::String>,
 }
 impl CreateTimelineEventInput {
@@ -6176,20 +6260,28 @@ impl std::fmt::Debug for CreateTimelineEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create an incident when using this response plan.</p>
+    #[doc(hidden)]
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
+    #[doc(hidden)]
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    #[doc(hidden)]
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>A list of tags that you are adding to the response plan.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6250,10 +6342,12 @@ impl std::fmt::Debug for CreateResponsePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
     >,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateReplicationSetInput {

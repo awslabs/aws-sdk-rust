@@ -5,24 +5,33 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResiliencyPolicy {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The name of the policy</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
+    #[doc(hidden)]
     pub policy_description: std::option::Option<std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
+    #[doc(hidden)]
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
+    #[doc(hidden)]
     pub estimated_cost_tier: std::option::Option<crate::model::EstimatedCostTier>,
     /// <p>The resiliency policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
     >,
     /// <p>The timestamp for when the resiliency policy was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -279,8 +288,10 @@ impl ResiliencyPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailurePolicy {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    #[doc(hidden)]
     pub rto_in_secs: i32,
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    #[doc(hidden)]
     pub rpo_in_secs: i32,
 }
 impl FailurePolicy {
@@ -610,29 +621,41 @@ impl AsRef<str> for DataLocationConstraint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name for the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the app was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AppStatusType>,
     /// <p>The current status of compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::AppComplianceStatusType>,
     /// <p>The timestamp for the most recent compliance evaluation.</p>
+    #[doc(hidden)]
     pub last_app_compliance_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current resiliency score for the application.</p>
+    #[doc(hidden)]
     pub resiliency_score: f64,
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    #[doc(hidden)]
     pub last_resiliency_score_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
 }
 impl App {
@@ -1114,39 +1137,55 @@ impl AsRef<str> for AppStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppAssessment {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The entity that invoked the assessment.</p>
+    #[doc(hidden)]
     pub invoker: std::option::Option<crate::model::AssessmentInvoker>,
     /// <p>The cost for the application.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
     /// <p>The current resiliency score for the application.</p>
+    #[doc(hidden)]
     pub resiliency_score: std::option::Option<crate::model::ResiliencyScore>,
     /// <p>The application compliance against the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
     >,
     /// <p>The current status of the compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
+    #[doc(hidden)]
     pub assessment_status: std::option::Option<crate::model::AssessmentStatus>,
     /// <p>The starting time for the action.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Error or warning message from the assessment execution</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the assessment.</p>
+    #[doc(hidden)]
     pub assessment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The resiliency policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
+    #[doc(hidden)]
     pub resource_errors_details: std::option::Option<crate::model::ResourceErrorsDetails>,
 }
 impl AppAssessment {
@@ -1542,8 +1581,10 @@ impl AppAssessment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
+    #[doc(hidden)]
     pub resource_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
+    #[doc(hidden)]
     pub has_more_errors: std::option::Option<bool>,
 }
 impl ResourceErrorsDetails {
@@ -1624,10 +1665,13 @@ impl ResourceErrorsDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceError {
     /// <p> This is the identifier of the resource. </p>
+    #[doc(hidden)]
     pub logical_resource_id: std::option::Option<std::string::String>,
     /// <p> This is the identifier of the physical resource. </p>
+    #[doc(hidden)]
     pub physical_resource_id: std::option::Option<std::string::String>,
     /// <p> This is the error message. </p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ResourceError {
@@ -1840,24 +1884,34 @@ impl AsRef<str> for ComplianceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisruptionCompliance {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
+    #[doc(hidden)]
     pub achievable_rto_in_secs: i32,
     /// <p>The current RTO, in seconds.</p>
+    #[doc(hidden)]
     pub current_rto_in_secs: i32,
     /// <p>The RTO reference identifier.</p>
+    #[doc(hidden)]
     pub rto_reference_id: std::option::Option<std::string::String>,
     /// <p>The RTO description.</p>
+    #[doc(hidden)]
     pub rto_description: std::option::Option<std::string::String>,
     /// <p>The current RPO, in seconds.</p>
+    #[doc(hidden)]
     pub current_rpo_in_secs: i32,
     /// <p>The RPO reference identifier.</p>
+    #[doc(hidden)]
     pub rpo_reference_id: std::option::Option<std::string::String>,
     /// <p>The RPO description.</p>
+    #[doc(hidden)]
     pub rpo_description: std::option::Option<std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
+    #[doc(hidden)]
     pub achievable_rpo_in_secs: i32,
     /// <p>The disruption compliance message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DisruptionCompliance {
@@ -2080,8 +2134,10 @@ impl DisruptionCompliance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
+    #[doc(hidden)]
     pub score: f64,
     /// <p>The disruption score for a valid key.</p>
+    #[doc(hidden)]
     pub disruption_score:
         std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
 }
@@ -2168,10 +2224,13 @@ impl ResiliencyScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cost {
     /// <p>The cost amount.</p>
+    #[doc(hidden)]
     pub amount: f64,
     /// <p>The cost currency, for example <code>USD</code>.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<std::string::String>,
     /// <p>The cost frequency.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<crate::model::CostFrequency>,
 }
 impl Cost {
@@ -2444,10 +2503,13 @@ impl AsRef<str> for ResourceResolutionStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
+    #[doc(hidden)]
     pub logical_resource_id: std::option::Option<crate::model::LogicalResourceId>,
     /// <p>The physical resource identifier for the unsupported resource.</p>
+    #[doc(hidden)]
     pub physical_resource_id: std::option::Option<crate::model::PhysicalResourceId>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl UnsupportedResource {
@@ -2545,6 +2607,7 @@ impl UnsupportedResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
@@ -2561,10 +2624,13 @@ pub struct PhysicalResourceId {
     /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PhysicalIdentifierType>,
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl PhysicalResourceId {
@@ -2773,12 +2839,16 @@ impl AsRef<str> for PhysicalIdentifierType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogicalResourceId {
     /// <p>The identifier of the resource.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
+    #[doc(hidden)]
     pub logical_stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource group that this resource belongs to.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
+    #[doc(hidden)]
     pub terraform_source_name: std::option::Option<std::string::String>,
 }
 impl LogicalResourceId {
@@ -2893,26 +2963,37 @@ impl LogicalResourceId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The reference identifier for the test recommendation.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The name of the application component.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the test recommendation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The intent of the test recommendation.</p>
+    #[doc(hidden)]
     pub intent: std::option::Option<std::string::String>,
     /// <p>The level of risk for this test recommendation.</p>
+    #[doc(hidden)]
     pub risk: std::option::Option<crate::model::TestRisk>,
     /// <p>The type of test recommendation.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>The description for the test recommendation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The test recommendation items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
     /// <p>The prerequisite of the test recommendation.</p>
+    #[doc(hidden)]
     pub prerequisite: std::option::Option<std::string::String>,
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
+    #[doc(hidden)]
     pub depends_on_alarms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestRecommendation {
@@ -3161,12 +3242,16 @@ impl TestRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationItem {
     /// <p>The resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The target account identifier.</p>
+    #[doc(hidden)]
     pub target_account_id: std::option::Option<std::string::String>,
     /// <p>The target region.</p>
+    #[doc(hidden)]
     pub target_region: std::option::Option<std::string::String>,
     /// <p>Specifies if the recommendation has already been implemented.</p>
+    #[doc(hidden)]
     pub already_implemented: std::option::Option<bool>,
 }
 impl RecommendationItem {
@@ -3400,20 +3485,28 @@ impl AsRef<str> for TestRisk {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SopRecommendation {
     /// <p>The service type.</p>
+    #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::SopServiceType>,
     /// <p>The application component name.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The description of the SOP recommendation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Identifier for the SOP recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The name of the SOP recommendation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The recommendation items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
     /// <p>The reference identifier for the SOP recommendation.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The prerequisite for the SOP recommendation.</p>
+    #[doc(hidden)]
     pub prerequisite: std::option::Option<std::string::String>,
 }
 impl SopRecommendation {
@@ -3656,12 +3749,16 @@ impl AsRef<str> for SopServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationTemplate {
     /// <p>The file location of the template.</p>
+    #[doc(hidden)]
     pub templates_location: std::option::Option<crate::model::S3Location>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
@@ -3684,6 +3781,7 @@ pub struct RecommendationTemplate {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub recommendation_types:
         std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
     /// <p>The format of the recommendation template.</p>
@@ -3701,23 +3799,32 @@ pub struct RecommendationTemplate {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::TemplateFormat>,
     /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
     /// <p>The message for the recommendation template.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecommendationTemplateStatus>,
     /// <p>The name for the recommendation template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The start time for the action.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates if replacements are needed.</p>
+    #[doc(hidden)]
     pub needs_replacements: std::option::Option<bool>,
 }
 impl RecommendationTemplate {
@@ -4343,8 +4450,10 @@ impl AsRef<str> for RenderRecommendationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -4416,6 +4525,7 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppVersionSummary {
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl AppVersionSummary {
@@ -4470,14 +4580,19 @@ impl AppVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalResource {
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The logical identifier of the resource.</p>
+    #[doc(hidden)]
     pub logical_resource_id: std::option::Option<crate::model::LogicalResourceId>,
     /// <p>The physical identifier of the resource.</p>
+    #[doc(hidden)]
     pub physical_resource_id: std::option::Option<crate::model::PhysicalResourceId>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The application components that belong to this resource.</p>
+    #[doc(hidden)]
     pub app_components: std::option::Option<std::vec::Vec<crate::model::AppComponent>>,
 }
 impl PhysicalResource {
@@ -4621,8 +4736,10 @@ impl PhysicalResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppComponent {
     /// <p>The name of the application component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of application component.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AppComponent {
@@ -4694,12 +4811,16 @@ impl AppComponent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
+    #[doc(hidden)]
     pub logical_stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the application this resource is mapped to.</p>
+    #[doc(hidden)]
     pub app_registry_app_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource group this resource is mapped to.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
@@ -4728,10 +4849,13 @@ pub struct ResourceMapping {
     /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub mapping_type: std::option::Option<crate::model::ResourceMappingType>,
     /// <p>The identifier of this resource.</p>
+    #[doc(hidden)]
     pub physical_resource_id: std::option::Option<crate::model::PhysicalResourceId>,
     /// <p> The short name of the Terraform source. </p>
+    #[doc(hidden)]
     pub terraform_source_name: std::option::Option<std::string::String>,
 }
 impl ResourceMapping {
@@ -5060,18 +5184,25 @@ impl AsRef<str> for ResourceMappingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the app was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::AppComplianceStatusType>,
     /// <p>The current resiliency score for the application.</p>
+    #[doc(hidden)]
     pub resiliency_score: f64,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
 }
 impl AppSummary {
@@ -5243,10 +5374,13 @@ impl AppSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRecommendation {
     /// <p>The name of the application component.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The recommendation status.</p>
+    #[doc(hidden)]
     pub recommendation_status: std::option::Option<crate::model::RecommendationComplianceStatus>,
     /// <p>The list of recommendations.</p>
+    #[doc(hidden)]
     pub config_recommendations:
         std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
 }
@@ -5360,14 +5494,18 @@ impl ComponentRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRecommendation {
     /// <p>The cost for the application.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
     /// <p>The application component name.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
+    #[doc(hidden)]
     pub compliance: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
     >,
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
+    #[doc(hidden)]
     pub recommendation_compliance: std::option::Option<
         std::collections::HashMap<
             crate::model::DisruptionType,
@@ -5375,16 +5513,22 @@ pub struct ConfigRecommendation {
         >,
     >,
     /// <p>The type of optimization.</p>
+    #[doc(hidden)]
     pub optimization_type: std::option::Option<crate::model::ConfigRecommendationOptimizationType>,
     /// <p>The name of the recommendation configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>List of the suggested configuration changes.</p>
+    #[doc(hidden)]
     pub suggested_changes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The architecture type.</p>
+    #[doc(hidden)]
     pub ha_architecture: std::option::Option<crate::model::HaArchitecture>,
     /// <p>The reference identifier for the recommendation configuration.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
 }
 impl ConfigRecommendation {
@@ -5822,14 +5966,19 @@ impl AsRef<str> for ConfigRecommendationOptimizationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
+    #[doc(hidden)]
     pub expected_compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The expected RTO after applying the recommended configuration change.</p>
+    #[doc(hidden)]
     pub expected_rto_in_secs: i32,
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
+    #[doc(hidden)]
     pub expected_rto_description: std::option::Option<std::string::String>,
     /// <p>The expected RPO after applying the recommended configuration change.</p>
+    #[doc(hidden)]
     pub expected_rpo_in_secs: i32,
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
+    #[doc(hidden)]
     pub expected_rpo_description: std::option::Option<std::string::String>,
 }
 impl RecommendationDisruptionCompliance {
@@ -6025,18 +6174,24 @@ impl AsRef<str> for RecommendationComplianceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppComponentCompliance {
     /// <p>The cost for the application.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
     /// <p>The name of the application component.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The compliance of the application component against the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
     >,
     /// <p>The compliance message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The current resiliency score for the application.</p>
+    #[doc(hidden)]
     pub resiliency_score: std::option::Option<crate::model::ResiliencyScore>,
 }
 impl AppComponentCompliance {
@@ -6215,28 +6370,40 @@ impl AppComponentCompliance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppAssessmentSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
+    #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
+    #[doc(hidden)]
     pub assessment_status: std::option::Option<crate::model::AssessmentStatus>,
     /// <p>The entity that invoked the assessment.</p>
+    #[doc(hidden)]
     pub invoker: std::option::Option<crate::model::AssessmentInvoker>,
     /// <p>The starting time for the action.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message from the assessment run.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the assessment.</p>
+    #[doc(hidden)]
     pub assessment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The cost for the application.</p>
+    #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
     /// <p>The current resiliency score for the application.</p>
+    #[doc(hidden)]
     pub resiliency_score: f64,
 }
 impl AppAssessmentSummary {
@@ -6499,20 +6666,28 @@ impl AppAssessmentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmRecommendation {
     /// <p>The identifier of the alarm recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>The reference identifier of the alarm recommendation.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm recommendation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the recommendation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of alarm recommendation.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AlarmType>,
     /// <p>The application component for the CloudWatch alarm recommendation.</p>
+    #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The list of CloudWatch alarm recommendations.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
     /// <p>The prerequisite for the alarm recommendation.</p>
+    #[doc(hidden)]
     pub prerequisite: std::option::Option<std::string::String>,
 }
 impl AlarmRecommendation {
@@ -6768,6 +6943,7 @@ impl AsRef<str> for AlarmType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerraformSource {
     /// <p> The Terraform s3 state file you need to import. </p>
+    #[doc(hidden)]
     pub s3_state_file_url: std::option::Option<std::string::String>,
 }
 impl TerraformSource {

@@ -691,6 +691,7 @@ impl ResolveCustomerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCustomerInput {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
+    #[doc(hidden)]
     pub registration_token: std::option::Option<std::string::String>,
 }
 impl ResolveCustomerInput {
@@ -712,10 +713,13 @@ impl std::fmt::Debug for ResolveCustomerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>Public Key Version provided by AWS Marketplace</p>
+    #[doc(hidden)]
     pub public_key_version: std::option::Option<i32>,
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
+    #[doc(hidden)]
     pub nonce: std::option::Option<std::string::String>,
 }
 impl RegisterUsageInput {
@@ -747,17 +751,23 @@ impl std::fmt::Debug for RegisterUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
+    #[doc(hidden)]
     pub usage_dimension: std::option::Option<std::string::String>,
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    #[doc(hidden)]
     pub usage_quantity: std::option::Option<i32>,
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
+    #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    #[doc(hidden)]
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
 }
 impl MeterUsageInput {
@@ -805,8 +815,10 @@ impl std::fmt::Debug for MeterUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
+    #[doc(hidden)]
     pub usage_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
 }
 impl BatchMeterUsageInput {

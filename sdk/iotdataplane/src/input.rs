@@ -1188,10 +1188,13 @@ impl UpdateThingShadowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the shadow.</p>
+    #[doc(hidden)]
     pub shadow_name: std::option::Option<std::string::String>,
     /// <p>The state information, in JSON format.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateThingShadowInput {
@@ -1223,16 +1226,20 @@ impl std::fmt::Debug for UpdateThingShadowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishInput {
     /// <p>The name of the MQTT topic.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Quality of Service (QoS) level.</p>
+    #[doc(hidden)]
     pub qos: i32,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
+    #[doc(hidden)]
     pub retain: bool,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PublishInput {
@@ -1273,8 +1280,10 @@ impl std::fmt::Debug for PublishInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetainedMessagesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListRetainedMessagesInput {
@@ -1301,10 +1310,13 @@ impl std::fmt::Debug for ListRetainedMessagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamedShadowsForThingInput {
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
+    #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListNamedShadowsForThingInput {
@@ -1336,8 +1348,10 @@ impl std::fmt::Debug for ListNamedShadowsForThingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThingShadowInput {
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the shadow.</p>
+    #[doc(hidden)]
     pub shadow_name: std::option::Option<std::string::String>,
 }
 impl GetThingShadowInput {
@@ -1364,6 +1378,7 @@ impl std::fmt::Debug for GetThingShadowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
 }
 impl GetRetainedMessageInput {
@@ -1385,8 +1400,10 @@ impl std::fmt::Debug for GetRetainedMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThingShadowInput {
     /// <p>The name of the thing.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the shadow.</p>
+    #[doc(hidden)]
     pub shadow_name: std::option::Option<std::string::String>,
 }
 impl DeleteThingShadowInput {

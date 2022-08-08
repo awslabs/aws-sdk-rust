@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
+    #[doc(hidden)]
     pub application_maintenance_window_start_time: std::option::Option<std::string::String>,
     /// <p>The end time for the maintenance window.</p>
+    #[doc(hidden)]
     pub application_maintenance_window_end_time: std::option::Option<std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationDescription {
@@ -100,6 +102,7 @@ impl ApplicationMaintenanceConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
+    #[doc(hidden)]
     pub application_maintenance_window_start_time_update: std::option::Option<std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationUpdate {
@@ -166,41 +169,58 @@ impl ApplicationMaintenanceConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationDetail {
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub application_description: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    #[doc(hidden)]
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
+    #[doc(hidden)]
     pub service_execution_role: std::option::Option<std::string::String>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The current timestamp when the application was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current timestamp when the application was last updated.</p>
+    #[doc(hidden)]
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_configuration_description:
         std::option::Option<crate::model::ApplicationConfigurationDescription>,
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
     /// <p>The details of the maintenance configuration for the application.</p>
+    #[doc(hidden)]
     pub application_maintenance_configuration_description:
         std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
+    #[doc(hidden)]
     pub application_version_updated_from: std::option::Option<i64>,
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
+    #[doc(hidden)]
     pub application_version_rolled_back_from: std::option::Option<i64>,
     /// <p>A value you use to implement strong concurrency for application updates.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
     /// <p>The version to which you want to roll back the application.</p>
+    #[doc(hidden)]
     pub application_version_rolled_back_to: std::option::Option<i64>,
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    #[doc(hidden)]
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl ApplicationDetail {
@@ -681,12 +701,15 @@ impl AsRef<str> for ApplicationMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOptionDescription {
     /// <p>The ID of the CloudWatch logging option description.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn: std::option::Option<std::string::String>,
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOptionDescription {
@@ -793,27 +816,35 @@ impl CloudWatchLoggingOptionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub sql_application_configuration_description:
         std::option::Option<crate::model::SqlApplicationConfigurationDescription>,
     /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_code_configuration_description:
         std::option::Option<crate::model::ApplicationCodeConfigurationDescription>,
     /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub run_configuration_description:
         std::option::Option<crate::model::RunConfigurationDescription>,
     /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub flink_application_configuration_description:
         std::option::Option<crate::model::FlinkApplicationConfigurationDescription>,
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub environment_property_descriptions:
         std::option::Option<crate::model::EnvironmentPropertyDescriptions>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_snapshot_configuration_description:
         std::option::Option<crate::model::ApplicationSnapshotConfigurationDescription>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
+    #[doc(hidden)]
     pub vpc_configuration_descriptions:
         std::option::Option<std::vec::Vec<crate::model::VpcConfigurationDescription>>,
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub zeppelin_application_configuration_description:
         std::option::Option<crate::model::ZeppelinApplicationConfigurationDescription>,
 }
@@ -1095,15 +1126,19 @@ impl ApplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinApplicationConfigurationDescription {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub monitoring_configuration_description:
         std::option::Option<crate::model::ZeppelinMonitoringConfigurationDescription>,
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub catalog_configuration_description:
         std::option::Option<crate::model::CatalogConfigurationDescription>,
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
+    #[doc(hidden)]
     pub deploy_as_application_configuration_description:
         std::option::Option<crate::model::DeployAsApplicationConfigurationDescription>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
+    #[doc(hidden)]
     pub custom_artifacts_configuration_description:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfigurationDescription>>,
 }
@@ -1272,10 +1307,13 @@ impl ZeppelinApplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomArtifactConfigurationDescription {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
+    #[doc(hidden)]
     pub artifact_type: std::option::Option<crate::model::ArtifactType>,
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
+    #[doc(hidden)]
     pub s3_content_location_description: std::option::Option<crate::model::S3ContentLocation>,
     /// <p>The parameters that are required to specify a Maven dependency.</p>
+    #[doc(hidden)]
     pub maven_reference_description: std::option::Option<crate::model::MavenReference>,
 }
 impl CustomArtifactConfigurationDescription {
@@ -1387,10 +1425,13 @@ impl CustomArtifactConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The artifact ID of the Maven reference.</p>
+    #[doc(hidden)]
     pub artifact_id: std::option::Option<std::string::String>,
     /// <p>The version of the Maven reference.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl MavenReference {
@@ -1479,10 +1520,13 @@ impl MavenReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ContentLocation {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The file key for the object containing the application code.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of the object containing the application code.</p>
+    #[doc(hidden)]
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3ContentLocation {
@@ -1629,6 +1673,7 @@ impl AsRef<str> for ArtifactType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployAsApplicationConfigurationDescription {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
+    #[doc(hidden)]
     pub s3_content_location_description:
         std::option::Option<crate::model::S3ContentBaseLocationDescription>,
 }
@@ -1696,8 +1741,10 @@ impl DeployAsApplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ContentBaseLocationDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
 }
 impl S3ContentBaseLocationDescription {
@@ -1769,6 +1816,7 @@ impl S3ContentBaseLocationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfigurationDescription {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub glue_data_catalog_configuration_description:
         std::option::Option<crate::model::GlueDataCatalogConfigurationDescription>,
 }
@@ -1837,6 +1885,7 @@ impl CatalogConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    #[doc(hidden)]
     pub database_arn: std::option::Option<std::string::String>,
 }
 impl GlueDataCatalogConfigurationDescription {
@@ -1891,6 +1940,7 @@ impl GlueDataCatalogConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationDescription {
@@ -2008,12 +2058,16 @@ impl AsRef<str> for LogLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfigurationDescription {
     /// <p>The ID of the VPC configuration.</p>
+    #[doc(hidden)]
     pub vpc_configuration_id: std::option::Option<std::string::String>,
     /// <p>The ID of the associated VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfigurationDescription {
@@ -2140,6 +2194,7 @@ impl VpcConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub snapshots_enabled: std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfigurationDescription {
@@ -2194,6 +2249,7 @@ impl ApplicationSnapshotConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
+    #[doc(hidden)]
     pub property_group_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
 }
@@ -2264,8 +2320,10 @@ impl EnvironmentPropertyDescriptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
+    #[doc(hidden)]
     pub property_group_id: std::option::Option<std::string::String>,
     /// <p>Describes the value of an application execution property key-value pair.</p>
+    #[doc(hidden)]
     pub property_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2361,15 +2419,19 @@ impl PropertyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlinkApplicationConfigurationDescription {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
+    #[doc(hidden)]
     pub checkpoint_configuration_description:
         std::option::Option<crate::model::CheckpointConfigurationDescription>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
+    #[doc(hidden)]
     pub monitoring_configuration_description:
         std::option::Option<crate::model::MonitoringConfigurationDescription>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    #[doc(hidden)]
     pub parallelism_configuration_description:
         std::option::Option<crate::model::ParallelismConfigurationDescription>,
     /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. To retrieve the job plan for the application, use the <code>DescribeApplicationRequest$IncludeAdditionalDetails</code> parameter of the <code>DescribeApplication</code> operation.</p>
+    #[doc(hidden)]
     pub job_plan_description: std::option::Option<std::string::String>,
 }
 impl FlinkApplicationConfigurationDescription {
@@ -2514,14 +2576,19 @@ impl FlinkApplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelismConfigurationDescription {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    #[doc(hidden)]
     pub parallelism: std::option::Option<i32>,
     /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application.</p>
+    #[doc(hidden)]
     pub parallelism_per_kpu: std::option::Option<i32>,
     /// <p>Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to application load. The service can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    #[doc(hidden)]
     pub current_parallelism: std::option::Option<i32>,
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
+    #[doc(hidden)]
     pub auto_scaling_enabled: std::option::Option<bool>,
 }
 impl ParallelismConfigurationDescription {
@@ -2702,10 +2769,13 @@ impl AsRef<str> for ConfigurationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringConfigurationDescription {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub metrics_level: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl MonitoringConfigurationDescription {
@@ -2870,18 +2940,22 @@ pub struct CheckpointConfigurationDescription {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpointing_enabled: std::option::Option<bool>,
     /// <p>Describes the interval in milliseconds between checkpoint operations. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpoint_interval: std::option::Option<i64>,
     /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub min_pause_between_checkpoints: std::option::Option<i64>,
 }
 impl CheckpointConfigurationDescription {
@@ -3035,9 +3109,11 @@ impl CheckpointConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunConfigurationDescription {
     /// <p>Describes the restore behavior of a restarting application.</p>
+    #[doc(hidden)]
     pub application_restore_configuration_description:
         std::option::Option<crate::model::ApplicationRestoreConfiguration>,
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub flink_run_configuration_description:
         std::option::Option<crate::model::FlinkRunConfiguration>,
 }
@@ -3137,6 +3213,7 @@ pub struct FlinkRunConfiguration {
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p> <note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub allow_non_restored_state: std::option::Option<bool>,
 }
 impl FlinkRunConfiguration {
@@ -3197,8 +3274,10 @@ impl FlinkRunConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
+    #[doc(hidden)]
     pub application_restore_type: std::option::Option<crate::model::ApplicationRestoreType>,
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl ApplicationRestoreConfiguration {
@@ -3345,8 +3424,10 @@ impl AsRef<str> for ApplicationRestoreType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
+    #[doc(hidden)]
     pub code_content_type: std::option::Option<crate::model::CodeContentType>,
     /// <p>Describes details about the location and format of the application code.</p>
+    #[doc(hidden)]
     pub code_content_description: std::option::Option<crate::model::CodeContentDescription>,
 }
 impl ApplicationCodeConfigurationDescription {
@@ -3430,12 +3511,16 @@ impl ApplicationCodeConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeContentDescription {
     /// <p>The text-format code</p>
+    #[doc(hidden)]
     pub text_content: std::option::Option<std::string::String>,
     /// <p>The checksum that can be used to validate zip-format code.</p>
+    #[doc(hidden)]
     pub code_md5: std::option::Option<std::string::String>,
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
+    #[doc(hidden)]
     pub code_size: std::option::Option<i64>,
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_application_code_location_description:
         std::option::Option<crate::model::S3ApplicationCodeLocationDescription>,
 }
@@ -3555,10 +3640,13 @@ impl CodeContentDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ApplicationCodeLocationDescription {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The file key for the object containing the application code.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of the object containing the application code.</p>
+    #[doc(hidden)]
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3ApplicationCodeLocationDescription {
@@ -3705,10 +3793,13 @@ impl AsRef<str> for CodeContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlApplicationConfigurationDescription {
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
+    #[doc(hidden)]
     pub input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
     /// <p>The array of <code>OutputDescription</code> objects describing the destination streams used by the application.</p>
+    #[doc(hidden)]
     pub output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
+    #[doc(hidden)]
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
 }
@@ -3836,13 +3927,17 @@ impl SqlApplicationConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSourceDescription {
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    #[doc(hidden)]
     pub s3_reference_data_source_description:
         std::option::Option<crate::model::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    #[doc(hidden)]
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSourceDescription {
@@ -3963,10 +4058,13 @@ impl ReferenceDataSourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
+    #[doc(hidden)]
     pub record_format: std::option::Option<crate::model::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    #[doc(hidden)]
     pub record_encoding: std::option::Option<std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects. </p>
+    #[doc(hidden)]
     pub record_columns: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
 impl SourceSchema {
@@ -4071,10 +4169,13 @@ impl SourceSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordColumn {
     /// <p>The name of the column that is created in the in-application input stream or reference table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A reference to the data element in the streaming input or the reference data source.</p>
+    #[doc(hidden)]
     pub mapping: std::option::Option<std::string::String>,
     /// <p>The type of column created in the in-application input stream or reference table.</p>
+    #[doc(hidden)]
     pub sql_type: std::option::Option<std::string::String>,
 }
 impl RecordColumn {
@@ -4163,8 +4264,10 @@ impl RecordColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
+    #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
+    #[doc(hidden)]
     pub mapping_parameters: std::option::Option<crate::model::MappingParameters>,
 }
 impl RecordFormat {
@@ -4242,8 +4345,10 @@ impl RecordFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+    #[doc(hidden)]
     pub json_mapping_parameters: std::option::Option<crate::model::JsonMappingParameters>,
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
+    #[doc(hidden)]
     pub csv_mapping_parameters: std::option::Option<crate::model::CsvMappingParameters>,
 }
 impl MappingParameters {
@@ -4331,8 +4436,10 @@ impl MappingParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvMappingParameters {
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
+    #[doc(hidden)]
     pub record_row_delimiter: std::option::Option<std::string::String>,
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
+    #[doc(hidden)]
     pub record_column_delimiter: std::option::Option<std::string::String>,
 }
 impl CsvMappingParameters {
@@ -4410,6 +4517,7 @@ impl CsvMappingParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonMappingParameters {
     /// <p>The path to the top-level parent that contains the records.</p>
+    #[doc(hidden)]
     pub record_row_path: std::option::Option<std::string::String>,
 }
 impl JsonMappingParameters {
@@ -4522,12 +4630,15 @@ impl AsRef<str> for RecordFormatType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>Amazon S3 object key name.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table. </p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub reference_role_arn: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSourceDescription {
@@ -4625,18 +4736,24 @@ impl S3ReferenceDataSourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDescription {
     /// <p>A unique identifier for the output configuration.</p>
+    #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
     /// <p>The name of the in-application stream that is configured as output.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output_description:
         std::option::Option<crate::model::KinesisStreamsOutputDescription>,
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output_description:
         std::option::Option<crate::model::KinesisFirehoseOutputDescription>,
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub lambda_output_description: std::option::Option<crate::model::LambdaOutputDescription>,
     /// <p>The data format used for writing data to the destination.</p>
+    #[doc(hidden)]
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
 }
 impl OutputDescription {
@@ -4812,6 +4929,7 @@ impl OutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
+    #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
 }
 impl DestinationSchema {
@@ -4869,10 +4987,12 @@ impl DestinationSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LambdaOutputDescription {
@@ -4950,10 +5070,12 @@ impl LambdaOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutputDescription {
@@ -5031,10 +5153,12 @@ impl KinesisFirehoseOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutputDescription {
@@ -5112,25 +5236,34 @@ impl KinesisStreamsOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDescription {
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application. </p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The in-application name prefix.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
+    #[doc(hidden)]
     pub in_app_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run. </p>
+    #[doc(hidden)]
     pub input_processing_configuration_description:
         std::option::Option<crate::model::InputProcessingConfigurationDescription>,
     /// <p>If a Kinesis data stream is configured as a streaming source, provides the Kinesis data stream's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub kinesis_streams_input_description:
         std::option::Option<crate::model::KinesisStreamsInputDescription>,
     /// <p>If a Kinesis Data Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN. </p>
+    #[doc(hidden)]
     pub kinesis_firehose_input_description:
         std::option::Option<crate::model::KinesisFirehoseInputDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source). </p>
+    #[doc(hidden)]
     pub input_parallelism: std::option::Option<crate::model::InputParallelism>,
     /// <p>The point at which the application is configured to read from the input stream.</p>
+    #[doc(hidden)]
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
 }
@@ -5391,6 +5524,7 @@ pub struct InputStartingPositionConfiguration {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub input_starting_position: std::option::Option<crate::model::InputStartingPosition>,
 }
 impl InputStartingPositionConfiguration {
@@ -5528,6 +5662,7 @@ impl AsRef<str> for InputStartingPosition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputParallelism {
     /// <p>The number of in-application streams to create.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl InputParallelism {
@@ -5580,10 +5715,12 @@ impl InputParallelism {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInputDescription {
@@ -5661,10 +5798,12 @@ impl KinesisFirehoseInputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputDescription {
@@ -5742,6 +5881,7 @@ impl KinesisStreamsInputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    #[doc(hidden)]
     pub input_lambda_processor_description:
         std::option::Option<crate::model::InputLambdaProcessorDescription>,
 }
@@ -5811,10 +5951,12 @@ pub struct InputLambdaProcessorDescription {
     /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessorDescription {
@@ -6084,8 +6226,10 @@ impl AsRef<str> for RuntimeEnvironment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>The ID of the CloudWatch logging option to update</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn_update: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdate {
@@ -6169,8 +6313,10 @@ impl CloudWatchLoggingOptionUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunConfigurationUpdate {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub flink_run_configuration: std::option::Option<crate::model::FlinkRunConfiguration>,
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
+    #[doc(hidden)]
     pub application_restore_configuration:
         std::option::Option<crate::model::ApplicationRestoreConfiguration>,
 }
@@ -6264,23 +6410,30 @@ impl RunConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationConfigurationUpdate {
     /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
+    #[doc(hidden)]
     pub sql_application_configuration_update:
         std::option::Option<crate::model::SqlApplicationConfigurationUpdate>,
     /// <p>Describes updates to an application's code configuration.</p>
+    #[doc(hidden)]
     pub application_code_configuration_update:
         std::option::Option<crate::model::ApplicationCodeConfigurationUpdate>,
     /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    #[doc(hidden)]
     pub flink_application_configuration_update:
         std::option::Option<crate::model::FlinkApplicationConfigurationUpdate>,
     /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub environment_property_updates: std::option::Option<crate::model::EnvironmentPropertyUpdates>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_snapshot_configuration_update:
         std::option::Option<crate::model::ApplicationSnapshotConfigurationUpdate>,
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
+    #[doc(hidden)]
     pub vpc_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::VpcConfigurationUpdate>>,
     /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub zeppelin_application_configuration_update:
         std::option::Option<crate::model::ZeppelinApplicationConfigurationUpdate>,
 }
@@ -6527,14 +6680,18 @@ impl ApplicationConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinApplicationConfigurationUpdate {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub monitoring_configuration_update:
         std::option::Option<crate::model::ZeppelinMonitoringConfigurationUpdate>,
     /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub catalog_configuration_update: std::option::Option<crate::model::CatalogConfigurationUpdate>,
     /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
+    #[doc(hidden)]
     pub deploy_as_application_configuration_update:
         std::option::Option<crate::model::DeployAsApplicationConfigurationUpdate>,
     /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
+    #[doc(hidden)]
     pub custom_artifacts_configuration_update:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
 }
@@ -6698,10 +6855,13 @@ impl ZeppelinApplicationConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomArtifactConfiguration {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
+    #[doc(hidden)]
     pub artifact_type: std::option::Option<crate::model::ArtifactType>,
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
+    #[doc(hidden)]
     pub s3_content_location: std::option::Option<crate::model::S3ContentLocation>,
     /// <p>The parameters required to fully specify a Maven reference.</p>
+    #[doc(hidden)]
     pub maven_reference: std::option::Option<crate::model::MavenReference>,
 }
 impl CustomArtifactConfiguration {
@@ -6799,6 +6959,7 @@ impl CustomArtifactConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
+    #[doc(hidden)]
     pub s3_content_location_update: std::option::Option<crate::model::S3ContentBaseLocationUpdate>,
 }
 impl DeployAsApplicationConfigurationUpdate {
@@ -6865,8 +7026,10 @@ impl DeployAsApplicationConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ContentBaseLocationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn_update: std::option::Option<std::string::String>,
     /// <p>The updated S3 bucket path.</p>
+    #[doc(hidden)]
     pub base_path_update: std::option::Option<std::string::String>,
 }
 impl S3ContentBaseLocationUpdate {
@@ -6944,6 +7107,7 @@ impl S3ContentBaseLocationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfigurationUpdate {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub glue_data_catalog_configuration_update:
         std::option::Option<crate::model::GlueDataCatalogConfigurationUpdate>,
 }
@@ -7011,6 +7175,7 @@ impl CatalogConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
+    #[doc(hidden)]
     pub database_arn_update: std::option::Option<std::string::String>,
 }
 impl GlueDataCatalogConfigurationUpdate {
@@ -7068,6 +7233,7 @@ impl GlueDataCatalogConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub log_level_update: std::option::Option<crate::model::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationUpdate {
@@ -7125,10 +7291,13 @@ impl ZeppelinMonitoringConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
+    #[doc(hidden)]
     pub vpc_configuration_id: std::option::Option<std::string::String>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub subnet_id_updates: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub security_group_id_updates: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfigurationUpdate {
@@ -7239,6 +7408,7 @@ impl VpcConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
+    #[doc(hidden)]
     pub snapshots_enabled_update: std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfigurationUpdate {
@@ -7293,6 +7463,7 @@ impl ApplicationSnapshotConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
+    #[doc(hidden)]
     pub property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
 }
 impl EnvironmentPropertyUpdates {
@@ -7356,12 +7527,15 @@ impl EnvironmentPropertyUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlinkApplicationConfigurationUpdate {
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
+    #[doc(hidden)]
     pub checkpoint_configuration_update:
         std::option::Option<crate::model::CheckpointConfigurationUpdate>,
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
+    #[doc(hidden)]
     pub monitoring_configuration_update:
         std::option::Option<crate::model::MonitoringConfigurationUpdate>,
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
+    #[doc(hidden)]
     pub parallelism_configuration_update:
         std::option::Option<crate::model::ParallelismConfigurationUpdate>,
 }
@@ -7487,12 +7661,16 @@ impl FlinkApplicationConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelismConfigurationUpdate {
     /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    #[doc(hidden)]
     pub configuration_type_update: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes updates to the initial number of parallel tasks an application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service will reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.</p>
+    #[doc(hidden)]
     pub parallelism_update: std::option::Option<i32>,
     /// <p>Describes updates to the number of parallel tasks an application can perform per Kinesis Processing Unit (KPU) used by the application.</p>
+    #[doc(hidden)]
     pub parallelism_per_kpu_update: std::option::Option<i32>,
     /// <p>Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based Kinesis Data Analytics application in response to increased throughput.</p>
+    #[doc(hidden)]
     pub auto_scaling_enabled_update: std::option::Option<bool>,
 }
 impl ParallelismConfigurationUpdate {
@@ -7609,10 +7787,13 @@ impl ParallelismConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringConfigurationUpdate {
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
+    #[doc(hidden)]
     pub configuration_type_update: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
+    #[doc(hidden)]
     pub metrics_level_update: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub log_level_update: std::option::Option<crate::model::LogLevel>,
 }
 impl MonitoringConfigurationUpdate {
@@ -7719,18 +7900,22 @@ pub struct CheckpointConfigurationUpdate {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub configuration_type_update: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes updates to whether checkpointing is enabled for an application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpointing_enabled_update: std::option::Option<bool>,
     /// <p>Describes updates to the interval in milliseconds between checkpoint operations.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpoint_interval_update: std::option::Option<i64>,
     /// <p>Describes updates to the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub min_pause_between_checkpoints_update: std::option::Option<i64>,
 }
 impl CheckpointConfigurationUpdate {
@@ -7895,8 +8080,10 @@ impl CheckpointConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content type.</p>
+    #[doc(hidden)]
     pub code_content_type_update: std::option::Option<crate::model::CodeContentType>,
     /// <p>Describes updates to the code content of an application.</p>
+    #[doc(hidden)]
     pub code_content_update: std::option::Option<crate::model::CodeContentUpdate>,
 }
 impl ApplicationCodeConfigurationUpdate {
@@ -7974,10 +8161,13 @@ impl ApplicationCodeConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
+    #[doc(hidden)]
     pub text_content_update: std::option::Option<std::string::String>,
     /// <p>Describes an update to the zipped code for an application.</p>
+    #[doc(hidden)]
     pub zip_file_content_update: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Describes an update to the location of code for an application.</p>
+    #[doc(hidden)]
     pub s3_content_location_update: std::option::Option<crate::model::S3ContentLocationUpdate>,
 }
 impl CodeContentUpdate {
@@ -8084,10 +8274,13 @@ impl CodeContentUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ContentLocationUpdate {
     /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    #[doc(hidden)]
     pub bucket_arn_update: std::option::Option<std::string::String>,
     /// <p>The new file key for the object containing the application code.</p>
+    #[doc(hidden)]
     pub file_key_update: std::option::Option<std::string::String>,
     /// <p>The new version of the object containing the application code.</p>
+    #[doc(hidden)]
     pub object_version_update: std::option::Option<std::string::String>,
 }
 impl S3ContentLocationUpdate {
@@ -8185,10 +8378,13 @@ impl S3ContentLocationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlApplicationConfigurationUpdate {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
+    #[doc(hidden)]
     pub input_updates: std::option::Option<std::vec::Vec<crate::model::InputUpdate>>,
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
+    #[doc(hidden)]
     pub output_updates: std::option::Option<std::vec::Vec<crate::model::OutputUpdate>>,
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
+    #[doc(hidden)]
     pub reference_data_source_updates:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceUpdate>>,
 }
@@ -8314,13 +8510,17 @@ impl SqlApplicationConfigurationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>The ID of the reference data source that is being updated. You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The in-application table name that is created by this update.</p>
+    #[doc(hidden)]
     pub table_name_update: std::option::Option<std::string::String>,
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
+    #[doc(hidden)]
     pub s3_reference_data_source_update:
         std::option::Option<crate::model::S3ReferenceDataSourceUpdate>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
+    #[doc(hidden)]
     pub reference_schema_update: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSourceUpdate {
@@ -8444,8 +8644,10 @@ impl ReferenceDataSourceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn_update: std::option::Option<std::string::String>,
     /// <p>The object key name.</p>
+    #[doc(hidden)]
     pub file_key_update: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSourceUpdate {
@@ -8523,18 +8725,24 @@ impl S3ReferenceDataSourceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
+    #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
+    #[doc(hidden)]
     pub name_update: std::option::Option<std::string::String>,
     /// <p>Describes a Kinesis data stream as the destination for the output.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output_update:
         std::option::Option<crate::model::KinesisStreamsOutputUpdate>,
     /// <p>Describes a Kinesis Data Firehose delivery stream as the destination for the output.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output_update:
         std::option::Option<crate::model::KinesisFirehoseOutputUpdate>,
     /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
+    #[doc(hidden)]
     pub lambda_output_update: std::option::Option<crate::model::LambdaOutputUpdate>,
     /// <p>Describes the data format when records are written to the destination. </p>
+    #[doc(hidden)]
     pub destination_schema_update: std::option::Option<crate::model::DestinationSchema>,
 }
 impl OutputUpdate {
@@ -8708,6 +8916,7 @@ pub struct LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl LambdaOutputUpdate {
@@ -8771,6 +8980,7 @@ impl LambdaOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutputUpdate {
@@ -8828,6 +9038,7 @@ impl KinesisFirehoseOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutputUpdate {
@@ -8885,20 +9096,27 @@ impl KinesisStreamsOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputUpdate {
     /// <p>The input ID of the application input to be updated.</p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
+    #[doc(hidden)]
     pub name_prefix_update: std::option::Option<std::string::String>,
     /// <p>Describes updates to an <code>InputProcessingConfiguration</code>.</p>
+    #[doc(hidden)]
     pub input_processing_configuration_update:
         std::option::Option<crate::model::InputProcessingConfigurationUpdate>,
     /// <p>If a Kinesis data stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub kinesis_streams_input_update: std::option::Option<crate::model::KinesisStreamsInputUpdate>,
     /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_input_update:
         std::option::Option<crate::model::KinesisFirehoseInputUpdate>,
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
+    #[doc(hidden)]
     pub input_schema_update: std::option::Option<crate::model::InputSchemaUpdate>,
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
+    #[doc(hidden)]
     pub input_parallelism_update: std::option::Option<crate::model::InputParallelismUpdate>,
 }
 impl InputUpdate {
@@ -9106,6 +9324,7 @@ impl InputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
+    #[doc(hidden)]
     pub count_update: std::option::Option<i32>,
 }
 impl InputParallelismUpdate {
@@ -9160,10 +9379,13 @@ impl InputParallelismUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSchemaUpdate {
     /// <p>Specifies the format of the records on the streaming source.</p>
+    #[doc(hidden)]
     pub record_format_update: std::option::Option<crate::model::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source; for example, UTF-8.</p>
+    #[doc(hidden)]
     pub record_encoding_update: std::option::Option<std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
+    #[doc(hidden)]
     pub record_column_updates: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
 impl InputSchemaUpdate {
@@ -9268,6 +9490,7 @@ impl InputSchemaUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInputUpdate {
@@ -9325,6 +9548,7 @@ impl KinesisFirehoseInputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputUpdate {
@@ -9382,6 +9606,7 @@ impl KinesisStreamsInputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
+    #[doc(hidden)]
     pub input_lambda_processor_update:
         std::option::Option<crate::model::InputLambdaProcessorUpdate>,
 }
@@ -9451,6 +9676,7 @@ pub struct InputLambdaProcessorUpdate {
     /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessorUpdate {
@@ -9514,8 +9740,10 @@ impl InputLambdaProcessorUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the key-value tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the key-value tag. The value is optional.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -9587,11 +9815,14 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunConfiguration {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub flink_run_configuration: std::option::Option<crate::model::FlinkRunConfiguration>,
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
+    #[doc(hidden)]
     pub sql_run_configurations:
         std::option::Option<std::vec::Vec<crate::model::SqlRunConfiguration>>,
     /// <p>Describes the restore behavior of a restarting application.</p>
+    #[doc(hidden)]
     pub application_restore_configuration:
         std::option::Option<crate::model::ApplicationRestoreConfiguration>,
 }
@@ -9714,8 +9945,10 @@ impl RunConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
+    #[doc(hidden)]
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
 }
@@ -9800,8 +10033,10 @@ impl SqlRunConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
 }
 impl ApplicationVersionSummary {
@@ -9876,12 +10111,16 @@ impl ApplicationVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The status of the application snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_status: std::option::Option<crate::model::SnapshotStatus>,
     /// <p>The current application version ID when the snapshot was created.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {
@@ -10062,16 +10301,22 @@ impl AsRef<str> for SnapshotStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The status of the application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>Provides the current application version.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
     /// <p>The runtime environment for the application.</p>
+    #[doc(hidden)]
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    #[doc(hidden)]
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl ApplicationSummary {
@@ -10226,6 +10471,7 @@ impl ApplicationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfiguration {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
+    #[doc(hidden)]
     pub input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
 }
 impl InputProcessingConfiguration {
@@ -10287,6 +10533,7 @@ pub struct InputLambdaProcessor {
     /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessor {
@@ -10347,8 +10594,10 @@ impl InputLambdaProcessor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Configuration {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The name of the object that contains the data.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
 }
 impl S3Configuration {
@@ -10475,6 +10724,7 @@ impl AsRef<str> for UrlType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOption {
@@ -10532,22 +10782,29 @@ impl CloudWatchLoggingOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationConfiguration {
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub sql_application_configuration:
         std::option::Option<crate::model::SqlApplicationConfiguration>,
     /// <p>The creation and update parameters for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub flink_application_configuration:
         std::option::Option<crate::model::FlinkApplicationConfiguration>,
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub environment_properties: std::option::Option<crate::model::EnvironmentProperties>,
     /// <p>The code location and type parameters for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_code_configuration:
         std::option::Option<crate::model::ApplicationCodeConfiguration>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub application_snapshot_configuration:
         std::option::Option<crate::model::ApplicationSnapshotConfiguration>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
+    #[doc(hidden)]
     pub vpc_configurations: std::option::Option<std::vec::Vec<crate::model::VpcConfiguration>>,
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub zeppelin_application_configuration:
         std::option::Option<crate::model::ZeppelinApplicationConfiguration>,
 }
@@ -10783,14 +11040,18 @@ impl ApplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinApplicationConfiguration {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub monitoring_configuration:
         std::option::Option<crate::model::ZeppelinMonitoringConfiguration>,
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub catalog_configuration: std::option::Option<crate::model::CatalogConfiguration>,
     /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
+    #[doc(hidden)]
     pub deploy_as_application_configuration:
         std::option::Option<crate::model::DeployAsApplicationConfiguration>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
+    #[doc(hidden)]
     pub custom_artifacts_configuration:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
 }
@@ -10941,6 +11202,7 @@ impl ZeppelinApplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployAsApplicationConfiguration {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
+    #[doc(hidden)]
     pub s3_content_location: std::option::Option<crate::model::S3ContentBaseLocation>,
 }
 impl DeployAsApplicationConfiguration {
@@ -10998,8 +11260,10 @@ impl DeployAsApplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
 }
 impl S3ContentBaseLocation {
@@ -11071,6 +11335,7 @@ impl S3ContentBaseLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfiguration {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
+    #[doc(hidden)]
     pub glue_data_catalog_configuration:
         std::option::Option<crate::model::GlueDataCatalogConfiguration>,
 }
@@ -11138,6 +11403,7 @@ impl CatalogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    #[doc(hidden)]
     pub database_arn: std::option::Option<std::string::String>,
 }
 impl GlueDataCatalogConfiguration {
@@ -11192,6 +11458,7 @@ impl GlueDataCatalogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl ZeppelinMonitoringConfiguration {
@@ -11246,8 +11513,10 @@ impl ZeppelinMonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfiguration {
@@ -11337,6 +11606,7 @@ impl VpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub snapshots_enabled: std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfiguration {
@@ -11391,8 +11661,10 @@ impl ApplicationSnapshotConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
+    #[doc(hidden)]
     pub code_content: std::option::Option<crate::model::CodeContent>,
     /// <p>Specifies whether the code content is in text or zip format.</p>
+    #[doc(hidden)]
     pub code_content_type: std::option::Option<crate::model::CodeContentType>,
 }
 impl ApplicationCodeConfiguration {
@@ -11470,10 +11742,13 @@ impl ApplicationCodeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeContent {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub text_content: std::option::Option<std::string::String>,
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub zip_file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
+    #[doc(hidden)]
     pub s3_content_location: std::option::Option<crate::model::S3ContentLocation>,
 }
 impl CodeContent {
@@ -11568,6 +11843,7 @@ impl CodeContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentProperties {
     /// <p>Describes the execution property groups.</p>
+    #[doc(hidden)]
     pub property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
 }
 impl EnvironmentProperties {
@@ -11631,10 +11907,13 @@ impl EnvironmentProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlinkApplicationConfiguration {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
+    #[doc(hidden)]
     pub checkpoint_configuration: std::option::Option<crate::model::CheckpointConfiguration>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
+    #[doc(hidden)]
     pub monitoring_configuration: std::option::Option<crate::model::MonitoringConfiguration>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    #[doc(hidden)]
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
 }
 impl FlinkApplicationConfiguration {
@@ -11750,12 +12029,16 @@ impl FlinkApplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelismConfiguration {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    #[doc(hidden)]
     pub parallelism: std::option::Option<i32>,
     /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
+    #[doc(hidden)]
     pub parallelism_per_kpu: std::option::Option<i32>,
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
+    #[doc(hidden)]
     pub auto_scaling_enabled: std::option::Option<bool>,
 }
 impl ParallelismConfiguration {
@@ -11864,10 +12147,13 @@ impl ParallelismConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringConfiguration {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
+    #[doc(hidden)]
     pub metrics_level: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl MonitoringConfiguration {
@@ -11969,18 +12255,22 @@ pub struct CheckpointConfiguration {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationType>,
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpointing_enabled: std::option::Option<bool>,
     /// <p>Describes the interval in milliseconds between checkpoint operations. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub checkpoint_interval: std::option::Option<i64>,
     /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the application otherwise performs continual checkpoint operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"> Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
+    #[doc(hidden)]
     pub min_pause_between_checkpoints: std::option::Option<i64>,
 }
 impl CheckpointConfiguration {
@@ -12134,10 +12424,13 @@ impl CheckpointConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlApplicationConfiguration {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
     /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
+    #[doc(hidden)]
     pub reference_data_sources:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSource>>,
 }
@@ -12257,10 +12550,13 @@ impl SqlApplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSource {
     /// <p>The name of the in-application table to create.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    #[doc(hidden)]
     pub s3_reference_data_source: std::option::Option<crate::model::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    #[doc(hidden)]
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSource {
@@ -12362,8 +12658,10 @@ impl ReferenceDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSource {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The object key name containing the reference data.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSource {
@@ -12436,14 +12734,19 @@ impl S3ReferenceDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Output {
     /// <p>The name of the in-application stream.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Identifies a Kinesis data stream as the destination.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output: std::option::Option<crate::model::KinesisStreamsOutput>,
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output: std::option::Option<crate::model::KinesisFirehoseOutput>,
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
+    #[doc(hidden)]
     pub lambda_output: std::option::Option<crate::model::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination. </p>
+    #[doc(hidden)]
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
 }
 impl Output {
@@ -12588,6 +12891,7 @@ pub struct LambdaOutput {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl LambdaOutput {
@@ -12648,6 +12952,7 @@ impl LambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutput {
     /// <p>The ARN of the destination delivery stream to write to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutput {
@@ -12702,6 +13007,7 @@ impl KinesisFirehoseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutput {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutput {
@@ -12756,18 +13062,24 @@ impl KinesisStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Input {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
+    #[doc(hidden)]
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub kinesis_streams_input: std::option::Option<crate::model::KinesisStreamsInput>,
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_input: std::option::Option<crate::model::KinesisFirehoseInput>,
     /// <p>Describes the number of in-application streams to create. </p>
+    #[doc(hidden)]
     pub input_parallelism: std::option::Option<crate::model::InputParallelism>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl Input {
@@ -12936,6 +13248,7 @@ impl Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInput {
@@ -12990,6 +13303,7 @@ impl KinesisFirehoseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInput {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInput {

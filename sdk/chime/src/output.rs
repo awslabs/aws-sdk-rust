@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateE911AddressOutput {
     /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    #[doc(hidden)]
     pub validation_result: i32,
     /// <p>The ID that represents the address.</p>
+    #[doc(hidden)]
     pub address_external_id: std::option::Option<std::string::String>,
     /// <p>The validated address.</p>
+    #[doc(hidden)]
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The list of address suggestions.</p>
+    #[doc(hidden)]
     pub candidate_address_list: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
 }
 impl ValidateE911AddressOutput {
@@ -128,6 +132,7 @@ impl ValidateE911AddressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceConnectorGroupOutput {
     /// <p>The updated Amazon Chime Voice Connector group details.</p>
+    #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
 }
 impl UpdateVoiceConnectorGroupOutput {
@@ -185,6 +190,7 @@ impl UpdateVoiceConnectorGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceConnectorOutput {
     /// <p>The updated Amazon Chime Voice Connector details.</p>
+    #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
 }
 impl UpdateVoiceConnectorOutput {
@@ -272,6 +278,7 @@ impl UpdateUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>The updated user details.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl UpdateUserOutput {
@@ -324,6 +331,7 @@ impl UpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipRuleOutput {
     /// <p>Updated SIP rule details.</p>
+    #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
 }
 impl UpdateSipRuleOutput {
@@ -378,6 +386,7 @@ impl UpdateSipRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipMediaApplicationCallOutput {
     /// <p>A <code>Call</code> instance for a SIP media application.</p>
+    #[doc(hidden)]
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
 }
 impl UpdateSipMediaApplicationCallOutput {
@@ -444,6 +453,7 @@ impl UpdateSipMediaApplicationCallOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSipMediaApplicationOutput {
     /// <p>The updated SIP media application details.</p>
+    #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
 impl UpdateSipMediaApplicationOutput {
@@ -501,6 +511,7 @@ impl UpdateSipMediaApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomMembershipOutput {
     /// <p>The room membership details.</p>
+    #[doc(hidden)]
     pub room_membership: std::option::Option<crate::model::RoomMembership>,
 }
 impl UpdateRoomMembershipOutput {
@@ -558,6 +569,7 @@ impl UpdateRoomMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoomOutput {
     /// <p>The room details.</p>
+    #[doc(hidden)]
     pub room: std::option::Option<crate::model::Room>,
 }
 impl UpdateRoomOutput {
@@ -610,6 +622,7 @@ impl UpdateRoomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProxySessionOutput {
     /// <p>The proxy session details.</p>
+    #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
 }
 impl UpdateProxySessionOutput {
@@ -697,6 +710,7 @@ impl UpdatePhoneNumberSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberOutput {
     /// <p>The updated phone number details.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
 }
 impl UpdatePhoneNumberOutput {
@@ -784,6 +798,7 @@ impl UpdateGlobalSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelReadMarkerOutput {
@@ -838,8 +853,10 @@ impl UpdateChannelReadMarkerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string of the message being updated.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageOutput {
@@ -911,6 +928,7 @@ impl UpdateChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelOutput {
@@ -965,6 +983,7 @@ impl UpdateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotOutput {
     /// <p>The updated bot details.</p>
+    #[doc(hidden)]
     pub bot: std::option::Option<crate::model::Bot>,
 }
 impl UpdateBotOutput {
@@ -1017,6 +1036,7 @@ impl UpdateBotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceUserOutput {
@@ -1074,6 +1094,7 @@ impl UpdateAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>. </p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAppInstanceOutput {
@@ -1161,6 +1182,7 @@ impl UpdateAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountOutput {
     /// <p>The updated Amazon Chime account details.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<crate::model::Account>,
 }
 impl UpdateAccountOutput {
@@ -1455,8 +1477,10 @@ impl StartMeetingTranscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string assigned to each message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendChannelMessageOutput {
@@ -1528,8 +1552,10 @@ impl SendChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>List of phone numbers, in E.164 format.</p>
+    #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used to retrieve the next page of search results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchAvailablePhoneNumbersOutput {
@@ -1610,6 +1636,7 @@ impl SearchAvailablePhoneNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestorePhoneNumberOutput {
     /// <p>The phone number details.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
 }
 impl RestorePhoneNumberOutput {
@@ -1667,6 +1694,7 @@ impl RestorePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetPersonalPinOutput {
     /// <p>The user details and new personal meeting PIN.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl ResetPersonalPinOutput {
@@ -1719,6 +1747,7 @@ impl ResetPersonalPinOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegenerateSecurityTokenOutput {
     /// <p>A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.</p>
+    #[doc(hidden)]
     pub bot: std::option::Option<crate::model::Bot>,
 }
 impl RegenerateSecurityTokenOutput {
@@ -1831,8 +1860,10 @@ impl RedactConversationMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being redacted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl RedactChannelMessageOutput {
@@ -1934,6 +1965,7 @@ impl PutVoiceConnectorTerminationCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorTerminationOutput {
     /// <p>The updated termination setting details.</p>
+    #[doc(hidden)]
     pub termination: std::option::Option<crate::model::Termination>,
 }
 impl PutVoiceConnectorTerminationOutput {
@@ -1991,6 +2023,7 @@ impl PutVoiceConnectorTerminationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorStreamingConfigurationOutput {
     /// <p>The updated streaming configuration details.</p>
+    #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
 }
 impl PutVoiceConnectorStreamingConfigurationOutput {
@@ -2054,6 +2087,7 @@ impl PutVoiceConnectorStreamingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorProxyOutput {
     /// <p>The proxy configuration details.</p>
+    #[doc(hidden)]
     pub proxy: std::option::Option<crate::model::Proxy>,
 }
 impl PutVoiceConnectorProxyOutput {
@@ -2106,6 +2140,7 @@ impl PutVoiceConnectorProxyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorOriginationOutput {
     /// <p>The updated origination setting details.</p>
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
 }
 impl PutVoiceConnectorOriginationOutput {
@@ -2163,6 +2198,7 @@ impl PutVoiceConnectorOriginationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorLoggingConfigurationOutput {
     /// <p>The updated logging configuration details.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutVoiceConnectorLoggingConfigurationOutput {
@@ -2222,6 +2258,7 @@ impl PutVoiceConnectorLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The emergency calling configuration details.</p>
+    #[doc(hidden)]
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
 }
@@ -2291,6 +2328,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSipMediaApplicationLoggingConfigurationOutput {
     /// <p>Logging configuration of the SIP media application.</p>
+    #[doc(hidden)]
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
 }
@@ -2360,8 +2398,10 @@ impl PutSipMediaApplicationLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionSettingsOutput {
     /// <p>The retention settings.</p>
+    #[doc(hidden)]
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutRetentionSettingsOutput {
@@ -2442,6 +2482,7 @@ impl PutRetentionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsConfigurationOutput {
     /// <p>The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.</p>
+    #[doc(hidden)]
     pub events_configuration: std::option::Option<crate::model::EventsConfiguration>,
 }
 impl PutEventsConfigurationOutput {
@@ -2499,6 +2540,7 @@ impl PutEventsConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
 }
@@ -2576,9 +2618,11 @@ impl PutAppInstanceStreamingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutAppInstanceRetentionSettingsOutput {
@@ -2698,6 +2742,7 @@ impl LogoutUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorTerminationCredentialsOutput {
     /// <p>A list of user names.</p>
+    #[doc(hidden)]
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListVoiceConnectorTerminationCredentialsOutput {
@@ -2762,8 +2807,10 @@ impl ListVoiceConnectorTerminationCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorsOutput {
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
+    #[doc(hidden)]
     pub voice_connectors: std::option::Option<std::vec::Vec<crate::model::VoiceConnector>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVoiceConnectorsOutput {
@@ -2845,9 +2892,11 @@ impl ListVoiceConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVoiceConnectorGroupsOutput {
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
+    #[doc(hidden)]
     pub voice_connector_groups:
         std::option::Option<std::vec::Vec<crate::model::VoiceConnectorGroup>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVoiceConnectorGroupsOutput {
@@ -2931,8 +2980,10 @@ impl ListVoiceConnectorGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>List of users and user details.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -3013,6 +3064,7 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag-key value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -3074,6 +3126,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
+    #[doc(hidden)]
     pub phone_number_countries:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>,
 }
@@ -3141,8 +3194,10 @@ impl ListSupportedPhoneNumberCountriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSipRulesOutput {
     /// <p>List of SIP rules and rule details.</p>
+    #[doc(hidden)]
     pub sip_rules: std::option::Option<std::vec::Vec<crate::model::SipRule>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSipRulesOutput {
@@ -3223,9 +3278,11 @@ impl ListSipRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSipMediaApplicationsOutput {
     /// <p>List of SIP media applications and application details.</p>
+    #[doc(hidden)]
     pub sip_media_applications:
         std::option::Option<std::vec::Vec<crate::model::SipMediaApplication>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSipMediaApplicationsOutput {
@@ -3309,8 +3366,10 @@ impl ListSipMediaApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoomsOutput {
     /// <p>The room details.</p>
+    #[doc(hidden)]
     pub rooms: std::option::Option<std::vec::Vec<crate::model::Room>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoomsOutput {
@@ -3391,8 +3450,10 @@ impl ListRoomsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoomMembershipsOutput {
     /// <p>The room membership details.</p>
+    #[doc(hidden)]
     pub room_memberships: std::option::Option<std::vec::Vec<crate::model::RoomMembership>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoomMembershipsOutput {
@@ -3474,8 +3535,10 @@ impl ListRoomMembershipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProxySessionsOutput {
     /// <p>The proxy session details.</p>
+    #[doc(hidden)]
     pub proxy_sessions: std::option::Option<std::vec::Vec<crate::model::ProxySession>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProxySessionsOutput {
@@ -3556,8 +3619,10 @@ impl ListProxySessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersOutput {
     /// <p>The phone number details.</p>
+    #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersOutput {
@@ -3638,8 +3703,10 @@ impl ListPhoneNumbersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumberOrdersOutput {
     /// <p>The phone number order details.</p>
+    #[doc(hidden)]
     pub phone_number_orders: std::option::Option<std::vec::Vec<crate::model::PhoneNumberOrder>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumberOrdersOutput {
@@ -3721,6 +3788,7 @@ impl ListPhoneNumberOrdersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeetingTagsOutput {
     /// <p>A list of tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListMeetingTagsOutput {
@@ -3782,8 +3850,10 @@ impl ListMeetingTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeetingsOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
+    #[doc(hidden)]
     pub meetings: std::option::Option<std::vec::Vec<crate::model::Meeting>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMeetingsOutput {
@@ -3864,9 +3934,11 @@ impl ListMeetingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMediaCapturePipelinesOutput {
     /// <p>The media capture pipeline objects in the list.</p>
+    #[doc(hidden)]
     pub media_capture_pipelines:
         std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
     /// <p>The token used to retrieve the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMediaCapturePipelinesOutput {
@@ -3953,9 +4025,11 @@ impl ListMediaCapturePipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
+    #[doc(hidden)]
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
@@ -4046,8 +4120,10 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// <p>The information about each channel.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -4128,10 +4204,13 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about and names of each moderator.</p>
+    #[doc(hidden)]
     pub channel_moderators:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
 }
@@ -4233,10 +4312,13 @@ impl ListChannelModeratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMessagesOutput {
     /// <p>The ARN of the channel containing the requested messages.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about, and content of, each requested message.</p>
+    #[doc(hidden)]
     pub channel_messages: std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
 }
 impl ListChannelMessagesOutput {
@@ -4335,10 +4417,12 @@ impl ListChannelMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub channel_memberships: std::option::Option<
         std::vec::Vec<crate::model::ChannelMembershipForAppInstanceUserSummary>,
     >,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
@@ -4429,11 +4513,14 @@ impl ListChannelMembershipsForAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The information for the requested channel memberships.</p>
+    #[doc(hidden)]
     pub channel_memberships:
         std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsOutput {
@@ -4537,10 +4624,13 @@ impl ListChannelMembershipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelBansOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information for each requested ban.</p>
+    #[doc(hidden)]
     pub channel_bans: std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
 }
 impl ListChannelBansOutput {
@@ -4639,8 +4729,10 @@ impl ListChannelBansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsOutput {
     /// <p>List of bots and bot details.</p>
+    #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::model::Bot>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsOutput {
@@ -4721,6 +4813,7 @@ impl ListBotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeeTagsOutput {
     /// <p>A list of tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListAttendeeTagsOutput {
@@ -4782,8 +4875,10 @@ impl ListAttendeeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeesOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttendeesOutput {
@@ -4864,11 +4959,14 @@ impl ListAttendeesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_users:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceUsersOutput {
@@ -4972,8 +5070,10 @@ impl ListAppInstanceUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instances: std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesOutput {
@@ -5055,11 +5155,14 @@ impl ListAppInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The information for each administrator.</p>
+    #[doc(hidden)]
     pub app_instance_admins:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsOutput {
@@ -5163,8 +5266,10 @@ impl ListAppInstanceAdminsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsOutput {
     /// <p>List of Amazon Chime accounts and account details.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsOutput {
@@ -5245,6 +5350,7 @@ impl ListAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteUsersOutput {
     /// <p>The email invitation details.</p>
+    #[doc(hidden)]
     pub invites: std::option::Option<std::vec::Vec<crate::model::Invite>>,
 }
 impl InviteUsersOutput {
@@ -5308,6 +5414,7 @@ impl InviteUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorTerminationHealthOutput {
     /// <p>The termination health details.</p>
+    #[doc(hidden)]
     pub termination_health: std::option::Option<crate::model::TerminationHealth>,
 }
 impl GetVoiceConnectorTerminationHealthOutput {
@@ -5365,6 +5472,7 @@ impl GetVoiceConnectorTerminationHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorTerminationOutput {
     /// <p>The termination setting details.</p>
+    #[doc(hidden)]
     pub termination: std::option::Option<crate::model::Termination>,
 }
 impl GetVoiceConnectorTerminationOutput {
@@ -5422,6 +5530,7 @@ impl GetVoiceConnectorTerminationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorStreamingConfigurationOutput {
     /// <p>The streaming configuration details.</p>
+    #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
 }
 impl GetVoiceConnectorStreamingConfigurationOutput {
@@ -5485,6 +5594,7 @@ impl GetVoiceConnectorStreamingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorProxyOutput {
     /// <p>The proxy configuration details.</p>
+    #[doc(hidden)]
     pub proxy: std::option::Option<crate::model::Proxy>,
 }
 impl GetVoiceConnectorProxyOutput {
@@ -5537,6 +5647,7 @@ impl GetVoiceConnectorProxyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorOriginationOutput {
     /// <p>The origination setting details.</p>
+    #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
 }
 impl GetVoiceConnectorOriginationOutput {
@@ -5594,6 +5705,7 @@ impl GetVoiceConnectorOriginationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorLoggingConfigurationOutput {
     /// <p>The logging configuration details.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetVoiceConnectorLoggingConfigurationOutput {
@@ -5653,6 +5765,7 @@ impl GetVoiceConnectorLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorGroupOutput {
     /// <p>The Amazon Chime Voice Connector group details.</p>
+    #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
 }
 impl GetVoiceConnectorGroupOutput {
@@ -5710,6 +5823,7 @@ impl GetVoiceConnectorGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The emergency calling configuration details.</p>
+    #[doc(hidden)]
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
 }
@@ -5779,6 +5893,7 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVoiceConnectorOutput {
     /// <p>The Amazon Chime Voice Connector details.</p>
+    #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
 }
 impl GetVoiceConnectorOutput {
@@ -5836,6 +5951,7 @@ impl GetVoiceConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserSettingsOutput {
     /// <p>The user settings.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<crate::model::UserSettings>,
 }
 impl GetUserSettingsOutput {
@@ -5893,6 +6009,7 @@ impl GetUserSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserOutput {
     /// <p>The user details.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl GetUserOutput {
@@ -5945,6 +6062,7 @@ impl GetUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipRuleOutput {
     /// <p>The SIP rule details.</p>
+    #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
 }
 impl GetSipRuleOutput {
@@ -5999,6 +6117,7 @@ impl GetSipRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The actual logging configuration.</p>
+    #[doc(hidden)]
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
 }
@@ -6068,6 +6187,7 @@ impl GetSipMediaApplicationLoggingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSipMediaApplicationOutput {
     /// <p>The SIP media application details.</p>
+    #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
 impl GetSipMediaApplicationOutput {
@@ -6125,6 +6245,7 @@ impl GetSipMediaApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoomOutput {
     /// <p>The room details.</p>
+    #[doc(hidden)]
     pub room: std::option::Option<crate::model::Room>,
 }
 impl GetRoomOutput {
@@ -6177,8 +6298,10 @@ impl GetRoomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRetentionSettingsOutput {
     /// <p>The retention settings.</p>
+    #[doc(hidden)]
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRetentionSettingsOutput {
@@ -6259,6 +6382,7 @@ impl GetRetentionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProxySessionOutput {
     /// <p>The proxy session details.</p>
+    #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
 }
 impl GetProxySessionOutput {
@@ -6316,8 +6440,10 @@ impl GetProxySessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberSettingsOutput {
     /// <p>The default outbound calling name for the account.</p>
+    #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPhoneNumberSettingsOutput {
@@ -6397,6 +6523,7 @@ impl GetPhoneNumberSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberOrderOutput {
     /// <p>The phone number order details.</p>
+    #[doc(hidden)]
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
 }
 impl GetPhoneNumberOrderOutput {
@@ -6454,6 +6581,7 @@ impl GetPhoneNumberOrderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPhoneNumberOutput {
     /// <p>The phone number details.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
 }
 impl GetPhoneNumberOutput {
@@ -6511,6 +6639,7 @@ impl GetPhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
 }
 impl GetMessagingSessionEndpointOutput {
@@ -6568,6 +6697,7 @@ impl GetMessagingSessionEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMeetingOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl GetMeetingOutput {
@@ -6622,6 +6752,7 @@ impl GetMeetingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaCapturePipelineOutput {
     /// <p>The media capture pipeline object.</p>
+    #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl GetMediaCapturePipelineOutput {
@@ -6681,8 +6812,10 @@ impl GetMediaCapturePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGlobalSettingsOutput {
     /// <p>The Amazon Chime Business Calling settings.</p>
+    #[doc(hidden)]
     pub business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
     /// <p>The Amazon Chime Voice Connector settings.</p>
+    #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
 }
 impl GetGlobalSettingsOutput {
@@ -6760,6 +6893,7 @@ impl GetGlobalSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventsConfigurationOutput {
     /// <p>The events configuration details.</p>
+    #[doc(hidden)]
     pub events_configuration: std::option::Option<crate::model::EventsConfiguration>,
 }
 impl GetEventsConfigurationOutput {
@@ -6817,6 +6951,7 @@ impl GetEventsConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
+    #[doc(hidden)]
     pub channel_message: std::option::Option<crate::model::ChannelMessage>,
 }
 impl GetChannelMessageOutput {
@@ -6874,6 +7009,7 @@ impl GetChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBotOutput {
     /// <p>The chat bot details.</p>
+    #[doc(hidden)]
     pub bot: std::option::Option<crate::model::Bot>,
 }
 impl GetBotOutput {
@@ -6926,6 +7062,7 @@ impl GetBotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttendeeOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
+    #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl GetAttendeeOutput {
@@ -6980,6 +7117,7 @@ impl GetAttendeeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
+    #[doc(hidden)]
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
 }
@@ -7057,9 +7195,11 @@ impl GetAppInstanceStreamingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
+    #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAppInstanceRetentionSettingsOutput {
@@ -7149,6 +7289,7 @@ impl GetAppInstanceRetentionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSettingsOutput {
     /// <p>The Amazon Chime account settings.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
 impl GetAccountSettingsOutput {
@@ -7206,6 +7347,7 @@ impl GetAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountOutput {
     /// <p>The Amazon Chime account details.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<crate::model::Account>,
 }
 impl GetAccountOutput {
@@ -7291,6 +7433,7 @@ impl DisassociateSigninDelegateGroupsFromAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
@@ -7356,6 +7499,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
@@ -7451,6 +7595,7 @@ impl DisassociatePhoneNumberFromUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::ChannelModerator>,
 }
 impl DescribeChannelModeratorOutput {
@@ -7508,6 +7653,7 @@ impl DescribeChannelModeratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
 }
 impl DescribeChannelModeratedByAppInstanceUserOutput {
@@ -7572,6 +7718,7 @@ impl DescribeChannelModeratedByAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     /// <p>The channel to which a user belongs.</p>
+    #[doc(hidden)]
     pub channel_membership:
         std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
 }
@@ -7637,6 +7784,7 @@ impl DescribeChannelMembershipForAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
+    #[doc(hidden)]
     pub channel_membership: std::option::Option<crate::model::ChannelMembership>,
 }
 impl DescribeChannelMembershipOutput {
@@ -7694,6 +7842,7 @@ impl DescribeChannelMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
+    #[doc(hidden)]
     pub channel_ban: std::option::Option<crate::model::ChannelBan>,
 }
 impl DescribeChannelBanOutput {
@@ -7751,6 +7900,7 @@ impl DescribeChannelBanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// <p>The channel details.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl DescribeChannelOutput {
@@ -7805,6 +7955,7 @@ impl DescribeChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
 }
 impl DescribeAppInstanceUserOutput {
@@ -7862,6 +8013,7 @@ impl DescribeAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
 }
 impl DescribeAppInstanceAdminOutput {
@@ -7919,6 +8071,7 @@ impl DescribeAppInstanceAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    #[doc(hidden)]
     pub app_instance: std::option::Option<crate::model::AppInstance>,
 }
 impl DescribeAppInstanceOutput {
@@ -8823,6 +8976,7 @@ impl DeleteAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceConnectorGroupOutput {
     /// <p>The Amazon Chime Voice Connector group details.</p>
+    #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
 }
 impl CreateVoiceConnectorGroupOutput {
@@ -8880,6 +9034,7 @@ impl CreateVoiceConnectorGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVoiceConnectorOutput {
     /// <p>The Amazon Chime Voice Connector details.</p>
+    #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
 }
 impl CreateVoiceConnectorOutput {
@@ -8937,6 +9092,7 @@ impl CreateVoiceConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The user on the Amazon Chime account.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
@@ -8989,6 +9145,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipRuleOutput {
     /// <p>Returns the SIP rule information, including the rule ID, triggers, and target applications.</p>
+    #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
 }
 impl CreateSipRuleOutput {
@@ -9043,6 +9200,7 @@ impl CreateSipRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationCallOutput {
     /// <p>The actual call.</p>
+    #[doc(hidden)]
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
 }
 impl CreateSipMediaApplicationCallOutput {
@@ -9109,6 +9267,7 @@ impl CreateSipMediaApplicationCallOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSipMediaApplicationOutput {
     /// <p>The SIP media application details.</p>
+    #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
 impl CreateSipMediaApplicationOutput {
@@ -9166,6 +9325,7 @@ impl CreateSipMediaApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomMembershipOutput {
     /// <p>The room membership details.</p>
+    #[doc(hidden)]
     pub room_membership: std::option::Option<crate::model::RoomMembership>,
 }
 impl CreateRoomMembershipOutput {
@@ -9223,6 +9383,7 @@ impl CreateRoomMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoomOutput {
     /// <p>The room details.</p>
+    #[doc(hidden)]
     pub room: std::option::Option<crate::model::Room>,
 }
 impl CreateRoomOutput {
@@ -9275,6 +9436,7 @@ impl CreateRoomOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProxySessionOutput {
     /// <p>The proxy session details.</p>
+    #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
 }
 impl CreateProxySessionOutput {
@@ -9332,6 +9494,7 @@ impl CreateProxySessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePhoneNumberOrderOutput {
     /// <p>The phone number order details.</p>
+    #[doc(hidden)]
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
 }
 impl CreatePhoneNumberOrderOutput {
@@ -9389,10 +9552,13 @@ impl CreatePhoneNumberOrderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesOutput {
     /// <p>A meeting created using the Amazon Chime SDK.</p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
     /// <p>The attendee information, including attendees IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
 }
 impl CreateMeetingWithAttendeesOutput {
@@ -9499,6 +9665,7 @@ impl CreateMeetingWithAttendeesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingDialOutOutput {
     /// <p>Unique ID that tracks API calls.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CreateMeetingDialOutOutput {
@@ -9556,6 +9723,7 @@ impl CreateMeetingDialOutOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingOutput {
     /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl CreateMeetingOutput {
@@ -9610,6 +9778,7 @@ impl CreateMeetingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineOutput {
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+    #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl CreateMediaCapturePipelineOutput {
@@ -9669,8 +9838,10 @@ impl CreateMediaCapturePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelModeratorOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARNs of the channel and the moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelModeratorOutput {
@@ -9745,8 +9916,10 @@ impl CreateChannelModeratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN and metadata of the member being added.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelMembershipOutput {
@@ -9818,8 +9991,10 @@ impl CreateChannelMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelBanOutput {
@@ -9891,6 +10066,7 @@ impl CreateChannelBanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateChannelOutput {
@@ -9945,6 +10121,7 @@ impl CreateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotOutput {
     /// <p>The bot details.</p>
+    #[doc(hidden)]
     pub bot: std::option::Option<crate::model::Bot>,
 }
 impl CreateBotOutput {
@@ -9997,6 +10174,7 @@ impl CreateBotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeOutput {
     /// <p>The attendee information, including attendee ID and join token.</p>
+    #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl CreateAttendeeOutput {
@@ -10051,6 +10229,7 @@ impl CreateAttendeeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceUserOutput {
@@ -10108,8 +10287,10 @@ impl CreateAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceAdminOutput {
     /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceAdminOutput {
@@ -10187,6 +10368,7 @@ impl CreateAppInstanceAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl CreateAppInstanceOutput {
@@ -10244,6 +10426,7 @@ impl CreateAppInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountOutput {
     /// <p>The Amazon Chime account details.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<crate::model::Account>,
 }
 impl CreateAccountOutput {
@@ -10298,6 +10481,7 @@ impl CreateAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateUserOutput {
     /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchUpdateUserOutput {
@@ -10361,6 +10545,7 @@ impl BatchUpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePhoneNumberOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl BatchUpdatePhoneNumberOutput {
@@ -10425,6 +10610,7 @@ impl BatchUpdatePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUnsuspendUserOutput {
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchUnsuspendUserOutput {
@@ -10488,6 +10674,7 @@ impl BatchUnsuspendUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSuspendUserOutput {
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchSuspendUserOutput {
@@ -10551,6 +10738,7 @@ impl BatchSuspendUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeletePhoneNumberOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl BatchDeletePhoneNumberOutput {
@@ -10615,6 +10803,7 @@ impl BatchDeletePhoneNumberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateRoomMembershipOutput {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::MemberError>>,
 }
 impl BatchCreateRoomMembershipOutput {
@@ -10678,8 +10867,10 @@ impl BatchCreateRoomMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
+    #[doc(hidden)]
     pub batch_channel_memberships: std::option::Option<crate::model::BatchChannelMemberships>,
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
 }
 impl BatchCreateChannelMembershipOutput {
@@ -10774,8 +10965,10 @@ impl BatchCreateChannelMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateAttendeeOutput {
     /// <p>The attendee information, including attendees IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
 }
 impl BatchCreateAttendeeOutput {
@@ -10926,6 +11119,7 @@ impl AssociatePhoneNumberWithUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
@@ -10991,6 +11185,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorOutput {

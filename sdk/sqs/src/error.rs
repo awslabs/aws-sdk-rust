@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAttributeName {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAttributeName {
@@ -69,6 +70,7 @@ impl InvalidAttributeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperation {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperation {
@@ -133,6 +135,7 @@ impl UnsupportedOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyEntriesInBatchRequest {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyEntriesInBatchRequest {
@@ -197,6 +200,7 @@ impl TooManyEntriesInBatchRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBatchEntryId {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBatchEntryId {
@@ -261,6 +265,7 @@ impl InvalidBatchEntryId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmptyBatchRequest {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmptyBatchRequest {
@@ -325,6 +330,7 @@ impl EmptyBatchRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRequestTooLong {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchRequestTooLong {
@@ -389,6 +395,7 @@ impl BatchRequestTooLong {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEntryIdsNotDistinct {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchEntryIdsNotDistinct {
@@ -453,6 +460,7 @@ impl BatchEntryIdsNotDistinct {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMessageContents {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMessageContents {
@@ -517,6 +525,7 @@ impl InvalidMessageContents {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverLimit {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OverLimit {
@@ -581,6 +590,7 @@ impl OverLimit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueueDoesNotExist {
@@ -645,6 +655,7 @@ impl QueueDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurgeQueueInProgress {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PurgeQueueInProgress {
@@ -709,6 +720,7 @@ impl PurgeQueueInProgress {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReceiptHandleIsInvalid {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReceiptHandleIsInvalid {
@@ -773,6 +785,7 @@ impl ReceiptHandleIsInvalid {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIdFormat {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIdFormat {
@@ -837,6 +850,7 @@ impl InvalidIdFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueNameExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueueNameExists {
@@ -901,6 +915,7 @@ impl QueueNameExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueDeletedRecently {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueueDeletedRecently {
@@ -965,6 +980,7 @@ impl QueueDeletedRecently {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageNotInflight {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageNotInflight {

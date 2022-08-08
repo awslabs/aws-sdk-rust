@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+    #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl UpdateDeploymentGroupOutput {
@@ -163,8 +164,10 @@ pub struct StopDeploymentOutput {
     /// <li> <p>Pending: The stop operation is pending.</p> </li>
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StopStatus>,
     /// <p>An accompanying status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl StopDeploymentOutput {
@@ -371,6 +374,7 @@ impl RegisterApplicationRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleEventHookExecutionStatusOutput {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
+    #[doc(hidden)]
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
 }
 impl PutLifecycleEventHookExecutionStatusOutput {
@@ -434,8 +438,10 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -516,8 +522,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
+    #[doc(hidden)]
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOnPremisesInstancesOutput {
@@ -598,8 +606,10 @@ impl ListOnPremisesInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
+    #[doc(hidden)]
     pub token_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGitHubAccountTokenNamesOutput {
@@ -680,8 +690,10 @@ impl ListGitHubAccountTokenNamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
+    #[doc(hidden)]
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentTargetsOutput {
@@ -762,8 +774,10 @@ impl ListDeploymentTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsOutput {
     /// <p>A list of deployment IDs.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -844,8 +858,10 @@ impl ListDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
+    #[doc(hidden)]
     pub instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentInstancesOutput {
@@ -926,10 +942,13 @@ impl ListDeploymentInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentGroupsOutput {
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A list of deployment group names.</p>
+    #[doc(hidden)]
     pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentGroupsOutput {
@@ -1030,8 +1049,10 @@ impl ListDeploymentGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentConfigsOutput {
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
+    #[doc(hidden)]
     pub deployment_configs_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentConfigsOutput {
@@ -1112,8 +1133,10 @@ impl ListDeploymentConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>A list of application names.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -1194,8 +1217,10 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
+    #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationRevisionsOutput {
@@ -1276,6 +1301,7 @@ impl ListApplicationRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
+    #[doc(hidden)]
     pub instance_info: std::option::Option<crate::model::InstanceInfo>,
 }
 impl GetOnPremisesInstanceOutput {
@@ -1333,6 +1359,7 @@ impl GetOnPremisesInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentTargetOutput {
     /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
+    #[doc(hidden)]
     pub deployment_target: std::option::Option<crate::model::DeploymentTarget>,
 }
 impl GetDeploymentTargetOutput {
@@ -1390,6 +1417,7 @@ impl GetDeploymentTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
+    #[doc(hidden)]
     pub instance_summary: std::option::Option<crate::model::InstanceSummary>,
 }
 impl GetDeploymentInstanceOutput {
@@ -1447,6 +1475,7 @@ impl GetDeploymentInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
+    #[doc(hidden)]
     pub deployment_group_info: std::option::Option<crate::model::DeploymentGroupInfo>,
 }
 impl GetDeploymentGroupOutput {
@@ -1504,6 +1533,7 @@ impl GetDeploymentGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentConfigOutput {
     /// <p>Information about the deployment configuration.</p>
+    #[doc(hidden)]
     pub deployment_config_info: std::option::Option<crate::model::DeploymentConfigInfo>,
 }
 impl GetDeploymentConfigOutput {
@@ -1563,6 +1593,7 @@ impl GetDeploymentConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
     /// <p>Information about the deployment.</p>
+    #[doc(hidden)]
     pub deployment_info: std::option::Option<crate::model::DeploymentInfo>,
 }
 impl GetDeploymentOutput {
@@ -1620,10 +1651,13 @@ impl GetDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Additional information about the revision, including type and location.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>General information about the revision.</p>
+    #[doc(hidden)]
     pub revision_info: std::option::Option<crate::model::GenericRevisionInfo>,
 }
 impl GetApplicationRevisionOutput {
@@ -1721,6 +1755,7 @@ impl GetApplicationRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>Information about the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationInfo>,
 }
 impl GetApplicationOutput {
@@ -1838,6 +1873,7 @@ impl DeleteResourcesByExternalIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
+    #[doc(hidden)]
     pub token_name: std::option::Option<std::string::String>,
 }
 impl DeleteGitHubAccountTokenOutput {
@@ -1892,6 +1928,7 @@ impl DeleteGitHubAccountTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl DeleteDeploymentGroupOutput {
@@ -2016,6 +2053,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentGroupOutput {
     /// <p>A unique deployment group ID.</p>
+    #[doc(hidden)]
     pub deployment_group_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentGroupOutput {
@@ -2073,6 +2111,7 @@ impl CreateDeploymentGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentConfigOutput {
     /// <p>A unique deployment configuration ID.</p>
+    #[doc(hidden)]
     pub deployment_config_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentConfigOutput {
@@ -2130,6 +2169,7 @@ impl CreateDeploymentConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p> The unique ID of a deployment. </p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -2187,6 +2227,7 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>A unique application ID.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl CreateApplicationOutput {
@@ -2274,6 +2315,7 @@ impl ContinueDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
+    #[doc(hidden)]
     pub instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
 }
 impl BatchGetOnPremisesInstancesOutput {
@@ -2343,6 +2385,7 @@ pub struct BatchGetDeploymentTargetsOutput {
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
 }
 impl BatchGetDeploymentTargetsOutput {
@@ -2425,6 +2468,7 @@ impl BatchGetDeploymentTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
+    #[doc(hidden)]
     pub deployments_info: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
 }
 impl BatchGetDeploymentsOutput {
@@ -2489,8 +2533,10 @@ impl BatchGetDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
+    #[doc(hidden)]
     pub instances_summary: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetDeploymentInstancesOutput {
@@ -2575,9 +2621,11 @@ impl BatchGetDeploymentInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
+    #[doc(hidden)]
     pub deployment_groups_info:
         std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetDeploymentGroupsOutput {
@@ -2664,6 +2712,7 @@ impl BatchGetDeploymentGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
+    #[doc(hidden)]
     pub applications_info: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
 }
 impl BatchGetApplicationsOutput {
@@ -2728,10 +2777,13 @@ impl BatchGetApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Information about errors that might have occurred during the API call.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Additional information about the revisions, including the type and location.</p>
+    #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionInfo>>,
 }
 impl BatchGetApplicationRevisionsOutput {

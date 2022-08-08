@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
+    #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    #[doc(hidden)]
     pub value_as_string: std::option::Option<std::string::String>,
 }
 impl FeatureValue {
@@ -81,10 +83,13 @@ impl FeatureValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRecordIdentifier {
     /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value for a list of record identifiers in string format.</p>
+    #[doc(hidden)]
     pub record_identifiers_value_as_string: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
+    #[doc(hidden)]
     pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetRecordIdentifier {
@@ -203,12 +208,16 @@ impl BatchGetRecordIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRecordError {
     /// <p>The name of the feature group that the record belongs to.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
+    #[doc(hidden)]
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"> Errors</a>.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetRecordError {
@@ -329,10 +338,13 @@ impl BatchGetRecordError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
+    #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value of the record identifer in string format.</p>
+    #[doc(hidden)]
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
     /// <p>The <code>Record</code> retrieved.</p>
+    #[doc(hidden)]
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
 }
 impl BatchGetRecordResultDetail {

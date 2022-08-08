@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRevealConfigurationOutput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RevealConfiguration>,
 }
 impl UpdateRevealConfigurationOutput {
@@ -151,8 +152,10 @@ impl UpdateMacieSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the filter that was updated.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsFilterOutput {
@@ -284,6 +287,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCustomDataIdentifierOutput {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
+    #[doc(hidden)]
     pub match_count: i32,
 }
 impl TestCustomDataIdentifierOutput {
@@ -368,8 +372,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesOutput {
     /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub matching_resources: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchResourcesOutput {
@@ -481,6 +487,7 @@ impl PutFindingsPublicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutClassificationExportConfigurationOutput {
     /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
 impl PutClassificationExportConfigurationOutput {
@@ -544,6 +551,7 @@ impl PutClassificationExportConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -617,8 +625,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
+    #[doc(hidden)]
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
@@ -699,8 +709,10 @@ impl ListOrganizationAdminAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
     /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -781,8 +793,10 @@ impl ListMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedDataIdentifiersOutput {
     /// <p>An array of objects, one for each managed data identifier.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedDataIdentifiersOutput {
@@ -864,8 +878,10 @@ impl ListManagedDataIdentifiersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -946,9 +962,11 @@ impl ListInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsFiltersOutput {
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
+    #[doc(hidden)]
     pub findings_filter_list_items:
         std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsFiltersOutput {
@@ -1038,8 +1056,10 @@ impl ListFindingsFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
     /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -1120,8 +1140,10 @@ impl ListFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomDataIdentifiersOutput {
@@ -1203,8 +1225,10 @@ impl ListCustomDataIdentifiersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClassificationJobsOutput {
     /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClassificationJobsOutput {
@@ -1285,8 +1309,10 @@ impl ListClassificationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageTotalsOutput {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
+    #[doc(hidden)]
     pub usage_totals: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>,
 }
 impl GetUsageTotalsOutput {
@@ -1370,10 +1396,13 @@ impl GetUsageTotalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
 }
 impl GetUsageStatisticsOutput {
@@ -1474,6 +1503,7 @@ impl GetUsageStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::AvailabilityCode>,
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
     /// <ul>
@@ -1484,6 +1514,7 @@ pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
+    #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
 }
 impl GetSensitiveDataOccurrencesAvailabilityOutput {
@@ -1592,8 +1623,10 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSensitiveDataOccurrencesOutput {
     /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+    #[doc(hidden)]
     pub sensitive_data_occurrences: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1606,6 +1639,7 @@ pub struct GetSensitiveDataOccurrencesOutput {
     /// <li><p>PROCESSING - Macie is processing the request.</p></li>
     /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RevealRequestStatus>,
 }
 impl GetSensitiveDataOccurrencesOutput {
@@ -1745,6 +1779,7 @@ impl GetSensitiveDataOccurrencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevealConfigurationOutput {
     /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RevealConfiguration>,
 }
 impl GetRevealConfigurationOutput {
@@ -1802,23 +1837,32 @@ impl GetRevealConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberOutput {
     /// <p>The Amazon Web Services account ID for the account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
+    #[doc(hidden)]
     pub administrator_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    #[doc(hidden)]
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMemberOutput {
@@ -2044,6 +2088,7 @@ impl GetMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountOutput {
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    #[doc(hidden)]
     pub master: std::option::Option<crate::model::Invitation>,
 }
 impl GetMasterAccountOutput {
@@ -2098,14 +2143,19 @@ impl GetMasterAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MacieStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMacieSessionOutput {
@@ -2246,6 +2296,7 @@ impl GetMacieSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationsCountOutput {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
+    #[doc(hidden)]
     pub invitations_count: i64,
 }
 impl GetInvitationsCountOutput {
@@ -2300,6 +2351,7 @@ impl GetInvitationsCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
 }
 impl GetFindingStatisticsOutput {
@@ -2363,6 +2415,7 @@ impl GetFindingStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
+    #[doc(hidden)]
     pub security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
 }
 impl GetFindingsPublicationConfigurationOutput {
@@ -2429,20 +2482,28 @@ impl GetFindingsPublicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsFilterOutput {
     /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The custom description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria that's used to filter findings.</p>
+    #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The unique identifier for the filter.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The custom name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    #[doc(hidden)]
     pub position: i32,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2643,6 +2704,7 @@ impl GetFindingsFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsOutput {
     /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
 impl GetFindingsOutput {
@@ -2706,28 +2768,40 @@ impl GetFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
+    #[doc(hidden)]
     pub deleted: bool,
     /// <p>The custom description of the custom data identifier.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+    #[doc(hidden)]
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    #[doc(hidden)]
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
+    #[doc(hidden)]
     pub maximum_match_distance: i32,
     /// <p>The custom name of the custom data identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
+    #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3020,6 +3094,7 @@ impl GetCustomDataIdentifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassificationExportConfigurationOutput {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
 impl GetClassificationExportConfigurationOutput {
@@ -3083,37 +3158,50 @@ impl GetClassificationExportConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
+    #[doc(hidden)]
     pub bucket_count: i64,
     /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    #[doc(hidden)]
     pub bucket_count_by_effective_permission:
         std::option::Option<crate::model::BucketCountByEffectivePermission>,
     /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    #[doc(hidden)]
     pub bucket_count_by_encryption_type:
         std::option::Option<crate::model::BucketCountByEncryptionType>,
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    #[doc(hidden)]
     pub bucket_count_by_object_encryption_requirement:
         std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
     /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub bucket_count_by_shared_access_type:
         std::option::Option<crate::model::BucketCountBySharedAccessType>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
+    #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    #[doc(hidden)]
     pub size_in_bytes: i64,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    #[doc(hidden)]
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_size_in_bytes:
         std::option::Option<crate::model::ObjectLevelStatistics>,
 }
@@ -3463,6 +3551,7 @@ impl GetBucketStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountOutput {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    #[doc(hidden)]
     pub administrator: std::option::Option<crate::model::Invitation>,
 }
 impl GetAdministratorAccountOutput {
@@ -3730,8 +3819,10 @@ impl DisableMacieOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
+    #[doc(hidden)]
     pub max_account_limit_reached: bool,
 }
 impl DescribeOrganizationConfigurationOutput {
@@ -3803,18 +3894,25 @@ impl DescribeOrganizationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClassificationJobOutput {
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    #[doc(hidden)]
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom description of the job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
+    #[doc(hidden)]
     pub initial_run: bool,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -3825,18 +3923,23 @@ pub struct DescribeClassificationJobOutput {
     /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - The job runs only once.</p></li>
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
+    #[doc(hidden)]
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
+    #[doc(hidden)]
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+    #[doc(hidden)]
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
     /// <ul>
@@ -3846,22 +3949,30 @@ pub struct DescribeClassificationJobOutput {
     /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
     /// </ul>
     /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    #[doc(hidden)]
     pub managed_data_identifier_selector:
         std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    #[doc(hidden)]
     pub s3_job_definition: std::option::Option<crate::model::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
+    #[doc(hidden)]
     pub sampling_percentage: i32,
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
+    #[doc(hidden)]
     pub schedule_frequency: std::option::Option<crate::model::JobScheduleFrequency>,
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
+    #[doc(hidden)]
     pub statistics: std::option::Option<crate::model::Statistics>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
+    #[doc(hidden)]
     pub user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
 }
 impl DescribeClassificationJobOutput {
@@ -4381,8 +4492,10 @@ impl DescribeClassificationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBucketsOutput {
     /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBucketsOutput {
@@ -4493,6 +4606,7 @@ impl DeleteMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteInvitationsOutput {
@@ -4617,6 +4731,7 @@ impl DeleteCustomDataIdentifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeclineInvitationsOutput {
@@ -4711,6 +4826,7 @@ impl CreateSampleFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateMemberOutput {
@@ -4763,6 +4879,7 @@ impl CreateMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateInvitationsOutput {
@@ -4827,8 +4944,10 @@ impl CreateInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the filter that was created.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateFindingsFilterOutput {
@@ -4900,6 +5019,7 @@ impl CreateFindingsFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomDataIdentifierOutput {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
+    #[doc(hidden)]
     pub custom_data_identifier_id: std::option::Option<std::string::String>,
 }
 impl CreateCustomDataIdentifierOutput {
@@ -4957,8 +5077,10 @@ impl CreateCustomDataIdentifierOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClassificationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateClassificationJobOutput {
@@ -5030,9 +5152,11 @@ impl CreateClassificationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    #[doc(hidden)]
     pub custom_data_identifiers:
         std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
+    #[doc(hidden)]
     pub not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersOutput {

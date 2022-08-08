@@ -5760,8 +5760,10 @@ impl UpdateKnowledgeBaseTemplateUriInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The template URI to update.</p>
+    #[doc(hidden)]
     pub template_uri: std::option::Option<std::string::String>,
 }
 impl UpdateKnowledgeBaseTemplateUriInput {
@@ -5788,8 +5790,10 @@ impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The type of content to upload.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl StartContentUploadInput {
@@ -5816,12 +5820,16 @@ impl std::fmt::Debug for StartContentUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContentInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The search expression to filter results.</p>
+    #[doc(hidden)]
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
 }
 impl SearchContentInput {
@@ -5858,6 +5866,7 @@ impl std::fmt::Debug for SearchContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
@@ -5879,8 +5888,10 @@ impl std::fmt::Debug for RemoveKnowledgeBaseTemplateUriInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKnowledgeBasesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListKnowledgeBasesInput {
@@ -5907,21 +5918,29 @@ impl std::fmt::Debug for ListKnowledgeBasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKnowledgeBaseInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the knowledge base.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
+    #[doc(hidden)]
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
+    #[doc(hidden)]
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5989,6 +6008,7 @@ impl std::fmt::Debug for CreateKnowledgeBaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKnowledgeBaseInput {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl DeleteKnowledgeBaseInput {
@@ -6010,6 +6030,7 @@ impl std::fmt::Debug for DeleteKnowledgeBaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKnowledgeBaseInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetKnowledgeBaseInput {
@@ -6031,8 +6052,10 @@ impl std::fmt::Debug for GetKnowledgeBaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentSummaryInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetContentSummaryInput {
@@ -6059,10 +6082,13 @@ impl std::fmt::Debug for GetContentSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl ListContentsInput {
@@ -6094,21 +6120,29 @@ impl std::fmt::Debug for ListContentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
+    #[doc(hidden)]
     pub override_link_out_uri: std::option::Option<std::string::String>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6172,8 +6206,10 @@ impl std::fmt::Debug for CreateContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
 }
 impl DeleteContentInput {
@@ -6200,21 +6236,29 @@ impl std::fmt::Debug for DeleteContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The title of the content.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    #[doc(hidden)]
     pub override_link_out_uri: std::option::Option<std::string::String>,
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
+    #[doc(hidden)]
     pub remove_override_link_out_uri: std::option::Option<bool>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl UpdateContentInput {
@@ -6277,8 +6321,10 @@ impl std::fmt::Debug for UpdateContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetContentInput {
@@ -6305,12 +6351,16 @@ impl std::fmt::Debug for GetContentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSessionsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The search expression to filter results.</p>
+    #[doc(hidden)]
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
 }
 impl SearchSessionsInput {
@@ -6347,12 +6397,16 @@ impl std::fmt::Debug for SearchSessionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The text to search for.</p>
+    #[doc(hidden)]
     pub query_text: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl QueryAssistantInput {
@@ -6389,10 +6443,13 @@ impl std::fmt::Debug for QueryAssistantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyRecommendationsReceivedInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the recommendations.</p>
+    #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NotifyRecommendationsReceivedInput {
@@ -6424,12 +6481,16 @@ impl std::fmt::Debug for NotifyRecommendationsReceivedInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
+    #[doc(hidden)]
     pub wait_time_seconds: i32,
 }
 impl GetRecommendationsInput {
@@ -6466,8 +6527,10 @@ impl std::fmt::Debug for GetRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssistantsInput {
@@ -6494,17 +6557,23 @@ impl std::fmt::Debug for ListAssistantsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssistantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the assistant.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of assistant.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AssistantType>,
     /// <p>The description of the assistant.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
@@ -6560,6 +6629,7 @@ impl std::fmt::Debug for CreateAssistantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssistantInput {
@@ -6581,6 +6651,7 @@ impl std::fmt::Debug for DeleteAssistantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl GetAssistantInput {
@@ -6602,14 +6673,19 @@ impl std::fmt::Debug for GetAssistantInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The name of the session.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6655,8 +6731,10 @@ impl std::fmt::Debug for CreateSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl GetSessionInput {
@@ -6683,10 +6761,13 @@ impl std::fmt::Debug for GetSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantAssociationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl ListAssistantAssociationsInput {
@@ -6718,14 +6799,19 @@ impl std::fmt::Debug for ListAssistantAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The type of association.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::AssociationType>,
     /// <p>The identifier of the associated resource.</p>
+    #[doc(hidden)]
     pub association: std::option::Option<crate::model::AssistantAssociationInputData>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6771,8 +6857,10 @@ impl std::fmt::Debug for CreateAssistantAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssistantAssociationInput {
@@ -6799,8 +6887,10 @@ impl std::fmt::Debug for DeleteAssistantAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl GetAssistantAssociationInput {
@@ -6827,8 +6917,10 @@ impl std::fmt::Debug for GetAssistantAssociationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6855,8 +6947,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6887,6 +6981,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

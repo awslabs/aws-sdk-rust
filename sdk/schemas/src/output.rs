@@ -4,21 +4,29 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaOutput {
     /// <p>The description of the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The version number of the schema</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Key-value pairs associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
+    #[doc(hidden)]
     pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSchemaOutput {
@@ -221,12 +229,16 @@ impl UpdateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegistryOutput {
     /// <p>The description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -356,18 +368,25 @@ impl UpdateRegistryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDiscovererOutput {
     /// <p>The description of the discoverer.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DiscovererState>,
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    #[doc(hidden)]
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -614,8 +633,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DiscovererState>,
 }
 impl StopDiscovererOutput {
@@ -693,8 +714,10 @@ impl StopDiscovererOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DiscovererState>,
 }
 impl StartDiscovererOutput {
@@ -772,8 +795,10 @@ impl StartDiscovererOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSchemasOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of SearchSchemaSummary information.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SearchSchemaSummary>>,
 }
 impl SearchSchemasOutput {
@@ -854,8 +879,10 @@ impl SearchSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The resource-based policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The revision ID of the policy.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
@@ -927,12 +954,16 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that code bindings were modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CodeGenerationStatus>,
 }
 impl PutCodeBindingOutput {
@@ -1050,6 +1081,7 @@ impl PutCodeBindingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Key-value pairs associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1123,8 +1155,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaVersionsOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of schema version summaries.</p>
+    #[doc(hidden)]
     pub schema_versions: std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>,
 }
 impl ListSchemaVersionsOutput {
@@ -1206,8 +1240,10 @@ impl ListSchemaVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of schema summaries.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
 }
 impl ListSchemasOutput {
@@ -1288,8 +1324,10 @@ impl ListSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegistriesOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of registry summaries.</p>
+    #[doc(hidden)]
     pub registries: std::option::Option<std::vec::Vec<crate::model::RegistrySummary>>,
 }
 impl ListRegistriesOutput {
@@ -1370,8 +1408,10 @@ impl ListRegistriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoverersOutput {
     /// <p>An array of DiscovererSummary information.</p>
+    #[doc(hidden)]
     pub discoverers: std::option::Option<std::vec::Vec<crate::model::DiscovererSummary>>,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoverersOutput {
@@ -1452,8 +1492,10 @@ impl ListDiscoverersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>The resource-based policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The revision ID.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -1525,6 +1567,7 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredSchemaOutput {
     /// <p>The source of the schema definition.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredSchemaOutput {
@@ -1579,6 +1622,7 @@ impl GetDiscoveredSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCodeBindingSourceOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetCodeBindingSourceOutput {
@@ -1631,14 +1675,19 @@ impl GetCodeBindingSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSchemaOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ExportSchemaOutput {
@@ -1764,23 +1813,32 @@ impl ExportSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemaOutput {
     /// <p>The source of the schema definition.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The description of the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The version number of the schema</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
+    #[doc(hidden)]
     pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSchemaOutput {
@@ -2000,12 +2058,16 @@ impl DescribeSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegistryOutput {
     /// <p>The description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2135,18 +2197,25 @@ impl DescribeRegistryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDiscovererOutput {
     /// <p>The description of the discoverer.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DiscovererState>,
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    #[doc(hidden)]
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2333,12 +2402,16 @@ impl DescribeDiscovererOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that code bindings were modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version number of the schema.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The current status of code binding generation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CodeGenerationStatus>,
 }
 impl DescribeCodeBindingOutput {
@@ -2606,21 +2679,29 @@ impl DeleteDiscovererOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaOutput {
     /// <p>The description of the schema.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that schema was modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
+    #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The version number of the schema</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Key-value pairs associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date the schema version was created.</p>
+    #[doc(hidden)]
     pub version_created_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSchemaOutput {
@@ -2823,12 +2904,16 @@ impl CreateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegistryOutput {
     /// <p>The description of the registry.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The name of the registry.</p>
+    #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2958,18 +3043,25 @@ impl CreateRegistryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiscovererOutput {
     /// <p>The description of the discoverer.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the discoverer.</p>
+    #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The state of the discoverer.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DiscovererState>,
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    #[doc(hidden)]
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

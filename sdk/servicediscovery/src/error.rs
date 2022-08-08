@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceNotFound {
@@ -69,6 +70,7 @@ impl ServiceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInput {
@@ -133,8 +135,10 @@ impl InvalidInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequest {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the operation that's already in progress.</p>
+    #[doc(hidden)]
     pub duplicate_operation_id: std::option::Option<std::string::String>,
 }
 impl DuplicateRequest {
@@ -221,6 +225,7 @@ impl DuplicateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUse {
@@ -285,6 +290,7 @@ impl ResourceInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NamespaceNotFound {
@@ -349,6 +355,7 @@ impl NamespaceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceNotFound {
@@ -413,6 +420,7 @@ impl InstanceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomHealthNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomHealthNotFound {
@@ -477,6 +485,7 @@ impl CustomHealthNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -541,8 +550,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
@@ -629,6 +640,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceeded {
@@ -693,6 +705,7 @@ impl ResourceLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotFound {
@@ -757,6 +770,7 @@ impl OperationNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestLimitExceeded {
@@ -821,10 +835,13 @@ impl RequestLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The <code>CreatorRequestId</code> that was used to create the service.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The ID of the existing service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
 }
 impl ServiceAlreadyExists {
@@ -928,10 +945,13 @@ impl ServiceAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The <code>CreatorRequestId</code> that was used to create the namespace.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The ID of the existing namespace.</p>
+    #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
 }
 impl NamespaceAlreadyExists {

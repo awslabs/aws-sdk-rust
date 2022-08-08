@@ -5,10 +5,12 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsOutput {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
+    #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::model::Stream>>,
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
+    #[doc(hidden)]
     pub last_evaluated_stream_arn: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -98,6 +100,7 @@ impl ListStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
+    #[doc(hidden)]
     pub shard_iterator: std::option::Option<std::string::String>,
 }
 impl GetShardIteratorOutput {
@@ -155,8 +158,10 @@ impl GetShardIteratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
+    #[doc(hidden)]
     pub next_shard_iterator: std::option::Option<std::string::String>,
 }
 impl GetRecordsOutput {
@@ -240,6 +245,7 @@ impl GetRecordsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
+    #[doc(hidden)]
     pub stream_description: std::option::Option<crate::model::StreamDescription>,
 }
 impl DescribeStreamOutput {

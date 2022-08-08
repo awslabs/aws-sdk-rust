@@ -64,10 +64,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateTunnelAccessTokenOutput {
     /// <p>The Amazon Resource Name for the tunnel.</p>
+    #[doc(hidden)]
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    #[doc(hidden)]
     pub source_access_token: std::option::Option<std::string::String>,
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    #[doc(hidden)]
     pub destination_access_token: std::option::Option<std::string::String>,
 }
 impl RotateTunnelAccessTokenOutput {
@@ -165,12 +168,16 @@ impl RotateTunnelAccessTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenTunnelOutput {
     /// <p>A unique alpha-numeric tunnel ID.</p>
+    #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name for the tunnel.</p>
+    #[doc(hidden)]
     pub tunnel_arn: std::option::Option<std::string::String>,
     /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
+    #[doc(hidden)]
     pub source_access_token: std::option::Option<std::string::String>,
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
+    #[doc(hidden)]
     pub destination_access_token: std::option::Option<std::string::String>,
 }
 impl OpenTunnelOutput {
@@ -285,8 +292,10 @@ impl OpenTunnelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTunnelsOutput {
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub tunnel_summaries: std::option::Option<std::vec::Vec<crate::model::TunnelSummary>>,
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTunnelsOutput {
@@ -368,6 +377,7 @@ impl ListTunnelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -429,6 +439,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTunnelOutput {
     /// <p>The tunnel being described.</p>
+    #[doc(hidden)]
     pub tunnel: std::option::Option<crate::model::Tunnel>,
 }
 impl DescribeTunnelOutput {

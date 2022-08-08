@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The description of the metric.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unit of the metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<std::string::String>,
 }
 impl ResponseResourceMetric {
@@ -152,8 +155,10 @@ impl AsRef<str> for ServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The available dimension groups for a metric type.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::DimensionGroupDetail>>,
 }
 impl MetricDimensionGroups {
@@ -234,8 +239,10 @@ impl MetricDimensionGroups {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The dimensions within a dimension group.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionDetail>>,
 }
 impl DimensionGroupDetail {
@@ -316,6 +323,7 @@ impl DimensionGroupDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionDetail {
     /// <p>The identifier of a dimension.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DimensionDetail {
@@ -370,8 +378,10 @@ impl DimensionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::ResponseResourceMetricKey>,
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
+    #[doc(hidden)]
     pub data_points: std::option::Option<std::vec::Vec<crate::model::DataPoint>>,
 }
 impl MetricKeyDataPoints {
@@ -455,8 +465,10 @@ impl MetricKeyDataPoints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl DataPoint {
@@ -538,8 +550,10 @@ pub struct ResponseResourceMetricKey {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The valid dimensions for the metric.</p>
+    #[doc(hidden)]
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -660,14 +674,17 @@ pub struct MetricQuery {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    #[doc(hidden)]
     pub group_by: std::option::Option<crate::model::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -848,6 +865,7 @@ pub struct DimensionGroup {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -891,8 +909,10 @@ pub struct DimensionGroup {
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DimensionGroup {
@@ -1202,6 +1222,7 @@ pub struct FeatureMetadata {
     /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FeatureStatus>,
 }
 impl FeatureMetadata {
@@ -1365,12 +1386,14 @@ pub struct DimensionKeyDetail {
     /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimension: std::option::Option<std::string::String>,
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
@@ -1378,6 +1401,7 @@ pub struct DimensionKeyDetail {
     /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetailStatus>,
 }
 impl DimensionKeyDetail {
@@ -1567,14 +1591,18 @@ impl AsRef<str> for DetailStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
+    #[doc(hidden)]
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<f64>,
     /// <p>A map that contains the value for each additional metric.</p>
+    #[doc(hidden)]
     pub additional_metrics:
         std::option::Option<std::collections::HashMap<std::string::String, f64>>,
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<f64>>,
 }
 impl DimensionKeyDescription {
@@ -1718,6 +1746,7 @@ impl DimensionKeyDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
+    #[doc(hidden)]
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

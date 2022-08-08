@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInputOutput {
     /// <p>Information about the configuration of the input.</p>
+    #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
 impl UpdateInputOutput {
@@ -61,6 +62,7 @@ impl UpdateInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
+    #[doc(hidden)]
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
 }
 impl UpdateDetectorModelOutput {
@@ -127,12 +129,16 @@ impl UpdateDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -141,6 +147,7 @@ pub struct UpdateAlarmModelOutput {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
 impl UpdateAlarmModelOutput {
@@ -356,6 +363,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl StartDetectorModelAnalysisOutput {
@@ -440,6 +448,7 @@ impl PutLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -501,8 +510,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputsOutput {
     /// <p>Summary information about the inputs.</p>
+    #[doc(hidden)]
     pub input_summaries: std::option::Option<std::vec::Vec<crate::model::InputSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputsOutput {
@@ -583,8 +594,10 @@ impl ListInputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputRoutingsOutput {
     /// <p> Summary information about the routed resources. </p>
+    #[doc(hidden)]
     pub routed_resources: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
     /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputRoutingsOutput {
@@ -666,9 +679,11 @@ impl ListInputRoutingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorModelVersionsOutput {
     /// <p>Summary information about the detector model versions.</p>
+    #[doc(hidden)]
     pub detector_model_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelVersionsOutput {
@@ -758,9 +773,11 @@ impl ListDetectorModelVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorModelsOutput {
     /// <p>Summary information about the detector models.</p>
+    #[doc(hidden)]
     pub detector_model_summaries:
         std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelsOutput {
@@ -847,9 +864,11 @@ impl ListDetectorModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmModelVersionsOutput {
     /// <p>A list that summarizes each alarm model version.</p>
+    #[doc(hidden)]
     pub alarm_model_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmModelVersionsOutput {
@@ -939,8 +958,10 @@ impl ListAlarmModelVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmModelsOutput {
     /// <p>A list that summarizes each alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmModelsOutput {
@@ -1022,8 +1043,10 @@ impl ListAlarmModelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorModelAnalysisResultsOutput {
     /// <p>Contains information about one or more analysis results.</p>
+    #[doc(hidden)]
     pub analysis_results: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDetectorModelAnalysisResultsOutput {
@@ -1105,6 +1128,7 @@ impl GetDetectorModelAnalysisResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the AWS IoT Events logging options.</p>
+    #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl DescribeLoggingOptionsOutput {
@@ -1162,6 +1186,7 @@ impl DescribeLoggingOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInputOutput {
     /// <p>Information about the input.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl DescribeInputOutput {
@@ -1219,6 +1244,7 @@ pub struct DescribeDetectorModelAnalysisOutput {
     /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
     /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnalysisStatus>,
 }
 impl DescribeDetectorModelAnalysisOutput {
@@ -1291,6 +1317,7 @@ impl DescribeDetectorModelAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorModelOutput {
     /// <p>Information about the detector model.</p>
+    #[doc(hidden)]
     pub detector_model: std::option::Option<crate::model::DetectorModel>,
 }
 impl DescribeDetectorModelOutput {
@@ -1348,12 +1375,16 @@ impl DescribeDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -1362,26 +1393,37 @@ pub struct DescribeAlarmModelOutput {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
     /// <p> Contains information about the status of the alarm model. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The description of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<i32>,
     /// <p>Defines when your alarm is invoked.</p>
+    #[doc(hidden)]
     pub alarm_rule: std::option::Option<crate::model::AlarmRule>,
     /// <p>Contains information about one or more notification actions.</p>
+    #[doc(hidden)]
     pub alarm_notification: std::option::Option<crate::model::AlarmNotification>,
     /// <p>Contains information about one or more alarm actions.</p>
+    #[doc(hidden)]
     pub alarm_event_actions: std::option::Option<crate::model::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
+    #[doc(hidden)]
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
 }
 impl DescribeAlarmModelOutput {
@@ -1818,6 +1860,7 @@ impl DeleteAlarmModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInputOutput {
     /// <p>Information about the configuration of the input.</p>
+    #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
 impl CreateInputOutput {
@@ -1875,6 +1918,7 @@ impl CreateInputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
+    #[doc(hidden)]
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
 }
 impl CreateDetectorModelOutput {
@@ -1941,12 +1985,16 @@ impl CreateDetectorModelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub alarm_model_arn: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -1955,6 +2003,7 @@ pub struct CreateAlarmModelOutput {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
 impl CreateAlarmModelOutput {

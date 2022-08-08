@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRepositoryOutput {
     /// <p> The updated repository. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl UpdateRepositoryOutput {
@@ -61,10 +62,12 @@ impl UpdateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageVersionsStatusOutput {
     /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
+    #[doc(hidden)]
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
     /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
+    #[doc(hidden)]
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
@@ -246,6 +249,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryPermissionsPolicyOutput {
     /// <p> The resource policy that was set after processing the request. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutRepositoryPermissionsPolicyOutput {
@@ -303,6 +307,7 @@ impl PutRepositoryPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPackageOriginConfigurationOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+    #[doc(hidden)]
     pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
 }
 impl PutPackageOriginConfigurationOutput {
@@ -366,6 +371,7 @@ impl PutPackageOriginConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDomainPermissionsPolicyOutput {
     /// <p> The resource policy that was set after processing the request. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutDomainPermissionsPolicyOutput {
@@ -423,6 +429,7 @@ impl PutDomainPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -484,8 +491,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInDomainOutput {
     /// <p> The returned list of repositories. </p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInDomainOutput {
@@ -567,8 +576,10 @@ impl ListRepositoriesInDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesOutput {
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesOutput {
@@ -654,8 +665,10 @@ pub struct ListPackageVersionsOutput {
     /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
     /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_display_version: std::option::Option<std::string::String>,
     /// <p> A format of the package. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -663,12 +676,16 @@ pub struct ListPackageVersionsOutput {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::PackageVersionSummary>>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionsOutput {
@@ -851,6 +868,7 @@ impl ListPackageVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionDependenciesOutput {
     /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -858,16 +876,22 @@ pub struct ListPackageVersionDependenciesOutput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the returned package versions dependencies. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The version of the package that is specified in the request. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The current revision associated with the package version. </p>
+    #[doc(hidden)]
     pub version_revision: std::option::Option<std::string::String>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
+    #[doc(hidden)]
     pub dependencies: std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
 }
 impl ListPackageVersionDependenciesOutput {
@@ -1055,6 +1079,7 @@ impl ListPackageVersionDependenciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionAssetsOutput {
     /// <p> The format of the package that contains the requested package version assets. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -1062,16 +1087,22 @@ pub struct ListPackageVersionAssetsOutput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested package version assets. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The version of the package associated with the requested assets. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The current revision associated with the package version. </p>
+    #[doc(hidden)]
     pub version_revision: std::option::Option<std::string::String>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
 }
 impl ListPackageVersionAssetsOutput {
@@ -1258,8 +1289,10 @@ impl ListPackageVersionAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesOutput {
     /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
+    #[doc(hidden)]
     pub packages: std::option::Option<std::vec::Vec<crate::model::PackageSummary>>,
     /// <p> If there are additional results, this is the token for the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesOutput {
@@ -1340,8 +1373,10 @@ impl ListPackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -1422,6 +1457,7 @@ impl ListDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPermissionsPolicyOutput {
     /// <p> The returned resource policy. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl GetRepositoryPermissionsPolicyOutput {
@@ -1479,6 +1515,7 @@ impl GetRepositoryPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryEndpointOutput {
     /// <p> A string that specifies the URL of the returned endpoint. </p>
+    #[doc(hidden)]
     pub repository_endpoint: std::option::Option<std::string::String>,
 }
 impl GetRepositoryEndpointOutput {
@@ -1536,6 +1573,7 @@ impl GetRepositoryEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionReadmeOutput {
     /// <p> The format of the package with the requested readme file. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -1543,14 +1581,19 @@ pub struct GetPackageVersionReadmeOutput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the returned readme file. </p>
+    #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
     /// <p> The version of the package with the requested readme file. </p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p> The current revision associated with the package version. </p>
+    #[doc(hidden)]
     pub version_revision: std::option::Option<std::string::String>,
     /// <p> The text of the returned readme file. </p>
+    #[doc(hidden)]
     pub readme: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionReadmeOutput {
@@ -1712,10 +1755,13 @@ pub struct GetPackageVersionAssetOutput {
     /// <p> The binary file, or asset, that is downloaded.</p>
     pub asset: aws_smithy_http::byte_stream::ByteStream,
     /// <p> The name of the asset that is downloaded. </p>
+    #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    #[doc(hidden)]
     pub package_version_revision: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionAssetOutput {
@@ -1830,6 +1876,7 @@ impl GetPackageVersionAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainPermissionsPolicyOutput {
     /// <p> The returned resource policy. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl GetDomainPermissionsPolicyOutput {
@@ -1887,8 +1934,10 @@ impl GetDomainPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenOutput {
     /// <p> The returned authentication token. </p>
+    #[doc(hidden)]
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAuthorizationTokenOutput {
@@ -1966,6 +2015,7 @@ impl GetAuthorizationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisposePackageVersionsOutput {
     /// <p> A list of the package versions that were successfully disposed. </p>
+    #[doc(hidden)]
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
@@ -1978,6 +2028,7 @@ pub struct DisposePackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
@@ -2123,6 +2174,7 @@ impl DisposePackageVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateExternalConnectionOutput {
     /// <p> The repository associated with the removed external connection. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DisassociateExternalConnectionOutput {
@@ -2180,6 +2232,7 @@ impl DisassociateExternalConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryOutput {
     /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DescribeRepositoryOutput {
@@ -2237,6 +2290,7 @@ impl DescribeRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageVersionOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<crate::model::PackageVersionDescription>,
 }
 impl DescribePackageVersionOutput {
@@ -2294,6 +2348,7 @@ impl DescribePackageVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    #[doc(hidden)]
     pub package: std::option::Option<crate::model::PackageDescription>,
 }
 impl DescribePackageOutput {
@@ -2351,6 +2406,7 @@ impl DescribePackageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainOutput {
     /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl DescribeDomainOutput {
@@ -2408,6 +2464,7 @@ impl DescribeDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPermissionsPolicyOutput {
     /// <p> Information about the deleted policy after processing the request. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl DeleteRepositoryPermissionsPolicyOutput {
@@ -2465,6 +2522,7 @@ impl DeleteRepositoryPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
     /// <p> Information about the deleted repository after processing the request. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DeleteRepositoryOutput {
@@ -2522,6 +2580,7 @@ impl DeleteRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageVersionsOutput {
     /// <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
+    #[doc(hidden)]
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
@@ -2534,6 +2593,7 @@ pub struct DeletePackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
@@ -2679,6 +2739,7 @@ impl DeletePackageVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainPermissionsPolicyOutput {
     /// <p> Information about the deleted resource policy after processing the request. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl DeleteDomainPermissionsPolicyOutput {
@@ -2736,6 +2797,7 @@ impl DeleteDomainPermissionsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p> Contains information about the deleted domain after processing the request. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl DeleteDomainOutput {
@@ -2793,6 +2855,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
     /// <p> Information about the created repository after processing the request. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl CreateRepositoryOutput {
@@ -2850,6 +2913,7 @@ impl CreateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p> Contains information about the created domain after processing the request. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl CreateDomainOutput {
@@ -2907,6 +2971,7 @@ impl CreateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyPackageVersionsOutput {
     /// <p> A list of the package versions that were successfully copied to your repository. </p>
+    #[doc(hidden)]
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
@@ -2919,6 +2984,7 @@ pub struct CopyPackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
@@ -3064,6 +3130,7 @@ impl CopyPackageVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateExternalConnectionOutput {
     /// <p> Information about the connected repository after processing the request. </p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl AssociateExternalConnectionOutput {

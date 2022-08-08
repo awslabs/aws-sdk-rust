@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackagingGroupOutput {
     /// The ARN of the PackagingGroup.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -240,6 +246,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -313,8 +320,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagingGroupsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of MediaPackage VOD PackagingGroup resources.
+    #[doc(hidden)]
     pub packaging_groups: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
 }
 impl ListPackagingGroupsOutput {
@@ -396,8 +405,10 @@ impl ListPackagingGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagingConfigurationsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of MediaPackage VOD PackagingConfiguration resources.
+    #[doc(hidden)]
     pub packaging_configurations:
         std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
 }
@@ -485,8 +496,10 @@ impl ListPackagingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssetsOutput {
     /// A list of MediaPackage VOD Asset resources.
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
     /// A token that can be used to resume pagination from the end of the collection.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetsOutput {
@@ -567,16 +580,22 @@ impl ListAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagingGroupOutput {
     /// The ARN of the PackagingGroup.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -743,20 +762,28 @@ impl DescribePackagingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A CMAF packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the PackagingConfiguration.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// The ID of a PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -966,22 +993,31 @@ impl DescribePackagingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetOutput {
     /// The ARN of the Asset.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time the Asset was initially submitted for Ingest.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The list of egress endpoints available for the Asset.
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
     /// The unique identifier for the Asset.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// The resource ID to include in SPEKE key requests.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// ARN of the source object in S3.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// The IAM role_arn used to access the source S3 bucket.
+    #[doc(hidden)]
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1299,16 +1335,22 @@ impl DeleteAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackagingGroupOutput {
     /// The ARN of the PackagingGroup.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1475,20 +1517,28 @@ impl CreatePackagingGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A CMAF packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the PackagingConfiguration.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// The ID of a PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1698,22 +1748,31 @@ impl CreatePackagingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetOutput {
     /// The ARN of the Asset.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time the Asset was initially submitted for Ingest.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The list of egress endpoints available for the Asset.
+    #[doc(hidden)]
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::EgressEndpoint>>,
     /// The unique identifier for the Asset.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// The resource ID to include in SPEKE key requests.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// ARN of the source object in S3.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// The IAM role_arn used to access the source S3 bucket.
+    #[doc(hidden)]
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1941,16 +2000,22 @@ impl CreateAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsOutput {
     /// The ARN of the PackagingGroup.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

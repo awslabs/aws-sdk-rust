@@ -6,14 +6,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hypervisor {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the hypervisor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the hypervisor.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::HypervisorState>,
 }
 impl Hypervisor {
@@ -205,8 +210,10 @@ impl AsRef<str> for HypervisorState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value part of a tag's key-value pair.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -278,14 +285,19 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The display name of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_display_name: std::option::Option<std::string::String>,
     /// <p>The type of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_type: std::option::Option<crate::model::GatewayType>,
     /// <p>The hypervisor ID of the gateway.</p>
+    #[doc(hidden)]
     pub hypervisor_id: std::option::Option<std::string::String>,
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
+    #[doc(hidden)]
     pub last_seen_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Gateway {
@@ -471,18 +483,25 @@ impl AsRef<str> for GatewayType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The display name of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_display_name: std::option::Option<std::string::String>,
     /// <p>The type of the gateway type.</p>
+    #[doc(hidden)]
     pub gateway_type: std::option::Option<crate::model::GatewayType>,
     /// <p>The hypervisor ID of the gateway.</p>
+    #[doc(hidden)]
     pub hypervisor_id: std::option::Option<std::string::String>,
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
+    #[doc(hidden)]
     pub last_seen_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details showing the next update availability time of the gateway.</p>
+    #[doc(hidden)]
     pub next_update_availability_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
+    #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<std::string::String>,
 }
 impl GatewayDetails {
@@ -659,16 +678,22 @@ impl GatewayDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualMachine {
     /// <p>The host name of the virtual machine.</p>
+    #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual machine's hypervisor.</p>
+    #[doc(hidden)]
     pub hypervisor_id: std::option::Option<std::string::String>,
     /// <p>The name of the virtual machine.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The path of the virtual machine.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
+    #[doc(hidden)]
     pub last_backup_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualMachine {

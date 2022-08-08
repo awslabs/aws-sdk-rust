@@ -3016,8 +3016,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags that you want to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3044,8 +3046,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you want to add to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3072,10 +3076,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The new, increased value for the quota.</p>
+    #[doc(hidden)]
     pub desired_value: std::option::Option<f64>,
 }
 impl RequestServiceQuotaIncreaseInput {
@@ -3107,12 +3114,16 @@ impl std::fmt::Debug for RequestServiceQuotaIncreaseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The new, increased value for the quota.</p>
+    #[doc(hidden)]
     pub desired_value: std::option::Option<f64>,
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
@@ -3149,6 +3160,7 @@ impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3170,8 +3182,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -3198,10 +3212,13 @@ impl std::fmt::Debug for ListServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceQuotasInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceQuotasInput {
@@ -3233,12 +3250,16 @@ impl std::fmt::Debug for ListServiceQuotasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
@@ -3275,14 +3296,19 @@ impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The status value of the quota increase request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RequestStatus>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
@@ -3324,12 +3350,16 @@ impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The status of the quota increase request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RequestStatus>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRequestedServiceQuotaChangeHistoryInput {
@@ -3366,10 +3396,13 @@ impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsDefaultServiceQuotasInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAwsDefaultServiceQuotasInput {
@@ -3401,10 +3434,13 @@ impl std::fmt::Debug for ListAwsDefaultServiceQuotasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateInput {
@@ -3436,8 +3472,10 @@ impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceQuotaInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
 }
 impl GetServiceQuotaInput {
@@ -3464,6 +3502,7 @@ impl std::fmt::Debug for GetServiceQuotaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestedServiceQuotaChangeInput {
     /// <p>The ID of the quota increase request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GetRequestedServiceQuotaChangeInput {
@@ -3485,8 +3524,10 @@ impl std::fmt::Debug for GetRequestedServiceQuotaChangeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAwsDefaultServiceQuotaInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
 }
 impl GetAwsDefaultServiceQuotaInput {
@@ -3535,10 +3576,13 @@ impl std::fmt::Debug for DisassociateServiceQuotaTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The AWS Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {

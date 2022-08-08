@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentMembershipOutput {
     /// <p>Information about the environment member whose settings were changed.</p>
+    #[doc(hidden)]
     pub membership: std::option::Option<crate::model::EnvironmentMember>,
 }
 impl UpdateEnvironmentMembershipOutput {
@@ -151,6 +152,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags associated with the Cloud9 development environment.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -212,8 +214,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of environment identifiers.</p>
+    #[doc(hidden)]
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListEnvironmentsOutput {
@@ -303,8 +307,10 @@ pub struct DescribeEnvironmentStatusOutput {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Any informational message about the status of the environment.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentStatusOutput {
@@ -406,6 +412,7 @@ impl DescribeEnvironmentStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentsOutput {
     /// <p>Information about the environments that are returned.</p>
+    #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
 }
 impl DescribeEnvironmentsOutput {
@@ -469,8 +476,10 @@ impl DescribeEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentMembershipsOutput {
     /// <p>Information about the environment members for the environment.</p>
+    #[doc(hidden)]
     pub memberships: std::option::Option<std::vec::Vec<crate::model::EnvironmentMember>>,
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentMembershipsOutput {
@@ -611,6 +620,7 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentMembershipOutput {
     /// <p>Information about the environment member that was added.</p>
+    #[doc(hidden)]
     pub membership: std::option::Option<crate::model::EnvironmentMember>,
 }
 impl CreateEnvironmentMembershipOutput {
@@ -668,6 +678,7 @@ impl CreateEnvironmentMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentEc2Output {
     /// <p>The ID of the environment that was created.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentEc2Output {

@@ -5,15 +5,20 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
+    #[doc(hidden)]
     pub input_updates: std::option::Option<std::vec::Vec<crate::model::InputUpdate>>,
     /// <p>Describes application code updates.</p>
+    #[doc(hidden)]
     pub application_code_update: std::option::Option<std::string::String>,
     /// <p>Describes application output configuration updates.</p>
+    #[doc(hidden)]
     pub output_updates: std::option::Option<std::vec::Vec<crate::model::OutputUpdate>>,
     /// <p>Describes application reference data source updates.</p>
+    #[doc(hidden)]
     pub reference_data_source_updates:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceUpdate>>,
     /// <p>Describes application CloudWatch logging option updates.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_updates:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
 }
@@ -194,10 +199,13 @@ impl ApplicationUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>ID of the CloudWatch logging option to update</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn_update: std::option::Option<std::string::String>,
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdate {
@@ -301,13 +309,17 @@ impl CloudWatchLoggingOptionUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>In-application table name that is created by this update.</p>
+    #[doc(hidden)]
     pub table_name_update: std::option::Option<std::string::String>,
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
+    #[doc(hidden)]
     pub s3_reference_data_source_update:
         std::option::Option<crate::model::S3ReferenceDataSourceUpdate>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
+    #[doc(hidden)]
     pub reference_schema_update: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSourceUpdate {
@@ -431,10 +443,13 @@ impl ReferenceDataSourceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
+    #[doc(hidden)]
     pub record_format: std::option::Option<crate::model::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    #[doc(hidden)]
     pub record_encoding: std::option::Option<std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects.</p>
+    #[doc(hidden)]
     pub record_columns: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
 impl SourceSchema {
@@ -539,10 +554,13 @@ impl SourceSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
+    #[doc(hidden)]
     pub mapping: std::option::Option<std::string::String>,
     /// <p>Type of column created in the in-application input stream or reference table.</p>
+    #[doc(hidden)]
     pub sql_type: std::option::Option<std::string::String>,
 }
 impl RecordColumn {
@@ -631,8 +649,10 @@ impl RecordColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
+    #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
+    #[doc(hidden)]
     pub mapping_parameters: std::option::Option<crate::model::MappingParameters>,
 }
 impl RecordFormat {
@@ -710,8 +730,10 @@ impl RecordFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+    #[doc(hidden)]
     pub json_mapping_parameters: std::option::Option<crate::model::JsonMappingParameters>,
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
+    #[doc(hidden)]
     pub csv_mapping_parameters: std::option::Option<crate::model::CsvMappingParameters>,
 }
 impl MappingParameters {
@@ -799,8 +821,10 @@ impl MappingParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvMappingParameters {
     /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
+    #[doc(hidden)]
     pub record_row_delimiter: std::option::Option<std::string::String>,
     /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
+    #[doc(hidden)]
     pub record_column_delimiter: std::option::Option<std::string::String>,
 }
 impl CsvMappingParameters {
@@ -878,6 +902,7 @@ impl CsvMappingParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
+    #[doc(hidden)]
     pub record_row_path: std::option::Option<std::string::String>,
 }
 impl JsonMappingParameters {
@@ -990,10 +1015,13 @@ impl AsRef<str> for RecordFormatType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn_update: std::option::Option<std::string::String>,
     /// <p>Object key name.</p>
+    #[doc(hidden)]
     pub file_key_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
+    #[doc(hidden)]
     pub reference_role_arn_update: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSourceUpdate {
@@ -1091,18 +1119,24 @@ impl S3ReferenceDataSourceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
+    #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
+    #[doc(hidden)]
     pub name_update: std::option::Option<std::string::String>,
     /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output_update:
         std::option::Option<crate::model::KinesisStreamsOutputUpdate>,
     /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output_update:
         std::option::Option<crate::model::KinesisFirehoseOutputUpdate>,
     /// <p>Describes an AWS Lambda function as the destination for the output.</p>
+    #[doc(hidden)]
     pub lambda_output_update: std::option::Option<crate::model::LambdaOutputUpdate>,
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    #[doc(hidden)]
     pub destination_schema_update: std::option::Option<crate::model::DestinationSchema>,
 }
 impl OutputUpdate {
@@ -1274,6 +1308,7 @@ impl OutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
+    #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
 }
 impl DestinationSchema {
@@ -1333,8 +1368,10 @@ pub struct LambdaOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl LambdaOutputUpdate {
@@ -1418,8 +1455,10 @@ impl LambdaOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutputUpdate {
@@ -1497,8 +1536,10 @@ impl KinesisFirehoseOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutputUpdate {
@@ -1576,20 +1617,27 @@ impl KinesisStreamsOutputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputUpdate {
     /// <p>Input ID of the application input to be updated.</p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.</p>
+    #[doc(hidden)]
     pub name_prefix_update: std::option::Option<std::string::String>,
     /// <p>Describes updates for an input processing configuration.</p>
+    #[doc(hidden)]
     pub input_processing_configuration_update:
         std::option::Option<crate::model::InputProcessingConfigurationUpdate>,
     /// <p>If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
+    #[doc(hidden)]
     pub kinesis_streams_input_update: std::option::Option<crate::model::KinesisStreamsInputUpdate>,
     /// <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN and IAM role ARN.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_input_update:
         std::option::Option<crate::model::KinesisFirehoseInputUpdate>,
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
+    #[doc(hidden)]
     pub input_schema_update: std::option::Option<crate::model::InputSchemaUpdate>,
     /// <p>Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the specific streaming source).</p>
+    #[doc(hidden)]
     pub input_parallelism_update: std::option::Option<crate::model::InputParallelismUpdate>,
 }
 impl InputUpdate {
@@ -1797,6 +1845,7 @@ impl InputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputParallelismUpdate {
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
+    #[doc(hidden)]
     pub count_update: std::option::Option<i32>,
 }
 impl InputParallelismUpdate {
@@ -1851,10 +1900,13 @@ impl InputParallelismUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSchemaUpdate {
     /// <p>Specifies the format of the records on the streaming source.</p>
+    #[doc(hidden)]
     pub record_format_update: std::option::Option<crate::model::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    #[doc(hidden)]
     pub record_encoding_update: std::option::Option<std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
+    #[doc(hidden)]
     pub record_column_updates: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
 impl InputSchemaUpdate {
@@ -1959,8 +2011,10 @@ impl InputSchemaUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInputUpdate {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInputUpdate {
@@ -2038,8 +2092,10 @@ impl KinesisFirehoseInputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputUpdate {
@@ -2117,6 +2173,7 @@ impl KinesisStreamsInputUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    #[doc(hidden)]
     pub input_lambda_processor_update:
         std::option::Option<crate::model::InputLambdaProcessorUpdate>,
 }
@@ -2186,8 +2243,10 @@ pub struct InputLambdaProcessorUpdate {
     /// <p>The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
     /// <p>The ARN of the new IAM role that is used to access the AWS Lambda function.</p>
+    #[doc(hidden)]
     pub role_arn_update: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessorUpdate {
@@ -2271,8 +2330,10 @@ impl InputLambdaProcessorUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the key-value tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the key-value tag. The value is optional.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2344,8 +2405,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputConfiguration {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
+    #[doc(hidden)]
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
 }
@@ -2435,6 +2498,7 @@ pub struct InputStartingPositionConfiguration {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li>
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub input_starting_position: std::option::Option<crate::model::InputStartingPosition>,
 }
 impl InputStartingPositionConfiguration {
@@ -2575,10 +2639,13 @@ impl AsRef<str> for InputStartingPosition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>Name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Status of the application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
 }
 impl ApplicationSummary {
@@ -2749,6 +2816,7 @@ impl AsRef<str> for ApplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
+    #[doc(hidden)]
     pub input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
 }
 impl InputProcessingConfiguration {
@@ -2810,8 +2878,10 @@ pub struct InputLambdaProcessor {
     /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessor {
@@ -2889,10 +2959,13 @@ impl InputLambdaProcessor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the S3 bucket that contains the data.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The name of the object that contains the data.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
 }
 impl S3Configuration {
@@ -2984,30 +3057,42 @@ impl S3Configuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationDetail {
     /// <p>Name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Description of the application.</p>
+    #[doc(hidden)]
     pub application_description: std::option::Option<std::string::String>,
     /// <p>ARN of the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Status of the application.</p>
+    #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>Time stamp when the application version was created.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Time stamp when the application was last updated.</p>
+    #[doc(hidden)]
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
+    #[doc(hidden)]
     pub input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
+    #[doc(hidden)]
     pub output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
     /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
+    #[doc(hidden)]
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
     /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
+    #[doc(hidden)]
     pub application_code: std::option::Option<std::string::String>,
     /// <p>Provides the current application version.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl ApplicationDetail {
@@ -3331,10 +3416,13 @@ impl ApplicationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOptionDescription {
     /// <p>ID of the CloudWatch logging option description.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn: std::option::Option<std::string::String>,
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOptionDescription {
@@ -3435,13 +3523,17 @@ impl CloudWatchLoggingOptionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSourceDescription {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
+    #[doc(hidden)]
     pub s3_reference_data_source_description:
         std::option::Option<crate::model::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    #[doc(hidden)]
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSourceDescription {
@@ -3562,10 +3654,13 @@ impl ReferenceDataSourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSourceDescription {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>Amazon S3 object key name.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p>
+    #[doc(hidden)]
     pub reference_role_arn: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSourceDescription {
@@ -3657,18 +3752,24 @@ impl S3ReferenceDataSourceDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDescription {
     /// <p>A unique identifier for the output configuration.</p>
+    #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
     /// <p>Name of the in-application stream configured as output.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Describes Amazon Kinesis stream configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output_description:
         std::option::Option<crate::model::KinesisStreamsOutputDescription>,
     /// <p>Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output_description:
         std::option::Option<crate::model::KinesisFirehoseOutputDescription>,
     /// <p>Describes the AWS Lambda function configured as the destination where output is written.</p>
+    #[doc(hidden)]
     pub lambda_output_description: std::option::Option<crate::model::LambdaOutputDescription>,
     /// <p>Data format used for writing data to the destination.</p>
+    #[doc(hidden)]
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
 }
 impl OutputDescription {
@@ -3844,8 +3945,10 @@ impl OutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LambdaOutputDescription {
@@ -3917,8 +4020,10 @@ impl LambdaOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutputDescription {
@@ -3990,8 +4095,10 @@ impl KinesisFirehoseOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutputDescription {
@@ -4063,25 +4170,34 @@ impl KinesisStreamsOutputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDescription {
     /// <p>Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each input configuration you add to your application. </p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>In-application name prefix.</p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>Returns the in-application stream names that are mapped to the stream source.</p>
+    #[doc(hidden)]
     pub in_app_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
+    #[doc(hidden)]
     pub input_processing_configuration_description:
         std::option::Option<crate::model::InputProcessingConfigurationDescription>,
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+    #[doc(hidden)]
     pub kinesis_streams_input_description:
         std::option::Option<crate::model::KinesisStreamsInputDescription>,
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_input_description:
         std::option::Option<crate::model::KinesisFirehoseInputDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source).</p>
+    #[doc(hidden)]
     pub input_parallelism: std::option::Option<crate::model::InputParallelism>,
     /// <p>Point at which the application is configured to read from the input stream.</p>
+    #[doc(hidden)]
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
 }
@@ -4337,6 +4453,7 @@ impl InputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputParallelism {
     /// <p>Number of in-application streams to create. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
 }
 impl InputParallelism {
@@ -4389,8 +4506,10 @@ impl InputParallelism {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInputDescription {
@@ -4462,8 +4581,10 @@ impl KinesisFirehoseInputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputDescription {
@@ -4535,6 +4656,7 @@ impl KinesisStreamsInputDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
+    #[doc(hidden)]
     pub input_lambda_processor_description:
         std::option::Option<crate::model::InputLambdaProcessorDescription>,
 }
@@ -4602,8 +4724,10 @@ impl InputProcessingConfigurationDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLambdaProcessorDescription {
     /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessorDescription {
@@ -4675,8 +4799,10 @@ impl InputLambdaProcessorDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLoggingOption {
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    #[doc(hidden)]
     pub log_stream_arn: std::option::Option<std::string::String>,
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLoggingOption {
@@ -4753,14 +4879,19 @@ impl CloudWatchLoggingOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Output {
     /// <p>Name of the in-application stream.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
+    #[doc(hidden)]
     pub kinesis_streams_output: std::option::Option<crate::model::KinesisStreamsOutput>,
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_output: std::option::Option<crate::model::KinesisFirehoseOutput>,
     /// <p>Identifies an AWS Lambda function as the destination.</p>
+    #[doc(hidden)]
     pub lambda_output: std::option::Option<crate::model::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    #[doc(hidden)]
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
 }
 impl Output {
@@ -4905,8 +5036,10 @@ pub struct LambdaOutput {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function to write to.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
     /// </note>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LambdaOutput {
@@ -4984,8 +5117,10 @@ impl LambdaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseOutput {
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseOutput {
@@ -5057,8 +5192,10 @@ impl KinesisFirehoseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsOutput {
     /// <p>ARN of the destination Amazon Kinesis stream to write to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsOutput {
@@ -5130,22 +5267,28 @@ impl KinesisStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Input {
     /// <p>Name prefix to use when creating an in-application stream. Suppose that you specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. </p>
+    #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    #[doc(hidden)]
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    #[doc(hidden)]
     pub kinesis_streams_input: std::option::Option<crate::model::KinesisStreamsInput>,
     /// <p>If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_input: std::option::Option<crate::model::KinesisFirehoseInput>,
     /// <p>Describes the number of in-application streams to create. </p>
     /// <p>Data from your source is routed to these in-application input streams.</p>
     /// <p> (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
+    #[doc(hidden)]
     pub input_parallelism: std::option::Option<crate::model::InputParallelism>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
+    #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl Input {
@@ -5326,8 +5469,10 @@ impl Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseInput {
     /// <p>ARN of the input delivery stream.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to make sure that the role has the necessary permissions to access the stream.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInput {
@@ -5399,8 +5544,10 @@ impl KinesisFirehoseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamsInput {
     /// <p>ARN of the input Amazon Kinesis stream to read.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInput {
@@ -5472,10 +5619,13 @@ impl KinesisStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferenceDataSource {
     /// <p>Name of the in-application table to create.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
+    #[doc(hidden)]
     pub s3_reference_data_source: std::option::Option<crate::model::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    #[doc(hidden)]
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
 impl ReferenceDataSource {
@@ -5577,10 +5727,13 @@ impl ReferenceDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReferenceDataSource {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>Object key name containing reference data.</p>
+    #[doc(hidden)]
     pub file_key: std::option::Option<std::string::String>,
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
+    #[doc(hidden)]
     pub reference_role_arn: std::option::Option<std::string::String>,
 }
 impl S3ReferenceDataSource {

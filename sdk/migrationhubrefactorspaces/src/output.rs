@@ -4,16 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteOutput {
     /// <p> The unique identifier of the route. </p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p> The ID of the application in which the route is being updated. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p> The current state of the route. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p> A timestamp that indicates when the route was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRouteOutput {
@@ -249,6 +255,7 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -322,8 +329,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
+    #[doc(hidden)]
     pub service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
@@ -405,8 +414,10 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutesOutput {
     /// <p>The list of <code>RouteSummary</code> objects. </p>
+    #[doc(hidden)]
     pub route_summary_list: std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutesOutput {
@@ -488,8 +499,10 @@ impl ListRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentVpcsOutput {
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
+    #[doc(hidden)]
     pub environment_vpc_list: std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentVpcsOutput {
@@ -571,9 +584,11 @@ impl ListEnvironmentVpcsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    #[doc(hidden)]
     pub environment_summary_list:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -657,9 +672,11 @@ impl ListEnvironmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    #[doc(hidden)]
     pub application_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -743,42 +760,59 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceOutput {
     /// <p>The unique identifier of the service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service creator.</p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The description of the service. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The endpoint type of the service.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type.</p>
     /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
     /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
+    #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointConfig>,
     /// <p>The configuration for the Lambda endpoint type.</p>
     /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
+    #[doc(hidden)]
     pub lambda_endpoint: std::option::Option<crate::model::LambdaEndpointConfig>,
     /// <p>The current state of the service. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the service resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the service is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetServiceOutput {
@@ -1166,40 +1200,57 @@ pub struct GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
     /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
     /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route creator.</p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The type of route.</p>
+    #[doc(hidden)]
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The unique identifier of the service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application that the route belongs to. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    #[doc(hidden)]
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    #[doc(hidden)]
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    #[doc(hidden)]
     pub path_resource_to_id:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current state of the route. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the route resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the route is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRouteOutput {
@@ -1605,6 +1656,7 @@ impl GetRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -1659,29 +1711,41 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the environment. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The network fabric type of the environment. </p>
+    #[doc(hidden)]
     pub network_fabric_type: std::option::Option<crate::model::NetworkFabricType>,
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway set up by the environment. </p>
+    #[doc(hidden)]
     pub transit_gateway_id: std::option::Option<std::string::String>,
     /// <p>The current state of the environment. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the environment is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEnvironmentOutput {
@@ -1967,33 +2031,47 @@ impl GetEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application creator. </p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
+    #[doc(hidden)]
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
     /// <p>The endpoint URL of the API Gateway proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyConfig>,
     /// <p>The current state of the application. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the application is created. </p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetApplicationOutput {
@@ -2319,18 +2397,25 @@ impl GetApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceOutput {
     /// <p>The unique identifier of the service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application that the service is in.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The current state of the service. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteServiceOutput {
@@ -2496,16 +2581,22 @@ impl DeleteServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteOutput {
     /// <p>The ID of the route to delete.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the service that the route belongs to.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application that the route belongs to.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The current state of the route. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteRouteOutput {
@@ -2681,14 +2772,19 @@ impl DeleteResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentOutput {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The current state of the environment. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteEnvironmentOutput {
@@ -2820,16 +2916,22 @@ impl DeleteEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application’s environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The current state of the application. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationOutput {
@@ -2981,37 +3083,53 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>The unique identifier of the service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the service creator.</p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The description of the created service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application that the created service belongs to. </p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The endpoint type of the service.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type. </p>
+    #[doc(hidden)]
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
+    #[doc(hidden)]
     pub lambda_endpoint: std::option::Option<crate::model::LambdaEndpointInput>,
     /// <p>The current state of the service. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the service is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateServiceOutput {
@@ -3368,29 +3486,41 @@ impl CreateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteOutput {
     /// <p>The unique identifier of the route.</p>
+    #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route creator.</p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The route type of the route.</p>
+    #[doc(hidden)]
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Configuration for the URI path route type. </p>
+    #[doc(hidden)]
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
     /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the route is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRouteOutput {
@@ -3673,25 +3803,35 @@ impl CreateRouteOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentOutput {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A description of the environment.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The network fabric type of the environment.</p>
+    #[doc(hidden)]
     pub network_fabric_type: std::option::Option<crate::model::NetworkFabricType>,
     /// <p>The Amazon Web Services account ID of environment owner.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The current state of the environment. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the environment is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateEnvironmentOutput {
@@ -3937,31 +4077,44 @@ impl CreateEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of application creator.</p>
+    #[doc(hidden)]
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the environment in which the application is created.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon VPC. </p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
+    #[doc(hidden)]
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    #[doc(hidden)]
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
     /// <p>The current state of the application. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A timestamp that indicates when the application was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the application is created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateApplicationOutput {

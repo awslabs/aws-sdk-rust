@@ -184,6 +184,7 @@ impl RejectInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -257,8 +258,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>The list of Detective administrator accounts.</p>
+    #[doc(hidden)]
     pub administrators: std::option::Option<std::vec::Vec<crate::model::Administrator>>,
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
@@ -341,8 +344,10 @@ pub struct ListMembersOutput {
     /// <p>The list of member accounts in the behavior graph.</p>
     /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
+    #[doc(hidden)]
     pub member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
     /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -429,8 +434,10 @@ impl ListMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -511,8 +518,10 @@ impl ListInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphsOutput {
     /// <p>A list of behavior graphs that the account is an administrator account for.</p>
+    #[doc(hidden)]
     pub graph_list: std::option::Option<std::vec::Vec<crate::model::Graph>>,
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGraphsOutput {
@@ -593,6 +602,7 @@ impl ListGraphsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasourcePackagesOutput {
     /// <p>Details on the data source packages active in the behavior graph.</p>
+    #[doc(hidden)]
     pub datasource_packages: std::option::Option<
         std::collections::HashMap<
             crate::model::DatasourcePackage,
@@ -600,6 +610,7 @@ pub struct ListDatasourcePackagesOutput {
         >,
     >,
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasourcePackagesOutput {
@@ -701,9 +712,11 @@ impl ListDatasourcePackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersOutput {
     /// <p>The member account details that Detective is returning in response to the request.</p>
+    #[doc(hidden)]
     pub member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetMembersOutput {
@@ -887,6 +900,7 @@ impl DisableOrganizationAdminAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl DescribeOrganizationConfigurationOutput {
@@ -941,8 +955,10 @@ impl DescribeOrganizationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
     /// <p>The list of Amazon Web Services account identifiers for the member accounts that Detective successfully removed from the behavior graph.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of member accounts that Detective was not able to remove from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteMembersOutput {
@@ -1063,8 +1079,10 @@ impl DeleteGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateMembersOutput {
@@ -1155,6 +1173,7 @@ impl CreateMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphOutput {
     /// <p>The ARN of the new behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl CreateGraphOutput {
@@ -1209,9 +1228,11 @@ impl CreateGraphOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetMembershipDatasourcesOutput {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
+    #[doc(hidden)]
     pub membership_datasources:
         std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
     /// <p>Graphs that data source package information could not be retrieved for.</p>
+    #[doc(hidden)]
     pub unprocessed_graphs: std::option::Option<std::vec::Vec<crate::model::UnprocessedGraph>>,
 }
 impl BatchGetMembershipDatasourcesOutput {
@@ -1308,8 +1329,10 @@ impl BatchGetMembershipDatasourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetGraphMemberDatasourcesOutput {
     /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+    #[doc(hidden)]
     pub member_datasources: std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
     /// <p>Accounts that data source package information could not be retrieved for.</p>
+    #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl BatchGetGraphMemberDatasourcesOutput {

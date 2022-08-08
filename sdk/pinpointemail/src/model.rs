@@ -6,16 +6,22 @@
 pub struct EventDestinationDefinition {
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
+    #[doc(hidden)]
     pub cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
+    #[doc(hidden)]
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
 impl EventDestinationDefinition {
@@ -195,6 +201,7 @@ impl EventDestinationDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PinpointDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl PinpointDestination {
@@ -252,6 +259,7 @@ impl PinpointDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
@@ -306,6 +314,7 @@ impl SnsDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
+    #[doc(hidden)]
     pub dimension_configurations:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
 }
@@ -382,14 +391,17 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
+    #[doc(hidden)]
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_dimension_value: std::option::Option<std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {
@@ -576,8 +588,10 @@ impl AsRef<str> for DimensionValueSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseDestination {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
+    #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseDestination {
@@ -748,8 +762,10 @@ impl AsRef<str> for EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don’t want a resource to have a specific tag value, don’t specify a value for this&nbsp;parameter. Amazon Pinpoint will set the value to an empty string.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -825,12 +841,14 @@ pub struct MessageTag {
     /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MessageTag {
@@ -926,6 +944,7 @@ impl MessageTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
+    #[doc(hidden)]
     pub simple: std::option::Option<crate::model::Message>,
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -937,8 +956,10 @@ pub struct EmailContent {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub raw: std::option::Option<crate::model::RawMessage>,
     /// <p>The template to use for the email message.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<crate::model::Template>,
 }
 impl EmailContent {
@@ -1054,8 +1075,10 @@ impl EmailContent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Template {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
+    #[doc(hidden)]
     pub template_data: std::option::Option<std::string::String>,
 }
 impl Template {
@@ -1139,6 +1162,7 @@ pub struct RawMessage {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl RawMessage {
@@ -1218,8 +1242,10 @@ impl RawMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<crate::model::Content>,
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<crate::model::Body>,
 }
 impl Message {
@@ -1291,8 +1317,10 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<crate::model::Content>,
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    #[doc(hidden)]
     pub html: std::option::Option<crate::model::Content>,
 }
 impl Body {
@@ -1364,8 +1392,10 @@ impl Body {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Content {
     /// <p>The content of the message itself.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
+    #[doc(hidden)]
     pub charset: std::option::Option<std::string::String>,
 }
 impl Content {
@@ -1437,10 +1467,13 @@ impl Content {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
+    #[doc(hidden)]
     pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
+    #[doc(hidden)]
     pub cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
+    #[doc(hidden)]
     pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Destination {
@@ -1618,10 +1651,13 @@ impl AsRef<str> for BehaviorOnMxFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
+    #[doc(hidden)]
     pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
+    #[doc(hidden)]
     pub inbox_placement_tracking_option:
         std::option::Option<crate::model::InboxPlacementTrackingOption>,
 }
@@ -1726,8 +1762,10 @@ impl DomainDeliverabilityTrackingOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InboxPlacementTrackingOption {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
+    #[doc(hidden)]
     pub global: bool,
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
+    #[doc(hidden)]
     pub tracked_isps: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InboxPlacementTrackingOption {
@@ -1871,11 +1909,14 @@ pub struct IdentityInfo {
     /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
     /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The address or domain of the identity.</p>
+    #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl IdentityInfo {
@@ -2057,32 +2098,46 @@ impl AsRef<str> for IdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeliverabilityCampaign {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The URL of an image that contains a snapshot of the email message that was sent.</p>
+    #[doc(hidden)]
     pub image_url: std::option::Option<std::string::String>,
     /// <p>The subject line, or title, of the email message.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The verified email address that the email message was sent from.</p>
+    #[doc(hidden)]
     pub from_address: std::option::Option<std::string::String>,
     /// <p>The IP addresses that were used to send the email message.</p>
+    #[doc(hidden)]
     pub sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    #[doc(hidden)]
     pub first_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
+    #[doc(hidden)]
     pub last_seen_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
+    #[doc(hidden)]
     pub inbox_count: std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail folders.</p>
+    #[doc(hidden)]
     pub spam_count: std::option::Option<i64>,
     /// <p>The percentage of email messages that were opened by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
+    #[doc(hidden)]
     pub read_rate: std::option::Option<f64>,
     /// <p>The percentage of email messages that were deleted by recipients, without being opened first. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
+    #[doc(hidden)]
     pub delete_rate: std::option::Option<f64>,
     /// <p>The percentage of email messages that were opened and then deleted by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
+    #[doc(hidden)]
     pub read_delete_rate: std::option::Option<f64>,
     /// <p>The projected number of recipients that the email message was sent to.</p>
+    #[doc(hidden)]
     pub projected_volume: std::option::Option<i64>,
     /// <p>The major email providers who handled the email message.</p>
+    #[doc(hidden)]
     pub esps: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DomainDeliverabilityCampaign {
@@ -2382,16 +2437,22 @@ impl DomainDeliverabilityCampaign {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverabilityTestReport {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    #[doc(hidden)]
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
 }
 impl DeliverabilityTestReport {
@@ -2608,6 +2669,7 @@ impl AsRef<str> for DeliverabilityTestStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
+    #[doc(hidden)]
     pub mail_from_domain: std::option::Option<std::string::String>,
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
@@ -2616,9 +2678,11 @@ pub struct MailFromAttributes {
     /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li>
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mail_from_domain_status: std::option::Option<crate::model::MailFromDomainStatus>,
     /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl MailFromAttributes {
@@ -2829,6 +2893,7 @@ impl AsRef<str> for MailFromDomainStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DkimAttributes {
     /// <p>If the value is <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. If the value is <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+    #[doc(hidden)]
     pub signing_enabled: bool,
     /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
@@ -2838,8 +2903,10 @@ pub struct DkimAttributes {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DkimStatus>,
     /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
+    #[doc(hidden)]
     pub tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DkimAttributes {
@@ -3061,10 +3128,13 @@ impl AsRef<str> for DkimStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
+    #[doc(hidden)]
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
+    #[doc(hidden)]
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
 impl DailyVolume {
@@ -3171,14 +3241,19 @@ impl DailyVolume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainIspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    #[doc(hidden)]
     pub isp_name: std::option::Option<std::string::String>,
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
+    #[doc(hidden)]
     pub inbox_raw_count: std::option::Option<i64>,
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
+    #[doc(hidden)]
     pub spam_raw_count: std::option::Option<i64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
+    #[doc(hidden)]
     pub inbox_percentage: std::option::Option<f64>,
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
+    #[doc(hidden)]
     pub spam_percentage: std::option::Option<f64>,
 }
 impl DomainIspPlacement {
@@ -3301,12 +3376,16 @@ impl DomainIspPlacement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeStatistics {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
+    #[doc(hidden)]
     pub inbox_raw_count: std::option::Option<i64>,
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
+    #[doc(hidden)]
     pub spam_raw_count: std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
+    #[doc(hidden)]
     pub projected_inbox: std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
+    #[doc(hidden)]
     pub projected_spam: std::option::Option<i64>,
 }
 impl VolumeStatistics {
@@ -3412,10 +3491,13 @@ impl VolumeStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
+    #[doc(hidden)]
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
+    #[doc(hidden)]
     pub read_rate_percent: std::option::Option<f64>,
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
+    #[doc(hidden)]
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
 impl OverallVolume {
@@ -3519,8 +3601,10 @@ impl OverallVolume {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    #[doc(hidden)]
     pub isp_name: std::option::Option<std::string::String>,
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
+    #[doc(hidden)]
     pub placement_statistics: std::option::Option<crate::model::PlacementStatistics>,
 }
 impl IspPlacement {
@@ -3595,14 +3679,19 @@ impl IspPlacement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementStatistics {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub inbox_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub spam_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub missing_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub spf_percentage: std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub dkim_percentage: std::option::Option<f64>,
 }
 impl PlacementStatistics {
@@ -3787,16 +3876,20 @@ impl AsRef<str> for DeliverabilityDashboardAccountStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DedicatedIp {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
+    #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub warmup_status: std::option::Option<crate::model::WarmupStatus>,
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    #[doc(hidden)]
     pub warmup_percentage: std::option::Option<i32>,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
+    #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
 }
 impl DedicatedIp {
@@ -3972,19 +4065,26 @@ impl AsRef<str> for WarmupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestination {
     /// <p>A name that identifies the event destination.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The types of events that Amazon Pinpoint sends to the specified event destinations.</p>
+    #[doc(hidden)]
     pub matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
+    #[doc(hidden)]
     pub cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    #[doc(hidden)]
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
     /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
+    #[doc(hidden)]
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
 impl EventDestination {
@@ -4181,6 +4281,7 @@ impl EventDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendingOptions {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl SendingOptions {
@@ -4235,8 +4336,10 @@ impl SendingOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReputationOptions {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+    #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
+    #[doc(hidden)]
     pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
@@ -4314,8 +4417,10 @@ impl ReputationOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
+    #[doc(hidden)]
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
 impl DeliveryOptions {
@@ -4394,6 +4499,7 @@ impl DeliveryOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
+    #[doc(hidden)]
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl TrackingOptions {
@@ -4451,10 +4557,13 @@ impl TrackingOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
+    #[doc(hidden)]
     pub rbl_name: std::option::Option<std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+    #[doc(hidden)]
     pub listing_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl BlacklistEntry {
@@ -4546,10 +4655,13 @@ impl BlacklistEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendQuota {
     /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+    #[doc(hidden)]
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
+    #[doc(hidden)]
     pub max_send_rate: f64,
     /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
+    #[doc(hidden)]
     pub sent_last24_hours: f64,
 }
 impl SendQuota {

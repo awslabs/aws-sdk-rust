@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for the tag. Keys are not case-sensitive and must be unique.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with a key. The value may be an empty string but it can't be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -408,6 +410,7 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
+    #[doc(hidden)]
     pub regex_configuration: std::option::Option<crate::model::SlotTypeRegexConfiguration>,
 }
 impl SlotTypeConfiguration {
@@ -485,6 +488,7 @@ pub struct SlotTypeRegexConfiguration {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl SlotTypeRegexConfiguration {
@@ -642,8 +646,10 @@ impl AsRef<str> for SlotValueSelectionStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnumerationValue {
     /// <p>The value of the slot type.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Additional values related to the slot type value.</p>
+    #[doc(hidden)]
     pub synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnumerationValue {
@@ -724,10 +730,13 @@ impl EnumerationValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputContext {
     /// <p>The name of the context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+    #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
+    #[doc(hidden)]
     pub turns_to_live: std::option::Option<i32>,
 }
 impl OutputContext {
@@ -816,6 +825,7 @@ impl OutputContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputContext {
     /// <p>The name of the context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputContext {
@@ -868,11 +878,14 @@ impl InputContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
+    #[doc(hidden)]
     pub kendra_index: std::option::Option<std::string::String>,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     /// <p>You can override this filter string with a new filter string at runtime.</p>
+    #[doc(hidden)]
     pub query_filter_string: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
 }
 impl KendraConfiguration {
@@ -972,8 +985,10 @@ impl KendraConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FulfillmentActivityType>,
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
+    #[doc(hidden)]
     pub code_hook: std::option::Option<crate::model::CodeHook>,
 }
 impl FulfillmentActivity {
@@ -1048,8 +1063,10 @@ impl FulfillmentActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
+    #[doc(hidden)]
     pub message_version: std::option::Option<std::string::String>,
 }
 impl CodeHook {
@@ -1179,8 +1196,10 @@ impl AsRef<str> for FulfillmentActivityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
     /// <p>A collection of message objects.</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
+    #[doc(hidden)]
     pub response_card: std::option::Option<std::string::String>,
 }
 impl Statement {
@@ -1264,10 +1283,13 @@ impl Statement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The content type of the message string.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::ContentType>,
     /// <p>The text of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
+    #[doc(hidden)]
     pub group_number: std::option::Option<i32>,
 }
 impl Message {
@@ -1418,8 +1440,10 @@ impl AsRef<str> for ContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FollowUpPrompt {
     /// <p>Prompts for information from the user. </p>
+    #[doc(hidden)]
     pub prompt: std::option::Option<crate::model::Prompt>,
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    #[doc(hidden)]
     pub rejection_statement: std::option::Option<crate::model::Statement>,
 }
 impl FollowUpPrompt {
@@ -1494,10 +1518,13 @@ impl FollowUpPrompt {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     /// <p>The number of times to prompt the user for information.</p>
+    #[doc(hidden)]
     pub max_attempts: std::option::Option<i32>,
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
+    #[doc(hidden)]
     pub response_card: std::option::Option<std::string::String>,
 }
 impl Prompt {
@@ -1598,27 +1625,38 @@ impl Prompt {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Slot {
     /// <p>The name of the slot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the slot is required or optional. </p>
+    #[doc(hidden)]
     pub slot_constraint: std::option::Option<crate::model::SlotConstraint>,
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
+    #[doc(hidden)]
     pub slot_type: std::option::Option<std::string::String>,
     /// <p>The version of the slot type.</p>
+    #[doc(hidden)]
     pub slot_type_version: std::option::Option<std::string::String>,
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
+    #[doc(hidden)]
     pub value_elicitation_prompt: std::option::Option<crate::model::Prompt>,
     /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
+    #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
+    #[doc(hidden)]
     pub response_card: std::option::Option<std::string::String>,
     /// <p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>. </p>
+    #[doc(hidden)]
     pub obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
     /// <p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
+    #[doc(hidden)]
     pub default_value_spec: std::option::Option<crate::model::SlotDefaultValueSpec>,
 }
 impl Slot {
@@ -1874,6 +1912,7 @@ impl Slot {
 pub struct SlotDefaultValueSpec {
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
+    #[doc(hidden)]
     pub default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpec {
@@ -1946,6 +1985,7 @@ pub struct SlotDefaultValue {
     /// <li> <p> <code>{attribute}</code> - The slot value of the session attribute "attribute."</p> </li>
     /// <li> <p> <code>'value'</code> - The discrete value "value."</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl SlotDefaultValue {
@@ -2128,8 +2168,10 @@ impl AsRef<str> for SlotConstraint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConversationLogsResponse {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
+    #[doc(hidden)]
     pub log_settings: std::option::Option<std::vec::Vec<crate::model::LogSettingsResponse>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
 impl ConversationLogsResponse {
@@ -2211,14 +2253,19 @@ impl ConversationLogsResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogSettingsResponse {
     /// <p>The type of logging that is enabled.</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
     /// <p>The destination where logs are delivered.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The Amazon Resource Name (ARN) of the key used to encrypt audio logs in an S3 bucket.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs are delivered.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    #[doc(hidden)]
     pub resource_prefix: std::option::Option<std::string::String>,
 }
 impl LogSettingsResponse {
@@ -2457,8 +2504,10 @@ impl AsRef<str> for LogType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConversationLogsRequest {
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
+    #[doc(hidden)]
     pub log_settings: std::option::Option<std::vec::Vec<crate::model::LogSettingsRequest>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
 impl ConversationLogsRequest {
@@ -2540,12 +2589,16 @@ impl ConversationLogsRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogSettingsRequest {
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
+    #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl LogSettingsRequest {
@@ -2727,8 +2780,10 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>The version of the intent.</p>
+    #[doc(hidden)]
     pub intent_version: std::option::Option<std::string::String>,
 }
 impl Intent {
@@ -2858,8 +2913,10 @@ impl AsRef<str> for ProcessBehavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UtteranceList {
     /// <p>The version of the bot that processed the list.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
+    #[doc(hidden)]
     pub utterances: std::option::Option<std::vec::Vec<crate::model::UtteranceData>>,
 }
 impl UtteranceList {
@@ -2940,14 +2997,19 @@ impl UtteranceList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UtteranceData {
     /// <p>The text that was entered by the user or the text representation of an audio clip.</p>
+    #[doc(hidden)]
     pub utterance_string: std::option::Option<std::string::String>,
     /// <p>The number of times that the utterance was processed.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
     /// <p>The total number of individuals that used the utterance.</p>
+    #[doc(hidden)]
     pub distinct_users: std::option::Option<i32>,
     /// <p>The date that the utterance was first recorded.</p>
+    #[doc(hidden)]
     pub first_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the utterance was last recorded.</p>
+    #[doc(hidden)]
     pub last_uttered_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UtteranceData {
@@ -3134,14 +3196,19 @@ impl AsRef<str> for StatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotTypeMetadata {
     /// <p>The name of the slot type.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the slot type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last updated date are the same. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the slot type.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl SlotTypeMetadata {
@@ -3270,22 +3337,31 @@ impl SlotTypeMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MigrationSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
+    #[doc(hidden)]
     pub v1_bot_name: std::option::Option<std::string::String>,
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
+    #[doc(hidden)]
     pub v1_bot_version: std::option::Option<std::string::String>,
     /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
+    #[doc(hidden)]
     pub v1_bot_locale: std::option::Option<crate::model::Locale>,
     /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
+    #[doc(hidden)]
     pub v2_bot_id: std::option::Option<std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub v2_bot_role: std::option::Option<std::string::String>,
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
+    #[doc(hidden)]
     pub migration_status: std::option::Option<crate::model::MigrationStatus>,
     /// <p>The strategy used to conduct the migration.</p>
+    #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
+    #[doc(hidden)]
     pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MigrationSummary {
@@ -3664,12 +3740,16 @@ pub struct MigrationAlert {
     /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MigrationAlertType>,
     /// <p>A message that describes why the alert was issued.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Additional details about the alert.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
+    #[doc(hidden)]
     pub reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MigrationAlert {
@@ -3863,14 +3943,19 @@ impl AsRef<str> for MigrationAlertType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentMetadata {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the intent.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. When you create an intent, the creation date and last updated date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the intent.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl IntentMetadata {
@@ -4113,8 +4198,10 @@ impl AsRef<str> for ExportType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltinSlotTypeMetadata {
     /// <p>A unique identifier for the built-in slot type. To find the signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
     /// <p>A list of target locales for the slot. </p>
+    #[doc(hidden)]
     pub supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
 }
 impl BuiltinSlotTypeMetadata {
@@ -4195,8 +4282,10 @@ impl BuiltinSlotTypeMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltinIntentMetadata {
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for the locales that the intent supports.</p>
+    #[doc(hidden)]
     pub supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
 }
 impl BuiltinIntentMetadata {
@@ -4277,6 +4366,7 @@ impl BuiltinIntentMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuiltinIntentSlot {
     /// <p>A list of the slots defined for the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl BuiltinIntentSlot {
@@ -4329,16 +4419,22 @@ impl BuiltinIntentSlot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotMetadata {
     /// <p>The name of the bot. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the bot.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The date that the bot was updated. When you create a bot, the creation date and last updated date are the same. </p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl BotMetadata {
@@ -4484,20 +4580,27 @@ impl BotMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotChannelAssociation {
     /// <p>The name of the association between the bot and the channel. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A text description of the association you are creating. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made. </p>
+    #[doc(hidden)]
     pub bot_alias: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Lex bot to which this association is being made. </p> <note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the association between the Amazon Lex bot and the channel was created. </p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the type of association by indicating the type of channel being established between the Amazon Lex bot and the external messaging platform.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Provides information necessary to communicate with the messaging platform. </p>
+    #[doc(hidden)]
     pub bot_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the bot channel. </p>
@@ -4506,8 +4609,10 @@ pub struct BotChannelAssociation {
     /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
     /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl BotChannelAssociation {
@@ -4870,20 +4975,28 @@ impl AsRef<str> for ChannelType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotAliasMetadata {
     /// <p>The name of the bot alias.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the bot alias.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the Amazon Lex bot to which the alias points.</p>
+    #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The name of the bot to which the alias points.</p>
+    #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date that the bot alias was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Checksum of the bot alias.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Settings that determine how Amazon Lex uses conversation logs for the alias.</p>
+    #[doc(hidden)]
     pub conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
 }
 impl BotAliasMetadata {
@@ -5068,8 +5181,10 @@ impl BotAliasMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceReference {
     /// <p>The name of the resource that is using the resource that you are trying to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the resource that is using the resource that you are trying to delete.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl ResourceReference {

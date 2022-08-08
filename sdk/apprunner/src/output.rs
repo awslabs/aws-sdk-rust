@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
     /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateServiceOutput {
@@ -137,6 +139,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeploymentOutput {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl StartDeploymentOutput {
@@ -191,8 +194,10 @@ impl StartDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeServiceOutput {
     /// <p>A description of the App Runner service that this request just resumed.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl ResumeServiceOutput {
@@ -264,8 +269,10 @@ impl ResumeServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseServiceOutput {
     /// <p>A description of the App Runner service that this request just paused.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl PauseServiceOutput {
@@ -337,8 +344,10 @@ impl PauseServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpcConnectorsOutput {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub vpc_connectors: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpcConnectorsOutput {
@@ -419,6 +428,7 @@ impl ListVpcConnectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -480,8 +490,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
@@ -563,8 +575,10 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsOutput {
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub operation_summary_list: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOperationsOutput {
@@ -646,9 +660,11 @@ impl ListOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub observability_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ObservabilityConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObservabilityConfigurationsOutput {
@@ -743,9 +759,11 @@ impl ListObservabilityConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub connection_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ConnectionSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsOutput {
@@ -829,9 +847,11 @@ impl ListConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoScalingConfigurationsOutput {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoScalingConfigurationsOutput {
@@ -926,10 +946,13 @@ impl ListAutoScalingConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
+    #[doc(hidden)]
     pub dns_target: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A description of the domain name that's being disassociated.</p>
+    #[doc(hidden)]
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
 }
 impl DisassociateCustomDomainOutput {
@@ -1021,6 +1044,7 @@ impl DisassociateCustomDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+    #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
 }
 impl DescribeVpcConnectorOutput {
@@ -1078,6 +1102,7 @@ impl DescribeVpcConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceOutput {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl DescribeServiceOutput {
@@ -1132,6 +1157,7 @@ impl DescribeServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObservabilityConfigurationOutput {
     /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+    #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
 }
 impl DescribeObservabilityConfigurationOutput {
@@ -1198,12 +1224,16 @@ impl DescribeObservabilityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomDomainsOutput {
     /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
+    #[doc(hidden)]
     pub dns_target: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
+    #[doc(hidden)]
     pub custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCustomDomainsOutput {
@@ -1318,6 +1348,7 @@ impl DescribeCustomDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingConfigurationOutput {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
 }
 impl DescribeAutoScalingConfigurationOutput {
@@ -1384,6 +1415,7 @@ impl DescribeAutoScalingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
 }
 impl DeleteVpcConnectorOutput {
@@ -1441,8 +1473,10 @@ impl DeleteVpcConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceOutput {
     /// <p>A description of the App Runner service that this request just deleted.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteServiceOutput {
@@ -1514,6 +1548,7 @@ impl DeleteServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
 }
 impl DeleteObservabilityConfigurationOutput {
@@ -1580,6 +1615,7 @@ impl DeleteObservabilityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl DeleteConnectionOutput {
@@ -1637,6 +1673,7 @@ impl DeleteConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
 }
 impl DeleteAutoScalingConfigurationOutput {
@@ -1703,6 +1740,7 @@ impl DeleteAutoScalingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
+    #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
 }
 impl CreateVpcConnectorOutput {
@@ -1760,8 +1798,10 @@ impl CreateVpcConnectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>A description of the App Runner service that's created by this request.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreateServiceOutput {
@@ -1833,6 +1873,7 @@ impl CreateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
+    #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
 }
 impl CreateObservabilityConfigurationOutput {
@@ -1899,6 +1940,7 @@ impl CreateObservabilityConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
     /// <p>A description of the App Runner connection that's created by this request.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl CreateConnectionOutput {
@@ -1956,6 +1998,7 @@ impl CreateConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
 }
 impl CreateAutoScalingConfigurationOutput {
@@ -2022,10 +2065,13 @@ impl CreateAutoScalingConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
+    #[doc(hidden)]
     pub dns_target: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A description of the domain name that's being associated.</p>
+    #[doc(hidden)]
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
 }
 impl AssociateCustomDomainOutput {

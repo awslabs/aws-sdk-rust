@@ -34,8 +34,10 @@ impl LogoutOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
+    #[doc(hidden)]
     pub account_list: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
 }
 impl ListAccountsOutput {
@@ -116,8 +118,10 @@ impl ListAccountsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountRolesOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
+    #[doc(hidden)]
     pub role_list: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
 }
 impl ListAccountRolesOutput {
@@ -198,6 +202,7 @@ impl ListAccountRolesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoleCredentialsOutput {
     /// <p>The credentials for the role that is assigned to the user.</p>
+    #[doc(hidden)]
     pub role_credentials: std::option::Option<crate::model::RoleCredentials>,
 }
 impl GetRoleCredentialsOutput {

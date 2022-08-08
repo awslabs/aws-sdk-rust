@@ -10286,16 +10286,21 @@ impl UpdateStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamProcessorInput {
     /// <p> Name of the stream processor that you want to update. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+    #[doc(hidden)]
     pub settings_for_update: std::option::Option<crate::model::StreamProcessorSettingsForUpdate>,
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    #[doc(hidden)]
     pub regions_of_interest_for_update:
         std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    #[doc(hidden)]
     pub data_sharing_preference_for_update:
         std::option::Option<crate::model::StreamProcessorDataSharingPreference>,
     /// <p> A list of parameters you want to delete from the stream processor. </p>
+    #[doc(hidden)]
     pub parameters_to_delete:
         std::option::Option<std::vec::Vec<crate::model::StreamProcessorParameterToDelete>>,
 }
@@ -10352,8 +10357,10 @@ impl std::fmt::Debug for UpdateStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p> The changes that you want to make to the dataset. </p>
+    #[doc(hidden)]
     pub changes: std::option::Option<crate::model::DatasetChanges>,
 }
 impl UpdateDatasetEntriesInput {
@@ -10380,8 +10387,10 @@ impl std::fmt::Debug for UpdateDatasetEntriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> A list of the tags that you want to remove. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -10408,8 +10417,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The key-value tags to assign to the resource. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10440,6 +10451,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopStreamProcessorInput {
@@ -10462,6 +10474,7 @@ impl std::fmt::Debug for StopStreamProcessorInput {
 pub struct StopProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
 }
 impl StopProjectVersionInput {
@@ -10484,14 +10497,19 @@ impl std::fmt::Debug for StopProjectVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionInput {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::StartTextDetectionFilters>,
 }
 impl StartTextDetectionInput {
@@ -10533,12 +10551,15 @@ impl std::fmt::Debug for StartTextDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+    #[doc(hidden)]
     pub start_selector: std::option::Option<crate::model::StreamProcessingStartSelector>,
     /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+    #[doc(hidden)]
     pub stop_selector: std::option::Option<crate::model::StreamProcessingStopSelector>,
 }
 impl StartStreamProcessorInput {
@@ -10576,16 +10597,22 @@ impl std::fmt::Debug for StartStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionInput {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>Filters for technical cue or shot detection.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::StartSegmentDetectionFilters>,
     /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
+    #[doc(hidden)]
     pub segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentType>>,
 }
 impl StartSegmentDetectionInput {
@@ -10632,12 +10659,15 @@ impl std::fmt::Debug for StartSegmentDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
     /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    #[doc(hidden)]
     pub min_inference_units: std::option::Option<i32>,
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+    #[doc(hidden)]
     pub max_inference_units: std::option::Option<i32>,
 }
 impl StartProjectVersionInput {
@@ -10671,12 +10701,16 @@ impl std::fmt::Debug for StartProjectVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPersonTrackingInput {
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartPersonTrackingInput {
@@ -10713,15 +10747,20 @@ impl std::fmt::Debug for StartPersonTrackingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLabelDetectionInput {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartLabelDetectionInput {
@@ -10764,16 +10803,22 @@ impl std::fmt::Debug for StartLabelDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceSearchInput {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    #[doc(hidden)]
     pub face_match_threshold: std::option::Option<f32>,
     /// <p>ID of the collection that contains the faces you want to search for.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartFaceSearchInput {
@@ -10820,16 +10865,21 @@ impl std::fmt::Debug for StartFaceSearchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceDetectionInput {
     /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>The face attributes you want returned.</p>
     /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
     /// <p> <code>ALL</code> - All facial attributes are returned.</p>
+    #[doc(hidden)]
     pub face_attributes: std::option::Option<crate::model::FaceAttributes>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartFaceDetectionInput {
@@ -10873,14 +10923,19 @@ impl std::fmt::Debug for StartFaceDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationInput {
     /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartContentModerationInput {
@@ -10922,12 +10977,16 @@ impl std::fmt::Debug for StartContentModerationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCelebrityRecognitionInput {
     /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub video: std::option::Option<crate::model::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    #[doc(hidden)]
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartCelebrityRecognitionInput {
@@ -10964,16 +11023,21 @@ impl std::fmt::Debug for StartCelebrityRecognitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesByImageInput {
     /// <p>ID of the collection to search.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    #[doc(hidden)]
     pub max_faces: std::option::Option<i32>,
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    #[doc(hidden)]
     pub face_match_threshold: std::option::Option<f32>,
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    #[doc(hidden)]
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
 impl SearchFacesByImageInput {
@@ -11017,12 +11081,16 @@ impl std::fmt::Debug for SearchFacesByImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesInput {
     /// <p>ID of the collection the face belongs to.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>ID of a face to find matches for in the collection.</p>
+    #[doc(hidden)]
     pub face_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    #[doc(hidden)]
     pub max_faces: std::option::Option<i32>,
     /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
+    #[doc(hidden)]
     pub face_match_threshold: std::option::Option<f32>,
 }
 impl SearchFacesInput {
@@ -11060,6 +11128,7 @@ impl std::fmt::Debug for SearchFacesInput {
 pub struct RecognizeCelebritiesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl RecognizeCelebritiesInput {
@@ -11082,6 +11151,7 @@ impl std::fmt::Debug for RecognizeCelebritiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -11103,8 +11173,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamProcessorsInput {
     /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListStreamProcessorsInput {
@@ -11131,10 +11203,13 @@ impl std::fmt::Debug for ListStreamProcessorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of faces to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFacesInput {
@@ -11166,10 +11241,13 @@ impl std::fmt::Debug for ListFacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetLabelsInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetLabelsInput {
@@ -11201,18 +11279,25 @@ impl std::fmt::Debug for ListDatasetLabelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
+    #[doc(hidden)]
     pub contains_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
+    #[doc(hidden)]
     pub labeled: std::option::Option<bool>,
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    #[doc(hidden)]
     pub source_ref_contains: std::option::Option<std::string::String>,
     /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
+    #[doc(hidden)]
     pub has_errors: std::option::Option<bool>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetEntriesInput {
@@ -11264,8 +11349,10 @@ impl std::fmt::Debug for ListDatasetEntriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectionsInput {
     /// <p>Pagination token from the previous response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of collection IDs to return. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCollectionsInput {
@@ -11292,22 +11379,28 @@ impl std::fmt::Debug for ListCollectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFacesInput {
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
+    #[doc(hidden)]
     pub external_image_id: std::option::Option<std::string::String>,
     /// <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    #[doc(hidden)]
     pub detection_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
     /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
     /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
     /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
+    #[doc(hidden)]
     pub max_faces: std::option::Option<i32>,
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    #[doc(hidden)]
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
 impl IndexFacesInput {
@@ -11360,10 +11453,13 @@ impl std::fmt::Debug for IndexFacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTextDetectionInput {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTextDetectionInput {
@@ -11395,10 +11491,13 @@ impl std::fmt::Debug for GetTextDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentDetectionInput {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSegmentDetectionInput {
@@ -11430,12 +11529,16 @@ impl std::fmt::Debug for GetSegmentDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonTrackingInput {
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::PersonTrackingSortBy>,
 }
 impl GetPersonTrackingInput {
@@ -11472,12 +11575,16 @@ impl std::fmt::Debug for GetPersonTrackingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelDetectionInput {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
 }
 impl GetLabelDetectionInput {
@@ -11514,12 +11621,16 @@ impl std::fmt::Debug for GetLabelDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceSearchInput {
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::FaceSearchSortBy>,
 }
 impl GetFaceSearchInput {
@@ -11556,10 +11667,13 @@ impl std::fmt::Debug for GetFaceSearchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceDetectionInput {
     /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFaceDetectionInput {
@@ -11591,12 +11705,16 @@ impl std::fmt::Debug for GetFaceDetectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentModerationInput {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ContentModerationSortBy>,
 }
 impl GetContentModerationInput {
@@ -11633,12 +11751,16 @@ impl std::fmt::Debug for GetContentModerationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityRecognitionInput {
     /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
 }
 impl GetCelebrityRecognitionInput {
@@ -11675,6 +11797,7 @@ impl std::fmt::Debug for GetCelebrityRecognitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityInfoInput {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCelebrityInfoInput {
@@ -11696,6 +11819,7 @@ impl std::fmt::Debug for GetCelebrityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInput {
@@ -11718,8 +11842,10 @@ impl std::fmt::Debug for DistributeDatasetEntriesInput {
 pub struct DetectTextInput {
     /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<crate::model::DetectTextFilters>,
 }
 impl DetectTextInput {
@@ -11747,8 +11873,10 @@ impl std::fmt::Debug for DetectTextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectProtectiveEquipmentInput {
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>An array of PPE types that you want to summarize.</p>
+    #[doc(hidden)]
     pub summarization_attributes:
         std::option::Option<crate::model::ProtectiveEquipmentSummarizationAttributes>,
 }
@@ -11779,11 +11907,14 @@ impl std::fmt::Debug for DetectProtectiveEquipmentInput {
 pub struct DetectModerationLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
+    #[doc(hidden)]
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
 }
 impl DetectModerationLabelsInput {
@@ -11818,11 +11949,14 @@ impl std::fmt::Debug for DetectModerationLabelsInput {
 pub struct DetectLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    #[doc(hidden)]
     pub max_labels: std::option::Option<i32>,
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
 }
 impl DetectLabelsInput {
@@ -11857,9 +11991,11 @@ impl std::fmt::Debug for DetectLabelsInput {
 pub struct DetectFacesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl DetectFacesInput {
@@ -11888,6 +12024,7 @@ impl std::fmt::Debug for DetectFacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectCustomLabelsInput {
     /// <p>The ARN of the model version that you want to use.</p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
     /// <p>Provides the input image either as bytes or an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
@@ -11896,10 +12033,13 @@ pub struct DetectCustomLabelsInput {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
+    #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
 }
 impl DetectCustomLabelsInput {
@@ -11942,6 +12082,7 @@ impl std::fmt::Debug for DetectCustomLabelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamProcessorInput {
     /// <p>Name of the stream processor for which you want information.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeStreamProcessorInput {
@@ -11963,12 +12104,16 @@ impl std::fmt::Debug for DescribeStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+    #[doc(hidden)]
     pub version_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeProjectVersionsInput {
@@ -12005,10 +12150,13 @@ impl std::fmt::Debug for DescribeProjectVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectsInput {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
+    #[doc(hidden)]
     pub project_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeProjectsInput {
@@ -12040,6 +12188,7 @@ impl std::fmt::Debug for DescribeProjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -12061,6 +12210,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
 }
 impl DescribeCollectionInput {
@@ -12082,6 +12232,7 @@ impl std::fmt::Debug for DescribeCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamProcessorInput {
     /// <p>The name of the stream processor you want to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteStreamProcessorInput {
@@ -12103,6 +12254,7 @@ impl std::fmt::Debug for DeleteStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectVersionInput {
@@ -12124,6 +12276,7 @@ impl std::fmt::Debug for DeleteProjectVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
@@ -12145,8 +12298,10 @@ impl std::fmt::Debug for DeleteProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFacesInput {
     /// <p>Collection from which to remove the specific faces.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>An array of face IDs to delete.</p>
+    #[doc(hidden)]
     pub face_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFacesInput {
@@ -12173,6 +12328,7 @@ impl std::fmt::Debug for DeleteFacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -12194,6 +12350,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
 }
 impl DeleteCollectionInput {
@@ -12215,28 +12372,38 @@ impl std::fmt::Debug for DeleteCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamProcessorInput {
     /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::StreamProcessorInput>,
     /// <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::StreamProcessorOutput>,
     /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<crate::model::StreamProcessorSettings>,
     /// <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+    #[doc(hidden)]
     pub notification_channel: std::option::Option<crate::model::StreamProcessorNotificationChannel>,
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+    #[doc(hidden)]
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    #[doc(hidden)]
     pub data_sharing_preference:
         std::option::Option<crate::model::StreamProcessorDataSharingPreference>,
 }
@@ -12314,16 +12481,22 @@ impl std::fmt::Debug for CreateStreamProcessorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectVersionInput {
     /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>A name for the version of the model. This value must be unique.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
+    #[doc(hidden)]
     pub training_data: std::option::Option<crate::model::TrainingData>,
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
+    #[doc(hidden)]
     pub testing_data: std::option::Option<crate::model::TestingData>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
@@ -12335,6 +12508,7 @@ pub struct CreateProjectVersionInput {
     /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateProjectVersionInput {
@@ -12397,6 +12571,7 @@ impl std::fmt::Debug for CreateProjectVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The name of the project to create.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl CreateProjectInput {
@@ -12418,10 +12593,13 @@ impl std::fmt::Debug for CreateProjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    #[doc(hidden)]
     pub dataset_source: std::option::Option<crate::model::DatasetSource>,
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetInput {
@@ -12453,8 +12631,10 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCollectionInput {
     /// <p>ID for the collection that you are creating.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12486,14 +12666,18 @@ impl std::fmt::Debug for CreateCollectionInput {
 pub struct CompareFacesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub source_image: std::option::Option<crate::model::Image>,
     /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    #[doc(hidden)]
     pub target_image: std::option::Option<crate::model::Image>,
     /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
+    #[doc(hidden)]
     pub similarity_threshold: std::option::Option<f32>,
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    #[doc(hidden)]
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
 impl CompareFacesInput {

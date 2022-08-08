@@ -5,28 +5,40 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the job run.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The user who created the job run.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the job run was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution role ARN of the job run.</p>
+    #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
     /// <p>The state of the job run.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The state details of the job run.</p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The EMR release version associated with the application your job is running on.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of job run, such as Spark or Hive.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl JobRunSummary {
@@ -374,8 +386,10 @@ impl AsRef<str> for JobRunState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
+    #[doc(hidden)]
     pub application_configuration: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The override configurations for monitoring.</p>
+    #[doc(hidden)]
     pub monitoring_configuration: std::option::Option<crate::model::MonitoringConfiguration>,
 }
 impl ConfigurationOverrides {
@@ -466,8 +480,10 @@ impl ConfigurationOverrides {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
+    #[doc(hidden)]
     pub s3_monitoring_configuration: std::option::Option<crate::model::S3MonitoringConfiguration>,
     /// <p>The managed log persistence configuration for a job run.</p>
+    #[doc(hidden)]
     pub managed_persistence_monitoring_configuration:
         std::option::Option<crate::model::ManagedPersistenceMonitoringConfiguration>,
 }
@@ -565,8 +581,10 @@ impl MonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedPersistenceMonitoringConfiguration {
     /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
 }
 impl ManagedPersistenceMonitoringConfiguration {
@@ -641,8 +659,10 @@ impl ManagedPersistenceMonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3MonitoringConfiguration {
     /// <p>The Amazon S3 destination URI for log publishing.</p>
+    #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
 }
 impl S3MonitoringConfiguration {
@@ -717,11 +737,14 @@ impl S3MonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
+    #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
     /// <p>A set of properties specified within a configuration classification.</p>
+    #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
+    #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
 }
 impl Configuration {
@@ -893,10 +916,13 @@ impl JobDriver {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hive {
     /// <p>The query for the Hive job run.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The query file for the Hive job run.</p>
+    #[doc(hidden)]
     pub init_query_file: std::option::Option<std::string::String>,
     /// <p>The parameters for the Hive job run.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
 }
 impl Hive {
@@ -988,10 +1014,13 @@ impl Hive {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SparkSubmit {
     /// <p>The entry point for the Spark submit job run.</p>
+    #[doc(hidden)]
     pub entry_point: std::option::Option<std::string::String>,
     /// <p>The arguments for the Spark submit job run.</p>
+    #[doc(hidden)]
     pub entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The parameters for the Spark submit job run.</p>
+    #[doc(hidden)]
     pub spark_submit_parameters: std::option::Option<std::string::String>,
 }
 impl SparkSubmit {
@@ -1095,39 +1124,56 @@ impl SparkSubmit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobRun {
     /// <p>The ID of the application the job is running on.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The execution role ARN of the job run.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The user who created the job run.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the job run was updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution role ARN of the job run.</p>
+    #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
     /// <p>The state of the job run.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The state details of the job run.</p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The EMR release version associated with the application your job is running on.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The configuration settings that are used to override default configuration.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The job driver for the job run.</p>
+    #[doc(hidden)]
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The tags assigned to the job run.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>
+    #[doc(hidden)]
     pub total_resource_utilization: std::option::Option<crate::model::TotalResourceUtilization>,
     /// <p>The network configuration for customer VPC connectivity.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
+    #[doc(hidden)]
     pub total_execution_duration_seconds: std::option::Option<i32>,
 }
 impl JobRun {
@@ -1527,8 +1573,10 @@ impl JobRun {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
     /// <p>The array of subnet Ids for customer VPC connectivity.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of security group Ids for customer VPC connectivity.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkConfiguration {
@@ -1618,10 +1666,13 @@ impl NetworkConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TotalResourceUtilization {
     /// <p>The aggregated vCPU used per hour from the time job start executing till the time job is terminated.</p>
+    #[doc(hidden)]
     pub v_cpu_hour: std::option::Option<f64>,
     /// <p>The aggregated memory used per hour from the time job start executing till the time job is terminated.</p>
+    #[doc(hidden)]
     pub memory_gb_hour: std::option::Option<f64>,
     /// <p>The aggregated storage used per hour from the time job start executing till the time job is terminated.</p>
+    #[doc(hidden)]
     pub storage_gb_hour: std::option::Option<f64>,
 }
 impl TotalResourceUtilization {
@@ -1710,22 +1761,31 @@ impl TotalResourceUtilization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The EMR release version associated with the application.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The state of the application.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The state details of the application.</p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The date and time when the application was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the application was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {
@@ -2014,8 +2074,10 @@ impl AsRef<str> for ApplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoStopConfig {
     /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
+    #[doc(hidden)]
     pub idle_timeout_minutes: std::option::Option<i32>,
 }
 impl AutoStopConfig {
@@ -2087,6 +2149,7 @@ impl AutoStopConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoStartConfig {
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
 }
 impl AutoStartConfig {
@@ -2141,10 +2204,13 @@ impl AutoStartConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
+    #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The maximum allowed resources for an application.</p>
+    #[doc(hidden)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The maximum allowed disk for an application.</p>
+    #[doc(hidden)]
     pub disk: std::option::Option<std::string::String>,
 }
 impl MaximumAllowedResources {
@@ -2233,8 +2299,10 @@ impl MaximumAllowedResources {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitialCapacityConfig {
     /// <p>The number of workers in the initial capacity configuration.</p>
+    #[doc(hidden)]
     pub worker_count: i64,
     /// <p>The resource configuration of the initial capacity configuration.</p>
+    #[doc(hidden)]
     pub worker_configuration: std::option::Option<crate::model::WorkerResourceConfig>,
 }
 impl InitialCapacityConfig {
@@ -2309,10 +2377,13 @@ impl InitialCapacityConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkerResourceConfig {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
+    #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The memory requirements for every worker instance of the worker type.</p>
+    #[doc(hidden)]
     pub memory: std::option::Option<std::string::String>,
     /// <p>The disk requirements for every worker instance of the worker type.</p>
+    #[doc(hidden)]
     pub disk: std::option::Option<std::string::String>,
 }
 impl WorkerResourceConfig {
@@ -2401,37 +2472,52 @@ impl WorkerResourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The EMR release version associated with the application.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The state of the application.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The state details of the application.</p>
+    #[doc(hidden)]
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The initial capacity of the application.</p>
+    #[doc(hidden)]
     pub initial_capacity: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::InitialCapacityConfig>,
     >,
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
+    #[doc(hidden)]
     pub maximum_capacity: std::option::Option<crate::model::MaximumAllowedResources>,
     /// <p>The date and time when the application run was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the application run was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
+    #[doc(hidden)]
     pub auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
+    #[doc(hidden)]
     pub auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl Application {

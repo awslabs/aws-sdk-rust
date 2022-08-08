@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGatewayRequestException {
     /// <p>A human-readable message describing the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InvalidGatewayRequestException {
@@ -93,8 +95,10 @@ impl InvalidGatewayRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>A human-readable message describing the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InternalServerError {
@@ -181,8 +185,10 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {
     /// <p>A human-readable message describing the error that occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl ServiceUnavailableError {

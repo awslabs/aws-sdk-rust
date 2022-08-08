@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationWarning {
     /// <p>The identifier of the object that contains the validation warning.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the validation warning.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ValidationWarning {
@@ -87,8 +89,10 @@ impl ValidationWarning {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the validation error.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ValidationError {
@@ -169,8 +173,10 @@ impl ValidationError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterValue {
     /// <p>The ID of the parameter value.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The field value, expressed as a String.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
 }
 impl ParameterValue {
@@ -242,8 +248,10 @@ impl ParameterValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The attributes of the parameter object.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>,
 }
 impl ParameterObject {
@@ -324,8 +332,10 @@ impl ParameterObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterAttribute {
     /// <p>The field identifier.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The field value, expressed as a String.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
 }
 impl ParameterAttribute {
@@ -397,10 +407,13 @@ impl ParameterAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineObject {
     /// <p>The ID of the object.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the object.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that define the properties of the object.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl PipelineObject {
@@ -498,10 +511,13 @@ impl PipelineObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Field {
     /// <p>The field identifier.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The field value, expressed as a String.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>The field value, expressed as the identifier of another object.</p>
+    #[doc(hidden)]
     pub ref_value: std::option::Option<std::string::String>,
 }
 impl Field {
@@ -649,6 +665,7 @@ impl AsRef<str> for TaskStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
+    #[doc(hidden)]
     pub selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
 }
 impl Query {
@@ -712,8 +729,10 @@ impl Query {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl Selector {
@@ -806,8 +825,10 @@ pub struct Operator {
     /// <li>@actualEndTime</li>
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OperatorType>,
     /// <p>The value that the actual field value will be compared with.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Operator {
@@ -1018,12 +1039,16 @@ impl AsRef<str> for OperatorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the pipeline that provided the task.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
+    #[doc(hidden)]
     pub attempt_id: std::option::Option<std::string::String>,
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
+    #[doc(hidden)]
     pub objects: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PipelineObject>,
     >,
@@ -1154,8 +1179,10 @@ impl TaskObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
+    #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
 }
 impl InstanceIdentity {
@@ -1227,8 +1254,10 @@ impl InstanceIdentity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineIdName {
     /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PipelineIdName {
@@ -1300,14 +1329,19 @@ impl PipelineIdName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Description of the pipeline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PipelineDescription {
@@ -1448,8 +1482,10 @@ impl PipelineDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional value portion of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {

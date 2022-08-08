@@ -7928,8 +7928,10 @@ pub struct ListMeshesInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListMeshesInput {
@@ -7958,12 +7960,16 @@ impl std::fmt::Debug for ListMeshesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeshInput {
     /// <p>The name to use for the service mesh.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The service mesh specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::MeshSpec>,
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateMeshInput {
@@ -8000,6 +8006,7 @@ impl std::fmt::Debug for CreateMeshInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
 }
 impl DeleteMeshInput {
@@ -8021,10 +8028,13 @@ impl std::fmt::Debug for DeleteMeshInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMeshInput {
     /// <p>The name of the service mesh to update.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The service mesh specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::MeshSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateMeshInput {
@@ -8056,8 +8066,10 @@ impl std::fmt::Debug for UpdateMeshInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMeshInput {
     /// <p>The name of the service mesh to describe.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeMeshInput {
@@ -8084,12 +8096,16 @@ impl std::fmt::Debug for DescribeMeshInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualServicesInput {
     /// <p>The name of the service mesh to list virtual services in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualServicesInput {
@@ -8126,16 +8142,22 @@ impl std::fmt::Debug for ListVirtualServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualServiceInput {
     /// <p>The name to use for the virtual service.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the virtual service in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual service specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualServiceSpec>,
     /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualServiceInput {
@@ -8182,10 +8204,13 @@ impl std::fmt::Debug for CreateVirtualServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualServiceInput {
     /// <p>The name of the virtual service to delete.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual service in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualServiceInput {
@@ -8217,14 +8242,19 @@ impl std::fmt::Debug for DeleteVirtualServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualServiceInput {
     /// <p>The name of the virtual service to update.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual service resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualServiceSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualServiceInput {
@@ -8266,10 +8296,13 @@ impl std::fmt::Debug for UpdateVirtualServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualServiceInput {
     /// <p>The name of the virtual service to describe.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual service resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualServiceInput {
@@ -8301,12 +8334,16 @@ impl std::fmt::Debug for DescribeVirtualServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualRoutersInput {
     /// <p>The name of the service mesh to list virtual routers in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualRoutersInput {
@@ -8343,16 +8380,22 @@ impl std::fmt::Debug for ListVirtualRoutersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the virtual router in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual router specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualRouterSpec>,
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualRouterInput {
@@ -8399,10 +8442,13 @@ impl std::fmt::Debug for CreateVirtualRouterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualRouterInput {
     /// <p>The name of the virtual router to delete.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual router in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualRouterInput {
@@ -8434,14 +8480,19 @@ impl std::fmt::Debug for DeleteVirtualRouterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualRouterInput {
     /// <p>The name of the virtual router to update.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualRouterSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualRouterInput {
@@ -8483,10 +8534,13 @@ impl std::fmt::Debug for UpdateVirtualRouterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualRouterInput {
     /// <p>The name of the virtual router to describe.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualRouterInput {
@@ -8518,14 +8572,19 @@ impl std::fmt::Debug for DescribeVirtualRouterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutesInput {
     /// <p>The name of the service mesh to list routes in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router to list routes in.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListRoutesInput {
@@ -8567,18 +8626,25 @@ impl std::fmt::Debug for ListRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteInput {
     /// <p>The name to use for the route.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the route in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The route specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::RouteSpec>,
     /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateRouteInput {
@@ -8630,12 +8696,16 @@ impl std::fmt::Debug for CreateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteInput {
     /// <p>The name of the route to delete.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the route in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router to delete the route in.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteRouteInput {
@@ -8672,16 +8742,22 @@ impl std::fmt::Debug for DeleteRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteInput {
     /// <p>The name of the route to update.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::RouteSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateRouteInput {
@@ -8728,12 +8804,16 @@ impl std::fmt::Debug for UpdateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteInput {
     /// <p>The name of the route to describe.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
 }
 impl DescribeRouteInput {
@@ -8770,12 +8850,16 @@ impl std::fmt::Debug for DescribeRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualNodesInput {
     /// <p>The name of the service mesh to list virtual nodes in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualNodesInput {
@@ -8812,16 +8896,22 @@ impl std::fmt::Debug for ListVirtualNodesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualNodeInput {
     /// <p>The name to use for the virtual node.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the virtual node in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual node specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualNodeSpec>,
     /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualNodeInput {
@@ -8868,10 +8958,13 @@ impl std::fmt::Debug for CreateVirtualNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualNodeInput {
     /// <p>The name of the virtual node to delete.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual node in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualNodeInput {
@@ -8903,14 +8996,19 @@ impl std::fmt::Debug for DeleteVirtualNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualNodeInput {
     /// <p>The name of the virtual node to update.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualNodeSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualNodeInput {
@@ -8952,10 +9050,13 @@ impl std::fmt::Debug for UpdateVirtualNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualNodeInput {
     /// <p>The name of the virtual node to describe.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualNodeInput {
@@ -8987,12 +9088,16 @@ impl std::fmt::Debug for DescribeVirtualNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualGatewaysInput {
     /// <p>The name of the service mesh to list virtual gateways in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualGatewaysInput {
@@ -9029,16 +9134,22 @@ impl std::fmt::Debug for ListVirtualGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualGatewayInput {
     /// <p>The name to use for the virtual gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the virtual gateway in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualGatewaySpec>,
     /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualGatewayInput {
@@ -9085,10 +9196,13 @@ impl std::fmt::Debug for CreateVirtualGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualGatewayInput {
     /// <p>The name of the virtual gateway to delete.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual gateway from.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualGatewayInput {
@@ -9120,14 +9234,19 @@ impl std::fmt::Debug for DeleteVirtualGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualGatewayInput {
     /// <p>The name of the virtual gateway to update.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualGatewaySpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualGatewayInput {
@@ -9169,10 +9288,13 @@ impl std::fmt::Debug for UpdateVirtualGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualGatewayInput {
     /// <p>The name of the virtual gateway to describe.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualGatewayInput {
@@ -9204,14 +9326,19 @@ impl std::fmt::Debug for DescribeVirtualGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayRoutesInput {
     /// <p>The name of the service mesh to list gateway routes in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListGatewayRoutesInput {
@@ -9253,18 +9380,25 @@ impl std::fmt::Debug for ListGatewayRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayRouteInput {
     /// <p>The name to use for the gateway route.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the gateway route in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The gateway route specification to apply.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::GatewayRouteSpec>,
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateGatewayRouteInput {
@@ -9316,12 +9450,16 @@ impl std::fmt::Debug for CreateGatewayRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayRouteInput {
     /// <p>The name of the gateway route to delete.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the gateway route from.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway to delete the route from.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayRouteInput {
@@ -9358,16 +9496,22 @@ impl std::fmt::Debug for DeleteGatewayRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayRouteInput {
     /// <p>The name of the gateway route to update.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::GatewayRouteSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayRouteInput {
@@ -9414,12 +9558,16 @@ impl std::fmt::Debug for UpdateGatewayRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayRouteInput {
     /// <p>The name of the gateway route to describe.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayRouteInput {
@@ -9456,8 +9604,10 @@ impl std::fmt::Debug for DescribeGatewayRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9484,8 +9634,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
 }
 impl TagResourceInput {
@@ -9512,10 +9664,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {

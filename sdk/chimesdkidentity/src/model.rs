@@ -186,8 +186,10 @@ impl AsRef<str> for AllowMessages {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key in a tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value in a tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -259,8 +261,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
+    #[doc(hidden)]
     pub device_token: std::option::Option<std::string::String>,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
+    #[doc(hidden)]
     pub voip_device_token: std::option::Option<std::string::String>,
 }
 impl EndpointAttributes {
@@ -394,6 +398,7 @@ impl AsRef<str> for AppInstanceUserEndpointType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
+    #[doc(hidden)]
     pub channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
 }
 impl AppInstanceRetentionSettings {
@@ -460,6 +465,7 @@ impl AppInstanceRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelRetentionSettings {
     /// <p>The time in days to retain the messages in a channel.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
 }
 impl ChannelRetentionSettings {
@@ -514,10 +520,13 @@ impl ChannelRetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of an <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl AppInstanceUserSummary {
@@ -609,16 +618,22 @@ impl AppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserEndpointSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
     /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    #[doc(hidden)]
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
     /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_state: std::option::Option<crate::model::EndpointState>,
 }
 impl AppInstanceUserEndpointSummary {
@@ -776,8 +791,10 @@ impl AppInstanceUserEndpointSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointState {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::EndpointStatusReason>,
 }
 impl EndpointState {
@@ -965,10 +982,13 @@ impl AsRef<str> for EndpointStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceSummary {
     /// <p>The <code>AppInstance</code> ARN.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl AppInstanceSummary {
@@ -1060,6 +1080,7 @@ impl AppInstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
+    #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
 }
 impl AppInstanceAdminSummary {
@@ -1112,8 +1133,10 @@ impl AppInstanceAdminSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>The ARN in an Identity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name in an Identity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Identity {
@@ -1185,22 +1208,31 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserEndpoint {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The attributes of an <code>Endpoint</code>.</p>
+    #[doc(hidden)]
     pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    #[doc(hidden)]
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
     /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
     /// <ul>
@@ -1209,6 +1241,7 @@ pub struct AppInstanceUserEndpoint {
     /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
     /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub endpoint_state: std::option::Option<crate::model::EndpointState>,
 }
 impl AppInstanceUserEndpoint {
@@ -1455,14 +1488,19 @@ impl AppInstanceUserEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUser {
@@ -1594,10 +1632,13 @@ impl AppInstanceUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
+    #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which an administrator was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceAdmin {
@@ -1692,14 +1733,19 @@ impl AppInstanceAdmin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstance {
     /// <p>The ARN of the messaging instance.</p>
+    #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata of an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl AppInstance {

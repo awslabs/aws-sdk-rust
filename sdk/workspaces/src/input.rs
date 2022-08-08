@@ -10521,12 +10521,15 @@ impl UpdateWorkspaceImagePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    #[doc(hidden)]
     pub allow_copy_image: std::option::Option<bool>,
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
 }
 impl UpdateWorkspaceImagePermissionInput {
@@ -10560,8 +10563,10 @@ impl std::fmt::Debug for UpdateWorkspaceImagePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl UpdateWorkspaceBundleInput {
@@ -10588,8 +10593,10 @@ impl std::fmt::Debug for UpdateWorkspaceBundleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRulesOfIpGroupInput {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>One or more rules.</p>
+    #[doc(hidden)]
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
 }
 impl UpdateRulesOfIpGroupInput {
@@ -10616,8 +10623,10 @@ impl std::fmt::Debug for UpdateRulesOfIpGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionAliasPermissionInput {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub connection_alias_permission: std::option::Option<crate::model::ConnectionAliasPermission>,
 }
 impl UpdateConnectionAliasPermissionInput {
@@ -10649,12 +10658,16 @@ impl std::fmt::Debug for UpdateConnectionAliasPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectClientAddInInput {
     /// <p>The identifier of the client add-in to update.</p>
+    #[doc(hidden)]
     pub add_in_id: std::option::Option<std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The name of the client add-in.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl UpdateConnectClientAddInInput {
@@ -10691,6 +10704,7 @@ impl std::fmt::Debug for UpdateConnectClientAddInInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateWorkspacesInput {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub terminate_workspace_requests:
         std::option::Option<std::vec::Vec<crate::model::TerminateRequest>>,
 }
@@ -10718,6 +10732,7 @@ impl std::fmt::Debug for TerminateWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub stop_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StopRequest>>,
 }
 impl StopWorkspacesInput {
@@ -10739,6 +10754,7 @@ impl std::fmt::Debug for StopWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkspacesInput {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub start_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StartRequest>>,
 }
 impl StartWorkspacesInput {
@@ -10760,8 +10776,10 @@ impl std::fmt::Debug for StartWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeIpRulesInput {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The rules to remove from the group.</p>
+    #[doc(hidden)]
     pub user_rules: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RevokeIpRulesInput {
@@ -10788,6 +10806,7 @@ impl std::fmt::Debug for RevokeIpRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreWorkspaceInput {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl RestoreWorkspaceInput {
@@ -10809,16 +10828,22 @@ impl std::fmt::Debug for RestoreWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    #[doc(hidden)]
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
+    #[doc(hidden)]
     pub enable_self_service: std::option::Option<bool>,
     /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    #[doc(hidden)]
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The tags associated with the directory.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterWorkspaceDirectoryInput {
@@ -10865,6 +10890,7 @@ impl std::fmt::Debug for RegisterWorkspaceDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebuildWorkspacesInput {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+    #[doc(hidden)]
     pub rebuild_workspace_requests:
         std::option::Option<std::vec::Vec<crate::model::RebuildRequest>>,
 }
@@ -10892,6 +10918,7 @@ impl std::fmt::Debug for RebuildWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub reboot_workspace_requests: std::option::Option<std::vec::Vec<crate::model::RebootRequest>>,
 }
 impl RebootWorkspacesInput {
@@ -10913,8 +10940,10 @@ impl std::fmt::Debug for RebootWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyWorkspaceStateInput {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The WorkSpace state.</p>
+    #[doc(hidden)]
     pub workspace_state: std::option::Option<crate::model::TargetWorkspaceState>,
 }
 impl ModifyWorkspaceStateInput {
@@ -10941,8 +10970,10 @@ impl std::fmt::Debug for ModifyWorkspaceStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyWorkspacePropertiesInput {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The properties of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
 }
 impl ModifyWorkspacePropertiesInput {
@@ -10969,8 +11000,10 @@ impl std::fmt::Debug for ModifyWorkspacePropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyWorkspaceCreationPropertiesInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The default properties for creating WorkSpaces.</p>
+    #[doc(hidden)]
     pub workspace_creation_properties:
         std::option::Option<crate::model::WorkspaceCreationProperties>,
 }
@@ -11003,8 +11036,10 @@ impl std::fmt::Debug for ModifyWorkspaceCreationPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyWorkspaceAccessPropertiesInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The device types and operating systems to enable or disable for access.</p>
+    #[doc(hidden)]
     pub workspace_access_properties: std::option::Option<crate::model::WorkspaceAccessProperties>,
 }
 impl ModifyWorkspaceAccessPropertiesInput {
@@ -11036,8 +11071,10 @@ impl std::fmt::Debug for ModifyWorkspaceAccessPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySelfservicePermissionsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The permissions to enable or disable self-service capabilities.</p>
+    #[doc(hidden)]
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
 }
 impl ModifySelfservicePermissionsInput {
@@ -11066,8 +11103,10 @@ impl std::fmt::Debug for ModifySelfservicePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySamlPropertiesInput {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
+    #[doc(hidden)]
     pub saml_properties: std::option::Option<crate::model::SamlProperties>,
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
@@ -11075,6 +11114,7 @@ pub struct ModifySamlPropertiesInput {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub properties_to_delete:
         std::option::Option<std::vec::Vec<crate::model::DeletableSamlProperty>>,
 }
@@ -11114,8 +11154,10 @@ impl std::fmt::Debug for ModifySamlPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClientPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
+    #[doc(hidden)]
     pub client_properties: std::option::Option<crate::model::ClientProperties>,
 }
 impl ModifyClientPropertiesInput {
@@ -11142,8 +11184,10 @@ impl std::fmt::Debug for ModifyClientPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAccountInput {
     /// <p>The status of BYOL.</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_support: std::option::Option<crate::model::DedicatedTenancySupportEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    #[doc(hidden)]
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
 impl ModifyAccountInput {
@@ -11175,8 +11219,10 @@ impl std::fmt::Debug for ModifyAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MigrateWorkspaceInput {
     /// <p>The identifier of the WorkSpace to migrate from.</p>
+    #[doc(hidden)]
     pub source_workspace_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl MigrateWorkspaceInput {
@@ -11203,10 +11249,13 @@ impl std::fmt::Debug for MigrateWorkspaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagementCidrRangesInput {
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    #[doc(hidden)]
     pub management_cidr_range_constraint: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagementCidrRangesInput {
@@ -11241,19 +11290,25 @@ impl std::fmt::Debug for ListAvailableManagementCidrRangesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
+    #[doc(hidden)]
     pub ec2_image_id: std::option::Option<std::string::String>,
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    #[doc(hidden)]
     pub ingestion_process: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The description of the WorkSpace image.</p>
+    #[doc(hidden)]
     pub image_description: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
     /// </note>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
 }
 impl ImportWorkspaceImageInput {
@@ -11305,20 +11360,27 @@ impl std::fmt::Debug for ImportWorkspaceImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The branding information to import for Windows devices.</p>
+    #[doc(hidden)]
     pub device_type_windows:
         std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for macOS devices.</p>
+    #[doc(hidden)]
     pub device_type_osx: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for Android devices.</p>
+    #[doc(hidden)]
     pub device_type_android:
         std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for iOS devices.</p>
+    #[doc(hidden)]
     pub device_type_ios: std::option::Option<crate::model::IosImportClientBrandingAttributes>,
     /// <p>The branding information to import for Linux devices.</p>
+    #[doc(hidden)]
     pub device_type_linux: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
     /// <p>The branding information to import for web access.</p>
+    #[doc(hidden)]
     pub device_type_web: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
 }
 impl ImportClientBrandingInput {
@@ -11382,8 +11444,10 @@ impl std::fmt::Debug for ImportClientBrandingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of one or more IP access control groups.</p>
+    #[doc(hidden)]
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateIpGroupsInput {
@@ -11410,6 +11474,7 @@ impl std::fmt::Debug for DisassociateIpGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectionAliasInput {
     /// <p>The identifier of the connection alias to disassociate.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DisassociateConnectionAliasInput {
@@ -11431,6 +11496,7 @@ impl std::fmt::Debug for DisassociateConnectionAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceSnapshotsInput {
     /// <p>The identifier of the WorkSpace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceSnapshotsInput {
@@ -11452,8 +11518,10 @@ impl std::fmt::Debug for DescribeWorkspaceSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesConnectionStatusInput {
@@ -11481,16 +11549,22 @@ impl std::fmt::Debug for DescribeWorkspacesConnectionStatusInput {
 pub struct DescribeWorkspacesInput {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
+    #[doc(hidden)]
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesInput {
@@ -11538,12 +11612,16 @@ impl std::fmt::Debug for DescribeWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceImagesInput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type (owned or shared) of the image.</p>
+    #[doc(hidden)]
     pub image_type: std::option::Option<crate::model::ImageType>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeWorkspaceImagesInput {
@@ -11580,10 +11658,13 @@ impl std::fmt::Debug for DescribeWorkspaceImagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceImagePermissionsInput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeWorkspaceImagePermissionsInput {
@@ -11615,10 +11696,13 @@ impl std::fmt::Debug for DescribeWorkspaceImagePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
+    #[doc(hidden)]
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of directories to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceDirectoriesInput {
@@ -11650,11 +11734,14 @@ impl std::fmt::Debug for DescribeWorkspaceDirectoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
+    #[doc(hidden)]
     pub bundle_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceBundlesInput {
@@ -11687,6 +11774,7 @@ impl std::fmt::Debug for DescribeWorkspaceBundlesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
@@ -11708,10 +11796,13 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
+    #[doc(hidden)]
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeIpGroupsInput {
@@ -11743,10 +11834,13 @@ impl std::fmt::Debug for DescribeIpGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionAliasPermissionsInput {
     /// <p>The identifier of the connection alias.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeConnectionAliasPermissionsInput {
@@ -11778,12 +11872,16 @@ impl std::fmt::Debug for DescribeConnectionAliasPermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionAliasesInput {
     /// <p>The identifiers of the connection aliases to describe.</p>
+    #[doc(hidden)]
     pub alias_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the directory associated with the connection alias.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of connection aliases to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionAliasesInput {
@@ -11820,10 +11918,13 @@ impl std::fmt::Debug for DescribeConnectionAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectClientAddInsInput {
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeConnectClientAddInsInput {
@@ -11855,6 +11956,7 @@ impl std::fmt::Debug for DescribeConnectClientAddInsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientPropertiesInput {
     /// <p>The resource identifier, in the form of directory IDs.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeClientPropertiesInput {
@@ -11876,6 +11978,7 @@ impl std::fmt::Debug for DescribeClientPropertiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeClientBrandingInput {
@@ -11897,6 +12000,7 @@ impl std::fmt::Debug for DescribeClientBrandingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountModificationsInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountModificationsInput {
@@ -11929,6 +12033,7 @@ impl std::fmt::Debug for DescribeAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeregisterWorkspaceDirectoryInput {
@@ -11950,6 +12055,7 @@ impl std::fmt::Debug for DeregisterWorkspaceDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceImageInput {
     /// <p>The identifier of the image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceImageInput {
@@ -11971,6 +12077,7 @@ impl std::fmt::Debug for DeleteWorkspaceImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
+    #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceBundleInput {
@@ -11992,8 +12099,10 @@ impl std::fmt::Debug for DeleteWorkspaceBundleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -12020,6 +12129,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpGroupInput {
     /// <p>The identifier of the IP access control group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DeleteIpGroupInput {
@@ -12041,6 +12151,7 @@ impl std::fmt::Debug for DeleteIpGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionAliasInput {
     /// <p>The identifier of the connection alias to delete.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionAliasInput {
@@ -12062,8 +12173,10 @@ impl std::fmt::Debug for DeleteConnectionAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectClientAddInInput {
     /// <p>The identifier of the client add-in to delete.</p>
+    #[doc(hidden)]
     pub add_in_id: std::option::Option<std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectClientAddInInput {
@@ -12090,8 +12203,10 @@ impl std::fmt::Debug for DeleteConnectClientAddInInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The device type for which you want to delete client branding.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ClientDeviceType>>,
 }
 impl DeleteClientBrandingInput {
@@ -12118,6 +12233,7 @@ impl std::fmt::Debug for DeleteClientBrandingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspacesInput {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceRequest>>,
 }
 impl CreateWorkspacesInput {
@@ -12139,12 +12255,16 @@ impl std::fmt::Debug for CreateWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceImageInput {
     /// <p>The name of the new WorkSpace image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new WorkSpace image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the source WorkSpace</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkspaceImageInput {
@@ -12181,20 +12301,27 @@ impl std::fmt::Debug for CreateWorkspaceImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceBundleInput {
     /// <p>The name of the bundle.</p>
+    #[doc(hidden)]
     pub bundle_name: std::option::Option<std::string::String>,
     /// <p>The description of the bundle.</p>
+    #[doc(hidden)]
     pub bundle_description: std::option::Option<std::string::String>,
     /// <p>The identifier of the image that is used to create the bundle.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>Describes the compute type of the bundle.</p>
+    #[doc(hidden)]
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    #[doc(hidden)]
     pub user_storage: std::option::Option<crate::model::UserStorage>,
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
+    #[doc(hidden)]
     pub root_storage: std::option::Option<crate::model::RootStorage>,
     /// <p>The tags associated with the bundle.</p> <note>
     /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkspaceBundleInput {
@@ -12248,14 +12375,18 @@ impl std::fmt::Debug for CreateWorkspaceBundleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUpdatedWorkspaceImageInput {
     /// <p>The name of the new updated WorkSpace image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the source WorkSpace image.</p>
+    #[doc(hidden)]
     pub source_image_id: std::option::Option<std::string::String>,
     /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
     /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateUpdatedWorkspaceImageInput {
@@ -12294,8 +12425,10 @@ impl std::fmt::Debug for CreateUpdatedWorkspaceImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
@@ -12322,12 +12455,16 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpGroupInput {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The description of the group.</p>
+    #[doc(hidden)]
     pub group_desc: std::option::Option<std::string::String>,
     /// <p>The rules to add to the group.</p>
+    #[doc(hidden)]
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateIpGroupInput {
@@ -12366,8 +12503,10 @@ pub struct CreateConnectionAliasInput {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
+    #[doc(hidden)]
     pub connection_string: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the connection alias.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionAliasInput {
@@ -12396,10 +12535,13 @@ impl std::fmt::Debug for CreateConnectionAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectClientAddInInput {
     /// <p>The directory identifier for which to configure the client add-in.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The name of the client add-in.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl CreateConnectClientAddInInput {
@@ -12431,14 +12573,19 @@ impl std::fmt::Debug for CreateConnectClientAddInInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyWorkspaceImageInput {
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the source image.</p>
+    #[doc(hidden)]
     pub source_image_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the source Region.</p>
+    #[doc(hidden)]
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The tags for the image.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CopyWorkspaceImageInput {
@@ -12480,8 +12627,10 @@ impl std::fmt::Debug for CopyWorkspaceImageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeIpRulesInput {
     /// <p>The identifier of the group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The rules to add to the group.</p>
+    #[doc(hidden)]
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
 }
 impl AuthorizeIpRulesInput {
@@ -12508,8 +12657,10 @@ impl std::fmt::Debug for AuthorizeIpRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of one or more IP access control groups.</p>
+    #[doc(hidden)]
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateIpGroupsInput {
@@ -12536,8 +12687,10 @@ impl std::fmt::Debug for AssociateIpGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionAliasInput {
     /// <p>The identifier of the connection alias.</p>
+    #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the directory to associate the connection alias with.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl AssociateConnectionAliasInput {

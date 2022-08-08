@@ -24064,8 +24064,10 @@ impl UpdateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateVpcLinkInput {
@@ -24092,8 +24094,10 @@ impl std::fmt::Debug for UpdateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsagePlanInput {
     /// <p>The Id of the to-be-updated usage plan.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateUsagePlanInput {
@@ -24120,10 +24124,13 @@ impl std::fmt::Debug for UpdateUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateUsageInput {
@@ -24155,10 +24162,13 @@ impl std::fmt::Debug for UpdateUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage resource to change information about.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateStageInput {
@@ -24190,8 +24200,10 @@ impl std::fmt::Debug for UpdateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateRestApiInput {
@@ -24218,10 +24230,13 @@ impl std::fmt::Debug for UpdateRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Resource resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateResourceInput {
@@ -24253,10 +24268,13 @@ impl std::fmt::Debug for UpdateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of RequestValidator to be updated.</p>
+    #[doc(hidden)]
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateRequestValidatorInput {
@@ -24288,10 +24306,13 @@ impl std::fmt::Debug for UpdateRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the model to update.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateModelInput {
@@ -24323,14 +24344,19 @@ impl std::fmt::Debug for UpdateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The status code for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateMethodResponseInput {
@@ -24372,12 +24398,16 @@ impl std::fmt::Debug for UpdateMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateMethodInput {
@@ -24414,14 +24444,19 @@ impl std::fmt::Debug for UpdateMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies an update integration response request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies an update integration response request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies an update integration response request's status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateIntegrationResponseInput {
@@ -24463,12 +24498,16 @@ impl std::fmt::Debug for UpdateIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Represents an update integration request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Represents an update integration request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateIntegrationInput {
@@ -24505,10 +24544,13 @@ impl std::fmt::Debug for UpdateIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateGatewayResponseInput {
@@ -24540,8 +24582,10 @@ impl std::fmt::Debug for UpdateGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameInput {
     /// <p>The name of the DomainName resource to be changed.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDomainNameInput {
@@ -24568,10 +24612,13 @@ impl std::fmt::Debug for UpdateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi..</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The version identifier of the to-be-updated documentation version.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInput {
@@ -24603,10 +24650,13 @@ impl std::fmt::Debug for UpdateDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the to-be-updated documentation part.</p>
+    #[doc(hidden)]
     pub documentation_part_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDocumentationPartInput {
@@ -24638,10 +24688,13 @@ impl std::fmt::Debug for UpdateDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The replacement identifier for the Deployment resource to change information about.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateDeploymentInput {
@@ -24673,8 +24726,10 @@ impl std::fmt::Debug for UpdateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateClientCertificateInput {
@@ -24701,11 +24756,14 @@ impl std::fmt::Debug for UpdateClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateBasePathMappingInput {
@@ -24738,10 +24796,13 @@ impl std::fmt::Debug for UpdateBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Authorizer resource.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateAuthorizerInput {
@@ -24773,8 +24834,10 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateApiKeyInput {
@@ -24801,6 +24864,7 @@ impl std::fmt::Debug for UpdateApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountInput {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
 impl UpdateAccountInput {
@@ -24822,8 +24886,10 @@ impl std::fmt::Debug for UpdateAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of a resource that can be tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The Tag keys to delete.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -24850,25 +24916,34 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a test invoke method request's resource ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a test invoke method request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    #[doc(hidden)]
     pub path_with_query_string: std::option::Option<std::string::String>,
     /// <p>The simulated request body of an incoming invocation request.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
+    #[doc(hidden)]
     pub headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
+    #[doc(hidden)]
     pub multi_value_headers: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    #[doc(hidden)]
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -24941,24 +25016,32 @@ impl std::fmt::Debug for TestInvokeMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestInvokeAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    #[doc(hidden)]
     pub headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    #[doc(hidden)]
     pub multi_value_headers: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    #[doc(hidden)]
     pub path_with_query_string: std::option::Option<std::string::String>,
     /// <p>The simulated request body of an incoming invocation request.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    #[doc(hidden)]
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A key-value map of additional context variables.</p>
+    #[doc(hidden)]
     pub additional_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -25029,8 +25112,10 @@ impl std::fmt::Debug for TestInvokeAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of a resource that can be tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -25061,15 +25146,20 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::PutMode>,
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub fail_on_warnings: bool,
     /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PutRestApiInput {
@@ -25114,17 +25204,23 @@ impl std::fmt::Debug for PutRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The method response's status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
+    #[doc(hidden)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -25177,28 +25273,39 @@ impl std::fmt::Debug for PutMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the new Method resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies the method request's HTTP method type.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the method required a valid ApiKey.</p>
+    #[doc(hidden)]
     pub api_key_required: bool,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
+    #[doc(hidden)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
+    #[doc(hidden)]
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutMethodInput {
@@ -25275,23 +25382,31 @@ impl std::fmt::Debug for PutMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a put integration response request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a put integration response request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the selection pattern of a put integration response.</p>
+    #[doc(hidden)]
     pub selection_pattern: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies a put integration response's templates.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    #[doc(hidden)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
 impl PutIntegrationResponseInput {
@@ -25355,41 +25470,58 @@ impl std::fmt::Debug for PutIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a put integration request's resource ID.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies the HTTP method for the integration.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies a put integration input's type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::IntegrationType>,
     /// <p>The HTTP method for the integration.</p>
+    #[doc(hidden)]
     pub integration_http_method: std::option::Option<std::string::String>,
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}. Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The ID of the VpcLink used for the integration. Specify this value only if you specify <code>VPC_LINK</code> as the connection type.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether credentials are required for a put integration.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    #[doc(hidden)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    #[doc(hidden)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. </p>
+    #[doc(hidden)]
     pub passthrough_behavior: std::option::Option<std::string::String>,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    #[doc(hidden)]
     pub cache_namespace: std::option::Option<std::string::String>,
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
+    #[doc(hidden)]
     pub cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    #[doc(hidden)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    #[doc(hidden)]
     pub timeout_in_millis: std::option::Option<i32>,
     /// <p>Specifies the TLS configuration for an integration.</p>
+    #[doc(hidden)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
 impl PutIntegrationInput {
@@ -25498,15 +25630,20 @@ impl std::fmt::Debug for PutIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The response type of the associated GatewayResponse</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code of the GatewayResponse.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    #[doc(hidden)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    #[doc(hidden)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -25555,6 +25692,7 @@ impl std::fmt::Debug for PutGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub fail_on_warnings: bool,
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
@@ -25562,9 +25700,11 @@ pub struct ImportRestApiInput {
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportRestApiInput {
@@ -25604,12 +25744,16 @@ impl std::fmt::Debug for ImportRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::PutMode>,
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    #[doc(hidden)]
     pub fail_on_warnings: bool,
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportDocumentationPartsInput {
@@ -25646,10 +25790,13 @@ impl std::fmt::Debug for ImportDocumentationPartsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApiKeysInput {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ApiKeysFormat>,
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+    #[doc(hidden)]
     pub fail_on_warnings: bool,
 }
 impl ImportApiKeysInput {
@@ -25681,8 +25828,10 @@ impl std::fmt::Debug for ImportApiKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinksInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetVpcLinksInput {
@@ -25709,6 +25858,7 @@ impl std::fmt::Debug for GetVpcLinksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl GetVpcLinkInput {
@@ -25730,10 +25880,13 @@ impl std::fmt::Debug for GetVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlansInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The identifier of the API key associated with the usage plans.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetUsagePlansInput {
@@ -25765,12 +25918,16 @@ impl std::fmt::Debug for GetUsagePlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeysInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
+    #[doc(hidden)]
     pub name_query: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanKeysInput {
@@ -25807,8 +25964,10 @@ impl std::fmt::Debug for GetUsagePlanKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanKeyInput {
@@ -25835,6 +25994,7 @@ impl std::fmt::Debug for GetUsagePlanKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsagePlanInput {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl GetUsagePlanInput {
@@ -25856,16 +26016,22 @@ impl std::fmt::Debug for GetUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The Id of the API key associated with the resultant usage data.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetUsageInput {
@@ -25912,10 +26078,13 @@ impl std::fmt::Debug for GetUsageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
     /// <p>The ARN of a resource that can be tagged.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetTagsInput {
@@ -25947,8 +26116,10 @@ impl std::fmt::Debug for GetTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStagesInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stages' deployment identifiers.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl GetStagesInput {
@@ -25975,8 +26146,10 @@ impl std::fmt::Debug for GetStagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage resource to get information about.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl GetStageInput {
@@ -26003,8 +26176,10 @@ impl std::fmt::Debug for GetStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkTypesInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetSdkTypesInput {
@@ -26031,6 +26206,7 @@ impl std::fmt::Debug for GetSdkTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkTypeInput {
     /// <p>The identifier of the queried SdkType instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSdkTypeInput {
@@ -26052,12 +26228,16 @@ impl std::fmt::Debug for GetSdkTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSdkInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage that the SDK will use.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+    #[doc(hidden)]
     pub sdk_type: std::option::Option<std::string::String>,
     /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>, a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -26098,8 +26278,10 @@ impl std::fmt::Debug for GetSdkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRestApisInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetRestApisInput {
@@ -26126,6 +26308,7 @@ impl std::fmt::Debug for GetRestApisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl GetRestApiInput {
@@ -26147,12 +26330,16 @@ impl std::fmt::Debug for GetRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+    #[doc(hidden)]
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourcesInput {
@@ -26189,10 +26376,13 @@ impl std::fmt::Debug for GetResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the Resource resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+    #[doc(hidden)]
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourceInput {
@@ -26224,10 +26414,13 @@ impl std::fmt::Debug for GetResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetRequestValidatorsInput {
@@ -26259,8 +26452,10 @@ impl std::fmt::Debug for GetRequestValidatorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the RequestValidator to be retrieved.</p>
+    #[doc(hidden)]
     pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl GetRequestValidatorInput {
@@ -26287,8 +26482,10 @@ impl std::fmt::Debug for GetRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelTemplateInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the model for which to generate a template.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl GetModelTemplateInput {
@@ -26315,10 +26512,13 @@ impl std::fmt::Debug for GetModelTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetModelsInput {
@@ -26350,10 +26550,13 @@ impl std::fmt::Debug for GetModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelInput {
     /// <p>The RestApi identifier under which the Model exists.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the model as an identifier.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub flatten: bool,
 }
 impl GetModelInput {
@@ -26385,12 +26588,16 @@ impl std::fmt::Debug for GetModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The status code for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
 }
 impl GetMethodResponseInput {
@@ -26427,10 +26634,13 @@ impl std::fmt::Debug for GetMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies the method request's HTTP method type.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
 }
 impl GetMethodInput {
@@ -26462,12 +26672,16 @@ impl std::fmt::Debug for GetMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a get integration response request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a get integration response request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies a get integration response request's status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
 }
 impl GetIntegrationResponseInput {
@@ -26504,10 +26718,13 @@ impl std::fmt::Debug for GetIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a get integration request's resource identifier</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a get integration request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
 }
 impl GetIntegrationInput {
@@ -26539,10 +26756,13 @@ impl std::fmt::Debug for GetIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponsesInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetGatewayResponsesInput {
@@ -26574,8 +26794,10 @@ impl std::fmt::Debug for GetGatewayResponsesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl GetGatewayResponseInput {
@@ -26602,15 +26824,20 @@ impl std::fmt::Debug for GetGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExportInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage that will be exported.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    #[doc(hidden)]
     pub export_type: std::option::Option<std::string::String>,
     /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
+    #[doc(hidden)]
     pub accepts: std::option::Option<std::string::String>,
 }
 impl GetExportInput {
@@ -26655,8 +26882,10 @@ impl std::fmt::Debug for GetExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNamesInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetDomainNamesInput {
@@ -26683,6 +26912,7 @@ impl std::fmt::Debug for GetDomainNamesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainNameInput {
@@ -26704,10 +26934,13 @@ impl std::fmt::Debug for GetDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetDocumentationVersionsInput {
@@ -26739,8 +26972,10 @@ impl std::fmt::Debug for GetDocumentationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentationVersionInput {
@@ -26767,18 +27002,25 @@ impl std::fmt::Debug for GetDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
+    #[doc(hidden)]
     pub name_query: std::option::Option<std::string::String>,
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
+    #[doc(hidden)]
     pub location_status: std::option::Option<crate::model::LocationStatusType>,
 }
 impl GetDocumentationPartsInput {
@@ -26830,8 +27072,10 @@ impl std::fmt::Debug for GetDocumentationPartsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl GetDocumentationPartInput {
@@ -26858,10 +27102,13 @@ impl std::fmt::Debug for GetDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetDeploymentsInput {
@@ -26893,10 +27140,13 @@ impl std::fmt::Debug for GetDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Deployment resource to get information about.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+    #[doc(hidden)]
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDeploymentInput {
@@ -26928,8 +27178,10 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClientCertificatesInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetClientCertificatesInput {
@@ -26956,6 +27208,7 @@ impl std::fmt::Debug for GetClientCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl GetClientCertificateInput {
@@ -26977,10 +27230,13 @@ impl std::fmt::Debug for GetClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingsInput {
     /// <p>The domain name of a BasePathMapping resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetBasePathMappingsInput {
@@ -27012,8 +27268,10 @@ impl std::fmt::Debug for GetBasePathMappingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
 }
 impl GetBasePathMappingInput {
@@ -27040,10 +27298,13 @@ impl std::fmt::Debug for GetBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizersInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetAuthorizersInput {
@@ -27075,8 +27336,10 @@ impl std::fmt::Debug for GetAuthorizersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Authorizer resource.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl GetAuthorizerInput {
@@ -27103,14 +27366,19 @@ impl std::fmt::Debug for GetAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiKeysInput {
     /// <p>The current pagination position in the paged result set.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The name of queried API keys.</p>
+    #[doc(hidden)]
     pub name_query: std::option::Option<std::string::String>,
     /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    #[doc(hidden)]
     pub customer_id: std::option::Option<std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
+    #[doc(hidden)]
     pub include_values: std::option::Option<bool>,
 }
 impl GetApiKeysInput {
@@ -27152,8 +27420,10 @@ impl std::fmt::Debug for GetApiKeysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiKeyInput {
     /// <p>The identifier of the ApiKey resource.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    #[doc(hidden)]
     pub include_value: std::option::Option<bool>,
 }
 impl GetApiKeyInput {
@@ -27191,8 +27461,10 @@ impl std::fmt::Debug for GetAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateClientCertificateInput {
     /// <p>The description of the ClientCertificate.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -27223,8 +27495,10 @@ impl std::fmt::Debug for GenerateClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageCacheInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage to flush its cache.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl FlushStageCacheInput {
@@ -27251,8 +27525,10 @@ impl std::fmt::Debug for FlushStageCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageAuthorizersCacheInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage to flush.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl FlushStageAuthorizersCacheInput {
@@ -27279,6 +27555,7 @@ impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl DeleteVpcLinkInput {
@@ -27300,8 +27577,10 @@ impl std::fmt::Debug for DeleteVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsagePlanKeyInput {
@@ -27328,6 +27607,7 @@ impl std::fmt::Debug for DeleteUsagePlanKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanInput {
     /// <p>The Id of the to-be-deleted usage plan.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
 }
 impl DeleteUsagePlanInput {
@@ -27349,8 +27629,10 @@ impl std::fmt::Debug for DeleteUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage resource to delete.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl DeleteStageInput {
@@ -27377,6 +27659,7 @@ impl std::fmt::Debug for DeleteStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRestApiInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
 }
 impl DeleteRestApiInput {
@@ -27398,8 +27681,10 @@ impl std::fmt::Debug for DeleteRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Resource resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceInput {
@@ -27426,8 +27711,10 @@ impl std::fmt::Debug for DeleteResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the RequestValidator to be deleted.</p>
+    #[doc(hidden)]
     pub request_validator_id: std::option::Option<std::string::String>,
 }
 impl DeleteRequestValidatorInput {
@@ -27454,8 +27741,10 @@ impl std::fmt::Debug for DeleteRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the model to delete.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelInput {
@@ -27482,12 +27771,16 @@ impl std::fmt::Debug for DeleteModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The status code identifier for the MethodResponse resource.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
 }
 impl DeleteMethodResponseInput {
@@ -27524,10 +27817,13 @@ impl std::fmt::Debug for DeleteMethodResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
 }
 impl DeleteMethodInput {
@@ -27559,12 +27855,16 @@ impl std::fmt::Debug for DeleteMethodInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a delete integration response request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a delete integration response request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies a delete integration response request's status code.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationResponseInput {
@@ -27601,10 +27901,13 @@ impl std::fmt::Debug for DeleteIntegrationResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>Specifies a delete integration request's resource identifier.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a delete integration request's HTTP method.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationInput {
@@ -27636,8 +27939,10 @@ impl std::fmt::Debug for DeleteIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
 impl DeleteGatewayResponseInput {
@@ -27664,6 +27969,7 @@ impl std::fmt::Debug for DeleteGatewayResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameInput {
     /// <p>The name of the DomainName resource to be deleted.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainNameInput {
@@ -27685,8 +27991,10 @@ impl std::fmt::Debug for DeleteDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentationVersionInput {
@@ -27713,8 +28021,10 @@ impl std::fmt::Debug for DeleteDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the to-be-deleted documentation part.</p>
+    #[doc(hidden)]
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentationPartInput {
@@ -27741,8 +28051,10 @@ impl std::fmt::Debug for DeleteDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Deployment resource to delete.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentInput {
@@ -27769,6 +28081,7 @@ impl std::fmt::Debug for DeleteDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
+    #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteClientCertificateInput {
@@ -27790,9 +28103,11 @@ impl std::fmt::Debug for DeleteClientCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
 }
 impl DeleteBasePathMappingInput {
@@ -27820,8 +28135,10 @@ impl std::fmt::Debug for DeleteBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Authorizer resource.</p>
+    #[doc(hidden)]
     pub authorizer_id: std::option::Option<std::string::String>,
 }
 impl DeleteAuthorizerInput {
@@ -27848,6 +28165,7 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be deleted.</p>
+    #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
 }
 impl DeleteApiKeyInput {
@@ -27869,12 +28187,16 @@ impl std::fmt::Debug for DeleteApiKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcLinkInput {
     /// <p>The name used to label and identify the VPC link.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the VPC link.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    #[doc(hidden)]
     pub target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -27915,10 +28237,13 @@ impl std::fmt::Debug for CreateVpcLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
+    #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
+    #[doc(hidden)]
     pub key_type: std::option::Option<std::string::String>,
 }
 impl CreateUsagePlanKeyInput {
@@ -27950,16 +28275,22 @@ impl std::fmt::Debug for CreateUsagePlanKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsagePlanInput {
     /// <p>The name of the usage plan.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the usage plan.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The associated API stages of the usage plan.</p>
+    #[doc(hidden)]
     pub api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
     /// <p>The throttling limits of the usage plan.</p>
+    #[doc(hidden)]
     pub throttle: std::option::Option<crate::model::ThrottleSettings>,
     /// <p>The quota of the usage plan.</p>
+    #[doc(hidden)]
     pub quota: std::option::Option<crate::model::QuotaSettings>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -28010,27 +28341,38 @@ impl std::fmt::Debug for CreateUsagePlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the Deployment resource for the Stage resource.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The description of the Stage resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Whether cache clustering is enabled for the stage.</p>
+    #[doc(hidden)]
     pub cache_cluster_enabled: bool,
     /// <p>The stage's cache cluster size.</p>
+    #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    #[doc(hidden)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>The canary deployment settings of this stage.</p>
+    #[doc(hidden)]
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    #[doc(hidden)]
     pub tracing_enabled: bool,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -28109,27 +28451,38 @@ impl std::fmt::Debug for CreateStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the RestApi.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A version identifier for the API.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The ID of the RestApi that you want to clone from.</p>
+    #[doc(hidden)]
     pub clone_from: std::option::Option<std::string::String>,
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
+    #[doc(hidden)]
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    #[doc(hidden)]
     pub minimum_compression_size: std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    #[doc(hidden)]
     pub api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
+    #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
 }
 impl CreateRestApiInput {
@@ -28209,10 +28562,13 @@ impl std::fmt::Debug for CreateRestApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The parent resource's identifier.</p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The last path segment for this resource.</p>
+    #[doc(hidden)]
     pub path_part: std::option::Option<std::string::String>,
 }
 impl CreateResourceInput {
@@ -28244,12 +28600,16 @@ impl std::fmt::Debug for CreateResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the to-be-created RequestValidator.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
+    #[doc(hidden)]
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
+    #[doc(hidden)]
     pub validate_request_parameters: bool,
 }
 impl CreateRequestValidatorInput {
@@ -28289,14 +28649,19 @@ impl std::fmt::Debug for CreateRequestValidatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateModelInput {
     /// <p>The RestApi identifier under which the Model will be created.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be alphanumeric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl CreateModelInput {
@@ -28338,31 +28703,44 @@ impl std::fmt::Debug for CreateModelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    #[doc(hidden)]
     pub certificate_body: std::option::Option<std::string::String>,
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    #[doc(hidden)]
     pub certificate_private_key: std::option::Option<std::string::String>,
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
+    #[doc(hidden)]
     pub regional_certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    #[doc(hidden)]
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
+    #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    #[doc(hidden)]
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    #[doc(hidden)]
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl CreateDomainNameInput {
@@ -28454,12 +28832,16 @@ impl std::fmt::Debug for CreateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The version identifier of the new snapshot.</p>
+    #[doc(hidden)]
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>The stage name to be associated with the new documentation snapshot.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>A description about the new documentation snapshot.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateDocumentationVersionInput {
@@ -28496,10 +28878,13 @@ impl std::fmt::Debug for CreateDocumentationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
 }
 impl CreateDocumentationPartInput {
@@ -28531,23 +28916,32 @@ impl std::fmt::Debug for CreateDocumentationPartInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
+    #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
+    #[doc(hidden)]
     pub stage_description: std::option::Option<std::string::String>,
     /// <p>The description for the Deployment resource to create.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
+    #[doc(hidden)]
     pub cache_cluster_enabled: std::option::Option<bool>,
     /// <p>Specifies the cache cluster size for the Stage resource specified in the input, if a cache cluster is enabled.</p>
+    #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    #[doc(hidden)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    #[doc(hidden)]
     pub canary_settings: std::option::Option<crate::model::DeploymentCanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    #[doc(hidden)]
     pub tracing_enabled: std::option::Option<bool>,
 }
 impl CreateDeploymentInput {
@@ -28612,12 +29006,16 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
+    #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
 }
 impl CreateBasePathMappingInput {
@@ -28654,24 +29052,34 @@ impl std::fmt::Debug for CreateBasePathMappingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
+    #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the authorizer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
+    #[doc(hidden)]
     pub provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    #[doc(hidden)]
     pub auth_type: std::option::Option<std::string::String>,
     /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    #[doc(hidden)]
     pub authorizer_credentials: std::option::Option<std::string::String>,
     /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</p>
+    #[doc(hidden)]
     pub identity_source: std::option::Option<std::string::String>,
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    #[doc(hidden)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
 }
 impl CreateAuthorizerInput {
@@ -28744,20 +29152,28 @@ impl std::fmt::Debug for CreateAuthorizerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ApiKey.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
+    #[doc(hidden)]
     pub generate_distinct_id: bool,
     /// <p>Specifies a value of the API key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
+    #[doc(hidden)]
     pub stage_keys: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    #[doc(hidden)]
     pub customer_id: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

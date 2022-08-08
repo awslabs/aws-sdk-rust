@@ -63,8 +63,10 @@ impl AsRef<str> for OptimizerType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WriteOperation {
     /// <p>A new object to add to the governed table.</p>
+    #[doc(hidden)]
     pub add_object: std::option::Option<crate::model::AddObjectInput>,
     /// <p>An object to delete from the governed table.</p>
+    #[doc(hidden)]
     pub delete_object: std::option::Option<crate::model::DeleteObjectInput>,
 }
 impl WriteOperation {
@@ -142,10 +144,13 @@ impl WriteOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteObjectInput {
@@ -243,13 +248,17 @@ impl DeleteObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The size of the Amazon S3 object in bytes.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddObjectInput {
@@ -422,15 +431,20 @@ impl AsRef<str> for TransactionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryPlanningContext {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The database containing the table.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    #[doc(hidden)]
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map consisting of key-value pairs.</p>
+    #[doc(hidden)]
     pub query_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl QueryPlanningContext {
@@ -582,12 +596,16 @@ impl QueryPlanningContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaggedTable {
     /// <p>A table that has LF-tags attached to it.</p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableResource>,
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
+    #[doc(hidden)]
     pub lf_tag_on_database: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A list of LF-tags attached to the table.</p>
+    #[doc(hidden)]
     pub lf_tags_on_table: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A list of LF-tags attached to columns in the table.</p>
+    #[doc(hidden)]
     pub lf_tags_on_columns: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
 }
 impl TaggedTable {
@@ -724,8 +742,10 @@ impl TaggedTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnLfTag {
     /// <p>The name of a column resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The LF-tags attached to a column resource.</p>
+    #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl ColumnLfTag {
@@ -806,10 +826,13 @@ impl ColumnLfTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LfTagPair {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LfTagPair {
@@ -907,13 +930,17 @@ impl LfTagPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A wildcard object representing every table under a database.</p>
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
+    #[doc(hidden)]
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
 }
 impl TableResource {
@@ -1058,8 +1085,10 @@ impl TableWildcard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LfTag {
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LfTag {
@@ -1140,8 +1169,10 @@ impl LfTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaggedDatabase {
     /// <p>A database that has LF-tags attached to it.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<crate::model::DatabaseResource>,
     /// <p>A list of LF-tags attached to the database.</p>
+    #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl TaggedDatabase {
@@ -1225,8 +1256,10 @@ impl TaggedDatabase {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DatabaseResource {
@@ -1406,20 +1439,28 @@ impl AsRef<str> for Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog: std::option::Option<crate::model::CatalogResource>,
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
+    #[doc(hidden)]
     pub database: std::option::Option<crate::model::DatabaseResource>,
     /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableResource>,
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
+    #[doc(hidden)]
     pub table_with_columns: std::option::Option<crate::model::TableWithColumnsResource>,
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
+    #[doc(hidden)]
     pub data_location: std::option::Option<crate::model::DataLocationResource>,
     /// <p>A data cell filter.</p>
+    #[doc(hidden)]
     pub data_cells_filter: std::option::Option<crate::model::DataCellsFilterResource>,
     /// <p>The LF-tag key and values attached to a resource.</p>
+    #[doc(hidden)]
     pub lf_tag: std::option::Option<crate::model::LfTagKeyResource>,
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+    #[doc(hidden)]
     pub lf_tag_policy: std::option::Option<crate::model::LfTagPolicyResource>,
 }
 impl Resource {
@@ -1619,10 +1660,13 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The resource type for which the LF-tag policy applies.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
 }
 impl LfTagPolicyResource {
@@ -1778,10 +1822,13 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LfTagKeyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LfTagKeyResource {
@@ -1879,12 +1926,16 @@ impl LfTagKeyResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCellsFilterResource {
     /// <p>The ID of the catalog to which the table belongs.</p>
+    #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
     /// <p>A database in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the data cells filter. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DataCellsFilterResource {
@@ -1996,8 +2047,10 @@ impl DataCellsFilterResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DataLocationResource {
@@ -2070,14 +2123,19 @@ impl DataLocationResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableWithColumnsResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
+    #[doc(hidden)]
     pub column_wildcard: std::option::Option<crate::model::ColumnWildcard>,
 }
 impl TableWithColumnsResource {
@@ -2215,6 +2273,7 @@ impl TableWithColumnsResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
+    #[doc(hidden)]
     pub excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnWildcard {
@@ -2308,6 +2367,7 @@ impl CatalogResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
+    #[doc(hidden)]
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
 impl DataLakePrincipal {
@@ -2371,8 +2431,10 @@ impl DataLakePrincipal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LfTagError {
     /// <p>The key-name of the LF-tag.</p>
+    #[doc(hidden)]
     pub lf_tag: std::option::Option<crate::model::LfTagPair>,
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
 impl LfTagError {
@@ -2444,8 +2506,10 @@ impl LfTagError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetail {
     /// <p>The code associated with this error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>A message describing the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {
@@ -2520,31 +2584,38 @@ impl ErrorDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
+    #[doc(hidden)]
     pub data_lake_admins: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
+    #[doc(hidden)]
     pub create_database_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
+    #[doc(hidden)]
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    #[doc(hidden)]
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    #[doc(hidden)]
     pub allow_external_data_filtering: std::option::Option<bool>,
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
+    #[doc(hidden)]
     pub external_data_filtering_allow_list:
         std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
+    #[doc(hidden)]
     pub authorized_session_tag_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DataLakeSettings {
@@ -2826,8 +2897,10 @@ impl DataLakeSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The permissions that are granted to the principal.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl PrincipalPermissions {
@@ -2911,12 +2984,16 @@ impl PrincipalPermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionDescription {
     /// <p>The ID of the transaction.</p>
+    #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
+    #[doc(hidden)]
     pub transaction_status: std::option::Option<crate::model::TransactionStatus>,
     /// <p>The time when the transaction started.</p>
+    #[doc(hidden)]
     pub transaction_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
+    #[doc(hidden)]
     pub transaction_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TransactionDescription {
@@ -3164,17 +3241,22 @@ impl AsRef<str> for TransactionStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageOptimizer {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
+    #[doc(hidden)]
     pub storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
+    #[doc(hidden)]
     pub config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A message that contains information about any warnings (if present).</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::string::String>,
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
+    #[doc(hidden)]
     pub last_run_details: std::option::Option<std::string::String>,
 }
 impl StorageOptimizer {
@@ -3332,10 +3414,13 @@ impl StorageOptimizer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The IAM role that registered a resource.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the resource was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceInfo {
@@ -3427,10 +3512,13 @@ impl ResourceInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCondition {
     /// <p>The field to filter in the filter condition.</p>
+    #[doc(hidden)]
     pub field: std::option::Option<crate::model::FieldNameString>,
     /// <p>The comparison operator used in the filter condition.</p>
+    #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>A string with values used in evaluating the filter condition.</p>
+    #[doc(hidden)]
     pub string_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FilterCondition {
@@ -3696,14 +3784,19 @@ impl AsRef<str> for FieldNameString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrincipalResourcePermissions {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The resource where permissions are to be granted or revoked.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions to be granted or revoked on the resource.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
+    #[doc(hidden)]
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
+    #[doc(hidden)]
     pub additional_details: std::option::Option<crate::model::DetailsMap>,
 }
 impl PrincipalResourcePermissions {
@@ -3857,6 +3950,7 @@ impl PrincipalResourcePermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
+    #[doc(hidden)]
     pub resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetailsMap {
@@ -4063,19 +4157,26 @@ impl AsRef<str> for ResourceShareType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
+    #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
     /// <p>A database in the Glue Data Catalog.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A table in the database.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name given by the user to the data filter cell.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A PartiQL predicate.</p>
+    #[doc(hidden)]
     pub row_filter: std::option::Option<crate::model::RowFilter>,
     /// <p>A list of column names.</p>
+    #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A wildcard with exclusions.</p>
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
+    #[doc(hidden)]
     pub column_wildcard: std::option::Option<crate::model::ColumnWildcard>,
 }
 impl DataCellsFilter {
@@ -4256,8 +4357,10 @@ impl DataCellsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowFilter {
     /// <p>A filter expression.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>A wildcard for all rows.</p>
+    #[doc(hidden)]
     pub all_rows_wildcard: std::option::Option<crate::model::AllRowsWildcard>,
 }
 impl RowFilter {
@@ -4365,10 +4468,13 @@ impl AllRowsWildcard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
+    #[doc(hidden)]
     pub work_unit_id_max: i64,
     /// <p>Defines the minimum work unit ID in the range.</p>
+    #[doc(hidden)]
     pub work_unit_id_min: i64,
     /// <p>A work token used to query the execution service.</p>
+    #[doc(hidden)]
     pub work_unit_token: std::option::Option<std::string::String>,
 }
 impl WorkUnitRange {
@@ -4515,6 +4621,7 @@ impl AsRef<str> for PermissionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+    #[doc(hidden)]
     pub additional_audit_context: std::option::Option<std::string::String>,
 }
 impl AuditContext {
@@ -4572,6 +4679,7 @@ impl AuditContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionValueList {
     /// <p>The list of partition values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PartitionValueList {
@@ -4635,8 +4743,10 @@ impl PartitionValueList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionObjects {
     /// <p>A list of partition values.</p>
+    #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of table objects</p>
+    #[doc(hidden)]
     pub objects: std::option::Option<std::vec::Vec<crate::model::TableObject>>,
 }
 impl PartitionObjects {
@@ -4726,10 +4836,13 @@ impl PartitionObjects {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableObject {
     /// <p>The Amazon S3 location of the object.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The size of the Amazon S3 object in bytes.</p>
+    #[doc(hidden)]
     pub size: i64,
 }
 impl TableObject {
@@ -4818,12 +4931,16 @@ impl TableObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlanningStatistics {
     /// <p>An estimate of the data that was scanned in bytes.</p>
+    #[doc(hidden)]
     pub estimated_data_to_scan_bytes: i64,
     /// <p>The time that it took to process the request.</p>
+    #[doc(hidden)]
     pub planning_time_millis: i64,
     /// <p>The time the request was in queue to be processed.</p>
+    #[doc(hidden)]
     pub queue_time_millis: i64,
     /// <p>The number of work units generated.</p>
+    #[doc(hidden)]
     pub work_units_generated_count: i64,
 }
 impl PlanningStatistics {
@@ -4935,10 +5052,13 @@ impl PlanningStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionStatistics {
     /// <p>The average time the request took to be executed.</p>
+    #[doc(hidden)]
     pub average_execution_time_millis: i64,
     /// <p>The amount of data that was scanned in bytes.</p>
+    #[doc(hidden)]
     pub data_scanned_bytes: i64,
     /// <p>The number of work units executed.</p>
+    #[doc(hidden)]
     pub work_units_executed_count: i64,
 }
 impl ExecutionStatistics {
@@ -5108,8 +5228,10 @@ impl AsRef<str> for QueryStateString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The ETag of the Amazon S3 object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl VirtualObject {
@@ -5181,8 +5303,10 @@ impl VirtualObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPermissionsFailureEntry {
     /// <p>An identifier for an entry of the batch request.</p>
+    #[doc(hidden)]
     pub request_entry: std::option::Option<crate::model::BatchPermissionsRequestEntry>,
     /// <p>An error message that applies to the failure of the entry.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetail>,
 }
 impl BatchPermissionsFailureEntry {
@@ -5259,14 +5383,19 @@ impl BatchPermissionsFailureEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The principal to be granted a permission.</p>
+    #[doc(hidden)]
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The resource to which the principal is to be granted a permission.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
     /// <p>The permissions to be granted.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates if the option to pass permissions is granted.</p>
+    #[doc(hidden)]
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl BatchPermissionsRequestEntry {

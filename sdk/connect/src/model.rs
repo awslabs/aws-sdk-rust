@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
+    #[doc(hidden)]
     pub phone_type: std::option::Option<crate::model::PhoneType>,
     /// <p>The Auto accept setting.</p>
+    #[doc(hidden)]
     pub auto_accept: bool,
     /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+    #[doc(hidden)]
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
+    #[doc(hidden)]
     pub desk_phone_number: std::option::Option<std::string::String>,
 }
 impl UserPhoneConfig {
@@ -185,10 +189,13 @@ impl AsRef<str> for PhoneType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl UserIdentityInfo {
@@ -360,14 +367,19 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyStructureUpdate {
     /// <p>The update for level one.</p>
+    #[doc(hidden)]
     pub level_one: std::option::Option<crate::model::HierarchyLevelUpdate>,
     /// <p>The update for level two.</p>
+    #[doc(hidden)]
     pub level_two: std::option::Option<crate::model::HierarchyLevelUpdate>,
     /// <p>The update for level three.</p>
+    #[doc(hidden)]
     pub level_three: std::option::Option<crate::model::HierarchyLevelUpdate>,
     /// <p>The update for level four.</p>
+    #[doc(hidden)]
     pub level_four: std::option::Option<crate::model::HierarchyLevelUpdate>,
     /// <p>The update for level five.</p>
+    #[doc(hidden)]
     pub level_five: std::option::Option<crate::model::HierarchyLevelUpdate>,
 }
 impl HierarchyStructureUpdate {
@@ -505,6 +517,7 @@ impl HierarchyStructureUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyLevelUpdate {
     /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl HierarchyLevelUpdate {
@@ -557,10 +570,13 @@ impl HierarchyLevelUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValidationExceptionProperty {
     /// <p>The full property path.</p>
+    #[doc(hidden)]
     pub property_path: std::option::Option<std::string::String>,
     /// <p>Why the property is not valid.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::PropertyValidationExceptionReason>,
     /// <p>A message describing why the property is not valid.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PropertyValidationExceptionProperty {
@@ -804,12 +820,16 @@ impl AsRef<str> for TaskTemplateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateField {
     /// <p>The unique identifier for the field.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
     /// <p>The description of the field.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates the type of field.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TaskTemplateFieldType>,
     /// <p>A list of options for a single select field.</p>
+    #[doc(hidden)]
     pub single_select_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TaskTemplateField {
@@ -1038,6 +1058,7 @@ impl AsRef<str> for TaskTemplateFieldType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateFieldIdentifier {
     /// <p>The name of the task template field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TaskTemplateFieldIdentifier {
@@ -1090,6 +1111,7 @@ impl TaskTemplateFieldIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateDefaults {
     /// <p>Default value for the field.</p>
+    #[doc(hidden)]
     pub default_field_values:
         std::option::Option<std::vec::Vec<crate::model::TaskTemplateDefaultFieldValue>>,
 }
@@ -1160,8 +1182,10 @@ impl TaskTemplateDefaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateDefaultFieldValue {
     /// <p>Identifier of a field. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
     /// <p>Default value for the field.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl TaskTemplateDefaultFieldValue {
@@ -1239,10 +1263,13 @@ impl TaskTemplateDefaultFieldValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateConstraints {
     /// <p>Lists the fields that are required to be filled by agents.</p>
+    #[doc(hidden)]
     pub required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredFieldInfo>>,
     /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
+    #[doc(hidden)]
     pub read_only_fields: std::option::Option<std::vec::Vec<crate::model::ReadOnlyFieldInfo>>,
     /// <p>Lists the fields that are invisible to agents.</p>
+    #[doc(hidden)]
     pub invisible_fields: std::option::Option<std::vec::Vec<crate::model::InvisibleFieldInfo>>,
 }
 impl TaskTemplateConstraints {
@@ -1361,6 +1388,7 @@ impl TaskTemplateConstraints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvisibleFieldInfo {
     /// <p>Identifier of the invisible field.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
 }
 impl InvisibleFieldInfo {
@@ -1416,6 +1444,7 @@ impl InvisibleFieldInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
 }
 impl ReadOnlyFieldInfo {
@@ -1471,6 +1500,7 @@ impl ReadOnlyFieldInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
 }
 impl RequiredFieldInfo {
@@ -1526,10 +1556,13 @@ impl RequiredFieldInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
+    #[doc(hidden)]
     pub queue_reference: std::option::Option<crate::model::RoutingProfileQueueReference>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub delay: std::option::Option<i32>,
 }
 impl RoutingProfileQueueConfig {
@@ -1626,8 +1659,10 @@ impl RoutingProfileQueueConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl RoutingProfileQueueReference {
@@ -1758,11 +1793,13 @@ impl AsRef<str> for Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
+    #[doc(hidden)]
     pub concurrency: i32,
 }
 impl MediaConcurrency {
@@ -1843,12 +1880,16 @@ impl MediaConcurrency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    #[doc(hidden)]
     pub quick_connect_type: std::option::Option<crate::model::QuickConnectType>,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
+    #[doc(hidden)]
     pub user_config: std::option::Option<crate::model::UserQuickConnectConfig>,
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
+    #[doc(hidden)]
     pub queue_config: std::option::Option<crate::model::QueueQuickConnectConfig>,
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
+    #[doc(hidden)]
     pub phone_config: std::option::Option<crate::model::PhoneNumberQuickConnectConfig>,
 }
 impl QuickConnectConfig {
@@ -1968,6 +2009,7 @@ impl QuickConnectConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl PhoneNumberQuickConnectConfig {
@@ -2022,8 +2064,10 @@ impl PhoneNumberQuickConnectConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueQuickConnectConfig {
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
 impl QueueQuickConnectConfig {
@@ -2098,8 +2142,10 @@ impl QueueQuickConnectConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
 impl UserQuickConnectConfig {
@@ -2288,10 +2334,13 @@ impl AsRef<str> for QueueStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundCallerConfig {
     /// <p>The caller ID name.</p>
+    #[doc(hidden)]
     pub outbound_caller_id_name: std::option::Option<std::string::String>,
     /// <p>The caller ID number.</p>
+    #[doc(hidden)]
     pub outbound_caller_id_number_id: std::option::Option<std::string::String>,
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
+    #[doc(hidden)]
     pub outbound_flow_id: std::option::Option<std::string::String>,
 }
 impl OutboundCallerConfig {
@@ -2395,16 +2444,22 @@ impl OutboundCallerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid storage type.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>The S3 bucket configuration.</p>
+    #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>The configuration of the Kinesis video stream.</p>
+    #[doc(hidden)]
     pub kinesis_video_stream_config: std::option::Option<crate::model::KinesisVideoStreamConfig>,
     /// <p>The configuration of the Kinesis data stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_config: std::option::Option<crate::model::KinesisStreamConfig>,
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
+    #[doc(hidden)]
     pub kinesis_firehose_config: std::option::Option<crate::model::KinesisFirehoseConfig>,
 }
 impl InstanceStorageConfig {
@@ -2574,6 +2629,7 @@ impl InstanceStorageConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseConfig {
@@ -2628,6 +2684,7 @@ impl KinesisFirehoseConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamConfig {
@@ -2682,11 +2739,14 @@ impl KinesisStreamConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    #[doc(hidden)]
     pub retention_period_hours: i32,
     /// <p>The encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl KinesisVideoStreamConfig {
@@ -2781,10 +2841,12 @@ impl KinesisVideoStreamConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionConfig {
@@ -2916,10 +2978,13 @@ impl AsRef<str> for EncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {
     /// <p>The S3 bucket name.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket prefix.</p>
+    #[doc(hidden)]
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 encryption configuration.</p>
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl S3Config {
@@ -3262,10 +3327,13 @@ impl AsRef<str> for InstanceAttributeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
+    #[doc(hidden)]
     pub day: std::option::Option<crate::model::HoursOfOperationDays>,
     /// <p>The start time that your contact center opens.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
     /// <p>The end time that your contact center closes.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
 }
 impl HoursOfOperationConfig {
@@ -3363,8 +3431,10 @@ impl HoursOfOperationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoursOfOperationTimeSlice {
     /// <p>The hours.</p>
+    #[doc(hidden)]
     pub hours: std::option::Option<i32>,
     /// <p>The minutes.</p>
+    #[doc(hidden)]
     pub minutes: std::option::Option<i32>,
 }
 impl HoursOfOperationTimeSlice {
@@ -3574,6 +3644,7 @@ impl AsRef<str> for ContactFlowModuleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProblemDetail {
     /// <p>The problem detail's message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ProblemDetail {
@@ -3683,8 +3754,10 @@ impl AsRef<str> for ContactFlowState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of the reference.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReferenceType>,
 }
 impl Reference {
@@ -3937,8 +4010,10 @@ impl AsRef<str> for TrafficType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnswerMachineDetectionConfig {
     /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    #[doc(hidden)]
     pub enable_answer_machine_detection: bool,
     /// <p>Wait for the answering machine prompt.</p>
+    #[doc(hidden)]
     pub await_answer_machine_prompt: bool,
 }
 impl AnswerMachineDetectionConfig {
@@ -4021,6 +4096,7 @@ impl AnswerMachineDetectionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChatStreamingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
+    #[doc(hidden)]
     pub streaming_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl ChatStreamingConfiguration {
@@ -4078,6 +4154,7 @@ impl ChatStreamingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
+    #[doc(hidden)]
     pub voice_recording_track: std::option::Option<crate::model::VoiceRecordingTrack>,
 }
 impl VoiceRecordingConfiguration {
@@ -4194,8 +4271,10 @@ impl AsRef<str> for VoiceRecordingTrack {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChatMessage {
     /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the chat message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl ChatMessage {
@@ -4267,6 +4346,7 @@ impl ChatMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParticipantDetails {
     /// <p>Display name of the participant.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl ParticipantDetails {
@@ -4321,18 +4401,25 @@ impl ParticipantDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VocabularySummary {
     /// <p>A unique name of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The current state of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the custom vocabulary was not created.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl VocabularySummary {
@@ -4704,25 +4791,35 @@ impl AsRef<str> for VocabularyLanguageCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The directory identifier of the user.</p>
+    #[doc(hidden)]
     pub directory_user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user's hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user's summary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The user's first name and last name.</p>
+    #[doc(hidden)]
     pub identity_info: std::option::Option<crate::model::UserIdentityInfoLite>,
     /// <p>Contains information about the phone configuration settings for a user.</p>
+    #[doc(hidden)]
     pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
     /// <p>The identifier of the user's routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the user's security profiles.</p>
+    #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl UserSearchSummary {
@@ -4974,8 +5071,10 @@ impl UserSearchSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityInfoLite {
     /// <p>The user's first name.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The user's last name.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
 }
 impl UserIdentityInfoLite {
@@ -5047,12 +5146,16 @@ impl UserIdentityInfoLite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSearchCriteria {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+    #[doc(hidden)]
     pub or_conditions: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition. </p>
+    #[doc(hidden)]
     pub and_conditions: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
+    #[doc(hidden)]
     pub string_condition: std::option::Option<crate::model::StringCondition>,
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    #[doc(hidden)]
     pub hierarchy_group_condition: std::option::Option<crate::model::HierarchyGroupCondition>,
 }
 impl UserSearchCriteria {
@@ -5190,8 +5293,10 @@ impl UserSearchCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyGroupCondition {
     /// <p>The value in the hierarchy group condition.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of hierarchy group match.</p>
+    #[doc(hidden)]
     pub hierarchy_group_match_type: std::option::Option<crate::model::HierarchyGroupMatchType>,
 }
 impl HierarchyGroupCondition {
@@ -5330,10 +5435,13 @@ impl AsRef<str> for HierarchyGroupMatchType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StringCondition {
     /// <p>The name of the field in the string condition.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>The value of the string.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
+    #[doc(hidden)]
     pub comparison_type: std::option::Option<crate::model::StringComparisonType>,
 }
 impl StringCondition {
@@ -5488,6 +5596,7 @@ pub struct UserSearchFilter {
     /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
     /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
 }
 impl UserSearchFilter {
@@ -5561,11 +5670,14 @@ impl UserSearchFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlPlaneTagFilter {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+    #[doc(hidden)]
     pub or_conditions:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagCondition>>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+    #[doc(hidden)]
     pub and_conditions: std::option::Option<std::vec::Vec<crate::model::TagCondition>>,
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+    #[doc(hidden)]
     pub tag_condition: std::option::Option<crate::model::TagCondition>,
 }
 impl ControlPlaneTagFilter {
@@ -5678,8 +5790,10 @@ impl ControlPlaneTagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagCondition {
     /// <p>The tag key in the tag condition.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The tag value in the tag condition.</p>
+    #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
 }
 impl TagCondition {
@@ -5751,10 +5865,13 @@ impl TagCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailableNumberSummary {
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
 }
 impl AvailableNumberSummary {
@@ -6923,10 +7040,13 @@ impl AsRef<str> for PhoneNumberCountryCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSummary {
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Connect user name of the user account.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl UserSummary {
@@ -7015,10 +7135,13 @@ impl UserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyGroupSummary {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hierarchy group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl HierarchyGroupSummary {
@@ -7107,10 +7230,13 @@ impl HierarchyGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UseCase {
     /// <p>The identifier for the use case.</p>
+    #[doc(hidden)]
     pub use_case_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
+    #[doc(hidden)]
     pub use_case_arn: std::option::Option<std::string::String>,
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    #[doc(hidden)]
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
 }
 impl UseCase {
@@ -7257,18 +7383,25 @@ impl AsRef<str> for UseCaseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTemplateMetadata {
     /// <p>A unique identifier for the task template.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the task template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the task template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskTemplateStatus>,
     /// <p>The timestamp when the task template was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the task template was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TaskTemplateMetadata {
@@ -7434,10 +7567,13 @@ impl TaskTemplateMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfileSummary {
     /// <p>The identifier of the security profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the security profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl SecurityProfileSummary {
@@ -7526,10 +7662,13 @@ impl SecurityProfileSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityKey {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The key of the security key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>When the security key was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SecurityKey {
@@ -7624,10 +7763,13 @@ impl SecurityKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileSummary {
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the routing profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl RoutingProfileSummary {
@@ -7716,16 +7858,22 @@ impl RoutingProfileSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileQueueConfigSummary {
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub queue_name: std::option::Option<std::string::String>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub delay: i32,
     /// <p>The channels this queue supports.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl RoutingProfileQueueConfigSummary {
@@ -7865,12 +8013,16 @@ impl RoutingProfileQueueConfigSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickConnectSummary {
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the quick connect.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    #[doc(hidden)]
     pub quick_connect_type: std::option::Option<crate::model::QuickConnectType>,
 }
 impl QuickConnectSummary {
@@ -7979,12 +8131,16 @@ impl QuickConnectSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueSummary {
     /// <p>The identifier of the queue.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of queue.</p>
+    #[doc(hidden)]
     pub queue_type: std::option::Option<crate::model::QueueType>,
 }
 impl QueueSummary {
@@ -8148,10 +8304,13 @@ impl AsRef<str> for QueueType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromptSummary {
     /// <p>The identifier of the prompt.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the prompt.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PromptSummary {
@@ -8240,16 +8399,22 @@ impl PromptSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhoneNumbersSummary {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl ListPhoneNumbersSummary {
@@ -8407,14 +8572,19 @@ impl ListPhoneNumbersSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberSummary {
     /// <p>The identifier of the phone number.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The phone number.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
 }
 impl PhoneNumberSummary {
@@ -8549,8 +8719,10 @@ impl PhoneNumberSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Region that the Amazon Lex bot was created in.</p>
+    #[doc(hidden)]
     pub lex_region: std::option::Option<std::string::String>,
 }
 impl LexBot {
@@ -8622,20 +8794,28 @@ impl LexBot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
+    #[doc(hidden)]
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
+    #[doc(hidden)]
     pub integration_association_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The integration type.</p>
+    #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
+    #[doc(hidden)]
     pub integration_arn: std::option::Option<std::string::String>,
     /// <p>The URL for the external application.</p>
+    #[doc(hidden)]
     pub source_application_url: std::option::Option<std::string::String>,
     /// <p>The user-provided, friendly name for the external application.</p>
+    #[doc(hidden)]
     pub source_application_name: std::option::Option<std::string::String>,
     /// <p>The name of the source.</p>
+    #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
 }
 impl IntegrationAssociationSummary {
@@ -8967,22 +9147,31 @@ impl AsRef<str> for IntegrationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>The identifier of the instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identity management type of the instance.</p>
+    #[doc(hidden)]
     pub identity_management_type: std::option::Option<crate::model::DirectoryType>,
     /// <p>The alias of the instance.</p>
+    #[doc(hidden)]
     pub instance_alias: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service role of the instance.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The state of the instance.</p>
+    #[doc(hidden)]
     pub instance_status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>Whether inbound calls are enabled.</p>
+    #[doc(hidden)]
     pub inbound_calls_enabled: std::option::Option<bool>,
     /// <p>Whether outbound calls are enabled.</p>
+    #[doc(hidden)]
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
 impl InstanceSummary {
@@ -9303,8 +9492,10 @@ impl AsRef<str> for DirectoryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The type of attribute.</p>
+    #[doc(hidden)]
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Attribute {
@@ -9379,10 +9570,13 @@ impl Attribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoursOfOperationSummary {
     /// <p>The identifier of the hours of operation.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hours of operation.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hours of operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl HoursOfOperationSummary {
@@ -9471,12 +9665,16 @@ impl HoursOfOperationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultVocabulary {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_id: std::option::Option<std::string::String>,
     /// <p>A unique name of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl DefaultVocabulary {
@@ -9702,8 +9900,10 @@ impl ReferenceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailReference {
     /// <p>Identifier of the email reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid email address.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl EmailReference {
@@ -9775,8 +9975,10 @@ impl EmailReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateReference {
     /// <p>Identifier of the date reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid date.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DateReference {
@@ -9848,8 +10050,10 @@ impl DateReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NumberReference {
     /// <p>Identifier of the number reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid number.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl NumberReference {
@@ -9921,8 +10125,10 @@ impl NumberReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StringReference {
     /// <p>Identifier of the string reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid string.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl StringReference {
@@ -9994,10 +10200,13 @@ impl StringReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The location path of the attachment reference.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Status of the attachment reference type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReferenceStatus>,
 }
 impl AttachmentReference {
@@ -10144,8 +10353,10 @@ impl AsRef<str> for ReferenceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlReference {
     /// <p>Identifier of the URL reference.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid URL.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl UrlReference {
@@ -10218,14 +10429,19 @@ impl UrlReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowSummary {
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_type: std::option::Option<crate::model::ContactFlowType>,
     /// <p>The type of contact flow.</p>
+    #[doc(hidden)]
     pub contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
 }
 impl ContactFlowSummary {
@@ -10447,12 +10663,16 @@ impl AsRef<str> for ContactFlowType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowModuleSummary {
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow module.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of contact flow module.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
 impl ContactFlowModuleSummary {
@@ -10561,8 +10781,10 @@ impl ContactFlowModuleSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexBotConfig {
     /// <p>Configuration information of an Amazon Lex bot.</p>
+    #[doc(hidden)]
     pub lex_bot: std::option::Option<crate::model::LexBot>,
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub lex_v2_bot: std::option::Option<crate::model::LexV2Bot>,
 }
 impl LexBotConfig {
@@ -10637,6 +10859,7 @@ impl LexBotConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
+    #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
 }
 impl LexV2Bot {
@@ -10746,12 +10969,16 @@ impl AsRef<str> for LexVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentStatusSummary {
     /// <p>The identifier for an agent status.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the agent status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the agent status.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AgentStatusType>,
 }
 impl AgentStatusSummary {
@@ -10919,8 +11146,10 @@ impl AsRef<str> for AgentStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<crate::model::Dimensions>,
     /// <p>The set of metrics.</p>
+    #[doc(hidden)]
     pub collections: std::option::Option<std::vec::Vec<crate::model::HistoricalMetricData>>,
 }
 impl HistoricalMetricResult {
@@ -11005,8 +11234,10 @@ impl HistoricalMetricResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoricalMetricData {
     /// <p>Information about the metric.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::HistoricalMetric>,
     /// <p>The value of the metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl HistoricalMetricData {
@@ -11081,12 +11312,16 @@ impl HistoricalMetricData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoricalMetric {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::HistoricalMetricName>,
     /// <p>The threshold for the metric, used with service level metrics.</p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<crate::model::Threshold>,
     /// <p>The statistic for the metric.</p>
+    #[doc(hidden)]
     pub statistic: std::option::Option<crate::model::Statistic>,
     /// <p>The unit for the metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
 }
 impl HistoricalMetric {
@@ -11319,8 +11554,10 @@ impl AsRef<str> for Statistic {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Threshold {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    #[doc(hidden)]
     pub comparison: std::option::Option<crate::model::Comparison>,
     /// <p>The threshold value to compare.</p>
+    #[doc(hidden)]
     pub threshold_value: std::option::Option<f64>,
 }
 impl Threshold {
@@ -11627,8 +11864,10 @@ impl AsRef<str> for HistoricalMetricName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::QueueReference>,
     /// <p>The channel used for grouping and filters.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl Dimensions {
@@ -11703,8 +11942,10 @@ impl Dimensions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueReference {
     /// <p>The identifier of the queue.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl QueueReference {
@@ -11831,8 +12072,10 @@ impl AsRef<str> for Grouping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
+    #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl Filters {
@@ -11922,12 +12165,16 @@ impl Filters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
+    #[doc(hidden)]
     pub access_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
+    #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>Renews the expiration timer for a generated token.</p>
+    #[doc(hidden)]
     pub refresh_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Credentials {
@@ -12042,23 +12289,31 @@ impl Credentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserData {
     /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::UserReference>,
     /// <p>Information about the routing profile that is assigned to the user.</p>
+    #[doc(hidden)]
     pub routing_profile: std::option::Option<crate::model::RoutingProfileReference>,
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+    #[doc(hidden)]
     pub hierarchy_path: std::option::Option<crate::model::HierarchyPathReference>,
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgentStatusReference>,
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+    #[doc(hidden)]
     pub available_slots_by_channel:
         std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+    #[doc(hidden)]
     pub max_slots_by_channel:
         std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
     /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+    #[doc(hidden)]
     pub active_slots_by_channel:
         std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
     /// <p>A list of contact reference information.</p>
+    #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
 }
 impl UserData {
@@ -12290,18 +12545,25 @@ impl UserData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentContactReference {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The channel of the contact.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p>How the contact was initiated.</p>
+    #[doc(hidden)]
     pub initiation_method: std::option::Option<crate::model::ContactInitiationMethod>,
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    #[doc(hidden)]
     pub agent_contact_state: std::option::Option<crate::model::ContactState>,
     /// <p>The epoch timestamp when the contact state started.</p>
+    #[doc(hidden)]
     pub state_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the contact was connected to an agent.</p>
+    #[doc(hidden)]
     pub connected_to_agent_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    #[doc(hidden)]
     pub queue: std::option::Option<crate::model::QueueReference>,
 }
 impl AgentContactReference {
@@ -12647,8 +12909,10 @@ impl AsRef<str> for ContactInitiationMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
+    #[doc(hidden)]
     pub status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+    #[doc(hidden)]
     pub status_arn: std::option::Option<std::string::String>,
 }
 impl AgentStatusReference {
@@ -12723,14 +12987,19 @@ impl AgentStatusReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyPathReference {
     /// <p>Information about level one.</p>
+    #[doc(hidden)]
     pub level_one: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
     /// <p>Information about level two.</p>
+    #[doc(hidden)]
     pub level_two: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
     /// <p>Information about level three.</p>
+    #[doc(hidden)]
     pub level_three: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
     /// <p>Information about level four.</p>
+    #[doc(hidden)]
     pub level_four: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
     /// <p>Information about level five.</p>
+    #[doc(hidden)]
     pub level_five: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
 }
 impl HierarchyPathReference {
@@ -12870,8 +13139,10 @@ impl HierarchyPathReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyGroupSummaryReference {
     /// <p>The unique identifier for the hierarchy group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl HierarchyGroupSummaryReference {
@@ -12943,8 +13214,10 @@ impl HierarchyGroupSummaryReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileReference {
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RoutingProfileReference {
@@ -13016,8 +13289,10 @@ impl RoutingProfileReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserReference {
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UserReference {
@@ -13089,8 +13364,10 @@ impl UserReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDataFilters {
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
+    #[doc(hidden)]
     pub contact_filter: std::option::Option<crate::model::ContactFilter>,
 }
 impl UserDataFilters {
@@ -13174,6 +13451,7 @@ impl UserDataFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+    #[doc(hidden)]
     pub contact_states: std::option::Option<std::vec::Vec<crate::model::ContactState>>,
 }
 impl ContactFilter {
@@ -13237,8 +13515,10 @@ impl ContactFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentMetricResult {
     /// <p>The dimensions for the metrics.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<crate::model::Dimensions>,
     /// <p>The set of metrics.</p>
+    #[doc(hidden)]
     pub collections: std::option::Option<std::vec::Vec<crate::model::CurrentMetricData>>,
 }
 impl CurrentMetricResult {
@@ -13322,8 +13602,10 @@ impl CurrentMetricResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentMetricData {
     /// <p>Information about the metric.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::CurrentMetric>,
     /// <p>The value of the metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
 }
 impl CurrentMetricData {
@@ -13398,8 +13680,10 @@ impl CurrentMetricData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentMetric {
     /// <p>The name of the metric.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::CurrentMetricName>,
     /// <p>The unit for the metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
 }
 impl CurrentMetric {
@@ -13587,22 +13871,31 @@ impl AsRef<str> for CurrentMetricName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Vocabulary {
     /// <p>A unique name of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
     /// <p>The current state of the custom vocabulary.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the custom vocabulary was not created.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13826,14 +14119,19 @@ impl Vocabulary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyStructure {
     /// <p>Information about level one.</p>
+    #[doc(hidden)]
     pub level_one: std::option::Option<crate::model::HierarchyLevel>,
     /// <p>Information about level two.</p>
+    #[doc(hidden)]
     pub level_two: std::option::Option<crate::model::HierarchyLevel>,
     /// <p>Information about level three.</p>
+    #[doc(hidden)]
     pub level_three: std::option::Option<crate::model::HierarchyLevel>,
     /// <p>Information about level four.</p>
+    #[doc(hidden)]
     pub level_four: std::option::Option<crate::model::HierarchyLevel>,
     /// <p>Information about level five.</p>
+    #[doc(hidden)]
     pub level_five: std::option::Option<crate::model::HierarchyLevel>,
 }
 impl HierarchyStructure {
@@ -13971,10 +14269,13 @@ impl HierarchyStructure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyLevel {
     /// <p>The identifier of the hierarchy level.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy level.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hierarchy level.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl HierarchyLevel {
@@ -14063,16 +14364,22 @@ impl HierarchyLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyGroup {
     /// <p>The identifier of the hierarchy group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the hierarchy group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the level in the hierarchy group.</p>
+    #[doc(hidden)]
     pub level_id: std::option::Option<std::string::String>,
     /// <p>Information about the levels in the hierarchy group.</p>
+    #[doc(hidden)]
     pub hierarchy_path: std::option::Option<crate::model::HierarchyPath>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14236,14 +14543,19 @@ impl HierarchyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyPath {
     /// <p>Information about level one.</p>
+    #[doc(hidden)]
     pub level_one: std::option::Option<crate::model::HierarchyGroupSummary>,
     /// <p>Information about level two.</p>
+    #[doc(hidden)]
     pub level_two: std::option::Option<crate::model::HierarchyGroupSummary>,
     /// <p>Information about level three.</p>
+    #[doc(hidden)]
     pub level_three: std::option::Option<crate::model::HierarchyGroupSummary>,
     /// <p>Information about level four.</p>
+    #[doc(hidden)]
     pub level_four: std::option::Option<crate::model::HierarchyGroupSummary>,
     /// <p>Information about level five.</p>
+    #[doc(hidden)]
     pub level_five: std::option::Option<crate::model::HierarchyGroupSummary>,
 }
 impl HierarchyPath {
@@ -14381,24 +14693,34 @@ impl HierarchyPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The identifier of the user account.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The user name assigned to the user account.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>Information about the user identity.</p>
+    #[doc(hidden)]
     pub identity_info: std::option::Option<crate::model::UserIdentityInfo>,
     /// <p>Information about the phone configuration for the user.</p>
+    #[doc(hidden)]
     pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
     /// <p>The identifier of the user account in the directory used for identity management.</p>
+    #[doc(hidden)]
     pub directory_user_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the security profiles for the user.</p>
+    #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the routing profile for the user.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
+    #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14651,16 +14973,22 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfile {
     /// <p>The identifier for the security profile.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The organization resource identifier for the security profile.</p>
+    #[doc(hidden)]
     pub organization_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name for the security profile.</p>
+    #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The description of the security profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -14827,20 +15155,28 @@ impl SecurityProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the routing profile.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
+    #[doc(hidden)]
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The description of the routing profile.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    #[doc(hidden)]
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
+    #[doc(hidden)]
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15054,16 +15390,22 @@ impl RoutingProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickConnect {
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_id: std::option::Option<std::string::String>,
     /// <p>The name of the quick connect.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Contains information about the quick connect.</p>
+    #[doc(hidden)]
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15233,22 +15575,31 @@ impl QuickConnect {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Queue {
     /// <p>The name of the queue.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the queue.</p>
+    #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
+    #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
     /// <p>The description of the queue.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    #[doc(hidden)]
     pub outbound_caller_config: std::option::Option<crate::model::OutboundCallerConfig>,
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    #[doc(hidden)]
     pub max_contacts: std::option::Option<i32>,
     /// <p>The status of the queue.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueueStatus>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15468,23 +15819,32 @@ impl Queue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimedPhoneNumberSummary {
     /// <p>A unique identifier for the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The ISO country code.</p>
+    #[doc(hidden)]
     pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
+    #[doc(hidden)]
     pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
     /// <p>The description of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the phone number.</p>
+    #[doc(hidden)]
     pub phone_number_status: std::option::Option<crate::model::PhoneNumberStatus>,
 }
 impl ClaimedPhoneNumberSummary {
@@ -15719,8 +16079,10 @@ impl ClaimedPhoneNumberSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberStatus {
     /// <p>The status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PhoneNumberWorkflowStatus>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PhoneNumberStatus {
@@ -15854,24 +16216,34 @@ impl AsRef<str> for PhoneNumberWorkflowStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identity management type.</p>
+    #[doc(hidden)]
     pub identity_management_type: std::option::Option<crate::model::DirectoryType>,
     /// <p>The alias of instance.</p>
+    #[doc(hidden)]
     pub instance_alias: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service role of the instance.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The state of the instance.</p>
+    #[doc(hidden)]
     pub instance_status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>Relevant details why the instance was not successfully created. </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::InstanceStatusReason>,
     /// <p>Whether inbound calls are enabled.</p>
+    #[doc(hidden)]
     pub inbound_calls_enabled: std::option::Option<bool>,
     /// <p>Whether outbound calls are enabled.</p>
+    #[doc(hidden)]
     pub outbound_calls_enabled: std::option::Option<bool>,
 }
 impl Instance {
@@ -16094,6 +16466,7 @@ impl Instance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStatusReason {
     /// <p>The message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceStatusReason {
@@ -16148,18 +16521,25 @@ impl InstanceStatusReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HoursOfOperation {
     /// <p>The identifier for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    #[doc(hidden)]
     pub hours_of_operation_arn: std::option::Option<std::string::String>,
     /// <p>The name for the hours of operation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the hours of operation.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The time zone for the hours of operation.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Configuration information for the hours of operation.</p>
+    #[doc(hidden)]
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16352,20 +16732,28 @@ impl HoursOfOperation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowModule {
     /// <p>The Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow module.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow module.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow module.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow module.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of contact flow module.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
     /// <p>The status of the contact flow module.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContactFlowModuleStatus>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16621,20 +17009,28 @@ impl AsRef<str> for ContactFlowModuleStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlow {
     /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
     /// <p>The type of contact flow.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowState>,
     /// <p>The description of the contact flow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16835,32 +17231,46 @@ impl ContactFlow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The identifier for the contact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
+    #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
+    #[doc(hidden)]
     pub previous_contact_id: std::option::Option<std::string::String>,
     /// <p>Indicates how the contact was initiated.</p>
+    #[doc(hidden)]
     pub initiation_method: std::option::Option<crate::model::ContactInitiationMethod>,
     /// <p>The name of the contact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>How the contact reached your contact center.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p>If this contact was queued, this contains information about the queue. </p>
+    #[doc(hidden)]
     pub queue_info: std::option::Option<crate::model::QueueInfo>,
     /// <p>Information about the agent who accepted the contact.</p>
+    #[doc(hidden)]
     pub agent_info: std::option::Option<crate::model::AgentInfo>,
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived.</p>
+    #[doc(hidden)]
     pub initiation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    #[doc(hidden)]
     pub disconnect_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when contact was last updated.</p>
+    #[doc(hidden)]
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    #[doc(hidden)]
     pub scheduled_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Contact {
@@ -17163,8 +17573,10 @@ impl Contact {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact was connected to the agent.</p>
+    #[doc(hidden)]
     pub connected_to_agent_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AgentInfo {
@@ -17242,8 +17654,10 @@ impl AgentInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact was added to the queue.</p>
+    #[doc(hidden)]
     pub enqueue_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl QueueInfo {
@@ -17318,20 +17732,28 @@ impl QueueInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentStatus {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the agent status.</p>
+    #[doc(hidden)]
     pub agent_status_id: std::option::Option<std::string::String>,
     /// <p>The name of the agent status.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the agent status.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of agent status.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AgentStatusType>,
     /// <p>The display order of the agent status.</p>
+    #[doc(hidden)]
     pub display_order: std::option::Option<i32>,
     /// <p>The state of the agent status.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AgentStatusState>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

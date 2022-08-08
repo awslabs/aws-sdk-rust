@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbInstanceStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbInstanceStateFault {
@@ -72,6 +73,7 @@ impl InvalidDbInstanceStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbClusterStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbClusterStateFault {
@@ -136,6 +138,7 @@ impl InvalidDbClusterStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterNotFoundFault {
@@ -200,6 +203,7 @@ impl DbClusterNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageQuotaExceededFault {
@@ -264,6 +268,7 @@ impl StorageQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotAccessibleFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyNotAccessibleFault {
@@ -328,6 +333,7 @@ impl KmsKeyNotAccessibleFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidVpcNetworkStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidVpcNetworkStateFault {
@@ -395,6 +401,7 @@ impl InvalidVpcNetworkStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnet {
@@ -459,6 +466,7 @@ impl InvalidSubnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRestoreFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRestoreFault {
@@ -523,6 +531,7 @@ impl InvalidRestoreFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSnapshotStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSnapshotStateFault {
@@ -590,6 +599,7 @@ impl InvalidDbSnapshotStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbClusterSnapshotStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
@@ -657,6 +667,7 @@ impl InvalidDbClusterSnapshotStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientStorageClusterCapacityFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientStorageClusterCapacityFault {
@@ -721,6 +732,7 @@ impl InsufficientStorageClusterCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDbClusterCapacityFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
@@ -788,6 +800,7 @@ impl InsufficientDbClusterCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
@@ -852,6 +865,7 @@ impl DbSubnetGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
@@ -919,6 +933,7 @@ impl DbClusterSnapshotNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterQuotaExceededFault {
@@ -986,6 +1001,7 @@ impl DbClusterQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterAlreadyExistsFault {
@@ -1053,6 +1069,7 @@ impl DbClusterAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSnapshotNotFoundFault {
@@ -1117,6 +1134,7 @@ impl DbSnapshotNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbParameterGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
@@ -1184,6 +1202,7 @@ impl InvalidDbParameterGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupNotFoundFault {
@@ -1251,6 +1270,7 @@ impl DbParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbInstanceNotFoundFault {
@@ -1315,6 +1335,7 @@ impl DbInstanceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionNotFoundFault {
@@ -1379,6 +1400,7 @@ impl SubscriptionNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceNotFoundFault {
@@ -1443,6 +1465,7 @@ impl SourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGlobalClusterStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGlobalClusterStateFault {
@@ -1507,6 +1530,7 @@ impl InvalidGlobalClusterStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterNotFoundFault {
@@ -1571,6 +1595,7 @@ impl GlobalClusterNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionCategoryNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
@@ -1635,6 +1660,7 @@ impl SubscriptionCategoryNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsTopicArnNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsTopicArnNotFoundFault {
@@ -1699,6 +1725,7 @@ impl SnsTopicArnNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsNoAuthorizationFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsNoAuthorizationFault {
@@ -1763,6 +1790,7 @@ impl SnsNoAuthorizationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsInvalidTopicFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsInvalidTopicFault {
@@ -1827,6 +1855,7 @@ impl SnsInvalidTopicFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscriptionQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
@@ -1891,6 +1920,7 @@ impl EventSubscriptionQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetAlreadyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetAlreadyInUse {
@@ -1955,6 +1985,7 @@ impl SubnetAlreadyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetQuotaExceededFault {
@@ -2019,6 +2050,7 @@ impl DbSubnetQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupDoesNotCoverEnoughAZs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
@@ -2086,6 +2118,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeNotSupportedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageTypeNotSupportedFault {
@@ -2150,6 +2183,7 @@ impl StorageTypeNotSupportedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSecurityGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
@@ -2217,6 +2251,7 @@ impl InvalidDbSecurityGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDbInstanceCapacityFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
@@ -2284,6 +2319,7 @@ impl InsufficientDbInstanceCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbUpgradeDependencyFailureFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
@@ -2351,6 +2387,7 @@ impl DbUpgradeDependencyFailureFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
@@ -2418,6 +2455,7 @@ impl DbSecurityGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
@@ -2485,6 +2523,7 @@ impl DbInstanceAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateNotFoundFault {
@@ -2550,6 +2589,7 @@ impl CertificateNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationNotFoundFault {
@@ -2614,6 +2654,7 @@ impl AuthorizationNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedSnapshotQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SharedSnapshotQuotaExceededFault {
@@ -2678,6 +2719,7 @@ impl SharedSnapshotQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSubnetGroupStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
@@ -2745,6 +2787,7 @@ impl InvalidDbSubnetGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroupNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
@@ -2812,6 +2855,7 @@ impl DbClusterParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundFault {
@@ -2876,6 +2920,7 @@ impl ResourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventSubscriptionStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEventSubscriptionStateFault {
@@ -2940,6 +2985,7 @@ impl InvalidEventSubscriptionStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSubnetStateFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSubnetStateFault {
@@ -3004,6 +3050,7 @@ impl InvalidDbSubnetStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotQuotaExceededFault {
@@ -3068,6 +3115,7 @@ impl SnapshotQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
@@ -3135,6 +3183,7 @@ impl DbSnapshotAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
@@ -3202,6 +3251,7 @@ impl DbClusterSnapshotAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
@@ -3266,6 +3316,7 @@ impl GlobalClusterQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
@@ -3330,6 +3381,7 @@ impl GlobalClusterAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionAlreadyExistFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionAlreadyExistFault {
@@ -3394,6 +3446,7 @@ impl SubscriptionAlreadyExistFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
@@ -3461,6 +3514,7 @@ impl DbSubnetGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
@@ -3528,6 +3582,7 @@ impl DbSubnetGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceQuotaExceededFault {
@@ -3592,6 +3647,7 @@ impl InstanceQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupQuotaExceededFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
@@ -3659,6 +3715,7 @@ impl DbParameterGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {

@@ -3605,8 +3605,10 @@ impl UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    #[doc(hidden)]
     pub auto_enable: bool,
 }
 impl UpdateOrganizationConfigurationInput {
@@ -3633,8 +3635,10 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasourcePackagesInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The data source package start for the behavior graph.</p>
+    #[doc(hidden)]
     pub datasource_packages: std::option::Option<std::vec::Vec<crate::model::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInput {
@@ -3661,8 +3665,10 @@ impl std::fmt::Debug for UpdateDatasourcePackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the behavior graph to remove the tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3689,8 +3695,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the behavior graph to assign the tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3721,9 +3729,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl StartMonitoringMemberInput {
@@ -3752,6 +3762,7 @@ impl std::fmt::Debug for StartMonitoringMemberInput {
 pub struct RejectInvitationInput {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
     /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl RejectInvitationInput {
@@ -3774,6 +3785,7 @@ impl std::fmt::Debug for RejectInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3795,8 +3807,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -3823,10 +3837,13 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListMembersInput {
@@ -3858,8 +3875,10 @@ impl std::fmt::Debug for ListMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
     /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListInvitationsInput {
@@ -3886,8 +3905,10 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphsInput {
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGraphsInput {
@@ -3914,10 +3935,13 @@ impl std::fmt::Debug for ListGraphsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasourcePackagesInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasourcePackagesInput {
@@ -3949,9 +3973,11 @@ impl std::fmt::Debug for ListDatasourcePackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersInput {
     /// <p>The ARN of the behavior graph for which to request the member details.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
     /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
@@ -3979,6 +4005,7 @@ impl std::fmt::Debug for GetMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
@@ -4001,6 +4028,7 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
 pub struct DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMembershipInput {
@@ -4034,6 +4062,7 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
@@ -4055,8 +4084,10 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersInput {
     /// <p>The ARN of the behavior graph to remove members from.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteMembersInput {
@@ -4083,6 +4114,7 @@ impl std::fmt::Debug for DeleteMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGraphInput {
     /// <p>The ARN of the behavior graph to disable.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGraphInput {
@@ -4104,13 +4136,17 @@ impl std::fmt::Debug for DeleteGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
+    #[doc(hidden)]
     pub disable_email_notification: bool,
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
+    #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
 }
 impl CreateMembersInput {
@@ -4151,6 +4187,7 @@ impl std::fmt::Debug for CreateMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphInput {
     /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4176,6 +4213,7 @@ impl std::fmt::Debug for CreateGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetMembershipDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetMembershipDatasourcesInput {
@@ -4197,8 +4235,10 @@ impl std::fmt::Debug for BatchGetMembershipDatasourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetGraphMemberDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetGraphMemberDatasourcesInput {
@@ -4226,6 +4266,7 @@ impl std::fmt::Debug for BatchGetGraphMemberDatasourcesInput {
 pub struct AcceptInvitationInput {
     /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl AcceptInvitationInput {

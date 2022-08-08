@@ -5,34 +5,47 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    #[doc(hidden)]
     pub include_global_service_events: std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    #[doc(hidden)]
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
+    #[doc(hidden)]
     pub log_file_validation_enabled: std::option::Option<bool>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs are delivered.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
+    #[doc(hidden)]
     pub is_organization_trail: std::option::Option<bool>,
 }
 impl UpdateTrailOutput {
@@ -336,25 +349,35 @@ impl UpdateTrailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
+    #[doc(hidden)]
     pub event_data_store_arn: std::option::Option<std::string::String>,
     /// <p>The name of the event data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EventDataStoreStatus>,
     /// <p>The advanced event selectors that are applied to the event data store.</p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    #[doc(hidden)]
     pub multi_region_enabled: std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
     /// <p>The retention period, in days.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    #[doc(hidden)]
     pub termination_protection_enabled: std::option::Option<bool>,
     /// <p>The timestamp that shows when an event data store was first created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateEventDataStoreOutput {
@@ -625,6 +648,7 @@ impl StopLoggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryOutput {
     /// <p>The ID of the started query.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl StartQueryOutput {
@@ -709,25 +733,35 @@ impl StartLoggingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreEventDataStoreOutput {
     /// <p>The event data store ARN.</p>
+    #[doc(hidden)]
     pub event_data_store_arn: std::option::Option<std::string::String>,
     /// <p>The name of the event data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the event data store.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EventDataStoreStatus>,
     /// <p>The advanced event selectors that were used to select events.</p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+    #[doc(hidden)]
     pub multi_region_enabled: std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
     /// <p>The retention period, in days.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    #[doc(hidden)]
     pub termination_protection_enabled: std::option::Option<bool>,
     /// <p>The timestamp of an event data store's creation.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RestoreEventDataStoreOutput {
@@ -998,8 +1032,10 @@ impl RemoveTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    #[doc(hidden)]
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl PutInsightSelectorsOutput {
@@ -1082,10 +1118,13 @@ impl PutInsightSelectorsOutput {
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the event selectors configured for your trail.</p>
+    #[doc(hidden)]
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
     /// <p>Specifies the advanced event selectors configured for your trail.</p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
@@ -1202,8 +1241,10 @@ impl PutEventSelectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupEventsOutput {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupEventsOutput {
@@ -1284,8 +1325,10 @@ impl LookupEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrailsOutput {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    #[doc(hidden)]
     pub trails: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsOutput {
@@ -1366,8 +1409,10 @@ impl ListTrailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>A list of resource tags.</p>
+    #[doc(hidden)]
     pub resource_tag_list: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -1448,8 +1493,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueriesOutput {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+    #[doc(hidden)]
     pub queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
     /// <p>A token you can use to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListQueriesOutput {
@@ -1532,8 +1579,10 @@ pub struct ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
+    #[doc(hidden)]
     pub public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublicKeysOutput {
@@ -1620,8 +1669,10 @@ impl ListPublicKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current region.</p>
+    #[doc(hidden)]
     pub event_data_stores: std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
     /// <p>A token you can use to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventDataStoresOutput {
@@ -1703,42 +1754,59 @@ impl ListEventDataStoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailStatusOutput {
     /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
+    #[doc(hidden)]
     pub is_logging: std::option::Option<bool>,
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub latest_delivery_error: std::option::Option<std::string::String>,
     /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
+    #[doc(hidden)]
     pub latest_notification_error: std::option::Option<std::string::String>,
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub latest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub latest_notification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub start_logging_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub stop_logging_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub latest_cloud_watch_logs_delivery_error: std::option::Option<std::string::String>,
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub latest_cloud_watch_logs_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub latest_digest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
+    #[doc(hidden)]
     pub latest_digest_delivery_error: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub latest_delivery_attempt_time: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub latest_notification_attempt_time: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub latest_notification_attempt_succeeded: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub latest_delivery_attempt_succeeded: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub time_logging_started: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
+    #[doc(hidden)]
     pub time_logging_stopped: std::option::Option<std::string::String>,
 }
 impl GetTrailStatusOutput {
@@ -2173,6 +2241,7 @@ impl GetTrailStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailOutput {
     /// <p>The settings for a trail.</p>
+    #[doc(hidden)]
     pub trail: std::option::Option<crate::model::Trail>,
 }
 impl GetTrailOutput {
@@ -2225,18 +2294,23 @@ impl GetTrailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryResultsOutput {
     /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
+    #[doc(hidden)]
     pub query_status: std::option::Option<crate::model::QueryStatus>,
     /// <p>Shows the count of query results.</p>
+    #[doc(hidden)]
     pub query_statistics: std::option::Option<crate::model::QueryStatistics>,
     /// <p>Contains the individual event results of the query.</p>
+    #[doc(hidden)]
     pub query_result_rows: std::option::Option<
         std::vec::Vec<
             std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
         >,
     >,
     /// <p>A token you can use to get the next page of query results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The error message returned if a query failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl GetQueryResultsOutput {
@@ -2396,8 +2470,10 @@ impl GetQueryResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
+    #[doc(hidden)]
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl GetInsightSelectorsOutput {
@@ -2479,10 +2555,13 @@ impl GetInsightSelectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsOutput {
     /// <p>The specified trail ARN that has the event selectors.</p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>The event selectors that are configured for the trail.</p>
+    #[doc(hidden)]
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
     /// <p> The advanced event selectors that are configured for the trail. </p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
@@ -2596,25 +2675,35 @@ impl GetEventSelectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventDataStoreOutput {
     /// <p>The event data store Amazon Resource Number (ARN).</p>
+    #[doc(hidden)]
     pub event_data_store_arn: std::option::Option<std::string::String>,
     /// <p>The name of the event data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EventDataStoreStatus>,
     /// <p>The advanced event selectors used to select events for the data store.</p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    #[doc(hidden)]
     pub multi_region_enabled: std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
     /// <p>The retention period of the event data store, in days.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>Indicates that termination protection is enabled.</p>
+    #[doc(hidden)]
     pub termination_protection_enabled: std::option::Option<bool>,
     /// <p>The timestamp of the event data store's creation.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEventDataStoreOutput {
@@ -2855,6 +2944,7 @@ impl GetEventDataStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+    #[doc(hidden)]
     pub trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
 }
 impl DescribeTrailsOutput {
@@ -2918,14 +3008,19 @@ impl DescribeTrailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQueryOutput {
     /// <p>The ID of the query.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>The SQL code of a query.</p>
+    #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
+    #[doc(hidden)]
     pub query_status: std::option::Option<crate::model::QueryStatus>,
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+    #[doc(hidden)]
     pub query_statistics: std::option::Option<crate::model::QueryStatisticsForDescribeQuery>,
     /// <p>The error message returned if a query failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl DescribeQueryOutput {
@@ -3123,34 +3218,47 @@ impl DeleteEventDataStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+    #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use SnsTopicARN.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    #[doc(hidden)]
     pub include_global_service_events: std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    #[doc(hidden)]
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
+    #[doc(hidden)]
     pub log_file_validation_enabled: std::option::Option<bool>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
+    #[doc(hidden)]
     pub is_organization_trail: std::option::Option<bool>,
 }
 impl CreateTrailOutput {
@@ -3454,27 +3562,38 @@ impl CreateTrailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
+    #[doc(hidden)]
     pub event_data_store_arn: std::option::Option<std::string::String>,
     /// <p>The name of the event data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of event data store creation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EventDataStoreStatus>,
     /// <p>The advanced event selectors that were used to select the events for the data store.</p>
+    #[doc(hidden)]
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+    #[doc(hidden)]
     pub multi_region_enabled: std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    #[doc(hidden)]
     pub organization_enabled: std::option::Option<bool>,
     /// <p>The retention period of an event data store, in days.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<i32>,
     /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    #[doc(hidden)]
     pub termination_protection_enabled: std::option::Option<bool>,
     /// <p>A list of tags.</p>
+    #[doc(hidden)]
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The timestamp that shows when the event data store was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    #[doc(hidden)]
     pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateEventDataStoreOutput {
@@ -3741,8 +3860,10 @@ impl CreateEventDataStoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
+    #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    #[doc(hidden)]
     pub query_status: std::option::Option<crate::model::QueryStatus>,
 }
 impl CancelQueryOutput {

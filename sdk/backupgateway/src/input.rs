@@ -2923,8 +2923,10 @@ impl UpdateHypervisorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHypervisorsInput {
     /// <p>The maximum number of hypervisors to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHypervisorsInput {
@@ -2951,16 +2953,22 @@ impl std::fmt::Debug for ListHypervisorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The username for the hypervisor.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password for the hypervisor.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The Key Management Service for the hypervisor.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The tags of the hypervisor configuration to import.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportHypervisorConfigurationInput {
@@ -3007,6 +3015,7 @@ impl std::fmt::Debug for ImportHypervisorConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHypervisorInput {
@@ -3028,14 +3037,19 @@ impl std::fmt::Debug for DeleteHypervisorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The updated username for the hypervisor.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The updated password for the hypervisor.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The updated name for the hypervisor</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateHypervisorInput {
@@ -3077,6 +3091,7 @@ impl std::fmt::Debug for UpdateHypervisorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewaySoftwareNowInput {
@@ -3098,12 +3113,16 @@ impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestHypervisorConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The username for the hypervisor.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password for the hypervisor.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl TestHypervisorConfigurationInput {
@@ -3140,15 +3159,20 @@ impl std::fmt::Debug for TestHypervisorConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour of the day to start maintenance on a gateway.</p>
+    #[doc(hidden)]
     pub hour_of_day: std::option::Option<i32>,
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
+    #[doc(hidden)]
     pub minute_of_hour: std::option::Option<i32>,
     /// <p>The day of the week to start maintenance on a gateway.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<i32>,
     /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
+    #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
 }
 impl PutMaintenanceStartTimeInput {
@@ -3191,6 +3215,7 @@ impl std::fmt::Debug for PutMaintenanceStartTimeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateGatewayFromServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateGatewayFromServerInput {
@@ -3212,8 +3237,10 @@ impl std::fmt::Debug for DisassociateGatewayFromServerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateGatewayToServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
+    #[doc(hidden)]
     pub server_arn: std::option::Option<std::string::String>,
 }
 impl AssociateGatewayToServerInput {
@@ -3240,8 +3267,10 @@ impl std::fmt::Debug for AssociateGatewayToServerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewaysInput {
     /// <p>The maximum number of gateways to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysInput {
@@ -3268,12 +3297,16 @@ impl std::fmt::Debug for ListGatewaysInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayInput {
     /// <p>The activation key of the created gateway.</p>
+    #[doc(hidden)]
     pub activation_key: std::option::Option<std::string::String>,
     /// <p>The display name of the created gateway.</p>
+    #[doc(hidden)]
     pub gateway_display_name: std::option::Option<std::string::String>,
     /// <p>The type of created gateway.</p>
+    #[doc(hidden)]
     pub gateway_type: std::option::Option<crate::model::GatewayType>,
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGatewayInput {
@@ -3310,6 +3343,7 @@ impl std::fmt::Debug for CreateGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayInput {
@@ -3331,8 +3365,10 @@ impl std::fmt::Debug for DeleteGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The updated display name of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_display_name: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInformationInput {
@@ -3359,6 +3395,7 @@ impl std::fmt::Debug for UpdateGatewayInformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl GetGatewayInput {
@@ -3380,8 +3417,10 @@ impl std::fmt::Debug for GetGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys specifying which tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3408,8 +3447,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to assign to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3436,8 +3477,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualMachinesInput {
     /// <p>The maximum number of virtual machines to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualMachinesInput {
@@ -3464,6 +3507,7 @@ impl std::fmt::Debug for ListVirtualMachinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

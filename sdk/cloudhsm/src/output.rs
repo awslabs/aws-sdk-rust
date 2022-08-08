@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl RemoveTagsFromResourceOutput {
@@ -58,6 +59,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLunaClientOutput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
 }
 impl ModifyLunaClientOutput {
@@ -112,6 +114,7 @@ impl ModifyLunaClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHsmOutput {
     /// <p>The ARN of the HSM.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
 }
 impl ModifyHsmOutput {
@@ -166,6 +169,7 @@ impl ModifyHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl ModifyHapgOutput {
@@ -220,6 +224,7 @@ impl ModifyHapgOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -283,8 +288,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLunaClientsOutput {
     /// <p>The list of clients.</p>
+    #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLunaClientsOutput {
@@ -365,8 +372,10 @@ impl ListLunaClientsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
+    #[doc(hidden)]
     pub hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHsmsOutput {
@@ -447,8 +456,10 @@ impl ListHsmsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
+    #[doc(hidden)]
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHapgsOutput {
@@ -529,6 +540,7 @@ impl ListHapgsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
+    #[doc(hidden)]
     pub az_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAvailableZonesOutput {
@@ -592,10 +604,13 @@ impl ListAvailableZonesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigOutput {
     /// <p>The type of credentials.</p>
+    #[doc(hidden)]
     pub config_type: std::option::Option<std::string::String>,
     /// <p>The chrystoki.conf configuration file.</p>
+    #[doc(hidden)]
     pub config_file: std::option::Option<std::string::String>,
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
+    #[doc(hidden)]
     pub config_cred: std::option::Option<std::string::String>,
 }
 impl GetConfigOutput {
@@ -684,14 +699,19 @@ impl GetConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLunaClientOutput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The certificate installed on the HSMs used by this client.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The certificate fingerprint.</p>
+    #[doc(hidden)]
     pub certificate_fingerprint: std::option::Option<std::string::String>,
     /// <p>The date and time the client was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<std::string::String>,
     /// <p>The label of the client.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl DescribeLunaClientOutput {
@@ -820,50 +840,71 @@ impl DescribeLunaClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmOutput {
     /// <p>The ARN of the HSM.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
     /// <p>The status of the HSM.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::HsmStatus>,
     /// <p>Contains additional information about the status of the HSM.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The Availability Zone that the HSM is in.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
+    #[doc(hidden)]
     pub eni_id: std::option::Option<std::string::String>,
     /// <p>The IP address assigned to the HSM's ENI.</p>
+    #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
     /// <p>The subscription start date.</p>
+    #[doc(hidden)]
     pub subscription_start_date: std::option::Option<std::string::String>,
     /// <p>The subscription end date.</p>
+    #[doc(hidden)]
     pub subscription_end_date: std::option::Option<std::string::String>,
     /// <p>The identifier of the VPC that the HSM is in.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the subnet that the HSM is in.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role assigned to the HSM.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The serial number of the HSM.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The name of the HSM vendor.</p>
+    #[doc(hidden)]
     pub vendor_name: std::option::Option<std::string::String>,
     /// <p>The HSM model type.</p>
+    #[doc(hidden)]
     pub hsm_type: std::option::Option<std::string::String>,
     /// <p>The HSM software version.</p>
+    #[doc(hidden)]
     pub software_version: std::option::Option<std::string::String>,
     /// <p>The public SSH key.</p>
+    #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date and time that the SSH key was last updated.</p>
+    #[doc(hidden)]
     pub ssh_key_last_updated: std::option::Option<std::string::String>,
     /// <p>The URI of the certificate server.</p>
+    #[doc(hidden)]
     pub server_cert_uri: std::option::Option<std::string::String>,
     /// <p>The date and time that the server certificate was last updated.</p>
+    #[doc(hidden)]
     pub server_cert_last_updated: std::option::Option<std::string::String>,
     /// <p>The list of partitions on the HSM.</p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeHsmOutput {
@@ -1312,22 +1353,31 @@ impl DescribeHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
     /// <p>The serial number of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub hapg_serial: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub hsms_last_action_failed: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p></p>
+    #[doc(hidden)]
     pub hsms_pending_deletion: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p></p>
+    #[doc(hidden)]
     pub hsms_pending_registration: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The label for the high-availability partition group.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The date and time the high-availability partition group was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<std::string::String>,
     /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
+    #[doc(hidden)]
     pub partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CloudHsmObjectState>,
 }
 impl DescribeHapgOutput {
@@ -1561,6 +1611,7 @@ impl DescribeHapgOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteLunaClientOutput {
@@ -1615,6 +1666,7 @@ impl DeleteLunaClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmOutput {
     /// <p>The status of the operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteHsmOutput {
@@ -1669,6 +1721,7 @@ impl DeleteHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHapgOutput {
     /// <p>The status of the action.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteHapgOutput {
@@ -1723,6 +1776,7 @@ impl DeleteHapgOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
 }
 impl CreateLunaClientOutput {
@@ -1777,6 +1831,7 @@ impl CreateLunaClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
 }
 impl CreateHsmOutput {
@@ -1831,6 +1886,7 @@ impl CreateHsmOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl CreateHapgOutput {
@@ -1885,6 +1941,7 @@ impl CreateHapgOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl AddTagsToResourceOutput {

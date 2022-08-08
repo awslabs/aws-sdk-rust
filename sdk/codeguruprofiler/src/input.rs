@@ -4560,12 +4560,16 @@ impl UpdateProfilingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    #[doc(hidden)]
     pub anomaly_instance_id: std::option::Option<std::string::String>,
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FeedbackType>,
     /// <p>Optional feedback about this anomaly.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl SubmitFeedbackInput {
@@ -4602,10 +4606,13 @@ impl std::fmt::Debug for SubmitFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    #[doc(hidden)]
     pub action_group: std::option::Option<crate::model::ActionGroup>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -4637,8 +4644,10 @@ impl std::fmt::Debug for RemovePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl RemoveNotificationChannelInput {
@@ -4665,12 +4674,16 @@ impl std::fmt::Debug for RemoveNotificationChannelInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    #[doc(hidden)]
     pub action_group: std::option::Option<crate::model::ActionGroup>,
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PutPermissionInput {
@@ -4707,16 +4720,20 @@ impl std::fmt::Debug for PutPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The submitted profiling data. </p>
+    #[doc(hidden)]
     pub agent_profile: std::option::Option<aws_smithy_types::Blob>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
+    #[doc(hidden)]
     pub profile_token: std::option::Option<std::string::String>,
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl PostAgentProfileInput {
@@ -4757,10 +4774,13 @@ impl std::fmt::Debug for PostAgentProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the time range from which to list the profiles.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range from which to list the profiles.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
     /// <ul>
@@ -4768,14 +4788,18 @@ pub struct ListProfileTimesInput {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::AggregationPeriod>,
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileTimesInput {
@@ -4834,18 +4858,24 @@ impl std::fmt::Debug for ListProfileTimesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+    #[doc(hidden)]
     pub daily_reports_only: std::option::Option<bool>,
 }
 impl ListFindingsReportsInput {
@@ -4894,10 +4924,13 @@ impl std::fmt::Debug for ListFindingsReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsInput {
     /// <p> The name of the profiling group to get analysis data about. </p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
@@ -4913,6 +4946,7 @@ pub struct GetRecommendationsInput {
     /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
     /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsInput {
@@ -4962,23 +4996,29 @@ impl std::fmt::Debug for GetRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileInput {
     /// <p>The name of the profiling group to get.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
     /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
+    #[doc(hidden)]
     pub period: std::option::Option<std::string::String>,
     /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
+    #[doc(hidden)]
     pub max_depth: std::option::Option<i32>,
     /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accept: std::option::Option<std::string::String>,
 }
 impl GetProfileInput {
@@ -5032,6 +5072,7 @@ impl std::fmt::Debug for GetProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
     /// <p>The name of the profiling group.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
@@ -5053,6 +5094,7 @@ impl std::fmt::Debug for GetPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl GetNotificationConfigurationInput {
@@ -5074,8 +5116,10 @@ impl std::fmt::Debug for GetNotificationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
+    #[doc(hidden)]
     pub fleet_instance_id: std::option::Option<std::string::String>,
     /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
@@ -5089,6 +5133,7 @@ pub struct ConfigureAgentInput {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub metadata: std::option::Option<
         std::collections::HashMap<crate::model::MetadataField, std::string::String>,
     >,
@@ -5137,12 +5182,16 @@ impl std::fmt::Debug for ConfigureAgentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
+    #[doc(hidden)]
     pub period: std::option::Option<std::string::String>,
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
@@ -5150,8 +5199,10 @@ pub struct BatchGetFrameMetricDataInput {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub target_resolution: std::option::Option<crate::model::AggregationPeriod>,
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    #[doc(hidden)]
     pub frame_metrics: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
 }
 impl BatchGetFrameMetricDataInput {
@@ -5203,8 +5254,10 @@ impl std::fmt::Debug for BatchGetFrameMetricDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl AddNotificationChannelsInput {
@@ -5233,10 +5286,13 @@ pub struct ListProfilingGroupsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
+    #[doc(hidden)]
     pub include_description: std::option::Option<bool>,
 }
 impl ListProfilingGroupsInput {
@@ -5270,14 +5326,19 @@ impl std::fmt::Debug for ListProfilingGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
+    #[doc(hidden)]
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
     /// <p> A list of tags to add to the created profiling group. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5328,6 +5389,7 @@ impl std::fmt::Debug for CreateProfilingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfilingGroupInput {
     /// <p>The name of the profiling group to delete.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfilingGroupInput {
@@ -5349,8 +5411,10 @@ impl std::fmt::Debug for DeleteProfilingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    #[doc(hidden)]
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
 }
 impl UpdateProfilingGroupInput {
@@ -5382,6 +5446,7 @@ impl std::fmt::Debug for UpdateProfilingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeProfilingGroupInput {
@@ -5403,8 +5468,10 @@ impl std::fmt::Debug for DescribeProfilingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5431,8 +5498,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The list of tags that are added to the specified resource. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5463,6 +5532,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5486,10 +5556,13 @@ pub struct GetFindingsReportAccountSummaryInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+    #[doc(hidden)]
     pub daily_reports_only: std::option::Option<bool>,
 }
 impl GetFindingsReportAccountSummaryInput {

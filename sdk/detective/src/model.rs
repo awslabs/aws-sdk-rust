@@ -122,10 +122,13 @@ impl AsRef<str> for DatasourcePackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub delegation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Administrator {
@@ -217,15 +220,20 @@ impl Administrator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberDetail {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account root user email address for the member account.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
     #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
+    #[doc(hidden)]
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
+    #[doc(hidden)]
     pub administrator_id: std::option::Option<std::string::String>,
     /// <p>The current membership status of the member account. The status can have one of the following values:</p>
     /// <ul>
@@ -236,6 +244,7 @@ pub struct MemberDetail {
     /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
     /// </ul>
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
     /// <p>The reason can have one of the following values:</p>
@@ -243,20 +252,25 @@ pub struct MemberDetail {
     /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
     /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
     /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub invited_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data volume in bytes per day for the member account.</p>
     #[deprecated(
         note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
     )]
+    #[doc(hidden)]
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(
         note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
     )]
+    #[doc(hidden)]
     pub volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
@@ -264,17 +278,21 @@ pub struct MemberDetail {
     #[deprecated(
         note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
     )]
+    #[doc(hidden)]
     pub percent_of_graph_utilization: std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(
         note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
     )]
+    #[doc(hidden)]
     pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
     /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
+    #[doc(hidden)]
     pub invitation_type: std::option::Option<crate::model::InvitationType>,
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
+    #[doc(hidden)]
     pub volume_usage_by_datasource_package: std::option::Option<
         std::collections::HashMap<
             crate::model::DatasourcePackage,
@@ -282,6 +300,7 @@ pub struct MemberDetail {
         >,
     >,
     /// <p>The state of a data source package for the behavior graph.</p>
+    #[doc(hidden)]
     pub datasource_package_ingest_states: std::option::Option<
         std::collections::HashMap<
             crate::model::DatasourcePackage,
@@ -843,8 +862,10 @@ impl AsRef<str> for DatasourcePackageIngestState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasourcePackageUsageInfo {
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
+    #[doc(hidden)]
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub volume_usage_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasourcePackageUsageInfo {
@@ -1102,8 +1123,10 @@ impl AsRef<str> for MemberStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Graph {
     /// <p>The ARN of the behavior graph.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Graph {
@@ -1178,9 +1201,11 @@ impl Graph {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
+    #[doc(hidden)]
     pub datasource_package_ingest_state:
         std::option::Option<crate::model::DatasourcePackageIngestState>,
     /// <p>The date a data source package was enabled for this account</p>
+    #[doc(hidden)]
     pub last_ingest_state_change: std::option::Option<
         std::collections::HashMap<
             crate::model::DatasourcePackageIngestState,
@@ -1299,6 +1324,7 @@ impl DatasourcePackageIngestDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampForCollection {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampForCollection {
@@ -1356,8 +1382,10 @@ impl TimestampForCollection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The reason that the member account request could not be processed.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl UnprocessedAccount {
@@ -1429,8 +1457,10 @@ impl UnprocessedAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl Account {
@@ -1505,8 +1535,10 @@ impl Account {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedGraph {
     /// <p>The ARN of the organization behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl UnprocessedGraph {
@@ -1578,10 +1610,13 @@ impl UnprocessedGraph {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MembershipDatasources {
     /// <p>The account identifier of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
+    #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>Details on when a data source package was added to a behavior graph.</p>
+    #[doc(hidden)]
     pub datasource_package_ingest_history: std::option::Option<
         std::collections::HashMap<
             crate::model::DatasourcePackage,

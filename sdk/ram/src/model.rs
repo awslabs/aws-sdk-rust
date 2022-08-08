@@ -5,22 +5,31 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
+    #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
+    #[doc(hidden)]
     pub owning_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
+    #[doc(hidden)]
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>The current status of the resource share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceShareStatus>,
     /// <p>A message about the status of the resource share.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The tag key and value pairs attached to the resource share.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The date and time when the resource share was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the resource share was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates how the resource share was created. Possible values include:</p>
     /// <ul>
@@ -28,6 +37,7 @@ pub struct ResourceShare {
     /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
 }
 impl ResourceShare {
@@ -340,8 +350,10 @@ impl AsRef<str> for ResourceShareFeatureSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The string value attached to the tag. The value can be an empty string. Key values are case sensitive.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -480,24 +492,33 @@ impl AsRef<str> for ResourceShareStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
+    #[doc(hidden)]
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
+    #[doc(hidden)]
     pub resource_share_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
+    #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
+    #[doc(hidden)]
     pub sender_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
+    #[doc(hidden)]
     pub receiver_account_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invitation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the invitation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
+    #[doc(hidden)]
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+    #[doc(hidden)]
     pub receiver_arn: std::option::Option<std::string::String>,
 }
 impl ResourceShareInvitation {
@@ -736,8 +757,10 @@ impl ResourceShareInvitation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareAssociation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
+    #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
+    #[doc(hidden)]
     pub resource_share_name: std::option::Option<std::string::String>,
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
@@ -751,18 +774,25 @@ pub struct ResourceShareAssociation {
     /// <li> <p>The ARN of an IAM user</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub associated_entity: std::option::Option<std::string::String>,
     /// <p>The type of entity included in this association.</p>
+    #[doc(hidden)]
     pub association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
     /// <p>The current status of the association.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
     /// <p>A message about the status of the association.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date and time when the association was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the association was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
+    #[doc(hidden)]
     pub external: std::option::Option<bool>,
 }
 impl ResourceShareAssociation {
@@ -1207,14 +1237,17 @@ impl AsRef<str> for ResourceShareInvitationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNameAndResourceType {
     /// <p>The type of the resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Specifies the scope of visibility of resources of this type:</p>
     /// <ul>
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScope>,
 }
 impl ServiceNameAndResourceType {
@@ -1435,22 +1468,31 @@ impl AsRef<str> for ResourceRegionScopeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the permission represented in this structure.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
+    #[doc(hidden)]
     pub default_version: std::option::Option<bool>,
     /// <p>The name of this permission.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of resource to which this permission applies.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The current status of the permission.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
+    #[doc(hidden)]
     pub is_resource_type_default: std::option::Option<bool>,
 }
 impl ResourceSharePermissionSummary {
@@ -1650,26 +1692,35 @@ impl ResourceSharePermissionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code> </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share this resource is associated with.</p>
+    #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
+    #[doc(hidden)]
     pub resource_group_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>A message about the status of the resource.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date and time when the resource was associated with the resource share.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date an time when the association was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScope>,
 }
 impl Resource {
@@ -2021,14 +2072,19 @@ impl AsRef<str> for ResourceOwner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
     /// <p>The ID of the principal.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
+    #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the principal was associated with the resource share.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the association was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
+    #[doc(hidden)]
     pub external: std::option::Option<bool>,
 }
 impl Principal {
@@ -2160,8 +2216,10 @@ impl Principal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
+    #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagFilter {
@@ -2242,22 +2300,31 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the permission represented in this structure.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
+    #[doc(hidden)]
     pub default_version: std::option::Option<bool>,
     /// <p>The name of this permission.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The resource type to which this permission applies.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
+    #[doc(hidden)]
     pub is_resource_type_default: std::option::Option<bool>,
 }
 impl ResourceSharePermissionDetail {

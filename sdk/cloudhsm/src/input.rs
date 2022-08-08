@@ -3091,9 +3091,11 @@ impl RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
+    #[doc(hidden)]
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -3121,8 +3123,10 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLunaClientInput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The new certificate for the client.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
 }
 impl ModifyLunaClientInput {
@@ -3149,17 +3153,23 @@ impl std::fmt::Debug for ModifyLunaClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHsmInput {
     /// <p>The ARN of the HSM to modify.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
+    #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>The new IAM role ARN.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The new external ID.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    #[doc(hidden)]
     pub syslog_ip: std::option::Option<std::string::String>,
 }
 impl ModifyHsmInput {
@@ -3207,10 +3217,13 @@ impl std::fmt::Debug for ModifyHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHapgInput {
     /// <p>The ARN of the high-availability partition group to modify.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
     /// <p>The new label for the high-availability partition group.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
+    #[doc(hidden)]
     pub partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyHapgInput {
@@ -3242,6 +3255,7 @@ impl std::fmt::Debug for ModifyHapgInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3263,6 +3277,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLunaClientsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLunaClientsInput {
@@ -3284,6 +3299,7 @@ impl std::fmt::Debug for ListLunaClientsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHsmsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHsmsInput {
@@ -3305,6 +3321,7 @@ impl std::fmt::Debug for ListHsmsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHapgsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHapgsInput {
@@ -3337,10 +3354,13 @@ impl std::fmt::Debug for ListAvailableZonesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigInput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The client version.</p>
+    #[doc(hidden)]
     pub client_version: std::option::Option<crate::model::ClientVersion>,
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
+    #[doc(hidden)]
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetConfigInput {
@@ -3372,8 +3392,10 @@ impl std::fmt::Debug for GetConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLunaClientInput {
     /// <p>The ARN of the client.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The certificate fingerprint.</p>
+    #[doc(hidden)]
     pub certificate_fingerprint: std::option::Option<std::string::String>,
 }
 impl DescribeLunaClientInput {
@@ -3400,8 +3422,10 @@ impl std::fmt::Debug for DescribeLunaClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmInput {
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    #[doc(hidden)]
     pub hsm_serial_number: std::option::Option<std::string::String>,
 }
 impl DescribeHsmInput {
@@ -3428,6 +3452,7 @@ impl std::fmt::Debug for DescribeHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHapgInput {
     /// <p>The ARN of the high-availability partition group to describe.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl DescribeHapgInput {
@@ -3449,6 +3474,7 @@ impl std::fmt::Debug for DescribeHapgInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLunaClientInput {
     /// <p>The ARN of the client to delete.</p>
+    #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLunaClientInput {
@@ -3470,6 +3496,7 @@ impl std::fmt::Debug for DeleteLunaClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmInput {
     /// <p>The ARN of the HSM to delete.</p>
+    #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHsmInput {
@@ -3491,6 +3518,7 @@ impl std::fmt::Debug for DeleteHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHapgInput {
     /// <p>The ARN of the high-availability partition group to delete.</p>
+    #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHapgInput {
@@ -3512,8 +3540,10 @@ impl std::fmt::Debug for DeleteHapgInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLunaClientInput {
     /// <p>The label for the client.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
 }
 impl CreateLunaClientInput {
@@ -3540,25 +3570,33 @@ impl std::fmt::Debug for CreateLunaClientInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmInput {
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The SSH public key to install on the HSM.</p>
+    #[doc(hidden)]
     pub ssh_key: std::option::Option<std::string::String>,
     /// <p>The IP address to assign to the HSM's ENI.</p>
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
+    #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    #[doc(hidden)]
     pub syslog_ip: std::option::Option<std::string::String>,
 }
 impl CreateHsmInput {
@@ -3620,6 +3658,7 @@ impl std::fmt::Debug for CreateHsmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl CreateHapgInput {
@@ -3641,8 +3680,10 @@ impl std::fmt::Debug for CreateHapgInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {

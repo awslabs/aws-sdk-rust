@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerEngineAttributesOutput {
     /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerEngineAttributesOutput {
@@ -58,6 +59,7 @@ impl UpdateServerEngineAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerOutput {
     /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerOutput {
@@ -172,6 +174,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMaintenanceOutput {
     /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl StartMaintenanceOutput {
@@ -226,6 +229,7 @@ impl StartMaintenanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreServerOutput {
     /// <p>Describes a configuration management server. </p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl RestoreServerOutput {
@@ -280,8 +284,10 @@ impl RestoreServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Tags that have been applied to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -362,8 +368,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportServerEngineAttributeOutput {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
+    #[doc(hidden)]
     pub engine_attribute: std::option::Option<crate::model::EngineAttribute>,
     /// <p>The server name used in the request.</p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
 }
 impl ExportServerEngineAttributeOutput {
@@ -438,6 +446,7 @@ impl ExportServerEngineAttributeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
+    #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl DisassociateNodeOutput {
@@ -507,8 +516,10 @@ pub struct DescribeServersOutput {
     /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
     /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub servers: std::option::Option<std::vec::Vec<crate::model::Server>>,
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeServersOutput {
@@ -613,8 +624,10 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
     /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub node_association_status: std::option::Option<crate::model::NodeAssociationStatus>,
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
+    #[doc(hidden)]
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl DescribeNodeAssociationStatusOutput {
@@ -723,8 +736,10 @@ impl DescribeNodeAssociationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
+    #[doc(hidden)]
     pub server_events: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
@@ -805,8 +820,10 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsOutput {
     /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
+    #[doc(hidden)]
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
@@ -887,6 +904,7 @@ impl DescribeBackupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p> The attributes that are currently set for the account. </p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
 }
 impl DescribeAccountAttributesOutput {
@@ -1010,6 +1028,7 @@ impl DeleteBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerOutput {
     /// <p>The server that is created by the request. </p>
+    #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl CreateServerOutput {
@@ -1064,6 +1083,7 @@ impl CreateServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupOutput {
     /// <p>Backup created by request.</p>
+    #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CreateBackupOutput {
@@ -1118,6 +1138,7 @@ impl CreateBackupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
+    #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl AssociateNodeOutput {

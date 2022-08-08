@@ -5,32 +5,46 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stack {
     /// <p>The ARN of the stack.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the stack.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The stack name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The time the stack was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The storage connectors to enable.</p>
+    #[doc(hidden)]
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    #[doc(hidden)]
     pub redirect_url: std::option::Option<std::string::String>,
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    #[doc(hidden)]
     pub feedback_url: std::option::Option<std::string::String>,
     /// <p>The errors for the stack.</p>
+    #[doc(hidden)]
     pub stack_errors: std::option::Option<std::vec::Vec<crate::model::StackError>>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
+    #[doc(hidden)]
     pub user_settings: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
     /// <p>The persistent application settings for users of the stack.</p>
+    #[doc(hidden)]
     pub application_settings: std::option::Option<crate::model::ApplicationSettingsResponse>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
+    #[doc(hidden)]
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    #[doc(hidden)]
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    #[doc(hidden)]
     pub streaming_experience_settings:
         std::option::Option<crate::model::StreamingExperienceSettings>,
 }
@@ -378,6 +392,7 @@ impl Stack {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
+    #[doc(hidden)]
     pub preferred_protocol: std::option::Option<crate::model::PreferredProtocol>,
 }
 impl StreamingExperienceSettings {
@@ -490,8 +505,10 @@ impl AsRef<str> for PreferredProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::AccessEndpointType>,
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
+    #[doc(hidden)]
     pub vpce_id: std::option::Option<std::string::String>,
 }
 impl AccessEndpoint {
@@ -617,10 +634,13 @@ impl AsRef<str> for AccessEndpointType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSettingsResponse {
     /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
+    #[doc(hidden)]
     pub settings_group: std::option::Option<std::string::String>,
     /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
 }
 impl ApplicationSettingsResponse {
@@ -715,8 +735,10 @@ impl ApplicationSettingsResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSetting {
     /// <p>The action that is enabled or disabled.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>Indicates whether the action is enabled or disabled.</p>
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::Permission>,
 }
 impl UserSetting {
@@ -929,8 +951,10 @@ impl AsRef<str> for Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackError {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::StackErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl StackError {
@@ -1063,10 +1087,13 @@ impl AsRef<str> for StackErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageConnector {
     /// <p>The type of storage connector.</p>
+    #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::StorageConnectorType>,
     /// <p>The ARN of the storage connector.</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The names of the domains for the account.</p>
+    #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageConnector {
@@ -1229,8 +1256,10 @@ impl AsRef<str> for StorageConnectorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSettings {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
+    #[doc(hidden)]
     pub settings_group: std::option::Option<std::string::String>,
 }
 impl ApplicationSettings {
@@ -1413,8 +1442,10 @@ impl AsRef<str> for StackAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
+    #[doc(hidden)]
     pub allow_fleet: std::option::Option<bool>,
     /// <p>Indicates whether the image can be used for an image builder.</p>
+    #[doc(hidden)]
     pub allow_image_builder: std::option::Option<bool>,
 }
 impl ImagePermissions {
@@ -1486,16 +1517,22 @@ impl ImagePermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the image used to create the fleet.</p>
+    #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN for the public, private, or shared image.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -1533,6 +1570,7 @@ pub struct Fleet {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The fleet type.</p>
     /// <dl>
@@ -1549,45 +1587,62 @@ pub struct Fleet {
     /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub fleet_type: std::option::Option<crate::model::FleetType>,
     /// <p>The capacity status for the fleet.</p>
+    #[doc(hidden)]
     pub compute_capacity_status: std::option::Option<crate::model::ComputeCapacityStatus>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
     /// <p>Specify a value between 600 and 360000.</p>
+    #[doc(hidden)]
     pub max_user_duration_in_seconds: std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
     /// <p>Specify a value between 60 and 360000.</p>
+    #[doc(hidden)]
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The current state for the fleet.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::FleetState>,
     /// <p>The VPC configuration for the fleet.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The time the fleet was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The fleet errors.</p>
+    #[doc(hidden)]
     pub fleet_errors: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
+    #[doc(hidden)]
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
+    #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
+    #[doc(hidden)]
     pub stream_view: std::option::Option<crate::model::StreamView>,
     /// <p>The platform of the fleet.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The maximum number of concurrent sessions for the fleet.</p>
+    #[doc(hidden)]
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings associated with the fleet.</p>
+    #[doc(hidden)]
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    #[doc(hidden)]
     pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl Fleet {
@@ -2277,8 +2332,10 @@ impl Fleet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The S3 key of the S3 object.</p>
+    #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -2473,8 +2530,10 @@ impl AsRef<str> for StreamView {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
+    #[doc(hidden)]
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
 }
 impl DomainJoinInfo {
@@ -2558,8 +2617,10 @@ impl DomainJoinInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetError {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::FleetErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FleetError {
@@ -2879,8 +2940,10 @@ impl AsRef<str> for FleetErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfig {
     /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifiers of the security groups for the fleet or image builder.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfig {
@@ -3033,12 +3096,16 @@ impl AsRef<str> for FleetState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeCapacityStatus {
     /// <p>The desired number of streaming instances.</p>
+    #[doc(hidden)]
     pub desired: std::option::Option<i32>,
     /// <p>The total number of simultaneous streaming instances that are running.</p>
+    #[doc(hidden)]
     pub running: std::option::Option<i32>,
     /// <p>The number of instances in use for streaming.</p>
+    #[doc(hidden)]
     pub in_use: std::option::Option<i32>,
     /// <p>The number of currently available instances that can be used to stream sessions.</p>
+    #[doc(hidden)]
     pub available: std::option::Option<i32>,
 }
 impl ComputeCapacityStatus {
@@ -3285,6 +3352,7 @@ impl AsRef<str> for FleetAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
+    #[doc(hidden)]
     pub desired_instances: std::option::Option<i32>,
 }
 impl ComputeCapacity {
@@ -3339,18 +3407,25 @@ impl ComputeCapacity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entitlement {
     /// <p>The name of the entitlement.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The description of the entitlement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether all or selected apps are entitled.</p>
+    #[doc(hidden)]
     pub app_visibility: std::option::Option<crate::model::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
     /// <p>The time when the entitlement was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the entitlement was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Entitlement {
@@ -3537,8 +3612,10 @@ pub struct EntitlementAttribute {
     /// <li> <p>userType</p> </li>
     /// </ul>
     /// <p> </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl EntitlementAttribute {
@@ -3698,13 +3775,17 @@ impl AsRef<str> for AppVisibility {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    #[doc(hidden)]
     pub organizational_unit_distinguished_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
     /// <p>The time the directory configuration was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DirectoryConfig {
@@ -3849,8 +3930,10 @@ impl DirectoryConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceAccountCredentials {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The password for the account.</p>
+    #[doc(hidden)]
     pub account_password: std::option::Option<std::string::String>,
 }
 impl ServiceAccountCredentials {
@@ -3925,35 +4008,50 @@ impl ServiceAccountCredentials {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The application name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
+    #[doc(hidden)]
     pub icon_url: std::option::Option<std::string::String>,
     /// <p>The path to the application executable in the instance.</p>
+    #[doc(hidden)]
     pub launch_path: std::option::Option<std::string::String>,
     /// <p>The arguments that are passed to the application at launch.</p>
+    #[doc(hidden)]
     pub launch_parameters: std::option::Option<std::string::String>,
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Additional attributes that describe the application.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for the application.</p>
+    #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The app block ARN of the application.</p>
+    #[doc(hidden)]
     pub app_block_arn: std::option::Option<std::string::String>,
     /// <p>The S3 location of the application icon.</p>
+    #[doc(hidden)]
     pub icon_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The platforms on which the application can run.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The instance families for the application.</p>
+    #[doc(hidden)]
     pub instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time at which the application was created within the app block.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Application {
@@ -4354,16 +4452,22 @@ impl AsRef<str> for ApplicationAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageBuilder {
     /// <p>The name of the image builder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN for the image builder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the image from which this builder was created.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The image builder name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The VPC configuration of the image builder.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
@@ -4401,29 +4505,41 @@ pub struct ImageBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The operating system platform of the image builder.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the image builder.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageBuilderState>,
     /// <p>The reason why the last state change occurred.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
     /// <p>The time stamp when the image builder was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Enables or disables default internet access for the image builder.</p>
+    #[doc(hidden)]
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>Describes the network details of the fleet or image builder instance.</p>
+    #[doc(hidden)]
     pub network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
     /// <p>The image builder errors.</p>
+    #[doc(hidden)]
     pub image_builder_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
+    #[doc(hidden)]
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    #[doc(hidden)]
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
 }
 impl ImageBuilder {
@@ -4943,10 +5059,13 @@ impl ImageBuilder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceError {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::FleetErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The time the error occurred.</p>
+    #[doc(hidden)]
     pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ResourceError {
@@ -5044,8 +5163,10 @@ impl ResourceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
+    #[doc(hidden)]
     pub eni_private_ip_address: std::option::Option<std::string::String>,
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
+    #[doc(hidden)]
     pub eni_id: std::option::Option<std::string::String>,
 }
 impl NetworkAccessConfiguration {
@@ -5120,8 +5241,10 @@ impl NetworkAccessConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageBuilderStateChangeReason {
     /// <p>The state change reason code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ImageBuilderStateChangeReason {
@@ -5354,6 +5477,7 @@ impl AsRef<str> for ImageBuilderState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitledApplication {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl EntitledApplication {
@@ -5470,14 +5594,18 @@ impl AsRef<str> for AuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The authentication type for the user.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
+    #[doc(hidden)]
     pub send_email_notification: bool,
 }
 impl UserStackAssociation {
@@ -5592,12 +5720,15 @@ impl UserStackAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ARN of the user.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the user in the user pool is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
@@ -5607,14 +5738,19 @@ pub struct User {
     /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The first name, or given name, of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name, or surname, of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The date and time the user was created in the user pool.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The authentication type for the user.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl User {
@@ -5822,12 +5958,16 @@ impl User {
 pub struct UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The schedule for generating usage reports.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
     /// <p>The time when the last usage report was generated.</p>
+    #[doc(hidden)]
     pub last_generated_report_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
+    #[doc(hidden)]
     pub subscription_errors:
         std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
 }
@@ -5966,8 +6106,10 @@ impl UsageReportSubscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastReportGenerationExecutionError {
     /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::UsageReportExecutionErrorCode>,
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl LastReportGenerationExecutionError {
@@ -6159,24 +6301,34 @@ impl AsRef<str> for UsageReportSchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The identifier of the streaming session.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user for whom the session was created.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The name of the stack for the streaming session.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet for the streaming session.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The current state of the streaming session.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::SessionState>,
     /// <p>Specifies whether a user is connected to the streaming session.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::SessionConnectionState>,
     /// <p>The time when a streaming instance is dedicated for the user.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
+    #[doc(hidden)]
     pub max_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
+    #[doc(hidden)]
     pub network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
 }
 impl Session {
@@ -6522,38 +6674,55 @@ impl AsRef<str> for SessionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>The name of the image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the image.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the image from which this image was created.</p>
+    #[doc(hidden)]
     pub base_image_arn: std::option::Option<std::string::String>,
     /// <p>The image name to display.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>Indicates whether the image is public or private.</p>
+    #[doc(hidden)]
     pub visibility: std::option::Option<crate::model::VisibilityType>,
     /// <p>Indicates whether an image builder can be launched from this image.</p>
+    #[doc(hidden)]
     pub image_builder_supported: bool,
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    #[doc(hidden)]
     pub image_builder_name: std::option::Option<std::string::String>,
     /// <p>The operating system platform of the image.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The description to display.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The reason why the last state change occurred.</p>
+    #[doc(hidden)]
     pub state_change_reason: std::option::Option<crate::model::ImageStateChangeReason>,
     /// <p>The applications associated with the image.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>The time the image was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
+    #[doc(hidden)]
     pub public_base_image_released_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    #[doc(hidden)]
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
+    #[doc(hidden)]
     pub image_permissions: std::option::Option<crate::model::ImagePermissions>,
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
+    #[doc(hidden)]
     pub image_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
 }
 impl Image {
@@ -6935,8 +7104,10 @@ impl Image {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageStateChangeReason {
     /// <p>The state change reason code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ImageStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ImageStateChangeReason {
@@ -7216,8 +7387,10 @@ impl AsRef<str> for ImageState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedImagePermissions {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>Describes the permissions for a shared image.</p>
+    #[doc(hidden)]
     pub image_permissions: std::option::Option<crate::model::ImagePermissions>,
 }
 impl SharedImagePermissions {
@@ -7295,8 +7468,10 @@ impl SharedImagePermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationFleetAssociation {
     /// <p>The name of the fleet associated with the application.</p>
+    #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the application associated with the fleet.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl ApplicationFleetAssociation {
@@ -7373,18 +7548,25 @@ impl ApplicationFleetAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppBlock {
     /// <p>The name of the app block.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the app block.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the app block.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The display name of the app block.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The source S3 location of the app block.</p>
+    #[doc(hidden)]
     pub source_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The setup script details of the app block.</p>
+    #[doc(hidden)]
     pub setup_script_details: std::option::Option<crate::model::ScriptDetails>,
     /// <p>The created time of the app block.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppBlock {
@@ -7550,12 +7732,16 @@ impl AppBlock {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptDetails {
     /// <p>The S3 object location for the script.</p>
+    #[doc(hidden)]
     pub script_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>The run path for the script.</p>
+    #[doc(hidden)]
     pub executable_path: std::option::Option<std::string::String>,
     /// <p>The runtime parameters passed to the run path for the script.</p>
+    #[doc(hidden)]
     pub executable_parameters: std::option::Option<std::string::String>,
     /// <p>The run timeout, in seconds, for the script.</p>
+    #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
 }
 impl ScriptDetails {
@@ -7725,10 +7911,13 @@ impl AsRef<str> for MessageAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
+    #[doc(hidden)]
     pub user_stack_association: std::option::Option<crate::model::UserStackAssociation>,
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::UserStackAssociationErrorCode>,
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UserStackAssociationError {

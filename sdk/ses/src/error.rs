@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateDoesNotExistException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TemplateDoesNotExistException {
@@ -93,8 +95,10 @@ impl TemplateDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTemplateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTemplateException {
@@ -181,8 +185,10 @@ impl InvalidTemplateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleSetDoesNotExistException {
     /// <p>Indicates that the named receipt rule set does not exist.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RuleSetDoesNotExistException {
@@ -266,8 +272,10 @@ impl RuleSetDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleDoesNotExistException {
     /// <p>Indicates that the named receipt rule does not exist.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RuleDoesNotExistException {
@@ -351,6 +359,7 @@ impl RuleDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -415,8 +424,10 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicException {
     /// <p>Indicates that the topic does not exist.</p>
+    #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSnsTopicException {
@@ -500,8 +511,10 @@ impl InvalidSnsTopicException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3ConfigurationException {
     /// <p>Indicated that the S3 Bucket was not found.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidS3ConfigurationException {
@@ -585,8 +598,10 @@ impl InvalidS3ConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaFunctionException {
     /// <p>Indicates that the ARN of the function was not found.</p>
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLambdaFunctionException {
@@ -670,8 +685,10 @@ impl InvalidLambdaFunctionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FromEmailAddressNotVerifiedException {
     /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl FromEmailAddressNotVerifiedException {
@@ -758,8 +775,10 @@ impl FromEmailAddressNotVerifiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplateDoesNotExistException {
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
+    #[doc(hidden)]
     pub custom_verification_email_template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomVerificationEmailTemplateDoesNotExistException {
@@ -856,6 +875,7 @@ impl CustomVerificationEmailTemplateDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailInvalidContentException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomVerificationEmailInvalidContentException {
@@ -920,8 +940,10 @@ impl CustomVerificationEmailInvalidContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptionsDoesNotExistException {
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TrackingOptionsDoesNotExistException {
@@ -1012,6 +1034,7 @@ impl TrackingOptionsDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrackingOptionsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTrackingOptionsException {
@@ -1076,8 +1099,10 @@ impl InvalidTrackingOptionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationSetDoesNotExistException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConfigurationSetDoesNotExistException {
@@ -1164,10 +1189,13 @@ impl ConfigurationSetDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Indicates that the event destination does not exist.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSnsDestinationException {
@@ -1277,10 +1305,13 @@ impl InvalidSnsDestinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFirehoseDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Indicates that the event destination does not exist.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidFirehoseDestinationException {
@@ -1387,10 +1418,13 @@ impl InvalidFirehoseDestinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCloudWatchDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Indicates that the event destination does not exist.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCloudWatchDestinationException {
@@ -1497,10 +1531,13 @@ impl InvalidCloudWatchDestinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestinationDoesNotExistException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Indicates that the event destination does not exist.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EventDestinationDoesNotExistException {
@@ -1607,8 +1644,10 @@ impl EventDestinationDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRenderingAttributeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MissingRenderingAttributeException {
@@ -1695,8 +1734,10 @@ impl MissingRenderingAttributeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRenderingParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRenderingParameterException {
@@ -1783,6 +1824,7 @@ impl InvalidRenderingParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageRejected {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageRejected {
@@ -1847,6 +1889,7 @@ impl MessageRejected {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailFromDomainNotVerifiedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MailFromDomainNotVerifiedException {
@@ -1912,8 +1955,10 @@ impl MailFromDomainNotVerifiedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationSetSendingPausedException {
     /// <p>The name of the configuration set for which email sending is disabled.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConfigurationSetSendingPausedException {
@@ -2001,6 +2046,7 @@ impl ConfigurationSetSendingPausedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSendingPausedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountSendingPausedException {
@@ -2065,6 +2111,7 @@ impl AccountSendingPausedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductionAccessNotGrantedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProductionAccessNotGrantedException {
@@ -2129,6 +2176,7 @@ impl ProductionAccessNotGrantedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPolicyException {
@@ -2193,6 +2241,7 @@ impl InvalidPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeliveryOptionsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeliveryOptionsException {
@@ -2257,8 +2306,10 @@ impl InvalidDeliveryOptionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotDeleteException {
     /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CannotDeleteException {
@@ -2342,8 +2393,10 @@ impl CannotDeleteException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
     /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
@@ -2427,8 +2480,10 @@ impl AlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplateAlreadyExistsException {
     /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
+    #[doc(hidden)]
     pub custom_verification_email_template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomVerificationEmailTemplateAlreadyExistsException {
@@ -2525,8 +2580,10 @@ impl CustomVerificationEmailTemplateAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptionsAlreadyExistsException {
     /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TrackingOptionsAlreadyExistsException {
@@ -2613,10 +2670,13 @@ impl TrackingOptionsAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestinationAlreadyExistsException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Indicates that the event destination does not exist.</p>
+    #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EventDestinationAlreadyExistsException {
@@ -2723,6 +2783,7 @@ impl EventDestinationAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationSetException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationSetException {
@@ -2787,8 +2848,10 @@ impl InvalidConfigurationSetException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationSetAlreadyExistsException {
     /// <p>Indicates that the configuration set does not exist.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConfigurationSetAlreadyExistsException {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbInstanceStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbInstanceStateFault {
@@ -72,6 +73,7 @@ impl InvalidDbInstanceStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbClusterStateFault {
@@ -136,6 +138,7 @@ impl InvalidDbClusterStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterNotFoundFault {
@@ -200,6 +203,7 @@ impl DbClusterNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageQuotaExceededFault {
@@ -264,6 +268,7 @@ impl StorageQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OptionGroupNotFoundFault {
@@ -328,6 +333,7 @@ impl OptionGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotAccessibleFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyNotAccessibleFault {
@@ -392,6 +398,7 @@ impl KmsKeyNotAccessibleFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidVpcNetworkStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidVpcNetworkStateFault {
@@ -459,6 +466,7 @@ impl InvalidVpcNetworkStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSubnet {
@@ -523,6 +531,7 @@ impl InvalidSubnet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRestoreFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRestoreFault {
@@ -587,6 +596,7 @@ impl InvalidRestoreFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSnapshotStateFault {
@@ -654,6 +664,7 @@ impl InvalidDbSnapshotStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbClusterSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
@@ -721,6 +732,7 @@ impl InvalidDbClusterSnapshotStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientStorageClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientStorageClusterCapacityFault {
@@ -785,6 +797,7 @@ impl InsufficientStorageClusterCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDbClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
@@ -852,6 +865,7 @@ impl InsufficientDbClusterCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
@@ -916,6 +930,7 @@ impl DbSubnetGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
@@ -983,6 +998,7 @@ impl DbClusterSnapshotNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterQuotaExceededFault {
@@ -1050,6 +1066,7 @@ impl DbClusterQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
@@ -1117,6 +1134,7 @@ impl DbClusterParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterAlreadyExistsFault {
@@ -1184,6 +1202,7 @@ impl DbClusterAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSnapshotNotFoundFault {
@@ -1248,6 +1267,7 @@ impl DbSnapshotNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbParameterGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
@@ -1315,6 +1335,7 @@ impl InvalidDbParameterGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupNotFoundFault {
@@ -1382,6 +1403,7 @@ impl DbParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbInstanceNotFoundFault {
@@ -1446,6 +1468,7 @@ impl DbInstanceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionNotFoundFault {
@@ -1510,6 +1533,7 @@ impl SubscriptionNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceNotFoundFault {
@@ -1574,6 +1598,7 @@ impl SourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRoleNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterRoleNotFoundFault {
@@ -1638,6 +1663,7 @@ impl DbClusterRoleNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGlobalClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGlobalClusterStateFault {
@@ -1702,6 +1728,7 @@ impl InvalidGlobalClusterStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterNotFoundFault {
@@ -1766,6 +1793,7 @@ impl GlobalClusterNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionCategoryNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
@@ -1830,6 +1858,7 @@ impl SubscriptionCategoryNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsTopicArnNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsTopicArnNotFoundFault {
@@ -1894,6 +1923,7 @@ impl SnsTopicArnNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsNoAuthorizationFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsNoAuthorizationFault {
@@ -1958,6 +1988,7 @@ impl SnsNoAuthorizationFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsInvalidTopicFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsInvalidTopicFault {
@@ -2022,6 +2053,7 @@ impl SnsInvalidTopicFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscriptionQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
@@ -2086,6 +2118,7 @@ impl EventSubscriptionQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetAlreadyInUse {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubnetAlreadyInUse {
@@ -2150,6 +2183,7 @@ impl SubnetAlreadyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetQuotaExceededFault {
@@ -2214,6 +2248,7 @@ impl DbSubnetQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupDoesNotCoverEnoughAZs {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
@@ -2281,6 +2316,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeNotSupportedFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StorageTypeNotSupportedFault {
@@ -2345,6 +2381,7 @@ impl StorageTypeNotSupportedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedIopsNotAvailableInAzFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProvisionedIopsNotAvailableInAzFault {
@@ -2412,6 +2449,7 @@ impl ProvisionedIopsNotAvailableInAzFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSecurityGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
@@ -2479,6 +2517,7 @@ impl InvalidDbSecurityGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDbInstanceCapacityFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
@@ -2546,6 +2585,7 @@ impl InsufficientDbInstanceCapacityFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainNotFoundFault {
@@ -2610,6 +2650,7 @@ impl DomainNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbUpgradeDependencyFailureFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
@@ -2677,6 +2718,7 @@ impl DbUpgradeDependencyFailureFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
@@ -2744,6 +2786,7 @@ impl DbSecurityGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
@@ -2811,6 +2854,7 @@ impl DbInstanceAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateNotFoundFault {
@@ -2876,6 +2920,7 @@ impl CertificateNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationNotFoundFault {
@@ -2940,6 +2985,7 @@ impl AuthorizationNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedSnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SharedSnapshotQuotaExceededFault {
@@ -3004,6 +3050,7 @@ impl SharedSnapshotQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbClusterEndpointStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbClusterEndpointStateFault {
@@ -3071,6 +3118,7 @@ impl InvalidDbClusterEndpointStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterEndpointNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterEndpointNotFoundFault {
@@ -3138,6 +3186,7 @@ impl DbClusterEndpointNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSubnetGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
@@ -3205,6 +3254,7 @@ impl InvalidDbSubnetGroupStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundFault {
@@ -3269,6 +3319,7 @@ impl ResourceNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventSubscriptionStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEventSubscriptionStateFault {
@@ -3333,6 +3384,7 @@ impl InvalidEventSubscriptionStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSubnetStateFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDbSubnetStateFault {
@@ -3397,6 +3449,7 @@ impl InvalidDbSubnetStateFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotQuotaExceededFault {
@@ -3461,6 +3514,7 @@ impl SnapshotQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
@@ -3528,6 +3582,7 @@ impl DbSnapshotAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
@@ -3595,6 +3650,7 @@ impl DbClusterSnapshotAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
@@ -3659,6 +3715,7 @@ impl GlobalClusterQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
@@ -3723,6 +3780,7 @@ impl GlobalClusterAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionAlreadyExistFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionAlreadyExistFault {
@@ -3787,6 +3845,7 @@ impl SubscriptionAlreadyExistFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
@@ -3854,6 +3913,7 @@ impl DbSubnetGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
@@ -3921,6 +3981,7 @@ impl DbSubnetGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
@@ -3988,6 +4049,7 @@ impl DbParameterGroupQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {
@@ -4055,6 +4117,7 @@ impl DbParameterGroupAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceQuotaExceededFault {
@@ -4119,6 +4182,7 @@ impl InstanceQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterEndpointQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterEndpointQuotaExceededFault {
@@ -4186,6 +4250,7 @@ impl DbClusterEndpointQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterEndpointAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterEndpointAlreadyExistsFault {
@@ -4253,6 +4318,7 @@ impl DbClusterEndpointAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRoleQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterRoleQuotaExceededFault {
@@ -4320,6 +4386,7 @@ impl DbClusterRoleQuotaExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRoleAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DbClusterRoleAlreadyExistsFault {

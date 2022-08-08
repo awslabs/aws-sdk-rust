@@ -5788,8 +5788,10 @@ impl UpdateDeviceMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>A description for the device.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceMetadataInput {
@@ -5816,8 +5818,10 @@ impl std::fmt::Debug for UpdateDeviceMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource's ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag keys to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5844,8 +5848,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource's ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5876,6 +5882,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveApplicationInstanceInput {
     /// <p>An application instance ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl RemoveApplicationInstanceInput {
@@ -5897,14 +5904,19 @@ impl std::fmt::Debug for RemoveApplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPackageVersionInput {
     /// <p>An owner account.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A package ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>A package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>A patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
+    #[doc(hidden)]
     pub mark_latest: bool,
 }
 impl RegisterPackageVersionInput {
@@ -5946,13 +5958,17 @@ impl std::fmt::Debug for RegisterPackageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionDeviceInput {
     /// <p>A name for the device.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the device.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags for the device.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A networking configuration for the device.</p>
+    #[doc(hidden)]
     pub networking_configuration: std::option::Option<crate::model::NetworkPayload>,
 }
 impl ProvisionDeviceInput {
@@ -5992,6 +6008,7 @@ impl std::fmt::Debug for ProvisionDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's ARN.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6013,8 +6030,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesInput {
     /// <p>The maximum number of packages to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesInput {
@@ -6041,8 +6060,10 @@ impl std::fmt::Debug for ListPackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageImportJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of package import jobs to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPackageImportJobsInput {
@@ -6069,18 +6090,25 @@ impl std::fmt::Debug for ListPackageImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesInput {
     /// <p>Search for nodes by category.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::NodeCategory>,
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Search for nodes by name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>Search for nodes by version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>Search for nodes by patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of nodes to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListNodesInput {
@@ -6132,8 +6160,10 @@ impl std::fmt::Debug for ListNodesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodeFromTemplateJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of node from template jobs to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListNodeFromTemplateJobsInput {
@@ -6160,10 +6190,13 @@ impl std::fmt::Debug for ListNodeFromTemplateJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesJobsInput {
     /// <p>Filter results by the job's target device ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of device jobs to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDevicesJobsInput {
@@ -6195,8 +6228,10 @@ impl std::fmt::Debug for ListDevicesJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDevicesInput {
@@ -6223,12 +6258,16 @@ impl std::fmt::Debug for ListDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Only include instances with a specific status.</p>
+    #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::StatusFilter>,
     /// <p>The maximum number of application instances to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstancesInput {
@@ -6265,10 +6304,13 @@ impl std::fmt::Debug for ListApplicationInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstanceNodeInstancesInput {
     /// <p>The node instances' application instance ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of node instances to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceNodeInstancesInput {
@@ -6300,10 +6342,13 @@ impl std::fmt::Debug for ListApplicationInstanceNodeInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationInstanceDependenciesInput {
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationInstanceDependenciesInput {
@@ -6335,12 +6380,16 @@ impl std::fmt::Debug for ListApplicationInstanceDependenciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageVersionInput {
     /// <p>The version's owner account.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The version's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The version's version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The version's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
 }
 impl DescribePackageVersionInput {
@@ -6377,6 +6426,7 @@ impl std::fmt::Debug for DescribePackageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribePackageImportJobInput {
@@ -6398,6 +6448,7 @@ impl std::fmt::Debug for DescribePackageImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageInput {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
 }
 impl DescribePackageInput {
@@ -6419,6 +6470,7 @@ impl std::fmt::Debug for DescribePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeFromTemplateJobInput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeNodeFromTemplateJobInput {
@@ -6440,8 +6492,10 @@ impl std::fmt::Debug for DescribeNodeFromTemplateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeInput {
     /// <p>The node's ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the node's owner.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
 }
 impl DescribeNodeInput {
@@ -6468,6 +6522,7 @@ impl std::fmt::Debug for DescribeNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceJobInput {
@@ -6489,6 +6544,7 @@ impl std::fmt::Debug for DescribeDeviceJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceInput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceInput {
@@ -6510,6 +6566,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceDetailsInput {
@@ -6531,6 +6588,7 @@ impl std::fmt::Debug for DescribeApplicationInstanceDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInstanceInput {
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceInput {
@@ -6552,14 +6610,19 @@ impl std::fmt::Debug for DescribeApplicationInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterPackageVersionInput {
     /// <p>An owner account.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A package ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>A package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>A patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
+    #[doc(hidden)]
     pub updated_latest_patch_version: std::option::Option<std::string::String>,
 }
 impl DeregisterPackageVersionInput {
@@ -6604,8 +6667,10 @@ impl std::fmt::Debug for DeregisterPackageVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
+    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeletePackageInput {
@@ -6632,6 +6697,7 @@ impl std::fmt::Debug for DeletePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceInput {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceInput {
@@ -6653,14 +6719,19 @@ impl std::fmt::Debug for DeleteDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::PackageImportJobType>,
     /// <p>An input config for the package import job.</p>
+    #[doc(hidden)]
     pub input_config: std::option::Option<crate::model::PackageImportJobInputConfig>,
     /// <p>An output config for the package import job.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::PackageImportJobOutputConfig>,
     /// <p>A client token for the package import job.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Tags for the package import job.</p>
+    #[doc(hidden)]
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl CreatePackageImportJobInput {
@@ -6704,8 +6775,10 @@ impl std::fmt::Debug for CreatePackageImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageInput {
     /// <p>A name for the package.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>Tags for the package.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6736,19 +6809,26 @@ impl std::fmt::Debug for CreatePackageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>An output package name for the node.</p>
+    #[doc(hidden)]
     pub output_package_name: std::option::Option<std::string::String>,
     /// <p>An output package version for the node.</p>
+    #[doc(hidden)]
     pub output_package_version: std::option::Option<std::string::String>,
     /// <p>A name for the node.</p>
+    #[doc(hidden)]
     pub node_name: std::option::Option<std::string::String>,
     /// <p>A description for the node.</p>
+    #[doc(hidden)]
     pub node_description: std::option::Option<std::string::String>,
     /// <p>Template parameters for the node.</p>
+    #[doc(hidden)]
     pub template_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags for the job.</p>
+    #[doc(hidden)]
     pub job_tags: std::option::Option<std::vec::Vec<crate::model::JobResourceTags>>,
 }
 impl CreateNodeFromTemplateJobInput {
@@ -6803,10 +6883,13 @@ impl std::fmt::Debug for CreateNodeFromTemplateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobForDevicesInput {
     /// <p>IDs of target devices.</p>
+    #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration settings for the job.</p>
+    #[doc(hidden)]
     pub device_job_config: std::option::Option<crate::model::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl CreateJobForDevicesInput {
@@ -6838,20 +6921,28 @@ impl std::fmt::Debug for CreateJobForDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInstanceInput {
     /// <p>A name for the application instance.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the application instance.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The application's manifest document.</p>
+    #[doc(hidden)]
     pub manifest_payload: std::option::Option<crate::model::ManifestPayload>,
     /// <p>Setting overrides for the application manifest.</p>
+    #[doc(hidden)]
     pub manifest_overrides_payload: std::option::Option<crate::model::ManifestOverridesPayload>,
     /// <p>The ID of an application instance to replace with the new instance.</p>
+    #[doc(hidden)]
     pub application_instance_id_to_replace: std::option::Option<std::string::String>,
     /// <p>The ARN of a runtime role for the application instance.</p>
+    #[doc(hidden)]
     pub runtime_role_arn: std::option::Option<std::string::String>,
     /// <p>A device's ID.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device: std::option::Option<std::string::String>,
     /// <p>Tags for the application instance.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

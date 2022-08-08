@@ -184,6 +184,7 @@ impl StopCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceOnboardingJobOutput {
     /// Instance onboarding job status object
+    #[doc(hidden)]
     pub connect_instance_onboarding_job_status:
         std::option::Option<crate::model::InstanceOnboardingJobStatus>,
 }
@@ -311,8 +312,10 @@ impl ResumeCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDialRequestBatchOutput {
     /// A list of successful requests identified by the unique client token.
+    #[doc(hidden)]
     pub successful_requests: std::option::Option<std::vec::Vec<crate::model::SuccessfulRequest>>,
     /// A list of failed requests.
+    #[doc(hidden)]
     pub failed_requests: std::option::Option<std::vec::Vec<crate::model::FailedRequest>>,
 }
 impl PutDialRequestBatchOutput {
@@ -433,6 +436,7 @@ impl PauseCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// Tag map with key and value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -506,8 +510,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsOutput {
     /// The token for the next set of results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// A list of Amazon Connect campaigns.
+    #[doc(hidden)]
     pub campaign_summary_list: std::option::Option<std::vec::Vec<crate::model::CampaignSummary>>,
 }
 impl ListCampaignsOutput {
@@ -589,6 +595,7 @@ impl ListCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceOnboardingJobStatusOutput {
     /// Instance onboarding job status object
+    #[doc(hidden)]
     pub connect_instance_onboarding_job_status:
         std::option::Option<crate::model::InstanceOnboardingJobStatus>,
 }
@@ -656,6 +663,7 @@ impl GetInstanceOnboardingJobStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectInstanceConfigOutput {
     /// Instance config object
+    #[doc(hidden)]
     pub connect_instance_config: std::option::Option<crate::model::InstanceConfig>,
 }
 impl GetConnectInstanceConfigOutput {
@@ -713,9 +721,11 @@ impl GetConnectInstanceConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
+    #[doc(hidden)]
     pub successful_requests:
         std::option::Option<std::vec::Vec<crate::model::SuccessfulCampaignStateResponse>>,
     /// List of failed requests of campaign state
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCampaignStateResponse>>,
 }
@@ -817,6 +827,7 @@ impl GetCampaignStateBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCampaignStateOutput {
     /// State of a campaign
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CampaignState>,
 }
 impl GetCampaignStateOutput {
@@ -872,6 +883,7 @@ impl GetCampaignStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCampaignOutput {
     /// An Amazon Connect campaign.
+    #[doc(hidden)]
     pub campaign: std::option::Option<crate::model::Campaign>,
 }
 impl DescribeCampaignOutput {
@@ -1016,10 +1028,13 @@ impl DeleteCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignOutput {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The resource name of an Amazon Connect campaign.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Tag map with key and value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

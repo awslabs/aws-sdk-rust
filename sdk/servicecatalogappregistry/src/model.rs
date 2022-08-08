@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeGroup {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the attribute group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -200,18 +207,25 @@ impl AttributeGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -501,10 +515,13 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the attribute group. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AttributeGroupDetails {
@@ -593,16 +610,22 @@ impl AttributeGroupDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeGroupSummary {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the attribute group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AttributeGroupSummary {
@@ -748,8 +771,10 @@ impl AttributeGroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInfo {
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ResourceInfo {
@@ -821,16 +846,22 @@ impl ResourceInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationSummary {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApplicationSummary {
@@ -976,12 +1007,16 @@ impl ApplicationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time the resource was associated with the application.</p>
+    #[doc(hidden)]
     pub association_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The service integration information about the resource. </p>
+    #[doc(hidden)]
     pub integrations: std::option::Option<crate::model::ResourceIntegrations>,
 }
 impl Resource {
@@ -1093,6 +1128,7 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
+    #[doc(hidden)]
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
 }
 impl ResourceIntegrations {
@@ -1156,10 +1192,13 @@ pub struct ResourceGroup {
     /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ResourceGroupState>,
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ResourceGroup {
@@ -1350,6 +1389,7 @@ impl AsRef<str> for ResourceGroupState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Integrations {
     /// <p> The information about the resource group integration.</p>
+    #[doc(hidden)]
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
 }
 impl Integrations {

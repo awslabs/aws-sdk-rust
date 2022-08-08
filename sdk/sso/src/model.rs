@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountInfo {
     /// <p>The identifier of the Amazon Web Services account that is assigned to the user.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The display name of the Amazon Web Services account that is assigned to the user.</p>
+    #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The email address of the Amazon Web Services account that is assigned to the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl AccountInfo {
@@ -100,8 +103,10 @@ impl AccountInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl RoleInfo {
@@ -173,12 +178,16 @@ impl RoleInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleCredentials {
     /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to Amazon Web Services Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to Amazon Web Services Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to Amazon Web Services Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which temporary security credentials expire.</p>
+    #[doc(hidden)]
     pub expiration: i64,
 }
 impl RoleCredentials {

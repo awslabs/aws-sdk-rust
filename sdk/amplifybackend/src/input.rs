@@ -5984,12 +5984,16 @@ impl UpdateBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendStorageInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for updating backend storage.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::UpdateBackendStorageResourceConfig>,
     /// <p>The name of the storage resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl UpdateBackendStorageInput {
@@ -6028,14 +6032,19 @@ impl std::fmt::Debug for UpdateBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendJobInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdateBackendJobInput {
@@ -6077,8 +6086,10 @@ impl std::fmt::Debug for UpdateBackendJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendConfigInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
+    #[doc(hidden)]
     pub login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
 }
 impl UpdateBackendConfigInput {
@@ -6105,12 +6116,16 @@ impl std::fmt::Debug for UpdateBackendConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendAuthInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for this request object.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::UpdateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl UpdateBackendAuthInput {
@@ -6149,12 +6164,16 @@ impl std::fmt::Debug for UpdateBackendAuthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendApiInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl UpdateBackendApiInput {
@@ -6191,6 +6210,7 @@ impl std::fmt::Debug for UpdateBackendApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveBackendConfigInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl RemoveBackendConfigInput {
@@ -6212,8 +6232,10 @@ impl std::fmt::Debug for RemoveBackendConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAllBackendsInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    #[doc(hidden)]
     pub clean_amplify_app: bool,
 }
 impl RemoveAllBackendsInput {
@@ -6240,6 +6262,7 @@ impl std::fmt::Debug for RemoveAllBackendsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListS3BucketsInput {
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListS3BucketsInput {
@@ -6261,18 +6284,25 @@ impl std::fmt::Debug for ListS3BucketsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackendJobsInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want in the response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ListBackendJobsInput {
@@ -6324,12 +6354,16 @@ impl std::fmt::Debug for ListBackendJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportBackendStorageInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The name of the storage service.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<crate::model::ServiceName>,
 }
 impl ImportBackendStorageInput {
@@ -6366,16 +6400,22 @@ impl std::fmt::Debug for ImportBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportBackendAuthInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito identity pool.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito native client.</p>
+    #[doc(hidden)]
     pub native_client_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito user pool.</p>
+    #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Cognito web client.</p>
+    #[doc(hidden)]
     pub web_client_id: std::option::Option<std::string::String>,
 }
 impl ImportBackendAuthInput {
@@ -6422,8 +6462,10 @@ impl std::fmt::Debug for ImportBackendAuthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTokenInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl GetTokenInput {
@@ -6450,10 +6492,13 @@ impl std::fmt::Debug for GetTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendStorageInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the storage resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendStorageInput {
@@ -6485,10 +6530,13 @@ impl std::fmt::Debug for GetBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendJobInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetBackendJobInput {
@@ -6520,10 +6568,13 @@ impl std::fmt::Debug for GetBackendJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendAuthInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendAuthInput {
@@ -6555,10 +6606,13 @@ impl std::fmt::Debug for GetBackendAuthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendApiModelsInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendApiModelsInput {
@@ -6590,12 +6644,16 @@ impl std::fmt::Debug for GetBackendApiModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendApiInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GetBackendApiInput {
@@ -6632,8 +6690,10 @@ impl std::fmt::Debug for GetBackendApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
 }
 impl GetBackendInput {
@@ -6660,10 +6720,13 @@ impl std::fmt::Debug for GetBackendInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateBackendApiModelsInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl GenerateBackendApiModelsInput {
@@ -6695,8 +6758,10 @@ impl std::fmt::Debug for GenerateBackendApiModelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTokenInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The session ID.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl DeleteTokenInput {
@@ -6723,12 +6788,16 @@ impl std::fmt::Debug for DeleteTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendStorageInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the storage resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The name of the storage service.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<crate::model::ServiceName>,
 }
 impl DeleteBackendStorageInput {
@@ -6765,10 +6834,13 @@ impl std::fmt::Debug for DeleteBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendAuthInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackendAuthInput {
@@ -6800,12 +6872,16 @@ impl std::fmt::Debug for DeleteBackendAuthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendApiInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackendApiInput {
@@ -6842,8 +6918,10 @@ impl std::fmt::Debug for DeleteBackendApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackendInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackendInput {
@@ -6870,6 +6948,7 @@ impl std::fmt::Debug for DeleteBackendInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {
@@ -6891,12 +6970,16 @@ impl std::fmt::Debug for CreateTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendStorageInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for creating backend storage.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::CreateBackendStorageResourceConfig>,
     /// <p>The name of the storage resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl CreateBackendStorageInput {
@@ -6935,8 +7018,10 @@ impl std::fmt::Debug for CreateBackendStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendConfigInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The app ID for the backend manager.</p>
+    #[doc(hidden)]
     pub backend_manager_app_id: std::option::Option<std::string::String>,
 }
 impl CreateBackendConfigInput {
@@ -6963,12 +7048,16 @@ impl std::fmt::Debug for CreateBackendConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for this request object.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl CreateBackendAuthInput {
@@ -7007,12 +7096,16 @@ impl std::fmt::Debug for CreateBackendAuthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendApiInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for this request.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl CreateBackendApiInput {
@@ -7049,14 +7142,19 @@ impl std::fmt::Debug for CreateBackendApiInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the app.</p>
+    #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The resource configuration for creating a backend.</p>
+    #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl CreateBackendInput {
@@ -7098,10 +7196,13 @@ impl std::fmt::Debug for CreateBackendInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneBackendInput {
     /// <p>The app ID.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
+    #[doc(hidden)]
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>The name of the destination backend environment to be created.</p>
+    #[doc(hidden)]
     pub target_environment_name: std::option::Option<std::string::String>,
 }
 impl CloneBackendInput {

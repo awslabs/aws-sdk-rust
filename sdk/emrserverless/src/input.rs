@@ -2652,16 +2652,22 @@ impl UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of job run results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of job runs that can be listed.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The lower bound of the option to filter by creation date and time.</p>
+    #[doc(hidden)]
     pub created_at_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The upper bound of the option to filter by creation date and time.</p>
+    #[doc(hidden)]
     pub created_at_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::JobRunState>>,
 }
 impl ListJobRunsInput {
@@ -2708,21 +2714,29 @@ impl std::fmt::Debug for ListJobRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The job driver for the job run.</p>
+    #[doc(hidden)]
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
+    #[doc(hidden)]
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The tags assigned to the job run.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
+    #[doc(hidden)]
     pub execution_timeout_minutes: std::option::Option<i64>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartJobRunInput {
@@ -2784,8 +2798,10 @@ impl std::fmt::Debug for StartJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobRunInput {
     /// <p>The ID of the application on which the job run will be canceled.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job run to cancel.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl CancelJobRunInput {
@@ -2812,8 +2828,10 @@ impl std::fmt::Debug for CancelJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobRunInput {
     /// <p>The ID of the application on which the job run is submitted.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job run.</p>
+    #[doc(hidden)]
     pub job_run_id: std::option::Option<std::string::String>,
 }
 impl GetJobRunInput {
@@ -2840,6 +2858,7 @@ impl std::fmt::Debug for GetJobRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopApplicationInput {
     /// <p>The ID of the application to stop.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl StopApplicationInput {
@@ -2861,6 +2880,7 @@ impl std::fmt::Debug for StopApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartApplicationInput {
     /// <p>The ID of the application to start.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl StartApplicationInput {
@@ -2882,10 +2902,13 @@ impl std::fmt::Debug for StartApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The token for the next set of application results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of applications that can be listed.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
 }
 impl ListApplicationsInput {
@@ -2917,27 +2940,37 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The EMR release version associated with the application.</p>
+    #[doc(hidden)]
     pub release_label: std::option::Option<std::string::String>,
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The capacity to initialize when the application is created.</p>
+    #[doc(hidden)]
     pub initial_capacity: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::InitialCapacityConfig>,
     >,
     /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
+    #[doc(hidden)]
     pub maximum_capacity: std::option::Option<crate::model::MaximumAllowedResources>,
     /// <p>The tags assigned to the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
+    #[doc(hidden)]
     pub auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
+    #[doc(hidden)]
     pub auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
     /// <p>The network configuration for customer VPC connectivity.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl CreateApplicationInput {
@@ -3013,6 +3046,7 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the application that will be deleted.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -3034,20 +3068,27 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The capacity to initialize when the application is updated.</p>
+    #[doc(hidden)]
     pub initial_capacity: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::InitialCapacityConfig>,
     >,
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
+    #[doc(hidden)]
     pub maximum_capacity: std::option::Option<crate::model::MaximumAllowedResources>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
+    #[doc(hidden)]
     pub auto_start_configuration: std::option::Option<crate::model::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
+    #[doc(hidden)]
     pub auto_stop_configuration: std::option::Option<crate::model::AutoStopConfig>,
     /// <p>The network configuration for customer VPC connectivity.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl UpdateApplicationInput {
@@ -3105,6 +3146,7 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The ID of the application that will be described.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -3126,8 +3168,10 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3154,8 +3198,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3186,6 +3232,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

@@ -12284,12 +12284,16 @@ impl UpdateTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    #[doc(hidden)]
     pub traffic_policy_id: std::option::Option<std::string::String>,
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    #[doc(hidden)]
     pub traffic_policy_version: std::option::Option<i32>,
 }
 impl UpdateTrafficPolicyInstanceInput {
@@ -12326,10 +12330,13 @@ impl std::fmt::Debug for UpdateTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
     /// <p>The new comment for the specified traffic policy and version.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl UpdateTrafficPolicyCommentInput {
@@ -12361,8 +12368,10 @@ impl std::fmt::Debug for UpdateTrafficPolicyCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHostedZoneCommentInput {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl UpdateHostedZoneCommentInput {
@@ -12389,6 +12398,7 @@ impl std::fmt::Debug for UpdateHostedZoneCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHealthCheckInput {
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
+    #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
     /// <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by 1 each time you update settings for the health check.</p>
     /// <p>We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value of <code>HealthCheckVersion</code> for the health check that you want to update, and that you include that value in your <code>UpdateHealthCheck</code> request. This prevents Route 53 from overwriting an intervening update:</p>
@@ -12396,6 +12406,7 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p>If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in the health check, Route 53 updates the health check with the new settings.</p> </li>
     /// <li> <p>If the value of <code>HealthCheckVersion</code> in the health check is greater, the health check was changed after you got the version number. Route 53 does not update the health check, and it returns a <code>HealthCheckVersionMismatch</code> error.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub health_check_version: std::option::Option<i64>,
     /// <p>The IPv4 or IPv6 IP address for the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address that is returned by DNS, Route 53 then checks the health of the endpoint.</p>
     /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
@@ -12417,13 +12428,16 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>
     /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
     /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
     /// <p>Specify this value only if you want to change it.</p>
+    #[doc(hidden)]
     pub resource_path: std::option::Option<std::string::String>,
     /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> <note>
     /// <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>. </p>
@@ -12445,13 +12459,17 @@ pub struct UpdateHealthCheckInput {
     /// <p>In this configuration, if the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value of <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
+    #[doc(hidden)]
     pub fully_qualified_domain_name: std::option::Option<std::string::String>,
     /// <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
+    #[doc(hidden)]
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    #[doc(hidden)]
     pub failure_threshold: std::option::Option<i32>,
     /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
+    #[doc(hidden)]
     pub inverted: std::option::Option<bool>,
     /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
     /// <ul>
@@ -12461,6 +12479,7 @@ pub struct UpdateHealthCheckInput {
     /// </ul>
     /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>
     /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
     /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code> elements.</p>
     /// <p>Note the following:</p>
@@ -12468,16 +12487,21 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>
     /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub health_threshold: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
+    #[doc(hidden)]
     pub child_health_checks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during <code>TLS</code> negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
     /// <p>Some endpoints require that HTTPS requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be SSL alert <code>handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
     /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
+    #[doc(hidden)]
     pub enable_sni: std::option::Option<bool>,
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
+    #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
+    #[doc(hidden)]
     pub alarm_identifier: std::option::Option<crate::model::AlarmIdentifier>,
     /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
     /// <ul>
@@ -12485,6 +12509,7 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub insufficient_data_health_status:
         std::option::Option<crate::model::InsufficientDataHealthStatus>,
     /// <p>A complex type that contains one <code>ResettableElementName</code> element for each element that you want to reset to the default value. Valid values for <code>ResettableElementName</code> include the following:</p>
@@ -12494,6 +12519,7 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p> <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a> list to the default set of regions. </p> </li>
     /// <li> <p> <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub reset_elements: std::option::Option<std::vec::Vec<crate::model::ResettableElementName>>,
 }
 impl UpdateHealthCheckInput {
@@ -12675,14 +12701,19 @@ impl std::fmt::Debug for UpdateHealthCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestDnsAnswerInput {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
+    #[doc(hidden)]
     pub record_name: std::option::Option<std::string::String>,
     /// <p>The type of the resource record set.</p>
+    #[doc(hidden)]
     pub record_type: std::option::Option<crate::model::RrType>,
     /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+    #[doc(hidden)]
     pub resolver_ip: std::option::Option<std::string::String>,
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
+    #[doc(hidden)]
     pub edns0_client_subnet_ip: std::option::Option<std::string::String>,
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
@@ -12690,6 +12721,7 @@ pub struct TestDnsAnswerInput {
     /// <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>
     /// <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub edns0_client_subnet_mask: std::option::Option<std::string::String>,
 }
 impl TestDnsAnswerInput {
@@ -12741,10 +12773,13 @@ impl std::fmt::Debug for TestDnsAnswerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpcAssociationAuthorizationsInput {
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of results, submit another request, and include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another <code>ListVPCAssociationAuthorizations</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListVpcAssociationAuthorizationsInput {
@@ -12776,11 +12811,14 @@ impl std::fmt::Debug for ListVpcAssociationAuthorizationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyVersionsInput {
     /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
+    #[doc(hidden)]
     pub traffic_policy_version_marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyVersionsInput {
@@ -12816,22 +12854,28 @@ impl std::fmt::Debug for ListTrafficPolicyVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesByPolicyInput {
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
+    #[doc(hidden)]
     pub traffic_policy_id: std::option::Option<std::string::String>,
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
+    #[doc(hidden)]
     pub traffic_policy_version: std::option::Option<i32>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
     /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub hosted_zone_id_marker: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
     /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
     /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesByPolicyInput {
@@ -12892,14 +12936,18 @@ impl std::fmt::Debug for ListTrafficPolicyInstancesByPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesByHostedZoneInput {
     /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesByHostedZoneInput {
@@ -12947,14 +12995,18 @@ impl std::fmt::Debug for ListTrafficPolicyInstancesByHostedZoneInput {
 pub struct ListTrafficPolicyInstancesInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>HostedZoneId</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub hosted_zone_id_marker: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::model::RrType>,
     /// <p>The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPolicyInstancesInput {
@@ -13003,8 +13055,10 @@ impl std::fmt::Debug for ListTrafficPolicyInstancesInput {
 pub struct ListTrafficPoliciesInput {
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
+    #[doc(hidden)]
     pub traffic_policy_id_marker: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListTrafficPoliciesInput {
@@ -13036,8 +13090,10 @@ pub struct ListTagsForResourcesInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListTagsForResourcesInput {
@@ -13072,8 +13128,10 @@ pub struct ListTagsForResourceInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -13106,8 +13164,10 @@ pub struct ListReusableDelegationSetsInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more reusable delegation sets to get.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListReusableDelegationSetsInput {
@@ -13136,8 +13196,10 @@ impl std::fmt::Debug for ListReusableDelegationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
+    #[doc(hidden)]
     pub start_record_name: std::option::Option<std::string::String>,
     /// <p>The type of resource record set to begin the record listing from.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
@@ -13153,10 +13215,13 @@ pub struct ListResourceRecordSetsInput {
     /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
+    #[doc(hidden)]
     pub start_record_type: std::option::Option<crate::model::RrType>,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    #[doc(hidden)]
     pub start_record_identifier: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListResourceRecordSetsInput {
@@ -13212,13 +13277,16 @@ impl std::fmt::Debug for ListResourceRecordSetsInput {
 pub struct ListQueryLoggingConfigsInput {
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request. If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a> in the response to get the next page of results.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQueryLoggingConfigsInput {
@@ -13254,14 +13322,18 @@ impl std::fmt::Debug for ListQueryLoggingConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByVpcInput {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    #[doc(hidden)]
     pub vpc_region: std::option::Option<crate::model::VpcRegion>,
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostedZonesByVpcInput {
@@ -13300,11 +13372,14 @@ impl std::fmt::Debug for ListHostedZonesByVpcInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByNameInput {
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
     /// <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListHostedZonesByNameInput {
@@ -13339,10 +13414,13 @@ pub struct ListHostedZonesInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    #[doc(hidden)]
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl ListHostedZonesInput {
@@ -13378,8 +13456,10 @@ pub struct ListHealthChecksInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListHealthChecksInput {
@@ -13409,13 +13489,17 @@ impl std::fmt::Debug for ListHealthChecksInput {
 pub struct ListGeoLocationsInput {
     /// <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
     /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
+    #[doc(hidden)]
     pub start_continent_code: std::option::Option<std::string::String>,
     /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
+    #[doc(hidden)]
     pub start_country_code: std::option::Option<std::string::String>,
     /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>
     /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+    #[doc(hidden)]
     pub start_subdivision_code: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListGeoLocationsInput {
@@ -13454,11 +13538,14 @@ impl std::fmt::Debug for ListGeoLocationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCidrLocationsInput {
     /// <p>The CIDR collection ID.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCidrLocationsInput {
@@ -13492,8 +13579,10 @@ impl std::fmt::Debug for ListCidrLocationsInput {
 pub struct ListCidrCollectionsInput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of CIDR collections to return in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCidrCollectionsInput {
@@ -13521,12 +13610,16 @@ impl std::fmt::Debug for ListCidrCollectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCidrBlocksInput {
     /// <p>The UUID of the CIDR collection.</p>
+    #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>The name of the CIDR collection location.</p>
+    #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results you want returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCidrBlocksInput {
@@ -13574,6 +13667,7 @@ impl std::fmt::Debug for GetTrafficPolicyInstanceCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to get information about.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetTrafficPolicyInstanceInput {
@@ -13595,8 +13689,10 @@ impl std::fmt::Debug for GetTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version number of the traffic policy that you want to get information about.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl GetTrafficPolicyInput {
@@ -13623,8 +13719,10 @@ impl std::fmt::Debug for GetTrafficPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReusableDelegationSetLimitInput {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
+    #[doc(hidden)]
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl GetReusableDelegationSetLimitInput {
@@ -13651,6 +13749,7 @@ impl std::fmt::Debug for GetReusableDelegationSetLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetReusableDelegationSetInput {
@@ -13672,6 +13771,7 @@ impl std::fmt::Debug for GetReusableDelegationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryLoggingConfigInput {
     /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetQueryLoggingConfigInput {
@@ -13697,8 +13797,10 @@ pub struct GetHostedZoneLimitInput {
     /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
     /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HostedZoneLimitType>,
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl GetHostedZoneLimitInput {
@@ -13740,6 +13842,7 @@ impl std::fmt::Debug for GetHostedZoneCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneInput {
     /// <p>The ID of the hosted zone that you want to get information about.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetHostedZoneInput {
@@ -13763,6 +13866,7 @@ pub struct GetHealthCheckStatusInput {
     /// <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
     /// </note>
+    #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
 }
 impl GetHealthCheckStatusInput {
@@ -13788,6 +13892,7 @@ pub struct GetHealthCheckLastFailureReasonInput {
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
     /// </note>
+    #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
 }
 impl GetHealthCheckLastFailureReasonInput {
@@ -13822,6 +13927,7 @@ impl std::fmt::Debug for GetHealthCheckCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
 }
 impl GetHealthCheckInput {
@@ -13852,10 +13958,13 @@ pub struct GetGeoLocationInput {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub continent_code: std::option::Option<std::string::String>,
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
+    #[doc(hidden)]
     pub subdivision_code: std::option::Option<std::string::String>,
 }
 impl GetGeoLocationInput {
@@ -13896,6 +14005,7 @@ impl std::fmt::Debug for GetGeoLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl GetDnssecInput {
@@ -13928,6 +14038,7 @@ impl std::fmt::Debug for GetCheckerIpRangesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeInput {
     /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetChangeInput {
@@ -13956,6 +14067,7 @@ pub struct GetAccountLimitInput {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccountLimitType>,
 }
 impl GetAccountLimitInput {
@@ -13984,6 +14096,7 @@ impl std::fmt::Debug for GetAccountLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl EnableHostedZoneDnssecInput {
@@ -14005,10 +14118,13 @@ impl std::fmt::Debug for EnableHostedZoneDnssecInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateVpcFromHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p> <i>Optional:</i> A comment about the disassociation request.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl DisassociateVpcFromHostedZoneInput {
@@ -14040,6 +14156,7 @@ impl std::fmt::Debug for DisassociateVpcFromHostedZoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl DisableHostedZoneDnssecInput {
@@ -14061,8 +14178,10 @@ impl std::fmt::Debug for DisableHostedZoneDnssecInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcAssociationAuthorizationInput {
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl DeleteVpcAssociationAuthorizationInput {
@@ -14091,6 +14210,7 @@ pub struct DeleteTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
     /// </important>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficPolicyInstanceInput {
@@ -14114,8 +14234,10 @@ impl std::fmt::Debug for DeleteTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version number of the traffic policy that you want to delete.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i32>,
 }
 impl DeleteTrafficPolicyInput {
@@ -14142,6 +14264,7 @@ impl std::fmt::Debug for DeleteTrafficPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteReusableDelegationSetInput {
@@ -14163,6 +14286,7 @@ impl std::fmt::Debug for DeleteReusableDelegationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryLoggingConfigInput {
     /// <p>The ID of the configuration that you want to delete. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteQueryLoggingConfigInput {
@@ -14184,8 +14308,10 @@ impl std::fmt::Debug for DeleteQueryLoggingConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteKeySigningKeyInput {
@@ -14212,6 +14338,7 @@ impl std::fmt::Debug for DeleteKeySigningKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHostedZoneInput {
     /// <p>The ID of the hosted zone you want to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteHostedZoneInput {
@@ -14233,6 +14360,7 @@ impl std::fmt::Debug for DeleteHostedZoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
+    #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
 }
 impl DeleteHealthCheckInput {
@@ -14254,6 +14382,7 @@ impl std::fmt::Debug for DeleteHealthCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCidrCollectionInput {
     /// <p>The UUID of the collection to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCidrCollectionInput {
@@ -14275,8 +14404,10 @@ impl std::fmt::Debug for DeleteCidrCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeactivateKeySigningKeyInput {
@@ -14303,8 +14434,10 @@ impl std::fmt::Debug for DeactivateKeySigningKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationInput {
@@ -14331,10 +14464,13 @@ impl std::fmt::Debug for CreateVpcAssociationAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyVersionInput {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl CreateTrafficPolicyVersionInput {
@@ -14366,14 +14502,19 @@ impl std::fmt::Debug for CreateTrafficPolicyVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyInstanceInput {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
     /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    #[doc(hidden)]
     pub traffic_policy_id: std::option::Option<std::string::String>,
     /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    #[doc(hidden)]
     pub traffic_policy_version: std::option::Option<i32>,
 }
 impl CreateTrafficPolicyInstanceInput {
@@ -14415,10 +14556,13 @@ impl std::fmt::Debug for CreateTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyInput {
     /// <p>The name of the traffic policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl CreateTrafficPolicyInput {
@@ -14450,8 +14594,10 @@ impl std::fmt::Debug for CreateTrafficPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReusableDelegationSetInput {
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl CreateReusableDelegationSetInput {
@@ -14478,10 +14624,12 @@ impl std::fmt::Debug for CreateReusableDelegationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueryLoggingConfigInput {
     /// <p>The ID of the hosted zone that you want to log queries for. You can log queries only for public hosted zones.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format of the ARN:</p>
     /// <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> </p>
     /// <p>To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a> API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a> command, or the applicable command in one of the Amazon Web Services SDKs.</p>
+    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateQueryLoggingConfigInput {
@@ -14513,8 +14661,10 @@ impl std::fmt::Debug for CreateQueryLoggingConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeySigningKeyInput {
     /// <p>A unique string that identifies the request.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
@@ -14554,10 +14704,13 @@ pub struct CreateKeySigningKeyInput {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
+    #[doc(hidden)]
     pub key_management_service_arn: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl CreateKeySigningKeyInput {
@@ -14640,12 +14793,15 @@ impl std::fmt::Debug for CreateKeySigningKeyInput {
 pub struct CreateHostedZoneInput {
     /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
     /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
     /// <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>(Optional) A complex type that contains the following optional values:</p>
     /// <ul>
@@ -14653,8 +14809,10 @@ pub struct CreateHostedZoneInput {
     /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
+    #[doc(hidden)]
     pub hosted_zone_config: std::option::Option<crate::model::HostedZoneConfig>,
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+    #[doc(hidden)]
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl CreateHostedZoneInput {
@@ -14710,8 +14868,10 @@ pub struct CreateHealthCheckInput {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
     /// <p>A complex type that contains settings for a new health check.</p>
+    #[doc(hidden)]
     pub health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
 }
 impl CreateHealthCheckInput {
@@ -14744,8 +14904,10 @@ impl std::fmt::Debug for CreateHealthCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCidrCollectionInput {
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
 }
 impl CreateCidrCollectionInput {
@@ -14776,13 +14938,17 @@ pub struct ChangeTagsForResourceInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
+    #[doc(hidden)]
     pub add_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
+    #[doc(hidden)]
     pub remove_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ChangeTagsForResourceInput {
@@ -14824,8 +14990,10 @@ impl std::fmt::Debug for ChangeTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
+    #[doc(hidden)]
     pub change_batch: std::option::Option<crate::model::ChangeBatch>,
 }
 impl ChangeResourceRecordSetsInput {
@@ -14852,6 +15020,7 @@ impl std::fmt::Debug for ChangeResourceRecordSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeCidrCollectionInput {
     /// <p>The UUID of the CIDR collection to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
@@ -14859,8 +15028,10 @@ pub struct ChangeCidrCollectionInput {
     /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
     /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub collection_version: std::option::Option<i64>,
     /// <p> Information about changes to a CIDR collection.</p>
+    #[doc(hidden)]
     pub changes: std::option::Option<std::vec::Vec<crate::model::CidrCollectionChange>>,
 }
 impl ChangeCidrCollectionInput {
@@ -14898,10 +15069,13 @@ impl std::fmt::Debug for ChangeCidrCollectionInput {
 pub struct AssociateVpcWithHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
+    #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p> <i>Optional:</i> A comment about the association request.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
 }
 impl AssociateVpcWithHostedZoneInput {
@@ -14934,8 +15108,10 @@ impl std::fmt::Debug for AssociateVpcWithHostedZoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ActivateKeySigningKeyInput {

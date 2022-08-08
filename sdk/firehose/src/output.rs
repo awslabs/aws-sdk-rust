@@ -154,10 +154,13 @@ impl StartDeliveryStreamEncryptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordBatchOutput {
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
+    #[doc(hidden)]
     pub failed_put_count: std::option::Option<i32>,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
+    #[doc(hidden)]
     pub request_responses:
         std::option::Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
 }
@@ -262,8 +265,10 @@ impl PutRecordBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordOutput {
     /// <p>The ID of the record.</p>
+    #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
 }
 impl PutRecordOutput {
@@ -335,8 +340,10 @@ impl PutRecordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForDeliveryStreamOutput {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
+    #[doc(hidden)]
     pub has_more_tags: std::option::Option<bool>,
 }
 impl ListTagsForDeliveryStreamOutput {
@@ -417,8 +424,10 @@ impl ListTagsForDeliveryStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliveryStreamsOutput {
     /// <p>The names of the delivery streams.</p>
+    #[doc(hidden)]
     pub delivery_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether there are more delivery streams available to list.</p>
+    #[doc(hidden)]
     pub has_more_delivery_streams: std::option::Option<bool>,
 }
 impl ListDeliveryStreamsOutput {
@@ -499,6 +508,7 @@ impl ListDeliveryStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryStreamOutput {
     /// <p>Information about the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_description: std::option::Option<crate::model::DeliveryStreamDescription>,
 }
 impl DescribeDeliveryStreamOutput {
@@ -595,6 +605,7 @@ impl DeleteDeliveryStreamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliveryStreamOutput {
     /// <p>The ARN of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
 }
 impl CreateDeliveryStreamOutput {

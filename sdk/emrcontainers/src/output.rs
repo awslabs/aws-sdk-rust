@@ -64,12 +64,16 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartJobRunOutput {
     /// <p>This output displays the started job run ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>This output displays the name of the started job run.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>This output lists the ARN of job run.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl StartJobRunOutput {
@@ -178,8 +182,10 @@ impl StartJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualClustersOutput {
     /// <p>This output lists the specified virtual clusters.</p>
+    #[doc(hidden)]
     pub virtual_clusters: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
     /// <p>This output displays the token for the next set of virtual clusters.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualClustersOutput {
@@ -261,6 +267,7 @@ impl ListVirtualClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags assigned to resources.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -334,8 +341,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedEndpointsOutput {
     /// <p>The managed endpoints to be listed.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// <p> The token for the next set of endpoints to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedEndpointsOutput {
@@ -416,8 +425,10 @@ impl ListManagedEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobRunsOutput {
     /// <p>This output lists information about the specified job runs.</p>
+    #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
     /// <p>This output displays the token for the next set of job runs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsOutput {
@@ -498,6 +509,7 @@ impl ListJobRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualClusterOutput {
     /// <p>This output displays information about the specified virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
 }
 impl DescribeVirtualClusterOutput {
@@ -555,6 +567,7 @@ impl DescribeVirtualClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedEndpointOutput {
     /// <p>This output displays information about a managed endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl DescribeManagedEndpointOutput {
@@ -609,6 +622,7 @@ impl DescribeManagedEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
+    #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
 impl DescribeJobRunOutput {
@@ -663,6 +677,7 @@ impl DescribeJobRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualClusterOutput {
@@ -715,8 +730,10 @@ impl DeleteVirtualClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteManagedEndpointOutput {
     /// <p>The output displays the ID of the managed endpoint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl DeleteManagedEndpointOutput {
@@ -791,10 +808,13 @@ impl DeleteManagedEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualClusterOutput {
     /// <p>This output contains the virtual cluster ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>This output contains the name of the virtual cluster.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>This output contains the ARN of virtual cluster.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateVirtualClusterOutput {
@@ -883,12 +903,16 @@ impl CreateVirtualClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateManagedEndpointOutput {
     /// <p>The output contains the ID of the managed endpoint.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The output contains the name of the managed endpoint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The output contains the ARN of the managed endpoint.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The output contains the ID of the virtual cluster.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl CreateManagedEndpointOutput {
@@ -997,8 +1021,10 @@ impl CreateManagedEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobRunOutput {
     /// <p>The output contains the ID of the cancelled job run.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
+    #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
 impl CancelJobRunOutput {

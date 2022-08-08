@@ -5480,6 +5480,7 @@ impl UpdateSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubscriptionInput {
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    #[doc(hidden)]
     pub auto_renew: std::option::Option<crate::model::AutoRenew>,
 }
 impl UpdateSubscriptionInput {
@@ -5501,6 +5502,7 @@ impl std::fmt::Debug for UpdateSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
@@ -5508,12 +5510,16 @@ pub struct UpdateProtectionGroupInput {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<crate::model::ProtectionGroupPattern>,
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ProtectedResourceType>,
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateProtectionGroupInput {
@@ -5561,6 +5567,7 @@ impl std::fmt::Debug for UpdateProtectionGroupInput {
 pub struct UpdateEmergencyContactSettingsInput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
+    #[doc(hidden)]
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
 impl UpdateEmergencyContactSettingsInput {
@@ -5583,8 +5590,10 @@ impl std::fmt::Debug for UpdateEmergencyContactSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationLayerAutomaticResponseInput {
     /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ResponseAction>,
 }
 impl UpdateApplicationLayerAutomaticResponseInput {
@@ -5611,8 +5620,10 @@ impl std::fmt::Debug for UpdateApplicationLayerAutomaticResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5639,8 +5650,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you want to modify or add to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5667,6 +5680,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5688,14 +5702,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// <p>On your first call to a list operation, leave this setting empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourcesInProtectionGroupInput {
@@ -5734,11 +5751,14 @@ pub struct ListProtectionsInput {
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// <p>On your first call to a list operation, leave this setting empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+    #[doc(hidden)]
     pub inclusion_filters: std::option::Option<crate::model::InclusionProtectionFilters>,
 }
 impl ListProtectionsInput {
@@ -5779,11 +5799,14 @@ pub struct ListProtectionGroupsInput {
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// <p>On your first call to a list operation, leave this setting empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+    #[doc(hidden)]
     pub inclusion_filters: std::option::Option<crate::model::InclusionProtectionGroupFilters>,
 }
 impl ListProtectionGroupsInput {
@@ -5821,18 +5844,23 @@ impl std::fmt::Debug for ListProtectionGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttacksInput {
     /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<crate::model::TimeRange>,
     /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<crate::model::TimeRange>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// <p>On your first call to a list operation, leave this setting empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttacksInput {
@@ -5900,8 +5928,10 @@ impl std::fmt::Debug for EnableProactiveEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableApplicationLayerAutomaticResponseInput {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ResponseAction>,
 }
 impl EnableApplicationLayerAutomaticResponseInput {
@@ -5928,8 +5958,10 @@ impl std::fmt::Debug for EnableApplicationLayerAutomaticResponseInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateHealthCheckInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
+    #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    #[doc(hidden)]
     pub health_check_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateHealthCheckInput {
@@ -5967,6 +5999,7 @@ impl std::fmt::Debug for DisassociateDrtRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    #[doc(hidden)]
     pub log_bucket: std::option::Option<std::string::String>,
 }
 impl DisassociateDrtLogBucketInput {
@@ -5999,6 +6032,7 @@ impl std::fmt::Debug for DisableProactiveEngagementInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableApplicationLayerAutomaticResponseInput {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DisableApplicationLayerAutomaticResponseInput {
@@ -6031,6 +6065,7 @@ impl std::fmt::Debug for DescribeSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
 }
 impl DescribeProtectionGroupInput {
@@ -6052,8 +6087,10 @@ impl std::fmt::Debug for DescribeProtectionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProtectionInput {
@@ -6113,6 +6150,7 @@ impl std::fmt::Debug for DescribeAttackStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackInput {
     /// <p>The unique identifier (ID) for the attack.</p>
+    #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttackInput {
@@ -6146,6 +6184,7 @@ impl std::fmt::Debug for DeleteSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteProtectionGroupInput {
@@ -6167,6 +6206,7 @@ impl std::fmt::Debug for DeleteProtectionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProtectionInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
+    #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
 }
 impl DeleteProtectionInput {
@@ -6199,6 +6239,7 @@ impl std::fmt::Debug for CreateSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
@@ -6206,14 +6247,19 @@ pub struct CreateProtectionGroupInput {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<crate::model::ProtectionGroupPattern>,
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ProtectedResourceType>,
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tag key-value pairs for the protection group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProtectionGroupInput {
@@ -6265,6 +6311,7 @@ impl std::fmt::Debug for CreateProtectionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProtectionInput {
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -6276,8 +6323,10 @@ pub struct CreateProtectionInput {
     /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProtectionInput {
@@ -6321,6 +6370,7 @@ pub struct AssociateProactiveEngagementDetailsInput {
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
     /// </note>
+    #[doc(hidden)]
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
 impl AssociateProactiveEngagementDetailsInput {
@@ -6345,8 +6395,10 @@ impl std::fmt::Debug for AssociateProactiveEngagementDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateHealthCheckInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
+    #[doc(hidden)]
     pub health_check_arn: std::option::Option<std::string::String>,
 }
 impl AssociateHealthCheckInput {
@@ -6374,6 +6426,7 @@ impl std::fmt::Debug for AssociateHealthCheckInput {
 pub struct AssociateDrtRoleInput {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
     /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AssociateDrtRoleInput {
@@ -6396,6 +6449,7 @@ impl std::fmt::Debug for AssociateDrtRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    #[doc(hidden)]
     pub log_bucket: std::option::Option<std::string::String>,
 }
 impl AssociateDrtLogBucketInput {

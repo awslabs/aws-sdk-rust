@@ -6054,10 +6054,13 @@ impl UpdateAssessmentTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentTargetInput {
     /// <p>The ARN of the assessment target that you want to update.</p>
+    #[doc(hidden)]
     pub assessment_target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assessment target that you want to update.</p>
+    #[doc(hidden)]
     pub assessment_target_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+    #[doc(hidden)]
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAssessmentTargetInput {
@@ -6089,10 +6092,13 @@ impl std::fmt::Debug for UpdateAssessmentTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeFromEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeFromEventInput {
@@ -6124,10 +6130,13 @@ impl std::fmt::Debug for UnsubscribeFromEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to receive SNS notifications.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SubscribeToEventInput {
@@ -6159,8 +6168,10 @@ impl std::fmt::Debug for SubscribeToEventInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAssessmentRunInput {
     /// <p>The ARN of the assessment run that you want to stop.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
+    #[doc(hidden)]
     pub stop_action: std::option::Option<crate::model::StopAction>,
 }
 impl StopAssessmentRunInput {
@@ -6187,8 +6198,10 @@ impl std::fmt::Debug for StopAssessmentRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
+    #[doc(hidden)]
     pub assessment_run_name: std::option::Option<std::string::String>,
 }
 impl StartAssessmentRunInput {
@@ -6215,8 +6228,10 @@ impl std::fmt::Debug for StartAssessmentRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl SetTagsForResourceInput {
@@ -6243,8 +6258,10 @@ impl std::fmt::Debug for SetTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
+    #[doc(hidden)]
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
+    #[doc(hidden)]
     pub attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveAttributesFromFindingsInput {
@@ -6271,6 +6288,7 @@ impl std::fmt::Debug for RemoveAttributesFromFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInput {
@@ -6292,10 +6310,13 @@ impl std::fmt::Debug for RegisterCrossAccountAccessRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
+    #[doc(hidden)]
     pub preview_agents_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl PreviewAgentsInput {
@@ -6327,6 +6348,7 @@ impl std::fmt::Debug for PreviewAgentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6348,8 +6370,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesPackagesInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRulesPackagesInput {
@@ -6376,13 +6400,17 @@ impl std::fmt::Debug for ListRulesPackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
+    #[doc(hidden)]
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::FindingFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFindingsInput {
@@ -6420,10 +6448,13 @@ impl std::fmt::Debug for ListFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExclusionsInput {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExclusionsInput {
@@ -6455,10 +6486,13 @@ impl std::fmt::Debug for ListExclusionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventSubscriptionsInput {
@@ -6490,13 +6524,17 @@ impl std::fmt::Debug for ListEventSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTemplatesInput {
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
+    #[doc(hidden)]
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::AssessmentTemplateFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTemplatesInput {
@@ -6535,10 +6573,13 @@ impl std::fmt::Debug for ListAssessmentTemplatesInput {
 pub struct ListAssessmentTargetsInput {
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::AssessmentTargetFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTargetsInput {
@@ -6571,13 +6612,17 @@ impl std::fmt::Debug for ListAssessmentTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
+    #[doc(hidden)]
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::AssessmentRunFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunsInput {
@@ -6615,13 +6660,17 @@ impl std::fmt::Debug for ListAssessmentRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::AgentFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunAgentsInput {
@@ -6659,6 +6708,7 @@ impl std::fmt::Debug for ListAssessmentRunAgentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl GetTelemetryMetadataInput {
@@ -6680,14 +6730,19 @@ impl std::fmt::Debug for GetTelemetryMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+    #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier associated of the exclusions preview.</p>
+    #[doc(hidden)]
     pub preview_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl GetExclusionsPreviewInput {
@@ -6729,10 +6784,13 @@ impl std::fmt::Debug for GetExclusionsPreviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportInput {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
+    #[doc(hidden)]
     pub report_file_format: std::option::Option<crate::model::ReportFileFormat>,
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    #[doc(hidden)]
     pub report_type: std::option::Option<crate::model::ReportType>,
 }
 impl GetAssessmentReportInput {
@@ -6764,8 +6822,10 @@ impl std::fmt::Debug for GetAssessmentReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
+    #[doc(hidden)]
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale that you want to translate a rules package description into.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeRulesPackagesInput {
@@ -6792,6 +6852,7 @@ impl std::fmt::Debug for DescribeRulesPackagesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
+    #[doc(hidden)]
     pub resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeResourceGroupsInput {
@@ -6813,8 +6874,10 @@ impl std::fmt::Debug for DescribeResourceGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
+    #[doc(hidden)]
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeFindingsInput {
@@ -6841,8 +6904,10 @@ impl std::fmt::Debug for DescribeFindingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    #[doc(hidden)]
     pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeExclusionsInput {
@@ -6880,6 +6945,7 @@ impl std::fmt::Debug for DescribeCrossAccountAccessRoleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentTemplatesInput {
@@ -6901,6 +6967,7 @@ impl std::fmt::Debug for DescribeAssessmentTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+    #[doc(hidden)]
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentTargetsInput {
@@ -6922,6 +6989,7 @@ impl std::fmt::Debug for DescribeAssessmentTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
+    #[doc(hidden)]
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentRunsInput {
@@ -6943,6 +7011,7 @@ impl std::fmt::Debug for DescribeAssessmentRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
+    #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentTemplateInput {
@@ -6964,6 +7033,7 @@ impl std::fmt::Debug for DeleteAssessmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
+    #[doc(hidden)]
     pub assessment_target_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentTargetInput {
@@ -6985,6 +7055,7 @@ impl std::fmt::Debug for DeleteAssessmentTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentRunInput {
@@ -7007,6 +7078,7 @@ impl std::fmt::Debug for DeleteAssessmentRunInput {
 pub struct CreateResourceGroupInput {
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    #[doc(hidden)]
     pub resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
 }
 impl CreateResourceGroupInput {
@@ -7029,6 +7101,7 @@ impl std::fmt::Debug for CreateResourceGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+    #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewInput {
@@ -7050,14 +7123,19 @@ impl std::fmt::Debug for CreateExclusionsPreviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
+    #[doc(hidden)]
     pub assessment_target_arn: std::option::Option<std::string::String>,
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
+    #[doc(hidden)]
     pub assessment_template_name: std::option::Option<std::string::String>,
     /// <p>The duration of the assessment run in seconds.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: i32,
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
+    #[doc(hidden)]
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
+    #[doc(hidden)]
     pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl CreateAssessmentTemplateInput {
@@ -7102,8 +7180,10 @@ impl std::fmt::Debug for CreateAssessmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTargetInput {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+    #[doc(hidden)]
     pub assessment_target_name: std::option::Option<std::string::String>,
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
+    #[doc(hidden)]
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentTargetInput {
@@ -7130,8 +7210,10 @@ impl std::fmt::Debug for CreateAssessmentTargetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+    #[doc(hidden)]
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of attributes that you want to assign to specified findings.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl AddAttributesToFindingsInput {

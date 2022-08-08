@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStageOutput {
     /// <p>Properties that provide details of the updated stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::StageDetails>,
 }
 impl UpdateStageOutput {
@@ -56,6 +57,7 @@ impl UpdateStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotOutput {
     /// <p>Properties that provide details of the updated snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::SnapshotDetails>,
 }
 impl UpdateSnapshotOutput {
@@ -113,6 +115,7 @@ impl UpdateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
+    #[doc(hidden)]
     pub game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
 }
 impl UpdateGameConfigurationOutput {
@@ -172,6 +175,7 @@ impl UpdateGameConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameOutput {
     /// <p>The details of the game.</p>
+    #[doc(hidden)]
     pub game: std::option::Option<crate::model::GameDetails>,
 }
 impl UpdateGameOutput {
@@ -284,6 +288,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStageDeploymentOutput {
     /// <p>Properties that describe the stage deployment.</p>
+    #[doc(hidden)]
     pub stage_deployment: std::option::Option<crate::model::StageDeploymentDetails>,
 }
 impl StartStageDeploymentOutput {
@@ -341,6 +346,7 @@ impl StartStageDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGeneratedCodeJobOutput {
     /// <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
+    #[doc(hidden)]
     pub generated_code_job_id: std::option::Option<std::string::String>,
 }
 impl StartGeneratedCodeJobOutput {
@@ -398,6 +404,7 @@ impl StartGeneratedCodeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -471,9 +478,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStagesOutput {
     /// <p> A list of stage summaries. You can use the stage names in the <code>UpdateStage</code> and <code>GetStage</code> actions. </p>
+    #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::StageSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStagesOutput {
@@ -557,9 +566,11 @@ impl ListStagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStageDeploymentsOutput {
     /// <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
+    #[doc(hidden)]
     pub stage_deployments: std::option::Option<std::vec::Vec<crate::model::StageDeploymentSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStageDeploymentsOutput {
@@ -646,9 +657,11 @@ impl ListStageDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotsOutput {
     /// <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotsOutput {
@@ -732,10 +745,12 @@ impl ListSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeneratedCodeJobsOutput {
     /// <p>The list of generated code jobs.</p>
+    #[doc(hidden)]
     pub generated_code_jobs:
         std::option::Option<std::vec::Vec<crate::model::GeneratedCodeJobDetails>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeneratedCodeJobsOutput {
@@ -822,9 +837,11 @@ impl ListGeneratedCodeJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGamesOutput {
     /// <p>The list of games.</p>
+    #[doc(hidden)]
     pub games: std::option::Option<std::vec::Vec<crate::model::GameSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGamesOutput {
@@ -908,10 +925,12 @@ impl ListGamesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExtensionVersionsOutput {
     /// <p>The list of extension versions.</p>
+    #[doc(hidden)]
     pub extension_versions:
         std::option::Option<std::vec::Vec<crate::model::ExtensionVersionDetails>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExtensionVersionsOutput {
@@ -998,9 +1017,11 @@ impl ListExtensionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExtensionsOutput {
     /// <p>The list of extensions.</p>
+    #[doc(hidden)]
     pub extensions: std::option::Option<std::vec::Vec<crate::model::ExtensionDetails>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExtensionsOutput {
@@ -1084,6 +1105,7 @@ impl ListExtensionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
+    #[doc(hidden)]
     pub game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
 }
 impl ImportGameConfigurationOutput {
@@ -1143,6 +1165,7 @@ impl ImportGameConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageDeploymentOutput {
     /// <p>Properties that provide details of the stage deployment.</p>
+    #[doc(hidden)]
     pub stage_deployment: std::option::Option<crate::model::StageDeploymentDetails>,
 }
 impl GetStageDeploymentOutput {
@@ -1200,6 +1223,7 @@ impl GetStageDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageOutput {
     /// <p>Properties that provide details of the stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::StageDetails>,
 }
 impl GetStageOutput {
@@ -1252,6 +1276,7 @@ impl GetStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotOutput {
     /// <p>Properties that provide details of the snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::SnapshotDetails>,
 }
 impl GetSnapshotOutput {
@@ -1309,6 +1334,7 @@ impl GetSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlayerConnectionStatusOutput {
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl GetPlayerConnectionStatusOutput {
@@ -1372,6 +1398,7 @@ impl GetPlayerConnectionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedCodeJobOutput {
     /// <p>Details about the generated code job.</p>
+    #[doc(hidden)]
     pub generated_code_job: std::option::Option<crate::model::GeneratedCodeJobDetails>,
 }
 impl GetGeneratedCodeJobOutput {
@@ -1431,6 +1458,7 @@ impl GetGeneratedCodeJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
+    #[doc(hidden)]
     pub game_configuration: std::option::Option<crate::model::GameConfigurationDetails>,
 }
 impl GetGameConfigurationOutput {
@@ -1490,6 +1518,7 @@ impl GetGameConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGameOutput {
     /// <p>The details of the game.</p>
+    #[doc(hidden)]
     pub game: std::option::Option<crate::model::GameDetails>,
 }
 impl GetGameOutput {
@@ -1542,6 +1571,7 @@ impl GetGameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExtensionVersionOutput {
     /// <p>The version of the extension.</p>
+    #[doc(hidden)]
     pub extension_version: std::option::Option<crate::model::ExtensionVersionDetails>,
 }
 impl GetExtensionVersionOutput {
@@ -1599,6 +1629,7 @@ impl GetExtensionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExtensionOutput {
     /// <p>Details about the extension.</p>
+    #[doc(hidden)]
     pub extension: std::option::Option<crate::model::ExtensionDetails>,
 }
 impl GetExtensionOutput {
@@ -1657,6 +1688,7 @@ impl GetExtensionOutput {
 pub struct ExportSnapshotOutput {
     /// <p>The presigned URL for the snapshot data.</p>
     /// <p> This URL will be available for 10 minutes, and can be used to download the snapshot content. If the URL expires, a new one can be requested using the same operation. </p>
+    #[doc(hidden)]
     pub s3_url: std::option::Option<std::string::String>,
 }
 impl ExportSnapshotOutput {
@@ -1714,8 +1746,10 @@ impl ExportSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectPlayerOutput {
     /// <p>The list of the connection ids that were disconnected.</p>
+    #[doc(hidden)]
     pub disconnect_successes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of the connection ids that could not be disconnected.</p>
+    #[doc(hidden)]
     pub disconnect_failures: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisconnectPlayerOutput {
@@ -1865,6 +1899,7 @@ impl DeleteGameOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStageOutput {
     /// <p>Properties that describe the stage.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::StageDetails>,
 }
 impl CreateStageOutput {
@@ -1917,6 +1952,7 @@ impl CreateStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>Properties that provide details of the created snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::SnapshotDetails>,
 }
 impl CreateSnapshotOutput {
@@ -1974,6 +2010,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameOutput {
     /// <p>Details about the game that was created.</p>
+    #[doc(hidden)]
     pub game: std::option::Option<crate::model::GameDetails>,
 }
 impl CreateGameOutput {

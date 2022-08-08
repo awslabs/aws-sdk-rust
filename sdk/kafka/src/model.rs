@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionInfo {
     /// <p>The data-volume encryption details.</p>
+    #[doc(hidden)]
     pub encryption_at_rest: std::option::Option<crate::model::EncryptionAtRest>,
     /// <p>The details for encryption in transit.</p>
+    #[doc(hidden)]
     pub encryption_in_transit: std::option::Option<crate::model::EncryptionInTransit>,
 }
 impl EncryptionInfo {
@@ -88,9 +90,11 @@ pub struct EncryptionInTransit {
     /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
+    #[doc(hidden)]
     pub client_broker: std::option::Option<crate::model::ClientBroker>,
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
+    #[doc(hidden)]
     pub in_cluster: bool,
 }
 impl EncryptionInTransit {
@@ -239,6 +243,7 @@ impl AsRef<str> for ClientBroker {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionAtRest {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
+    #[doc(hidden)]
     pub data_volume_kms_key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionAtRest {
@@ -296,10 +301,13 @@ impl EncryptionAtRest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
+    #[doc(hidden)]
     pub sasl: std::option::Option<crate::model::Sasl>,
     /// <p>Details for ClientAuthentication using TLS.</p>
+    #[doc(hidden)]
     pub tls: std::option::Option<crate::model::Tls>,
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
+    #[doc(hidden)]
     pub unauthenticated: std::option::Option<crate::model::Unauthenticated>,
 }
 impl ClientAuthentication {
@@ -391,6 +399,7 @@ impl ClientAuthentication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Unauthenticated {
@@ -445,8 +454,10 @@ impl Unauthenticated {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
+    #[doc(hidden)]
     pub certificate_authority_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Tls {
@@ -534,8 +545,10 @@ impl Tls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
+    #[doc(hidden)]
     pub scram: std::option::Option<crate::model::Scram>,
     /// <p>Indicates whether IAM access control is enabled.</p>
+    #[doc(hidden)]
     pub iam: std::option::Option<crate::model::Iam>,
 }
 impl Sasl {
@@ -607,6 +620,7 @@ impl Sasl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Iam {
@@ -661,6 +675,7 @@ impl Iam {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Scram {
@@ -715,6 +730,7 @@ impl Scram {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub broker_logs: std::option::Option<crate::model::BrokerLogs>,
 }
 impl LoggingInfo {
@@ -772,10 +788,13 @@ impl LoggingInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerLogs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogs>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub firehose: std::option::Option<crate::model::Firehose>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3>,
 }
 impl BrokerLogs {
@@ -867,10 +886,13 @@ impl BrokerLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3 {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub enabled: bool,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3 {
@@ -959,8 +981,10 @@ impl S3 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl Firehose {
@@ -1035,8 +1059,10 @@ impl Firehose {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub enabled: bool,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogs {
@@ -1108,6 +1134,7 @@ impl CloudWatchLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenMonitoringInfo {
     /// <p>Prometheus settings.</p>
+    #[doc(hidden)]
     pub prometheus: std::option::Option<crate::model::PrometheusInfo>,
 }
 impl OpenMonitoringInfo {
@@ -1165,8 +1192,10 @@ impl OpenMonitoringInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrometheusInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    #[doc(hidden)]
     pub jmx_exporter: std::option::Option<crate::model::JmxExporterInfo>,
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    #[doc(hidden)]
     pub node_exporter: std::option::Option<crate::model::NodeExporterInfo>,
 }
 impl PrometheusInfo {
@@ -1244,6 +1273,7 @@ impl PrometheusInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    #[doc(hidden)]
     pub enabled_in_broker: bool,
 }
 impl NodeExporterInfo {
@@ -1298,6 +1328,7 @@ impl NodeExporterInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    #[doc(hidden)]
     pub enabled_in_broker: bool,
 }
 impl JmxExporterInfo {
@@ -1420,6 +1451,7 @@ impl AsRef<str> for EnhancedMonitoring {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
+    #[doc(hidden)]
     pub public_access: std::option::Option<crate::model::PublicAccess>,
 }
 impl ConnectivityInfo {
@@ -1477,6 +1509,7 @@ impl ConnectivityInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl PublicAccess {
@@ -1531,10 +1564,13 @@ impl PublicAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl ConfigurationRevision {
@@ -1626,8 +1662,10 @@ impl ConfigurationRevision {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The revision of the configuration to use.</p>
+    #[doc(hidden)]
     pub revision: i64,
 }
 impl ConfigurationInfo {
@@ -1699,10 +1737,13 @@ impl ConfigurationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
+    #[doc(hidden)]
     pub kafka_broker_node_id: std::option::Option<std::string::String>,
     /// EBS volume provisioned throughput information.
+    #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>Size of the EBS volume to update.</p>
+    #[doc(hidden)]
     pub volume_size_gb: i32,
 }
 impl BrokerEbsVolumeInfo {
@@ -1802,8 +1843,10 @@ impl BrokerEbsVolumeInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughput {
     /// Provisioned throughput is enabled or not.
+    #[doc(hidden)]
     pub enabled: bool,
     /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+    #[doc(hidden)]
     pub volume_throughput: i32,
 }
 impl ProvisionedThroughput {
@@ -1875,16 +1918,22 @@ impl ProvisionedThroughput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeInfo {
     /// <p>The start time.</p>
+    #[doc(hidden)]
     pub added_to_cluster_time: std::option::Option<std::string::String>,
     /// <p>The broker node info.</p>
+    #[doc(hidden)]
     pub broker_node_info: std::option::Option<crate::model::BrokerNodeInfo>,
     /// <p>The instance type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
+    #[doc(hidden)]
     pub node_arn: std::option::Option<std::string::String>,
     /// <p>The node type.</p>
+    #[doc(hidden)]
     pub node_type: std::option::Option<crate::model::NodeType>,
     /// <p>The ZookeeperNodeInfo.</p>
+    #[doc(hidden)]
     pub zookeeper_node_info: std::option::Option<crate::model::ZookeeperNodeInfo>,
 }
 impl NodeInfo {
@@ -2036,14 +2085,19 @@ impl NodeInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZookeeperNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
+    #[doc(hidden)]
     pub attached_eni_id: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) IP address of the client.</p>
+    #[doc(hidden)]
     pub client_vpc_ip_address: std::option::Option<std::string::String>,
     /// <p>Endpoints for accessing the ZooKeeper.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The role-specific ID for Zookeeper.</p>
+    #[doc(hidden)]
     pub zookeeper_id: f64,
     /// <p>The version of Zookeeper.</p>
+    #[doc(hidden)]
     pub zookeeper_version: std::option::Option<std::string::String>,
 }
 impl ZookeeperNodeInfo {
@@ -2235,16 +2289,22 @@ impl AsRef<str> for NodeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
+    #[doc(hidden)]
     pub attached_eni_id: std::option::Option<std::string::String>,
     /// <p>The ID of the broker.</p>
+    #[doc(hidden)]
     pub broker_id: f64,
     /// <p>The client subnet to which this broker node belongs.</p>
+    #[doc(hidden)]
     pub client_subnet: std::option::Option<std::string::String>,
     /// <p>The virtual private cloud (VPC) of the client.</p>
+    #[doc(hidden)]
     pub client_vpc_ip_address: std::option::Option<std::string::String>,
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
+    #[doc(hidden)]
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>Endpoints for accessing the broker.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BrokerNodeInfo {
@@ -2414,10 +2474,13 @@ impl BrokerNodeInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
+    #[doc(hidden)]
     pub configuration_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
+    #[doc(hidden)]
     pub configuration_revision: i64,
     /// <p>The version of Apache Kafka.</p>
+    #[doc(hidden)]
     pub kafka_version: std::option::Option<std::string::String>,
 }
 impl BrokerSoftwareInfo {
@@ -2512,8 +2575,10 @@ impl BrokerSoftwareInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::KafkaVersionStatus>,
 }
 impl KafkaVersion {
@@ -2643,18 +2708,25 @@ impl AsRef<str> for KafkaVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
+    #[doc(hidden)]
     pub kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Latest revision of the configuration.</p>
+    #[doc(hidden)]
     pub latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ConfigurationState>,
 }
 impl Configuration {
@@ -2888,27 +2960,38 @@ impl AsRef<str> for ConfigurationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+    #[doc(hidden)]
     pub active_operation_arn: std::option::Option<std::string::String>,
     /// <p>Cluster Type.</p>
+    #[doc(hidden)]
     pub cluster_type: std::option::Option<crate::model::ClusterType>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The time when the cluster was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current version of the MSK cluster.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     /// <p>State Info for the Amazon MSK cluster.</p>
+    #[doc(hidden)]
     pub state_info: std::option::Option<crate::model::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
+    #[doc(hidden)]
     pub provisioned: std::option::Option<crate::model::Provisioned>,
     /// <p>Information about the serverless cluster.</p>
+    #[doc(hidden)]
     pub serverless: std::option::Option<crate::model::Serverless>,
 }
 impl Cluster {
@@ -3174,8 +3257,10 @@ impl Cluster {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Serverless {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    #[doc(hidden)]
     pub vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ServerlessClientAuthentication>,
 }
 impl Serverless {
@@ -3265,6 +3350,7 @@ impl Serverless {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
+    #[doc(hidden)]
     pub sasl: std::option::Option<crate::model::ServerlessSasl>,
 }
 impl ServerlessClientAuthentication {
@@ -3320,6 +3406,7 @@ impl ServerlessClientAuthentication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerlessSasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
+    #[doc(hidden)]
     pub iam: std::option::Option<crate::model::Iam>,
 }
 impl ServerlessSasl {
@@ -3372,8 +3459,10 @@ impl ServerlessSasl {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfig {
     /// <p>The IDs of the subnets associated with the cluster.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups associated with the cluster.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfig {
@@ -3463,24 +3552,34 @@ impl VpcConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Provisioned {
     /// <p>Information about the brokers.</p>
+    #[doc(hidden)]
     pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+    #[doc(hidden)]
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
     /// <p>Log delivery information for the cluster.</p>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub number_of_broker_nodes: i32,
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    #[doc(hidden)]
     pub zookeeper_connect_string: std::option::Option<std::string::String>,
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+    #[doc(hidden)]
     pub zookeeper_connect_string_tls: std::option::Option<std::string::String>,
 }
 impl Provisioned {
@@ -3735,16 +3834,22 @@ impl Provisioned {
 pub struct BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+    #[doc(hidden)]
     pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
+    #[doc(hidden)]
     pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+    #[doc(hidden)]
     pub storage_info: std::option::Option<crate::model::StorageInfo>,
     /// <p>Information about the broker access configuration.</p>
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
 }
 impl BrokerNodeGroupInfo {
@@ -3919,6 +4024,7 @@ impl BrokerNodeGroupInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageInfo {
     /// <p>EBS volume information.</p>
+    #[doc(hidden)]
     pub ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
 }
 impl StorageInfo {
@@ -3976,8 +4082,10 @@ impl StorageInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsStorageInfo {
     /// EBS volume provisioned throughput information.
+    #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+    #[doc(hidden)]
     pub volume_size: i32,
 }
 impl EbsStorageInfo {
@@ -4109,8 +4217,10 @@ impl AsRef<str> for BrokerAzDistribution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateInfo {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl StateInfo {
@@ -4325,41 +4435,59 @@ impl AsRef<str> for ClusterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
+    #[doc(hidden)]
     pub active_operation_arn: std::option::Option<std::string::String>,
     /// <p>Information about the broker nodes.</p>
+    #[doc(hidden)]
     pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The time when the cluster was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
+    #[doc(hidden)]
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>The current version of the MSK cluster.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>Settings for open monitoring using Prometheus.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoring>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub number_of_broker_nodes: i32,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub state_info: std::option::Option<crate::model::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    #[doc(hidden)]
     pub zookeeper_connect_string: std::option::Option<std::string::String>,
     /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
+    #[doc(hidden)]
     pub zookeeper_connect_string_tls: std::option::Option<std::string::String>,
 }
 impl ClusterInfo {
@@ -4781,6 +4909,7 @@ impl ClusterInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
+    #[doc(hidden)]
     pub prometheus: std::option::Option<crate::model::Prometheus>,
 }
 impl OpenMonitoring {
@@ -4838,8 +4967,10 @@ impl OpenMonitoring {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Prometheus {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    #[doc(hidden)]
     pub jmx_exporter: std::option::Option<crate::model::JmxExporter>,
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    #[doc(hidden)]
     pub node_exporter: std::option::Option<crate::model::NodeExporter>,
 }
 impl Prometheus {
@@ -4917,6 +5048,7 @@ impl Prometheus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    #[doc(hidden)]
     pub enabled_in_broker: bool,
 }
 impl NodeExporter {
@@ -4971,6 +5103,7 @@ impl NodeExporter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JmxExporter {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    #[doc(hidden)]
     pub enabled_in_broker: bool,
 }
 impl JmxExporter {
@@ -5025,26 +5158,37 @@ impl JmxExporter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterOperationInfo {
     /// <p>The ID of the API request that triggered this operation.</p>
+    #[doc(hidden)]
     pub client_request_id: std::option::Option<std::string::String>,
     /// <p>ARN of the cluster.</p>
+    #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The time that the operation was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the operation finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the error if the operation fails.</p>
+    #[doc(hidden)]
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p>ARN of the cluster operation.</p>
+    #[doc(hidden)]
     pub operation_arn: std::option::Option<std::string::String>,
     /// <p>State of the cluster operation.</p>
+    #[doc(hidden)]
     pub operation_state: std::option::Option<std::string::String>,
     /// <p>Steps completed during the operation.</p>
+    #[doc(hidden)]
     pub operation_steps: std::option::Option<std::vec::Vec<crate::model::ClusterOperationStep>>,
     /// <p>Type of the cluster operation.</p>
+    #[doc(hidden)]
     pub operation_type: std::option::Option<std::string::String>,
     /// <p>Information about cluster attributes before a cluster is updated.</p>
+    #[doc(hidden)]
     pub source_cluster_info: std::option::Option<crate::model::MutableClusterInfo>,
     /// <p>Information about cluster attributes after a cluster is updated.</p>
+    #[doc(hidden)]
     pub target_cluster_info: std::option::Option<crate::model::MutableClusterInfo>,
 }
 impl ClusterOperationInfo {
@@ -5306,27 +5450,38 @@ impl ClusterOperationInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
+    #[doc(hidden)]
     pub broker_ebs_volume_info:
         std::option::Option<std::vec::Vec<crate::model::BrokerEbsVolumeInfo>>,
     /// <p>Information about the changes in the configuration of the brokers.</p>
+    #[doc(hidden)]
     pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub number_of_broker_nodes: i32,
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoring>,
     /// <p>The Apache Kafka version.</p>
+    #[doc(hidden)]
     pub kafka_version: std::option::Option<std::string::String>,
     /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>Information about the Amazon MSK broker type.</p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     /// <p>Information about the broker access configuration.</p>
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
 }
 impl MutableClusterInfo {
@@ -5592,8 +5747,10 @@ impl MutableClusterInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterOperationStep {
     /// <p>Information about the step and its status.</p>
+    #[doc(hidden)]
     pub step_info: std::option::Option<crate::model::ClusterOperationStepInfo>,
     /// <p>The name of the step.</p>
+    #[doc(hidden)]
     pub step_name: std::option::Option<std::string::String>,
 }
 impl ClusterOperationStep {
@@ -5668,6 +5825,7 @@ impl ClusterOperationStep {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
+    #[doc(hidden)]
     pub step_status: std::option::Option<std::string::String>,
 }
 impl ClusterOperationStepInfo {
@@ -5722,8 +5880,10 @@ impl ClusterOperationStepInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInfo {
     /// <p>A number describing the error programmatically.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An optional field to provide more details about the error.</p>
+    #[doc(hidden)]
     pub error_string: std::option::Option<std::string::String>,
 }
 impl ErrorInfo {
@@ -5795,8 +5955,10 @@ impl ErrorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>A list of Apache Kafka versions.</p>
+    #[doc(hidden)]
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompatibleKafkaVersion {
@@ -5880,8 +6042,10 @@ impl CompatibleKafkaVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerlessRequest {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    #[doc(hidden)]
     pub vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ServerlessClientAuthentication>,
 }
 impl ServerlessRequest {
@@ -5971,22 +6135,31 @@ impl ServerlessRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
+    #[doc(hidden)]
     pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
     /// <p>Includes all client authentication information.</p>
+    #[doc(hidden)]
     pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
+    #[doc(hidden)]
     pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
     /// <p>Includes all encryption-related information.</p>
+    #[doc(hidden)]
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
+    #[doc(hidden)]
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
     /// <p>The Apache Kafka version that you want for the cluster.</p>
+    #[doc(hidden)]
     pub kafka_version: std::option::Option<std::string::String>,
     /// <p>Log delivery information for the cluster.</p>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
+    #[doc(hidden)]
     pub number_of_broker_nodes: i32,
 }
 impl ProvisionedRequest {
@@ -6205,10 +6378,13 @@ impl ProvisionedRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedScramSecret {
     /// <p>Error code for associate/disassociate failure.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Error message for associate/disassociate failure.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>AWS Secrets Manager secret ARN.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl UnprocessedScramSecret {

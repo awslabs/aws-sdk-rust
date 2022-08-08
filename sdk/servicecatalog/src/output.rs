@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
+    #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl UpdateTagOptionOutput {
@@ -61,6 +62,7 @@ impl UpdateTagOptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
+    #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl UpdateServiceActionOutput {
@@ -118,11 +120,14 @@ impl UpdateServiceActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3.</p>
+    #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl UpdateProvisioningArtifactOutput {
@@ -243,14 +248,18 @@ impl UpdateProvisioningArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisionedProductPropertiesOutput {
     /// <p>The provisioned product identifier.</p>
+    #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the properties updated.</p>
+    #[doc(hidden)]
     pub provisioned_product_properties: std::option::Option<
         std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
     >,
     /// <p>The identifier of the record.</p>
+    #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecordStatus>,
 }
 impl UpdateProvisionedProductPropertiesOutput {
@@ -386,6 +395,7 @@ impl UpdateProvisionedProductPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisionedProductOutput {
     /// <p>Information about the result of the request.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl UpdateProvisionedProductOutput {
@@ -443,8 +453,10 @@ impl UpdateProvisionedProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProductOutput {
     /// <p>Information about the product view.</p>
+    #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
     /// <p>Information about the tags associated with the product.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateProductOutput {
@@ -528,8 +540,10 @@ impl UpdateProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
+    #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
 }
 impl UpdatePortfolioShareOutput {
@@ -604,8 +618,10 @@ impl UpdatePortfolioShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
+    #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdatePortfolioOutput {
@@ -689,10 +705,13 @@ impl UpdatePortfolioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConstraintOutput {
     /// <p>Information about the constraint.</p>
+    #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
     /// <p>The constraint parameters.</p>
+    #[doc(hidden)]
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl UpdateConstraintOutput {
@@ -787,6 +806,7 @@ impl UpdateConstraintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateProvisionedProductOutput {
     /// <p>Information about the result of this request.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl TerminateProvisionedProductOutput {
@@ -844,11 +864,14 @@ impl TerminateProvisionedProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
+    #[doc(hidden)]
     pub provisioned_products:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
     /// <p>The number of provisioned products found.</p>
+    #[doc(hidden)]
     pub total_results_count: i32,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl SearchProvisionedProductsOutput {
@@ -955,8 +978,10 @@ impl SearchProvisionedProductsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProductsAsAdminOutput {
     /// <p>Information about the product views.</p>
+    #[doc(hidden)]
     pub product_view_details: std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsAsAdminOutput {
@@ -1041,9 +1066,11 @@ impl SearchProductsAsAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProductsOutput {
     /// <p>Information about the product views.</p>
+    #[doc(hidden)]
     pub product_view_summaries:
         std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
     /// <p>The product view aggregations.</p>
+    #[doc(hidden)]
     pub product_view_aggregations: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1051,6 +1078,7 @@ pub struct SearchProductsOutput {
         >,
     >,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsOutput {
@@ -1184,9 +1212,11 @@ impl SearchProductsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
+    #[doc(hidden)]
     pub provisioned_products:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ScanProvisionedProductsOutput {
@@ -1306,6 +1336,7 @@ impl RejectPortfolioShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionProductOutput {
     /// <p>Information about the result of provisioning the product.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ProvisionProductOutput {
@@ -1363,8 +1394,10 @@ impl ProvisionProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagOptionsOutput {
     /// <p>Information about the TagOptions.</p>
+    #[doc(hidden)]
     pub tag_option_details: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListTagOptionsOutput {
@@ -1446,8 +1479,10 @@ impl ListTagOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackInstancesForProvisionedProductOutput {
     /// <p>List of stack instances.</p>
+    #[doc(hidden)]
     pub stack_instances: std::option::Option<std::vec::Vec<crate::model::StackInstance>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListStackInstancesForProvisionedProductOutput {
@@ -1532,9 +1567,11 @@ impl ListStackInstancesForProvisionedProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceActionsForProvisioningArtifactOutput {
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
+    #[doc(hidden)]
     pub service_action_summaries:
         std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsForProvisioningArtifactOutput {
@@ -1625,9 +1662,11 @@ impl ListServiceActionsForProvisioningArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceActionsOutput {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
+    #[doc(hidden)]
     pub service_action_summaries:
         std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsOutput {
@@ -1717,8 +1756,10 @@ impl ListServiceActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForTagOptionOutput {
     /// <p>Information about the resources.</p>
+    #[doc(hidden)]
     pub resource_details: std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesForTagOptionOutput {
@@ -1800,8 +1841,10 @@ impl ListResourcesForTagOptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordHistoryOutput {
     /// <p>The records, in reverse chronological order.</p>
+    #[doc(hidden)]
     pub record_details: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListRecordHistoryOutput {
@@ -1885,9 +1928,11 @@ impl ListRecordHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningArtifactsForServiceActionOutput {
     /// <p>An array of objects with information about product views and provisioning artifacts.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_views:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsForServiceActionOutput {
@@ -1981,9 +2026,11 @@ impl ListProvisioningArtifactsForServiceActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningArtifactsOutput {
     /// <p>Information about the provisioning artifacts.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_details:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsOutput {
@@ -2076,9 +2123,11 @@ impl ListProvisioningArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisionedProductPlansOutput {
     /// <p>Information about the plans.</p>
+    #[doc(hidden)]
     pub provisioned_product_plans:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisionedProductPlansOutput {
@@ -2168,8 +2217,10 @@ impl ListProvisionedProductPlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsForPortfolioOutput {
     /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalsForPortfolioOutput {
@@ -2253,8 +2304,10 @@ impl ListPrincipalsForPortfolioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfoliosForProductOutput {
     /// <p>Information about the portfolios.</p>
+    #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPortfoliosForProductOutput {
@@ -2339,8 +2392,10 @@ impl ListPortfoliosForProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfoliosOutput {
     /// <p>Information about the portfolios.</p>
+    #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPortfoliosOutput {
@@ -2425,8 +2480,10 @@ impl ListPortfoliosOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfolioAccessOutput {
     /// <p>Information about the AWS accounts with access to the portfolio.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListPortfolioAccessOutput {
@@ -2510,8 +2567,10 @@ impl ListPortfolioAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationPortfolioAccessOutput {
     /// <p>Displays information about the organization nodes.</p>
+    #[doc(hidden)]
     pub organization_nodes: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationPortfolioAccessOutput {
@@ -2596,8 +2655,10 @@ impl ListOrganizationPortfolioAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchPathsOutput {
     /// <p>Information about the launch path.</p>
+    #[doc(hidden)]
     pub launch_path_summaries: std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchPathsOutput {
@@ -2682,8 +2743,10 @@ impl ListLaunchPathsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConstraintsForPortfolioOutput {
     /// <p>Information about the constraints.</p>
+    #[doc(hidden)]
     pub constraint_details: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListConstraintsForPortfolioOutput {
@@ -2768,8 +2831,10 @@ impl ListConstraintsForPortfolioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBudgetsForResourceOutput {
     /// <p>Information about the associated budgets.</p>
+    #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListBudgetsForResourceOutput {
@@ -2853,8 +2918,10 @@ impl ListBudgetsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAcceptedPortfolioSharesOutput {
     /// <p>Information about the portfolios.</p>
+    #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListAcceptedPortfolioSharesOutput {
@@ -2939,6 +3006,7 @@ impl ListAcceptedPortfolioSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAsProvisionedProductOutput {
     /// <p>Information about a request operation.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ImportAsProvisionedProductOutput {
@@ -2996,8 +3064,10 @@ impl ImportAsProvisionedProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProvisionedProductOutputsOutput {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetProvisionedProductOutputsOutput {
@@ -3081,6 +3151,7 @@ impl GetProvisionedProductOutputsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
+    #[doc(hidden)]
     pub access_status: std::option::Option<crate::model::AccessStatus>,
 }
 impl GetAwsOrganizationsAccessStatusOutput {
@@ -3138,6 +3209,7 @@ impl GetAwsOrganizationsAccessStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteProvisionedProductServiceActionOutput {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ExecuteProvisionedProductServiceActionOutput {
@@ -3195,6 +3267,7 @@ impl ExecuteProvisionedProductServiceActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteProvisionedProductPlanOutput {
     /// <p>Information about the result of provisioning the product.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ExecuteProvisionedProductPlanOutput {
@@ -3466,6 +3539,7 @@ impl DisableAwsOrganizationsAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
+    #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl DescribeTagOptionOutput {
@@ -3523,6 +3597,7 @@ impl DescribeTagOptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
+    #[doc(hidden)]
     pub service_action_parameters:
         std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
 }
@@ -3594,6 +3669,7 @@ impl DescribeServiceActionExecutionParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
+    #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl DescribeServiceActionOutput {
@@ -3651,10 +3727,13 @@ impl DescribeServiceActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecordOutput {
     /// <p>Information about the product.</p>
+    #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    #[doc(hidden)]
     pub record_outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl DescribeRecordOutput {
@@ -3758,24 +3837,31 @@ impl DescribeRecordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningParametersOutput {
     /// <p>Information about the parameters used to provision the product.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_parameters:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
     /// <p>Information about the constraints used to provision the product.</p>
+    #[doc(hidden)]
     pub constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
     /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
+    #[doc(hidden)]
     pub usage_instructions: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
     /// <p>Information about the TagOptions associated with the resource.</p>
+    #[doc(hidden)]
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>,
     /// <p>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_preferences:
         std::option::Option<crate::model::ProvisioningArtifactPreferences>,
     /// <p>The output of the provisioning artifact.</p>
     #[deprecated(
         note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
     )]
+    #[doc(hidden)]
     pub provisioning_artifact_outputs:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_output_keys:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
 }
@@ -4037,11 +4123,14 @@ impl DescribeProvisioningParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3.</p>
+    #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl DescribeProvisioningArtifactOutput {
@@ -4162,11 +4251,14 @@ impl DescribeProvisioningArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisionedProductPlanOutput {
     /// <p>Information about the plan.</p>
+    #[doc(hidden)]
     pub provisioned_product_plan_details:
         std::option::Option<crate::model::ProvisionedProductPlanDetails>,
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
+    #[doc(hidden)]
     pub resource_changes: std::option::Option<std::vec::Vec<crate::model::ResourceChange>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl DescribeProvisionedProductPlanOutput {
@@ -4280,8 +4372,10 @@ impl DescribeProvisionedProductPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisionedProductOutput {
     /// <p>Information about the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_detail: std::option::Option<crate::model::ProvisionedProductDetail>,
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
+    #[doc(hidden)]
     pub cloud_watch_dashboards:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
 }
@@ -4378,8 +4472,10 @@ impl DescribeProvisionedProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductViewOutput {
     /// <p>Summary information about the product.</p>
+    #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the product.</p>
+    #[doc(hidden)]
     pub provisioning_artifacts:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
 }
@@ -4467,15 +4563,20 @@ impl DescribeProductViewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductAsAdminOutput {
     /// <p>Information about the product view.</p>
+    #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_summaries:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
     /// <p>Information about the tags associated with the product.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Information about the TagOptions associated with the product.</p>
+    #[doc(hidden)]
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
+    #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
 }
 impl DescribeProductAsAdminOutput {
@@ -4646,13 +4747,17 @@ impl DescribeProductAsAdminOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductOutput {
     /// <p>Summary information about the product view.</p>
+    #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the specified product.</p>
+    #[doc(hidden)]
     pub provisioning_artifacts:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
     /// <p>Information about the associated budgets.</p>
+    #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
     /// <p>Information about the associated launch paths.</p>
+    #[doc(hidden)]
     pub launch_paths: std::option::Option<std::vec::Vec<crate::model::LaunchPath>>,
 }
 impl DescribeProductOutput {
@@ -4791,14 +4896,19 @@ impl DescribeProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioShareStatusOutput {
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
+    #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
+    #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
+    #[doc(hidden)]
     pub organization_node_value: std::option::Option<std::string::String>,
     /// <p>Status of the portfolio share operation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>Information about the portfolio share operation.</p>
+    #[doc(hidden)]
     pub share_details: std::option::Option<crate::model::ShareDetails>,
 }
 impl DescribePortfolioShareStatusOutput {
@@ -4930,8 +5040,10 @@ impl DescribePortfolioShareStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioSharesOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>Summaries about each of the portfolio shares.</p>
+    #[doc(hidden)]
     pub portfolio_share_details:
         std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
 }
@@ -5022,12 +5134,16 @@ impl DescribePortfolioSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioOutput {
     /// <p>Information about the portfolio.</p>
+    #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Information about the TagOptions associated with the portfolio.</p>
+    #[doc(hidden)]
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
+    #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
 }
 impl DescribePortfolioOutput {
@@ -5163,10 +5279,13 @@ impl DescribePortfolioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCopyProductStatusOutput {
     /// <p>The status of the copy product operation.</p>
+    #[doc(hidden)]
     pub copy_product_status: std::option::Option<crate::model::CopyProductStatus>,
     /// <p>The identifier of the copied product.</p>
+    #[doc(hidden)]
     pub target_product_id: std::option::Option<std::string::String>,
     /// <p>The status message.</p>
+    #[doc(hidden)]
     pub status_detail: std::option::Option<std::string::String>,
 }
 impl DescribeCopyProductStatusOutput {
@@ -5264,10 +5383,13 @@ impl DescribeCopyProductStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConstraintOutput {
     /// <p>Information about the constraint.</p>
+    #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
     /// <p>The constraint parameters.</p>
+    #[doc(hidden)]
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl DescribeConstraintOutput {
@@ -5512,6 +5634,7 @@ impl DeleteProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortfolioShareOutput {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
+    #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
 impl DeletePortfolioShareOutput {
@@ -5629,6 +5752,7 @@ impl DeleteConstraintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
+    #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl CreateTagOptionOutput {
@@ -5686,6 +5810,7 @@ impl CreateTagOptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceActionOutput {
     /// <p>An object containing information about the self-service action.</p>
+    #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl CreateServiceActionOutput {
@@ -5743,6 +5868,7 @@ impl CreateServiceActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
@@ -5750,9 +5876,11 @@ pub struct CreateProvisioningArtifactOutput {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
     /// <p> <code>ImportFromPhysicalId</code> </p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
+    #[doc(hidden)]
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CreateProvisioningArtifactOutput {
@@ -5888,14 +6016,19 @@ impl CreateProvisioningArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisionedProductPlanOutput {
     /// <p>The name of the plan.</p>
+    #[doc(hidden)]
     pub plan_name: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
+    #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
+    #[doc(hidden)]
     pub provision_product_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
+    #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
+    #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
 }
 impl CreateProvisionedProductPlanOutput {
@@ -6027,10 +6160,13 @@ impl CreateProvisionedProductPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProductOutput {
     /// <p>Information about the product view.</p>
+    #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
     /// <p>Information about the provisioning artifact. </p>
+    #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>Information about the tags associated with the product.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProductOutput {
@@ -6143,6 +6279,7 @@ impl CreateProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortfolioShareOutput {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
+    #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioShareOutput {
@@ -6200,8 +6337,10 @@ impl CreatePortfolioShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
+    #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePortfolioOutput {
@@ -6285,10 +6424,13 @@ impl CreatePortfolioOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConstraintOutput {
     /// <p>Information about the constraint.</p>
+    #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
     /// <p>The constraint parameters.</p>
+    #[doc(hidden)]
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CreateConstraintOutput {
@@ -6383,6 +6525,7 @@ impl CreateConstraintOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyProductOutput {
     /// <p>The token to use to track the progress of the operation.</p>
+    #[doc(hidden)]
     pub copy_product_token: std::option::Option<std::string::String>,
 }
 impl CopyProductOutput {
@@ -6440,6 +6583,7 @@ impl CopyProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
+    #[doc(hidden)]
     pub failed_service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
 }
@@ -6518,6 +6662,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
+    #[doc(hidden)]
     pub failed_service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
 }

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
     /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInput {
@@ -69,6 +70,7 @@ impl InvalidInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedTld {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedTld {
@@ -133,6 +135,7 @@ impl UnsupportedTld {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationLimitExceeded {
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationLimitExceeded {
@@ -197,6 +200,7 @@ impl OperationLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TldRulesViolation {
     /// <p>The top-level domain does not support this operation.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TldRulesViolation {
@@ -261,6 +265,7 @@ impl TldRulesViolation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequest {
     /// <p>The request is already in progress for the domain.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicateRequest {
@@ -325,6 +330,7 @@ impl DuplicateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainLimitExceeded {
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainLimitExceeded {

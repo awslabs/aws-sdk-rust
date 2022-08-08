@@ -34,6 +34,7 @@ impl StopHumanLoopOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartHumanLoopOutput {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
 }
 impl StartHumanLoopOutput {
@@ -91,8 +92,10 @@ impl StartHumanLoopOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
+    #[doc(hidden)]
     pub human_loop_summaries: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
     /// <p>A token to display the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHumanLoopsOutput {
@@ -174,21 +177,29 @@ impl ListHumanLoopsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A failure code that identifies the type of failure.</p>
     /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>The status of the human loop. </p>
+    #[doc(hidden)]
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>An object that contains information about the output of the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_output: std::option::Option<crate::model::HumanLoopOutput>,
 }
 impl DescribeHumanLoopOutput {

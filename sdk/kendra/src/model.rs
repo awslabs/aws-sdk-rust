@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Path {
     /// <p>The name of the S3 bucket that contains the file.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the file.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3Path {
@@ -135,6 +137,7 @@ impl AsRef<str> for Mode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. Amazon Web Services Single Sign On is currently the only available mode. Your users and groups must exist in an Amazon Web Services SSO identity source in order to use this mode.</p>
+    #[doc(hidden)]
     pub user_group_resolution_mode: std::option::Option<crate::model::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfiguration {
@@ -311,8 +314,10 @@ impl AsRef<str> for UserContextPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserTokenConfiguration {
     /// <p>Information about the JWT token type configuration.</p>
+    #[doc(hidden)]
     pub jwt_token_type_configuration: std::option::Option<crate::model::JwtTokenTypeConfiguration>,
     /// <p>Information about the JSON token type configuration.</p>
+    #[doc(hidden)]
     pub json_token_type_configuration:
         std::option::Option<crate::model::JsonTokenTypeConfiguration>,
 }
@@ -409,8 +414,10 @@ impl UserTokenConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
+    #[doc(hidden)]
     pub user_name_attribute_field: std::option::Option<std::string::String>,
     /// <p>The group attribute field.</p>
+    #[doc(hidden)]
     pub group_attribute_field: std::option::Option<std::string::String>,
 }
 impl JsonTokenTypeConfiguration {
@@ -488,18 +495,25 @@ impl JsonTokenTypeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
+    #[doc(hidden)]
     pub key_location: std::option::Option<crate::model::KeyLocation>,
     /// <p>The signing key URL.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
+    #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The user name attribute field.</p>
+    #[doc(hidden)]
     pub user_name_attribute_field: std::option::Option<std::string::String>,
     /// <p>The group attribute field.</p>
+    #[doc(hidden)]
     pub group_attribute_field: std::option::Option<std::string::String>,
     /// <p>The issuer of the token.</p>
+    #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The regular expression that identifies the claim.</p>
+    #[doc(hidden)]
     pub claim_regex: std::option::Option<std::string::String>,
 }
 impl JwtTokenTypeConfiguration {
@@ -723,10 +737,12 @@ impl AsRef<str> for KeyLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityUnitsConfiguration {
     /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
+    #[doc(hidden)]
     pub storage_capacity_units: std::option::Option<i32>,
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    #[doc(hidden)]
     pub query_capacity_units: std::option::Option<i32>,
 }
 impl CapacityUnitsConfiguration {
@@ -804,12 +820,16 @@ impl CapacityUnitsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the index field. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DocumentAttributeValueType>,
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
+    #[doc(hidden)]
     pub relevance: std::option::Option<crate::model::Relevance>,
     /// <p>Provides information about how the field is used during a search.</p>
+    #[doc(hidden)]
     pub search: std::option::Option<crate::model::Search>,
 }
 impl DocumentMetadataConfiguration {
@@ -921,12 +941,16 @@ impl DocumentMetadataConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Search {
     /// <p>Indicates that the field can be used to create search facets, a count of results for each value in the field. The default is <code>false</code> .</p>
+    #[doc(hidden)]
     pub facetable: bool,
     /// <p>Determines whether the field is used in the search. If the <code>Searchable</code> field is <code>true</code>, you can use relevance tuning to manually tune how Amazon Kendra weights the field in the search. The default is <code>true</code> for string fields and <code>false</code> for number and date fields.</p>
+    #[doc(hidden)]
     pub searchable: bool,
     /// <p>Determines whether the field is returned in the query response. The default is <code>true</code>.</p>
+    #[doc(hidden)]
     pub displayable: bool,
     /// <p>Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub sortable: bool,
 }
 impl Search {
@@ -1032,19 +1056,24 @@ impl Search {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Relevance {
     /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    #[doc(hidden)]
     pub freshness: std::option::Option<bool>,
     /// <p>The relative importance of the field in the search. Larger numbers provide more of a boost than smaller numbers.</p>
+    #[doc(hidden)]
     pub importance: std::option::Option<i32>,
     /// <p>Specifies the time period that the boost applies to. For example, to make the boost apply to documents with the field value within the last month, you would use "2628000s". Once the field value is beyond the specified range, the effect of the boost drops off. The higher the importance, the faster the effect drops off. If you don't specify a value, the default is 3 months. The value of the field is a numeric string followed by the character "s", for example "86400s" for one day, or "604800s" for one week. </p>
     /// <p>Only applies to <code>DATE</code> fields.</p>
+    #[doc(hidden)]
     pub duration: std::option::Option<std::string::String>,
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
     /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    #[doc(hidden)]
     pub rank_order: std::option::Option<crate::model::Order>,
     /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher. </p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
+    #[doc(hidden)]
     pub value_importance_map:
         std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -1318,8 +1347,10 @@ impl AsRef<str> for DocumentAttributeValueType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperienceConfiguration {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub content_source_configuration: std::option::Option<crate::model::ContentSourceConfiguration>,
     /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    #[doc(hidden)]
     pub user_identity_configuration: std::option::Option<crate::model::UserIdentityConfiguration>,
 }
 impl ExperienceConfiguration {
@@ -1415,6 +1446,7 @@ impl ExperienceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityConfiguration {
     /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up Amazon Web Services SSO with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>.</p>
+    #[doc(hidden)]
     pub identity_attribute_name: std::option::Option<std::string::String>,
 }
 impl UserIdentityConfiguration {
@@ -1472,10 +1504,13 @@ impl UserIdentityConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    #[doc(hidden)]
     pub direct_put_content: bool,
 }
 impl ContentSourceConfiguration {
@@ -1583,14 +1618,18 @@ impl ContentSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomDocumentEnrichmentConfiguration {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
+    #[doc(hidden)]
     pub inline_configurations: std::option::Option<
         std::vec::Vec<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
     >,
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
+    #[doc(hidden)]
     pub pre_extraction_hook_configuration: std::option::Option<crate::model::HookConfiguration>,
     /// <p>Configuration information for invoking a Lambda function in Lambda on the structured documents with their metadata and text extracted. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
+    #[doc(hidden)]
     pub post_extraction_hook_configuration: std::option::Option<crate::model::HookConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomDocumentEnrichmentConfiguration {
@@ -1740,10 +1779,13 @@ impl CustomDocumentEnrichmentConfiguration {
 pub struct HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+    #[doc(hidden)]
     pub invocation_condition: std::option::Option<crate::model::DocumentAttributeCondition>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
 }
 impl HookConfiguration {
@@ -1848,12 +1890,15 @@ pub struct DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    #[doc(hidden)]
     pub condition_document_attribute_key: std::option::Option<std::string::String>,
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::ConditionOperator>,
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
+    #[doc(hidden)]
     pub condition_on_value: std::option::Option<crate::model::DocumentAttributeValue>,
 }
 impl DocumentAttributeCondition {
@@ -1969,13 +2014,17 @@ impl DocumentAttributeCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttributeValue {
     /// <p>A string, such as "department".</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>A list of strings. </p>
+    #[doc(hidden)]
     pub string_list_value: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A long integer value.</p>
+    #[doc(hidden)]
     pub long_value: std::option::Option<i64>,
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+    #[doc(hidden)]
     pub date_value: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DocumentAttributeValue {
@@ -2200,10 +2249,13 @@ impl AsRef<str> for ConditionOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InlineCustomDocumentEnrichmentConfiguration {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::DocumentAttributeCondition>,
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::DocumentAttributeTarget>,
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
+    #[doc(hidden)]
     pub document_content_deletion: bool,
 }
 impl InlineCustomDocumentEnrichmentConfiguration {
@@ -2302,11 +2354,14 @@ impl InlineCustomDocumentEnrichmentConfiguration {
 pub struct DocumentAttributeTarget {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
+    #[doc(hidden)]
     pub target_document_attribute_key: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    #[doc(hidden)]
     pub target_document_attribute_value_deletion: bool,
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
+    #[doc(hidden)]
     pub target_document_attribute_value: std::option::Option<crate::model::DocumentAttributeValue>,
 }
 impl DocumentAttributeTarget {
@@ -2430,38 +2485,55 @@ impl DocumentAttributeTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3DataSourceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
+    #[doc(hidden)]
     pub share_point_configuration: std::option::Option<crate::model::SharePointConfiguration>,
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
+    #[doc(hidden)]
     pub database_configuration: std::option::Option<crate::model::DatabaseConfiguration>,
     /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
+    #[doc(hidden)]
     pub salesforce_configuration: std::option::Option<crate::model::SalesforceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
+    #[doc(hidden)]
     pub one_drive_configuration: std::option::Option<crate::model::OneDriveConfiguration>,
     /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
+    #[doc(hidden)]
     pub service_now_configuration: std::option::Option<crate::model::ServiceNowConfiguration>,
     /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
+    #[doc(hidden)]
     pub confluence_configuration: std::option::Option<crate::model::ConfluenceConfiguration>,
     /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
+    #[doc(hidden)]
     pub google_drive_configuration: std::option::Option<crate::model::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
+    #[doc(hidden)]
     pub web_crawler_configuration: std::option::Option<crate::model::WebCrawlerConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
+    #[doc(hidden)]
     pub work_docs_configuration: std::option::Option<crate::model::WorkDocsConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    #[doc(hidden)]
     pub fsx_configuration: std::option::Option<crate::model::FsxConfiguration>,
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    #[doc(hidden)]
     pub slack_configuration: std::option::Option<crate::model::SlackConfiguration>,
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
+    #[doc(hidden)]
     pub box_configuration: std::option::Option<crate::model::BoxConfiguration>,
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
+    #[doc(hidden)]
     pub quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
+    #[doc(hidden)]
     pub jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    #[doc(hidden)]
     pub git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    #[doc(hidden)]
     pub alfresco_configuration: std::option::Option<crate::model::AlfrescoConfiguration>,
 }
 impl DataSourceConfiguration {
@@ -2904,37 +2976,50 @@ impl DataSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlfrescoConfiguration {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+    #[doc(hidden)]
     pub site_url: std::option::Option<std::string::String>,
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The user name of the Alfresco account.</p> </li>
     /// <li> <p>password—The password of the Alfresco account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+    #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p> <code>TRUE</code> to index shared files.</p>
+    #[doc(hidden)]
     pub crawl_system_folders: bool,
     /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+    #[doc(hidden)]
     pub crawl_comments: bool,
     /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+    #[doc(hidden)]
     pub entity_filter: std::option::Option<std::vec::Vec<crate::model::AlfrescoEntity>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    #[doc(hidden)]
     pub document_library_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    #[doc(hidden)]
     pub blog_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    #[doc(hidden)]
     pub wiki_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl AlfrescoConfiguration {
@@ -3291,8 +3376,10 @@ impl AlfrescoConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceVpcConfiguration {
     /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DataSourceVpcConfiguration {
@@ -3382,10 +3469,13 @@ impl DataSourceVpcConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceToIndexFieldMapping {
     /// <p>The name of the column or attribute in the data source.</p>
+    #[doc(hidden)]
     pub data_source_field_name: std::option::Option<std::string::String>,
     /// <p>The type of data stored in the column or attribute.</p>
+    #[doc(hidden)]
     pub date_field_format: std::option::Option<std::string::String>,
     /// <p>The name of the field in the index.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl DataSourceToIndexFieldMapping {
@@ -3542,59 +3632,81 @@ impl AsRef<str> for AlfrescoEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubConfiguration {
     /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+    #[doc(hidden)]
     pub saa_s_configuration: std::option::Option<crate::model::SaaSConfiguration>,
     /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+    #[doc(hidden)]
     pub on_premise_configuration: std::option::Option<crate::model::OnPremiseConfiguration>,
     /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+    #[doc(hidden)]
     pub git_hub_document_crawl_properties:
         std::option::Option<crate::model::GitHubDocumentCrawlProperties>,
     /// <p>A list of names of the specific repositories you want to index.</p>
+    #[doc(hidden)]
     pub repository_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_folder_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_file_type_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_file_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_folder_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_file_type_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_file_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_repository_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_commit_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_issue_document_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_issue_comment_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_issue_attachment_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_pull_request_comment_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_pull_request_document_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    #[doc(hidden)]
     pub git_hub_pull_request_document_attachment_configuration_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -4328,18 +4440,25 @@ impl GitHubConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubDocumentCrawlProperties {
     /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    #[doc(hidden)]
     pub crawl_repository_documents: bool,
     /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    #[doc(hidden)]
     pub crawl_issue: bool,
     /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    #[doc(hidden)]
     pub crawl_issue_comment: bool,
     /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    #[doc(hidden)]
     pub crawl_issue_comment_attachment: bool,
     /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    #[doc(hidden)]
     pub crawl_pull_request: bool,
     /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    #[doc(hidden)]
     pub crawl_pull_request_comment: bool,
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    #[doc(hidden)]
     pub crawl_pull_request_comment_attachment: bool,
 }
 impl GitHubDocumentCrawlProperties {
@@ -4573,10 +4692,13 @@ impl AsRef<str> for Type {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnPremiseConfiguration {
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    #[doc(hidden)]
     pub host_url: std::option::Option<std::string::String>,
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
+    #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl OnPremiseConfiguration {
@@ -4671,8 +4793,10 @@ impl OnPremiseConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+    #[doc(hidden)]
     pub host_url: std::option::Option<std::string::String>,
 }
 impl SaaSConfiguration {
@@ -4747,43 +4871,58 @@ impl SaaSConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JiraConfiguration {
     /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    #[doc(hidden)]
     pub jira_account_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira username.</p> </li>
     /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    #[doc(hidden)]
     pub issue_type: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+    #[doc(hidden)]
     pub issue_sub_entity_filter: std::option::Option<std::vec::Vec<crate::model::IssueSubEntity>>,
     /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    #[doc(hidden)]
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    #[doc(hidden)]
     pub comment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    #[doc(hidden)]
     pub issue_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    #[doc(hidden)]
     pub project_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    #[doc(hidden)]
     pub work_log_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl JiraConfiguration {
@@ -5288,34 +5427,46 @@ impl AsRef<str> for IssueSubEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuipConfiguration {
     /// <p>The Quip site domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to index file comments.</p>
+    #[doc(hidden)]
     pub crawl_file_comments: bool,
     /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
+    #[doc(hidden)]
     pub crawl_chat_rooms: bool,
     /// <p> <code>TRUE</code> to index attachments.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>The identifiers of the Quip folders you want to index.</p>
+    #[doc(hidden)]
     pub folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    #[doc(hidden)]
     pub thread_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    #[doc(hidden)]
     pub message_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    #[doc(hidden)]
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl QuipConfiguration {
@@ -5646,6 +5797,7 @@ impl QuipConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BoxConfiguration {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
+    #[doc(hidden)]
     pub enterprise_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -5656,32 +5808,44 @@ pub struct BoxConfiguration {
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a Box data source</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p> <code>TRUE</code> to index comments.</p>
+    #[doc(hidden)]
     pub crawl_comments: bool,
     /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    #[doc(hidden)]
     pub crawl_tasks: bool,
     /// <p> <code>TRUE</code> to index web links.</p>
+    #[doc(hidden)]
     pub crawl_web_links: bool,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
+    #[doc(hidden)]
     pub file_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
+    #[doc(hidden)]
     pub task_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
+    #[doc(hidden)]
     pub comment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
+    #[doc(hidden)]
     pub web_link_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl BoxConfiguration {
@@ -6054,36 +6218,50 @@ impl BoxConfiguration {
 pub struct SlackConfiguration {
     /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
     /// <p>You can find your team ID in the URL of the main page of your Slack workspace. When you log in to Slack via a browser, you are directed to the URL of the main page. For example, <i>https://app.slack.com/client/<b>T0123456789</b>/...</i>.</p>
+    #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Slack workspace team. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>slackToken—The user or bot token created in Slack. For more information on creating a token in Slack, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#slack-authentication">Authentication for a Slack data source</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
+    #[doc(hidden)]
     pub slack_entity_list: std::option::Option<std::vec::Vec<crate::model::SlackEntity>>,
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p> <code>TRUE</code> to index bot messages from your Slack workspace team.</p>
+    #[doc(hidden)]
     pub crawl_bot_message: bool,
     /// <p> <code>TRUE</code> to exclude archived messages to index from your Slack workspace team.</p>
+    #[doc(hidden)]
     pub exclude_archived: bool,
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
+    #[doc(hidden)]
     pub since_crawl_date: std::option::Option<std::string::String>,
     /// <p>The number of hours for change log to look back from when you last synchronized your data. You can look back up to 7 days or 168 hours.</p>
     /// <p>Change log updates your index only if new content was added since you last synced your data. Updated or deleted content from before you last synced does not get updated in your index. To capture updated or deleted content before you last synced, set the <code>LookBackPeriod</code> to the number of hours you want change log to look back.</p>
+    #[doc(hidden)]
     pub look_back_period: std::option::Option<i32>,
     /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
+    #[doc(hidden)]
     pub private_channel_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
+    #[doc(hidden)]
     pub public_channel_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -6515,22 +6693,29 @@ impl AsRef<str> for SlackEntity {
 pub struct FsxConfiguration {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+    #[doc(hidden)]
     pub file_system_type: std::option::Option<crate::model::FsxFileSystemType>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
     /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -6803,17 +6988,23 @@ impl AsRef<str> for FsxFileSystemType {
 pub struct WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
+    #[doc(hidden)]
     pub crawl_comments: bool,
     /// <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -6999,34 +7190,43 @@ pub struct WebCrawlerConfiguration {
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
     /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
+    #[doc(hidden)]
     pub urls: std::option::Option<crate::model::Urls>,
     /// <p>Specifies the number of levels in a website that you want to crawl.</p>
     /// <p>The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1.</p>
     /// <p>The default crawl depth is set to 2.</p>
+    #[doc(hidden)]
     pub crawl_depth: std::option::Option<i32>,
     /// <p>The maximum number of URLs on a webpage to include when crawling a website. This number is per webpage.</p>
     /// <p>As a website’s webpages are crawled, any URLs the webpages link to are also crawled. URLs on a webpage are crawled in order of appearance.</p>
     /// <p>The default maximum links per page is 100.</p>
+    #[doc(hidden)]
     pub max_links_per_page: std::option::Option<i32>,
     /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
     /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
     /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
+    #[doc(hidden)]
     pub max_content_size_per_page_in_mega_bytes: std::option::Option<f32>,
     /// <p>The maximum number of URLs crawled per website host per minute.</p>
     /// <p>A minimum of one URL is required.</p>
     /// <p>The default maximum number of URLs crawled per website host per minute is 300.</p>
+    #[doc(hidden)]
     pub max_urls_per_minute_crawl_rate: std::option::Option<i32>,
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
+    #[doc(hidden)]
     pub url_inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
+    #[doc(hidden)]
     pub url_exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
+    #[doc(hidden)]
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>Configuration information required to connect to websites using authentication.</p>
     /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    #[doc(hidden)]
     pub authentication_configuration:
         std::option::Option<crate::model::AuthenticationConfiguration>,
 }
@@ -7310,6 +7510,7 @@ impl WebCrawlerConfiguration {
 pub struct AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
+    #[doc(hidden)]
     pub basic_authentication:
         std::option::Option<std::vec::Vec<crate::model::BasicAuthenticationConfiguration>>,
 }
@@ -7386,12 +7587,15 @@ impl AuthenticationConfiguration {
 pub struct BasicAuthenticationConfiguration {
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The port number of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::string::String>,
 }
 impl BasicAuthenticationConfiguration {
@@ -7490,12 +7694,15 @@ impl BasicAuthenticationConfiguration {
 pub struct ProxyConfiguration {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
+    #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
+    #[doc(hidden)]
     pub port: std::option::Option<i32>,
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
+    #[doc(hidden)]
     pub credentials: std::option::Option<std::string::String>,
 }
 impl ProxyConfiguration {
@@ -7597,9 +7804,11 @@ pub struct Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
+    #[doc(hidden)]
     pub seed_url_configuration: std::option::Option<crate::model::SeedUrlConfiguration>,
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
+    #[doc(hidden)]
     pub site_maps_configuration: std::option::Option<crate::model::SiteMapsConfiguration>,
 }
 impl Urls {
@@ -7696,6 +7905,7 @@ impl Urls {
 pub struct SiteMapsConfiguration {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
+    #[doc(hidden)]
     pub site_maps: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SiteMapsConfiguration {
@@ -7764,6 +7974,7 @@ impl SiteMapsConfiguration {
 pub struct SeedUrlConfiguration {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
+    #[doc(hidden)]
     pub seed_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
@@ -7772,6 +7983,7 @@ pub struct SeedUrlConfiguration {
     /// <li> <p> <code>EVERYTHING</code> – crawl the website host names with subdomains and other domains that the webpages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
+    #[doc(hidden)]
     pub web_crawler_mode: std::option::Option<crate::model::WebCrawlerMode>,
 }
 impl SeedUrlConfiguration {
@@ -7935,20 +8147,27 @@ impl AsRef<str> for WebCrawlerMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GoogleDriveConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>A list of regular expression patterns to include certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maps Google Drive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Google Drive data source field names must exist in your Google Drive custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
+    #[doc(hidden)]
     pub exclude_mime_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of email addresses of the users. Documents owned by these users are excluded from the index. Documents shared with excluded users are indexed unless they are excluded in another way.</p>
+    #[doc(hidden)]
     pub exclude_user_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of identifiers or shared drives to exclude from the index. All files and folders stored on the shared drive are excluded.</p>
+    #[doc(hidden)]
     pub exclude_shared_drives: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GoogleDriveConfiguration {
@@ -8168,25 +8387,35 @@ impl GoogleDriveConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
+    #[doc(hidden)]
     pub server_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The version or the type of Confluence installation to connect to.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::ConfluenceVersion>,
     /// <p>Configuration information for indexing Confluence spaces.</p>
+    #[doc(hidden)]
     pub space_configuration: std::option::Option<crate::model::ConfluenceSpaceConfiguration>,
     /// <p>Configuration information for indexing Confluence pages.</p>
+    #[doc(hidden)]
     pub page_configuration: std::option::Option<crate::model::ConfluencePageConfiguration>,
     /// <p>Configuration information for indexing Confluence blogs.</p>
+    #[doc(hidden)]
     pub blog_configuration: std::option::Option<crate::model::ConfluenceBlogConfiguration>,
     /// <p>Configuration information for indexing attachments to Confluence blogs and pages.</p>
+    #[doc(hidden)]
     pub attachment_configuration:
         std::option::Option<crate::model::ConfluenceAttachmentConfiguration>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConfluenceConfiguration {
@@ -8459,9 +8688,11 @@ impl ConfluenceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceAttachmentConfiguration {
     /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
+    #[doc(hidden)]
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceAttachmentToIndexFieldMapping>>,
 }
@@ -8556,10 +8787,13 @@ impl ConfluenceAttachmentConfiguration {
 pub struct ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
+    #[doc(hidden)]
     pub data_source_field_name: std::option::Option<crate::model::ConfluenceAttachmentFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
+    #[doc(hidden)]
     pub date_field_format: std::option::Option<std::string::String>,
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl ConfluenceAttachmentToIndexFieldMapping {
@@ -8770,6 +9004,7 @@ impl AsRef<str> for ConfluenceAttachmentFieldName {
 pub struct ConfluenceBlogConfiguration {
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
+    #[doc(hidden)]
     pub blog_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceBlogToIndexFieldMapping>>,
 }
@@ -8845,10 +9080,13 @@ impl ConfluenceBlogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceBlogToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
+    #[doc(hidden)]
     pub data_source_field_name: std::option::Option<crate::model::ConfluenceBlogFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
+    #[doc(hidden)]
     pub date_field_format: std::option::Option<std::string::String>,
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl ConfluenceBlogToIndexFieldMapping {
@@ -9046,6 +9284,7 @@ impl AsRef<str> for ConfluenceBlogFieldName {
 pub struct ConfluencePageConfiguration {
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
+    #[doc(hidden)]
     pub page_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluencePageToIndexFieldMapping>>,
 }
@@ -9121,10 +9360,13 @@ impl ConfluencePageConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluencePageToIndexFieldMapping {
     /// <p>The name of the field in the data source.</p>
+    #[doc(hidden)]
     pub data_source_field_name: std::option::Option<crate::model::ConfluencePageFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
+    #[doc(hidden)]
     pub date_field_format: std::option::Option<std::string::String>,
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl ConfluencePageToIndexFieldMapping {
@@ -9336,15 +9578,20 @@ impl AsRef<str> for ConfluencePageFieldName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceSpaceConfiguration {
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    #[doc(hidden)]
     pub crawl_personal_spaces: bool,
     /// <p> <code>TRUE</code> to index archived spaces.</p>
+    #[doc(hidden)]
     pub crawl_archived_spaces: bool,
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
+    #[doc(hidden)]
     pub include_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
+    #[doc(hidden)]
     pub exclude_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
+    #[doc(hidden)]
     pub space_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceSpaceToIndexFieldMapping>>,
 }
@@ -9506,10 +9753,13 @@ impl ConfluenceSpaceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceSpaceToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
+    #[doc(hidden)]
     pub data_source_field_name: std::option::Option<crate::model::ConfluenceSpaceFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
+    #[doc(hidden)]
     pub date_field_format: std::option::Option<std::string::String>,
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
+    #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
 }
 impl ConfluenceSpaceToIndexFieldMapping {
@@ -9731,19 +9981,25 @@ impl AsRef<str> for ConfluenceVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    #[doc(hidden)]
     pub host_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
+    #[doc(hidden)]
     pub service_now_build_version: std::option::Option<crate::model::ServiceNowBuildVersionType>,
     /// <p>Configuration information for crawling knowledge articles in the ServiceNow site.</p>
+    #[doc(hidden)]
     pub knowledge_article_configuration:
         std::option::Option<crate::model::ServiceNowKnowledgeArticleConfiguration>,
     /// <p>Configuration information for crawling service catalogs in the ServiceNow site.</p>
+    #[doc(hidden)]
     pub service_catalog_configuration:
         std::option::Option<crate::model::ServiceNowServiceCatalogConfiguration>,
     /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
     /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::ServiceNowAuthenticationType>,
 }
 impl ServiceNowConfiguration {
@@ -9983,18 +10239,24 @@ impl AsRef<str> for ServiceNowAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowServiceCatalogConfiguration {
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
+    #[doc(hidden)]
     pub include_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
+    #[doc(hidden)]
     pub exclude_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -10194,22 +10456,29 @@ impl ServiceNowServiceCatalogConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowKnowledgeArticleConfiguration {
     /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    #[doc(hidden)]
     pub include_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    #[doc(hidden)]
     pub exclude_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of knoweldge articles to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A query that selects the knowledge articles to index. The query can return articles from multiple knowledge bases, and the knowledge bases can be public or private.</p>
     /// <p>The query string must be one generated by the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/servicenow-query.html">Specifying documents to index with a query</a>. </p>
+    #[doc(hidden)]
     pub filter_query: std::option::Option<std::string::String>,
 }
 impl ServiceNowKnowledgeArticleConfiguration {
@@ -10483,21 +10752,28 @@ impl AsRef<str> for ServiceNowBuildVersionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OneDriveConfiguration {
     /// <p>The Azure Active Directory domain of the organization. </p>
+    #[doc(hidden)]
     pub tenant_domain: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>A list of user accounts whose documents should be indexed.</p>
+    #[doc(hidden)]
     pub one_drive_users: std::option::Option<crate::model::OneDriveUsers>,
     /// <p>A list of regular expression patterns to include certain documents in your OneDrive. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the file name.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your OneDrive. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the file name.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The OneDrive data source field names must exist in your OneDrive custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p> <code>TRUE</code> to disable local groups information.</p>
+    #[doc(hidden)]
     pub disable_local_groups: bool,
 }
 impl OneDriveConfiguration {
@@ -10699,8 +10975,10 @@ impl OneDriveConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OneDriveUsers {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
+    #[doc(hidden)]
     pub one_drive_user_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
+    #[doc(hidden)]
     pub one_drive_user_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl OneDriveUsers {
@@ -10784,6 +11062,7 @@ impl OneDriveUsers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
+    #[doc(hidden)]
     pub server_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -10794,26 +11073,34 @@ pub struct SalesforceConfiguration {
     /// <li> <p>securityToken - The token associated with the user account logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
+    #[doc(hidden)]
     pub standard_object_configurations:
         std::option::Option<std::vec::Vec<crate::model::SalesforceStandardObjectConfiguration>>,
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
+    #[doc(hidden)]
     pub knowledge_article_configuration:
         std::option::Option<crate::model::SalesforceKnowledgeArticleConfiguration>,
     /// <p>Configuration information for Salesforce chatter feeds.</p>
+    #[doc(hidden)]
     pub chatter_feed_configuration:
         std::option::Option<crate::model::SalesforceChatterFeedConfiguration>,
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    #[doc(hidden)]
     pub standard_object_attachment_configuration:
         std::option::Option<crate::model::SalesforceStandardObjectAttachmentConfiguration>,
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
+    #[doc(hidden)]
     pub include_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
+    #[doc(hidden)]
     pub exclude_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SalesforceConfiguration {
@@ -11125,8 +11412,10 @@ impl SalesforceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceStandardObjectAttachmentConfiguration {
     /// <p>The name of the field used for the document title.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -11217,13 +11506,17 @@ impl SalesforceStandardObjectAttachmentConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceChatterFeedConfiguration {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
+    #[doc(hidden)]
     pub include_filter_types:
         std::option::Option<std::vec::Vec<crate::model::SalesforceChatterFeedIncludeFilterType>>,
 }
@@ -11424,12 +11717,15 @@ impl AsRef<str> for SalesforceChatterFeedIncludeFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceKnowledgeArticleConfiguration {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
+    #[doc(hidden)]
     pub included_states:
         std::option::Option<std::vec::Vec<crate::model::SalesforceKnowledgeArticleState>>,
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
+    #[doc(hidden)]
     pub standard_knowledge_article_type_configuration:
         std::option::Option<crate::model::SalesforceStandardKnowledgeArticleTypeConfiguration>,
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
+    #[doc(hidden)]
     pub custom_knowledge_article_type_configurations: std::option::Option<
         std::vec::Vec<crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration>,
     >,
@@ -11578,12 +11874,16 @@ impl SalesforceKnowledgeArticleConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceCustomKnowledgeArticleTypeConfiguration {
     /// <p>The name of the configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -11712,10 +12012,13 @@ impl SalesforceCustomKnowledgeArticleTypeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceStandardKnowledgeArticleTypeConfiguration {
     /// <p>The name of the field that contains the document data to index.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the field that contains the document title.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of the knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -11886,12 +12189,16 @@ impl AsRef<str> for SalesforceKnowledgeArticleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceStandardObjectConfiguration {
     /// <p>The name of the standard object.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::SalesforceStandardObjectName>,
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
+    #[doc(hidden)]
     pub document_data_field_name: std::option::Option<std::string::String>,
     /// <p>The name of the field in the standard object table that contains the document title.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -12155,16 +12462,22 @@ impl AsRef<str> for SalesforceStandardObjectName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
+    #[doc(hidden)]
     pub database_engine_type: std::option::Option<crate::model::DatabaseEngineType>,
     /// <p>Configuration information that's required to connect to a database.</p>
+    #[doc(hidden)]
     pub connection_configuration: std::option::Option<crate::model::ConnectionConfiguration>,
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>Information about where the index should get the document information from the database.</p>
+    #[doc(hidden)]
     pub column_configuration: std::option::Option<crate::model::ColumnConfiguration>,
     /// <p>Information about the database column that provides information for user context filtering.</p>
+    #[doc(hidden)]
     pub acl_configuration: std::option::Option<crate::model::AclConfiguration>,
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
+    #[doc(hidden)]
     pub sql_configuration: std::option::Option<crate::model::SqlConfiguration>,
 }
 impl DatabaseConfiguration {
@@ -12336,6 +12649,7 @@ pub struct SqlConfiguration {
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
+    #[doc(hidden)]
     pub query_identifiers_enclosing_option:
         std::option::Option<crate::model::QueryIdentifiersEnclosingOption>,
 }
@@ -12467,6 +12781,7 @@ impl AsRef<str> for QueryIdentifiersEnclosingOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AclConfiguration {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
+    #[doc(hidden)]
     pub allowed_groups_column_name: std::option::Option<std::string::String>,
 }
 impl AclConfiguration {
@@ -12527,15 +12842,20 @@ impl AclConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnConfiguration {
     /// <p>The column that provides the document's unique identifier.</p>
+    #[doc(hidden)]
     pub document_id_column_name: std::option::Option<std::string::String>,
     /// <p>The column that contains the contents of the document.</p>
+    #[doc(hidden)]
     pub document_data_column_name: std::option::Option<std::string::String>,
     /// <p>The column that contains the title of the document.</p>
+    #[doc(hidden)]
     pub document_title_column_name: std::option::Option<std::string::String>,
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
+    #[doc(hidden)]
     pub change_detecting_columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnConfiguration {
@@ -12695,14 +13015,19 @@ impl ColumnConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionConfiguration {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
+    #[doc(hidden)]
     pub database_host: std::option::Option<std::string::String>,
     /// <p>The port that the database uses for connections.</p>
+    #[doc(hidden)]
     pub database_port: std::option::Option<i32>,
     /// <p>The name of the database containing the document data.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the document data.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl ConnectionConfiguration {
@@ -12899,34 +13224,47 @@ impl AsRef<str> for DatabaseEngineType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
+    #[doc(hidden)]
     pub share_point_version: std::option::Option<crate::model::SharePointVersion>,
     /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+    #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
     /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
+    #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to index document attachments.</p>
+    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    #[doc(hidden)]
     pub use_change_log: bool,
     /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The regex applies to the display URL of the SharePoint document.</p>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The regex applies to the display URL of the SharePoint document.</p>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map SharePoint data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to SharePoint fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The SharePoint data source field names must exist in your SharePoint custom metadata.</p>
+    #[doc(hidden)]
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
+    #[doc(hidden)]
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to disable local groups information.</p>
+    #[doc(hidden)]
     pub disable_local_groups: bool,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
+    #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
 }
 impl SharePointConfiguration {
@@ -13376,8 +13714,10 @@ impl AsRef<str> for SharePointVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DataSourceConfiguration {
     /// <p>The name of the bucket that contains the documents.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
+    #[doc(hidden)]
     pub inclusion_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -13386,6 +13726,7 @@ pub struct S3DataSourceConfiguration {
     /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
     /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -13394,11 +13735,14 @@ pub struct S3DataSourceConfiguration {
     /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
     /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
+    #[doc(hidden)]
     pub documents_metadata_configuration:
         std::option::Option<crate::model::DocumentsMetadataConfiguration>,
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
+    #[doc(hidden)]
     pub access_control_list_configuration:
         std::option::Option<crate::model::AccessControlListConfiguration>,
 }
@@ -13626,6 +13970,7 @@ impl S3DataSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlListConfiguration {
     /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
+    #[doc(hidden)]
     pub key_path: std::option::Option<std::string::String>,
 }
 impl AccessControlListConfiguration {
@@ -13680,6 +14025,7 @@ impl AccessControlListConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
+    #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
 }
 impl DocumentsMetadataConfiguration {
@@ -13734,6 +14080,7 @@ impl DocumentsMetadataConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+    #[doc(hidden)]
     pub principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
 }
 impl HierarchicalPrincipal {
@@ -13797,12 +14144,16 @@ impl HierarchicalPrincipal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Principal {
     /// <p>The name of the user or group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of principal.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PrincipalType>,
     /// <p>Whether to allow or deny document access to the principal.</p>
+    #[doc(hidden)]
     pub access: std::option::Option<crate::model::ReadAccessType>,
     /// <p>The identifier of the data source the principal should access documents from.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl Principal {
@@ -14024,8 +14375,10 @@ impl AsRef<str> for PrincipalType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for the tag. Keys are not case sensitive and must be unique for the index, FAQ, or data source.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with the tag. The value may be an empty string but it can't be null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -14097,8 +14450,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelevanceFeedback {
     /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
+    #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>Whether to document was relevant or not relevant to the search.</p>
+    #[doc(hidden)]
     pub relevance_value: std::option::Option<crate::model::RelevanceType>,
 }
 impl RelevanceFeedback {
@@ -14228,8 +14583,10 @@ impl AsRef<str> for RelevanceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClickFeedback {
     /// <p>The unique identifier of the search result that was clicked.</p>
+    #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
+    #[doc(hidden)]
     pub click_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClickFeedback {
@@ -14304,8 +14661,10 @@ impl ClickFeedback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpellCorrectedQuery {
     /// <p>The query with the suggested spell corrections.</p>
+    #[doc(hidden)]
     pub suggested_query_text: std::option::Option<std::string::String>,
     /// <p>The corrected misspelled word or words in a query.</p>
+    #[doc(hidden)]
     pub corrections: std::option::Option<std::vec::Vec<crate::model::Correction>>,
 }
 impl SpellCorrectedQuery {
@@ -14389,12 +14748,16 @@ impl SpellCorrectedQuery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Correction {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>The string or text of a misspelled word in a query.</p>
+    #[doc(hidden)]
     pub term: std::option::Option<std::string::String>,
     /// <p>The string or text of a corrected misspelled word in a query.</p>
+    #[doc(hidden)]
     pub corrected_term: std::option::Option<std::string::String>,
 }
 impl Correction {
@@ -14503,8 +14866,10 @@ impl Correction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Warning {
     /// <p>The message that explains the problem with the query.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The code used to show the type of warning for the query.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::WarningCode>,
 }
 impl Warning {
@@ -14627,11 +14992,14 @@ impl AsRef<str> for WarningCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetResult {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
+    #[doc(hidden)]
     pub document_attribute_key: std::option::Option<std::string::String>,
     /// <p>The data type of the facet value. This is the same as the type defined for the index field when it was created.</p>
+    #[doc(hidden)]
     pub document_attribute_value_type:
         std::option::Option<crate::model::DocumentAttributeValueType>,
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
+    #[doc(hidden)]
     pub document_attribute_value_count_pairs:
         std::option::Option<std::vec::Vec<crate::model::DocumentAttributeValueCountPair>>,
 }
@@ -14758,11 +15126,14 @@ impl FacetResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttributeValueCountPair {
     /// <p>The value of the attribute. For example, "HR".</p>
+    #[doc(hidden)]
     pub document_attribute_value: std::option::Option<crate::model::DocumentAttributeValue>,
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
+    #[doc(hidden)]
     pub count: std::option::Option<i32>,
     /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+    #[doc(hidden)]
     pub facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
 }
 impl DocumentAttributeValueCountPair {
@@ -14873,26 +15244,36 @@ impl DocumentAttributeValueCountPair {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryResultItem {
     /// <p>The unique identifier for the query result.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of document. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::QueryResultType>,
     /// <p>One or more additional attributes associated with the query result.</p>
+    #[doc(hidden)]
     pub additional_attributes:
         std::option::Option<std::vec::Vec<crate::model::AdditionalResultAttribute>>,
     /// <p>The unique identifier for the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The title of the document. Contains the text of the title and information for highlighting the relevant terms in the title.</p>
+    #[doc(hidden)]
     pub document_title: std::option::Option<crate::model::TextWithHighlights>,
     /// <p>An extract of the text in the document. Contains information about highlighting the relevant terms in the excerpt.</p>
+    #[doc(hidden)]
     pub document_excerpt: std::option::Option<crate::model::TextWithHighlights>,
     /// <p>The URI of the original location of the document.</p>
+    #[doc(hidden)]
     pub document_uri: std::option::Option<std::string::String>,
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    #[doc(hidden)]
     pub document_attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
     /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
     /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
+    #[doc(hidden)]
     pub score_attributes: std::option::Option<crate::model::ScoreAttributes>,
     /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
+    #[doc(hidden)]
     pub feedback_token: std::option::Option<std::string::String>,
 }
 impl QueryResultItem {
@@ -15143,6 +15524,7 @@ impl QueryResultItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScoreAttributes {
     /// <p>A relative ranking for how well the response matches the query.</p>
+    #[doc(hidden)]
     pub score_confidence: std::option::Option<crate::model::ScoreConfidence>,
 }
 impl ScoreAttributes {
@@ -15267,8 +15649,10 @@ impl AsRef<str> for ScoreConfidence {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttribute {
     /// <p>The identifier for the attribute.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::DocumentAttributeValue>,
 }
 impl DocumentAttribute {
@@ -15343,8 +15727,10 @@ impl DocumentAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextWithHighlights {
     /// <p>The text to display to the user.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The beginning and end of the text that should be highlighted.</p>
+    #[doc(hidden)]
     pub highlights: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
 }
 impl TextWithHighlights {
@@ -15425,12 +15811,16 @@ impl TextWithHighlights {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
+    #[doc(hidden)]
     pub top_answer: bool,
     /// <p>The highlight type. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HighlightType>,
 }
 impl Highlight {
@@ -15591,10 +15981,13 @@ impl AsRef<str> for HighlightType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The data type of the <code>Value</code> property.</p>
+    #[doc(hidden)]
     pub value_type: std::option::Option<crate::model::AdditionalResultAttributeValueType>,
     /// <p>An object that contains the attribute value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::AdditionalResultAttributeValue>,
 }
 impl AdditionalResultAttribute {
@@ -15695,6 +16088,7 @@ impl AdditionalResultAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
+    #[doc(hidden)]
     pub text_with_highlights_value: std::option::Option<crate::model::TextWithHighlights>,
 }
 impl AdditionalResultAttributeValue {
@@ -15877,6 +16271,7 @@ impl AsRef<str> for QueryResultType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpellCorrectionConfiguration {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
+    #[doc(hidden)]
     pub include_query_spell_check_suggestions: bool,
 }
 impl SpellCorrectionConfiguration {
@@ -15946,12 +16341,16 @@ impl SpellCorrectionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserContext {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
+    #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
+    #[doc(hidden)]
     pub data_source_groups: std::option::Option<std::vec::Vec<crate::model::DataSourceGroup>>,
 }
 impl UserContext {
@@ -16076,8 +16475,10 @@ impl UserContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceGroup {
     /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl DataSourceGroup {
@@ -16170,8 +16571,10 @@ pub struct SortingConfiguration {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub document_attribute_key: std::option::Option<std::string::String>,
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl SortingConfiguration {
@@ -16328,8 +16731,10 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+    #[doc(hidden)]
     pub relevance: std::option::Option<crate::model::Relevance>,
 }
 impl DocumentRelevanceConfiguration {
@@ -16406,12 +16811,15 @@ impl DocumentRelevanceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Facet {
     /// <p>The unique key for the document attribute.</p>
+    #[doc(hidden)]
     pub document_attribute_key: std::option::Option<std::string::String>,
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    #[doc(hidden)]
     pub facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl Facet {
@@ -16529,24 +16937,34 @@ impl Facet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeFilter {
     /// <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
+    #[doc(hidden)]
     pub and_all_filters: std::option::Option<std::vec::Vec<crate::model::AttributeFilter>>,
     /// <p>Performs a logical <code>OR</code> operation on all supplied filters.</p>
+    #[doc(hidden)]
     pub or_all_filters: std::option::Option<std::vec::Vec<crate::model::AttributeFilter>>,
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
+    #[doc(hidden)]
     pub not_filter: std::option::Option<std::boxed::Box<crate::model::AttributeFilter>>,
     /// <p>Performs an equals operation on two document attributes.</p>
+    #[doc(hidden)]
     pub equals_to: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Returns true when a document contains all of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    #[doc(hidden)]
     pub contains_all: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Returns true when a document contains any of the specified document attributes. This filter is only applicable to <code>StringListValue</code> metadata.</p>
+    #[doc(hidden)]
     pub contains_any: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a greater than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    #[doc(hidden)]
     pub greater_than: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a greater or equals than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    #[doc(hidden)]
     pub greater_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a less than operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    #[doc(hidden)]
     pub less_than: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a less than or equals operation on two document attributes. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    #[doc(hidden)]
     pub less_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
 }
 impl AttributeFilter {
@@ -16801,11 +17219,14 @@ impl AttributeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupMembers {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
+    #[doc(hidden)]
     pub member_groups: std::option::Option<std::vec::Vec<crate::model::MemberGroup>>,
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
+    #[doc(hidden)]
     pub member_users: std::option::Option<std::vec::Vec<crate::model::MemberUser>>,
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
+    #[doc(hidden)]
     pub s3_pathfor_group_members: std::option::Option<crate::model::S3Path>,
 }
 impl GroupMembers {
@@ -16918,6 +17339,7 @@ impl GroupMembers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberUser {
     /// <p>The identifier of the user you want to map to a group.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl MemberUser {
@@ -16972,8 +17394,10 @@ impl MemberUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberGroup {
     /// <p>The identifier of the sub group you want to map to a group.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl MemberGroup {
@@ -17048,14 +17472,19 @@ impl MemberGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThesaurusSummary {
     /// <p>The identifier of the thesaurus.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the thesaurus.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the thesaurus.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ThesaurusStatus>,
     /// <p>The Unix datetime that the thesaurus was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThesaurusSummary {
@@ -17267,16 +17696,22 @@ impl AsRef<str> for ThesaurusStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuerySuggestionsBlockListSummary {
     /// <p>The identifier of a block list.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the block list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the block list.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
     /// <p>The date-time summary information for a query suggestions block list was last created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time the block list was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of items in the block list file.</p>
+    #[doc(hidden)]
     pub item_count: std::option::Option<i32>,
 }
 impl QuerySuggestionsBlockListSummary {
@@ -17503,16 +17938,22 @@ impl AsRef<str> for QuerySuggestionsBlockListStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexConfigurationSummary {
     /// <p>The identifier of the index.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IndexStatus>,
 }
 impl IndexConfigurationSummary {
@@ -17794,8 +18235,10 @@ impl AsRef<str> for IndexEdition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupSummary {
     /// <p>The identifier of the group you want group summary information on.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
+    #[doc(hidden)]
     pub ordering_id: std::option::Option<i64>,
 }
 impl GroupSummary {
@@ -17867,18 +18310,25 @@ impl GroupSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaqSummary {
     /// <p>The unique identifier of the FAQ.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name that you assigned the FAQ when you created or updated the FAQ.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the FAQ. When the status is <code>ACTIVE</code> the FAQ is ready for use.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FaqStatus>,
     /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the FAQ was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The file type used to create the FAQ. </p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
 }
 impl FaqSummary {
@@ -18173,14 +18623,19 @@ impl AsRef<str> for FaqStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperiencesSummary {
     /// <p>The name of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date-time your Amazon Kendra experience was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The processing status of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperienceStatus>,
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
 }
 impl ExperiencesSummary {
@@ -18318,8 +18773,10 @@ impl ExperiencesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperienceEndpoint {
     /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The endpoint of your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
 }
 impl ExperienceEndpoint {
@@ -18508,10 +18965,13 @@ impl AsRef<str> for ExperienceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperienceEntitiesSummary {
     /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<crate::model::EntityType>,
     /// <p>Information about the user entity.</p>
+    #[doc(hidden)]
     pub display_data: std::option::Option<crate::model::EntityDisplayData>,
 }
 impl ExperienceEntitiesSummary {
@@ -18606,14 +19066,19 @@ impl ExperienceEntitiesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityDisplayData {
     /// <p>The name of the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The user name of the user.</p>
+    #[doc(hidden)]
     pub identified_user_name: std::option::Option<std::string::String>,
     /// <p>The first name of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
 }
 impl EntityDisplayData {
@@ -18794,12 +19259,16 @@ impl AsRef<str> for EntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PersonasSummary {
     /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    #[doc(hidden)]
     pub persona: std::option::Option<crate::model::Persona>,
     /// <p>The date-time the summary information was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time the summary information was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PersonasSummary {
@@ -18966,20 +19435,28 @@ impl AsRef<str> for Persona {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSyncJob {
     /// <p>A unique identifier for the synchronization job.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The UNIX datetime that the synchronization job started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the synchronization job completed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceSyncJobStatus>,
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
+    #[doc(hidden)]
     pub data_source_error_code: std::option::Option<std::string::String>,
     /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<crate::model::DataSourceSyncJobMetrics>,
 }
 impl DataSourceSyncJob {
@@ -19174,14 +19651,19 @@ impl DataSourceSyncJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSyncJobMetrics {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
+    #[doc(hidden)]
     pub documents_added: std::option::Option<std::string::String>,
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
+    #[doc(hidden)]
     pub documents_modified: std::option::Option<std::string::String>,
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
+    #[doc(hidden)]
     pub documents_deleted: std::option::Option<std::string::String>,
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
+    #[doc(hidden)]
     pub documents_failed: std::option::Option<std::string::String>,
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
+    #[doc(hidden)]
     pub documents_scanned: std::option::Option<std::string::String>,
 }
 impl DataSourceSyncJobMetrics {
@@ -19457,8 +19939,10 @@ impl AsRef<str> for DataSourceSyncJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The UNIX datetime of the beginning of the time range.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime of the end of the time range.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeRange {
@@ -19536,18 +20020,25 @@ impl TimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSummary {
     /// <p>The name of the data source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data source.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The UNIX datetime that the data source was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The UNIX datetime that the data source was lasted updated. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
 }
 impl DataSourceSummary {
@@ -19924,6 +20415,7 @@ impl AsRef<str> for DataSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlConfigurationSummary {
     /// <p>The identifier of the access control configuration.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl AccessControlConfigurationSummary {
@@ -20132,9 +20624,11 @@ impl AsRef<str> for Interval {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Suggestion {
     /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::SuggestionValue>,
 }
 impl Suggestion {
@@ -20212,6 +20706,7 @@ impl Suggestion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestionValue {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<crate::model::SuggestionTextWithHighlights>,
 }
 impl SuggestionValue {
@@ -20267,8 +20762,10 @@ impl SuggestionValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestionTextWithHighlights {
     /// <p>The query suggestion text to display to the user.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
+    #[doc(hidden)]
     pub highlights: std::option::Option<std::vec::Vec<crate::model::SuggestionHighlight>>,
 }
 impl SuggestionTextWithHighlights {
@@ -20350,8 +20847,10 @@ impl SuggestionTextWithHighlights {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
+    #[doc(hidden)]
     pub begin_offset: std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
+    #[doc(hidden)]
     pub end_offset: std::option::Option<i32>,
 }
 impl SuggestionHighlight {
@@ -20423,8 +20922,10 @@ impl SuggestionHighlight {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedEntity {
     /// <p>The identifier of the user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The reason the user or group in your Amazon Web Services SSO identity source failed to properly configure with your Amazon Kendra experience.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedEntity {
@@ -20499,8 +21000,10 @@ impl FailedEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityConfiguration {
     /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<crate::model::EntityType>,
 }
 impl EntityConfiguration {
@@ -20630,14 +21133,19 @@ impl AsRef<str> for QuerySuggestionsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupOrderingIdSummary {
     /// <p>The current processing status of actions for mapping users to their groups. The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PrincipalMappingStatus>,
     /// <p>The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub received_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The order in which actions should complete processing. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub ordering_id: std::option::Option<i64>,
     /// <p>The reason an action could not be processed. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl GroupOrderingIdSummary {
@@ -20839,8 +21347,10 @@ impl AsRef<str> for PrincipalMappingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexStatistics {
     /// <p>The number of question and answer topics in the index.</p>
+    #[doc(hidden)]
     pub faq_statistics: std::option::Option<crate::model::FaqStatistics>,
     /// <p>The number of text documents indexed.</p>
+    #[doc(hidden)]
     pub text_document_statistics: std::option::Option<crate::model::TextDocumentStatistics>,
 }
 impl IndexStatistics {
@@ -20924,8 +21434,10 @@ impl IndexStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextDocumentStatistics {
     /// <p>The number of text documents indexed.</p>
+    #[doc(hidden)]
     pub indexed_text_documents_count: i32,
     /// <p>The total size, in bytes, of the indexed documents.</p>
+    #[doc(hidden)]
     pub indexed_text_bytes: i64,
 }
 impl TextDocumentStatistics {
@@ -21000,6 +21512,7 @@ impl TextDocumentStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaqStatistics {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
+    #[doc(hidden)]
     pub indexed_question_answers_count: i32,
 }
 impl FaqStatistics {
@@ -21062,6 +21575,7 @@ impl FaqStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
@@ -21116,10 +21630,13 @@ impl ServerSideEncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutDocumentResponseFailedDocument {
     /// <p>The unique identifier of the document.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of error that caused the document to fail to be indexed.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A description of the reason why the document could not be indexed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutDocumentResponseFailedDocument {
@@ -21215,25 +21732,34 @@ impl BatchPutDocumentResponseFailedDocument {
 pub struct Document {
     /// <p>A unique identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The title of the document.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
+    #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    #[doc(hidden)]
     pub hierarchical_access_control_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
+    #[doc(hidden)]
     pub access_control_configuration_id: std::option::Option<std::string::String>,
 }
 impl Document {
@@ -21548,13 +22074,17 @@ impl AsRef<str> for ContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Status {
     /// <p>The unique identifier of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
+    #[doc(hidden)]
     pub document_status: std::option::Option<crate::model::DocumentStatus>,
     /// <p>Indicates the source of the error.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl Status {
@@ -21747,10 +22277,13 @@ impl AsRef<str> for DocumentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDocumentStatusResponseError {
     /// <p>The unique identifier of the document whose status could not be retrieved.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Indicates the source of the error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchGetDocumentStatusResponseError {
@@ -21845,6 +22378,7 @@ impl BatchGetDocumentStatusResponseError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentInfo {
     /// <p>The unique identifier of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
@@ -21859,6 +22393,7 @@ pub struct DocumentInfo {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
 }
 impl DocumentInfo {
@@ -21975,10 +22510,13 @@ impl DocumentInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDocumentResponseFailedDocument {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The error code for why the document couldn't be removed from the index.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchDeleteDocumentResponseFailedDocument {
@@ -22073,10 +22611,12 @@ impl BatchDeleteDocumentResponseFailedDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
+    #[doc(hidden)]
     pub data_source_sync_job_id: std::option::Option<std::string::String>,
 }
 impl DataSourceSyncJobMetricTarget {
@@ -22160,8 +22700,10 @@ impl DataSourceSyncJobMetricTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityPersonaConfiguration {
     /// <p>The identifier of a user or group in your Amazon Web Services SSO identity source. For example, a user ID could be an email.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The persona that defines the specific permissions of the user or group in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    #[doc(hidden)]
     pub persona: std::option::Option<crate::model::Persona>,
 }
 impl EntityPersonaConfiguration {

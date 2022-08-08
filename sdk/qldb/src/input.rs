@@ -3608,6 +3608,7 @@ impl UpdateLedgerPermissionsModeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
@@ -3616,6 +3617,7 @@ pub struct UpdateLedgerPermissionsModeInput {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
+    #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
 }
 impl UpdateLedgerPermissionsModeInput {
@@ -3648,9 +3650,11 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
@@ -3668,6 +3672,7 @@ pub struct UpdateLedgerInput {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl UpdateLedgerInput {
@@ -3716,8 +3721,10 @@ impl std::fmt::Debug for UpdateLedgerInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3746,8 +3753,10 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
@@ -3781,25 +3790,32 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     /// <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
+    #[doc(hidden)]
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    #[doc(hidden)]
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
+    #[doc(hidden)]
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
     /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl StreamJournalToKinesisInput {
@@ -3863,6 +3879,7 @@ impl std::fmt::Debug for StreamJournalToKinesisInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3885,8 +3902,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersInput {
     /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLedgersInput {
@@ -3913,10 +3932,13 @@ impl std::fmt::Debug for ListLedgersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsForLedgerInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsForLedgerInput {
@@ -3948,8 +3970,10 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsInput {
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsInput {
@@ -3976,10 +4000,13 @@ impl std::fmt::Debug for ListJournalS3ExportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalKinesisStreamsForLedgerInput {
@@ -4011,14 +4038,18 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    #[doc(hidden)]
     pub block_address: std::option::Option<crate::model::ValueHolder>,
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
+    #[doc(hidden)]
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetRevisionInput {
@@ -4057,6 +4088,7 @@ impl std::fmt::Debug for GetRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDigestInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDigestInput {
@@ -4078,12 +4110,15 @@ impl std::fmt::Debug for GetDigestInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    #[doc(hidden)]
     pub block_address: std::option::Option<crate::model::ValueHolder>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
+    #[doc(hidden)]
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetBlockInput {
@@ -4117,17 +4152,21 @@ impl std::fmt::Debug for GetBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
+    #[doc(hidden)]
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
+    #[doc(hidden)]
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
+    #[doc(hidden)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
@@ -4135,8 +4174,10 @@ pub struct ExportJournalToS3Input {
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+    #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::OutputFormat>,
 }
 impl ExportJournalToS3Input {
@@ -4195,6 +4236,7 @@ impl std::fmt::Debug for ExportJournalToS3Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLedgerInput {
     /// <p>The name of the ledger that you want to describe.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeLedgerInput {
@@ -4216,8 +4258,10 @@ impl std::fmt::Debug for DescribeLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl DescribeJournalS3ExportInput {
@@ -4244,8 +4288,10 @@ impl std::fmt::Debug for DescribeJournalS3ExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl DescribeJournalKinesisStreamInput {
@@ -4272,6 +4318,7 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLedgerInput {
     /// <p>The name of the ledger that you want to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteLedgerInput {
@@ -4294,8 +4341,10 @@ impl std::fmt::Debug for DeleteLedgerInput {
 pub struct CreateLedgerInput {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
@@ -4306,9 +4355,11 @@ pub struct CreateLedgerInput {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
+    #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
@@ -4326,6 +4377,7 @@ pub struct CreateLedgerInput {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl CreateLedgerInput {
@@ -4394,8 +4446,10 @@ impl std::fmt::Debug for CreateLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
+    #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl CancelJournalKinesisStreamInput {

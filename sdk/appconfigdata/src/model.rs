@@ -121,6 +121,7 @@ impl BadRequestDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
+    #[doc(hidden)]
     pub problem: std::option::Option<crate::model::InvalidParameterProblem>,
 }
 impl InvalidParameterDetail {

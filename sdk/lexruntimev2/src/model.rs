@@ -5,11 +5,14 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Interpretation {
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+    #[doc(hidden)]
     pub nlu_confidence: std::option::Option<crate::model::ConfidenceScore>,
     /// <p>The sentiment expressed in an utterance. </p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
+    #[doc(hidden)]
     pub sentiment_response: std::option::Option<crate::model::SentimentResponse>,
     /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
+    #[doc(hidden)]
     pub intent: std::option::Option<crate::model::Intent>,
 }
 impl Interpretation {
@@ -107,13 +110,17 @@ impl Interpretation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
+    #[doc(hidden)]
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
     /// <p>Contains fulfillment information for the intent. </p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::IntentState>,
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
+    #[doc(hidden)]
     pub confirmation_state: std::option::Option<crate::model::ConfirmationState>,
 }
 impl Intent {
@@ -374,10 +381,13 @@ impl AsRef<str> for IntentState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Slot {
     /// <p>The current value of the slot.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::Value>,
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+    #[doc(hidden)]
     pub shape: std::option::Option<crate::model::Shape>,
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
 }
 impl Slot {
@@ -530,10 +540,13 @@ impl AsRef<str> for Shape {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Value {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
+    #[doc(hidden)]
     pub original_value: std::option::Option<std::string::String>,
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
+    #[doc(hidden)]
     pub interpreted_value: std::option::Option<std::string::String>,
     /// <p>A list of additional values that have been recognized for the slot.</p>
+    #[doc(hidden)]
     pub resolved_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Value {
@@ -638,8 +651,10 @@ impl Value {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SentimentResponse {
     /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
+    #[doc(hidden)]
     pub sentiment: std::option::Option<crate::model::SentimentType>,
     /// <p>The individual sentiment responses for the utterance.</p>
+    #[doc(hidden)]
     pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
 }
 impl SentimentResponse {
@@ -717,12 +732,16 @@ impl SentimentResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+    #[doc(hidden)]
     pub positive: f64,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+    #[doc(hidden)]
     pub negative: f64,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+    #[doc(hidden)]
     pub neutral: f64,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+    #[doc(hidden)]
     pub mixed: f64,
 }
 impl SentimentScore {
@@ -891,6 +910,7 @@ impl AsRef<str> for SentimentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfidenceScore {
     /// <p>A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
+    #[doc(hidden)]
     pub score: f64,
 }
 impl ConfidenceScore {
@@ -945,17 +965,23 @@ impl ConfidenceScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
+    #[doc(hidden)]
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
+    #[doc(hidden)]
     pub intent: std::option::Option<crate::model::Intent>,
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
+    #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
+    #[doc(hidden)]
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier for a specific request.</p>
+    #[doc(hidden)]
     pub originating_request_id: std::option::Option<std::string::String>,
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+    #[doc(hidden)]
     pub runtime_hints: std::option::Option<crate::model::RuntimeHints>,
 }
 impl SessionState {
@@ -1137,6 +1163,7 @@ pub struct RuntimeHints {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
+    #[doc(hidden)]
     pub slot_hints: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1235,6 +1262,7 @@ impl RuntimeHints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
+    #[doc(hidden)]
     pub runtime_hint_values: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
 }
 impl RuntimeHintDetails {
@@ -1299,6 +1327,7 @@ impl RuntimeHintDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+    #[doc(hidden)]
     pub phrase: std::option::Option<std::string::String>,
 }
 impl RuntimeHintValue {
@@ -1354,11 +1383,14 @@ impl RuntimeHintValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
+    #[doc(hidden)]
     pub time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
+    #[doc(hidden)]
     pub context_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1474,8 +1506,10 @@ impl ActiveContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContextTimeToLive {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
+    #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
+    #[doc(hidden)]
     pub turns_to_live: std::option::Option<i32>,
 }
 impl ActiveContextTimeToLive {
@@ -1553,8 +1587,10 @@ pub struct DialogAction {
     /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The name of the slot that should be elicited from the user.</p>
+    #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
     /// <ul>
@@ -1562,6 +1598,7 @@ pub struct DialogAction {
     /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    #[doc(hidden)]
     pub slot_elicitation_style: std::option::Option<crate::model::StyleType>,
 }
 impl DialogAction {
@@ -1829,11 +1866,14 @@ impl AsRef<str> for DialogActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The text of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Indicates the type of response.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::MessageContentType>,
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
+    #[doc(hidden)]
     pub image_response_card: std::option::Option<crate::model::ImageResponseCard>,
 }
 impl Message {
@@ -1932,12 +1972,16 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
+    #[doc(hidden)]
     pub subtitle: std::option::Option<std::string::String>,
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
+    #[doc(hidden)]
     pub image_url: std::option::Option<std::string::String>,
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
+    #[doc(hidden)]
     pub buttons: std::option::Option<std::vec::Vec<crate::model::Button>>,
 }
 impl ImageResponseCard {
@@ -2052,8 +2096,10 @@ impl ImageResponseCard {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Button {
     /// <p>The text that is displayed on the button.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Button {

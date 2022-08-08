@@ -3852,8 +3852,10 @@ impl UntagQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagQueueInput {
     /// <p>The URL of the queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The list of tags to be removed from the specified queue.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagQueueInput {
@@ -3880,8 +3882,10 @@ impl std::fmt::Debug for UntagQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagQueueInput {
     /// <p>The URL of the queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The list of tags to be added to the specified queue.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3913,6 +3917,7 @@ impl std::fmt::Debug for TagQueueInput {
 pub struct SetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A map of attributes to set.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
@@ -3964,6 +3969,7 @@ pub struct SetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
@@ -4047,8 +4053,10 @@ impl std::fmt::Debug for SetQueueAttributesInput {
 pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
 }
 impl SendMessageBatchInput {
@@ -4077,18 +4085,22 @@ impl std::fmt::Debug for SendMessageBatchInput {
 pub struct SendMessageInput {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
     /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// </important>
+    #[doc(hidden)]
     pub message_body: std::option::Option<std::string::String>,
     /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
+    #[doc(hidden)]
     pub delay_seconds: i32,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -4098,6 +4110,7 @@ pub struct SendMessageInput {
     /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
+    #[doc(hidden)]
     pub message_system_attributes: std::option::Option<
         std::collections::HashMap<
             crate::model::MessageSystemAttributeNameForSends,
@@ -4123,6 +4136,7 @@ pub struct SendMessageInput {
     /// </note>
     /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
@@ -4134,6 +4148,7 @@ pub struct SendMessageInput {
     /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
+    #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl SendMessageInput {
@@ -4236,8 +4251,10 @@ impl std::fmt::Debug for SendMessageInput {
 pub struct RemovePermissionInput {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -4266,6 +4283,7 @@ impl std::fmt::Debug for RemovePermissionInput {
 pub struct ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
@@ -4284,6 +4302,7 @@ pub struct ReceiveMessageInput {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
@@ -4294,14 +4313,18 @@ pub struct ReceiveMessageInput {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
+    #[doc(hidden)]
     pub message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
+    #[doc(hidden)]
     pub max_number_of_messages: i32,
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
+    #[doc(hidden)]
     pub visibility_timeout: i32,
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
+    #[doc(hidden)]
     pub wait_time_seconds: i32,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
@@ -4319,6 +4342,7 @@ pub struct ReceiveMessageInput {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub receive_request_attempt_id: std::option::Option<std::string::String>,
 }
 impl ReceiveMessageInput {
@@ -4416,6 +4440,7 @@ impl std::fmt::Debug for ReceiveMessageInput {
 pub struct PurgeQueueInput {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl PurgeQueueInput {
@@ -4438,6 +4463,7 @@ impl std::fmt::Debug for PurgeQueueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueueTagsInput {
     /// <p>The URL of the queue.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl ListQueueTagsInput {
@@ -4460,10 +4486,13 @@ impl std::fmt::Debug for ListQueueTagsInput {
 pub struct ListQueuesInput {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_name_prefix: std::option::Option<std::string::String>,
     /// <p>Pagination token to request the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListQueuesInput {
@@ -4497,10 +4526,13 @@ impl std::fmt::Debug for ListQueuesInput {
 pub struct ListDeadLetterSourceQueuesInput {
     /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>Pagination token to request the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeadLetterSourceQueuesInput {
@@ -4534,8 +4566,10 @@ impl std::fmt::Debug for ListDeadLetterSourceQueuesInput {
 pub struct GetQueueUrlInput {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
+    #[doc(hidden)]
     pub queue_owner_aws_account_id: std::option::Option<std::string::String>,
 }
 impl GetQueueUrlInput {
@@ -4567,6 +4601,7 @@ impl std::fmt::Debug for GetQueueUrlInput {
 pub struct GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of attributes for which to retrieve information.</p>
     /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
@@ -4620,6 +4655,7 @@ pub struct GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
 }
 impl GetQueueAttributesInput {
@@ -4699,6 +4735,7 @@ impl std::fmt::Debug for GetQueueAttributesInput {
 pub struct DeleteQueueInput {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl DeleteQueueInput {
@@ -4722,8 +4759,10 @@ impl std::fmt::Debug for DeleteQueueInput {
 pub struct DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of receipt handles for the messages to be deleted.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchRequestEntry>>,
 }
 impl DeleteMessageBatchInput {
@@ -4752,8 +4791,10 @@ impl std::fmt::Debug for DeleteMessageBatchInput {
 pub struct DeleteMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The receipt handle associated with the message to delete.</p>
+    #[doc(hidden)]
     pub receipt_handle: std::option::Option<std::string::String>,
 }
 impl DeleteMessageInput {
@@ -4787,6 +4828,7 @@ pub struct CreateQueueInput {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_name: std::option::Option<std::string::String>,
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
@@ -4800,6 +4842,7 @@ pub struct CreateQueueInput {
     /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
     /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of attributes with their corresponding values.</p>
@@ -4853,6 +4896,7 @@ pub struct CreateQueueInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
@@ -4961,8 +5005,10 @@ impl std::fmt::Debug for CreateQueueInput {
 pub struct ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    #[doc(hidden)]
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchRequestEntry>>,
 }
@@ -4994,10 +5040,13 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchInput {
 pub struct ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    #[doc(hidden)]
     pub receipt_handle: std::option::Option<std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+    #[doc(hidden)]
     pub visibility_timeout: i32,
 }
 impl ChangeMessageVisibilityInput {
@@ -5031,14 +5080,18 @@ impl std::fmt::Debug for ChangeMessageVisibilityInput {
 pub struct AddPermissionInput {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub aws_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddPermissionInput {

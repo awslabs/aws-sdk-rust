@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
+    #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingDistributionOutput {
@@ -86,8 +88,10 @@ impl UpdateStreamingDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResponseHeadersPolicyOutput {
     /// <p>A response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
     /// <p>The current version of the response headers policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateResponseHeadersPolicyOutput {
@@ -168,6 +172,7 @@ impl UpdateResponseHeadersPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
+    #[doc(hidden)]
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
 impl UpdateRealtimeLogConfigOutput {
@@ -225,8 +230,10 @@ impl UpdateRealtimeLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicKeyOutput {
     /// <p>The public key.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<crate::model::PublicKey>,
     /// <p>The identifier of the current version of the public key.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdatePublicKeyOutput {
@@ -301,8 +308,10 @@ impl UpdatePublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
+    #[doc(hidden)]
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
     /// <p>The current version of the origin request policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateOriginRequestPolicyOutput {
@@ -377,8 +386,10 @@ impl UpdateOriginRequestPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyGroupOutput {
     /// <p>The key group that was just updated.</p>
+    #[doc(hidden)]
     pub key_group: std::option::Option<crate::model::KeyGroup>,
     /// <p>The identifier for this version of the key group.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateKeyGroupOutput {
@@ -450,8 +461,10 @@ impl UpdateKeyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateFunctionOutput {
@@ -526,9 +539,11 @@ impl UpdateFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionProfileOutput {
     /// <p>Return the results of updating the profile.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile:
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
     /// <p>The result of the field-level encryption profile request. </p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileOutput {
@@ -612,8 +627,10 @@ impl UpdateFieldLevelEncryptionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
+    #[doc(hidden)]
     pub field_level_encryption: std::option::Option<crate::model::FieldLevelEncryption>,
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigOutput {
@@ -690,8 +707,10 @@ impl UpdateFieldLevelEncryptionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionOutput {
     /// <p>The distribution's information.</p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionOutput {
@@ -766,9 +785,11 @@ impl UpdateDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateCloudFrontOriginAccessIdentityOutput {
@@ -852,8 +873,10 @@ impl UpdateCloudFrontOriginAccessIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCachePolicyOutput {
     /// <p>A cache policy.</p>
+    #[doc(hidden)]
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
     /// <p>The current version of the cache policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateCachePolicyOutput {
@@ -958,6 +981,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFunctionOutput {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
+    #[doc(hidden)]
     pub test_result: std::option::Option<crate::model::TestResult>,
 }
 impl TestFunctionOutput {
@@ -1045,6 +1069,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
 }
 impl PublishFunctionOutput {
@@ -1102,6 +1127,7 @@ impl PublishFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl ListTagsForResourceOutput {
@@ -1154,6 +1180,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type. </p>
+    #[doc(hidden)]
     pub streaming_distribution_list: std::option::Option<crate::model::StreamingDistributionList>,
 }
 impl ListStreamingDistributionsOutput {
@@ -1220,6 +1247,7 @@ impl ListStreamingDistributionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
+    #[doc(hidden)]
     pub response_headers_policy_list: std::option::Option<crate::model::ResponseHeadersPolicyList>,
 }
 impl ListResponseHeadersPoliciesOutput {
@@ -1286,6 +1314,7 @@ impl ListResponseHeadersPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
+    #[doc(hidden)]
     pub realtime_log_configs: std::option::Option<crate::model::RealtimeLogConfigs>,
 }
 impl ListRealtimeLogConfigsOutput {
@@ -1343,6 +1372,7 @@ impl ListRealtimeLogConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
+    #[doc(hidden)]
     pub public_key_list: std::option::Option<crate::model::PublicKeyList>,
 }
 impl ListPublicKeysOutput {
@@ -1400,6 +1430,7 @@ impl ListPublicKeysOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginRequestPoliciesOutput {
     /// <p>A list of origin request policies.</p>
+    #[doc(hidden)]
     pub origin_request_policy_list: std::option::Option<crate::model::OriginRequestPolicyList>,
 }
 impl ListOriginRequestPoliciesOutput {
@@ -1466,6 +1497,7 @@ impl ListOriginRequestPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyGroupsOutput {
     /// <p>A list of key groups.</p>
+    #[doc(hidden)]
     pub key_group_list: std::option::Option<crate::model::KeyGroupList>,
 }
 impl ListKeyGroupsOutput {
@@ -1523,6 +1555,7 @@ impl ListKeyGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvalidationsOutput {
     /// <p>Information about invalidation batches. </p>
+    #[doc(hidden)]
     pub invalidation_list: std::option::Option<crate::model::InvalidationList>,
 }
 impl ListInvalidationsOutput {
@@ -1580,6 +1613,7 @@ impl ListInvalidationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsOutput {
     /// <p>A list of CloudFront functions.</p>
+    #[doc(hidden)]
     pub function_list: std::option::Option<crate::model::FunctionList>,
 }
 impl ListFunctionsOutput {
@@ -1637,6 +1671,7 @@ impl ListFunctionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionProfilesOutput {
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile_list:
         std::option::Option<crate::model::FieldLevelEncryptionProfileList>,
 }
@@ -1704,6 +1739,7 @@ impl ListFieldLevelEncryptionProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
+    #[doc(hidden)]
     pub field_level_encryption_list: std::option::Option<crate::model::FieldLevelEncryptionList>,
 }
 impl ListFieldLevelEncryptionConfigsOutput {
@@ -1770,6 +1806,7 @@ impl ListFieldLevelEncryptionConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type. </p>
+    #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
 impl ListDistributionsByWebAclIdOutput {
@@ -1827,6 +1864,7 @@ impl ListDistributionsByWebAclIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByResponseHeadersPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
+    #[doc(hidden)]
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
 }
 impl ListDistributionsByResponseHeadersPolicyIdOutput {
@@ -1885,6 +1923,7 @@ impl ListDistributionsByResponseHeadersPolicyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
+    #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
 impl ListDistributionsByRealtimeLogConfigOutput {
@@ -1942,6 +1981,7 @@ impl ListDistributionsByRealtimeLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByOriginRequestPolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
+    #[doc(hidden)]
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
 }
 impl ListDistributionsByOriginRequestPolicyIdOutput {
@@ -2000,6 +2040,7 @@ impl ListDistributionsByOriginRequestPolicyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByKeyGroupOutput {
     /// <p>A list of distribution IDs.</p>
+    #[doc(hidden)]
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
 }
 impl ListDistributionsByKeyGroupOutput {
@@ -2057,6 +2098,7 @@ impl ListDistributionsByKeyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByCachePolicyIdOutput {
     /// <p>A list of distribution IDs.</p>
+    #[doc(hidden)]
     pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
 }
 impl ListDistributionsByCachePolicyIdOutput {
@@ -2114,6 +2156,7 @@ impl ListDistributionsByCachePolicyIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type. </p>
+    #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::model::DistributionList>,
 }
 impl ListDistributionsOutput {
@@ -2171,6 +2214,7 @@ impl ListDistributionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConflictingAliasesOutput {
     /// <p>A list of conflicting aliases.</p>
+    #[doc(hidden)]
     pub conflicting_aliases_list: std::option::Option<crate::model::ConflictingAliasesList>,
 }
 impl ListConflictingAliasesOutput {
@@ -2234,6 +2278,7 @@ impl ListConflictingAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity_list:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
 }
@@ -2302,6 +2347,7 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
+    #[doc(hidden)]
     pub cache_policy_list: std::option::Option<crate::model::CachePolicyList>,
 }
 impl ListCachePoliciesOutput {
@@ -2359,9 +2405,11 @@ impl ListCachePoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
+    #[doc(hidden)]
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionConfigOutput {
@@ -2445,8 +2493,10 @@ impl GetStreamingDistributionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
+    #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionOutput {
@@ -2526,9 +2576,11 @@ impl GetStreamingDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponseHeadersPolicyConfigOutput {
     /// <p>Contains a response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     /// <p>The version identifier for the current version of the response headers policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigOutput {
@@ -2612,8 +2664,10 @@ impl GetResponseHeadersPolicyConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
     /// <p>The version identifier for the current version of the response headers policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyOutput {
@@ -2694,6 +2748,7 @@ impl GetResponseHeadersPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
+    #[doc(hidden)]
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
 impl GetRealtimeLogConfigOutput {
@@ -2751,8 +2806,10 @@ impl GetRealtimeLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyConfigOutput {
     /// <p>A public key configuration.</p>
+    #[doc(hidden)]
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     /// <p>The identifier for this version of the public key configuration.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetPublicKeyConfigOutput {
@@ -2827,8 +2884,10 @@ impl GetPublicKeyConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
     /// <p>The public key.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<crate::model::PublicKey>,
     /// <p>The identifier for this version of the public key.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetPublicKeyOutput {
@@ -2903,8 +2962,10 @@ impl GetPublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyConfigOutput {
     /// <p>The origin request policy configuration.</p>
+    #[doc(hidden)]
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
     /// <p>The current version of the origin request policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyConfigOutput {
@@ -2988,8 +3049,10 @@ impl GetOriginRequestPolicyConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyOutput {
     /// <p>The origin request policy.</p>
+    #[doc(hidden)]
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
     /// <p>The current version of the origin request policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyOutput {
@@ -3064,6 +3127,7 @@ impl GetOriginRequestPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    #[doc(hidden)]
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl GetMonitoringSubscriptionOutput {
@@ -3127,8 +3191,10 @@ impl GetMonitoringSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupConfigOutput {
     /// <p>The key group configuration.</p>
+    #[doc(hidden)]
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     /// <p>The identifier for this version of the key group.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupConfigOutput {
@@ -3203,8 +3269,10 @@ impl GetKeyGroupConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupOutput {
     /// <p>The key group.</p>
+    #[doc(hidden)]
     pub key_group: std::option::Option<crate::model::KeyGroup>,
     /// <p>The identifier for this version of the key group.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupOutput {
@@ -3276,6 +3344,7 @@ impl GetKeyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
+    #[doc(hidden)]
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
 impl GetInvalidationOutput {
@@ -3333,10 +3402,13 @@ impl GetInvalidationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionOutput {
     /// <p>The function code of a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The content type (media type) of the response.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetFunctionOutput {
@@ -3428,9 +3500,11 @@ impl GetFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileConfigOutput {
     /// <p>Return the field-level encryption profile configuration information.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     /// <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionProfileConfigOutput {
@@ -3514,9 +3588,11 @@ impl GetFieldLevelEncryptionProfileConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileOutput {
     /// <p>Return the field-level encryption profile information.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile:
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionProfileOutput {
@@ -3600,9 +3676,11 @@ impl GetFieldLevelEncryptionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionConfigOutput {
     /// <p>Return the field-level encryption configuration information.</p>
+    #[doc(hidden)]
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionConfigOutput {
@@ -3686,8 +3764,10 @@ impl GetFieldLevelEncryptionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionOutput {
     /// <p>Return the field-level encryption configuration information.</p>
+    #[doc(hidden)]
     pub field_level_encryption: std::option::Option<crate::model::FieldLevelEncryption>,
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionOutput {
@@ -3764,8 +3844,10 @@ impl GetFieldLevelEncryptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
+    #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigOutput {
@@ -3840,8 +3922,10 @@ impl GetDistributionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionOutput {
     /// <p>The distribution's information.</p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetDistributionOutput {
@@ -3916,9 +4000,11 @@ impl GetDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information. </p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
@@ -4004,9 +4090,11 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
     /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityOutput {
@@ -4090,8 +4178,10 @@ impl GetCloudFrontOriginAccessIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyConfigOutput {
     /// <p>The cache policy configuration.</p>
+    #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     /// <p>The current version of the cache policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyConfigOutput {
@@ -4166,8 +4256,10 @@ impl GetCachePolicyConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyOutput {
     /// <p>The cache policy.</p>
+    #[doc(hidden)]
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
     /// <p>The current version of the cache policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyOutput {
@@ -4242,8 +4334,10 @@ impl GetCachePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl DescribeFunctionOutput {
@@ -4708,10 +4802,13 @@ impl DeleteCachePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingDistributionWithTagsOutput {
     /// <p>The streaming distribution's information. </p>
+    #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the distribution created.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateStreamingDistributionWithTagsOutput {
@@ -4808,10 +4905,13 @@ impl CreateStreamingDistributionWithTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
+    #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the streaming distribution created.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateStreamingDistributionOutput {
@@ -4908,10 +5008,13 @@ impl CreateStreamingDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
+    #[doc(hidden)]
     pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
     /// <p>The URL of the response headers policy.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The version identifier for the current version of the response headers policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateResponseHeadersPolicyOutput {
@@ -5009,6 +5112,7 @@ impl CreateResponseHeadersPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
+    #[doc(hidden)]
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
 }
 impl CreateRealtimeLogConfigOutput {
@@ -5066,10 +5170,13 @@ impl CreateRealtimeLogConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicKeyOutput {
     /// <p>The public key.</p>
+    #[doc(hidden)]
     pub public_key: std::option::Option<crate::model::PublicKey>,
     /// <p>The URL of the public key.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The identifier for this version of the public key.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreatePublicKeyOutput {
@@ -5161,10 +5268,13 @@ impl CreatePublicKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
+    #[doc(hidden)]
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
     /// <p>The fully qualified URI of the origin request policy just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the origin request policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateOriginRequestPolicyOutput {
@@ -5256,6 +5366,7 @@ impl CreateOriginRequestPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    #[doc(hidden)]
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl CreateMonitoringSubscriptionOutput {
@@ -5319,10 +5430,13 @@ impl CreateMonitoringSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyGroupOutput {
     /// <p>The key group that was just created.</p>
+    #[doc(hidden)]
     pub key_group: std::option::Option<crate::model::KeyGroup>,
     /// <p>The URL of the key group.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The identifier for this version of the key group.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateKeyGroupOutput {
@@ -5411,8 +5525,10 @@ impl CreateKeyGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInvalidationOutput {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The invalidation's information.</p>
+    #[doc(hidden)]
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
 impl CreateInvalidationOutput {
@@ -5487,10 +5603,13 @@ impl CreateInvalidationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    #[doc(hidden)]
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
     /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateFunctionOutput {
@@ -5582,11 +5701,14 @@ impl CreateFunctionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionProfileOutput {
     /// <p>Returned when you create a new field-level encryption profile.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile:
         std::option::Option<crate::model::FieldLevelEncryptionProfile>,
     /// <p>The fully qualified URI of the new profile resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateFieldLevelEncryptionProfileOutput {
@@ -5687,10 +5809,13 @@ impl CreateFieldLevelEncryptionProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionConfigOutput {
     /// <p>Returned when you create a new field-level encryption configuration.</p>
+    #[doc(hidden)]
     pub field_level_encryption: std::option::Option<crate::model::FieldLevelEncryption>,
     /// <p>The fully qualified URI of the new configuration resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateFieldLevelEncryptionConfigOutput {
@@ -5784,10 +5909,13 @@ impl CreateFieldLevelEncryptionConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionWithTagsOutput {
     /// <p>The distribution's information. </p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the distribution created.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateDistributionWithTagsOutput {
@@ -5879,10 +6007,13 @@ impl CreateDistributionWithTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionOutput {
     /// <p>The distribution's information.</p>
+    #[doc(hidden)]
     pub distribution: std::option::Option<crate::model::Distribution>,
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the distribution created.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateDistributionOutput {
@@ -5974,11 +6105,14 @@ impl CreateDistributionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
     /// <p>The fully qualified URI of the new origin access identity just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the origin access identity created.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateCloudFrontOriginAccessIdentityOutput {
@@ -6079,10 +6213,13 @@ impl CreateCloudFrontOriginAccessIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachePolicyOutput {
     /// <p>A cache policy.</p>
+    #[doc(hidden)]
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
     /// <p>The fully qualified URI of the cache policy just created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The current version of the cache policy.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl CreateCachePolicyOutput {

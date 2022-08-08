@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Reason the request failed validation.
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.
+    #[doc(hidden)]
     pub field_list: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl ValidationException {
@@ -122,12 +125,16 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Service Quotas requirement to identify originating service.
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// Service Quotas requirement to identify originating quota.
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
     /// Advice to clients on when the call can be safely retried.
+    #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<i32>,
 }
 impl ThrottlingException {
@@ -249,8 +256,10 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Advice to clients on when the call can be safely retried.
+    #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<i32>,
 }
 impl InternalServerException {
@@ -338,6 +347,7 @@ impl InternalServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -402,14 +412,19 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Identifier of the resource affected.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// Type of the resource affected.
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// Service Quotas requirement to identify originating service.
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// Service Quotas requirement to identify originating quota.
+    #[doc(hidden)]
     pub quota_code: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {
@@ -547,10 +562,13 @@ impl ServiceQuotaExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Identifier of the resource affected.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// Type of the resource affected.
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -654,10 +672,13 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// Description of the error.
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Identifier of the resource affected.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// Type of the resource affected.
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {

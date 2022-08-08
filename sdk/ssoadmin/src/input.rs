@@ -6461,14 +6461,19 @@ impl UpdatePermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The description of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
+    #[doc(hidden)]
     pub session_duration: std::option::Option<std::string::String>,
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
+    #[doc(hidden)]
     pub relay_state: std::option::Option<std::string::String>,
 }
 impl UpdatePermissionSetInput {
@@ -6510,8 +6515,10 @@ impl std::fmt::Debug for UpdatePermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Updates the attributes for your ABAC configuration.</p>
+    #[doc(hidden)]
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
@@ -6546,10 +6553,13 @@ impl std::fmt::Debug for UpdateInstanceAccessControlAttributeConfigurationInput 
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource with the tags to be listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of tags that are attached to the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6581,10 +6591,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource with the tags to be listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs that are used to manage the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6616,10 +6629,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionsBoundaryToPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
@@ -6651,10 +6667,13 @@ impl std::fmt::Debug for PutPermissionsBoundaryToPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInlinePolicyToPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub inline_policy: std::option::Option<std::string::String>,
 }
 impl PutInlinePolicyToPermissionSetInput {
@@ -6686,12 +6705,16 @@ impl std::fmt::Debug for PutInlinePolicyToPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::ProvisionTargetType>,
 }
 impl ProvisionPermissionSetInput {
@@ -6728,10 +6751,13 @@ impl std::fmt::Debug for ProvisionPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource with the tags to be listed.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -6763,14 +6789,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetsProvisionedToAccountInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status object for the permission set provisioning operation.</p>
+    #[doc(hidden)]
     pub provisioning_status: std::option::Option<crate::model::ProvisioningStatus>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionSetsProvisionedToAccountInput {
@@ -6812,10 +6843,13 @@ impl std::fmt::Debug for ListPermissionSetsProvisionedToAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetsInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListPermissionSetsInput {
@@ -6847,12 +6881,16 @@ impl std::fmt::Debug for ListPermissionSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionSetProvisioningStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results based on the passed attribute value.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
 }
 impl ListPermissionSetProvisioningStatusInput {
@@ -6889,12 +6927,16 @@ impl std::fmt::Debug for ListPermissionSetProvisioningStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedPoliciesInPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedPoliciesInPermissionSetInput {
@@ -6931,8 +6973,10 @@ impl std::fmt::Debug for ListManagedPoliciesInPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesInput {
     /// <p>The maximum number of results to display for the instance.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesInput {
@@ -6959,12 +7003,16 @@ impl std::fmt::Debug for ListInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the list call.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
@@ -7002,14 +7050,19 @@ impl std::fmt::Debug for ListCustomerManagedPolicyReferencesInPermissionSetInput
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForProvisionedPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub provisioning_status: std::option::Option<crate::model::ProvisioningStatus>,
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsForProvisionedPermissionSetInput {
@@ -7051,14 +7104,19 @@ impl std::fmt::Debug for ListAccountsForProvisionedPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentsInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set from which to list assignments.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssignmentsInput {
@@ -7100,12 +7158,16 @@ impl std::fmt::Debug for ListAccountAssignmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results based on the passed attribute value.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
 }
 impl ListAccountAssignmentDeletionStatusInput {
@@ -7142,12 +7204,16 @@ impl std::fmt::Debug for ListAccountAssignmentDeletionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountAssignmentCreationStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to display for the assignment.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results based on the passed attribute value.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
 }
 impl ListAccountAssignmentCreationStatusInput {
@@ -7184,8 +7250,10 @@ impl std::fmt::Debug for ListAccountAssignmentCreationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionsBoundaryForPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl GetPermissionsBoundaryForPermissionSetInput {
@@ -7212,8 +7280,10 @@ impl std::fmt::Debug for GetPermissionsBoundaryForPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInlinePolicyForPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl GetInlinePolicyForPermissionSetInput {
@@ -7240,10 +7310,13 @@ impl std::fmt::Debug for GetInlinePolicyForPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachManagedPolicyFromPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
+    #[doc(hidden)]
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
 impl DetachManagedPolicyFromPermissionSetInput {
@@ -7275,10 +7348,13 @@ impl std::fmt::Debug for DetachManagedPolicyFromPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    #[doc(hidden)]
     pub customer_managed_policy_reference:
         std::option::Option<crate::model::CustomerManagedPolicyReference>,
 }
@@ -7317,8 +7393,10 @@ impl std::fmt::Debug for DetachCustomerManagedPolicyReferenceFromPermissionSetIn
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionSetProvisioningStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
+    #[doc(hidden)]
     pub provision_permission_set_request_id: std::option::Option<std::string::String>,
 }
 impl DescribePermissionSetProvisioningStatusInput {
@@ -7348,8 +7426,10 @@ impl std::fmt::Debug for DescribePermissionSetProvisioningStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set. </p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl DescribePermissionSetInput {
@@ -7376,6 +7456,7 @@ impl std::fmt::Debug for DescribePermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAccessControlAttributeConfigurationInput {
@@ -7398,8 +7479,10 @@ impl std::fmt::Debug for DescribeInstanceAccessControlAttributeConfigurationInpu
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier that is used to track the request operation progress.</p>
+    #[doc(hidden)]
     pub account_assignment_deletion_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
@@ -7429,8 +7512,10 @@ impl std::fmt::Debug for DescribeAccountAssignmentDeletionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAssignmentCreationStatusInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier that is used to track the request operation progress.</p>
+    #[doc(hidden)]
     pub account_assignment_creation_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountAssignmentCreationStatusInput {
@@ -7460,8 +7545,10 @@ impl std::fmt::Debug for DescribeAccountAssignmentCreationStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set that should be deleted.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl DeletePermissionSetInput {
@@ -7488,8 +7575,10 @@ impl std::fmt::Debug for DeletePermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionsBoundaryFromPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl DeletePermissionsBoundaryFromPermissionSetInput {
@@ -7516,6 +7605,7 @@ impl std::fmt::Debug for DeletePermissionsBoundaryFromPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceAccessControlAttributeConfigurationInput {
@@ -7538,8 +7628,10 @@ impl std::fmt::Debug for DeleteInstanceAccessControlAttributeConfigurationInput 
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInlinePolicyFromPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set that will be used to remove access.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
@@ -7566,16 +7658,22 @@ impl std::fmt::Debug for DeleteInlinePolicyFromPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountAssignmentInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be deleted.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetType>,
     /// <p>The ARN of the permission set that will be used to remove access.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be deleted.</p>
+    #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccountAssignmentInput {
@@ -7622,16 +7720,22 @@ impl std::fmt::Debug for DeleteAccountAssignmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionSetInput {
     /// <p>The name of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
+    #[doc(hidden)]
     pub session_duration: std::option::Option<std::string::String>,
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
+    #[doc(hidden)]
     pub relay_state: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePermissionSetInput {
@@ -7678,8 +7782,10 @@ impl std::fmt::Debug for CreatePermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
+    #[doc(hidden)]
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
@@ -7714,16 +7820,22 @@ impl std::fmt::Debug for CreateInstanceAccessControlAttributeConfigurationInput 
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountAssignmentInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
+    #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetType>,
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
+    #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl CreateAccountAssignmentInput {
@@ -7770,10 +7882,13 @@ impl std::fmt::Debug for CreateAccountAssignmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachManagedPolicyToPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
+    #[doc(hidden)]
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
 impl AttachManagedPolicyToPermissionSetInput {
@@ -7805,10 +7920,13 @@ impl std::fmt::Debug for AttachManagedPolicyToPermissionSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. </p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    #[doc(hidden)]
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    #[doc(hidden)]
     pub customer_managed_policy_reference:
         std::option::Option<crate::model::CustomerManagedPolicyReference>,
 }

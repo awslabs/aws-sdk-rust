@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentConfigurationStatus {
     /// <p>The agent/connector ID.</p>
+    #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
+    #[doc(hidden)]
     pub operation_succeeded: bool,
     /// <p>A description of the operation performed.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl AgentConfigurationStatus {
@@ -97,32 +100,45 @@ impl AgentConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTask {
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A descriptive name for an import task. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
+    #[doc(hidden)]
     pub import_url: std::option::Option<std::string::String>,
     /// <p>The status of the import task. An import can have the status of <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall request. More information can be found in the downloadable archive defined in the <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management console.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImportStatus>,
     /// <p>The time that the import task request was made, presented in the Unix time stamp format.</p>
+    #[doc(hidden)]
     pub import_request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
+    #[doc(hidden)]
     pub import_completion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
+    #[doc(hidden)]
     pub import_deleted_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of server records in the import file that were successfully imported.</p>
+    #[doc(hidden)]
     pub server_import_success: i32,
     /// <p>The total number of server records in the import file that failed to be imported.</p>
+    #[doc(hidden)]
     pub server_import_failure: i32,
     /// <p>The total number of application records in the import file that were successfully imported.</p>
+    #[doc(hidden)]
     pub application_import_success: i32,
     /// <p>The total number of application records in the import file that failed to be imported.</p>
+    #[doc(hidden)]
     pub application_import_failure: i32,
     /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
     /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
+    #[doc(hidden)]
     pub errors_and_failed_entries_zip: std::option::Option<std::string::String>,
 }
 impl ImportTask {
@@ -523,10 +539,13 @@ impl AsRef<str> for ImportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportFilter {
     /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Supported condition: <code>EQUALS</code> </p>
+    #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
 }
 impl ExportFilter {
@@ -730,14 +749,19 @@ impl AsRef<str> for DataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NeighborConnectionDetail {
     /// <p>The ID of the server that opened the network connection.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>The ID of the server that accepted the network connection.</p>
+    #[doc(hidden)]
     pub destination_server_id: std::option::Option<std::string::String>,
     /// <p>The destination network port for the connection.</p>
+    #[doc(hidden)]
     pub destination_port: std::option::Option<i32>,
     /// <p>The network protocol used for the connection.</p>
+    #[doc(hidden)]
     pub transport_protocol: std::option::Option<std::string::String>,
     /// <p>The number of open network connections with the neighboring server.</p>
+    #[doc(hidden)]
     pub connections_count: i64,
 }
 impl NeighborConnectionDetail {
@@ -869,8 +893,10 @@ impl NeighborConnectionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderByElement {
     /// <p>The field on which to order.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>Ordering direction.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::OrderString>,
 }
 impl OrderByElement {
@@ -1001,10 +1027,13 @@ impl AsRef<str> for OrderString {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>
+    #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -1165,18 +1194,25 @@ impl AsRef<str> for ConfigurationItemType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerAgentlessCollectorInfo {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub active_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub healthy_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub deny_listed_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub shutdown_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub unhealthy_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub total_agentless_collectors: i32,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub unknown_agentless_collectors: i32,
 }
 impl CustomerAgentlessCollectorInfo {
@@ -1369,18 +1405,25 @@ impl CustomerAgentlessCollectorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerMeCollectorInfo {
     /// <p> The number of active Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub active_me_collectors: i32,
     /// <p> The number of healthy Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub healthy_me_collectors: i32,
     /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub deny_listed_me_collectors: i32,
     /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+    #[doc(hidden)]
     pub shutdown_me_collectors: i32,
     /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub unhealthy_me_collectors: i32,
     /// <p> The total number of Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub total_me_collectors: i32,
     /// <p> The number of unknown Migration Evaluator collectors. </p>
+    #[doc(hidden)]
     pub unknown_me_collectors: i32,
 }
 impl CustomerMeCollectorInfo {
@@ -1537,18 +1580,25 @@ impl CustomerMeCollectorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerConnectorInfo {
     /// <p>Number of active discovery connectors.</p>
+    #[doc(hidden)]
     pub active_connectors: i32,
     /// <p>Number of healthy discovery connectors.</p>
+    #[doc(hidden)]
     pub healthy_connectors: i32,
     /// <p>Number of blacklisted discovery connectors.</p>
+    #[doc(hidden)]
     pub black_listed_connectors: i32,
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
+    #[doc(hidden)]
     pub shutdown_connectors: i32,
     /// <p>Number of unhealthy discovery connectors.</p>
+    #[doc(hidden)]
     pub unhealthy_connectors: i32,
     /// <p>Total number of discovery connectors.</p>
+    #[doc(hidden)]
     pub total_connectors: i32,
     /// <p>Number of unknown discovery connectors.</p>
+    #[doc(hidden)]
     pub unknown_connectors: i32,
 }
 impl CustomerConnectorInfo {
@@ -1705,18 +1755,25 @@ impl CustomerConnectorInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerAgentInfo {
     /// <p>Number of active discovery agents.</p>
+    #[doc(hidden)]
     pub active_agents: i32,
     /// <p>Number of healthy discovery agents</p>
+    #[doc(hidden)]
     pub healthy_agents: i32,
     /// <p>Number of blacklisted discovery agents.</p>
+    #[doc(hidden)]
     pub black_listed_agents: i32,
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
+    #[doc(hidden)]
     pub shutdown_agents: i32,
     /// <p>Number of unhealthy discovery agents.</p>
+    #[doc(hidden)]
     pub unhealthy_agents: i32,
     /// <p>Total number of discovery agents.</p>
+    #[doc(hidden)]
     pub total_agents: i32,
     /// <p>Number of unknown discovery agents.</p>
+    #[doc(hidden)]
     pub unknown_agents: i32,
 }
 impl CustomerAgentInfo {
@@ -1873,14 +1930,19 @@ impl CustomerAgentInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
+    #[doc(hidden)]
     pub time_of_creation: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigurationTag {
@@ -2012,8 +2074,10 @@ impl ConfigurationTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagFilter {
     /// <p>A name of the tag filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Values for the tag filter.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagFilter {
@@ -2096,8 +2160,10 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTaskFilter {
     /// <p>The name, status, or import task ID for a specific import task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ImportTaskFilterName>,
     /// <p>An array of strings that you can provide to match against a specific name, status, or import task ID to filter the results for your import task queries.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ImportTaskFilter {
@@ -2240,20 +2306,28 @@ impl AsRef<str> for ImportTaskFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
     /// <p>The status of the data export job.</p>
+    #[doc(hidden)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
     /// <p>A status message provided for API callers.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
+    #[doc(hidden)]
     pub configurations_download_url: std::option::Option<std::string::String>,
     /// <p>The time that the data export was initiated.</p>
+    #[doc(hidden)]
     pub export_request_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
+    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
+    #[doc(hidden)]
     pub requested_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
+    #[doc(hidden)]
     pub requested_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExportInfo {
@@ -2510,6 +2584,7 @@ impl AsRef<str> for ExportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousExportDescription {
     /// <p>The unique ID assigned to this export.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
     /// <p>Describes the status of the export. Can be one of the following values:</p>
     /// <ul>
@@ -2521,6 +2596,7 @@ pub struct ContinuousExportDescription {
     /// <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li>
     /// <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContinuousExportStatus>,
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
@@ -2541,19 +2617,25 @@ pub struct ContinuousExportDescription {
     /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
+    #[doc(hidden)]
     pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>An object which describes how the data is stored.</p>
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub schema_storage_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2936,24 +3018,34 @@ impl AsRef<str> for ContinuousExportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentInfo {
     /// <p>The agent or connector ID.</p>
+    #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
     /// <p>The name of the host where the agent or connector resides. The host can be a server or virtual machine.</p>
+    #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
     /// <p>Network details about the host where the agent or connector resides.</p>
+    #[doc(hidden)]
     pub agent_network_info_list: std::option::Option<std::vec::Vec<crate::model::AgentNetworkInfo>>,
     /// <p>The ID of the connector.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
     /// <p>The agent or connector version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The health of the agent or connector.</p>
+    #[doc(hidden)]
     pub health: std::option::Option<crate::model::AgentStatus>,
     /// <p>Time since agent or connector health was reported.</p>
+    #[doc(hidden)]
     pub last_health_ping_time: std::option::Option<std::string::String>,
     /// <p>Status of the collection process for an agent or connector.</p>
+    #[doc(hidden)]
     pub collection_status: std::option::Option<std::string::String>,
     /// <p>Type of agent.</p>
+    #[doc(hidden)]
     pub agent_type: std::option::Option<std::string::String>,
     /// <p>Agent's first registration timestamp in UTC.</p>
+    #[doc(hidden)]
     pub registered_time: std::option::Option<std::string::String>,
 }
 impl AgentInfo {
@@ -3260,8 +3352,10 @@ impl AsRef<str> for AgentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/connector resides.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The MAC address for the host where the agent/connector resides.</p>
+    #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
 }
 impl AgentNetworkInfo {
@@ -3335,8 +3429,10 @@ impl AgentNetworkInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The type of tag on which to filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A value for a tag key on which to filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -3408,10 +3504,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImportDataError {
     /// <p>The unique import ID associated with the error that occurred.</p>
+    #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
     /// <p>The type of error that occurred for a specific import task.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BatchDeleteImportDataErrorCode>,
     /// <p>The description of the error that occurred for a specific import task.</p>
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
 }
 impl BatchDeleteImportDataError {

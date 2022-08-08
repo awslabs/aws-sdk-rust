@@ -5500,8 +5500,10 @@ impl UpdateApplicationMaintenanceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationMaintenanceConfigurationInput {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Describes the application maintenance configuration update.</p>
+    #[doc(hidden)]
     pub application_maintenance_configuration_update:
         std::option::Option<crate::model::ApplicationMaintenanceConfigurationUpdate>,
 }
@@ -5534,20 +5536,27 @@ impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Describes application configuration updates.</p>
+    #[doc(hidden)]
     pub application_configuration_update:
         std::option::Option<crate::model::ApplicationConfigurationUpdate>,
     /// <p>Describes updates to the service execution role.</p>
+    #[doc(hidden)]
     pub service_execution_role_update: std::option::Option<std::string::String>,
     /// <p>Describes updates to the application's starting parameters.</p>
+    #[doc(hidden)]
     pub run_configuration_update: std::option::Option<crate::model::RunConfigurationUpdate>,
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_updates:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -5617,8 +5626,10 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys of tags to remove from the specified application.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5645,8 +5656,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The ARN of the application to assign the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value tags to assign to the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5673,12 +5686,14 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopApplicationInput {
     /// <p>The name of the running application to stop.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
     /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
     /// </note>
     /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
     /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+    #[doc(hidden)]
     pub force: std::option::Option<bool>,
 }
 impl StopApplicationInput {
@@ -5709,8 +5724,10 @@ impl std::fmt::Debug for StopApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartApplicationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    #[doc(hidden)]
     pub run_configuration: std::option::Option<crate::model::RunConfiguration>,
 }
 impl StartApplicationInput {
@@ -5737,8 +5754,10 @@ impl std::fmt::Debug for StartApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackApplicationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
 }
 impl RollbackApplicationInput {
@@ -5768,6 +5787,7 @@ impl std::fmt::Debug for RollbackApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the application for which to retrieve tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5789,10 +5809,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsInput {
     /// <p>The name of the application for which you want to list all versions.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsInput {
@@ -5824,10 +5847,13 @@ impl std::fmt::Debug for ListApplicationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationSnapshotsInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of application snapshots to list.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationSnapshotsInput {
@@ -5859,8 +5885,10 @@ impl std::fmt::Debug for ListApplicationSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The maximum number of applications to list.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -5887,15 +5915,20 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverInputSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that is used to access the streaming source.</p>
+    #[doc(hidden)]
     pub service_execution_role: std::option::Option<std::string::String>,
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    #[doc(hidden)]
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
     /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+    #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::S3Configuration>,
     /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
+    #[doc(hidden)]
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
@@ -5948,8 +5981,10 @@ impl std::fmt::Debug for DiscoverInputSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionInput {
     /// <p>The name of the application for which you want to get the version description.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The ID of the application version for which you want to get the description.</p>
+    #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
 }
 impl DescribeApplicationVersionInput {
@@ -5976,8 +6011,10 @@ impl std::fmt::Debug for DescribeApplicationVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationSnapshotInput {
@@ -6004,8 +6041,10 @@ impl std::fmt::Debug for DescribeApplicationSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    #[doc(hidden)]
     pub include_additional_details: std::option::Option<bool>,
 }
 impl DescribeApplicationInput {
@@ -6035,12 +6074,16 @@ impl std::fmt::Debug for DescribeApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the VPC configuration to delete.</p>
+    #[doc(hidden)]
     pub vpc_configuration_id: std::option::Option<std::string::String>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationVpcConfigurationInput {
@@ -6080,10 +6123,13 @@ impl std::fmt::Debug for DeleteApplicationVpcConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the snapshot delete.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
+    #[doc(hidden)]
     pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationSnapshotInput {
@@ -6118,10 +6164,13 @@ impl std::fmt::Debug for DeleteApplicationSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationReferenceDataSourceInput {
@@ -6156,10 +6205,13 @@ impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutputInput {
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
+    #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationOutputInput {
@@ -6194,10 +6246,13 @@ impl std::fmt::Debug for DeleteApplicationOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInputProcessingConfigurationInput {
@@ -6232,12 +6287,16 @@ impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
@@ -6280,8 +6339,10 @@ impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
+    #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInput {
@@ -6308,8 +6369,10 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationSnapshotInput {
     /// <p>The name of an existing application</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An identifier for the application snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl CreateApplicationSnapshotInput {
@@ -6336,10 +6399,13 @@ impl std::fmt::Debug for CreateApplicationSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationPresignedUrlInput {
     /// <p>The name of the application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    #[doc(hidden)]
     pub url_type: std::option::Option<crate::model::UrlType>,
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
+    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: std::option::Option<i64>,
 }
 impl CreateApplicationPresignedUrlInput {
@@ -6374,21 +6440,29 @@ impl std::fmt::Debug for CreateApplicationPresignedUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A summary description of the application.</p>
+    #[doc(hidden)]
     pub application_description: std::option::Option<std::string::String>,
     /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    #[doc(hidden)]
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+    #[doc(hidden)]
     pub service_execution_role: std::option::Option<std::string::String>,
     /// <p>Use this parameter to configure the application.</p>
+    #[doc(hidden)]
     pub application_configuration: std::option::Option<crate::model::ApplicationConfiguration>,
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
+    #[doc(hidden)]
     pub cloud_watch_logging_options:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    #[doc(hidden)]
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl CreateApplicationInput {
@@ -6452,12 +6526,16 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Description of the VPC to add to the application.</p>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl AddApplicationVpcConfigurationInput {
@@ -6497,10 +6575,13 @@ impl std::fmt::Debug for AddApplicationVpcConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
+    #[doc(hidden)]
     pub reference_data_source: std::option::Option<crate::model::ReferenceDataSource>,
 }
 impl AddApplicationReferenceDataSourceInput {
@@ -6535,10 +6616,13 @@ impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationOutputInput {
     /// <p>The name of the application to which you want to add the output configuration.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
+    #[doc(hidden)]
     pub output: std::option::Option<crate::model::Output>,
 }
 impl AddApplicationOutputInput {
@@ -6573,12 +6657,16 @@ impl std::fmt::Debug for AddApplicationOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
+    #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
+    #[doc(hidden)]
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
@@ -6624,10 +6712,13 @@ impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputInput {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The <code>Input</code> to add.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl AddApplicationInputInput {
@@ -6662,12 +6753,16 @@ impl std::fmt::Debug for AddApplicationInputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Data Analytics application name.</p>
+    #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    #[doc(hidden)]
     pub cloud_watch_logging_option: std::option::Option<crate::model::CloudWatchLoggingOption>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    #[doc(hidden)]
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl AddApplicationCloudWatchLoggingOptionInput {

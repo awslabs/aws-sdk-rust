@@ -4694,14 +4694,19 @@ impl UpdateLogPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLogPatternInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern.</p>
+    #[doc(hidden)]
     pub pattern_name: std::option::Option<std::string::String>,
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+    #[doc(hidden)]
     pub rank: i32,
 }
 impl UpdateLogPatternInput {
@@ -4743,16 +4748,22 @@ impl std::fmt::Debug for UpdateLogPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application component is monitored.</p>
+    #[doc(hidden)]
     pub monitor: std::option::Option<bool>,
     /// <p>The tier of the application component.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+    #[doc(hidden)]
     pub component_configuration: std::option::Option<std::string::String>,
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
+    #[doc(hidden)]
     pub auto_config_enabled: std::option::Option<bool>,
 }
 impl UpdateComponentConfigurationInput {
@@ -4799,12 +4810,16 @@ impl std::fmt::Debug for UpdateComponentConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The new name of the component.</p>
+    #[doc(hidden)]
     pub new_component_name: std::option::Option<std::string::String>,
     /// <p>The list of resource ARNs that belong to the component.</p>
+    #[doc(hidden)]
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateComponentInput {
@@ -4841,16 +4856,22 @@ impl std::fmt::Debug for UpdateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    #[doc(hidden)]
     pub ops_center_enabled: std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    #[doc(hidden)]
     pub cwe_monitor_enabled: std::option::Option<bool>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    #[doc(hidden)]
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    #[doc(hidden)]
     pub remove_sns_topic: std::option::Option<bool>,
     /// <p> Turns auto-configuration on or off. </p>
+    #[doc(hidden)]
     pub auto_config_enabled: std::option::Option<bool>,
 }
 impl UpdateApplicationInput {
@@ -4897,9 +4918,11 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
     /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4927,8 +4950,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4955,6 +4980,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4976,16 +5002,22 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProblemsInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The name of the component. </p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl ListProblemsInput {
@@ -5032,10 +5064,13 @@ impl std::fmt::Debug for ListProblemsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogPatternSetsInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternSetsInput {
@@ -5067,12 +5102,16 @@ impl std::fmt::Debug for ListLogPatternSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogPatternsInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternsInput {
@@ -5109,16 +5148,22 @@ impl std::fmt::Debug for ListLogPatternsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationHistoryInput {
     /// <p>Resource group to which the application belongs. </p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the event. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the event.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
+    #[doc(hidden)]
     pub event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
     /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationHistoryInput {
@@ -5165,10 +5210,13 @@ impl std::fmt::Debug for ListConfigurationHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
@@ -5200,8 +5248,10 @@ impl std::fmt::Debug for ListComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -5228,6 +5278,7 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProblemObservationsInput {
     /// <p>The ID of the problem.</p>
+    #[doc(hidden)]
     pub problem_id: std::option::Option<std::string::String>,
 }
 impl DescribeProblemObservationsInput {
@@ -5249,6 +5300,7 @@ impl std::fmt::Debug for DescribeProblemObservationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProblemInput {
     /// <p>The ID of the problem.</p>
+    #[doc(hidden)]
     pub problem_id: std::option::Option<std::string::String>,
 }
 impl DescribeProblemInput {
@@ -5270,6 +5322,7 @@ impl std::fmt::Debug for DescribeProblemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObservationInput {
     /// <p>The ID of the observation.</p>
+    #[doc(hidden)]
     pub observation_id: std::option::Option<std::string::String>,
 }
 impl DescribeObservationInput {
@@ -5291,10 +5344,13 @@ impl std::fmt::Debug for DescribeObservationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLogPatternInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern.</p>
+    #[doc(hidden)]
     pub pattern_name: std::option::Option<std::string::String>,
 }
 impl DescribeLogPatternInput {
@@ -5326,10 +5382,13 @@ impl std::fmt::Debug for DescribeLogPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentConfigurationRecommendationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The tier of the application component.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::Tier>,
 }
 impl DescribeComponentConfigurationRecommendationInput {
@@ -5361,8 +5420,10 @@ impl std::fmt::Debug for DescribeComponentConfigurationRecommendationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl DescribeComponentConfigurationInput {
@@ -5389,8 +5450,10 @@ impl std::fmt::Debug for DescribeComponentConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl DescribeComponentInput {
@@ -5417,6 +5480,7 @@ impl std::fmt::Debug for DescribeComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInput {
@@ -5438,10 +5502,13 @@ impl std::fmt::Debug for DescribeApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLogPatternInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern.</p>
+    #[doc(hidden)]
     pub pattern_name: std::option::Option<std::string::String>,
 }
 impl DeleteLogPatternInput {
@@ -5473,8 +5540,10 @@ impl std::fmt::Debug for DeleteLogPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
@@ -5501,6 +5570,7 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -5522,14 +5592,19 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLogPatternInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
+    #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern.</p>
+    #[doc(hidden)]
     pub pattern_name: std::option::Option<std::string::String>,
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+    #[doc(hidden)]
     pub rank: i32,
 }
 impl CreateLogPatternInput {
@@ -5571,10 +5646,13 @@ impl std::fmt::Debug for CreateLogPatternInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The list of resource ARNs that belong to the component.</p>
+    #[doc(hidden)]
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateComponentInput {
@@ -5606,20 +5684,28 @@ impl std::fmt::Debug for CreateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name of the resource group.</p>
+    #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    #[doc(hidden)]
     pub ops_center_enabled: std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    #[doc(hidden)]
     pub cwe_monitor_enabled: std::option::Option<bool>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+    #[doc(hidden)]
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    #[doc(hidden)]
     pub auto_config_enabled: std::option::Option<bool>,
     /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    #[doc(hidden)]
     pub auto_create: std::option::Option<bool>,
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    #[doc(hidden)]
     pub grouping_type: std::option::Option<crate::model::GroupingType>,
 }
 impl CreateApplicationInput {

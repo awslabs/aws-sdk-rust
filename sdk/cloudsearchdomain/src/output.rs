@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadDocumentsOutput {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The number of documents that were added to the search domain.</p>
+    #[doc(hidden)]
     pub adds: i64,
     /// <p>The number of documents that were deleted from the search domain.</p>
+    #[doc(hidden)]
     pub deletes: i64,
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
 }
 impl UploadDocumentsOutput {
@@ -126,8 +130,10 @@ impl UploadDocumentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SuggestStatus>,
     /// <p>Container for the matching search suggestion information.</p>
+    #[doc(hidden)]
     pub suggest: std::option::Option<crate::model::SuggestModel>,
 }
 impl SuggestOutput {
@@ -205,14 +211,18 @@ impl SuggestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchOutput {
     /// <p>The status information returned for the search request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SearchStatus>,
     /// <p>The documents that match the search criteria.</p>
+    #[doc(hidden)]
     pub hits: std::option::Option<crate::model::Hits>,
     /// <p>The requested facet information.</p>
+    #[doc(hidden)]
     pub facets: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::BucketInfo>,
     >,
     /// <p>The requested field statistics information.</p>
+    #[doc(hidden)]
     pub stats: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FieldStats>,
     >,

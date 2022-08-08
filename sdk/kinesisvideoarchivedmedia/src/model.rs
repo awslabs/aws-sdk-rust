@@ -5,14 +5,19 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Fragment {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
+    #[doc(hidden)]
     pub fragment_number: std::option::Option<std::string::String>,
     /// <p>The total fragment size, including information about the fragment and contained media data.</p>
+    #[doc(hidden)]
     pub fragment_size_in_bytes: i64,
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
+    #[doc(hidden)]
     pub producer_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    #[doc(hidden)]
     pub server_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The playback duration or other time value associated with the fragment.</p>
+    #[doc(hidden)]
     pub fragment_length_in_milliseconds: i64,
 }
 impl Fragment {
@@ -160,8 +165,10 @@ impl Fragment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
+    #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::FragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
+    #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::TimestampRange>,
 }
 impl FragmentSelector {
@@ -241,8 +248,10 @@ impl FragmentSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
+    #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampRange {
@@ -375,6 +384,7 @@ impl AsRef<str> for FragmentSelectorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
+    #[doc(hidden)]
     pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
     /// <ul>
@@ -383,8 +393,10 @@ pub struct Image {
     /// <ul>
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ImageError>,
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
+    #[doc(hidden)]
     pub image_content: std::option::Option<std::string::String>,
 }
 impl Image {
@@ -886,9 +898,11 @@ pub struct HlsFragmentSelector {
     /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::HlsFragmentSelectorType>,
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::HlsTimestampRange>,
 }
 impl HlsFragmentSelector {
@@ -990,12 +1004,14 @@ pub struct HlsTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
     /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
     /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
     /// </note>
+    #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl HlsTimestampRange {
@@ -1209,9 +1225,11 @@ pub struct DashFragmentSelector {
     /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the MPEG-DASH manifest will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
+    #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::DashFragmentSelectorType>,
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::DashTimestampRange>,
 }
 impl DashFragmentSelector {
@@ -1314,12 +1332,14 @@ pub struct DashTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
     /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
     /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p> <note>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
     /// </note>
+    #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DashTimestampRange {
@@ -1640,8 +1660,10 @@ impl AsRef<str> for DashPlaybackMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
+    #[doc(hidden)]
     pub fragment_selector_type: std::option::Option<crate::model::ClipFragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
+    #[doc(hidden)]
     pub timestamp_range: std::option::Option<crate::model::ClipTimestampRange>,
 }
 impl ClipFragmentSelector {
@@ -1726,10 +1748,12 @@ impl ClipFragmentSelector {
 pub struct ClipTimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
+    #[doc(hidden)]
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClipTimestampRange {

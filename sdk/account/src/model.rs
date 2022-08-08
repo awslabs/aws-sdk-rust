@@ -5,28 +5,40 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactInformation {
     /// <p>The full name of the primary contact address.</p>
+    #[doc(hidden)]
     pub full_name: std::option::Option<std::string::String>,
     /// <p>The first line of the primary contact address.</p>
+    #[doc(hidden)]
     pub address_line1: std::option::Option<std::string::String>,
     /// <p>The second line of the primary contact address, if any.</p>
+    #[doc(hidden)]
     pub address_line2: std::option::Option<std::string::String>,
     /// <p>The third line of the primary contact address, if any.</p>
+    #[doc(hidden)]
     pub address_line3: std::option::Option<std::string::String>,
     /// <p>The city of the primary contact address.</p>
+    #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
     /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    #[doc(hidden)]
     pub state_or_region: std::option::Option<std::string::String>,
     /// <p>The district or county of the primary contact address, if any.</p>
+    #[doc(hidden)]
     pub district_or_county: std::option::Option<std::string::String>,
     /// <p>The postal code of the primary contact address.</p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
+    #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The name of the company associated with the primary contact information, if any.</p>
+    #[doc(hidden)]
     pub company_name: std::option::Option<std::string::String>,
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
+    #[doc(hidden)]
     pub website_url: std::option::Option<std::string::String>,
 }
 impl ContactInformation {
@@ -342,14 +354,19 @@ impl AsRef<str> for AlternateContactType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlternateContact {
     /// <p>The name associated with this alternate contact.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The title associated with this alternate contact.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The email address associated with this alternate contact.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The phone number associated with this alternate contact.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The type of alternate contact.</p>
+    #[doc(hidden)]
     pub alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
 }
 impl AlternateContact {

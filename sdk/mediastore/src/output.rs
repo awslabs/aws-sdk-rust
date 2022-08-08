@@ -244,6 +244,7 @@ impl PutContainerPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array of key:value pairs that are assigned to the container.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -305,8 +306,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainersOutput {
     /// <p>The names of the containers.</p>
+    #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
     /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainersOutput {
@@ -387,6 +390,7 @@ impl ListContainersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricPolicyOutput {
     /// <p>The metric policy that is associated with the specific container.</p>
+    #[doc(hidden)]
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
 impl GetMetricPolicyOutput {
@@ -444,6 +448,7 @@ impl GetMetricPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
+    #[doc(hidden)]
     pub lifecycle_policy: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyOutput {
@@ -501,6 +506,7 @@ impl GetLifecyclePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCorsPolicyOutput {
     /// <p>The CORS policy assigned to the container.</p>
+    #[doc(hidden)]
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl GetCorsPolicyOutput {
@@ -564,6 +570,7 @@ impl GetCorsPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetContainerPolicyOutput {
@@ -618,6 +625,7 @@ impl GetContainerPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
+    #[doc(hidden)]
     pub container: std::option::Option<crate::model::Container>,
 }
 impl DescribeContainerOutput {
@@ -837,6 +845,7 @@ pub struct CreateContainerOutput {
     /// <p>CreationTime: Unix time stamp.</p>
     /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
     /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
+    #[doc(hidden)]
     pub container: std::option::Option<crate::model::Container>,
 }
 impl CreateContainerOutput {

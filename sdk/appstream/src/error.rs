@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -69,6 +70,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -133,6 +135,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedException {
@@ -197,6 +200,7 @@ impl OperationNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -261,6 +265,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRoleException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRoleException {
@@ -325,6 +330,7 @@ impl InvalidRoleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterCombinationException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterCombinationException {
@@ -389,6 +395,7 @@ impl InvalidParameterCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAccountStatusException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAccountStatusException {
@@ -453,6 +460,7 @@ impl InvalidAccountStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleImageException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatibleImageException {
@@ -517,6 +525,7 @@ impl IncompatibleImageException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -581,6 +590,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotAvailableException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotAvailableException {
@@ -645,6 +655,7 @@ impl ResourceNotAvailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceededException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestLimitExceededException {
@@ -709,6 +720,7 @@ impl RequestLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitlementNotFoundException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntitlementNotFoundException {
@@ -773,6 +785,7 @@ impl EntitlementNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
@@ -837,6 +850,7 @@ impl ResourceAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitlementAlreadyExistsException {
     /// <p>The error message in the exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntitlementAlreadyExistsException {

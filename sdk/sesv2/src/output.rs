@@ -215,6 +215,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderEmailTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
+    #[doc(hidden)]
     pub rendered_template: std::option::Option<std::string::String>,
 }
 impl TestRenderEmailTemplateOutput {
@@ -304,6 +305,7 @@ pub struct SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>
     /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
     /// </note>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendEmailOutput {
@@ -364,6 +366,7 @@ impl SendEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendCustomVerificationEmailOutput {
@@ -418,6 +421,7 @@ impl SendCustomVerificationEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
+    #[doc(hidden)]
     pub bulk_email_entry_results:
         std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
 }
@@ -588,10 +592,12 @@ pub struct PutEmailIdentityDkimSigningAttributesOutput {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dkim_status: std::option::Option<crate::model::DkimStatus>,
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
+    #[doc(hidden)]
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutput {
@@ -1129,6 +1135,7 @@ impl PutAccountDedicatedIpWarmupAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1190,9 +1197,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
+    #[doc(hidden)]
     pub suppressed_destination_summaries:
         std::option::Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuppressedDestinationsOutput {
@@ -1282,8 +1291,10 @@ impl ListSuppressedDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportJobsOutput {
     /// <p>A list of the import job summaries.</p>
+    #[doc(hidden)]
     pub import_jobs: std::option::Option<std::vec::Vec<crate::model::ImportJobSummary>>,
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImportJobsOutput {
@@ -1364,8 +1375,10 @@ impl ListImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
+    #[doc(hidden)]
     pub templates_metadata: std::option::Option<std::vec::Vec<crate::model::EmailTemplateMetadata>>,
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEmailTemplatesOutput {
@@ -1449,8 +1462,10 @@ impl ListEmailTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub email_identities: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEmailIdentitiesOutput {
@@ -1531,9 +1546,11 @@ impl ListEmailIdentitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
+    #[doc(hidden)]
     pub domain_deliverability_campaigns:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainDeliverabilityCampaignsOutput {
@@ -1623,9 +1640,11 @@ impl ListDomainDeliverabilityCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
+    #[doc(hidden)]
     pub deliverability_test_reports:
         std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeliverabilityTestReportsOutput {
@@ -1715,8 +1734,10 @@ impl ListDeliverabilityTestReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
+    #[doc(hidden)]
     pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDedicatedIpPoolsOutput {
@@ -1797,9 +1818,11 @@ impl ListDedicatedIpPoolsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
+    #[doc(hidden)]
     pub custom_verification_email_templates:
         std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>,
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVerificationEmailTemplatesOutput {
@@ -1892,8 +1915,10 @@ impl ListCustomVerificationEmailTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsOutput {
     /// <p>The contacts present in a specific contact list.</p>
+    #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::model::Contact>>,
     /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactsOutput {
@@ -1974,8 +1999,10 @@ impl ListContactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactListsOutput {
     /// <p>The available contact lists.</p>
+    #[doc(hidden)]
     pub contact_lists: std::option::Option<std::vec::Vec<crate::model::ContactList>>,
     /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactListsOutput {
@@ -2056,8 +2083,10 @@ impl ListContactListsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsOutput {
@@ -2138,6 +2167,7 @@ impl ListConfigurationSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
+    #[doc(hidden)]
     pub suppressed_destination: std::option::Option<crate::model::SuppressedDestination>,
 }
 impl GetSuppressedDestinationOutput {
@@ -2200,22 +2230,31 @@ impl GetSuppressedDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The destination of the import job.</p>
+    #[doc(hidden)]
     pub import_destination: std::option::Option<crate::model::ImportDestination>,
     /// <p>The data source of the import job.</p>
+    #[doc(hidden)]
     pub import_data_source: std::option::Option<crate::model::ImportDataSource>,
     /// <p>The failure details about an import job.</p>
+    #[doc(hidden)]
     pub failure_info: std::option::Option<crate::model::FailureInfo>,
     /// <p>The status of the import job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time stamp of when the import job was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time stamp of when the import job was completed.</p>
+    #[doc(hidden)]
     pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current number of records processed.</p>
+    #[doc(hidden)]
     pub processed_records_count: std::option::Option<i32>,
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+    #[doc(hidden)]
     pub failed_records_count: std::option::Option<i32>,
 }
 impl GetImportJobOutput {
@@ -2424,8 +2463,10 @@ impl GetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateOutput {
     /// <p>The name of the template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    #[doc(hidden)]
     pub template_content: std::option::Option<crate::model::EmailTemplateContent>,
 }
 impl GetEmailTemplateOutput {
@@ -2503,6 +2544,7 @@ impl GetEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
+    #[doc(hidden)]
     pub policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2578,23 +2620,31 @@ impl GetEmailIdentityPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+    #[doc(hidden)]
     pub feedback_forwarding_status: bool,
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    #[doc(hidden)]
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
+    #[doc(hidden)]
     pub mail_from_attributes: std::option::Option<crate::model::MailFromAttributes>,
     /// <p>A map of policy names to policies.</p>
+    #[doc(hidden)]
     pub policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration set used by default when sending from this identity.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetEmailIdentityOutput {
@@ -2821,8 +2871,10 @@ impl GetEmailIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
+    #[doc(hidden)]
     pub overall_volume: std::option::Option<crate::model::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
+    #[doc(hidden)]
     pub daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
 }
 impl GetDomainStatisticsReportOutput {
@@ -2906,6 +2958,7 @@ impl GetDomainStatisticsReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
+    #[doc(hidden)]
     pub domain_deliverability_campaign:
         std::option::Option<crate::model::DomainDeliverabilityCampaign>,
 }
@@ -2973,14 +3026,19 @@ impl GetDomainDeliverabilityCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub deliverability_test_report: std::option::Option<crate::model::DeliverabilityTestReport>,
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
+    #[doc(hidden)]
     pub overall_placement: std::option::Option<crate::model::PlacementStatistics>,
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
+    #[doc(hidden)]
     pub isp_placements: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetDeliverabilityTestReportOutput {
@@ -3136,15 +3194,20 @@ impl GetDeliverabilityTestReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
+    #[doc(hidden)]
     pub dashboard_enabled: bool,
     /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    #[doc(hidden)]
     pub subscription_expiry_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub account_status: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub active_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
+    #[doc(hidden)]
     pub pending_expiration_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
@@ -3319,8 +3382,10 @@ impl GetDeliverabilityDashboardOptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub dedicated_ips: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpsOutput {
@@ -3401,6 +3466,7 @@ impl GetDedicatedIpsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
+    #[doc(hidden)]
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
 }
 impl GetDedicatedIpOutput {
@@ -3458,16 +3524,22 @@ impl GetDedicatedIpOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomVerificationEmailTemplateOutput {
     /// <p>The name of the custom verification email template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
+    #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
+    #[doc(hidden)]
     pub template_subject: std::option::Option<std::string::String>,
     /// <p>The content of the custom verification email.</p>
+    #[doc(hidden)]
     pub template_content: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    #[doc(hidden)]
     pub success_redirection_url: std::option::Option<std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    #[doc(hidden)]
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl GetCustomVerificationEmailTemplateOutput {
@@ -3625,16 +3697,22 @@ impl GetCustomVerificationEmailTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactListOutput {
     /// <p>The name of the contact list.</p>
+    #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    #[doc(hidden)]
     pub topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
     /// <p>A description of what the contact list is about.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A timestamp noting when the contact list was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with a contact list.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GetContactListOutput {
@@ -3801,21 +3879,29 @@ impl GetContactListOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactOutput {
     /// <p>The name of the contact list to which the contact belongs.</p>
+    #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The contact's email addres.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
+    #[doc(hidden)]
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
+    #[doc(hidden)]
     pub topic_default_preferences:
         std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    #[doc(hidden)]
     pub unsubscribe_all: bool,
     /// <p>The attribute data attached to a contact.</p>
+    #[doc(hidden)]
     pub attributes_data: std::option::Option<std::string::String>,
     /// <p>A timestamp noting when the contact was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetContactOutput {
@@ -4026,6 +4112,7 @@ impl GetContactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
+    #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
 }
 impl GetConfigurationSetEventDestinationsOutput {
@@ -4090,18 +4177,25 @@ impl GetConfigurationSetEventDestinationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
+    #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
+    #[doc(hidden)]
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
+    #[doc(hidden)]
     pub sending_options: std::option::Option<crate::model::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    #[doc(hidden)]
     pub suppression_options: std::option::Option<crate::model::SuppressionOptions>,
 }
 impl GetConfigurationSetOutput {
@@ -4285,6 +4379,7 @@ impl GetConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
+    #[doc(hidden)]
     pub blacklist_report: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
     >,
@@ -4371,6 +4466,7 @@ impl GetBlacklistReportsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountOutput {
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
+    #[doc(hidden)]
     pub dedicated_ip_auto_warmup_enabled: bool,
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
@@ -4378,18 +4474,24 @@ pub struct GetAccountOutput {
     /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub enforcement_status: std::option::Option<std::string::String>,
     /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
+    #[doc(hidden)]
     pub production_access_enabled: bool,
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub send_quota: std::option::Option<crate::model::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the current Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub sending_enabled: bool,
     /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub suppression_attributes: std::option::Option<crate::model::SuppressionAttributes>,
     /// <p>An object that defines your account details.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::AccountDetails>,
 }
 impl GetAccountOutput {
@@ -4892,6 +4994,7 @@ impl DeleteConfigurationSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateImportJobOutput {
@@ -5007,10 +5110,13 @@ impl CreateEmailIdentityPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
+    #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    #[doc(hidden)]
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
 }
 impl CreateEmailIdentityOutput {
@@ -5108,8 +5214,10 @@ impl CreateEmailIdentityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    #[doc(hidden)]
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
 }
 impl CreateDeliverabilityTestReportOutput {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
@@ -14,8 +15,10 @@ pub struct TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
+    #[doc(hidden)]
     pub millis_until_next_refreshable: i64,
 }
 impl TrustedAdvisorCheckRefreshStatus {
@@ -133,16 +136,22 @@ impl TrustedAdvisorCheckRefreshStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
+    #[doc(hidden)]
     pub has_flagged_resources: bool,
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
+    #[doc(hidden)]
     pub resources_summary: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+    #[doc(hidden)]
     pub category_specific_summary:
         std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
 }
@@ -301,6 +310,7 @@ impl TrustedAdvisorCheckSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCategorySpecificSummary {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
+    #[doc(hidden)]
     pub cost_optimizing: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
 }
 impl TrustedAdvisorCategorySpecificSummary {
@@ -364,8 +374,10 @@ impl TrustedAdvisorCategorySpecificSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCostOptimizingSummary {
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
+    #[doc(hidden)]
     pub estimated_monthly_savings: f64,
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
+    #[doc(hidden)]
     pub estimated_percent_monthly_savings: f64,
 }
 impl TrustedAdvisorCostOptimizingSummary {
@@ -445,12 +457,16 @@ impl TrustedAdvisorCostOptimizingSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub resources_processed: i64,
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub resources_flagged: i64,
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
+    #[doc(hidden)]
     pub resources_ignored: i64,
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
+    #[doc(hidden)]
     pub resources_suppressed: i64,
 }
 impl TrustedAdvisorResourcesSummary {
@@ -556,14 +572,19 @@ impl TrustedAdvisorResourcesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The display name for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The category of the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedAdvisorCheckDescription {
@@ -695,17 +716,23 @@ impl TrustedAdvisorCheckDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckResult {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
+    #[doc(hidden)]
     pub resources_summary: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+    #[doc(hidden)]
     pub category_specific_summary:
         std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
     /// <p>The details about each resource listed in the check result.</p>
+    #[doc(hidden)]
     pub flagged_resources:
         std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorResourceDetail>>,
 }
@@ -879,14 +906,19 @@ impl TrustedAdvisorCheckResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the identified resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
+    #[doc(hidden)]
     pub is_suppressed: bool,
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedAdvisorResourceDetail {
@@ -1019,6 +1051,7 @@ impl TrustedAdvisorResourceDetail {
 pub struct SeverityLevel {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
     /// <p>The values returned by the API are different from the values that appear in the Amazon Web Services Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
@@ -1032,6 +1065,7 @@ pub struct SeverityLevel {
     /// </ul>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl SeverityLevel {
@@ -1139,10 +1173,13 @@ impl SeverityLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
+    #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::model::Category>>,
 }
 impl Service {
@@ -1240,8 +1277,10 @@ impl Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Category {
     /// <p>The category code for the support case.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The category name for the support case.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Category {
@@ -1313,16 +1352,21 @@ impl Category {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Communication {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
     /// . Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
+    #[doc(hidden)]
     pub submitted_by: std::option::Option<std::string::String>,
     /// <p>The time the communication was created.</p>
+    #[doc(hidden)]
     pub time_created: std::option::Option<std::string::String>,
     /// <p>Information about the attachments to the case communication.</p>
+    #[doc(hidden)]
     pub attachment_set: std::option::Option<std::vec::Vec<crate::model::AttachmentDetails>>,
 }
 impl Communication {
@@ -1461,8 +1505,10 @@ impl Communication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentDetails {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The file name of the attachment.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
 }
 impl AttachmentDetails {
@@ -1559,10 +1605,13 @@ impl AttachmentDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaseDetails {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
+    #[doc(hidden)]
     pub display_id: std::option::Option<std::string::String>,
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
@@ -1574,22 +1623,31 @@ pub struct CaseDetails {
     /// <li> <p> <code>unassigned</code> </p> </li>
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
+    #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The category of problem for the support case.</p>
+    #[doc(hidden)]
     pub category_code: std::option::Option<std::string::String>,
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
+    #[doc(hidden)]
     pub severity_code: std::option::Option<std::string::String>,
     /// <p>The email address of the account that submitted the case.</p>
+    #[doc(hidden)]
     pub submitted_by: std::option::Option<std::string::String>,
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
+    #[doc(hidden)]
     pub time_created: std::option::Option<std::string::String>,
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+    #[doc(hidden)]
     pub recent_communications: std::option::Option<crate::model::RecentCaseCommunications>,
     /// <p>The email addresses that receive copies of communication about the case.</p>
+    #[doc(hidden)]
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl CaseDetails {
@@ -1882,8 +1940,10 @@ impl CaseDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecentCaseCommunications {
     /// <p>The five most recent communications associated with the case.</p>
+    #[doc(hidden)]
     pub communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
     /// <p>A resumption point for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl RecentCaseCommunications {
@@ -1964,8 +2024,10 @@ impl RecentCaseCommunications {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {
     /// <p>The name of the attachment file.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
     /// <p>The content of the attachment file.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Attachment {

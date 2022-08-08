@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>The Amazon QuickSight user.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateUserOutput {
@@ -96,14 +99,19 @@ impl UpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>The resulting list of resource permissions for the theme.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateThemePermissionsOutput {
@@ -236,10 +244,13 @@ impl UpdateThemePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
+    #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateThemeAliasOutput {
@@ -331,16 +342,22 @@ impl UpdateThemeAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeOutput {
     /// <p>The ID for the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The creation status of the theme.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateThemeOutput {
@@ -483,14 +500,19 @@ impl UpdateThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplatePermissionsOutput {
     /// <p>The ID for the template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions to be set on the template.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateTemplatePermissionsOutput {
@@ -623,10 +645,13 @@ impl UpdateTemplatePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateAliasOutput {
     /// <p>The template alias.</p>
+    #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateTemplateAliasOutput {
@@ -718,16 +743,22 @@ impl UpdateTemplateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateOutput {
     /// <p>The ID for the template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN for the template, including the version information of the first version.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The creation status of the template.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateTemplateOutput {
@@ -870,8 +901,10 @@ impl UpdateTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicSharingSettingsOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdatePublicSharingSettingsOutput {
@@ -943,10 +976,13 @@ impl UpdatePublicSharingSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request. </p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateIpRestrictionOutput {
@@ -1038,12 +1074,16 @@ impl UpdateIpRestrictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIamPolicyAssignmentOutput {
     /// <p>The name of the assignment or rule.</p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
+    #[doc(hidden)]
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -1053,10 +1093,13 @@ pub struct UpdateIamPolicyAssignmentOutput {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateIamPolicyAssignmentOutput {
@@ -1258,10 +1301,13 @@ impl UpdateIamPolicyAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateGroupOutput {
@@ -1350,14 +1396,19 @@ impl UpdateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFolderPermissionsOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>Information about the permissions for the folder.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateFolderPermissionsOutput {
@@ -1490,12 +1541,16 @@ impl UpdateFolderPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFolderOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateFolderOutput {
@@ -1601,12 +1656,16 @@ impl UpdateFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateDataSourcePermissionsOutput {
@@ -1718,14 +1777,19 @@ impl UpdateDataSourcePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The update status of the data source's last update.</p>
+    #[doc(hidden)]
     pub update_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateDataSourceOutput {
@@ -1854,12 +1918,16 @@ impl UpdateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateDataSetPermissionsOutput {
@@ -1965,16 +2033,22 @@ impl UpdateDataSetPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
+    #[doc(hidden)]
     pub ingestion_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
+    #[doc(hidden)]
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateDataSetOutput {
@@ -2117,12 +2191,16 @@ impl UpdateDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPublishedVersionOutput {
     /// <p>The ID for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateDashboardPublishedVersionOutput {
@@ -2231,16 +2309,22 @@ impl UpdateDashboardPublishedVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>Information about the permissions on the dashboard.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    #[doc(hidden)]
     pub link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
 }
 impl UpdateDashboardPermissionsOutput {
@@ -2405,16 +2489,22 @@ impl UpdateDashboardPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the dashboard, including the version number.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The creation status of the request.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateDashboardOutput {
@@ -2557,14 +2647,19 @@ impl UpdateDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
+    #[doc(hidden)]
     pub analysis_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you updated permissions for.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateAnalysisPermissionsOutput {
@@ -2697,14 +2792,19 @@ impl UpdateAnalysisPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisOutput {
     /// <p>The ARN of the analysis that you're updating.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The update status of the last update that was made to the analysis.</p>
+    #[doc(hidden)]
     pub update_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateAnalysisOutput {
@@ -2830,8 +2930,10 @@ impl UpdateAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateAccountSettingsOutput {
@@ -2903,16 +3005,22 @@ impl UpdateAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    #[doc(hidden)]
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UpdateAccountCustomizationOutput {
@@ -3060,8 +3168,10 @@ impl UpdateAccountCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl UntagResourceOutput {
@@ -3133,8 +3243,10 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl TagResourceOutput {
@@ -3206,12 +3318,16 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchGroupsOutput {
     /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+    #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl SearchGroupsOutput {
@@ -3326,12 +3442,16 @@ impl SearchGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFoldersOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
+    #[doc(hidden)]
     pub folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SearchFoldersOutput {
@@ -3447,12 +3567,16 @@ impl SearchFoldersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
+    #[doc(hidden)]
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SearchDashboardsOutput {
@@ -3568,12 +3692,16 @@ impl SearchDashboardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAnalysesOutput {
     /// <p>Metadata describing the analyses that you searched for.</p>
+    #[doc(hidden)]
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
     /// <p>A pagination token that can be used in a subsequent request. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SearchAnalysesOutput {
@@ -3689,12 +3817,16 @@ impl SearchAnalysesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreAnalysisOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're restoring. </p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl RestoreAnalysisOutput {
@@ -3800,12 +3932,16 @@ impl RestoreAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUserOutput {
     /// <p>The user's user name.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
     /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+    #[doc(hidden)]
     pub user_invitation_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl RegisterUserOutput {
@@ -3914,12 +4050,16 @@ impl RegisterUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>The list of users.</p>
+    #[doc(hidden)]
     pub user_list: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListUsersOutput {
@@ -4034,12 +4174,16 @@ impl ListUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserGroupsOutput {
     /// <p>The list of groups the user is a member of.</p>
+    #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListUserGroupsOutput {
@@ -4154,13 +4298,17 @@ impl ListUserGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
+    #[doc(hidden)]
     pub theme_version_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListThemeVersionsOutput {
@@ -4284,12 +4432,16 @@ impl ListThemeVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemesOutput {
     /// <p>Information about the themes in the list.</p>
+    #[doc(hidden)]
     pub theme_summary_list: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListThemesOutput {
@@ -4405,12 +4557,16 @@ impl ListThemesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeAliasesOutput {
     /// <p>A structure containing the list of the theme's aliases.</p>
+    #[doc(hidden)]
     pub theme_alias_list: std::option::Option<std::vec::Vec<crate::model::ThemeAlias>>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThemeAliasesOutput {
@@ -4525,13 +4681,17 @@ impl ListThemeAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified template.</p>
+    #[doc(hidden)]
     pub template_version_summary_list:
         std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListTemplateVersionsOutput {
@@ -4655,12 +4815,16 @@ impl ListTemplateVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesOutput {
     /// <p>A structure containing information about the templates in the list.</p>
+    #[doc(hidden)]
     pub template_summary_list: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListTemplatesOutput {
@@ -4776,12 +4940,16 @@ impl ListTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateAliasesOutput {
     /// <p>A structure containing the list of the template's aliases.</p>
+    #[doc(hidden)]
     pub template_alias_list: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTemplateAliasesOutput {
@@ -4897,10 +5065,13 @@ impl ListTemplateAliasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListTagsForResourceOutput {
@@ -4998,12 +5169,16 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
+    #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListNamespacesOutput {
@@ -5118,12 +5293,16 @@ impl ListNamespacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIngestionsOutput {
     /// <p>A list of the ingestions.</p>
+    #[doc(hidden)]
     pub ingestions: std::option::Option<std::vec::Vec<crate::model::Ingestion>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListIngestionsOutput {
@@ -5238,13 +5417,17 @@ impl ListIngestionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
+    #[doc(hidden)]
     pub active_assignments:
         std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListIamPolicyAssignmentsForUserOutput {
@@ -5365,13 +5548,17 @@ impl ListIamPolicyAssignmentsForUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsOutput {
     /// <p>Information describing the IAM policy assignments.</p>
+    #[doc(hidden)]
     pub iam_policy_assignments:
         std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListIamPolicyAssignmentsOutput {
@@ -5492,12 +5679,16 @@ impl ListIamPolicyAssignmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>The list of the groups.</p>
+    #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListGroupsOutput {
@@ -5612,12 +5803,16 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupMembershipsOutput {
     /// <p>The list of the members of the group.</p>
+    #[doc(hidden)]
     pub group_member_list: std::option::Option<std::vec::Vec<crate::model::GroupMember>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListGroupMembershipsOutput {
@@ -5732,12 +5927,16 @@ impl ListGroupMembershipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFoldersOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
+    #[doc(hidden)]
     pub folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListFoldersOutput {
@@ -5853,12 +6052,16 @@ impl ListFoldersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFolderMembersOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
+    #[doc(hidden)]
     pub folder_member_list: std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListFolderMembersOutput {
@@ -5974,12 +6177,16 @@ impl ListFolderMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesOutput {
     /// <p>A list of data sources.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListDataSourcesOutput {
@@ -6094,12 +6301,16 @@ impl ListDataSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsOutput {
     /// <p>The list of dataset summaries.</p>
+    #[doc(hidden)]
     pub data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl ListDataSetsOutput {
@@ -6215,13 +6426,17 @@ impl ListDataSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardVersionsOutput {
     /// <p>A structure that contains information about each version of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_version_summary_list:
         std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListDashboardVersionsOutput {
@@ -6345,12 +6560,16 @@ impl ListDashboardVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
     /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
+    #[doc(hidden)]
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListDashboardsOutput {
@@ -6466,12 +6685,16 @@ impl ListDashboardsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
+    #[doc(hidden)]
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListAnalysesOutput {
@@ -6587,10 +6810,13 @@ impl ListAnalysesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GetSessionEmbedUrlOutput {
@@ -6679,10 +6905,13 @@ impl GetSessionEmbedUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashboardEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GetDashboardEmbedUrlOutput {
@@ -6771,10 +7000,13 @@ impl GetDashboardEmbedUrlOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForRegisteredUserOutput {
     /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+    #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
@@ -6863,10 +7095,13 @@ impl GenerateEmbedUrlForRegisteredUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
+    #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
@@ -6955,10 +7190,13 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
     /// <p>The user name.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeUserOutput {
@@ -7047,14 +7285,19 @@ impl DescribeUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions set on the theme. </p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeThemePermissionsOutput {
@@ -7187,10 +7430,13 @@ impl DescribeThemePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
+    #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeThemeAliasOutput {
@@ -7282,10 +7528,13 @@ impl DescribeThemeAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeOutput {
     /// <p>The information about the theme that you are describing.</p>
+    #[doc(hidden)]
     pub theme: std::option::Option<crate::model::Theme>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeThemeOutput {
@@ -7374,14 +7623,19 @@ impl DescribeThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplatePermissionsOutput {
     /// <p>The ID for the template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions to be set on the template. </p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeTemplatePermissionsOutput {
@@ -7514,10 +7768,13 @@ impl DescribeTemplatePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateAliasOutput {
     /// <p>Information about the template alias.</p>
+    #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeTemplateAliasOutput {
@@ -7609,10 +7866,13 @@ impl DescribeTemplateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateOutput {
     /// <p>The template structure for the object you want to describe.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<crate::model::Template>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeTemplateOutput {
@@ -7701,10 +7961,13 @@ impl DescribeTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceOutput {
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::NamespaceInfoV2>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeNamespaceOutput {
@@ -7796,15 +8059,20 @@ impl DescribeNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
+    #[doc(hidden)]
     pub ip_restriction_rule_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request. </p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeIpRestrictionOutput {
@@ -7950,10 +8218,13 @@ impl DescribeIpRestrictionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIngestionOutput {
     /// <p>Information about the ingestion.</p>
+    #[doc(hidden)]
     pub ingestion: std::option::Option<crate::model::Ingestion>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeIngestionOutput {
@@ -8045,10 +8316,13 @@ impl DescribeIngestionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamPolicyAssignmentOutput {
     /// <p>Information describing the IAM policy assignment.</p>
+    #[doc(hidden)]
     pub iam_policy_assignment: std::option::Option<crate::model::IamPolicyAssignment>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeIamPolicyAssignmentOutput {
@@ -8140,10 +8414,13 @@ impl DescribeIamPolicyAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupMembershipOutput {
     /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    #[doc(hidden)]
     pub group_member: std::option::Option<crate::model::GroupMember>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeGroupMembershipOutput {
@@ -8235,10 +8512,13 @@ impl DescribeGroupMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupOutput {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeGroupOutput {
@@ -8327,14 +8607,19 @@ impl DescribeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderResolvedPermissionsOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the permissions for the folder.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderResolvedPermissionsOutput {
@@ -8467,14 +8752,19 @@ impl DescribeFolderResolvedPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderPermissionsOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the permissions on the folder.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderPermissionsOutput {
@@ -8607,10 +8897,13 @@ impl DescribeFolderPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>Information about the folder.</p>
+    #[doc(hidden)]
     pub folder: std::option::Option<crate::model::Folder>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderOutput {
@@ -8699,14 +8992,19 @@ impl DescribeFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the data source.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeDataSourcePermissionsOutput {
@@ -8845,10 +9143,13 @@ impl DescribeDataSourcePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceOutput {
     /// <p>The information on the data source.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeDataSourceOutput {
@@ -8940,14 +9241,19 @@ impl DescribeDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions on the dataset.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeDataSetPermissionsOutput {
@@ -9080,10 +9386,13 @@ impl DescribeDataSetPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetOutput {
     /// <p>Information on the dataset.</p>
+    #[doc(hidden)]
     pub data_set: std::option::Option<crate::model::DataSet>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeDataSetOutput {
@@ -9172,16 +9481,22 @@ impl DescribeDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardPermissionsOutput {
     /// <p>The ID for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>A structure that contains the permissions for the dashboard.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+    #[doc(hidden)]
     pub link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
 }
 impl DescribeDashboardPermissionsOutput {
@@ -9346,10 +9661,13 @@ impl DescribeDashboardPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardOutput {
     /// <p>Information about the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard: std::option::Option<crate::model::Dashboard>,
     /// <p>The HTTP status of this request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeDashboardOutput {
@@ -9441,14 +9759,19 @@ impl DescribeDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisPermissionsOutput {
     /// <p>The ID of the analysis whose permissions you're describing.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
+    #[doc(hidden)]
     pub analysis_arn: std::option::Option<std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
+    #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnalysisPermissionsOutput {
@@ -9581,10 +9904,13 @@ impl DescribeAnalysisPermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisOutput {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
+    #[doc(hidden)]
     pub analysis: std::option::Option<crate::model::Analysis>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnalysisOutput {
@@ -9680,10 +10006,13 @@ pub struct DescribeAccountSubscriptionOutput {
     /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
     /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub account_info: std::option::Option<crate::model::AccountInfo>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountSubscriptionOutput {
@@ -9797,10 +10126,13 @@ impl DescribeAccountSubscriptionOutput {
 pub struct DescribeAccountSettingsOutput {
     /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
     /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeAccountSettingsOutput {
@@ -9895,16 +10227,22 @@ impl DescribeAccountSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight namespace that you're describing. </p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region. </p>
+    #[doc(hidden)]
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DescribeAccountCustomizationOutput {
@@ -10052,8 +10390,10 @@ impl DescribeAccountCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserByPrincipalIdOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteUserByPrincipalIdOutput {
@@ -10125,8 +10465,10 @@ impl DeleteUserByPrincipalIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteUserOutput {
@@ -10198,14 +10540,19 @@ impl DeleteUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeAliasOutput {
     /// <p>The name for the theme alias.</p>
+    #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>An ID for the theme associated with the deletion.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
 }
 impl DeleteThemeAliasOutput {
@@ -10328,12 +10675,16 @@ impl DeleteThemeAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>An ID for the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
 }
 impl DeleteThemeOutput {
@@ -10439,14 +10790,19 @@ impl DeleteThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateAliasOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>An ID for the template associated with the deletion.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The name for the template alias.</p>
+    #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteTemplateAliasOutput {
@@ -10569,12 +10925,16 @@ impl DeleteTemplateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An ID for the template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteTemplateOutput {
@@ -10680,8 +11040,10 @@ impl DeleteTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteNamespaceOutput {
@@ -10753,10 +11115,13 @@ impl DeleteNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. </p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteIamPolicyAssignmentOutput {
@@ -10848,8 +11213,10 @@ impl DeleteIamPolicyAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupMembershipOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteGroupMembershipOutput {
@@ -10921,8 +11288,10 @@ impl DeleteGroupMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteGroupOutput {
@@ -10994,8 +11363,10 @@ impl DeleteGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderMembershipOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderMembershipOutput {
@@ -11067,12 +11438,16 @@ impl DeleteFolderMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name of the deleted folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderOutput {
@@ -11178,12 +11553,16 @@ impl DeleteFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteDataSourceOutput {
@@ -11292,12 +11671,16 @@ impl DeleteDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteDataSetOutput {
@@ -11403,12 +11786,16 @@ impl DeleteDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDashboardOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteDashboardOutput {
@@ -11514,14 +11901,19 @@ impl DeleteDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the deleted analysis.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
+    #[doc(hidden)]
     pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteAnalysisOutput {
@@ -11647,8 +12039,10 @@ impl DeleteAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl DeleteAccountCustomizationOutput {
@@ -11720,10 +12114,13 @@ impl DeleteAccountCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
+    #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateThemeAliasOutput {
@@ -11815,16 +12212,22 @@ impl CreateThemeAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeOutput {
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the theme.</p>
+    #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The theme creation status.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateThemeOutput {
@@ -11967,10 +12370,13 @@ impl CreateThemeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateAliasOutput {
     /// <p>Information about the template alias.</p>
+    #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateTemplateAliasOutput {
@@ -12062,16 +12468,22 @@ impl CreateTemplateAliasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateOutput {
     /// <p>The ARN for the template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN for the template, including the version information of the first version.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The template creation status.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateTemplateOutput {
@@ -12214,18 +12626,25 @@ impl CreateTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceOutput {
     /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    #[doc(hidden)]
     pub capacity_region: std::option::Option<std::string::String>,
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::NamespaceStatus>,
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
+    #[doc(hidden)]
     pub identity_store: std::option::Option<crate::model::IdentityStore>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateNamespaceOutput {
@@ -12391,14 +12810,19 @@ impl CreateNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIngestionOutput {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
+    #[doc(hidden)]
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The ingestion status.</p>
+    #[doc(hidden)]
     pub ingestion_status: std::option::Option<crate::model::IngestionStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateIngestionOutput {
@@ -12524,8 +12948,10 @@ impl CreateIngestionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the assignment.</p>
+    #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -12533,16 +12959,21 @@ pub struct CreateIamPolicyAssignmentOutput {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
+    #[doc(hidden)]
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateIamPolicyAssignmentOutput {
@@ -12744,10 +13175,13 @@ impl CreateIamPolicyAssignmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupMembershipOutput {
     /// <p>The group member.</p>
+    #[doc(hidden)]
     pub group_member: std::option::Option<crate::model::GroupMember>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateGroupMembershipOutput {
@@ -12839,10 +13273,13 @@ impl CreateGroupMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The name of the group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateGroupOutput {
@@ -12931,10 +13368,13 @@ impl CreateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderMembershipOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>Information about the member in the folder.</p>
+    #[doc(hidden)]
     pub folder_member: std::option::Option<crate::model::FolderMember>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderMembershipOutput {
@@ -13026,12 +13466,16 @@ impl CreateFolderMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderOutput {
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The folder ID for the newly created folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The request ID for the newly created folder.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderOutput {
@@ -13137,14 +13581,19 @@ impl CreateFolderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The status of creating the data source.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateDataSourceOutput {
@@ -13273,16 +13722,22 @@ impl CreateDataSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
+    #[doc(hidden)]
     pub ingestion_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
+    #[doc(hidden)]
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateDataSetOutput {
@@ -13425,16 +13880,22 @@ impl CreateDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDashboardOutput {
     /// <p>The ARN of the dashboard.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
+    #[doc(hidden)]
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
+    #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The status of the dashboard creation request.</p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateDashboardOutput {
@@ -13577,14 +14038,19 @@ impl CreateDashboardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnalysisOutput {
     /// <p>The ARN for the analysis.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis.</p>
+    #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The status of the creation of the analysis. </p>
+    #[doc(hidden)]
     pub creation_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateAnalysisOutput {
@@ -13710,10 +14176,13 @@ impl CreateAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountSubscriptionOutput {
     /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+    #[doc(hidden)]
     pub signup_response: std::option::Option<crate::model::SignupResponse>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateAccountSubscriptionOutput {
@@ -13805,16 +14274,22 @@ impl CreateAccountSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization you're creating. </p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
+    #[doc(hidden)]
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CreateAccountCustomizationOutput {
@@ -13962,12 +14437,16 @@ impl CreateAccountCustomizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelIngestionOutput {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
+    #[doc(hidden)]
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
+    #[doc(hidden)]
     pub status: i32,
 }
 impl CancelIngestionOutput {

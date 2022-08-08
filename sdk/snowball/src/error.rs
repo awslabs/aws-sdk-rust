@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The provided resource value is invalid.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl InvalidResourceException {
@@ -93,6 +95,7 @@ impl InvalidResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidJobStateException {
@@ -157,6 +160,7 @@ impl InvalidJobStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsRequestFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsRequestFailedException {
@@ -221,6 +225,7 @@ impl KmsRequestFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputCombinationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInputCombinationException {
@@ -285,6 +290,7 @@ impl InvalidInputCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2RequestFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2RequestFailedException {
@@ -349,6 +355,7 @@ impl Ec2RequestFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterLimitExceededException {
@@ -413,6 +420,7 @@ impl ClusterLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -477,8 +485,10 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
+    #[doc(hidden)]
     pub conflict_resource: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -565,6 +575,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReturnShippingLabelAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReturnShippingLabelAlreadyExistsException {
@@ -629,6 +640,7 @@ impl ReturnShippingLabelAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAddressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedAddressException {
@@ -693,6 +705,7 @@ impl UnsupportedAddressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAddressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAddressException {

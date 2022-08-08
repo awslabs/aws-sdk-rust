@@ -6,8 +6,10 @@
 pub struct RevealConfiguration {
     /// <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services Region as the Amazon Macie account.</p>
     /// <p>If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of the key's alias.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RevealStatus>,
 }
 impl RevealConfiguration {
@@ -254,6 +256,7 @@ impl AsRef<str> for FindingPublishingFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
+    #[doc(hidden)]
     pub criterion: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CriterionAdditionalProperties>,
     >,
@@ -340,19 +343,26 @@ impl FindingCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CriterionAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
+    #[doc(hidden)]
     pub eq_exact_match: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
+    #[doc(hidden)]
     pub gt: i64,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
+    #[doc(hidden)]
     pub gte: i64,
     /// <p>The value for the property is less than the specified value.</p>
+    #[doc(hidden)]
     pub lt: i64,
     /// <p>The value for the property is less than or equal to the specified value.</p>
+    #[doc(hidden)]
     pub lte: i64,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
+    #[doc(hidden)]
     pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CriterionAdditionalProperties {
@@ -672,6 +682,7 @@ impl AsRef<str> for JobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    #[doc(hidden)]
     pub matching_bucket: std::option::Option<crate::model::MatchingBucket>,
 }
 impl MatchingResource {
@@ -729,34 +740,47 @@ impl MatchingResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingBucket {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
     /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The total number of objects in the bucket.</p>
+    #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
+    #[doc(hidden)]
     pub object_count_by_encryption_type:
         std::option::Option<crate::model::ObjectCountByEncryptionType>,
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
+    #[doc(hidden)]
     pub size_in_bytes: i64,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    #[doc(hidden)]
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_size_in_bytes:
         std::option::Option<crate::model::ObjectLevelStatistics>,
 }
@@ -1073,10 +1097,13 @@ impl MatchingBucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub file_type: i64,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
+    #[doc(hidden)]
     pub storage_class: i64,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub total: i64,
 }
 impl ObjectLevelStatistics {
@@ -1165,14 +1192,19 @@ impl ObjectLevelStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    #[doc(hidden)]
     pub customer_managed: i64,
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    #[doc(hidden)]
     pub kms_managed: i64,
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    #[doc(hidden)]
     pub s3_managed: i64,
     /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
+    #[doc(hidden)]
     pub unencrypted: i64,
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
+    #[doc(hidden)]
     pub unknown: i64,
 }
 impl ObjectCountByEncryptionType {
@@ -1300,6 +1332,7 @@ pub struct JobDetails {
     /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
     /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub is_defined_in_job: std::option::Option<crate::model::IsDefinedInJob>,
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
@@ -1307,12 +1340,15 @@ pub struct JobDetails {
     /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
     /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub is_monitored_by_job: std::option::Option<crate::model::IsMonitoredByJob>,
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
+    #[doc(hidden)]
     pub last_job_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
+    #[doc(hidden)]
     pub last_job_run_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl JobDetails {
@@ -1632,8 +1668,10 @@ impl AsRef<str> for BucketMetadataErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesSortCriteria {
     /// <p>The property to sort the results by.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<crate::model::SearchResourcesSortAttributeName>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl SearchResourcesSortCriteria {
@@ -1845,8 +1883,10 @@ impl AsRef<str> for SearchResourcesSortAttributeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesBucketCriteria {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the results.</p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<crate::model::SearchResourcesCriteriaBlock>,
     /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<crate::model::SearchResourcesCriteriaBlock>,
 }
 impl SearchResourcesBucketCriteria {
@@ -1924,6 +1964,7 @@ impl SearchResourcesBucketCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesCriteriaBlock {
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<std::vec::Vec<crate::model::SearchResourcesCriteria>>,
 }
 impl SearchResourcesCriteriaBlock {
@@ -1985,8 +2026,10 @@ impl SearchResourcesCriteriaBlock {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesCriteria {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
+    #[doc(hidden)]
     pub simple_criterion: std::option::Option<crate::model::SearchResourcesSimpleCriterion>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
+    #[doc(hidden)]
     pub tag_criterion: std::option::Option<crate::model::SearchResourcesTagCriterion>,
 }
 impl SearchResourcesCriteria {
@@ -2070,8 +2113,10 @@ impl SearchResourcesCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesTagCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::SearchResourcesComparator>,
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
+    #[doc(hidden)]
     pub tag_values:
         std::option::Option<std::vec::Vec<crate::model::SearchResourcesTagCriterionPair>>,
 }
@@ -2161,8 +2206,10 @@ impl SearchResourcesTagCriterion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesTagCriterionPair {
     /// <p>The value for the tag key to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value to use in the condition.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SearchResourcesTagCriterionPair {
@@ -2289,8 +2336,10 @@ impl AsRef<str> for SearchResourcesComparator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesSimpleCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::SearchResourcesComparator>,
     /// <p>The property to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::SearchResourcesSimpleCriterionKey>,
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -2300,6 +2349,7 @@ pub struct SearchResourcesSimpleCriterion {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SearchResourcesSimpleCriterion {
@@ -2496,8 +2546,10 @@ impl AsRef<str> for SearchResourcesSimpleCriterionKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityHubConfiguration {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
+    #[doc(hidden)]
     pub publish_classification_findings: bool,
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
+    #[doc(hidden)]
     pub publish_policy_findings: bool,
 }
 impl SecurityHubConfiguration {
@@ -2577,6 +2629,7 @@ impl SecurityHubConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl ClassificationExportConfiguration {
@@ -2634,10 +2687,13 @@ impl ClassificationExportConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3Destination {
@@ -2726,8 +2782,10 @@ impl S3Destination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AdminStatus>,
 }
 impl AdminAccount {
@@ -2854,23 +2912,32 @@ impl AsRef<str> for AdminStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
+    #[doc(hidden)]
     pub administrator_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    #[doc(hidden)]
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the account in Amazon Macie.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
@@ -3194,8 +3261,10 @@ impl AsRef<str> for RelationshipStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedDataIdentifierSummary {
     /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ManagedDataIdentifierSummary {
@@ -3338,12 +3407,16 @@ impl AsRef<str> for SensitiveDataItemCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invitation {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the invitation.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
+    #[doc(hidden)]
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
 }
 impl Invitation {
@@ -3458,14 +3531,19 @@ impl Invitation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingsFilterListItem {
     /// <p>The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the filter.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The custom name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3612,8 +3690,10 @@ impl FindingsFilterListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortCriteria {
     /// <p>The name of the property to sort the results by. This value can be the name of any property that Amazon Macie defines for a finding.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl SortCriteria {
@@ -3688,14 +3768,19 @@ impl SortCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The custom description of the custom data identifier.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The custom name of the custom data identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CustomDataIdentifierSummary {
@@ -3821,11 +3906,14 @@ impl CustomDataIdentifierSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    #[doc(hidden)]
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -3836,20 +3924,26 @@ pub struct JobSummary {
     /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
     /// <li><p>ONE_TIME - The job runs only once.</p></li>
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
+    #[doc(hidden)]
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
     /// <p>The custom name of the job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
+    #[doc(hidden)]
     pub user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
     /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+    #[doc(hidden)]
     pub bucket_criteria: std::option::Option<crate::model::S3BucketCriteriaForJob>,
 }
 impl JobSummary {
@@ -4103,8 +4197,10 @@ impl JobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketCriteriaForJob {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<crate::model::CriteriaBlockForJob>,
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<crate::model::CriteriaBlockForJob>,
 }
 impl S3BucketCriteriaForJob {
@@ -4182,6 +4278,7 @@ impl S3BucketCriteriaForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CriteriaBlockForJob {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<std::vec::Vec<crate::model::CriteriaForJob>>,
 }
 impl CriteriaBlockForJob {
@@ -4243,8 +4340,10 @@ impl CriteriaBlockForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CriteriaForJob {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
+    #[doc(hidden)]
     pub simple_criterion: std::option::Option<crate::model::SimpleCriterionForJob>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
+    #[doc(hidden)]
     pub tag_criterion: std::option::Option<crate::model::TagCriterionForJob>,
 }
 impl CriteriaForJob {
@@ -4322,8 +4421,10 @@ impl CriteriaForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<crate::model::TagCriterionPairForJob>>,
 }
 impl TagCriterionForJob {
@@ -4408,8 +4509,10 @@ impl TagCriterionForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagCriterionPairForJob {
     /// <p>The value for the tag key to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value to use in the condition.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TagCriterionPairForJob {
@@ -4569,8 +4672,10 @@ impl AsRef<str> for JobComparator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimpleCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The property to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::SimpleCriterionKeyForJob>,
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -4580,6 +4685,7 @@ pub struct SimpleCriterionForJob {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SimpleCriterionForJob {
@@ -4776,10 +4882,13 @@ impl AsRef<str> for SimpleCriterionKeyForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
+    #[doc(hidden)]
     pub job_expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
+    #[doc(hidden)]
     pub job_imminent_expiration_health_event_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
+    #[doc(hidden)]
     pub job_paused_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UserPausedDetails {
@@ -4889,6 +4998,7 @@ pub struct LastRunErrorStatus {
     /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
     /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::LastRunErrorStatusCode>,
 }
 impl LastRunErrorStatus {
@@ -5066,8 +5176,10 @@ impl AsRef<str> for JobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketDefinitionForJob {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An array that lists the names of the buckets.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl S3BucketDefinitionForJob {
@@ -5148,8 +5260,10 @@ impl S3BucketDefinitionForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsSortCriteria {
     /// <p>The property to sort the results by.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<crate::model::ListJobsSortAttributeName>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl ListJobsSortCriteria {
@@ -5287,8 +5401,10 @@ impl AsRef<str> for ListJobsSortAttributeName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsFilterCriteria {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::ListJobsFilterTerm>>,
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::ListJobsFilterTerm>>,
 }
 impl ListJobsFilterCriteria {
@@ -5378,10 +5494,13 @@ impl ListJobsFilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsFilterTerm {
     /// <p>The operator to use to filter the results.</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The property to use to filter the results.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::ListJobsFilterKey>,
     /// <p>An array that lists one or more values to use to filter the results.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListJobsFilterTerm {
@@ -5548,10 +5667,13 @@ impl AsRef<str> for ListJobsFilterKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageTotal {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::Currency>,
     /// <p>The estimated value for the metric.</p>
+    #[doc(hidden)]
     pub estimated_cost: std::option::Option<std::string::String>,
     /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UsageType>,
 }
 impl UsageTotal {
@@ -5804,10 +5926,13 @@ impl AsRef<str> for TimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
+    #[doc(hidden)]
     pub free_trial_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
+    #[doc(hidden)]
     pub usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
 }
 impl UsageRecord {
@@ -5908,12 +6033,16 @@ impl UsageRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageByAccount {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::Currency>,
     /// <p>The estimated value for the metric.</p>
+    #[doc(hidden)]
     pub estimated_cost: std::option::Option<std::string::String>,
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
+    #[doc(hidden)]
     pub service_limit: std::option::Option<crate::model::ServiceLimit>,
     /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UsageType>,
 }
 impl UsageByAccount {
@@ -6025,10 +6154,13 @@ impl UsageByAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimit {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
+    #[doc(hidden)]
     pub is_service_limited: bool,
     /// <p>The unit of measurement for the value specified by the value field.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
+    #[doc(hidden)]
     pub value: i64,
 }
 impl ServiceLimit {
@@ -6168,8 +6300,10 @@ impl AsRef<str> for Unit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageStatisticsSortBy {
     /// <p>The field to sort the results by.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::UsageStatisticsSortKey>,
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl UsageStatisticsSortBy {
@@ -6312,8 +6446,10 @@ impl AsRef<str> for UsageStatisticsSortKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::UsageStatisticsFilterComparator>,
     /// <p>The field to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::UsageStatisticsFilterKey>,
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
@@ -6323,6 +6459,7 @@ pub struct UsageStatisticsFilter {
     /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UsageStatisticsFilter {
@@ -6778,6 +6915,7 @@ impl AsRef<str> for RevealRequestStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedDataDetails {
     /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl DetectedDataDetails {
@@ -6830,8 +6968,10 @@ impl DetectedDataDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupCount {
     /// <p>The total number of findings in the group of query results.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
+    #[doc(hidden)]
     pub group_key: std::option::Option<std::string::String>,
 }
 impl GroupCount {
@@ -6903,8 +7043,10 @@ impl GroupCount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingStatisticsSortCriteria {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<crate::model::FindingStatisticsSortAttributeName>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl FindingStatisticsSortCriteria {
@@ -7108,40 +7250,58 @@ impl AsRef<str> for GroupBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Finding {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the finding is archived (suppressed).</p>
+    #[doc(hidden)]
     pub archived: bool,
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::FindingCategory>,
     /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
+    #[doc(hidden)]
     pub classification_details: std::option::Option<crate::model::ClassificationDetails>,
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the finding.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<std::string::String>,
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
+    #[doc(hidden)]
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
     /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The resources that the finding applies to.</p>
+    #[doc(hidden)]
     pub resources_affected: std::option::Option<crate::model::ResourcesAffected>,
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
+    #[doc(hidden)]
     pub sample: bool,
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The severity level and score for the finding.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::Severity>,
     /// <p>The brief description of the finding.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The type of the finding.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FindingType>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Finding {
@@ -7629,8 +7789,10 @@ impl AsRef<str> for FindingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::SeverityDescription>,
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
+    #[doc(hidden)]
     pub score: i64,
 }
 impl Severity {
@@ -7764,8 +7926,10 @@ impl AsRef<str> for SeverityDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcesAffected {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
+    #[doc(hidden)]
     pub s3_bucket: std::option::Option<crate::model::S3Bucket>,
     /// <p>The details of the S3 object that the finding applies to.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl ResourcesAffected {
@@ -7837,28 +8001,40 @@ impl ResourcesAffected {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Object {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
+    #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
+    #[doc(hidden)]
     pub extension: std::option::Option<std::string::String>,
     /// <p>The full key (name) that's assigned to the object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The path to the object, including the full key (name).</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
+    #[doc(hidden)]
     pub public_access: bool,
     /// <p>The type of server-side encryption that's used to encrypt the object.</p>
+    #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The total storage size, in bytes, of the object.</p>
+    #[doc(hidden)]
     pub size: i64,
     /// <p>The storage class of the object.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>The tags that are associated with the object.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The identifier for the affected version of the object.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl S3Object {
@@ -8120,8 +8296,10 @@ impl S3Object {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyValuePair {
     /// <p>One part of a key-value pair that comprises a tag. A tag key is a general label that acts as a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value can be an empty string.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl KeyValuePair {
@@ -8276,8 +8454,10 @@ impl AsRef<str> for StorageClass {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryption {
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
+    #[doc(hidden)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryption {
@@ -8425,21 +8605,29 @@ pub struct S3Bucket {
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p></li>
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub allows_unencrypted_object_uploads:
         std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
+    #[doc(hidden)]
     pub default_server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<crate::model::S3BucketOwner>,
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
+    #[doc(hidden)]
     pub public_access: std::option::Option<crate::model::BucketPublicAccess>,
     /// <p>The tags that are associated with the bucket.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
 }
 impl S3Bucket {
@@ -8675,8 +8863,10 @@ pub struct BucketPublicAccess {
     /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub effective_permission: std::option::Option<crate::model::EffectivePermission>,
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
+    #[doc(hidden)]
     pub permission_configuration: std::option::Option<crate::model::BucketPermissionConfiguration>,
 }
 impl BucketPublicAccess {
@@ -8775,8 +8965,10 @@ impl BucketPublicAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketPermissionConfiguration {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
+    #[doc(hidden)]
     pub account_level_permissions: std::option::Option<crate::model::AccountLevelPermissions>,
     /// <p>The bucket-level permissions settings for the bucket.</p>
+    #[doc(hidden)]
     pub bucket_level_permissions: std::option::Option<crate::model::BucketLevelPermissions>,
 }
 impl BucketPermissionConfiguration {
@@ -8866,10 +9058,13 @@ impl BucketPermissionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
+    #[doc(hidden)]
     pub access_control_list: std::option::Option<crate::model::AccessControlList>,
     /// <p>The block public access settings for the bucket.</p>
+    #[doc(hidden)]
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
+    #[doc(hidden)]
     pub bucket_policy: std::option::Option<crate::model::BucketPolicy>,
 }
 impl BucketLevelPermissions {
@@ -8967,8 +9162,10 @@ impl BucketLevelPermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
+    #[doc(hidden)]
     pub allows_public_read_access: bool,
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
+    #[doc(hidden)]
     pub allows_public_write_access: bool,
 }
 impl BucketPolicy {
@@ -9043,12 +9240,16 @@ impl BucketPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
+    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
+    #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
+    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
+    #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl BlockPublicAccess {
@@ -9154,8 +9355,10 @@ impl BlockPublicAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
+    #[doc(hidden)]
     pub allows_public_read_access: bool,
     /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
+    #[doc(hidden)]
     pub allows_public_write_access: bool,
 }
 impl AccessControlList {
@@ -9230,6 +9433,7 @@ impl AccessControlList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
+    #[doc(hidden)]
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {
@@ -9346,8 +9550,10 @@ impl AsRef<str> for EffectivePermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketOwner {
     /// <p>The display name of the account that owns the bucket.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The canonical user ID for the account that owns the bucket.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl S3BucketOwner {
@@ -9478,8 +9684,10 @@ impl AsRef<str> for AllowsUnencryptedObjectUploads {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyDetails {
     /// <p>The action that produced the finding.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingAction>,
     /// <p>The entity that performed the action that produced the finding.</p>
+    #[doc(hidden)]
     pub actor: std::option::Option<crate::model::FindingActor>,
 }
 impl PolicyDetails {
@@ -9554,10 +9762,13 @@ impl PolicyDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
+    #[doc(hidden)]
     pub domain_details: std::option::Option<crate::model::DomainDetails>,
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    #[doc(hidden)]
     pub ip_address_details: std::option::Option<crate::model::IpAddressDetails>,
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    #[doc(hidden)]
     pub user_identity: std::option::Option<crate::model::UserIdentity>,
 }
 impl FindingActor {
@@ -9655,18 +9866,25 @@ impl FindingActor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentity {
     /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
+    #[doc(hidden)]
     pub assumed_role: std::option::Option<crate::model::AssumedRole>,
     /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
+    #[doc(hidden)]
     pub aws_account: std::option::Option<crate::model::AwsAccount>,
     /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    #[doc(hidden)]
     pub aws_service: std::option::Option<crate::model::AwsService>,
     /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
+    #[doc(hidden)]
     pub federated_user: std::option::Option<crate::model::FederatedUser>,
     /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
+    #[doc(hidden)]
     pub iam_user: std::option::Option<crate::model::IamUser>,
     /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
+    #[doc(hidden)]
     pub root: std::option::Option<crate::model::UserIdentityRoot>,
     /// <p>The type of entity that performed the action.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserIdentityType>,
 }
 impl UserIdentity {
@@ -9919,10 +10137,13 @@ impl AsRef<str> for UserIdentityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityRoot {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user or role that performed the action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that performed the action.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl UserIdentityRoot {
@@ -10011,12 +10232,16 @@ impl UserIdentityRoot {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUser {
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the IAM user who performed the action.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The user name of the IAM user who performed the action.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl IamUser {
@@ -10122,14 +10347,19 @@ impl IamUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FederatedUser {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
+    #[doc(hidden)]
     pub session_context: std::option::Option<crate::model::SessionContext>,
 }
 impl FederatedUser {
@@ -10258,8 +10488,10 @@ impl FederatedUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionContext {
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::SessionContextAttributes>,
     /// <p>The source and type of credentials that were issued to the entity.</p>
+    #[doc(hidden)]
     pub session_issuer: std::option::Option<crate::model::SessionIssuer>,
 }
 impl SessionContext {
@@ -10337,14 +10569,19 @@ impl SessionContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionIssuer {
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl SessionIssuer {
@@ -10467,8 +10704,10 @@ impl SessionIssuer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
+    #[doc(hidden)]
     pub mfa_authenticated: bool,
 }
 impl SessionContextAttributes {
@@ -10543,6 +10782,7 @@ impl SessionContextAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
+    #[doc(hidden)]
     pub invoked_by: std::option::Option<std::string::String>,
 }
 impl AwsService {
@@ -10597,8 +10837,10 @@ impl AwsService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAccount {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that performed the action.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
 }
 impl AwsAccount {
@@ -10670,14 +10912,19 @@ impl AwsAccount {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssumedRole {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
+    #[doc(hidden)]
     pub session_context: std::option::Option<crate::model::SessionContext>,
 }
 impl AssumedRole {
@@ -10806,14 +11053,19 @@ impl AssumedRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpAddressDetails {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
+    #[doc(hidden)]
     pub ip_address_v4: std::option::Option<std::string::String>,
     /// <p>The city that the IP address originated from.</p>
+    #[doc(hidden)]
     pub ip_city: std::option::Option<crate::model::IpCity>,
     /// <p>The country that the IP address originated from.</p>
+    #[doc(hidden)]
     pub ip_country: std::option::Option<crate::model::IpCountry>,
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
+    #[doc(hidden)]
     pub ip_geo_location: std::option::Option<crate::model::IpGeoLocation>,
     /// <p>The registered owner of the IP address.</p>
+    #[doc(hidden)]
     pub ip_owner: std::option::Option<crate::model::IpOwner>,
 }
 impl IpAddressDetails {
@@ -10945,12 +11197,16 @@ impl IpAddressDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpOwner {
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
+    #[doc(hidden)]
     pub asn: std::option::Option<std::string::String>,
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
+    #[doc(hidden)]
     pub asn_org: std::option::Option<std::string::String>,
     /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
+    #[doc(hidden)]
     pub isp: std::option::Option<std::string::String>,
     /// <p>The name of the organization that owned the IP address.</p>
+    #[doc(hidden)]
     pub org: std::option::Option<std::string::String>,
 }
 impl IpOwner {
@@ -11056,8 +11312,10 @@ impl IpOwner {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
+    #[doc(hidden)]
     pub lat: f64,
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
+    #[doc(hidden)]
     pub lon: f64,
 }
 impl IpGeoLocation {
@@ -11129,8 +11387,10 @@ impl IpGeoLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpCountry {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The name of the country that the IP address originated from.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IpCountry {
@@ -11202,6 +11462,7 @@ impl IpCountry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpCity {
     /// <p>The name of the city.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IpCity {
@@ -11254,6 +11515,7 @@ impl IpCity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDetails {
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DomainDetails {
@@ -11308,8 +11570,10 @@ impl DomainDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingAction {
     /// <p>The type of action that occurred for the affected resource. This value is typically AWS_API_CALL, which indicates that an entity invoked an API operation for the resource.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::FindingActionType>,
     /// <p>The invocation details of the API operation that an entity invoked for the affected resource, if the value for the actionType property is AWS_API_CALL.</p>
+    #[doc(hidden)]
     pub api_call_details: std::option::Option<crate::model::ApiCallDetails>,
 }
 impl FindingAction {
@@ -11387,12 +11651,16 @@ impl FindingAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
+    #[doc(hidden)]
     pub api: std::option::Option<std::string::String>,
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    #[doc(hidden)]
     pub api_service_name: std::option::Option<std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
+    #[doc(hidden)]
     pub first_seen: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
+    #[doc(hidden)]
     pub last_seen: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApiCallDetails {
@@ -11558,14 +11826,19 @@ impl AsRef<str> for FindingActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationDetails {
     /// <p>The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder. Otherwise, this value is the path to a file.</p>
+    #[doc(hidden)]
     pub detailed_results_location: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the classification job that produced the finding.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the classification job that produced the finding.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+    #[doc(hidden)]
     pub origin_type: std::option::Option<crate::model::OriginType>,
     /// <p>The status and other details of the finding.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<crate::model::ClassificationResult>,
 }
 impl ClassificationDetails {
@@ -11698,16 +11971,22 @@ impl ClassificationDetails {
 pub struct ClassificationResult {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p>
+    #[doc(hidden)]
     pub additional_occurrences: bool,
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
+    #[doc(hidden)]
     pub custom_data_identifiers: std::option::Option<crate::model::CustomDataIdentifiers>,
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
+    #[doc(hidden)]
     pub mime_type: std::option::Option<std::string::String>,
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
+    #[doc(hidden)]
     pub sensitive_data: std::option::Option<std::vec::Vec<crate::model::SensitiveDataItem>>,
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
+    #[doc(hidden)]
     pub size_classified: i64,
     /// <p>The status of the finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClassificationResultStatus>,
 }
 impl ClassificationResult {
@@ -11877,6 +12156,7 @@ pub struct ClassificationResultStatus {
     /// <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p>
     /// <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p>
@@ -11903,6 +12183,7 @@ pub struct ClassificationResultStatus {
     /// <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage formats</a> in the <i>Amazon Macie User Guide</i>.</p></li>
     /// </ul>
     /// <p>For information about sensitive data discovery quotas for files, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon Macie User Guide</i>.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl ClassificationResultStatus {
@@ -12061,10 +12342,13 @@ impl ClassificationResultStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
+    #[doc(hidden)]
     pub detections: std::option::Option<std::vec::Vec<crate::model::DefaultDetection>>,
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
+    #[doc(hidden)]
     pub total_count: i64,
 }
 impl SensitiveDataItem {
@@ -12165,10 +12449,13 @@ impl SensitiveDataItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+    #[doc(hidden)]
     pub occurrences: std::option::Option<crate::model::Occurrences>,
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl DefaultDetection {
@@ -12261,17 +12548,22 @@ impl DefaultDetection {
 pub struct Occurrences {
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
+    #[doc(hidden)]
     pub line_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub offset_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
     /// <p>Each Page object specifies a page that contains the sensitive data.</p>
+    #[doc(hidden)]
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
 impl Occurrences {
@@ -12452,8 +12744,10 @@ impl Occurrences {
 pub struct Record {
     /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p>
     /// <p>If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
+    #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
     /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
+    #[doc(hidden)]
     pub record_index: i64,
 }
 impl Record {
@@ -12528,10 +12822,13 @@ impl Record {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Page {
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub line_range: std::option::Option<crate::model::Range>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub offset_range: std::option::Option<crate::model::Range>,
     /// <p>The page number of the page that contains the sensitive data.</p>
+    #[doc(hidden)]
     pub page_number: i64,
 }
 impl Page {
@@ -12620,10 +12917,13 @@ impl Page {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
+    #[doc(hidden)]
     pub end: i64,
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
+    #[doc(hidden)]
     pub start: i64,
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
+    #[doc(hidden)]
     pub start_column: i64,
 }
 impl Range {
@@ -12712,12 +13012,16 @@ impl Range {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cell {
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
+    #[doc(hidden)]
     pub cell_reference: std::option::Option<std::string::String>,
     /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
+    #[doc(hidden)]
     pub column: i64,
     /// <p>The name of the column that contains the sensitive data, if available.</p>
+    #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The row number of the row that contains the sensitive data.</p>
+    #[doc(hidden)]
     pub row: i64,
 }
 impl Cell {
@@ -12826,8 +13130,10 @@ impl Cell {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomDataIdentifiers {
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
+    #[doc(hidden)]
     pub detections: std::option::Option<std::vec::Vec<crate::model::CustomDetection>>,
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
+    #[doc(hidden)]
     pub total_count: i64,
 }
 impl CustomDataIdentifiers {
@@ -12908,12 +13214,16 @@ impl CustomDataIdentifiers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomDetection {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The name of the custom data identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+    #[doc(hidden)]
     pub occurrences: std::option::Option<crate::model::Occurrences>,
 }
 impl CustomDetection {
@@ -13128,8 +13438,10 @@ impl AsRef<str> for FindingCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SeverityLevel {
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+    #[doc(hidden)]
     pub occurrences_threshold: i64,
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::DataIdentifierSeverity>,
 }
 impl SeverityLevel {
@@ -13263,12 +13575,16 @@ impl AsRef<str> for DataIdentifierSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountBySharedAccessType {
     /// <p>The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    #[doc(hidden)]
     pub external: i64,
     /// <p>The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p>
+    #[doc(hidden)]
     pub internal: i64,
     /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts.</p>
+    #[doc(hidden)]
     pub not_shared: i64,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts.</p>
+    #[doc(hidden)]
     pub unknown: i64,
 }
 impl BucketCountBySharedAccessType {
@@ -13374,10 +13690,13 @@ impl BucketCountBySharedAccessType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p>
+    #[doc(hidden)]
     pub allows_unencrypted_object_uploads: i64,
     /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.</p>
+    #[doc(hidden)]
     pub denies_unencrypted_object_uploads: i64,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    #[doc(hidden)]
     pub unknown: i64,
 }
 impl BucketCountPolicyAllowsUnencryptedObjectUploads {
@@ -13483,12 +13802,16 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountByEncryptionType {
     /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
+    #[doc(hidden)]
     pub kms_managed: i64,
     /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
+    #[doc(hidden)]
     pub s3_managed: i64,
     /// <p>The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these buckets.</p>
+    #[doc(hidden)]
     pub unencrypted: i64,
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    #[doc(hidden)]
     pub unknown: i64,
 }
 impl BucketCountByEncryptionType {
@@ -13594,12 +13917,16 @@ impl BucketCountByEncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountByEffectivePermission {
     /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
+    #[doc(hidden)]
     pub publicly_accessible: i64,
     /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
+    #[doc(hidden)]
     pub publicly_readable: i64,
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
+    #[doc(hidden)]
     pub publicly_writable: i64,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    #[doc(hidden)]
     pub unknown: i64,
 }
 impl BucketCountByEffectivePermission {
@@ -13705,8 +14032,10 @@ impl BucketCountByEffectivePermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
+    #[doc(hidden)]
     pub approximate_number_of_objects_to_process: f64,
     /// <p>The number of times that the job has run.</p>
+    #[doc(hidden)]
     pub number_of_runs: f64,
 }
 impl Statistics {
@@ -13786,10 +14115,13 @@ impl Statistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobScheduleFrequency {
     /// <p>Specifies a daily recurrence pattern for running the job.</p>
+    #[doc(hidden)]
     pub daily_schedule: std::option::Option<crate::model::DailySchedule>,
     /// <p>Specifies a monthly recurrence pattern for running the job.</p>
+    #[doc(hidden)]
     pub monthly_schedule: std::option::Option<crate::model::MonthlySchedule>,
     /// <p>Specifies a weekly recurrence pattern for running the job.</p>
+    #[doc(hidden)]
     pub weekly_schedule: std::option::Option<crate::model::WeeklySchedule>,
 }
 impl JobScheduleFrequency {
@@ -13887,6 +14219,7 @@ impl JobScheduleFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
+    #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
 }
 impl WeeklySchedule {
@@ -14028,6 +14361,7 @@ impl AsRef<str> for DayOfWeek {
 pub struct MonthlySchedule {
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
+    #[doc(hidden)]
     pub day_of_month: i32,
 }
 impl MonthlySchedule {
@@ -14115,11 +14449,14 @@ impl DailySchedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3JobDefinition {
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    #[doc(hidden)]
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
+    #[doc(hidden)]
     pub scoping: std::option::Option<crate::model::Scoping>,
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+    #[doc(hidden)]
     pub bucket_criteria: std::option::Option<crate::model::S3BucketCriteriaForJob>,
 }
 impl S3JobDefinition {
@@ -14223,8 +14560,10 @@ impl S3JobDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<crate::model::JobScopingBlock>,
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<crate::model::JobScopingBlock>,
 }
 impl Scoping {
@@ -14302,6 +14641,7 @@ impl Scoping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
+    #[doc(hidden)]
     pub and: std::option::Option<std::vec::Vec<crate::model::JobScopeTerm>>,
 }
 impl JobScopingBlock {
@@ -14363,8 +14703,10 @@ impl JobScopingBlock {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobScopeTerm {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
+    #[doc(hidden)]
     pub simple_scope_term: std::option::Option<crate::model::SimpleScopeTerm>,
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
+    #[doc(hidden)]
     pub tag_scope_term: std::option::Option<crate::model::TagScopeTerm>,
 }
 impl JobScopeTerm {
@@ -14442,12 +14784,16 @@ impl JobScopeTerm {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagScopeTerm {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
+    #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<crate::model::TagValuePair>>,
     /// <p>The type of object to apply the condition to.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::TagTarget>,
 }
 impl TagScopeTerm {
@@ -14616,8 +14962,10 @@ impl AsRef<str> for TagTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagValuePair {
     /// <p>The value for the tag key to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key for a condition, specify the tag key for the key property and set this value to an empty string.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TagValuePair {
@@ -14695,8 +15043,10 @@ pub struct SimpleScopeTerm {
     /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
     /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The object property to use in the condition.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::ScopeFilterKey>,
     /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported property (key) are:</p>
@@ -14707,6 +15057,7 @@ pub struct SimpleScopeTerm {
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SimpleScopeTerm {
@@ -14980,6 +15331,7 @@ impl AsRef<str> for ManagedDataIdentifierSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketMetadata {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p>
     /// <ul>
@@ -14987,39 +15339,55 @@ pub struct BucketMetadata {
     /// <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p></li>
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub allows_unencrypted_object_uploads:
         std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+    #[doc(hidden)]
     pub bucket_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
     /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the bucket.</p>
+    #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
+    #[doc(hidden)]
     pub object_count_by_encryption_type:
         std::option::Option<crate::model::ObjectCountByEncryptionType>,
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
+    #[doc(hidden)]
     pub public_access: std::option::Option<crate::model::BucketPublicAccess>,
     /// <p>The Amazon Web Services Region that hosts the bucket.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
+    #[doc(hidden)]
     pub replication_details: std::option::Option<crate::model::ReplicationDetails>,
     /// <p>Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption that's used.</p>
+    #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::model::BucketServerSideEncryption>,
     /// <p>Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:</p>
     /// <ul>
@@ -15028,21 +15396,28 @@ pub struct BucketMetadata {
     /// <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.</p></li>
     /// <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub shared_access: std::option::Option<crate::model::SharedAccess>,
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
+    #[doc(hidden)]
     pub size_in_bytes: i64,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    #[doc(hidden)]
     pub size_in_bytes_compressed: i64,
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    #[doc(hidden)]
     pub unclassifiable_object_size_in_bytes:
         std::option::Option<crate::model::ObjectLevelStatistics>,
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
+    #[doc(hidden)]
     pub versioning: bool,
 }
 impl BucketMetadata {
@@ -15686,6 +16061,7 @@ impl AsRef<str> for SharedAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
+    #[doc(hidden)]
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p>
     /// <ul>
@@ -15693,6 +16069,7 @@ pub struct BucketServerSideEncryption {
     /// <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li>
     /// <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl BucketServerSideEncryption {
@@ -15841,10 +16218,13 @@ impl AsRef<str> for Type {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
+    #[doc(hidden)]
     pub replicated: bool,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
+    #[doc(hidden)]
     pub replicated_externally: bool,
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
+    #[doc(hidden)]
     pub replication_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReplicationDetails {
@@ -15942,8 +16322,10 @@ impl ReplicationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketSortCriteria {
     /// <p>The name of the bucket property to sort the results by. This value can be one of the following properties that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes, objectCount, or sizeInBytes.</p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The sort order to apply to the results, based on the value specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<crate::model::OrderBy>,
 }
 impl BucketSortCriteria {
@@ -16018,18 +16400,25 @@ impl BucketSortCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
+    #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
+    #[doc(hidden)]
     pub gt: i64,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
+    #[doc(hidden)]
     pub gte: i64,
     /// <p>The value for the property is less than the specified value.</p>
+    #[doc(hidden)]
     pub lt: i64,
     /// <p>The value for the property is less than or equal to the specified value.</p>
+    #[doc(hidden)]
     pub lte: i64,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
+    #[doc(hidden)]
     pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the bucket begins with the specified value.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl BucketCriteriaAdditionalProperties {
@@ -16204,10 +16593,13 @@ impl BucketCriteriaAdditionalProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedAccount {
     /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source of the issue or delay in processing the request.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The reason why the request hasn't been processed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UnprocessedAccount {
@@ -16357,8 +16749,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountDetail {
     /// <p>The Amazon Web Services account ID for the account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
 }
 impl AccountDetail {
@@ -16430,16 +16824,22 @@ impl AccountDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
+    #[doc(hidden)]
     pub deleted: bool,
     /// <p>The custom description of the custom data identifier.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The custom name of the custom data identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl BatchGetCustomDataIdentifierSummary {

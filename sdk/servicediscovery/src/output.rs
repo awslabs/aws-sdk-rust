@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateServiceOutput {
@@ -58,6 +59,7 @@ impl UpdateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePublicDnsNamespaceOutput {
@@ -112,6 +114,7 @@ impl UpdatePublicDnsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePrivateDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePrivateDnsNamespaceOutput {
@@ -196,6 +199,7 @@ impl UpdateInstanceCustomHealthStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateHttpNamespaceOutput {
@@ -310,6 +314,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RegisterInstanceOutput {
@@ -364,6 +369,7 @@ impl RegisterInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -425,10 +431,12 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
     /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
@@ -515,10 +523,12 @@ impl ListServicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsOutput {
     /// <p>Summary information about the operations that match the specified criteria.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOperationsOutput {
@@ -605,10 +615,12 @@ impl ListOperationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
+    #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNamespacesOutput {
@@ -695,8 +707,10 @@ impl ListNamespacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -777,6 +791,7 @@ impl ListInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceOutput {
     /// <p>A complex type that contains information about the service.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl GetServiceOutput {
@@ -831,6 +846,7 @@ impl GetServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationOutput {
     /// <p>A complex type that contains information about the operation.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
@@ -888,6 +904,7 @@ impl GetOperationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl GetNamespaceOutput {
@@ -945,10 +962,12 @@ impl GetNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstancesHealthStatusOutput {
     /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
     >,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesHealthStatusOutput {
@@ -1041,6 +1060,7 @@ impl GetInstancesHealthStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceOutput {
     /// <p>A complex type that contains information about a specified instance.</p>
+    #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
 }
 impl GetInstanceOutput {
@@ -1095,6 +1115,7 @@ impl GetInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
 }
 impl DiscoverInstancesOutput {
@@ -1158,6 +1179,7 @@ impl DiscoverInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstanceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeregisterInstanceOutput {
@@ -1242,6 +1264,7 @@ impl DeleteServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteNamespaceOutput {
@@ -1296,6 +1319,7 @@ impl DeleteNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>A complex type that contains information about the new service.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
 }
 impl CreateServiceOutput {
@@ -1350,6 +1374,7 @@ impl CreateServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePublicDnsNamespaceOutput {
@@ -1404,6 +1429,7 @@ impl CreatePublicDnsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrivateDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePrivateDnsNamespaceOutput {
@@ -1458,6 +1484,7 @@ impl CreatePrivateDnsNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreateHttpNamespaceOutput {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
@@ -93,8 +95,10 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerErrorException {
@@ -181,8 +185,10 @@ impl InternalServerErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {
@@ -269,8 +275,10 @@ impl ForbiddenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -357,8 +365,10 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
@@ -445,8 +455,10 @@ impl BadRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
     /// <p>The attribute which caused the error.</p>
+    #[doc(hidden)]
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnauthorizedException {

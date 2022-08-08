@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyBucketsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyBucketsException {
@@ -69,6 +70,7 @@ impl TooManyBucketsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientPrivilegesException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientPrivilegesException {
@@ -134,6 +136,7 @@ impl InsufficientPrivilegesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -198,6 +201,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTypeNotSupportedException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceTypeNotSupportedException {
@@ -262,6 +266,7 @@ impl ResourceTypeNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -326,6 +331,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationInProgressException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationInProgressException {
@@ -390,6 +396,7 @@ impl OperationInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticBeanstalkServiceException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ElasticBeanstalkServiceException {
@@ -454,6 +461,7 @@ impl ElasticBeanstalkServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -518,6 +526,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformVersionStillReferencedException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlatformVersionStillReferencedException {
@@ -582,6 +591,7 @@ impl PlatformVersionStillReferencedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceBundleDeletionException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceBundleDeletionException {
@@ -651,6 +661,7 @@ impl SourceBundleDeletionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3LocationNotInServiceRegionException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3LocationNotInServiceRegionException {
@@ -715,6 +726,7 @@ impl S3LocationNotInServiceRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3SubscriptionRequiredException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3SubscriptionRequiredException {
@@ -779,6 +791,7 @@ impl S3SubscriptionRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyPlatformsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyPlatformsException {
@@ -843,6 +856,7 @@ impl TooManyPlatformsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyEnvironmentsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyEnvironmentsException {
@@ -907,6 +921,7 @@ impl TooManyEnvironmentsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyConfigurationTemplatesException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyConfigurationTemplatesException {
@@ -971,6 +986,7 @@ impl TooManyConfigurationTemplatesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyApplicationVersionsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyApplicationVersionsException {
@@ -1035,6 +1051,7 @@ impl TooManyApplicationVersionsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyApplicationsException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyApplicationsException {
@@ -1099,6 +1116,7 @@ impl TooManyApplicationsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeBuildNotInServiceRegionException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeBuildNotInServiceRegionException {
@@ -1163,6 +1181,7 @@ impl CodeBuildNotInServiceRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedActionInvalidStateException {
     /// <p>The exception error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ManagedActionInvalidStateException {

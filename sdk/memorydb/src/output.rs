@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {
     /// <p>The updated user</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl UpdateUserOutput {
@@ -56,6 +57,7 @@ impl UpdateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubnetGroupOutput {
     /// <p>The updated subnet group</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl UpdateSubnetGroupOutput {
@@ -113,6 +115,7 @@ impl UpdateSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateParameterGroupOutput {
     /// <p>The updated parameter group</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl UpdateParameterGroupOutput {
@@ -170,6 +173,7 @@ impl UpdateParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterOutput {
     /// <p>The updated cluster</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl UpdateClusterOutput {
@@ -224,6 +228,7 @@ impl UpdateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAclOutput {
     /// <p>The updated Access Control List</p>
+    #[doc(hidden)]
     pub acl: std::option::Option<crate::model::Acl>,
 }
 impl UpdateAclOutput {
@@ -276,6 +281,7 @@ impl UpdateAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>The list of tags removed</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UntagResourceOutput {
@@ -339,6 +345,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceOutput {
@@ -402,6 +409,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetParameterGroupOutput {
     /// <p>The parameter group being reset.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl ResetParameterGroupOutput {
@@ -459,6 +467,7 @@ impl ResetParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>A list of tags as key-value pairs.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsOutput {
@@ -522,8 +531,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAllowedNodeTypeUpdatesOutput {
     /// <p>A list node types which you can use to scale up your cluster.</p>
+    #[doc(hidden)]
     pub scale_up_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list node types which you can use to scale down your cluster.</p>
+    #[doc(hidden)]
     pub scale_down_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAllowedNodeTypeUpdatesOutput {
@@ -613,6 +624,7 @@ impl ListAllowedNodeTypeUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverShardOutput {
     /// <p>The cluster being failed over</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl FailoverShardOutput {
@@ -667,8 +679,10 @@ impl FailoverShardOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersOutput {
     /// <p>A list of users.</p>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -749,8 +763,10 @@ impl DescribeUsersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubnetGroupsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
+    #[doc(hidden)]
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
 }
 impl DescribeSubnetGroupsOutput {
@@ -831,8 +847,10 @@ impl DescribeSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeSnapshotsOutput {
@@ -913,8 +931,10 @@ impl DescribeSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceUpdatesOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of service updates</p>
+    #[doc(hidden)]
     pub service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
 }
 impl DescribeServiceUpdatesOutput {
@@ -995,8 +1015,10 @@ impl DescribeServiceUpdatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl DescribeParametersOutput {
@@ -1077,8 +1099,10 @@ impl DescribeParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParameterGroupsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
+    #[doc(hidden)]
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
 }
 impl DescribeParameterGroupsOutput {
@@ -1160,8 +1184,10 @@ impl DescribeParameterGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -1242,8 +1268,10 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineVersionsOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
+    #[doc(hidden)]
     pub engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersionInfo>>,
 }
 impl DescribeEngineVersionsOutput {
@@ -1325,8 +1353,10 @@ impl DescribeEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of clusters</p>
+    #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
 impl DescribeClustersOutput {
@@ -1407,8 +1437,10 @@ impl DescribeClustersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcLsOutput {
     /// <p>The list of ACLs</p>
+    #[doc(hidden)]
     pub ac_ls: std::option::Option<std::vec::Vec<crate::model::Acl>>,
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcLsOutput {
@@ -1489,6 +1521,7 @@ impl DescribeAcLsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {
     /// <p>The user object that has been deleted.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl DeleteUserOutput {
@@ -1541,6 +1574,7 @@ impl DeleteUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetGroupOutput {
     /// <p>The subnet group object that has been deleted.</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl DeleteSubnetGroupOutput {
@@ -1598,6 +1632,7 @@ impl DeleteSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
     /// <p>The snapshot object that has been deleted.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl DeleteSnapshotOutput {
@@ -1652,6 +1687,7 @@ impl DeleteSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterGroupOutput {
     /// <p>The parameter group that has been deleted.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl DeleteParameterGroupOutput {
@@ -1709,6 +1745,7 @@ impl DeleteParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterOutput {
     /// <p>The cluster object that has been deleted</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DeleteClusterOutput {
@@ -1763,6 +1800,7 @@ impl DeleteClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAclOutput {
     /// <p>The Access Control List object that has been deleted.</p>
+    #[doc(hidden)]
     pub acl: std::option::Option<crate::model::Acl>,
 }
 impl DeleteAclOutput {
@@ -1815,6 +1853,7 @@ impl DeleteAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
     /// <p>The newly-created user.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
@@ -1867,6 +1906,7 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetGroupOutput {
     /// <p>The newly-created subnet group</p>
+    #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl CreateSubnetGroupOutput {
@@ -1924,6 +1964,7 @@ impl CreateSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>The newly-created snapshot.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
@@ -1978,6 +2019,7 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupOutput {
     /// <p>The newly-created parameter group.</p>
+    #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl CreateParameterGroupOutput {
@@ -2035,6 +2077,7 @@ impl CreateParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterOutput {
     /// <p>The newly-created cluster.</p>
+    #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl CreateClusterOutput {
@@ -2089,6 +2132,7 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAclOutput {
     /// <p>The newly-created Access Control List.</p>
+    #[doc(hidden)]
     pub acl: std::option::Option<crate::model::Acl>,
 }
 impl CreateAclOutput {
@@ -2141,6 +2185,7 @@ impl CreateAclOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotOutput {
     /// <p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CopySnapshotOutput {
@@ -2195,8 +2240,10 @@ impl CopySnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateClusterOutput {
     /// <p>The list of clusters that have been updated.</p>
+    #[doc(hidden)]
     pub processed_clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>The list of clusters where updates have not been applied.</p>
+    #[doc(hidden)]
     pub unprocessed_clusters: std::option::Option<std::vec::Vec<crate::model::UnprocessedCluster>>,
 }
 impl BatchUpdateClusterOutput {

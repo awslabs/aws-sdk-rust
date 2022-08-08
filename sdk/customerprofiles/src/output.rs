@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateProfileOutput {
@@ -58,21 +59,29 @@ impl UpdateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
+    #[doc(hidden)]
     pub default_expiration_days: std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    #[doc(hidden)]
     pub default_encryption_key: std::option::Option<std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
+    #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -345,8 +354,10 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesOutput {
     /// <p>The list of SearchProfiles instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Profile>>,
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchProfilesOutput {
@@ -427,32 +438,44 @@ impl SearchProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>Description of the profile object type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the object template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
+    #[doc(hidden)]
     pub expiration_days: std::option::Option<i32>,
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+    #[doc(hidden)]
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
     >,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -784,6 +807,7 @@ impl PutProfileObjectTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProfileObjectOutput {
     /// <p>The unique identifier of the profile object generated by the service.</p>
+    #[doc(hidden)]
     pub profile_object_unique_key: std::option::Option<std::string::String>,
 }
 impl PutProfileObjectOutput {
@@ -841,22 +865,30 @@ impl PutProfileObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIntegrationOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    #[doc(hidden)]
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl PutIntegrationOutput {
@@ -1079,6 +1111,7 @@ impl PutIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeProfilesOutput {
     /// <p>A message that indicates the merge request is complete.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MergeProfilesOutput {
@@ -1133,8 +1166,10 @@ impl MergeProfilesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsOutput {
     /// <p>List containing workflow details.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkflowsOutput {
@@ -1215,6 +1250,7 @@ impl ListWorkflowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1288,8 +1324,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeTemplateItem>>,
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectTypeTemplatesOutput {
@@ -1373,8 +1411,10 @@ impl ListProfileObjectTypeTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectTypesOutput {
     /// <p>The list of ListProfileObjectTypes instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectTypeItem>>,
     /// <p>Identifies the next page of results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectTypesOutput {
@@ -1456,8 +1496,10 @@ impl ListProfileObjectTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectsOutput {
     /// <p>The list of ListProfileObject instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>,
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectsOutput {
@@ -1538,8 +1580,10 @@ impl ListProfileObjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationsOutput {
     /// <p>The list of ListIntegrations instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIntegrationsOutput {
@@ -1620,9 +1664,11 @@ impl ListIntegrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
+    #[doc(hidden)]
     pub identity_resolution_jobs_list:
         std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityResolutionJobsOutput {
@@ -1712,8 +1758,10 @@ impl ListIdentityResolutionJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p>The list of ListDomains instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>,
     /// <p>The pagination token from the previous ListDomains API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -1794,8 +1842,10 @@ impl ListDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountIntegrationsOutput {
     /// <p>The list of ListAccountIntegration instances.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListIntegrationItem>>,
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountIntegrationsOutput {
@@ -1876,12 +1926,16 @@ impl ListAccountIntegrationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowStepsOutput {
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>List containing workflow step details.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetWorkflowStepsOutput {
@@ -1999,20 +2053,28 @@ impl GetWorkflowStepsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>Status of workflow execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Workflow error messages during execution (if any).</p>
+    #[doc(hidden)]
     pub error_description: std::option::Option<std::string::String>,
     /// <p>The timestamp that represents when workflow execution started.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when workflow execution last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Attributes provided for workflow execution.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::WorkflowAttributes>,
     /// <p>Workflow specific execution metrics.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<crate::model::WorkflowMetrics>,
 }
 impl GetWorkflowOutput {
@@ -2204,20 +2266,27 @@ impl GetWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileObjectTypeTemplateOutput {
     /// <p>A unique identifier for the object template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The name of the source of the object template.</p>
+    #[doc(hidden)]
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The source of the object template.</p>
+    #[doc(hidden)]
     pub source_object: std::option::Option<std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    #[doc(hidden)]
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
     >,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
@@ -2436,32 +2505,44 @@ impl GetProfileObjectTypeTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The description of the profile object type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the object template.</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
+    #[doc(hidden)]
     pub expiration_days: std::option::Option<i32>,
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    #[doc(hidden)]
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
     >,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
     >,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2793,12 +2874,16 @@ impl GetProfileObjectTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMatchesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The timestamp this version of Match Result generated.</p>
+    #[doc(hidden)]
     pub match_generation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of potential matches found.</p>
+    #[doc(hidden)]
     pub potential_matches: std::option::Option<i32>,
     /// <p>The list of matched profiles for this instance.</p>
+    #[doc(hidden)]
     pub matches: std::option::Option<std::vec::Vec<crate::model::MatchItem>>,
 }
 impl GetMatchesOutput {
@@ -2916,22 +3001,30 @@ impl GetMatchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
+    #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    #[doc(hidden)]
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl GetIntegrationOutput {
@@ -3154,8 +3247,10 @@ impl GetIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityResolutionJobOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
@@ -3167,22 +3262,31 @@ pub struct GetIdentityResolutionJobOutput {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
+    #[doc(hidden)]
     pub job_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
+    #[doc(hidden)]
     pub job_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
+    #[doc(hidden)]
     pub job_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+    #[doc(hidden)]
     pub auto_merging: std::option::Option<crate::model::AutoMerging>,
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    #[doc(hidden)]
     pub exporting_location: std::option::Option<crate::model::ExportingLocation>,
     /// <p>Statistics about the Identity Resolution Job.</p>
+    #[doc(hidden)]
     pub job_stats: std::option::Option<crate::model::JobStats>,
 }
 impl GetIdentityResolutionJobOutput {
@@ -3455,23 +3559,32 @@ impl GetIdentityResolutionJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
+    #[doc(hidden)]
     pub default_expiration_days: std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    #[doc(hidden)]
     pub default_encryption_key: std::option::Option<std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
+    #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>Usage-specific statistics about the domain.</p>
+    #[doc(hidden)]
     pub stats: std::option::Option<crate::model::DomainStats>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3701,12 +3814,16 @@ impl GetDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoMergingPreviewOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
+    #[doc(hidden)]
     pub number_of_matches_in_sample: i64,
     /// <p>The number of profiles found in this preview dry run.</p>
+    #[doc(hidden)]
     pub number_of_profiles_in_sample: i64,
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+    #[doc(hidden)]
     pub number_of_profiles_will_be_merged: i64,
 }
 impl GetAutoMergingPreviewOutput {
@@ -3856,6 +3973,7 @@ impl DeleteWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileObjectTypeOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectTypeOutput {
@@ -3910,6 +4028,7 @@ impl DeleteProfileObjectTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileObjectOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileObjectOutput {
@@ -3964,6 +4083,7 @@ impl DeleteProfileObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileKeyOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileKeyOutput {
@@ -4018,6 +4138,7 @@ impl DeleteProfileKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteProfileOutput {
@@ -4072,6 +4193,7 @@ impl DeleteProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteIntegrationOutput {
@@ -4126,6 +4248,7 @@ impl DeleteIntegrationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
     /// <p>A message that indicates the delete request is done.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeleteDomainOutput {
@@ -4180,6 +4303,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl CreateProfileOutput {
@@ -4234,8 +4358,10 @@ impl CreateProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>A message indicating create request was received.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CreateIntegrationWorkflowOutput {
@@ -4307,21 +4433,29 @@ impl CreateIntegrationWorkflowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p>The unique name of the domain.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
+    #[doc(hidden)]
     pub default_expiration_days: std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    #[doc(hidden)]
     pub default_encryption_key: std::option::Option<std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
+    #[doc(hidden)]
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4534,8 +4668,10 @@ impl CreateDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddProfileKeyOutput {
     /// <p>A searchable identifier of a customer profile.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddProfileKeyOutput {

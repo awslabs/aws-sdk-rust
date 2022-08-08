@@ -9862,8 +9862,10 @@ impl UpdateRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
 }
 impl UpdateRecommenderInput {
@@ -9890,12 +9892,16 @@ impl std::fmt::Debug for UpdateRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of a new solution version to deploy.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
+    #[doc(hidden)]
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
+    #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
 }
 impl UpdateCampaignInput {
@@ -9932,8 +9938,10 @@ impl std::fmt::Debug for UpdateCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys to remove from the resource's tags.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9960,8 +9968,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -9988,6 +9998,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSolutionVersionCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl StopSolutionVersionCreationInput {
@@ -10009,6 +10020,7 @@ impl std::fmt::Debug for StopSolutionVersionCreationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StopRecommenderInput {
@@ -10030,6 +10042,7 @@ impl std::fmt::Debug for StopRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StartRecommenderInput {
@@ -10051,6 +10064,7 @@ impl std::fmt::Debug for StartRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -10072,10 +10086,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSolutionVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solution versions to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSolutionVersionsInput {
@@ -10107,10 +10124,13 @@ impl std::fmt::Debug for ListSolutionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSolutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solutions to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSolutionsInput {
@@ -10142,8 +10162,10 @@ impl std::fmt::Debug for ListSolutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
     /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListSchemasInput {
@@ -10170,10 +10192,13 @@ impl std::fmt::Debug for ListSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendersInput {
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommenders to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendersInput {
@@ -10205,12 +10230,16 @@ impl std::fmt::Debug for ListRecommendersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipesInput {
     /// <p>The default is <code>SERVICE</code>.</p>
+    #[doc(hidden)]
     pub recipe_provider: std::option::Option<crate::model::RecipeProvider>,
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recipes to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl ListRecipesInput {
@@ -10247,10 +10276,13 @@ impl std::fmt::Debug for ListRecipesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersInput {
     /// <p>The ARN of the dataset group that contains the filters.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of filters to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListFiltersInput {
@@ -10282,10 +10314,13 @@ impl std::fmt::Debug for ListFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTrackersInput {
     /// <p>The ARN of a dataset group used to filter the response.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of event trackers to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventTrackersInput {
@@ -10317,10 +10352,13 @@ impl std::fmt::Debug for ListEventTrackersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of datasets to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
@@ -10352,10 +10390,13 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset import jobs to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetImportJobsInput {
@@ -10387,8 +10428,10 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
     /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset groups to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetGroupsInput {
@@ -10415,10 +10458,13 @@ impl std::fmt::Debug for ListDatasetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetExportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset export jobs to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetExportJobsInput {
@@ -10450,10 +10496,13 @@ impl std::fmt::Debug for ListDatasetExportJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> for getting the next set of campaigns (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of campaigns to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListCampaignsInput {
@@ -10485,10 +10534,13 @@ impl std::fmt::Debug for ListCampaignsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchSegmentJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchSegmentJobsInput {
@@ -10520,10 +10572,13 @@ impl std::fmt::Debug for ListBatchSegmentJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchInferenceJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchInferenceJobsInput {
@@ -10555,6 +10610,7 @@ impl std::fmt::Debug for ListBatchInferenceJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSolutionMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl GetSolutionMetricsInput {
@@ -10576,6 +10632,7 @@ impl std::fmt::Debug for GetSolutionMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSolutionVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSolutionVersionInput {
@@ -10597,6 +10654,7 @@ impl std::fmt::Debug for DescribeSolutionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSolutionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSolutionInput {
@@ -10618,6 +10676,7 @@ impl std::fmt::Debug for DescribeSolutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSchemaInput {
@@ -10639,6 +10698,7 @@ impl std::fmt::Debug for DescribeSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRecommenderInput {
@@ -10660,6 +10720,7 @@ impl std::fmt::Debug for DescribeRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRecipeInput {
@@ -10681,6 +10742,7 @@ impl std::fmt::Debug for DescribeRecipeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFilterInput {
     /// <p>The ARN of the filter to describe.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFilterInput {
@@ -10702,6 +10764,7 @@ impl std::fmt::Debug for DescribeFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureTransformationInput {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    #[doc(hidden)]
     pub feature_transformation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFeatureTransformationInput {
@@ -10726,6 +10789,7 @@ impl std::fmt::Debug for DescribeFeatureTransformationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
+    #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
 }
 impl DescribeEventTrackerInput {
@@ -10747,6 +10811,7 @@ impl std::fmt::Debug for DescribeEventTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetImportJobInput {
@@ -10768,6 +10833,7 @@ impl std::fmt::Debug for DescribeDatasetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetGroupInput {
@@ -10789,6 +10855,7 @@ impl std::fmt::Debug for DescribeDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
+    #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetExportJobInput {
@@ -10810,6 +10877,7 @@ impl std::fmt::Debug for DescribeDatasetExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -10831,6 +10899,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCampaignInput {
@@ -10852,6 +10921,7 @@ impl std::fmt::Debug for DescribeCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchSegmentJobInput {
     /// <p>The ARN of the batch segment job to describe.</p>
+    #[doc(hidden)]
     pub batch_segment_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBatchSegmentJobInput {
@@ -10873,6 +10943,7 @@ impl std::fmt::Debug for DescribeBatchSegmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchInferenceJobInput {
     /// <p>The ARN of the batch inference job to describe.</p>
+    #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBatchInferenceJobInput {
@@ -10894,6 +10965,7 @@ impl std::fmt::Debug for DescribeBatchInferenceJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlgorithmInput {
     /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAlgorithmInput {
@@ -10915,6 +10987,7 @@ impl std::fmt::Debug for DescribeAlgorithmInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSolutionInput {
     /// <p>The ARN of the solution to delete.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSolutionInput {
@@ -10936,6 +11009,7 @@ impl std::fmt::Debug for DeleteSolutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaInput {
@@ -10957,6 +11031,7 @@ impl std::fmt::Debug for DeleteSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRecommenderInput {
@@ -10978,6 +11053,7 @@ impl std::fmt::Debug for DeleteRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFilterInput {
     /// <p>The ARN of the filter to delete.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFilterInput {
@@ -10999,6 +11075,7 @@ impl std::fmt::Debug for DeleteFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
+    #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEventTrackerInput {
@@ -11020,6 +11097,7 @@ impl std::fmt::Debug for DeleteEventTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetGroupInput {
     /// <p>The ARN of the dataset group to delete.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetGroupInput {
@@ -11041,6 +11119,7 @@ impl std::fmt::Debug for DeleteDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -11062,6 +11141,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCampaignInput {
@@ -11083,12 +11163,15 @@ impl std::fmt::Debug for DeleteCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
+    #[doc(hidden)]
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSolutionVersionInput {
@@ -11122,25 +11205,33 @@ impl std::fmt::Debug for CreateSolutionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionInput {
     /// <p>The name for the solution.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
     /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
+    #[doc(hidden)]
     pub perform_hpo: std::option::Option<bool>,
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    #[doc(hidden)]
     pub perform_auto_ml: bool,
     /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
     /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
     /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
+    #[doc(hidden)]
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSolutionInput {
@@ -11202,10 +11293,13 @@ impl std::fmt::Debug for CreateSolutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaInput {
     /// <p>The name for the schema.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A schema in Avro JSON format.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateSchemaInput {
@@ -11237,14 +11331,19 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommenderInput {
     /// <p>The name of the recommender.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
+    #[doc(hidden)]
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the recommender.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRecommenderInput {
@@ -11286,12 +11385,16 @@ impl std::fmt::Debug for CreateRecommenderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
     /// <p>The name of the filter to create.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the filter.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFilterInput {
@@ -11328,10 +11431,13 @@ impl std::fmt::Debug for CreateFilterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventTrackerInput {
     /// <p>The name for the event tracker.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventTrackerInput {
@@ -11363,20 +11469,26 @@ impl std::fmt::Debug for CreateEventTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset that receives the imported data.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
     /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
     /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl CreateDatasetImportJobInput {
@@ -11427,14 +11539,19 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetGroupInput {
     /// <p>The name for the new dataset group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset group.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetGroupInput {
@@ -11476,16 +11593,22 @@ impl std::fmt::Debug for CreateDatasetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetExportJobInput {
     /// <p>The name for the dataset export job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    #[doc(hidden)]
     pub ingestion_mode: std::option::Option<crate::model::IngestionMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetExportJobInput {
@@ -11532,10 +11655,13 @@ impl std::fmt::Debug for CreateDatasetExportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>The name for the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
@@ -11544,8 +11670,10 @@ pub struct CreateDatasetInput {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetInput {
@@ -11593,14 +11721,19 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignInput {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
+    #[doc(hidden)]
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
+    #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCampaignInput {
@@ -11642,20 +11775,28 @@ impl std::fmt::Debug for CreateCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchSegmentJobInput {
     /// <p>The name of the batch segment job to create.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
+    #[doc(hidden)]
     pub job_input: std::option::Option<crate::model::BatchSegmentJobInput>,
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::BatchSegmentJobOutput>,
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchSegmentJobInput {
@@ -11712,22 +11853,31 @@ impl std::fmt::Debug for CreateBatchSegmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchInferenceJobInput {
     /// <p>The name of the batch inference job to create.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of recommendations to retrieve.</p>
+    #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
+    #[doc(hidden)]
     pub job_input: std::option::Option<crate::model::BatchInferenceJobInput>,
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
+    #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::BatchInferenceJobOutput>,
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of a batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchInferenceJobInput {

@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeSetOutput {
     /// <p>Unique identifier generated for the request.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
+    #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
 }
 impl StartChangeSetOutput {
@@ -83,8 +85,10 @@ impl StartChangeSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesOutput {
     /// <p> Array of <code>EntitySummary</code> object.</p>
+    #[doc(hidden)]
     pub entity_summary_list: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesOutput {
@@ -166,9 +170,11 @@ impl ListEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
+    #[doc(hidden)]
     pub change_set_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangeSetsOutput {
@@ -255,14 +261,19 @@ impl ListChangeSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
+    #[doc(hidden)]
     pub entity_identifier: std::option::Option<std::string::String>,
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
+    #[doc(hidden)]
     pub entity_arn: std::option::Option<std::string::String>,
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>This stringified JSON object includes the details of the entity.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl DescribeEntityOutput {
@@ -391,22 +402,31 @@ impl DescribeEntityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+    #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
+    #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The status of the change request.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChangeStatus>,
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::FailureCode>,
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
+    #[doc(hidden)]
     pub failure_description: std::option::Option<std::string::String>,
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
+    #[doc(hidden)]
     pub change_set: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
 }
 impl DescribeChangeSetOutput {
@@ -624,8 +644,10 @@ impl DescribeChangeSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelChangeSetOutput {
     /// <p>The unique identifier for the change set referenced in this request.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated with the change set referenced in this request.</p>
+    #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
 }
 impl CancelChangeSetOutput {

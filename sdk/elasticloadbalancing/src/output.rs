@@ -126,6 +126,7 @@ impl RemoveTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl RegisterInstancesWithLoadBalancerOutput {
@@ -189,8 +190,10 @@ impl RegisterInstancesWithLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>Information about the load balancer attributes.</p>
+    #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesOutput {
@@ -274,6 +277,7 @@ impl ModifyLoadBalancerAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerOutput {
@@ -337,6 +341,7 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
@@ -401,6 +406,7 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachLoadBalancerFromSubnetsOutput {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetachLoadBalancerFromSubnetsOutput {
@@ -464,6 +470,7 @@ impl DetachLoadBalancerFromSubnetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
@@ -528,9 +535,11 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
+    #[doc(hidden)]
     pub load_balancer_descriptions:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
@@ -620,6 +629,7 @@ impl DescribeLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
+    #[doc(hidden)]
     pub policy_type_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
 }
@@ -690,6 +700,7 @@ impl DescribeLoadBalancerPolicyTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
+    #[doc(hidden)]
     pub policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
 }
 impl DescribeLoadBalancerPoliciesOutput {
@@ -754,6 +765,7 @@ impl DescribeLoadBalancerPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
+    #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
 impl DescribeLoadBalancerAttributesOutput {
@@ -817,6 +829,7 @@ impl DescribeLoadBalancerAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
+    #[doc(hidden)]
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
 }
 impl DescribeInstanceHealthOutput {
@@ -880,8 +893,10 @@ impl DescribeInstanceHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
+    #[doc(hidden)]
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeAccountLimitsOutput {
@@ -962,6 +977,7 @@ impl DescribeAccountLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
@@ -1175,6 +1191,7 @@ impl CreateLoadBalancerListenersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
+    #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerOutput {
@@ -1289,6 +1306,7 @@ impl CreateAppCookieStickinessPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl ConfigureHealthCheckOutput {
@@ -1346,6 +1364,7 @@ impl ConfigureHealthCheckOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AttachLoadBalancerToSubnetsOutput {
@@ -1409,6 +1428,7 @@ impl AttachLoadBalancerToSubnetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySecurityGroupsToLoadBalancerOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApplySecurityGroupsToLoadBalancerOutput {

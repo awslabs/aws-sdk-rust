@@ -8356,22 +8356,31 @@ impl UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The given name of the user.</p>
+    #[doc(hidden)]
     pub given_name: std::option::Option<std::string::String>,
     /// <p>The surname of the user.</p>
+    #[doc(hidden)]
     pub surname: std::option::Option<std::string::String>,
     /// <p>The type of the user.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The amount of storage for the user.</p>
+    #[doc(hidden)]
     pub storage_rule: std::option::Option<crate::model::StorageRuleType>,
     /// <p>The time zone ID of the user.</p>
+    #[doc(hidden)]
     pub time_zone_id: std::option::Option<std::string::String>,
     /// <p>The locale of the user.</p>
+    #[doc(hidden)]
     pub locale: std::option::Option<crate::model::LocaleType>,
     /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    #[doc(hidden)]
     pub grant_poweruser_privileges: std::option::Option<crate::model::BooleanEnumType>,
 }
 impl UpdateUserInput {
@@ -8438,14 +8447,19 @@ impl std::fmt::Debug for UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The name of the folder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
+    #[doc(hidden)]
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateFolderInput {
@@ -8487,12 +8501,16 @@ impl std::fmt::Debug for UpdateFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The version ID of the document.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The status of the version.</p>
+    #[doc(hidden)]
     pub version_status: std::option::Option<crate::model::DocumentVersionStatus>,
 }
 impl UpdateDocumentVersionInput {
@@ -8529,14 +8547,19 @@ impl std::fmt::Debug for UpdateDocumentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The name of the document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
+    #[doc(hidden)]
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateDocumentInput {
@@ -8578,12 +8601,16 @@ impl std::fmt::Debug for UpdateDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveResourcePermissionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The principal ID of the resource.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The principal type of the resource.</p>
+    #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
 impl RemoveResourcePermissionInput {
@@ -8620,8 +8647,10 @@ impl std::fmt::Debug for RemoveResourcePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAllResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl RemoveAllResourcePermissionsInput {
@@ -8648,20 +8677,28 @@ impl std::fmt::Debug for RemoveAllResourcePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The timestamp when the content of the document was originally created.</p>
+    #[doc(hidden)]
     pub content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
+    #[doc(hidden)]
     pub content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The content type of the document.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The size of the document, in bytes.</p>
+    #[doc(hidden)]
     pub document_size_in_bytes: std::option::Option<i64>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
 }
 impl InitiateDocumentVersionUploadInput {
@@ -8721,14 +8758,19 @@ impl std::fmt::Debug for InitiateDocumentVersionUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
     /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The collection type.</p>
+    #[doc(hidden)]
     pub collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The maximum number of resources to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetResourcesInput {
@@ -8770,14 +8812,19 @@ impl std::fmt::Debug for GetResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderPathInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetFolderPathInput {
@@ -8819,10 +8866,13 @@ impl std::fmt::Debug for GetFolderPathInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to include custom metadata in the response.</p>
+    #[doc(hidden)]
     pub include_custom_metadata: bool,
 }
 impl GetFolderInput {
@@ -8854,14 +8904,19 @@ impl std::fmt::Debug for GetFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The version ID of the document.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
+    #[doc(hidden)]
     pub include_custom_metadata: bool,
 }
 impl GetDocumentVersionInput {
@@ -8903,14 +8958,19 @@ impl std::fmt::Debug for GetDocumentVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentPathInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl GetDocumentPathInput {
@@ -8952,10 +9012,13 @@ impl std::fmt::Debug for GetDocumentPathInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
+    #[doc(hidden)]
     pub include_custom_metadata: bool,
 }
 impl GetDocumentInput {
@@ -8987,6 +9050,7 @@ impl std::fmt::Debug for GetDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentUserInput {
     /// <p>Amazon WorkDocs authentication token.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl GetCurrentUserInput {
@@ -9008,24 +9072,34 @@ impl std::fmt::Debug for GetCurrentUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the users.</p>
+    #[doc(hidden)]
     pub user_ids: std::option::Option<std::string::String>,
     /// <p>A query to filter users by user name.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
+    #[doc(hidden)]
     pub include: std::option::Option<crate::model::UserFilterType>,
     /// <p>The order for the results.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The sorting criteria.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::UserSortType>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeUsersInput {
@@ -9092,10 +9166,13 @@ impl std::fmt::Debug for DescribeUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRootFoldersInput {
     /// <p>Amazon WorkDocs authentication token.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeRootFoldersInput {
@@ -9127,14 +9204,19 @@ impl std::fmt::Debug for DescribeRootFoldersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ID of the principal to filter permissions by.</p>
+    #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsInput {
@@ -9176,10 +9258,13 @@ impl std::fmt::Debug for DescribeResourcePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationSubscriptionsInput {
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeNotificationSubscriptionsInput {
@@ -9211,14 +9296,19 @@ impl std::fmt::Debug for DescribeNotificationSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>A query to describe groups by group name.</p>
+    #[doc(hidden)]
     pub search_query: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeGroupsInput {
@@ -9260,20 +9350,28 @@ impl std::fmt::Debug for DescribeGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderContentsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The sorting criteria.</p>
+    #[doc(hidden)]
     pub sort: std::option::Option<crate::model::ResourceSortType>,
     /// <p>The order for the contents of the folder.</p>
+    #[doc(hidden)]
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The maximum number of items to return with this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The type of items.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FolderContentType>,
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
+    #[doc(hidden)]
     pub include: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsInput {
@@ -9330,16 +9428,22 @@ impl std::fmt::Debug for DescribeFolderContentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentVersionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return with this call.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
+    #[doc(hidden)]
     pub include: std::option::Option<std::string::String>,
     /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsInput {
@@ -9386,14 +9490,19 @@ impl std::fmt::Debug for DescribeDocumentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommentsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The ID of the document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsInput {
@@ -9435,24 +9544,34 @@ impl std::fmt::Debug for DescribeCommentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivitiesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
+    #[doc(hidden)]
     pub activity_types: std::option::Option<std::string::String>,
     /// <p>The document or folder ID for which to describe activity types.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    #[doc(hidden)]
     pub include_indirect_activities: bool,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeActivitiesInput {
@@ -9522,8 +9641,10 @@ impl std::fmt::Debug for DescribeActivitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -9550,8 +9671,10 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotificationSubscriptionInput {
     /// <p>The ID of the subscription.</p>
+    #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl DeleteNotificationSubscriptionInput {
@@ -9578,12 +9701,16 @@ impl std::fmt::Debug for DeleteNotificationSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLabelsInput {
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>List of labels to delete from the resource.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Flag to request removal of all labels from the specified resource.</p>
+    #[doc(hidden)]
     pub delete_all: bool,
 }
 impl DeleteLabelsInput {
@@ -9620,8 +9747,10 @@ impl std::fmt::Debug for DeleteLabelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderContentsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderContentsInput {
@@ -9648,8 +9777,10 @@ impl std::fmt::Debug for DeleteFolderContentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the folder.</p>
+    #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderInput {
@@ -9676,8 +9807,10 @@ impl std::fmt::Debug for DeleteFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentInput {
@@ -9704,14 +9837,19 @@ impl std::fmt::Debug for DeleteDocumentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomMetadataInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource, either a document or folder.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>List of properties to remove.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
+    #[doc(hidden)]
     pub delete_all: bool,
 }
 impl DeleteCustomMetadataInput {
@@ -9753,12 +9891,16 @@ impl std::fmt::Debug for DeleteCustomMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCommentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The ID of the document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The ID of the comment.</p>
+    #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
 }
 impl DeleteCommentInput {
@@ -9795,8 +9937,10 @@ impl std::fmt::Debug for DeleteCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateUserInput {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl DeactivateUserInput {
@@ -9823,22 +9967,31 @@ impl std::fmt::Debug for DeactivateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The login name of the user.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The given name of the user.</p>
+    #[doc(hidden)]
     pub given_name: std::option::Option<std::string::String>,
     /// <p>The surname of the user.</p>
+    #[doc(hidden)]
     pub surname: std::option::Option<std::string::String>,
     /// <p>The password of the user.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The time zone ID of the user.</p>
+    #[doc(hidden)]
     pub time_zone_id: std::option::Option<std::string::String>,
     /// <p>The amount of storage for the user.</p>
+    #[doc(hidden)]
     pub storage_rule: std::option::Option<crate::model::StorageRuleType>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl CreateUserInput {
@@ -9900,12 +10053,16 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
     /// <p>The notification type.</p>
+    #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
 }
 impl CreateNotificationSubscriptionInput {
@@ -9942,10 +10099,13 @@ impl std::fmt::Debug for CreateNotificationSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLabelsInput {
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>List of labels to add to the resource.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl CreateLabelsInput {
@@ -9977,10 +10137,13 @@ impl std::fmt::Debug for CreateLabelsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The name of the new folder.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
+    #[doc(hidden)]
     pub parent_folder_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderInput {
@@ -10012,12 +10175,16 @@ impl std::fmt::Debug for CreateFolderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomMetadataInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Custom metadata in the form of name-value pairs.</p>
+    #[doc(hidden)]
     pub custom_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10058,20 +10225,28 @@ impl std::fmt::Debug for CreateCustomMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCommentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The ID of the document version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The ID of the parent comment.</p>
+    #[doc(hidden)]
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The ID of the root comment in the thread.</p>
+    #[doc(hidden)]
     pub thread_id: std::option::Option<std::string::String>,
     /// <p>The text of the comment.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
+    #[doc(hidden)]
     pub visibility: std::option::Option<crate::model::CommentVisibilityType>,
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
+    #[doc(hidden)]
     pub notify_collaborators: bool,
 }
 impl CreateCommentInput {
@@ -10128,12 +10303,16 @@ impl std::fmt::Debug for CreateCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The users, groups, or organization being granted permission.</p>
+    #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::SharePrincipal>>,
     /// <p>The notification options.</p>
+    #[doc(hidden)]
     pub notification_options: std::option::Option<crate::model::NotificationOptions>,
 }
 impl AddResourcePermissionsInput {
@@ -10170,8 +10349,10 @@ impl std::fmt::Debug for AddResourcePermissionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateUserInput {
     /// <p>The ID of the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl ActivateUserInput {
@@ -10198,10 +10379,13 @@ impl std::fmt::Debug for ActivateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
+    #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The ID of the version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl AbortDocumentVersionUploadInput {

@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
     /// <p>Server</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>500 Internal Server Error</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if the service cannot complete the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
@@ -109,10 +112,13 @@ impl ServiceUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>Client</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>404 Not Found</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -213,10 +219,13 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTimeoutException {
     /// <p>Client</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>408 Request Timeout</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestTimeoutException {
@@ -317,10 +326,13 @@ impl RequestTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingParameterValueException {
     /// <p>Client.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>400 Bad Request</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if no authentication data is found for the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MissingParameterValueException {
@@ -421,10 +433,13 @@ impl MissingParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p>Client</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>400 Bad Request</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if a parameter of the request is incorrectly specified.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
@@ -525,10 +540,13 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>Client</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>400 Bad Request</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>Returned if the request results in a vault limit or tags limit being exceeded.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
@@ -629,10 +647,13 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyEnforcedException {
     /// <p>Client</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>PolicyEnforcedException</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>InitiateJob request denied by current data retrieval policy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PolicyEnforcedException {
@@ -733,10 +754,13 @@ impl PolicyEnforcedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapacityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InsufficientCapacityException {

@@ -361,6 +361,7 @@ impl TranscriptResultStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::Transcript>,
 }
 impl TranscriptEvent {
@@ -418,6 +419,7 @@ impl TranscriptEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transcript {
     /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl Transcript {
@@ -481,22 +483,30 @@ impl Transcript {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Result {
     /// <p>A unique identifier for the result. </p>
+    #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
     /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    #[doc(hidden)]
     pub is_partial: bool,
     /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+    #[doc(hidden)]
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
     /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
     /// <p>The language code of the identified language in your media stream.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The language code of the dominant language identified in your media.</p>
+    #[doc(hidden)]
     pub language_identification:
         std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
 }
@@ -701,8 +711,10 @@ impl Result {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageWithScore {
     /// <p>The language code of the language identified by Amazon Transcribe.</p>
+    #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
+    #[doc(hidden)]
     pub score: f64,
 }
 impl LanguageWithScore {
@@ -777,10 +789,13 @@ impl LanguageWithScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alternative {
     /// <p>The text that was transcribed from the audio.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
     /// <p>One or more alternative interpretations of the input audio. </p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Item>>,
     /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl Alternative {
@@ -887,16 +902,22 @@ impl Alternative {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entity {
     /// <p>The start time of speech that was identified as PII.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time of speech that was identified as PII.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The category of information identified in this entity; for example, PII.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
 }
 impl Entity {
@@ -1036,20 +1057,28 @@ impl Entity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Item {
     /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The word or punctuation that was recognized in the input audio.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
+    #[doc(hidden)]
     pub vocabulary_filter_match: bool,
     /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
+    #[doc(hidden)]
     pub speaker: std::option::Option<std::string::String>,
     /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
     /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    #[doc(hidden)]
     pub stable: std::option::Option<bool>,
 }
 impl Item {
@@ -1377,6 +1406,7 @@ impl AudioStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
+    #[doc(hidden)]
     pub audio_chunk: std::option::Option<aws_smithy_types::Blob>,
 }
 impl AudioEvent {
@@ -1524,6 +1554,7 @@ impl MedicalTranscriptResultStream {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalTranscriptEvent {
     /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
 }
 impl MedicalTranscriptEvent {
@@ -1581,6 +1612,7 @@ impl MedicalTranscriptEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalTranscript {
     /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
 }
 impl MedicalTranscript {
@@ -1644,18 +1676,24 @@ impl MedicalTranscript {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalResult {
     /// <p>A unique identifier for the result.</p>
+    #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
     /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
+    #[doc(hidden)]
     pub is_partial: bool,
     /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+    #[doc(hidden)]
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
     /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
+    #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl MedicalResult {
@@ -1811,10 +1849,13 @@ impl MedicalResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalAlternative {
     /// <p>The text that was transcribed from the audio.</p>
+    #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
     /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
     /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
 }
 impl MedicalAlternative {
@@ -1921,14 +1962,19 @@ impl MedicalAlternative {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalEntity {
     /// <p>The start time of the speech that was identified as a medical entity.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time of the speech that was identified as a medical entity.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The type of personal health information of the medical entity.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
     /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
 }
 impl MedicalEntity {
@@ -2051,16 +2097,22 @@ impl MedicalEntity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalItem {
     /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
+    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The word or punctuation mark that was recognized in the input audio.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
     /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
+    #[doc(hidden)]
     pub speaker: std::option::Option<std::string::String>,
 }
 impl MedicalItem {

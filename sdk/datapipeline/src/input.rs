@@ -3244,12 +3244,16 @@ impl ValidatePipelineDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
+    #[doc(hidden)]
     pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
+    #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
 impl ValidatePipelineDefinitionInput {
@@ -3286,14 +3290,19 @@ impl std::fmt::Debug for ValidatePipelineDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    #[doc(hidden)]
     pub task_status: std::option::Option<crate::model::TaskStatus>,
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    #[doc(hidden)]
     pub error_id: std::option::Option<std::string::String>,
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    #[doc(hidden)]
     pub error_stack_trace: std::option::Option<std::string::String>,
 }
 impl SetTaskStatusInput {
@@ -3335,10 +3344,13 @@ impl std::fmt::Debug for SetTaskStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    #[doc(hidden)]
     pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl SetStatusInput {
@@ -3370,10 +3382,13 @@ impl std::fmt::Debug for SetStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    #[doc(hidden)]
     pub taskrunner_id: std::option::Option<std::string::String>,
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    #[doc(hidden)]
     pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the task runner.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
 }
 impl ReportTaskRunnerHeartbeatInput {
@@ -3405,8 +3420,10 @@ impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl ReportTaskProgressInput {
@@ -3433,8 +3450,10 @@ impl std::fmt::Debug for ReportTaskProgressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
@@ -3461,14 +3480,19 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<crate::model::Query>,
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    #[doc(hidden)]
     pub sphere: std::option::Option<std::string::String>,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl QueryObjectsInput {
@@ -3510,12 +3534,16 @@ impl std::fmt::Debug for QueryObjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
+    #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
+    #[doc(hidden)]
     pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
+    #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
 impl PutPipelineDefinitionInput {
@@ -3552,10 +3580,13 @@ impl std::fmt::Debug for PutPipelineDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForTaskInput {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    #[doc(hidden)]
     pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the calling task runner.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
+    #[doc(hidden)]
     pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
 impl PollForTaskInput {
@@ -3587,6 +3618,7 @@ impl std::fmt::Debug for PollForTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPipelinesInput {
@@ -3608,8 +3640,10 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl GetPipelineDefinitionInput {
@@ -3636,10 +3670,13 @@ impl std::fmt::Debug for GetPipelineDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The ID of the object.</p>
+    #[doc(hidden)]
     pub object_id: std::option::Option<std::string::String>,
     /// <p>The expression to evaluate.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl EvaluateExpressionInput {
@@ -3671,6 +3708,7 @@ impl std::fmt::Debug for EvaluateExpressionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
+    #[doc(hidden)]
     pub pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribePipelinesInput {
@@ -3692,12 +3730,16 @@ impl std::fmt::Debug for DescribePipelinesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
+    #[doc(hidden)]
     pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
+    #[doc(hidden)]
     pub evaluate_expressions: bool,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeObjectsInput {
@@ -3734,6 +3776,7 @@ impl std::fmt::Debug for DescribeObjectsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
@@ -3755,8 +3798,10 @@ impl std::fmt::Debug for DeletePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
+    #[doc(hidden)]
     pub cancel_active: std::option::Option<bool>,
 }
 impl DeactivatePipelineInput {
@@ -3783,12 +3828,16 @@ impl std::fmt::Debug for DeactivatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
     /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+    #[doc(hidden)]
     pub unique_id: std::option::Option<std::string::String>,
     /// <p>The description for the pipeline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
@@ -3825,8 +3874,10 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The tags to add, as key/value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
@@ -3853,10 +3904,13 @@ impl std::fmt::Debug for AddTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
+    #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
+    #[doc(hidden)]
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivatePipelineInput {

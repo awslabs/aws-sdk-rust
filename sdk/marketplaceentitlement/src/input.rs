@@ -205,8 +205,10 @@ impl GetEntitlementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntitlementsInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
+    #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<
         std::collections::HashMap<
             crate::model::GetEntitlementFilterName,
@@ -214,8 +216,10 @@ pub struct GetEntitlementsInput {
         >,
     >,
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEntitlementsInput {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DocumentServiceWarning {
@@ -114,10 +115,13 @@ impl AsRef<str> for ContentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
+    #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
     /// <p>The number of documents that were found to match the query string.</p>
+    #[doc(hidden)]
     pub found: i64,
     /// <p>The documents that match the query string.</p>
+    #[doc(hidden)]
     pub suggestions: std::option::Option<std::vec::Vec<crate::model::SuggestionMatch>>,
 }
 impl SuggestModel {
@@ -215,10 +219,13 @@ impl SuggestModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
+    #[doc(hidden)]
     pub suggestion: std::option::Option<std::string::String>,
     /// <p>The relevance score of a suggested match.</p>
+    #[doc(hidden)]
     pub score: i64,
     /// <p>The document ID of the suggested document.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl SuggestionMatch {
@@ -307,8 +314,10 @@ impl SuggestionMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuggestStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
+    #[doc(hidden)]
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
+    #[doc(hidden)]
     pub rid: std::option::Option<std::string::String>,
 }
 impl SuggestStatus {
@@ -381,22 +390,30 @@ impl SuggestStatus {
 pub struct FieldStats {
     /// <p>The minimum value found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<std::string::String>,
     /// <p>The maximum value found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
     /// <p>The number of documents that contain a value in the specified field in the result set.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
+    #[doc(hidden)]
     pub missing: i64,
     /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
+    #[doc(hidden)]
     pub sum: f64,
     /// <p>The sum of all field values in the result set squared.</p>
+    #[doc(hidden)]
     pub sum_of_squares: f64,
     /// <p>The average of the values found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    #[doc(hidden)]
     pub mean: std::option::Option<std::string::String>,
     /// <p>The standard deviation of the values in the specified field in the result set.</p>
+    #[doc(hidden)]
     pub stddev: f64,
 }
 impl FieldStats {
@@ -579,6 +596,7 @@ impl FieldStats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
+    #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
 impl BucketInfo {
@@ -642,8 +660,10 @@ impl BucketInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
     /// <p>The facet value being counted.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
+    #[doc(hidden)]
     pub count: i64,
 }
 impl Bucket {
@@ -715,12 +735,16 @@ impl Bucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hits {
     /// <p>The total number of documents that match the search request.</p>
+    #[doc(hidden)]
     pub found: i64,
     /// <p>The index of the first matching document.</p>
+    #[doc(hidden)]
     pub start: i64,
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
+    #[doc(hidden)]
     pub cursor: std::option::Option<std::string::String>,
     /// <p>A document that matches the search request.</p>
+    #[doc(hidden)]
     pub hit: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl Hits {
@@ -835,15 +859,19 @@ impl Hits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hit {
     /// <p>The document ID of a document that matches the search request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The fields returned from a document that matches the search request.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The expressions returned from a document that matches the search request.</p>
+    #[doc(hidden)]
     pub exprs:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The highlights returned from a document that matches the search request.</p>
+    #[doc(hidden)]
     pub highlights:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1011,8 +1039,10 @@ impl Hit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
+    #[doc(hidden)]
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
+    #[doc(hidden)]
     pub rid: std::option::Option<std::string::String>,
 }
 impl SearchStatus {

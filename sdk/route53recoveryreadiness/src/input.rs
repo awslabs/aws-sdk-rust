@@ -5270,11 +5270,14 @@ impl UpdateResourceSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceSetInput {
     /// <p>Name of a resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl UpdateResourceSetInput {
@@ -5307,8 +5310,10 @@ impl std::fmt::Debug for UpdateResourceSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryGroupInput {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl UpdateRecoveryGroupInput {
@@ -5335,8 +5340,10 @@ impl std::fmt::Debug for UpdateRecoveryGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource set to be checked.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl UpdateReadinessCheckInput {
@@ -5363,8 +5370,10 @@ impl std::fmt::Debug for UpdateReadinessCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCellInput {
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateCellInput {
@@ -5391,8 +5400,10 @@ impl std::fmt::Debug for UpdateCellInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys for tags you add to resources.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5419,8 +5430,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5451,6 +5464,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourcesInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourcesInput {
@@ -5472,10 +5486,13 @@ impl std::fmt::Debug for ListTagsForResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The resource type that a readiness rule applies to.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ListRulesInput {
@@ -5507,8 +5524,10 @@ impl std::fmt::Debug for ListRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSetsInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceSetsInput {
@@ -5535,8 +5554,10 @@ impl std::fmt::Debug for ListResourceSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryGroupsInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecoveryGroupsInput {
@@ -5563,8 +5584,10 @@ impl std::fmt::Debug for ListRecoveryGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReadinessChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReadinessChecksInput {
@@ -5591,8 +5614,10 @@ impl std::fmt::Debug for ListReadinessChecksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrossAccountAuthorizationsInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrossAccountAuthorizationsInput {
@@ -5619,8 +5644,10 @@ impl std::fmt::Debug for ListCrossAccountAuthorizationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCellsInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCellsInput {
@@ -5647,6 +5674,7 @@ impl std::fmt::Debug for ListCellsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSetInput {
     /// <p>Name of a resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl GetResourceSetInput {
@@ -5668,10 +5696,13 @@ impl std::fmt::Debug for GetResourceSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupReadinessSummaryInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of a recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetRecoveryGroupReadinessSummaryInput {
@@ -5703,6 +5734,7 @@ impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetRecoveryGroupInput {
@@ -5724,10 +5756,13 @@ impl std::fmt::Debug for GetRecoveryGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckStatusInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckStatusInput {
@@ -5759,12 +5794,16 @@ impl std::fmt::Debug for GetReadinessCheckStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckResourceStatusInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
+    #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckResourceStatusInput {
@@ -5801,6 +5840,7 @@ impl std::fmt::Debug for GetReadinessCheckResourceStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckInput {
@@ -5822,10 +5862,13 @@ impl std::fmt::Debug for GetReadinessCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellReadinessSummaryInput {
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCellReadinessSummaryInput {
@@ -5857,6 +5900,7 @@ impl std::fmt::Debug for GetCellReadinessSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellInput {
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
 }
 impl GetCellInput {
@@ -5878,10 +5922,13 @@ impl std::fmt::Debug for GetCellInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchitectureRecommendationsInput {
     /// <p>The number of objects that you want to return with this call.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of a recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetArchitectureRecommendationsInput {
@@ -5913,6 +5960,7 @@ impl std::fmt::Debug for GetArchitectureRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceSetInput {
     /// <p>Name of a resource set.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteResourceSetInput {
@@ -5934,6 +5982,7 @@ impl std::fmt::Debug for DeleteResourceSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteRecoveryGroupInput {
@@ -5955,6 +6004,7 @@ impl std::fmt::Debug for DeleteRecoveryGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl DeleteReadinessCheckInput {
@@ -5976,6 +6026,7 @@ impl std::fmt::Debug for DeleteReadinessCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
+    #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl DeleteCrossAccountAuthorizationInput {
@@ -6000,6 +6051,7 @@ impl std::fmt::Debug for DeleteCrossAccountAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCellInput {
     /// <p>The name of the cell.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
 }
 impl DeleteCellInput {
@@ -6021,13 +6073,17 @@ impl std::fmt::Debug for DeleteCellInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceSetInput {
     /// <p>The name of the resource set to create.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
     /// <p>A list of resource objects in the resource set.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>A tag to associate with the parameters for a resource set.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6069,10 +6125,13 @@ impl std::fmt::Debug for CreateResourceSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecoveryGroupInput {
     /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the recovery group to create.</p>
+    #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6108,10 +6167,13 @@ impl std::fmt::Debug for CreateRecoveryGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReadinessCheckInput {
     /// <p>The name of the readiness check to create.</p>
+    #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource set to check.</p>
+    #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6147,6 +6209,7 @@ impl std::fmt::Debug for CreateReadinessCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
+    #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl CreateCrossAccountAuthorizationInput {
@@ -6171,10 +6234,13 @@ impl std::fmt::Debug for CreateCrossAccountAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCellInput {
     /// <p>The name of the cell to create.</p>
+    #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
     /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A collection of tags associated with a resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

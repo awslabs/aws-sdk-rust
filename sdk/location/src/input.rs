@@ -10274,12 +10274,15 @@ impl UpdateTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackerConsumersInput {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackerConsumersInput {
@@ -10313,12 +10316,15 @@ impl std::fmt::Debug for ListTrackerConsumersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePositionsInput {
     /// <p>The tracker resource containing the requested devices.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>An optional limit for the number of entries returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePositionsInput {
@@ -10352,26 +10358,32 @@ impl std::fmt::Debug for ListDevicePositionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionHistoryInput {
     /// <p>The tracker resource receiving the request for the device position history.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The device whose position history you want to retrieve.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
     /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub start_time_inclusive: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
     /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetDevicePositionHistoryInput {
@@ -10428,8 +10440,10 @@ impl std::fmt::Debug for GetDevicePositionHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The device whose position you want to retrieve.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl GetDevicePositionInput {
@@ -10456,11 +10470,13 @@ impl std::fmt::Debug for GetDevicePositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateTrackerConsumerInput {
@@ -10490,8 +10506,10 @@ impl std::fmt::Debug for DisassociateTrackerConsumerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Contains the position update details for each device.</p>
+    #[doc(hidden)]
     pub updates: std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
 }
 impl BatchUpdateDevicePositionInput {
@@ -10518,11 +10536,13 @@ impl std::fmt::Debug for BatchUpdateDevicePositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevicePositionInput {
@@ -10552,11 +10572,13 @@ impl std::fmt::Debug for BatchGetDevicePositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDevicePositionHistoryInput {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteDevicePositionHistoryInput {
@@ -10586,11 +10608,13 @@ impl std::fmt::Debug for BatchDeleteDevicePositionHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
 }
 impl AssociateTrackerConsumerInput {
@@ -10621,9 +10645,11 @@ impl std::fmt::Debug for AssociateTrackerConsumerInput {
 pub struct ListTrackersInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackersInput {
@@ -10658,19 +10684,24 @@ pub struct CreateTrackerInput {
     /// <li> <p>Must be a unique tracker resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the tracker resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -10683,6 +10714,7 @@ pub struct CreateTrackerInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the position filtering for the tracker resource.</p>
@@ -10693,6 +10725,7 @@ pub struct CreateTrackerInput {
     /// <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
+    #[doc(hidden)]
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
 impl CreateTrackerInput {
@@ -10775,6 +10808,7 @@ impl std::fmt::Debug for CreateTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrackerInput {
     /// <p>The name of the tracker resource to be deleted.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
 }
 impl DeleteTrackerInput {
@@ -10796,17 +10830,21 @@ impl std::fmt::Debug for DeleteTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the tracker resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Updates the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
@@ -10815,6 +10853,7 @@ pub struct UpdateTrackerInput {
     /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
     /// <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This helps educe the effects of GPS noise when displaying device trajectories on a map, and can help control costs by reducing the number of geofence evaluations. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
 impl UpdateTrackerInput {
@@ -10867,6 +10906,7 @@ impl std::fmt::Debug for UpdateTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrackerInput {
@@ -10888,6 +10928,7 @@ impl std::fmt::Debug for DescribeTrackerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -10895,6 +10936,7 @@ pub struct CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    #[doc(hidden)]
     pub departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -10902,6 +10944,7 @@ pub struct CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    #[doc(hidden)]
     pub destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
@@ -10910,6 +10953,7 @@ pub struct CalculateRouteMatrixInput {
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
     /// <p>Default Value: <code>Car</code> </p>
+    #[doc(hidden)]
     pub travel_mode: std::option::Option<crate::model::TravelMode>,
     /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -10917,19 +10961,24 @@ pub struct CalculateRouteMatrixInput {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub departure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub depart_now: std::option::Option<bool>,
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    #[doc(hidden)]
     pub car_mode_options: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    #[doc(hidden)]
     pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
 }
 impl CalculateRouteMatrixInput {
@@ -11021,6 +11070,7 @@ impl std::fmt::Debug for CalculateRouteMatrixInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
@@ -11029,6 +11079,7 @@ pub struct CalculateRouteInput {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    #[doc(hidden)]
     pub departure_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
@@ -11037,6 +11088,7 @@ pub struct CalculateRouteInput {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    #[doc(hidden)]
     pub destination_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
     /// <ul>
@@ -11047,6 +11099,7 @@ pub struct CalculateRouteInput {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    #[doc(hidden)]
     pub waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
@@ -11055,6 +11108,7 @@ pub struct CalculateRouteInput {
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
     /// <p>Default Value: <code>Car</code> </p>
+    #[doc(hidden)]
     pub travel_mode: std::option::Option<crate::model::TravelMode>,
     /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -11062,23 +11116,29 @@ pub struct CalculateRouteInput {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub departure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub depart_now: std::option::Option<bool>,
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
     /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub include_leg_geometry: std::option::Option<bool>,
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    #[doc(hidden)]
     pub car_mode_options: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    #[doc(hidden)]
     pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
 }
 impl CalculateRouteInput {
@@ -11193,9 +11253,11 @@ impl std::fmt::Debug for CalculateRouteInput {
 pub struct ListRouteCalculatorsInput {
     /// <p>An optional maximum number of results returned in a single call.</p>
     /// <p>Default Value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default Value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRouteCalculatorsInput {
@@ -11230,6 +11292,7 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>Specifies the data provider of traffic and road network data.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>
@@ -11240,14 +11303,17 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the route calculator resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
@@ -11263,6 +11329,7 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11339,6 +11406,7 @@ impl std::fmt::Debug for CreateRouteCalculatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteCalculatorInput {
     /// <p>The name of the route calculator resource to be deleted.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
 }
 impl DeleteRouteCalculatorInput {
@@ -11360,14 +11428,17 @@ impl std::fmt::Debug for DeleteRouteCalculatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the route calculator resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateRouteCalculatorInput {
@@ -11403,6 +11474,7 @@ impl std::fmt::Debug for UpdateRouteCalculatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
 }
 impl DescribeRouteCalculatorInput {
@@ -11424,34 +11496,41 @@ impl std::fmt::Debug for DescribeRouteCalculatorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
     /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
+    #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
     /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
     /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
     /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
+    #[doc(hidden)]
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
     /// <ul>
     /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>50</code> </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForTextInput {
@@ -11519,34 +11598,41 @@ impl std::fmt::Debug for SearchPlaceIndexForTextInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
     /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
+    #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
     /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
     /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
+    #[doc(hidden)]
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>5</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForSuggestionsInput {
@@ -11614,19 +11700,23 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForPositionInput {
@@ -11671,9 +11761,11 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
 pub struct ListPlaceIndexesInput {
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaceIndexesInput {
@@ -11708,6 +11800,7 @@ pub struct CreatePlaceIndexInput {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -11720,16 +11813,20 @@ pub struct CreatePlaceIndexInput {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the data storage option requesting Places.</p>
+    #[doc(hidden)]
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -11742,6 +11839,7 @@ pub struct CreatePlaceIndexInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11824,6 +11922,7 @@ impl std::fmt::Debug for CreatePlaceIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl DeletePlaceIndexInput {
@@ -11845,16 +11944,20 @@ impl std::fmt::Debug for DeletePlaceIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the place index resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Updates the data storage option for the place index resource.</p>
+    #[doc(hidden)]
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
 }
 impl UpdatePlaceIndexInput {
@@ -11897,6 +12000,7 @@ impl std::fmt::Debug for UpdatePlaceIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlaceIndexInput {
     /// <p>The name of the place index resource.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl DescribePlaceIndexInput {
@@ -11918,12 +12022,16 @@ impl std::fmt::Debug for DescribePlaceIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapTileInput {
     /// <p>The map resource to retrieve the map tiles from.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The zoom value for the map tile.</p>
+    #[doc(hidden)]
     pub z: std::option::Option<std::string::String>,
     /// <p>The X axis value for the map tile.</p>
+    #[doc(hidden)]
     pub x: std::option::Option<std::string::String>,
     /// <p>The Y axis value for the map tile. </p>
+    #[doc(hidden)]
     pub y: std::option::Option<std::string::String>,
 }
 impl GetMapTileInput {
@@ -11960,6 +12068,7 @@ impl std::fmt::Debug for GetMapTileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapStyleDescriptorInput {
     /// <p>The map resource to retrieve the style descriptor from.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
 }
 impl GetMapStyleDescriptorInput {
@@ -11981,6 +12090,7 @@ impl std::fmt::Debug for GetMapStyleDescriptorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
@@ -11992,6 +12102,7 @@ pub struct GetMapSpritesInput {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
 }
 impl GetMapSpritesInput {
@@ -12027,6 +12138,7 @@ impl std::fmt::Debug for GetMapSpritesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
@@ -12042,8 +12154,10 @@ pub struct GetMapGlyphsInput {
     /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
     /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub font_stack: std::option::Option<std::string::String>,
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
+    #[doc(hidden)]
     pub font_unicode_range: std::option::Option<std::string::String>,
 }
 impl GetMapGlyphsInput {
@@ -12089,9 +12203,11 @@ impl std::fmt::Debug for GetMapGlyphsInput {
 pub struct ListMapsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMapsInput {
@@ -12126,16 +12242,20 @@ pub struct CreateMapInput {
     /// <li> <p>Must be a unique map resource name. </p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>Specifies the map style selected from an available data provider.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MapConfiguration>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>An optional description for the map resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -12148,6 +12268,7 @@ pub struct CreateMapInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12213,6 +12334,7 @@ impl std::fmt::Debug for CreateMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMapInput {
     /// <p>The name of the map resource to be deleted.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
 }
 impl DeleteMapInput {
@@ -12234,14 +12356,17 @@ impl std::fmt::Debug for DeleteMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the map resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateMapInput {
@@ -12277,6 +12402,7 @@ impl std::fmt::Debug for UpdateMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMapInput {
     /// <p>The name of the map resource.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
 }
 impl DescribeMapInput {
@@ -12298,12 +12424,15 @@ impl std::fmt::Debug for DescribeMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGeofenceInput {
     /// <p>The geofence collection to store the geofence in.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
 }
 impl PutGeofenceInput {
@@ -12337,12 +12466,15 @@ impl std::fmt::Debug for PutGeofenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional limit for the number of geofences returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListGeofencesInput {
@@ -12376,8 +12508,10 @@ impl std::fmt::Debug for ListGeofencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeofenceInput {
     /// <p>The geofence collection storing the target geofence.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The geofence you're retrieving details for.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
 }
 impl GetGeofenceInput {
@@ -12404,8 +12538,10 @@ impl std::fmt::Debug for GetGeofenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceRequestEntry>>,
 }
 impl BatchPutGeofenceInput {
@@ -12432,8 +12568,10 @@ impl std::fmt::Debug for BatchPutGeofenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesInput {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
+    #[doc(hidden)]
     pub device_position_updates:
         std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
 }
@@ -12463,8 +12601,10 @@ impl std::fmt::Debug for BatchEvaluateGeofencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The batch of geofences to be deleted.</p>
+    #[doc(hidden)]
     pub geofence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteGeofenceInput {
@@ -12492,9 +12632,11 @@ impl std::fmt::Debug for BatchDeleteGeofenceInput {
 pub struct ListGeofenceCollectionsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofenceCollectionsInput {
@@ -12529,17 +12671,21 @@ pub struct CreateGeofenceCollectionInput {
     /// <li> <p>Must be a unique geofence collection name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the geofence collection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -12552,9 +12698,11 @@ pub struct CreateGeofenceCollectionInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateGeofenceCollectionInput {
@@ -12625,6 +12773,7 @@ impl std::fmt::Debug for CreateGeofenceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
 }
 impl DeleteGeofenceCollectionInput {
@@ -12646,17 +12795,21 @@ impl std::fmt::Debug for DeleteGeofenceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the geofence collection.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateGeofenceCollectionInput {
@@ -12698,6 +12851,7 @@ impl std::fmt::Debug for UpdateGeofenceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
 }
 impl DescribeGeofenceCollectionInput {
@@ -12722,8 +12876,10 @@ pub struct UntagResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -12756,6 +12912,7 @@ pub struct TagResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -12768,6 +12925,7 @@ pub struct TagResourceInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12814,6 +12972,7 @@ pub struct ListTagsForResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {

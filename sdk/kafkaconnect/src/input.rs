@@ -2100,10 +2100,13 @@ impl UpdateConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorInput {
     /// <p>The target capacity.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<crate::model::CapacityUpdate>,
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the connector that you want to update.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorInput {
@@ -2135,8 +2138,10 @@ impl std::fmt::Debug for UpdateConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerConfigurationsInput {
     /// <p>The maximum number of worker configurations to list in one response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkerConfigurationsInput {
@@ -2163,8 +2168,10 @@ impl std::fmt::Debug for ListWorkerConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomPluginsInput {
     /// <p>The maximum number of custom plugins to list in one response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomPluginsInput {
@@ -2191,10 +2198,13 @@ impl std::fmt::Debug for ListCustomPluginsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorsInput {
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
+    #[doc(hidden)]
     pub connector_name_prefix: std::option::Option<std::string::String>,
     /// <p>The maximum number of connectors to list in one response.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorsInput {
@@ -2226,6 +2236,7 @@ impl std::fmt::Debug for ListConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeWorkerConfigurationInput {
@@ -2247,6 +2258,7 @@ impl std::fmt::Debug for DescribeWorkerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCustomPluginInput {
@@ -2268,6 +2280,7 @@ impl std::fmt::Debug for DescribeCustomPluginInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorInput {
@@ -2289,6 +2302,7 @@ impl std::fmt::Debug for DescribeConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomPluginInput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCustomPluginInput {
@@ -2310,8 +2324,10 @@ impl std::fmt::Debug for DeleteCustomPluginInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the connector that you want to delete.</p>
+    #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl DeleteConnectorInput {
@@ -2338,10 +2354,13 @@ impl std::fmt::Debug for DeleteConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the worker configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    #[doc(hidden)]
     pub properties_file_content: std::option::Option<std::string::String>,
 }
 impl CreateWorkerConfigurationInput {
@@ -2376,12 +2395,16 @@ impl std::fmt::Debug for CreateWorkerConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::CustomPluginContentType>,
     /// <p>A summary description of the custom plugin.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the location of a custom plugin.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::CustomPluginLocation>,
     /// <p>The name of the custom plugin.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateCustomPluginInput {
@@ -2418,31 +2441,43 @@ impl std::fmt::Debug for CreateCustomPluginInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorInput {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
+    #[doc(hidden)]
     pub capacity: std::option::Option<crate::model::Capacity>,
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    #[doc(hidden)]
     pub connector_configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A summary description of the connector.</p>
+    #[doc(hidden)]
     pub connector_description: std::option::Option<std::string::String>,
     /// <p>The name of the connector.</p>
+    #[doc(hidden)]
     pub connector_name: std::option::Option<std::string::String>,
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
+    #[doc(hidden)]
     pub kafka_cluster: std::option::Option<crate::model::KafkaCluster>,
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub kafka_cluster_client_authentication:
         std::option::Option<crate::model::KafkaClusterClientAuthentication>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit:
         std::option::Option<crate::model::KafkaClusterEncryptionInTransit>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    #[doc(hidden)]
     pub kafka_connect_version: std::option::Option<std::string::String>,
     /// <p>Details about log delivery.</p>
+    #[doc(hidden)]
     pub log_delivery: std::option::Option<crate::model::LogDelivery>,
     /// <p>Specifies which plugins to use for the connector.</p>
+    #[doc(hidden)]
     pub plugins: std::option::Option<std::vec::Vec<crate::model::Plugin>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
+    #[doc(hidden)]
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies which worker configuration to use with the connector.</p>
+    #[doc(hidden)]
     pub worker_configuration: std::option::Option<crate::model::WorkerConfiguration>,
 }
 impl CreateConnectorInput {

@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     /// Error code for the exception
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Field that has invalid input
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
 }
 impl InvalidInputException {
@@ -109,8 +112,10 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {
     /// Error code for the exception
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalException {
@@ -194,8 +199,10 @@ impl InternalException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Resource type that caused the exception
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
@@ -282,10 +289,13 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// Error code for the exception
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// Resource type that caused the exception
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {

@@ -3607,12 +3607,16 @@ impl UpdateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainInput {
     /// <p>The identifier of the domain to be updated.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description about this domain.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
@@ -3655,8 +3659,10 @@ impl std::fmt::Debug for UpdateDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys you want to remove from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3683,8 +3689,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to assign to the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3711,18 +3719,25 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeakerEnrollmentJobInput {
     /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A name for your speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
+    #[doc(hidden)]
     pub enrollment_config: std::option::Option<crate::model::EnrollmentConfig>,
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
 }
 impl StartSpeakerEnrollmentJobInput {
@@ -3774,18 +3789,25 @@ impl std::fmt::Debug for StartSpeakerEnrollmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFraudsterRegistrationJobInput {
     /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the new fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    #[doc(hidden)]
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
+    #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
 }
 impl StartFraudsterRegistrationJobInput {
@@ -3837,8 +3859,10 @@ impl std::fmt::Debug for StartFraudsterRegistrationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptOutSpeakerInput {
     /// <p>The identifier of the domain containing the speaker.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker you want opted-out.</p>
+    #[doc(hidden)]
     pub speaker_id: std::option::Option<std::string::String>,
 }
 impl OptOutSpeakerInput {
@@ -3865,6 +3889,7 @@ impl std::fmt::Debug for OptOutSpeakerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -3886,10 +3911,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeakersInput {
     /// <p>The identifier of the domain.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakersInput {
@@ -3921,12 +3949,16 @@ impl std::fmt::Debug for ListSpeakersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeakerEnrollmentJobsInput {
     /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of your speaker enrollment Job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakerEnrollmentJobsInput {
@@ -3963,12 +3995,16 @@ impl std::fmt::Debug for ListSpeakerEnrollmentJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFraudsterRegistrationJobsInput {
     /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of your fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFraudsterRegistrationJobsInput {
@@ -4005,8 +4041,10 @@ impl std::fmt::Debug for ListFraudsterRegistrationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsInput {
@@ -4033,8 +4071,10 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+    #[doc(hidden)]
     pub session_name_or_id: std::option::Option<std::string::String>,
 }
 impl EvaluateSessionInput {
@@ -4061,8 +4101,10 @@ impl std::fmt::Debug for EvaluateSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpeakerEnrollmentJobInput {
     /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpeakerEnrollmentJobInput {
@@ -4089,8 +4131,10 @@ impl std::fmt::Debug for DescribeSpeakerEnrollmentJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpeakerInput {
     /// <p>The identifier of the domain that contains the speaker.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker you are describing.</p>
+    #[doc(hidden)]
     pub speaker_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpeakerInput {
@@ -4117,8 +4161,10 @@ impl std::fmt::Debug for DescribeSpeakerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the fraudster registration job you are describing.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeFraudsterRegistrationJobInput {
@@ -4145,8 +4191,10 @@ impl std::fmt::Debug for DescribeFraudsterRegistrationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFraudsterInput {
     /// <p>The identifier of the domain containing the fraudster.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the fraudster you are describing.</p>
+    #[doc(hidden)]
     pub fraudster_id: std::option::Option<std::string::String>,
 }
 impl DescribeFraudsterInput {
@@ -4173,6 +4221,7 @@ impl std::fmt::Debug for DescribeFraudsterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
     /// <p>The identifier of the domain you are describing.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -4194,8 +4243,10 @@ impl std::fmt::Debug for DescribeDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSpeakerInput {
     /// <p>The identifier of the domain containing the speaker.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker you want to delete.</p>
+    #[doc(hidden)]
     pub speaker_id: std::option::Option<std::string::String>,
 }
 impl DeleteSpeakerInput {
@@ -4222,8 +4273,10 @@ impl std::fmt::Debug for DeleteSpeakerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFraudsterInput {
     /// <p>The identifier of the domain containing the fraudster.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the fraudster you want to delete.</p>
+    #[doc(hidden)]
     pub fraudster_id: std::option::Option<std::string::String>,
 }
 impl DeleteFraudsterInput {
@@ -4250,6 +4303,7 @@ impl std::fmt::Debug for DeleteFraudsterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -4271,15 +4325,20 @@ impl std::fmt::Debug for DeleteDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
     /// <p>The name of the domain.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description of this domain.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
+    #[doc(hidden)]
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of tags you want added to the domain.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDomainInput {

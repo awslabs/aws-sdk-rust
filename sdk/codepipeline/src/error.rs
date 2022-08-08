@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -69,6 +70,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -133,6 +135,7 @@ impl LimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStructureException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStructureException {
@@ -197,6 +200,7 @@ impl InvalidStructureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStageDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStageDeclarationException {
@@ -261,6 +265,7 @@ impl InvalidStageDeclarationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBlockerDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBlockerDeclarationException {
@@ -325,6 +330,7 @@ impl InvalidBlockerDeclarationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActionDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidActionDeclarationException {
@@ -389,6 +395,7 @@ impl InvalidActionDeclarationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestFailedException {
@@ -453,6 +460,7 @@ impl RequestFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionTypeNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActionTypeNotFoundException {
@@ -517,6 +525,7 @@ impl ActionTypeNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -581,6 +590,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagsException {
@@ -645,6 +655,7 @@ impl InvalidTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArnException {
@@ -709,6 +720,7 @@ impl InvalidArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModificationException {
@@ -773,6 +785,7 @@ impl ConcurrentModificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsException {
@@ -837,6 +850,7 @@ impl TooManyTagsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineNotFoundException {
@@ -901,6 +915,7 @@ impl PipelineNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecutionNotStoppableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineExecutionNotStoppableException {
@@ -965,6 +980,7 @@ impl PipelineExecutionNotStoppableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicatedStopRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DuplicatedStopRequestException {
@@ -1029,6 +1045,7 @@ impl DuplicatedStopRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -1093,6 +1110,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageNotRetryableException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StageNotRetryableException {
@@ -1157,6 +1175,7 @@ impl StageNotRetryableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StageNotFoundException {
@@ -1221,6 +1240,7 @@ impl StageNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotLatestPipelineExecutionException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotLatestPipelineExecutionException {
@@ -1285,6 +1305,7 @@ impl NotLatestPipelineExecutionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebhookNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WebhookNotFoundException {
@@ -1349,6 +1370,7 @@ impl WebhookNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidWebhookFilterPatternException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidWebhookFilterPatternException {
@@ -1413,6 +1435,7 @@ impl InvalidWebhookFilterPatternException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidWebhookAuthenticationParametersException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidWebhookAuthenticationParametersException {
@@ -1477,6 +1500,7 @@ impl InvalidWebhookAuthenticationParametersException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for JobNotFoundException {
@@ -1541,6 +1565,7 @@ impl JobNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobStateException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidJobStateException {
@@ -1605,6 +1630,7 @@ impl InvalidJobStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidClientTokenException {
@@ -1669,6 +1695,7 @@ impl InvalidClientTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputVariablesSizeExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OutputVariablesSizeExceededException {
@@ -1733,6 +1760,7 @@ impl OutputVariablesSizeExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApprovalTokenException {
@@ -1797,6 +1825,7 @@ impl InvalidApprovalTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalAlreadyCompletedException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApprovalAlreadyCompletedException {
@@ -1861,6 +1890,7 @@ impl ApprovalAlreadyCompletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActionNotFoundException {
@@ -1925,6 +1955,7 @@ impl ActionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -1989,6 +2020,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecutionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineExecutionNotFoundException {
@@ -2053,6 +2085,7 @@ impl PipelineExecutionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidJobException {
@@ -2117,6 +2150,7 @@ impl InvalidJobException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineVersionNotFoundException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineVersionNotFoundException {
@@ -2181,6 +2215,7 @@ impl PipelineVersionNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineNameInUseException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineNameInUseException {
@@ -2245,6 +2280,7 @@ impl PipelineNameInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNonceException {
     /// <p>The message provided to the user in the event of an exception.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNonceException {

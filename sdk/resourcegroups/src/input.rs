@@ -2659,12 +2659,15 @@ impl UpdateGroupQueryInput {
 pub struct UpdateGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
 }
 impl UpdateGroupQueryInput {
@@ -2700,10 +2703,13 @@ impl std::fmt::Debug for UpdateGroupQueryInput {
 pub struct UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to modify.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateGroupInput {
@@ -2736,8 +2742,10 @@ impl std::fmt::Debug for UpdateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagInput {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagInput {
@@ -2764,8 +2772,10 @@ impl std::fmt::Debug for UntagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UngroupResourcesInput {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The ARNs of the resources to be removed from the group.</p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UngroupResourcesInput {
@@ -2792,8 +2802,10 @@ impl std::fmt::Debug for UngroupResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagInput {
     /// <p>The ARN of the resource group to which to add tags.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2824,10 +2836,13 @@ impl std::fmt::Debug for TagInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesInput {
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
+    #[doc(hidden)]
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchResourcesInput {
@@ -2859,11 +2874,13 @@ impl std::fmt::Debug for SearchResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGroupConfigurationInput {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInput {
@@ -2901,10 +2918,13 @@ pub struct ListGroupsInput {
     /// <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::GroupFilter>>,
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsInput {
@@ -2947,8 +2967,10 @@ pub struct ListGroupResourcesInput {
     /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
     /// <ul>
@@ -2957,10 +2979,13 @@ pub struct ListGroupResourcesInput {
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
     /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ResourceFilter>>,
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupResourcesInput {
@@ -3011,8 +3036,10 @@ impl std::fmt::Debug for ListGroupResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupResourcesInput {
     /// <p>The name or the ARN of the resource group to add resources to.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The list of ARNs for resources to be added to the group. </p>
+    #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GroupResourcesInput {
@@ -3039,6 +3066,7 @@ impl std::fmt::Debug for GroupResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
     /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetTagsInput {
@@ -3061,8 +3089,10 @@ impl std::fmt::Debug for GetTagsInput {
 pub struct GetGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupQueryInput {
@@ -3090,6 +3120,7 @@ impl std::fmt::Debug for GetGroupQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupConfigurationInput {
     /// <p>The name or the ARN of the resource group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupConfigurationInput {
@@ -3112,8 +3143,10 @@ impl std::fmt::Debug for GetGroupConfigurationInput {
 pub struct GetGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to retrieve.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
@@ -3142,8 +3175,10 @@ impl std::fmt::Debug for GetGroupInput {
 pub struct DeleteGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to delete.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
@@ -3171,19 +3206,24 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
     /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
     /// <p>The tags to add to the group. A tag is key-value pair string.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
+    #[doc(hidden)]
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
 }
 impl CreateGroupInput {

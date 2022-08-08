@@ -5,24 +5,34 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Server {
     /// <p>Associate a public IP address with a server that you are launching. </p>
+    #[doc(hidden)]
     pub associate_public_ip_address: std::option::Option<bool>,
     /// <p>The number of automated backups to keep. </p>
+    #[doc(hidden)]
     pub backup_retention_count: std::option::Option<i32>,
     /// <p>The name of the server. </p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code> </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+    #[doc(hidden)]
     pub cloud_formation_stack_arn: std::option::Option<std::string::String>,
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
+    #[doc(hidden)]
     pub custom_domain: std::option::Option<std::string::String>,
     /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount. </p>
+    #[doc(hidden)]
     pub disable_automated_backup: std::option::Option<bool>,
     /// <p> A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified. </p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
+    #[doc(hidden)]
     pub engine_model: std::option::Option<std::string::String>,
     /// <p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p>
     /// <p class="title"> <b>Attributes returned in a createServer response for Chef</b> </p>
@@ -35,32 +45,46 @@ pub struct Server {
     /// <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li>
     /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>. </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The instance profile ARN of the server. </p>
+    #[doc(hidden)]
     pub instance_profile_arn: std::option::Option<std::string::String>,
     /// <p> The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console. </p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The key pair associated with the server. </p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<std::string::String>,
     /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>. </p>
+    #[doc(hidden)]
     pub maintenance_status: std::option::Option<crate::model::MaintenanceStatus>,
     /// <p>The preferred maintenance period specified for the server. </p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The preferred backup period specified for the server. </p>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p> The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console. </p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The service role ARN used to create the server. </p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p> The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ServerStatus>,
     /// <p> Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results). </p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p> The subnet IDs specified in a CreateServer request. </p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN of the server. </p>
+    #[doc(hidden)]
     pub server_arn: std::option::Option<std::string::String>,
 }
 impl Server {
@@ -777,8 +801,10 @@ impl AsRef<str> for MaintenanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineAttribute {
     /// <p>The name of the engine attribute. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the engine attribute. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl EngineAttribute {
@@ -850,8 +876,10 @@ impl EngineAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>An optional tag value, such as <code>Production</code> or <code>test-owcm-server</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1003,12 +1031,16 @@ impl AsRef<str> for NodeAssociationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerEvent {
     /// <p>The time when the event occurred. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the server on or for which the event occurred. </p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p>A human-readable informational or status message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 URL of the event's log file.</p>
+    #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
 }
 impl ServerEvent {
@@ -1117,54 +1149,78 @@ impl ServerEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Backup {
     /// <p>The ARN of the backup. </p>
+    #[doc(hidden)]
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
+    #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
     /// <p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>
+    #[doc(hidden)]
     pub backup_type: std::option::Option<crate::model::BackupType>,
     /// <p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A user-provided description for a manual backup. This field is empty for automated backups. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> The engine type that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p> The engine model that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub engine_model: std::option::Option<std::string::String>,
     /// <p> The engine version that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>
+    #[doc(hidden)]
     pub instance_profile_arn: std::option::Option<std::string::String>,
     /// <p> The instance type that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p> The key pair that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub key_pair: std::option::Option<std::string::String>,
     /// <p> The preferred backup period that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p> The preferred maintenance period that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
+    #[doc(hidden)]
     pub s3_data_size: std::option::Option<i32>,
     /// <p> This field is deprecated and is no longer used. </p>
     #[deprecated]
+    #[doc(hidden)]
     pub s3_data_url: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 URL of the backup's log file. </p>
+    #[doc(hidden)]
     pub s3_log_url: std::option::Option<std::string::String>,
     /// <p> The security group IDs that are obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The name of the server from which the backup was made. </p>
+    #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
     /// <p> The service role ARN that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The status of a backup while in progress. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::BackupStatus>,
     /// <p> An informational message about backup status. </p>
+    #[doc(hidden)]
     pub status_description: std::option::Option<std::string::String>,
     /// <p> The subnet IDs that are obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>
+    #[doc(hidden)]
     pub tools_version: std::option::Option<std::string::String>,
     /// <p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl Backup {
@@ -1795,10 +1851,13 @@ pub struct AccountAttribute {
     /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The maximum allowed value. </p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<i32>,
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
+    #[doc(hidden)]
     pub used: std::option::Option<i32>,
 }
 impl AccountAttribute {

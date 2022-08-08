@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateInfrastructureConfigurationOutput {
@@ -105,10 +108,13 @@ impl UpdateInfrastructureConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl UpdateImagePipelineOutput {
@@ -200,10 +206,13 @@ impl UpdateImagePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionConfigurationOutput {
@@ -361,10 +370,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImagePipelineExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl StartImagePipelineExecutionOutput {
@@ -456,8 +468,10 @@ impl StartImagePipelineExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl PutImageRecipePolicyOutput {
@@ -532,8 +546,10 @@ impl PutImageRecipePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImagePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
 }
 impl PutImagePolicyOutput {
@@ -605,8 +621,10 @@ impl PutImagePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutContainerRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl PutContainerRecipePolicyOutput {
@@ -681,8 +699,10 @@ impl PutContainerRecipePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutComponentPolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
+    #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
 }
 impl PutComponentPolicyOutput {
@@ -757,6 +777,7 @@ impl PutComponentPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -830,11 +851,14 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInfrastructureConfigurationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of infrastructure configurations.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::InfrastructureConfigurationSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInfrastructureConfigurationsOutput {
@@ -946,6 +970,7 @@ impl ListInfrastructureConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -962,8 +987,10 @@ pub struct ListImagesOutput {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    #[doc(hidden)]
     pub image_version_list: std::option::Option<std::vec::Vec<crate::model::ImageVersion>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagesOutput {
@@ -1104,11 +1131,14 @@ impl ListImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image pipelines.</p>
+    #[doc(hidden)]
     pub image_recipe_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ImageRecipeSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageRecipesOutput {
@@ -1212,10 +1242,13 @@ impl ListImageRecipesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePipelinesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image pipelines.</p>
+    #[doc(hidden)]
     pub image_pipeline_list: std::option::Option<std::vec::Vec<crate::model::ImagePipeline>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelinesOutput {
@@ -1314,10 +1347,13 @@ impl ListImagePipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePipelineImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of images built by this pipeline.</p>
+    #[doc(hidden)]
     pub image_summary_list: std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelineImagesOutput {
@@ -1416,10 +1452,13 @@ impl ListImagePipelineImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePackagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of Image Packages returned in the response.</p>
+    #[doc(hidden)]
     pub image_package_list: std::option::Option<std::vec::Vec<crate::model::ImagePackage>>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePackagesOutput {
@@ -1518,10 +1557,13 @@ impl ListImagePackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image build versions.</p>
+    #[doc(hidden)]
     pub image_summary_list: std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageBuildVersionsOutput {
@@ -1620,11 +1662,14 @@ impl ListImageBuildVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionConfigurationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of distributions.</p>
+    #[doc(hidden)]
     pub distribution_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::DistributionConfigurationSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDistributionConfigurationsOutput {
@@ -1736,11 +1781,14 @@ impl ListDistributionConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainerRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of container recipes returned for the request.</p>
+    #[doc(hidden)]
     pub container_recipe_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ContainerRecipeSummary>>,
     /// <p>The next token field is used for paginated responses. When this is not empty, there are additional container recipes that the service has not included in this response. Use this token with the next request to retrieve additional list items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainerRecipesOutput {
@@ -1847,6 +1895,7 @@ impl ListContainerRecipesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of component semantic versions.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -1862,8 +1911,10 @@ pub struct ListComponentsOutput {
     /// </minor>
     /// </major></p>
     /// </note>
+    #[doc(hidden)]
     pub component_version_list: std::option::Option<std::vec::Vec<crate::model::ComponentVersion>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
@@ -2001,10 +2052,13 @@ impl ListComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of component summaries for the specified semantic version.</p>
+    #[doc(hidden)]
     pub component_summary_list: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentBuildVersionsOutput {
@@ -2103,10 +2157,13 @@ impl ListComponentBuildVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportVmImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token that was used for this request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportVmImageOutput {
@@ -2195,10 +2252,13 @@ impl ImportVmImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
+    #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl ImportComponentOutput {
@@ -2296,8 +2356,10 @@ impl ImportComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The infrastructure configuration object.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration:
         std::option::Option<crate::model::InfrastructureConfiguration>,
 }
@@ -2382,8 +2444,10 @@ impl GetInfrastructureConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image recipe policy object.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetImageRecipePolicyOutput {
@@ -2455,8 +2519,10 @@ impl GetImageRecipePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image recipe object.</p>
+    #[doc(hidden)]
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
 }
 impl GetImageRecipeOutput {
@@ -2531,8 +2597,10 @@ impl GetImageRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image policy object.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetImagePolicyOutput {
@@ -2604,8 +2672,10 @@ impl GetImagePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image pipeline object.</p>
+    #[doc(hidden)]
     pub image_pipeline: std::option::Option<crate::model::ImagePipeline>,
 }
 impl GetImagePipelineOutput {
@@ -2680,8 +2750,10 @@ impl GetImagePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The image object.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl GetImageOutput {
@@ -2753,8 +2825,10 @@ impl GetImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The distribution configuration object.</p>
+    #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
 }
 impl GetDistributionConfigurationOutput {
@@ -2838,8 +2912,10 @@ impl GetDistributionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The container recipe policy object that is returned.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipePolicyOutput {
@@ -2911,8 +2987,10 @@ impl GetContainerRecipePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The container recipe object that is returned.</p>
+    #[doc(hidden)]
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
 }
 impl GetContainerRecipeOutput {
@@ -2987,8 +3065,10 @@ impl GetContainerRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentPolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The component policy.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetComponentPolicyOutput {
@@ -3060,8 +3140,10 @@ impl GetComponentPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The component object associated with the specified ARN.</p>
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
@@ -3136,8 +3218,10 @@ impl GetComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInfrastructureConfigurationOutput {
@@ -3218,8 +3302,10 @@ impl DeleteInfrastructureConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageRecipeOutput {
@@ -3294,8 +3380,10 @@ impl DeleteImageRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImagePipelineOutput {
@@ -3370,8 +3458,10 @@ impl DeleteImagePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageOutput {
@@ -3446,8 +3536,10 @@ impl DeleteImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionConfigurationOutput {
@@ -3528,8 +3620,10 @@ impl DeleteDistributionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteContainerRecipeOutput {
@@ -3604,8 +3698,10 @@ impl DeleteContainerRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component build version that was deleted.</p>
+    #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteComponentOutput {
@@ -3686,10 +3782,13 @@ impl DeleteComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
+    #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateInfrastructureConfigurationOutput {
@@ -3787,10 +3886,13 @@ impl CreateInfrastructureConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
+    #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl CreateImageRecipeOutput {
@@ -3882,10 +3984,13 @@ impl CreateImageRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImagePipelineOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p> The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl CreateImagePipelineOutput {
@@ -3977,10 +4082,13 @@ impl CreateImagePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p> The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateImageOutput {
@@ -4072,10 +4180,13 @@ impl CreateImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionConfigurationOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p> The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
+    #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationOutput {
@@ -4173,10 +4284,13 @@ impl CreateDistributionConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The client token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
+    #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl CreateContainerRecipeOutput {
@@ -4268,10 +4382,13 @@ impl CreateContainerRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateComponentOutput {
@@ -4369,10 +4486,13 @@ impl CreateComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelImageCreationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token that was used for this request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
+    #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl CancelImageCreationOutput {

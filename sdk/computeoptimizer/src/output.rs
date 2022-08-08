@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl UpdateEnrollmentStatusOutput {
@@ -111,8 +113,10 @@ impl PutRecommendationPreferencesOutput {
 pub struct GetRecommendationSummariesOutput {
     /// <p>The token to use to advance to the next page of recommendation summaries.</p>
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that summarize a recommendation.</p>
+    #[doc(hidden)]
     pub recommendation_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
 }
@@ -204,8 +208,10 @@ impl GetRecommendationSummariesOutput {
 pub struct GetRecommendationPreferencesOutput {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe recommendation preferences.</p>
+    #[doc(hidden)]
     pub recommendation_preferences_details:
         std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>,
 }
@@ -302,8 +308,10 @@ impl GetRecommendationPreferencesOutput {
 pub struct GetLambdaFunctionRecommendationsOutput {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe function recommendations.</p>
+    #[doc(hidden)]
     pub lambda_function_recommendations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>,
 }
@@ -397,10 +405,12 @@ impl GetLambdaFunctionRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
+    #[doc(hidden)]
     pub account_enrollment_statuses:
         std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
     /// <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
@@ -493,15 +503,20 @@ impl GetEnrollmentStatusesForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
+    #[doc(hidden)]
     pub member_accounts_enrolled: bool,
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
+    #[doc(hidden)]
     pub number_of_member_accounts_opted_in: std::option::Option<i32>,
 }
 impl GetEnrollmentStatusOutput {
@@ -642,6 +657,7 @@ pub struct GetEffectiveRecommendationPreferencesOutput {
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
 }
@@ -718,6 +734,7 @@ impl GetEffectiveRecommendationPreferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2RecommendationProjectedMetricsOutput {
     /// <p>An array of objects that describes projected metrics.</p>
+    #[doc(hidden)]
     pub recommended_option_projected_metrics:
         std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
 }
@@ -796,12 +813,15 @@ impl GetEc2RecommendationProjectedMetricsOutput {
 pub struct GetEc2InstanceRecommendationsOutput {
     /// <p>The token to use to advance to the next page of instance recommendations.</p>
     /// <p>This value is null when there are no more pages of instance recommendations to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe instance recommendations.</p>
+    #[doc(hidden)]
     pub instance_recommendations:
         std::option::Option<std::vec::Vec<crate::model::InstanceRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
 impl GetEc2InstanceRecommendationsOutput {
@@ -921,12 +941,15 @@ impl GetEc2InstanceRecommendationsOutput {
 pub struct GetEbsVolumeRecommendationsOutput {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe volume recommendations.</p>
+    #[doc(hidden)]
     pub volume_recommendations:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
 impl GetEbsVolumeRecommendationsOutput {
@@ -1043,12 +1066,15 @@ impl GetEbsVolumeRecommendationsOutput {
 pub struct GetAutoScalingGroupRecommendationsOutput {
     /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>
     /// <p>This value is null when there are no more pages of Auto Scaling group recommendations to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_recommendations:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
 impl GetAutoScalingGroupRecommendationsOutput {
@@ -1171,8 +1197,10 @@ impl GetAutoScalingGroupRecommendationsOutput {
 pub struct ExportLambdaFunctionRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl ExportLambdaFunctionRecommendationsOutput {
@@ -1251,8 +1279,10 @@ impl ExportLambdaFunctionRecommendationsOutput {
 pub struct ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl ExportEc2InstanceRecommendationsOutput {
@@ -1331,8 +1361,10 @@ impl ExportEc2InstanceRecommendationsOutput {
 pub struct ExportEbsVolumeRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl ExportEbsVolumeRecommendationsOutput {
@@ -1411,8 +1443,10 @@ impl ExportEbsVolumeRecommendationsOutput {
 pub struct ExportAutoScalingGroupRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
 impl ExportAutoScalingGroupRecommendationsOutput {
@@ -1490,10 +1524,12 @@ impl ExportAutoScalingGroupRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationExportJobsOutput {
     /// <p>An array of objects that describe recommendation export jobs.</p>
+    #[doc(hidden)]
     pub recommendation_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
     /// <p>The token to use to advance to the next page of export jobs.</p>
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRecommendationExportJobsOutput {

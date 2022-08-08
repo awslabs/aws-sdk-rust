@@ -2964,25 +2964,32 @@ impl UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub readme_body: std::option::Option<std::string::String>,
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
+    #[doc(hidden)]
     pub readme_url: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -3041,8 +3048,10 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The AWS Organization ID to unshare the application from.</p>
+    #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl UnshareApplicationInput {
@@ -3069,8 +3078,10 @@ impl std::fmt::Debug for UnshareApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>An array of policy statements applied to the application.</p>
+    #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInput {
@@ -3097,10 +3108,13 @@ impl std::fmt::Debug for PutApplicationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The total number of items to return.</p>
+    #[doc(hidden)]
     pub max_items: i32,
     /// <p>A token to specify where to start paginating.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsInput {
@@ -3132,8 +3146,10 @@ impl std::fmt::Debug for ListApplicationVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
     /// <p>The total number of items to return.</p>
+    #[doc(hidden)]
     pub max_items: i32,
     /// <p>A token to specify where to start paginating.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -3160,12 +3176,16 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationDependenciesInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The total number of items to return.</p>
+    #[doc(hidden)]
     pub max_items: i32,
     /// <p>A token to specify where to start paginating.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application to get.</p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
 }
 impl ListApplicationDependenciesInput {
@@ -3202,9 +3222,11 @@ impl std::fmt::Debug for ListApplicationDependenciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFormationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationTemplateInput {
@@ -3232,6 +3254,7 @@ impl std::fmt::Debug for GetCloudFormationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationPolicyInput {
@@ -3253,8 +3276,10 @@ impl std::fmt::Debug for GetApplicationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application to get.</p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
@@ -3281,6 +3306,7 @@ impl std::fmt::Debug for GetApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -3302,9 +3328,11 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
 }
 impl CreateCloudFormationTemplateInput {
@@ -3332,6 +3360,7 @@ impl std::fmt::Debug for CreateCloudFormationTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationChangeSetInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -3339,30 +3368,42 @@ pub struct CreateCloudFormationChangeSetInput {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
+    #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of parameter values for the parameters of the application.</p>
+    #[doc(hidden)]
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
 }
 impl CreateCloudFormationChangeSetInput {
@@ -3453,17 +3494,23 @@ impl std::fmt::Debug for CreateCloudFormationChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The semantic version of the new version.</p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
+    #[doc(hidden)]
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    #[doc(hidden)]
     pub source_code_url: std::option::Option<std::string::String>,
     /// <p>The raw packaged AWS SAM template of your application.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl CreateApplicationVersionInput {
@@ -3513,51 +3560,66 @@ pub struct CreateApplicationInput {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    #[doc(hidden)]
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+    #[doc(hidden)]
     pub license_body: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+    #[doc(hidden)]
     pub license_url: std::option::Option<std::string::String>,
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+    #[doc(hidden)]
     pub readme_body: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+    #[doc(hidden)]
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
+    #[doc(hidden)]
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    #[doc(hidden)]
     pub source_code_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
+    #[doc(hidden)]
     pub spdx_license_id: std::option::Option<std::string::String>,
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+    #[doc(hidden)]
     pub template_url: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {

@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelReadMarkerOutput {
@@ -58,10 +59,13 @@ impl UpdateChannelReadMarkerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string of the message being updated.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The status of the message update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
 }
 impl UpdateChannelMessageOutput {
@@ -153,6 +157,7 @@ impl UpdateChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelFlowOutput {
@@ -210,6 +215,7 @@ impl UpdateChannelFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelOutput {
@@ -324,10 +330,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string assigned to each message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The status of the channel message.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
 }
 impl SendChannelMessageOutput {
@@ -419,8 +428,10 @@ impl SendChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchChannelsOutput {
     /// <p>A list of the channels in the request.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// <p>The token returned from previous API responses until the number of channels is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchChannelsOutput {
@@ -501,8 +512,10 @@ impl SearchChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the message being redacted.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl RedactChannelMessageOutput {
@@ -574,10 +587,13 @@ impl RedactChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutChannelMembershipPreferencesOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The details of a user.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN and metadata of the member being added.</p>
+    #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
 }
 impl PutChannelMembershipPreferencesOutput {
@@ -669,6 +685,7 @@ impl PutChannelMembershipPreferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -730,9 +747,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
+    #[doc(hidden)]
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
@@ -823,9 +842,11 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The information about each channel.</p>
+    #[doc(hidden)]
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelAssociatedWithFlowSummary>>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsAssociatedWithChannelFlowOutput {
@@ -911,8 +932,10 @@ impl ListChannelsAssociatedWithChannelFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// <p>The information about each channel.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -993,10 +1016,13 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about and names of each moderator.</p>
+    #[doc(hidden)]
     pub channel_moderators:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
 }
@@ -1098,10 +1124,13 @@ impl ListChannelModeratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMessagesOutput {
     /// <p>The ARN of the channel containing the requested messages.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about, and content of, each requested message.</p>
+    #[doc(hidden)]
     pub channel_messages: std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
 }
 impl ListChannelMessagesOutput {
@@ -1200,10 +1229,12 @@ impl ListChannelMessagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The information for the requested channel memberships.</p>
+    #[doc(hidden)]
     pub channel_memberships: std::option::Option<
         std::vec::Vec<crate::model::ChannelMembershipForAppInstanceUserSummary>,
     >,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
@@ -1294,11 +1325,14 @@ impl ListChannelMembershipsForAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The information for the requested channel memberships.</p>
+    #[doc(hidden)]
     pub channel_memberships:
         std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsOutput {
@@ -1402,8 +1436,10 @@ impl ListChannelMembershipsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelFlowsOutput {
     /// <p>The information about each channel flow.</p>
+    #[doc(hidden)]
     pub channel_flows: std::option::Option<std::vec::Vec<crate::model::ChannelFlowSummary>>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelFlowsOutput {
@@ -1485,10 +1521,13 @@ impl ListChannelFlowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelBansOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information for each requested ban.</p>
+    #[doc(hidden)]
     pub channel_bans: std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
 }
 impl ListChannelBansOutput {
@@ -1587,6 +1626,7 @@ impl ListChannelBansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
 }
 impl GetMessagingSessionEndpointOutput {
@@ -1644,6 +1684,7 @@ impl GetMessagingSessionEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageStatusOutput {
     /// <p>The message status and details.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
 }
 impl GetChannelMessageStatusOutput {
@@ -1701,6 +1742,7 @@ impl GetChannelMessageStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
+    #[doc(hidden)]
     pub channel_message: std::option::Option<crate::model::ChannelMessage>,
 }
 impl GetChannelMessageOutput {
@@ -1758,10 +1800,13 @@ impl GetChannelMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelMembershipPreferencesOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The details of a user.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+    #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
 }
 impl GetChannelMembershipPreferencesOutput {
@@ -1883,6 +1928,7 @@ impl DisassociateChannelFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::ChannelModerator>,
 }
 impl DescribeChannelModeratorOutput {
@@ -1940,6 +1986,7 @@ impl DescribeChannelModeratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
 }
 impl DescribeChannelModeratedByAppInstanceUserOutput {
@@ -2004,6 +2051,7 @@ impl DescribeChannelModeratedByAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     /// <p>The channel to which a user belongs.</p>
+    #[doc(hidden)]
     pub channel_membership:
         std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
 }
@@ -2069,6 +2117,7 @@ impl DescribeChannelMembershipForAppInstanceUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
+    #[doc(hidden)]
     pub channel_membership: std::option::Option<crate::model::ChannelMembership>,
 }
 impl DescribeChannelMembershipOutput {
@@ -2126,6 +2175,7 @@ impl DescribeChannelMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelFlowOutput {
     /// <p>The channel flow details.</p>
+    #[doc(hidden)]
     pub channel_flow: std::option::Option<crate::model::ChannelFlow>,
 }
 impl DescribeChannelFlowOutput {
@@ -2183,6 +2233,7 @@ impl DescribeChannelFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
+    #[doc(hidden)]
     pub channel_ban: std::option::Option<crate::model::ChannelBan>,
 }
 impl DescribeChannelBanOutput {
@@ -2240,6 +2291,7 @@ impl DescribeChannelBanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// <p>The channel details.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl DescribeChannelOutput {
@@ -2474,8 +2526,10 @@ impl DeleteChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelModeratorOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARNs of the channel and the moderator.</p>
+    #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelModeratorOutput {
@@ -2550,8 +2604,10 @@ impl CreateChannelModeratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN and metadata of the member being added.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelMembershipOutput {
@@ -2623,6 +2679,7 @@ impl CreateChannelMembershipOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl CreateChannelFlowOutput {
@@ -2680,8 +2737,10 @@ impl CreateChannelFlowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelBanOutput {
@@ -2753,6 +2812,7 @@ impl CreateChannelBanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateChannelOutput {
@@ -2807,8 +2867,10 @@ impl CreateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelFlowCallbackOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The call back ID passed in the request.</p>
+    #[doc(hidden)]
     pub callback_id: std::option::Option<std::string::String>,
 }
 impl ChannelFlowCallbackOutput {
@@ -2880,8 +2942,10 @@ impl ChannelFlowCallbackOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
+    #[doc(hidden)]
     pub batch_channel_memberships: std::option::Option<crate::model::BatchChannelMemberships>,
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
 }
 impl BatchCreateChannelMembershipOutput {

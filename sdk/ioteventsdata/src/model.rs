@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorSummary {
     /// <p>The name of the detector model that created this detector (instance).</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The version of the detector model that created this detector (instance).</p>
+    #[doc(hidden)]
     pub detector_model_version: std::option::Option<std::string::String>,
     /// <p>The current state of the detector (instance).</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DetectorStateSummary>,
     /// <p>The time the detector (instance) was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the detector (instance) was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DetectorSummary {
@@ -169,6 +175,7 @@ impl DetectorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorStateSummary {
     /// <p>The name of the state.</p>
+    #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
 }
 impl DetectorStateSummary {
@@ -223,10 +230,13 @@ impl DetectorStateSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmSummary {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -237,10 +247,13 @@ pub struct AlarmSummary {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AlarmSummary {
@@ -497,16 +510,22 @@ impl AsRef<str> for AlarmStateName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Detector {
     /// <p>The name of the detector model that created this detector (instance).</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The version of the detector model that created this detector (instance).</p>
+    #[doc(hidden)]
     pub detector_model_version: std::option::Option<std::string::String>,
     /// <p>The current state of the detector (instance).</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DetectorState>,
     /// <p>The time the detector (instance) was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the detector (instance) was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Detector {
@@ -661,10 +680,13 @@ impl Detector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorState {
     /// <p>The name of the state.</p>
+    #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
     /// <p>The current values of the detector's variables.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
     /// <p>The current state of the detector's timers.</p>
+    #[doc(hidden)]
     pub timers: std::option::Option<std::vec::Vec<crate::model::Timer>>,
 }
 impl DetectorState {
@@ -771,8 +793,10 @@ impl DetectorState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Timer {
     /// <p>The name of the timer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The expiration time for the timer.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Timer {
@@ -847,8 +871,10 @@ impl Timer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current value of the variable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Variable {
@@ -920,18 +946,25 @@ impl Variable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarm {
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_version: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>Contains information about the current state of the alarm.</p>
+    #[doc(hidden)]
     pub alarm_state: std::option::Option<crate::model::AlarmState>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<i32>,
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Alarm {
@@ -1111,12 +1144,16 @@ pub struct AlarmState {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
     /// <p>Information needed to evaluate data.</p>
+    #[doc(hidden)]
     pub rule_evaluation: std::option::Option<crate::model::RuleEvaluation>,
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
+    #[doc(hidden)]
     pub customer_action: std::option::Option<crate::model::CustomerAction>,
     /// <p>Contains information about alarm state changes.</p>
+    #[doc(hidden)]
     pub system_event: std::option::Option<crate::model::SystemEvent>,
 }
 impl AlarmState {
@@ -1258,8 +1295,10 @@ impl AlarmState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>Contains the configuration information of alarm state changes.</p>
+    #[doc(hidden)]
     pub state_change_configuration: std::option::Option<crate::model::StateChangeConfiguration>,
 }
 impl SystemEvent {
@@ -1346,6 +1385,7 @@ impl SystemEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateChangeConfiguration {
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+    #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
 }
 impl StateChangeConfiguration {
@@ -1513,17 +1553,23 @@ pub struct CustomerAction {
     /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<crate::model::CustomerActionName>,
     /// <p>Contains the configuration information of a snooze action.</p>
+    #[doc(hidden)]
     pub snooze_action_configuration: std::option::Option<crate::model::SnoozeActionConfiguration>,
     /// <p>Contains the configuration information of an enable action.</p>
+    #[doc(hidden)]
     pub enable_action_configuration: std::option::Option<crate::model::EnableActionConfiguration>,
     /// <p>Contains the configuration information of a disable action.</p>
+    #[doc(hidden)]
     pub disable_action_configuration: std::option::Option<crate::model::DisableActionConfiguration>,
     /// <p>Contains the configuration information of an acknowledge action.</p>
+    #[doc(hidden)]
     pub acknowledge_action_configuration:
         std::option::Option<crate::model::AcknowledgeActionConfiguration>,
     /// <p>Contains the configuration information of a reset action.</p>
+    #[doc(hidden)]
     pub reset_action_configuration: std::option::Option<crate::model::ResetActionConfiguration>,
 }
 impl CustomerAction {
@@ -1750,6 +1796,7 @@ impl CustomerAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetActionConfiguration {
     /// <p>The note that you can leave when you reset the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl ResetActionConfiguration {
@@ -1802,6 +1849,7 @@ impl ResetActionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl AcknowledgeActionConfiguration {
@@ -1854,6 +1902,7 @@ impl AcknowledgeActionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl DisableActionConfiguration {
@@ -1906,6 +1955,7 @@ impl DisableActionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableActionConfiguration {
     /// <p>The note that you can leave when you enable the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl EnableActionConfiguration {
@@ -1958,8 +2008,10 @@ impl EnableActionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    #[doc(hidden)]
     pub snooze_duration: std::option::Option<i32>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl SnoozeActionConfiguration {
@@ -2098,6 +2150,7 @@ impl AsRef<str> for CustomerActionName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
+    #[doc(hidden)]
     pub simple_rule_evaluation: std::option::Option<crate::model::SimpleRuleEvaluation>,
 }
 impl RuleEvaluation {
@@ -2157,10 +2210,13 @@ impl RuleEvaluation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SimpleRuleEvaluation {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
+    #[doc(hidden)]
     pub input_property_value: std::option::Option<std::string::String>,
     /// <p>The comparison operator.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The threshold value, on the right side of the comparison operator.</p>
+    #[doc(hidden)]
     pub threshold_value: std::option::Option<std::string::String>,
 }
 impl SimpleRuleEvaluation {
@@ -2336,10 +2392,13 @@ impl AsRef<str> for ComparisonOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchUpdateDetectorErrorEntry {
@@ -2507,12 +2566,16 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The name of the detector model that created the detectors (instances).</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DetectorStateDefinition>,
 }
 impl UpdateDetectorRequest {
@@ -2624,10 +2687,13 @@ impl UpdateDetectorRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
+    #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>,
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
+    #[doc(hidden)]
     pub timers: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>,
 }
 impl DetectorStateDefinition {
@@ -2734,8 +2800,10 @@ impl DetectorStateDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
+    #[doc(hidden)]
     pub seconds: std::option::Option<i32>,
 }
 impl TimerDefinition {
@@ -2807,8 +2875,10 @@ impl TimerDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableDefinition {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new value of the variable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl VariableDefinition {
@@ -2887,10 +2957,13 @@ impl VariableDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAlarmActionErrorEntry {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchAlarmActionErrorEntry {
@@ -2985,14 +3058,19 @@ impl BatchAlarmActionErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnoozeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    #[doc(hidden)]
     pub snooze_duration: std::option::Option<i32>,
 }
 impl SnoozeAlarmActionRequest {
@@ -3118,12 +3196,16 @@ impl SnoozeAlarmActionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you reset the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl ResetAlarmActionRequest {
@@ -3232,10 +3314,13 @@ impl ResetAlarmActionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutMessageErrorEntry {
@@ -3330,12 +3415,16 @@ impl BatchPutMessageErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The name of the input into which the message payload is transformed.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The timestamp associated with the message.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<crate::model::TimestampValue>,
 }
 impl Message {
@@ -3444,6 +3533,7 @@ impl Message {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
+    #[doc(hidden)]
     pub time_in_millis: std::option::Option<i64>,
 }
 impl TimestampValue {
@@ -3498,12 +3588,16 @@ impl TimestampValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you enable the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl EnableAlarmActionRequest {
@@ -3612,12 +3706,16 @@ impl EnableAlarmActionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you disable the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl DisableAlarmActionRequest {
@@ -3726,10 +3824,13 @@ impl DisableAlarmActionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDetectorErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>A message that describes the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchDeleteDetectorErrorEntry {
@@ -3824,10 +3925,13 @@ impl BatchDeleteDetectorErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorRequest {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The name of the detector model that was used to create the detector instance.</p>
+    #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorRequest {
@@ -3919,12 +4023,16 @@ impl DeleteDetectorRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
+    #[doc(hidden)]
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    #[doc(hidden)]
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
+    #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl AcknowledgeAlarmActionRequest {

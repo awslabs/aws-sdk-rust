@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSegmentReferencesOutput {
     /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+    #[doc(hidden)]
     pub referenced_by: std::option::Option<std::vec::Vec<crate::model::RefResource>>,
     /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSegmentReferencesOutput {
@@ -86,8 +88,10 @@ impl ListSegmentReferencesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSegmentsOutput {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
+    #[doc(hidden)]
     pub segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSegmentsOutput {
@@ -168,6 +172,7 @@ impl ListSegmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSegmentOutput {
     /// <p>A structure that contains the complete information about the segment that was just created.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<crate::model::Segment>,
 }
 impl CreateSegmentOutput {
@@ -252,6 +257,7 @@ impl DeleteSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentOutput {
     /// <p>A structure that contains the complete information about the segment.</p>
+    #[doc(hidden)]
     pub segment: std::option::Option<crate::model::Segment>,
 }
 impl GetSegmentOutput {
@@ -306,6 +312,7 @@ impl GetSegmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectDataDeliveryOutput {
     /// <p>A structure containing details about the project that you updated.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl UpdateProjectDataDeliveryOutput {
@@ -360,6 +367,7 @@ impl UpdateProjectDataDeliveryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>A structure containing information about the updated project.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl UpdateProjectOutput {
@@ -414,8 +422,10 @@ impl UpdateProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProjectEventsOutput {
     /// <p>The number of events in the operation that could not be used by Evidently.</p>
+    #[doc(hidden)]
     pub failed_event_count: std::option::Option<i32>,
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
+    #[doc(hidden)]
     pub event_results:
         std::option::Option<std::vec::Vec<crate::model::PutProjectEventsResultEntry>>,
 }
@@ -500,12 +510,16 @@ impl PutProjectEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateFeatureOutput {
     /// <p>The name of the variation that was served to the user session.</p>
+    #[doc(hidden)]
     pub variation: std::option::Option<std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::VariableValue>,
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl EvaluateFeatureOutput {
@@ -614,6 +628,7 @@ impl EvaluateFeatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateFeatureOutput {
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
 }
 impl BatchEvaluateFeatureOutput {
@@ -677,8 +692,10 @@ impl BatchEvaluateFeatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
+    #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
     /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -759,6 +776,7 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
     /// <p>A structure that contains information about the created project.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl CreateProjectOutput {
@@ -843,6 +861,7 @@ impl DeleteProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProjectOutput {
     /// <p>A structure containing the configuration details of the project.</p>
+    #[doc(hidden)]
     pub project: std::option::Option<crate::model::Project>,
 }
 impl GetProjectOutput {
@@ -897,6 +916,7 @@ impl GetProjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLaunchOutput {
     /// <p>The date and time that the launch stopped.</p>
+    #[doc(hidden)]
     pub ended_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopLaunchOutput {
@@ -954,6 +974,7 @@ impl StopLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLaunchOutput {
     /// <p>A structure that contains information about the launch that was started.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<crate::model::Launch>,
 }
 impl StartLaunchOutput {
@@ -1008,8 +1029,10 @@ impl StartLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchesOutput {
     /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
+    #[doc(hidden)]
     pub launches: std::option::Option<std::vec::Vec<crate::model::Launch>>,
     /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchesOutput {
@@ -1090,6 +1113,7 @@ impl ListLaunchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchOutput {
     /// <p>A structure that contains the configuration of the launch that was created.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<crate::model::Launch>,
 }
 impl CreateLaunchOutput {
@@ -1174,6 +1198,7 @@ impl DeleteLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchOutput {
     /// <p>A structure that contains the new configuration of the launch that was updated.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<crate::model::Launch>,
 }
 impl UpdateLaunchOutput {
@@ -1228,6 +1253,7 @@ impl UpdateLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchOutput {
     /// <p>A structure containing the configuration details of the launch.</p>
+    #[doc(hidden)]
     pub launch: std::option::Option<crate::model::Launch>,
 }
 impl GetLaunchOutput {
@@ -1282,8 +1308,10 @@ impl GetLaunchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFeaturesOutput {
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
+    #[doc(hidden)]
     pub features: std::option::Option<std::vec::Vec<crate::model::FeatureSummary>>,
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFeaturesOutput {
@@ -1364,6 +1392,7 @@ impl ListFeaturesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFeatureOutput {
     /// <p>A structure that contains information about the new feature.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<crate::model::Feature>,
 }
 impl CreateFeatureOutput {
@@ -1448,6 +1477,7 @@ impl DeleteFeatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFeatureOutput {
     /// <p>A structure that contains information about the updated feature.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<crate::model::Feature>,
 }
 impl UpdateFeatureOutput {
@@ -1502,6 +1532,7 @@ impl UpdateFeatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFeatureOutput {
     /// <p>A structure containing the configuration details of the feature.</p>
+    #[doc(hidden)]
     pub feature: std::option::Option<crate::model::Feature>,
 }
 impl GetFeatureOutput {
@@ -1556,6 +1587,7 @@ impl GetFeatureOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopExperimentOutput {
     /// <p>The date and time that the experiment stopped.</p>
+    #[doc(hidden)]
     pub ended_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopExperimentOutput {
@@ -1613,6 +1645,7 @@ impl StopExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExperimentOutput {
     /// <p>A timestamp that indicates when the experiment started.</p>
+    #[doc(hidden)]
     pub started_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExperimentOutput {
@@ -1670,12 +1703,16 @@ impl StartExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentResultsOutput {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
+    #[doc(hidden)]
     pub results_data: std::option::Option<std::vec::Vec<crate::model::ExperimentResultsData>>,
     /// <p>An array of structures that include the reports that you requested.</p>
+    #[doc(hidden)]
     pub reports: std::option::Option<std::vec::Vec<crate::model::ExperimentReport>>,
     /// <p>The timestamps of each result returned.</p>
+    #[doc(hidden)]
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
 }
 impl GetExperimentResultsOutput {
@@ -1809,8 +1846,10 @@ impl GetExperimentResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsOutput {
     /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
+    #[doc(hidden)]
     pub experiments: std::option::Option<std::vec::Vec<crate::model::Experiment>>,
     /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentsOutput {
@@ -1891,6 +1930,7 @@ impl ListExperimentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentOutput {
     /// <p>A structure containing the configuration details of the experiment that you created.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl CreateExperimentOutput {
@@ -1978,6 +2018,7 @@ impl DeleteExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentOutput {
     /// <p>A structure containing the configuration details of the experiment that was updated.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl UpdateExperimentOutput {
@@ -2035,6 +2076,7 @@ impl UpdateExperimentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExperimentOutput {
     /// <p>A structure containing the configuration details of the experiment.</p>
+    #[doc(hidden)]
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl GetExperimentOutput {
@@ -2122,6 +2164,7 @@ impl UntagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestSegmentPatternOutput {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<bool>,
 }
 impl TestSegmentPatternOutput {
@@ -2206,6 +2249,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

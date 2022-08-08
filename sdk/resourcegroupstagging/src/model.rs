@@ -11,10 +11,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailureInfo {
     /// <p>The HTTP status code of the common error.</p>
+    #[doc(hidden)]
     pub status_code: i32,
     /// <p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the Amazon Web Services service that hosts the resource that you want to tag.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The message of the common error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailureInfo {
@@ -164,10 +167,13 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
+    #[doc(hidden)]
     pub compliance_details: std::option::Option<crate::model::ComplianceDetails>,
 }
 impl ResourceTagMapping {
@@ -268,10 +274,13 @@ impl ResourceTagMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
+    #[doc(hidden)]
     pub noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
+    #[doc(hidden)]
     pub keys_with_noncompliant_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
+    #[doc(hidden)]
     pub compliance_status: std::option::Option<bool>,
 }
 impl ComplianceDetails {
@@ -385,8 +394,10 @@ impl ComplianceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -458,8 +469,10 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagFilter {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TagFilter {
@@ -540,16 +553,22 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
+    #[doc(hidden)]
     pub last_updated: std::option::Option<std::string::String>,
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
+    #[doc(hidden)]
     pub target_id_type: std::option::Option<crate::model::TargetIdType>,
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The count of noncompliant resources.</p>
+    #[doc(hidden)]
     pub non_compliant_resources: i64,
 }
 impl Summary {

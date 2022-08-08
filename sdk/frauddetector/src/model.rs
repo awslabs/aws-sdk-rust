@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
     /// <p>The detector for which the rule is associated.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The rule ID.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The rule version.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<std::string::String>,
 }
 impl Rule {
@@ -97,8 +100,10 @@ impl Rule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A value assigned to a tag key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -343,6 +348,7 @@ impl AsRef<str> for ModelTypeEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
+    #[doc(hidden)]
     pub ingested_events_time_window: std::option::Option<crate::model::IngestedEventsTimeWindow>,
 }
 impl IngestedEventsDetail {
@@ -409,8 +415,10 @@ impl IngestedEventsDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngestedEventsTimeWindow {
     /// <p>Timestamp of the first ingensted event.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of the final ingested event.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
 }
 impl IngestedEventsTimeWindow {
@@ -482,8 +490,10 @@ impl IngestedEventsTimeWindow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
+    #[doc(hidden)]
     pub data_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
+    #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl ExternalEventsDetail {
@@ -675,12 +685,16 @@ impl AsRef<str> for RuleExecutionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelVersion {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ModelVersion {
@@ -792,8 +806,10 @@ impl ModelVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entity {
     /// <p>The entity type.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl Entity {
@@ -920,11 +936,14 @@ impl AsRef<str> for ModelEndpointStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ModelOutputDataFormat>,
     /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
+    #[doc(hidden)]
     pub json_key_to_variable_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
+    #[doc(hidden)]
     pub csv_index_to_variable_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1112,14 +1131,19 @@ impl AsRef<str> for ModelOutputDataFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelInputConfiguration {
     /// <p>The event type name.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::ModelInputDataFormat>,
     /// <p>The event variables.</p>
+    #[doc(hidden)]
     pub use_event_variables: std::option::Option<bool>,
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    #[doc(hidden)]
     pub json_input_template: std::option::Option<std::string::String>,
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
+    #[doc(hidden)]
     pub csv_input_template: std::option::Option<std::string::String>,
 }
 impl ModelInputConfiguration {
@@ -1415,16 +1439,22 @@ impl AsRef<str> for EventIngestion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventPredictionSummary {
     /// <p> The event ID. </p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p> The event type. </p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p> The timestamp of the event. </p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p> The timestamp when the prediction was generated. </p>
+    #[doc(hidden)]
     pub prediction_timestamp: std::option::Option<std::string::String>,
     /// <p> The detector ID. </p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p> The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
 }
 impl EventPredictionSummary {
@@ -1576,8 +1606,10 @@ impl EventPredictionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictionTimeRange {
     /// <p> The start time of the time period for when the predictions were generated. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p> The end time of the time period for when the predictions were generated. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
 }
 impl PredictionTimeRange {
@@ -1649,6 +1681,7 @@ impl PredictionTimeRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCondition {
     /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FilterCondition {
@@ -1701,23 +1734,32 @@ impl FilterCondition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::DataType>,
     /// <p>The data source of the variable.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The default value of the variable.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The description of the variable. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The variable type of the variable.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
+    #[doc(hidden)]
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>The time when variable was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The time when the variable was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The ARN of the variable.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Variable {
@@ -2045,24 +2087,34 @@ impl AsRef<str> for DataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleDetail {
     /// <p>The rule ID.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The rule description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The detector for which the rule is associated.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The rule version.</p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<std::string::String>,
     /// <p>The rule expression.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The rule language.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::Language>,
     /// <p>The rule outcomes.</p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Timestamp of the last time the rule was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the rule was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The rule ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl RuleDetail {
@@ -2282,14 +2334,19 @@ impl RuleDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Outcome {
     /// <p>The outcome name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The outcome description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the outcome was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp when the outcome was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The outcome ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Outcome {
@@ -2415,8 +2472,10 @@ impl Outcome {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingDataSchema {
     /// <p>The training data schema variables.</p>
+    #[doc(hidden)]
     pub model_variables: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The label schema.</p>
+    #[doc(hidden)]
     pub label_schema: std::option::Option<crate::model::LabelSchema>,
 }
 impl TrainingDataSchema {
@@ -2500,10 +2559,12 @@ impl TrainingDataSchema {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelSchema {
     /// <p>The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have multiple label variants from your event type for a single Amazon Fraud Detector label. </p>
+    #[doc(hidden)]
     pub label_mapper: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The action to take for unlabeled events.</p>
+    #[doc(hidden)]
     pub unlabeled_events_treatment: std::option::Option<crate::model::UnlabeledEventsTreatment>,
 }
 impl LabelSchema {
@@ -2722,18 +2783,25 @@ impl AsRef<str> for TrainingDataSourceEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Model {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the model was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of last time the model was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The ARN of the model.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Model {
@@ -2899,14 +2967,19 @@ impl Model {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Label {
     /// <p>The label name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The label description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the label was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the event type was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The label ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Label {
@@ -3032,6 +3105,7 @@ impl Label {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKey {
     /// <p>The encryption key ARN.</p>
+    #[doc(hidden)]
     pub kms_encryption_key_arn: std::option::Option<std::string::String>,
 }
 impl KmsKey {
@@ -3089,22 +3163,31 @@ impl KmsKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalModel {
     /// <p>The Amazon SageMaker model endpoints.</p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
     /// <p>The source of the model.</p>
+    #[doc(hidden)]
     pub model_source: std::option::Option<crate::model::ModelSource>,
     /// <p>The role used to invoke the model. </p>
+    #[doc(hidden)]
     pub invoke_model_endpoint_role_arn: std::option::Option<std::string::String>,
     /// <p>The input configuration.</p>
+    #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::ModelInputConfiguration>,
     /// <p>The output configuration.</p>
+    #[doc(hidden)]
     pub output_configuration: std::option::Option<crate::model::ModelOutputConfiguration>,
     /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
+    #[doc(hidden)]
     pub model_endpoint_status: std::option::Option<crate::model::ModelEndpointStatus>,
     /// <p>Timestamp of when the model was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the model was last created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The model ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ExternalModel {
@@ -3330,24 +3413,34 @@ impl ExternalModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventType {
     /// <p>The event type name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The event type description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The event type event variables.</p>
+    #[doc(hidden)]
     pub event_variables: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The event type labels.</p>
+    #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The event type entity types.</p>
+    #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
+    #[doc(hidden)]
     pub event_ingestion: std::option::Option<crate::model::EventIngestion>,
     /// <p>Data about the stored events.</p>
+    #[doc(hidden)]
     pub ingested_event_statistics: std::option::Option<crate::model::IngestedEventStatistics>,
     /// <p>Timestamp of when the event type was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the event type was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The entity type ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl EventType {
@@ -3597,14 +3690,19 @@ impl EventType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngestedEventStatistics {
     /// <p>The number of stored events.</p>
+    #[doc(hidden)]
     pub number_of_events: std::option::Option<i64>,
     /// <p>The total size of the stored events.</p>
+    #[doc(hidden)]
     pub event_data_size_in_bytes: std::option::Option<i64>,
     /// <p>The oldest stored event.</p>
+    #[doc(hidden)]
     pub least_recent_event: std::option::Option<std::string::String>,
     /// <p>The newest stored event.</p>
+    #[doc(hidden)]
     pub most_recent_event: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the stored event was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
 }
 impl IngestedEventStatistics {
@@ -3736,13 +3834,17 @@ impl IngestedEventStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatedExternalModel {
     /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
     /// <p> Indicates whether event variables were used to generate predictions. </p>
+    #[doc(hidden)]
     pub use_event_variables: std::option::Option<bool>,
     /// <p> Input variables use for generating predictions. </p>
+    #[doc(hidden)]
     pub input_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Output variables. </p>
+    #[doc(hidden)]
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3892,13 +3994,17 @@ impl EvaluatedExternalModel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatedModelVersion {
     /// <p> The model ID. </p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p> The model version. </p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The model type. </p>
     /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<std::string::String>,
     /// <p> Evaluations generated for the model version. </p>
+    #[doc(hidden)]
     pub evaluations: std::option::Option<std::vec::Vec<crate::model::ModelVersionEvaluation>>,
 }
 impl EvaluatedModelVersion {
@@ -4020,10 +4126,13 @@ impl EvaluatedModelVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelVersionEvaluation {
     /// <p> The output variable name. </p>
+    #[doc(hidden)]
     pub output_variable_name: std::option::Option<std::string::String>,
     /// <p> The evaluation score generated for the model version. </p>
+    #[doc(hidden)]
     pub evaluation_score: std::option::Option<std::string::String>,
     /// <p> The prediction explanations generated for the model version. </p>
+    #[doc(hidden)]
     pub prediction_explanations: std::option::Option<crate::model::PredictionExplanations>,
 }
 impl ModelVersionEvaluation {
@@ -4127,10 +4236,12 @@ impl ModelVersionEvaluation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
+    #[doc(hidden)]
     pub variable_impact_explanations:
         std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
     /// <p> The details of the aggregated variables impact on the prediction score. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    #[doc(hidden)]
     pub aggregated_variables_impact_explanations:
         std::option::Option<std::vec::Vec<crate::model::AggregatedVariablesImpactExplanation>>,
 }
@@ -4248,14 +4359,17 @@ impl PredictionExplanations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedVariablesImpactExplanation {
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+    #[doc(hidden)]
     pub event_variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+    #[doc(hidden)]
     pub relative_impact: std::option::Option<std::string::String>,
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
     /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
     /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub log_odds_impact: std::option::Option<f32>,
 }
 impl AggregatedVariablesImpactExplanation {
@@ -4368,14 +4482,17 @@ impl AggregatedVariablesImpactExplanation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableImpactExplanation {
     /// <p> The event variable name. </p>
+    #[doc(hidden)]
     pub event_variable_name: std::option::Option<std::string::String>,
     /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+    #[doc(hidden)]
     pub relative_impact: std::option::Option<std::string::String>,
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
     /// <ul>
     /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
     /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub log_odds_impact: std::option::Option<f32>,
 }
 impl VariableImpactExplanation {
@@ -4482,18 +4599,25 @@ impl VariableImpactExplanation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatedRule {
     /// <p> The rule ID. </p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p> The rule version. </p>
+    #[doc(hidden)]
     pub rule_version: std::option::Option<std::string::String>,
     /// <p> The rule expression. </p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p> The rule expression value. </p>
+    #[doc(hidden)]
     pub expression_with_values: std::option::Option<std::string::String>,
     /// <p> The rule outcome. </p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Indicates whether the rule was evaluated. </p>
+    #[doc(hidden)]
     pub evaluated: std::option::Option<bool>,
     /// <p> Indicates whether the rule matched. </p>
+    #[doc(hidden)]
     pub matched: std::option::Option<bool>,
 }
 impl EvaluatedRule {
@@ -4662,10 +4786,13 @@ impl EvaluatedRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventVariableSummary {
     /// <p> The event variable name. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The value of the event variable. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p> The event variable source. </p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl EventVariableSummary {
@@ -4754,8 +4881,10 @@ impl EventVariableSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
+    #[doc(hidden)]
     pub external_model: std::option::Option<crate::model::ExternalModelSummary>,
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
+    #[doc(hidden)]
     pub outputs:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4851,8 +4980,10 @@ impl ExternalModelOutputs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalModelSummary {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
+    #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
     /// <p>The source of the model.</p>
+    #[doc(hidden)]
     pub model_source: std::option::Option<crate::model::ModelSource>,
 }
 impl ExternalModelSummary {
@@ -4930,8 +5061,10 @@ impl ExternalModelSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
+    #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
+    #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RuleResult {
@@ -5012,8 +5145,10 @@ impl RuleResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelScores {
     /// <p>The model version.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<crate::model::ModelVersion>,
     /// <p>The model's fraud prediction scores.</p>
+    #[doc(hidden)]
     pub scores: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
 }
 impl ModelScores {
@@ -5099,8 +5234,10 @@ impl ModelScores {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelEndpointDataBlob {
     /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
+    #[doc(hidden)]
     pub byte_buffer: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl ModelEndpointDataBlob {
@@ -5175,19 +5312,26 @@ impl ModelEndpointDataBlob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The event ID.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    #[doc(hidden)]
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    #[doc(hidden)]
     pub event_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The label associated with the event.</p>
+    #[doc(hidden)]
     pub current_label: std::option::Option<std::string::String>,
     /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    #[doc(hidden)]
     pub label_timestamp: std::option::Option<std::string::String>,
     /// <p>The event entities.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl Event {
@@ -5385,14 +5529,19 @@ impl Event {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityType {
     /// <p>The entity type name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The entity type description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the entity type was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the entity type was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The entity type ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl EntityType {
@@ -5518,16 +5667,22 @@ impl EntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Detector {
     /// <p>The detector ID.</p>
+    #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the detector was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the detector was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The detector ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Detector {
@@ -5751,34 +5906,49 @@ impl AsRef<str> for AsyncJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPrediction {
     /// <p>The job ID for the batch prediction.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The batch prediction status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AsyncJobStatus>,
     /// <p>The reason a batch prediction job failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the batch prediction job started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the batch prediction job completed.</p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
+    #[doc(hidden)]
     pub last_heartbeat_time: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your training file.</p>
+    #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your output file.</p>
+    #[doc(hidden)]
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The name of the detector.</p>
+    #[doc(hidden)]
     pub detector_name: std::option::Option<std::string::String>,
     /// <p>The detector version. </p>
+    #[doc(hidden)]
     pub detector_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of batch prediction job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of records processed by the batch prediction job.</p>
+    #[doc(hidden)]
     pub processed_records_count: std::option::Option<i32>,
     /// <p>The total number of records in the batch prediction job.</p>
+    #[doc(hidden)]
     pub total_records_count: std::option::Option<i32>,
 }
 impl BatchPrediction {
@@ -6092,30 +6262,43 @@ impl BatchPrediction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImport {
     /// <p>The ID of the batch import job. </p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the batch import job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AsyncJobStatus>,
     /// <p>The reason batch import job failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the batch import job started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when batch import job completed.</p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your data file for batch import.</p>
+    #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location of your output file.</p>
+    #[doc(hidden)]
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
+    #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role to use for this job request.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the batch import job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of records processed by batch import job.</p>
+    #[doc(hidden)]
     pub processed_records_count: std::option::Option<i32>,
     /// <p>The number of records that failed to import. </p>
+    #[doc(hidden)]
     pub failed_records_count: std::option::Option<i32>,
     /// <p>The total number of records in the batch import job.</p>
+    #[doc(hidden)]
     pub total_records_count: std::option::Option<i32>,
 }
 impl BatchImport {
@@ -6386,30 +6569,43 @@ impl BatchImport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelVersionDetail {
     /// <p>The model ID.</p>
+    #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
     /// <p>The model type.</p>
+    #[doc(hidden)]
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
+    #[doc(hidden)]
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The status of the model version.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The model version training data source.</p>
+    #[doc(hidden)]
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
+    #[doc(hidden)]
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
+    #[doc(hidden)]
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The training results.</p>
+    #[doc(hidden)]
     pub training_result: std::option::Option<crate::model::TrainingResult>,
     /// <p>The timestamp when the model was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp when the model was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The training result details. The details include the relative importance of the variables. </p>
+    #[doc(hidden)]
     pub training_result_v2: std::option::Option<crate::model::TrainingResultV2>,
 }
 impl ModelVersionDetail {
@@ -6701,13 +6897,17 @@ impl ModelVersionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingResultV2 {
     /// <p>The model training data validation metrics.</p>
+    #[doc(hidden)]
     pub data_validation_metrics: std::option::Option<crate::model::DataValidationMetrics>,
     /// <p> The training metric details. </p>
+    #[doc(hidden)]
     pub training_metrics_v2: std::option::Option<crate::model::TrainingMetricsV2>,
     /// <p>The variable importance metrics details.</p>
+    #[doc(hidden)]
     pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    #[doc(hidden)]
     pub aggregated_variables_importance_metrics:
         std::option::Option<crate::model::AggregatedVariablesImportanceMetrics>,
 }
@@ -6855,6 +7055,7 @@ impl TrainingResultV2 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedVariablesImportanceMetrics {
     /// <p> List of variables' metrics. </p>
+    #[doc(hidden)]
     pub log_odds_metrics: std::option::Option<std::vec::Vec<crate::model::AggregatedLogOddsMetric>>,
 }
 impl AggregatedVariablesImportanceMetrics {
@@ -6922,8 +7123,10 @@ impl AggregatedVariablesImportanceMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedLogOddsMetric {
     /// <p> The names of all the variables. </p>
+    #[doc(hidden)]
     pub variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
+    #[doc(hidden)]
     pub aggregated_variables_importance: std::option::Option<f32>,
 }
 impl AggregatedLogOddsMetric {
@@ -7010,6 +7213,7 @@ impl AggregatedLogOddsMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
+    #[doc(hidden)]
     pub log_odds_metrics: std::option::Option<std::vec::Vec<crate::model::LogOddsMetric>>,
 }
 impl VariableImportanceMetrics {
@@ -7074,10 +7278,13 @@ impl VariableImportanceMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogOddsMetric {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub variable_name: std::option::Option<std::string::String>,
     /// <p>The type of variable.</p>
+    #[doc(hidden)]
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
+    #[doc(hidden)]
     pub variable_importance: std::option::Option<f32>,
 }
 impl LogOddsMetric {
@@ -7172,10 +7379,13 @@ impl LogOddsMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingMetricsV2 {
     /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+    #[doc(hidden)]
     pub ofi: std::option::Option<crate::model::OfiTrainingMetricsValue>,
     /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+    #[doc(hidden)]
     pub tfi: std::option::Option<crate::model::TfiTrainingMetricsValue>,
     /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+    #[doc(hidden)]
     pub ati: std::option::Option<crate::model::AtiTrainingMetricsValue>,
 }
 impl TrainingMetricsV2 {
@@ -7273,8 +7483,10 @@ impl TrainingMetricsV2 {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
+    #[doc(hidden)]
     pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::AtiMetricDataPoint>>,
     /// <p> The model's overall performance scores. </p>
+    #[doc(hidden)]
     pub model_performance: std::option::Option<crate::model::AtiModelPerformance>,
 }
 impl AtiTrainingMetricsValue {
@@ -7359,6 +7571,7 @@ impl AtiTrainingMetricsValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AtiModelPerformance {
     /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
+    #[doc(hidden)]
     pub asi: std::option::Option<f32>,
 }
 impl AtiModelPerformance {
@@ -7411,12 +7624,16 @@ impl AtiModelPerformance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AtiMetricDataPoint {
     /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+    #[doc(hidden)]
     pub cr: std::option::Option<f32>,
     /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+    #[doc(hidden)]
     pub adr: std::option::Option<f32>,
     /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f32>,
     /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+    #[doc(hidden)]
     pub atodr: std::option::Option<f32>,
 }
 impl AtiMetricDataPoint {
@@ -7522,8 +7739,10 @@ impl AtiMetricDataPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
+    #[doc(hidden)]
     pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::TfiMetricDataPoint>>,
     /// <p> The model performance score. </p>
+    #[doc(hidden)]
     pub model_performance: std::option::Option<crate::model::TfiModelPerformance>,
 }
 impl TfiTrainingMetricsValue {
@@ -7608,6 +7827,7 @@ impl TfiTrainingMetricsValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    #[doc(hidden)]
     pub auc: std::option::Option<f32>,
 }
 impl TfiModelPerformance {
@@ -7660,12 +7880,16 @@ impl TfiModelPerformance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TfiMetricDataPoint {
     /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+    #[doc(hidden)]
     pub fpr: std::option::Option<f32>,
     /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+    #[doc(hidden)]
     pub precision: std::option::Option<f32>,
     /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+    #[doc(hidden)]
     pub tpr: std::option::Option<f32>,
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f32>,
 }
 impl TfiMetricDataPoint {
@@ -7771,8 +7995,10 @@ impl TfiMetricDataPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
+    #[doc(hidden)]
     pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::OfiMetricDataPoint>>,
     /// <p> The model's overall performance score. </p>
+    #[doc(hidden)]
     pub model_performance: std::option::Option<crate::model::OfiModelPerformance>,
 }
 impl OfiTrainingMetricsValue {
@@ -7857,6 +8083,7 @@ impl OfiTrainingMetricsValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    #[doc(hidden)]
     pub auc: std::option::Option<f32>,
 }
 impl OfiModelPerformance {
@@ -7909,12 +8136,16 @@ impl OfiModelPerformance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OfiMetricDataPoint {
     /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+    #[doc(hidden)]
     pub fpr: std::option::Option<f32>,
     /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+    #[doc(hidden)]
     pub precision: std::option::Option<f32>,
     /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+    #[doc(hidden)]
     pub tpr: std::option::Option<f32>,
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f32>,
 }
 impl OfiMetricDataPoint {
@@ -8020,9 +8251,11 @@ impl OfiMetricDataPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
+    #[doc(hidden)]
     pub file_level_messages:
         std::option::Option<std::vec::Vec<crate::model::FileValidationMessage>>,
     /// <p>The field-specific model training validation messages.</p>
+    #[doc(hidden)]
     pub field_level_messages:
         std::option::Option<std::vec::Vec<crate::model::FieldValidationMessage>>,
 }
@@ -8119,14 +8352,19 @@ impl DataValidationMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldValidationMessage {
     /// <p>The field name.</p>
+    #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
     /// <p>The message ID.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The message title.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The message content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The message type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl FieldValidationMessage {
@@ -8249,10 +8487,13 @@ impl FieldValidationMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileValidationMessage {
     /// <p>The message title.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The message content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The message type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl FileValidationMessage {
@@ -8341,10 +8582,13 @@ impl FileValidationMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingResult {
     /// <p>The validation metrics.</p>
+    #[doc(hidden)]
     pub data_validation_metrics: std::option::Option<crate::model::DataValidationMetrics>,
     /// <p>The training metric details.</p>
+    #[doc(hidden)]
     pub training_metrics: std::option::Option<crate::model::TrainingMetrics>,
     /// <p>The variable importance metrics.</p>
+    #[doc(hidden)]
     pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
 }
 impl TrainingResult {
@@ -8457,8 +8701,10 @@ impl TrainingResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingMetrics {
     /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+    #[doc(hidden)]
     pub auc: std::option::Option<f32>,
     /// <p>The data points details.</p>
+    #[doc(hidden)]
     pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
 }
 impl TrainingMetrics {
@@ -8540,12 +8786,16 @@ impl TrainingMetrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataPoint {
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+    #[doc(hidden)]
     pub fpr: std::option::Option<f32>,
     /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    #[doc(hidden)]
     pub precision: std::option::Option<f32>,
     /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    #[doc(hidden)]
     pub tpr: std::option::Option<f32>,
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    #[doc(hidden)]
     pub threshold: std::option::Option<f32>,
 }
 impl MetricDataPoint {
@@ -8651,12 +8901,16 @@ impl MetricDataPoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectorVersionSummary {
     /// <p>The detector version ID. </p>
+    #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The detector version status. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
     /// <p>The detector version description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the detector version was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<std::string::String>,
 }
 impl DetectorVersionSummary {
@@ -8771,10 +9025,13 @@ impl DetectorVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetVariableError {
     /// <p>The error name. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The error code. </p>
+    #[doc(hidden)]
     pub code: i32,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchGetVariableError {
@@ -8863,10 +9120,13 @@ impl BatchGetVariableError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateVariableError {
     /// <p>The name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The error code. </p>
+    #[doc(hidden)]
     pub code: i32,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchCreateVariableError {
@@ -8955,17 +9215,23 @@ impl BatchCreateVariableError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableEntry {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the variable.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The data source of the variable.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The default value of the variable.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The description of the variable.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
+    #[doc(hidden)]
     pub variable_type: std::option::Option<std::string::String>,
 }
 impl VariableEntry {

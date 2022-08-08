@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl EgressAccessLogs {
@@ -62,8 +63,10 @@ impl EgressAccessLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
+    #[doc(hidden)]
     pub cdn_identifier_secret: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+    #[doc(hidden)]
     pub secrets_role_arn: std::option::Option<std::string::String>,
 }
 impl Authorization {
@@ -141,16 +144,22 @@ impl Authorization {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackagingGroup {
     /// The ARN of the PackagingGroup.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
+    #[doc(hidden)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The fully qualified domain name for Assets in the PackagingGroup.
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// Configure egress access logging.
+    #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of the PackagingGroup.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -317,20 +326,28 @@ impl PackagingGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackagingConfiguration {
     /// The ARN of the PackagingConfiguration.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// A CMAF packaging configuration.
+    #[doc(hidden)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    #[doc(hidden)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
+    #[doc(hidden)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the PackagingConfiguration.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    #[doc(hidden)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// The ID of a PackagingGroup.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -540,10 +557,13 @@ impl PackagingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::MssEncryption>,
     /// A list of MSS manifest configurations.
+    #[doc(hidden)]
     pub mss_manifests: std::option::Option<std::vec::Vec<crate::model::MssManifest>>,
     /// The duration (in seconds) of each segment.
+    #[doc(hidden)]
     pub segment_duration_seconds: i32,
 }
 impl MssPackage {
@@ -644,8 +664,10 @@ impl MssPackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MssManifest {
     /// An optional string to include in the name of the manifest.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A StreamSelection configuration.
+    #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl MssManifest {
@@ -723,10 +745,13 @@ impl MssManifest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
+    #[doc(hidden)]
     pub max_video_bits_per_second: i32,
     /// The minimum video bitrate (bps) to include in output.
+    #[doc(hidden)]
     pub min_video_bits_per_second: i32,
     /// A directive that determines the order of streams in the output.
+    #[doc(hidden)]
     pub stream_order: std::option::Option<crate::model::StreamOrder>,
 }
 impl StreamSelection {
@@ -881,6 +906,7 @@ impl AsRef<str> for StreamOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl MssEncryption {
@@ -938,10 +964,13 @@ impl MssEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpekeKeyProvider {
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The system IDs to include in key requests.
+    #[doc(hidden)]
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The URL of the external key provider service.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl SpekeKeyProvider {
@@ -1039,14 +1068,19 @@ impl SpekeKeyProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::HlsEncryption>,
     /// A list of HLS manifest configurations.
+    #[doc(hidden)]
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    #[doc(hidden)]
     pub include_dvb_subtitles: bool,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    #[doc(hidden)]
     pub segment_duration_seconds: i32,
     /// When enabled, audio streams will be placed in rendition groups in the output.
+    #[doc(hidden)]
     pub use_audio_rendition_group: bool,
 }
 impl HlsPackage {
@@ -1181,16 +1215,22 @@ impl HlsPackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+    #[doc(hidden)]
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
     /// When enabled, an I-Frame only stream will be included in the output.
+    #[doc(hidden)]
     pub include_iframe_only_stream: bool,
     /// An optional string to include in the name of the manifest.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
+    #[doc(hidden)]
     pub program_date_time_interval_seconds: i32,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+    #[doc(hidden)]
     pub repeat_ext_x_key: bool,
     /// A StreamSelection configuration.
+    #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl HlsManifest {
@@ -1409,10 +1449,13 @@ impl AsRef<str> for AdMarkers {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
+    #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// The encryption method to use.
+    #[doc(hidden)]
     pub encryption_method: std::option::Option<crate::model::EncryptionMethod>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl HlsEncryption {
@@ -1571,16 +1614,22 @@ impl AsRef<str> for EncryptionMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashPackage {
     /// A list of DASH manifest configurations.
+    #[doc(hidden)]
     pub dash_manifests: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::DashEncryption>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+    #[doc(hidden)]
     pub include_encoder_configuration_in_segments: bool,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
+    #[doc(hidden)]
     pub period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
+    #[doc(hidden)]
     pub segment_duration_seconds: i32,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    #[doc(hidden)]
     pub segment_template_format: std::option::Option<crate::model::SegmentTemplateFormat>,
 }
 impl DashPackage {
@@ -1873,6 +1922,7 @@ impl AsRef<str> for PeriodTriggersElement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl DashEncryption {
@@ -1930,16 +1980,22 @@ impl DashEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    #[doc(hidden)]
     pub manifest_layout: std::option::Option<crate::model::ManifestLayout>,
     /// An optional string to include in the name of the manifest.
+    #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
+    #[doc(hidden)]
     pub min_buffer_time_seconds: i32,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    #[doc(hidden)]
     pub profile: std::option::Option<crate::model::Profile>,
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    #[doc(hidden)]
     pub scte_markers_source: std::option::Option<crate::model::ScteMarkersSource>,
     /// A StreamSelection configuration.
+    #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl DashManifest {
@@ -2256,12 +2312,16 @@ impl AsRef<str> for ManifestLayout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafPackage {
     /// A CMAF encryption configuration.
+    #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::CmafEncryption>,
     /// A list of HLS manifest configurations.
+    #[doc(hidden)]
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+    #[doc(hidden)]
     pub include_encoder_configuration_in_segments: bool,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    #[doc(hidden)]
     pub segment_duration_seconds: i32,
 }
 impl CmafPackage {
@@ -2387,8 +2447,10 @@ impl CmafPackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+    #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl CmafEncryption {
@@ -2472,20 +2534,28 @@ impl CmafEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetShallow {
     /// The ARN of the Asset.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time the Asset was initially submitted for Ingest.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The unique identifier for the Asset.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
+    #[doc(hidden)]
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// The resource ID to include in SPEKE key requests.
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// ARN of the source object in S3.
+    #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// The IAM role ARN used to access the source S3 bucket.
+    #[doc(hidden)]
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2686,10 +2756,13 @@ impl AssetShallow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
+    #[doc(hidden)]
     pub packaging_configuration_id: std::option::Option<std::string::String>,
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// The URL of the parent manifest for the repackaged Asset.
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl EgressEndpoint {

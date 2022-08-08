@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
+    #[doc(hidden)]
     pub format_version: std::option::Option<std::string::String>,
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
+    #[doc(hidden)]
     pub price_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetProductsOutput {
@@ -108,8 +111,10 @@ impl GetProductsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttributeValuesOutput {
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
+    #[doc(hidden)]
     pub attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAttributeValuesOutput {
@@ -191,10 +196,13 @@ impl GetAttributeValuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
+    #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
+    #[doc(hidden)]
     pub format_version: std::option::Option<std::string::String>,
     /// <p>The pagination token for the next set of retrievable results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeServicesOutput {

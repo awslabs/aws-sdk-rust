@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceChange {
     /// <p>A description for the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfigChange>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    #[doc(hidden)]
     pub health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
 }
 impl ServiceChange {
@@ -160,11 +163,14 @@ pub struct HealthCheckConfig {
     /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HealthCheckType>,
     /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
+    #[doc(hidden)]
     pub resource_path: std::option::Option<std::string::String>,
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub failure_threshold: std::option::Option<i32>,
 }
 impl HealthCheckConfig {
@@ -354,6 +360,7 @@ impl AsRef<str> for HealthCheckType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
+    #[doc(hidden)]
     pub dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
 }
 impl DnsConfigChange {
@@ -475,10 +482,12 @@ pub struct DnsRecord {
     /// </ul>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecordType>,
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
+    #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
 }
 impl DnsRecord {
@@ -793,8 +802,10 @@ impl AsRef<str> for RecordType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicDnsNamespaceChange {
     /// <p>An updated description for the public DNS namespace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Properties to be updated in the public DNS namespace.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::PublicDnsNamespacePropertiesChange>,
 }
 impl PublicDnsNamespaceChange {
@@ -875,6 +886,7 @@ impl PublicDnsNamespaceChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
+    #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::PublicDnsPropertiesMutableChange>,
 }
 impl PublicDnsNamespacePropertiesChange {
@@ -938,6 +950,7 @@ impl PublicDnsNamespacePropertiesChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
+    #[doc(hidden)]
     pub soa: std::option::Option<crate::model::SoaChange>,
 }
 impl PublicDnsPropertiesMutableChange {
@@ -990,6 +1003,7 @@ impl PublicDnsPropertiesMutableChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SoaChange {
     /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
 }
 impl SoaChange {
@@ -1042,8 +1056,10 @@ impl SoaChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateDnsNamespaceChange {
     /// <p>An updated description for the private DNS namespace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Properties to be updated in the private DNS namespace.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::PrivateDnsNamespacePropertiesChange>,
 }
 impl PrivateDnsNamespaceChange {
@@ -1124,6 +1140,7 @@ impl PrivateDnsNamespaceChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the private DNS namespace.</p>
+    #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::PrivateDnsPropertiesMutableChange>,
 }
 impl PrivateDnsNamespacePropertiesChange {
@@ -1187,6 +1204,7 @@ impl PrivateDnsNamespacePropertiesChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
+    #[doc(hidden)]
     pub soa: std::option::Option<crate::model::SoaChange>,
 }
 impl PrivateDnsPropertiesMutableChange {
@@ -1294,6 +1312,7 @@ impl AsRef<str> for CustomHealthStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl HttpNamespaceChange {
@@ -1348,8 +1367,10 @@ impl HttpNamespaceChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1421,10 +1442,13 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSummary {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Describes the systems that can be used to discover the service instances.</p>
     /// <dl>
@@ -1447,14 +1471,19 @@ pub struct ServiceSummary {
     /// <p>Reserved.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ServiceType>,
     /// <p>The description that you specify when you create the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfig>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
+    #[doc(hidden)]
     pub health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
     /// <ul>
@@ -1463,8 +1492,10 @@ pub struct ServiceSummary {
     /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
+    #[doc(hidden)]
     pub health_check_custom_config: std::option::Option<crate::model::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServiceSummary {
@@ -1797,6 +1828,7 @@ pub struct HealthCheckCustomConfig {
     #[deprecated(
         note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
     )]
+    #[doc(hidden)]
     pub failure_threshold: std::option::Option<i32>,
 }
 impl HealthCheckCustomConfig {
@@ -1873,6 +1905,7 @@ impl HealthCheckCustomConfig {
 pub struct DnsConfig {
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
+    #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
@@ -1898,8 +1931,10 @@ pub struct DnsConfig {
     /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub routing_policy: std::option::Option<crate::model::RoutingPolicy>,
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
+    #[doc(hidden)]
     pub dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
 }
 impl DnsConfig {
@@ -2190,8 +2225,10 @@ impl AsRef<str> for ServiceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFilter {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::ServiceFilterName>,
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
@@ -2199,6 +2236,7 @@ pub struct ServiceFilter {
     /// <li> <p> <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want <code>ListServices</code> to return a list of services for.</p> </li>
     /// <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterCondition>,
 }
 impl ServiceFilter {
@@ -2427,6 +2465,7 @@ impl AsRef<str> for ServiceFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationSummary {
     /// <p>The ID for an operation.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
@@ -2435,6 +2474,7 @@ pub struct OperationSummary {
     /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OperationStatus>,
 }
 impl OperationSummary {
@@ -2597,6 +2637,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::OperationFilterName>,
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
@@ -2606,6 +2647,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
@@ -2613,6 +2655,7 @@ pub struct OperationFilter {
     /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterCondition>,
 }
 impl OperationFilter {
@@ -2846,20 +2889,28 @@ impl AsRef<str> for OperationFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceSummary {
     /// <p>The ID of the namespace.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone that has the same name as the namespace.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the namespace, either public or private.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NamespaceType>,
     /// <p>A description for the namespace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of services that were created using the namespace.</p>
+    #[doc(hidden)]
     pub service_count: std::option::Option<i32>,
     /// <p>The properties of the namespace.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::NamespaceProperties>,
     /// <p>The date and time that the namespace was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NamespaceSummary {
@@ -3039,8 +3090,10 @@ impl NamespaceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceProperties {
     /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::DnsProperties>,
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
+    #[doc(hidden)]
     pub http_properties: std::option::Option<crate::model::HttpProperties>,
 }
 impl NamespaceProperties {
@@ -3118,6 +3171,7 @@ impl NamespaceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpProperties {
     /// <p>The name of an HTTP namespace.</p>
+    #[doc(hidden)]
     pub http_name: std::option::Option<std::string::String>,
 }
 impl HttpProperties {
@@ -3172,8 +3226,10 @@ impl HttpProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsProperties {
     /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
+    #[doc(hidden)]
     pub soa: std::option::Option<crate::model::Soa>,
 }
 impl DnsProperties {
@@ -3248,6 +3304,7 @@ impl DnsProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
+    #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
 }
 impl Soa {
@@ -3359,9 +3416,11 @@ impl AsRef<str> for NamespaceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamespaceFilter {
     /// <p>Specify <code>TYPE</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::NamespaceFilterName>,
     /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p>
     /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid values for <code>condition</code> include:</p>
     /// <dl>
@@ -3384,6 +3443,7 @@ pub struct NamespaceFilter {
     /// <p> Not applicable</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterCondition>,
 }
 impl NamespaceFilter {
@@ -3601,6 +3661,7 @@ impl AsRef<str> for NamespaceFilterName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>The ID for an instance that you created by using a specified service.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A string map that contains the following information:</p>
     /// <ul>
@@ -3652,6 +3713,7 @@ pub struct InstanceSummary {
     /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3891,18 +3953,25 @@ impl InstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the service.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the namespace that was used to create the service.</p>
+    #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The description of the service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
+    #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
     /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfig>,
     /// <p>Describes the systems that can be used to discover the service instances.</p>
     /// <dl>
@@ -3925,17 +3994,22 @@ pub struct Service {
     /// <p>Reserved.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ServiceType>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    #[doc(hidden)]
     pub health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
+    #[doc(hidden)]
     pub health_check_custom_config: std::option::Option<crate::model::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl Service {
@@ -4270,8 +4344,10 @@ impl Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the operation that's associated with the specified ID.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OperationType>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <dl>
@@ -4300,8 +4376,10 @@ pub struct Operation {
     /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::OperationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
@@ -4313,10 +4391,13 @@ pub struct Operation {
     /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the target entity that's associated with the operation:</p>
     /// <dl>
@@ -4339,6 +4420,7 @@ pub struct Operation {
     /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub targets: std::option::Option<
         std::collections::HashMap<crate::model::OperationTargetType, std::string::String>,
     >,
@@ -4849,10 +4931,13 @@ impl AsRef<str> for OperationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Namespace {
     /// <p>The ID of a namespace.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
     /// <dl>
@@ -4875,16 +4960,22 @@ pub struct Namespace {
     /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code> API.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NamespaceType>,
     /// <p>The description that you specify for the namespace when you create it.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The number of services that are associated with the namespace.</p>
+    #[doc(hidden)]
     pub service_count: std::option::Option<i32>,
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<crate::model::NamespaceProperties>,
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl Namespace {
@@ -5211,8 +5302,10 @@ pub struct Instance {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note> </li>
     /// </ul>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -5277,6 +5370,7 @@ pub struct Instance {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5599,15 +5693,20 @@ impl Instance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpInstanceSummary {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p> <code></code> <code></code> <code></code> </p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::HealthStatus>,
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5874,6 +5973,7 @@ impl AsRef<str> for ServiceTypeOption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicDnsNamespaceProperties {
     /// <p>DNS properties for the public DNS namespace.</p>
+    #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::PublicDnsPropertiesMutable>,
 }
 impl PublicDnsNamespaceProperties {
@@ -5931,6 +6031,7 @@ impl PublicDnsNamespaceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicDnsPropertiesMutable {
     /// <p>Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
+    #[doc(hidden)]
     pub soa: std::option::Option<crate::model::Soa>,
 }
 impl PublicDnsPropertiesMutable {
@@ -5983,6 +6084,7 @@ impl PublicDnsPropertiesMutable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateDnsNamespaceProperties {
     /// <p>DNS properties for the private DNS namespace.</p>
+    #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::PrivateDnsPropertiesMutable>,
 }
 impl PrivateDnsNamespaceProperties {
@@ -6042,6 +6144,7 @@ impl PrivateDnsNamespaceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
+    #[doc(hidden)]
     pub soa: std::option::Option<crate::model::Soa>,
 }
 impl PrivateDnsPropertiesMutable {

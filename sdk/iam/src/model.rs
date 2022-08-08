@@ -6,16 +6,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SshPublicKey {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key_id: std::option::Option<std::string::String>,
     /// <p>The MD5 message digest of the SSH public key.</p>
+    #[doc(hidden)]
     pub fingerprint: std::option::Option<std::string::String>,
     /// <p>The SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key_body: std::option::Option<std::string::String>,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
+    #[doc(hidden)]
     pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SshPublicKey {
@@ -220,14 +226,19 @@ impl AsRef<str> for StatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningCertificate {
     /// <p>The name of the user the signing certificate is associated with.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The ID for the signing certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The contents of the signing certificate.</p>
+    #[doc(hidden)]
     pub certificate_body: std::option::Option<std::string::String>,
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the signing certificate was uploaded.</p>
+    #[doc(hidden)]
     pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SigningCertificate {
@@ -359,10 +370,12 @@ impl SigningCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key name that can be used to look up or retrieve the associated value. For example, <code>Department</code> or <code>Cost Center</code> are common choices.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with this tag. For example, tags with a key name of <code>Department</code> could have values such as <code>Human Resources</code>, <code>Accounting</code>, and <code>Support</code>. Tags with a key name of <code>Cost Center</code> might have values that consist of the number associated with the different cost centers in your company. Typically, many resources have tags with the same key name but with different values.</p> <note>
     /// <p>Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store comma-separated values in the string. However, you must interpret the value in your code.</p>
     /// </note>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -441,16 +454,22 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerCertificateMetadata {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The name that identifies the server certificate.</p>
+    #[doc(hidden)]
     pub server_certificate_name: std::option::Option<std::string::String>,
     /// <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub server_certificate_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the server certificate was uploaded.</p>
+    #[doc(hidden)]
     pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date on which the certificate is set to expire.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ServerCertificateMetadata {
@@ -602,27 +621,38 @@ impl ServerCertificateMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Role {
     /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the role.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p> The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub role_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i> guide. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The policy that grants an entity permission to assume the role.</p>
+    #[doc(hidden)]
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A description of the role that you provide.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI parameter.</p>
+    #[doc(hidden)]
     pub max_session_duration: std::option::Option<i32>,
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_last_used: std::option::Option<crate::model::RoleLastUsed>,
 }
 impl Role {
@@ -885,8 +915,10 @@ impl Role {
 pub struct RoleLastUsed {
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> that the role was last used.</p>
     /// <p>This field is null if the role has not been used within the IAM tracking period. For more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl RoleLastUsed {
@@ -966,9 +998,11 @@ impl RoleLastUsed {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachedPermissionsBoundary {
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
+    #[doc(hidden)]
     pub permissions_boundary_type:
         std::option::Option<crate::model::PermissionsBoundaryAttachmentType>,
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
+    #[doc(hidden)]
     pub permissions_boundary_arn: std::option::Option<std::string::String>,
 }
 impl AttachedPermissionsBoundary {
@@ -1104,29 +1138,38 @@ impl AsRef<str> for PermissionsBoundaryAttachmentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The name of the API operation tested on the indicated resource.</p>
+    #[doc(hidden)]
     pub eval_action_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
+    #[doc(hidden)]
     pub eval_resource_name: std::option::Option<std::string::String>,
     /// <p>The result of the simulation.</p>
+    #[doc(hidden)]
     pub eval_decision: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
     /// <p>A list of the statements in the input policies that determine the result for this scenario. Remember that even if multiple statements allow the operation on the resource, if only one statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
+    #[doc(hidden)]
     pub matched_statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
     /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
+    #[doc(hidden)]
     pub missing_context_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A structure that details how Organizations and its service control policies affect the results of the simulation. Only applies if the simulated user's account is part of an organization.</p>
+    #[doc(hidden)]
     pub organizations_decision_detail:
         std::option::Option<crate::model::OrganizationsDecisionDetail>,
     /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.</p>
+    #[doc(hidden)]
     pub permissions_boundary_decision_detail:
         std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
     /// <p>Additional details about the results of the cross-account evaluation decision. This parameter is populated for only cross-account simulations. It contains a brief summary of how each policy type contributes to the final evaluation decision.</p>
     /// <p>If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is present but the response is empty. If the simulation evaluates policies within the same account and specifies all resources (<code>*</code>), then the parameter is not returned.</p>
     /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
     /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy evaluation does not proceed any further and this parameter is not returned.</p>
+    #[doc(hidden)]
     pub eval_decision_details: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
     >,
     /// <p>The individual results of the simulation of the API operation specified in EvalActionName on each resource.</p>
+    #[doc(hidden)]
     pub resource_specific_results:
         std::option::Option<std::vec::Vec<crate::model::ResourceSpecificResult>>,
 }
@@ -1423,18 +1466,24 @@ impl EvaluationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceSpecificResult {
     /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
+    #[doc(hidden)]
     pub eval_resource_name: std::option::Option<std::string::String>,
     /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
+    #[doc(hidden)]
     pub eval_resource_decision: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
     /// <p>A list of the statements in the input policies that determine the result for this part of the simulation. Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
+    #[doc(hidden)]
     pub matched_statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
     /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when a list of ARNs is included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify individual resources, by setting <code>ResourceArns</code> to "*" or by not including the <code>ResourceArns</code> parameter, then any missing context values are instead included under the <code>EvaluationResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
+    #[doc(hidden)]
     pub missing_context_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Additional details about the results of the evaluation decision on a single resource. This parameter is returned only for cross-account simulations. This parameter explains how each policy type contributes to the resource-specific evaluation decision.</p>
+    #[doc(hidden)]
     pub eval_decision_details: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
     >,
     /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when that boundary is applied to an IAM entity.</p>
+    #[doc(hidden)]
     pub permissions_boundary_decision_detail:
         std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
 }
@@ -1644,6 +1693,7 @@ impl ResourceSpecificResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionsBoundaryDecisionDetail {
     /// <p>Specifies whether an action is allowed by a permissions boundary that is applied to an IAM entity (user or role). A value of <code>true</code> means that the permissions boundary does not deny the action. This means that the policy includes an <code>Allow</code> statement that matches the request. In this case, if an identity-based policy also allows the action, the request is allowed. A value of <code>false</code> means that either the requested action is not allowed (implicitly denied) or that the action is explicitly denied by the permissions boundary. In both of these cases, the action is not allowed, regardless of the identity-based policy.</p>
+    #[doc(hidden)]
     pub allowed_by_permissions_boundary: bool,
 }
 impl PermissionsBoundaryDecisionDetail {
@@ -1766,12 +1816,16 @@ impl AsRef<str> for PolicyEvaluationDecisionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
     /// <p>The identifier of the policy that was provided as an input.</p>
+    #[doc(hidden)]
     pub source_policy_id: std::option::Option<std::string::String>,
     /// <p>The type of the policy.</p>
+    #[doc(hidden)]
     pub source_policy_type: std::option::Option<crate::model::PolicySourceType>,
     /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM policy.</p>
+    #[doc(hidden)]
     pub start_position: std::option::Option<crate::model::Position>,
     /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
+    #[doc(hidden)]
     pub end_position: std::option::Option<crate::model::Position>,
 }
 impl Statement {
@@ -1890,8 +1944,10 @@ impl Statement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Position {
     /// <p>The line containing the specified position in the document.</p>
+    #[doc(hidden)]
     pub line: i32,
     /// <p>The column in the line containing the specified position in the document.</p>
+    #[doc(hidden)]
     pub column: i32,
 }
 impl Position {
@@ -2046,6 +2102,7 @@ impl AsRef<str> for PolicySourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsDecisionDetail {
     /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
+    #[doc(hidden)]
     pub allowed_by_organizations: bool,
 }
 impl OrganizationsDecisionDetail {
@@ -2101,10 +2158,13 @@ impl OrganizationsDecisionDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContextEntry {
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
+    #[doc(hidden)]
     pub context_key_name: std::option::Option<std::string::String>,
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
+    #[doc(hidden)]
     pub context_key_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
+    #[doc(hidden)]
     pub context_key_type: std::option::Option<crate::model::ContextKeyTypeEnum>,
 }
 impl ContextEntry {
@@ -2371,18 +2431,25 @@ impl AsRef<str> for GlobalEndpointTokenVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSpecificCredential {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the service associated with the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The generated user name for the service-specific credential. This value is generated by combining the IAM user's name combined with the ID number of the Amazon Web Services account, as in <code>jane-at-123456789012</code>, for example. This value cannot be configured by the user.</p>
+    #[doc(hidden)]
     pub service_user_name: std::option::Option<std::string::String>,
     /// <p>The generated password for the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_password: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
 }
 impl ServiceSpecificCredential {
@@ -2557,16 +2624,22 @@ impl ServiceSpecificCredential {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    #[doc(hidden)]
     pub base32_string_seed: std::option::Option<aws_smithy_types::Blob>,
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
+    #[doc(hidden)]
     pub qr_code_png: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The IAM user associated with this virtual MFA device.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
+    #[doc(hidden)]
     pub enable_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl VirtualMfaDevice {
@@ -2734,14 +2807,19 @@ impl VirtualMfaDevice {
 pub struct User {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name identifying the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
@@ -2750,10 +2828,13 @@ pub struct User {
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    #[doc(hidden)]
     pub password_last_used: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl User {
@@ -3032,12 +3113,16 @@ impl AsRef<str> for AssignmentStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SshPublicKeyMetadata {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
+    #[doc(hidden)]
     pub upload_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SshPublicKeyMetadata {
@@ -3149,16 +3234,22 @@ impl SshPublicKeyMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSpecificCredentialMetadata {
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The generated user name for the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_user_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The name of the service associated with the service-specific credential.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl ServiceSpecificCredentialMetadata {
@@ -3313,10 +3404,13 @@ impl ServiceSpecificCredentialMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The expiration date and time for the SAML provider.</p>
+    #[doc(hidden)]
     pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the SAML provider was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SamlProviderListEntry {
@@ -3415,13 +3509,17 @@ pub struct PolicyVersion {
     /// <p>The policy document.</p>
     /// <p>The policy document is returned in the response to the <code>GetPolicyVersion</code> and <code>GetAccountAuthorizationDetails</code> operations. It is not returned in the response to the <code>CreatePolicyVersion</code> or <code>ListPolicyVersions</code> operations. </p>
     /// <p>The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
     /// <p>The identifier for the policy version.</p>
     /// <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a policy is created, the first policy version is <code>v1</code>. </p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the policy version is set as the policy's default version.</p>
+    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy version was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {
@@ -3541,8 +3639,10 @@ impl PolicyVersion {
 pub struct ListPoliciesGrantingServiceAccessEntry {
     /// <p>The namespace of the service that was accessed.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The&nbsp;<code>PoliciesGrantingServiceAccess</code> object that contains details about the policy.</p>
+    #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>>,
 }
 impl ListPoliciesGrantingServiceAccessEntry {
@@ -3631,17 +3731,22 @@ impl ListPoliciesGrantingServiceAccessEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGrantingServiceAccess {
     /// <p>The policy name.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<crate::model::PolicyType>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The type of entity (user or role) that used the policy to access the service to which the inline policy is attached.</p>
     /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<crate::model::PolicyOwnerEntityType>,
     /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
     /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
 }
 impl PolicyGrantingServiceAccess {
@@ -3895,34 +4000,46 @@ impl AsRef<str> for PolicyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policy {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the policy that is set as the default version.</p>
+    #[doc(hidden)]
     pub default_version_id: std::option::Option<std::string::String>,
     /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
+    #[doc(hidden)]
     pub attachment_count: std::option::Option<i32>,
     /// <p>The number of entities (users and roles) for which the policy is used to set the permissions boundary. </p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary_usage_count: std::option::Option<i32>,
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
+    #[doc(hidden)]
     pub is_attachable: bool,
     /// <p>A friendly description of the policy.</p>
     /// <p>This element is included in the response to the <code>GetPolicy</code> operation. It is not included in the response to the <code>ListPolicies</code> operation. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl Policy {
@@ -4324,6 +4441,7 @@ impl AsRef<str> for PolicyScopeType {
 pub struct OpenIdConnectProviderListEntry {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl OpenIdConnectProviderListEntry {
@@ -4380,10 +4498,13 @@ impl OpenIdConnectProviderListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MfaDevice {
     /// <p>The user with whom the MFA device is associated.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The date when the MFA device was enabled for the user.</p>
+    #[doc(hidden)]
     pub enable_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MfaDevice {
@@ -4485,18 +4606,25 @@ impl MfaDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceProfile {
     /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The name identifying the instance profile.</p>
+    #[doc(hidden)]
     pub instance_profile_name: std::option::Option<std::string::String>,
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub instance_profile_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the instance profile was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The role associated with the instance profile.</p>
+    #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl InstanceProfile {
@@ -4686,14 +4814,19 @@ impl InstanceProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Group {
@@ -4821,8 +4954,10 @@ impl Group {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyRole {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_id: std::option::Option<std::string::String>,
 }
 impl PolicyRole {
@@ -4896,8 +5031,10 @@ impl PolicyRole {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyUser {
     /// <p>The name (friendly name, not ARN) identifying the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl PolicyUser {
@@ -4971,8 +5108,10 @@ impl PolicyUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGroup {
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl PolicyGroup {
@@ -5119,9 +5258,11 @@ impl AsRef<str> for EntityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachedPolicy {
     /// <p>The friendly name of the attached policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl AttachedPolicy {
@@ -5197,12 +5338,16 @@ impl AttachedPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessKeyMetadata {
     /// <p>The name of the IAM user that the key is associated with.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The ID for this access key.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls; <code>Inactive</code> means it is not.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the access key was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessKeyMetadata {
@@ -5370,8 +5515,10 @@ impl AsRef<str> for EncodingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletionTaskFailureReasonType {
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
+    #[doc(hidden)]
     pub role_usage_list: std::option::Option<std::vec::Vec<crate::model::RoleUsageType>>,
 }
 impl DeletionTaskFailureReasonType {
@@ -5453,8 +5600,10 @@ impl DeletionTaskFailureReasonType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleUsageType {
     /// <p>The name of the Region where the service-linked role is being used.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The name of the resource that is using the service-linked role.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RoleUsageType {
@@ -5599,8 +5748,10 @@ impl AsRef<str> for DeletionTaskStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>Detailed information about the reason that the operation failed.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The error code associated with the operation failure.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -5673,9 +5824,11 @@ impl ErrorDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityDetails {
     /// <p>The&nbsp;<code>EntityInfo</code> object that contains details about the entity (user or role).</p>
+    #[doc(hidden)]
     pub entity_info: std::option::Option<crate::model::EntityInfo>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EntityDetails {
@@ -5758,14 +5911,19 @@ impl EntityDetails {
 pub struct EntityInfo {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the entity (user or role).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of entity (user or role).</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PolicyOwnerEntityType>,
     /// <p>The identifier of the entity (user or role).</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl EntityInfo {
@@ -5954,24 +6112,31 @@ impl AsRef<str> for JobStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLastAccessed {
     /// <p>The name of the service in which access was attempted.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_authenticated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_authenticated_entity: std::option::Option<std::string::String>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_authenticated_region: std::option::Option<std::string::String>,
     /// <p>The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access the service.</p>
     /// <p>This field is null if no principals attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub total_authenticated_entities: std::option::Option<i32>,
     /// <p>An object that contains details about the most recent attempt to access a tracked action within the service.</p>
     /// <p>This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>. This field is also null if the report was generated at the service level and not the action level. For more information, see the <code>Granularity</code> field in <code>GenerateServiceLastAccessedDetails</code>.</p>
+    #[doc(hidden)]
     pub tracked_actions_last_accessed:
         std::option::Option<std::vec::Vec<crate::model::TrackedActionLastAccessed>>,
 }
@@ -6181,15 +6346,19 @@ impl ServiceLastAccessed {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackedActionLastAccessed {
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub last_accessed_entity: std::option::Option<std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_accessed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_accessed_region: std::option::Option<std::string::String>,
 }
 impl TrackedActionLastAccessed {
@@ -6369,12 +6538,16 @@ impl AsRef<str> for AccessAdvisorUsageGranularityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerCertificate {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
+    #[doc(hidden)]
     pub server_certificate_metadata: std::option::Option<crate::model::ServerCertificateMetadata>,
     /// <p>The contents of the public key certificate.</p>
+    #[doc(hidden)]
     pub certificate_body: std::option::Option<std::string::String>,
     /// <p>The contents of the public key certificate chain.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ServerCertificate {
@@ -6508,20 +6681,26 @@ impl ServerCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDetail {
     /// <p>The name of the service in which access was attempted.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    #[doc(hidden)]
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The Region where the last service access attempt occurred.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an authenticated principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub entity_path: std::option::Option<std::string::String>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated principal most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
+    #[doc(hidden)]
     pub last_authenticated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to access the service in the reporting period.</p>
+    #[doc(hidden)]
     pub total_authenticated_entities: std::option::Option<i32>,
 }
 impl AccessDetail {
@@ -6751,10 +6930,13 @@ impl AsRef<str> for SortKeyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The date when the password for the user was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    #[doc(hidden)]
     pub password_reset_required: bool,
 }
 impl LoginProfile {
@@ -7080,25 +7262,35 @@ impl AsRef<str> for SummaryKeyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PasswordPolicy {
     /// <p>Minimum length to require for IAM user passwords.</p>
+    #[doc(hidden)]
     pub minimum_password_length: std::option::Option<i32>,
     /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    #[doc(hidden)]
     pub require_symbols: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
+    #[doc(hidden)]
     pub require_numbers: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
+    #[doc(hidden)]
     pub require_uppercase_characters: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
+    #[doc(hidden)]
     pub require_lowercase_characters: bool,
     /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
+    #[doc(hidden)]
     pub allow_users_to_change_password: bool,
     /// <p>Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.</p>
+    #[doc(hidden)]
     pub expire_passwords: bool,
     /// <p>The number of days that an IAM user password is valid.</p>
+    #[doc(hidden)]
     pub max_password_age: std::option::Option<i32>,
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
+    #[doc(hidden)]
     pub password_reuse_prevention: std::option::Option<i32>,
     /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
+    #[doc(hidden)]
     pub hard_expiry: std::option::Option<bool>,
 }
 impl PasswordPolicy {
@@ -7331,34 +7523,46 @@ impl PasswordPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedPolicyDetail {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>. </p>
+    #[doc(hidden)]
     pub default_version_id: std::option::Option<std::string::String>,
     /// <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
+    #[doc(hidden)]
     pub attachment_count: std::option::Option<i32>,
     /// <p>The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary_usage_count: std::option::Option<i32>,
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
+    #[doc(hidden)]
     pub is_attachable: bool,
     /// <p>A friendly description of the policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
+    #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list containing information about the versions of the policy.</p>
+    #[doc(hidden)]
     pub policy_version_list: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
 }
 impl ManagedPolicyDetail {
@@ -7644,30 +7848,42 @@ impl ManagedPolicyDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleDetail {
     /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the role.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The trust policy that grants permission to assume the role.</p>
+    #[doc(hidden)]
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A list of instance profiles that contain this role.</p>
+    #[doc(hidden)]
     pub instance_profile_list: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
     /// <p>A list of inline policies embedded in the role. These policies are the role's access (permissions) policies.</p>
+    #[doc(hidden)]
     pub role_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of managed policies attached to the role. These policies are the role's access (permissions) policies.</p>
+    #[doc(hidden)]
     pub attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_last_used: std::option::Option<crate::model::RoleLastUsed>,
 }
 impl RoleDetail {
@@ -7980,8 +8196,10 @@ impl RoleDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyDetail {
     /// <p>The name of the policy.</p>
+    #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl PolicyDetail {
@@ -8057,19 +8275,26 @@ impl PolicyDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupDetail {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the inline policies embedded in the group.</p>
+    #[doc(hidden)]
     pub group_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of the managed policies attached to the group.</p>
+    #[doc(hidden)]
     pub attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
 }
 impl GroupDetail {
@@ -8255,26 +8480,36 @@ impl GroupDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDetail {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The friendly name identifying the user.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the inline policies embedded in the user.</p>
+    #[doc(hidden)]
     pub user_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of IAM groups that the user is in.</p>
+    #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of the managed policies attached to the user.</p>
+    #[doc(hidden)]
     pub attached_managed_policies: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UserDetail {
@@ -8545,6 +8780,7 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub last_used_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -8552,6 +8788,7 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -8560,6 +8797,7 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
 }
 impl AccessKeyLastUsed {
@@ -8761,14 +8999,19 @@ impl AsRef<str> for ReportStateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessKey {
     /// <p>The name of the IAM user that the access key is associated with.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The ID for this access key.</p>
+    #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The secret key used to sign requests.</p>
+    #[doc(hidden)]
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The date when the access key was created.</p>
+    #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AccessKey {

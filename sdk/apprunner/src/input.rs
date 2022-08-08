@@ -5081,19 +5081,26 @@ impl UpdateServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The source configuration to apply to the App Runner service.</p>
     /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
+    #[doc(hidden)]
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    #[doc(hidden)]
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The observability configuration of your service.</p>
+    #[doc(hidden)]
     pub observability_configuration:
         std::option::Option<crate::model::ServiceObservabilityConfiguration>,
 }
@@ -5165,8 +5172,10 @@ impl std::fmt::Debug for UpdateServiceInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys that you want to remove.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5195,8 +5204,10 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5224,6 +5235,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeploymentInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInput {
@@ -5245,6 +5257,7 @@ impl std::fmt::Debug for StartDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl ResumeServiceInput {
@@ -5266,6 +5279,7 @@ impl std::fmt::Debug for ResumeServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PauseServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl PauseServiceInput {
@@ -5288,9 +5302,11 @@ impl std::fmt::Debug for PauseServiceInput {
 pub struct ListVpcConnectorsInput {
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpcConnectorsInput {
@@ -5320,6 +5336,7 @@ impl std::fmt::Debug for ListVpcConnectorsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5343,9 +5360,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListServicesInput {
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -5374,12 +5393,15 @@ impl std::fmt::Debug for ListServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOperationsInput {
@@ -5413,16 +5435,20 @@ impl std::fmt::Debug for ListOperationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObservabilityConfigurationsInput {
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    #[doc(hidden)]
     pub observability_configuration_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub latest_only: bool,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObservabilityConfigurationsInput {
@@ -5466,12 +5492,15 @@ impl std::fmt::Debug for ListObservabilityConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
     /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsInput {
@@ -5505,16 +5534,20 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoScalingConfigurationsInput {
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub latest_only: bool,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoScalingConfigurationsInput {
@@ -5558,8 +5591,10 @@ impl std::fmt::Debug for ListAutoScalingConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCustomDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisassociateCustomDomainInput {
@@ -5587,6 +5622,7 @@ impl std::fmt::Debug for DisassociateCustomDomainInput {
 pub struct DescribeVpcConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
+    #[doc(hidden)]
     pub vpc_connector_arn: std::option::Option<std::string::String>,
 }
 impl DescribeVpcConnectorInput {
@@ -5609,6 +5645,7 @@ impl std::fmt::Debug for DescribeVpcConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl DescribeServiceInput {
@@ -5631,6 +5668,7 @@ impl std::fmt::Debug for DescribeServiceInput {
 pub struct DescribeObservabilityConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    #[doc(hidden)]
     pub observability_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeObservabilityConfigurationInput {
@@ -5656,12 +5694,15 @@ impl std::fmt::Debug for DescribeObservabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomDomainsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeCustomDomainsInput {
@@ -5696,6 +5737,7 @@ impl std::fmt::Debug for DescribeCustomDomainsInput {
 pub struct DescribeAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingConfigurationInput {
@@ -5722,6 +5764,7 @@ impl std::fmt::Debug for DescribeAutoScalingConfigurationInput {
 pub struct DeleteVpcConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
+    #[doc(hidden)]
     pub vpc_connector_arn: std::option::Option<std::string::String>,
 }
 impl DeleteVpcConnectorInput {
@@ -5744,6 +5787,7 @@ impl std::fmt::Debug for DeleteVpcConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl DeleteServiceInput {
@@ -5766,6 +5810,7 @@ impl std::fmt::Debug for DeleteServiceInput {
 pub struct DeleteObservabilityConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    #[doc(hidden)]
     pub observability_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteObservabilityConfigurationInput {
@@ -5791,6 +5836,7 @@ impl std::fmt::Debug for DeleteObservabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -5813,6 +5859,7 @@ impl std::fmt::Debug for DeleteConnectionInput {
 pub struct DeleteAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInput {
@@ -5838,14 +5885,18 @@ impl std::fmt::Debug for DeleteAutoScalingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcConnectorInput {
     /// <p>A name for the VPC connector.</p>
+    #[doc(hidden)]
     pub vpc_connector_name: std::option::Option<std::string::String>,
     /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
     /// <p> App Runner currently only provides support for IPv4. </p>
     /// </note>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVpcConnectorInput {
@@ -5884,24 +5935,33 @@ impl std::fmt::Debug for CreateVpcConnectorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
+    #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
+    #[doc(hidden)]
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    #[doc(hidden)]
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
+    #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The observability configuration of your service.</p>
+    #[doc(hidden)]
     pub observability_configuration:
         std::option::Option<crate::model::ServiceObservabilityConfiguration>,
 }
@@ -5988,10 +6048,13 @@ pub struct CreateObservabilityConfigurationInput {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
+    #[doc(hidden)]
     pub observability_configuration_name: std::option::Option<std::string::String>,
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+    #[doc(hidden)]
     pub trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateObservabilityConfigurationInput {
@@ -6029,10 +6092,13 @@ impl std::fmt::Debug for CreateObservabilityConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The source repository provider.</p>
+    #[doc(hidden)]
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionInput {
@@ -6067,18 +6133,23 @@ pub struct CreateAutoScalingConfigurationInput {
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
+    #[doc(hidden)]
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code> </p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<i32>,
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
     /// <p>Default: <code>1</code> </p>
+    #[doc(hidden)]
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code> </p>
+    #[doc(hidden)]
     pub max_size: std::option::Option<i32>,
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAutoScalingConfigurationInput {
@@ -6130,11 +6201,14 @@ impl std::fmt::Debug for CreateAutoScalingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCustomDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
+    #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub enable_www_subdomain: std::option::Option<bool>,
 }
 impl AssociateCustomDomainInput {

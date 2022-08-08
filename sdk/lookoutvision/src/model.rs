@@ -169,8 +169,10 @@ impl AsRef<str> for DatasetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag that is attached to the specified model.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag that is attached to the specified model.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -315,6 +317,7 @@ impl AsRef<str> for ModelHostingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+    #[doc(hidden)]
     pub greengrass: std::option::Option<crate::model::GreengrassConfiguration>,
 }
 impl ModelPackagingConfiguration {
@@ -375,20 +378,28 @@ impl ModelPackagingConfiguration {
 pub struct GreengrassConfiguration {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    #[doc(hidden)]
     pub compiler_options: std::option::Option<std::string::String>,
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
+    #[doc(hidden)]
     pub target_device: std::option::Option<crate::model::TargetDevice>,
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
+    #[doc(hidden)]
     pub target_platform: std::option::Option<crate::model::TargetPlatform>,
     /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
+    #[doc(hidden)]
     pub s3_output_location: std::option::Option<crate::model::S3Location>,
     /// <p> A name for the AWS IoT Greengrass component. </p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p> A description for the AWS IoT Greengrass component. </p>
+    #[doc(hidden)]
     pub component_description: std::option::Option<std::string::String>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GreengrassConfiguration {
@@ -595,8 +606,10 @@ impl GreengrassConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -668,14 +681,17 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetPlatform {
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+    #[doc(hidden)]
     pub os: std::option::Option<crate::model::TargetPlatformOs>,
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+    #[doc(hidden)]
     pub arch: std::option::Option<crate::model::TargetPlatformArch>,
     /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU: </p>
     /// <ul>
     /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
     /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::TargetPlatformAccelerator>,
 }
 impl TargetPlatform {
@@ -993,10 +1009,13 @@ impl AsRef<str> for TargetDevice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectMetadata {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The unix timestamp for the date and time that the project was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProjectMetadata {
@@ -1088,18 +1107,25 @@ impl ProjectMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelMetadata {
     /// <p>The unix timestamp for the date and time that the model was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the model.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The description for the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The status message for the model.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
+    #[doc(hidden)]
     pub performance: std::option::Option<crate::model::ModelPerformance>,
 }
 impl ModelMetadata {
@@ -1268,10 +1294,13 @@ impl ModelMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
+    #[doc(hidden)]
     pub f1_score: std::option::Option<f32>,
     /// <p>The overall recall metric value for the trained model. </p>
+    #[doc(hidden)]
     pub recall: std::option::Option<f32>,
     /// <p>The overall precision metric value for the trained model.</p>
+    #[doc(hidden)]
     pub precision: std::option::Option<f32>,
 }
 impl ModelPerformance {
@@ -1453,22 +1482,31 @@ impl AsRef<str> for ModelStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPackagingJobMetadata {
     /// <p> The name of the model packaging job. </p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p> The project that contains the model that is in the model package. </p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p> The version of the model that is in the model package. </p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p> The description for the model packaging job. </p>
+    #[doc(hidden)]
     pub model_packaging_job_description: std::option::Option<std::string::String>,
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    #[doc(hidden)]
     pub model_packaging_method: std::option::Option<std::string::String>,
     /// <p>The status of the model packaging job. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelPackagingJobStatus>,
     /// <p>The status message for the model packaging job. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModelPackagingJobMetadata {
@@ -1749,18 +1787,23 @@ impl AsRef<str> for ModelPackagingJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ImageSource>,
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
+    #[doc(hidden)]
     pub is_anomalous: bool,
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
+    #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    #[doc(hidden)]
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    #[doc(hidden)]
     pub anomaly_mask: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DetectAnomalyResult {
@@ -1907,8 +1950,10 @@ impl DetectAnomalyResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Anomaly {
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
+    #[doc(hidden)]
     pub pixel_anomaly: std::option::Option<crate::model::PixelAnomaly>,
 }
 impl Anomaly {
@@ -1983,8 +2028,10 @@ impl Anomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PixelAnomaly {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
+    #[doc(hidden)]
     pub total_percentage_area: std::option::Option<f32>,
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+    #[doc(hidden)]
     pub color: std::option::Option<std::string::String>,
 }
 impl PixelAnomaly {
@@ -2056,6 +2103,7 @@ impl PixelAnomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageSource {
     /// <p>The type of the image.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ImageSource {
@@ -2110,12 +2158,16 @@ impl ImageSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The unix timestamp for the date and time that the project was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of datasets in the project.</p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
 }
 impl ProjectDescription {
@@ -2233,12 +2285,16 @@ impl ProjectDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetMetadata {
     /// <p>The type of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status for the dataset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The status message for the dataset.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl DatasetMetadata {
@@ -2353,28 +2409,39 @@ impl DatasetMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPackagingDescription {
     /// <p> The name of the model packaging job. </p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The name of the project that's associated with a model that's in the model package. </p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The version of the model used in the model packaging job. </p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p> The configuration information used in the model packaging job. </p>
+    #[doc(hidden)]
     pub model_packaging_configuration:
         std::option::Option<crate::model::ModelPackagingConfiguration>,
     /// <p>The description for the model packaging job. </p>
+    #[doc(hidden)]
     pub model_packaging_job_description: std::option::Option<std::string::String>,
     /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    #[doc(hidden)]
     pub model_packaging_method: std::option::Option<std::string::String>,
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+    #[doc(hidden)]
     pub model_packaging_output_details:
         std::option::Option<crate::model::ModelPackagingOutputDetails>,
     /// <p> The status of the model packaging job. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelPackagingJobStatus>,
     /// <p> The status message for the model packaging job. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ModelPackagingDescription {
@@ -2650,6 +2717,7 @@ impl ModelPackagingDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+    #[doc(hidden)]
     pub greengrass: std::option::Option<crate::model::GreengrassOutputDetails>,
 }
 impl ModelPackagingOutputDetails {
@@ -2707,10 +2775,13 @@ impl ModelPackagingOutputDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GreengrassOutputDetails {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
+    #[doc(hidden)]
     pub component_version_arn: std::option::Option<std::string::String>,
     /// <p> The name of the component. </p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p> The version of the component. </p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
 }
 impl GreengrassOutputDetails {
@@ -2808,32 +2879,46 @@ impl GreengrassOutputDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelDescription {
     /// <p>The version of the model</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
     /// <p>The unix timestamp for the date and time that the model was created. </p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the model.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The status message for the model.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Performance metrics for the model. Created during training.</p>
+    #[doc(hidden)]
     pub performance: std::option::Option<crate::model::ModelPerformance>,
     /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
+    #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::OutputConfig>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
+    #[doc(hidden)]
     pub evaluation_manifest: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
+    #[doc(hidden)]
     pub evaluation_result: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    #[doc(hidden)]
     pub evaluation_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    #[doc(hidden)]
     pub min_inference_units: std::option::Option<i32>,
     /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+    #[doc(hidden)]
     pub max_inference_units: std::option::Option<i32>,
 }
 impl ModelDescription {
@@ -3133,8 +3218,10 @@ impl ModelDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputS3Object {
     /// <p>The bucket that contains the training output.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The location of the training output in the bucket.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl OutputS3Object {
@@ -3206,6 +3293,7 @@ impl OutputS3Object {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputConfig {
     /// <p>The S3 location for the output.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl OutputConfig {
@@ -3263,18 +3351,25 @@ impl OutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetDescription {
     /// <p>The name of the project that contains the dataset.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
+    #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the date and time that the dataset was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the dataset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The status message for the dataset. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Statistics about the images in a dataset.</p>
+    #[doc(hidden)]
     pub image_stats: std::option::Option<crate::model::DatasetImageStats>,
 }
 impl DatasetDescription {
@@ -3446,12 +3541,16 @@ impl DatasetDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImageStats {
     /// <p>The total number of images in the dataset.</p>
+    #[doc(hidden)]
     pub total: std::option::Option<i32>,
     /// <p>The total number of labeled images.</p>
+    #[doc(hidden)]
     pub labeled: std::option::Option<i32>,
     /// <p>The total number of images labeled as normal.</p>
+    #[doc(hidden)]
     pub normal: std::option::Option<i32>,
     /// <p>the total number of images labeled as an anomaly.</p>
+    #[doc(hidden)]
     pub anomaly: std::option::Option<i32>,
 }
 impl DatasetImageStats {
@@ -3557,6 +3656,7 @@ impl DatasetImageStats {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSource {
     /// <p>Location information for the manifest file.</p>
+    #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::model::DatasetGroundTruthManifest>,
 }
 impl DatasetSource {
@@ -3620,6 +3720,7 @@ impl DatasetSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
+    #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::InputS3Object>,
 }
 impl DatasetGroundTruthManifest {
@@ -3677,10 +3778,13 @@ impl DatasetGroundTruthManifest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputS3Object {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name and location of the manifest file withiin the bucket.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the bucket.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl InputS3Object {
